@@ -1,11 +1,9 @@
 name: PHI scan
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
   workflow_call:
+  workflow_dispatch:
 
 jobs:
   scan:
