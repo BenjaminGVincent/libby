@@ -921,14 +921,31 @@ def _column_widths(headers: list[str], page_w: float, n: int) -> list[float]:
     return [page_w * r for r in ratios]
 
 
+_RX_SINGLE_LINK_CELL = re.compile(r"^\s*\[([^\]]+)\]\(([^)]+)\)\s*$")
+
+
+def _cell_link(cell: str) -> str:
+    """Return the URL when a cell is a single markdown link `[label](url)`.
+
+    Used by the table renderer to attach a clickable hyperlink to the rendered
+    cell. When the cell is plain text or contains mixed content, returns ''.
+    The Reference column on the manuscripts master table is always a single
+    link or `—`, so this catches every case there.
+    """
+    m = _RX_SINGLE_LINK_CELL.match(cell)
+    return m.group(2) if m else ""
+
+
 def _render_table_row(pdf, cells: list[str], widths: list[float], fill: bool, header: bool) -> None:
     line_h = 4.2 if not header else 4.6
     pad_v = 1.2
     cell_lines: list[list[str]] = []
+    cell_links: list[str] = []
     for cell, w in zip(cells, widths):
         plain = _strip_inline_md(cell)
         wrapped = _word_wrap(_ascii_fallback(plain), w - 2.4, pdf, font_style="B" if header else "")
         cell_lines.append(wrapped)
+        cell_links.append("" if header else _cell_link(cell))
     n_lines = max(1, max(len(c) for c in cell_lines))
     row_h = max(line_h * n_lines + pad_v * 2, 6)
 
@@ -950,19 +967,31 @@ def _render_table_row(pdf, cells: list[str], widths: list[float], fill: bool, he
         pdf.line(x0, y0, x0 + sum(widths), y0)
 
     cx = x0
-    for cell, w, lines in zip(cells, widths, cell_lines):
+    for cell, w, lines, link in zip(cells, widths, cell_lines, cell_links):
         cy = y0 + pad_v
         for ln in lines:
             pdf.set_xy(cx + 1.2, cy)
-            _emit_table_cell_line(pdf, ln, w - 2.4, header)
+            _emit_table_cell_line(pdf, ln, w - 2.4, header, cell_link=link)
             cy += line_h
         cx += w
 
     pdf.set_xy(x0, y0 + row_h)
 
 
-def _emit_table_cell_line(pdf, text: str, w: float, header: bool) -> None:
+def _emit_table_cell_line(pdf, text: str, w: float, header: bool, cell_link: str = "") -> None:
     pdf.set_text_color(*INK)
+    if cell_link and not header:
+        # The whole cell is one hyperlinked run — `_render_table_row` already
+        # stripped the markdown so `text` is the visible label. Render it as
+        # ACCENT-colored clickable text with the URL attached.
+        ascii_text = _ascii_fallback(text)
+        pdf.set_font(_FONT_FAMILY, "", 8)
+        pdf.set_text_color(*ACCENT)
+        ww = pdf.get_string_width(ascii_text)
+        if ww > w + 0.01:
+            ww = w
+        pdf.cell(ww, 4.2, ascii_text, link=cell_link)
+        return
     runs = _tokenize_inline(text)
     cur_x = pdf.get_x()
     y = pdf.get_y()
@@ -1153,15 +1182,22 @@ def _tox_for_pdf(t: dict) -> str:
 
 
 def _reference_for_pdf(r: dict) -> str:
+    """Return a clickable markdown link for the manuscript's canonical reference.
+
+    The PDF table cell renderer tokenizes `[label](url)` into a run that emits
+    `pdf.cell(..., link=url)`, so the rendered cell is a hyperlink the reader
+    can click. PubMed > DOI > ClinicalTrials.gov, mirroring the web table's
+    reference_cell precedence.
+    """
     pmid = r.get("pmid")
     if pmid:
-        return f"PMID {pmid} (https://pubmed.ncbi.nlm.nih.gov/{pmid})"
+        return f"[PMID {pmid}](https://pubmed.ncbi.nlm.nih.gov/{pmid})"
     doi = r.get("doi")
     if doi:
-        return f"doi:{doi} (https://doi.org/{doi})"
+        return f"[doi:{doi}](https://doi.org/{doi})"
     nct = r.get("nct_id") or r.get("evidence_id") or ""
     if str(nct).upper().startswith("NCT"):
-        return f"{nct} (https://clinicaltrials.gov/study/{nct})"
+        return f"[{nct}](https://clinicaltrials.gov/study/{nct})"
     return "—"
 
 
@@ -1481,6 +1517,11 @@ def _downloads_section(slug: str, case_docs: Path) -> str:
             f"{slug}-manuscripts.pdf",
             "Master manuscripts table (PDF)",
             "every paper considered — n, effect, variance, toxicities",
+        ),
+        (
+            "manuscripts.md",
+            "Master manuscripts table (web)",
+            "same inventory in a sortable in-browser table",
         ),
         (
             f"{slug}-recommendations.html",
