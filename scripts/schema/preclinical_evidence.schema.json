@@ -19,7 +19,12 @@
     "case_slug": { "type": "string" },
     "intervention_id": { "type": "string" },
     "intervention_label": { "type": "string" },
+    "first_author": { "type": "string" },
+    "last_author": { "type": "string" },
     "model_system": { "type": "string", "description": "e.g. 'syngeneic mouse MC38', 'patient-derived organoid'." },
+    "n_units": { "type": "string", "description": "Sample size / replicates as published (e.g. 'n=8 mice/arm', 'n=3 biological replicates')." },
+    "control_arm": { "type": "string", "description": "Control comparator used in the study." },
+    "dose_and_schedule": { "type": "string", "description": "Dosing as published (e.g. '10 mg/kg IP q3d × 4 weeks')." },
     "mechanism": { "type": "string" },
     "key_finding": { "type": "string" },
     "effect_size_qual": {
@@ -31,6 +36,11 @@
     "year": { "type": "integer", "minimum": 1980, "maximum": 2100 },
     "journal": { "type": "string" },
     "translatability_score": { "type": "string", "enum": ["low", "med", "high"] },
+    "case_match": {
+      "type": "string",
+      "enum": ["strong", "partial", "weak", "none", "cross_tumor_only"],
+      "description": "How well does the model system match the patient's tumor / biomarker profile?"
+    },
     "caveats": { "type": "string" }
   }
 }

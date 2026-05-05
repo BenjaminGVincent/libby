@@ -15,7 +15,21 @@ You complement the trial-screener: where `trials.jsonl` is one row per trial pub
 
 ## Schema
 
-Match `scripts/schema/clinical_evidence.schema.json`. Required: `evidence_id`, `case_slug`, `intervention_id`, `intervention_label`, `indication`, `design`, `outcome`, `effect_size`, `year`. Capture `last_author` and `last_author_contact` (corresponding-author email if available in the published affiliation; null if unavailable). Use OCEBM tiers for `evidence_tier` (`1a`–`5`).
+Match `scripts/schema/clinical_evidence.schema.json`. The schema is rich because the rendered evidence page is per-manuscript decision-relevant detail, comparable to the io-shieldbreak `Pharmacodynamic Results` table. Capture as many fields as the primary source supports. Leave fields null when not reported — never invent values.
+
+**Required:** `evidence_id`, `case_slug`, `intervention_id`, `intervention_label`, `indication`, `design`, `outcome`, `year`.
+
+**Per-manuscript detail fields (capture when reported):**
+
+- **Authors:** `first_author` and `last_author` (surnames). `last_author_contact` = corresponding-author email from the published affiliation block; null if unavailable.
+- **Cohort scope:** `line_of_therapy` (`1L | 2L+ | adj | neoadj | maintenance | any`), `population_detail` (free-text — biomarker subset, prior-therapy filters, ECOG limits).
+- **Intervention:** `intervention_dose` (dose + schedule as published), `comparator` (`—` for single-arm).
+- **Endpoint:** `outcome` (free-text endpoint name), `endpoint_type` (one of `ORR | DCR | DOR | PFS | OS | EFS | TTR | HR_OS | HR_PFS | AE_rate | biomarker | other` — for sortability), `effect_size` (numeric or string), `effect_units` (`%`, `months`, `HR`, `fold-change`, etc.), `ci_lower` and `ci_upper` (numeric — separate columns; reserve `variance_or_ci` for the cases where you cannot decompose), `p_value`.
+- **Durability:** `median_dor_or_pfs` — published median DoR or PFS as a free-text string.
+- **Safety:** `safety_summary` — 1-2 line summary of G3+ AE rate, treatment-related deaths, characteristic AEs.
+- **Quality:** `risk_of_bias` (RoB2 for RCTs, ROBINS-I for non-randomized, `informal:*` for narrative review). `evidence_tier` (OCEBM `1a`-`5`).
+- **Case fit:** `case_match` (`strong | partial | weak | none | cross_tumor_only`) — how well the paper's population matches the patient profile in `data/cases/<slug>/profile.json`. `cross_tumor_only` is the right call for cross-tumor extrapolation rows (mirrors `tumor_type_relationship: cross_tumor_extrapolation` on `trials.jsonl`).
+- **Provenance:** `pmid`, `doi`, `journal`, `notes`.
 
 ## Workflow
 

@@ -30,6 +30,20 @@
 .rel-cross-tumor { background: #F1E5FF; color: #441E72; border-color: #D4BBF2; }
 .rel-other       { background: #F1F3F5; color: #4A5568; border-color: #E2E8F0; }
 
+/* Risk-of-bias badges (evidence table). */
+.rob-badge {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.4em;
+  font-size: 0.78em;
+  font-weight: 600;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.rob-low  { background: #E6F5EA; color: #14532D; border-color: #BBE2C7; }
+.rob-med  { background: #FFF7E0; color: #5A4500; border-color: #F1DD9A; }
+.rob-high { background: #FBE9E7; color: #6F2E1A; border-color: #ECC4BB; }
+
 /* Toxicity flag pills. */
 .tox-flag {
   display: inline-block;

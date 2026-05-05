@@ -98,6 +98,9 @@ ONCOLOGY_ACRONYM_ALLOWLIST = frozenset({
     "CAR", "ADC", "TKI", "DXD", "PROTAC", "IO", "IND", "BLA", "ORR",
     "PFS", "OS", "DCR", "DOR", "TTR", "PR", "CR", "SD", "PD", "NE",
     "BICR", "IRC", "AE", "TRAE", "SAE", "DLT", "MTD", "RP2D",
+    # Toxicity / AE acronyms
+    "CRS", "ILD", "ICANS", "VTE", "DVT", "PE", "AKI", "GI", "HFS",
+    "HTN", "QTC", "LVEF", "LFT", "AST", "ALT", "ANC", "WBC", "BUN",
     "PMID", "DOI", "NCT", "CDX", "IHC", "FISH", "NGS", "RNA", "DNA",
     "MRNA", "LNCRNA", "PDX", "WES", "WGS", "FFPE", "EHR", "CTDNA",
     "EGFR", "MET", "KRAS", "BRAF", "ALK", "ROS", "RET", "NTRK", "FGFR",

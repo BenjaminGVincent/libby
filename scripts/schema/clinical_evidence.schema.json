@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://libby.local/schema/clinical_evidence.schema.json",
   "title": "Libby clinical-evidence row",
-  "description": "Row per published clinical-evidence finding. Appended by clinician agent.",
+  "description": "Row per published clinical-evidence finding. Appended by clinician agent. Per-manuscript decision-relevant fields modeled on the io-shieldbreak pharmacodynamic-results table layout.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -13,31 +13,56 @@
     "indication",
     "design",
     "outcome",
-    "effect_size",
     "year"
   ],
   "properties": {
     "evidence_id": { "type": "string" },
     "case_slug": { "type": "string" },
-    "intervention_id": { "type": "string", "description": "Stable ID for the intervention; PI uses this to group across rows." },
+    "intervention_id": { "type": "string", "description": "Stable kebab-case ID grouping rows that share an intervention; PI uses to aggregate across rows." },
     "intervention_label": { "type": "string" },
+    "intervention_dose": { "type": "string", "description": "Dose / schedule as published (e.g. 'cabozantinib 60 mg PO daily', '10 mg IV q2w with 1 mg step-up'). Null if not reported." },
     "indication": { "type": "string" },
-    "design": { "type": "string" },
+    "line_of_therapy": { "type": "string", "description": "1L | 2L+ | adj | neoadj | maintenance | any" },
+    "population_detail": { "type": "string", "description": "Subset / biomarker / prior-therapy details that scope the cohort. e.g. 'EGFR-mut + MET amp post-osimertinib', 'ECOG 0-1 only'." },
+    "design": { "type": "string", "description": "RCT, single-arm phase 2, basket, retrospective cohort, etc." },
+    "comparator": { "type": "string", "description": "— for single-arm; named comparator for RCTs." },
     "n": { "type": ["integer", "null"], "minimum": 0 },
-    "outcome": { "type": "string" },
-    "effect_size": { "type": ["number", "string", "null"] },
-    "variance_or_ci": { "type": "string" },
+    "first_author": { "type": "string" },
     "last_author": { "type": "string" },
     "last_author_contact": { "type": ["string", "null"] },
-    "pmid": { "type": ["string", "null"] },
-    "doi": { "type": ["string", "null"] },
     "year": { "type": "integer", "minimum": 1980, "maximum": 2100 },
     "journal": { "type": "string" },
+    "outcome": { "type": "string", "description": "Free-text outcome name; e.g. 'ORR (BICR)', 'median PFS', 'OS HR vs comparator'." },
+    "endpoint_type": {
+      "type": "string",
+      "enum": ["ORR", "DCR", "DOR", "PFS", "OS", "EFS", "TTR", "HR_OS", "HR_PFS", "AE_rate", "biomarker", "other"],
+      "description": "Endpoint family for sortability and grouping in the rendered table."
+    },
+    "effect_size": { "type": ["number", "string", "null"] },
+    "effect_units": { "type": "string", "description": "%, months, HR, fold-change, etc." },
+    "ci_lower": { "type": ["number", "null"] },
+    "ci_upper": { "type": ["number", "null"] },
+    "variance_or_ci": { "type": "string", "description": "Free-text variance description when numeric CI bounds are not separable (e.g. 'IQR 1.5-4.2')." },
+    "p_value": { "type": ["string", "number", "null"], "description": "p-value string or numeric; '<0.001' convention." },
+    "median_dor_or_pfs": { "type": "string", "description": "Durability — median DoR / PFS / time-on-treatment as reported. e.g. 'mDoR 7.0 mo', 'mPFS 3.6 mo'." },
+    "safety_summary": { "type": "string", "description": "1-2 line summary: G3+ AE rate, treatment-related deaths, characteristic AEs (CRS, ILD, neuropathy, etc)." },
+    "risk_of_bias": {
+      "type": "string",
+      "enum": ["RoB2:Low", "RoB2:Some", "RoB2:High", "ROBINS-I:Low", "ROBINS-I:Moderate", "ROBINS-I:Serious", "ROBINS-I:Critical", "ROBINS-I:NoInfo", "informal:low", "informal:med", "informal:high", "n/a"],
+      "description": "Per-paper RoB call. Use RoB2 for RCTs, ROBINS-I for non-randomized, informal for narrative-style review."
+    },
+    "case_match": {
+      "type": "string",
+      "enum": ["strong", "partial", "weak", "none", "cross_tumor_only"],
+      "description": "How well does this paper's population match the patient profile? `strong` = same indication + line + biomarker. `partial` = same indication, different line/biomarker subset. `weak` = same drug class only. `cross_tumor_only` = different tumor type, included for mechanism/efficacy precedent."
+    },
     "evidence_tier": {
       "type": "string",
       "enum": ["1a", "1b", "2a", "2b", "3a", "3b", "4", "5"],
       "description": "OCEBM-style tier."
     },
+    "pmid": { "type": ["string", "null"] },
+    "doi": { "type": ["string", "null"] },
     "notes": { "type": "string" }
   }
 }

@@ -15,7 +15,13 @@ You are a translational researcher reviewing the pre-clinical evidence base for 
 
 Match `scripts/schema/preclinical_evidence.schema.json`. Required: `evidence_id`, `case_slug`, `intervention_id`, `intervention_label`, `model_system`, `key_finding`, `year`. Reuse the `intervention_id` keys from `clinical_evidence.jsonl` so the PI can cross-reference.
 
-`effect_size_qual` is one of `strong | moderate | weak | null | negative`. `translatability_score` is `low | med | high` — your judgment about how likely the pre-clinical finding is to translate (model fidelity, dosing relevance, target homology).
+**Per-manuscript fields (capture when reported, leave null if not):**
+
+- **Authors:** `first_author`, `last_author` (surnames).
+- **Experimental design:** `n_units` (e.g. `n=8 mice/arm`, `n=3 biological replicates`), `control_arm`, `dose_and_schedule`.
+- **Mechanism + result:** `mechanism`, `key_finding` (≤ 3 sentences), `effect_size_qual` (`strong | moderate | weak | null | negative`).
+- **Translatability:** `translatability_score` (`low | med | high`) — your judgment of fidelity (model match to tumor, dose relevance, target homology). `case_match` (`strong | partial | weak | none | cross_tumor_only`) — how the model relates to the patient's tumor / biomarker profile.
+- **Provenance:** `pmid`, `doi`, `journal`, `caveats`.
 
 ## Workflow
 
