@@ -1,0 +1,8 @@
+{
+  "case_slug": "osteosarcoma-mets-dll3-h7r2",
+  "efficacy_toxicity_weight": 0.85,
+  "toxicity_vetoes": [],
+  "modality_constraints": [],
+  "free_text_constraints": "User explicitly stated 'accepts high-risk high-reward options'. Interpreted as: tolerance for low-evidence, novel, or first-in-class approaches when the upside scenario is meaningful. No specific toxicities identified as veto-level. Trial enrollment strongly favored.",
+  "prefers_trials": true
+}

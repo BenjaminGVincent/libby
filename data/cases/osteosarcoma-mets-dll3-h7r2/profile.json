@@ -1,0 +1,24 @@
+{
+  "case_slug": "osteosarcoma-mets-dll3-h7r2",
+  "age_band": "18-29",
+  "sex": "unknown",
+  "primary_site": "bone",
+  "histology": "osteosarcoma",
+  "biomarkers": [
+    { "name": "DLL3 RNA expression", "value": "elevated (level not specified)", "method": "user-reported; IHC protein-level confirmation status unknown" }
+  ],
+  "stage": "IV",
+  "ecog": 1,
+  "prior_therapies": [
+    { "regimen": "MAP (high-dose methotrexate, doxorubicin, cisplatin) — assumed standard frontline", "line": "1L", "best_response": "unknown", "duration_months": 0 }
+  ],
+  "current_therapy": null,
+  "organ_function": {
+    "note_unspecified": "user did not provide labs; assume adequate organ function for trial eligibility — to be confirmed at intake"
+  },
+  "targetable_features": [
+    { "feature": "DLL3 RNA expression", "rationale": "User-identified targetable feature. RNA expression alone is insufficient for DLL3-directed therapy eligibility; protein-level confirmation by IHC (e.g. SP347 antibody) is the gating biomarker for current DLL3-directed clinical trials and approved indications." }
+  ],
+  "geography_band": null,
+  "private": false
+}

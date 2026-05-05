@@ -8,6 +8,7 @@
 ## Published cases
 
 - [demo — NSCLC EGFR L858R post-osimertinib (synthetic)](demo-nsclc-egfr-l858r-post-osi-d3m0/index.md)
+- [metastatic osteosarcoma with DLL3 RNA expression (sparse-input run)](osteosarcoma-mets-dll3-h7r2/index.md)
 
 ## Conventions
 

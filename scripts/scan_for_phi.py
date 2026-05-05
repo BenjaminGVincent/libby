@@ -90,6 +90,10 @@ ONCOLOGY_ACRONYM_ALLOWLIST = frozenset({
     "TATTON", "SAVANNAH", "SACHI", "SAFFRON", "CHRYSALIS", "MARIPOSA",
     "PAPILLON", "HERTHENA", "DESTINY", "CHECKMATE", "KEYNOTE", "ADAURA",
     "FLAURA", "AURA", "LIBRETTO", "LUMINOSITY", "INSIGHT", "VISION",
+    # Sarcoma + DLL3 + adjacent trials
+    "CABONE", "REGOBONE", "SARC", "AOST", "DELLPHI",
+    # Genomics / pathology
+    "TCGA", "MSI", "TMB", "MMR", "HRD", "GIST", "TPS",
     # Misc oncology / pharm
     "CAR", "ADC", "TKI", "DXD", "PROTAC", "IO", "IND", "BLA", "ORR",
     "PFS", "OS", "DCR", "DOR", "TTR", "PR", "CR", "SD", "PD", "NE",
