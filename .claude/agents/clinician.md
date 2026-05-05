@@ -38,6 +38,14 @@ Match `scripts/schema/clinical_evidence.schema.json`. The schema is rich because
 - **Case fit:** `case_match` (`strong | partial | weak | none | cross_tumor_only`) — how well the paper's population matches the patient profile in `data/cases/<slug>/profile.json`. `cross_tumor_only` is the right call for cross-tumor extrapolation rows (mirrors `tumor_type_relationship: cross_tumor_extrapolation` on `trials.jsonl`).
 - **Provenance:** `pmid`, `doi`, `journal`, `notes`.
 
+**Notes — when to fill it.** The master `manuscripts.md` page surfaces `notes` in a dedicated column. Use it for:
+
+- *Why a field is empty.* If you couldn't extract `effect_size`, `n`, `toxicities`, or another decision-relevant field, say so briefly: "abstract only — full toxicity table not in abstract", "preprint without supplementary data", "results held by sponsor; topline press release only", "ASCO 2024 abstract; full publication pending".
+- *Trial / publication context.* "Pivotal trial driving FDA accelerated approval", "independent replication of SARC024", "small RCT with crossover, OS not improved (crossover diluted)".
+- *Caveats the reviewer needs.* Cohort overlap with another row, post-hoc analysis, single-site cohort, retracted-and-republished, etc.
+
+Keep notes ≤ 2 sentences. Do not duplicate the `exclusion_reason` here — that surfaces in a separate part of the Notes cell when `inclusion_status: "considered_excluded"`.
+
 ## Workflow
 
 1. **Load.** Read `profile.json`, `preferences.json`, `trials.jsonl`. Build the unique-interventions list from `trials.jsonl::intervention` plus any other interventions you judge plausibly applicable to the patient's `targetable_features`.

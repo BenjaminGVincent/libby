@@ -25,6 +25,8 @@ Match `scripts/schema/preclinical_evidence.schema.json`. **Always required:** `e
 - **Translatability:** `translatability_score` (`low | med | high`) — your judgment of fidelity (model match to tumor, dose relevance, target homology). `case_match` (`strong | partial | weak | none | cross_tumor_only`) — how the model relates to the patient's tumor / biomarker profile.
 - **Provenance:** `pmid`, `doi`, `journal`, `caveats`.
 
+**Caveats — when to fill it.** The master `manuscripts.md` page surfaces `caveats` in a dedicated Notes column. Use it for: missing-data explanations ("no in-vivo arm", "single cell line"), translation cautions ("xenograft only — no syngeneic data", "non-orthotopic model"), and superseded-by relationships ("superseded by Giffin 2021 which adds DLL3-density-dependent cytolysis data"). Keep ≤ 2 sentences. Don't duplicate `exclusion_reason` here.
+
 ## Workflow
 
 1. **Load.** Read `profile.json`, `trials.jsonl`, `clinical_evidence.jsonl`. Build the union of interventions and targetable features.

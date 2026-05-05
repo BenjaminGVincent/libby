@@ -878,9 +878,9 @@ def _render_table(pdf, lines: list[str]) -> None:
 
 
 def _column_widths(headers: list[str], page_w: float, n: int) -> list[float]:
-    if n == 10 and any("toxicit" in h for h in headers):
-        # Manuscripts master table: Report | Type | Inclusion | Intervention | Indication | n | Effect | Variance | Toxicities | Case fit
-        ratios = [0.10, 0.06, 0.10, 0.09, 0.12, 0.04, 0.09, 0.10, 0.24, 0.06]
+    if n == 13 and any("toxicit" in h for h in headers):
+        # Manuscripts master table: Report | Reference | Type | Inclusion | Intervention | Indication | Design | n | Effect | Variance | Toxicities | Case fit | Notes
+        ratios = [0.07, 0.06, 0.05, 0.07, 0.07, 0.09, 0.07, 0.03, 0.08, 0.08, 0.16, 0.05, 0.12]
     elif n == 4 and any("rationale" in h or "notes" in h for h in headers):
         ratios = [0.15, 0.20, 0.25, 0.40]
     elif n == 5:
@@ -1123,8 +1123,47 @@ def _tox_for_pdf(t: dict) -> str:
     return head
 
 
+def _reference_for_pdf(r: dict) -> str:
+    pmid = r.get("pmid")
+    if pmid:
+        return f"PMID {pmid} (https://pubmed.ncbi.nlm.nih.gov/{pmid})"
+    doi = r.get("doi")
+    if doi:
+        return f"doi:{doi} (https://doi.org/{doi})"
+    nct = r.get("nct_id") or r.get("evidence_id") or ""
+    if str(nct).upper().startswith("NCT"):
+        return f"{nct} (https://clinicaltrials.gov/study/{nct})"
+    return "—"
+
+
+def _notes_for_pdf(r: dict, excluded: bool, kind: str) -> str:
+    bits: list[str] = []
+    if excluded:
+        reason = r.get("exclusion_reason")
+        if reason:
+            bits.append(f"Excluded: {reason}")
+    authored = r.get("notes") or r.get("caveats")
+    if authored:
+        bits.append(str(authored))
+    if not excluded:
+        gaps: list[str] = []
+        if kind == "trial" and not r.get("pmid"):
+            gaps.append("registration only — no peer-reviewed publication yet")
+        if r.get("indication") and not r.get("toxicities") and not r.get("safety_summary") and kind != "preclinical":
+            gaps.append("toxicity table not extracted")
+        if r.get("indication") and r.get("effect_size") in (None, "") and kind != "preclinical":
+            gaps.append("primary endpoint not extracted")
+        if gaps:
+            bits.append("(" + "; ".join(gaps) + ")")
+    return " — ".join(bits) if bits else "—"
+
+
 def _row_for_pdf(r: dict, kind: str) -> list[str]:
-    """Return the 10 cells (in PDF COLS order) for one manuscript row, plain text."""
+    """Return the 13 cells (in PDF COLS order) for one manuscript row, plain text.
+
+    Order: Report, Reference, Type, Inclusion, Intervention, Indication, Design,
+    n, Effect, Variance, Toxicities, Case fit, Notes.
+    """
     first = r.get("first_author") or "—"
     last = r.get("last_author") or "—"
     yr = r.get("year") or "—"
@@ -1132,6 +1171,8 @@ def _row_for_pdf(r: dict, kind: str) -> list[str]:
     report = f"{first}/{last} ({yr})"
     if journal:
         report = f"{report} — {journal}"
+
+    reference = _reference_for_pdf(r)
 
     inclusion_status = (r.get("inclusion_status") or "included")
     if inclusion_status == "considered_excluded":
@@ -1206,17 +1247,21 @@ def _row_for_pdf(r: dict, kind: str) -> list[str]:
         tox_str = "n/a (preclinical)"
         fit = r.get("case_match") or "—"
 
+    notes_str = _notes_for_pdf(r, excluded, kind)
     return [
         report,
+        reference,
         kind,
         inclusion_str,
         intervention,
         ind_full,
+        design,
         n_str,
         effect,
         variance,
         tox_str,
         fit,
+        notes_str,
     ]
 
 
@@ -1245,8 +1290,9 @@ def _trial_to_synthetic_for_pdf(t: dict) -> dict:
 
 def _manuscripts_md_for_pdf(slug: str, clinical: list[dict], preclinical: list[dict], trials: list[dict]) -> str:
     headers = [
-        "Report", "Type", "Inclusion", "Intervention", "Indication / model",
-        "n", "Effect size", "Variance", "Toxicities (type, n/N, rate)", "Case fit",
+        "Report", "Reference", "Type", "Inclusion", "Intervention", "Indication / model",
+        "Design", "n", "Effect size", "Variance",
+        "Toxicities (type, n/N, rate)", "Case fit", "Notes",
     ]
     seen_pmids: set[str] = {str(r.get("pmid")) for r in clinical + preclinical if r.get("pmid")}
     extra_trials = [_trial_to_synthetic_for_pdf(t) for t in trials

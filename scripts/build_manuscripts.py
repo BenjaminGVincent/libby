@@ -59,11 +59,65 @@ def link_doi(doi) -> str:
     return f'<a href="https://doi.org/{html.escape(str(doi))}">DOI</a>'
 
 
-def sources_cell(r: dict) -> str:
-    parts = [p for p in (link_pmid(r.get("pmid")), link_doi(r.get("doi"))) if p]
-    if not parts:
-        return "—"
-    return " · ".join(parts)
+def link_nct(nct) -> str:
+    if not nct:
+        return ""
+    return f'<a href="https://clinicaltrials.gov/study/{html.escape(str(nct))}">{html.escape(str(nct))}</a>'
+
+
+def reference_cell(r: dict) -> str:
+    """Single canonical reference link: PubMed > DOI > NCT > evidence_id.
+
+    The notion is one stable, dereferenceable URL per row. Secondary identifiers
+    fall through to the Notes column or the per-intervention evidence page.
+    """
+    pmid = r.get("pmid")
+    if pmid:
+        return link_pmid(pmid)
+    doi = r.get("doi")
+    if doi:
+        return f'<a href="https://doi.org/{html.escape(str(doi))}">doi:{html.escape(str(doi))}</a>'
+    nct = r.get("nct_id") or r.get("evidence_id")
+    if nct and str(nct).upper().startswith("NCT"):
+        return link_nct(nct)
+    return "—"
+
+
+def notes_cell(r: dict) -> str:
+    """Combine row `notes` with auto-generated explanations of missing data.
+
+    Order:
+      1. Inclusion-status text first when row is `considered_excluded` (the
+         exclusion_reason is the most decision-relevant note).
+      2. The agent-authored `notes` (clinical) or `caveats` (preclinical).
+      3. Auto-generated explanations when key fields are empty (toxicities,
+         effect_size, n, etc.) so a reviewer can tell missing-by-design from
+         missing-by-omission at a glance.
+    """
+    bits: list[str] = []
+    status = (r.get("inclusion_status") or "included").lower()
+    if status == "considered_excluded":
+        reason = r.get("exclusion_reason")
+        if reason:
+            bits.append(f"<strong>Excluded:</strong> {html.escape(str(reason))}")
+
+    authored = r.get("notes") or r.get("caveats")
+    if authored:
+        bits.append(html.escape(str(authored)))
+
+    if status != "considered_excluded":
+        gaps: list[str] = []
+        kind = r.get("_source") or ""
+        if kind == "trial" and not r.get("pmid"):
+            gaps.append("registration only — no peer-reviewed publication yet")
+        if r.get("indication") and not r.get("toxicities") and not r.get("safety_summary"):
+            gaps.append("toxicity table not extracted")
+        if r.get("indication") and r.get("effect_size") in (None, ""):
+            gaps.append("primary endpoint not extracted")
+        if gaps:
+            bits.append("<em>" + html.escape("; ".join(gaps)) + "</em>")
+
+    return "<br>".join(bits) if bits else "—"
 
 
 def report_cell(r: dict) -> str:
@@ -202,6 +256,7 @@ def toxicities_cell(r: dict) -> str:
 
 COLS: list[tuple[str, str]] = [
     ("Report",      "report"),
+    ("Reference",   "reference"),
     ("Type",        "kind"),
     ("Inclusion",   "inclusion"),
     ("Intervention","intervention"),
@@ -212,7 +267,7 @@ COLS: list[tuple[str, str]] = [
     ("Variance",    "variance"),
     ("Toxicities (type · n/N · rate)", "toxicities"),
     ("Case fit",    "case_match"),
-    ("Sources",     "sources"),
+    ("Notes",       "notes"),
 ]
 
 
@@ -222,10 +277,15 @@ def render_clinical_row(r: dict) -> str:
     for _, key in COLS:
         if key == "report":
             cells.append(f"<td>{report_cell(r)}</td>")
+        elif key == "reference":
+            cells.append(f"<td>{reference_cell(r)}</td>")
         elif key == "kind":
-            cells.append(f"<td>{kind_badge('clinical')}</td>")
+            kind = "trial" if r.get("_source") == "trial" else "clinical"
+            cells.append(f"<td>{kind_badge(kind)}</td>")
         elif key == "inclusion":
             cells.append(f"<td>{status_badge(r)}</td>")
+        elif key == "notes":
+            cells.append(f"<td>{notes_cell(r)}</td>")
         elif key == "intervention":
             cells.append(f"<td>{fmt(r.get('intervention_label'))}</td>")
         elif key == "indication":
@@ -258,8 +318,6 @@ def render_clinical_row(r: dict) -> str:
                 cells.append(f"<td>{toxicities_cell(r)}</td>")
         elif key == "case_match":
             cells.append(f"<td>{fit_badge(r.get('case_match'))}</td>")
-        elif key == "sources":
-            cells.append(f"<td>{sources_cell(r)}</td>")
         else:
             cells.append("<td>—</td>")
     return "        <tr>" + "".join(cells) + "</tr>"
@@ -271,10 +329,14 @@ def render_preclinical_row(r: dict) -> str:
     for _, key in COLS:
         if key == "report":
             cells.append(f"<td>{report_cell(r)}</td>")
+        elif key == "reference":
+            cells.append(f"<td>{reference_cell(r)}</td>")
         elif key == "kind":
             cells.append(f"<td>{kind_badge('preclinical')}</td>")
         elif key == "inclusion":
             cells.append(f"<td>{status_badge(r)}</td>")
+        elif key == "notes":
+            cells.append(f"<td>{notes_cell(r)}</td>")
         elif key == "intervention":
             cells.append(f"<td>{fmt(r.get('intervention_label'))}</td>")
         elif key == "indication":
@@ -291,8 +353,6 @@ def render_preclinical_row(r: dict) -> str:
             cells.append("<td><em>n/a (preclinical)</em></td>")
         elif key == "case_match":
             cells.append(f"<td>{fit_badge(r.get('case_match'))}</td>")
-        elif key == "sources":
-            cells.append(f"<td>{sources_cell(r)}</td>")
         else:
             cells.append("<td>—</td>")
     return "        <tr>" + "".join(cells) + "</tr>"
@@ -304,6 +364,13 @@ def trial_to_synthetic_row(t: dict) -> dict:
     Used only for trial rows whose PMID is NOT already present in clinical_evidence.jsonl —
     surfaces trial publications (and registration-only entries) the clinician didn't promote.
     """
+    nct = t.get("nct_id")
+    has_pub = bool(t.get("pmid"))
+    note_bits: list[str] = []
+    if t.get("inclusion_match_notes"):
+        note_bits.append(str(t["inclusion_match_notes"]))
+    if not has_pub and nct:
+        note_bits.append("Trial registration only — no peer-reviewed publication yet")
     return {
         "evidence_id": t.get("nct_id") or t.get("pmid") or "",
         "case_slug": t.get("case_slug"),
@@ -317,7 +384,7 @@ def trial_to_synthetic_row(t: dict) -> dict:
         "first_author": t.get("first_author"),
         "last_author": t.get("last_author"),
         "year": t.get("year"),
-        "journal": t.get("journal") or ("ClinicalTrials.gov registration" if not t.get("pmid") else ""),
+        "journal": t.get("journal") or ("ClinicalTrials.gov registration" if not has_pub else ""),
         "outcome": t.get("endpoint") or "",
         "effect_size": t.get("effect_size"),
         "effect_units": "",
@@ -327,6 +394,8 @@ def trial_to_synthetic_row(t: dict) -> dict:
         "case_match": t.get("fit_to_case"),
         "pmid": t.get("pmid"),
         "doi": t.get("doi"),
+        "nct_id": nct,
+        "notes": " · ".join(note_bits) if note_bits else "",
         "_source": "trial",
     }
 
