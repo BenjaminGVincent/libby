@@ -8,6 +8,7 @@
 
 - [Clinician PDF report](demo-nsclc-egfr-l858r-post-osi-d3m0-libby-report.pdf) — ranked recommendations + evidence + sources
 - [Patient/caregiver PDF](demo-nsclc-egfr-l858r-post-osi-d3m0-plain-language.pdf) — plain-language summary
+- [Master manuscripts table (PDF)](demo-nsclc-egfr-l858r-post-osi-d3m0-manuscripts.pdf) — every paper considered — n, effect, variance, toxicities
 - [Self-contained HTML](demo-nsclc-egfr-l858r-post-osi-d3m0-recommendations.html) — recommendations table that opens offline
 
 <!-- libby:downloads:end -->

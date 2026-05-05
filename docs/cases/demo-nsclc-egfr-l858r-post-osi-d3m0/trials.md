@@ -20,7 +20,7 @@ _4 trials._
   </div>
 </div>
 
-[Back to case](index.md) · [Evidence](evidence.md) · [Board](board.md) · [Recommendations](recommendations.md)
+[Back to case](index.md) · [Evidence](evidence.md) · [Manuscripts](manuscripts.md) · [Board](board.md) · [Recommendations](recommendations.md)
 
 !!! danger disclaimer "Decision support, not medical advice"
     Not a substitute for clinician review. See [PHI policy](../../phi_policy.md).

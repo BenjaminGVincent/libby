@@ -23,7 +23,7 @@ _3 ranked options._
   </div>
 </div>
 
-[Back to case](index.md) · [Trials](trials.md) · [Evidence](evidence.md) · [Board](board.md) · [Plain language](plain_language.md)
+[Back to case](index.md) · [Trials](trials.md) · [Evidence](evidence.md) · [Manuscripts](manuscripts.md) · [Board](board.md) · [Plain language](plain_language.md)
 
 !!! danger disclaimer "Decision support, not medical advice"
     Libby is experimental. Recommendations on this page have not been
