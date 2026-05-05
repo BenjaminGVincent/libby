@@ -32,6 +32,7 @@
 .trial-table .num { text-align: right; }
 .trial-table a {
   text-decoration: underline;
+  font-weight: 700;
 }
 .trial-table .mark {
   font-size: 0.75em;

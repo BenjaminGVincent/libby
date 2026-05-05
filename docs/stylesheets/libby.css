@@ -1,5 +1,10 @@
 /* Libby-specific styling: case-fit / toxicity badges, agreement matrix, persona pills. */
 
+/* Bold links across all rendered content. */
+.md-typeset a {
+  font-weight: 700;
+}
+
 /* Case-fit badges (in trials.md). */
 .fit-badge {
   display: inline-block;
