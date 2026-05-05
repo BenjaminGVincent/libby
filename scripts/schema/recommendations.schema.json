@@ -47,13 +47,17 @@
       "default": "recommended"
     },
     "scenario": {
-      "type": ["string", "null"],
-      "description": "When the case has a non-confirmed biomarker, the PI emits per-scenario rankings. Format: `<biomarker_short>:<positive|negative>`, e.g. `dll3_ihc:positive`. Null for single-scenario runs (default when all biomarkers confirmed).",
+      "oneOf": [
+        { "type": "null" },
+        { "type": "string", "const": "shared" },
+        { "type": "string", "pattern": "^[a-z0-9_]+:positive$" }
+      ],
+      "description": "Three values: `null` for biomarker-independent recs (default), the literal `\"shared\"` for the rank-1 workup row that gates whether biomarker-conditional recs apply, or `\"<biomarker_short>:positive\"` for recs that are valid only if the named biomarker confirms positive (e.g. `dll3_ihc:positive`). The negative branch is no longer emitted: if the confirmatory test is negative, biomarker-conditional recs are foreclosed and the cross-cutting caveat in `index.md` documents the foreclosure mapping.",
       "default": null
     },
     "scenario_label": {
       "type": ["string", "null"],
-      "description": "Human-readable label for the scenario, shown as a section heading in rendered docs. E.g. 'If DLL3 IHC ≥1%' or 'If DLL3 IHC negative'."
+      "description": "Human-readable label for a `:positive` scenario, used inline in rendered docs (e.g. 'If DLL3 IHC ≥1% (preferably ≥25%)'). Null for `shared` workup rows and `null`-scenario rows."
     }
   }
 }

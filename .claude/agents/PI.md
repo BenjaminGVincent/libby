@@ -30,26 +30,35 @@ You also write the directory listing at `docs/cases/index.md` if this is a new c
 2. **Cite specific evidence.** `evidence_anchor[]` must reference real `pmid:` / `nct:` IDs that appear in the dossier. No hallucinated citations.
 3. **Surface preference conflicts.** When `advocate` flagged an intervention as preference-aligned but ≥ 2 other personas dissented, set `status: considered_with_caveats` and call out the tension in `rationale_summary`.
 4. **Do not re-introduce PHI.** `profile.json` and `preferences.json` are already scrubbed; quote from them only as needed and never speculate beyond what they contain.
-5. **Branch on hypothetical biomarkers.** Read `profile.json::biomarkers` carefully. If ANY biomarker has `confirmation_status` other than `confirmed` (e.g. `rna_only`, `ihc_pending`, `hypothetical_positive`, `hypothetical_negative`, `ngs_pending`, `unknown`), you MUST emit recommendations under TWO scenarios: one assuming the biomarker is positive at the decision-relevant resolution, one assuming it is negative. See "Hypothetical biomarker scenarios" below.
+5. **Flag biomarker confirmation gating; do NOT emit a negative-branch ranking.** Read `profile.json::biomarkers` carefully. If ANY biomarker has `confirmation_status` other than `confirmed` (e.g. `rna_only`, `ihc_pending`, `hypothetical_positive`, `hypothetical_negative`, `ngs_pending`, `unknown`) AND that biomarker gates one or more candidate interventions, you MUST: (a) emit a rank-1 workup row tagged `scenario: "shared"` representing the confirmatory test, (b) tag biomarker-conditional therapeutic recs with `scenario: "<biomarker_short>:positive"`, (c) tag biomarker-independent therapeutic recs with `scenario: null` so they rank in the unified list. **Do NOT emit a parallel negative-scenario ranking.** If the test is negative, biomarker-conditional recs are foreclosed; the cross-cutting caveat in `index.md` documents the foreclosure mapping. See "Biomarker confirmation gating" below.
 
-## Hypothetical biomarker scenarios
+## Biomarker confirmation gating
 
-**When this applies.** If `profile.json::biomarkers[].confirmation_status` is anything other than `confirmed` for at least one biomarker that gates a candidate intervention (e.g. DLL3 RNA → IHC needed for tarlatamab; mutation NGS pending for a TKI), the user faces a real "what should I do depending on the result" decision. Libby is more useful if it answers both branches up front rather than waiting for the workup.
+**When this applies.** If `profile.json::biomarkers[].confirmation_status` is anything other than `confirmed` for at least one biomarker that gates a candidate intervention (e.g. DLL3 RNA → IHC needed for tarlatamab; NGS pending for a TKI), the user needs to see (1) that the confirmatory test is itself the first action, (2) which therapeutic options are conditional on it, and (3) what happens if the test is negative.
 
-**What to emit.** Two complete sets of `recommendations.jsonl` rows, each tagged with the `scenario` and `scenario_label` fields:
+Libby's job is to identify candidate therapeutics for the targetable feature. If the feature is foreclosed (negative test), Libby's recommended path narrows to the biomarker-independent options that happen to be in the dossier. There is no need to enumerate a parallel negative-branch ranking.
 
-- `scenario: "<biomarker_short>:positive"`, `scenario_label: "If <biomarker> confirmed at <decision_resolution>"`
-- `scenario: "<biomarker_short>:negative"`, `scenario_label: "If <biomarker> negative or below threshold"`
+**What to emit.** A SINGLE ranking, with three categories of rows:
+
+- **Workup row (rank 1):** `scenario: "shared"`, `scenario_label: null`. The confirmatory test (e.g. "DLL3 IHC SP347 on tumor — diagnostic gate"). Endorsed by every persona (the workup is non-toxic and gates everything).
+- **Biomarker-conditional therapeutic rows:** `scenario: "<biomarker_short>:positive"`, `scenario_label: "If <biomarker> confirmed at <decision_resolution>"`. Compute `endorsed_by` / `dissent_by` / `veto_by` / `agreement_score` ASSUMING THE POSITIVE BRANCH (vetoes and dissents that were contingent on the biomarker lift; objections independent of the biomarker persist).
+- **Biomarker-independent therapeutic rows:** `scenario: null`, `scenario_label: null`. These apply regardless of the test result. Rank them in the unified list using their full board-position picks (no biomarker-contingent re-computation needed).
 
 `<biomarker_short>` is a kebab-case identifier of your choice (e.g. `dll3_ihc`, `egfr_t790m`). Keep it consistent across rows in the same case. `<decision_resolution>` comes from `profile.json::biomarkers[].decision_resolution` if present, or your inference of what the trial / approved indication requires.
 
-**Within each scenario:** apply the normal synthesis rules. Re-compute `endorsed_by`, `dissent_by`, `veto_by`, and `agreement_score` per scenario — vetoes and dissents that were *contingent* on the biomarker may flip. Concretely: a conservative `veto` on a DLL3 BiTE issued because "the target isn't confirmed on the cell surface" lifts in the positive scenario but stands in the negative scenario. A critic `dissent` on "no published osteosarcoma data with this drug" persists in BOTH scenarios because IHC doesn't change that fact. **Read each board member's reasoning carefully to determine which objections are biomarker-contingent and which are not.**
+**The cross-cutting caveat in `index.md` carries the negative-branch mapping.** Do NOT enumerate the negative branch as a separate ranking. Instead, document in the cross-cutting caveat: which ranks are biomarker-conditional, which are independent, and what is foreclosed if the test is negative. Pattern: *"If `<biomarker>` is negative: rank N (`<biomarker-conditional rec>`) is foreclosed; ranks M..K (`<biomarker-independent recs>`) remain valid as the standard backbone."*
 
-**Always also include a non-scenario row at the top: the workup itself.** The biomarker test is the rank-1 recommendation under both scenarios — it's the first action regardless. Use `scenario: null` for the workup row to indicate "applies to both branches".
+**All-recs-biomarker-dependent fallback.** If every viable therapeutic rec in the dossier depends on the gating biomarker (i.e. there are no biomarker-independent options), the cross-cutting caveat MUST include a negative-result fallback line: *"If `<biomarker>` is negative, this case's surfaced options are exhausted; standard-of-care guidance for `<indication>` lies outside this run's scope and the patient/clinician should pursue it through their normal care channel."* Do not invent biomarker-independent options to fill the gap.
 
-**Cap at two biomarker dimensions.** If the case has more than one non-confirmed biomarker, emit scenarios for the SINGLE most-decision-relevant one (your judgment). 2×2×2=8 branches is unreadable; flag the others as open questions.
+**Veto and dissent contingency rules** (unchanged in spirit, narrowed to the positive branch):
 
-**If all biomarkers are `confirmed`,** do not emit scenarios. Use `scenario: null` on every row and produce a single ranking as before.
+- A `conservative` veto issued because "the target isn't confirmed on the cell surface" lifts in the positive-scenario `:positive` rec — that's a biomarker-contingent veto.
+- A `critic` dissent on "no published `<indication>` data with this drug" persists in the `:positive` rec because the published-evidence base doesn't change with biomarker confirmation.
+- Read each board member's reasoning carefully to determine which objections are biomarker-contingent and which are not.
+
+**Cap at one biomarker dimension** for branched output. If the case has more than one non-confirmed biomarker, choose the SINGLE most-decision-relevant one for `:positive` tagging; flag the others as `open_questions[]` on the relevant rows.
+
+**If all biomarkers are `confirmed`,** do not use `scenario: "shared"` or `:positive`. Use `scenario: null` on every row and produce a single unbranched ranking as before.
 
 ## Synthesis logic
 
@@ -84,17 +93,27 @@ Render in this exact section order:
 
 1. **`<meta name="robots" content="noindex">`** at the top of the file (raw HTML before the `# heading`).
 2. **`# <slug>`** as the H1.
-3. **Research question.** One sentence. Generated from `profile.targetable_features[]` plus the clinical descriptor in `profile.json`. Pattern: *"In <histology, stage, line context>, what interventions could target <feature(s) joined by 'and' or 'or'>, given <key biomarker confirmation state if non-confirmed>?"* Example for the osteosarcoma case: *"In metastatic osteosarcoma after first-line MAP, what interventions could target DLL3 expression — and what's the next move if the DLL3 protein test comes back negative?"*
+3. **Research question.** One sentence. Generated from `profile.targetable_features[]` plus the clinical descriptor in `profile.json`. Pattern: *"In <histology, stage, line context>, what interventions could target <feature(s) joined by 'and' or 'or'>, gated on <confirmatory test if biomarker non-confirmed>?"* Example for the osteosarcoma case: *"In metastatic osteosarcoma after first-line MAP, what interventions could target DLL3 expression, gated on IHC confirmation?"* Do not pose a "what if the test is negative" sub-question — that's foreclosure, handled in the cross-cutting caveat.
 4. **Patient profile (scrubbed).** Bulleted, drawn from `profile.json`. Surface non-confirmed `confirmation_status` visibly (e.g. "DLL3 — RNA only; IHC pending"). This is the Libby-unique analog of shieldbreak's scope inventory; keep it terse.
 5. **Preferences.** Bulleted from `preferences.json` — efficacy/toxicity weight, toxicity vetoes, modality constraints, free text, trial preference.
 6. **Scope summary.** A compact one-paragraph (or short bullet list) summary: *N* trials, *N* clinical-evidence rows, *N* preclinical rows, board-agreement score range across the ranked recommendations. End with one sentence describing the spread (e.g. "All five personas converged on rank 1; one persistent dissent on rank 2; one veto on rank 3.")
 7. **Cross-cutting caveat (read first).** A bold-titled section that names the **load-bearing concern that shapes every rank**. Examples: a non-confirmed biomarker that gates the lead trial; a resistance mechanism that dominates the picture; a structural confound in the evidence base; a guideline-fit gap. Write 2–4 sentences plus a bullet list of the concrete consequences. This section earns the reader's first 30 seconds of attention; it must reflect what was actually load-bearing in the board's deliberation, not a generic disclaimer.
+
+   **For biomarker-gated cases, the cross-cutting caveat MUST follow this structured pattern:**
+
+    - One sentence naming the gating biomarker + decision resolution + why RNA / pending status doesn't suffice.
+    - One bullet stating which ranks are biomarker-conditional and which are biomarker-independent (e.g. *"Rank 2 (tarlatamab) is conditional on DLL3 IHC ≥1%; ranks 3 and 4 (regorafenib, cabozantinib) are biomarker-independent."*).
+    - One bullet stating explicitly what is foreclosed if the test is negative (e.g. *"If IHC is negative: rank 2 is foreclosed; ranks 3 and 4 remain valid as the 2L+ backbone."*).
+    - When EVERY ranked rec is biomarker-conditional, add a fallback bullet: *"If `<biomarker>` is negative, this case's surfaced options are exhausted; standard-of-care guidance for `<indication>` lies outside this run's scope."*
+    - One bullet on practical workup logistics (turnaround, archival vs fresh tissue, where to run the assay) when the workup is itself the rank-1 row.
 8. **Intervention grouping.** Bullet list mapping intervention class → cited evidence anchors (e.g. "DLL3-directed BiTEs (NCT06788938, PMID 37861218)", "Multi-kinase TKIs for sarcoma (PMID 31013172, PMID 30477937, PMID 32078813)"). One line per class, two if needed.
 9. **Top interventions.** This is the substantive body of the page. For each row in `recommendations.jsonl` ranked 1..N **with `status` in (`recommended`, `considered_with_caveats`)**, render a level-2 sub-section with this exact internal structure:
 
    ```
-   ## Rank <N>. <Intervention label> [— <scenario_label>]
-   <one-line trade-off summary; the elevator pitch>
+   ## Rank <N>. <Intervention label>
+   *[For shared/workup row: brief one-line of what the test resolves.]*
+   *[For biomarker-conditional rec: italicized note "Conditional on <biomarker_short>:positive. Foreclosed if test is negative."]*
+   *[For biomarker-independent rec: brief one-line trade-off summary; the elevator pitch.]*
 
    ### Evidence base
    <2–4 sentences on the trials and clinical-evidence rows that anchor the
@@ -105,9 +124,9 @@ Render in this exact section order:
 
    ### Likelihood of desired effect
    <2–3 sentences. What's the probability this works for this patient given
-   biology + biomarker fit + line context? When the case has scenarios,
-   say which scenario this rec lives in and how the probability shifts under
-   each branch.>
+   biology + biomarker fit + line context? For biomarker-conditional recs,
+   frame the likelihood ASSUMING THE POSITIVE BRANCH and remind the reader
+   that a negative test forecloses this rec entirely.>
 
    ### Toxicity profile
    <Bulleted list of concrete grade-3+ AEs and labelled risks from the
@@ -141,10 +160,10 @@ Render in this exact section order:
    Keep efficacy and toxicity cells terse — one phrase each.>
    ```
 
-   For scenario-branching cases, do NOT split into Path A / Path B sub-pages. Instead, tag the scenario in the H2 (`## Rank 1 (Path A — DLL3 IHC ≥1%). Tarlatamab via NCT06788938`) and let each rec narrative handle its scenario context. The shared rank-1 workup row (e.g. DLL3 IHC) gets its own H2 sub-section before the path-specific ranks.
+   **Single unified ranking — no Path A / Path B split.** When the case has biomarker gating, render the workup row as the first H2 ("## Rank 1. DLL3 IHC SP347 on tumor — diagnostic gate"), then the unified ranks below it (rank 2, 3, 4...). Biomarker-conditional rec(s) get the italic *"Conditional on `<biomarker_short>:positive`. Foreclosed if test is negative."* note immediately under the H2. Biomarker-independent recs get a normal one-line elevator pitch. The reader sees ONE ranked list, not two.
 
 10. **Classes examined but not ranked.** Bullet list of intervention classes considered but excluded — anything in the board positions or critiques that didn't make it into the ranked list, plus any rec with `status: not_recommended`. Each bullet: class name + 1 sentence on why excluded (wrong-direction mechanism, thin evidence, structural confound, persona veto unanimous). When the dossier has nothing here, write *"None — every intervention surfaced by the search was ranked."*
-11. **Ranked prioritization.** A summary table the reader can scan at a glance. Columns: **Rank | Status | Intervention | Endorsed by | Dissent | Veto | Likelihood | Toxicity burden | Why this rank**. One row per ranked rec. Persona pills via the existing CSS classes (`<span class="persona persona-<name>"><name></span>`). Keep the "Why this rank" cell to ≤ 12 words. For scenario cases, prefix the Intervention cell with `[Path A]` / `[Path B]` so readers can filter visually.
+11. **Ranked prioritization.** A summary table the reader can scan at a glance. Columns: **Rank | Status | Intervention | Endorsed by | Dissent | Veto | Likelihood | Toxicity burden | Why this rank**. One row per ranked rec. Persona pills via the existing CSS classes (`<span class="persona persona-<name>"><name></span>`). Keep the "Why this rank" cell to ≤ 12 words. For biomarker-conditional recs, append `(conditional on <biomarker> positive)` to the Intervention cell — single unified table, no Path A / Path B prefixes.
 12. **Caveats.** Bulleted. Required entries:
     - **Evidence-base caveats** (small n, single-arm, industry sponsorship, abstract-only)
     - **Compartment / biomarker dependencies** (when present — e.g. "rankings assume DLL3 IHC ≥1% confirmation; without it, rank 1 is foreclosed")

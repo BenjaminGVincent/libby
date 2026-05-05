@@ -150,13 +150,15 @@ The render layer (`build_table.py`) surfaces the category as a colored
 badge in the trial table so a clinician can scan enrollable-now vs
 informational-only at a glance.
 
-## Hypothetical biomarker scenarios
+## Biomarker confirmation gating
 
 When a biomarker driving candidate-intervention selection is not yet at the
 resolution required for clinical decisions (e.g. DLL3 RNA expression measured
-but IHC protein-level confirmation pending), Libby branches the
-recommendation output into parallel scenarios rather than collapsing to a
-single ranking.
+but IHC protein-level confirmation pending), Libby flags the confirmatory
+test as the rank-1 workup and tags biomarker-conditional therapeutic recs.
+Libby does NOT generate a parallel ranking for the negative-result branch:
+if the test is negative, biomarker-conditional recs are foreclosed, and
+the cross-cutting caveat in the case page documents what remains valid.
 
 The mechanism is on the schema and PI-prompt side:
 
@@ -165,23 +167,28 @@ The mechanism is on the schema and PI-prompt side:
   `hypothetical_negative`, `unknown`. Set during intake.
 - **`profile.json::biomarkers[].decision_resolution`** — short description
   of what level of testing IS required (e.g. "IHC SP347 ≥1%").
-- **`recommendations.jsonl::scenario`** — `null` for single-scenario runs,
-  `<biomarker_short>:positive` / `<biomarker_short>:negative` for branched
-  runs. Rows with `scenario: "shared"` apply to every branch (typically the
-  rank-1 workup that gates branch selection).
-- **`PI.md`** prompt rule: when any biomarker is non-confirmed, emit two
-  complete sets of recommendations, re-computing endorsements / dissents /
-  vetoes per scenario (board objections that were *contingent* on the
-  biomarker may flip; objections on grounds independent of the biomarker
-  persist).
-- **`translator.md`** prompt rule: parallel "if positive / if negative"
-  sections in the plain-language page.
-- **`build_recommendations.py`** renders each scenario as its own ranked
-  sub-table under a labeled heading.
+- **`recommendations.jsonl::scenario`** — three values:
+    - `null` (default) — biomarker-independent rec; applies regardless of any pending test.
+    - `"shared"` — the rank-1 workup row representing the confirmatory test itself.
+    - `"<biomarker_short>:positive"` (e.g. `dll3_ihc:positive`) — rec valid only if the named biomarker confirms positive; foreclosed if the test is negative.
 
-Cap: 2 biomarker dimensions per case. More than one non-confirmed biomarker
-collapses scenarios on the most-decision-relevant one; the others become
-open questions in the relevant rows.
+  The `:negative` suffix is no longer emitted; the negative-result outcome
+  is documented in the case page's cross-cutting caveat instead.
+- **`PI.md`** prompt rule: when any biomarker gates a candidate intervention
+  and is non-confirmed, emit a single unified ranking with the workup at
+  rank 1 (`scenario: "shared"`), biomarker-conditional therapeutic rec(s)
+  tagged `:positive`, and biomarker-independent recs untagged. The cross-cutting
+  caveat in `index.md` carries the "if test negative" foreclosure mapping.
+- **`translator.md`** prompt rule: surface the workup as "the first step
+  everyone agreed on"; flag biomarker-conditional options inline with an
+  "if negative" note; do NOT render a parallel negative-branch ranking.
+- **`build_recommendations.py`** and **`build_report.py`** render the workup
+  under a "Shared first step" header and the rest of the unified ranking
+  in a single ranked table. Conditional recs are visually flagged.
+
+Cap: 1 biomarker dimension for `:positive` tagging. If the case has more
+than one non-confirmed biomarker, choose the single most-decision-relevant
+one; flag the others as open questions.
 
 ## Limitations
 

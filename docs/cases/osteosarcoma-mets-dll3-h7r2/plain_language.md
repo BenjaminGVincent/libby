@@ -13,8 +13,9 @@ The DLL3 information you gave us was at the **RNA level** — that tells us
 the gene is being read, but it doesn't tell us whether the DLL3 protein is
 actually sitting on the surface of the cancer cells (which is what those
 new drugs need to grab onto). So the recommendations come in two parts:
-**a single first step everyone agreed on**, and then **two parallel paths**
-depending on what that first step finds.
+**a first step everyone agreed on** (a confirmatory test), and then a
+**ranked list of treatment options** — one of which depends on that test
+coming back positive, and two of which apply regardless.
 
 ## The first step everyone agreed on
 
@@ -24,26 +25,28 @@ from a previous biopsy, or fresh tissue if needed. It's non-toxic, takes
 1–3 weeks, and costs almost nothing compared to a treatment cycle. **All
 five reviewers ranked this as the first action — without dissent.**
 
-The test result then tells you which of the two paths below applies.
+The test result decides whether the lead treatment option (Option 1 below)
+is on the table. The other two options (Options 2 and 3) apply either way
+because they don't depend on DLL3 status.
 
 ---
 
-## Path A — if the DLL3 test comes back POSITIVE (≥1%, ideally ≥25%)
+## The options the board considered
 
-In this branch, a brand-new DLL3-targeted immunotherapy is on the table.
-This is the path that matches what you said you wanted.
+### Option 1 — Tarlatamab via clinical trial NCT06788938
 
-### Option A1 — Tarlatamab via clinical trial NCT06788938
+**This option is only available if the DLL3 IHC test comes back positive.**
+If the test is negative or below threshold, this option is off the table;
+Options 2 and 3 below still apply because they don't depend on this test.
 
-**The board recommended this as the lead option in this branch.**
+**The board recommended this as the lead option *when the test is positive*.**
 
 **What it is.** A "bispecific T-cell engager" given as an infusion every
 two weeks. One end of the molecule grips DLL3 on the cancer cell, the other
 end recruits an immune T cell to attack it. Currently approved for small-cell
-lung cancer. The trial (run by the University of California Lung Cancer
-Consortium) accepts patients with **any** DLL3-positive tumor, including
-osteosarcoma, **as long as the IHC test confirms DLL3 is on the cell surface
-at sufficient levels**.
+lung cancer. The trial accepts patients with **any** DLL3-positive tumor,
+including osteosarcoma, **as long as the IHC test confirms DLL3 is on the
+cell surface at sufficient levels**.
 
 **What the upside might look like.** In small-cell lung cancer, where this
 drug is approved, tarlatamab nearly halved the risk of death compared to
@@ -66,60 +69,54 @@ hospital for monitoring.
   patient has been published as receiving tarlatamab. You'd be in the very
   first cohort. Worth knowing going in.
 
-### Option A2 — Regorafenib (backbone if the trial isn't reachable)
+**If the IHC is negative,** this option closes entirely. Talk to your
+oncologist about Option 2 (regorafenib) as the de facto first treatment in
+that case, and ask about referral to an academic sarcoma center to look for
+other osteosarcoma trials that don't require DLL3.
+
+### Option 2 — Regorafenib
+
+**The board recommended this with universal endorsement.** This option does
+not depend on the DLL3 test result.
 
 **What it is.** A pill at home, 3 weeks on / 1 week off.
 
-**Why it's still here even in the trial-positive branch.** Trial slots
-aren't guaranteed; tolerability isn't guaranteed; some patients prefer to
-have a non-trial option in their pocket. Two clinical trials in metastatic
+**What the upside might look like.** Two clinical trials in metastatic
 osteosarcoma showed regorafenib delays cancer growth by about 2 months on
-average, with manageable side effects (skin reaction on hands and feet,
-high blood pressure, fatigue).
+average compared to placebo. Neither trial showed a survival improvement
+(both let placebo patients cross over to active drug, which dilutes survival
+comparisons). The benefit is real but modest.
 
-### Option A3 — Cabozantinib
+**The main risks.** Skin reaction on hands and feet (the most common
+limiting side effect), high blood pressure, fatigue, mucositis, mild liver
+enzyme elevations. About 7 of every 10 patients have at least one
+moderate-to-severe side effect; almost all are managed by lowering the
+dose. No treatment-related deaths in either trial.
+
+**Why it's ranked below the trial when the trial is reachable.** You said
+you preferred trial-based options. If the trial is reachable (positive IHC
++ available slot), the trial gets rank 1; regorafenib is the off-trial
+backbone. If the trial is closed (negative IHC, slot unavailable, or
+intolerable to wait), regorafenib is the de facto first treatment.
+
+### Option 3 — Cabozantinib
+
+**Same role: backup if regorafenib doesn't work.** Universal endorsement;
+biomarker-independent.
 
 **What it is.** Another pill at home; targets different growth pathways
-(MET and VEGFR2).
+(MET and VEGFR2) than regorafenib.
 
-**The trial data.** A 42-patient trial showed about 12 of every 100 had
-tumor shrinkage; about a third had no growth at 6 months.
+**What the upside might look like.** A 42-patient trial showed about 12 of
+every 100 patients had tumor shrinkage; about a third had no growth at 6
+months. Smaller effect than regorafenib's PFS gain.
+
+**The main risks.** Similar profile to regorafenib (high blood pressure,
+hand-foot reaction) plus a notable risk of blood clots in about 7% of
+patients — relevant for someone with metastatic disease.
 
 **When to consider it.** If regorafenib is contraindicated, has been used,
 or wasn't tolerated.
-
----
-
-## Path B — if the DLL3 test comes back NEGATIVE or below threshold
-
-In this branch, the tarlatamab pathway is closed — the drug needs the
-target on the cell surface, and the IHC told us it isn't there at sufficient
-density. This is disappointing but actionable.
-
-### Option B1 — Regorafenib
-
-**The board recommended this as the lead option in this branch.**
-
-Same drug as Option A2 above — but here it moves to first place because the
-trial that outranked it is no longer reachable. All five reviewers
-endorse. Two replicating clinical trials in your exact situation, modest
-but real benefit, predictable side-effect profile your oncologist knows how
-to manage.
-
-### Option B2 — Cabozantinib
-
-Same drug as Option A3 above. Same role: alternative if regorafenib is
-contraindicated, exhausted, or not tolerated.
-
-### Option B3 — Search for non-DLL3 trials *(considered with caveats)*
-
-You said you preferred trial-based options. Even with the DLL3 pathway
-closed, that preference is real. The board surfaced this as a third option
-in the negative branch: ask your oncologist (or a referral to an academic
-sarcoma center) about other osteosarcoma-relevant trials currently
-enrolling — different mechanisms, different targets. Specific trial
-selection wasn't part of this Libby run, so this is a "next conversation"
-item rather than a specific recommendation.
 
 ---
 
@@ -144,9 +141,10 @@ Several things weren't in the inputs:
 2. **If the IHC comes back positive, what's the path to NCT06788938?**
    Closest enrolling site, wait time, logistics for the inpatient cycle-1
    monitoring.
-3. **If the IHC comes back negative, are there other osteosarcoma trials
-   I'd qualify for?** Especially at academic sarcoma centers.
-4. **If we pursue regorafenib (in either branch), what's the plan for
+3. **If the IHC comes back negative, what other osteosarcoma trials might
+   I qualify for?** Especially at academic sarcoma centers — Libby didn't
+   enumerate non-DLL3 trials, so this is a separate conversation.
+4. **If we pursue regorafenib (in either case), what's the plan for
    managing hand-foot syndrome?** That's the most common dose-limiting
    side effect.
 5. **Have I already had regorafenib or cabozantinib? What was the response?**
@@ -188,7 +186,5 @@ records:
 
 !!! warning "Decision support, not medical advice"
     This is information to help you have a better conversation with your
-    oncologist. It is not a treatment plan. Five computer agents reviewed
-    the published research and discussed options; their suggestions have
-    not been checked by a doctor who knows you personally. Do not make
-    decisions based on this page without talking to a qualified oncologist.
+    oncologist. It is not a treatment plan. Do not make decisions based on
+    this page without talking to a qualified oncologist.

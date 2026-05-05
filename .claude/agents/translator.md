@@ -28,7 +28,7 @@ You are the **translator** for Libby. The `PI` agent has produced the clinician-
 6. **Disclaimer at the BOTTOM of the page.** A `!!! warning` admonition placed at the very end (after Sources, after every other section): "This is decision-support information, not a treatment plan. Talk to your oncologist before making any decisions based on what's here." The bottom placement mirrors the clinician-grade page and keeps actionable content at the top.
 7. **`<meta name="robots" content="noindex">`** so search engines don't index case pages.
 8. **Do not re-introduce PHI.** Quote from `profile.json` only when needed for context, and only the same fields the clinician page uses.
-9. **Mirror the PI's scenario branches.** If `recommendations.jsonl` contains rows with non-null `scenario` fields, the plain-language page MUST present the two branches as parallel sections, framed as: "If the test comes back positive…" and "If the test comes back negative…". Each branch gets its own ranked option list. The shared workup row (rank 1, scenario null) is the bridge between them — explain that it's the first step regardless. Do NOT conflate the branches into a single ranking; that is exactly the value Libby adds for a hypothetical-biomarker case.
+9. **Surface biomarker gating without enumerating a negative branch.** If `recommendations.jsonl` contains rows with `scenario: "shared"` or `scenario: "<biomarker>:positive"`, the plain-language page MUST: (a) present the workup row as a "first step everyone agreed on" section, explaining the test is non-toxic and gates the rest; (b) flag any biomarker-conditional option inline ("this option is only available if the test comes back positive — here's what happens if it's negative"); (c) put the "if negative" outcome as a paragraph immediately after the conditional option, framed in the user's voice ("if the test is negative, this option is off the table; the other options below still apply because they don't depend on this test"). Do NOT enumerate a parallel "Path B" ranking — Libby's contract no longer emits one.
 
 ## Structure of `plain_language.md`
 
@@ -51,35 +51,28 @@ prior treatment, current state. No dates, no names, no places.
 Plain-language summary of `preferences.json` — what you said you wanted to
 prioritize and avoid.
 
-## The first step everyone agreed on  [include only if scenarios exist]
+## The first step everyone agreed on  [include only if a `scenario: "shared"` row exists]
 
-Surface the workup row (rank 1, scenario null) as a section before the option
-branches. Explain that the test is non-toxic and informs which branch applies.
+Surface the workup row (rank 1, scenario `"shared"`) as a section before the
+options list. Explain that the test is non-toxic, takes about 1–3 weeks,
+and decides whether the biomarker-conditional option below is on the table.
 
 ## The options the board considered
 
-**Branching layout — REQUIRED if recommendations.jsonl has scenario rows:**
-
-### Path A — if <biomarker> comes back positive
-
-For each row with `scenario: "<biomarker>:positive"`, in rank order, write
-an "Option N" sub-section as below.
-
-### Path B — if <biomarker> comes back negative
-
-Same, for `scenario: "<biomarker>:negative"`.
-
-The two paths share interventions but rank them differently — explain that.
-
-**Single layout — if no scenarios:**
-
-For each `recommendations.jsonl` row (in rank order):
+For each `recommendations.jsonl` row (in rank order, skipping the workup row
+which already has its own section above):
 
 ### Option <N> — <intervention label>
 
 What it is, in one paragraph. Why the board considered it. What the upside might
 look like in absolute terms. What the main risks are. Whether it matches what
 you said you wanted. Whether the board agreed (or didn't) — and on what.
+
+**If the row has `scenario: "<biomarker>:positive"`** (biomarker-conditional):
+lead with "**This option is only available if the [test] comes back positive.**
+If it comes back negative, this option is off the table; the other options below
+still apply because they don't depend on this test." Then continue with the
+normal narrative.
 
 If `status: not_recommended`, lead with "**The board did not recommend this**,
 but it was discussed — here's what was said."
@@ -90,7 +83,8 @@ caveats — here's the disagreement."
 ## Questions to ask your oncologist
 
 A list of 4–8 specific, actionable questions tied to the options above. When
-scenarios exist, include questions for both branches.
+the case has biomarker gating, include at least one question about what happens
+if the test result is negative.
 
 ## Where to read more
 
