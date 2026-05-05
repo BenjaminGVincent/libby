@@ -110,6 +110,40 @@ def group_by_scenario(rows: list[dict]) -> tuple[list[dict], dict[str, dict]]:
     return shared, scenarios
 
 
+def downloads_block(case_docs: Path, slug: str) -> str:
+    """Surface reporter-built artifacts at the top of recommendations.md.
+
+    Empty string when none exist yet — keeps the page clean before /reporter
+    has run, and the page doesn't need a re-render once it does (the
+    reporter calls back through run_case.sh which re-runs this script).
+    """
+    artifacts = [
+        (
+            f"{slug}-libby-report.pdf",
+            "Clinician PDF report",
+            "ranked recommendations + evidence + sources",
+        ),
+        (
+            f"{slug}-plain-language.pdf",
+            "Patient/caregiver PDF",
+            "plain-language summary",
+        ),
+        (
+            f"{slug}-recommendations.html",
+            "Self-contained HTML",
+            "recommendations table that opens offline",
+        ),
+    ]
+    present = [(name, label, blurb) for name, label, blurb in artifacts if (case_docs / name).exists()]
+    if not present:
+        return ""
+    lines = ["## Downloads\n"]
+    for name, label, blurb in present:
+        lines.append(f"- [{label}]({html.escape(name)}) — {blurb}")
+    lines.append("")
+    return "\n".join(lines)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("slug")
@@ -129,6 +163,11 @@ def main() -> int:
         "    reviewed by a clinician treating this patient.\n"
         "    See [PHI policy](../../phi_policy.md).\n",
     ]
+
+    case_docs = REPO / "docs" / "cases" / slug
+    dl = downloads_block(case_docs, slug)
+    if dl:
+        parts.append(dl)
 
     if scenarios:
         parts.append(
