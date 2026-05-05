@@ -124,6 +124,39 @@ All committed JSONL artifacts validate against schemas in
 - `critiques.schema.json` — board round-2 cross-critique.
 - `recommendations.schema.json` — PI's ranked recommendation row.
 
+## Hypothetical biomarker scenarios
+
+When a biomarker driving candidate-intervention selection is not yet at the
+resolution required for clinical decisions (e.g. DLL3 RNA expression measured
+but IHC protein-level confirmation pending), Libby branches the
+recommendation output into parallel scenarios rather than collapsing to a
+single ranking.
+
+The mechanism is on the schema and PI-prompt side:
+
+- **`profile.json::biomarkers[].confirmation_status`** — one of `confirmed`
+  (default), `rna_only`, `ihc_pending`, `ngs_pending`, `hypothetical_positive`,
+  `hypothetical_negative`, `unknown`. Set during intake.
+- **`profile.json::biomarkers[].decision_resolution`** — short description
+  of what level of testing IS required (e.g. "IHC SP347 ≥1%").
+- **`recommendations.jsonl::scenario`** — `null` for single-scenario runs,
+  `<biomarker_short>:positive` / `<biomarker_short>:negative` for branched
+  runs. Rows with `scenario: "shared"` apply to every branch (typically the
+  rank-1 workup that gates branch selection).
+- **`PI.md`** prompt rule: when any biomarker is non-confirmed, emit two
+  complete sets of recommendations, re-computing endorsements / dissents /
+  vetoes per scenario (board objections that were *contingent* on the
+  biomarker may flip; objections on grounds independent of the biomarker
+  persist).
+- **`translator.md`** prompt rule: parallel "if positive / if negative"
+  sections in the plain-language page.
+- **`build_recommendations.py`** renders each scenario as its own ranked
+  sub-table under a labeled heading.
+
+Cap: 2 biomarker dimensions per case. More than one non-confirmed biomarker
+collapses scenarios on the most-decision-relevant one; the others become
+open questions in the relevant rows.
+
 ## Limitations
 
 - `fit_to_case` and `toxicity_flags` in `trials.jsonl` are **LLM-interpreted**,

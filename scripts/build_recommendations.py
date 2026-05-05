@@ -44,6 +44,72 @@ def status_class(status: str) -> str:
     }.get(status, "")
 
 
+RECS_HEAD = (
+    "<th>Rank</th><th>Status</th><th>Intervention</th>"
+    "<th>Endorsed by</th><th>Dissent</th><th>Veto</th>"
+    "<th>Expected benefit</th><th>Key risks</th>"
+    "<th>Preference fit</th><th>Guideline</th>"
+    "<th>Evidence anchor</th><th>Open questions</th>"
+)
+
+
+def render_recs_table(rows: list[dict]) -> str:
+    if not rows:
+        return "_No rows in this scenario._\n"
+    body = []
+    for r in rows:
+        status = r.get("status", "recommended")
+        klass = status_class(status)
+        body.append(
+            "    <tr>"
+            f"<td>{fmt(r.get('rank'))}</td>"
+            f'<td class="{klass}">{html.escape(status)}</td>'
+            f"<td><strong>{fmt(r.get('intervention_label'))}</strong></td>"
+            f"<td>{persona_badges(r.get('endorsed_by'))}</td>"
+            f"<td>{persona_badges(r.get('dissent_by'))}</td>"
+            f"<td>{persona_badges(r.get('veto_by'))}</td>"
+            f"<td>{fmt(r.get('expected_benefit'))}</td>"
+            f"<td>{fmt(r.get('key_risks'))}</td>"
+            f"<td>{fmt(r.get('preference_alignment'))}</td>"
+            f"<td>{fmt(r.get('guideline_status'))}</td>"
+            f"<td>{fmt(r.get('evidence_anchor'))}</td>"
+            f"<td>{fmt(r.get('open_questions'))}</td>"
+            "</tr>"
+        )
+    return (
+        '<div class="trial-table-wrap">\n'
+        '  <div class="trial-scroll">\n'
+        '    <table class="trial-table">\n'
+        f'      <thead><tr>{RECS_HEAD}</tr></thead>\n'
+        '      <tbody>\n' + "\n".join(body) + "\n      </tbody>\n"
+        "    </table>\n"
+        "  </div>\n"
+        "</div>\n"
+    )
+
+
+def group_by_scenario(rows: list[dict]) -> tuple[list[dict], dict[str, dict]]:
+    """Split rows into (shared_rows, scenarios_by_key).
+
+    `shared_rows` are rows with scenario in (None, "", "shared") — they apply
+    to every branch (typically rank-1 workup steps). `scenarios_by_key` maps
+    each non-shared scenario string to {"label": str, "rows": [dict]}.
+    """
+    shared: list[dict] = []
+    scenarios: dict[str, dict] = {}
+    for r in rows:
+        scen = r.get("scenario")
+        if not scen or scen == "shared":
+            shared.append(r)
+            continue
+        scenarios.setdefault(scen, {"label": r.get("scenario_label") or scen, "rows": []})
+        scenarios[scen]["rows"].append(r)
+    shared.sort(key=lambda r: r.get("rank") or 999)
+    for s in scenarios.values():
+        s["rows"].sort(key=lambda r: r.get("rank") or 999)
+    return shared, scenarios
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("slug")
@@ -52,60 +118,40 @@ def main() -> int:
 
     case_dir = REPO / "data" / "cases" / slug
     rows = load_jsonl(case_dir / "recommendations.jsonl")
-    rows.sort(key=lambda r: r.get("rank") or 999)
 
-    if not rows:
-        table = "_No recommendations yet._\n"
-    else:
-        head = (
-            "<th>Rank</th><th>Status</th><th>Intervention</th>"
-            "<th>Endorsed by</th><th>Dissent</th><th>Veto</th>"
-            "<th>Expected benefit</th><th>Key risks</th>"
-            "<th>Preference fit</th><th>Guideline</th>"
-            "<th>Evidence anchor</th><th>Open questions</th>"
-        )
-        body = []
-        for r in rows:
-            status = r.get("status", "recommended")
-            klass = status_class(status)
-            body.append(
-                "    <tr>"
-                f"<td>{fmt(r.get('rank'))}</td>"
-                f'<td class="{klass}">{html.escape(status)}</td>'
-                f"<td><strong>{fmt(r.get('intervention_label'))}</strong></td>"
-                f"<td>{persona_badges(r.get('endorsed_by'))}</td>"
-                f"<td>{persona_badges(r.get('dissent_by'))}</td>"
-                f"<td>{persona_badges(r.get('veto_by'))}</td>"
-                f"<td>{fmt(r.get('expected_benefit'))}</td>"
-                f"<td>{fmt(r.get('key_risks'))}</td>"
-                f"<td>{fmt(r.get('preference_alignment'))}</td>"
-                f"<td>{fmt(r.get('guideline_status'))}</td>"
-                f"<td>{fmt(r.get('evidence_anchor'))}</td>"
-                f"<td>{fmt(r.get('open_questions'))}</td>"
-                "</tr>"
-            )
-        table = (
-            '<div class="trial-table-wrap">\n'
-            '  <div class="trial-scroll">\n'
-            '    <table class="trial-table">\n'
-            f'      <thead><tr>{head}</tr></thead>\n'
-            '      <tbody>\n' + "\n".join(body) + "\n      </tbody>\n"
-            "    </table>\n"
-            "  </div>\n"
-            "</div>\n"
-        )
+    shared, scenarios = group_by_scenario(rows)
 
-    body_md = (
-        '<meta name="robots" content="noindex">\n\n'
-        f"# Recommendations — `{slug}`\n\n"
+    parts = [
+        '<meta name="robots" content="noindex">\n',
+        f"# Recommendations — `{slug}`\n",
         '!!! danger disclaimer "Decision support, not medical advice"\n'
         "    Libby is experimental. Recommendations on this page have not been\n"
         "    reviewed by a clinician treating this patient.\n"
-        "    See [PHI policy](../../phi_policy.md).\n\n"
-        f"_{len(rows)} ranked options._\n\n"
-        f"{table}\n"
-        f"[Back to case](index.md) · [Trials](trials.md) · [Evidence](evidence.md) · [Board](board.md) · [Plain language](plain_language.md)\n"
+        "    See [PHI policy](../../phi_policy.md).\n",
+    ]
+
+    if scenarios:
+        parts.append(
+            f"_{len(rows)} rows across {len(scenarios)} scenario(s) "
+            f"plus {len(shared)} shared row(s)._\n"
+        )
+        if shared:
+            parts.append("## Shared first step (applies to every scenario)\n")
+            parts.append(render_recs_table(shared))
+        for key, payload in scenarios.items():
+            parts.append(f"## {payload['label']}\n")
+            parts.append(f'<small><code>scenario: {html.escape(key)}</code></small>\n')
+            parts.append(render_recs_table(payload["rows"]))
+    else:
+        parts.append(f"_{len(rows)} ranked options._\n")
+        parts.append(render_recs_table(shared))
+
+    parts.append(
+        f"[Back to case](index.md) · [Trials](trials.md) · "
+        f"[Evidence](evidence.md) · [Board](board.md) · "
+        f"[Plain language](plain_language.md)\n"
     )
+    body_md = "\n".join(parts) + "\n"
 
     dst = REPO / "docs" / "cases" / slug / "recommendations.md"
     dst.parent.mkdir(parents=True, exist_ok=True)

@@ -30,6 +30,26 @@ You also write the directory listing at `docs/cases/index.md` if this is a new c
 2. **Cite specific evidence.** `evidence_anchor[]` must reference real `pmid:` / `nct:` IDs that appear in the dossier. No hallucinated citations.
 3. **Surface preference conflicts.** When `advocate` flagged an intervention as preference-aligned but ≥ 2 other personas dissented, set `status: considered_with_caveats` and call out the tension in `rationale_summary`.
 4. **Do not re-introduce PHI.** `profile.json` and `preferences.json` are already scrubbed; quote from them only as needed and never speculate beyond what they contain.
+5. **Branch on hypothetical biomarkers.** Read `profile.json::biomarkers` carefully. If ANY biomarker has `confirmation_status` other than `confirmed` (e.g. `rna_only`, `ihc_pending`, `hypothetical_positive`, `hypothetical_negative`, `ngs_pending`, `unknown`), you MUST emit recommendations under TWO scenarios: one assuming the biomarker is positive at the decision-relevant resolution, one assuming it is negative. See "Hypothetical biomarker scenarios" below.
+
+## Hypothetical biomarker scenarios
+
+**When this applies.** If `profile.json::biomarkers[].confirmation_status` is anything other than `confirmed` for at least one biomarker that gates a candidate intervention (e.g. DLL3 RNA → IHC needed for tarlatamab; mutation NGS pending for a TKI), the user faces a real "what should I do depending on the result" decision. Libby is more useful if it answers both branches up front rather than waiting for the workup.
+
+**What to emit.** Two complete sets of `recommendations.jsonl` rows, each tagged with the `scenario` and `scenario_label` fields:
+
+- `scenario: "<biomarker_short>:positive"`, `scenario_label: "If <biomarker> confirmed at <decision_resolution>"`
+- `scenario: "<biomarker_short>:negative"`, `scenario_label: "If <biomarker> negative or below threshold"`
+
+`<biomarker_short>` is a kebab-case identifier of your choice (e.g. `dll3_ihc`, `egfr_t790m`). Keep it consistent across rows in the same case. `<decision_resolution>` comes from `profile.json::biomarkers[].decision_resolution` if present, or your inference of what the trial / approved indication requires.
+
+**Within each scenario:** apply the normal synthesis rules. Re-compute `endorsed_by`, `dissent_by`, `veto_by`, and `agreement_score` per scenario — vetoes and dissents that were *contingent* on the biomarker may flip. Concretely: a conservative `veto` on a DLL3 BiTE issued because "the target isn't confirmed on the cell surface" lifts in the positive scenario but stands in the negative scenario. A critic `dissent` on "no published osteosarcoma data with this drug" persists in BOTH scenarios because IHC doesn't change that fact. **Read each board member's reasoning carefully to determine which objections are biomarker-contingent and which are not.**
+
+**Always also include a non-scenario row at the top: the workup itself.** The biomarker test is the rank-1 recommendation under both scenarios — it's the first action regardless. Use `scenario: null` for the workup row to indicate "applies to both branches".
+
+**Cap at two biomarker dimensions.** If the case has more than one non-confirmed biomarker, emit scenarios for the SINGLE most-decision-relevant one (your judgment). 2×2×2=8 branches is unreadable; flag the others as open questions.
+
+**If all biomarkers are `confirmed`,** do not emit scenarios. Use `scenario: null` on every row and produce a single ranking as before.
 
 ## Synthesis logic
 
@@ -68,9 +88,9 @@ Render a clinician-grade markdown page with:
        Do not act on this page without consulting a qualified oncologist.
    ```
 2. **`<meta name="robots" content="noindex">`** at the top of the file (via `extra` block or raw HTML) so search engines don't index case pages.
-3. **Profile snapshot** (scrubbed; from `profile.json`).
+3. **Profile snapshot** (scrubbed; from `profile.json`). When biomarkers carry non-confirmed `confirmation_status`, surface the status visibly (e.g. "DLL3 — RNA only; IHC pending").
 4. **Preferences snapshot** (from `preferences.json`).
-5. **Recommendation table** (Rank | Intervention | Endorsed by | Dissent | Expected benefit | Key risks | Preference fit | Guideline | Evidence | Open Qs). Use the `.persona-*` and `.fit-badge` classes from `docs/stylesheets/libby.css`.
+5. **Recommendation summary.** If the case has scenarios, render TWO sub-sections side-by-side or stacked: "If \<biomarker\> positive" and "If \<biomarker\> negative", each with its own ranked summary table. Otherwise a single ranked summary as before.
 6. **Links** to per-page transparency artifacts: `trials.md`, `evidence.md`, `board.md`, `recommendations.md`, `plain_language.md`.
 
 If this is a new case, also append a row to `docs/cases/index.md` linking to the new page.

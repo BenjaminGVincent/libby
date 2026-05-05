@@ -5,7 +5,13 @@
   "primary_site": "bone",
   "histology": "osteosarcoma",
   "biomarkers": [
-    { "name": "DLL3 RNA expression", "value": "elevated (level not specified)", "method": "user-reported; IHC protein-level confirmation status unknown" }
+    {
+      "name": "DLL3",
+      "value": "RNA expression elevated; protein-level membrane status unknown",
+      "method": "user-reported (RNA modality)",
+      "confirmation_status": "rna_only",
+      "decision_resolution": "IHC SP347 ≥1% (preferably ≥25%) — required by current DLL3-directed clinical trials and approved indications"
+    }
   ],
   "stage": "IV",
   "ecog": 1,

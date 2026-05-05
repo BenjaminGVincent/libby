@@ -47,7 +47,17 @@
         "properties": {
           "name": { "type": "string" },
           "value": { "type": "string" },
-          "method": { "type": "string" }
+          "method": { "type": "string" },
+          "confirmation_status": {
+            "type": "string",
+            "enum": ["confirmed", "rna_only", "ihc_pending", "ngs_pending", "hypothetical_positive", "hypothetical_negative", "unknown"],
+            "description": "How firm is this biomarker call? `confirmed` means the result is at the resolution required for clinical decisions (e.g. IHC for a BiTE/ADC target, NGS for a mutation). Non-confirmed values trigger PI scenario branching: the PI emits separate ranked recommendations for the positive and negative cases.",
+            "default": "confirmed"
+          },
+          "decision_resolution": {
+            "type": "string",
+            "description": "What level of confirmation IS required for clinical decisions on this biomarker? E.g. 'IHC SP347 ≥1%' for DLL3-directed therapy, 'tissue NGS' for a driver mutation. Used by the PI to phrase the workup recommendation."
+          }
         }
       }
     },

@@ -15,137 +15,130 @@ You (or your clinician) asked Libby to look at one specific situation:
 **metastatic osteosarcoma where the cancer is showing signs that DLL3 — a
 protein that some new immunotherapies target — might be present**. Your
 input was that you'd consider high-risk options if the upside is meaningful.
-This page summarizes what the board found.
 
-## The most important thing the board said
+The DLL3 information you gave us was at the **RNA level** — that tells us
+the gene is being read, but it doesn't tell us whether the DLL3 protein is
+actually sitting on the surface of the cancer cells (which is what those
+new drugs need to grab onto). So the recommendations come in two parts:
+**a single first step everyone agreed on**, and then **two parallel paths**
+depending on what that first step finds.
 
-Before deciding anything about DLL3-targeted treatment, **a specific lab test
-is required**: a stain on the tumor tissue (called an IHC test, using an
-antibody named SP347) to confirm that DLL3 is actually on the cell surface,
-not just present at the RNA level. This was the **only point all five
-reviewers agreed on without reservation**.
+## The first step everyone agreed on
 
-Why it matters: DLL3 is the target of a relatively new class of drugs — they
-work by sticking to DLL3 on the outside of cancer cells and bringing immune
-cells in to attack. If DLL3 is not on the cell surface (and RNA expression
-doesn't tell you whether it is), those drugs have nothing to grab onto.
-**Without this test, the most exciting option on the list is purely
-hypothetical.**
+**Get a DLL3 protein test on your tumor — specifically an IHC stain using
+an antibody called SP347.** Your oncologist can order this on stored tissue
+from a previous biopsy, or fresh tissue if needed. It's non-toxic, takes
+1–3 weeks, and costs almost nothing compared to a treatment cycle. **All
+five reviewers ranked this as the first action — without dissent.**
 
-The good news: this test is non-toxic, takes 1–3 weeks to come back, and
-costs almost nothing compared to a treatment cycle. Asking for it should be
-the first conversation with your oncologist.
+The test result then tells you which of the two paths below applies.
 
-## The options the board considered
+---
 
-### Option 1 — DLL3 IHC test first
+## Path A — if the DLL3 test comes back POSITIVE (≥1%, ideally ≥25%)
 
-**The board recommended this without dissent.** Five out of five reviewers
-agreed: confirm whether the target is actually present before treating for
-it. Your oncologist can order this on archived or fresh tumor tissue. The
-trial that would consider you (more on that below) requires this test as a
-condition of enrollment.
+In this branch, a brand-new DLL3-targeted immunotherapy is on the table.
+This is the path that matches what you said you wanted.
 
-### Option 2 — Regorafenib
+### Option A1 — Tarlatamab via clinical trial NCT06788938
 
-**The board recommended this as the evidence-anchored backbone.** All five
-reviewers had it on their list; three of them ranked it first.
+**The board recommended this as the lead option in this branch.**
 
-**What it is.** A pill taken at home (3 weeks on, 1 week off). It blocks
-several growth-signaling pathways the cancer uses.
+**What it is.** A "bispecific T-cell engager" given as an infusion every
+two weeks. One end of the molecule grips DLL3 on the cancer cell, the other
+end recruits an immune T cell to attack it. Currently approved for small-cell
+lung cancer. The trial (run by the University of California Lung Cancer
+Consortium) accepts patients with **any** DLL3-positive tumor, including
+osteosarcoma, **as long as the IHC test confirms DLL3 is on the cell surface
+at sufficient levels**.
 
-**What the upside might look like.** Two trials showed that patients on
-regorafenib went longer before their cancer grew compared to placebo. In one
-trial, patients on regorafenib had about 3.6 months before the cancer grew
-versus 1.7 months on placebo. Neither trial showed people lived longer
-overall (because patients on placebo were allowed to switch to regorafenib
-when their cancer grew, which made the comparison less clean).
-
-**The main risks.** A skin reaction on the hands and feet (often the dose
-has to be reduced), high blood pressure, fatigue, sometimes liver-enzyme
-changes. These are well-understood and your oncologist will have a
-management plan.
-
-**Does it match what you said you wanted?** Partially. You said high-risk
-high-reward; this is a moderate-evidence, moderate-benefit option. **One
-reviewer (the patient advocate) actively disagreed with putting this at #1**
-on the grounds that it doesn't reflect your stated preference. That
-disagreement is honored on this page by listing the trial option (Option 3)
-as a parallel pathway.
-
-### Option 3 — Tarlatamab (the DLL3 immunotherapy) on a clinical trial — **contingent on the IHC test**
-
-**The board considered this carefully, with serious disagreement.**
-
-**What it is.** An infusion every two weeks. Tarlatamab is a "bispecific T-cell
-engager" — a protein with two grippers; one binds DLL3 on the cancer cell,
-the other recruits an immune T cell to kill it. There's a trial open
-(University of California Lung Cancer Consortium) that accepts patients with
-DLL3-expressing tumors regardless of cancer type — including osteosarcoma —
-**if the IHC test confirms DLL3 protein is present at sufficient levels**.
-
-**What the upside might look like.** In small-cell lung cancer (where this
-drug is approved), tarlatamab nearly halved the risk of death compared to
+**What the upside might look like.** In small-cell lung cancer, where this
+drug is approved, tarlatamab nearly halved the risk of death compared to
 chemotherapy in a recent randomized trial. About 40 of every 100 patients
-had measurable tumor shrinkage. **No one has yet published whether this
-translates to osteosarcoma** — that's exactly why the trial exists.
+had measurable tumor shrinkage. **Whether this translates to osteosarcoma
+is exactly the question the trial would answer — and you'd be helping to
+answer it.**
 
-**The main risks.** A reaction called "cytokine release syndrome" happens in
-about half of patients (mostly mild, but about 1 in 100 are severe).
-Neurologic side effects in about 10%. The first cycle requires being in
+**The main risks.** A reaction called "cytokine release syndrome" happens
+in about half of patients (mostly mild; about 1 in 100 are severe).
+Neurologic side effects in roughly 10%. The first cycle requires being in
 hospital for monitoring.
 
-**Why the board disagreed.**
+**Where the board agreed and where they didn't.**
 
-- Two reviewers (risktaker, advocate) **endorsed** this — it matches your
-  stated preference for high-risk-high-reward and trial-based options. The
-  upside, if the mechanism translates, is large.
-- One reviewer (the conservative) issued a **veto** — but conditional. They
-  said: do not give a T-cell-engager for a target that hasn't been confirmed
-  on the cell surface. **The veto lifts as soon as the IHC confirms DLL3
-  protein is present at the trial-required level.**
-- One reviewer (the critic) **dissented** on the evidence — even with a
-  positive IHC, there are zero published osteosarcoma cases with this drug,
-  so we'd be extrapolating from small-cell lung cancer.
-- One reviewer (the consensus reviewer) noted this is **off-guideline**
-  for osteosarcoma, but trial enrollment in general is the
-  guideline-recommended action.
+- *Risktaker, advocate, conservative, consensus reviewer:* endorse. The
+  conservative's earlier toxicity concern was specifically about treating
+  for an unconfirmed target — once the IHC confirms, that concern lifts.
+- *Critic:* still dissents — even with a positive IHC, no osteosarcoma
+  patient has been published as receiving tarlatamab. You'd be in the very
+  first cohort. Worth knowing going in.
 
-**The board's bottom line.** If the IHC test (Option 1) confirms DLL3 protein
-is present at the trial threshold, this becomes a serious contender — likely
-the option that most matches what you said you wanted. If the IHC is
-negative, this option is closed and Option 2 becomes the lead.
+### Option A2 — Regorafenib (backbone if the trial isn't reachable)
 
-### Option 4 — Cabozantinib
+**What it is.** A pill at home, 3 weeks on / 1 week off.
 
-**The board recommended this as a backup.** Universal endorsement, nobody's
-top choice.
+**Why it's still here even in the trial-positive branch.** Trial slots
+aren't guaranteed; tolerability isn't guaranteed; some patients prefer to
+have a non-trial option in their pocket. Two clinical trials in metastatic
+osteosarcoma showed regorafenib delays cancer growth by about 2 months on
+average, with manageable side effects (skin reaction on hands and feet,
+high blood pressure, fatigue).
 
-**What it is.** Another pill taken at home. Different mechanism from
-regorafenib (it blocks two specific growth-signaling proteins called MET
-and VEGFR2).
+### Option A3 — Cabozantinib
 
-**What the upside might look like.** In a trial of 42 patients with
-osteosarcoma, about 12 of every 100 had measurable tumor shrinkage; about
-33 of every 100 had no growth at the 6-month mark.
+**What it is.** Another pill at home; targets different growth pathways
+(MET and VEGFR2).
 
-**The main risks.** Blood clots, high blood pressure, diarrhea, hand-foot
-reaction, sometimes heart-rhythm changes.
+**The trial data.** A 42-patient trial showed about 12 of every 100 had
+tumor shrinkage; about a third had no growth at 6 months.
 
-**When it might be the right pick.** If you've already had regorafenib, or
-if it didn't work, or if you couldn't tolerate it.
+**When to consider it.** If regorafenib is contraindicated, has been used,
+or wasn't tolerated.
+
+---
+
+## Path B — if the DLL3 test comes back NEGATIVE or below threshold
+
+In this branch, the tarlatamab pathway is closed — the drug needs the
+target on the cell surface, and the IHC told us it isn't there at sufficient
+density. This is disappointing but actionable.
+
+### Option B1 — Regorafenib
+
+**The board recommended this as the lead option in this branch.**
+
+Same drug as Option A2 above — but here it moves to first place because the
+trial that outranked it is no longer reachable. All five reviewers
+endorse. Two replicating clinical trials in your exact situation, modest
+but real benefit, predictable side-effect profile your oncologist knows how
+to manage.
+
+### Option B2 — Cabozantinib
+
+Same drug as Option A3 above. Same role: alternative if regorafenib is
+contraindicated, exhausted, or not tolerated.
+
+### Option B3 — Search for non-DLL3 trials *(considered with caveats)*
+
+You said you preferred trial-based options. Even with the DLL3 pathway
+closed, that preference is real. The board surfaced this as a third option
+in the negative branch: ask your oncologist (or a referral to an academic
+sarcoma center) about other osteosarcoma-relevant trials currently
+enrolling — different mechanisms, different targets. Specific trial
+selection wasn't part of this Libby run, so this is a "next conversation"
+item rather than a specific recommendation.
+
+---
 
 ## What the board could not figure out
 
-Several things about your situation weren't in the inputs the user gave
-Libby:
+Several things weren't in the inputs:
 
-- **Was DLL3 measured at the protein level (IHC) or only the RNA level?**
-  The single most important question.
-- **What treatment have you already had, and how did it go?** The
-  recommendations assume you've had standard frontline chemotherapy (MAP);
-  if you've had other treatments — including regorafenib or cabozantinib
-  already — that changes the ranking.
+- **Was DLL3 measured at the protein level (IHC) or only RNA?** Resolved by
+  the recommended first step.
+- **What treatment have you already had?** The recommendations assume
+  standard frontline chemotherapy (MAP); if you've had regorafenib or
+  cabozantinib already, the rankings change.
 - **What's your performance status (how active are you day-to-day)?** Most
   trials require ECOG 0 or 1.
 - **Where do you live, and what's your access to academic cancer centers?**
@@ -153,21 +146,25 @@ Libby:
 
 ## Questions to ask your oncologist
 
-1. **Can we order DLL3 IHC (SP347 antibody) on my tumor?** That's the gate
-   for the trial option and the board's #1 recommendation.
-2. **If the IHC is positive, what's the path to NCT06788938?** Which
-   enrolling site is closest, and what's the wait time?
-3. **If we pursue regorafenib, what's the plan for managing
-   hand-foot syndrome?** That's the most common dose-limiting side effect.
-4. **Have I already had regorafenib or cabozantinib? What was the response?**
+1. **Can we order DLL3 IHC (SP347 antibody) on my tumor?** That's the first
+   step before any of the rest of this plan.
+2. **If the IHC comes back positive, what's the path to NCT06788938?**
+   Closest enrolling site, wait time, logistics for the inpatient cycle-1
+   monitoring.
+3. **If the IHC comes back negative, are there other osteosarcoma trials
+   I'd qualify for?** Especially at academic sarcoma centers.
+4. **If we pursue regorafenib (in either branch), what's the plan for
+   managing hand-foot syndrome?** That's the most common dose-limiting
+   side effect.
+5. **Have I already had regorafenib or cabozantinib? What was the response?**
    If yes, that changes the rankings substantially.
-5. **What's the realistic time-to-response for each of these options, and
-   how will we know it's working?**
-6. **If the DLL3 IHC is positive and I enroll in the trial, what's the plan
-   for the inpatient cycle-1 monitoring?** (Logistics matter — you'll need
-   to plan for 1–2 hospital admissions in the first month.)
+6. **What's the realistic time-to-response for each option, and how will we
+   know it's working?**
 7. **Is there anything in my labs or scans that would change which of these
    options is appropriate?**
+8. **If the tarlatamab trial is on the table, what's the realistic timeline
+   from IHC confirmation to first dose?** (Helps you decide whether to start
+   regorafenib as a bridge or wait.)
 
 ## Where to read more
 
@@ -175,7 +172,7 @@ Libby:
 - [Trial table](trials.md) — the trials Libby reviewed.
 - [Evidence list](evidence.md) — the clinical and lab studies cited.
 - [Tumor-board transcript](board.md) — what each reviewer actually said.
-- [Recommendations detail](recommendations.md) — the full structured table.
+- [Recommendations detail](recommendations.md) — full structured tables.
 
 ## Sources
 
