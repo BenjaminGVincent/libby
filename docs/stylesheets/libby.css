@@ -83,6 +83,20 @@
 .agree-dissent   { color: #6F2E1A; font-weight: 600; }
 .agree-veto      { color: #6F2E1A; font-weight: 700; text-decoration: underline; }
 
+/* Biomarker-conditional flag (inline in Intervention cell when scenario ends with :positive). */
+.scenario-conditional {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5A4500;
+  background: #FFF7E0;
+  border: 1px solid #F1DD9A;
+  border-radius: 0.35em;
+  padding: 0.05em 0.45em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+
 /* Recommendation table marks. */
 .split-glyph { font-weight: 700; color: #5A4500; }
 .not-recommended {

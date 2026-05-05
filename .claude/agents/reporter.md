@@ -65,32 +65,24 @@ Draft `executive_summary.md` to a fixed structure (~300 words; never more than ~
 
 ## Top-line findings
 
-- <bullet — the dominant scenario gate or first-step action (e.g., "DLL3 IHC is the load-bearing test; both scenarios fork from the result")>
-- <bullet — the rank-1 intervention in the primary scenario, with the most important qualifier (CP-MoA severity / coverage gap / dissent flag)>
+- <bullet — the dominant first-step action (e.g., "DLL3 IHC is the load-bearing test; rank 2 is foreclosed without it")>
+- <bullet — the rank-1 therapeutic intervention (after the workup if any), with the most important qualifier (CP-MoA severity / coverage gap / dissent flag)>
 - <bullet — the biggest dissent or veto the reviewer needs to be aware of>
+- <bullet — for biomarker-gated cases: what happens if the test is negative (which ranks foreclose, which remain valid)>
 - <bullet — a notable open question that the dossier could not resolve>
 
 ## Recommendation summary
 
-(If the case has scenario rows in `recommendations.jsonl`:)
+(If the case has a `scenario: "shared"` workup row:)
 
-**Shared first step:** <one line — the workup row at rank 1 with `scenario: shared` or null>
+**Shared first step:** <one line — the workup row at rank 1>
 
-**Path A — <scenario_label>:**
-1. **<intervention>** — <one-line verdict including key risk or dissent>
+(Then the unified ranking, same for biomarker-gated and non-gated cases:)
+
+1. **<intervention>** — <one-line verdict>. *[If scenario: "<biomarker>:positive": append "Conditional on `<biomarker>` positive — foreclosed if test is negative."]*
 2. **<intervention>** — <one-line verdict>
 3. **<intervention>** — <one-line verdict>
-
-**Path B — <scenario_label>:**
-1. **<intervention>** — <one-line verdict>
-2. **<intervention>** — <one-line verdict>
-3. **<intervention>** — <one-line verdict>
-
-(If no scenarios:)
-1. **<intervention>** — <one-line verdict including CP-MoA severity / dissent>
-2. **<intervention>** — <one-line verdict>
-3. **<intervention>** — <one-line verdict>
-... (3–7 entries; same count and order as recommendations.jsonl rank ordering)
+... (3–7 entries; same count and order as recommendations.jsonl rank ordering, excluding the workup row which has its own line above)
 
 ## What this report does *not* cover
 
@@ -166,7 +158,7 @@ bash scripts/run_case.sh <slug>
 - **Never push without confirmation.** Local commits fine; pushes are user-authorized only.
 - **Closing disclaimer is required**, not decorative. It appears on the cover, in the executive summary, and (already) at the foot of `index.md` and `plain_language.md`.
 - **Case isolation.** A run for `<slug-A>` must not touch any file under another case's directories.
-- **Scenario branches must be preserved.** If `recommendations.jsonl` has rows with non-null `scenario` fields, the executive summary must present Path A and Path B as parallel sections — do NOT collapse them. The whole point of Libby's scenario branching is that the user faces a real fork; the PDF must answer both branches.
+- **Biomarker gating must be surfaced, not collapsed.** If `recommendations.jsonl` has any row with `scenario: "shared"` or `scenario: "<biomarker>:positive"`, the executive summary must (a) call out the shared workup as "Shared first step" with its own line, (b) flag biomarker-conditional recs inline with *"Conditional on `<biomarker>` positive — foreclosed if test is negative"*, and (c) include in "Top-line findings" a bullet on what happens if the test is negative (which ranks foreclose, which remain valid). Do NOT enumerate a "Path B" parallel ranking — Libby's contract no longer emits one.
 
 ## Output style
 

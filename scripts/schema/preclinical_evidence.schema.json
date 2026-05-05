@@ -10,13 +10,37 @@
     "case_slug",
     "intervention_id",
     "intervention_label",
-    "model_system",
-    "key_finding",
     "year"
+  ],
+  "allOf": [
+    {
+      "if": {
+        "anyOf": [
+          { "not": { "required": ["inclusion_status"] } },
+          { "properties": { "inclusion_status": { "const": "included" } } }
+        ]
+      },
+      "then": {
+        "required": ["model_system", "key_finding"]
+      },
+      "else": {
+        "required": ["exclusion_reason"]
+      }
+    }
   ],
   "properties": {
     "evidence_id": { "type": "string" },
     "case_slug": { "type": "string" },
+    "inclusion_status": {
+      "type": "string",
+      "enum": ["included", "considered_excluded"],
+      "default": "included",
+      "description": "Did this paper enter the synthesis fed to the tumor board (`included`), or was it reviewed and excluded (`considered_excluded`)? The master manuscripts page renders both."
+    },
+    "exclusion_reason": {
+      "type": "string",
+      "description": "Required when `inclusion_status: considered_excluded`. Brief reason — e.g. 'in-vitro only, no in-vivo data', 'tumor type unrelated', 'mechanism diverges from intervention'."
+    },
     "intervention_id": { "type": "string" },
     "intervention_label": { "type": "string" },
     "first_author": { "type": "string" },

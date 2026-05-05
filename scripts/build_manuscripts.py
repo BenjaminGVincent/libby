@@ -94,7 +94,20 @@ def fit_badge(label: str | None) -> str:
 def kind_badge(kind: str) -> str:
     if kind == "clinical":
         return '<span class="rel-badge rel-indication">clinical</span>'
-    return '<span class="rel-badge rel-cross-tumor">preclinical</span>'
+    if kind == "preclinical":
+        return '<span class="rel-badge rel-cross-tumor">preclinical</span>'
+    return '<span class="rel-badge rel-basket">trial publication</span>'
+
+
+def status_badge(row: dict) -> str:
+    status = (row.get("inclusion_status") or "included").lower()
+    if status == "considered_excluded":
+        reason = row.get("exclusion_reason") or "—"
+        return (
+            '<span class="rel-badge rel-other">excluded</span>'
+            f'<br><small>{html.escape(str(reason))}</small>'
+        )
+    return '<span class="fit-badge fit-strong">included</span>'
 
 
 def effect_cell_clinical(r: dict) -> str:
@@ -190,6 +203,7 @@ def toxicities_cell(r: dict) -> str:
 COLS: list[tuple[str, str]] = [
     ("Report",      "report"),
     ("Type",        "kind"),
+    ("Inclusion",   "inclusion"),
     ("Intervention","intervention"),
     ("Indication / model", "indication"),
     ("Design",      "design"),
@@ -204,32 +218,44 @@ COLS: list[tuple[str, str]] = [
 
 def render_clinical_row(r: dict) -> str:
     cells: list[str] = []
+    excluded = (r.get("inclusion_status") or "included") == "considered_excluded"
     for _, key in COLS:
         if key == "report":
             cells.append(f"<td>{report_cell(r)}</td>")
         elif key == "kind":
             cells.append(f"<td>{kind_badge('clinical')}</td>")
+        elif key == "inclusion":
+            cells.append(f"<td>{status_badge(r)}</td>")
         elif key == "intervention":
             cells.append(f"<td>{fmt(r.get('intervention_label'))}</td>")
         elif key == "indication":
-            ind = r.get("indication") or ""
-            pop = r.get("population_detail") or ""
-            line = r.get("line_of_therapy") or ""
-            tag = f" <em>({html.escape(line)})</em>" if line else ""
-            sub = f"<br><small>{html.escape(pop)}</small>" if pop else ""
-            cells.append(f"<td>{html.escape(ind)}{tag}{sub}</td>")
+            if excluded:
+                cells.append("<td>—</td>")
+            else:
+                ind = r.get("indication") or ""
+                pop = r.get("population_detail") or ""
+                line = r.get("line_of_therapy") or ""
+                tag = f" <em>({html.escape(line)})</em>" if line else ""
+                sub = f"<br><small>{html.escape(pop)}</small>" if pop else ""
+                cells.append(f"<td>{html.escape(ind)}{tag}{sub}</td>")
         elif key == "design":
             cells.append(f"<td>{fmt(r.get('design'))}</td>")
         elif key == "n":
             cells.append(f'<td class="num">{n_cell_clinical(r)}</td>')
         elif key == "effect":
-            outcome = r.get("outcome") or ""
-            sub = f"<br><small>{html.escape(outcome)}</small>" if outcome else ""
-            cells.append(f'<td class="num">{effect_cell_clinical(r)}{sub}</td>')
+            if excluded:
+                cells.append('<td class="num">—</td>')
+            else:
+                outcome = r.get("outcome") or ""
+                sub = f"<br><small>{html.escape(outcome)}</small>" if outcome else ""
+                cells.append(f'<td class="num">{effect_cell_clinical(r)}{sub}</td>')
         elif key == "variance":
             cells.append(f'<td class="num">{variance_cell_clinical(r)}</td>')
         elif key == "toxicities":
-            cells.append(f"<td>{toxicities_cell(r)}</td>")
+            if excluded:
+                cells.append("<td>—</td>")
+            else:
+                cells.append(f"<td>{toxicities_cell(r)}</td>")
         elif key == "case_match":
             cells.append(f"<td>{fit_badge(r.get('case_match'))}</td>")
         elif key == "sources":
@@ -241,11 +267,14 @@ def render_clinical_row(r: dict) -> str:
 
 def render_preclinical_row(r: dict) -> str:
     cells: list[str] = []
+    excluded = (r.get("inclusion_status") or "included") == "considered_excluded"
     for _, key in COLS:
         if key == "report":
             cells.append(f"<td>{report_cell(r)}</td>")
         elif key == "kind":
             cells.append(f"<td>{kind_badge('preclinical')}</td>")
+        elif key == "inclusion":
+            cells.append(f"<td>{status_badge(r)}</td>")
         elif key == "intervention":
             cells.append(f"<td>{fmt(r.get('intervention_label'))}</td>")
         elif key == "indication":
@@ -269,17 +298,71 @@ def render_preclinical_row(r: dict) -> str:
     return "        <tr>" + "".join(cells) + "</tr>"
 
 
-def render_table(clinical: list[dict], preclinical: list[dict]) -> str:
-    if not clinical and not preclinical:
+def trial_to_synthetic_row(t: dict) -> dict:
+    """Map a trials.jsonl row into a clinical-evidence-shaped row for the master table.
+
+    Used only for trial rows whose PMID is NOT already present in clinical_evidence.jsonl —
+    surfaces trial publications (and registration-only entries) the clinician didn't promote.
+    """
+    return {
+        "evidence_id": t.get("nct_id") or t.get("pmid") or "",
+        "case_slug": t.get("case_slug"),
+        "intervention_id": t.get("intervention_id") or (t.get("intervention") or "").lower().replace(" ", "-"),
+        "intervention_label": t.get("intervention") or "—",
+        "indication": t.get("indication") or "—",
+        "line_of_therapy": t.get("line"),
+        "population_detail": t.get("biomarker") or "",
+        "design": t.get("design") or t.get("phase") or "—",
+        "n": t.get("n"),
+        "first_author": t.get("first_author"),
+        "last_author": t.get("last_author"),
+        "year": t.get("year"),
+        "journal": t.get("journal") or ("ClinicalTrials.gov registration" if not t.get("pmid") else ""),
+        "outcome": t.get("endpoint") or "",
+        "effect_size": t.get("effect_size"),
+        "effect_units": "",
+        "ci_lower": t.get("ci_lower"),
+        "ci_upper": t.get("ci_upper"),
+        "p_value": t.get("p_value"),
+        "case_match": t.get("fit_to_case"),
+        "pmid": t.get("pmid"),
+        "doi": t.get("doi"),
+        "_source": "trial",
+    }
+
+
+def render_table(clinical: list[dict], preclinical: list[dict], trials: list[dict]) -> str:
+    """Render a flat master table from clinical evidence + preclinical evidence + trial publications.
+
+    Trial publications are pulled from trials.jsonl when their PMID is not already in
+    clinical_evidence (avoids double-counting). Trial registration rows without a PMID
+    are also surfaced so the user sees every manuscript and registration considered.
+    """
+    if not clinical and not preclinical and not trials:
         return "_No manuscripts indexed yet._\n"
+
+    seen_pmids: set[str] = {str(r.get("pmid")) for r in clinical if r.get("pmid")}
+    seen_pmids |= {str(r.get("pmid")) for r in preclinical if r.get("pmid")}
+    extra_trial_rows: list[dict] = []
+    for t in trials:
+        pmid = t.get("pmid")
+        if pmid and str(pmid) in seen_pmids:
+            continue
+        extra_trial_rows.append(trial_to_synthetic_row(t))
+
     head = "".join(f"<th>{html.escape(label)}</th>" for label, _ in COLS)
     body: list[str] = []
-    rows = sorted(
-        [(r, "clinical") for r in clinical] + [(r, "preclinical") for r in preclinical],
-        key=lambda pair: -(pair[0].get("year") or 0),
+    triples: list[tuple[dict, str]] = (
+        [(r, "clinical") for r in clinical]
+        + [(r, "preclinical") for r in preclinical]
+        + [(r, "trial") for r in extra_trial_rows]
     )
-    for r, kind in rows:
-        body.append(render_clinical_row(r) if kind == "clinical" else render_preclinical_row(r))
+    triples.sort(key=lambda pair: -(pair[0].get("year") or 0))
+    for r, kind in triples:
+        if kind == "preclinical":
+            body.append(render_preclinical_row(r))
+        else:
+            body.append(render_clinical_row(r))
     return (
         '<div class="trial-table-wrap">\n'
         '  <div class="trial-scroll">\n'
@@ -301,16 +384,29 @@ def main() -> int:
     case_dir = REPO / "data" / "cases" / slug
     clinical = load_jsonl(case_dir / "clinical_evidence.jsonl")
     preclinical = load_jsonl(case_dir / "preclinical_evidence.jsonl")
+    trials = load_jsonl(case_dir / "trials.jsonl")
+
+    n_clin_inc = sum(1 for r in clinical if (r.get("inclusion_status") or "included") == "included")
+    n_clin_exc = len(clinical) - n_clin_inc
+    n_prec_inc = sum(1 for r in preclinical if (r.get("inclusion_status") or "included") == "included")
+    n_prec_exc = len(preclinical) - n_prec_inc
+    seen_pmids = {str(r.get("pmid")) for r in clinical + preclinical if r.get("pmid")}
+    n_trial_extra = sum(1 for t in trials if not (t.get("pmid") and str(t["pmid"]) in seen_pmids))
 
     parts: list[str] = [
         '<meta name="robots" content="noindex">\n',
         f"# Manuscripts considered — `{slug}`\n",
-        f"Master inventory: {len(clinical)} clinical + {len(preclinical)} pre-clinical "
-        "rows. One paper per row, sorted by year (newest first). Toxicities are "
-        "captured per CTCAE-style term with grade, count, and rate; pre-clinical "
-        "rows leave the toxicity cell blank by design. A printable PDF version is "
-        "linked from the case **Downloads** section.\n",
-        render_table(clinical, preclinical),
+        f"Master inventory: {len(clinical)} clinical "
+        f"({n_clin_inc} included, {n_clin_exc} considered & excluded) + "
+        f"{len(preclinical)} pre-clinical "
+        f"({n_prec_inc} included, {n_prec_exc} considered & excluded) + "
+        f"{n_trial_extra} additional trial publications/registrations. "
+        "One row per paper, sorted by year (newest first). Excluded rows are "
+        "papers a Libby agent reviewed and chose NOT to feed to the board, with the "
+        "exclusion reason captured. Toxicities use CTCAE-style term · grade · n/N · "
+        "rate. Pre-clinical rows leave the toxicity cell blank by design. A "
+        "printable PDF version is linked from the case **Downloads** section.\n",
+        render_table(clinical, preclinical, trials),
         f"[Back to case](index.md) · [Trials](trials.md) · [Evidence (per intervention)](evidence.md) · "
         f"[Board](board.md) · [Recommendations](recommendations.md)\n",
         '!!! danger disclaimer "Decision support, not medical advice"\n'

@@ -2,6 +2,8 @@
 
 # Evidence — `osteosarcoma-mets-dll3-h7r2`
 
+_This page shows 5 included clinical + 4 included pre-clinical rows, grouped by intervention. 3 clinical and 1 pre-clinical papers were reviewed and excluded — see the [master manuscripts table](manuscripts.md) for the full audit trail._
+
 ## Clinical evidence (5 rows)
 
 Per-manuscript detail grouped by intervention. Each row is one published clinical-evidence finding. Columns mirror the per-publication decision-support layout used in companion projects (`io-shieldbreak`'s Pharmacodynamic-Results table).

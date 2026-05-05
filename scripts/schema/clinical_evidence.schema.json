@@ -10,14 +10,37 @@
     "case_slug",
     "intervention_id",
     "intervention_label",
-    "indication",
-    "design",
-    "outcome",
     "year"
+  ],
+  "allOf": [
+    {
+      "if": {
+        "anyOf": [
+          { "not": { "required": ["inclusion_status"] } },
+          { "properties": { "inclusion_status": { "const": "included" } } }
+        ]
+      },
+      "then": {
+        "required": ["indication", "design", "outcome"]
+      },
+      "else": {
+        "required": ["exclusion_reason"]
+      }
+    }
   ],
   "properties": {
     "evidence_id": { "type": "string" },
     "case_slug": { "type": "string" },
+    "inclusion_status": {
+      "type": "string",
+      "enum": ["included", "considered_excluded"],
+      "default": "included",
+      "description": "Did this paper enter the synthesis fed to the tumor board (`included`), or was it reviewed and excluded (`considered_excluded`)? The master manuscripts page renders both; the per-intervention evidence page and the board read `included` only."
+    },
+    "exclusion_reason": {
+      "type": "string",
+      "description": "Required when `inclusion_status: considered_excluded`. Brief reason — e.g. 'drug discontinued (Rova-T withdrawal)', 'wrong line of therapy', 'biomarker mismatch (BRCA-mut required)', 'preprint without peer review', 'superseded by larger trial in same population'."
+    },
     "intervention_id": { "type": "string", "description": "Stable kebab-case ID grouping rows that share an intervention; PI uses to aggregate across rows." },
     "intervention_label": { "type": "string" },
     "intervention_dose": { "type": "string", "description": "Dose / schedule as published (e.g. 'cabozantinib 60 mg PO daily', '10 mg IV q2w with 1 mg step-up'). Null if not reported." },

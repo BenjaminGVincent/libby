@@ -236,6 +236,18 @@ small.scenario-key { color: var(--ink-muted); }
   color: var(--ink-muted);
   text-decoration: line-through;
 }
+.scenario-conditional {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5A4500;
+  background: #FFF7E0;
+  border: 1px solid #F1DD9A;
+  border-radius: 0.35em;
+  padding: 0.05em 0.45em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
 footer.libby-footer {
   margin-top: 3rem;
   padding-top: 1rem;
@@ -280,9 +292,21 @@ _RECS_HEAD_HTML = (
 )
 
 
+def _intervention_cell_html(r: dict) -> str:
+    label = _fmt_html(r.get("intervention_label"))
+    scen = r.get("scenario")
+    if isinstance(scen, str) and scen.endswith(":positive"):
+        biomarker_short = scen.split(":", 1)[0]
+        return (
+            f"<td><strong>{label}</strong> "
+            f'<span class="scenario-conditional">(conditional on {_html.escape(biomarker_short)} positive)</span></td>'
+        )
+    return f"<td><strong>{label}</strong></td>"
+
+
 def _render_recs_table_html(rows: list[dict]) -> str:
     if not rows:
-        return "<p><em>No rows in this scenario.</em></p>"
+        return "<p><em>No rows.</em></p>"
     body: list[str] = []
     for r in rows:
         status = r.get("status", "recommended")
@@ -291,7 +315,7 @@ def _render_recs_table_html(rows: list[dict]) -> str:
             "    <tr>"
             f"<td>{_fmt_html(r.get('rank'))}</td>"
             f'<td class="{klass}">{_html.escape(status)}</td>'
-            f"<td><strong>{_fmt_html(r.get('intervention_label'))}</strong></td>"
+            f"{_intervention_cell_html(r)}"
             f"<td>{_persona_badges_html(r.get('endorsed_by'))}</td>"
             f"<td>{_persona_badges_html(r.get('dissent_by'))}</td>"
             f"<td>{_persona_badges_html(r.get('veto_by'))}</td>"
@@ -313,20 +337,26 @@ def _render_recs_table_html(rows: list[dict]) -> str:
     )
 
 
-def _group_by_scenario(rows: list[dict]) -> tuple[list[dict], dict[str, dict]]:
-    shared: list[dict] = []
-    scenarios: dict[str, dict] = {}
+def _group_by_scenario(rows: list[dict]) -> tuple[list[dict], list[dict]]:
+    """Split rows into (workup_rows, unified_rows).
+
+    `workup_rows` are rows with `scenario == "shared"` — the rank-1 confirmatory
+    test. `unified_rows` is everything else: biomarker-independent recs
+    (`scenario: null`) AND biomarker-conditional recs (`scenario:
+    "<biomarker_short>:positive"`), rank-ordered for a single ranked table.
+    Conditional recs surface the (conditional on …) flag at render time.
+    """
+    workup: list[dict] = []
+    unified: list[dict] = []
     for r in rows:
         scen = r.get("scenario")
-        if not scen or scen == "shared":
-            shared.append(r)
-            continue
-        scenarios.setdefault(scen, {"label": r.get("scenario_label") or scen, "rows": []})
-        scenarios[scen]["rows"].append(r)
-    shared.sort(key=lambda r: r.get("rank") or 999)
-    for s in scenarios.values():
-        s["rows"].sort(key=lambda r: r.get("rank") or 999)
-    return shared, scenarios
+        if scen == "shared":
+            workup.append(r)
+        else:
+            unified.append(r)
+    workup.sort(key=lambda r: r.get("rank") or 999)
+    unified.sort(key=lambda r: r.get("rank") or 999)
+    return workup, unified
 
 
 def _profile_dl_html(profile: dict, preferences: dict) -> str:
@@ -379,7 +409,7 @@ def _profile_dl_html(profile: dict, preferences: dict) -> str:
 
 def _render_recommendations_html(slug: str, recs: list[dict], profile: dict, preferences: dict) -> str:
     today = datetime.now(timezone.utc).date().isoformat()
-    shared, scenarios = _group_by_scenario(recs)
+    workup, unified = _group_by_scenario(recs)
 
     parts = [
         '<!DOCTYPE html>',
@@ -407,23 +437,27 @@ def _render_recommendations_html(slug: str, recs: list[dict], profile: dict, pre
         parts.append("<h2>Profile snapshot</h2>")
         parts.append(profile_html)
 
-    if scenarios:
+    if workup:
         parts.append(
-            f"<p><em>{len(recs)} rows across {len(scenarios)} scenario(s) "
-            f"plus {len(shared)} shared row(s).</em></p>"
+            f"<p><em>{len(recs)} rows: {len(workup)} workup + "
+            f"{len(unified)} ranked options.</em></p>"
         )
-        if shared:
-            parts.append("<h2>Shared first step (applies to every scenario)</h2>")
-            parts.append(_render_recs_table_html(shared))
-        for key, payload in scenarios.items():
-            parts.append(f"<h2>{_html.escape(payload['label'])}</h2>")
+        parts.append("<h2>Shared first step</h2>")
+        parts.append(
+            "<p><em>The confirmatory test gates whether biomarker-conditional recs below apply. "
+            "Run regardless of which therapy is ultimately chosen.</em></p>"
+        )
+        parts.append(_render_recs_table_html(workup))
+        if unified:
+            parts.append("<h2>Ranked options</h2>")
             parts.append(
-                f'<small class="scenario-key"><code>scenario: {_html.escape(key)}</code></small>'
+                "<p><em>Biomarker-conditional recs are flagged inline. If the workup test is negative, "
+                "the conditional recs are foreclosed; biomarker-independent recs remain valid.</em></p>"
             )
-            parts.append(_render_recs_table_html(payload["rows"]))
+            parts.append(_render_recs_table_html(unified))
     else:
         parts.append(f"<p><em>{len(recs)} ranked options.</em></p>")
-        parts.append(_render_recs_table_html(shared))
+        parts.append(_render_recs_table_html(unified))
 
     parts.append(
         '<footer class="libby-footer">'
@@ -844,9 +878,9 @@ def _render_table(pdf, lines: list[str]) -> None:
 
 
 def _column_widths(headers: list[str], page_w: float, n: int) -> list[float]:
-    if n == 9 and any("toxicit" in h for h in headers):
-        # Manuscripts master table: Report | Type | Intervention | Indication | n | Effect | Variance | Toxicities | Case fit
-        ratios = [0.11, 0.06, 0.10, 0.13, 0.04, 0.10, 0.11, 0.28, 0.07]
+    if n == 10 and any("toxicit" in h for h in headers):
+        # Manuscripts master table: Report | Type | Inclusion | Intervention | Indication | n | Effect | Variance | Toxicities | Case fit
+        ratios = [0.10, 0.06, 0.10, 0.09, 0.12, 0.04, 0.09, 0.10, 0.24, 0.06]
     elif n == 4 and any("rationale" in h or "notes" in h for h in headers):
         ratios = [0.15, 0.20, 0.25, 0.40]
     elif n == 5:
@@ -1090,7 +1124,7 @@ def _tox_for_pdf(t: dict) -> str:
 
 
 def _row_for_pdf(r: dict, kind: str) -> list[str]:
-    """Return the 9 cells (in COLS order) for one manuscript row, plain text."""
+    """Return the 10 cells (in PDF COLS order) for one manuscript row, plain text."""
     first = r.get("first_author") or "—"
     last = r.get("last_author") or "—"
     yr = r.get("year") or "—"
@@ -1099,7 +1133,14 @@ def _row_for_pdf(r: dict, kind: str) -> list[str]:
     if journal:
         report = f"{report} — {journal}"
 
-    if kind == "clinical":
+    inclusion_status = (r.get("inclusion_status") or "included")
+    if inclusion_status == "considered_excluded":
+        inclusion_str = f"excluded — {r.get('exclusion_reason') or '?'}"
+    else:
+        inclusion_str = "included"
+    excluded = inclusion_status == "considered_excluded"
+
+    if kind == "clinical" or kind == "trial":
         intervention = r.get("intervention_label") or "—"
         ind = r.get("indication") or "—"
         line = r.get("line_of_therapy")
@@ -1110,33 +1151,38 @@ def _row_for_pdf(r: dict, kind: str) -> list[str]:
         design = r.get("design") or "—"
         n_str = str(r.get("n")) if r.get("n") not in (None, "") else "—"
 
-        e = r.get("effect_size")
-        units = r.get("effect_units") or ""
-        if e is None or e == "":
+        if excluded:
             effect = "—"
+            variance = "—"
+            tox_str = "—"
         else:
-            effect = f"{e} {units}".strip()
-        outcome = r.get("outcome")
-        if outcome:
-            effect = f"{effect} — {outcome}"
+            e = r.get("effect_size")
+            units = r.get("effect_units") or ""
+            if e is None or e == "":
+                effect = "—"
+            else:
+                effect = f"{e} {units}".strip()
+            outcome = r.get("outcome")
+            if outcome:
+                effect = f"{effect} — {outcome}"
 
-        var_parts: list[str] = []
-        lo, hi = r.get("ci_lower"), r.get("ci_upper")
-        if lo is not None and hi is not None:
-            var_parts.append(f"95% CI {lo}–{hi}")
-        free = r.get("variance_or_ci")
-        if free:
-            var_parts.append(str(free))
-        p = r.get("p_value")
-        if p not in (None, "", "—"):
-            var_parts.append(f"p={p}")
-        variance = "; ".join(var_parts) if var_parts else "—"
+            var_parts: list[str] = []
+            lo, hi = r.get("ci_lower"), r.get("ci_upper")
+            if lo is not None and hi is not None:
+                var_parts.append(f"95% CI {lo}–{hi}")
+            free = r.get("variance_or_ci")
+            if free:
+                var_parts.append(str(free))
+            p = r.get("p_value")
+            if p not in (None, "", "—"):
+                var_parts.append(f"p={p}")
+            variance = "; ".join(var_parts) if var_parts else "—"
 
-        tox = r.get("toxicities") or []
-        if tox:
-            tox_str = "; ".join(_tox_for_pdf(t) for t in tox)
-        else:
-            tox_str = r.get("safety_summary") or "—"
+            tox = r.get("toxicities") or []
+            if tox:
+                tox_str = "; ".join(_tox_for_pdf(t) for t in tox)
+            else:
+                tox_str = r.get("safety_summary") or "—"
 
         fit = r.get("case_match") or "—"
     else:  # preclinical
@@ -1144,21 +1190,26 @@ def _row_for_pdf(r: dict, kind: str) -> list[str]:
         ind_full = r.get("model_system") or "—"
         design = r.get("mechanism") or "—"
         n_str = r.get("n_units") or "—"
-        qual = r.get("effect_size_qual") or ""
-        finding = r.get("key_finding") or ""
-        effect = (f"{qual} — {finding}" if qual and finding else (qual or finding)) or "—"
-        var_parts = []
-        if r.get("control_arm"):
-            var_parts.append(f"vs {r['control_arm']}")
-        if r.get("translatability_score"):
-            var_parts.append(f"translatability: {r['translatability_score']}")
-        variance = "; ".join(var_parts) if var_parts else "—"
+        if excluded:
+            effect = "—"
+            variance = "—"
+        else:
+            qual = r.get("effect_size_qual") or ""
+            finding = r.get("key_finding") or ""
+            effect = (f"{qual} — {finding}" if qual and finding else (qual or finding)) or "—"
+            var_parts = []
+            if r.get("control_arm"):
+                var_parts.append(f"vs {r['control_arm']}")
+            if r.get("translatability_score"):
+                var_parts.append(f"translatability: {r['translatability_score']}")
+            variance = "; ".join(var_parts) if var_parts else "—"
         tox_str = "n/a (preclinical)"
         fit = r.get("case_match") or "—"
 
     return [
         report,
         kind,
+        inclusion_str,
         intervention,
         ind_full,
         n_str,
@@ -1169,34 +1220,70 @@ def _row_for_pdf(r: dict, kind: str) -> list[str]:
     ]
 
 
-def _manuscripts_md_for_pdf(slug: str, clinical: list[dict], preclinical: list[dict]) -> str:
+def _trial_to_synthetic_for_pdf(t: dict) -> dict:
+    return {
+        "case_slug": t.get("case_slug"),
+        "intervention_label": t.get("intervention") or "—",
+        "indication": t.get("indication") or "—",
+        "line_of_therapy": t.get("line"),
+        "population_detail": t.get("biomarker") or "",
+        "design": t.get("design") or t.get("phase") or "—",
+        "n": t.get("n"),
+        "first_author": t.get("first_author"),
+        "last_author": t.get("last_author"),
+        "year": t.get("year"),
+        "journal": t.get("journal") or ("ClinicalTrials.gov registration" if not t.get("pmid") else ""),
+        "outcome": t.get("endpoint") or "",
+        "effect_size": t.get("effect_size"),
+        "ci_lower": t.get("ci_lower"),
+        "ci_upper": t.get("ci_upper"),
+        "p_value": t.get("p_value"),
+        "case_match": t.get("fit_to_case"),
+        "pmid": t.get("pmid"),
+    }
+
+
+def _manuscripts_md_for_pdf(slug: str, clinical: list[dict], preclinical: list[dict], trials: list[dict]) -> str:
     headers = [
-        "Report", "Type", "Intervention", "Indication / model",
+        "Report", "Type", "Inclusion", "Intervention", "Indication / model",
         "n", "Effect size", "Variance", "Toxicities (type, n/N, rate)", "Case fit",
     ]
+    seen_pmids: set[str] = {str(r.get("pmid")) for r in clinical + preclinical if r.get("pmid")}
+    extra_trials = [_trial_to_synthetic_for_pdf(t) for t in trials
+                    if not (t.get("pmid") and str(t["pmid"]) in seen_pmids)]
+    n_clin_inc = sum(1 for r in clinical if (r.get("inclusion_status") or "included") == "included")
+    n_clin_exc = len(clinical) - n_clin_inc
+    n_prec_inc = sum(1 for r in preclinical if (r.get("inclusion_status") or "included") == "included")
+    n_prec_exc = len(preclinical) - n_prec_inc
+
     lines = [
         f"# Manuscripts considered — {slug}",
         "",
-        f"Master inventory: {len(clinical)} clinical + {len(preclinical)} pre-clinical "
-        "papers. One row per manuscript, sorted by year (newest first). Toxicities are "
-        "captured per CTCAE-style term with grade, count, and rate; pre-clinical rows "
-        "leave the toxicity cell blank by design.",
+        f"Master inventory: {len(clinical)} clinical ({n_clin_inc} included, "
+        f"{n_clin_exc} considered & excluded) + {len(preclinical)} pre-clinical "
+        f"({n_prec_inc} included, {n_prec_exc} considered & excluded) + "
+        f"{len(extra_trials)} additional trial publications/registrations. "
+        "One row per manuscript, sorted by year (newest first). Excluded rows are "
+        "papers a Libby agent reviewed and chose NOT to feed to the board, with the "
+        "exclusion reason captured.",
         "",
         "| " + " | ".join(headers) + " |",
         "| " + " | ".join(["---"] * len(headers)) + " |",
     ]
-    rows = sorted(
-        [(r, "clinical") for r in clinical] + [(r, "preclinical") for r in preclinical],
-        key=lambda pair: -(pair[0].get("year") or 0),
+    triples = (
+        [(r, "clinical") for r in clinical]
+        + [(r, "preclinical") for r in preclinical]
+        + [(r, "trial") for r in extra_trials]
     )
-    for r, kind in rows:
+    triples.sort(key=lambda pair: -(pair[0].get("year") or 0))
+    for r, kind in triples:
         cells = _row_for_pdf(r, kind)
         lines.append("| " + " | ".join(_pipe_escape(c) for c in cells) + " |")
     lines.append("")
     return "\n".join(lines)
 
 
-def _make_manuscripts_pdf(slug: str, clinical: list[dict], preclinical: list[dict], out_path: Path) -> None:
+def _make_manuscripts_pdf(slug: str, clinical: list[dict], preclinical: list[dict], trials: list[dict], out_path: Path) -> None:
     try:
         from fpdf import FPDF
     except ImportError as e:
@@ -1236,7 +1323,7 @@ def _make_manuscripts_pdf(slug: str, clinical: list[dict], preclinical: list[dic
     )
 
     pdf.add_page()
-    body_md = _manuscripts_md_for_pdf(slug, clinical, preclinical)
+    body_md = _manuscripts_md_for_pdf(slug, clinical, preclinical, trials)
     _render_markdown_block(pdf, body_md, top_h1=True)
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
@@ -1431,13 +1518,15 @@ def main(argv: list[str]) -> int:
 
     clinical = _load_jsonl(case_data / "clinical_evidence.jsonl")
     preclinical = _load_jsonl(case_data / "preclinical_evidence.jsonl")
-    if clinical or preclinical:
+    trials = _load_jsonl(case_data / "trials.jsonl")
+    if clinical or preclinical or trials:
         manuscripts_out = case_docs / f"{slug}-manuscripts.pdf"
-        _make_manuscripts_pdf(slug, clinical, preclinical, manuscripts_out)
+        _make_manuscripts_pdf(slug, clinical, preclinical, trials, manuscripts_out)
         print(
             f"built {manuscripts_out.relative_to(REPO_ROOT)} — "
             f"{manuscripts_out.stat().st_size / 1024:.0f} KB "
-            f"(clinical={len(clinical)}, preclinical={len(preclinical)})"
+            f"(clinical={len(clinical)}, preclinical={len(preclinical)}, "
+            f"trials={len(trials)})"
         )
 
     html_out = case_docs / f"{slug}-recommendations.html"

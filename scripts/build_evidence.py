@@ -243,13 +243,24 @@ def main() -> int:
     slug = args.slug
 
     case_dir = REPO / "data" / "cases" / slug
-    clinical = load_jsonl(case_dir / "clinical_evidence.jsonl")
-    preclinical = load_jsonl(case_dir / "preclinical_evidence.jsonl")
+    clinical_all = load_jsonl(case_dir / "clinical_evidence.jsonl")
+    preclinical_all = load_jsonl(case_dir / "preclinical_evidence.jsonl")
+    clinical = [r for r in clinical_all if (r.get("inclusion_status") or "included") == "included"]
+    preclinical = [r for r in preclinical_all if (r.get("inclusion_status") or "included") == "included"]
+    n_clin_excluded = len(clinical_all) - len(clinical)
+    n_prec_excluded = len(preclinical_all) - len(preclinical)
 
     parts: list[str] = [
         '<meta name="robots" content="noindex">\n',
         f"# Evidence — `{slug}`\n",
     ]
+    if n_clin_excluded or n_prec_excluded:
+        parts.append(
+            f"_This page shows {len(clinical)} included clinical + {len(preclinical)} "
+            f"included pre-clinical rows, grouped by intervention. "
+            f"{n_clin_excluded} clinical and {n_prec_excluded} pre-clinical papers "
+            f"were reviewed and excluded — see the [master manuscripts table](manuscripts.md) for the full audit trail._\n"
+        )
 
     parts.append(f"## Clinical evidence ({len(clinical)} rows)\n")
     if clinical:
