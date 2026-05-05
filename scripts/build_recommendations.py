@@ -106,9 +106,10 @@ def group_by_scenario(rows: list[dict]) -> tuple[list[dict], list[dict]]:
 
     `workup_rows` are rows with `scenario == "shared"` — the rank-1 confirmatory
     test that gates whether biomarker-conditional therapeutic recs apply.
-    `unified_rows` is everything else (biomarker-independent recs with
-    `scenario: null` AND biomarker-conditional recs with `scenario:
-    "<biomarker_short>:positive"`), rank-ordered for a single ranked table.
+    `unified_rows` is everything else (biomarker-conditional recs tagged
+    `scenario: "<biomarker_short>:positive"` in gated cases, or untagged
+    `scenario: null` recs in non-gated cases), rank-ordered for a single
+    ranked table.
 
     Conditional recs surface the (conditional on …) flag at render time via
     `_intervention_cell` — they don't get split into a separate table.
@@ -199,8 +200,10 @@ def main() -> int:
         if unified:
             parts.append("## Ranked options\n")
             parts.append(
-                "_Biomarker-conditional recs are flagged inline. If the workup test is negative, "
-                "the conditional recs are foreclosed; biomarker-independent recs remain valid._\n"
+                "_Biomarker-conditional recs are flagged inline. The ranking is "
+                "scoped to drugs that target the user's stated targetable feature; "
+                "if the workup test is negative the within-scope options are exhausted, "
+                "and standard care for the indication lies outside Libby's targetable-feature scope._\n"
             )
             parts.append(render_recs_table(unified))
     else:

@@ -4,18 +4,24 @@
 
 ## What this page is
 
-You (or your clinician) asked Libby to look at one specific situation:
-**metastatic osteosarcoma where the cancer is showing signs that DLL3 — a
-protein that some new immunotherapies target — might be present**. Your
-input was that you'd consider high-risk options if the upside is meaningful.
+You (or your clinician) asked Libby to look at one specific question:
+**given metastatic osteosarcoma where the cancer is showing signs that DLL3 — a
+protein that some new immunotherapies target — might be present, what
+treatments would target DLL3?** Your input was that you'd consider high-risk
+options if the upside is meaningful.
 
 The DLL3 information you gave us was at the **RNA level** — that tells us
 the gene is being read, but it doesn't tell us whether the DLL3 protein is
 actually sitting on the surface of the cancer cells (which is what those
 new drugs need to grab onto). So the recommendations come in two parts:
-**a first step everyone agreed on** (a confirmatory test), and then a
-**ranked list of treatment options** — one of which depends on that test
-coming back positive, and two of which apply regardless.
+**a first step everyone agreed on** (a confirmatory test), and then **one
+treatment option** that is only on the table if that test comes back positive.
+
+This page does **not** enumerate standard 2L+ care for relapsed osteosarcoma
+(things like regorafenib or cabozantinib). Those are real options, but they
+don't target DLL3 — so they fell outside the scope of the question you
+asked. Talk to your oncologist about them through the normal care channel,
+independent of this page.
 
 ## The first step everyone agreed on
 
@@ -25,19 +31,19 @@ from a previous biopsy, or fresh tissue if needed. It's non-toxic, takes
 1–3 weeks, and costs almost nothing compared to a treatment cycle. **All
 five reviewers ranked this as the first action — without dissent.**
 
-The test result decides whether the lead treatment option (Option 1 below)
-is on the table. The other two options (Options 2 and 3) apply either way
-because they don't depend on DLL3 status.
+The test result decides whether the treatment option below is on the table.
 
 ---
 
-## The options the board considered
+## The option the board considered
 
 ### Option 1 — Tarlatamab via clinical trial NCT06788938
 
 **This option is only available if the DLL3 IHC test comes back positive.**
-If the test is negative or below threshold, this option is off the table;
-Options 2 and 3 below still apply because they don't depend on this test.
+If the test is negative or below threshold, this option is off the table,
+and this case has no further treatment recommendations within scope.
+Standard 2L+ care for relapsed osteosarcoma is the next conversation to
+have with your oncologist, separate from this page.
 
 **The board recommended this as the lead option *when the test is positive*.**
 
@@ -69,54 +75,11 @@ hospital for monitoring.
   patient has been published as receiving tarlatamab. You'd be in the very
   first cohort. Worth knowing going in.
 
-**If the IHC is negative,** this option closes entirely. Talk to your
-oncologist about Option 2 (regorafenib) as the de facto first treatment in
-that case, and ask about referral to an academic sarcoma center to look for
-other osteosarcoma trials that don't require DLL3.
-
-### Option 2 — Regorafenib
-
-**The board recommended this with universal endorsement.** This option does
-not depend on the DLL3 test result.
-
-**What it is.** A pill at home, 3 weeks on / 1 week off.
-
-**What the upside might look like.** Two clinical trials in metastatic
-osteosarcoma showed regorafenib delays cancer growth by about 2 months on
-average compared to placebo. Neither trial showed a survival improvement
-(both let placebo patients cross over to active drug, which dilutes survival
-comparisons). The benefit is real but modest.
-
-**The main risks.** Skin reaction on hands and feet (the most common
-limiting side effect), high blood pressure, fatigue, mucositis, mild liver
-enzyme elevations. About 7 of every 10 patients have at least one
-moderate-to-severe side effect; almost all are managed by lowering the
-dose. No treatment-related deaths in either trial.
-
-**Why it's ranked below the trial when the trial is reachable.** You said
-you preferred trial-based options. If the trial is reachable (positive IHC
-+ available slot), the trial gets rank 1; regorafenib is the off-trial
-backbone. If the trial is closed (negative IHC, slot unavailable, or
-intolerable to wait), regorafenib is the de facto first treatment.
-
-### Option 3 — Cabozantinib
-
-**Same role: backup if regorafenib doesn't work.** Universal endorsement;
-biomarker-independent.
-
-**What it is.** Another pill at home; targets different growth pathways
-(MET and VEGFR2) than regorafenib.
-
-**What the upside might look like.** A 42-patient trial showed about 12 of
-every 100 patients had tumor shrinkage; about a third had no growth at 6
-months. Smaller effect than regorafenib's PFS gain.
-
-**The main risks.** Similar profile to regorafenib (high blood pressure,
-hand-foot reaction) plus a notable risk of blood clots in about 7% of
-patients — relevant for someone with metastatic disease.
-
-**When to consider it.** If regorafenib is contraindicated, has been used,
-or wasn't tolerated.
+**If the IHC is negative,** this option closes entirely. There is no
+"backup option" within scope of this page — Libby was asked specifically
+about DLL3-targeted therapy. Your oncologist can talk you through standard
+2L+ options for relapsed osteosarcoma (which exist and are well-established);
+that conversation is separate from this page.
 
 ---
 
@@ -127,8 +90,7 @@ Several things weren't in the inputs:
 - **Was DLL3 measured at the protein level (IHC) or only RNA?** Resolved by
   the recommended first step.
 - **What treatment have you already had?** The recommendations assume
-  standard frontline chemotherapy (MAP); if you've had regorafenib or
-  cabozantinib already, the rankings change.
+  standard frontline chemotherapy (MAP).
 - **What's your performance status (how active are you day-to-day)?** Most
   trials require ECOG 0 or 1.
 - **Where do you live, and what's your access to academic cancer centers?**
@@ -141,21 +103,20 @@ Several things weren't in the inputs:
 2. **If the IHC comes back positive, what's the path to NCT06788938?**
    Closest enrolling site, wait time, logistics for the inpatient cycle-1
    monitoring.
-3. **If the IHC comes back negative, what other osteosarcoma trials might
-   I qualify for?** Especially at academic sarcoma centers — Libby didn't
-   enumerate non-DLL3 trials, so this is a separate conversation.
-4. **If we pursue regorafenib (in either case), what's the plan for
-   managing hand-foot syndrome?** That's the most common dose-limiting
-   side effect.
-5. **Have I already had regorafenib or cabozantinib? What was the response?**
-   If yes, that changes the rankings substantially.
-6. **What's the realistic time-to-response for each option, and how will we
-   know it's working?**
-7. **Is there anything in my labs or scans that would change which of these
-   options is appropriate?**
-8. **If the tarlatamab trial is on the table, what's the realistic timeline
-   from IHC confirmation to first dose?** (Helps you decide whether to start
-   regorafenib as a bridge or wait.)
+3. **If the IHC comes back negative, what 2L+ options do you usually
+   consider for relapsed osteosarcoma?** This page doesn't cover those —
+   it was scoped to DLL3 — but they're real options and worth understanding
+   in advance.
+4. **If we pursue tarlatamab, what's the realistic timeline from IHC
+   confirmation to first dose?**
+5. **What's your experience with the side effects (CRS, neurologic
+   reactions)?** Knowing your hospital's protocol helps.
+6. **Have I already had any of the standard 2L+ osteosarcoma options? What
+   was the response?** Useful context for your team.
+7. **Is there anything in my labs or scans that would change which trial
+   I'd be eligible for?**
+8. **If the tarlatamab trial isn't reachable (slot, location, eligibility),
+   what's the next step from your perspective?**
 
 ## Where to read more
 
@@ -170,11 +131,6 @@ Several things weren't in the inputs:
 The recommendations cited the following published reports and clinical-trial
 records:
 
-- Davis et al. *J Clin Oncol* 2019 — regorafenib SARC024 RCT in metastatic
-  osteosarcoma (PMID 31013172)
-- Duffaud et al. *Lancet Oncol* 2019 — regorafenib REGOBONE RCT (PMID 30477937)
-- Italiano et al. *Lancet Oncol* 2020 — cabozantinib CABONE phase-2 in
-  advanced osteosarcoma and Ewing sarcoma (PMID 32078813)
 - Ahn et al. *N Engl J Med* 2023 — tarlatamab DeLLphi-301 in SCLC (PMID 37861218)
 - Mountzios et al. *N Engl J Med* 2025 — tarlatamab DeLLphi-304 in SCLC
   (PMID 40454646)

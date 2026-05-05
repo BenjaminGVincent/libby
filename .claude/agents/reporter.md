@@ -68,7 +68,7 @@ Draft `executive_summary.md` to a fixed structure (~300 words; never more than ~
 - <bullet — the dominant first-step action (e.g., "DLL3 IHC is the load-bearing test; rank 2 is foreclosed without it")>
 - <bullet — the rank-1 therapeutic intervention (after the workup if any), with the most important qualifier (CP-MoA severity / coverage gap / dissent flag)>
 - <bullet — the biggest dissent or veto the reviewer needs to be aware of>
-- <bullet — for biomarker-gated cases: what happens if the test is negative (which ranks foreclose, which remain valid)>
+- <bullet — for biomarker-gated cases: what happens if the test is negative. Note that Libby's ranking is targetable-feature-scoped, so a negative test exhausts the within-scope ranks; standard 2L+ care for the indication is out-of-scope and a separate care-team conversation>
 - <bullet — a notable open question that the dossier could not resolve>
 
 ## Recommendation summary
@@ -158,7 +158,7 @@ bash scripts/run_case.sh <slug>
 - **Never push without confirmation.** Local commits fine; pushes are user-authorized only.
 - **Closing disclaimer is required**, not decorative. It appears on the cover, in the executive summary, and (already) at the foot of `index.md` and `plain_language.md`.
 - **Case isolation.** A run for `<slug-A>` must not touch any file under another case's directories.
-- **Biomarker gating must be surfaced, not collapsed.** If `recommendations.jsonl` has any row with `scenario: "shared"` or `scenario: "<biomarker>:positive"`, the executive summary must (a) call out the shared workup as "Shared first step" with its own line, (b) flag biomarker-conditional recs inline with *"Conditional on `<biomarker>` positive — foreclosed if test is negative"*, and (c) include in "Top-line findings" a bullet on what happens if the test is negative (which ranks foreclose, which remain valid). Do NOT enumerate a "Path B" parallel ranking — Libby's contract no longer emits one.
+- **Biomarker gating must be surfaced, not collapsed.** If `recommendations.jsonl` has any row with `scenario: "shared"` or `scenario: "<biomarker>:positive"`, the executive summary must (a) call out the shared workup as "Shared first step" with its own line, (b) flag biomarker-conditional recs inline with *"Conditional on `<biomarker>` positive — foreclosed if test is negative"*, and (c) include in "Top-line findings" a bullet stating that the ranking is targetable-feature-scoped — a negative test exhausts the within-scope ranks; standard 2L+ care for the indication is out-of-scope. Do NOT enumerate a "Path B" parallel ranking, and do NOT include drugs that don't target the user's stated targetable feature in the recommendation summary.
 
 ## Output style
 

@@ -341,10 +341,11 @@ def _group_by_scenario(rows: list[dict]) -> tuple[list[dict], list[dict]]:
     """Split rows into (workup_rows, unified_rows).
 
     `workup_rows` are rows with `scenario == "shared"` — the rank-1 confirmatory
-    test. `unified_rows` is everything else: biomarker-independent recs
-    (`scenario: null`) AND biomarker-conditional recs (`scenario:
-    "<biomarker_short>:positive"`), rank-ordered for a single ranked table.
-    Conditional recs surface the (conditional on …) flag at render time.
+    test. `unified_rows` is everything else: biomarker-conditional recs
+    tagged `scenario: "<biomarker_short>:positive"` in gated cases, or
+    untagged `scenario: null` recs in non-gated cases. Rank-ordered for a
+    single ranked table. Conditional recs surface the (conditional on …)
+    flag at render time.
     """
     workup: list[dict] = []
     unified: list[dict] = []
@@ -451,8 +452,10 @@ def _render_recommendations_html(slug: str, recs: list[dict], profile: dict, pre
         if unified:
             parts.append("<h2>Ranked options</h2>")
             parts.append(
-                "<p><em>Biomarker-conditional recs are flagged inline. If the workup test is negative, "
-                "the conditional recs are foreclosed; biomarker-independent recs remain valid.</em></p>"
+                "<p><em>Biomarker-conditional recs are flagged inline. The ranking is "
+                "scoped to drugs that target the user's stated targetable feature; "
+                "if the workup test is negative the within-scope options are exhausted, "
+                "and standard care for the indication lies outside Libby's targetable-feature scope.</em></p>"
             )
             parts.append(_render_recs_table_html(unified))
     else:

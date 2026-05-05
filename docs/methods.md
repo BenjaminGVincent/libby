@@ -168,17 +168,20 @@ The mechanism is on the schema and PI-prompt side:
 - **`profile.json::biomarkers[].decision_resolution`** — short description
   of what level of testing IS required (e.g. "IHC SP347 ≥1%").
 - **`recommendations.jsonl::scenario`** — three values:
-    - `null` (default) — biomarker-independent rec; applies regardless of any pending test.
+    - `null` (default) — used in non-gated cases (every biomarker `confirmed`); the row applies in the case's single ranking.
     - `"shared"` — the rank-1 workup row representing the confirmatory test itself.
     - `"<biomarker_short>:positive"` (e.g. `dll3_ihc:positive`) — rec valid only if the named biomarker confirms positive; foreclosed if the test is negative.
 
   The `:negative` suffix is no longer emitted; the negative-result outcome
   is documented in the case page's cross-cutting caveat instead.
 - **`PI.md`** prompt rule: when any biomarker gates a candidate intervention
-  and is non-confirmed, emit a single unified ranking with the workup at
-  rank 1 (`scenario: "shared"`), biomarker-conditional therapeutic rec(s)
-  tagged `:positive`, and biomarker-independent recs untagged. The cross-cutting
-  caveat in `index.md` carries the "if test negative" foreclosure mapping.
+  and is non-confirmed, emit a focused ranking with the workup at rank 1
+  (`scenario: "shared"`) plus only the therapeutic rec(s) that target the
+  gating feature, tagged `:positive`. Drugs that don't target the feature
+  (standard care for the indication that came up via the trial screener)
+  are not ranked; they're listed under "Classes examined but not ranked"
+  with an out-of-scope note. The cross-cutting caveat in `index.md` carries
+  the "if test negative, no within-scope recommendations" mapping.
 - **`translator.md`** prompt rule: surface the workup as "the first step
   everyone agreed on"; flag biomarker-conditional options inline with an
   "if negative" note; do NOT render a parallel negative-branch ranking.

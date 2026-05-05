@@ -136,7 +136,7 @@ consulting a qualified oncologist.
   <dt>Efficacy/toxicity weight</dt><dd>0.85</dd>
 </dl>
 
-<p><em>4 rows: 1 workup + 3 ranked options.</em></p>
+<p><em>2 rows: 1 workup + 1 ranked options.</em></p>
 <h2>Shared first step</h2>
 <p><em>The confirmatory test gates whether biomarker-conditional recs below apply. Run regardless of which therapy is ultimately chosen.</em></p>
 <div class="trial-table-wrap">
@@ -151,15 +151,13 @@ consulting a qualified oncologist.
 </div>
 
 <h2>Ranked options</h2>
-<p><em>Biomarker-conditional recs are flagged inline. If the workup test is negative, the conditional recs are foreclosed; biomarker-independent recs remain valid.</em></p>
+<p><em>Biomarker-conditional recs are flagged inline. The ranking is scoped to drugs that target the user's stated targetable feature; if the workup test is negative the within-scope options are exhausted, and standard care for the indication lies outside Libby's targetable-feature scope.</em></p>
 <div class="trial-table-wrap">
   <div class="trial-scroll">
     <table class="trial-table">
       <thead><tr><th>Rank</th><th>Status</th><th>Intervention</th><th>Endorsed by</th><th>Dissent</th><th>Veto</th><th>Expected benefit</th><th>Key risks</th><th>Preference fit</th><th>Guideline</th><th>Evidence anchor</th><th>Open questions</th></tr></thead>
       <tbody>
     <tr><td>2</td><td class="">recommended</td><td><strong>tarlatamab via NCT06788938 (UCCC-01 basket)</strong> <span class="scenario-conditional">(conditional on dll3_ihc positive)</span></td><td><span class="persona persona-risktaker">risktaker</span> <span class="persona persona-advocate">advocate</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-concensusite">concensusite</span></td><td><span class="persona persona-critic">critic</span></td><td>&mdash;</td><td>If mechanism translates from SCLC: median OS 13.6 vs 8.3 mo (HR 0.60) in DeLLphi-304 SCLC; ORR ~40% in DeLLphi-301. Cross-tumor extrapolation to osteosarcoma is unproven — the trial design exists precisely to test this.</td><td>CRS ~50% (mostly grade 1-2; grade ≥3 ~1% in SCLC); ICANS-like neurologic events ~10%; inpatient cycle-1 monitoring; no prior osteosarcoma data — cross-tumor translation is the open question</td><td>Strong match: high-risk-high-reward + prefers_trials. Conditional on positive DLL3 IHC.</td><td>Off-guideline for osteosarcoma; trial enrollment is NCCN cat-1 for relapsed disease.</td><td>nct:NCT06788938; pmid:37861218; pmid:40454646</td><td>Slot availability at NCT06788938 enrolling sites; Pre-medication / monitoring logistics for cycle 1; Cross-tumor translatability of DLL3 BiTE mechanism — first osteosarcoma cohort</td></tr>
-    <tr><td>3</td><td class="">recommended</td><td><strong>regorafenib</strong></td><td><span class="persona persona-risktaker">risktaker</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span> <span class="persona persona-advocate">advocate</span></td><td>&mdash;</td><td>&mdash;</td><td>Median PFS 3.6 vs 1.7 mo (SARC024); 65% non-progression at 8 weeks (REGOBONE). No OS benefit (crossover designs).</td><td>hand-foot reaction; hypertension; fatigue; transaminitis; G3+ AE rate ~70%, manageable with dose reduction</td><td>Off-trial backbone. Universal endorsement. All-oral aligns with no-modality-constraints; no toxicity vetoes triggered.</td><td>NCCN-recommended for relapsed/refractory osteosarcoma.</td><td>pmid:31013172; pmid:30477937</td><td>Has the patient already had regorafenib?</td></tr>
-    <tr><td>4</td><td class="">recommended</td><td><strong>cabozantinib</strong></td><td><span class="persona persona-risktaker">risktaker</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span> <span class="persona persona-advocate">advocate</span></td><td>&mdash;</td><td>&mdash;</td><td>ORR 11.9% (95% CI 4.0-25.6); 6-mo non-progression 33.3% (CABONE).</td><td>thromboembolism (7%); hypertension; diarrhea; hand-foot syndrome; G3+ AE rate ~68%</td><td>Reasonable backup. Universal endorsement. All-oral.</td><td>NCCN-listed alternative for relapsed bone sarcoma.</td><td>pmid:32078813</td><td>Prior regorafenib history; VTE prophylaxis</td></tr>
       </tbody>
     </table>
   </div>

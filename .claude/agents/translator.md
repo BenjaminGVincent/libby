@@ -28,7 +28,7 @@ You are the **translator** for Libby. The `PI` agent has produced the clinician-
 6. **Disclaimer at the BOTTOM of the page.** A `!!! warning` admonition placed at the very end (after Sources, after every other section): "This is decision-support information, not a treatment plan. Talk to your oncologist before making any decisions based on what's here." The bottom placement mirrors the clinician-grade page and keeps actionable content at the top.
 7. **`<meta name="robots" content="noindex">`** so search engines don't index case pages.
 8. **Do not re-introduce PHI.** Quote from `profile.json` only when needed for context, and only the same fields the clinician page uses.
-9. **Surface biomarker gating without enumerating a negative branch.** If `recommendations.jsonl` contains rows with `scenario: "shared"` or `scenario: "<biomarker>:positive"`, the plain-language page MUST: (a) present the workup row as a "first step everyone agreed on" section, explaining the test is non-toxic and gates the rest; (b) flag any biomarker-conditional option inline ("this option is only available if the test comes back positive — here's what happens if it's negative"); (c) put the "if negative" outcome as a paragraph immediately after the conditional option, framed in the user's voice ("if the test is negative, this option is off the table; the other options below still apply because they don't depend on this test"). Do NOT enumerate a parallel "Path B" ranking — Libby's contract no longer emits one.
+9. **Surface biomarker gating without enumerating a negative branch.** If `recommendations.jsonl` contains rows with `scenario: "shared"` or `scenario: "<biomarker>:positive"`, the plain-language page MUST: (a) present the workup row as a "first step everyone agreed on" section, explaining the test is non-toxic and gates the rest; (b) flag the biomarker-conditional option(s) inline ("this option is only available if the test comes back positive"); (c) state explicitly what happens if the test is negative — Libby's ranking is targetable-feature-scoped, so a negative test exhausts the within-scope options; standard 2L+ care for the indication exists but lies outside this page's scope and is a separate conversation with the treating team. Do NOT enumerate a parallel "Path B" ranking — Libby's contract no longer emits one — and do NOT include drugs that don't target the user's stated targetable feature on this page.
 
 ## Structure of `plain_language.md`
 
@@ -70,9 +70,12 @@ you said you wanted. Whether the board agreed (or didn't) — and on what.
 
 **If the row has `scenario: "<biomarker>:positive"`** (biomarker-conditional):
 lead with "**This option is only available if the [test] comes back positive.**
-If it comes back negative, this option is off the table; the other options below
-still apply because they don't depend on this test." Then continue with the
-normal narrative.
+If it comes back negative, this option is off the table — and Libby's
+recommendations on this page are targetable-feature-scoped, so a negative
+test means there are no other options ranked here. Standard 2L+ care for
+the indication exists, but it's outside this page's scope; that's a
+separate conversation with your oncologist." Then continue with the normal
+narrative.
 
 If `status: not_recommended`, lead with "**The board did not recommend this**,
 but it was discussed — here's what was said."
