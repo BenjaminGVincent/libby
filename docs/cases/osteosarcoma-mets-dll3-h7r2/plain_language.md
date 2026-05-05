@@ -17,11 +17,11 @@ new drugs need to grab onto). So the recommendations come in two parts:
 **a first step everyone agreed on** (a confirmatory test), and then **one
 treatment option** that is only on the table if that test comes back positive.
 
-This page does **not** enumerate standard 2L+ care for relapsed osteosarcoma
-(things like regorafenib or cabozantinib). Those are real options, but they
-don't target DLL3 — so they fell outside the scope of the question you
-asked. Talk to your oncologist about them through the normal care channel,
-independent of this page.
+This page is scoped to **drugs that target DLL3** — that's the molecular
+feature the question was about. Other treatments may exist for relapsed
+osteosarcoma in general, but they don't target DLL3, so they're outside
+the scope of this page. Your oncologist will know which standard options
+apply to your situation; that's a separate conversation from this report.
 
 ## The first step everyone agreed on
 

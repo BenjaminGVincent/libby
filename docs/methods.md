@@ -1,5 +1,41 @@
 # Methods
 
+## Targetable-feature scope (cross-cutting rule)
+
+Libby is a **targetable-feature ranker**, not a standard-of-care concierge.
+The case slug commits to a specific molecular feature (or features) named in
+`profile.json::targetable_features[]` — e.g. *DLL3 RNA expression*, *EGFR
+L858R*, *MET exon-14 skipping*. Every downstream surface — the trial table,
+the clinical-evidence dossier, the preclinical dossier, the board positions,
+the PI ranking, the executive summary, the plain-language page, and the PDF
+report — is scoped to drugs whose mechanism plausibly targets one of those
+features.
+
+A drug is **in scope** if its mechanism binds, modulates, or acts via the
+named feature. A drug is **out of scope** if it does not, even when it has
+RCT-grade evidence in the patient's tumor type. Standard 2L+ care for the
+indication that doesn't act on the feature (e.g. multi-kinase TKIs in a
+DLL3-RNA case) is out of scope: the patient pursues those through their
+treating team, independent of Libby.
+
+The contract is enforced at every agent boundary:
+
+- `trial_screener` only logs trials whose drug targets the feature.
+- `clinician` only compiles clinical evidence for feature-targeting drugs.
+- `researcher` only logs preclinical evidence for feature-targeting drugs.
+- The 5 board personas only reason over the in-scope dossier.
+- `PI` only ranks feature-targeting interventions; out-of-scope drugs are
+  not named in the ranking, in "Classes examined but not ranked", or in any
+  narrative.
+- `translator` and `reporter` carry the same rule into the patient and PDF
+  surfaces.
+
+When a biomarker confirmatory test is negative and the test was the gate on
+the feature, the case has no within-scope recommendations and the
+cross-cutting caveat says exactly that — *without* naming standard-care
+alternatives. The treating team's standard-care conversation is a separate
+artifact from Libby's case page.
+
 ## Pipeline
 
 Libby is invoked one case at a time. A "case" is one patient (or one
@@ -178,10 +214,13 @@ The mechanism is on the schema and PI-prompt side:
   and is non-confirmed, emit a focused ranking with the workup at rank 1
   (`scenario: "shared"`) plus only the therapeutic rec(s) that target the
   gating feature, tagged `:positive`. Drugs that don't target the feature
-  (standard care for the indication that came up via the trial screener)
-  are not ranked; they're listed under "Classes examined but not ranked"
-  with an out-of-scope note. The cross-cutting caveat in `index.md` carries
-  the "if test negative, no within-scope recommendations" mapping.
+  (standard care for the indication) are out of scope and **do not appear
+  in the case output at all** — not in the ranking, not in "Classes examined
+  but not ranked", not by name in any narrative. The cross-cutting caveat in
+  `index.md` carries the "if test negative, no within-scope recommendations"
+  mapping without enumerating standard-care alternatives. The trial screener,
+  clinician, and researcher contracts enforce mechanism-scope upstream so
+  out-of-scope drugs do not enter the dossier in the first place.
 - **`translator.md`** prompt rule: surface the workup as "the first step
   everyone agreed on"; flag biomarker-conditional options inline with an
   "if negative" note; do NOT render a parallel negative-branch ranking.

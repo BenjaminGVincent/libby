@@ -189,9 +189,7 @@ Below ranks 1 and 2 because the alopecia veto is unconditional. Surfaced for tra
 ## Classes examined but not ranked
 
 - **Osimertinib re-challenge / dose escalation:** T790M absent — gatekeeper-mutation pathway is not the resistance mechanism, so re-challenge has no biomarker rationale.
-- **Platinum + pemetrexed chemotherapy:** SAFFRON's comparator arm; surfaces only as the off-trial fallback if the trial pathway is unreachable. Not advanced as a primary option in the dossier.
-- **Immunotherapy (anti-PD-1) for EGFR-mutant NSCLC:** historically negative as monotherapy in EGFR-mutant disease; PD-L1 TPS 10% does not change that. Not advanced.
-- **MET-targeted monotherapy (capmatinib, tepotinib):** indicated for METex14, not amplification; biomarker mismatch.
+- **MET-targeted monotherapy (capmatinib, tepotinib):** mechanistically targets the same feature class as the rank-1 savolitinib + osimertinib combo, but the approved indications are METex14 not amplification — biomarker subset mismatch.
 
 ## Ranked prioritization
 

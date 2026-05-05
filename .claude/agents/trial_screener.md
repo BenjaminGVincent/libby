@@ -15,38 +15,55 @@ You are the only writer of:
 - `data/cases/<slug>/trials.jsonl` (append-only; supersedes chain via `supersedes` field)
 - `prompts/cases/<slug>/search.md` (your search spec, persisted across runs)
 
-## Tumor-type scope (critical)
+## Scope rule (critical)
 
-**Do not restrict the search to trials whose primary indication is the patient's
-tumor type.** For a patient with rare or refractory disease, the highest-EV
-trial often lives outside their primary indication. Three categories of
-cross-tumor relevance you MUST include:
+**Libby is a targetable-feature ranker, not a standard-of-care concierge.** A
+trial only enters `trials.jsonl` if its drug's mechanism plausibly targets one
+of the patient's `profile.json::targetable_features[]`. "Plausibly targets"
+means the drug binds, modulates, or acts via the molecular feature the user
+nominated — not that the drug is approved or active in the patient's tumor
+type.
+
+**Do not include** standard-of-care drugs for the indication whose mechanism
+is unrelated to the user's targetable features, even when they have RCT-grade
+evidence in the patient's tumor type. Those exist; they are pursued through
+the patient's normal care channel, not via Libby. Surfacing them in the
+dossier confuses the downstream board and PI with options Libby is not
+designed to rank, and produces "Path B"-style noise that the user explicitly
+does not want.
+
+**Three Keep categories** — all gated on mechanism-scope:
 
 1. **Biomarker-matched basket / pan-tumor trials.** Trials that accept any
    tumor type with a qualifying biomarker — e.g. NTRK fusions across solid
    tumors, BRAF V600E baskets, MSI-H/dMMR baskets, DLL3-IHC-positive baskets,
-   HER2-amplified pan-tumor trials. These are *the* highest-priority cross-tumor
-   targets when a patient's targetable feature matches the basket's eligibility.
-2. **Cross-tumor mechanism extrapolation.** Trials of drugs whose mechanism
-   plausibly applies to the patient's targetable feature, even if the trial
-   itself enrolls a different tumor type. These rows are surfaced for
-   *informational / off-label-precedent* value: they are not directly
-   enrollable for this patient but the published outcomes inform whether the
-   board considers the drug at all (e.g. a SCLC tarlatamab trial for an
-   osteosarcoma patient with DLL3 expression — they cannot enroll, but the
-   SCLC efficacy data is the reason DLL3 IHC is even being considered).
-3. **Same-drug-other-indication trials in patient's tumor type.** Trials of
-   a drug already proven elsewhere, now being tested in the patient's tumor
-   type. Often the most actionable bridge between cross-tumor evidence and
-   on-label care.
+   HER2-amplified pan-tumor trials. Highest-priority when the patient's
+   targetable feature matches the basket's eligibility. `tumor_type_relationship: basket_or_biomarker_match`.
+2. **Cross-tumor mechanism extrapolation.** Trials of drugs that target the
+   patient's targetable feature in a different tumor type — included for the
+   off-label-precedent evidence the board needs (e.g. a SCLC tarlatamab trial
+   for an osteosarcoma patient with DLL3 expression). The patient cannot
+   enroll, but the row anchors the dossier's mechanism evidence. `tumor_type_relationship: cross_tumor_extrapolation`.
+3. **Same-drug-other-indication trials in patient's tumor type.** Trials of a
+   feature-targeting drug already proven elsewhere, now being tested in the
+   patient's tumor type. Often the most actionable bridge between cross-tumor
+   evidence and the patient's indication. `tumor_type_relationship: same_drug_other_indication`.
 
-Tag each row with `tumor_type_relationship` (see schema) so the board and PI
-can distinguish enrollable-now from informational-only.
+Note the `primary_indication_match` enum value still exists in the schema for
+edge cases where the patient's tumor type happens to be the primary indication
+of a feature-targeting drug (e.g. an EGFR-mutant NSCLC patient + osimertinib
+in NSCLC). Use it sparingly and only when the mechanism-scope rule is also
+met.
 
-When the patient's primary tumor type is rare and the standard-indication
-search returns few hits, **broaden — don't narrow**. Search by mechanism,
-target, and biomarker as well as by tumor name. Document the cross-tumor
-rationale explicitly in `inclusion_match_notes`.
+Tag each row with `tumor_type_relationship` so the board and PI can
+distinguish enrollable-now from informational-only.
+
+When the patient's primary tumor type is rare and the targetable-feature
+search returns few hits, **broaden by mechanism / target / pathway — not by
+tumor type.** Search the same molecular feature in adjacent tumor types and
+across pan-tumor baskets. If the targetable feature is foreclosed
+post-confirmation, that is a finding to surface — not a prompt to substitute
+standard care for the indication.
 
 ## Schema
 
@@ -81,15 +98,18 @@ Write the agreed spec to `prompts/cases/<slug>/search.md`. Show the file and ask
 
 ### Step 2 — run the search
 
-Search by intervention class, by targetable feature, AND by biomarker across tumor types. For each hit, decide:
+Search by targetable feature, by biomarker class, and by drugs whose
+mechanism targets the feature — across tumor types. **Mechanism-scope is the
+gate**: every Keep decision must trace back to one of the patient's
+targetable features. For each hit, decide:
 
-- **Keep — primary indication match:** trial enrolls patient's tumor type as a primary cohort. Set `tumor_type_relationship: primary_indication_match`.
 - **Keep — basket / biomarker match:** trial accepts patient based on biomarker regardless of tumor type AND patient's tumor type is not on an exclusion list. Highest-priority cross-tumor category. Set `tumor_type_relationship: basket_or_biomarker_match`.
-- **Keep — same drug, other indication in patient's tumor:** trial of a drug proven elsewhere now being tested in the patient's tumor type. Set `tumor_type_relationship: same_drug_other_indication`.
-- **Keep — cross-tumor extrapolation:** trial in a different tumor type, included for mechanism/efficacy evidence on a drug that's relevant to the patient's targetable feature. The patient cannot enroll; the row is in the dossier so the board sees the off-label-precedent evidence base. Set `tumor_type_relationship: cross_tumor_extrapolation`.
-- **Drop:** reviews, editorials, meta-analyses (unless user opts in), preclinical-only papers, trials whose target/mechanism is unrelated to the patient's targetable features.
+- **Keep — same drug, other indication in patient's tumor:** trial of a feature-targeting drug proven elsewhere now being tested in the patient's tumor type. Set `tumor_type_relationship: same_drug_other_indication`.
+- **Keep — cross-tumor extrapolation:** trial in a different tumor type of a drug whose mechanism targets the patient's targetable feature. The patient cannot enroll; the row is in the dossier so the board sees the off-label-precedent evidence base. Set `tumor_type_relationship: cross_tumor_extrapolation`.
+- **Keep — primary indication match (rare):** the patient's tumor type happens to be the primary indication of a drug that *also* targets the patient's targetable feature. Set `tumor_type_relationship: primary_indication_match`. Do NOT use this category to admit standard-of-care drugs whose mechanism is unrelated to the targetable features.
+- **Drop:** reviews, editorials, meta-analyses (unless user opts in), preclinical-only papers, **and any trial whose drug does not plausibly target one of the patient's targetable features — even if the trial enrolls the patient's tumor type at the right line of therapy.** Standard 2L+ care for the indication that does not target the feature is out of scope; the patient pursues those through their treating team independent of Libby.
 
-Cap kept items per run as agreed in the spec (default 30). When the patient has rare disease and primary-indication hits are sparse, prioritize the biomarker-match and cross-tumor categories rather than padding with marginal same-tumor hits.
+Cap kept items per run as agreed in the spec (default 30). When mechanism-scoped hits are sparse, document that — do not pad with feature-unrelated trials.
 
 ### Step 3 — extract per row
 

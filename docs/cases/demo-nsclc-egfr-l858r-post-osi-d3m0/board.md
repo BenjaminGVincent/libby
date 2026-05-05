@@ -2,7 +2,7 @@
 
 # Tumor-board transcript — `demo-nsclc-egfr-l858r-post-osi-d3m0`
 
-_5 positions, 20 cross-critiques._
+_5 positions, 17 cross-critiques._
 
 ## Agreement matrix
 
@@ -15,7 +15,6 @@ Cells show round-1 picks (rank N) where the persona endorsed at round 1, or the 
     <tr><td><strong>amivantamab + lazertinib</strong></td><td class="cell-endorse">rank 1</td><td class="cell-veto">veto</td><td class="cell-dissent">rank 2</td><td class="cell-endorse">rank 1</td><td class="cell-dissent">rank 2</td></tr>
     <tr><td><strong>savolitinib + osimertinib</strong></td><td class="cell-qualified">rank 2</td><td class="cell-endorse">rank 1</td><td class="cell-qualified">rank 1</td><td class="cell-qualified">rank 3</td><td class="cell-endorse">rank 1</td></tr>
     <tr><td><strong>patritumab deruxtecan (HER3-DXd)</strong></td><td class="cell-endorse">rank 3</td><td class="cell-absent"></td><td class="cell-absent"></td><td class="cell-absent"></td><td class="cell-absent"></td></tr>
-    <tr><td><strong>platinum + pemetrexed</strong></td><td class="cell-absent"></td><td class="cell-endorse">rank 2</td><td class="cell-qualified">qualified</td><td class="cell-endorse">rank 2</td><td class="cell-dissent">dissent</td></tr>
     </tbody>
   </table>
 </div>
@@ -87,28 +86,6 @@ Cells show round-1 picks (rank N) where the persona endorsed at round 1, or the 
 <tr><td><span class="persona persona-critic">critic</span></td><td>—</td><td>—</td><td><em>did not pick</em></td><td>—</td></tr>
 <tr><td><span class="persona persona-concensusite">concensusite</span></td><td>—</td><td>—</td><td><em>did not pick</em></td><td>—</td></tr>
 <tr><td><span class="persona persona-advocate">advocate</span></td><td>—</td><td>—</td><td><em>did not pick</em></td><td>—</td></tr>
-</tbody></table></div>
-
-
-### platinum + pemetrexed (`platinum-pemetrexed`)
-
-**Persona stances**
-
-<div class="trial-table-wrap"><table class="trial-table"><thead><tr><th>Persona</th><th>Rank</th><th>Confidence</th><th>Rationale</th><th>Concerns</th></tr></thead><tbody>
-<tr><td><span class="persona persona-risktaker">risktaker</span></td><td>—</td><td>—</td><td><em>did not pick</em></td><td>—</td></tr>
-<tr><td><span class="persona persona-conservative">conservative</span></td><td>2</td><td>high</td><td>Standard salvage with decades of safety data, well-characterized AE management, broad clinical familiarity. Inferior efficacy expected in this biomarker context but lowest uncertainty.</td><td>myelosuppression; modality conflict — IV</td></tr>
-<tr><td><span class="persona persona-critic">critic</span></td><td>—</td><td>—</td><td><em>did not pick</em></td><td>—</td></tr>
-<tr><td><span class="persona persona-concensusite">concensusite</span></td><td>2</td><td>high</td><td>NCCN category 1 for EGFR-mutant NSCLC after TKI failure. Default standard.</td><td>modality conflict</td></tr>
-<tr><td><span class="persona persona-advocate">advocate</span></td><td>—</td><td>—</td><td><em>did not pick</em></td><td>—</td></tr>
-</tbody></table></div>
-
-
-**Cross-critiques**
-
-<div class="trial-table-wrap"><table class="trial-table"><thead><tr><th>Critic</th><th>Target</th><th>Agreement</th><th>Dimension</th><th>Comment</th></tr></thead><tbody>
-<tr><td><span class="persona persona-critic">critic</span></td><td>conservative</td><td><span class="agree-qualified">qualified</span></td><td>evidence_quality</td><td>Strong safety data, but for this biomarker stratum the expected efficacy is materially below targeted alternatives — &quot;safest option&quot; can be the wrong question.</td></tr>
-<tr><td><span class="persona persona-concensusite">concensusite</span></td><td>conservative</td><td><span class="agree-endorse">endorse</span></td><td>guideline_fit</td><td>NCCN category 1 default after TKI progression — appropriate fallback.</td></tr>
-<tr><td><span class="persona persona-advocate">advocate</span></td><td>conservative</td><td><span class="agree-dissent">dissent</span></td><td>preference_fit</td><td>IV cytotoxic regimen with hair loss and modality conflict — patient said no.</td></tr>
 </tbody></table></div>
 
 

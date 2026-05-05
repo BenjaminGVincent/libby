@@ -67,8 +67,15 @@ def cell_class(level: str) -> str:
     }.get(level, "cell-absent")
 
 
-def collect_interventions(positions: list[dict]) -> list[tuple[str, str]]:
-    """Return ordered (intervention_id, intervention_label) preserving rank-1 priority."""
+def collect_interventions(
+    positions: list[dict], in_scope: set[str] | None = None
+) -> list[tuple[str, str]]:
+    """Return ordered (intervention_id, intervention_label) preserving rank-1 priority.
+
+    If `in_scope` is provided, drop picks whose intervention_id is not in the set —
+    those are out-of-scope per the case's targetable-feature ranking and must not
+    surface on board.md. The audit trail in positions.jsonl is unchanged.
+    """
     seen: dict[str, str] = {}
     rank1_first: list[str] = []
     others: list[str] = []
@@ -77,6 +84,8 @@ def collect_interventions(positions: list[dict]) -> list[tuple[str, str]]:
             iid = pick.get("intervention_id")
             label = pick.get("intervention_label") or iid
             if not iid or iid in seen:
+                continue
+            if in_scope is not None and iid not in in_scope:
                 continue
             seen[iid] = label
             if pick.get("rank") == 1:
@@ -174,7 +183,17 @@ def main() -> int:
     positions = load_jsonl(case_dir / "board" / "positions.jsonl")
     critiques = load_jsonl(case_dir / "board" / "critiques.jsonl")
 
-    interventions = collect_interventions(positions)
+    # Targetable-feature scope: only render drugs that survived to recommendations.jsonl.
+    # Picks/critiques on out-of-scope drugs (e.g. standard-care drugs that don't target
+    # the user's feature) are dropped at render time; the data files keep history.
+    rec_rows = load_jsonl(case_dir / "recommendations.jsonl")
+    in_scope: set[str] | None = None
+    if rec_rows:
+        in_scope = {r.get("intervention_id") for r in rec_rows if r.get("intervention_id")}
+
+    interventions = collect_interventions(positions, in_scope=in_scope)
+    if in_scope is not None:
+        critiques = [c for c in critiques if c.get("target_intervention_id") in in_scope or c.get("target_intervention_id") is None]
     matrix = render_matrix(positions, critiques, interventions)
 
     sections = [render_intervention_section(iid, label, positions, critiques) for iid, label in interventions]

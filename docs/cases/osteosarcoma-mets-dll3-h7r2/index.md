@@ -37,14 +37,14 @@ In metastatic osteosarcoma after first-line MAP, what interventions could target
 
 ## Scope summary
 
-7 trials, 5 clinical-evidence rows, 4 preclinical rows. Two ranked rows: a workup gate at rank 1 plus one biomarker-conditional therapeutic option at rank 2. Board agreement: full consensus (all five personas) on the workup; one persistent dissent (critic) on the conditional rank-2 trial. Standard 2L+ care for relapsed osteosarcoma (regorafenib, cabozantinib) lies outside this case's targetable-feature scope and is not enumerated here.
+3 trials, 3 clinical-evidence rows, 4 preclinical rows. Two ranked rows: a workup gate at rank 1 plus one biomarker-conditional therapeutic option at rank 2. Board agreement: full consensus (all five personas) on the workup; one persistent dissent (critic) on the conditional rank-2 trial. The case is scoped to drugs that target the user's stated targetable feature (DLL3); standard 2L+ care for the indication is out of scope and is not enumerated.
 
 ## Cross-cutting caveat (read first)
 
 **The DLL3 RNA expression in user input does not establish membrane DLL3 protein. The DLL3 IHC SP347 test (rank 1) gates whether tarlatamab via NCT06788938 (rank 2) is on the table at all.** Every DLL3-directed therapy in current clinical use requires IHC protein-level confirmation; RNA expression is necessary but not sufficient.
 
 - **Rank 2 (tarlatamab)** is conditional on DLL3 IHC ≥1% (preferably ≥25%). It is the only therapeutic option within scope of this case's targetable feature.
-- **If IHC is negative:** rank 2 is foreclosed and this case has no within-scope recommendations. The targetable-feature pathway is closed; the patient and clinician should pursue standard 2L+ care for relapsed osteosarcoma through their normal care channel — that lies outside Libby's targetable-feature-driven scope here.
+- **If IHC is negative:** rank 2 is foreclosed and this case has no within-scope recommendations. Libby's ranking is targetable-feature-scoped; standard 2L+ care for the indication is a separate conversation with the treating team and is not enumerated on this page.
 - **Workup logistics:** SP347 IHC is non-toxic, runs on archival tissue (no fresh biopsy required), takes 1–3 weeks, and costs almost nothing relative to a treatment cycle. Confirm assay availability at the treating institution.
 
 ## Intervention grouping
@@ -137,10 +137,7 @@ The only DLL3-directed therapeutic option on the table, conditional on biomarker
 
 ## Classes examined but not ranked
 
-- **Anti-PD-1 / PD-L1 monotherapy in osteosarcoma:** historically negative (SARC028 and successors); not DLL3-directed.
-- **HER2-, GD2-, B7-H3-directed therapies:** not in the dossier for this case; no biomarker selection performed at intake.
-- **MTP-PE (mifamurtide):** historical adjuvant data in newly diagnosed disease; not 2L+; not DLL3-directed.
-- **Multi-kinase TKIs (regorafenib, cabozantinib):** standard 2L+ care for relapsed osteosarcoma per NCCN ([PMID 31013172](https://pubmed.ncbi.nlm.nih.gov/31013172), [PMID 30477937](https://pubmed.ncbi.nlm.nih.gov/30477937), [PMID 32078813](https://pubmed.ncbi.nlm.nih.gov/32078813)). They do not target DLL3 and lie outside this case's targetable-feature scope. Surfaced here for transparency only — they should be considered through the patient's normal care channel, not via Libby's targeted-feature ranking.
+- **DLL3-directed ADCs (rovalpituzumab tesirine / Rova-T):** mechanistically in scope as a DLL3-targeting modality; not procurable — AbbVie withdrew Rova-T after the TAHOE phase-3 SCLC trial showed worse OS than topotecan ([PMID 33002438](https://pubmed.ncbi.nlm.nih.gov/33002438)). Listed for mechanism context; not actionable.
 
 ## Ranked prioritization
 
@@ -165,22 +162,6 @@ The only DLL3-directed therapeutic option on the table, conditional on biomarker
           <td><strong>Moderate</strong> <span class="cpm-desc">(On-mechanism CNS bystander T-cell activation drives ICANS; possible DLL3 antigen-loss escape on repeated dosing)</span></td>
           <td><strong>The only DLL3-directed option when IHC is positive — preference-aligned but cross-tumor translation untested; foreclosed if IHC negative.</strong></td>
         </tr>
-        <tr>
-          <td>3</td>
-          <td><strong>regorafenib</strong><br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span> <span class="persona persona-advocate">advocate</span></small></td>
-          <td>Moderate. mPFS 3.6 vs 1.7 mo (SARC024, HR 0.42, p=0.017); independently replicated in REGOBONE — strongest 2L+ osteosarcoma RCT evidence base.</td>
-          <td>High (G3+ AEs 70-76%: hand-foot, hypertension, fatigue, mucositis; ~65% require dose reduction; no treatment-related deaths)</td>
-          <td><strong>Low</strong> <span class="cpm-desc">(Anti-angiogenic mechanism can impair wound healing and raise bleeding risk; no on-target counter-productive vector)</span></td>
-          <td><strong>Strongest replicated 2L+ osteosarcoma RCT evidence; biomarker-independent backbone regardless of IHC.</strong></td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td><strong>cabozantinib</strong><br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span> <span class="persona persona-advocate">advocate</span></small></td>
-          <td>Modest. ORR ~12% in CABONE osteosarcoma cohort (n=42); mPFS 6.2 mo. Single-arm phase-2 evidence — supportive but not RCT-grade.</td>
-          <td>High (G3+ AEs ~68%: hypertension, hand-foot, hypophosphatemia, transaminitis; thromboembolism ~7%)</td>
-          <td><strong>Low</strong> <span class="cpm-desc">(VEGFR-driven thromboembolism / wound-healing impairment is class-effect off-target; no on-mechanism counter-productive vector)</span></td>
-          <td><strong>Single-arm sarcoma-cohort signal; biomarker-independent fallback when an RCT-grade option is exhausted or unavailable.</strong></td>
-        </tr>
       </tbody>
     </table>
   </div>
@@ -196,8 +177,7 @@ The only DLL3-directed therapeutic option on the table, conditional on biomarker
 - **What would change the ranking:**
     - A positive DLL3 IHC plus a head-to-head osteosarcoma cohort within the basket trial reading out would move tarlatamab from "mechanism unproven cross-tumor" to "evidence-supported" and tighten its rank-2 confidence.
     - A user toxicity veto on CRS / inpatient cycle-1 monitoring would foreclose tarlatamab even with positive IHC.
-    - Slot unavailability at NCT06788938 sites would close the within-scope therapeutic pathway entirely; standard 2L+ care for the indication would be the patient's residual option (outside Libby's enumeration here).
-- **Out-of-scope caveat:** standard 2L+ care for relapsed osteosarcoma (regorafenib's two-RCT base, cabozantinib's CABONE phase-2) was surfaced by the trial screener and reviewed by the board, but those drugs do not target the user's stated targetable feature (DLL3). They are not ranked on this page; pursue them through the treating team independent of Libby's targetable-feature ranking.
+    - Slot unavailability at NCT06788938 sites would close the within-scope therapeutic pathway; the patient's residual options would be the treating team's standard-of-care conversation, which lies outside Libby's targetable-feature scope and is not enumerated here.
 
 ## Sources
 
@@ -215,15 +195,15 @@ The only DLL3-directed therapeutic option on the table, conditional on biomarker
 
 ## Transparency artifacts
 
-- [Trial table](trials.md) — 7 rows, all 25 columns
-- [Evidence list](evidence.md) — 5 clinical-evidence rows + 4 preclinical rows
-- [Tumor-board transcript](board.md) — 5 positions, 20 cross-critiques
+- [Trial table](trials.md) — 3 rows, all 25 columns
+- [Evidence list](evidence.md) — 3 clinical-evidence rows + 4 preclinical rows
+- [Tumor-board transcript](board.md) — 5 positions, 20 cross-critiques (filtered to in-scope drugs at render time)
 - [Recommendations table](recommendations.md) — full ranked detail with biomarker-conditional flag
 - [Plain-language summary](plain_language.md) — patient/caregiver track
 
 ## Run log
 
-Authored May 2026. Inputs supplied: targetable feature ("DLL3 RNA expression"), clinical descriptor ("metastatic osteosarcoma"), preference summary ("accepts high-risk high-reward options"). Re-rendered when Libby's biomarker-confirmation contract narrowed: instead of emitting parallel positive/negative therapeutic rankings, the PI now flags the confirmatory test as the rank-1 workup and tags only biomarker-conditional recs with `:positive`. Negative-branch ranking is foreclosed via the cross-cutting caveat above. Standard 2L+ care for the indication is out of scope and not ranked here.
+Authored May 2026. Inputs supplied: targetable feature ("DLL3 RNA expression"), clinical descriptor ("metastatic osteosarcoma"), preference summary ("accepts high-risk high-reward options"). Re-rendered when Libby's case scope was tightened to drugs that target the user's stated targetable feature: out-of-scope drugs (standard care for the indication that doesn't act on DLL3) no longer enter the dossier or appear in any case surface. The cross-cutting caveat carries the negative-result foreclosure mapping; the standard-of-care conversation for the indication is the treating team's, not Libby's.
 
 !!! danger disclaimer "Decision support, not medical advice"
     Libby is an experimental decision-support tool. The recommendations on
