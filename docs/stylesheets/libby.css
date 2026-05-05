@@ -64,8 +64,9 @@
   color: #B71C1C;
 }
 
-/* Agreement matrix heatmap (board.md). Cells carry explicit foreground+background
-   so they remain legible on both Material default and slate color schemes. */
+/* Agreement matrix heatmap (board.md). Pastel cells carry explicit
+   foreground+background that remain legible regardless of scheme; matrix
+   chrome (header, borders, no-opinion cells) uses scheme-aware selectors. */
 .agreement-matrix {
   border-collapse: collapse;
   font-size: 0.85em;
@@ -73,15 +74,41 @@
 .agreement-matrix th, .agreement-matrix td {
   padding: 0.35em 0.5em;
   text-align: center;
-  border: 1px solid var(--md-default-fg-color--lightest);
-  color: var(--md-typeset-color);
 }
-.agreement-matrix th {
-  background: var(--md-default-fg-color--lightest);
-  font-weight: 600;
-}
+.agreement-matrix th { font-weight: 600; }
+
+/* Pastel cell colors — same in both schemes (high contrast on their own bg). */
 .agreement-matrix td.cell-endorse   { background: #C8E6D0; color: #14532D; }
 .agreement-matrix td.cell-qualified { background: #FCEEC2; color: #5A4500; }
 .agreement-matrix td.cell-dissent   { background: #F4C7BE; color: #6F2E1A; }
 .agreement-matrix td.cell-veto      { background: #E8A399; color: #4A1408; font-weight: 700; }
-.agreement-matrix td.cell-absent    { background: var(--md-default-fg-color--lightest); color: var(--md-default-fg-color--light); }
+
+/* Default (light) scheme chrome. */
+[data-md-color-scheme="default"] .agreement-matrix th,
+[data-md-color-scheme="default"] .agreement-matrix td {
+  border: 1px solid #E2E8F0;
+  color: #1A202C;
+}
+[data-md-color-scheme="default"] .agreement-matrix th {
+  background: #F4F6F8;
+  color: #1A202C;
+}
+[data-md-color-scheme="default"] .agreement-matrix td.cell-absent {
+  background: #F1F3F5;
+  color: #94A3B8;
+}
+
+/* Slate (dark) scheme chrome. */
+[data-md-color-scheme="slate"] .agreement-matrix th,
+[data-md-color-scheme="slate"] .agreement-matrix td {
+  border: 1px solid #3A4159;
+  color: #E2E8F0;
+}
+[data-md-color-scheme="slate"] .agreement-matrix th {
+  background: #2D3344;
+  color: #F1F5F9;
+}
+[data-md-color-scheme="slate"] .agreement-matrix td.cell-absent {
+  background: #232838;
+  color: #64748B;
+}
