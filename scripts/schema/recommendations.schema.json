@@ -41,6 +41,28 @@
     "guideline_status": { "type": "string" },
     "rationale_summary": { "type": "string" },
     "open_questions": { "type": "array", "items": { "type": "string" } },
+    "likelihood_of_effect": {
+      "type": "string",
+      "description": "≤ 25-word qualitative narrative for the at-a-glance ranked-prioritization table. Lead with a tier descriptor ('High in <subset>', 'Moderate', 'Low for <endpoint>') + the load-bearing evidence anchor (effect size, concordance across replicate trials, or trial reference). Distilled from the per-rank 'Likelihood of desired effect' prose."
+    },
+    "toxicity_burden": {
+      "type": "string",
+      "description": "Patient-level AE burden as a tier ('Low' | 'Moderate' | 'High') + parenthetical of 2-4 characteristic G3+ AEs. Aggregation rule: Low if all G≥3 rates < 20%, Moderate if any 20-50%, High if any > 50% or if treatment-related death > 0. Distinct from `counter_productive_moa` (col 5) which is mechanism-level risk."
+    },
+    "counter_productive_moa": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["severity"],
+      "properties": {
+        "severity": { "type": "string", "enum": ["Low", "Moderate", "High", "N/A"] },
+        "description": { "type": "string", "description": "≤ 20 words. Names the mechanism-level risk that could blunt the therapeutic goal — T-cell exhaustion, antigen-loss escape, anti-angiogenic wound-healing impairment, etc. Distinct from patient AEs (those go in `toxicity_burden`)." }
+      },
+      "description": "Mechanism-level counter-productive risk. Severity rule: Low if dissent is preference-flavored only, Moderate if a board persona dissented on mechanism grounds, High if a veto stood on mechanism grounds. Workup / diagnostic rows always `N/A`."
+    },
+    "overall": {
+      "type": "string",
+      "description": "≤ 30-word declarative summary, rendered bold. Names the load-bearing tradeoff or scope — NOT the rank ordering. Sharpened from the per-rank 'Why this rank' prose. Examples: 'Strongest replicated 2L+ osteosarcoma RCT evidence; biomarker-independent backbone regardless of IHC.', 'The only DLL3-directed option when IHC is positive — preference-aligned but cross-tumor translation untested.'"
+    },
     "status": {
       "type": "string",
       "enum": ["recommended", "considered_with_caveats", "not_recommended"],

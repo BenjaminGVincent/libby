@@ -284,12 +284,23 @@ def _status_class(status: str) -> str:
 
 
 _RECS_HEAD_HTML = (
-    "<th>Rank</th><th>Status</th><th>Intervention</th>"
-    "<th>Endorsed by</th><th>Dissent</th><th>Veto</th>"
-    "<th>Expected benefit</th><th>Key risks</th>"
-    "<th>Preference fit</th><th>Guideline</th>"
-    "<th>Evidence anchor</th><th>Open questions</th>"
+    "<th>Rank</th><th>Intervention</th>"
+    "<th>Likelihood of effect</th><th>Toxicity burden</th>"
+    "<th>Counter-productive MoA</th><th>Overall</th>"
 )
+
+
+def _persona_line_html(r: dict) -> str:
+    pieces: list[str] = []
+    for label, key in (("endorse", "endorsed_by"), ("dissent", "dissent_by"), ("veto", "veto_by")):
+        personas = r.get(key) or []
+        if not personas:
+            continue
+        pills = " ".join(
+            f'<span class="persona persona-{_html.escape(p)}">{_html.escape(p)}</span>' for p in personas
+        )
+        pieces.append(f'<small><em>{label}:</em> {pills}</small>')
+    return "<br>".join(pieces)
 
 
 def _intervention_cell_html(r: dict) -> str:
@@ -297,11 +308,34 @@ def _intervention_cell_html(r: dict) -> str:
     scen = r.get("scenario")
     if isinstance(scen, str) and scen.endswith(":positive"):
         biomarker_short = scen.split(":", 1)[0]
-        return (
-            f"<td><strong>{label}</strong> "
-            f'<span class="scenario-conditional">(conditional on {_html.escape(biomarker_short)} positive)</span></td>'
+        head = (
+            f"<strong>{label}</strong> "
+            f'<span class="scenario-conditional">(conditional on {_html.escape(biomarker_short)} positive)</span>'
         )
-    return f"<td><strong>{label}</strong></td>"
+    else:
+        head = f"<strong>{label}</strong>"
+    persona = _persona_line_html(r)
+    body = f"{head}<br>{persona}" if persona else head
+    return f"<td>{body}</td>"
+
+
+def _cpm_cell_html(r: dict) -> str:
+    cpm = r.get("counter_productive_moa") or {}
+    severity = cpm.get("severity")
+    description = cpm.get("description")
+    if not severity:
+        return "<td>&mdash;</td>"
+    sev_html = f"<strong>{_html.escape(str(severity))}</strong>"
+    if description:
+        return f'<td>{sev_html} <span class="cpm-desc">({_html.escape(str(description))})</span></td>'
+    return f"<td>{sev_html}</td>"
+
+
+def _overall_cell_html(r: dict) -> str:
+    overall = r.get("overall")
+    if not overall:
+        return "<td>&mdash;</td>"
+    return f"<td><strong>{_html.escape(str(overall))}</strong></td>"
 
 
 def _render_recs_table_html(rows: list[dict]) -> str:
@@ -309,22 +343,14 @@ def _render_recs_table_html(rows: list[dict]) -> str:
         return "<p><em>No rows.</em></p>"
     body: list[str] = []
     for r in rows:
-        status = r.get("status", "recommended")
-        klass = _status_class(status)
         body.append(
             "    <tr>"
             f"<td>{_fmt_html(r.get('rank'))}</td>"
-            f'<td class="{klass}">{_html.escape(status)}</td>'
             f"{_intervention_cell_html(r)}"
-            f"<td>{_persona_badges_html(r.get('endorsed_by'))}</td>"
-            f"<td>{_persona_badges_html(r.get('dissent_by'))}</td>"
-            f"<td>{_persona_badges_html(r.get('veto_by'))}</td>"
-            f"<td>{_fmt_html(r.get('expected_benefit'))}</td>"
-            f"<td>{_fmt_html(r.get('key_risks'))}</td>"
-            f"<td>{_fmt_html(r.get('preference_alignment'))}</td>"
-            f"<td>{_fmt_html(r.get('guideline_status'))}</td>"
-            f"<td>{_fmt_html(r.get('evidence_anchor'))}</td>"
-            f"<td>{_fmt_html(r.get('open_questions'))}</td>"
+            f"<td>{_fmt_html(r.get('likelihood_of_effect'))}</td>"
+            f"<td>{_fmt_html(r.get('toxicity_burden'))}</td>"
+            f"{_cpm_cell_html(r)}"
+            f"{_overall_cell_html(r)}"
             "</tr>"
         )
     return (

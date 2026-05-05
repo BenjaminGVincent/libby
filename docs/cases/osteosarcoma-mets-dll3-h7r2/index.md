@@ -144,10 +144,50 @@ The only DLL3-directed therapeutic option on the table, conditional on biomarker
 
 ## Ranked prioritization
 
-| Rank | Status | Intervention | Endorsed by | Dissent | Veto | Likelihood | Toxicity burden | Why this rank |
-|---|---|---|---|---|---|---|---|---|
-| 1 | recommended | DLL3 IHC (SP347) | <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span> <span class="persona persona-advocate">advocate</span> | — | — | Resolves rank 2 reachability | None | Gate; precondition for rank 2 |
-| 2 | recommended | Tarlatamab via NCT06788938 (conditional on DLL3 IHC positive) | <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-advocate">advocate</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-concensusite">concensusite</span> | <span class="persona persona-critic">critic</span> | — | Mechanism unproven cross-tumor | CRS, ICANS, C1 inpatient | Only DLL3-directed option; preference fit |
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td><strong>DLL3 IHC (SP347) on tumor — diagnostic gate</strong><br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span> <span class="persona persona-advocate">advocate</span></small></td>
+          <td>Diagnostic certainty — resolves whether the DLL3-directed pathway is reachable; required by NCT06788938 (≥25% stage 1, ≥1% stage 2).</td>
+          <td>Low (none — diagnostic test on archival tissue)</td>
+          <td><strong>N/A</strong> <span class="cpm-desc">(diagnostic, not therapeutic)</span></td>
+          <td><strong>Non-toxic precondition that gates rank 2 entirely; run regardless of which therapy is ultimately chosen.</strong></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><strong>tarlatamab via NCT06788938 (UCCC-01 basket)</strong> <span class="scenario-conditional">(conditional on dll3_ihc positive)</span><br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-advocate">advocate</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-concensusite">concensusite</span></small><br><small><em>dissent:</em> <span class="persona persona-critic">critic</span></small></td>
+          <td>Cross-tumor extrapolation: SCLC OS HR 0.60 (DeLLphi-304); ORR ~40% (DeLLphi-301). Osteosarcoma efficacy is the open question NCT06788938 will answer.</td>
+          <td>Moderate (CRS ~50% mostly G1-2; CRS G≥3 ~1%; ICANS-like ~10%; inpatient cycle-1 step-up dosing required)</td>
+          <td><strong>Moderate</strong> <span class="cpm-desc">(On-mechanism CNS bystander T-cell activation drives ICANS; possible DLL3 antigen-loss escape on repeated dosing)</span></td>
+          <td><strong>The only DLL3-directed option when IHC is positive — preference-aligned but cross-tumor translation untested; foreclosed if IHC negative.</strong></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><strong>regorafenib</strong><br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span> <span class="persona persona-advocate">advocate</span></small></td>
+          <td>Moderate. mPFS 3.6 vs 1.7 mo (SARC024, HR 0.42, p=0.017); independently replicated in REGOBONE — strongest 2L+ osteosarcoma RCT evidence base.</td>
+          <td>High (G3+ AEs 70-76%: hand-foot, hypertension, fatigue, mucositis; ~65% require dose reduction; no treatment-related deaths)</td>
+          <td><strong>Low</strong> <span class="cpm-desc">(Anti-angiogenic mechanism can impair wound healing and raise bleeding risk; no on-target counter-productive vector)</span></td>
+          <td><strong>Strongest replicated 2L+ osteosarcoma RCT evidence; biomarker-independent backbone regardless of IHC.</strong></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td><strong>cabozantinib</strong><br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span> <span class="persona persona-advocate">advocate</span></small></td>
+          <td>Modest. ORR ~12% in CABONE osteosarcoma cohort (n=42); mPFS 6.2 mo. Single-arm phase-2 evidence — supportive but not RCT-grade.</td>
+          <td>High (G3+ AEs ~68%: hypertension, hand-foot, hypophosphatemia, transaminitis; thromboembolism ~7%)</td>
+          <td><strong>Low</strong> <span class="cpm-desc">(VEGFR-driven thromboembolism / wound-healing impairment is class-effect off-target; no on-mechanism counter-productive vector)</span></td>
+          <td><strong>Single-arm sarcoma-cohort signal; biomarker-independent fallback when an RCT-grade option is exhausted or unavailable.</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+!!! note "Reading the columns"
+    **Toxicity burden** is patient-level G3+ AE severity (Low / Moderate / High) summarized from the trial publications. **Counter-productive MoA** is the mechanism-level risk that the intervention's own pathway could blunt the therapeutic goal — distinct from patient AEs. The board's endorse / dissent / veto state appears as pills under each intervention; full per-persona rationale lives on the [board page](board.md).
 
 ## Caveats
 

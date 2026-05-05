@@ -84,6 +84,18 @@ For each intervention, fill out:
 - `rationale_summary` ≤ 6 sentences, synthesizing the five positions + critiques. Surface disagreement; do not flatten it.
 - `open_questions[]` — what the dossier could not resolve.
 
+**Ranked-prioritization summary fields (drive the at-a-glance table in section 11 of `index.md`).** Compute these from the same source material — do not re-evaluate the dossier.
+
+- `likelihood_of_effect` — ≤ 25-word qualitative narrative. Lead with a tier descriptor ("High in <subset>", "Moderate", "Low for <endpoint>"), then cite the load-bearing evidence anchor (effect size or trial-concordance reference). Distill from the per-rank "Likelihood of desired effect" sub-section in `index.md`.
+- `toxicity_burden` — `<tier> (<2-4 characteristic G3+ AEs>)`. Aggregation rule on `clinical_evidence.jsonl::toxicities[]` rows attached to this intervention: **Low** if all G≥3 AE rates < 20%; **Moderate** if any 20–50%; **High** if any > 50% or if a treatment-related death is reported. Append the 2–4 most characteristic AEs in parens. Workup / diagnostic rows: `Low (none — diagnostic test on tissue)`.
+- `counter_productive_moa` — object `{severity, description}`. Severity rule:
+    - `Low` when dissent is preference-flavored only (e.g. "trial logistics") or the mechanism has no plausible counter-productive vector.
+    - `Moderate` when a board persona (typically `critic` or `risktaker`) dissented on mechanism grounds in their round-2 critique.
+    - `High` when a `veto` stood on mechanism grounds (i.e. `veto_by[]` non-empty AND the cited dimension is `evidence_quality`, `toxicity-as-mechanism`, or `other` with a mechanism rationale).
+    - `N/A` for workup / diagnostic rows.
+    Description ≤ 20 words. Names the mechanism-level risk that could blunt the therapeutic goal — T-cell exhaustion, antigen-loss escape, on-mechanism CNS bystander activation, anti-angiogenic wound-healing impairment, etc. Distinct from patient AEs (those go in `toxicity_burden`).
+- `overall` — bold one-sentence summary, ≤ 30 words. Names the load-bearing tradeoff or scope. Should NOT mention rank ordering. Sharpen from the per-rank "Why this rank" sub-section. Examples: *"Strongest replicated 2L+ osteosarcoma RCT evidence; biomarker-independent backbone regardless of IHC."*, *"The only DLL3-directed option when IHC is positive — preference-aligned but cross-tumor translation untested."*
+
 ## docs/cases/<slug>/index.md
 
 The case landing page mirrors the **io-shieldbreak shieldbreak-report layout** (see `pirl-unc/io-shieldbreak/docs/shieldbreaks/<slug>/index.md` for reference). Lead with the research question; integrate Libby's PHI-scrubbed profile + preferences as the case-specific "scope"; surface the load-bearing concern as a cross-cutting caveat the reader hits before the ranked options; render each top intervention as a deep narrative (not just a row); and close with sources and transparency links.
@@ -161,7 +173,20 @@ Render in this exact section order:
    **Single unified ranking — no Path A / Path B split.** When the case has biomarker gating, render the workup row as the first H2 ("## Rank 1. DLL3 IHC SP347 on tumor — diagnostic gate"), then the biomarker-conditional therapeutic ranks below it (rank 2, 3, ...). Each conditional rec gets the italic *"Conditional on `<biomarker_short>:positive`. Foreclosed if test is negative."* note immediately under the H2. The reader sees ONE focused ranked list — workup plus the drugs that target the gating feature. Drugs that don't target the feature are not in this list (they're under "Classes examined but not ranked" if relevant, with a note that they're out of scope).
 
 10. **Classes examined but not ranked.** Bullet list of intervention classes considered but excluded — anything in the board positions or critiques that didn't make it into the ranked list, plus any rec with `status: not_recommended`. Each bullet: class name + 1 sentence on why excluded (wrong-direction mechanism, thin evidence, structural confound, persona veto unanimous). When the dossier has nothing here, write *"None — every intervention surfaced by the search was ranked."*
-11. **Ranked prioritization.** A summary table the reader can scan at a glance. Columns: **Rank | Status | Intervention | Endorsed by | Dissent | Veto | Likelihood | Toxicity burden | Why this rank**. One row per ranked rec. Persona pills via the existing CSS classes (`<span class="persona persona-<name>"><name></span>`). Keep the "Why this rank" cell to ≤ 12 words. For biomarker-conditional recs, append `(conditional on <biomarker> positive)` to the Intervention cell — single unified table, no Path A / Path B prefixes.
+11. **Ranked prioritization.** A 6-column at-a-glance summary table modeled on io-shieldbreak's ranked-prioritization layout. Columns in order:
+
+    | Rank | Intervention | Likelihood of effect | Toxicity burden | Counter-productive MoA | Overall |
+
+    **Cell content rules:**
+
+    - **Rank** — integer, matching `rank` on the row. Render workup rows (`scenario: "shared"`) on a separate sub-table above the unified ranked options when biomarker gating applies.
+    - **Intervention** — bold label. For `scenario: "<biomarker_short>:positive"` recs, append `(conditional on <biomarker_short> positive)` inline. Below the label, on a new line, render the board's persona state as small pills using the pattern: `<small><em>endorse:</em> <span class="persona persona-<name>"><name></span> ...</small><br><small><em>dissent:</em> ...</small><br><small><em>veto:</em> ...</small>`. Omit any line whose list is empty.
+    - **Likelihood of effect** — qualitative narrative, ≤ ~25 words, exactly the value of `likelihood_of_effect` on the row. Lead with a tier descriptor ("High in <subset>", "Moderate", "Low for <endpoint>") and cite the load-bearing evidence anchor (effect size or trial-concordance reference).
+    - **Toxicity burden** — exactly the value of `toxicity_burden`. Format: `<tier> (<2-4 characteristic G3+ AEs>)`. Tier ∈ {Low, Moderate, High}.
+    - **Counter-productive MoA** — render `<strong>{severity}</strong> ({description})` from the `counter_productive_moa` object. Severity ∈ {Low, Moderate, High, N/A}. Workup rows always `N/A`. Description names the mechanism-level risk to the therapeutic goal (T-cell exhaustion, antigen-loss escape, anti-angiogenic wound-healing impairment, etc.) — distinct from patient AEs in column 4.
+    - **Overall** — the bold value of `overall`, ≤ ~30 words. Names the load-bearing tradeoff or scope. Should NOT mention rank ordering. Examples: *"Strongest replicated 2L+ osteosarcoma RCT evidence; biomarker-independent backbone regardless of IHC."*, *"The only DLL3-directed option when IHC is positive — preference-aligned but cross-tumor translation untested."*
+
+    **Below the table** add a short legend admonition explaining that **Toxicity burden** is patient-level AE severity while **Counter-productive MoA** is mechanism-level risk to the therapeutic goal, and that the persona pills under each intervention are the at-a-glance board signal (full per-persona rationale lives on the board page).
 12. **Caveats.** Bulleted. Required entries:
     - **Evidence-base caveats** (small n, single-arm, industry sponsorship, abstract-only)
     - **Compartment / biomarker dependencies** (when present — e.g. "rankings assume DLL3 IHC ≥1% confirmation; without it, rank 1 is foreclosed")

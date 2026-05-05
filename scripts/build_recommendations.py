@@ -45,25 +45,63 @@ def status_class(status: str) -> str:
 
 
 RECS_HEAD = (
-    "<th>Rank</th><th>Status</th><th>Intervention</th>"
-    "<th>Endorsed by</th><th>Dissent</th><th>Veto</th>"
-    "<th>Expected benefit</th><th>Key risks</th>"
-    "<th>Preference fit</th><th>Guideline</th>"
-    "<th>Evidence anchor</th><th>Open questions</th>"
+    "<th>Rank</th><th>Intervention</th>"
+    "<th>Likelihood of effect</th><th>Toxicity burden</th>"
+    "<th>Counter-productive MoA</th><th>Overall</th>"
 )
 
 
+def _persona_line(r: dict) -> str:
+    """Compact persona pills row: endorse / dissent / veto, when any persona registered."""
+    pieces: list[str] = []
+    for label, key in (("endorse", "endorsed_by"), ("dissent", "dissent_by"), ("veto", "veto_by")):
+        personas = r.get(key) or []
+        if not personas:
+            continue
+        pills = " ".join(f'<span class="persona persona-{p}">{html.escape(p)}</span>' for p in personas)
+        pieces.append(f'<small class="persona-line"><em>{label}:</em> {pills}</small>')
+    return "<br>".join(pieces)
+
+
 def _intervention_cell(r: dict) -> str:
-    """Intervention cell: bold label plus a (conditional on …) parenthetical when scenario is biomarker-positive."""
+    """Intervention cell: bold label, conditional flag, and persona-state pills under it.
+
+    Persona state moves into this cell (replacing dedicated Endorsed / Dissent / Veto
+    columns) so the at-a-glance table stays narrow while board signal stays visible.
+    """
     label = fmt(r.get("intervention_label"))
     scen = r.get("scenario")
     if isinstance(scen, str) and scen.endswith(":positive"):
         biomarker_short = scen.split(":", 1)[0]
-        return (
-            f"<td><strong>{label}</strong> "
-            f'<span class="scenario-conditional">(conditional on {html.escape(biomarker_short)} positive)</span></td>'
+        head = (
+            f"<strong>{label}</strong> "
+            f'<span class="scenario-conditional">(conditional on {html.escape(biomarker_short)} positive)</span>'
         )
-    return f"<td><strong>{label}</strong></td>"
+    else:
+        head = f"<strong>{label}</strong>"
+    persona = _persona_line(r)
+    body = f"{head}<br>{persona}" if persona else head
+    return f"<td>{body}</td>"
+
+
+def _cpm_cell(r: dict) -> str:
+    """Counter-productive MoA cell: bold severity + parenthetical mechanism description."""
+    cpm = r.get("counter_productive_moa") or {}
+    severity = cpm.get("severity")
+    description = cpm.get("description")
+    if not severity:
+        return "<td>—</td>"
+    sev_html = f"<strong>{html.escape(str(severity))}</strong>"
+    if description:
+        return f'<td>{sev_html} <span class="cpm-desc">({html.escape(str(description))})</span></td>'
+    return f"<td>{sev_html}</td>"
+
+
+def _overall_cell(r: dict) -> str:
+    overall = r.get("overall")
+    if not overall:
+        return "<td>—</td>"
+    return f"<td><strong>{html.escape(str(overall))}</strong></td>"
 
 
 def render_recs_table(rows: list[dict]) -> str:
@@ -71,22 +109,14 @@ def render_recs_table(rows: list[dict]) -> str:
         return "_No rows in this scenario._\n"
     body = []
     for r in rows:
-        status = r.get("status", "recommended")
-        klass = status_class(status)
         body.append(
             "    <tr>"
             f"<td>{fmt(r.get('rank'))}</td>"
-            f'<td class="{klass}">{html.escape(status)}</td>'
             f"{_intervention_cell(r)}"
-            f"<td>{persona_badges(r.get('endorsed_by'))}</td>"
-            f"<td>{persona_badges(r.get('dissent_by'))}</td>"
-            f"<td>{persona_badges(r.get('veto_by'))}</td>"
-            f"<td>{fmt(r.get('expected_benefit'))}</td>"
-            f"<td>{fmt(r.get('key_risks'))}</td>"
-            f"<td>{fmt(r.get('preference_alignment'))}</td>"
-            f"<td>{fmt(r.get('guideline_status'))}</td>"
-            f"<td>{fmt(r.get('evidence_anchor'))}</td>"
-            f"<td>{fmt(r.get('open_questions'))}</td>"
+            f"<td>{fmt(r.get('likelihood_of_effect'))}</td>"
+            f"<td>{fmt(r.get('toxicity_burden'))}</td>"
+            f"{_cpm_cell(r)}"
+            f"{_overall_cell(r)}"
             "</tr>"
         )
     return (
@@ -99,6 +129,17 @@ def render_recs_table(rows: list[dict]) -> str:
         "  </div>\n"
         "</div>\n"
     )
+
+
+_TABLE_LEGEND = (
+    '!!! note "Reading the columns"\n'
+    "    **Toxicity burden** is patient-level G3+ AE severity (Low / Moderate / High) "
+    "summarized from trial publications. **Counter-productive MoA** is the "
+    "mechanism-level risk that the intervention's own pathway could blunt the "
+    "therapeutic goal — distinct from patient AEs. The board's endorse / dissent / "
+    "veto state appears as pills under each intervention; full per-persona "
+    "rationale lives on the [board page](board.md).\n"
+)
 
 
 def group_by_scenario(rows: list[dict]) -> tuple[list[dict], list[dict]]:
@@ -209,6 +250,8 @@ def main() -> int:
     else:
         parts.append(f"_{len(rows)} ranked options._\n")
         parts.append(render_recs_table(unified))
+
+    parts.append(_TABLE_LEGEND)
 
     parts.append(
         f"[Back to case](index.md) · [Trials](trials.md) · "
