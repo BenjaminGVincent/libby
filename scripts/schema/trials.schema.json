@@ -57,6 +57,16 @@
       "enum": [null, "recruiting", "active not recruiting", "completed", "terminated", "withdrawn", "not yet recruiting", "unknown"]
     },
     "intervention_dosing": { "type": "string" },
-    "supersedes": { "type": ["string", "null"], "description": "row_id this row replaces." }
+    "supersedes": { "type": ["string", "null"], "description": "row_id this row replaces." },
+    "tumor_type_relationship": {
+      "type": "string",
+      "enum": [
+        "primary_indication_match",
+        "basket_or_biomarker_match",
+        "same_drug_other_indication",
+        "cross_tumor_extrapolation"
+      ],
+      "description": "How does this trial relate to the patient's tumor type? `primary_indication_match` = trial enrolls the patient's tumor type. `basket_or_biomarker_match` = trial accepts the patient based on biomarker regardless of tumor type — most under-recognized actionable opportunity for rare-disease patients. `same_drug_other_indication` = drug proven elsewhere being tested in the patient's tumor type. `cross_tumor_extrapolation` = trial is in a different tumor type but informs the evidence base; not directly enrollable for this patient. Default (omitted) = primary_indication_match."
+    }
   }
 }

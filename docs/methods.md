@@ -124,6 +124,32 @@ All committed JSONL artifacts validate against schemas in
 - `critiques.schema.json` — board round-2 cross-critique.
 - `recommendations.schema.json` — PI's ranked recommendation row.
 
+## Cross-tumor and basket trials
+
+The `trial_screener` agent does NOT restrict the search to trials whose primary
+indication matches the patient's tumor type. For rare-disease and refractory
+patients, the highest-EV trial often lives outside the primary indication.
+Each row in `trials.jsonl` is tagged with `tumor_type_relationship`:
+
+- **`primary_indication_match`** — trial enrolls the patient's tumor type as
+  a primary cohort. The default category.
+- **`basket_or_biomarker_match`** — trial accepts the patient based on a
+  biomarker regardless of tumor type (e.g. NTRK fusions, BRAF V600E, MSI-H,
+  DLL3 IHC). These are the most under-recognized actionable opportunities for
+  rare-disease patients and rank above same-tumor weak-evidence trials in
+  practice.
+- **`same_drug_other_indication`** — trial of a drug already proven elsewhere
+  now being tested in the patient's tumor type. Bridges cross-tumor evidence
+  to on-label care.
+- **`cross_tumor_extrapolation`** — trial in a different tumor type, included
+  in the dossier for mechanism-of-action / efficacy evidence even though the
+  patient cannot enroll. Informs board reasoning about whether the drug is
+  worth pursuing through a basket trial or off-label use.
+
+The render layer (`build_table.py`) surfaces the category as a colored
+badge in the trial table so a clinician can scan enrollable-now vs
+informational-only at a glance.
+
 ## Hypothetical biomarker scenarios
 
 When a biomarker driving candidate-intervention selection is not yet at the

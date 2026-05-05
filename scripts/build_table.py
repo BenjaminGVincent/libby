@@ -69,6 +69,21 @@ def fit_badge(fit: str) -> str:
     return f'<span class="fit-badge {klass}">{html.escape(str(fit or "—"))}</span>'
 
 
+_TUMOR_REL_LABEL = {
+    "primary_indication_match":   ("indication", "rel-indication"),
+    "basket_or_biomarker_match":  ("basket",     "rel-basket"),
+    "same_drug_other_indication": ("same-drug",  "rel-same-drug"),
+    "cross_tumor_extrapolation":  ("cross-tumor", "rel-cross-tumor"),
+}
+
+
+def tumor_rel_badge(rel: str | None) -> str:
+    if not rel:
+        return "—"
+    label, klass = _TUMOR_REL_LABEL.get(rel, (rel, "rel-other"))
+    return f'<span class="rel-badge {html.escape(klass)}">{html.escape(label)}</span>'
+
+
 def tox_pills(flags) -> str:
     if not flags:
         return "—"
@@ -98,6 +113,7 @@ HEADERS = [
     ("PMID",               "pmid",                "left",  False),
     ("DOI",                "doi",                 "left",  False),
     ("Fit",                "fit_to_case",         "left",  False),
+    ("Tumor-type relation","tumor_type_relationship", "left", False),
     ("Toxicity flags",     "toxicity_flags",      "left",  False),
     ("Inclusion notes",    "inclusion_match_notes", "left", False),
 ]
@@ -119,6 +135,8 @@ def render_table(rows: list[dict]) -> str:
                 content = link_doi(r.get(key))
             elif key == "fit_to_case":
                 content = fit_badge(r.get(key) or "")
+            elif key == "tumor_type_relationship":
+                content = tumor_rel_badge(r.get(key))
             elif key == "toxicity_flags":
                 content = tox_pills(r.get(key) or [])
             elif key in {"effect_size", "ci_lower", "ci_upper"}:
