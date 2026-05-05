@@ -64,7 +64,8 @@
   color: #B71C1C;
 }
 
-/* Agreement matrix heatmap (board.md). */
+/* Agreement matrix heatmap (board.md). Cells carry explicit foreground+background
+   so they remain legible on both Material default and slate color schemes. */
 .agreement-matrix {
   border-collapse: collapse;
   font-size: 0.85em;
@@ -72,14 +73,15 @@
 .agreement-matrix th, .agreement-matrix td {
   padding: 0.35em 0.5em;
   text-align: center;
-  border: 1px solid #E2E8F0;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  color: var(--md-typeset-color);
 }
 .agreement-matrix th {
-  background: #F4F6F8;
+  background: var(--md-default-fg-color--lightest);
   font-weight: 600;
 }
-.agreement-matrix td.cell-endorse   { background: #C8E6D0; }
-.agreement-matrix td.cell-qualified { background: #FCEEC2; }
-.agreement-matrix td.cell-dissent   { background: #F4C7BE; }
-.agreement-matrix td.cell-veto      { background: #E8A399; font-weight: 700; }
-.agreement-matrix td.cell-absent    { background: #F1F3F5; color: #94A3B8; }
+.agreement-matrix td.cell-endorse   { background: #C8E6D0; color: #14532D; }
+.agreement-matrix td.cell-qualified { background: #FCEEC2; color: #5A4500; }
+.agreement-matrix td.cell-dissent   { background: #F4C7BE; color: #6F2E1A; }
+.agreement-matrix td.cell-veto      { background: #E8A399; color: #4A1408; font-weight: 700; }
+.agreement-matrix td.cell-absent    { background: var(--md-default-fg-color--lightest); color: var(--md-default-fg-color--light); }

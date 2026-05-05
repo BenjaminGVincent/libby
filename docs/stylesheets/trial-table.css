@@ -1,7 +1,13 @@
 /* Trial-table style — vendored from /Users/benjaminvincent/turtle/pfo/conductor/styles/trial-table/
-   Scoped via .trial-table-wrap so it does not leak into surrounding MkDocs page. */
+   Scoped via .trial-table-wrap so it does not leak into surrounding MkDocs page.
 
-.trial-table-wrap { color: #1A202C; }
+   Uses Material for MkDocs CSS variables (--md-typeset-color, --md-default-fg-color--*)
+   so the table reads correctly in both default (light) and slate (dark) color schemes. */
+
+.trial-table-wrap {
+  /* Inherit Material body color — adapts to light/dark scheme. */
+  color: var(--md-typeset-color);
+}
 .trial-table-wrap caption {
   caption-side: top;
   text-align: left;
@@ -16,26 +22,28 @@
   font-size: 0.88em;
 }
 .trial-table thead th {
-  background: #F4F6F8;
+  background: var(--md-default-fg-color--lightest);
+  color: var(--md-typeset-color);
   font-weight: 600;
   text-align: left;
   padding: 0.5em 0.6em;
-  border-top: 2px solid #1A202C;
-  border-bottom: 1px solid #1A202C;
+  border-top: 2px solid var(--md-default-fg-color--light);
+  border-bottom: 1px solid var(--md-default-fg-color--light);
   white-space: nowrap;
 }
 .trial-table tbody td {
+  color: var(--md-typeset-color);
   padding: 0.5em 0.6em;
-  border-bottom: 1px solid #E2E8F0;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
   font-variant-numeric: tabular-nums;
   vertical-align: top;
 }
 .trial-table tbody tr:last-child td {
-  border-bottom: 2px solid #1A202C;
+  border-bottom: 2px solid var(--md-default-fg-color--light);
 }
 .trial-table .num { text-align: right; }
 .trial-table a {
-  color: #1A202C;
+  color: var(--md-typeset-a-color);
   text-decoration: underline;
 }
 .trial-table .mark {
@@ -44,6 +52,6 @@
 }
 .trial-table-wrap .notes {
   font-size: 0.85em;
-  color: #4A5568;
+  color: var(--md-default-fg-color--light);
   margin-top: 0.6em;
 }
