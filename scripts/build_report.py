@@ -1104,6 +1104,86 @@ def _make_patient_pdf(slug: str, body_md: str, out_path: Path) -> None:
     pdf.output(str(out_path))
 
 
+# ---------- index.md downloads-section injection ----------
+
+
+_DOWNLOADS_BEGIN = "<!-- libby:downloads:begin -->"
+_DOWNLOADS_END = "<!-- libby:downloads:end -->"
+_RX_DOWNLOADS_BLOCK = re.compile(
+    re.escape(_DOWNLOADS_BEGIN) + r".*?" + re.escape(_DOWNLOADS_END),
+    re.DOTALL,
+)
+# Insert before the first H2 (## …) when no markers exist yet, so the section
+# lands above "Profile snapshot" / "Recommendation summary" rather than at the
+# bottom of the page.
+_RX_FIRST_H2 = re.compile(r"^## ", re.MULTILINE)
+
+
+def _downloads_section(slug: str, case_docs: Path) -> str:
+    artifacts = [
+        (
+            f"{slug}-libby-report.pdf",
+            "Clinician PDF report",
+            "ranked recommendations + evidence + sources",
+        ),
+        (
+            f"{slug}-plain-language.pdf",
+            "Patient/caregiver PDF",
+            "plain-language summary",
+        ),
+        (
+            f"{slug}-recommendations.html",
+            "Self-contained HTML",
+            "recommendations table that opens offline",
+        ),
+    ]
+    present = [(n, lbl, b) for n, lbl, b in artifacts if (case_docs / n).exists()]
+    if not present:
+        return ""
+    lines = [
+        _DOWNLOADS_BEGIN,
+        "",
+        "## Downloads",
+        "",
+    ]
+    for name, label, blurb in present:
+        lines.append(f"- [{label}]({name}) — {blurb}")
+    lines.extend(["", _DOWNLOADS_END, ""])
+    return "\n".join(lines)
+
+
+def _inject_downloads(index_path: Path, slug: str, case_docs: Path) -> bool:
+    """Idempotently insert/refresh the Downloads section in index.md.
+
+    Returns True when the file was modified. Strategy:
+      - If markers already exist, replace the block in place.
+      - Otherwise insert before the first H2; if no H2, append.
+      - When no artifacts exist, strip any pre-existing markers (cleanup).
+    """
+    text = index_path.read_text(encoding="utf-8")
+    block = _downloads_section(slug, case_docs)
+
+    if _RX_DOWNLOADS_BLOCK.search(text):
+        if not block:
+            new_text = _RX_DOWNLOADS_BLOCK.sub("", text)
+            new_text = re.sub(r"\n{3,}", "\n\n", new_text)
+        else:
+            new_text = _RX_DOWNLOADS_BLOCK.sub(block.rstrip("\n"), text)
+    elif block:
+        m = _RX_FIRST_H2.search(text)
+        if m:
+            new_text = text[: m.start()] + block + text[m.start() :]
+        else:
+            new_text = text.rstrip() + "\n\n" + block + "\n"
+    else:
+        return False
+
+    if new_text == text:
+        return False
+    index_path.write_text(new_text, encoding="utf-8")
+    return True
+
+
 # ---------- main ----------
 
 
@@ -1169,6 +1249,9 @@ def main(argv: list[str]) -> int:
         f"built {html_out.relative_to(REPO_ROOT)} — "
         f"{html_out.stat().st_size / 1024:.0f} KB"
     )
+
+    if _inject_downloads(index_path, slug, case_docs):
+        print(f"patched {index_path.relative_to(REPO_ROOT)} — downloads section")
 
     return 0
 

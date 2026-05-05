@@ -7,6 +7,12 @@
     reviewed by a clinician treating this patient.
     See [PHI policy](../../phi_policy.md).
 
+## Downloads
+
+- [Clinician PDF report](osteosarcoma-mets-dll3-h7r2-libby-report.pdf) — ranked recommendations + evidence + sources
+- [Patient/caregiver PDF](osteosarcoma-mets-dll3-h7r2-plain-language.pdf) — plain-language summary
+- [Self-contained HTML](osteosarcoma-mets-dll3-h7r2-recommendations.html) — recommendations table that opens offline
+
 _7 rows across 2 scenario(s) plus 1 shared row(s)._
 
 ## Shared first step (applies to every scenario)

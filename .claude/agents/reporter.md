@@ -121,13 +121,15 @@ The script reads `executive_summary.md`, `index.md`, `plain_language.md`, `recom
 
 ## Step 3 — surface the download links on the site
 
-Run:
+`scripts/build_report.py` itself patches the case landing page (`docs/cases/<slug>/index.md`) — it inserts (or refreshes) a `## Downloads` section between stable HTML comment markers `<!-- libby:downloads:begin -->` and `<!-- libby:downloads:end -->`. The block lands before the first `##` heading on the page. The injection is idempotent: re-running the reporter replaces the block in place; if no artifacts exist it strips the block. **Note:** if the PI re-runs and re-authors `index.md` from scratch, the markers disappear, but the next reporter run re-inserts them. Reporter is the last stage in the pipeline, so this is not a problem in normal flow.
+
+Then run:
 
 ```bash
 bash scripts/run_case.sh <slug>
 ```
 
-`scripts/build_recommendations.py` (called by `run_case.sh`) detects the new files in `docs/cases/<slug>/` and inserts a "Downloads" block at the top of the regenerated `recommendations.md`. You don't need to edit `recommendations.md` directly — the generator handles it. `run_case.sh` also re-runs the PHI scanner against the rendered docs as belt-and-suspenders.
+`scripts/build_recommendations.py` (called by `run_case.sh`) also surfaces the artifacts as a Downloads block at the top of `recommendations.md`, so the deterministic table page carries the same links. `run_case.sh` also re-runs the PHI scanner against the rendered docs as belt-and-suspenders.
 
 ## Step 4 — verify and commit
 
@@ -185,7 +187,8 @@ Humanizer rules layer on top of this agent's existing voice (no marketing langua
 ## Forbidden actions
 
 - Never read `case/<slug>/clinical/`.
-- Never edit `recommendations.jsonl`, `index.md`, or `plain_language.md` (PI / translator own those).
+- Never edit `recommendations.jsonl` or `plain_language.md` (PI / translator own those).
+- Never edit `index.md` directly — the only mutation allowed is the Downloads-section injection performed by `scripts/build_report.py` between `<!-- libby:downloads:begin -->` / `<!-- libby:downloads:end -->` markers. Hand-editing the rest of the file is the PI's job.
 - Never re-rank or re-introduce removed interventions.
 - Never `git add -A` (would slip in `case/`). Stage explicitly: `git add data/cases/<slug>/executive_summary.md data/cases/<slug>/runs.jsonl docs/cases/<slug>/<slug>-libby-report.pdf docs/cases/<slug>/<slug>-plain-language.pdf docs/cases/<slug>/<slug>-recommendations.html docs/cases/<slug>/recommendations.md`.
 - Never `git push` without explicit user confirmation.

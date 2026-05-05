@@ -8,6 +8,15 @@
     without consulting a qualified oncologist. Several profile fields were
     inferred (sparse user input) and are flagged as open questions.
 
+<!-- libby:downloads:begin -->
+
+## Downloads
+
+- [Clinician PDF report](osteosarcoma-mets-dll3-h7r2-libby-report.pdf) — ranked recommendations + evidence + sources
+- [Patient/caregiver PDF](osteosarcoma-mets-dll3-h7r2-plain-language.pdf) — plain-language summary
+- [Self-contained HTML](osteosarcoma-mets-dll3-h7r2-recommendations.html) — recommendations table that opens offline
+
+<!-- libby:downloads:end -->
 ## Profile snapshot (scrubbed)
 
 - **Primary site / histology:** bone — osteosarcoma
