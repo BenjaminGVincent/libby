@@ -78,24 +78,101 @@ For each intervention, fill out:
 
 ## docs/cases/<slug>/index.md
 
-Render a clinician-grade markdown page with:
+The case landing page mirrors the **io-shieldbreak shieldbreak-report layout** (see `pirl-unc/io-shieldbreak/docs/shieldbreaks/<slug>/index.md` for reference). Lead with the research question; integrate Libby's PHI-scrubbed profile + preferences as the case-specific "scope"; surface the load-bearing concern as a cross-cutting caveat the reader hits before the ranked options; render each top intervention as a deep narrative (not just a row); and close with sources and transparency links.
 
-1. **`<meta name="robots" content="noindex">`** at the top of the file (raw HTML before the `# heading`) so search engines don't index case pages.
-2. **Profile snapshot** (scrubbed; from `profile.json`). When biomarkers carry non-confirmed `confirmation_status`, surface the status visibly (e.g. "DLL3 — RNA only; IHC pending").
-3. **Preferences snapshot** (from `preferences.json`).
-4. **Recommendation summary.** If the case has scenarios, render TWO sub-sections side-by-side or stacked: "If \<biomarker\> positive" and "If \<biomarker\> negative", each with its own ranked summary table. Otherwise a single ranked summary as before.
-5. **Links** to per-page transparency artifacts: `trials.md`, `evidence.md`, `board.md`, `recommendations.md`, `plain_language.md`.
-6. **Disclaimer admonition at the BOTTOM of the page** (after run log, after every other section):
+Render in this exact section order:
+
+1. **`<meta name="robots" content="noindex">`** at the top of the file (raw HTML before the `# heading`).
+2. **`# <slug>`** as the H1.
+3. **Research question.** One sentence. Generated from `profile.targetable_features[]` plus the clinical descriptor in `profile.json`. Pattern: *"In <histology, stage, line context>, what interventions could target <feature(s) joined by 'and' or 'or'>, given <key biomarker confirmation state if non-confirmed>?"* Example for the osteosarcoma case: *"In metastatic osteosarcoma after first-line MAP, what interventions could target DLL3 expression — and what's the next move if the DLL3 protein test comes back negative?"*
+4. **Patient profile (scrubbed).** Bulleted, drawn from `profile.json`. Surface non-confirmed `confirmation_status` visibly (e.g. "DLL3 — RNA only; IHC pending"). This is the Libby-unique analog of shieldbreak's scope inventory; keep it terse.
+5. **Preferences.** Bulleted from `preferences.json` — efficacy/toxicity weight, toxicity vetoes, modality constraints, free text, trial preference.
+6. **Scope summary.** A compact one-paragraph (or short bullet list) summary: *N* trials, *N* clinical-evidence rows, *N* preclinical rows, board-agreement score range across the ranked recommendations. End with one sentence describing the spread (e.g. "All five personas converged on rank 1; one persistent dissent on rank 2; one veto on rank 3.")
+7. **Cross-cutting caveat (read first).** A bold-titled section that names the **load-bearing concern that shapes every rank**. Examples: a non-confirmed biomarker that gates the lead trial; a resistance mechanism that dominates the picture; a structural confound in the evidence base; a guideline-fit gap. Write 2–4 sentences plus a bullet list of the concrete consequences. This section earns the reader's first 30 seconds of attention; it must reflect what was actually load-bearing in the board's deliberation, not a generic disclaimer.
+8. **Intervention grouping.** Bullet list mapping intervention class → cited evidence anchors (e.g. "DLL3-directed BiTEs (NCT06788938, PMID 37861218)", "Multi-kinase TKIs for sarcoma (PMID 31013172, PMID 30477937, PMID 32078813)"). One line per class, two if needed.
+9. **Top interventions.** This is the substantive body of the page. For each row in `recommendations.jsonl` ranked 1..N **with `status` in (`recommended`, `considered_with_caveats`)**, render a level-2 sub-section with this exact internal structure:
+
    ```
-   !!! danger disclaimer "Decision support, not medical advice"
-       Libby is an experimental decision-support tool. The recommendations on
-       this page have not been reviewed by a clinician treating this patient.
-       Do not act on this page without consulting a qualified oncologist.
+   ## Rank <N>. <Intervention label> [— <scenario_label>]
+   <one-line trade-off summary; the elevator pitch>
+
+   ### Evidence base
+   <2–4 sentences on the trials and clinical-evidence rows that anchor the
+   rec; cite PMIDs/NCTs inline using the [<id>](url) syntax. State n,
+   design, indication-fit (primary / basket / cross-tumor), and the headline
+   effect (e.g. "ORR ~30% in the post-EGFR-TKI MET-amp stratum"). When the
+   evidence is cross-tumor or single-arm, name that limitation explicitly.>
+
+   ### Likelihood of desired effect
+   <2–3 sentences. What's the probability this works for this patient given
+   biology + biomarker fit + line context? When the case has scenarios,
+   say which scenario this rec lives in and how the probability shifts under
+   each branch.>
+
+   ### Toxicity profile
+   <Bulleted list of concrete grade-3+ AEs and labelled risks from the
+   evidence anchors. Map them against the user's `toxicity_vetoes` and call
+   out hits explicitly. If the rec triggers a veto, flag it here in bold.>
+
+   ### Counter-productive mechanisms / dissent
+   <2–4 sentences. Surface the board's dissent and veto state for THIS rec.
+   Name the persona (e.g. "the critic dissented on cross-tumor
+   translatability") and what their objection rested on. When a veto was
+   lifted (e.g. on biomarker confirmation) explain the contingency. If
+   the rec has no dissent, write "Board endorsement was unanimous.">
+
+   ### Practical considerations
+   <Trial enrollment status, modality / route, monitoring requirements,
+   guideline status (NCCN/ESMO/etc), prior-therapy implications, and any
+   user-preference matches/mismatches that the prior sections didn't
+   already cover. 2–4 sentences.>
+
+   ### Why this rank
+   <1–2 sentences. Reconcile this rank against the next-ranked option:
+   why is rank 2 not rank 1, why is rank 3 not rank 2, etc. Reference
+   the agreement_score gap and the load-bearing tradeoff.>
+
+   ### Per-trial detail
+   <A 4-column table: Therapeutic agent | Efficacy | Toxicity | Reference.
+   One row per trial in `trials.jsonl` whose `intervention_label` matches
+   this rec's `intervention_label` (or whose evidence_anchor IDs overlap).
+   Reference cells link to PubMed (`[<pmid>](https://pubmed.ncbi.nlm.nih.gov/<pmid>)`)
+   or ClinicalTrials.gov (`[<nct>](https://clinicaltrials.gov/study/<nct>)`).
+   Keep efficacy and toxicity cells terse — one phrase each.>
    ```
-   The bottom placement mirrors the build-script-rendered pages and keeps
-   the page-top focused on the actionable content.
+
+   For scenario-branching cases, do NOT split into Path A / Path B sub-pages. Instead, tag the scenario in the H2 (`## Rank 1 (Path A — DLL3 IHC ≥1%). Tarlatamab via NCT06788938`) and let each rec narrative handle its scenario context. The shared rank-1 workup row (e.g. DLL3 IHC) gets its own H2 sub-section before the path-specific ranks.
+
+10. **Classes examined but not ranked.** Bullet list of intervention classes considered but excluded — anything in the board positions or critiques that didn't make it into the ranked list, plus any rec with `status: not_recommended`. Each bullet: class name + 1 sentence on why excluded (wrong-direction mechanism, thin evidence, structural confound, persona veto unanimous). When the dossier has nothing here, write *"None — every intervention surfaced by the search was ranked."*
+11. **Ranked prioritization.** A summary table the reader can scan at a glance. Columns: **Rank | Status | Intervention | Endorsed by | Dissent | Veto | Likelihood | Toxicity burden | Why this rank**. One row per ranked rec. Persona pills via the existing CSS classes (`<span class="persona persona-<name>"><name></span>`). Keep the "Why this rank" cell to ≤ 12 words. For scenario cases, prefix the Intervention cell with `[Path A]` / `[Path B]` so readers can filter visually.
+12. **Caveats.** Bulleted. Required entries:
+    - **Evidence-base caveats** (small n, single-arm, industry sponsorship, abstract-only)
+    - **Compartment / biomarker dependencies** (when present — e.g. "rankings assume DLL3 IHC ≥1% confirmation; without it, rank 1 is foreclosed")
+    - **What would change the ranking** (1–3 specific sensitivity-analysis bullets — e.g. "An independent replication of cross-tumor DLL3 BiTE activity would move rank 1's confidence up", "A negative DLL3 IHC moves rank 1 to non-applicable")
+    - **Re-scoping caveat** (1 sentence — what changes if the user's preferences or the clinical state moves)
+13. **Sources.** Two sub-lists — one for PMIDs, one for NCTs — drawn from `evidence_anchor[]` across all ranked rows, deduped, alphabetized by ID. Render PMIDs as `[<id>](https://pubmed.ncbi.nlm.nih.gov/<id>)` and NCTs as `[<id>](https://clinicaltrials.gov/study/<id>)`.
+14. **Transparency artifacts.** Subdued footer with links to `trials.md`, `evidence.md`, `board.md`, `recommendations.md`, `plain_language.md`. One bullet line each, with a short blurb (e.g. "[Trial table](trials.md) — N rows, all columns").
+15. **Run log.** One short paragraph: when authored, what was supplied, what was inferred. Useful for re-runs.
+16. **Disclaimer admonition** at the BOTTOM:
+    ```
+    !!! danger disclaimer "Decision support, not medical advice"
+        Libby is an experimental decision-support tool. The recommendations on
+        this page have not been reviewed by a clinician treating this patient.
+        Do not act on this page without consulting a qualified oncologist.
+    ```
+
+The reporter agent inserts a `## Downloads` section between `<!-- libby:downloads:begin -->` / `<!-- libby:downloads:end -->` markers (currently placed before the first H2). Do not author that section yourself — leave the markers absent and the reporter will insert it on its run.
 
 If this is a new case, also append a row to `docs/cases/index.md` linking to the new page.
+
+### What stays out of index.md
+
+- Per-trial detail tables for trials NOT cited by any ranked rec (those live in `trials.md`).
+- The full agreement matrix and per-intervention persona transcripts (those live in `board.md`).
+- Pre-clinical evidence rows that didn't rise to a ranked rec (those live in `evidence.md`).
+- Plain-language framing (that lives in `plain_language.md`).
+
+The page is the editorial synthesis — dense, opinionated about which evidence is load-bearing, but transparent about disagreement and biomarker dependencies. A reviewer reading the first three sections (Research question, Patient profile, Cross-cutting caveat) should leave with the right epistemic state in 60 seconds. Everything below that is the substantiation.
 
 ## Validate, log, hand off
 
