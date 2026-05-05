@@ -1,0 +1,329 @@
+#!/usr/bin/env python3
+"""Render the master manuscript inventory for a Libby case.
+
+One flat table covering every paper considered (clinical + preclinical), with
+the four user-named decision-relevant fields per row: sample size, effect size,
+variance, and toxicities (type / number / frequency). Modeled on io-shieldbreak's
+'Pharmacodynamic Results' / 'Scope inventory' table — one paper per row, no
+per-intervention grouping, sortable by year.
+
+Reads:
+  data/cases/<slug>/clinical_evidence.jsonl
+  data/cases/<slug>/preclinical_evidence.jsonl
+
+Writes:
+  docs/cases/<slug>/manuscripts.md
+"""
+
+from __future__ import annotations
+
+import argparse
+import html
+import json
+import sys
+from pathlib import Path
+
+REPO = Path(__file__).resolve().parent.parent
+
+
+def load_jsonl(path: Path) -> list[dict]:
+    if not path.exists():
+        return []
+    return [json.loads(l) for l in path.read_text(encoding="utf-8").splitlines() if l.strip()]
+
+
+def fmt(v, dash: str = "—") -> str:
+    if v is None or v == "":
+        return dash
+    return html.escape(str(v))
+
+
+def num_fmt(v, places: int = 2, dash: str = "—") -> str:
+    if v is None or v == "":
+        return dash
+    try:
+        return f"{float(v):.{places}f}"
+    except (TypeError, ValueError):
+        return html.escape(str(v))
+
+
+def link_pmid(pmid) -> str:
+    if not pmid:
+        return ""
+    return f'<a href="https://pubmed.ncbi.nlm.nih.gov/{html.escape(str(pmid))}">PMID&nbsp;{html.escape(str(pmid))}</a>'
+
+
+def link_doi(doi) -> str:
+    if not doi:
+        return ""
+    return f'<a href="https://doi.org/{html.escape(str(doi))}">DOI</a>'
+
+
+def sources_cell(r: dict) -> str:
+    parts = [p for p in (link_pmid(r.get("pmid")), link_doi(r.get("doi"))) if p]
+    if not parts:
+        return "—"
+    return " · ".join(parts)
+
+
+def report_cell(r: dict) -> str:
+    first = r.get("first_author") or "—"
+    last = r.get("last_author") or "—"
+    yr = r.get("year") or "—"
+    journal = r.get("journal") or ""
+    parts = [f"{html.escape(str(first))}/{html.escape(str(last))} ({yr})"]
+    if journal:
+        parts.append(f"<em>{html.escape(str(journal))}</em>")
+    return "<br>".join(parts)
+
+
+def fit_badge(label: str | None) -> str:
+    if not label:
+        return "—"
+    cls = {
+        "strong": "fit-strong",
+        "partial": "fit-partial",
+        "weak": "fit-weak",
+        "none": "fit-none",
+        "cross_tumor_only": "fit-weak",
+    }.get(label, "fit-none")
+    pretty = label.replace("_", " ")
+    return f'<span class="fit-badge {cls}">{html.escape(pretty)}</span>'
+
+
+def kind_badge(kind: str) -> str:
+    if kind == "clinical":
+        return '<span class="rel-badge rel-indication">clinical</span>'
+    return '<span class="rel-badge rel-cross-tumor">preclinical</span>'
+
+
+def effect_cell_clinical(r: dict) -> str:
+    e = r.get("effect_size")
+    units = r.get("effect_units")
+    if e is None or e == "":
+        return "—"
+    out = num_fmt(e, places=2) if isinstance(e, (int, float)) else html.escape(str(e))
+    if units:
+        out += f" {html.escape(str(units))}"
+    return out
+
+
+def variance_cell_clinical(r: dict) -> str:
+    lo, hi = r.get("ci_lower"), r.get("ci_upper")
+    free = r.get("variance_or_ci")
+    parts = []
+    if lo is not None and hi is not None:
+        parts.append(f"95% CI {num_fmt(lo)}–{num_fmt(hi)}")
+    if free:
+        parts.append(html.escape(str(free)))
+    p = r.get("p_value")
+    if p not in (None, "", "—"):
+        parts.append(f"p={html.escape(str(p))}")
+    return "<br>".join(parts) if parts else "—"
+
+
+def n_cell_clinical(r: dict) -> str:
+    n = r.get("n")
+    if n in (None, ""):
+        return "—"
+    return html.escape(str(n))
+
+
+def n_cell_preclinical(r: dict) -> str:
+    n = r.get("n_units")
+    if not n:
+        return "—"
+    return html.escape(str(n))
+
+
+def effect_cell_preclinical(r: dict) -> str:
+    qual = r.get("effect_size_qual")
+    finding = r.get("key_finding") or ""
+    if qual:
+        return f"{html.escape(qual)} — {html.escape(finding)}" if finding else html.escape(qual)
+    return html.escape(finding) or "—"
+
+
+def variance_cell_preclinical(r: dict) -> str:
+    parts = []
+    control = r.get("control_arm")
+    if control:
+        parts.append(f"vs {html.escape(str(control))}")
+    trans = r.get("translatability_score")
+    if trans:
+        parts.append(f"translatability: {html.escape(str(trans))}")
+    return "<br>".join(parts) if parts else "—"
+
+
+def fmt_toxicity(t: dict) -> str:
+    """Render one toxicity row as 'term (grade): n/N (rate%)'."""
+    term = html.escape(str(t.get("term") or "?"))
+    grade = t.get("grade")
+    n_events = t.get("n_events")
+    denom = t.get("denominator")
+    rate = t.get("rate_pct")
+
+    grade_str = f" G{html.escape(str(grade))}" if grade and grade != "any" else ""
+    head = f"<strong>{term}</strong>{grade_str}"
+
+    rate_parts = []
+    if n_events is not None and denom is not None:
+        rate_parts.append(f"{n_events}/{denom}")
+    elif denom is not None:
+        rate_parts.append(f"n={denom}")
+    if rate is not None:
+        rate_parts.append(f"{num_fmt(rate, places=1).rstrip('0').rstrip('.')}%")
+    rate_str = f" — {' · '.join(rate_parts)}" if rate_parts else ""
+
+    return head + rate_str
+
+
+def toxicities_cell(r: dict) -> str:
+    tox = r.get("toxicities")
+    summary = r.get("safety_summary")
+    if not tox:
+        return html.escape(summary) if summary else "—"
+    items = "<br>".join(fmt_toxicity(t) for t in tox)
+    return items
+
+
+COLS: list[tuple[str, str]] = [
+    ("Report",      "report"),
+    ("Type",        "kind"),
+    ("Intervention","intervention"),
+    ("Indication / model", "indication"),
+    ("Design",      "design"),
+    ("n",           "n"),
+    ("Effect size", "effect"),
+    ("Variance",    "variance"),
+    ("Toxicities (type · n/N · rate)", "toxicities"),
+    ("Case fit",    "case_match"),
+    ("Sources",     "sources"),
+]
+
+
+def render_clinical_row(r: dict) -> str:
+    cells: list[str] = []
+    for _, key in COLS:
+        if key == "report":
+            cells.append(f"<td>{report_cell(r)}</td>")
+        elif key == "kind":
+            cells.append(f"<td>{kind_badge('clinical')}</td>")
+        elif key == "intervention":
+            cells.append(f"<td>{fmt(r.get('intervention_label'))}</td>")
+        elif key == "indication":
+            ind = r.get("indication") or ""
+            pop = r.get("population_detail") or ""
+            line = r.get("line_of_therapy") or ""
+            tag = f" <em>({html.escape(line)})</em>" if line else ""
+            sub = f"<br><small>{html.escape(pop)}</small>" if pop else ""
+            cells.append(f"<td>{html.escape(ind)}{tag}{sub}</td>")
+        elif key == "design":
+            cells.append(f"<td>{fmt(r.get('design'))}</td>")
+        elif key == "n":
+            cells.append(f'<td class="num">{n_cell_clinical(r)}</td>')
+        elif key == "effect":
+            outcome = r.get("outcome") or ""
+            sub = f"<br><small>{html.escape(outcome)}</small>" if outcome else ""
+            cells.append(f'<td class="num">{effect_cell_clinical(r)}{sub}</td>')
+        elif key == "variance":
+            cells.append(f'<td class="num">{variance_cell_clinical(r)}</td>')
+        elif key == "toxicities":
+            cells.append(f"<td>{toxicities_cell(r)}</td>")
+        elif key == "case_match":
+            cells.append(f"<td>{fit_badge(r.get('case_match'))}</td>")
+        elif key == "sources":
+            cells.append(f"<td>{sources_cell(r)}</td>")
+        else:
+            cells.append("<td>—</td>")
+    return "        <tr>" + "".join(cells) + "</tr>"
+
+
+def render_preclinical_row(r: dict) -> str:
+    cells: list[str] = []
+    for _, key in COLS:
+        if key == "report":
+            cells.append(f"<td>{report_cell(r)}</td>")
+        elif key == "kind":
+            cells.append(f"<td>{kind_badge('preclinical')}</td>")
+        elif key == "intervention":
+            cells.append(f"<td>{fmt(r.get('intervention_label'))}</td>")
+        elif key == "indication":
+            cells.append(f"<td>{fmt(r.get('model_system'))}</td>")
+        elif key == "design":
+            cells.append(f"<td>{fmt(r.get('mechanism'))}</td>")
+        elif key == "n":
+            cells.append(f'<td class="num">{n_cell_preclinical(r)}</td>')
+        elif key == "effect":
+            cells.append(f"<td>{effect_cell_preclinical(r)}</td>")
+        elif key == "variance":
+            cells.append(f"<td>{variance_cell_preclinical(r)}</td>")
+        elif key == "toxicities":
+            cells.append("<td><em>n/a (preclinical)</em></td>")
+        elif key == "case_match":
+            cells.append(f"<td>{fit_badge(r.get('case_match'))}</td>")
+        elif key == "sources":
+            cells.append(f"<td>{sources_cell(r)}</td>")
+        else:
+            cells.append("<td>—</td>")
+    return "        <tr>" + "".join(cells) + "</tr>"
+
+
+def render_table(clinical: list[dict], preclinical: list[dict]) -> str:
+    if not clinical and not preclinical:
+        return "_No manuscripts indexed yet._\n"
+    head = "".join(f"<th>{html.escape(label)}</th>" for label, _ in COLS)
+    body: list[str] = []
+    rows = sorted(
+        [(r, "clinical") for r in clinical] + [(r, "preclinical") for r in preclinical],
+        key=lambda pair: -(pair[0].get("year") or 0),
+    )
+    for r, kind in rows:
+        body.append(render_clinical_row(r) if kind == "clinical" else render_preclinical_row(r))
+    return (
+        '<div class="trial-table-wrap">\n'
+        '  <div class="trial-scroll">\n'
+        '    <table class="trial-table">\n'
+        f'      <thead><tr>{head}</tr></thead>\n'
+        '      <tbody>\n' + "\n".join(body) + "\n      </tbody>\n"
+        "    </table>\n"
+        "  </div>\n"
+        "</div>\n"
+    )
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("slug")
+    args = parser.parse_args()
+    slug = args.slug
+
+    case_dir = REPO / "data" / "cases" / slug
+    clinical = load_jsonl(case_dir / "clinical_evidence.jsonl")
+    preclinical = load_jsonl(case_dir / "preclinical_evidence.jsonl")
+
+    parts: list[str] = [
+        '<meta name="robots" content="noindex">\n',
+        f"# Manuscripts considered — `{slug}`\n",
+        f"Master inventory: {len(clinical)} clinical + {len(preclinical)} pre-clinical "
+        "rows. One paper per row, sorted by year (newest first). Toxicities are "
+        "captured per CTCAE-style term with grade, count, and rate; pre-clinical "
+        "rows leave the toxicity cell blank by design. A printable PDF version is "
+        "linked from the case **Downloads** section.\n",
+        render_table(clinical, preclinical),
+        f"[Back to case](index.md) · [Trials](trials.md) · [Evidence (per intervention)](evidence.md) · "
+        f"[Board](board.md) · [Recommendations](recommendations.md)\n",
+        '!!! danger disclaimer "Decision support, not medical advice"\n'
+        "    See [PHI policy](../../phi_policy.md).\n",
+    ]
+
+    body_md = "\n".join(parts) + "\n"
+    dst = REPO / "docs" / "cases" / slug / "manuscripts.md"
+    dst.parent.mkdir(parents=True, exist_ok=True)
+    dst.write_text(body_md, encoding="utf-8")
+    print(f"wrote {dst} (clinical={len(clinical)}, preclinical={len(preclinical)})")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

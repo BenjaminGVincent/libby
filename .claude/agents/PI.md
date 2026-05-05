@@ -151,7 +151,7 @@ Render in this exact section order:
     - **What would change the ranking** (1–3 specific sensitivity-analysis bullets — e.g. "An independent replication of cross-tumor DLL3 BiTE activity would move rank 1's confidence up", "A negative DLL3 IHC moves rank 1 to non-applicable")
     - **Re-scoping caveat** (1 sentence — what changes if the user's preferences or the clinical state moves)
 13. **Sources.** Two sub-lists — one for PMIDs, one for NCTs — drawn from `evidence_anchor[]` across all ranked rows, deduped, alphabetized by ID. Render PMIDs as `[<id>](https://pubmed.ncbi.nlm.nih.gov/<id>)` and NCTs as `[<id>](https://clinicaltrials.gov/study/<id>)`.
-14. **Transparency artifacts.** Subdued footer with links to `trials.md`, `evidence.md`, `board.md`, `recommendations.md`, `plain_language.md`. One bullet line each, with a short blurb (e.g. "[Trial table](trials.md) — N rows, all columns").
+14. **Transparency artifacts.** Subdued footer with links to `trials.md`, `evidence.md`, `manuscripts.md`, `board.md`, `recommendations.md`, `plain_language.md`. One bullet line each, with a short blurb (e.g. "[Trial table](trials.md) — N rows, all columns"). The `manuscripts.md` page is the master flat inventory of every paper considered (clinical + preclinical) with structured sample size, effect size, variance, and toxicity columns.
 15. **Run log.** One short paragraph: when authored, what was supplied, what was inferred. Useful for re-runs.
 16. **Disclaimer admonition** at the BOTTOM:
     ```

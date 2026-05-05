@@ -844,7 +844,10 @@ def _render_table(pdf, lines: list[str]) -> None:
 
 
 def _column_widths(headers: list[str], page_w: float, n: int) -> list[float]:
-    if n == 4 and any("rationale" in h or "notes" in h for h in headers):
+    if n == 9 and any("toxicit" in h for h in headers):
+        # Manuscripts master table: Report | Type | Intervention | Indication | n | Effect | Variance | Toxicities | Case fit
+        ratios = [0.11, 0.06, 0.10, 0.13, 0.04, 0.10, 0.11, 0.28, 0.07]
+    elif n == 4 and any("rationale" in h or "notes" in h for h in headers):
         ratios = [0.15, 0.20, 0.25, 0.40]
     elif n == 5:
         ratios = [0.06, 0.18, 0.28, 0.20, 0.28]
@@ -1059,6 +1062,187 @@ def _make_clinician_pdf(slug: str, exec_md: str, body_md: str, sources_md: str, 
     pdf.output(str(out_path))
 
 
+def _pipe_escape(s: str) -> str:
+    return s.replace("|", "\\|").replace("\n", " ").strip()
+
+
+def _tox_for_pdf(t: dict) -> str:
+    term = t.get("term") or "?"
+    grade = t.get("grade")
+    n_events = t.get("n_events")
+    denom = t.get("denominator")
+    rate = t.get("rate_pct")
+    head = term + (f" G{grade}" if grade and grade != "any" else "")
+    rate_parts: list[str] = []
+    if n_events is not None and denom is not None:
+        rate_parts.append(f"{n_events}/{denom}")
+    elif denom is not None:
+        rate_parts.append(f"n={denom}")
+    if rate is not None:
+        try:
+            r = float(rate)
+            rate_parts.append(f"{r:g}%")
+        except (TypeError, ValueError):
+            rate_parts.append(f"{rate}%")
+    if rate_parts:
+        return f"{head} ({', '.join(rate_parts)})"
+    return head
+
+
+def _row_for_pdf(r: dict, kind: str) -> list[str]:
+    """Return the 9 cells (in COLS order) for one manuscript row, plain text."""
+    first = r.get("first_author") or "—"
+    last = r.get("last_author") or "—"
+    yr = r.get("year") or "—"
+    journal = r.get("journal") or ""
+    report = f"{first}/{last} ({yr})"
+    if journal:
+        report = f"{report} — {journal}"
+
+    if kind == "clinical":
+        intervention = r.get("intervention_label") or "—"
+        ind = r.get("indication") or "—"
+        line = r.get("line_of_therapy")
+        pop = r.get("population_detail")
+        ind_full = ind + (f" ({line})" if line else "")
+        if pop:
+            ind_full += f"; {pop}"
+        design = r.get("design") or "—"
+        n_str = str(r.get("n")) if r.get("n") not in (None, "") else "—"
+
+        e = r.get("effect_size")
+        units = r.get("effect_units") or ""
+        if e is None or e == "":
+            effect = "—"
+        else:
+            effect = f"{e} {units}".strip()
+        outcome = r.get("outcome")
+        if outcome:
+            effect = f"{effect} — {outcome}"
+
+        var_parts: list[str] = []
+        lo, hi = r.get("ci_lower"), r.get("ci_upper")
+        if lo is not None and hi is not None:
+            var_parts.append(f"95% CI {lo}–{hi}")
+        free = r.get("variance_or_ci")
+        if free:
+            var_parts.append(str(free))
+        p = r.get("p_value")
+        if p not in (None, "", "—"):
+            var_parts.append(f"p={p}")
+        variance = "; ".join(var_parts) if var_parts else "—"
+
+        tox = r.get("toxicities") or []
+        if tox:
+            tox_str = "; ".join(_tox_for_pdf(t) for t in tox)
+        else:
+            tox_str = r.get("safety_summary") or "—"
+
+        fit = r.get("case_match") or "—"
+    else:  # preclinical
+        intervention = r.get("intervention_label") or "—"
+        ind_full = r.get("model_system") or "—"
+        design = r.get("mechanism") or "—"
+        n_str = r.get("n_units") or "—"
+        qual = r.get("effect_size_qual") or ""
+        finding = r.get("key_finding") or ""
+        effect = (f"{qual} — {finding}" if qual and finding else (qual or finding)) or "—"
+        var_parts = []
+        if r.get("control_arm"):
+            var_parts.append(f"vs {r['control_arm']}")
+        if r.get("translatability_score"):
+            var_parts.append(f"translatability: {r['translatability_score']}")
+        variance = "; ".join(var_parts) if var_parts else "—"
+        tox_str = "n/a (preclinical)"
+        fit = r.get("case_match") or "—"
+
+    return [
+        report,
+        kind,
+        intervention,
+        ind_full,
+        n_str,
+        effect,
+        variance,
+        tox_str,
+        fit,
+    ]
+
+
+def _manuscripts_md_for_pdf(slug: str, clinical: list[dict], preclinical: list[dict]) -> str:
+    headers = [
+        "Report", "Type", "Intervention", "Indication / model",
+        "n", "Effect size", "Variance", "Toxicities (type, n/N, rate)", "Case fit",
+    ]
+    lines = [
+        f"# Manuscripts considered — {slug}",
+        "",
+        f"Master inventory: {len(clinical)} clinical + {len(preclinical)} pre-clinical "
+        "papers. One row per manuscript, sorted by year (newest first). Toxicities are "
+        "captured per CTCAE-style term with grade, count, and rate; pre-clinical rows "
+        "leave the toxicity cell blank by design.",
+        "",
+        "| " + " | ".join(headers) + " |",
+        "| " + " | ".join(["---"] * len(headers)) + " |",
+    ]
+    rows = sorted(
+        [(r, "clinical") for r in clinical] + [(r, "preclinical") for r in preclinical],
+        key=lambda pair: -(pair[0].get("year") or 0),
+    )
+    for r, kind in rows:
+        cells = _row_for_pdf(r, kind)
+        lines.append("| " + " | ".join(_pipe_escape(c) for c in cells) + " |")
+    lines.append("")
+    return "\n".join(lines)
+
+
+def _make_manuscripts_pdf(slug: str, clinical: list[dict], preclinical: list[dict], out_path: Path) -> None:
+    try:
+        from fpdf import FPDF
+    except ImportError as e:
+        raise SystemExit(
+            "build_report: missing dependency `fpdf2`.\n  pip install fpdf2"
+        ) from e
+
+    today = datetime.now(timezone.utc).date().isoformat()
+
+    class ManuscriptsPDF(FPDF):
+        def footer(self_):
+            if self_.page_no() <= 1:
+                return
+            self_.set_y(-12)
+            self_.set_font(_FONT_FAMILY, "I", 8)
+            self_.set_text_color(*INK_MUTED)
+            self_.cell(
+                0,
+                6,
+                _ascii_fallback(
+                    f"{self_.page_no()} of {{nb}}    ·    Libby — manuscripts inventory    ·    {slug}"
+                ),
+                align="C",
+            )
+
+    pdf = ManuscriptsPDF(orientation="L", unit="mm", format="Letter")
+    pdf.set_auto_page_break(auto=True, margin=18)
+    pdf.set_margins(left=12, top=14, right=12)
+    pdf.alias_nb_pages()
+    _register_unicode_font(pdf)
+
+    _render_cover(
+        pdf, f"Manuscripts considered — {slug}",
+        "Master inventory: every paper reviewed in this case",
+        today, "LIBBY — MANUSCRIPTS INVENTORY",
+        COVER_BG, _DISCLAIMER_CLINICIAN,
+    )
+
+    pdf.add_page()
+    body_md = _manuscripts_md_for_pdf(slug, clinical, preclinical)
+    _render_markdown_block(pdf, body_md, top_h1=True)
+
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    pdf.output(str(out_path))
+
+
 def _make_patient_pdf(slug: str, body_md: str, out_path: Path) -> None:
     try:
         from fpdf import FPDF
@@ -1130,6 +1314,11 @@ def _downloads_section(slug: str, case_docs: Path) -> str:
             f"{slug}-plain-language.pdf",
             "Patient/caregiver PDF",
             "plain-language summary",
+        ),
+        (
+            f"{slug}-manuscripts.pdf",
+            "Master manuscripts table (PDF)",
+            "every paper considered — n, effect, variance, toxicities",
         ),
         (
             f"{slug}-recommendations.html",
@@ -1238,6 +1427,17 @@ def main(argv: list[str]) -> int:
         print(
             f"built {plain_out.relative_to(REPO_ROOT)} — "
             f"{plain_out.stat().st_size / 1024:.0f} KB"
+        )
+
+    clinical = _load_jsonl(case_data / "clinical_evidence.jsonl")
+    preclinical = _load_jsonl(case_data / "preclinical_evidence.jsonl")
+    if clinical or preclinical:
+        manuscripts_out = case_docs / f"{slug}-manuscripts.pdf"
+        _make_manuscripts_pdf(slug, clinical, preclinical, manuscripts_out)
+        print(
+            f"built {manuscripts_out.relative_to(REPO_ROOT)} — "
+            f"{manuscripts_out.stat().st_size / 1024:.0f} KB "
+            f"(clinical={len(clinical)}, preclinical={len(preclinical)})"
         )
 
     html_out = case_docs / f"{slug}-recommendations.html"

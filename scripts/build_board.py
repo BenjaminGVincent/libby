@@ -189,7 +189,8 @@ def main() -> int:
         f"{matrix}\n"
         "## By intervention\n\n"
         + "\n\n".join(sections) + "\n\n"
-        f"[Back to case](index.md) · [Trials](trials.md) · [Evidence](evidence.md) · [Recommendations](recommendations.md)\n\n"
+        f"[Back to case](index.md) · [Trials](trials.md) · [Evidence](evidence.md) · "
+        f"[Manuscripts](manuscripts.md) · [Recommendations](recommendations.md)\n\n"
         '!!! danger disclaimer "Decision support, not medical advice"\n'
         "    See [PHI policy](../../phi_policy.md).\n"
     )

@@ -8,6 +8,7 @@
 
 - [Clinician PDF report](osteosarcoma-mets-dll3-h7r2-libby-report.pdf) — ranked recommendations + evidence + sources
 - [Patient/caregiver PDF](osteosarcoma-mets-dll3-h7r2-plain-language.pdf) — plain-language summary
+- [Master manuscripts table (PDF)](osteosarcoma-mets-dll3-h7r2-manuscripts.pdf) — every paper considered — n, effect, variance, toxicities
 - [Self-contained HTML](osteosarcoma-mets-dll3-h7r2-recommendations.html) — recommendations table that opens offline
 
 <!-- libby:downloads:end -->
@@ -314,7 +315,8 @@ Below regorafenib and cabozantinib because the dossier did not anchor a specific
 ## Transparency artifacts
 
 - [Trial table](trials.md) — 7 rows, all 25 columns
-- [Evidence list](evidence.md) — 5 clinical-evidence rows + 4 preclinical rows
+- [Evidence list](evidence.md) — 5 clinical-evidence rows + 4 preclinical rows (grouped by intervention)
+- [Manuscripts considered](manuscripts.md) — flat master table: n, effect, variance, structured toxicities
 - [Tumor-board transcript](board.md) — 5 positions, 20 cross-critiques
 - [Recommendations table](recommendations.md) — full ranked detail with scenario branches
 - [Plain-language summary](plain_language.md) — patient/caregiver track

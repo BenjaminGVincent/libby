@@ -285,6 +285,7 @@ def main() -> int:
 
     parts.append(
         f"[Back to case](index.md) · [Trials](trials.md) · "
+        f"[Manuscripts](manuscripts.md) · "
         f"[Board](board.md) · [Recommendations](recommendations.md)\n"
     )
     parts.append(

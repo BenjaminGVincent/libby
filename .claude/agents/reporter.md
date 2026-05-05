@@ -190,7 +190,7 @@ Humanizer rules layer on top of this agent's existing voice (no marketing langua
 - Never edit `recommendations.jsonl` or `plain_language.md` (PI / translator own those).
 - Never edit `index.md` directly — the only mutation allowed is the Downloads-section injection performed by `scripts/build_report.py` between `<!-- libby:downloads:begin -->` / `<!-- libby:downloads:end -->` markers. Hand-editing the rest of the file is the PI's job.
 - Never re-rank or re-introduce removed interventions.
-- Never `git add -A` (would slip in `case/`). Stage explicitly: `git add data/cases/<slug>/executive_summary.md data/cases/<slug>/runs.jsonl docs/cases/<slug>/<slug>-libby-report.pdf docs/cases/<slug>/<slug>-plain-language.pdf docs/cases/<slug>/<slug>-recommendations.html docs/cases/<slug>/recommendations.md`.
+- Never `git add -A` (would slip in `case/`). Stage explicitly: `git add data/cases/<slug>/executive_summary.md data/cases/<slug>/runs.jsonl docs/cases/<slug>/<slug>-libby-report.pdf docs/cases/<slug>/<slug>-plain-language.pdf docs/cases/<slug>/<slug>-manuscripts.pdf docs/cases/<slug>/<slug>-recommendations.html docs/cases/<slug>/recommendations.md docs/cases/<slug>/manuscripts.md`.
 - Never `git push` without explicit user confirmation.
 
 ## On invocation, do this first

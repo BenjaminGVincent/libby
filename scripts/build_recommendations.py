@@ -183,8 +183,8 @@ def main() -> int:
 
     parts.append(
         f"[Back to case](index.md) · [Trials](trials.md) · "
-        f"[Evidence](evidence.md) · [Board](board.md) · "
-        f"[Plain language](plain_language.md)\n"
+        f"[Evidence](evidence.md) · [Manuscripts](manuscripts.md) · "
+        f"[Board](board.md) · [Plain language](plain_language.md)\n"
     )
     parts.append(
         '!!! danger disclaimer "Decision support, not medical advice"\n'

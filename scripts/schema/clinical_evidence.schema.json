@@ -46,6 +46,23 @@
     "p_value": { "type": ["string", "number", "null"], "description": "p-value string or numeric; '<0.001' convention." },
     "median_dor_or_pfs": { "type": "string", "description": "Durability — median DoR / PFS / time-on-treatment as reported. e.g. 'mDoR 7.0 mo', 'mPFS 3.6 mo'." },
     "safety_summary": { "type": "string", "description": "1-2 line summary: G3+ AE rate, treatment-related deaths, characteristic AEs (CRS, ILD, neuropathy, etc)." },
+    "toxicities": {
+      "type": "array",
+      "description": "Structured per-AE rows for the master manuscripts table. Capture decision-relevant toxicities: high-grade events, characteristic class effects, treatment-discontinuation drivers, AEs flagged in `preferences.toxicity_vetoes`. Multiple grade rows for the same term are allowed (e.g. one row for 'any grade', one for '>=3').",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["term"],
+        "properties": {
+          "term": { "type": "string", "description": "AE term, CTCAE-aligned where possible. e.g. 'CRS', 'ILD/pneumonitis', 'hand-foot reaction', 'hypertension'." },
+          "grade": { "type": "string", "description": "Grade scope: 'any' | '1-2' | '>=3' | '3' | '4' | '5'. Use '>=3' for the union grade-3-5 rate." },
+          "n_events": { "type": ["integer", "null"], "minimum": 0, "description": "Number of patients with the event. Null when only a percentage is reported." },
+          "denominator": { "type": ["integer", "null"], "minimum": 0, "description": "Cohort size for this rate. If omitted, the row-level `n` is assumed." },
+          "rate_pct": { "type": ["number", "null"], "minimum": 0, "maximum": 100, "description": "Frequency as percent. Capture exactly as reported." },
+          "notes": { "type": "string" }
+        }
+      }
+    },
     "risk_of_bias": {
       "type": "string",
       "enum": ["RoB2:Low", "RoB2:Some", "RoB2:High", "ROBINS-I:Low", "ROBINS-I:Moderate", "ROBINS-I:Serious", "ROBINS-I:Critical", "ROBINS-I:NoInfo", "informal:low", "informal:med", "informal:high", "n/a"],

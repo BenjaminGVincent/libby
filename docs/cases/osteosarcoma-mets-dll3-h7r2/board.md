@@ -126,7 +126,7 @@ Cells show round-1 picks (rank N) where the persona endorsed at round 1, or the 
 </tbody></table></div>
 
 
-[Back to case](index.md) · [Trials](trials.md) · [Evidence](evidence.md) · [Recommendations](recommendations.md)
+[Back to case](index.md) · [Trials](trials.md) · [Evidence](evidence.md) · [Manuscripts](manuscripts.md) · [Recommendations](recommendations.md)
 
 !!! danger disclaimer "Decision support, not medical advice"
     See [PHI policy](../../phi_policy.md).
