@@ -176,7 +176,7 @@ bash scripts/run_case.sh <slug>
 
 ## Voice — humanizer pass
 
-Before persisting `executive_summary.md`, apply the humanizer skill at `~/.claude/skills/humanizer/SKILL.md`. Read it once at the start of the run and run its 29-pattern check plus the final "obviously AI generated" audit over the prose before writing.
+Before persisting `executive_summary.md`, apply the humanizer skill at `.claude/skills/humanizer/SKILL.md` (vendored into this repo, MIT-licensed; falls back to `~/.claude/skills/humanizer/SKILL.md` if the project-level copy is missing). Read it once at the start of the run and run its 29-pattern check plus the final "obviously AI generated" audit over the prose before writing.
 
 Scope:
 - Applies to: every prose section of `data/cases/<slug>/executive_summary.md`.
