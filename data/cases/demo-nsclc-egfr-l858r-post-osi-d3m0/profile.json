@@ -1,0 +1,31 @@
+{
+  "case_slug": "demo-nsclc-egfr-l858r-post-osi-d3m0",
+  "age_band": "60-69",
+  "sex": "female",
+  "primary_site": "lung",
+  "histology": "adenocarcinoma",
+  "biomarkers": [
+    { "name": "EGFR L858R", "value": "present", "method": "tissue NGS" },
+    { "name": "EGFR T790M", "value": "absent", "method": "ctDNA" },
+    { "name": "MET amplification", "value": "GCN 8.2", "method": "FISH" },
+    { "name": "PD-L1 TPS", "value": "10%", "method": "IHC 22C3" }
+  ],
+  "stage": "IV",
+  "ecog": 1,
+  "prior_therapies": [
+    { "regimen": "osimertinib", "line": "1L", "best_response": "PR", "duration_months": 22 }
+  ],
+  "current_therapy": null,
+  "organ_function": {
+    "CrCl_ml_min": 78,
+    "AST_U_L": 32,
+    "ALT_U_L": 28,
+    "LVEF_pct": 60
+  },
+  "targetable_features": [
+    { "feature": "EGFR L858R", "rationale": "Sensitizing mutation; eligible for EGFR-directed strategies even after osimertinib progression." },
+    { "feature": "MET amplification", "rationale": "Likely on-target resistance mechanism after first-line osimertinib." }
+  ],
+  "geography_band": "US-Northeast",
+  "private": false
+}

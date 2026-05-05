@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Libby pre-commit hook: PHI gate.
+# Refuses any staged path under case/ (raw PHI territory) and runs the
+# scan_for_phi.py scanner against staged text-bearing files.
+#
+# Install with: bash scripts/install_hooks.sh
+
+set -euo pipefail
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+cd "$REPO_ROOT"
+
+python3 scripts/scan_for_phi.py --mode=staged --root="$REPO_ROOT"

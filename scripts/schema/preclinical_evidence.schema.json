@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://libby.local/schema/preclinical_evidence.schema.json",
+  "title": "Libby preclinical-evidence row",
+  "description": "Row per pre-clinical literature finding. Appended by researcher agent.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "evidence_id",
+    "case_slug",
+    "intervention_id",
+    "intervention_label",
+    "model_system",
+    "key_finding",
+    "year"
+  ],
+  "properties": {
+    "evidence_id": { "type": "string" },
+    "case_slug": { "type": "string" },
+    "intervention_id": { "type": "string" },
+    "intervention_label": { "type": "string" },
+    "model_system": { "type": "string", "description": "e.g. 'syngeneic mouse MC38', 'patient-derived organoid'." },
+    "mechanism": { "type": "string" },
+    "key_finding": { "type": "string" },
+    "effect_size_qual": {
+      "type": "string",
+      "enum": ["strong", "moderate", "weak", "null", "negative"]
+    },
+    "pmid": { "type": ["string", "null"] },
+    "doi": { "type": ["string", "null"] },
+    "year": { "type": "integer", "minimum": 1980, "maximum": 2100 },
+    "journal": { "type": "string" },
+    "translatability_score": { "type": "string", "enum": ["low", "med", "high"] },
+    "caveats": { "type": "string" }
+  }
+}

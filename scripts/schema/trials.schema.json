@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://libby.local/schema/trials.schema.json",
+  "title": "Libby trial-screener row",
+  "description": "One row per publication (per the trial-table style). Appended to data/cases/<slug>/trials.jsonl by trial_screener.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "row_id",
+    "case_slug",
+    "first_author",
+    "last_author",
+    "year",
+    "phase",
+    "indication",
+    "intervention",
+    "endpoint",
+    "fit_to_case"
+  ],
+  "properties": {
+    "row_id": { "type": "string", "description": "Stable ID for the trial-publication row (slug-PMID or NCT)." },
+    "case_slug": { "type": "string" },
+    "first_author": { "type": "string" },
+    "last_author": { "type": "string" },
+    "year": { "type": "integer", "minimum": 1980, "maximum": 2100 },
+    "journal": { "type": "string" },
+    "nct_id": { "type": ["string", "null"] },
+    "phase": { "type": "string", "enum": ["1", "1a", "1b", "1/2", "2", "2a", "2b", "2/3", "3", "4", "early phase 1", "n/a"] },
+    "indication": { "type": "string" },
+    "line": { "type": "string", "description": "1L | 2L+ | adj | neoadj | n/a" },
+    "biomarker": { "type": "string" },
+    "n": { "type": ["integer", "null"], "minimum": 0 },
+    "design": { "type": "string" },
+    "intervention": { "type": "string" },
+    "comparator": { "type": "string", "description": "— for single-arm." },
+    "endpoint": { "type": "string" },
+    "effect_size": { "type": ["number", "string", "null"] },
+    "ci_lower": { "type": ["number", "null"] },
+    "ci_upper": { "type": ["number", "null"] },
+    "p_value": { "type": ["string", "number", "null"] },
+    "quality": { "type": "string", "description": "RoB 2 / ROBINS-I tier or informal {low|med|high}." },
+    "pmid": { "type": ["string", "null"] },
+    "doi": { "type": ["string", "null"] },
+    "fit_to_case": {
+      "type": "string",
+      "enum": ["strong", "partial", "weak", "none"],
+      "description": "Advisory match against profile.json — LLM-interpreted."
+    },
+    "toxicity_flags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Toxicity-veto fragments from preferences.json that this regimen triggers."
+    },
+    "inclusion_match_notes": { "type": "string" },
+    "recruitment_status": {
+      "type": ["string", "null"],
+      "enum": [null, "recruiting", "active not recruiting", "completed", "terminated", "withdrawn", "not yet recruiting", "unknown"]
+    },
+    "intervention_dosing": { "type": "string" },
+    "supersedes": { "type": ["string", "null"], "description": "row_id this row replaces." }
+  }
+}

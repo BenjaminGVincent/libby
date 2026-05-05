@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://libby.local/schema/critiques.schema.json",
+  "title": "Libby tumor-board cross-critique (round 2)",
+  "description": "One row per (critic, target_persona, target_intervention) tuple; written to data/cases/<slug>/board/critiques.jsonl.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "critic_persona",
+    "target_persona",
+    "case_slug",
+    "target_intervention_id",
+    "agreement_level",
+    "dimension",
+    "comment",
+    "written_at_utc"
+  ],
+  "properties": {
+    "critic_persona": {
+      "type": "string",
+      "enum": ["risktaker", "conservative", "critic", "concensusite", "advocate"]
+    },
+    "target_persona": {
+      "type": "string",
+      "enum": ["risktaker", "conservative", "critic", "concensusite", "advocate"]
+    },
+    "case_slug": { "type": "string" },
+    "target_intervention_id": { "type": "string" },
+    "agreement_level": {
+      "type": "string",
+      "enum": ["endorse", "qualified", "dissent", "veto"]
+    },
+    "dimension": {
+      "type": "string",
+      "enum": ["evidence_quality", "toxicity", "guideline_fit", "preference_fit", "other"]
+    },
+    "comment": { "type": "string", "description": "≤ 3 sentences, anchored on a specific evidence row or preference field." },
+    "evidence_citations": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "written_at_utc": { "type": "string", "format": "date-time" }
+  },
+  "$comment": "Self-critique (critic_persona == target_persona) is forbidden but enforced by the agent prompt, not by the schema."
+}

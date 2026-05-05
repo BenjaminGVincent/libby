@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://libby.local/schema/clinical_evidence.schema.json",
+  "title": "Libby clinical-evidence row",
+  "description": "Row per published clinical-evidence finding. Appended by clinician agent.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "evidence_id",
+    "case_slug",
+    "intervention_id",
+    "intervention_label",
+    "indication",
+    "design",
+    "outcome",
+    "effect_size",
+    "year"
+  ],
+  "properties": {
+    "evidence_id": { "type": "string" },
+    "case_slug": { "type": "string" },
+    "intervention_id": { "type": "string", "description": "Stable ID for the intervention; PI uses this to group across rows." },
+    "intervention_label": { "type": "string" },
+    "indication": { "type": "string" },
+    "design": { "type": "string" },
+    "n": { "type": ["integer", "null"], "minimum": 0 },
+    "outcome": { "type": "string" },
+    "effect_size": { "type": ["number", "string", "null"] },
+    "variance_or_ci": { "type": "string" },
+    "last_author": { "type": "string" },
+    "last_author_contact": { "type": ["string", "null"] },
+    "pmid": { "type": ["string", "null"] },
+    "doi": { "type": ["string", "null"] },
+    "year": { "type": "integer", "minimum": 1980, "maximum": 2100 },
+    "journal": { "type": "string" },
+    "evidence_tier": {
+      "type": "string",
+      "enum": ["1a", "1b", "2a", "2b", "3a", "3b", "4", "5"],
+      "description": "OCEBM-style tier."
+    },
+    "notes": { "type": "string" }
+  }
+}

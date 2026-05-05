@@ -1,0 +1,15 @@
+[project]
+name = "libby"
+version = "0.0.1"
+description = "Multi-agent framework for identifying candidate therapeutics for an individual cancer patient. Decision support, not medical advice."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "httpx>=0.27",
+    "pydantic>=2.7",
+    "jsonschema>=4.21",
+    "mkdocs-material>=9.5",
+    "pymdown-extensions>=10.0",
+    "markdown>=3.6",
+    "fpdf2>=2.7",
+]

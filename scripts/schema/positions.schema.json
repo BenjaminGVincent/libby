@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://libby.local/schema/positions.schema.json",
+  "title": "Libby tumor-board position (round 1)",
+  "description": "One row per persona; written to data/cases/<slug>/board/positions.jsonl in round 1.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["persona", "case_slug", "written_at_utc", "picks", "abstain"],
+  "properties": {
+    "persona": {
+      "type": "string",
+      "enum": ["risktaker", "conservative", "critic", "concensusite", "advocate"]
+    },
+    "case_slug": { "type": "string" },
+    "written_at_utc": { "type": "string", "format": "date-time" },
+    "picks": {
+      "type": "array",
+      "minItems": 0,
+      "maxItems": 7,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["rank", "intervention_id", "intervention_label", "rationale", "confidence"],
+        "properties": {
+          "rank": { "type": "integer", "minimum": 1 },
+          "intervention_id": { "type": "string" },
+          "intervention_label": { "type": "string" },
+          "rationale": { "type": "string", "description": "≤ 4 sentences, persona-flavored." },
+          "evidence_citations": {
+            "type": "array",
+            "items": { "type": "string", "description": "e.g. 'pmid:12345678' or 'nct:NCT04487080'." }
+          },
+          "primary_concerns": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "confidence": { "type": "string", "enum": ["low", "moderate", "high"] }
+        }
+      }
+    },
+    "abstain": { "type": "boolean", "default": false },
+    "abstain_reason": { "type": ["string", "null"] },
+    "notes": { "type": "string" }
+  }
+}

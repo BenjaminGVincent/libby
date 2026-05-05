@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://libby.local/schema/recommendations.schema.json",
+  "title": "Libby PI recommendation row",
+  "description": "Final ranked recommendations synthesized by the PI agent.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "rank",
+    "case_slug",
+    "intervention_id",
+    "intervention_label",
+    "endorsed_by",
+    "dissent_by",
+    "veto_by",
+    "agreement_score",
+    "rationale_summary"
+  ],
+  "properties": {
+    "rank": { "type": "integer", "minimum": 1 },
+    "case_slug": { "type": "string" },
+    "intervention_id": { "type": "string" },
+    "intervention_label": { "type": "string" },
+    "endorsed_by": {
+      "type": "array",
+      "items": { "type": "string", "enum": ["risktaker", "conservative", "critic", "concensusite", "advocate"] }
+    },
+    "dissent_by": {
+      "type": "array",
+      "items": { "type": "string", "enum": ["risktaker", "conservative", "critic", "concensusite", "advocate"] }
+    },
+    "veto_by": {
+      "type": "array",
+      "items": { "type": "string", "enum": ["risktaker", "conservative", "critic", "concensusite", "advocate"] }
+    },
+    "agreement_score": { "type": "number", "minimum": -2, "maximum": 1 },
+    "evidence_anchor": { "type": "array", "items": { "type": "string" } },
+    "expected_benefit": { "type": "string" },
+    "key_risks": { "type": "array", "items": { "type": "string" } },
+    "preference_alignment": { "type": "string" },
+    "guideline_status": { "type": "string" },
+    "rationale_summary": { "type": "string" },
+    "open_questions": { "type": "array", "items": { "type": "string" } },
+    "status": {
+      "type": "string",
+      "enum": ["recommended", "considered_with_caveats", "not_recommended"],
+      "default": "recommended"
+    }
+  }
+}

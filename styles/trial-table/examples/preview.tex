@@ -1,0 +1,65 @@
+% Trial-table style — self-contained compilable preview.
+% See ../STYLE.md for the full spec.
+%
+% Build: pdflatex preview.tex && pdflatex preview.tex
+% (two passes because of \ref in the supplementary-table footnote)
+%
+% This wraps table.tex in a minimal document and inlines a stub bibliography
+% (via filecontents) so the file compiles end-to-end without external .bib.
+
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{threeparttable}
+\usepackage{siunitx}
+\usepackage{array}
+\usepackage{rotating}
+\usepackage{natbib}
+
+\begin{filecontents*}{refs.bib}
+@article{larkin2019,
+  author  = {Larkin, J. and others and Wolchok, J. D.},
+  title   = {Five-Year Survival with Combined Nivolumab and Ipilimumab in Advanced Melanoma},
+  journal = {New England Journal of Medicine},
+  year    = {2019},
+  volume  = {381},
+  pages   = {1535--1546},
+  doi     = {10.1056/NEJMoa1910836}
+}
+@article{robert2019,
+  author  = {Robert, C. and others and Ribas, A.},
+  title   = {Pembrolizumab versus ipilimumab in advanced melanoma (KEYNOTE-006): post-hoc 5-year results from an open-label, multicentre, randomised, controlled, phase 3 study},
+  journal = {Lancet Oncology},
+  year    = {2019}
+}
+@article{wolchok2017,
+  author  = {Wolchok, J. D. and others},
+  title   = {Overall Survival with Combined Nivolumab and Ipilimumab in Advanced Melanoma},
+  journal = {New England Journal of Medicine},
+  year    = {2017}
+}
+@article{hodi2018,
+  author  = {Hodi, F. S. and others},
+  title   = {Nivolumab plus ipilimumab or nivolumab alone versus ipilimumab alone in advanced melanoma (CheckMate 067)},
+  journal = {Lancet Oncology},
+  year    = {2018}
+}
+\end{filecontents*}
+
+\begin{document}
+
+\section*{Trial-table style preview}
+
+Body text surrounding the table to show how it sits in a running document.
+The sample data is illustrative; values for the Larkin row were recalled and
+have not been re-verified against the source.
+
+\input{table.tex}
+
+More body text after the table to demonstrate spacing.
+
+\bibliographystyle{plainnat}
+\bibliography{refs}
+
+\end{document}

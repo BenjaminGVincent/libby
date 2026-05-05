@@ -1,0 +1,71 @@
+% Trial-table style — LaTeX example (manuscript body).
+% See ../STYLE.md for the full spec.
+%
+% Required packages (add to preamble):
+%   \usepackage{booktabs}
+%   \usepackage{threeparttable}
+%   \usepackage{siunitx}
+%   \usepackage{array}
+%
+% Usage: \input{table.tex}
+% A compilable preview wrapping this fragment is in preview.tex.
+%
+% Example values for CheckMate 067 (Larkin 2019) are illustrative and not
+% re-verified against source — do not reuse without checking PMID 31562797.
+
+\begin{table}[htbp]
+  \centering
+  \small
+  \begin{threeparttable}
+    \caption{Selected immune-checkpoint inhibitor trials in advanced melanoma.}
+    \label{tab:ici-trials}
+    \begin{tabular}{@{}llcllS[table-format=4.0]llS[table-format=1.2]S[table-format=<1.3]l@{}}
+      \toprule
+      First author & Last author & Year & Phase & Indication & {n} & Intervention & Endpoint & {Effect} & {p} & Ref \\
+      \midrule
+      Larkin & Wolchok & 2019 & 3 & Adv. melanoma, 1L & 945 & Nivo + ipi    & OS (HR) & 0.52  & <0.001 & \cite{larkin2019} \\
+      Robert & Ribas   & 2019 & 3 & Adv. melanoma, 1L & 834 & Pembrolizumab & OS (HR) & {[ph]} & {[ph]} & \cite{robert2019} \\
+      \bottomrule
+    \end{tabular}
+    \begin{tablenotes}[flushleft]
+      \footnotesize
+      \item Abbreviations: HR, hazard ratio; OS, overall survival;
+            Nivo, nivolumab; ipi, ipilimumab.
+      \item Full trial details (NCT ID, line of therapy, biomarker status,
+            comparator, design, 95\% CI bounds, and risk-of-bias grade) are
+            provided in Supplementary Table~S1.
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+% ---------------------------------------------------------------------------
+% Supplementary landscape table — place in supplement.tex.
+% Requires: \usepackage{rotating}
+% ---------------------------------------------------------------------------
+
+\begin{sidewaystable}
+  \centering
+  \footnotesize
+  \begin{threeparttable}
+    \caption{Full trial-level details for Table~\ref{tab:ici-trials}.}
+    \label{tab:ici-trials-supp}
+    \begin{tabular}{@{}lllllllllS[table-format=1.2]S[table-format=1.2]S[table-format=1.2]ll@{}}
+      \toprule
+      Ref & NCT ID & Phase & Indication & Line & Biomarker & Design & Intervention & Comparator
+        & {Effect} & {Lower CI} & {Upper CI} & Quality & Notes \\
+      \midrule
+      \cite{larkin2019} & NCT01844505 & 3 & Adv. melanoma & 1L & unselected & RCT, 3-arm
+        & Nivo + ipi    & Ipi & 0.52  & 0.42  & 0.64  & Low & Trial a \\
+      \cite{robert2019} & NCT01866319 & 3 & Adv. melanoma & 1L & unselected & RCT
+        & Pembrolizumab & Ipi & {[ph]} & {[ph]} & {[ph]} & Low & --- \\
+      \bottomrule
+    \end{tabular}
+    \begin{tablenotes}[flushleft]
+      \footnotesize
+      \item \textit{Trial a:} Same trial (CheckMate 067) as Wolchok 2017
+            \cite{wolchok2017} and Hodi 2018 \cite{hodi2018} --- differing
+            minimum follow-up.
+      \item Quality graded with RoB~2 (RCTs) or ROBINS-I (non-randomized).
+    \end{tablenotes}
+  \end{threeparttable}
+\end{sidewaystable}

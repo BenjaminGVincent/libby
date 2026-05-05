@@ -1,0 +1,59 @@
+site_name: Libby
+site_description: A multi-agent decision-support framework for identifying candidate therapeutics for an individual cancer patient. Not medical advice.
+site_url: https://benjamingvincent.github.io/libby/
+repo_url: https://github.com/BenjaminGVincent/libby
+repo_name: BenjaminGVincent/libby
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  features:
+    - navigation.top
+    - navigation.instant
+    - navigation.tracking
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - content.action.edit
+    - content.tables.sortable
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+markdown_extensions:
+  - admonition
+  - footnotes
+  - tables
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+
+extra_css:
+  - stylesheets/trial-table.css
+  - stylesheets/libby.css
+
+nav:
+  - Home: index.md
+  - Cases: cases/index.md
+  - Methods: methods.md
+  - PHI policy: phi_policy.md

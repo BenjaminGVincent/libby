@@ -1,0 +1,21 @@
+name: PHI scan
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_call:
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run PHI scanner on tracked tree
+        run: python3 scripts/scan_for_phi.py --mode=tree

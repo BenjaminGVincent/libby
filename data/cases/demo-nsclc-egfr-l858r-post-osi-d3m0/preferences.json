@@ -1,0 +1,16 @@
+{
+  "case_slug": "demo-nsclc-egfr-l858r-post-osi-d3m0",
+  "efficacy_toxicity_weight": 0.55,
+  "toxicity_vetoes": [
+    "severe neuropathy",
+    "cardiotoxicity",
+    "alopecia"
+  ],
+  "modality_constraints": [
+    "oral preferred",
+    "no inpatient infusion",
+    "minimize IV chair time"
+  ],
+  "free_text_constraints": "Patient is a working artist; manual dexterity in hands matters more than typical.",
+  "prefers_trials": true
+}

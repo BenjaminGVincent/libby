@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://libby.local/schema/preferences.schema.json",
+  "title": "Libby user preferences (scrubbed, committable)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["case_slug", "efficacy_toxicity_weight", "toxicity_vetoes"],
+  "properties": {
+    "case_slug": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "efficacy_toxicity_weight": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "0 = minimize toxicity at all costs; 1 = maximize efficacy at all costs."
+    },
+    "toxicity_vetoes": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Toxicities the user wants to avoid (e.g. 'severe neuropathy', 'cardiotoxicity', 'IV chair time')."
+    },
+    "modality_constraints": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Modality limits (e.g. 'oral preferred', 'no transplant', 'no inpatient infusion')."
+    },
+    "free_text_constraints": {
+      "type": "string",
+      "description": "Anything else; free text, never identifying."
+    },
+    "prefers_trials": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether to surface clinical trials prominently."
+    }
+  }
+}
