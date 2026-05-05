@@ -2,10 +2,11 @@
 
 # Recommendations — `demo-nsclc-egfr-l858r-post-osi-d3m0`
 
-!!! danger disclaimer "Decision support, not medical advice"
-    Libby is experimental. Recommendations on this page have not been
-    reviewed by a clinician treating this patient.
-    See [PHI policy](../../phi_policy.md).
+## Downloads
+
+- [Clinician PDF report](demo-nsclc-egfr-l858r-post-osi-d3m0-libby-report.pdf) — ranked recommendations + evidence + sources
+- [Patient/caregiver PDF](demo-nsclc-egfr-l858r-post-osi-d3m0-plain-language.pdf) — plain-language summary
+- [Self-contained HTML](demo-nsclc-egfr-l858r-post-osi-d3m0-recommendations.html) — recommendations table that opens offline
 
 _3 ranked options._
 
@@ -23,4 +24,9 @@ _3 ranked options._
 </div>
 
 [Back to case](index.md) · [Trials](trials.md) · [Evidence](evidence.md) · [Board](board.md) · [Plain language](plain_language.md)
+
+!!! danger disclaimer "Decision support, not medical advice"
+    Libby is experimental. Recommendations on this page have not been
+    reviewed by a clinician treating this patient.
+    See [PHI policy](../../phi_policy.md).
 

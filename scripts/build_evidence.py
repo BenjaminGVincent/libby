@@ -113,13 +113,13 @@ def main() -> int:
     body = (
         '<meta name="robots" content="noindex">\n\n'
         f"# Evidence — `{slug}`\n\n"
-        '!!! danger disclaimer "Decision support, not medical advice"\n'
-        "    See [PHI policy](../../phi_policy.md).\n\n"
         f"## Clinical evidence ({len(clinical)} rows)\n\n"
         f"{render_table(clinical, CLINICAL_COLS)}\n"
         f"## Pre-clinical evidence ({len(preclinical)} rows)\n\n"
         f"{render_table(preclinical, PRECLINICAL_COLS)}\n"
-        f"[Back to case](index.md) · [Trials](trials.md) · [Board](board.md) · [Recommendations](recommendations.md)\n"
+        f"[Back to case](index.md) · [Trials](trials.md) · [Board](board.md) · [Recommendations](recommendations.md)\n\n"
+        '!!! danger disclaimer "Decision support, not medical advice"\n'
+        "    See [PHI policy](../../phi_policy.md).\n"
     )
     dst = REPO / "docs" / "cases" / slug / "evidence.md"
     dst.parent.mkdir(parents=True, exist_ok=True)

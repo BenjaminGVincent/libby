@@ -2,13 +2,6 @@
 
 # Plain-language summary — `osteosarcoma-mets-dll3-h7r2`
 
-!!! warning "Decision support, not medical advice"
-    This is information to help you have a better conversation with your
-    oncologist. It is not a treatment plan. Five computer agents reviewed
-    the published research and discussed options; their suggestions have
-    not been checked by a doctor who knows you personally. Do not make
-    decisions based on this page without talking to a qualified oncologist.
-
 ## What this page is
 
 You (or your clinician) asked Libby to look at one specific situation:
@@ -192,3 +185,10 @@ records:
 - Wang et al. *J Exp Clin Cancer Res* 2018 — Notch3/DLL3 axis in osteosarcoma
   stemness (PMID 29475441)
 - Trial registry NCT06788938 — UCCC-01 / UCLA L-10 tarlatamab basket
+
+!!! warning "Decision support, not medical advice"
+    This is information to help you have a better conversation with your
+    oncologist. It is not a treatment plan. Five computer agents reviewed
+    the published research and discussed options; their suggestions have
+    not been checked by a doctor who knows you personally. Do not make
+    decisions based on this page without talking to a qualified oncologist.

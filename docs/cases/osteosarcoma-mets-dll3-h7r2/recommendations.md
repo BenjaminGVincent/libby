@@ -2,11 +2,6 @@
 
 # Recommendations — `osteosarcoma-mets-dll3-h7r2`
 
-!!! danger disclaimer "Decision support, not medical advice"
-    Libby is experimental. Recommendations on this page have not been
-    reviewed by a clinician treating this patient.
-    See [PHI policy](../../phi_policy.md).
-
 ## Downloads
 
 - [Clinician PDF report](osteosarcoma-mets-dll3-h7r2-libby-report.pdf) — ranked recommendations + evidence + sources
@@ -63,4 +58,9 @@ _7 rows across 2 scenario(s) plus 1 shared row(s)._
 </div>
 
 [Back to case](index.md) · [Trials](trials.md) · [Evidence](evidence.md) · [Board](board.md) · [Plain language](plain_language.md)
+
+!!! danger disclaimer "Decision support, not medical advice"
+    Libby is experimental. Recommendations on this page have not been
+    reviewed by a clinician treating this patient.
+    See [PHI policy](../../phi_policy.md).
 

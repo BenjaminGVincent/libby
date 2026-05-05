@@ -2,12 +2,6 @@
 
 # `osteosarcoma-mets-dll3-h7r2`
 
-!!! danger disclaimer "Decision support, not medical advice"
-    Libby is experimental. The recommendations on this page have **not** been
-    reviewed by a clinician treating this patient. Do not act on this page
-    without consulting a qualified oncologist. Several profile fields were
-    inferred (sparse user input) and are flagged as open questions.
-
 <!-- libby:downloads:begin -->
 
 ## Downloads
@@ -111,3 +105,9 @@ Authored May 2026. Inputs supplied: targetable feature ("DLL3 RNA expression"),
 clinical descriptor ("metastatic osteosarcoma"), preference summary ("accepts
 high-risk high-reward options"). Re-run after Libby gained scenario-branching
 support for non-confirmed biomarkers.
+
+!!! danger disclaimer "Decision support, not medical advice"
+    Libby is experimental. The recommendations on this page have **not** been
+    reviewed by a clinician treating this patient. Do not act on this page
+    without consulting a qualified oncologist. Several profile fields were
+    inferred (sparse user input) and are flagged as open questions.

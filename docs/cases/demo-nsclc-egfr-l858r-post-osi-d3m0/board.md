@@ -2,9 +2,6 @@
 
 # Tumor-board transcript — `demo-nsclc-egfr-l858r-post-osi-d3m0`
 
-!!! danger disclaimer "Decision support, not medical advice"
-    See [PHI policy](../../phi_policy.md).
-
 _5 positions, 20 cross-critiques._
 
 ## Agreement matrix
@@ -116,3 +113,6 @@ Cells show round-1 picks (rank N) where the persona endorsed at round 1, or the 
 
 
 [Back to case](index.md) · [Trials](trials.md) · [Evidence](evidence.md) · [Recommendations](recommendations.md)
+
+!!! danger disclaimer "Decision support, not medical advice"
+    See [PHI policy](../../phi_policy.md).

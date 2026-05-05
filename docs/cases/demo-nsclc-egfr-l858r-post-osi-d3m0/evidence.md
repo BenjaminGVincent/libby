@@ -2,9 +2,6 @@
 
 # Evidence — `demo-nsclc-egfr-l858r-post-osi-d3m0`
 
-!!! danger disclaimer "Decision support, not medical advice"
-    See [PHI policy](../../phi_policy.md).
-
 ## Clinical evidence (3 rows)
 
 <div class="trial-table-wrap">
@@ -36,3 +33,6 @@
 </div>
 
 [Back to case](index.md) · [Trials](trials.md) · [Board](board.md) · [Recommendations](recommendations.md)
+
+!!! danger disclaimer "Decision support, not medical advice"
+    See [PHI policy](../../phi_policy.md).

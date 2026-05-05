@@ -2,14 +2,6 @@
 
 # Plain-language summary — `demo-nsclc-egfr-l858r-post-osi-d3m0`
 
-!!! warning "Decision support, not medical advice"
-    This is information to help you have a better conversation with your
-    oncologist. It is not a treatment plan. The reviewers were five computer
-    agents, not a real medical team; their suggestions have not been checked
-    by a doctor who knows you. Do not make decisions based on what's on this
-    page without talking to a qualified oncologist. This is also a
-    **synthetic demo** — the patient is fictional.
-
 ## What this page is
 
 Libby is an experimental tool that compiles published research about
@@ -159,3 +151,11 @@ registrations:
 - PMID 36720074 (CHRYSALIS-2, amivantamab + lazertinib)
 - PMID 37563559 (HERTHENA-Lung01, patritumab deruxtecan)
 - NCT05261399 (SAFFRON phase-3 trial registry)
+
+!!! warning "Decision support, not medical advice"
+    This is information to help you have a better conversation with your
+    oncologist. It is not a treatment plan. The reviewers were five computer
+    agents, not a real medical team; their suggestions have not been checked
+    by a doctor who knows you. Do not make decisions based on what's on this
+    page without talking to a qualified oncologist. This is also a
+    **synthetic demo** — the patient is fictional.

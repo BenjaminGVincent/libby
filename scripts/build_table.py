@@ -175,12 +175,12 @@ def main() -> int:
     body = (
         '<meta name="robots" content="noindex">\n\n'
         f"# Trials — `{slug}`\n\n"
-        '!!! danger disclaimer "Decision support, not medical advice"\n'
-        "    Not a substitute for clinician review. See [PHI policy](../../phi_policy.md).\n\n"
         f"_{len(rows)} trials._\n\n"
         f"{table_html}\n"
         f"[Back to case](index.md) · "
-        f"[Evidence](evidence.md) · [Board](board.md) · [Recommendations](recommendations.md)\n"
+        f"[Evidence](evidence.md) · [Board](board.md) · [Recommendations](recommendations.md)\n\n"
+        '!!! danger disclaimer "Decision support, not medical advice"\n'
+        "    Not a substitute for clinician review. See [PHI policy](../../phi_policy.md).\n"
     )
     dst.write_text(body, encoding="utf-8")
     print(f"wrote {dst} ({len(rows)} rows)")

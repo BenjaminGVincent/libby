@@ -2,12 +2,6 @@
 
 # `demo-nsclc-egfr-l858r-post-osi-d3m0`
 
-!!! danger disclaimer "Decision support, not medical advice"
-    Libby is experimental. The recommendations on this page have **not** been
-    reviewed by a clinician treating this patient. Do not act on this page
-    without consulting a qualified oncologist. This is a synthetic
-    demonstration case; the patient profile is fictional.
-
 <!-- libby:downloads:begin -->
 
 ## Downloads
@@ -80,3 +74,9 @@ alopecia veto outright; surfaced for transparency only.
 
 Demo case authored May 2026 with synthetic data for smoke-testing the
 pipeline. No real patient information is represented.
+
+!!! danger disclaimer "Decision support, not medical advice"
+    Libby is experimental. The recommendations on this page have **not** been
+    reviewed by a clinician treating this patient. Do not act on this page
+    without consulting a qualified oncologist. This is a synthetic
+    demonstration case; the patient profile is fictional.

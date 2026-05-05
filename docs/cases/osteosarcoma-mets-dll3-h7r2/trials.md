@@ -2,9 +2,6 @@
 
 # Trials — `osteosarcoma-mets-dll3-h7r2`
 
-!!! danger disclaimer "Decision support, not medical advice"
-    Not a substitute for clinician review. See [PHI policy](../../phi_policy.md).
-
 _7 trials._
 
 <div class="trial-table-wrap">
@@ -27,3 +24,6 @@ _7 trials._
 </div>
 
 [Back to case](index.md) · [Evidence](evidence.md) · [Board](board.md) · [Recommendations](recommendations.md)
+
+!!! danger disclaimer "Decision support, not medical advice"
+    Not a substitute for clinician review. See [PHI policy](../../phi_policy.md).

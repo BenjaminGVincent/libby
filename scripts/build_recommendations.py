@@ -158,10 +158,6 @@ def main() -> int:
     parts = [
         '<meta name="robots" content="noindex">\n',
         f"# Recommendations — `{slug}`\n",
-        '!!! danger disclaimer "Decision support, not medical advice"\n'
-        "    Libby is experimental. Recommendations on this page have not been\n"
-        "    reviewed by a clinician treating this patient.\n"
-        "    See [PHI policy](../../phi_policy.md).\n",
     ]
 
     case_docs = REPO / "docs" / "cases" / slug
@@ -189,6 +185,12 @@ def main() -> int:
         f"[Back to case](index.md) · [Trials](trials.md) · "
         f"[Evidence](evidence.md) · [Board](board.md) · "
         f"[Plain language](plain_language.md)\n"
+    )
+    parts.append(
+        '!!! danger disclaimer "Decision support, not medical advice"\n'
+        "    Libby is experimental. Recommendations on this page have not been\n"
+        "    reviewed by a clinician treating this patient.\n"
+        "    See [PHI policy](../../phi_policy.md).\n"
     )
     body_md = "\n".join(parts) + "\n"
 

@@ -182,8 +182,6 @@ def main() -> int:
     body = (
         '<meta name="robots" content="noindex">\n\n'
         f"# Tumor-board transcript — `{slug}`\n\n"
-        '!!! danger disclaimer "Decision support, not medical advice"\n'
-        "    See [PHI policy](../../phi_policy.md).\n\n"
         f"_{len(positions)} positions, {len(critiques)} cross-critiques._\n\n"
         "## Agreement matrix\n\n"
         "Cells show round-1 picks (rank N) where the persona endorsed at round 1, "
@@ -191,7 +189,9 @@ def main() -> int:
         f"{matrix}\n"
         "## By intervention\n\n"
         + "\n\n".join(sections) + "\n\n"
-        f"[Back to case](index.md) · [Trials](trials.md) · [Evidence](evidence.md) · [Recommendations](recommendations.md)\n"
+        f"[Back to case](index.md) · [Trials](trials.md) · [Evidence](evidence.md) · [Recommendations](recommendations.md)\n\n"
+        '!!! danger disclaimer "Decision support, not medical advice"\n'
+        "    See [PHI policy](../../phi_policy.md).\n"
     )
     dst = REPO / "docs" / "cases" / slug / "board.md"
     dst.parent.mkdir(parents=True, exist_ok=True)

@@ -80,18 +80,20 @@ For each intervention, fill out:
 
 Render a clinician-grade markdown page with:
 
-1. **Disclaimer admonition at the top:**
+1. **`<meta name="robots" content="noindex">`** at the top of the file (raw HTML before the `# heading`) so search engines don't index case pages.
+2. **Profile snapshot** (scrubbed; from `profile.json`). When biomarkers carry non-confirmed `confirmation_status`, surface the status visibly (e.g. "DLL3 — RNA only; IHC pending").
+3. **Preferences snapshot** (from `preferences.json`).
+4. **Recommendation summary.** If the case has scenarios, render TWO sub-sections side-by-side or stacked: "If \<biomarker\> positive" and "If \<biomarker\> negative", each with its own ranked summary table. Otherwise a single ranked summary as before.
+5. **Links** to per-page transparency artifacts: `trials.md`, `evidence.md`, `board.md`, `recommendations.md`, `plain_language.md`.
+6. **Disclaimer admonition at the BOTTOM of the page** (after run log, after every other section):
    ```
    !!! danger disclaimer "Decision support, not medical advice"
        Libby is an experimental decision-support tool. The recommendations on
        this page have not been reviewed by a clinician treating this patient.
        Do not act on this page without consulting a qualified oncologist.
    ```
-2. **`<meta name="robots" content="noindex">`** at the top of the file (via `extra` block or raw HTML) so search engines don't index case pages.
-3. **Profile snapshot** (scrubbed; from `profile.json`). When biomarkers carry non-confirmed `confirmation_status`, surface the status visibly (e.g. "DLL3 — RNA only; IHC pending").
-4. **Preferences snapshot** (from `preferences.json`).
-5. **Recommendation summary.** If the case has scenarios, render TWO sub-sections side-by-side or stacked: "If \<biomarker\> positive" and "If \<biomarker\> negative", each with its own ranked summary table. Otherwise a single ranked summary as before.
-6. **Links** to per-page transparency artifacts: `trials.md`, `evidence.md`, `board.md`, `recommendations.md`, `plain_language.md`.
+   The bottom placement mirrors the build-script-rendered pages and keeps
+   the page-top focused on the actionable content.
 
 If this is a new case, also append a row to `docs/cases/index.md` linking to the new page.
 
