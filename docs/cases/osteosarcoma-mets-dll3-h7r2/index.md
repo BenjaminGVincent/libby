@@ -38,7 +38,7 @@ In metastatic osteosarcoma after first-line MAP, what interventions can target D
 
 ## Scope summary
 
-Three trials, three clinical-evidence rows, four preclinical rows. Two ranked rows: a workup gate at rank 1 plus one biomarker-conditional therapeutic option at rank 2. The board reached full consensus (all five personas) on the workup. One persistent dissent (critic) sits on the conditional rank-2 trial. The case is scoped to drugs that act on the user's stated targetable feature (DLL3); standard 2L+ care for the indication is out of scope and is not enumerated.
+21 trials surfaced (3 included as primary efficacy rows for tarlatamab; 18 cross-tumor / pipeline-context rows spanning seven DLL3-targeting modality classes), 3 clinical-evidence rows (2 included + 1 considered & excluded), 5 preclinical rows (4 included + 1 considered & excluded). Two ranked rows: a workup gate at rank 1 plus one biomarker-conditional therapeutic option at rank 2. The board reached full consensus (all five personas) on the workup. One persistent dissent (critic) sits on the conditional rank-2 trial. The case is scoped to drugs that act on the user's stated targetable feature (DLL3); standard 2L+ care for the indication is out of scope and is not enumerated.
 
 ## Cross-cutting caveat (read first)
 
@@ -47,10 +47,17 @@ Three trials, three clinical-evidence rows, four preclinical rows. Two ranked ro
 - **Rank 2 (tarlatamab)** is conditional on DLL3 IHC ≥1% (preferably ≥25%). It is the only therapeutic option within scope of this case's targetable feature.
 - **If IHC is negative:** rank 2 is foreclosed and this case has no within-scope recommendations. Libby's ranking is targetable-feature-scoped; standard 2L+ care for the indication is a separate conversation with the treating team and is not enumerated on this page.
 - **Workup logistics:** SP347 IHC is non-toxic, runs on archival tissue (no fresh biopsy required), takes one to three weeks, and costs almost nothing relative to a treatment cycle. Confirm assay availability at the treating institution.
+- **Pipeline visibility.** The dossier surfaces 18 additional DLL3-targeting investigational drugs across seven modality classes (BiTE, trispecific, CD47-bispecific, ADC, radioligand, radioimmunotherapy, CAR-T, CAR-NK). They are informational only — patient cannot enroll (SCLC/NEC-scoped) — but they shape how the board reasons about the BiTE class (tarlatamab vs alternatives), the post-Rova-T ADC era, and what a negative IHC result actually forecloses (it forecloses *all* DLL3-directed therapy, not just tarlatamab).
 
 ## Intervention grouping
 
-- **DLL3-directed BiTEs (biomarker-conditional):** tarlatamab via NCT06788938. Cross-tumor efficacy anchor: DeLLphi-301 ([PMID 37861218](https://pubmed.ncbi.nlm.nih.gov/37861218)) and DeLLphi-304 ([PMID 40454646](https://pubmed.ncbi.nlm.nih.gov/40454646)).
+- **DLL3 × CD3 BiTEs (biomarker-conditional, actionable via NCT06788938):** tarlatamab. Anchor evidence: DeLLphi-301 ([PMID 37861218](https://pubmed.ncbi.nlm.nih.gov/37861218)) + DeLLphi-304 ([PMID 40454646](https://pubmed.ncbi.nlm.nih.gov/40454646)).
+- **Other DLL3 × CD3 / CD137 BiTEs and trispecifics (pipeline context, SCLC/NEC-scoped):** obrixtamig (BI 764532, Boehringer Ingelheim DAREON phase 3), gocatamig (MK-6070 / HPN328 / DS3280, Harpoon→Merck), alveltamig (ZG006, Zelgen phase 3), clesitamig (RO7616789, Roche), QLS31904.
+- **DLL3 × CD47 bispecifics (non-T-cell-engager class):** peluntamig (PT217, Phanes Therapeutics).
+- **DLL3 ADCs (TOP1-inhibitor or DXd payload, post-Rova-T era):** zocilurtatug pelitecan (ZL-1310, Zai Lab phase 3), SHR-4849 / IDE849 (IDEAYA / Hengrui), IBI3009 (Innovent), FZ-AD005 (Shanghai Fudan-Zhangjiang).
+- **DLL3 radiopharmaceuticals (radiation mechanism, antigen-loss-resistant):** ²²⁵Ac-ABD147 (Abdera), ¹⁷⁷Lu-DTPA-SC16.56 (Memorial Sloan Kettering), ²²⁵Ac-ETN029 (Novartis).
+- **DLL3 cell therapies:** LB2102 autologous CAR-T (Legend Biotech), DLL3-CAR-NK cells (Tianjin academic). AMG 119 was Amgen's first-generation CAR-T program — currently suspended.
+- **Discontinued DLL3 ADCs (mechanism context for current ADC entrants):** rovalpituzumab tesirine / Rova-T (TAHOE phase-3 failure, AbbVie discontinued), SC-002 (Stemcentrx, terminated in phase 1).
 
 ## Top interventions
 
