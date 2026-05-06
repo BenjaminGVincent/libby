@@ -27,7 +27,7 @@ _3 ranked options._
 !!! note "Reading the columns"
     **Toxicity burden** is patient-level G3+ AE severity (Low / Moderate / High) summarized from trial publications. **Counter-productive MoA** is the mechanism-level risk that the intervention's own pathway could blunt the therapeutic goal — distinct from patient AEs. The board's endorse / dissent / veto state appears as pills under each intervention; full per-persona rationale lives on the [board page](board.md).
 
-[Back to case](index.md) · [Trials](trials.md) · [Evidence](evidence.md) · [Manuscripts](manuscripts.md) · [Board](board.md) · [Plain language](plain_language.md)
+[Back to case](index.md) · [Trials](trials.md) · [Evidence](evidence.md) · [Manuscripts](manuscripts.md) · [Target validation](target_validation.md) · [Board](board.md) · [Plain language](plain_language.md)
 
 !!! danger disclaimer "Decision support, not medical advice"
     Libby is experimental. Recommendations on this page have not been

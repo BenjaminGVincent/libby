@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://libby.local/schema/target_validation.schema.json",
+  "title": "Libby target-validation row",
+  "description": "One row per recommended biomarker / orthogonal assay / resistance marker / functional study identified by the target_validator agent. Increases confidence in the user-stated targetable feature.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "validation_id",
+    "case_slug",
+    "feature",
+    "test_type",
+    "test_name",
+    "priority",
+    "rationale"
+  ],
+  "properties": {
+    "validation_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "description": "Stable kebab-case row id (e.g. 'dll3-ihc-confirmatory')."
+    },
+    "case_slug": { "type": "string" },
+    "feature": {
+      "type": "string",
+      "description": "Verbatim copy of profile.json::targetable_features[].feature this validation step assesses."
+    },
+    "test_type": {
+      "type": "string",
+      "enum": [
+        "confirmatory",
+        "orthogonal_validation",
+        "heterogeneity",
+        "subtyping",
+        "co_mutation",
+        "resistance_marker",
+        "functional_assay",
+        "microenvironment",
+        "germline"
+      ]
+    },
+    "test_name": {
+      "type": "string",
+      "description": "Human-readable assay or analysis name (e.g. 'DLL3 IHC (clone SP347)')."
+    },
+    "assay_modality": {
+      "type": ["string", "null"],
+      "enum": [
+        "IHC", "FISH", "PCR", "ddPCR", "NGS_panel", "WES", "WGS", "RNA_seq",
+        "methylation_array", "flow_cytometry", "tissue_microarray", "ctDNA",
+        "functional_assay", "imaging", "germline_panel", "other", null
+      ]
+    },
+    "tissue_type": {
+      "type": ["string", "null"],
+      "description": "Free text — e.g. 'archival FFPE', 'fresh biopsy required', 'whole blood'."
+    },
+    "decision_relevance": {
+      "type": ["string", "null"],
+      "enum": [
+        "gates_intervention",
+        "confirms_target_call",
+        "refines_target_subtype",
+        "informs_resistance",
+        "informs_prognosis",
+        "informs_microenvironment",
+        "informs_germline_implications",
+        null
+      ]
+    },
+    "gates_intervention": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Drug names or NCT IDs whose eligibility hinges on this test (e.g. ['tarlatamab', 'NCT06788938']). Empty array when no specific intervention gating applies."
+    },
+    "priority": {
+      "type": "string",
+      "enum": ["essential", "high", "medium", "low"]
+    },
+    "rationale": {
+      "type": "string",
+      "maxLength": 1200,
+      "description": "≤ 3 sentences: what the test resolves, the supporting reference, and the consequence of skipping it."
+    },
+    "turnaround_estimate": { "type": ["string", "null"] },
+    "tissue_required_estimate": { "type": ["string", "null"] },
+    "cost_relative": {
+      "type": ["string", "null"],
+      "enum": ["low", "moderate", "high", null],
+      "description": "Relative to a single treatment cycle for the indication."
+    },
+    "references": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "pmid:* / nct:* / guideline:* citations."
+    },
+    "notes": { "type": ["string", "null"] },
+    "supersedes": {
+      "type": ["string", "null"],
+      "description": "validation_id of a prior row this one corrects or replaces."
+    }
+  }
+}

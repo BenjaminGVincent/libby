@@ -477,6 +477,7 @@ def main() -> int:
         "printable PDF version is linked from the case **Downloads** section.\n",
         render_table(clinical, preclinical, trials),
         f"[Back to case](index.md) · [Trials](trials.md) · [Evidence (per intervention)](evidence.md) · "
+        f"[Target validation](target_validation.md) · "
         f"[Board](board.md) · [Recommendations](recommendations.md)\n",
         '!!! danger disclaimer "Decision support, not medical advice"\n'
         "    See [PHI policy](../../phi_policy.md).\n",

@@ -68,7 +68,25 @@ against the JSON schemas in `scripts/schema/`, runs the PHI scanner against
 both files, and (only if both pass) copies them to `data/cases/<slug>/`. This is
 the **only path** PHI-derived data takes into the committable tree.
 
-### 3. Research tier
+### 3. Target validation
+
+```
+/target_validator <slug>   # data/cases/<slug>/target_validation.jsonl
+```
+
+For each `profile.json::targetable_features[]` entry, the validator surfaces
+the additional biomarkers, orthogonal assays, resistance markers, and
+functional studies that would harden the target call. Rows are tagged with
+a `priority` (essential / high / medium / low) and a `decision_relevance`
+(gates_intervention / confirms_target_call / refines_target_subtype /
+informs_resistance / informs_prognosis / informs_microenvironment /
+informs_germline_implications). The PI uses `priority: "essential"` +
+`decision_relevance: "gates_intervention"` rows to compute the rank-1
+shared workup row in `recommendations.jsonl` — the canonical example is
+*DLL3 RNA → DLL3 IHC SP347* in the osteosarcoma case, where the IHC gates
+every DLL3-directed therapy regardless of which specific drug is chosen.
+
+### 4. Research tier
 
 ```
 /trial_screener <slug>     # data/cases/<slug>/trials.jsonl
@@ -76,10 +94,11 @@ the **only path** PHI-derived data takes into the committable tree.
 /researcher     <slug>     # data/cases/<slug>/preclinical_evidence.jsonl
 ```
 
-Each agent reads only `data/cases/<slug>/{profile,preferences}.json` and the
-prior agent's output. They never read `case/<slug>/clinical/` directly.
+Each agent reads only `data/cases/<slug>/{profile,preferences}.json`,
+`target_validation.jsonl` (when present), and the prior agent's output.
+They never read `case/<slug>/clinical/` directly.
 
-### 4. Tumor board — round 1 (positions)
+### 5. Tumor board — round 1 (positions)
 
 ```
 /risktaker     <slug> --round 1
@@ -93,7 +112,7 @@ Each persona reads the research dossier and appends one row to
 `data/cases/<slug>/board/positions.jsonl` — 3–5 ranked picks with rationale,
 evidence citations, primary concerns, and confidence. Order is independent.
 
-### 5. Tumor board — round 2 (cross-critiques)
+### 6. Tumor board — round 2 (cross-critiques)
 
 ```
 /risktaker     <slug> --round 2
@@ -108,7 +127,7 @@ Each persona reads all five round-1 positions and writes four critique rows
 rows total. Round-2 prompts explicitly direct each agent to **disagree where
 defensible** to mitigate consensus drift.
 
-### 6. Synthesis
+### 7. Synthesis
 
 ```
 /PI <slug>          # data/cases/<slug>/recommendations.jsonl + docs/cases/<slug>/index.md
@@ -125,7 +144,7 @@ absolute-risk framing, no NCT IDs in body, "questions to ask your oncologist."
 A separate agent (rather than a prompt branch on `PI`) because the audiences
 need different *omissions*, not just different word choices.
 
-### 7. Render
+### 8. Render
 
 ```
 bash scripts/run_case.sh <slug>
@@ -134,7 +153,7 @@ bash scripts/run_case.sh <slug>
 Runs `build_table.py`, `build_evidence.py`, `build_board.py`,
 `build_recommendations.py`, and a final PHI re-scan against rendered docs.
 
-### 8. Publish
+### 9. Publish
 
 ```
 git add data/cases/<slug>/ docs/cases/<slug>/

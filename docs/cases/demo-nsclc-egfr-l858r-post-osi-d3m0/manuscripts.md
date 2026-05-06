@@ -21,7 +21,7 @@ Master inventory: 3 clinical (3 included, 0 considered & excluded) + 3 pre-clini
   </div>
 </div>
 
-[Back to case](index.md) · [Trials](trials.md) · [Evidence (per intervention)](evidence.md) · [Board](board.md) · [Recommendations](recommendations.md)
+[Back to case](index.md) · [Trials](trials.md) · [Evidence (per intervention)](evidence.md) · [Target validation](target_validation.md) · [Board](board.md) · [Recommendations](recommendations.md)
 
 !!! danger disclaimer "Decision support, not medical advice"
     See [PHI policy](../../phi_policy.md).

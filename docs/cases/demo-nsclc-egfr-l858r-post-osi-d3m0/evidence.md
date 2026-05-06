@@ -92,7 +92,7 @@ Per-manuscript detail grouped by intervention. Each row is one published clinica
   </div>
 </div>
 
-[Back to case](index.md) · [Trials](trials.md) · [Manuscripts](manuscripts.md) · [Board](board.md) · [Recommendations](recommendations.md)
+[Back to case](index.md) · [Trials](trials.md) · [Manuscripts](manuscripts.md) · [Target validation](target_validation.md) · [Board](board.md) · [Recommendations](recommendations.md)
 
 !!! danger disclaimer "Decision support, not medical advice"
     See [PHI policy](../../phi_policy.md).

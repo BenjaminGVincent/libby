@@ -18,11 +18,21 @@ You also write the directory listing at `docs/cases/index.md` if this is a new c
 
 - `data/cases/<slug>/profile.json`
 - `data/cases/<slug>/preferences.json`
+- `data/cases/<slug>/target_validation.jsonl` (when present — `target_validator` output)
 - `data/cases/<slug>/trials.jsonl`
 - `data/cases/<slug>/clinical_evidence.jsonl`
 - `data/cases/<slug>/preclinical_evidence.jsonl`
 - `data/cases/<slug>/board/positions.jsonl` (5 rows)
 - `data/cases/<slug>/board/critiques.jsonl` (20 rows)
+
+When `target_validation.jsonl` is present, the rank-1 shared workup row in
+`recommendations.jsonl` should be derived from rows tagged
+`priority: "essential"` and `decision_relevance: "gates_intervention"`. Use
+the validator's `test_name`, `gates_intervention[]`, and `rationale` as the
+basis for the workup row's `intervention_label`, `evidence_anchor[]`, and
+`rationale_summary`. Other validator rows (`high` priority, non-gating)
+surface in the case's `## Workup considerations` paragraph in `index.md`,
+not as separate ranked recs.
 
 ## Hard rules
 
