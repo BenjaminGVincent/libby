@@ -63,6 +63,7 @@ Field guidance:
 - `tissue_required_estimate` — e.g. *"archival FFPE acceptable"*, *"fresh biopsy required"*, *"5-10 mL whole blood"*.
 - `cost_relative` — `low | moderate | high`, relative to a treatment cycle for the indication.
 - `references[]` — `pmid:*`, `nct:*`, or `guideline:*` (e.g. `guideline:nccn-NSCLC-v3.2025`). Never invent.
+- `providers[]` — companies / labs that offer this assay as a service (≤ 5 per row). Each provider object: `name` (required), `size` (`academic | mid | major`), `us_based` (boolean), `assay_brand` (provider's branded test name when distinct from the generic `test_name`), `contact_url`, `contact_email`, `contact_phone`, `notes`. Always include at least one of `contact_url` / `contact_email` / `contact_phone` per provider — these power the access table at the top of the reporter's `target_validation_report.md`. **Selection priority when more than 5 providers offer the assay:** (1) company size — major commercial reference labs (LabCorp, Quest, Foundation Medicine, Guardant, Tempus, Caris, NeoGenomics, Invitae, GeneDx, etc.) over small / boutique providers; (2) reputation — CAP-accredited, used in pivotal trials, named in NCCN / ESMO confirmatory-test guidance; (3) US-based location — domestic providers preferred for US-routed cases unless the user's `profile.json::geography_band` says otherwise. Use only public contact info from the company's own published test-info pages; never scrape personal emails or invent phone numbers.
 
 ## Voice — humanizer pass (free-text fields)
 
@@ -91,6 +92,18 @@ Cross-reference `targetable_features[].feature` and `biomarkers[]`. If a biomark
 ### Step 2 — search the literature
 
 Search PubMed and ClinicalTrials.gov for the feature's name plus `"biomarker"`, `"companion diagnostic"`, `"validation"`, `"resistance"`. Read enrollment criteria of the most-active trials targeting the feature to see what biomarker resolution they require — this is the most concrete source of `gates_intervention` rationale. Pull NCCN, ESMO, and CAP guidelines for confirmatory-test standards when they exist.
+
+### Step 2.5 — identify providers
+
+For each test, identify ≤ 5 commercial / academic providers that offer the assay as a service. Use:
+
+- The company's own test-info pages (e.g. labcorp.com, questdiagnostics.com, foundationmedicine.com, guardanthealth.com, tempus.com, caris.com, neogenomics.com, invitae.com, genedx.com, mayocliniclabs.com).
+- CAP / CLIA directories.
+- The pivotal trials' published methods sections — they often name the central lab.
+
+Capture `name`, `size`, `us_based`, `assay_brand` (when the provider has a distinct branded test name), and at least one of `contact_url` / `contact_email` / `contact_phone`. Use only publicly-listed contact info.
+
+When more than 5 providers exist, select per the priority rule: **company size (major > mid > academic-only)** → **reputation (CAP-accredited / pivotal-trial-central-lab / NCCN-named)** → **US-based location** unless the case's geography says otherwise. Document the selection reasoning briefly in `notes` if the cut is non-obvious.
 
 ### Step 3 — emit rows
 

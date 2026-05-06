@@ -110,12 +110,21 @@ If `data/cases/<slug>/target_validation.jsonl` exists and is non-empty, also aut
 1. **Website.** Injected into `docs/cases/<slug>/index.md` between stable HTML markers `<!-- libby:target-validation:begin -->` / `<!-- libby:target-validation:end -->`, placed immediately after the `## Preferences` section so a clinician sees the workup framing before reading the scope summary or the per-rank narratives.
 2. **PDF.** A standalone *"Target validation paths"* PDF (`<slug>-target-validation.pdf`), linked from the case's Downloads block.
 
-Structure (single H2 + per-feature narrative):
+Structure (assay-providers table → per-feature narrative):
 
 ```markdown
 ## Target validation paths
 
-<1–2 sentence opening: name the gating test(s) that the case hinges on, and what they unlock or foreclose. Mirror the cross-cutting caveat's "if test negative" framing when biomarker gating applies.>
+### Where to order these assays
+
+| Assay | Provider | Contact |
+|---|---|---|
+| <test_name from row 1> | <provider.name> *(<assay_brand if any>)* | [test info](<provider.contact_url>) · <provider.contact_email> · <provider.contact_phone> |
+| ... | ... | ... |
+
+<This table comes first. One row per (assay, provider) pair, drawn from `target_validation.jsonl::providers[]`. When multiple rows reference the same assay, deduplicate. Keep the table compact — pull `contact_url`, `contact_email`, `contact_phone` into a single Contact column separated by " · ". Cap at the providers the JSONL already filtered to (≤ 5 per assay per the target_validator's selection rule). Use the provider's branded test name as a parenthetical when distinct from the generic test_name.>
+
+<1–2 sentence prose paragraph after the table: name the gating test(s) the case hinges on, what they unlock or foreclose. Mirror the cross-cutting caveat's "if test negative" framing when biomarker gating applies.>
 
 ### <feature name from profile.json::targetable_features[].feature>
 

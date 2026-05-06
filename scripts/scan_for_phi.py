@@ -159,19 +159,38 @@ def all_caps_pair_is_phi(line: str) -> bool:
     return False
 
 
-# Files where structured manufacturer / trial contact information and
+# Files where structured manufacturer / trial / lab contact information and
 # row-verification dates are surfaced by design. The accessibility report's
 # whole purpose is to publish phone numbers, emails, and last-verified dates
-# so a treating team can dial them. PHI patterns are still meaningful inside
-# such a file — they just shift to the patterns that genuinely indicate
-# patient identifiers (MRN, SSN, ALL-CAPS NAME pairs) rather than the
-# patterns that legitimately match published business contacts.
-_ACCESSIBILITY_NAMES = {"accessibility.md", "accessibility.jsonl"}
-_ACCESSIBILITY_BYDESIGN_LABELS = {"email", "us_phone", "iso_date_full"}
+# so a treating team can dial them. The target-validation files do the same
+# for assay providers — they list reference labs (LabCorp, Foundation
+# Medicine, Mayo Labs, etc.) with toll-free customer-service numbers and
+# test-info URLs so a clinician can route a sample. PHI patterns are still
+# meaningful inside such files — they just shift to the patterns that
+# genuinely indicate patient identifiers (MRN, SSN, ALL-CAPS NAME pairs)
+# rather than the patterns that legitimately match published business
+# contacts.
+_BYDESIGN_NAMES = {
+    "accessibility.md",
+    "accessibility.jsonl",
+    "target_validation.md",
+    "target_validation.jsonl",
+    "target_validation_report.md",
+}
+_BYDESIGN_LABELS = {"email", "us_phone", "iso_date_full"}
 
 
-def _is_accessibility_artifact(path: Path) -> bool:
-    return path.name in _ACCESSIBILITY_NAMES
+def _is_bydesign_artifact(path: Path) -> bool:
+    return path.name in _BYDESIGN_NAMES
+
+
+# Marker pairs that bracket sections where business-contact patterns
+# (us_phone, email, iso_date_full) are surfaced by design — used inside
+# index.md, where the rest of the file should still be PHI-scanned strictly.
+_BYDESIGN_REGION_MARKERS = (
+    ("<!-- libby:target-validation:begin -->", "<!-- libby:target-validation:end -->"),
+    ("<!-- libby:accessibility:begin -->", "<!-- libby:accessibility:end -->"),
+)
 
 
 def scan_file(path: Path) -> list[tuple[int, str, str, str]]:
@@ -182,11 +201,28 @@ def scan_file(path: Path) -> list[tuple[int, str, str, str]]:
         text = path.read_text(encoding="utf-8", errors="replace")
     except (FileNotFoundError, IsADirectoryError, PermissionError):
         return []
-    suppress_labels = _ACCESSIBILITY_BYDESIGN_LABELS if _is_accessibility_artifact(path) else set()
+    file_level_suppress = _BYDESIGN_LABELS if _is_bydesign_artifact(path) else set()
     hits: list[tuple[int, str, str, str]] = []
+    in_bydesign_region = False
+    region_end_marker: str | None = None
     for lineno, line in enumerate(text.splitlines(), start=1):
         if IGNORE_TOKEN in line:
+            # Toggle region state if a marker appears even on an ignored line.
+            for begin, end in _BYDESIGN_REGION_MARKERS:
+                if begin in line:
+                    in_bydesign_region = True
+                    region_end_marker = end
+                if end in line:
+                    in_bydesign_region = False
+                    region_end_marker = None
             continue
+        if not in_bydesign_region:
+            for begin, _end in _BYDESIGN_REGION_MARKERS:
+                if begin in line:
+                    in_bydesign_region = True
+                    region_end_marker = _end
+                    break
+        suppress_labels = file_level_suppress | (_BYDESIGN_LABELS if in_bydesign_region else set())
         for label, pattern, description in PATTERNS:
             if label in suppress_labels:
                 continue
@@ -195,6 +231,9 @@ def scan_file(path: Path) -> list[tuple[int, str, str, str]]:
             if label == "all_caps_name" and not all_caps_pair_is_phi(line):
                 continue
             hits.append((lineno, label, description, line.rstrip()))
+        if in_bydesign_region and region_end_marker and region_end_marker in line:
+            in_bydesign_region = False
+            region_end_marker = None
     return hits
 
 

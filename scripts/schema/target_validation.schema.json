@@ -94,6 +94,33 @@
       "items": { "type": "string" },
       "description": "pmid:* / nct:* / guideline:* citations."
     },
+    "providers": {
+      "type": "array",
+      "maxItems": 5,
+      "description": "Companies / labs that offer this assay as a service. Capped at 5 per row. Selection priority: company size, reputation, and US-based location (target_validator contract).",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name"],
+        "properties": {
+          "name": { "type": "string" },
+          "size": {
+            "type": ["string", "null"],
+            "enum": ["academic", "mid", "major", null],
+            "description": "academic = NCI-designated / large academic medical center reference lab; mid = mid-cap commercial; major = large-cap commercial reference lab."
+          },
+          "us_based": { "type": ["boolean", "null"] },
+          "contact_url": { "type": ["string", "null"] },
+          "contact_email": { "type": ["string", "null"] },
+          "contact_phone": { "type": ["string", "null"] },
+          "assay_brand": {
+            "type": ["string", "null"],
+            "description": "Provider's branded name for the test (e.g. 'Guardant360', 'FoundationOne CDx'), when distinct from the generic test_name."
+          },
+          "notes": { "type": ["string", "null"] }
+        }
+      }
+    },
     "notes": { "type": ["string", "null"] },
     "supersedes": {
       "type": ["string", "null"],

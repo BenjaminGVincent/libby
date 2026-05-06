@@ -128,6 +128,45 @@ def sort_key(r: dict) -> tuple:
     )
 
 
+def providers_cell(providers: list[dict] | None) -> str:
+    """Compact per-provider list. Each provider renders as a bold name + brand
+    inline + contact line(s), one provider per row."""
+    if not providers:
+        return "—"
+    pieces: list[str] = []
+    for p in providers:
+        if not p or not p.get("name"):
+            continue
+        head_bits = [f"<strong>{html.escape(str(p['name']))}</strong>"]
+        brand = p.get("assay_brand")
+        if brand:
+            head_bits.append(f"<em>{html.escape(str(brand))}</em>")
+        head = " · ".join(head_bits)
+        contacts: list[str] = []
+        url = p.get("contact_url")
+        if url:
+            contacts.append(f'<a href="{html.escape(str(url))}">test info</a>')
+        email = p.get("contact_email")
+        if email:
+            contacts.append(f'<a href="mailto:{html.escape(str(email))}">{html.escape(str(email))}</a>')
+        phone = p.get("contact_phone")
+        if phone:
+            contacts.append(html.escape(str(phone)))
+        contact_line = " · ".join(contacts) if contacts else "—"
+        notes = p.get("notes")
+        flag = ""
+        if p.get("us_based") is True:
+            flag = ' <span class="fit-badge fit-strong">US</span>'
+        elif p.get("us_based") is False:
+            flag = ' <span class="fit-badge fit-weak">non-US</span>'
+        pieces.append(
+            f"<div>{head}{flag}<br><small>{contact_line}</small>"
+            + (f"<br><small><em>{html.escape(str(notes))}</em></small>" if notes else "")
+            + "</div>"
+        )
+    return "<br>".join(pieces) if pieces else "—"
+
+
 def render_table(rows: list[dict]) -> str:
     if not rows:
         return "_No validation rows for this feature._\n"
@@ -135,7 +174,7 @@ def render_table(rows: list[dict]) -> str:
         "<th>Priority</th><th>Test</th><th>Type</th>"
         "<th>Modality</th><th>Tissue</th><th>Turnaround</th>"
         "<th>Gates intervention</th><th>Decision relevance</th>"
-        "<th>Rationale</th><th>References</th>"
+        "<th>Rationale</th><th>Providers</th><th>References</th>"
     )
     body: list[str] = []
     for r in rows:
@@ -150,6 +189,7 @@ def render_table(rows: list[dict]) -> str:
             f"<td>{gates_cell(r.get('gates_intervention'))}</td>"
             f"<td>{fmt((r.get('decision_relevance') or '').replace('_', ' ') or None)}</td>"
             f"<td>{fmt(r.get('rationale'))}</td>"
+            f"<td>{providers_cell(r.get('providers'))}</td>"
             f"<td>{references_cell(r.get('references'))}</td>"
             "</tr>"
         )
