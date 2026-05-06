@@ -67,6 +67,46 @@
         "cross_tumor_extrapolation"
       ],
       "description": "How does this trial relate to the patient's tumor type? `primary_indication_match` = trial enrolls the patient's tumor type. `basket_or_biomarker_match` = trial accepts the patient based on biomarker regardless of tumor type — most under-recognized actionable opportunity for rare-disease patients. `same_drug_other_indication` = drug proven elsewhere being tested in the patient's tumor type. `cross_tumor_extrapolation` = trial is in a different tumor type but informs the evidence base; not directly enrollable for this patient. Default (omitted) = primary_indication_match."
+    },
+    "aliases": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Every known identifier for the intervention drug — generic INN/USAN, pharma code(s), dev-program code, nicknames. e.g. ['gocatamig', 'MK-6070', 'HPN328', 'DS3280']. The screener uses this to detect duplicate registry hits and to keep its alias-expansion search complete. Always include the agent's primary name in the list for round-tripping."
+    },
+    "modality": {
+      "type": "string",
+      "enum": [
+        "BiTE",
+        "bispecific_other",
+        "trispecific",
+        "ADC",
+        "radioligand",
+        "radioimmunotherapy",
+        "CAR-T",
+        "CAR-NK",
+        "small_molecule",
+        "monoclonal_antibody",
+        "vaccine",
+        "other"
+      ],
+      "description": "Therapeutic modality. Drives the modality cross-product search in trial_screener Step 1.5. The screener must enumerate the full <feature> × <modality> grid before declaring discovery complete."
+    },
+    "development_status": {
+      "type": "string",
+      "enum": [
+        "approved",
+        "phase_3_active",
+        "phase_2_active",
+        "phase_1_active",
+        "ind_cleared_pre_phase_1",
+        "discontinued",
+        "legacy_research_only"
+      ],
+      "description": "Development status as of the most recent registry / publication signal. `discontinued` and `legacy_research_only` rows are kept (informational) so the board sees the full mechanism evidence base — not just active programs. Failed-but-instructive entries (e.g. Rova-T post-TAHOE) are decision-relevant context."
+    },
+    "sponsor": {
+      "type": "string",
+      "description": "Corporate or academic developer (Boehringer Ingelheim, Merck, Harpoon→Merck, Amgen, Innovent, Daiichi/AbbVie, Memorial Sloan Kettering, etc.). Useful for the user to assess feasibility of access and to follow news flow."
     }
   }
 }

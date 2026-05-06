@@ -114,9 +114,36 @@ HEADERS = [
     ("DOI",                "doi",                 "left",  False),
     ("Fit",                "fit_to_case",         "left",  False),
     ("Tumor-type relation","tumor_type_relationship", "left", False),
+    ("Modality",           "modality",            "left",  False),
+    ("Dev status",         "development_status",  "left",  False),
+    ("Sponsor",            "sponsor",             "left",  False),
     ("Toxicity flags",     "toxicity_flags",      "left",  False),
     ("Inclusion notes",    "inclusion_match_notes", "left", False),
 ]
+
+
+def dev_status_badge(status: str | None) -> str:
+    if not status:
+        return "—"
+    pretty = status.replace("_", " ")
+    cls_map = {
+        "approved": "fit-strong",
+        "phase_3_active": "fit-strong",
+        "phase_2_active": "fit-partial",
+        "phase_1_active": "fit-partial",
+        "ind_cleared_pre_phase_1": "fit-weak",
+        "discontinued": "fit-none",
+        "legacy_research_only": "fit-none",
+    }
+    cls = cls_map.get(status, "fit-none")
+    return f'<span class="fit-badge {cls}">{html.escape(pretty)}</span>'
+
+
+def modality_badge(mod: str | None) -> str:
+    if not mod:
+        return "—"
+    pretty = mod.replace("_", " ")
+    return f'<span class="rel-badge rel-other">{html.escape(pretty)}</span>'
 
 
 def render_table(rows: list[dict]) -> str:
@@ -137,6 +164,10 @@ def render_table(rows: list[dict]) -> str:
                 content = fit_badge(r.get(key) or "")
             elif key == "tumor_type_relationship":
                 content = tumor_rel_badge(r.get(key))
+            elif key == "modality":
+                content = modality_badge(r.get(key))
+            elif key == "development_status":
+                content = dev_status_badge(r.get(key))
             elif key == "toxicity_flags":
                 content = tox_pills(r.get(key) or [])
             elif key in {"effect_size", "ci_lower", "ci_upper"}:

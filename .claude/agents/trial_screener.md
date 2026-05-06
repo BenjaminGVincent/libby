@@ -67,12 +67,16 @@ standard care for the indication.
 
 ## Schema
 
-Each row matches `scripts/schema/trials.schema.json`. Required fields: `row_id`, `case_slug`, `first_author`, `last_author`, `year`, `phase`, `indication`, `intervention`, `endpoint`, `fit_to_case`. Use the trial-table 21-column convention plus three Libby additions:
+Each row matches `scripts/schema/trials.schema.json`. Required fields: `row_id`, `case_slug`, `first_author`, `last_author`, `year`, `phase`, `indication`, `intervention`, `endpoint`, `fit_to_case`. Use the trial-table 21-column convention plus the Libby additions:
 
 - `fit_to_case`: `strong | partial | weak | none`. Compare the trial's eligibility criteria and target population against the patient profile. *Strong* means biomarker-matched + line-matched + indication-matched + ECOG-matched (or biomarker-matched basket trial that accepts the patient's tumor type). *Partial* means at least one major eligibility axis matches but another is uncertain (e.g. trial requires IHC confirmation that hasn't been obtained). *Weak* means biomarker-adjacent only, or the trial is in a different tumor type that informs but doesn't enroll. *None* means clearly excluded — generally don't include `none` rows unless they're the closest available option and the user wants visibility.
 - `toxicity_flags`: list of strings drawn from `preferences.json::toxicity_vetoes` that this regimen plausibly triggers (e.g. if veto includes "severe neuropathy" and the regimen is paclitaxel-based, append "severe neuropathy").
 - `inclusion_match_notes`: ≤ 3 sentences explaining the I/E criteria axes that drove the `fit_to_case` rating. **For cross-tumor trials, explicitly state whether the trial accepts the patient's tumor type via a basket / biomarker eligibility criterion, or whether the row is included for informational value only (different tumor type, mechanism-only relevance).**
 - `tumor_type_relationship`: one of `primary_indication_match`, `basket_or_biomarker_match`, `cross_tumor_extrapolation`, `same_drug_other_indication`. Drives downstream reasoning: rows with `cross_tumor_extrapolation` are not enrollable but inform the evidence dossier; rows with `basket_or_biomarker_match` are the most under-recognized actionable opportunities for rare-disease patients.
+- `aliases`: list of every known identifier for the intervention drug — generic INN/USAN, pharma code(s), dev-program code, nicknames. Always include the primary name. Powers alias-expansion search and registry-duplicate detection.
+- `modality`: one of `BiTE | bispecific_other | trispecific | ADC | radioligand | radioimmunotherapy | CAR-T | CAR-NK | small_molecule | monoclonal_antibody | vaccine | other`. Drives the modality cross-product search in Step 1.5.
+- `development_status`: one of `approved | phase_3_active | phase_2_active | phase_1_active | ind_cleared_pre_phase_1 | discontinued | legacy_research_only`. Discontinued and legacy rows are kept (informational) so the board sees the full mechanism context — not just active programs.
+- `sponsor`: corporate / academic developer.
 
 ## Workflow
 
@@ -93,23 +97,50 @@ Propose a search spec derived from `targetable_features[]`, `primary_site`, `his
 2. **PubMed via NCBI E-utilities** — for trial publications. `https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=<query>&retmode=json&retmax=200`. Then esummary / efetch for metadata.
 3. **PMC** — full text where OA. `https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pmc&term=<query>`.
 4. **Europe PMC** — fallback when NCBI is rate-limited or PMC has no OA.
+5. **AACR / ASCO / ESMO meeting abstracts** — for early-phase pipeline programs not yet indexed in PubMed. Use Google Scholar with `site:abstracts.asco.org`, `site:aacrjournals.org`, `site:esmo.org` filters.
+6. **NIH Inxight Drugs** — `https://drugs.ncats.io/` — alphanumeric drug-pipeline lookup, good for resolving INN ↔ pharma code mappings.
+7. **WHO INN proposed-list archive** — earliest-phase agents get INN names here before publication footprint exists.
 
 Write the agreed spec to `prompts/cases/<slug>/search.md`. Show the file and ask "Looks right?" before searching.
+
+### Step 1.5 — pipeline reconnaissance (REQUIRED for every well-characterized target)
+
+**This step is non-negotiable when the targetable feature has a known investigational-drug pipeline.** Skipping it produces the failure mode where ClinicalTrials.gov / PubMed relevance ranking surfaces the most-cited drug (e.g. tarlatamab for DLL3) and clips the rest of the pipeline below the default 30-row cap. The fix is to enumerate the full pipeline *first*, then run per-drug per-modality registry searches.
+
+Workflow:
+
+1. **Find a recent target-specific review.** PubMed query `<feature> targeted therapy review` filtered to the last 24 months (e.g. `2024:2026[dp]`). The Discussion/Pipeline section of recent reviews catalogs every named investigational drug.
+2. **Enumerate by modality cross-product.** Run a separate search for each cell of `<feature> × {BiTE, bispecific antibody, trispecific antibody, ADC, antibody-drug conjugate, radioligand, radioimmunotherapy, CAR-T, CAR-NK, small molecule, vaccine}`. Each modality surfaces a different slice of the pipeline; a flat `<feature>` query merges them and biases toward the most-published modality.
+3. **Cross-reference with Inxight Drugs** for code ↔ INN resolution and any agents the review missed.
+4. **Pull AACR / ASCO / ESMO 2024–2026 abstracts** for `<feature>` to catch programs that have meeting data but no journal article.
+5. **Build the pipeline roster.** Write `prompts/cases/<slug>/pipeline.md` containing every investigational drug found, with columns:
+    | INN / generic | Aliases (codes) | Modality | Sponsor | Latest phase | Development status |
+6. **Show the roster to the user and ask "Roster complete?"** before running per-drug per-trial searches in Step 2. The user's answer is decisive — if they add agents, those go into the roster too.
+
+**Hard rule.** If the targetable feature has ≥ 3 known investigational drugs and any are missing from the per-drug trial search after Step 2, surface this as a coverage gap in the run-log and re-prompt the user before declaring Step 4 complete. Missing investigational agents from a known pipeline is a Libby failure, not an out-of-scope decision.
 
 ### Step 2 — run the search
 
 Search by targetable feature, by biomarker class, and by drugs whose
-mechanism targets the feature — across tumor types. **Mechanism-scope is the
-gate**: every Keep decision must trace back to one of the patient's
-targetable features. For each hit, decide:
+mechanism targets the feature — across tumor types. **For every drug on the
+Step 1.5 pipeline roster**, run an alias-expanded ClinicalTrials.gov search:
+each known alias gets its own query, with and without hyphens / spaces
+(registries tokenize inconsistently — `MK-6070` does not match `MK 6070`
+which does not match `gocatamig`). Mechanism-scope is the gate: every Keep
+decision must trace back to one of the patient's targetable features.
+
+For each hit, decide:
 
 - **Keep — basket / biomarker match:** trial accepts patient based on biomarker regardless of tumor type AND patient's tumor type is not on an exclusion list. Highest-priority cross-tumor category. Set `tumor_type_relationship: basket_or_biomarker_match`.
 - **Keep — same drug, other indication in patient's tumor:** trial of a feature-targeting drug proven elsewhere now being tested in the patient's tumor type. Set `tumor_type_relationship: same_drug_other_indication`.
 - **Keep — cross-tumor extrapolation:** trial in a different tumor type of a drug whose mechanism targets the patient's targetable feature. The patient cannot enroll; the row is in the dossier so the board sees the off-label-precedent evidence base. Set `tumor_type_relationship: cross_tumor_extrapolation`.
+- **Keep — legacy / discontinued (informational):** trial of a feature-targeting drug that has been discontinued or is no longer pursued. Decision-relevant context — board needs to see e.g. that Rova-T failed TAHOE before advising on a current DLL3 ADC. Set `development_status: discontinued` (or `legacy_research_only`) and `tumor_type_relationship` per the trial's own indication.
 - **Keep — primary indication match (rare):** the patient's tumor type happens to be the primary indication of a drug that *also* targets the patient's targetable feature. Set `tumor_type_relationship: primary_indication_match`. Do NOT use this category to admit standard-of-care drugs whose mechanism is unrelated to the targetable features.
 - **Drop:** reviews, editorials, meta-analyses (unless user opts in), preclinical-only papers, **and any trial whose drug does not plausibly target one of the patient's targetable features — even if the trial enrolls the patient's tumor type at the right line of therapy.** Standard 2L+ care for the indication that does not target the feature is out of scope; the patient pursues those through their treating team independent of Libby.
 
-Cap kept items per run as agreed in the spec (default 30). When mechanism-scoped hits are sparse, document that — do not pad with feature-unrelated trials.
+**Result-cap rule.** The default 30-row cap is for poorly-characterized targets where most hits are noise. **When the Step 1.5 pipeline roster has > 10 agents the cap lifts**: the per-drug per-modality search runs to exhaustion. Capping mid-pipeline silently drops decision-relevant agents and is the failure mode this revision fixes.
+
+**Legacy / discontinued pass.** For each surfaced drug, run an explicit `<drug> discontinued`, `<drug> failed`, `<drug> withdrawn` search and tag matched rows `development_status: discontinued`. Discontinued-drug rows are kept for the mechanism-context they provide.
 
 ### Step 3 — extract per row
 

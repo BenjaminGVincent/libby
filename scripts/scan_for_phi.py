@@ -91,7 +91,14 @@ ONCOLOGY_ACRONYM_ALLOWLIST = frozenset({
     "PAPILLON", "HERTHENA", "DESTINY", "CHECKMATE", "KEYNOTE", "ADAURA",
     "FLAURA", "AURA", "LIBRETTO", "LUMINOSITY", "INSIGHT", "VISION",
     # Sarcoma + DLL3 + adjacent trials
-    "CABONE", "REGOBONE", "SARC", "AOST", "DELLPHI",
+    "CABONE", "REGOBONE", "SARC", "AOST", "DELLPHI", "DAREON", "TAHOE",
+    "TRINITY", "MERU",
+    # Tumor / pathology acronyms (DLL3 pipeline)
+    "SCLC", "NSCLC", "NEC", "LCNEC", "NEPC", "GEP", "MTC", "EP",
+    # Drug-class / mechanism modality acronyms
+    "BITE", "CAR", "ADC", "DXD", "PBD", "TOP",
+    # Pipeline-program tokens that surface in narrative
+    "INN", "USAN", "GVHD",
     # Genomics / pathology
     "TCGA", "MSI", "TMB", "MMR", "HRD", "GIST", "TPS",
     # Misc oncology / pharm
