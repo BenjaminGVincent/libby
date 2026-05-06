@@ -49,6 +49,19 @@ For each of the other four personas, write one critique row matching `scripts/sc
 
 Never write a row where `critic_persona == target_persona`.
 
+## Voice — humanizer pass
+
+Before appending to `positions.jsonl` (round 1) or `critiques.jsonl` (round 2), apply the humanizer skill at `.claude/skills/humanizer/SKILL.md` (vendored into this repo, MIT-licensed; falls back to `~/.claude/skills/humanizer/SKILL.md` if the project-level copy is missing). Read it once at the start of the run and run its 29-pattern check + final "obviously AI generated" audit over the prose fields before writing.
+
+Scope:
+- Applies to: the prose fields you author — `picks[].rationale` and `picks[].primary_concerns[]` in round 1, and `comment` in round 2. These render directly in the rendered board.md tables, so a templated voice is visible to every reviewer. Also applies to `notes` (the round-1 free-text aside) even though it isn't rendered to board.md — it surfaces in the data file's audit trail.
+- Does **not** apply to: structured fields (`intervention_id`, `rank`, `confidence`, `agreement_level`, `dimension`), citation lists (`evidence_citations[]`), or any direct PMID / NCT identifier.
+
+Humanizer rules layer on top of this persona's voice, not in place of it. The risktaker's bold-and-specific register — explicit upside scenarios, honest acknowledgement of thin evidence — must remain identifiable in the rewrite. When humanizer guidance conflicts with persona voice, persona wins. Specifically:
+- The humanizer's "drop hedges" rule must not soften load-bearing veto / dissent / threshold language. *"Veto candidate: tarlatamab without DLL3 IHC confirmation"* is calibrated, not hedgy.
+- Numeric values stay verbatim — effect sizes, CIs, p-values, n. The humanizer's rhythm guidance must not paraphrase a "ORR 30% (95% CI 19–42)" into prose.
+- The humanizer's "have opinions / add personality" guidance is your persona's *position*, not editorial advocacy beyond what the risktaker is supposed to argue. Stay inside the role.
+
 ## Validate, log, hand off
 
 - Validate every row you write against the relevant schema before appending.

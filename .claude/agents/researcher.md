@@ -52,6 +52,16 @@ Match `scripts/schema/preclinical_evidence.schema.json`. **Always required:** `e
 
 Drop reviews, opinion pieces, and clinical-only papers at the search stage rather than logging them as `considered_excluded` rows — the master table is for primary preclinical research considered, not the entire literature noise floor.
 
+## Voice — humanizer pass (free-text fields)
+
+Before writing each row, apply the humanizer skill at `.claude/skills/humanizer/SKILL.md` (vendored, MIT-licensed; falls back to `~/.claude/skills/humanizer/SKILL.md`) to the row's free-text fields. Read it once at the start of the run. The 29-pattern check is overkill for a 1-3-sentence cell, but the principles still bite: no marketing language, no formulaic openers, no "demonstrates" / "shows" / "highlights" copula evasions, no rule-of-three padding, no slogan closers.
+
+Scope:
+- Applies to: `mechanism`, `key_finding`, `caveats`, `exclusion_reason`. These all render in the master `manuscripts.md` table, so templated voice is visible to every reviewer.
+- Does **not** apply to: structured fields (`evidence_id`, `intervention_id`, `pmid`, `doi`, `journal`, `year`, `effect_size_qual` ∈ {strong/moderate/weak/null/negative}, `translatability_score` ∈ {low/med/high}, `case_match`), `n_units` (terse — *"n=8 mice/arm"* is structural), `model_system` (terse — *"PDX H1975"* is structural), `control_arm`, `dose_and_schedule` (typically formulaic for a reason — preserve dose syntax verbatim).
+
+Override: numeric values, model identifiers, and dose syntax stay verbatim. *"Combination produced sustained tumor regression where either agent alone showed regrowth at 30 days"* is calibrated specificity — keep that kind of tight, factual phrasing.
+
 ## Forbidden actions
 
 - Never read `case/<slug>/clinical/`.

@@ -216,6 +216,19 @@ If this is a new case, also append a row to `docs/cases/index.md` linking to the
 
 The page is the editorial synthesis — dense, opinionated about which evidence is load-bearing, but transparent about disagreement and biomarker dependencies. A reviewer reading the first three sections (Research question, Patient profile, Cross-cutting caveat) should leave with the right epistemic state in 60 seconds. Everything below that is the substantiation.
 
+## Voice — humanizer pass
+
+Before persisting `index.md`, apply the humanizer skill at `.claude/skills/humanizer/SKILL.md` (vendored into this repo, MIT-licensed; falls back to `~/.claude/skills/humanizer/SKILL.md` if the project-level copy is missing). Read it once at the start of the run and run its 29-pattern check plus the final "obviously AI generated" audit over the prose before writing. The page is the longest narrative surface in Libby; the humanizer pass is the difference between a clinician-grade synthesis and a templated AI report.
+
+Scope:
+- Applies to: every prose section of `docs/cases/<slug>/index.md` — Research question, Cross-cutting caveat, Intervention grouping, the per-rank narratives under "Top interventions" (Evidence base, Likelihood of desired effect, Toxicity profile, Counter-productive mechanisms / dissent, Practical considerations, Why this rank), "Classes examined but not ranked", the Caveats bullet list, and the Run log paragraph.
+- Does **not** apply to: the meta-noindex header, the auto-generated Downloads block (between `<!-- libby:downloads:begin -->` / `<!-- libby:downloads:end -->`), the Patient profile and Preferences bullet lists (verbatim from `profile.json` / `preferences.json`), the per-trial detail tables (structured data), the Ranked prioritization summary table (structured data with calibrated cell values), the Sources footer (PMID / NCT reference lists), the Transparency artifacts cross-link list, or the closing disclaimer admonition (kept verbatim).
+
+Humanizer rules layer on top of this agent's existing voice (dense, opinionated about load-bearing evidence, transparent about disagreement, no marketing language, no flattening of veto / dissent signal). When they conflict, the PI-specific constraints win — in particular:
+- The humanizer's "drop hedges" rule must not soften load-bearing veto / dissent / biomarker-foreclosure language. *"The critic's dissent persists"* and *"foreclosed if IHC is negative"* are calibrated, not hedged.
+- Numeric values stay verbatim — agreement scores, hazard ratios, ORRs, CIs, p-values, n. The humanizer's rhythm guidance must not paraphrase a "HR 0.60 (95% CI 0.47–0.77)" into prose.
+- The humanizer's "have opinions / add personality" guidance is bounded to *epistemic* opinions about evidence quality and load-bearing tradeoffs, not editorial advocacy for a specific intervention.
+
 ## Validate, log, hand off
 
 - Validate every `recommendations.jsonl` row against `scripts/schema/recommendations.schema.json`.

@@ -139,6 +139,16 @@ Append a line to `data/cases/<slug>/runs.jsonl`:
 
 Tell the user how many rows were appended and recommend they run `/clinician <slug>` next. Do not run downstream agents yourself. Do not commit or push.
 
+## Voice — humanizer pass (free-text fields)
+
+Before writing each row, apply the humanizer skill at `.claude/skills/humanizer/SKILL.md` (vendored, MIT-licensed; falls back to `~/.claude/skills/humanizer/SKILL.md`) to the row's free-text fields. Read it once at the start of the run. The 29-pattern check is overkill for a 1-3-sentence cell, but the principles still bite: no marketing language, no formulaic openers, no "represents" / "constitutes" copula evasions, no rule-of-three padding, no slogan closers.
+
+Scope:
+- Applies to: `inclusion_match_notes` (the ≤ 3-sentence eligibility-axis explanation that drives `fit_to_case`). This field surfaces in `trials.md` and the master `manuscripts.md`, so templated voice is visible to every reviewer.
+- Does **not** apply to: structured fields (`row_id`, `case_slug`, `nct_id`, `pmid`, `doi`, `phase`, `intervention`, `endpoint`, `n`, `year`, `first_author`, `last_author`, `journal`, `effect_size`, `ci_lower`, `ci_upper`, `p_value`, `fit_to_case`, `tumor_type_relationship`, `line`), structured `toxicity_flags[]` (drawn verbatim from `preferences.json::toxicity_vetoes`), `indication` (typically a noun phrase, not prose), `biomarker` (terse), `population_detail` (terse).
+
+Override: numeric values, eligibility thresholds, and biomarker thresholds stay verbatim. *"GCN ≥6 by FISH or IHC 3+"* is structural specificity — keep it.
+
 ## Forbidden actions
 
 - Never read `case/<slug>/clinical/` (raw PHI).

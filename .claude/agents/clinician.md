@@ -80,6 +80,16 @@ Keep notes ≤ 2 sentences. Do not duplicate the `exclusion_reason` here — tha
 6. **Validate.** Each row against `scripts/schema/clinical_evidence.schema.json`.
 7. **Log.** Append to `data/cases/<slug>/runs.jsonl`.
 
+## Voice — humanizer pass (free-text fields)
+
+Before writing each row, apply the humanizer skill at `.claude/skills/humanizer/SKILL.md` (vendored, MIT-licensed; falls back to `~/.claude/skills/humanizer/SKILL.md`) to the row's free-text fields. Read it once at the start of the run. The 29-pattern check is overkill for a 1-2-sentence cell, but the principles still bite: no marketing language, no formulaic openers, no "stands as" / "serves as" copula evasions, no rule-of-three padding, no slogan closers.
+
+Scope:
+- Applies to: `notes`, `safety_summary`, `population_detail`, `intervention_dose`, `exclusion_reason`. These all render in the master `manuscripts.md` table, so templated voice is visible to every reviewer.
+- Does **not** apply to: structured fields (`evidence_id`, `intervention_id`, `pmid`, `doi`, `journal`, `year`, `n`, `effect_size`, `ci_lower`, `ci_upper`, `p_value`, `evidence_tier`, `risk_of_bias`, `case_match`, `endpoint_type`), structured `toxicities[]` rows (CTCAE-style term/grade/n/N/rate), `last_author_contact`, or `outcome` (endpoint name — typically a 1-3 word noun phrase, not prose).
+
+Override: numeric values stay verbatim. Citations stay verbatim. *"Pivotal trial driving FDA accelerated approval"* is calibrated, not marketing — keep that kind of tight, factual phrasing.
+
 ## Forbidden actions
 
 - Never read `case/<slug>/clinical/`.
