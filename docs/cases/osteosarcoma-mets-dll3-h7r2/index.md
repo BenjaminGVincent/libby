@@ -45,15 +45,21 @@ In metastatic osteosarcoma after first-line MAP, what interventions can target D
 
 ## Target validation paths
 
-DLL3 IHC (clone SP347) is the test the case hinges on. A positive result at the trial threshold opens the only within-scope DLL3-directed therapy on the page (tarlatamab via NCT06788938). A negative result forecloses the entire DLL3-directed pathway — every BiTE, ADC, radioligand, and cell-therapy program in the dossier gates on protein-level confirmation, not transcript expression.
+The case has two RNA-only targetable features, each with a distinct protein-level confirmation step. **DLL3 IHC (clone SP347)** gates ranks 2–3; **PRAME IHC plus HLA-A*02:01 typing** together gate ranks 4–5. The two pathways are independent — the patient may have neither, either, or both — and all three workup tests can run in parallel on archival tissue plus a single blood draw. If both workups return negative, the case has no within-scope recommendations and the standard-of-care conversation for relapsed osteosarcoma is the treating team's separate conversation.
 
 ### DLL3 RNA expression
 
-Before any therapy decision: DLL3 IHC SP347 on archival FFPE, ≥1% (preferably ≥25%) per NCT06788938's enrollment threshold. Turnaround is one to three weeks; cost is trivial relative to a treatment cycle. The first practical step is confirming SP347 assay availability at the treating institution — not every reference lab carries the Roche Tissue Diagnostics clone used in the tarlatamab development program.
+Before any DLL3-directed therapy decision: DLL3 IHC SP347 on archival FFPE, ≥1% (preferably ≥25%) per NCT06788938's enrollment threshold. Turnaround is one to three weeks; cost is trivial relative to a treatment cycle. The first practical step is confirming SP347 assay availability at the treating institution — not every reference lab carries the Roche Tissue Diagnostics clone used in the tarlatamab development program.
 
 Two refinements sit one tier down. Spatial heterogeneity is a known confounder in solid-tumor DLL3 (Zhang 2023): if multiple tumor blocks are available, IHC on a metastatic site as well as the primary refines confidence in whether the gating result generalizes. Neuroendocrine context (ASCL1 / NEUROD1 / chromogranin / synaptophysin / INSM1 panel) is research-grade for an osteosarcoma — DLL3 is normally a Notch-pathway target on neuroendocrine lineage, and an unexpectedly positive DLL3 IHC in a non-NEC tumor is worth contextualizing before the trial enrollment paperwork.
 
 Germline TP53 sequencing (Li-Fraumeni panel) is a separate kind of finding — it does not affect tarlatamab eligibility, but late-teens / twenties osteosarcoma carries a meaningful prior probability for germline TP53. A positive result reshapes radiation-sensitivity considerations, screening for synchronous tumors, and family screening. Discuss with a genetic counselor before testing.
+
+### PRAME RNA expression
+
+Two essential tests gate the entire PRAME-directed pathway: **PRAME IHC** to confirm tumor protein expression, and **HLA-A*02:01 typing** to confirm the patient can present the PRAME peptide. Every PRAME-directed ImmTAC and TCR-T in clinical development (IMA203, brenetafusp, IMC-P115C) is HLA-A*02:01-restricted; typing-negative patients are foreclosed even with strong PRAME IHC positivity. PRAME IHC is positive in ~56% of osteosarcoma (Iura 2017, n=82); HLA-A*02:01 prevalence is ~40–50% in Caucasian populations. Order both alongside the DLL3 IHC — same block, same blood draw, same turnaround window.
+
+Spatial heterogeneity refines confidence at the next tier. PRAME IHC on a metastatic site as well as the primary helps rule out the case where one biopsy hits a focal expression hotspot. Tumor NGS for B2M loss-of-function and HLA-A*02:01 loss-of-heterozygosity is a resistance check — TCR-mediated killing depends on intact antigen presentation, and tumor-specific HLA-LOH is a documented escape mechanism that doesn't show up on the IHC or HLA-typing workup. Quantifying baseline CD8 T-cell infiltrate density via IHC (or multiplex CD3 / CD8 / FoxP3) is the microenvironment companion — an immune-cold tumor predicts diminished response even with PRAME and HLA both positive.
 
 ### Where to order these assays
 
@@ -64,6 +70,24 @@ Germline TP53 sequencing (Li-Fraumeni panel) is a separate kind of finding — i
 | DLL3 IHC (clone SP347) | NeoGenomics Laboratories | [test info](https://neogenomics.com/test-menu) · 1-866-776-5907 |
 | DLL3 IHC (clone SP347) | Caris Life Sciences | [test info](https://www.carislifesciences.com/products-and-services/molecular-profiling/) · 1-888-979-8669 |
 | DLL3 IHC (clone SP347) | LabCorp / Esoterix Oncology | [test info](https://www.labcorp.com/oncology) · 1-800-345-4363 |
+| PRAME IHC (clone EPR20330 or equivalent) | NeoGenomics Laboratories | [test info](https://neogenomics.com/test-menu) · 1-866-776-5907 |
+| PRAME IHC | Caris Life Sciences | [test info](https://www.carislifesciences.com/products-and-services/molecular-profiling/) · 1-888-979-8669 |
+| PRAME IHC | Foundation Medicine | [test info](https://www.foundationmedicine.com/test/foundationone-cdx) · 1-888-988-3639 |
+| PRAME IHC | LabCorp / Esoterix Oncology | [test info](https://www.labcorp.com/oncology) · 1-800-345-4363 |
+| PRAME IHC | Mayo Clinic Laboratories | [test info](https://www.mayocliniclabs.com/test-catalog) · 1-800-533-1710 |
+| HLA Class I high-resolution typing (HLA-A*02:01) | HistoGenetics | [test info](https://www.histogenetics.com/) · 1-845-356-3801 |
+| HLA Class I typing | Versiti / Wisconsin Diagnostic Laboratories | [test info](https://www.versiti.org/medical-professionals/diagnostic-labs) · 1-800-245-3117 |
+| HLA Class I typing | ARUP Laboratories | [test info](https://www.aruplab.com/) · 1-800-242-2787 |
+| HLA Class I typing | Mayo Clinic Laboratories | [test info](https://www.mayocliniclabs.com/test-catalog) · 1-800-533-1710 |
+| HLA Class I typing | Stanford Histocompatibility Laboratory | [test info](https://stanfordbloodcenter.org/healthcare-professionals/histocompatibility/) · 1-650-723-7960 |
+| Tumor NGS for HLA-LOH / B2M / antigen-presentation | Foundation Medicine *(FoundationOne CDx)* | [test info](https://www.foundationmedicine.com/test/foundationone-cdx) · 1-888-988-3639 |
+| Tumor NGS (HLA-LOH / B2M) | Caris Life Sciences *(Molecular Intelligence)* | [test info](https://www.carislifesciences.com/products-and-services/molecular-profiling/) · 1-888-979-8669 |
+| Tumor NGS (HLA-LOH / B2M) | Tempus *(xT)* | [test info](https://www.tempus.com/oncology/diagnostics/) · 1-800-739-4137 |
+| Tumor NGS (HLA-LOH / B2M) | Memorial Sloan Kettering *(MSK-IMPACT)* | [test info](https://www.mskcc.org/clinical-services/diagnostic-laboratory) · 1-212-639-2000 |
+| Tumor NGS (HLA-LOH / B2M) | NeoGenomics Laboratories *(NeoTYPE Comprehensive)* | [test info](https://neogenomics.com/test-menu) · 1-866-776-5907 |
+| CD8 / TIL density (multiplex IHC) | NeoGenomics Laboratories *(MultiOmyx)* | [test info](https://neogenomics.com/test-menu) · 1-866-776-5907 |
+| CD8 / TIL density | Caris Life Sciences | [test info](https://www.carislifesciences.com/products-and-services/molecular-profiling/) · 1-888-979-8669 |
+| CD8 / TIL density | Foundation Medicine | [test info](https://www.foundationmedicine.com/test/foundationone-cdx) · 1-888-988-3639 |
 | Neuroendocrine IHC panel (ASCL1 / NEUROD1 / chromogranin / synaptophysin / INSM1) | ARUP Laboratories | [test info](https://www.aruplab.com/) · 1-800-242-2787 |
 | Neuroendocrine IHC panel | Mayo Clinic Laboratories | [test info](https://www.mayocliniclabs.com/test-catalog) · 1-800-533-1710 |
 | Neuroendocrine IHC panel | LabCorp / Esoterix Oncology | [test info](https://www.labcorp.com/oncology) · 1-800-345-4363 |
