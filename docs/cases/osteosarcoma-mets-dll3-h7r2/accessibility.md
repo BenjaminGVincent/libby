@@ -10,15 +10,15 @@ _The number in the first column links to the per-intervention section further do
 
 <table class="trial-table"><thead><tr><th>#</th><th>Intervention</th><th>Modality</th><th>Access status</th><th>Regulatory</th><th>Recommended first action</th></tr></thead><tbody>
 
-<tr><td><a href="#access-1"><strong>1</strong></a></td><td><strong>FZ-AD005</strong></td><td>ADC</td><td><span class="fit-badge fit-partial">Clinical trial</span></td><td>Investigational. Mainland-China NMPA filing; no FDA/EMA approval.</td><td>Listed for completeness only — not an actionable pathway.</td></tr>
-<tr><td><a href="#access-2"><strong>2</strong></a></td><td><strong>IBI3009</strong></td><td>ADC</td><td><span class="fit-badge fit-partial">Clinical trial</span></td><td>Investigational. INDs cleared in multiple countries; no approval yet.</td><td>Not currently enrollable for osteosarcoma.</td></tr>
-<tr><td><a href="#access-3"><strong>3</strong></a></td><td><strong>LB2102 (autologous DLL3 CAR-T)</strong></td><td>CAR-T</td><td><span class="fit-badge fit-partial">Clinical trial</span></td><td>Investigational.</td><td>Not currently enrollable for osteosarcoma.</td></tr>
-<tr><td><a href="#access-4"><strong>4</strong></a></td><td><strong>SHR-4849 / IDE849</strong></td><td>ADC</td><td><span class="fit-badge fit-partial">Clinical trial</span></td><td>Investigational. IDEAYA holds US development license; Jiangsu Hengrui originated the compound.</td><td>Email IDEAYA Clinical Trials (IDEAYAClinicalTrials@ideayabio.com) or call +1-855-433-2246 to confirm whether osteosarcoma is in scope for the DLL3-expressing-tumors basket arm.</td></tr>
-<tr><td><a href="#access-5"><strong>5</strong></a></td><td><strong>alveltamig (ZG006)</strong></td><td>trispecific</td><td><span class="fit-badge fit-partial">Clinical trial</span></td><td>Investigational. No FDA/EMA approval. Phase-3 in mainland China (relapsed SCLC).</td><td>This pathway is not realistically accessible for a US/EU patient.</td></tr>
-<tr><td><a href="#access-6"><strong>6</strong></a></td><td><strong>gocatamig (MK-6070 / HPN328 / DS3280)</strong></td><td>trispecific</td><td><span class="fit-badge fit-partial">Clinical trial</span></td><td>Investigational. No FDA/EMA approval. Originated at Harpoon Therapeutics; Merck acquired Harpoon in 2024.</td><td>This pathway is not enrollable — included as contact information only.</td></tr>
-<tr><td><a href="#access-7"><strong>7</strong></a></td><td><strong>obrixtamig (BI 764532)</strong></td><td>BiTE</td><td><span class="fit-badge fit-partial">Clinical trial</span></td><td>Investigational. No FDA/EMA approval. Boehringer Ingelheim&#x27;s lead DLL3 program (DAREON development plan).</td><td>This pathway is not enrollable — included as contact information only.</td></tr>
-<tr><td><a href="#access-8"><strong>8</strong></a></td><td><strong>peluntamig (PT217)</strong></td><td>bispecific_other</td><td><span class="fit-badge fit-partial">Clinical trial</span></td><td>Investigational. No FDA/EMA approval.</td><td>Not enrollable for osteosarcoma at present.</td></tr>
-<tr><td><a href="#access-9"><strong>9</strong></a></td><td><strong>tarlatamab (Imdelltra)</strong></td><td>BiTE</td><td><span class="fit-badge fit-partial">Clinical trial</span></td><td>FDA accelerated approval (2024) for ES-SCLC after platinum-based chemotherapy. EMA conditional approval (2025). NOT approved for osteosarcoma — basket-trial enrollment is the in-scope path.</td><td>Confirm DLL3 IHC SP347 result first — required by NCT06788938 enrollment criteria.</td></tr>
+<tr><td><a href="#access-1"><strong>1</strong></a></td><td><strong>tarlatamab (Imdelltra)</strong></td><td>BiTE</td><td><span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span></td><td>FDA accelerated approval (2024) for ES-SCLC after platinum-based chemotherapy. EMA conditional approval (2025). NOT approved for osteosarcoma — but the SCLC approval makes off-label prescription a real access path in addition to trial enrollment.</td><td>Confirm DLL3 IHC SP347 result first — required for both paths (the trial mandates ≥1% / preferably ≥25%; off-label use should not proceed without protein confirmation).</td></tr>
+<tr><td><a href="#access-2"><strong>2</strong></a></td><td><strong>FZ-AD005</strong></td><td>ADC</td><td><span class="fit-badge fit-partial">Clinical trial</span></td><td>Investigational. Mainland-China NMPA filing; no FDA/EMA approval.</td><td>Listed for completeness only — not an actionable pathway.</td></tr>
+<tr><td><a href="#access-3"><strong>3</strong></a></td><td><strong>IBI3009</strong></td><td>ADC</td><td><span class="fit-badge fit-partial">Clinical trial</span></td><td>Investigational. INDs cleared in multiple countries; no approval yet.</td><td>Not currently enrollable for osteosarcoma.</td></tr>
+<tr><td><a href="#access-4"><strong>4</strong></a></td><td><strong>LB2102 (autologous DLL3 CAR-T)</strong></td><td>CAR-T</td><td><span class="fit-badge fit-partial">Clinical trial</span></td><td>Investigational.</td><td>Not currently enrollable for osteosarcoma.</td></tr>
+<tr><td><a href="#access-5"><strong>5</strong></a></td><td><strong>SHR-4849 / IDE849</strong></td><td>ADC</td><td><span class="fit-badge fit-partial">Clinical trial</span></td><td>Investigational. IDEAYA holds US development license; Jiangsu Hengrui originated the compound.</td><td>Email IDEAYA Clinical Trials (IDEAYAClinicalTrials@ideayabio.com) or call +1-855-433-2246 to confirm whether osteosarcoma is in scope for the DLL3-expressing-tumors basket arm.</td></tr>
+<tr><td><a href="#access-6"><strong>6</strong></a></td><td><strong>alveltamig (ZG006)</strong></td><td>trispecific</td><td><span class="fit-badge fit-partial">Clinical trial</span></td><td>Investigational. No FDA/EMA approval. Phase-3 in mainland China (relapsed SCLC).</td><td>This pathway is not realistically accessible for a US/EU patient.</td></tr>
+<tr><td><a href="#access-7"><strong>7</strong></a></td><td><strong>gocatamig (MK-6070 / HPN328 / DS3280)</strong></td><td>trispecific</td><td><span class="fit-badge fit-partial">Clinical trial</span></td><td>Investigational. No FDA/EMA approval. Originated at Harpoon Therapeutics; Merck acquired Harpoon in 2024.</td><td>This pathway is not enrollable — included as contact information only.</td></tr>
+<tr><td><a href="#access-8"><strong>8</strong></a></td><td><strong>obrixtamig (BI 764532)</strong></td><td>BiTE</td><td><span class="fit-badge fit-partial">Clinical trial</span></td><td>Investigational. No FDA/EMA approval. Boehringer Ingelheim&#x27;s lead DLL3 program (DAREON development plan).</td><td>This pathway is not enrollable — included as contact information only.</td></tr>
+<tr><td><a href="#access-9"><strong>9</strong></a></td><td><strong>peluntamig (PT217)</strong></td><td>bispecific_other</td><td><span class="fit-badge fit-partial">Clinical trial</span></td><td>Investigational. No FDA/EMA approval.</td><td>Not enrollable for osteosarcoma at present.</td></tr>
 <tr><td><a href="#access-10"><strong>10</strong></a></td><td><strong>zocilurtatug pelitecan (ZL-1310)</strong></td><td>ADC</td><td><span class="fit-badge fit-partial">Clinical trial</span></td><td>Investigational. FDA Fast Track designation for ES-SCLC (TOP1-inhibitor payload, post-Rova-T-era ADC).</td><td>Not currently enrollable for osteosarcoma.</td></tr>
 <tr><td><a href="#access-11"><strong>11</strong></a></td><td><strong>²²⁵Ac-ABD147</strong></td><td>radioligand</td><td><span class="fit-badge fit-partial">Clinical trial</span></td><td>Investigational. No FDA/EMA approval.</td><td>Not currently enrollable.</td></tr>
 <tr><td><a href="#access-12"><strong>12</strong></a></td><td><strong>²²⁵Ac-ETN029</strong></td><td>radioligand</td><td><span class="fit-badge fit-partial">Clinical trial</span></td><td>Investigational. Novartis-sponsored phase 1.</td><td>Not currently enrollable for osteosarcoma.</td></tr>
@@ -32,9 +32,64 @@ _The number in the first column links to the per-intervention section further do
 </tbody></table>
 
 
-## Clinical trial (12)
+## Off-label use (1)
 
-### 1. FZ-AD005 <small><code>FZ-AD005</code></small> { #access-1 }
+### 1. tarlatamab (Imdelltra) <small><code>tarlatamab, AMG 757, Imdelltra</code></small> { #access-1 }
+
+**Access status:** <span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** BiTE &nbsp; **Verified:** 2026-05-06
+
+
+Two real access paths: (1) **off-label prescription** — Imdelltra is FDA-approved for SCLC and can be prescribed off-label for DLL3+ osteosarcoma by a clinician willing to navigate payer review; (2) **clinical trial** — NCT06788938 (UCLA basket) accepts DLL3-IHC-positive non-SCLC tumors and is the on-protocol pathway. The trial path is preferred when accessible because it carries trial-billing infrastructure and protocolized monitoring; off-label is the fallback if the trial is foreclosed.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>FDA accelerated approval (2024) for ES-SCLC after platinum-based chemotherapy. EMA conditional approval (2025). NOT approved for osteosarcoma — but the SCLC approval makes off-label prescription a real access path in addition to trial enrollment.</dd>
+  <dt>Guidelines</dt><dd>NCCN category 1 for relapsed ES-SCLC; off-guideline for osteosarcoma — basket-trial enrollment is the on-protocol route.</dd>
+  <dt>Geographic scope</dt><dd>US — UCLA-led trial with potential satellite arrangements. Off-label prescription is available wherever Imdelltra is commercially distributed (US, EU).</dd>
+</dl>
+
+
+**Next steps**
+
+1. Confirm DLL3 IHC SP347 result first — required for both paths (the trial mandates ≥1% / preferably ≥25%; off-label use should not proceed without protein confirmation).
+2. **Trial path:** Email NCT06788938 central contact (istteam@mednet.ucla.edu) or call 888-798-0719 to request a screening slot. If outside a UCLA-affiliated geography, ask about satellite or referral arrangements.
+3. **Off-label path:** If the trial is foreclosed (slot unavailable, geography mismatch, screening exclusion), discuss off-label Imdelltra with the treating oncologist and institutional pharmacy. Pre-authorization with the payer is the load-bearing step; a biomarker-justified appeal letter is typically required.
+4. Contact Amgen medical information (1-800-772-6436) for technical product information and compassionate-use guidance if both trial and off-label paths are blocked.
+
+
+**Trial pathways**
+
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th>NCT</th><th>Phase</th><th>Indication</th><th>Status</th><th>Patient eligible</th><th>Central contact</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td><a href="https://clinicaltrials.gov/study/NCT06788938">NCT06788938</a></td><td>2</td><td>DLL3-expressing advanced solid tumors (osteosarcoma included)</td><td>recruiting</td><td><span class="fit-badge fit-partial">eligible: likely</span></td><td><strong>CRU Hotline</strong><br><a href="mailto:istteam@mednet.ucla.edu">istteam@mednet.ucla.edu</a><br><code>888-798-0719</code><br><a href="https://clinicaltrials.gov/study/NCT06788938">trial sites</a></td><td>Eligibility gates on DLL3 IHC ≥1% (preferably ≥25%). Confirm IHC SP347 result first; the protocol&#x27;s DLL3 criterion is the load-bearing screening step.</td></tr>
+</tbody></table></div></div>
+
+
+**Manufacturer / sponsor contact**
+
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Amgen</dd>
+  <dt>Country</dt><dd>US</dd>
+  <dt>Medical info phone</dt><dd><code>1-800-772-6436</code></dd>
+  <dt>Product information</dt><dd><a href="https://www.amgenmedinfo.com/">https://www.amgenmedinfo.com/</a></dd>
+  <dt>Compassionate / expanded access</dt><dd><a href="https://www.amgen.com/about/compassionate-use">https://www.amgen.com/about/compassionate-use</a></dd>
+  <dt>Notes</dt><dd>Imdelltra is commercially available for SCLC and can be obtained through standard specialty-distribution channels for off-label use, subject to institutional pharmacy and payer review.</dd>
+</dl>
+
+
+**Payer / coverage notes.** Medicare bills the SCLC indication under standard biologic codes; off-label use for a non-SCLC tumor type is generally not reimbursed without prior authorization, an appeal citing biomarker rationale, or a clinical-trial billing path. Manufacturer patient-assistance through Amgen Assist (www.amgenassist360.com) may help with co-pay support.
+
+
+**Notes.** Imdelltra label specifies SCLC after platinum failure; osteosarcoma is off-label. Trial enrollment is the on-protocol route; off-label prescription is a real fallback. The cycle-1 inpatient step-up dosing for CRS mitigation is the same regardless of which access path is used.
+
+
+---
+
+
+## Clinical trial (11)
+
+### 2. FZ-AD005 <small><code>FZ-AD005</code></small> { #access-2 }
 
 **Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** ADC &nbsp; **Verified:** 2026-05-06
 
@@ -77,7 +132,7 @@ DXd-payload DLL3 ADC; mainland-China phase-1 program. Not realistically accessib
 
 ---
 
-### 2. IBI3009 <small><code>IBI3009</code></small> { #access-2 }
+### 3. IBI3009 <small><code>IBI3009</code></small> { #access-3 }
 
 **Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** ADC &nbsp; **Verified:** 2026-05-06
 
@@ -125,7 +180,7 @@ DLL3/exatecan ADC (TOP1-inhibitor payload class). Phase 1 SCLC-only enrollment �
 
 ---
 
-### 3. LB2102 (autologous DLL3 CAR-T) <small><code>LB2102</code></small> { #access-3 }
+### 4. LB2102 (autologous DLL3 CAR-T) <small><code>LB2102</code></small> { #access-4 }
 
 **Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** CAR-T &nbsp; **Verified:** 2026-05-06
 
@@ -170,7 +225,7 @@ Autologous DLL3 CAR-T — distinct mechanism class from BiTEs and ADCs. Phase 1 
 
 ---
 
-### 4. SHR-4849 / IDE849 <small><code>SHR-4849, IDE849</code></small> { #access-4 }
+### 5. SHR-4849 / IDE849 <small><code>SHR-4849, IDE849</code></small> { #access-5 }
 
 **Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** ADC &nbsp; **Verified:** 2026-05-06
 
@@ -222,7 +277,7 @@ DLL3 ADC (TOP1-inhibitor payload) in IDEAYA&#x27;s pan-tumor basket. Eligibility
 
 ---
 
-### 5. alveltamig (ZG006) <small><code>alveltamig, ZG006</code></small> { #access-5 }
+### 6. alveltamig (ZG006) <small><code>alveltamig, ZG006</code></small> { #access-6 }
 
 **Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** trispecific &nbsp; **Verified:** 2026-05-06
 
@@ -271,7 +326,7 @@ DLL3 × DLL3 × CD3 trispecific in mainland-China phase-3 development for SCLC. 
 
 ---
 
-### 6. gocatamig (MK-6070 / HPN328 / DS3280) <small><code>gocatamig, MK-6070, HPN328, DS3280</code></small> { #access-6 }
+### 7. gocatamig (MK-6070 / HPN328 / DS3280) <small><code>gocatamig, MK-6070, HPN328, DS3280</code></small> { #access-7 }
 
 **Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** trispecific &nbsp; **Verified:** 2026-05-06
 
@@ -321,7 +376,7 @@ Trispecific DLL3 × CD3 × albumin-binding T-cell engager from Harpoon → Merck
 
 ---
 
-### 7. obrixtamig (BI 764532) <small><code>obrixtamig, BI 764532, BI-764532</code></small> { #access-7 }
+### 8. obrixtamig (BI 764532) <small><code>obrixtamig, BI 764532, BI-764532</code></small> { #access-8 }
 
 **Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** BiTE &nbsp; **Verified:** 2026-05-06
 
@@ -373,7 +428,7 @@ Investigational DLL3 BiTE in pivotal phase-3 development for SCLC. All current t
 
 ---
 
-### 8. peluntamig (PT217) <small><code>peluntamig, PT217</code></small> { #access-8 }
+### 9. peluntamig (PT217) <small><code>peluntamig, PT217</code></small> { #access-9 }
 
 **Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** bispecific_other &nbsp; **Verified:** 2026-05-06
 
@@ -420,58 +475,6 @@ DLL3 × CD47 bispecific — non-T-cell-engager mechanism. Currently SCLC/NEC-onl
 
 
 **Notes.** DLL3 × CD47 bispecific combines DLL3 targeting with macrophage &#x27;don&#x27;t-eat-me&#x27; blockade.
-
-
----
-
-### 9. tarlatamab (Imdelltra) <small><code>tarlatamab, AMG 757, Imdelltra</code></small> { #access-9 }
-
-**Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** BiTE &nbsp; **Verified:** 2026-05-06
-
-
-Approved for SCLC (Imdelltra) but NOT for osteosarcoma. The actionable path for this patient is enrollment in NCT06788938 (UCLA-led DLL3-IHC-positive basket). Off-label use outside the trial is technically possible but rarely reimbursed and not the recommended path.
-
-
-<dl class="profile-grid">
-  <dt>Regulatory</dt><dd>FDA accelerated approval (2024) for ES-SCLC after platinum-based chemotherapy. EMA conditional approval (2025). NOT approved for osteosarcoma — basket-trial enrollment is the in-scope path.</dd>
-  <dt>Guidelines</dt><dd>NCCN category 1 for relapsed ES-SCLC; off-guideline for osteosarcoma — basket-trial enrollment is the legitimate route.</dd>
-  <dt>Geographic scope</dt><dd>US — UCLA-led with potential satellite/referral arrangements. Confirm with the trial team.</dd>
-</dl>
-
-
-**Next steps**
-
-1. Confirm DLL3 IHC SP347 result first — required by NCT06788938 enrollment criteria.
-2. Email NCT06788938 central contact (istteam@mednet.ucla.edu) or call 888-798-0719 to request a screening slot.
-3. If outside a UCLA-affiliated geography, ask the trial team whether they have a satellite or referral arrangement.
-4. If the trial is foreclosed, contact Amgen medical information (1-800-772-6436) about compassionate-use options for an off-label DLL3+ tumor.
-
-
-**Trial pathways**
-
-<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
-<thead><tr><th>NCT</th><th>Phase</th><th>Indication</th><th>Status</th><th>Patient eligible</th><th>Central contact</th><th>Notes</th></tr></thead>
-<tbody>
-<tr><td><a href="https://clinicaltrials.gov/study/NCT06788938">NCT06788938</a></td><td>2</td><td>DLL3-expressing advanced solid tumors (osteosarcoma included)</td><td>recruiting</td><td><span class="fit-badge fit-partial">eligible: likely</span></td><td><strong>CRU Hotline</strong><br><a href="mailto:istteam@mednet.ucla.edu">istteam@mednet.ucla.edu</a><br><code>888-798-0719</code><br><a href="https://clinicaltrials.gov/study/NCT06788938">trial sites</a></td><td>Eligibility gates on DLL3 IHC ≥1% (preferably ≥25%). Confirm IHC SP347 result first; the protocol&#x27;s DLL3 criterion is the load-bearing screening step.</td></tr>
-</tbody></table></div></div>
-
-
-**Manufacturer / sponsor contact**
-
-<dl class="profile-grid">
-  <dt>Company</dt><dd>Amgen</dd>
-  <dt>Country</dt><dd>US</dd>
-  <dt>Medical info phone</dt><dd><code>1-800-772-6436</code></dd>
-  <dt>Product information</dt><dd><a href="https://www.amgenmedinfo.com/">https://www.amgenmedinfo.com/</a></dd>
-  <dt>Compassionate / expanded access</dt><dd><a href="https://www.amgen.com/about/compassionate-use">https://www.amgen.com/about/compassionate-use</a></dd>
-  <dt>Notes</dt><dd>Imdelltra is commercially available for SCLC; off-label use for non-SCLC outside a trial would require institutional-pharmacy approval and direct payer engagement.</dd>
-</dl>
-
-
-**Payer / coverage notes.** Medicare J9999 / unclassified biologic billing typical for the SCLC indication; non-SCLC use is generally not reimbursed without a clinical-trial billing path or compassionate program.
-
-
-**Notes.** Imdelltra label specifies SCLC after platinum failure; osteosarcoma is off-label. Trial enrollment is the only on-protocol pathway for this patient.
 
 
 ---
