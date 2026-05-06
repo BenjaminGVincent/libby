@@ -1516,42 +1516,58 @@ def _accessibility_md_for_pdf(slug: str, rows: list[dict]) -> str:
     by_status: dict[str, list[dict]] = {}
     for r in rows:
         by_status.setdefault(r.get("access_status") or "unavailable", []).append(r)
+    for s in by_status:
+        by_status[s].sort(key=lambda x: x.get("intervention_label") or "")
+
+    # Numbered ordering shared between the summary table and the per-intervention
+    # deep sections — mirrors the web page so the printed report's numbers match.
+    numbered: list[tuple[int, str, dict]] = []
+    n = 1
+    for status in status_order:
+        for r in by_status.get(status, []):
+            numbered.append((n, status, r))
+            n += 1
+    by_status_numbered: dict[str, list[tuple[int, dict]]] = {}
+    for num, status, r in numbered:
+        by_status_numbered.setdefault(status, []).append((num, r))
 
     lines: list[str] = [
         f"# Access guide — {slug}",
         "",
         "How a patient or treating team could practically access each intervention "
         "in this case's dossier. Trial recruitment contacts and manufacturer "
-        "medical-information lines are captured for direct outreach. Information "
-        "ages — each row carries a `Verified` date; re-screen before relying on a "
-        "specific contact or trial slot.",
+        "medical-information lines are captured for direct outreach. The number in "
+        "the first column of the summary table is the entry's identifier in the "
+        "per-intervention sections below — use it to find the deep section "
+        "quickly. Information ages — each row carries a `Verified` date; re-screen "
+        "before relying on a specific contact or trial slot.",
         "",
         "## Summary",
         "",
-        "| Intervention | Modality | Access status | Regulatory | Recommended first action |",
-        "| --- | --- | --- | --- | --- |",
+        "| # | Intervention | Modality | Access status | Regulatory | Recommended first action |",
+        "| --- | --- | --- | --- | --- | --- |",
     ]
-    for s in status_order:
-        for r in by_status.get(s, []):
-            first_step = (r.get("next_steps") or ["—"])[0]
-            lines.append(
-                f"| {r.get('intervention_label') or '—'} "
-                f"| {r.get('modality') or '—'} "
-                f"| {status_label.get(s, s)} "
-                f"| {r.get('regulatory_status') or '—'} "
-                f"| {first_step} |"
-            )
+    for num, status, r in numbered:
+        first_step = (r.get("next_steps") or ["—"])[0]
+        lines.append(
+            f"| {num} "
+            f"| {r.get('intervention_label') or '—'} "
+            f"| {r.get('modality') or '—'} "
+            f"| {status_label.get(status, status)} "
+            f"| {r.get('regulatory_status') or '—'} "
+            f"| {first_step} |"
+        )
     lines.append("")
 
     for s in status_order:
-        group = by_status.get(s, [])
+        group = by_status_numbered.get(s, [])
         if not group:
             continue
         lines.append(f"## {status_label.get(s, s)} ({len(group)})")
         lines.append("")
-        for r in sorted(group, key=lambda x: x.get("intervention_label") or ""):
+        for num, r in group:
             label = r.get("intervention_label") or r.get("intervention_id") or "?"
-            lines.append(f"### {label}")
+            lines.append(f"### {num}. {label}")
             lines.append("")
             aliases = r.get("aliases") or []
             if aliases:

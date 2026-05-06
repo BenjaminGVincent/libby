@@ -139,7 +139,7 @@ def render_manufacturer_block(m: dict) -> str:
     return f'<dl class="profile-grid">\n{items}\n</dl>\n'
 
 
-def render_intervention_section(r: dict) -> str:
+def render_intervention_section(r: dict, number: int) -> str:
     label = r.get("intervention_label") or r.get("intervention_id") or "?"
     aliases = r.get("aliases") or []
     alias_str = (
@@ -147,8 +147,12 @@ def render_intervention_section(r: dict) -> str:
         if aliases
         else ""
     )
+    anchor = f'access-{number}'
     parts: list[str] = []
-    parts.append(f"### {html.escape(str(label))}{alias_str}\n")
+    parts.append(
+        f'### {number}. {html.escape(str(label))}{alias_str} '
+        f'{{ #{anchor} }}\n'
+    )
     parts.append(
         f"**Access status:** {status_badge(r.get('access_status'))} &nbsp; "
         f"**Modality:** {fmt(r.get('modality'))} &nbsp; "
@@ -236,40 +240,62 @@ def main() -> int:
             + "` to populate this page._\n"
         )
     else:
-        # Group by status, ordered by actionability.
+        # Group by status, ordered by actionability. Within each group, sort by
+        # intervention_label so numbers are reproducible run to run.
         by_status: dict[str, list[dict]] = {}
         for r in rows:
             by_status.setdefault(r.get("access_status") or "unavailable", []).append(r)
+        for s in by_status:
+            by_status[s].sort(key=lambda x: x.get("intervention_label") or "")
 
-        # Top-of-page summary table.
-        parts.append("## Summary\n")
-        parts.append('<table class="trial-table"><thead><tr>'
-                     '<th>Intervention</th><th>Modality</th><th>Access status</th>'
-                     '<th>Regulatory</th><th>Recommended first action</th>'
-                     '</tr></thead><tbody>\n')
+        # Build a single ordered list of (number, status, row) so the summary
+        # table and the per-intervention deep sections share the same numbering.
+        numbered: list[tuple[int, str, dict]] = []
+        n = 1
         for status in _STATUS_ORDER:
             for r in by_status.get(status, []):
-                first_step = (r.get("next_steps") or ["—"])[0]
-                parts.append(
-                    "<tr>"
-                    f"<td><strong>{fmt(r.get('intervention_label'))}</strong></td>"
-                    f"<td>{fmt(r.get('modality'))}</td>"
-                    f"<td>{status_badge(status)}</td>"
-                    f"<td>{fmt(r.get('regulatory_status'))}</td>"
-                    f"<td>{html.escape(str(first_step))}</td>"
-                    "</tr>"
-                )
+                numbered.append((n, status, r))
+                n += 1
+
+        # Top-of-page summary table — first column is the entry number, which
+        # links directly to the per-intervention deep section anchor below.
+        parts.append("## Summary\n")
+        parts.append(
+            "_The number in the first column links to the per-intervention "
+            "section further down the page. Use it for quick navigation._\n"
+        )
+        parts.append('<table class="trial-table"><thead><tr>'
+                     '<th>#</th><th>Intervention</th><th>Modality</th>'
+                     '<th>Access status</th><th>Regulatory</th>'
+                     '<th>Recommended first action</th>'
+                     '</tr></thead><tbody>\n')
+        for num, status, r in numbered:
+            first_step = (r.get("next_steps") or ["—"])[0]
+            parts.append(
+                "<tr>"
+                f'<td><a href="#access-{num}"><strong>{num}</strong></a></td>'
+                f"<td><strong>{fmt(r.get('intervention_label'))}</strong></td>"
+                f"<td>{fmt(r.get('modality'))}</td>"
+                f"<td>{status_badge(status)}</td>"
+                f"<td>{fmt(r.get('regulatory_status'))}</td>"
+                f"<td>{html.escape(str(first_step))}</td>"
+                "</tr>"
+            )
         parts.append("</tbody></table>\n")
 
-        # Per-intervention deep sections, grouped by status.
+        # Per-intervention deep sections, grouped by status. Each H3 carries
+        # the entry number from the summary table plus a `#access-<n>` anchor.
+        by_status_numbered: dict[str, list[tuple[int, dict]]] = {}
+        for num, status, r in numbered:
+            by_status_numbered.setdefault(status, []).append((num, r))
         for status in _STATUS_ORDER:
-            group = by_status.get(status, [])
+            group = by_status_numbered.get(status, [])
             if not group:
                 continue
             label, _cls = _STATUS_META.get(status, (status, "fit-none"))
             parts.append(f"\n## {label} ({len(group)})\n")
-            for r in sorted(group, key=lambda x: x.get("intervention_label") or ""):
-                parts.append(render_intervention_section(r))
+            for num, r in group:
+                parts.append(render_intervention_section(r, num))
 
     parts.append(
         f"\n[Back to case](index.md) · [Trials](trials.md) · "
