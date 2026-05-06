@@ -25,17 +25,22 @@
       "description": "Every known identifier — generic INN/USAN, pharma code, dev-program code, nicknames. Mirrored from trials.jsonl when available."
     },
     "access_status": {
-      "type": "string",
-      "enum": [
-        "standard_of_care",
-        "off_label_use",
-        "clinical_trial_only",
-        "compassionate_use",
-        "expanded_access_program",
-        "unavailable",
-        "not_yet_accessible"
-      ],
-      "description": "How a patient could practically access the therapy today. `standard_of_care` = on-label for the patient's indication; `off_label_use` = approved but not for the patient's tumor type; `clinical_trial_only` = investigational, only via enrollment; `compassionate_use` / `expanded_access_program` = pre-approval extended access pathways; `unavailable` = no current access path; `not_yet_accessible` = approved/active elsewhere but the patient cannot currently reach it for logistics or geography."
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "standard_of_care",
+          "off_label_use",
+          "clinical_trial_only",
+          "compassionate_use",
+          "expanded_access_program",
+          "unavailable",
+          "not_yet_accessible"
+        ]
+      },
+      "description": "How a patient could practically access the therapy today. **A single intervention can carry multiple access paths simultaneously.** `standard_of_care` = on-label for the patient's indication; `off_label_use` = approved (in any indication) and the patient's clinician could prescribe it off-label for the case's tumor type; `clinical_trial_only` = investigational, only via enrollment; `compassionate_use` / `expanded_access_program` = pre-approval extended access pathways; `unavailable` = no current access path; `not_yet_accessible` = approved/active elsewhere but the patient cannot currently reach it for logistics or geography. **Approval rule:** any FDA/EMA-approved drug carries `off_label_use` (because a clinician can prescribe it off-label for an unrelated tumor type) — and if active trials also exist, both `off_label_use` AND `clinical_trial_only` appear in this list. Order the array by actionability so the most patient-relevant path appears first."
     },
     "regulatory_status": {
       "type": "string",

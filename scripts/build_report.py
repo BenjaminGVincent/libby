@@ -1505,7 +1505,7 @@ def _accessibility_md_for_pdf(slug: str, rows: list[dict]) -> str:
     status_label = {
         "standard_of_care": "Standard of care",
         "off_label_use": "Off-label use",
-        "clinical_trial_only": "Clinical trial only",
+        "clinical_trial_only": "Clinical trial",
         "compassionate_use": "Compassionate use",
         "expanded_access_program": "Expanded access program",
         "not_yet_accessible": "Not yet accessible",
@@ -1513,9 +1513,30 @@ def _accessibility_md_for_pdf(slug: str, rows: list[dict]) -> str:
     }
     status_order = list(status_label.keys())
 
+    def _normalize(raw):
+        if isinstance(raw, list):
+            return [s for s in raw if s]
+        if isinstance(raw, str) and raw:
+            return [raw]
+        return []
+
+    def _primary(statuses: list[str]) -> str:
+        for s in status_order:
+            if s in statuses:
+                return s
+        return "unavailable"
+
+    def _statuses_str(statuses: list[str]) -> str:
+        ordered = [s for s in status_order if s in statuses]
+        return " + ".join(status_label.get(s, s) for s in ordered) or "—"
+
+    for r in rows:
+        r["_statuses"] = _normalize(r.get("access_status"))
+        r["_primary"] = _primary(r["_statuses"])
+
     by_status: dict[str, list[dict]] = {}
     for r in rows:
-        by_status.setdefault(r.get("access_status") or "unavailable", []).append(r)
+        by_status.setdefault(r["_primary"], []).append(r)
     for s in by_status:
         by_status[s].sort(key=lambda x: x.get("intervention_label") or "")
 
@@ -1553,7 +1574,7 @@ def _accessibility_md_for_pdf(slug: str, rows: list[dict]) -> str:
             f"| {num} "
             f"| {r.get('intervention_label') or '—'} "
             f"| {r.get('modality') or '—'} "
-            f"| {status_label.get(status, status)} "
+            f"| {_statuses_str(r['_statuses'])} "
             f"| {r.get('regulatory_status') or '—'} "
             f"| {first_step} |"
         )

@@ -25,15 +25,27 @@ For slug `<slug>`, you read `data/cases/<slug>/{profile.json, preferences.json, 
 
 Each row matches `scripts/schema/accessibility.schema.json`. Required: `row_id`, `case_slug`, `intervention_id`, `intervention_label`, `access_status`, `access_summary`. The other fields (regulatory, guideline, trials[], manufacturer, payer notes, next steps, geographic scope) are populated when verifiable.
 
-**`access_status` (enum, choose one):**
+**`access_status` is an array — populate every applicable path.** A single intervention can carry multiple access paths simultaneously, and the user (or treating team) needs to see all of them. The most important multi-status pattern: an FDA/EMA-approved drug carries `off_label_use` (a clinician can prescribe it off-label for an unrelated tumor type) AND `clinical_trial_only` if there is also at least one active trial. Order the array by actionability (most patient-relevant path first).
+
+**Approval rule.** If the intervention has any FDA / EMA / equivalent regulator approval — even for an unrelated indication — the array MUST include `off_label_use`. Off-label prescription is a real access path that the user's treating team can pursue without trial enrollment, and the access guide must surface it. The fact that off-label use is unreimbursed by some payers, or off-guideline, does not change the access classification — surface those constraints in `payer_access_notes` and `access_summary` instead.
+
+**Status enum (each list element):**
 
 - `standard_of_care` — drug is approved on-label for the patient's indication and accessible through routine prescription. Rare for a Libby case (the ranking is targetable-feature-scoped).
-- `off_label_use` — drug is FDA/EMA approved for *some* indication and could be used off-label for the patient's tumor type. Real path; payer / institution specifics matter.
-- `clinical_trial_only` — investigational drug, only accessible by trial enrollment. The dominant case for early-phase investigational agents.
+- `off_label_use` — drug is FDA/EMA approved for *some* indication and could be used off-label for the patient's tumor type. Real path; payer / institution specifics matter. **Use whenever the drug carries any approval, even when it co-occurs with `clinical_trial_only`.**
+- `clinical_trial_only` — investigational drug, only accessible by trial enrollment. The dominant case for early-phase investigational agents that have not been approved anywhere.
 - `compassionate_use` — pre-approval access via a manufacturer's compassionate-use program (FDA's Expanded Access pathway in the US, equivalent in EU/UK/AU). Use when the drug is post-IND but the patient is not trial-eligible (geography, exclusion criterion, slot unavailability) and a compassionate program exists.
 - `expanded_access_program` — formal FDA Expanded Access protocol or industry-sponsored EAP. Distinct from one-off compassionate use because there's a posted protocol.
-- `unavailable` — discontinued (Rova-T post-TAHOE), terminated trials with no successor program, or paused/suspended without restart timeline.
+- `unavailable` — discontinued (Rova-T post-TAHOE), terminated trials with no successor program, or paused/suspended without restart timeline. Mutually exclusive with the others.
 - `not_yet_accessible` — approved or active elsewhere but the patient cannot currently reach it (e.g. mainland-China-only trial, EU-only approval, geography mismatch).
+
+**Common combinations.**
+
+- `["off_label_use", "clinical_trial_only"]` — approved drug (somewhere) with an active basket / cross-tumor trial open. e.g. tarlatamab (FDA-approved for SCLC) + the UCLA DLL3-IHC basket trial.
+- `["off_label_use"]` — approved drug, no active trial in the patient's targetable feature.
+- `["clinical_trial_only"]` — investigational drug with no approval anywhere; trial enrollment is the only path.
+- `["clinical_trial_only", "compassionate_use"]` — investigational drug with a manufacturer compassionate-access program for patients ineligible for trials.
+- `["unavailable"]` — discontinued or never-approved drug with no current or planned access path.
 
 ## Workflow
 

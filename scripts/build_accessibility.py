@@ -33,17 +33,53 @@ def fmt(v, dash: str = "—") -> str:
 _STATUS_META: dict[str, tuple[str, str]] = {
     "standard_of_care":         ("Standard of care",        "fit-strong"),
     "off_label_use":            ("Off-label use",           "fit-partial"),
-    "clinical_trial_only":      ("Clinical trial only",     "fit-partial"),
+    "clinical_trial_only":      ("Clinical trial",          "fit-partial"),
     "compassionate_use":        ("Compassionate use",       "fit-weak"),
     "expanded_access_program":  ("Expanded access program", "fit-weak"),
     "not_yet_accessible":       ("Not yet accessible",      "fit-weak"),
     "unavailable":              ("Unavailable",             "fit-none"),
 }
 
+_STATUS_ORDER = [
+    "standard_of_care",
+    "off_label_use",
+    "clinical_trial_only",
+    "compassionate_use",
+    "expanded_access_program",
+    "not_yet_accessible",
+    "unavailable",
+]
+
+
+def normalize_status(raw) -> list[str]:
+    """Accept either a list (current schema) or a bare string (legacy rows)."""
+    if isinstance(raw, list):
+        return [s for s in raw if s]
+    if isinstance(raw, str) and raw:
+        return [raw]
+    return []
+
+
+def primary_status(statuses: list[str]) -> str:
+    """Return the most actionable status from a list, used for grouping."""
+    for s in _STATUS_ORDER:
+        if s in statuses:
+            return s
+    return "unavailable"
+
 
 def status_badge(s: str | None) -> str:
     label, cls = _STATUS_META.get(s or "", (s or "—", "fit-none"))
     return f'<span class="fit-badge {cls}">{html.escape(label)}</span>'
+
+
+def status_badges(statuses: list[str]) -> str:
+    """Render every status in the list as a separate badge."""
+    if not statuses:
+        return status_badge(None)
+    # Order by actionability, not by author order, so the strongest path leads.
+    ordered = [s for s in _STATUS_ORDER if s in statuses]
+    return " ".join(status_badge(s) for s in ordered)
 
 
 def eligibility_badge(e: str | None) -> str:
@@ -153,8 +189,9 @@ def render_intervention_section(r: dict, number: int) -> str:
         f'### {number}. {html.escape(str(label))}{alias_str} '
         f'{{ #{anchor} }}\n'
     )
+    statuses = r.get("_statuses") or normalize_status(r.get("access_status"))
     parts.append(
-        f"**Access status:** {status_badge(r.get('access_status'))} &nbsp; "
+        f"**Access status:** {status_badges(statuses)} &nbsp; "
         f"**Modality:** {fmt(r.get('modality'))} &nbsp; "
         f"**Verified:** {fmt(r.get('last_verified_utc'))}\n"
     )
@@ -202,17 +239,6 @@ def render_intervention_section(r: dict, number: int) -> str:
     return "\n".join(parts)
 
 
-_STATUS_ORDER = [
-    "standard_of_care",
-    "off_label_use",
-    "clinical_trial_only",
-    "compassionate_use",
-    "expanded_access_program",
-    "not_yet_accessible",
-    "unavailable",
-]
-
-
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("slug")
@@ -240,11 +266,17 @@ def main() -> int:
             + "` to populate this page._\n"
         )
     else:
-        # Group by status, ordered by actionability. Within each group, sort by
-        # intervention_label so numbers are reproducible run to run.
+        # Normalize statuses to lists, then group each row by its most
+        # actionable status (so a row tagged ["off_label_use",
+        # "clinical_trial_only"] groups under Off-label use, not Clinical
+        # trial). Within each group, sort by intervention_label so numbers
+        # are reproducible run to run.
+        for r in rows:
+            r["_statuses"] = normalize_status(r.get("access_status"))
+            r["_primary"] = primary_status(r["_statuses"])
         by_status: dict[str, list[dict]] = {}
         for r in rows:
-            by_status.setdefault(r.get("access_status") or "unavailable", []).append(r)
+            by_status.setdefault(r["_primary"], []).append(r)
         for s in by_status:
             by_status[s].sort(key=lambda x: x.get("intervention_label") or "")
 
@@ -276,7 +308,7 @@ def main() -> int:
                 f'<td><a href="#access-{num}"><strong>{num}</strong></a></td>'
                 f"<td><strong>{fmt(r.get('intervention_label'))}</strong></td>"
                 f"<td>{fmt(r.get('modality'))}</td>"
-                f"<td>{status_badge(status)}</td>"
+                f'<td>{status_badges(r["_statuses"])}</td>'
                 f"<td>{fmt(r.get('regulatory_status'))}</td>"
                 f"<td>{html.escape(str(first_step))}</td>"
                 "</tr>"
