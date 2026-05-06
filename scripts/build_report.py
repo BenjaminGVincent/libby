@@ -1441,6 +1441,58 @@ def _make_manuscripts_pdf(slug: str, clinical: list[dict], preclinical: list[dic
     pdf.output(str(out_path))
 
 
+def _make_target_validation_pdf(slug: str, body_md: str, out_path: Path) -> None:
+    """Render data/cases/<slug>/target_validation_report.md → PDF.
+
+    Portrait, single small disclaimer cover, then the report's prose body. The
+    report itself is reporter-authored and short (~200-300 words), so a one-
+    or two-page PDF is the expected shape.
+    """
+    try:
+        from fpdf import FPDF
+    except ImportError as e:
+        raise SystemExit(
+            "build_report: missing dependency `fpdf2`.\n  pip install fpdf2"
+        ) from e
+
+    today = datetime.now(timezone.utc).date().isoformat()
+
+    class TargetValidationPDF(FPDF):
+        def footer(self_):
+            if self_.page_no() <= 1:
+                return
+            self_.set_y(-12)
+            self_.set_font(_FONT_FAMILY, "I", 8)
+            self_.set_text_color(*INK_MUTED)
+            self_.cell(
+                0,
+                6,
+                _ascii_fallback(
+                    f"{self_.page_no()} of {{nb}}    ·    Libby — target validation paths    ·    {slug}"
+                ),
+                align="C",
+            )
+
+    pdf = TargetValidationPDF(orientation="P", unit="mm", format="Letter")
+    pdf.set_auto_page_break(auto=True, margin=20)
+    pdf.set_margins(left=18, top=20, right=18)
+    pdf.alias_nb_pages()
+    _register_unicode_font(pdf)
+
+    _render_cover(
+        pdf, f"Target validation paths — {slug}",
+        "The diagnostic and biomarker workup that hardens the targetable-feature call",
+        today, "LIBBY — TARGET VALIDATION PATHS",
+        COVER_BG, _DISCLAIMER_CLINICIAN,
+    )
+
+    pdf.add_page()
+    _render_markdown_block(pdf, body_md, top_h1=False)
+
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    pdf.output(str(out_path))
+
+
 def _make_patient_pdf(slug: str, body_md: str, out_path: Path) -> None:
     try:
         from fpdf import FPDF
@@ -1514,6 +1566,11 @@ def _downloads_section(slug: str, case_docs: Path) -> str:
             "plain-language summary",
         ),
         (
+            f"{slug}-target-validation.pdf",
+            "Target validation paths",
+            "diagnostic + biomarker workup that hardens the targetable-feature call",
+        ),
+        (
             f"{slug}-manuscripts.pdf",
             "Master manuscripts table (PDF)",
             "every paper considered — n, effect, variance, toxicities",
@@ -1567,6 +1624,74 @@ def _inject_downloads(index_path: Path, slug: str, case_docs: Path) -> bool:
             new_text = text[: m.start()] + block + text[m.start() :]
         else:
             new_text = text.rstrip() + "\n\n" + block + "\n"
+    else:
+        return False
+
+    if new_text == text:
+        return False
+    index_path.write_text(new_text, encoding="utf-8")
+    return True
+
+
+# ---------- index.md target-validation injection ----------
+
+
+_TV_BEGIN = "<!-- libby:target-validation:begin -->"
+_TV_END = "<!-- libby:target-validation:end -->"
+_RX_TV_BLOCK = re.compile(
+    re.escape(_TV_BEGIN) + r".*?" + re.escape(_TV_END),
+    re.DOTALL,
+)
+# Match the "## Preferences" heading + its body up to (but not including) the
+# next H2. Group 1 captures the heading + body; we insert the TV block
+# immediately after it.
+_RX_PREFERENCES_BLOCK = re.compile(
+    r"(^##\s+Preferences\s*\n.*?)(?=^##\s+\S)",
+    re.DOTALL | re.MULTILINE,
+)
+
+
+def _target_validation_section(report_md: str) -> str:
+    """Wrap the reporter-authored prose with stable markers for re-injection.
+
+    The reporter's report already contains its own H2 (`## Target validation
+    paths`). We just bracket it with the markers and return.
+    """
+    body = report_md.strip()
+    if not body:
+        return ""
+    return "\n".join([_TV_BEGIN, "", body, "", _TV_END, ""])
+
+
+def _inject_target_validation(index_path: Path, report_md: str) -> bool:
+    """Idempotently insert/refresh the Target-validation section in index.md.
+
+    Placement: immediately after the `## Preferences` block (before the next
+    H2 — typically `## Scope summary`).
+    Returns True when the file was modified.
+    """
+    text = index_path.read_text(encoding="utf-8")
+    block = _target_validation_section(report_md)
+
+    if _RX_TV_BLOCK.search(text):
+        if not block:
+            new_text = _RX_TV_BLOCK.sub("", text)
+            new_text = re.sub(r"\n{3,}", "\n\n", new_text)
+        else:
+            new_text = _RX_TV_BLOCK.sub(block.rstrip("\n"), text)
+    elif block:
+        m = _RX_PREFERENCES_BLOCK.search(text)
+        if m:
+            insert_at = m.end()
+            new_text = text[:insert_at] + block + "\n" + text[insert_at:]
+        else:
+            # No Preferences section found; fall back to inserting before the
+            # first H2 (rare — would be a malformed case page).
+            m = _RX_FIRST_H2.search(text)
+            if m:
+                new_text = text[: m.start()] + block + text[m.start() :]
+            else:
+                new_text = text.rstrip() + "\n\n" + block + "\n"
     else:
         return False
 
@@ -1645,6 +1770,26 @@ def main(argv: list[str]) -> int:
             f"trials={len(trials)})"
         )
 
+    # Reporter-authored target-validation prose. Drives both the website
+    # injection (after `## Preferences`) and the standalone PDF.
+    tv_report_path = case_data / "target_validation_report.md"
+    tv_report_md = ""
+    if tv_report_path.exists():
+        tv_report_md = tv_report_path.read_text(encoding="utf-8").strip()
+    if tv_report_md:
+        tv_pdf_out = case_docs / f"{slug}-target-validation.pdf"
+        _make_target_validation_pdf(slug, tv_report_md, tv_pdf_out)
+        print(
+            f"built {tv_pdf_out.relative_to(REPO_ROOT)} — "
+            f"{tv_pdf_out.stat().st_size / 1024:.0f} KB"
+        )
+    else:
+        # If the reporter has not yet authored the report, strip any stale PDF
+        # so the Downloads block doesn't surface a phantom link.
+        tv_pdf_out = case_docs / f"{slug}-target-validation.pdf"
+        if tv_pdf_out.exists():
+            tv_pdf_out.unlink()
+
     html_out = case_docs / f"{slug}-recommendations.html"
     html_out.write_text(
         _render_recommendations_html(slug, recs, profile, preferences),
@@ -1654,6 +1799,12 @@ def main(argv: list[str]) -> int:
         f"built {html_out.relative_to(REPO_ROOT)} — "
         f"{html_out.stat().st_size / 1024:.0f} KB"
     )
+
+    if _inject_target_validation(index_path, tv_report_md):
+        print(
+            f"patched {index_path.relative_to(REPO_ROOT)} — target-validation section "
+            f"({'inserted' if tv_report_md else 'cleared'})"
+        )
 
     if _inject_downloads(index_path, slug, case_docs):
         print(f"patched {index_path.relative_to(REPO_ROOT)} — downloads section")

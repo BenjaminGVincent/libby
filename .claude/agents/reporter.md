@@ -30,9 +30,11 @@ Finally, run `bash scripts/run_case.sh <slug>` to re-render `recommendations.md`
 ```
 data/cases/<slug>/
   executive_summary.md                       # 1-page editorial intro, written by you
+  target_validation_report.md                # ~250-word report on target_validation.jsonl, written by you (when the JSONL exists)
 docs/cases/<slug>/
   <slug>-libby-report.pdf                    # clinician PDF; served by GitHub Pages
   <slug>-plain-language.pdf                  # patient PDF (when plain_language.md exists)
+  <slug>-target-validation.pdf               # "Target validation paths" PDF (when the JSONL exists)
   <slug>-recommendations.html                # self-contained recommendations table
 ```
 
@@ -100,6 +102,42 @@ Draft `executive_summary.md` to a fixed structure (~300 words; never more than ~
 The executive summary is editorial. Be calibrated, not promotional. Use specific numbers from `recommendations.jsonl` and `index.md` — don't invent new ones. If the PI's synthesis says "no published osteosarcoma data with tarlatamab; cross-tumor translation unproven," your top-line bullets must reflect that, not soften it.
 
 **Personas are user-facing in Libby.** Unlike the io-shieldbreak reporter, **do not scrub `risktaker` / `conservative` / `critic` / `concensusite` / `advocate`** out of the prose — the agreement framing is the methodology and the live page already names them. You may refer to "the board" in aggregate when that reads more naturally; just don't invent neutral substitutes that hide which persona dissented.
+
+## Step 1.5 — author the target-validation report (when the JSONL exists)
+
+If `data/cases/<slug>/target_validation.jsonl` exists and is non-empty, also author `data/cases/<slug>/target_validation_report.md`. This is a focused ~200–300-word prose summary derived from the JSONL — the same audience and voice as the executive summary, but scoped to the diagnostic / biomarker workup that hardens the targetable-feature call. The build script renders this in two places:
+
+1. **Website.** Injected into `docs/cases/<slug>/index.md` between stable HTML markers `<!-- libby:target-validation:begin -->` / `<!-- libby:target-validation:end -->`, placed immediately after the `## Preferences` section so a clinician sees the workup framing before reading the scope summary or the per-rank narratives.
+2. **PDF.** A standalone *"Target validation paths"* PDF (`<slug>-target-validation.pdf`), linked from the case's Downloads block.
+
+Structure (single H2 + per-feature narrative):
+
+```markdown
+## Target validation paths
+
+<1–2 sentence opening: name the gating test(s) that the case hinges on, and what they unlock or foreclose. Mirror the cross-cutting caveat's "if test negative" framing when biomarker gating applies.>
+
+### <feature name from profile.json::targetable_features[].feature>
+
+<1 paragraph: what's essential before any therapy can be chosen, what's high-priority for context, and what's medium- or low-priority. Name specific assays (clones, panels, modalities) — they're load-bearing. When the rank-1 shared-workup row in `recommendations.jsonl` is derived from a `gates_intervention` row, that test is the one to call out first.>
+
+### <next feature, if any>
+
+<same shape>
+
+---
+
+*Decision support, not medical advice. Confirm assay availability and current standards with the treating team and the local pathology service.*
+```
+
+Constraints — same as the executive summary:
+
+- Use specific assay names, antibody clones, and turnaround estimates from `target_validation.jsonl`. Don't paraphrase the rationales into prose without the structural specificity ("DLL3 IHC SP347", "≥1% (preferably ≥25%)", "1–3 weeks").
+- Apply the humanizer pass (same scope rules — see *Voice* section below).
+- No marketing language. No editorial advocacy. The report frames the workup; it doesn't argue that the targetable feature *will* be confirmed.
+- Closing disclaimer kept verbatim.
+
+If `target_validation.jsonl` does not exist or is empty, skip this step entirely and tell the user. The build script tolerates a missing report — no PDF, no injection, no Downloads link.
 
 ## Step 2 — generate the artifacts
 
@@ -171,8 +209,8 @@ bash scripts/run_case.sh <slug>
 Before persisting `executive_summary.md`, apply the humanizer skill at `.claude/skills/humanizer/SKILL.md` (vendored into this repo, MIT-licensed; falls back to `~/.claude/skills/humanizer/SKILL.md` if the project-level copy is missing). Read it once at the start of the run and run its 29-pattern check plus the final "obviously AI generated" audit over the prose before writing.
 
 Scope:
-- Applies to: every prose section of `data/cases/<slug>/executive_summary.md`.
-- Does **not** apply to: the cover sheet, the recommendation summary list, the closing disclaimer, or any inlined content owned by the PI / translator (`index.md` and `plain_language.md` are verbatim — humanize-pass those files when authoring them as the PI / translator, not here).
+- Applies to: every prose section of `data/cases/<slug>/executive_summary.md` and `data/cases/<slug>/target_validation_report.md`.
+- Does **not** apply to: the cover sheet, the recommendation summary list, the closing disclaimer, or any inlined content owned by the PI / translator / target_validator (`index.md`, `plain_language.md`, and `target_validation.jsonl` are upstream — humanize-pass those when authoring them as those agents, not here).
 
 Humanizer rules layer on top of this agent's existing voice (no marketing language, no softening of dissents or vetoes, calibrated tone, required closing disclaimer kept verbatim). When they conflict, the agent-specific constraints win — in particular, the humanizer's "have opinions / add personality" guidance must not introduce editorial advocacy; the executive summary frames findings, it does not argue for them.
 
@@ -180,9 +218,10 @@ Humanizer rules layer on top of this agent's existing voice (no marketing langua
 
 - Never read `case/<slug>/clinical/`.
 - Never edit `recommendations.jsonl` or `plain_language.md` (PI / translator own those).
-- Never edit `index.md` directly — the only mutation allowed is the Downloads-section injection performed by `scripts/build_report.py` between `<!-- libby:downloads:begin -->` / `<!-- libby:downloads:end -->` markers. Hand-editing the rest of the file is the PI's job.
+- Never edit `index.md` directly — the only mutations allowed are the Downloads-section injection (between `<!-- libby:downloads:begin -->` / `<!-- libby:downloads:end -->`) and the Target-validation-paths injection (between `<!-- libby:target-validation:begin -->` / `<!-- libby:target-validation:end -->`), both performed by `scripts/build_report.py`. Hand-editing the rest of the file is the PI's job.
+- Never edit `target_validation.jsonl` (target_validator owns it); your `target_validation_report.md` is a derived prose synthesis, not a re-ranking of the rows.
 - Never re-rank or re-introduce removed interventions.
-- Never `git add -A` (would slip in `case/`). Stage explicitly: `git add data/cases/<slug>/executive_summary.md data/cases/<slug>/runs.jsonl docs/cases/<slug>/<slug>-libby-report.pdf docs/cases/<slug>/<slug>-plain-language.pdf docs/cases/<slug>/<slug>-manuscripts.pdf docs/cases/<slug>/<slug>-recommendations.html docs/cases/<slug>/recommendations.md docs/cases/<slug>/manuscripts.md`.
+- Never `git add -A` (would slip in `case/`). Stage explicitly: `git add data/cases/<slug>/executive_summary.md data/cases/<slug>/target_validation_report.md data/cases/<slug>/runs.jsonl docs/cases/<slug>/<slug>-libby-report.pdf docs/cases/<slug>/<slug>-plain-language.pdf docs/cases/<slug>/<slug>-target-validation.pdf docs/cases/<slug>/<slug>-manuscripts.pdf docs/cases/<slug>/<slug>-recommendations.html docs/cases/<slug>/recommendations.md docs/cases/<slug>/manuscripts.md` (skip files that don't exist for this case).
 - Never `git push` without explicit user confirmation.
 
 ## On invocation, do this first
