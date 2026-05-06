@@ -1493,6 +1493,197 @@ def _make_target_validation_pdf(slug: str, body_md: str, out_path: Path) -> None
     pdf.output(str(out_path))
 
 
+def _accessibility_md_for_pdf(slug: str, rows: list[dict]) -> str:
+    """Convert accessibility.jsonl rows into a markdown body the PDF renderer can consume.
+
+    Mirrors the on-page web layout (build_accessibility.py) but uses pipe tables
+    and headings the existing markdown subset supports. No HTML.
+    """
+    if not rows:
+        return f"# Access guide — {slug}\n\n_No accessibility rows yet._\n"
+
+    status_label = {
+        "standard_of_care": "Standard of care",
+        "off_label_use": "Off-label use",
+        "clinical_trial_only": "Clinical trial only",
+        "compassionate_use": "Compassionate use",
+        "expanded_access_program": "Expanded access program",
+        "not_yet_accessible": "Not yet accessible",
+        "unavailable": "Unavailable",
+    }
+    status_order = list(status_label.keys())
+
+    by_status: dict[str, list[dict]] = {}
+    for r in rows:
+        by_status.setdefault(r.get("access_status") or "unavailable", []).append(r)
+
+    lines: list[str] = [
+        f"# Access guide — {slug}",
+        "",
+        "How a patient or treating team could practically access each intervention "
+        "in this case's dossier. Trial recruitment contacts and manufacturer "
+        "medical-information lines are captured for direct outreach. Information "
+        "ages — each row carries a `Verified` date; re-screen before relying on a "
+        "specific contact or trial slot.",
+        "",
+        "## Summary",
+        "",
+        "| Intervention | Modality | Access status | Regulatory | Recommended first action |",
+        "| --- | --- | --- | --- | --- |",
+    ]
+    for s in status_order:
+        for r in by_status.get(s, []):
+            first_step = (r.get("next_steps") or ["—"])[0]
+            lines.append(
+                f"| {r.get('intervention_label') or '—'} "
+                f"| {r.get('modality') or '—'} "
+                f"| {status_label.get(s, s)} "
+                f"| {r.get('regulatory_status') or '—'} "
+                f"| {first_step} |"
+            )
+    lines.append("")
+
+    for s in status_order:
+        group = by_status.get(s, [])
+        if not group:
+            continue
+        lines.append(f"## {status_label.get(s, s)} ({len(group)})")
+        lines.append("")
+        for r in sorted(group, key=lambda x: x.get("intervention_label") or ""):
+            label = r.get("intervention_label") or r.get("intervention_id") or "?"
+            lines.append(f"### {label}")
+            lines.append("")
+            aliases = r.get("aliases") or []
+            if aliases:
+                lines.append(f"_Aliases:_ {', '.join(aliases)}")
+                lines.append("")
+            meta_bits = []
+            if r.get("modality"):
+                meta_bits.append(f"**Modality:** {r['modality']}")
+            if r.get("regulatory_status"):
+                meta_bits.append(f"**Regulatory:** {r['regulatory_status']}")
+            if r.get("guideline_status"):
+                meta_bits.append(f"**Guidelines:** {r['guideline_status']}")
+            if r.get("geographic_scope"):
+                meta_bits.append(f"**Geographic scope:** {r['geographic_scope']}")
+            if r.get("last_verified_utc"):
+                meta_bits.append(f"**Verified:** {r['last_verified_utc']}")
+            if meta_bits:
+                lines.append("  ·  ".join(meta_bits))
+                lines.append("")
+            if r.get("access_summary"):
+                lines.append(r["access_summary"])
+                lines.append("")
+            if r.get("next_steps"):
+                lines.append("**Next steps**")
+                lines.append("")
+                for i, step in enumerate(r["next_steps"], 1):
+                    lines.append(f"{i}. {step}")
+                lines.append("")
+            trials = r.get("trials") or []
+            if trials:
+                lines.append("**Trial pathways**")
+                lines.append("")
+                lines.append("| NCT | Phase | Status | Eligible | Central contact |")
+                lines.append("| --- | --- | --- | --- | --- |")
+                for t in trials:
+                    contact_bits = []
+                    if t.get("central_contact_name"):
+                        contact_bits.append(t["central_contact_name"])
+                    if t.get("central_contact_email"):
+                        contact_bits.append(t["central_contact_email"])
+                    if t.get("central_contact_phone"):
+                        contact_bits.append(t["central_contact_phone"])
+                    contact = "; ".join(contact_bits) or "—"
+                    lines.append(
+                        f"| [{t.get('nct_id') or '—'}](https://clinicaltrials.gov/study/{t.get('nct_id') or ''}) "
+                        f"| {t.get('phase') or '—'} "
+                        f"| {t.get('recruitment_status') or '—'} "
+                        f"| {t.get('patient_eligible') or '—'} "
+                        f"| {contact} |"
+                    )
+                lines.append("")
+            m = r.get("manufacturer") or {}
+            if m:
+                lines.append("**Manufacturer / sponsor contact**")
+                lines.append("")
+                man_bits = []
+                if m.get("company"):
+                    man_bits.append(f"**Company:** {m['company']}")
+                if m.get("medical_information_phone"):
+                    man_bits.append(f"**Med info phone:** `{m['medical_information_phone']}`")
+                if m.get("medical_information_email"):
+                    man_bits.append(f"**Med info email:** [{m['medical_information_email']}](mailto:{m['medical_information_email']})")
+                if m.get("product_information_url"):
+                    man_bits.append(f"**Product info:** [{m['product_information_url']}]({m['product_information_url']})")
+                if m.get("compassionate_use_url"):
+                    man_bits.append(f"**Compassionate / expanded access:** [{m['compassionate_use_url']}]({m['compassionate_use_url']})")
+                if m.get("compassionate_use_email"):
+                    man_bits.append(f"**Compassionate use email:** [{m['compassionate_use_email']}](mailto:{m['compassionate_use_email']})")
+                for b in man_bits:
+                    lines.append(f"- {b}")
+                if m.get("notes"):
+                    lines.append(f"- **Notes:** {m['notes']}")
+                lines.append("")
+            if r.get("payer_access_notes"):
+                lines.append(f"**Payer / coverage:** {r['payer_access_notes']}")
+                lines.append("")
+            if r.get("notes"):
+                lines.append(f"**Notes:** {r['notes']}")
+                lines.append("")
+            lines.append("---")
+            lines.append("")
+    return "\n".join(lines)
+
+
+def _make_accessibility_pdf(slug: str, rows: list[dict], out_path: Path) -> None:
+    """Render the access guide to a portrait-Letter PDF for the Downloads section."""
+    try:
+        from fpdf import FPDF
+    except ImportError as e:
+        raise SystemExit(
+            "build_report: missing dependency `fpdf2`.\n  pip install fpdf2"
+        ) from e
+
+    today = datetime.now(timezone.utc).date().isoformat()
+
+    class AccessibilityPDF(FPDF):
+        def footer(self_):
+            if self_.page_no() <= 1:
+                return
+            self_.set_y(-12)
+            self_.set_font(_FONT_FAMILY, "I", 8)
+            self_.set_text_color(*INK_MUTED)
+            self_.cell(
+                0,
+                6,
+                _ascii_fallback(
+                    f"{self_.page_no()} of {{nb}}    ·    Libby — access guide    ·    {slug}"
+                ),
+                align="C",
+            )
+
+    pdf = AccessibilityPDF(orientation="P", unit="mm", format="Letter")
+    pdf.set_auto_page_break(auto=True, margin=20)
+    pdf.set_margins(left=18, top=20, right=18)
+    pdf.alias_nb_pages()
+    _register_unicode_font(pdf)
+
+    _render_cover(
+        pdf, f"Access guide — {slug}",
+        "How to access each therapy: trial contacts + manufacturer medical-info",
+        today, "LIBBY — ACCESS GUIDE",
+        COVER_BG, _DISCLAIMER_CLINICIAN,
+    )
+
+    pdf.add_page()
+    body_md = _accessibility_md_for_pdf(slug, rows)
+    _render_markdown_block(pdf, body_md, top_h1=True)
+
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    pdf.output(str(out_path))
+
+
 def _make_patient_pdf(slug: str, body_md: str, out_path: Path) -> None:
     try:
         from fpdf import FPDF
@@ -1779,6 +1970,19 @@ def main(argv: list[str]) -> int:
             f"(clinical={len(clinical)}, preclinical={len(preclinical)}, "
             f"trials={len(trials)})"
         )
+
+    accessibility_rows = _load_jsonl(case_data / "accessibility.jsonl")
+    accessibility_pdf_out = case_docs / f"{slug}-accessibility.pdf"
+    if accessibility_rows:
+        _make_accessibility_pdf(slug, accessibility_rows, accessibility_pdf_out)
+        print(
+            f"built {accessibility_pdf_out.relative_to(REPO_ROOT)} — "
+            f"{accessibility_pdf_out.stat().st_size / 1024:.0f} KB "
+            f"(interventions={len(accessibility_rows)})"
+        )
+    else:
+        if accessibility_pdf_out.exists():
+            accessibility_pdf_out.unlink()
 
     # Reporter-authored target-validation prose. Drives both the website
     # injection (after `## Preferences`) and the standalone PDF.

@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://libby.local/schema/accessibility.schema.json",
+  "title": "Libby accessibility-screener row",
+  "description": "One row per unique intervention surfaced by clinician / researcher / trial_screener, describing how a patient could practically access it: standard-of-care, off-label use, clinical-trial, compassionate / expanded-access, or unavailable. Includes trial recruitment contacts and manufacturer medical-information lines so the user (or treating team) has actionable points of contact.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "row_id",
+    "case_slug",
+    "intervention_id",
+    "intervention_label",
+    "access_status",
+    "access_summary"
+  ],
+  "properties": {
+    "row_id": { "type": "string", "description": "Stable kebab-case ID, typically `<slug>-access-<intervention_id>`." },
+    "case_slug": { "type": "string" },
+    "intervention_id": { "type": "string", "description": "Matches the intervention_id used in clinical_evidence.jsonl / preclinical_evidence.jsonl / recommendations.jsonl." },
+    "intervention_label": { "type": "string" },
+    "modality": { "type": "string", "description": "Therapeutic modality (BiTE / trispecific / ADC / radioligand / CAR-T / CAR-NK / small molecule / monoclonal antibody / vaccine / other). Reuse the value from trials.jsonl when one exists." },
+    "aliases": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Every known identifier — generic INN/USAN, pharma code, dev-program code, nicknames. Mirrored from trials.jsonl when available."
+    },
+    "access_status": {
+      "type": "string",
+      "enum": [
+        "standard_of_care",
+        "off_label_use",
+        "clinical_trial_only",
+        "compassionate_use",
+        "expanded_access_program",
+        "unavailable",
+        "not_yet_accessible"
+      ],
+      "description": "How a patient could practically access the therapy today. `standard_of_care` = on-label for the patient's indication; `off_label_use` = approved but not for the patient's tumor type; `clinical_trial_only` = investigational, only via enrollment; `compassionate_use` / `expanded_access_program` = pre-approval extended access pathways; `unavailable` = no current access path; `not_yet_accessible` = approved/active elsewhere but the patient cannot currently reach it for logistics or geography."
+    },
+    "regulatory_status": {
+      "type": "string",
+      "description": "Approval state: 'FDA-approved (ES-SCLC, accelerated 2024)', 'FDA Fast Track (ES-SCLC)', 'EMA-approved', 'Breakthrough therapy designation', 'IND-cleared, no approval', 'discontinued', 'no regulatory filing'."
+    },
+    "guideline_status": {
+      "type": "string",
+      "description": "Guideline coverage: NCCN category, ESMO recommendation level, ASCO endorsement, etc. Free text. e.g. 'NCCN category 1 for ES-SCLC 2L; off-guideline for osteosarcoma'."
+    },
+    "trials": {
+      "type": "array",
+      "description": "Active trial pathways the patient could pursue. One entry per relevant trial.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["nct_id"],
+        "properties": {
+          "nct_id": { "type": "string" },
+          "title": { "type": "string" },
+          "phase": { "type": "string" },
+          "indication": { "type": "string" },
+          "patient_eligible": { "type": "string", "enum": ["yes", "likely", "unconfirmed", "no"], "description": "Does this trial accept the patient's tumor type per published eligibility?" },
+          "recruitment_status": { "type": "string", "enum": ["recruiting", "active not recruiting", "not yet recruiting", "completed", "terminated", "withdrawn", "suspended", "unknown"] },
+          "central_contact_name": { "type": "string" },
+          "central_contact_email": { "type": "string" },
+          "central_contact_phone": { "type": "string" },
+          "sites_url": { "type": "string", "description": "URL on ClinicalTrials.gov for the trial's site list." },
+          "notes": { "type": "string", "description": "Slot availability, geography, time-to-screen, anything else useful for the user's outreach call." }
+        }
+      }
+    },
+    "manufacturer": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Manufacturer / marketer / sponsor contact info for medical-information inquiries, off-label requests, and compassionate-use requests.",
+      "properties": {
+        "company": { "type": "string" },
+        "country_of_origin": { "type": "string" },
+        "medical_information_phone": { "type": "string" },
+        "medical_information_email": { "type": "string" },
+        "product_information_url": { "type": "string" },
+        "compassionate_use_url": { "type": "string", "description": "Direct URL for the manufacturer's compassionate-use / expanded-access portal when one exists." },
+        "compassionate_use_email": { "type": "string" },
+        "notes": { "type": "string" }
+      }
+    },
+    "payer_access_notes": {
+      "type": "string",
+      "description": "Medicare/Medicaid coverage, NCD/LCD status, prior-authorization considerations, manufacturer patient-assistance programs. Free text."
+    },
+    "access_summary": {
+      "type": "string",
+      "description": "2-3 sentence narrative summary the user can read in isolation. Names the realistic access path and the load-bearing constraint."
+    },
+    "next_steps": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Ordered list of concrete actions the user / treating team should take to pursue this pathway. e.g. 'Confirm DLL3 IHC SP347 result before enrollment', 'Email the NCT06788938 central contact to request screening slot'."
+    },
+    "geographic_scope": {
+      "type": "string",
+      "description": "Geographies where the access path is currently realistic. e.g. 'US + EU; mainland-China sites only', 'US sites only — not yet open in EU'."
+    },
+    "last_verified_utc": {
+      "type": "string",
+      "description": "ISO date the agent last verified this row in YYYY-MM-DD form. Information ages — record the verification date so a reviewer knows whether to re-screen."
+    },
+    "notes": {
+      "type": "string",
+      "description": "Caveats, recent news, sponsor-side updates that don't fit the structured fields."
+    }
+  }
+}

@@ -9,6 +9,8 @@
 - [Clinician PDF report](osteosarcoma-mets-dll3-h7r2-libby-report.pdf) — ranked recommendations + evidence + sources
 - [Patient/caregiver PDF](osteosarcoma-mets-dll3-h7r2-plain-language.pdf) — plain-language summary
 - [Target validation paths](osteosarcoma-mets-dll3-h7r2-target-validation.pdf) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Access guide (PDF)](osteosarcoma-mets-dll3-h7r2-accessibility.pdf) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines
+- [Access guide (web)](accessibility.md) — same access guide in an in-browser sortable table
 - [Master manuscripts table (PDF)](osteosarcoma-mets-dll3-h7r2-manuscripts.pdf) — every paper considered — n, effect, variance, toxicities
 - [Master manuscripts table (web)](manuscripts.md) — same inventory in a sortable in-browser table
 - [Self-contained HTML](osteosarcoma-mets-dll3-h7r2-recommendations.html) — recommendations table that opens offline

@@ -95,6 +95,8 @@ ONCOLOGY_ACRONYM_ALLOWLIST = frozenset({
     "TRINITY", "MERU",
     # Tumor / pathology acronyms (DLL3 pipeline)
     "SCLC", "NSCLC", "NEC", "LCNEC", "NEPC", "GEP", "MTC", "EP",
+    # Geographies (regions / countries, frequent in access guides)
+    "US", "EU", "UK", "AU", "JP",
     # Drug-class / mechanism modality acronyms
     "BITE", "CAR", "ADC", "DXD", "PBD", "TOP",
     # Pipeline-program tokens that surface in narrative
@@ -157,6 +159,21 @@ def all_caps_pair_is_phi(line: str) -> bool:
     return False
 
 
+# Files where structured manufacturer / trial contact information and
+# row-verification dates are surfaced by design. The accessibility report's
+# whole purpose is to publish phone numbers, emails, and last-verified dates
+# so a treating team can dial them. PHI patterns are still meaningful inside
+# such a file — they just shift to the patterns that genuinely indicate
+# patient identifiers (MRN, SSN, ALL-CAPS NAME pairs) rather than the
+# patterns that legitimately match published business contacts.
+_ACCESSIBILITY_NAMES = {"accessibility.md", "accessibility.jsonl"}
+_ACCESSIBILITY_BYDESIGN_LABELS = {"email", "us_phone", "iso_date_full"}
+
+
+def _is_accessibility_artifact(path: Path) -> bool:
+    return path.name in _ACCESSIBILITY_NAMES
+
+
 def scan_file(path: Path) -> list[tuple[int, str, str, str]]:
     """Return (lineno, label, description, line) for each hit."""
     if path.suffix.lower() not in SCAN_EXTS:
@@ -165,11 +182,14 @@ def scan_file(path: Path) -> list[tuple[int, str, str, str]]:
         text = path.read_text(encoding="utf-8", errors="replace")
     except (FileNotFoundError, IsADirectoryError, PermissionError):
         return []
+    suppress_labels = _ACCESSIBILITY_BYDESIGN_LABELS if _is_accessibility_artifact(path) else set()
     hits: list[tuple[int, str, str, str]] = []
     for lineno, line in enumerate(text.splitlines(), start=1):
         if IGNORE_TOKEN in line:
             continue
         for label, pattern, description in PATTERNS:
+            if label in suppress_labels:
+                continue
             if not pattern.search(line):
                 continue
             if label == "all_caps_name" and not all_caps_pair_is_phi(line):

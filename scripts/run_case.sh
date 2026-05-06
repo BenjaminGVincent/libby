@@ -19,6 +19,7 @@ python3 scripts/build_manuscripts.py "$SLUG"
 python3 scripts/build_board.py "$SLUG"
 python3 scripts/build_recommendations.py "$SLUG"
 python3 scripts/build_target_validation.py "$SLUG"
+python3 scripts/build_accessibility.py "$SLUG"
 
 # PHI re-scan against rendered docs before commit (belt-and-suspenders).
 python3 scripts/scan_for_phi.py --mode=files \
@@ -30,6 +31,7 @@ python3 scripts/scan_for_phi.py --mode=files \
   "docs/cases/$SLUG/evidence.md" \
   "docs/cases/$SLUG/manuscripts.md" \
   "docs/cases/$SLUG/target_validation.md" \
+  "docs/cases/$SLUG/accessibility.md" \
   "docs/cases/$SLUG/trials.md" 2>&1 | tee /dev/stderr | tail -5
 
 # Build PDFs + HTML downloads (clinician report, plain-language, manuscripts, recs HTML).

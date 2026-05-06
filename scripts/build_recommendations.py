@@ -187,6 +187,11 @@ def downloads_block(case_docs: Path, slug: str) -> str:
             "plain-language summary",
         ),
         (
+            f"{slug}-accessibility.pdf",
+            "Access guide (PDF)",
+            "how to access each therapy — trial recruitment contacts + manufacturer medical-info lines",
+        ),
+        (
             f"{slug}-manuscripts.pdf",
             "Master manuscripts table (PDF)",
             "every paper considered — n, effect, variance, toxicities",
