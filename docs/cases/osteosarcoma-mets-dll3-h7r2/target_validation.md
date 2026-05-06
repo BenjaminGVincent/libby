@@ -2,7 +2,7 @@
 
 # Target validation — `osteosarcoma-mets-dll3-h7r2`
 
-_4 validation rows across 1 feature(s) — 1 essential, 1 gating an intervention. Sorted within each feature by priority, then by decision relevance._
+_4 validation rows across 2 feature(s) — 1 essential, 1 gating an intervention. Sorted within each feature by priority, then by decision relevance._
 
 _Essential / gates-intervention rows are the diagnostic prerequisites the downstream tumor board and PI use to compute the case's rank-1 shared workup. Rows tagged `confirms_target_call` harden the target call without gating a specific therapy; resistance / co-mutation / microenvironment rows refine sequencing and risk._
 
@@ -21,6 +21,10 @@ _Essential / gates-intervention rows are the diagnostic prerequisites the downst
     </table>
   </div>
 </div>
+
+## PRAME RNA expression
+
+_No validation rows for this feature._
 
 [Back to case](index.md) · [Trials](trials.md) · [Evidence](evidence.md) · [Manuscripts](manuscripts.md) · [Board](board.md) · [Recommendations](recommendations.md)
 

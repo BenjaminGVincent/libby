@@ -13,22 +13,27 @@ _The number in the first column links to the per-intervention section further do
 <tr><td><a href="#access-1"><strong>1</strong></a></td><td><strong>tarlatamab (Imdelltra)</strong></td><td>BiTE</td><td><span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span></td><td>FDA accelerated approval (2024) for ES-SCLC after platinum-based chemotherapy. EMA conditional approval (2025). NOT approved for osteosarcoma — but the SCLC approval makes off-label prescription a real access path in addition to trial enrollment.</td><td>Confirm DLL3 IHC SP347 result first — required for both paths (the trial mandates ≥1% / preferably ≥25%; off-label use should not proceed without protein confirmation).</td></tr>
 <tr><td><a href="#access-2"><strong>2</strong></a></td><td><strong>FZ-AD005</strong></td><td>ADC</td><td><span class="fit-badge fit-partial">Clinical trial</span></td><td>Investigational. Mainland-China NMPA filing; no FDA/EMA approval.</td><td>Listed for completeness only — not an actionable pathway.</td></tr>
 <tr><td><a href="#access-3"><strong>3</strong></a></td><td><strong>IBI3009</strong></td><td>ADC</td><td><span class="fit-badge fit-partial">Clinical trial</span></td><td>Investigational. INDs cleared in multiple countries; no approval yet.</td><td>Not currently enrollable for osteosarcoma.</td></tr>
-<tr><td><a href="#access-4"><strong>4</strong></a></td><td><strong>LB2102 (autologous DLL3 CAR-T)</strong></td><td>CAR-T</td><td><span class="fit-badge fit-partial">Clinical trial</span></td><td>Investigational.</td><td>Not currently enrollable for osteosarcoma.</td></tr>
-<tr><td><a href="#access-5"><strong>5</strong></a></td><td><strong>SHR-4849 / IDE849</strong></td><td>ADC</td><td><span class="fit-badge fit-partial">Clinical trial</span></td><td>Investigational. IDEAYA holds US development license; Jiangsu Hengrui originated the compound.</td><td>Email IDEAYA Clinical Trials (IDEAYAClinicalTrials@ideayabio.com) or call +1-855-433-2246 to confirm whether osteosarcoma is in scope for the DLL3-expressing-tumors basket arm.</td></tr>
-<tr><td><a href="#access-6"><strong>6</strong></a></td><td><strong>alveltamig (ZG006)</strong></td><td>trispecific</td><td><span class="fit-badge fit-partial">Clinical trial</span></td><td>Investigational. No FDA/EMA approval. Phase-3 in mainland China (relapsed SCLC).</td><td>This pathway is not realistically accessible for a US/EU patient.</td></tr>
-<tr><td><a href="#access-7"><strong>7</strong></a></td><td><strong>gocatamig (MK-6070 / HPN328 / DS3280)</strong></td><td>trispecific</td><td><span class="fit-badge fit-partial">Clinical trial</span></td><td>Investigational. No FDA/EMA approval. Originated at Harpoon Therapeutics; Merck acquired Harpoon in 2024.</td><td>This pathway is not enrollable — included as contact information only.</td></tr>
-<tr><td><a href="#access-8"><strong>8</strong></a></td><td><strong>obrixtamig (BI 764532)</strong></td><td>BiTE</td><td><span class="fit-badge fit-partial">Clinical trial</span></td><td>Investigational. No FDA/EMA approval. Boehringer Ingelheim&#x27;s lead DLL3 program (DAREON development plan).</td><td>This pathway is not enrollable — included as contact information only.</td></tr>
-<tr><td><a href="#access-9"><strong>9</strong></a></td><td><strong>peluntamig (PT217)</strong></td><td>bispecific_other</td><td><span class="fit-badge fit-partial">Clinical trial</span></td><td>Investigational. No FDA/EMA approval.</td><td>Not enrollable for osteosarcoma at present.</td></tr>
-<tr><td><a href="#access-10"><strong>10</strong></a></td><td><strong>zocilurtatug pelitecan (ZL-1310)</strong></td><td>ADC</td><td><span class="fit-badge fit-partial">Clinical trial</span></td><td>Investigational. FDA Fast Track designation for ES-SCLC (TOP1-inhibitor payload, post-Rova-T-era ADC).</td><td>Not currently enrollable for osteosarcoma.</td></tr>
-<tr><td><a href="#access-11"><strong>11</strong></a></td><td><strong>²²⁵Ac-ABD147</strong></td><td>radioligand</td><td><span class="fit-badge fit-partial">Clinical trial</span></td><td>Investigational. No FDA/EMA approval.</td><td>Not currently enrollable.</td></tr>
-<tr><td><a href="#access-12"><strong>12</strong></a></td><td><strong>²²⁵Ac-ETN029</strong></td><td>radioligand</td><td><span class="fit-badge fit-partial">Clinical trial</span></td><td>Investigational. Novartis-sponsored phase 1.</td><td>Not currently enrollable for osteosarcoma.</td></tr>
-<tr><td><a href="#access-13"><strong>13</strong></a></td><td><strong>DLL3-CAR-NK cells (Tianjin academic)</strong></td><td>CAR-NK</td><td><span class="fit-badge fit-weak">Not yet accessible</span></td><td>Investigational; Chinese academic program.</td><td>Not realistically accessible for a US/EU patient.</td></tr>
-<tr><td><a href="#access-14"><strong>14</strong></a></td><td><strong>QLS31904</strong></td><td>BiTE</td><td><span class="fit-badge fit-weak">Not yet accessible</span></td><td>Investigational. NMPA-only development; no FDA/EMA filing.</td><td>Listed for completeness only — not an actionable pathway.</td></tr>
-<tr><td><a href="#access-15"><strong>15</strong></a></td><td><strong>clesitamig (RO7616789)</strong></td><td>trispecific</td><td><span class="fit-badge fit-weak">Not yet accessible</span></td><td>Investigational. Phase 1 completed (NCT05619744). Future-development status uncertain — Roche has not announced a phase-2 successor.</td><td>Watch Roche pipeline announcements for a phase-2 successor.</td></tr>
-<tr><td><a href="#access-16"><strong>16</strong></a></td><td><strong>¹⁷⁷Lu-DTPA-SC16.56</strong></td><td>radioimmunotherapy</td><td><span class="fit-badge fit-weak">Not yet accessible</span></td><td>Investigational. Memorial Sloan Kettering academic program with companion ⁸⁹Zr-DFO-SC16.56 PET imaging on NCT04199741.</td><td>Not currently enrollable for osteosarcoma.</td></tr>
-<tr><td><a href="#access-17"><strong>17</strong></a></td><td><strong>AMG 119 (legacy DLL3 CAR-T)</strong></td><td>CAR-T</td><td><span class="fit-badge fit-none">Unavailable</span></td><td>Investigational. Trial currently SUSPENDED — Amgen has not announced a restart timeline.</td><td>Not accessible — drug program is dormant.</td></tr>
-<tr><td><a href="#access-18"><strong>18</strong></a></td><td><strong>SC-002 (legacy)</strong></td><td>ADC</td><td><span class="fit-badge fit-none">Unavailable</span></td><td>Discontinued. Stemcentrx&#x27;s second DLL3 ADC; phase 1 terminated.</td><td>Not accessible — drug discontinued.</td></tr>
-<tr><td><a href="#access-19"><strong>19</strong></a></td><td><strong>rovalpituzumab tesirine (Rova-T, legacy)</strong></td><td>ADC</td><td><span class="fit-badge fit-none">Unavailable</span></td><td>Discontinued. AbbVie withdrew Rova-T from development in 2019 after the TAHOE phase-3 SCLC trial showed worse OS than topotecan.</td><td>Not accessible — drug is discontinued.</td></tr>
+<tr><td><a href="#access-4"><strong>4</strong></a></td><td><strong>IMA203 (PRAME-TCR-T)</strong></td><td>CAR-T</td><td><span class="fit-badge fit-partial">Clinical trial</span></td><td>Investigational. No FDA/EMA approval. Phase 3 in cutaneous melanoma (NCT06743126); pan-solid phase 1/2 basket (NCT03686124) is the path for non-melanoma tumors.</td><td>Confirm PRAME IHC result AND HLA-A*02:01 typing first — both required for eligibility.</td></tr>
+<tr><td><a href="#access-5"><strong>5</strong></a></td><td><strong>IMA402 (Immatics PRAME TCER)</strong></td><td>bispecific_other</td><td><span class="fit-badge fit-partial">Clinical trial</span></td><td>Investigational. Phase 1/2 dose-finding.</td><td>Confirm PRAME IHC AND HLA-A*02:01 typing first.</td></tr>
+<tr><td><a href="#access-6"><strong>6</strong></a></td><td><strong>IMC-P115C (Immunocore next-gen PRAME ImmTAC)</strong></td><td>bispecific_other</td><td><span class="fit-badge fit-partial">Clinical trial</span></td><td>Investigational. First-in-human dose-escalation phase 1.</td><td>Confirm PRAME IHC AND HLA-A*02:01 typing first.</td></tr>
+<tr><td><a href="#access-7"><strong>7</strong></a></td><td><strong>LB2102 (autologous DLL3 CAR-T)</strong></td><td>CAR-T</td><td><span class="fit-badge fit-partial">Clinical trial</span></td><td>Investigational.</td><td>Not currently enrollable for osteosarcoma.</td></tr>
+<tr><td><a href="#access-8"><strong>8</strong></a></td><td><strong>SHR-4849 / IDE849</strong></td><td>ADC</td><td><span class="fit-badge fit-partial">Clinical trial</span></td><td>Investigational. IDEAYA holds US development license; Jiangsu Hengrui originated the compound.</td><td>Email IDEAYA Clinical Trials (IDEAYAClinicalTrials@ideayabio.com) or call +1-855-433-2246 to confirm whether osteosarcoma is in scope for the DLL3-expressing-tumors basket arm.</td></tr>
+<tr><td><a href="#access-9"><strong>9</strong></a></td><td><strong>alveltamig (ZG006)</strong></td><td>trispecific</td><td><span class="fit-badge fit-partial">Clinical trial</span></td><td>Investigational. No FDA/EMA approval. Phase-3 in mainland China (relapsed SCLC).</td><td>This pathway is not realistically accessible for a US/EU patient.</td></tr>
+<tr><td><a href="#access-10"><strong>10</strong></a></td><td><strong>brenetafusp (IMC-F106C)</strong></td><td>bispecific_other</td><td><span class="fit-badge fit-partial">Clinical trial</span></td><td>Investigational. No FDA/EMA approval. Phase 3 PRISM-MEL-301 in cutaneous melanoma (NCT06112314).</td><td>Confirm PRAME IHC result AND HLA-A*02:01 typing first.</td></tr>
+<tr><td><a href="#access-11"><strong>11</strong></a></td><td><strong>gocatamig (MK-6070 / HPN328 / DS3280)</strong></td><td>trispecific</td><td><span class="fit-badge fit-partial">Clinical trial</span></td><td>Investigational. No FDA/EMA approval. Originated at Harpoon Therapeutics; Merck acquired Harpoon in 2024.</td><td>This pathway is not enrollable — included as contact information only.</td></tr>
+<tr><td><a href="#access-12"><strong>12</strong></a></td><td><strong>obrixtamig (BI 764532)</strong></td><td>BiTE</td><td><span class="fit-badge fit-partial">Clinical trial</span></td><td>Investigational. No FDA/EMA approval. Boehringer Ingelheim&#x27;s lead DLL3 program (DAREON development plan).</td><td>This pathway is not enrollable — included as contact information only.</td></tr>
+<tr><td><a href="#access-13"><strong>13</strong></a></td><td><strong>peluntamig (PT217)</strong></td><td>bispecific_other</td><td><span class="fit-badge fit-partial">Clinical trial</span></td><td>Investigational. No FDA/EMA approval.</td><td>Not enrollable for osteosarcoma at present.</td></tr>
+<tr><td><a href="#access-14"><strong>14</strong></a></td><td><strong>zocilurtatug pelitecan (ZL-1310)</strong></td><td>ADC</td><td><span class="fit-badge fit-partial">Clinical trial</span></td><td>Investigational. FDA Fast Track designation for ES-SCLC (TOP1-inhibitor payload, post-Rova-T-era ADC).</td><td>Not currently enrollable for osteosarcoma.</td></tr>
+<tr><td><a href="#access-15"><strong>15</strong></a></td><td><strong>²²⁵Ac-ABD147</strong></td><td>radioligand</td><td><span class="fit-badge fit-partial">Clinical trial</span></td><td>Investigational. No FDA/EMA approval.</td><td>Not currently enrollable.</td></tr>
+<tr><td><a href="#access-16"><strong>16</strong></a></td><td><strong>²²⁵Ac-ETN029</strong></td><td>radioligand</td><td><span class="fit-badge fit-partial">Clinical trial</span></td><td>Investigational. Novartis-sponsored phase 1.</td><td>Not currently enrollable for osteosarcoma.</td></tr>
+<tr><td><a href="#access-17"><strong>17</strong></a></td><td><strong>DLL3-CAR-NK cells (Tianjin academic)</strong></td><td>CAR-NK</td><td><span class="fit-badge fit-weak">Not yet accessible</span></td><td>Investigational; Chinese academic program.</td><td>Not realistically accessible for a US/EU patient.</td></tr>
+<tr><td><a href="#access-18"><strong>18</strong></a></td><td><strong>QLS31904</strong></td><td>BiTE</td><td><span class="fit-badge fit-weak">Not yet accessible</span></td><td>Investigational. NMPA-only development; no FDA/EMA filing.</td><td>Listed for completeness only — not an actionable pathway.</td></tr>
+<tr><td><a href="#access-19"><strong>19</strong></a></td><td><strong>clesitamig (RO7616789)</strong></td><td>trispecific</td><td><span class="fit-badge fit-weak">Not yet accessible</span></td><td>Investigational. Phase 1 completed (NCT05619744). Future-development status uncertain — Roche has not announced a phase-2 successor.</td><td>Watch Roche pipeline announcements for a phase-2 successor.</td></tr>
+<tr><td><a href="#access-20"><strong>20</strong></a></td><td><strong>¹⁷⁷Lu-DTPA-SC16.56</strong></td><td>radioimmunotherapy</td><td><span class="fit-badge fit-weak">Not yet accessible</span></td><td>Investigational. Memorial Sloan Kettering academic program with companion ⁸⁹Zr-DFO-SC16.56 PET imaging on NCT04199741.</td><td>Not currently enrollable for osteosarcoma.</td></tr>
+<tr><td><a href="#access-21"><strong>21</strong></a></td><td><strong>AMG 119 (legacy DLL3 CAR-T)</strong></td><td>CAR-T</td><td><span class="fit-badge fit-none">Unavailable</span></td><td>Investigational. Trial currently SUSPENDED — Amgen has not announced a restart timeline.</td><td>Not accessible — drug program is dormant.</td></tr>
+<tr><td><a href="#access-22"><strong>22</strong></a></td><td><strong>BPX-701 (Bellicum PRAME-TCR with iCasp9 safety switch)</strong></td><td>CAR-T</td><td><span class="fit-badge fit-none">Unavailable</span></td><td>Discontinued. Bellicum&#x27;s PRAME-TCR program was terminated; the company underwent restructuring.</td><td>Not accessible — drug program is dormant.</td></tr>
+<tr><td><a href="#access-23"><strong>23</strong></a></td><td><strong>SC-002 (legacy)</strong></td><td>ADC</td><td><span class="fit-badge fit-none">Unavailable</span></td><td>Discontinued. Stemcentrx&#x27;s second DLL3 ADC; phase 1 terminated.</td><td>Not accessible — drug discontinued.</td></tr>
+<tr><td><a href="#access-24"><strong>24</strong></a></td><td><strong>rovalpituzumab tesirine (Rova-T, legacy)</strong></td><td>ADC</td><td><span class="fit-badge fit-none">Unavailable</span></td><td>Discontinued. AbbVie withdrew Rova-T from development in 2019 after the TAHOE phase-3 SCLC trial showed worse OS than topotecan.</td><td>Not accessible — drug is discontinued.</td></tr>
 </tbody></table>
 
 
@@ -87,7 +92,7 @@ Two real access paths: (1) **off-label prescription** — Imdelltra is FDA-appro
 ---
 
 
-## Clinical trial (11)
+## Clinical trial (15)
 
 ### 2. FZ-AD005 <small><code>FZ-AD005</code></small> { #access-2 }
 
@@ -180,7 +185,161 @@ DLL3/exatecan ADC (TOP1-inhibitor payload class). Phase 1 SCLC-only enrollment �
 
 ---
 
-### 4. LB2102 (autologous DLL3 CAR-T) <small><code>LB2102</code></small> { #access-4 }
+### 4. IMA203 (PRAME-TCR-T) <small><code>IMA203, ACTengine PRAME</code></small> { #access-4 }
+
+**Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** CAR-T &nbsp; **Verified:** 2026-05-06
+
+
+Best-evidenced PRAME pathway with explicit pan-solid sarcoma-inclusive basket eligibility. Conditional on PRAME IHC AND HLA-A*02:01 positivity. Trial enrollment via ACTengine NCT03686124 is the realistic path; direct sponsor outreach to Immatics is the first action.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Investigational. No FDA/EMA approval. Phase 3 in cutaneous melanoma (NCT06743126); pan-solid phase 1/2 basket (NCT03686124) is the path for non-melanoma tumors.</dd>
+  <dt>Guidelines</dt><dd>Off-guideline. Pan-solid basket eligibility is published and protocolized.</dd>
+  <dt>Geographic scope</dt><dd>US, EU. Confirm specific site availability with Immatics medical affairs.</dd>
+</dl>
+
+
+**Next steps**
+
+1. Confirm PRAME IHC result AND HLA-A*02:01 typing first — both required for eligibility.
+2. Email Immatics ctgovinquiries@immatics.com or call +1 346 204-5400 to confirm sarcoma-cohort slot availability and screening procedure.
+3. Confirm the treating institution has CAR-T / TCR-T infrastructure (Cy/Flu lymphodepletion + CRS monitoring + ICU step-up).
+4. Plan for 4-6-week manufacturing turnaround between leukapheresis and infusion.
+
+
+**Trial pathways**
+
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th>NCT</th><th>Phase</th><th>Indication</th><th>Status</th><th>Patient eligible</th><th>Central contact</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td><a href="https://clinicaltrials.gov/study/NCT03686124">NCT03686124</a></td><td>1/2</td><td>PRAME-positive HLA-A*02:01-positive refractory solid tumors (basket: melanoma, sarcomas including synovial sarcoma + osteosarcoma, ovarian, NSCLC, head and neck, uterine, others)</td><td>recruiting</td><td><span class="fit-badge fit-partial">eligible: likely</span></td><td><strong>Immatics US, Inc.</strong><br><a href="mailto:ctgovinquiries@immatics.com">ctgovinquiries@immatics.com</a><br><code>+1 346 204-5400</code><br><a href="https://clinicaltrials.gov/study/NCT03686124">trial sites</a></td><td>Most actionable PRAME pathway for osteosarcoma. Sarcoma cohorts on protocol. Patient must be PRAME IHC-positive AND HLA-A*02:01-positive. Lymphodepleting Cy/Flu chemotherapy precedes T-cell infusion; CRS / neurotoxicity monitoring infrastructure required.</td></tr>
+<tr><td><a href="https://clinicaltrials.gov/study/NCT06743126">NCT06743126</a></td><td>3</td><td>previously treated cutaneous malignant melanoma</td><td>recruiting</td><td><span class="fit-badge fit-none">eligible: no</span></td><td><strong>Immatics US, Inc.</strong><br><a href="mailto:ctgovinquiries@immatics.com">ctgovinquiries@immatics.com</a><br><code>+1 346 204-5400</code><br><a href="https://clinicaltrials.gov/study/NCT06743126">trial sites</a></td><td>Melanoma-restricted; not enrollable for osteosarcoma. Listed as pivotal-evidence reference.</td></tr>
+</tbody></table></div></div>
+
+
+**Manufacturer / sponsor contact**
+
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Immatics US, Inc.</dd>
+  <dt>Country</dt><dd>US (Houston) / Germany (parent: Immatics Biotechnologies)</dd>
+  <dt>Medical info phone</dt><dd><code>+1 346 204-5400</code></dd>
+  <dt>Medical info email</dt><dd><a href="mailto:ctgovinquiries@immatics.com">ctgovinquiries@immatics.com</a></dd>
+  <dt>Product information</dt><dd><a href="https://www.immatics.com/">https://www.immatics.com/</a></dd>
+  <dt>Compassionate use email</dt><dd><a href="mailto:ctgovinquiries@immatics.com">ctgovinquiries@immatics.com</a></dd>
+  <dt>Notes</dt><dd>Mid-cap biotech with active sarcoma-cohort engagement on the ACTengine basket. Direct email to ctgovinquiries@immatics.com is the realistic outreach channel for screening questions and sponsor-level discussion.</dd>
+</dl>
+
+
+**Payer / coverage notes.** Investigational autologous TCR-T; no payer coverage outside trial enrollment. Trial-billing infrastructure handles drug + manufacturing; the treating institution typically bills supportive-care and lymphodepletion components.
+
+
+**Notes.** Lymphodepleting Cy/Flu chemo + autologous TCR-T infusion. Wermke 2024 reported 54% ORR (pan-solid PRAME+ HLA-A*02:01+ basket) — best signal in PRAME class to date.
+
+
+---
+
+### 5. IMA402 (Immatics PRAME TCER) <small><code>IMA402, TCER PRAME</code></small> { #access-5 }
+
+**Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** bispecific_other &nbsp; **Verified:** 2026-05-06
+
+
+Distinct mechanism class within Immatics&#x27; PRAME portfolio: half-life-extended bispecific TCER (no autologous T-cell manufacturing, unlike IMA203). Pan-solid PRAME+ basket eligibility; sarcoma fit unconfirmed.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Investigational. Phase 1/2 dose-finding.</dd>
+  <dt>Guidelines</dt><dd>Off-guideline.</dd>
+  <dt>Geographic scope</dt><dd>US, EU.</dd>
+</dl>
+
+
+**Next steps**
+
+1. Confirm PRAME IHC AND HLA-A*02:01 typing first.
+2. Email Immatics Ctgovinquiries@immatics.com to confirm sarcoma-cohort eligibility and slot availability.
+3. Mechanism-bridge option between brenetafusp (ImmTAC) and IMA203 (TCR-T) — relevant if neither lead pathway is accessible.
+
+
+**Trial pathways**
+
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th>NCT</th><th>Phase</th><th>Indication</th><th>Status</th><th>Patient eligible</th><th>Central contact</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td><a href="https://clinicaltrials.gov/study/NCT05958121">NCT05958121</a></td><td>1/2</td><td>refractory / recurrent solid tumors expressing PRAME</td><td>recruiting</td><td><span class="fit-badge fit-weak">eligible: unconfirmed</span></td><td><a href="mailto:Ctgovinquiries@immatics.com">Ctgovinquiries@immatics.com</a><br><a href="https://clinicaltrials.gov/study/NCT05958121">trial sites</a></td><td>Pan-solid PRAME+ basket. TCER platform — half-life-extended PRAME × CD3 engager, mechanism-bridge between brenetafusp ImmTAC and IMA203 TCR-T.</td></tr>
+</tbody></table></div></div>
+
+
+**Manufacturer / sponsor contact**
+
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Immatics Biotechnologies</dd>
+  <dt>Country</dt><dd>Germany (Tübingen)</dd>
+  <dt>Medical info email</dt><dd><a href="mailto:Ctgovinquiries@immatics.com">Ctgovinquiries@immatics.com</a></dd>
+  <dt>Product information</dt><dd><a href="https://www.immatics.com/">https://www.immatics.com/</a></dd>
+  <dt>Compassionate use email</dt><dd><a href="mailto:Ctgovinquiries@immatics.com">Ctgovinquiries@immatics.com</a></dd>
+  <dt>Notes</dt><dd>German parent of Immatics US (which owns the IMA203 program). Single point of contact via the ctgovinquiries inbox.</dd>
+</dl>
+
+
+**Payer / coverage notes.** Investigational; no payer coverage outside trial enrollment.
+
+
+---
+
+### 6. IMC-P115C (Immunocore next-gen PRAME ImmTAC) <small><code>IMC-P115C</code></small> { #access-6 }
+
+**Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** bispecific_other &nbsp; **Verified:** 2026-05-06
+
+
+Next-generation pan-tumor PRAME ImmTAC. The most accessible Immunocore PRAME protocol for non-melanoma tumors right now (brenetafusp&#x27;s pan-solid arm is active not recruiting). Conditional on PRAME IHC + HLA-A*02:01 + sponsor confirmation osteosarcoma is in scope.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Investigational. First-in-human dose-escalation phase 1.</dd>
+  <dt>Guidelines</dt><dd>Off-guideline.</dd>
+  <dt>Geographic scope</dt><dd>US, EU.</dd>
+</dl>
+
+
+**Next steps**
+
+1. Confirm PRAME IHC AND HLA-A*02:01 typing first.
+2. Email Immunocore medical.information@immunocore.com or call 844-466-8661 to confirm whether osteosarcoma is in scope for the IMC-P115C basket.
+3. If accepted, confirm dosing schedule (weekly IV infusions, ImmTAC class) and pre-medication / CRS-management infrastructure at the treating institution.
+
+
+**Trial pathways**
+
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th>NCT</th><th>Phase</th><th>Indication</th><th>Status</th><th>Patient eligible</th><th>Central contact</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td><a href="https://clinicaltrials.gov/study/NCT07156136">NCT07156136</a></td><td>1</td><td>PRAME-positive HLA-A*02:01-positive advanced cancer (pan-tumor)</td><td>recruiting</td><td><span class="fit-badge fit-weak">eligible: unconfirmed</span></td><td><strong>Immunocore Medical Information Global</strong><br><a href="mailto:medical.information@immunocore.com">medical.information@immunocore.com</a><br><code>844-466-8661</code><br><a href="https://clinicaltrials.gov/study/NCT07156136">trial sites</a></td><td>Pan-tumor PRAME-positive HLA-A*02:01-positive eligibility. Confirm with Immunocore medical affairs whether sarcoma is on the per-protocol list. Next-generation ImmTAC successor to brenetafusp.</td></tr>
+</tbody></table></div></div>
+
+
+**Manufacturer / sponsor contact**
+
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Immunocore</dd>
+  <dt>Country</dt><dd>UK / US</dd>
+  <dt>Medical info phone</dt><dd><code>844-466-8661</code></dd>
+  <dt>Medical info email</dt><dd><a href="mailto:medical.information@immunocore.com">medical.information@immunocore.com</a></dd>
+  <dt>Product information</dt><dd><a href="https://www.immunocore.com/">https://www.immunocore.com/</a></dd>
+  <dt>Compassionate use email</dt><dd><a href="mailto:medical.information@immunocore.com">medical.information@immunocore.com</a></dd>
+  <dt>Notes</dt><dd>EU contact: medinfo.eu@immunocore.com / +00 800-744-51111.</dd>
+</dl>
+
+
+**Payer / coverage notes.** Investigational; no payer coverage outside trial enrollment.
+
+
+**Notes.** Mechanism-class alternative to IMA203 (TCR-T) within the PRAME pathway.
+
+
+---
+
+### 7. LB2102 (autologous DLL3 CAR-T) <small><code>LB2102</code></small> { #access-7 }
 
 **Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** CAR-T &nbsp; **Verified:** 2026-05-06
 
@@ -225,7 +384,7 @@ Autologous DLL3 CAR-T — distinct mechanism class from BiTEs and ADCs. Phase 1 
 
 ---
 
-### 5. SHR-4849 / IDE849 <small><code>SHR-4849, IDE849</code></small> { #access-5 }
+### 8. SHR-4849 / IDE849 <small><code>SHR-4849, IDE849</code></small> { #access-8 }
 
 **Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** ADC &nbsp; **Verified:** 2026-05-06
 
@@ -277,7 +436,7 @@ DLL3 ADC (TOP1-inhibitor payload) in IDEAYA&#x27;s pan-tumor basket. Eligibility
 
 ---
 
-### 6. alveltamig (ZG006) <small><code>alveltamig, ZG006</code></small> { #access-6 }
+### 9. alveltamig (ZG006) <small><code>alveltamig, ZG006</code></small> { #access-9 }
 
 **Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** trispecific &nbsp; **Verified:** 2026-05-06
 
@@ -326,7 +485,60 @@ DLL3 × DLL3 × CD3 trispecific in mainland-China phase-3 development for SCLC. 
 
 ---
 
-### 7. gocatamig (MK-6070 / HPN328 / DS3280) <small><code>gocatamig, MK-6070, HPN328, DS3280</code></small> { #access-7 }
+### 10. brenetafusp (IMC-F106C) <small><code>brenetafusp, IMC-F106C</code></small> { #access-10 }
+
+**Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** bispecific_other &nbsp; **Verified:** 2026-05-06
+
+
+Lead PRAME ImmTAC bispecific. Pan-solid sarcoma cohort on NCT04262466 is currently active not recruiting; pivotal phase-3 PRISM-MEL-301 is melanoma-only. Patient is not currently enrollable on either active protocol. Immunocore&#x27;s IMC-P115C (rank 5) is the next-generation pan-tumor protocol that may be more accessible.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Investigational. No FDA/EMA approval. Phase 3 PRISM-MEL-301 in cutaneous melanoma (NCT06112314).</dd>
+  <dt>Guidelines</dt><dd>Off-guideline.</dd>
+  <dt>Geographic scope</dt><dd>US, EU.</dd>
+</dl>
+
+
+**Next steps**
+
+1. Confirm PRAME IHC result AND HLA-A*02:01 typing first.
+2. Email Immunocore medical.information@immunocore.com or call 844-466-8661 to ask about sarcoma-cohort re-opening on NCT04262466 or a successor protocol.
+3. If brenetafusp is not currently accessible, IMC-P115C (NCT07156136, pan-tumor PRAME ImmTAC) is the same-class alternative — see access entry for IMC-P115C.
+
+
+**Trial pathways**
+
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th>NCT</th><th>Phase</th><th>Indication</th><th>Status</th><th>Patient eligible</th><th>Central contact</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td><a href="https://clinicaltrials.gov/study/NCT04262466">NCT04262466</a></td><td>1/2</td><td>advanced solid tumors expressing PRAME (cutaneous and uveal melanoma, ovarian, lung, sarcoma cohorts)</td><td>active not recruiting</td><td><span class="fit-badge fit-weak">eligible: unconfirmed</span></td><td><a href="https://clinicaltrials.gov/study/NCT04262466">trial sites</a></td><td>Pan-solid sarcoma cohort exists on protocol but is currently ACTIVE NOT RECRUITING. Confirm with Immunocore whether re-opening or successor protocol is planned for sarcoma.</td></tr>
+<tr><td><a href="https://clinicaltrials.gov/study/NCT06112314">NCT06112314</a></td><td>3</td><td>previously untreated HLA-A*02:01-positive advanced cutaneous melanoma</td><td>recruiting</td><td><span class="fit-badge fit-none">eligible: no</span></td><td><strong>Immunocore Medical Information</strong><br><a href="mailto:medical.information@immunocore.com">medical.information@immunocore.com</a><br><code>844-466-8661</code><br><a href="https://clinicaltrials.gov/study/NCT06112314">trial sites</a></td><td>Melanoma-restricted; not enrollable for osteosarcoma.</td></tr>
+</tbody></table></div></div>
+
+
+**Manufacturer / sponsor contact**
+
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Immunocore</dd>
+  <dt>Country</dt><dd>UK (Abingdon) / US</dd>
+  <dt>Medical info phone</dt><dd><code>844-466-8661</code></dd>
+  <dt>Medical info email</dt><dd><a href="mailto:medical.information@immunocore.com">medical.information@immunocore.com</a></dd>
+  <dt>Product information</dt><dd><a href="https://www.immunocore.com/">https://www.immunocore.com/</a></dd>
+  <dt>Compassionate use email</dt><dd><a href="mailto:medical.information@immunocore.com">medical.information@immunocore.com</a></dd>
+  <dt>Notes</dt><dd>EU contact: medinfo.eu@immunocore.com / +00 800-744-51111. Immunocore commercializes tebentafusp (Kimmtrak, gp100 ImmTAC for uveal melanoma) — same platform as brenetafusp.</dd>
+</dl>
+
+
+**Payer / coverage notes.** Investigational; no payer coverage outside trial enrollment.
+
+
+**Notes.** ImmTAC platform validated (tebentafusp approved in uveal melanoma). PRAME-specific data: ORR ~9% in heavily pretreated melanoma (Hamid 2024 Cancer Discov), durable in subset.
+
+
+---
+
+### 11. gocatamig (MK-6070 / HPN328 / DS3280) <small><code>gocatamig, MK-6070, HPN328, DS3280</code></small> { #access-11 }
 
 **Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** trispecific &nbsp; **Verified:** 2026-05-06
 
@@ -376,7 +588,7 @@ Trispecific DLL3 × CD3 × albumin-binding T-cell engager from Harpoon → Merck
 
 ---
 
-### 8. obrixtamig (BI 764532) <small><code>obrixtamig, BI 764532, BI-764532</code></small> { #access-8 }
+### 12. obrixtamig (BI 764532) <small><code>obrixtamig, BI 764532, BI-764532</code></small> { #access-12 }
 
 **Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** BiTE &nbsp; **Verified:** 2026-05-06
 
@@ -428,7 +640,7 @@ Investigational DLL3 BiTE in pivotal phase-3 development for SCLC. All current t
 
 ---
 
-### 9. peluntamig (PT217) <small><code>peluntamig, PT217</code></small> { #access-9 }
+### 13. peluntamig (PT217) <small><code>peluntamig, PT217</code></small> { #access-13 }
 
 **Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** bispecific_other &nbsp; **Verified:** 2026-05-06
 
@@ -479,7 +691,7 @@ DLL3 × CD47 bispecific — non-T-cell-engager mechanism. Currently SCLC/NEC-onl
 
 ---
 
-### 10. zocilurtatug pelitecan (ZL-1310) <small><code>zocilurtatug pelitecan, ZL-1310, zoci</code></small> { #access-10 }
+### 14. zocilurtatug pelitecan (ZL-1310) <small><code>zocilurtatug pelitecan, ZL-1310, zoci</code></small> { #access-14 }
 
 **Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** ADC &nbsp; **Verified:** 2026-05-06
 
@@ -530,7 +742,7 @@ First DLL3 ADC in pivotal phase-3 since Rova-T&#x27;s TAHOE failure (TOP1-inhibi
 
 ---
 
-### 11. ²²⁵Ac-ABD147 <small><code>²²⁵Ac-ABD147, 225Ac-ABD147, ABD147</code></small> { #access-11 }
+### 15. ²²⁵Ac-ABD147 <small><code>²²⁵Ac-ABD147, 225Ac-ABD147, ABD147</code></small> { #access-15 }
 
 **Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** radioligand &nbsp; **Verified:** 2026-05-06
 
@@ -575,7 +787,7 @@ Actinium-225 alpha-particle DLL3 radiopharmaceutical. Phase 1 active not recruit
 
 ---
 
-### 12. ²²⁵Ac-ETN029 <small><code>²²⁵Ac-ETN029, 225Ac-ETN029, ETN029</code></small> { #access-12 }
+### 16. ²²⁵Ac-ETN029 <small><code>²²⁵Ac-ETN029, 225Ac-ETN029, ETN029</code></small> { #access-16 }
 
 **Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** radioligand &nbsp; **Verified:** 2026-05-06
 
@@ -626,7 +838,7 @@ Actinium-225 DLL3 radioligand with companion indium-111 imaging — Novartis&#x2
 
 ## Not yet accessible (4)
 
-### 13. DLL3-CAR-NK cells (Tianjin academic) <small><code>DLL3-CAR-NK</code></small> { #access-13 }
+### 17. DLL3-CAR-NK cells (Tianjin academic) <small><code>DLL3-CAR-NK</code></small> { #access-17 }
 
 **Access status:** <span class="fit-badge fit-weak">Not yet accessible</span> &nbsp; **Modality:** CAR-NK &nbsp; **Verified:** 2026-05-06
 
@@ -670,7 +882,7 @@ Allogeneic DLL3 CAR-NK — off-the-shelf cell therapy class with theoretically l
 
 ---
 
-### 14. QLS31904 <small><code>QLS31904</code></small> { #access-14 }
+### 18. QLS31904 <small><code>QLS31904</code></small> { #access-18 }
 
 **Access status:** <span class="fit-badge fit-weak">Not yet accessible</span> &nbsp; **Modality:** BiTE &nbsp; **Verified:** 2026-05-06
 
@@ -713,7 +925,7 @@ Mainland-China DLL3 BiTE in early phase 1 with current recruitment status unknow
 
 ---
 
-### 15. clesitamig (RO7616789) <small><code>clesitamig, RO7616789, RG6524, ALPS12</code></small> { #access-15 }
+### 19. clesitamig (RO7616789) <small><code>clesitamig, RO7616789, RG6524, ALPS12</code></small> { #access-19 }
 
 **Access status:** <span class="fit-badge fit-weak">Not yet accessible</span> &nbsp; **Modality:** trispecific &nbsp; **Verified:** 2026-05-06
 
@@ -763,7 +975,7 @@ Trispecific DLL3 × CD3 × CD137 with co-stimulation arm. Phase 1 completed; no 
 
 ---
 
-### 16. ¹⁷⁷Lu-DTPA-SC16.56 <small><code>¹⁷⁷Lu-DTPA-SC16.56, 177Lu-SC16.56, SC16.56</code></small> { #access-16 }
+### 20. ¹⁷⁷Lu-DTPA-SC16.56 <small><code>¹⁷⁷Lu-DTPA-SC16.56, 177Lu-SC16.56, SC16.56</code></small> { #access-20 }
 
 **Access status:** <span class="fit-badge fit-weak">Not yet accessible</span> &nbsp; **Modality:** radioimmunotherapy &nbsp; **Verified:** 2026-05-06
 
@@ -812,9 +1024,9 @@ Lutetium-177 beta-particle DLL3 radioimmunotherapy from Memorial Sloan Kettering
 ---
 
 
-## Unavailable (3)
+## Unavailable (4)
 
-### 17. AMG 119 (legacy DLL3 CAR-T) <small><code>AMG 119</code></small> { #access-17 }
+### 21. AMG 119 (legacy DLL3 CAR-T) <small><code>AMG 119</code></small> { #access-21 }
 
 **Access status:** <span class="fit-badge fit-none">Unavailable</span> &nbsp; **Modality:** CAR-T &nbsp; **Verified:** 2026-05-06
 
@@ -859,7 +1071,50 @@ Amgen&#x27;s first-generation autologous DLL3 CAR-T. Trial is suspended with no 
 
 ---
 
-### 18. SC-002 (legacy) <small><code>SC-002</code></small> { #access-18 }
+### 22. BPX-701 (Bellicum PRAME-TCR with iCasp9 safety switch) <small><code>BPX-701</code></small> { #access-22 }
+
+**Access status:** <span class="fit-badge fit-none">Unavailable</span> &nbsp; **Modality:** CAR-T &nbsp; **Verified:** 2026-05-06
+
+
+Discontinued. Bellicum&#x27;s first-generation PRAME-TCR program with iCasp9 safety switch was terminated in phase 1/2; the company has restructured. Decision-relevant only as historical context for the PRAME-TCR class — IMA203 (rank 4) is the active inheritor of this mechanism class.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Discontinued. Bellicum&#x27;s PRAME-TCR program was terminated; the company underwent restructuring.</dd>
+  <dt>Guidelines</dt><dd>Not applicable.</dd>
+  <dt>Geographic scope</dt><dd>Was US.</dd>
+</dl>
+
+
+**Next steps**
+
+1. Not accessible — drug program is dormant.
+
+
+**Trial pathways**
+
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th>NCT</th><th>Phase</th><th>Indication</th><th>Status</th><th>Patient eligible</th><th>Central contact</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td><a href="https://clinicaltrials.gov/study/NCT02743611">NCT02743611</a></td><td>1/2</td><td>AML, MDS, uveal melanoma</td><td>terminated</td><td><span class="fit-badge fit-none">eligible: no</span></td><td><a href="https://clinicaltrials.gov/study/NCT02743611">trial sites</a></td><td>Terminated. Never reached pivotal development.</td></tr>
+</tbody></table></div></div>
+
+
+**Manufacturer / sponsor contact**
+
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Bellicum Pharmaceuticals</dd>
+  <dt>Country</dt><dd>US (was Houston)</dd>
+  <dt>Notes</dt><dd>Bellicum&#x27;s CAR-T program with inducible-caspase-9 safety switch. Company has restructured; the BPX-701 PRAME-TCR program is dormant.</dd>
+</dl>
+
+
+**Payer / coverage notes.** Not applicable — drug not produced.
+
+
+---
+
+### 23. SC-002 (legacy) <small><code>SC-002</code></small> { #access-23 }
 
 **Access status:** <span class="fit-badge fit-none">Unavailable</span> &nbsp; **Modality:** ADC &nbsp; **Verified:** 2026-05-06
 
@@ -904,7 +1159,7 @@ Discontinued. Stemcentrx&#x27;s second-generation DLL3 PBD-payload ADC; phase 1 
 
 ---
 
-### 19. rovalpituzumab tesirine (Rova-T, legacy) <small><code>rovalpituzumab tesirine, Rova-T, SC16LD6.5</code></small> { #access-19 }
+### 24. rovalpituzumab tesirine (Rova-T, legacy) <small><code>rovalpituzumab tesirine, Rova-T, SC16LD6.5</code></small> { #access-24 }
 
 **Access status:** <span class="fit-badge fit-none">Unavailable</span> &nbsp; **Modality:** ADC &nbsp; **Verified:** 2026-05-06
 

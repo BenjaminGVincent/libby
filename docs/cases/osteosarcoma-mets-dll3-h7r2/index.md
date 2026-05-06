@@ -19,7 +19,7 @@
 
 ## Research question
 
-In metastatic osteosarcoma after first-line MAP, what interventions can target DLL3, gated on IHC confirmation?
+In metastatic osteosarcoma after first-line MAP, what interventions can target DLL3 **and PRAME**, gated on protein-level confirmation (DLL3 IHC SP347; PRAME IHC + HLA-A*02:01 typing)?
 
 ## Patient profile (scrubbed)
 
@@ -28,7 +28,9 @@ In metastatic osteosarcoma after first-line MAP, what interventions can target D
 - **Performance status (assumed):** ECOG 1
 - **Age band (assumed):** 18-29 (typical osteosarcoma demographics; not user-supplied)
 - **Sex:** unknown
-- **Biomarkers:** **DLL3 — RNA only (`confirmation_status: rna_only`); IHC SP347 status unknown.** Decision-relevant resolution: ≥1% (preferably ≥25%) by IHC for DLL3-directed clinical trials.
+- **Biomarkers:**
+    - **DLL3 — RNA only (`confirmation_status: rna_only`); IHC SP347 status unknown.** Decision-relevant resolution: ≥1% (preferably ≥25%) by IHC for DLL3-directed clinical trials.
+    - **PRAME — RNA only (`confirmation_status: rna_only`); IHC and HLA-A*02:01 status unknown.** Decision-relevant resolution: PRAME IHC positive AND HLA-A*02:01-positive (every PRAME-directed ImmTAC and TCR-T in clinical development is HLA-A*02:01-restricted).
 - **Prior therapy (assumed):** MAP frontline; response not provided.
 
 ## Preferences
@@ -79,18 +81,21 @@ Germline TP53 sequencing (Li-Fraumeni panel) is a separate kind of finding — i
 
 ## Scope summary
 
-21 trials surfaced (3 included as primary efficacy rows for tarlatamab; 18 cross-tumor / pipeline-context rows spanning seven DLL3-targeting modality classes), 3 clinical-evidence rows (2 included + 1 considered & excluded), 5 preclinical rows (4 included + 1 considered & excluded). Three ranked rows: a workup gate at rank 1, a biomarker-conditional therapeutic option at rank 2 (tarlatamab via NCT06788938), and a tentative second pathway at rank 3 (SHR-4849 via NCT07174583, *considered with caveats* pending sponsor confirmation of osteosarcoma eligibility). The board reached full consensus on the workup. One persistent dissent (critic) sits on the conditional rank-2 trial. Two dissents (critic, conservative) sit on the tentative rank-3 path. The case is scoped to drugs that act on the user's stated targetable feature (DLL3); standard 2L+ care for the indication is out of scope and is not enumerated.
+29 trials surfaced (21 DLL3-targeting + 8 PRAME-targeting, spanning ten modality classes across the two pathways). 5 clinical-evidence rows (4 included + 1 excluded). 6 preclinical rows. Five ranked rows: a dual-biomarker workup gate at rank 1, two DLL3-conditional therapeutic options (rank 2 tarlatamab; rank 3 SHR-4849 *considered with caveats*), and two PRAME-conditional therapeutic options (rank 4 IMA203 ACTengine basket; rank 5 IMC-P115C *considered with caveats*). The board reached full consensus on the workup. One persistent dissent (critic) sits on rank 2; two dissents (critic, conservative) sit on rank 3 and on rank 5; one dissent (conservative) sits on rank 4. The case is scoped to drugs that act on the user's stated targetable features (DLL3 and PRAME); standard 2L+ care for the indication is out of scope and is not enumerated.
 
 ## Cross-cutting caveat (read first)
 
-**The DLL3 RNA expression in user input does not establish membrane DLL3 protein. The DLL3 IHC SP347 test (rank 1) gates whether tarlatamab via NCT06788938 (rank 2) is on the table at all.** Every DLL3-directed therapy in current clinical use requires IHC protein-level confirmation. RNA expression is necessary but not sufficient.
+**Both targetable features are RNA-only. Neither DLL3 nor PRAME RNA expression alone establishes a workable target — protein-level confirmation is required for both, and PRAME additionally requires HLA-A*02:01 typing.** The rank-1 dual workup is the precondition for everything else; it can be run in parallel.
 
-- **Rank 2 (tarlatamab)** is conditional on DLL3 IHC ≥1% (preferably ≥25%). It is the only therapeutic option within scope of this case's targetable feature.
-- **If IHC is negative:** rank 2 is foreclosed and this case has no within-scope recommendations. Libby's ranking is targetable-feature-scoped; standard 2L+ care for the indication is a separate conversation with the treating team and is not enumerated on this page.
-- **Workup logistics:** SP347 IHC is non-toxic, runs on archival tissue (no fresh biopsy required), takes one to three weeks, and costs almost nothing relative to a treatment cycle. Confirm assay availability at the treating institution.
-- **Pipeline visibility.** The dossier surfaces 18 additional DLL3-targeting investigational drugs across seven modality classes (BiTE, trispecific, CD47-bispecific, ADC, radioligand, radioimmunotherapy, CAR-T, CAR-NK). They are informational only — patient cannot enroll (SCLC/NEC-scoped) — but they shape how the board reasons about the BiTE class (tarlatamab vs alternatives), the post-Rova-T ADC era, and what a negative IHC result actually forecloses (it forecloses *all* DLL3-directed therapy, not just tarlatamab).
+- **DLL3 pathway (ranks 2-3)** is conditional on DLL3 IHC ≥1% (preferably ≥25%) by SP347. Rank 2 (tarlatamab via NCT06788938) is the actionable option; rank 3 (SHR-4849 via NCT07174583) is the tentative second DLL3 pathway pending sponsor confirmation of osteosarcoma eligibility.
+- **PRAME pathway (ranks 4-5)** is conditional on PRAME IHC positivity AND HLA-A*02:01-positive typing — both required because every PRAME-directed ImmTAC and TCR-T in clinical development is HLA-A*02:01-restricted. Rank 4 (IMA203 via NCT03686124 ACTengine pan-solid basket) has the strongest published efficacy signal in the PRAME class (54% ORR, Wermke 2024 Lancet Oncol). Rank 5 (IMC-P115C via NCT07156136) is the second PRAME pathway, ImmTAC mechanism class, considered with caveats.
+- **The two pathways are independent.** DLL3 and PRAME confirmation are independent biomarkers; the patient may have neither, either, or both. Each ranked option foreclosure is independent — a negative DLL3 IHC does not foreclose the PRAME ranks, and vice versa. **If both workups are negative, the case has no within-scope recommendations** and standard 2L+ care for osteosarcoma is the treating team's separate conversation.
+- **Workup logistics:** all three tests (DLL3 IHC, PRAME IHC, HLA-A*02:01 typing) are non-toxic and can run in parallel on archival tissue + a single blood draw for HLA. Total turnaround one to three weeks. The dual-biomarker workup costs trivially relative to a treatment cycle. Confirm assay availability at the treating institution before relying on a specific lab.
+- **Pipeline visibility.** The dossier surfaces 21 DLL3-targeting agents (seven modality classes) and 8 PRAME-targeting agents (TCR-T, ImmTAC, TCER bispecific, mRNA combo, legacy iCasp9-TCR). Most are SCLC/NEC-scoped (DLL3) or melanoma-scoped (PRAME) and not directly enrollable for osteosarcoma — they remain in the dossier as evidence-base context. The patient-actionable subset is the rank 2-5 set, all gated on the rank-1 dual workup.
 
 ## Intervention grouping
+
+### DLL3 pathway
 
 - **DLL3 × CD3 BiTEs (biomarker-conditional, actionable via NCT06788938):** tarlatamab. Anchor evidence: DeLLphi-301 ([PMID 37861218](https://pubmed.ncbi.nlm.nih.gov/37861218)) + DeLLphi-304 ([PMID 40454646](https://pubmed.ncbi.nlm.nih.gov/40454646)).
 - **Other DLL3 × CD3 / CD137 BiTEs and trispecifics (pipeline context, SCLC/NEC-scoped):** obrixtamig (BI 764532, Boehringer Ingelheim DAREON phase 3), gocatamig (MK-6070 / HPN328 / DS3280, Harpoon→Merck), alveltamig (ZG006, Zelgen phase 3), clesitamig (RO7616789, Roche), QLS31904.
@@ -100,23 +105,35 @@ Germline TP53 sequencing (Li-Fraumeni panel) is a separate kind of finding — i
 - **DLL3 cell therapies:** LB2102 autologous CAR-T (Legend Biotech), DLL3-CAR-NK cells (Tianjin academic). AMG 119 was Amgen's first-generation CAR-T program — currently suspended.
 - **Discontinued DLL3 ADCs (mechanism context for current ADC entrants):** rovalpituzumab tesirine / Rova-T (TAHOE phase-3 failure, AbbVie discontinued), SC-002 (Stemcentrx, terminated in phase 1).
 
+### PRAME pathway
+
+- **PRAME-TCR-T (biomarker-conditional, actionable via NCT03686124 ACTengine pan-solid basket):** IMA203 / IMA203CD8 (Immatics). Anchor evidence: Wermke 2024 ([PMID 38821093](https://pubmed.ncbi.nlm.nih.gov/38821093); ORR 54% in cross-tumor PRAME+ HLA-A*02:01+ basket including sarcomas).
+- **PRAME ImmTAC bispecifics (biomarker-conditional, ranks 4-5):** brenetafusp / IMC-F106C (Immunocore lead, melanoma-pivotal phase 3 PRISM-MEL-301; pan-solid sarcoma cohort active not recruiting), IMC-P115C (Immunocore next-generation pan-tumor PRAME ImmTAC, NCT07156136). ImmTAC platform is class-validated via tebentafusp (Kimmtrak, approved in uveal melanoma). Anchor: Hamid 2024 ([PMID 39007852](https://pubmed.ncbi.nlm.nih.gov/39007852)).
+- **PRAME TCER half-life-extended bispecifics:** IMA402 (Immatics, NCT05958121). Mechanism-bridge between brenetafusp ImmTAC and IMA203 TCR-T.
+- **PRAME mRNA combinations:** IMA203 + mRNA-4203 (Immatics + Moderna, NCT06946225). Synovial sarcoma in scope; osteosarcoma not on protocol but mechanism-relevant.
+- **Discontinued PRAME-TCR programs:** BPX-701 (Bellicum, terminated phase 1/2 with iCasp9 safety switch). Decision-relevant only as historical context for the PRAME-TCR class — IMA203 is the active inheritor.
+
+### Cross-pathway
+
+- **Pan-pathway radio-immunotherapy & radioligands** (DLL3 only; no PRAME radioligand programs in development): see DLL3 group above.
+
 ## Top interventions
 
-### Rank 1. DLL3 IHC (SP347) on tumor — diagnostic gate
+### Rank 1. Dual-biomarker workup — DLL3 IHC (SP347) + PRAME IHC + HLA-A*02:01 typing
 
-*Non-toxic. Resolves whether the DLL3-directed pathway is open. Required for trial NCT06788938.*
+*Non-toxic. Resolves which of the two targetable-feature pathways is open. Run all three tests in parallel.*
 
 #### Evidence base
 
-NCT06788938 enforces DLL3 IHC ≥25% (stage 1) or ≥1% (stage 2) for enrollment. The basket-trial design uses IHC for a concrete reason: DLL3 RNA expression does not predict surface protein density at the level the BiTE needs. Mechanistic anchor: every DLL3-directed therapy in clinical development gates on protein-level confirmation, not transcript.
+The case has two RNA-only targetable features, each with a distinct protein-level confirmation step. **DLL3 IHC** (SP347) gates ranks 2-3: NCT06788938 enforces ≥25% (stage 1) or ≥1% (stage 2) by IHC; every DLL3-directed therapy in clinical development gates on protein-level confirmation, not transcript. **PRAME IHC + HLA-A*02:01 typing** together gate ranks 4-5: PRAME-targeting drugs are HLA-A*02:01-restricted (the PRAME peptide is presented on HLA-A*02:01) and additionally require PRAME protein expression on the tumor cell. PRAME IHC is positive in ~56% of osteosarcoma cases (Iura 2017, [PMID 28315425](https://pubmed.ncbi.nlm.nih.gov/28315425), n=82); HLA-A*02:01 prevalence is ~40-50% in Caucasian populations.
 
 #### Likelihood of desired effect
 
-The test resolves whether rank 2 is reachable. Non-toxic and cheap regardless of result.
+The dual workup resolves which of two pathways is reachable. The two are independent — the patient may have neither, either, or both. Non-toxic and cheap regardless of result.
 
 #### Toxicity profile
 
-- None. Lab test on tissue.
+- None. IHC on archival FFPE + a single blood draw for HLA typing.
 
 #### Counter-productive mechanisms / dissent
 
@@ -124,17 +141,18 @@ Board endorsement was unanimous. No persona dissented or vetoed.
 
 #### Practical considerations
 
-Archival or fresh tumor works. Confirm SP347 antibody assay availability at the treating institution. One to three week turnaround. The IHC is the precondition for any DLL3-directed action regardless of which therapy the patient ultimately pursues.
+All three tests run in parallel. DLL3 IHC SP347 and PRAME IHC use archival or fresh tumor (no fresh biopsy required). HLA-A*02:01 typing runs on a blood sample with same-day to one-week turnaround at most reference labs. Confirm assay availability at the treating institution: SP347 (Roche Tissue Diagnostics clone) is not universally stocked, PRAME IHC clones vary by lab (commonly EPR23197), and HLA typing is widely available. The full workup is the precondition for any DLL3- or PRAME-directed action.
 
 #### Why this rank
 
-The IHC is the precondition for rank 2. The board treated it as the gate, not as a therapy.
+The dual workup is the precondition for ranks 2-5. The board treated it as a gate, not as a therapy.
 
 #### Per-trial detail
 
 | Test / trial | Efficacy context | Toxicity | Reference |
 |---|---|---|---|
 | DLL3 IHC SP347 (assay) | Gates enrollment in DLL3-directed therapy trials | None — diagnostic | [NCT06788938](https://clinicaltrials.gov/study/NCT06788938) |
+| PRAME IHC + HLA-A*02:01 typing (assay pair) | Gates enrollment in PRAME-directed therapy trials (ImmTAC + TCR-T) | None — diagnostic | [NCT03686124](https://clinicaltrials.gov/study/NCT03686124), [PMID 28315425](https://pubmed.ncbi.nlm.nih.gov/28315425) |
 
 ---
 
@@ -230,6 +248,95 @@ Lower than rank 2 because (a) eligibility for osteosarcoma is unconfirmed and (b
 |---|---|---|---|
 | SHR-4849 / IDE849 — NCT07174583 IDEAYA pan-tumor DLL3-expressing basket (eligibility for osteosarcoma pending sponsor confirmation) | DLT, ORR primary; no published efficacy data yet | Class effects expected; no published AE table yet | [NCT07174583](https://clinicaltrials.gov/study/NCT07174583) |
 
+---
+
+### Rank 4. IMA203 (PRAME-TCR-T) via NCT03686124 — Immatics ACTengine pan-solid basket
+
+*Conditional on `prame_ihc_hla:positive` (PRAME IHC AND HLA-A*02:01 typing both positive). Foreclosed if either test is negative.*
+
+*Best-evidenced PRAME pathway: 54% ORR (Wermke 2024, n=28) in cross-tumor PRAME+ HLA-A*02:01+ basket including sarcoma cohorts. Mechanism-distinct from DLL3.*
+
+#### Evidence base
+
+NCT03686124 (ACTengine phase 1/2, recruiting) is the pan-solid PRAME+ HLA-A*02:01+ basket from Immatics. Sarcoma cohorts are explicitly named; osteosarcoma fit is mechanism-driven rather than tumor-restricted. The Wermke 2024 publication ([PMID 38821093](https://pubmed.ncbi.nlm.nih.gov/38821093); Lancet Oncol) reports ORR 54% (95% CI 34-73) in 28 evaluable PRAME+ HLA-A*02:01+ patients across multiple solid-tumor types including synovial sarcoma. Median DoR not reached at 9-mo follow-up.
+
+#### Likelihood of desired effect
+
+Strong, conditional on biomarker confirmation. The 54% ORR is the highest published response signal in any PRAME-targeting class. The cross-tumor design — heterogeneous tumor types in a single PRAME+ HLA-A*02:01+ basket — supports the hypothesis that the relevant biomarker is the PRAME peptide on HLA-A*02:01, not the tumor lineage. Osteosarcoma efficacy data within the basket is not yet published, but mechanism-class fit is expected.
+
+#### Toxicity profile
+
+- CRS in ~100% (mostly grade 1-2; grade 3-4 ~10%)
+- ICANS-like neurotoxicity ~25% (mostly grade 1-2)
+- Lymphodepleting Cy/Flu chemotherapy precedes T-cell infusion (uniform post-Cy/Flu cytopenias)
+- One treatment-related death in the published cohort (septic shock post-Cy/Flu)
+- Manufacturing turnaround for autologous TCR-T: typically 4-6 weeks between leukapheresis and infusion
+
+User has no toxicity vetoes; CRS, neurotoxicity, and lymphodepletion are not pre-flagged.
+
+#### Counter-productive mechanisms / dissent
+
+**The conservative dissents** on autologous-cell-therapy logistics and the CRS-management infrastructure required for safe TCR-T delivery — the treating institution must have CAR-T-style infusion capability, ICU step-up, and tocilizumab on hand. **Risktaker, advocate, and concensusite endorse** on the basket-trial principle plus the published 54% ORR efficacy signal. The critic does not dissent (no published-evidence objection because the Wermke 2024 paper is RCT-grade phase 1/2 cross-tumor data) but also does not strongly endorse — the pre-medication and infrastructure burden moderates the score.
+
+#### Practical considerations
+
+- Trial open at NCT03686124 (recruiting). Sarcoma-cohort slot availability should be confirmed directly with Immatics.
+- Treating institution must have CAR-T / TCR-T infrastructure: leukapheresis, Cy/Flu lymphodepletion capability, CRS monitoring (often inpatient first cycle), tocilizumab access, ICU step-up.
+- Off-guideline; investigational. Pan-solid basket eligibility is published and protocolized.
+- Manufacturing-failure rate for autologous TCR-T should be discussed with the sponsor — bridging therapy planning may be needed during the 4-6-week manufacturing window.
+
+#### Why this rank
+
+Higher than rank 5 because of published clinical efficacy (rank 5 has none) and the explicit pan-solid sarcoma-inclusive basket. Lower than ranks 2-3 only if the user's preference weighs CRS infrastructure / lymphodepletion / autologous manufacturing logistics heavily — otherwise rank 4 is the strongest evidence-anchored ranked option in the dossier.
+
+#### Per-trial detail
+
+| Therapeutic agent | Efficacy | Toxicity | Reference |
+|---|---|---|---|
+| IMA203 — NCT03686124 ACTengine pan-solid PRAME+ HLA-A*02:01+ basket (sarcoma cohorts on protocol) | ORR 54% (Wermke 2024); mDoR not reached at 9 mo | CRS ~100% (G3-4 ~10%); ICANS ~25%; uniform post-Cy/Flu cytopenia; 1 TRAE death | [NCT03686124](https://clinicaltrials.gov/study/NCT03686124), [PMID 38821093](https://pubmed.ncbi.nlm.nih.gov/38821093) |
+
+---
+
+### Rank 5. IMC-P115C via NCT07156136 — Immunocore next-gen PRAME ImmTAC pan-tumor
+
+*Conditional on `prame_ihc_hla:positive` AND sponsor confirms osteosarcoma eligibility. Status: **considered with caveats**. Two dissents (critic, conservative).*
+
+*Mechanism-class alternative to IMA203 within the PRAME pathway. ImmTAC platform is class-validated via tebentafusp + brenetafusp; IMC-P115C is the next-generation PRAME ImmTAC.*
+
+#### Evidence base
+
+NCT07156136 is Immunocore's first-in-human dose-escalation phase 1 for IMC-P115C, a next-generation PRAME × CD3 ImmTAC bispecific. No published clinical data for IMC-P115C yet; the rank stands on (a) class validation via tebentafusp ([Kimmtrak](https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-tebentafusp-tebn-uveal-melanoma), gp100 ImmTAC approved in uveal melanoma 2022) and (b) brenetafusp class precedent in heavily pretreated PRAME+ HLA-A*02:01+ melanoma (Hamid 2024, [PMID 39007852](https://pubmed.ncbi.nlm.nih.gov/39007852); ORR ~9%, durable in subset).
+
+#### Likelihood of desired effect
+
+Speculative for IMC-P115C specifically. Class validation suggests the ImmTAC platform produces durable but lower-frequency responses than TCR-T (consistent with the brenetafusp 9% ORR vs IMA203 54% ORR comparison). Pan-tumor PRAME+ HLA-A*02:01+ eligibility is plausible for sarcoma but not stated outright in published eligibility — sponsor confirmation is the load-bearing screening step.
+
+#### Toxicity profile
+
+- ImmTAC class effects expected: CRS ~85% (mostly grade 1-2 in brenetafusp); rash ~70%; transient hypotension
+- Pre-medication with dexamethasone manages CRS in the ImmTAC class
+- Weekly IV infusion — outpatient cycle-1 monitoring after step-up dosing
+
+#### Counter-productive mechanisms / dissent
+
+**The critic dissents** on no-published-clinical-data for IMC-P115C specifically. **The conservative dissents** on osteosarcoma eligibility uncertainty (the trial wording is "PRAME-positive HLA-A*02:01-positive advanced cancer" but the per-protocol cohort list may be melanoma-weighted). **Risktaker and advocate endorse** on the basket-trial principle and the second-mechanism-class hedge — having both an ImmTAC option and a TCR-T option in the PRAME pathway is preferable to a single-mechanism plan if both can be reached.
+
+#### Practical considerations
+
+- Trial open at [NCT07156136](https://clinicaltrials.gov/study/NCT07156136) (recruiting). **First action: contact Immunocore medical affairs (see [access guide](accessibility.md) entry #5 for direct phone and email) to confirm whether osteosarcoma is in scope for the basket and what the per-protocol PRAME IHC threshold is.**
+- Concurrent enrollment with rank 4 (IMA203) is unlikely to be permitted; if both biomarkers confirm, the user / treating team will need to choose based on infrastructure (ImmTAC weekly outpatient infusion vs TCR-T autologous manufacturing).
+- Off-guideline; investigational.
+
+#### Why this rank
+
+Lower than rank 4 because (a) no published clinical data for IMC-P115C and (b) eligibility for osteosarcoma is unconfirmed. Higher than not-ranking-it because the basket eligibility is plausible per the trial wording, the platform is class-validated, and a two-mechanism-class hedge in the PRAME pathway is preferable to a single-mechanism plan.
+
+#### Per-trial detail
+
+| Therapeutic agent | Efficacy | Toxicity | Reference |
+|---|---|---|---|
+| IMC-P115C — NCT07156136 PRAME-positive HLA-A*02:01-positive advanced cancer (pan-tumor; sarcoma fit pending sponsor confirmation) | DLT, MTD primary; no published efficacy data yet | ImmTAC class: CRS ~85% (mostly G1-2); rash; transient hypotension | [NCT07156136](https://clinicaltrials.gov/study/NCT07156136), [PMID 39007852](https://pubmed.ncbi.nlm.nih.gov/39007852) |
+
 ## Classes examined but not ranked
 
 - **DLL3-directed ADCs (rovalpituzumab tesirine / Rova-T):** mechanistically a DLL3-targeting modality, but not procurable. AbbVie withdrew Rova-T after the TAHOE phase-3 SCLC trial showed worse OS than topotecan ([PMID 33002438](https://pubmed.ncbi.nlm.nih.gov/33002438)). Listed for mechanism context. Not actionable.
@@ -244,11 +351,11 @@ Lower than rank 2 because (a) eligibility for osteosarcoma is unconfirmed and (b
       <tbody>
         <tr>
           <td>1</td>
-          <td><strong>DLL3 IHC (SP347) on tumor — diagnostic gate</strong><br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span> <span class="persona persona-advocate">advocate</span></small></td>
-          <td>Diagnostic certainty — resolves whether the DLL3-directed pathway is reachable; required by NCT06788938 (≥25% stage 1, ≥1% stage 2).</td>
-          <td>Low (none — diagnostic test on archival tissue)</td>
+          <td><strong>Dual-biomarker workup — DLL3 IHC (SP347) + PRAME IHC + HLA-A*02:01 typing</strong><br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span> <span class="persona persona-advocate">advocate</span></small></td>
+          <td>Diagnostic certainty — resolves which of two pathways is reachable. DLL3 IHC gates ranks 2-3; PRAME IHC + HLA-A*02:01 gate ranks 4-5. Tests are independent and run in parallel.</td>
+          <td>Low (none — diagnostic IHC on archival tissue + a single blood draw for HLA typing)</td>
           <td><strong>N/A</strong> <span class="cpm-desc">(diagnostic, not therapeutic)</span></td>
-          <td><strong>Non-toxic precondition that gates rank 2 entirely; run regardless of which therapy is ultimately chosen.</strong></td>
+          <td><strong>Non-toxic dual workup that gates ranks 2-5; run all three tests in parallel regardless of which therapy is ultimately chosen.</strong></td>
         </tr>
         <tr>
           <td>2</td>
@@ -265,6 +372,22 @@ Lower than rank 2 because (a) eligibility for osteosarcoma is unconfirmed and (b
           <td>Unknown — no published clinical data. Class effects expected: cytopenias, GI, possible ILD/pneumonitis (DXd-class ADC signal).</td>
           <td><strong>Moderate</strong> <span class="cpm-desc">(ADC bystander toxicity to DLL3-low tissue; antigen-loss escape on repeated dosing; PBD-class TAHOE shadow does not directly apply but informs framing)</span></td>
           <td><strong>Mechanism-distinct second DLL3 pathway pending sponsor confirmation of osteosarcoma eligibility — relevant if the tarlatamab path is foreclosed or fails.</strong></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td><strong>IMA203 (PRAME-TCR-T) via NCT03686124 (Immatics ACTengine pan-solid basket)</strong> <span class="scenario-conditional">(conditional on prame_ihc_hla positive)</span><br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-advocate">advocate</span> <span class="persona persona-concensusite">concensusite</span></small><br><small><em>dissent:</em> <span class="persona persona-conservative">conservative</span></small></td>
+          <td>Strong. ORR 54% (95% CI 34-73) in pan-solid PRAME+ HLA-A*02:01+ basket (Wermke 2024 Lancet Oncol, n=28). Sarcoma cohorts on protocol; mechanism-driven eligibility.</td>
+          <td>High (CRS ~100% — G3-4 ~10%; ICANS-like ~25%; uniform post-Cy/Flu cytopenias; one treatment-related death in published cohort; CAR-T-style infusion infrastructure required)</td>
+          <td><strong>Moderate</strong> <span class="cpm-desc">(On-target / off-tumor toxicity to PRAME-expressing testis is class-managed; CRS / neurotoxicity from T-cell activation is the main mechanism-level risk)</span></td>
+          <td><strong>Best-evidenced PRAME pathway with pan-solid sarcoma-inclusive basket; conditional on PRAME IHC + HLA-A*02:01 typing both confirming.</strong></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td><strong class="split-glyph">IMC-P115C via NCT07156136 (Immunocore next-gen PRAME ImmTAC pan-tumor)</strong> <span class="scenario-conditional">(conditional on prame_ihc_hla positive + sponsor confirms osteosarcoma)</span><br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-advocate">advocate</span></small><br><small><em>dissent:</em> <span class="persona persona-critic">critic</span> <span class="persona persona-conservative">conservative</span></small></td>
+          <td>Speculative. No published clinical data for IMC-P115C; relies on brenetafusp class precedent (ORR ~9% in heavily pretreated melanoma; durable in subset).</td>
+          <td>Moderate (ImmTAC class: CRS ~85% mostly G1-2; rash ~70%; transient hypotension; pre-medication-managed)</td>
+          <td><strong>Moderate</strong> <span class="cpm-desc">(ImmTAC on-target / off-tumor signal in PRAME-expressing normal tissue (low; testis-restricted); CRS from T-cell activation)</span></td>
+          <td><strong>Mechanism-class alternative to IMA203 in the PRAME space, contingent on PRAME + HLA confirmation and sponsor confirmation osteosarcoma is in scope.</strong></td>
         </tr>
       </tbody>
     </table>

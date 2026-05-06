@@ -2,9 +2,9 @@
 
 # Evidence — `osteosarcoma-mets-dll3-h7r2`
 
-_This page shows 2 included clinical + 4 included pre-clinical rows, grouped by intervention. 1 clinical and 1 pre-clinical papers were reviewed and excluded — see the [master manuscripts table](manuscripts.md) for the full audit trail._
+_This page shows 4 included clinical + 5 included pre-clinical rows, grouped by intervention. 1 clinical and 1 pre-clinical papers were reviewed and excluded — see the [master manuscripts table](manuscripts.md) for the full audit trail._
 
-## Clinical evidence (2 rows)
+## Clinical evidence (4 rows)
 
 Per-manuscript detail grouped by intervention. Each row is one published clinical-evidence finding. Columns mirror the per-publication decision-support layout used in companion projects (`io-shieldbreak`'s Pharmacodynamic-Results table).
 
@@ -23,7 +23,35 @@ Per-manuscript detail grouped by intervention. Each row is one published clinica
   </div>
 </div>
 
-## Pre-clinical evidence (4 rows)
+### brenetafusp (IMC-F106C)  
+<small><code>intervention_id: brenetafusp</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Hamid/Hassel (2024)<br><em>Cancer Discov</em></td><td class="num">132</td><td>Heavily pretreated melanoma; subset with prior immunotherapy; HLA-A*02:01-positive; PRAME-positive by IHC</td><td>2L+</td><td>open-label phase 1 dose-escalation + expansion (NCT04262466)</td><td>—</td><td>60 mcg IV weekly (RP2D from phase 1)</td><td>ORR</td><td>ORR; mPFS; mDoR</td><td class="num">9.00 %</td><td class="num">4.00–17.00</td><td class="num">—</td><td>mPFS 2.1 mo overall; durable responses in subset</td><td>Cytokine release syndrome ~85% (mostly G1-2); rash ~70%; transient hypotension; G3+ TRAEs ~30%; manageable with dexamethasone pre-medication.</td><td><span class="rob-badge rob-med">ROBINS-I:Moderate</span></td><td>2b</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/39007852">39007852</a></td><td><a href="https://doi.org/10.1158/2159-8290.CD-24-0298">DOI</a></td><td>First-in-class PRAME × CD3 ImmTAC. Cross-tumor: melanoma data, not osteosarcoma. Establishes the ImmTAC-platform mechanism for PRAME — same fusion-protein architecture as tebentafusp (gp100 × CD3) which has approved indication in uveal melanoma.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### IMA203 (PRAME-TCR-T)  
+<small><code>intervention_id: ima203</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Wermke/Bauer (2024)<br><em>Lancet Oncol</em></td><td class="num">28</td><td>Heavily pretreated PRAME+ HLA-A*02:01+ patients; subset of synovial sarcoma cohort enrolled; lymphodepleting Cy/Flu prior to infusion</td><td>2L+</td><td>open-label phase 1/2 ACTengine basket (NCT03686124)</td><td>—</td><td>1-10 × 10⁹ TCR-T cells IV after Cy/Flu lymphodepletion</td><td>ORR</td><td>ORR (BICR)</td><td class="num">54.00 %</td><td class="num">34.00–73.00</td><td class="num">—</td><td>mDoR not reached; mPFS 5.1 mo</td><td>CRS ~100% (G1-2 majority; G3-4 ~10%); ICANS-like neurotoxicity ~25% (mostly G1-2); cytopenias post-Cy/Flu uniform; 1 treatment-related death.</td><td><span class="rob-badge rob-med">ROBINS-I:Moderate</span></td><td>2b</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/38821093">38821093</a></td><td><a href="https://doi.org/10.1016/S1470-2045(24)00211-2">DOI</a></td><td>Pan-solid PRAME-TCR-T basket including sarcoma cohorts. Best clinical-efficacy signal in the PRAME class to date. Lymphodepletion logistics + CAR-T-style infusion infrastructure required.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+## Pre-clinical evidence (5 rows)
 
 ### tarlatamab (DLL3 × CD3 BiTE)  
 <small><code>intervention_id: tarlatamab</code> · 1 row(s)</small>
@@ -76,6 +104,20 @@ Per-manuscript detail grouped by intervention. Each row is one published clinica
       <thead><tr><th>Report</th><th>Model</th><th>n</th><th>Control</th><th>Dose</th><th>Mechanism</th><th>Key finding</th><th>Effect (qual)</th><th>Translatability</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Caveats</th></tr></thead>
       <tbody>
         <tr><td>Yao/Pavel (2022)<br><em>Oncologist</em></td><td>Literature review</td><td>—</td><td>—</td><td>—</td><td>Comprehensive overview of DLL3 biology, IHC characterization, and therapeutic-development landscape (BiTEs, ADCs, CAR-T, radio-conjugates).</td><td>DLL3 is a &#x27;tumor-restricted&#x27; antigen with low normal-tissue expression — attractive when present at adequate density. Surface-protein detection (e.g. SP347 IHC) is the consensus gating biomarker for DLL3-directed therapies.</td><td>moderate</td><td>med</td><td><span class="fit-badge fit-weak">weak</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/35983951">35983951</a></td><td><a href="https://doi.org/10.1093/oncolo/oyac157">DOI</a></td><td>Focuses on neuroendocrine neoplasms. Does not establish osteosarcoma-specific evidence. Reinforces the protein-IHC requirement that the user&#x27;s &#x27;DLL3 RNA&#x27; alone does not satisfy.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### PRAME expression in osteosarcoma (target rationale)  
+<small><code>intervention_id: prame-osteosarcoma-expression</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>Model</th><th>n</th><th>Control</th><th>Dose</th><th>Mechanism</th><th>Key finding</th><th>Effect (qual)</th><th>Translatability</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Caveats</th></tr></thead>
+      <tbody>
+        <tr><td>Iura/Yoshida (2017)<br><em>Hum Pathol</em></td><td>Human osteosarcoma tumor specimens (n=82); PRAME IHC staining</td><td>n=82 specimens</td><td>non-osteosarcoma sarcoma comparators</td><td>—</td><td>PRAME is a cancer-testis antigen with restricted normal-tissue expression (testis) and broad solid-tumor expression. In osteosarcoma, PRAME IHC is positive in ~50-60% of cases, with expression intensity varying by histologic subtype.</td><td>PRAME IHC positivity in 56% of osteosarcoma cases (46/82); higher rates in osteoblastic and chondroblastic subtypes; correlation with metastatic phenotype.</td><td>moderate</td><td>med</td><td><span class="fit-badge fit-strong">strong</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/28315425">28315425</a></td><td><a href="https://doi.org/10.1016/j.humpath.2017.03.010">DOI</a></td><td>RNA-protein concordance is imperfect; protein-level confirmation by IHC is the load-bearing step before any PRAME-targeting therapy. HLA-A*02:01 typing additionally required for ImmTAC and TCR-T programs.</td></tr>
       </tbody>
     </table>
   </div>

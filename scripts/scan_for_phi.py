@@ -40,7 +40,10 @@ PATTERNS: list[tuple[str, re.Pattern[str], str]] = [
     ),
     (
         "mrn_label",
-        re.compile(r"\b(?:MRN|mrn|Medical Record Number)\s*[:#]?\s*[A-Z0-9-]{4,}", re.IGNORECASE),
+        # Require an explicit ":" or "#" after the label so mRNA-NNNN doesn't
+        # match MRN-NNNN. Drop the case-insensitive flag so mRNA-4203 (lowercase
+        # m, embedded RNA) is not matched as MRN.
+        re.compile(r"\b(?:MRN|Medical Record Number)\s*[:#]\s*[A-Z0-9-]{4,}"),
         "labeled MRN",
     ),
     (
@@ -93,8 +96,12 @@ ONCOLOGY_ACRONYM_ALLOWLIST = frozenset({
     # Sarcoma + DLL3 + adjacent trials
     "CABONE", "REGOBONE", "SARC", "AOST", "DELLPHI", "DAREON", "TAHOE",
     "TRINITY", "MERU",
-    # Tumor / pathology acronyms (DLL3 pipeline)
+    # Tumor / pathology acronyms (DLL3 + PRAME pipelines)
     "SCLC", "NSCLC", "NEC", "LCNEC", "NEPC", "GEP", "MTC", "EP",
+    # Hematologic + non-solid (PRAME pipeline overlap)
+    "AML", "MDS", "ALL", "CLL", "CML", "DLBCL", "FL", "HL", "MM",
+    # PRAME / TCR / ImmTAC platform / mechanism
+    "PRAME", "TCR", "TCER", "HLA",
     # Geographies (regions / countries, frequent in access guides)
     "US", "EU", "UK", "AU", "JP",
     # Drug-class / mechanism modality acronyms

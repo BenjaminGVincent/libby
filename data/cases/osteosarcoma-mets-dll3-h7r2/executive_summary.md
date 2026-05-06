@@ -1,8 +1,8 @@
 # Executive summary
 
 **Case:** `osteosarcoma-mets-dll3-h7r2`
-**Question:** Metastatic osteosarcoma with user-reported DLL3 RNA expression. What interventions could target DLL3 expression, gated on IHC confirmation?
-**Evidence base:** 21 trials surfaced (3 primary efficacy rows for tarlatamab + 18 cross-tumor / pipeline-context rows across seven DLL3-targeting modalities — BiTE, trispecific, CD47-bispecific, ADC, radioligand, radioimmunotherapy, CAR-T, CAR-NK), 3 clinical-evidence rows, 5 preclinical rows. Three ranked rows: a workup gate plus two biomarker-conditional therapeutic options (tarlatamab actionable, SHR-4849 considered with caveats pending sponsor confirmation). Board agreement: full consensus on the workup; one persistent dissent (critic) on rank 2; two dissents (critic, conservative) on rank 3.
+**Question:** Metastatic osteosarcoma with user-reported DLL3 RNA expression AND PRAME RNA expression. What interventions could target either feature, gated on protein-level confirmation (DLL3 IHC SP347; PRAME IHC + HLA-A*02:01 typing)?
+**Evidence base:** 29 trials surfaced (21 DLL3-targeting + 8 PRAME-targeting across ten modality classes including BiTE, trispecific, CD47-bispecific, ADC, radioligand, radioimmunotherapy, CAR-T, CAR-NK, ImmTAC, TCR-T, TCER), 5 clinical-evidence rows, 6 preclinical rows. Five ranked rows: a dual-biomarker workup gate plus four biomarker-conditional therapeutic options across two pathways. **DLL3 pathway:** rank 2 tarlatamab (actionable via NCT06788938 basket); rank 3 SHR-4849 (considered with caveats pending sponsor confirmation). **PRAME pathway:** rank 4 IMA203 ACTengine basket (best-evidenced; ORR 54% Wermke 2024); rank 5 IMC-P115C (considered with caveats). Board agreement: full consensus on the workup; one persistent dissent (critic) on rank 2; two dissents (critic, conservative) on ranks 3 and 5; one dissent (conservative) on rank 4.
 
 ## What this report covers
 
@@ -18,10 +18,17 @@ The PI's synthesis frames the case around the DLL3 IHC test that gates whether t
 
 ## Recommendation summary
 
-**Shared first step:** DLL3 IHC (SP347) on tumor — gates whether ranks 2 and 3 are reachable. All 5 personas endorse.
+**Shared first step:** Dual-biomarker workup — DLL3 IHC (SP347) + PRAME IHC + HLA-A*02:01 typing — gates whether ranks 2-5 are reachable. All 5 personas endorse. The two pathways are independent; either or both may confirm.
 
-1. **Tarlatamab via NCT06788938** — *Conditional on DLL3 IHC positive — foreclosed if test is negative.* Strong preference fit (high-risk-high-reward + prefers trials); critic dissent on cross-tumor translatability persists. The actionable DLL3-directed option.
-2. **SHR-4849 / IDE849 via NCT07174583 (IDEAYA pan-tumor DLL3 basket)** — *Considered with caveats. Conditional on DLL3 IHC positive AND IDEAYA confirming osteosarcoma is on the basket eligibility list.* Mechanism-distinct DLL3 ADC (TOP1-inhibitor payload, post-Rova-T era) — relevant if the BiTE path is foreclosed or fails. Two dissents: critic on no-published-clinical-data; conservative on eligibility uncertainty. **First action before pursuing: contact IDEAYA medical affairs to confirm osteosarcoma is in scope.**
+**DLL3 pathway (ranks 2-3):**
+
+1. **Tarlatamab via NCT06788938** — *Conditional on DLL3 IHC positive — foreclosed if test is negative.* The actionable DLL3-directed option. Strong preference fit; critic dissent on cross-tumor translatability persists.
+2. **SHR-4849 / IDE849 via NCT07174583 (IDEAYA pan-tumor DLL3 basket)** — *Considered with caveats. Conditional on DLL3 IHC positive AND IDEAYA confirming osteosarcoma is on the basket eligibility list.* Mechanism-distinct DLL3 ADC. **First action: contact IDEAYA medical affairs.**
+
+**PRAME pathway (ranks 4-5):**
+
+3. **IMA203 (PRAME-TCR-T) via NCT03686124 (Immatics ACTengine pan-solid basket)** — *Conditional on PRAME IHC AND HLA-A*02:01 typing both positive.* Best-evidenced PRAME pathway: 54% ORR (Wermke 2024 Lancet Oncol, n=28) in cross-tumor PRAME+ HLA-A*02:01+ basket including sarcoma cohorts. Conservative dissents on TCR-T infrastructure burden.
+4. **IMC-P115C via NCT07156136 (Immunocore next-gen pan-tumor PRAME ImmTAC)** — *Considered with caveats. Conditional on PRAME + HLA AND sponsor confirms osteosarcoma is in scope.* Mechanism-class alternative to IMA203. Two dissents: critic on no-published-data; conservative on eligibility uncertainty. **First action: contact Immunocore medical affairs.**
 
 ## What this report does *not* cover
 

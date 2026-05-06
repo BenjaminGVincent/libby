@@ -11,6 +11,13 @@
       "method": "user-reported (RNA modality)",
       "confirmation_status": "rna_only",
       "decision_resolution": "IHC SP347 ≥1% (preferably ≥25%) — required by current DLL3-directed clinical trials and approved indications"
+    },
+    {
+      "name": "PRAME",
+      "value": "RNA expression elevated; protein-level expression and HLA presentation status unknown",
+      "method": "user-reported (RNA modality)",
+      "confirmation_status": "rna_only",
+      "decision_resolution": "PRAME IHC for protein expression PLUS HLA-A*02:01 typing — both required for current PRAME-directed ImmTAC and TCR-T programs (PRAME peptide presented on HLA-A*02:01)"
     }
   ],
   "stage": "IV",
@@ -23,7 +30,8 @@
     "note_unspecified": "user did not provide labs; assume adequate organ function for trial eligibility — to be confirmed at intake"
   },
   "targetable_features": [
-    { "feature": "DLL3 RNA expression", "rationale": "User-identified targetable feature. RNA expression alone is insufficient for DLL3-directed therapy eligibility; protein-level confirmation by IHC (e.g. SP347 antibody) is the gating biomarker for current DLL3-directed clinical trials and approved indications." }
+    { "feature": "DLL3 RNA expression", "rationale": "User-identified targetable feature. RNA expression alone is insufficient for DLL3-directed therapy eligibility; protein-level confirmation by IHC (e.g. SP347 antibody) is the gating biomarker for current DLL3-directed clinical trials and approved indications." },
+    { "feature": "PRAME RNA expression", "rationale": "User-identified targetable feature. PRAME-targeting therapies fall into two mechanism classes: (a) HLA-A*02:01-restricted ImmTACs (PRAME × CD3 bispecifics, e.g. brenetafusp) and TCR-T (e.g. IMA203) which require both PRAME protein expression AND HLA-A*02:01 positivity; (b) PRAME-directed mRNA vaccines (e.g. mRNA-4203) which are HLA-agnostic. RNA expression alone is insufficient for the HLA-restricted programs — a positive PRAME IHC plus HLA-A*02:01 typing is the gating biomarker pair." }
   ],
   "geography_band": null,
   "private": false
