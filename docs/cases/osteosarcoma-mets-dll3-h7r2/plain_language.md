@@ -4,34 +4,60 @@
 
 ## What this page is
 
-You (or your clinician) asked Libby to look at one specific question:
-**given metastatic osteosarcoma where the cancer is showing signs that DLL3 — a
-protein that some new immunotherapies target — might be present, what
-treatments would target DLL3?** Your input was that you'd consider high-risk
-options if the upside is meaningful.
+You (or your clinician) asked Libby a narrow question: in metastatic
+osteosarcoma where there's a hint that DLL3 might be present, what
+treatments would target DLL3? You also said you'd consider high-risk options
+if the upside is meaningful, and the board read this report through that
+lens.
 
-The DLL3 information you gave us was at the **RNA level** — that tells us
-the gene is being read, but it doesn't tell us whether the DLL3 protein is
-actually sitting on the surface of the cancer cells (which is what those
-new drugs need to grab onto). So the recommendations come in two parts:
-**a first step everyone agreed on** (a confirmatory test), and then **one
-treatment option** that is only on the table if that test comes back positive.
+One thing matters before anything else. The DLL3 signal you gave us was at
+the RNA level. RNA tells us the gene is being read inside the cell. It does
+not tell us the DLL3 protein is actually sitting on the outside of the cell,
+which is what the new drugs need to grab onto. That distinction shapes the
+rest of this page. So the recommendations come in two parts. First, a
+confirmatory test that everyone agreed should happen. Second, a single
+treatment option that only opens up if that test comes back positive.
 
-This page is scoped to **drugs that target DLL3** — that's the molecular
-feature the question was about. Other treatments may exist for relapsed
-osteosarcoma in general, but they don't target DLL3, so they're outside
-the scope of this page. Your oncologist will know which standard options
-apply to your situation; that's a separate conversation from this report.
+The page is also scoped tightly. It only covers drugs that target DLL3,
+because DLL3 was the question. Plenty of other treatments exist for
+relapsed osteosarcoma, and those are a conversation for your oncologist,
+not this report.
+
+## What we know about your cancer
+
+You're in your late teens or twenties with metastatic (stage IV)
+osteosarcoma, a cancer that started in bone. The board assumed you'd had
+standard frontline chemotherapy (the MAP regimen: methotrexate,
+doxorubicin, cisplatin), since that's the default for this disease, but
+your inputs didn't say how you responded or whether you've had anything
+since. Your day-to-day function looks like ECOG 1, which roughly means
+you're up and around but tire more easily than you used to. The single
+feature driving this report is the DLL3 RNA signal, with the caveat from
+the section above.
+
+## What you told us matters most
+
+You said you accept high-risk, high-reward options when the possible upside
+is meaningful. You didn't name any toxicities you wanted to veto outright,
+and you flagged a clear preference for clinical trials over off-trial
+experimental use. The board took those signals seriously. They're the
+reason a first-in-disease trial option even made it onto the page.
 
 ## The first step everyone agreed on
 
-**Get a DLL3 protein test on your tumor — specifically an IHC stain using
-an antibody called SP347.** Your oncologist can order this on stored tissue
-from a previous biopsy, or fresh tissue if needed. It's non-toxic, takes
-1–3 weeks, and costs almost nothing compared to a treatment cycle. **All
-five reviewers ranked this as the first action — without dissent.**
+Before any treatment decision, get a DLL3 protein test on the tumor. The
+specific test is an IHC stain that uses an antibody called SP347. In most
+cases your oncologist can order it on stored tissue from a previous biopsy.
+If there isn't enough archived tissue, a fresh sample works too. The test
+itself isn't toxic. Turnaround is roughly one to three weeks. The cost is
+trivial compared to a single treatment cycle.
 
-The test result decides whether the treatment option below is on the table.
+All five reviewers put this in the rank-1 slot, and nobody dissented. The
+result decides whether the option below is on the table at all. If the
+test comes back positive, you have a real choice to discuss. If it comes
+back negative, the DLL3-directed pathway closes and the conversation
+shifts to standard relapsed-osteosarcoma options that your oncologist can
+take you through.
 
 ---
 
@@ -39,84 +65,89 @@ The test result decides whether the treatment option below is on the table.
 
 ### Option 1 — Tarlatamab via clinical trial NCT06788938
 
-**This option is only available if the DLL3 IHC test comes back positive.**
-If the test is negative or below threshold, this option is off the table,
-and this case has no further treatment recommendations within scope.
-Standard 2L+ care for relapsed osteosarcoma is the next conversation to
-have with your oncologist, separate from this page.
+This option is conditional on a positive DLL3 IHC. If the IHC is negative
+or below the trial's threshold, the option is off the table, and this
+page has no further treatment recommendations within scope.
 
-**The board recommended this as the lead option *when the test is positive*.**
+When the test is positive, the board recommended tarlatamab as the lead
+option.
 
-**What it is.** A "bispecific T-cell engager" given as an infusion every
-two weeks. One end of the molecule grips DLL3 on the cancer cell, the other
-end recruits an immune T cell to attack it. Currently approved for small-cell
-lung cancer. The trial accepts patients with **any** DLL3-positive tumor,
-including osteosarcoma, **as long as the IHC test confirms DLL3 is on the
-cell surface at sufficient levels**.
+So what is it? Tarlatamab is a "bispecific T-cell engager." You get it as
+an infusion every two weeks. The drug works like a molecular clip: one
+end grips DLL3 on the cancer cell, the other end pulls in one of your own
+T cells to attack it. It's currently approved for small-cell lung cancer.
+NCT06788938 is a "basket" trial, which means it accepts any DLL3-positive
+tumor (osteosarcoma included), provided the IHC confirms DLL3 is on the
+cell surface at high enough levels.
 
-**What the upside might look like.** In small-cell lung cancer, where this
-drug is approved, tarlatamab nearly halved the risk of death compared to
-chemotherapy in a recent randomized trial. About 40 of every 100 patients
-had measurable tumor shrinkage. **Whether this translates to osteosarcoma
-is exactly the question the trial would answer — and you'd be helping to
-answer it.**
+What might the upside look like? In small-cell lung cancer, where this
+drug is already approved, a recent randomized trial showed tarlatamab cut
+the risk of death roughly in half compared to chemotherapy. About 40 out
+of 100 patients had measurable tumor shrinkage. Whether any of that
+carries over to osteosarcoma is exactly the unanswered question this
+trial is designed to answer. I can't translate the SCLC numbers cleanly
+into an osteosarcoma expectation here, because no one has published that
+data yet and it would be misleading to pretend otherwise.
 
-**The main risks.** A reaction called "cytokine release syndrome" happens
-in about half of patients (mostly mild; about 1 in 100 are severe).
-Neurologic side effects in roughly 10%. The first cycle requires being in
-hospital for monitoring.
+On the risk side, about half of patients get a reaction called "cytokine
+release syndrome." It's a flu-like immune flare; most cases are mild and
+roughly 1 in 100 are severe. About 1 in 10 patients have neurologic side
+effects. The first cycle requires inpatient monitoring, so you'd be in
+hospital while the step-up doses are given.
 
-**Where the board agreed and where they didn't.**
+The board wasn't unanimous on this one. Four reviewers endorsed it in the
+positive-IHC scenario (the risk-taker, the advocate, the consensus
+reviewer, and the conservative). The conservative's earlier worry was
+specifically about treating an unconfirmed target; once IHC locks the
+target down, that worry goes away. The critic still dissented even with a
+positive IHC, on a single specific point: no osteosarcoma patient has been
+published as receiving tarlatamab yet. Whoever takes this trial is in the
+very first cohort. That's a real thing to weigh, not a footnote.
 
-- *Risktaker, advocate, conservative, consensus reviewer:* endorse. The
-  conservative's earlier toxicity concern was specifically about treating
-  for an unconfirmed target — once the IHC confirms, that concern lifts.
-- *Critic:* still dissents — even with a positive IHC, no osteosarcoma
-  patient has been published as receiving tarlatamab. You'd be in the very
-  first cohort. Worth knowing going in.
-
-**If the IHC is negative,** this option closes entirely. There is no
-"backup option" within scope of this page — Libby was asked specifically
-about DLL3-targeted therapy. Your oncologist can talk you through standard
-2L+ options for relapsed osteosarcoma (which exist and are well-established);
-that conversation is separate from this page.
+If the IHC comes back negative, the option closes entirely. There's no
+backup within scope of this page, because the page was scoped to DLL3.
+Standard 2L+ options for relapsed osteosarcoma exist and are well
+established. Your oncologist is the person to take you through them.
 
 ---
 
 ## What the board could not figure out
 
-Several things weren't in the inputs:
+A few things the inputs didn't tell us, which would sharpen the plan:
 
-- **Was DLL3 measured at the protein level (IHC) or only RNA?** Resolved by
-  the recommended first step.
-- **What treatment have you already had?** The recommendations assume
-  standard frontline chemotherapy (MAP).
-- **What's your performance status (how active are you day-to-day)?** Most
-  trials require ECOG 0 or 1.
-- **Where do you live, and what's your access to academic cancer centers?**
-  The tarlatamab trial is at specific UC sites.
+- Was DLL3 measured at the protein level (IHC) or only at RNA? The
+  recommended first step resolves this directly.
+- What treatment have you actually had? The recommendations assume
+  standard frontline MAP and nothing after that.
+- What's your day-to-day function (performance status)? Most trials
+  require ECOG 0 or 1.
+- Where do you live, and how reachable are academic cancer centers? The
+  tarlatamab trial enrolls only at specific UC sites.
 
 ## Questions to ask your oncologist
 
-1. **Can we order DLL3 IHC (SP347 antibody) on my tumor?** That's the first
-   step before any of the rest of this plan.
-2. **If the IHC comes back positive, what's the path to NCT06788938?**
-   Closest enrolling site, wait time, logistics for the inpatient cycle-1
-   monitoring.
-3. **If the IHC comes back negative, what 2L+ options do you usually
-   consider for relapsed osteosarcoma?** This page doesn't cover those —
-   it was scoped to DLL3 — but they're real options and worth understanding
-   in advance.
-4. **If we pursue tarlatamab, what's the realistic timeline from IHC
-   confirmation to first dose?**
-5. **What's your experience with the side effects (CRS, neurologic
-   reactions)?** Knowing your hospital's protocol helps.
-6. **Have I already had any of the standard 2L+ osteosarcoma options? What
-   was the response?** Useful context for your team.
-7. **Is there anything in my labs or scans that would change which trial
-   I'd be eligible for?**
-8. **If the tarlatamab trial isn't reachable (slot, location, eligibility),
-   what's the next step from your perspective?**
+1. Can we order DLL3 IHC on my tumor using the SP347 antibody? That has
+   to come before the rest of this conversation.
+2. If the IHC comes back positive, what's the realistic path to NCT06788938
+   from here? I'd want to understand the closest enrolling site, how long
+   the wait usually is, and how the inpatient cycle-1 monitoring would
+   actually look in practice.
+3. If the IHC is negative, what 2L+ options do you usually consider for
+   relapsed osteosarcoma? This page doesn't cover those (it was scoped to
+   DLL3), but they're real options and I'd want to understand them ahead
+   of time.
+4. If we go with tarlatamab, how long does it usually take from IHC
+   confirmation to first dose at your center?
+5. What's your hospital's protocol for the side effects, especially
+   cytokine release syndrome and the neurologic reactions? It matters how
+   that's handled locally.
+6. Have I already had any of the standard 2L+ osteosarcoma options? What
+   was the response? Useful context for whoever's planning next steps.
+7. Is there anything in my labs or imaging that would change which trials
+   I'd be eligible for?
+8. If the tarlatamab trial turns out to be unreachable for me, whether
+   that's a slot issue, the location, or an eligibility reason, what
+   would you suggest as a next step?
 
 ## Where to read more
 

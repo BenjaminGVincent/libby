@@ -4,135 +4,75 @@
 
 ## What this page is
 
-Libby is an experimental tool that compiles published research about
-treatments that might apply to a particular cancer, then has five different
-"reviewers" with different priorities discuss the options. This page is the
-patient-friendly summary of what they came up with for a fictional case used
-to demonstrate the tool.
+Libby is an experimental tool. It pulls together published research on cancer treatments that might fit a particular case, then runs the options past five "reviewers" who each weight things differently. One reviewer is a risk-taker. One is conservative about side effects. One is the published-evidence skeptic. One is a patient advocate. One cares mainly about whether the regimen lines up with official guidelines. They argue. Sometimes they disagree on purpose.
+
+This page is the patient-facing version of what they came up with. The case is fictional, used to demo the tool, but the drugs and trial data are real.
 
 ## What we know about the cancer
 
-This is a lung cancer (adenocarcinoma) that has spread beyond the lung
-(stage IV). The cancer carries two specific changes that doctors call
-"actionable" — meaning there are drugs that target them:
+This is lung cancer (the adenocarcinoma type) that has spread beyond the lung. Stage IV. Two specific genetic features are driving it, and both have drugs aimed at them:
 
-- A mutation in the **EGFR** gene called **L858R**.
-- An amplification (extra copies) of the **MET** gene.
+- A change in a gene called EGFR, specifically the L858R mutation.
+- Extra copies of a gene called MET. Doctors call this MET amplification.
 
-The patient was first treated with a pill called **osimertinib** that targets
-the EGFR mutation. It worked well for almost two years, then the cancer began
-growing again. The MET amplification is likely the reason the cancer became
-resistant.
+The patient was on a pill called osimertinib first. It targets the EGFR change, and it worked for about 22 months before the cancer started growing again. The MET amplification almost certainly explains why osimertinib stopped working. That matters because it points pretty directly at what should come next.
 
 ## What the patient said matters most
 
-- They want a treatment they can take by mouth (a pill), not one that
-  requires sitting in an infusion chair for hours.
-- They specifically want to avoid:
-  - **Severe nerve damage** (numbness, tingling, weakness — important for
-    a working artist whose hands matter for their job).
-  - **Heart problems** as a side effect.
-  - **Hair loss.**
-- They are open to enrolling in a clinical trial.
-- On the question "do you want to push for the most effective treatment even
-  if it's harder, or the gentlest treatment that still works?" — they leaned
-  slightly toward effectiveness (about 55/45).
+A pill, ideally. Not hours of infusions in a chair. The patient is a working artist, so anything that risks numbness or weakness in the hands is more than a quality-of-life concern, it is a livelihood concern. So the things she said she wanted to avoid were:
+
+- Severe nerve damage.
+- Heart problems.
+- Hair loss.
+
+She is open to a clinical trial, which expands what the board could put on the table. Asked whether to push for the most effective treatment even if it is rougher, or the gentlest treatment that still works, she landed slightly on the effectiveness side. About 55/45. Not a strong lean.
 
 ## The options the board considered
 
 ### Option 1 — savolitinib + osimertinib (preferably as part of a clinical trial)
 
-**The board recommended this.** Four of five reviewers endorsed it; the fifth
-agreed with caveats.
+The board recommended this. Four of five reviewers endorsed it; the fifth agreed with caveats.
 
-**What it is.** Two pills taken at home. **Osimertinib** is the same drug the
-patient was already taking; **savolitinib** is added to it to block the MET
-pathway that probably caused the resistance. The combination has been
-studied in earlier-phase trials for exactly this situation (EGFR-mutant lung
-cancer that became resistant via MET amplification), and a larger phase-3
-trial (called SAFFRON) is currently underway.
+Two pills, both taken at home. Osimertinib is the same drug she was already on. Savolitinib gets added on top, and it blocks the MET pathway, which is the same pathway that probably caused the resistance in the first place. So the drug is aimed at the thing that broke. There is earlier-phase data behind it (a trial called TATTON), and a larger phase-3 trial (called SAFFRON) is recruiting now.
 
-**What the upside might look like.** In the earlier trial (called TATTON),
-about 1 in 3 patients in this exact biomarker situation had measurable tumor
-shrinkage. The published numbers suggest the combination can re-establish
-disease control in a meaningful fraction of patients, but precise long-term
-benefit numbers are still being gathered.
+What the upside might look like, in plain numbers: in TATTON, about 1 in 3 patients in this exact biomarker setup had measurable tumor shrinkage. The published numbers suggest this combination can put the disease back under control for a meaningful share of patients, but I cannot give you a precise long-term improvement here without more context. The phase-3 trial is what will eventually quantify how much extra time it buys.
 
-**The main risks.** The most common side effects are liver-test changes
-(monitorable with blood draws), some leg swelling, and fatigue. None of these
-match the patient's specific vetoes.
+Side effects to watch for: liver-test changes (caught with routine blood draws), some swelling in the legs, fatigue. None of these match her list of vetoes.
 
-**Does it match what the patient wanted?** Yes — all-oral, no infusions, no
-severe neuropathy / heart toxicity / hair loss in the published reports, and
-enrollable on a trial.
-
-**Did the board agree?** Mostly yes. The "consensus" reviewer pointed out
-that this combination is not yet officially in the major guidelines as a
-recommended regimen, so the cleanest path to it is via clinical trial
-enrollment — which the patient was already open to.
+Does it match what she wanted? Yes on every axis. All-oral, no infusions, no severe neuropathy or heart issues or hair loss in the published reports, and there is a trial route. The fifth reviewer, the guideline reviewer, pointed out that this combination is not yet officially listed in the major guidelines as a recommended regimen, so the cleanest path is via the trial. Which she had already said she was open to.
 
 ### Option 2 — amivantamab + lazertinib *(considered with caveats)*
 
-**The board considered this carefully but did NOT recommend it as the first
-choice.**
+The board considered this seriously and did not recommend it as the first choice.
 
-**What it is.** A combination where one component (amivantamab) is given by
-intravenous infusion in the clinic, and the other (lazertinib) is a pill at
-home. Amivantamab is an antibody that targets both the EGFR and MET pathways.
+It is a combination of two drugs. One of them, amivantamab, is given by IV infusion in the clinic, especially at the start. The other, lazertinib, is a pill at home. Amivantamab is an antibody that hits both EGFR and MET, which is why it shows up here.
 
-**What the upside might look like.** A study (called CHRYSALIS-2) reported
-that about 36 of every 100 patients in a similar situation had measurable
-tumor shrinkage — a slightly higher rate than Option 1.
+The efficacy signal is real. In a study called CHRYSALIS-2, about 36 of every 100 patients in a similar situation had measurable tumor shrinkage. That is slightly higher than Option 1.
 
-**The main risks.** Infusion reactions are common (sometimes severe), rash is
-nearly universal, and combination data show meaningful nerve-related side
-effects. The "conservative" reviewer specifically issued a **veto** because
-of the nerve-damage risk and the IV burden, both of which directly conflict
-with what the patient said they wanted to avoid.
+The problem is the side-effect side. Infusion reactions are common and sometimes severe. Rash is nearly universal. And the combination data show meaningful nerve-related side effects. The conservative reviewer issued a veto on exactly that ground: the neuropathy risk for a working artist plus the IV burden. Both directly conflict with what she said she wanted. The advocate reviewer also dissented on preference fit. The skeptic reviewer dissented on evidence quality, because CHRYSALIS-2 is single-arm without a randomized comparator in the post-osimertinib subset.
 
-**Why it's still on the page.** Two of the five reviewers (one focused on
-effect size, one focused on official guidelines) did endorse it. The board's
-rule is that a vetoed option is never silently dropped — the patient and
-clinician should see what was considered and rejected.
-
-**The board's bottom line.** Option 2 is a real option, but only if Option 1
-fails or proves intolerable. It violates the patient's stated preferences
-about IV time and nerve damage, and the modest extra effectiveness over
-Option 1 was not judged enough to override those preferences.
+It is still on this page because two of the five reviewers (the risk-taker, on effect size; the guideline reviewer, on NCCN status) did endorse it, and Libby's rule is that a vetoed option does not silently disappear. The patient and the oncologist should be able to see what was put on the table and rejected. But the board's bottom line is: this is a real option only if Option 1 fails or proves intolerable. The slightly larger response rate over Option 1 was not judged enough to override the stated preferences.
 
 ### Option 3 — patritumab deruxtecan (HER3-DXd) *(considered with caveats)*
 
-**The board did not recommend this.**
+The board did not recommend this.
 
-**What it is.** An antibody-drug conjugate given by IV infusion every three
-weeks. It carries a chemotherapy payload to cells that express a marker
-called HER3.
+It is an antibody-drug conjugate, given by IV every three weeks. It works by carrying a chemotherapy payload to cells that display a marker called HER3.
 
-**Why it's not recommended here.** Hair loss is a frequent side effect, which
-the patient specifically said they wanted to avoid. The "advocate" reviewer
-removed it from active consideration on those grounds. There is also a small
-but real risk of lung inflammation (called ILD).
+Hair loss is a frequent side effect of this drug. She said upfront that hair loss was something she wanted to avoid, and the advocate reviewer took her at her word and removed the option from active consideration. There is also a small but real risk of lung inflammation (the medical term is ILD, interstitial lung disease) that anyone considering this drug needs to know about. Only one reviewer, the risk-taker, kept it in the running, on effect-size grounds.
 
-**Why it's still on the page.** For transparency. If the patient ever
-re-thinks the hair-loss veto, it's a real third-line option worth a
-conversation.
+Why it is still on this page: transparency. If she ever wants to reopen the conversation about the hair-loss veto, this is a real third-line option worth a discussion. But the dossier surfaces it as a what-if, not a recommendation.
 
 ## Questions to ask your oncologist
 
-1. Am I a candidate for the **SAFFRON** or **SACHI** trial of savolitinib
-   plus osimertinib? If so, where is the nearest enrolling site?
-2. If I'm not eligible for a trial, can savolitinib plus osimertinib still be
-   accessed off-trial? What's the path?
-3. With Option 1, what's the monitoring plan for liver-function changes, and
-   what would prompt us to pause or stop the drug?
-4. If Option 1 stops working, what's the realistic next step — Option 2,
-   chemotherapy, or something else? What would I want to know in advance?
-5. How current is the guideline status of these options? Anything new in the
-   last 6 months I should know about?
-6. What's the realistic time-to-response for Option 1, and how will we know
-   it's working?
-7. Are there any side effects I'd want to plan around given my work as an
-   artist?
+1. Am I a candidate for the SAFFRON or SACHI trial of savolitinib plus osimertinib? Where is the nearest enrolling site, and what is the expected timeline to a slot?
+2. If a trial slot is not available, can savolitinib plus osimertinib be accessed off-trial? What does that path look like, and what are the trade-offs?
+3. With Option 1, what is the monitoring plan for liver changes? What numbers would push us to pause or stop the drug, and what would we do then?
+4. If Option 1 stops working down the line, what is the realistic next step? Is Option 2 back on the table at that point, with the neuropathy risk discussed openly, or would we look at chemotherapy first?
+5. Has the guideline status of any of these options shifted in the last six months? Anything I should know about that the page might not reflect?
+6. What is the realistic time-to-response for Option 1, and what scans or markers will we use to know it is working?
+7. Given my work with my hands, are there specific side effects I should be planning around even on Option 1, where the board did not flag any vetoes?
+8. If I ever wanted to reopen the hair-loss question and look at Option 3, what would change in the plan, and what would the conversation look like?
 
 ## Where to read more
 
@@ -144,8 +84,7 @@ conversation.
 
 ## Sources
 
-The recommendations cited the following PubMed records and clinical-trial
-registrations:
+The recommendations cited the following PubMed records and clinical-trial registrations:
 
 - PMID 32679432 (TATTON expansion, savolitinib + osimertinib)
 - PMID 36720074 (CHRYSALIS-2, amivantamab + lazertinib)
