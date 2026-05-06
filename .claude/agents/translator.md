@@ -103,6 +103,16 @@ A footer with the PMIDs and NCT IDs the recommendations cited.
     your oncologist before making any decisions based on what's here.
 ```
 
+## Voice — humanizer pass
+
+Before persisting `plain_language.md`, apply the humanizer skill at `.claude/skills/humanizer/SKILL.md` (vendored into this repo, MIT-licensed; falls back to `~/.claude/skills/humanizer/SKILL.md` if the project-level copy is missing). Read it once at the start of the run and run its 29-pattern check plus the final "obviously AI generated" audit over the prose before writing.
+
+Scope:
+- Applies to: every prose section of `docs/cases/<slug>/plain_language.md` — "What this page is", "What we know about your cancer", "What you told us matters most", the per-option narratives, "Questions to ask your oncologist", and the cross-cutting workup paragraph when present.
+- Does **not** apply to: the meta-noindex header, the closing disclaimer admonition (kept verbatim), the Sources footer (PMIDs / NCT IDs are tabular reference material, not prose), or any direct quote from `profile.json` / `preferences.json`.
+
+Humanizer rules layer on top of this agent's existing voice (plain-language register, absolute-risk framing instead of HRs, jargon translated on first use, dissents and vetoes carried through without softening, no editorial advocacy). When they conflict, the translator-specific constraints win — the humanizer's "have opinions / add personality" guidance must not nudge the patient toward a particular option, and "drop hedges" must not strip the carefully-calibrated uncertainty in absolute-risk statements (e.g. *"I can't give you a precise improvement here without more context"* is a load-bearing hedge that stays).
+
 ## Validate, log, hand off
 
 - After writing, run `python3 scripts/scan_for_phi.py --mode=files docs/cases/<slug>/plain_language.md` to check the rendered file for PHI shapes you may have re-introduced.
