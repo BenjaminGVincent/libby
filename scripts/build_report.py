@@ -1571,6 +1571,16 @@ def _downloads_section(slug: str, case_docs: Path) -> str:
             "diagnostic + biomarker workup that hardens the targetable-feature call",
         ),
         (
+            f"{slug}-accessibility.pdf",
+            "Access guide (PDF)",
+            "how to access each therapy — trial recruitment contacts + manufacturer medical-info lines",
+        ),
+        (
+            "accessibility.md",
+            "Access guide (web)",
+            "same access guide in an in-browser sortable table",
+        ),
+        (
             f"{slug}-manuscripts.pdf",
             "Master manuscripts table (PDF)",
             "every paper considered — n, effect, variance, toxicities",
