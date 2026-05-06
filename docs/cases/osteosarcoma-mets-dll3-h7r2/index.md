@@ -16,7 +16,7 @@
 
 ## Research question
 
-In metastatic osteosarcoma after first-line MAP, what interventions could target DLL3 expression, gated on IHC confirmation?
+In metastatic osteosarcoma after first-line MAP, what interventions can target DLL3, gated on IHC confirmation?
 
 ## Patient profile (scrubbed)
 
@@ -38,15 +38,15 @@ In metastatic osteosarcoma after first-line MAP, what interventions could target
 
 ## Scope summary
 
-3 trials, 3 clinical-evidence rows, 4 preclinical rows. Two ranked rows: a workup gate at rank 1 plus one biomarker-conditional therapeutic option at rank 2. Board agreement: full consensus (all five personas) on the workup; one persistent dissent (critic) on the conditional rank-2 trial. The case is scoped to drugs that target the user's stated targetable feature (DLL3); standard 2L+ care for the indication is out of scope and is not enumerated.
+Three trials, three clinical-evidence rows, four preclinical rows. Two ranked rows: a workup gate at rank 1 plus one biomarker-conditional therapeutic option at rank 2. The board reached full consensus (all five personas) on the workup. One persistent dissent (critic) sits on the conditional rank-2 trial. The case is scoped to drugs that act on the user's stated targetable feature (DLL3); standard 2L+ care for the indication is out of scope and is not enumerated.
 
 ## Cross-cutting caveat (read first)
 
-**The DLL3 RNA expression in user input does not establish membrane DLL3 protein. The DLL3 IHC SP347 test (rank 1) gates whether tarlatamab via NCT06788938 (rank 2) is on the table at all.** Every DLL3-directed therapy in current clinical use requires IHC protein-level confirmation; RNA expression is necessary but not sufficient.
+**The DLL3 RNA expression in user input does not establish membrane DLL3 protein. The DLL3 IHC SP347 test (rank 1) gates whether tarlatamab via NCT06788938 (rank 2) is on the table at all.** Every DLL3-directed therapy in current clinical use requires IHC protein-level confirmation. RNA expression is necessary but not sufficient.
 
 - **Rank 2 (tarlatamab)** is conditional on DLL3 IHC ≥1% (preferably ≥25%). It is the only therapeutic option within scope of this case's targetable feature.
 - **If IHC is negative:** rank 2 is foreclosed and this case has no within-scope recommendations. Libby's ranking is targetable-feature-scoped; standard 2L+ care for the indication is a separate conversation with the treating team and is not enumerated on this page.
-- **Workup logistics:** SP347 IHC is non-toxic, runs on archival tissue (no fresh biopsy required), takes 1–3 weeks, and costs almost nothing relative to a treatment cycle. Confirm assay availability at the treating institution.
+- **Workup logistics:** SP347 IHC is non-toxic, runs on archival tissue (no fresh biopsy required), takes one to three weeks, and costs almost nothing relative to a treatment cycle. Confirm assay availability at the treating institution.
 
 ## Intervention grouping
 
@@ -60,7 +60,7 @@ In metastatic osteosarcoma after first-line MAP, what interventions could target
 
 #### Evidence base
 
-NCT06788938 enforces DLL3 IHC ≥25% (stage 1) or ≥1% (stage 2) for enrollment. The basket-trial design exists precisely because DLL3 RNA expression is not a sufficient enrollment biomarker. Mechanistic anchor: every DLL3-directed therapy in clinical development requires protein-level confirmation.
+NCT06788938 enforces DLL3 IHC ≥25% (stage 1) or ≥1% (stage 2) for enrollment. The basket-trial design uses IHC for a concrete reason: DLL3 RNA expression does not predict surface protein density at the level the BiTE needs. Mechanistic anchor: every DLL3-directed therapy in clinical development gates on protein-level confirmation, not transcript.
 
 #### Likelihood of desired effect
 
@@ -76,7 +76,7 @@ Board endorsement was unanimous. No persona dissented or vetoed.
 
 #### Practical considerations
 
-Archival or fresh tumor; SP347 antibody assay availability at the treating institution should be confirmed. 1–3 week turnaround. The IHC is the precondition for every DLL3-directed action regardless of which therapy the patient ultimately pursues.
+Archival or fresh tumor works. Confirm SP347 antibody assay availability at the treating institution. One to three week turnaround. The IHC is the precondition for any DLL3-directed action regardless of which therapy the patient ultimately pursues.
 
 #### Why this rank
 
@@ -94,7 +94,7 @@ The IHC is the precondition for rank 2. The board treated it as the gate, not as
 
 *Conditional on `dll3_ihc:positive`. Foreclosed if test is negative.*
 
-*High-efficacy bispecific T-cell engager; preferences point exactly here when the trial is reachable; one persistent dissent on cross-tumor translation.*
+*Bispecific T-cell engager with strong cross-tumor efficacy data in SCLC. The user's stated preferences fit this option when the trial is reachable. One persistent dissent on cross-tumor translation.*
 
 #### Evidence base
 
@@ -102,7 +102,7 @@ NCT06788938 (single-arm phase 2 basket, Simon two-stage, n=29 planned) is the tr
 
 #### Likelihood of desired effect
 
-Assuming positive IHC, mechanism-fit is concordant. Whether SCLC's clinical effect transfers to osteosarcoma is the central scientific question this trial enrollment would answer. The user's preferences (efficacy lean 0.85, accepts high-risk-high-reward, prefers trials) point exactly here. **A negative IHC forecloses this rec entirely.**
+Assuming positive IHC, mechanism-fit is concordant. Whether SCLC's clinical effect transfers to osteosarcoma is the open question this trial enrollment would answer. The user's preferences (efficacy lean 0.85, accepts high-risk-high-reward, prefers trials) fit this option. **A negative IHC forecloses this rec entirely.**
 
 #### Toxicity profile
 
@@ -115,18 +115,18 @@ User has no toxicity vetoes; CRS and inpatient cycle-1 chair time are not flagge
 
 #### Counter-productive mechanisms / dissent
 
-**The critic's dissent persists.** No published osteosarcoma data with tarlatamab; cross-tumor translation from SCLC is unproven; the trial's basket design exists to *test* this premise. The conservative's earlier toxicity veto (issued under the IHC-unconfirmed scenario) lifts on biomarker confirmation — its own rationale specified the veto was contingent on IHC. Concensusite's qualified-on-guideline-fit position upgrades to endorsement when the trial-enrollment principle is in play.
+**The critic's dissent persists.** No published osteosarcoma data with tarlatamab. Cross-tumor translation from SCLC is unproven, and the trial's basket design exists to test that premise. The conservative's earlier toxicity veto (issued under the IHC-unconfirmed scenario) lifts on biomarker confirmation; its own rationale specified the veto was contingent on IHC. Concensusite's qualified-on-guideline-fit position upgrades to endorsement when the trial-enrollment principle is the relevant frame.
 
 #### Practical considerations
 
-- Trial open at NCT06788938 (recruiting). Slot availability at treating site should be confirmed.
-- Trial enrollment is NCCN cat-1 for relapsed osteosarcoma irrespective of mechanism.
+- Trial open at NCT06788938 (recruiting). Confirm slot availability at the treating site.
+- Trial enrollment is NCCN cat-1 for relapsed osteosarcoma regardless of mechanism.
 - Inpatient cycle-1 monitoring required.
 - Off-guideline for osteosarcoma per indication; the trial provides the regulatory pathway.
 
 #### Why this rank
 
-The only DLL3-directed therapeutic option on the table, conditional on biomarker confirmation. Foreclosed entirely if IHC negative.
+The only DLL3-directed therapeutic option on the table, conditional on biomarker confirmation. Foreclosed entirely if IHC is negative.
 
 #### Per-trial detail
 
@@ -138,7 +138,7 @@ The only DLL3-directed therapeutic option on the table, conditional on biomarker
 
 ## Classes examined but not ranked
 
-- **DLL3-directed ADCs (rovalpituzumab tesirine / Rova-T):** mechanistically in scope as a DLL3-targeting modality; not procurable — AbbVie withdrew Rova-T after the TAHOE phase-3 SCLC trial showed worse OS than topotecan ([PMID 33002438](https://pubmed.ncbi.nlm.nih.gov/33002438)). Listed for mechanism context; not actionable.
+- **DLL3-directed ADCs (rovalpituzumab tesirine / Rova-T):** mechanistically a DLL3-targeting modality, but not procurable. AbbVie withdrew Rova-T after the TAHOE phase-3 SCLC trial showed worse OS than topotecan ([PMID 33002438](https://pubmed.ncbi.nlm.nih.gov/33002438)). Listed for mechanism context. Not actionable.
 
 ## Ranked prioritization
 
@@ -173,12 +173,12 @@ The only DLL3-directed therapeutic option on the table, conditional on biomarker
 
 ## Caveats
 
-- **Evidence base is small for the conditional trial.** NCT06788938 plans n=29 with no published efficacy data yet. The mechanistic basis is the cross-tumor SCLC evidence (DeLLphi-301 / 304), which is robust in SCLC but unproven in any other tumor type.
-- **Biomarker dependency:** rank 2's eligibility assumes a binary IHC result. Indeterminate / weak-positive (1–24%) edge cases are not explicitly addressed; in practice, NCT06788938's stage-2 ≥1% threshold may permit enrollment.
-- **What would change the ranking:**
+- The evidence base for the conditional trial is small. NCT06788938 plans n=29 with no published efficacy data yet. The mechanistic basis is the cross-tumor SCLC evidence (DeLLphi-301 / 304), which is robust in SCLC but unproven in any other tumor type.
+- Biomarker dependency: rank 2's eligibility assumes a binary IHC result. Indeterminate or weak-positive (1–24%) edge cases are not explicitly addressed; in practice, NCT06788938's stage-2 ≥1% threshold may permit enrollment.
+- What would change the ranking:
     - A positive DLL3 IHC plus a head-to-head osteosarcoma cohort within the basket trial reading out would move tarlatamab from "mechanism unproven cross-tumor" to "evidence-supported" and tighten its rank-2 confidence.
-    - A user toxicity veto on CRS / inpatient cycle-1 monitoring would foreclose tarlatamab even with positive IHC.
-    - Slot unavailability at NCT06788938 sites would close the within-scope therapeutic pathway; the patient's residual options would be the treating team's standard-of-care conversation, which lies outside Libby's targetable-feature scope and is not enumerated here.
+    - A user toxicity veto on CRS or inpatient cycle-1 monitoring would foreclose tarlatamab even with positive IHC.
+    - Slot unavailability at NCT06788938 sites would close the within-scope therapeutic pathway. The patient's residual options would then be the treating team's standard-of-care conversation, which lies outside Libby's targetable-feature scope and is not enumerated here.
 
 ## Sources
 
@@ -204,7 +204,7 @@ The only DLL3-directed therapeutic option on the table, conditional on biomarker
 
 ## Run log
 
-Authored May 2026. Inputs supplied: targetable feature ("DLL3 RNA expression"), clinical descriptor ("metastatic osteosarcoma"), preference summary ("accepts high-risk high-reward options"). Re-rendered when Libby's case scope was tightened to drugs that target the user's stated targetable feature: out-of-scope drugs (standard care for the indication that doesn't act on DLL3) no longer enter the dossier or appear in any case surface. The cross-cutting caveat carries the negative-result foreclosure mapping; the standard-of-care conversation for the indication is the treating team's, not Libby's.
+Authored May 2026. Inputs: targetable feature ("DLL3 RNA expression"), clinical descriptor ("metastatic osteosarcoma"), preference summary ("accepts high-risk high-reward options"). Re-rendered when Libby's case scope tightened to drugs that act on the user's stated targetable feature; out-of-scope drugs (standard care for the indication that does not act on DLL3) no longer enter the dossier or appear on any case surface. The cross-cutting caveat carries the negative-result foreclosure mapping. The standard-of-care conversation for the indication is the treating team's, not Libby's. Humanizer pass applied May 2026.
 
 !!! danger disclaimer "Decision support, not medical advice"
     Libby is an experimental decision-support tool. The recommendations on
