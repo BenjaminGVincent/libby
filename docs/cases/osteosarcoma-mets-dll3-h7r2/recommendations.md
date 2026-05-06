@@ -9,7 +9,7 @@
 - [Master manuscripts table (PDF)](osteosarcoma-mets-dll3-h7r2-manuscripts.pdf) — every paper considered — n, effect, variance, toxicities
 - [Self-contained HTML](osteosarcoma-mets-dll3-h7r2-recommendations.html) — recommendations table that opens offline
 
-_2 rows: 1 workup + 1 ranked options._
+_3 rows: 1 workup + 2 ranked options._
 
 ## Shared first step
 
@@ -36,6 +36,7 @@ _Biomarker-conditional recs are flagged inline. The ranking is scoped to drugs t
       <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th></tr></thead>
       <tbody>
     <tr><td>2</td><td><strong>tarlatamab via NCT06788938 (UCCC-01 basket)</strong> <span class="scenario-conditional">(conditional on dll3_ihc positive)</span><br><small class="persona-line"><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-advocate">advocate</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-concensusite">concensusite</span></small><br><small class="persona-line"><em>dissent:</em> <span class="persona persona-critic">critic</span></small></td><td>Cross-tumor extrapolation: SCLC OS HR 0.60 (DeLLphi-304); ORR ~40% (DeLLphi-301). Osteosarcoma efficacy is the open question NCT06788938 will answer.</td><td>Moderate (CRS ~50% mostly G1-2; CRS G≥3 ~1%; ICANS-like ~10%; inpatient cycle-1 step-up dosing required)</td><td><strong>Moderate</strong> <span class="cpm-desc">(On-mechanism CNS bystander T-cell activation drives ICANS; possible DLL3 antigen-loss escape on repeated dosing)</span></td><td><strong>The only DLL3-directed option when IHC is positive — preference-aligned but cross-tumor translation untested; foreclosed if IHC negative.</strong></td></tr>
+    <tr><td>3</td><td><strong>SHR-4849 / IDE849 via NCT07174583 (IDEAYA pan-tumor DLL3 basket)</strong> <span class="scenario-conditional">(conditional on dll3_ihc positive)</span><br><small class="persona-line"><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-advocate">advocate</span></small><br><small class="persona-line"><em>dissent:</em> <span class="persona persona-critic">critic</span> <span class="persona persona-conservative">conservative</span></small></td><td>Speculative. No published clinical data for SHR-4849. TOP1-inhibitor-payload ADC precedent (T-DXd, sacituzumab govitecan) suggests the payload class can produce response signals, but DLL3-specific efficacy is the open question.</td><td>Unknown — no published clinical data. TOP1-inhibitor ADC class effects expected: cytopenias, GI toxicity, possible ILD/pneumonitis (DXd-class ADCs carry an ILD signal worth monitoring).</td><td><strong>Moderate</strong> <span class="cpm-desc">(ADC bystander toxicity to DLL3-low normal tissue; antigen-loss escape on repeated dosing; PBD-payload class shadow (Rova-T TAHOE) does not directly apply but informs the toxicity-budget framing.)</span></td><td><strong>Mechanism-distinct second DLL3 pathway pending sponsor confirmation of osteosarcoma eligibility — relevant if the tarlatamab path is foreclosed or fails.</strong></td></tr>
       </tbody>
     </table>
   </div>

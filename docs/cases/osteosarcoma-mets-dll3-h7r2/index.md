@@ -38,7 +38,7 @@ In metastatic osteosarcoma after first-line MAP, what interventions can target D
 
 ## Scope summary
 
-21 trials surfaced (3 included as primary efficacy rows for tarlatamab; 18 cross-tumor / pipeline-context rows spanning seven DLL3-targeting modality classes), 3 clinical-evidence rows (2 included + 1 considered & excluded), 5 preclinical rows (4 included + 1 considered & excluded). Two ranked rows: a workup gate at rank 1 plus one biomarker-conditional therapeutic option at rank 2. The board reached full consensus (all five personas) on the workup. One persistent dissent (critic) sits on the conditional rank-2 trial. The case is scoped to drugs that act on the user's stated targetable feature (DLL3); standard 2L+ care for the indication is out of scope and is not enumerated.
+21 trials surfaced (3 included as primary efficacy rows for tarlatamab; 18 cross-tumor / pipeline-context rows spanning seven DLL3-targeting modality classes), 3 clinical-evidence rows (2 included + 1 considered & excluded), 5 preclinical rows (4 included + 1 considered & excluded). Three ranked rows: a workup gate at rank 1, a biomarker-conditional therapeutic option at rank 2 (tarlatamab via NCT06788938), and a tentative second pathway at rank 3 (SHR-4849 via NCT07174583, *considered with caveats* pending sponsor confirmation of osteosarcoma eligibility). The board reached full consensus on the workup. One persistent dissent (critic) sits on the conditional rank-2 trial. Two dissents (critic, conservative) sit on the tentative rank-3 path. The case is scoped to drugs that act on the user's stated targetable feature (DLL3); standard 2L+ care for the indication is out of scope and is not enumerated.
 
 ## Cross-cutting caveat (read first)
 
@@ -143,9 +143,56 @@ The only DLL3-directed therapeutic option on the table, conditional on biomarker
 | Tarlatamab — DeLLphi-301 SCLC (cross-tumor mechanism evidence), n=220 | ORR 40% (95% CI 29–52); mPFS 4.9 mo | CRS ~50% (G3+ ~1%); ICANS ~10%; G3+ TRAEs 30% | [PMID 37861218](https://pubmed.ncbi.nlm.nih.gov/37861218) |
 | Tarlatamab — DeLLphi-304 SCLC (cross-tumor confirmatory), n=509 | OS HR 0.60 (95% CI 0.47–0.77), p<0.001; median OS 13.6 vs 8.3 mo | G3+ TRAEs 24% vs 53% chemo arm — favorable vs comparator | [PMID 40454646](https://pubmed.ncbi.nlm.nih.gov/40454646) |
 
+---
+
+### Rank 3. SHR-4849 / IDE849 via NCT07174583 — IDEAYA pan-tumor DLL3 basket
+
+*Status: **considered with caveats**. Conditional on `dll3_ihc:positive` AND IDEAYA confirming osteosarcoma is on the basket eligibility list. Two dissents (critic, conservative).*
+
+*Mechanism-distinct second DLL3 pathway — TOP1-inhibitor ADC payload (post-Rova-T era). Relevant if the BiTE path is foreclosed or fails. No published clinical data yet.*
+
+#### Evidence base
+
+NCT07174583 is IDEAYA Biosciences' phase 1/2 dose-escalation + expansion trial of SHR-4849 / IDE849 (DLL3-targeted ADC, TOP1-inhibitor payload, originated by Jiangsu Hengrui), monotherapy and in combination with durvalumab or IDE161. Eligibility names "DLL3-expressing tumors" without an explicit SCLC/NEC restriction — pan-tumor in principle. The osteosarcoma fit is **not yet confirmed by the sponsor**: the trial wording suggests it should be in scope, but the published eligibility text does not state it outright. No clinical data for SHR-4849 has been published yet (first-in-class signal pending).
+
+#### Likelihood of desired effect
+
+Speculative. TOP1-inhibitor ADC precedent (T-DXd, sacituzumab govitecan, Dato-DXd) suggests the payload class can produce durable response signals across solid tumors when the surface antigen is sufficiently expressed. DLL3-specific efficacy is the open question. Assuming positive IHC AND osteosarcoma is on the basket, this is a mechanism-class diversification away from BiTE-only DLL3 targeting — a hedge against tarlatamab-specific failure modes (CRS intolerance, ICANS, antigen-loss escape from CD3 engagement).
+
+#### Toxicity profile
+
+- No published clinical AE rates for SHR-4849 yet
+- Expected per TOP1-inhibitor ADC class: cytopenias (neutropenia, thrombocytopenia), GI (nausea, vomiting, diarrhea), fatigue
+- ILD/pneumonitis is a class signal worth monitoring (DXd-class ADCs carry an explicit ILD risk; SHR-4849's payload is a TOP1 inhibitor of similar mechanism)
+- Cycle-1 monitoring requirements unknown until phase 1 data publishes
+
+User has no toxicity vetoes; cytopenias and ILD signal are not pre-flagged.
+
+#### Counter-productive mechanisms / dissent
+
+**The critic dissents on evidence base** — no published clinical data for SHR-4849 means the row stands on payload-class precedent rather than on the molecule itself. **The conservative dissents on osteosarcoma eligibility uncertainty** — the basket may in practice enroll only SCLC/NEC, with the broader "DLL3-expressing tumors" wording being aspirational. The risktaker and advocate endorse on the basket-trial principle plus the second-mechanism-class advantage. The TAHOE/PBD-payload class shadow (Rova-T failure) does not directly apply to a TOP1-inhibitor payload, but informs the toxicity-budget framing the board uses for any DLL3 ADC in 2026.
+
+#### Practical considerations
+
+- Trial open at NCT07174583 (recruiting). **First action: contact IDEAYA medical affairs to confirm osteosarcoma eligibility on the basket — do not pursue this rank without that confirmation.**
+- Concurrent enrollment with NCT06788938 (rank 2) is unlikely to be permitted simultaneously; the user (or treating team) will need to choose.
+- Off-guideline; investigational. Not on any NCCN / ESMO recommendation.
+- IDE849's parent compound (SHR-4849) was developed by Jiangsu Hengrui in China; IDEAYA holds the US development license.
+
+#### Why this rank
+
+Lower than rank 2 because (a) eligibility for osteosarcoma is unconfirmed and (b) no published clinical data for SHR-4849 yet exists. Higher than not-ranking-it because the basket eligibility is plausible per the trial wording and the payload class has better odds in 2026 than the BiTE class shadow that drove the conservative's earlier veto. A two-pathway DLL3 plan (BiTE + ADC) is preferable to a single-pathway plan if both can be reached.
+
+#### Per-trial detail
+
+| Therapeutic agent | Efficacy | Toxicity | Reference |
+|---|---|---|---|
+| SHR-4849 / IDE849 — NCT07174583 IDEAYA pan-tumor DLL3-expressing basket (eligibility for osteosarcoma pending sponsor confirmation) | DLT, ORR primary; no published efficacy data yet | Class effects expected; no published AE table yet | [NCT07174583](https://clinicaltrials.gov/study/NCT07174583) |
+
 ## Classes examined but not ranked
 
 - **DLL3-directed ADCs (rovalpituzumab tesirine / Rova-T):** mechanistically a DLL3-targeting modality, but not procurable. AbbVie withdrew Rova-T after the TAHOE phase-3 SCLC trial showed worse OS than topotecan ([PMID 33002438](https://pubmed.ncbi.nlm.nih.gov/33002438)). Listed for mechanism context. Not actionable.
+- **Other DLL3-targeting investigational drugs (SCLC/NEC-only enrollment):** obrixtamig, gocatamig, alveltamig, clesitamig, peluntamig, QLS31904, zocilurtatug pelitecan, IBI3009, FZ-AD005, ²²⁵Ac-ABD147, ¹⁷⁷Lu-DTPA-SC16.56, ²²⁵Ac-ETN029, LB2102, AMG 119, DLL3-CAR-NK. All are tagged `cross_tumor_extrapolation` on `trials.md` — patient is not enrollable per published eligibility. Visible in the dossier as evidence-base context for the BiTE / ADC / radioligand / cell-therapy DLL3 classes; not actionable for this case absent a basket trial that explicitly accepts the patient's tumor type.
 
 ## Ranked prioritization
 
@@ -169,6 +216,14 @@ The only DLL3-directed therapeutic option on the table, conditional on biomarker
           <td>Moderate (CRS ~50% mostly G1-2; CRS G≥3 ~1%; ICANS-like ~10%; inpatient cycle-1 step-up dosing required)</td>
           <td><strong>Moderate</strong> <span class="cpm-desc">(On-mechanism CNS bystander T-cell activation drives ICANS; possible DLL3 antigen-loss escape on repeated dosing)</span></td>
           <td><strong>The only DLL3-directed option when IHC is positive — preference-aligned but cross-tumor translation untested; foreclosed if IHC negative.</strong></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><strong class="split-glyph">SHR-4849 / IDE849 via NCT07174583 (IDEAYA pan-tumor DLL3 basket)</strong> <span class="scenario-conditional">(conditional on dll3_ihc positive + sponsor confirms osteosarcoma)</span><br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-advocate">advocate</span></small><br><small><em>dissent:</em> <span class="persona persona-critic">critic</span> <span class="persona persona-conservative">conservative</span></small></td>
+          <td>Speculative. No published clinical data for SHR-4849. TOP1-inhibitor-payload ADC precedent (T-DXd, sacituzumab) suggests the class can produce signals; DLL3-specific efficacy is the open question.</td>
+          <td>Unknown — no published clinical data. Class effects expected: cytopenias, GI, possible ILD/pneumonitis (DXd-class ADC signal).</td>
+          <td><strong>Moderate</strong> <span class="cpm-desc">(ADC bystander toxicity to DLL3-low tissue; antigen-loss escape on repeated dosing; PBD-class TAHOE shadow does not directly apply but informs framing)</span></td>
+          <td><strong>Mechanism-distinct second DLL3 pathway pending sponsor confirmation of osteosarcoma eligibility — relevant if the tarlatamab path is foreclosed or fails.</strong></td>
         </tr>
       </tbody>
     </table>
