@@ -37,6 +37,7 @@ inline bold/italic/links/code, hr) plus a self-contained HTML emitter.
 
 from __future__ import annotations
 
+import hashlib
 import html as _html
 import json
 import re
@@ -2205,9 +2206,26 @@ def _downloads_section(slug: str, case_docs: Path) -> str:
         "",
     ]
     for name, label, blurb in present:
-        lines.append(f"- [{label}]({name}) — {blurb}")
+        lines.append(f"- [{label}]({_cache_busted_link(case_docs / name, name)}) — {blurb}")
     lines.extend(["", _DOWNLOADS_END, ""])
     return "\n".join(lines)
+
+
+def _cache_busted_link(path: Path, name: str) -> str:
+    """Append ?v=<short-content-hash> to a download link.
+
+    GitHub Pages and intermediate caches honor URL-based cache keys, so
+    changing the query string is the most reliable way to force a refresh
+    when the underlying bytes change. The hash is content-derived (sha1
+    first 8 chars) so unchanged files keep their warm cache; only files
+    whose content actually changed get a new URL. The `?v=` is the
+    convention reCAPTCHA / GA / many CDNs use for the same purpose.
+    """
+    try:
+        digest = hashlib.sha1(path.read_bytes()).hexdigest()[:8]
+    except OSError:
+        return name
+    return f"{name}?v={digest}"
 
 
 def _inject_downloads(index_path: Path, slug: str, case_docs: Path) -> bool:

@@ -6,14 +6,14 @@
 
 ## Downloads
 
-- [Clinician PDF report](osteosarcoma-mets-dll3-h7r2-libby-report.pdf) — ranked recommendations + evidence + sources
-- [Patient/caregiver PDF](osteosarcoma-mets-dll3-h7r2-plain-language.pdf) — plain-language summary
-- [Target validation paths](osteosarcoma-mets-dll3-h7r2-target-validation.pdf) — diagnostic + biomarker workup that hardens the targetable-feature call
-- [Access guide (PDF)](osteosarcoma-mets-dll3-h7r2-accessibility.pdf) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines
-- [Access guide (web)](accessibility.md) — same access guide in an in-browser sortable table
-- [Master manuscripts table (PDF)](osteosarcoma-mets-dll3-h7r2-manuscripts.pdf) — every paper considered — n, effect, variance, toxicities
-- [Master manuscripts table (web)](manuscripts.md) — same inventory in a sortable in-browser table
-- [Self-contained HTML](osteosarcoma-mets-dll3-h7r2-recommendations.html) — recommendations table that opens offline
+- [Clinician PDF report](osteosarcoma-mets-dll3-h7r2-libby-report.pdf?v=76de941a) — ranked recommendations + evidence + sources
+- [Patient/caregiver PDF](osteosarcoma-mets-dll3-h7r2-plain-language.pdf?v=28d3af0e) — plain-language summary
+- [Target validation paths](osteosarcoma-mets-dll3-h7r2-target-validation.pdf?v=8e3ae2b0) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Access guide (PDF)](osteosarcoma-mets-dll3-h7r2-accessibility.pdf?v=d818ac54) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines
+- [Access guide (web)](accessibility.md?v=ced10fa1) — same access guide in an in-browser sortable table
+- [Master manuscripts table (PDF)](osteosarcoma-mets-dll3-h7r2-manuscripts.pdf?v=0fcacc3d) — every paper considered — n, effect, variance, toxicities
+- [Master manuscripts table (web)](manuscripts.md?v=0e17b1da) — same inventory in a sortable in-browser table
+- [Self-contained HTML](osteosarcoma-mets-dll3-h7r2-recommendations.html?v=84c96694) — recommendations table that opens offline
 
 <!-- libby:downloads:end -->
 
