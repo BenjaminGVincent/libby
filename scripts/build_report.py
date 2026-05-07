@@ -303,7 +303,7 @@ def _persona_line_html(r: dict) -> str:
     return "<br>".join(pieces)
 
 
-def _intervention_cell_html(r: dict) -> str:
+def _intervention_cell_html(r: dict, *, show_personas: bool = True) -> str:
     label = _fmt_html(r.get("intervention_label"))
     scen = r.get("scenario")
     if isinstance(scen, str) and scen.endswith(":positive"):
@@ -314,8 +314,11 @@ def _intervention_cell_html(r: dict) -> str:
         )
     else:
         head = f"<strong>{label}</strong>"
-    persona = _persona_line_html(r)
-    body = f"{head}<br>{persona}" if persona else head
+    if show_personas:
+        persona = _persona_line_html(r)
+        body = f"{head}<br>{persona}" if persona else head
+    else:
+        body = head
     return f"<td>{body}</td>"
 
 
@@ -338,7 +341,7 @@ def _overall_cell_html(r: dict) -> str:
     return f"<td><strong>{_html.escape(str(overall))}</strong></td>"
 
 
-def _render_recs_table_html(rows: list[dict]) -> str:
+def _render_recs_table_html(rows: list[dict], *, show_personas: bool = True) -> str:
     if not rows:
         return "<p><em>No rows.</em></p>"
     body: list[str] = []
@@ -346,7 +349,7 @@ def _render_recs_table_html(rows: list[dict]) -> str:
         body.append(
             "    <tr>"
             f"<td>{_fmt_html(r.get('rank'))}</td>"
-            f"{_intervention_cell_html(r)}"
+            f"{_intervention_cell_html(r, show_personas=show_personas)}"
             f"<td>{_fmt_html(r.get('likelihood_of_effect'))}</td>"
             f"<td>{_fmt_html(r.get('toxicity_burden'))}</td>"
             f"{_cpm_cell_html(r)}"
@@ -361,6 +364,46 @@ def _render_recs_table_html(rows: list[dict]) -> str:
         '      <tbody>\n' + "\n".join(body) + "\n      </tbody>\n"
         "    </table>\n  </div>\n</div>\n"
     )
+
+
+_FEATURE_LABELS: dict[str, str] = {
+    # Friendlier human-readable names for known scenario_short prefixes.
+    # Any prefix not in this map renders title-cased.
+    "dll3_ihc": "DLL3-targeting interventions",
+    "prame_ihc_hla": "PRAME-targeting interventions",
+}
+
+
+def _feature_label_for_scenario(scenario_short: str) -> str:
+    if scenario_short in _FEATURE_LABELS:
+        return _FEATURE_LABELS[scenario_short]
+    pretty = scenario_short.replace("_", " ").title()
+    return f"{pretty} interventions"
+
+
+def _group_by_feature(rows: list[dict]) -> "list[tuple[str, list[dict]]]":
+    """Group biomarker-conditional rows by their scenario prefix.
+
+    Returns an ordered list of (scenario_short, rows) pairs, preserving the
+    order in which scenarios first appear in `rows`. Untagged (`scenario`
+    null/empty/'shared') rows go under the synthetic key `__unscoped`.
+    The HTML composer renders one table per feature.
+    """
+    seen: list[str] = []
+    by_feature: dict[str, list[dict]] = {}
+    for r in rows:
+        scen = r.get("scenario")
+        if isinstance(scen, str) and ":" in scen:
+            key = scen.split(":", 1)[0]
+        else:
+            key = "__unscoped"
+        if key not in by_feature:
+            by_feature[key] = []
+            seen.append(key)
+        by_feature[key].append(r)
+    for k in by_feature:
+        by_feature[k].sort(key=lambda r: r.get("rank") or 999)
+    return [(k, by_feature[k]) for k in seen]
 
 
 def _group_by_scenario(rows: list[dict]) -> tuple[list[dict], list[dict]]:
@@ -435,8 +478,24 @@ def _profile_dl_html(profile: dict, preferences: dict) -> str:
 
 
 def _render_recommendations_html(slug: str, recs: list[dict], profile: dict, preferences: dict) -> str:
+    """Self-contained recommendations HTML, designed for forwarding offline.
+
+    Three deliberate departures from the deterministic recommendations.md page:
+      1. Persona pills (endorse / dissent / veto) are dropped — full per-persona
+         rationale lives on board.md, and a forwardable artifact wants the
+         clinical bottom line without the multi-agent voting metadata.
+      2. Therapeutic options are grouped by targetable feature (one HTML table
+         per scenario prefix — DLL3-targeting, PRAME-targeting, etc.) so the
+         reader sees each pathway as its own ranked list rather than as a
+         single mixed table.
+      3. Workup rows (`scenario: "shared"`) are excluded — biomarker testing
+         is documented in the standalone Target validation paths report.
+    """
     today = datetime.now(timezone.utc).date().isoformat()
-    workup, unified = _group_by_scenario(recs)
+
+    # (1) drop workup rows; (2) group remaining by scenario prefix.
+    therapeutic_rows = [r for r in recs if r.get("scenario") != "shared"]
+    feature_groups = _group_by_feature(therapeutic_rows)
 
     parts = [
         '<!DOCTYPE html>',
@@ -464,29 +523,32 @@ def _render_recommendations_html(slug: str, recs: list[dict], profile: dict, pre
         parts.append("<h2>Profile snapshot</h2>")
         parts.append(profile_html)
 
-    if workup:
+    if not therapeutic_rows:
+        parts.append("<p><em>No therapeutic recommendations.</em></p>")
+    elif len(feature_groups) > 1:
         parts.append(
-            f"<p><em>{len(recs)} rows: {len(workup)} workup + "
-            f"{len(unified)} ranked options.</em></p>"
+            f"<p><em>{len(therapeutic_rows)} ranked therapeutic options across "
+            f"{len(feature_groups)} targetable features. Biomarker workup steps "
+            "live in the standalone Target validation paths report.</em></p>"
         )
-        parts.append("<h2>Shared first step</h2>")
-        parts.append(
-            "<p><em>The confirmatory test gates whether biomarker-conditional recs below apply. "
-            "Run regardless of which therapy is ultimately chosen.</em></p>"
-        )
-        parts.append(_render_recs_table_html(workup))
-        if unified:
-            parts.append("<h2>Ranked options</h2>")
-            parts.append(
-                "<p><em>Biomarker-conditional recs are flagged inline. The ranking is "
-                "scoped to drugs that target the user's stated targetable feature; "
-                "if the workup test is negative the within-scope options are exhausted, "
-                "and standard care for the indication lies outside Libby's targetable-feature scope.</em></p>"
+        for scenario_short, group_rows in feature_groups:
+            heading = (
+                _feature_label_for_scenario(scenario_short)
+                if scenario_short != "__unscoped"
+                else "Biomarker-independent options"
             )
-            parts.append(_render_recs_table_html(unified))
+            parts.append(f"<h2>{_html.escape(heading)}</h2>")
+            parts.append(_render_recs_table_html(group_rows, show_personas=False))
     else:
-        parts.append(f"<p><em>{len(recs)} ranked options.</em></p>")
-        parts.append(_render_recs_table_html(unified))
+        # Single feature — no need for per-feature headings.
+        parts.append(
+            f"<p><em>{len(therapeutic_rows)} ranked therapeutic options. "
+            "Biomarker workup steps live in the standalone Target validation paths report.</em></p>"
+        )
+        scenario_short, group_rows = feature_groups[0]
+        if scenario_short != "__unscoped":
+            parts.append(f"<h2>{_html.escape(_feature_label_for_scenario(scenario_short))}</h2>")
+        parts.append(_render_recs_table_html(group_rows, show_personas=False))
 
     parts.append(
         '<footer class="libby-footer">'
