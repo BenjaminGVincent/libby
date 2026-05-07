@@ -109,21 +109,30 @@ The executive summary is editorial. Be calibrated, not promotional. Use specific
 
 ## Step 1.5 — author the target-validation report (when the JSONL exists)
 
-If `data/cases/<slug>/target_validation.jsonl` exists and is non-empty, also author `data/cases/<slug>/target_validation_report.md`. This is a focused ~200–300-word prose summary derived from the JSONL — the same audience and voice as the executive summary, but scoped to the diagnostic / biomarker workup that hardens the targetable-feature call. The build script renders this in two places:
+If `data/cases/<slug>/target_validation.jsonl` exists and is non-empty, also author `data/cases/<slug>/target_validation_report.md`. This is a focused ~200–300-word prose summary derived from the JSONL: same audience and voice as the executive summary, but scoped to the diagnostic / biomarker workup that hardens the targetable-feature call. The build script renders this in two places:
 
 1. **Website.** Injected into `docs/cases/<slug>/index.md` between stable HTML markers `<!-- libby:target-validation:begin -->` / `<!-- libby:target-validation:end -->`, placed immediately after the `## Preferences` section so a clinician sees the workup framing before reading the scope summary or the per-rank narratives.
 2. **PDF.** A standalone *"Target validation paths"* PDF (`<slug>-target-validation.pdf`), linked from the case's Downloads block.
+
+**Self-contained narrative rule (load-bearing).** The PDF is a standalone artifact and the website injection is read independently of the rest of `index.md`. The report **must not reference rank numbers, recommendation IDs, or other reports** to make sense. Specifically:
+
+- Do **not** write *"DLL3 IHC gates ranks 2–3"* or *"PRAME IHC plus HLA-A\*02:01 typing together gate ranks 4–5"* or any other phrasing that requires the reader to know which rank corresponds to which intervention.
+- Do **not** write *"see the recommendations table"* / *"see the case page"* / *"see the executive summary"* or any other cross-reference. The reader has only this report.
+- Refer to the gated interventions by their drug name and / or trial NCT, not by rank: *"DLL3 IHC gates tarlatamab via NCT06788938 and the SHR-4849 / IDE849 ADC pathway via NCT07174583"*. The `decision_gated` value in each `target_validation.jsonl` row already names the gated intervention; the prose is the place to lean on those names, not on rank numbers.
+- Do **not** refer to the upstream PI synthesis, board agreement scores, agreement-state pills, or persona names. Those belong to the executive summary and the live case page.
+
+This is a self-contained "what biomarker workup do you need, and why" narrative for a clinician reading just the PDF. Anything that requires another report to understand belongs in another report.
 
 Structure (per-feature narrative → assay-providers table):
 
 ```markdown
 ## Target validation paths
 
-<1–2 sentence opening: name the gating test(s) the case hinges on, what they unlock or foreclose. Mirror the cross-cutting caveat's "if test negative" framing when biomarker gating applies.>
+<1–2 sentence opening: name the gating test(s) the case hinges on, what they unlock or foreclose. Refer to the gated interventions by drug name and / or NCT, never by rank. If the workup result is binary (positive / negative), say what each branch implies for the patient's options without enumerating ranks: "If both workups return negative, this report has no within-scope recommendations and the next conversation about standard 2L+ care is the treating team's, not Libby's.">
 
 ### <feature name from profile.json::targetable_features[].feature>
 
-<1 paragraph: what's essential before any therapy can be chosen, what's high-priority for context, and what's medium- or low-priority. Name specific assays (clones, panels, modalities) — they're load-bearing. When the rank-1 shared-workup row in `recommendations.jsonl` is derived from a `gates_intervention` row, that test is the one to call out first.>
+<1 paragraph: what's essential before any feature-targeting therapy can be chosen, what's high-priority for context, and what's medium- or low-priority. Name specific assays (clones, panels, modalities); they're load-bearing. When a `gates_intervention` row exists, lead with the test it gates and name the gated drug or trial. Do NOT name a rank number.>
 
 ### <next feature, if any>
 

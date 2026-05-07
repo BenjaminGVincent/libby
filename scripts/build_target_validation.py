@@ -274,8 +274,8 @@ def main() -> int:
             "Sorted within each feature by priority, then by decision relevance._\n"
         )
         parts.append(
-            "_Essential / gates-intervention rows are the diagnostic prerequisites the "
-            "downstream tumor board and PI use to compute the case's rank-1 shared workup. "
+            "_Essential / gates-intervention rows are the diagnostic prerequisites that must "
+            "resolve before any feature-targeting therapy can be chosen. "
             "Rows tagged `confirms_target_call` harden the target call without gating a "
             "specific therapy; resistance / co-mutation / microenvironment rows refine "
             "sequencing and risk._\n"

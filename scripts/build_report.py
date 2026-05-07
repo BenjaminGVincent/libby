@@ -2334,6 +2334,7 @@ def _inject_target_validation(index_path: Path, report_md: str) -> bool:
 _RX_BOLD_NO_SPACE_AFTER = re.compile(r"\*\*[^\s*][^*]*\*\*[A-Za-z0-9]")
 _RX_BOLD_NO_SPACE_BEFORE = re.compile(r"[A-Za-z0-9]\*\*[^\s*][^*]*\*\*")
 _RX_EM_DASH = re.compile(r"—")
+_RX_RANK_REF = re.compile(r"\branks?[\s\-][0-9]", flags=re.IGNORECASE)
 
 
 def _check_inline_bold_spacing(path: Path) -> list[tuple[int, str]]:
@@ -2354,7 +2355,7 @@ def _check_inline_bold_spacing(path: Path) -> list[tuple[int, str]]:
 def _check_em_dashes(path: Path) -> list[tuple[int, str]]:
     """Return (line_no, line) tuples for any line containing a literal em-dash
     (U+2014). The reporter contract forbids em-dashes anywhere in
-    `executive_summary.md` or `target_validation_report.md` — the humanizer
+    `executive_summary.md` or `target_validation_report.md`. The humanizer
     skill flags em-dash overuse as a top AI-prose tell, and the reporter is
     expected to use periods, commas, colons, or sentence restructure instead.
     Hyphens (`-`) and en-dashes (`–`, used inside numeric ranges) are unaffected.
@@ -2364,6 +2365,23 @@ def _check_em_dashes(path: Path) -> list[tuple[int, str]]:
     hits: list[tuple[int, str]] = []
     for i, line in enumerate(path.read_text(encoding="utf-8").splitlines(), start=1):
         if _RX_EM_DASH.search(line):
+            hits.append((i, line.rstrip()))
+    return hits
+
+
+def _check_rank_references(path: Path) -> list[tuple[int, str]]:
+    """Return (line_no, line) tuples for any "rank N" / "ranks N-M" / "rank-N"
+    pattern in `target_validation_report.md`. The reporter contract requires
+    the target-validation report to be a self-contained narrative; rank
+    numbers come from `recommendations.jsonl` and force the reader to
+    cross-reference another report. Refer to interventions by drug name and /
+    or NCT instead.
+    """
+    if not path.exists():
+        return []
+    hits: list[tuple[int, str]] = []
+    for i, line in enumerate(path.read_text(encoding="utf-8").splitlines(), start=1):
+        if _RX_RANK_REF.search(line):
             hits.append((i, line.rstrip()))
     return hits
 
@@ -2430,6 +2448,31 @@ def main(argv: list[str]) -> int:
             file=sys.stderr,
         )
         for path, ln, line in em_dash_blockers:
+            print(f"  {path}:{ln}: {line}", file=sys.stderr)
+        return 1
+
+    # Pre-flight #3: refuse to render when target_validation_report.md
+    # references a rank number from recommendations.jsonl. The
+    # target-validation report is a standalone artifact; rank numbers force
+    # the reader to cross-reference another report. Refer to interventions by
+    # drug name and / or NCT instead. Only checks the target-validation
+    # report; the executive summary is allowed to reference ranks because it
+    # ships alongside the recommendation list it's summarizing.
+    rank_blockers: list[tuple[Path, int, str]] = []
+    tv_report = case_data / "target_validation_report.md"
+    for ln, line in _check_rank_references(tv_report):
+        rank_blockers.append((tv_report, ln, line))
+    if rank_blockers:
+        print(
+            "build_report: refusing to render. Rank-number reference found in "
+            "target_validation_report.md. The target-validation report is a "
+            "standalone artifact and must not refer to ranks from "
+            "recommendations.jsonl. Refer to interventions by drug name and / "
+            "or NCT instead (see reporter.md Step 1.5 \"Self-contained "
+            "narrative rule\" for guidance).",
+            file=sys.stderr,
+        )
+        for path, ln, line in rank_blockers:
             print(f"  {path}:{ln}: {line}", file=sys.stderr)
         return 1
 

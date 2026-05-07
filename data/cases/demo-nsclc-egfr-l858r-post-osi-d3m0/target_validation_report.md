@@ -1,6 +1,6 @@
 ## Target validation paths
 
-EGFR L858R, MET amplification (GCN 8.2), and T790M-absent are all confirmed at decision-relevant resolution, so no diagnostic test gates the rank-1 trial. The validation work here is about resistance characterization at progression, not target confirmation. The goal is to make sure the case really is MET-amplified bypass resistance and not something more complicated wearing the same imaging signature.
+EGFR L858R, MET amplification (GCN 8.2), and T790M-absent are all confirmed at decision-relevant resolution, so no diagnostic test gates the savolitinib + osimertinib trial enrollment (SAFFRON / SACHI). The validation work here is about resistance characterization at progression, not target confirmation. The goal is to make sure the case really is MET-amplified bypass resistance and not something more complicated wearing the same imaging signature.
 
 ### EGFR L858R
 

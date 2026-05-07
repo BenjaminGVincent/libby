@@ -6,12 +6,12 @@
 
 ## Downloads
 
-- [Clinician PDF report](osteosarcoma-mets-dll3-h7r2-libby-report.pdf?v=09fd4f14) — ranked recommendations + evidence + sources
-- [Patient/caregiver PDF](osteosarcoma-mets-dll3-h7r2-plain-language.pdf?v=61e5f81b) — plain-language summary
-- [Target validation paths](osteosarcoma-mets-dll3-h7r2-target-validation.pdf?v=51a65ed6) — diagnostic + biomarker workup that hardens the targetable-feature call
-- [Access guide (PDF)](osteosarcoma-mets-dll3-h7r2-accessibility.pdf?v=687754fa) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines
+- [Clinician PDF report](osteosarcoma-mets-dll3-h7r2-libby-report.pdf?v=26bfec35) — ranked recommendations + evidence + sources
+- [Patient/caregiver PDF](osteosarcoma-mets-dll3-h7r2-plain-language.pdf?v=10b5d1c8) — plain-language summary
+- [Target validation paths](osteosarcoma-mets-dll3-h7r2-target-validation.pdf?v=53221267) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Access guide (PDF)](osteosarcoma-mets-dll3-h7r2-accessibility.pdf?v=b3fa53e6) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines
 - [Access guide (web)](accessibility.md?v=ced10fa1) — same access guide in an in-browser sortable table
-- [Master manuscripts table (PDF)](osteosarcoma-mets-dll3-h7r2-manuscripts.pdf?v=b881f983) — every paper considered — n, effect, variance, toxicities
+- [Master manuscripts table (PDF)](osteosarcoma-mets-dll3-h7r2-manuscripts.pdf?v=a075e841) — every paper considered — n, effect, variance, toxicities
 - [Master manuscripts table (web)](manuscripts.md?v=0e17b1da) — same inventory in a sortable in-browser table
 - [Self-contained HTML](osteosarcoma-mets-dll3-h7r2-recommendations.html?v=84c96694) — recommendations table that opens offline
 
@@ -45,7 +45,7 @@ In metastatic osteosarcoma after first-line MAP, what interventions can target D
 
 ## Target validation paths
 
-The case has two RNA-only targetable features, each with its own protein-level confirmation step. **DLL3 IHC (clone SP347)** gates ranks 2–3. **PRAME IHC plus HLA-A*02:01 typing** together gate ranks 4–5. The two pathways are independent: the patient may have neither, either, or both. All three workup tests can run in parallel on archival tissue and a single blood draw. If both workups return negative, the case has no within-scope recommendations, and the next conversation about standard 2L+ care is the treating team's, not Libby's.
+The case has two RNA-only targetable features, each with its own protein-level confirmation step. **DLL3 IHC (clone SP347)** gates the DLL3-directed pathway: tarlatamab via NCT06788938 and the SHR-4849 / IDE849 ADC trial NCT07174583. **PRAME IHC plus HLA-A*02:01 typing** together gate the PRAME-directed pathway: IMA203 via NCT03686124 (Immatics ACTengine) and IMC-P115C via NCT07156136. The two pathways are independent. The patient may have neither, either, or both. All three workup tests can run in parallel on archival tissue and a single blood draw. If both workups return negative, this report has no within-scope recommendations, and the next conversation about standard 2L+ care is the treating team's, not Libby's.
 
 ### DLL3 RNA expression
 
@@ -106,7 +106,7 @@ The preferred provider for each assay is marked **(preferred)**, selected on com
 | Tumor NGS (HLA-LOH / B2M) | Caris Life Sciences *(Molecular Intelligence)* | Frames durability and post-progression sequencing for PRAME-directed therapy | [test info](https://www.carislifesciences.com/products-and-services/molecular-profiling/) · 4610 South 44th Place, Phoenix, AZ 85040 · 1-888-979-8669 |
 | Tumor NGS (HLA-LOH / B2M) | Tempus *(xT)* | Frames durability and post-progression sequencing for PRAME-directed therapy | [test info](https://www.tempus.com/oncology/diagnostics/) · 600 West Chicago Avenue, Chicago, IL 60654 · 1-800-739-4137 |
 | Tumor NGS (HLA-LOH / B2M) | NeoGenomics Laboratories *(NeoTYPE Comprehensive)* | Frames durability and post-progression sequencing for PRAME-directed therapy | [test info](https://neogenomics.com/test-menu) · 9490 NeoGenomics Way, Fort Myers, FL 33912 · 1-866-776-5907 |
-| **CD8 / TIL density (multiplex IHC)** | **NeoGenomics Laboratories *(preferred)* (MultiOmyx)** | **Frames durability of PRAME-directed therapy; informs next-line plan if rank 4 / 5 fails** | **[test info](https://neogenomics.com/test-menu) · 9490 NeoGenomics Way, Fort Myers, FL 33912 · 1-866-776-5907** |
+| **CD8 / TIL density (multiplex IHC)** | **NeoGenomics Laboratories *(preferred)* (MultiOmyx)** | **Frames durability of PRAME-directed therapy; informs the next-line plan if IMA203 or IMC-P115C fails** | **[test info](https://neogenomics.com/test-menu) · 9490 NeoGenomics Way, Fort Myers, FL 33912 · 1-866-776-5907** |
 | CD8 / TIL density | Caris Life Sciences | Frames durability of PRAME-directed therapy | [test info](https://www.carislifesciences.com/products-and-services/molecular-profiling/) · 4610 South 44th Place, Phoenix, AZ 85040 · 1-888-979-8669 |
 | CD8 / TIL density | Foundation Medicine | Frames durability of PRAME-directed therapy | [test info](https://www.foundationmedicine.com/test/foundationone-cdx) · 150 Second Street, Cambridge, MA 02141 · 1-888-988-3639 |
 | CD8 / TIL density | Mayo Clinic Laboratories | Frames durability of PRAME-directed therapy | [test info](https://www.mayocliniclabs.com/test-catalog) · 200 First Street SW, Rochester, MN 55905 · 1-800-533-1710 |

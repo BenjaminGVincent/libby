@@ -4,7 +4,7 @@
 
 _6 validation rows across 2 feature(s) — 0 essential, 0 gating an intervention. Sorted within each feature by priority, then by decision relevance._
 
-_Essential / gates-intervention rows are the diagnostic prerequisites the downstream tumor board and PI use to compute the case's rank-1 shared workup. Rows tagged `confirms_target_call` harden the target call without gating a specific therapy; resistance / co-mutation / microenvironment rows refine sequencing and risk._
+_Essential / gates-intervention rows are the diagnostic prerequisites that must resolve before any feature-targeting therapy can be chosen. Rows tagged `confirms_target_call` harden the target call without gating a specific therapy; resistance / co-mutation / microenvironment rows refine sequencing and risk._
 
 ## EGFR L858R
 
