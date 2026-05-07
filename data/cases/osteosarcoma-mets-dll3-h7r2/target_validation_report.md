@@ -18,39 +18,54 @@ Spatial heterogeneity refines confidence at the next tier. PRAME IHC on a metast
 
 ### Where to order these assays
 
-| Assay | Provider | Contact |
-|---|---|---|
-| DLL3 IHC (clone SP347) | Foundation Medicine *(FoundationOne CDx + IHC reflex)* | [test info](https://www.foundationmedicine.com/test/foundationone-cdx) · 1-888-988-3639 |
-| DLL3 IHC (clone SP347) | Mayo Clinic Laboratories | [test info](https://www.mayocliniclabs.com/test-catalog) · 1-800-533-1710 |
-| DLL3 IHC (clone SP347) | NeoGenomics Laboratories | [test info](https://neogenomics.com/test-menu) · 1-866-776-5907 |
-| DLL3 IHC (clone SP347) | Caris Life Sciences | [test info](https://www.carislifesciences.com/products-and-services/molecular-profiling/) · 1-888-979-8669 |
-| DLL3 IHC (clone SP347) | LabCorp / Esoterix Oncology | [test info](https://www.labcorp.com/oncology) · 1-800-345-4363 |
-| PRAME IHC (clone EPR20330 or equivalent) | NeoGenomics Laboratories | [test info](https://neogenomics.com/test-menu) · 1-866-776-5907 |
-| PRAME IHC | Caris Life Sciences | [test info](https://www.carislifesciences.com/products-and-services/molecular-profiling/) · 1-888-979-8669 |
-| PRAME IHC | Foundation Medicine | [test info](https://www.foundationmedicine.com/test/foundationone-cdx) · 1-888-988-3639 |
-| PRAME IHC | LabCorp / Esoterix Oncology | [test info](https://www.labcorp.com/oncology) · 1-800-345-4363 |
-| PRAME IHC | Mayo Clinic Laboratories | [test info](https://www.mayocliniclabs.com/test-catalog) · 1-800-533-1710 |
-| HLA Class I high-resolution typing (HLA-A*02:01) | HistoGenetics | [test info](https://www.histogenetics.com/) · 1-845-356-3801 |
-| HLA Class I typing | Versiti / Wisconsin Diagnostic Laboratories | [test info](https://www.versiti.org/medical-professionals/diagnostic-labs) · 1-800-245-3117 |
-| HLA Class I typing | ARUP Laboratories | [test info](https://www.aruplab.com/) · 1-800-242-2787 |
-| HLA Class I typing | Mayo Clinic Laboratories | [test info](https://www.mayocliniclabs.com/test-catalog) · 1-800-533-1710 |
-| HLA Class I typing | Stanford Histocompatibility Laboratory | [test info](https://stanfordbloodcenter.org/healthcare-professionals/histocompatibility/) · 1-650-723-7960 |
-| Tumor NGS for HLA-LOH / B2M / antigen-presentation | Foundation Medicine *(FoundationOne CDx)* | [test info](https://www.foundationmedicine.com/test/foundationone-cdx) · 1-888-988-3639 |
-| Tumor NGS (HLA-LOH / B2M) | Caris Life Sciences *(Molecular Intelligence)* | [test info](https://www.carislifesciences.com/products-and-services/molecular-profiling/) · 1-888-979-8669 |
-| Tumor NGS (HLA-LOH / B2M) | Tempus *(xT)* | [test info](https://www.tempus.com/oncology/diagnostics/) · 1-800-739-4137 |
-| Tumor NGS (HLA-LOH / B2M) | Memorial Sloan Kettering *(MSK-IMPACT)* | [test info](https://www.mskcc.org/clinical-services/diagnostic-laboratory) · 1-212-639-2000 |
-| Tumor NGS (HLA-LOH / B2M) | NeoGenomics Laboratories *(NeoTYPE Comprehensive)* | [test info](https://neogenomics.com/test-menu) · 1-866-776-5907 |
-| CD8 / TIL density (multiplex IHC) | NeoGenomics Laboratories *(MultiOmyx)* | [test info](https://neogenomics.com/test-menu) · 1-866-776-5907 |
-| CD8 / TIL density | Caris Life Sciences | [test info](https://www.carislifesciences.com/products-and-services/molecular-profiling/) · 1-888-979-8669 |
-| CD8 / TIL density | Foundation Medicine | [test info](https://www.foundationmedicine.com/test/foundationone-cdx) · 1-888-988-3639 |
-| Neuroendocrine IHC panel (ASCL1 / NEUROD1 / chromogranin / synaptophysin / INSM1) | ARUP Laboratories | [test info](https://www.aruplab.com/) · 1-800-242-2787 |
-| Neuroendocrine IHC panel | Mayo Clinic Laboratories | [test info](https://www.mayocliniclabs.com/test-catalog) · 1-800-533-1710 |
-| Neuroendocrine IHC panel | LabCorp / Esoterix Oncology | [test info](https://www.labcorp.com/oncology) · 1-800-345-4363 |
-| Neuroendocrine IHC panel | Quest Diagnostics | [test info](https://testdirectory.questdiagnostics.com/) · 1-866-697-8378 |
-| Germline TP53 (Li-Fraumeni panel) | Invitae *(Common Hereditary Cancers Panel)* | [test info](https://www.invitae.com/en/providers/test-catalog) · 1-800-436-3037 |
-| Germline TP53 panel | GeneDx | [test info](https://www.genedx.com/tests) · 1-888-729-1206 |
-| Germline TP53 panel | Ambry Genetics *(CancerNext)* | [test info](https://www.ambrygen.com/providers/test-menu) · 1-866-262-7943 |
-| Germline TP53 panel | Myriad Genetics *(MyRisk Hereditary Cancer)* | [test info](https://myriad.com/genetic-tests/myrisk-hereditary-cancer/) · 1-800-469-7423 |
+The preferred provider for each assay is marked **(preferred)** — selected on company size, reputation, US-based location, and turnaround time. Other providers in the row are listed in case the preferred lab is unreachable for this patient.
+
+| Assay | Provider | Decision gated | Contact |
+|---|---|---|---|
+| DLL3 IHC (clone SP347) | **Foundation Medicine *(preferred)*** *(FoundationOne CDx + IHC reflex)* | Tarlatamab via NCT06788938 | [test info](https://www.foundationmedicine.com/test/foundationone-cdx) · 150 Second Street, Cambridge, MA 02141 · 1-888-988-3639 |
+| DLL3 IHC (clone SP347) | Mayo Clinic Laboratories | Tarlatamab via NCT06788938 | [test info](https://www.mayocliniclabs.com/test-catalog) · 200 First Street SW, Rochester, MN 55905 · 1-800-533-1710 |
+| DLL3 IHC (clone SP347) | NeoGenomics Laboratories | Tarlatamab via NCT06788938 | [test info](https://neogenomics.com/test-menu) · 9490 NeoGenomics Way, Fort Myers, FL 33912 · 1-866-776-5907 |
+| DLL3 IHC (clone SP347) | Caris Life Sciences | Tarlatamab via NCT06788938 | [test info](https://www.carislifesciences.com/products-and-services/molecular-profiling/) · 4610 South 44th Place, Phoenix, AZ 85040 · 1-888-979-8669 |
+| DLL3 IHC (clone SP347) | LabCorp / Esoterix Oncology | Tarlatamab via NCT06788938 | [test info](https://www.labcorp.com/oncology) · 358 South Main Street, Burlington, NC 27215 · 1-800-345-4363 |
+| DLL3 multi-region IHC (heterogeneity) | **NeoGenomics Laboratories *(preferred)*** | Refines DLL3 IHC gating result; does not gate enrollment | [test info](https://neogenomics.com/test-menu) · 9490 NeoGenomics Way, Fort Myers, FL 33912 · 1-866-776-5907 |
+| DLL3 multi-region IHC | Foundation Medicine | Refines DLL3 IHC gating result; does not gate enrollment | [test info](https://www.foundationmedicine.com/test/foundationone-cdx) · 150 Second Street, Cambridge, MA 02141 · 1-888-988-3639 |
+| DLL3 multi-region IHC | Mayo Clinic Laboratories | Refines DLL3 IHC gating result; does not gate enrollment | [test info](https://www.mayocliniclabs.com/test-catalog) · 200 First Street SW, Rochester, MN 55905 · 1-800-533-1710 |
+| DLL3 multi-region IHC | Memorial Sloan Kettering Diagnostic Molecular Pathology | Refines DLL3 IHC gating result; does not gate enrollment | [test info](https://www.mskcc.org/clinical-services/diagnostic-laboratory) · 1275 York Avenue, New York, NY 10065 · 1-212-639-2000 |
+| Neuroendocrine IHC panel (ASCL1 / NEUROD1 / chromogranin / synaptophysin / INSM1) | **Mayo Clinic Laboratories *(preferred)*** | Confirms DLL3 target call (neuroendocrine biology); does not gate enrollment | [test info](https://www.mayocliniclabs.com/test-catalog) · 200 First Street SW, Rochester, MN 55905 · 1-800-533-1710 |
+| Neuroendocrine IHC panel | ARUP Laboratories | Confirms DLL3 target call (neuroendocrine biology); does not gate enrollment | [test info](https://www.aruplab.com/) · 500 Chipeta Way, Salt Lake City, UT 84108 · 1-800-242-2787 |
+| Neuroendocrine IHC panel | LabCorp / Esoterix Oncology | Confirms DLL3 target call (neuroendocrine biology); does not gate enrollment | [test info](https://www.labcorp.com/oncology) · 358 South Main Street, Burlington, NC 27215 · 1-800-345-4363 |
+| Neuroendocrine IHC panel | Quest Diagnostics | Confirms DLL3 target call (neuroendocrine biology); does not gate enrollment | [test info](https://testdirectory.questdiagnostics.com/) · 500 Plaza Drive, Secaucus, NJ 07094 · 1-866-697-8378 |
+| Neuroendocrine IHC panel | Memorial Sloan Kettering Diagnostic Molecular Pathology | Confirms DLL3 target call (neuroendocrine biology); does not gate enrollment | [test info](https://www.mskcc.org/clinical-services/diagnostic-laboratory) · 1275 York Avenue, New York, NY 10065 · 1-212-639-2000 |
+| Germline TP53 (Li-Fraumeni panel) | **Invitae *(preferred)*** *(Common Hereditary Cancers Panel)* | Reframes radiation, synchronous-tumor screening, and family cascade testing; does not affect tarlatamab eligibility | [test info](https://www.invitae.com/en/providers/test-catalog) · 1400 16th Street, San Francisco, CA 94103 · 1-800-436-3037 |
+| Germline TP53 panel | GeneDx | Reframes radiation, synchronous-tumor screening, and family cascade testing; does not affect tarlatamab eligibility | [test info](https://www.genedx.com/tests) · 207 Perry Parkway, Gaithersburg, MD 20877 · 1-888-729-1206 |
+| Germline TP53 panel | Ambry Genetics *(CancerNext)* | Reframes radiation, synchronous-tumor screening, and family cascade testing; does not affect tarlatamab eligibility | [test info](https://www.ambrygen.com/providers/test-menu) · 1 Enterprise, Aliso Viejo, CA 92656 · 1-866-262-7943 |
+| Germline TP53 panel | Myriad Genetics *(MyRisk Hereditary Cancer)* | Reframes radiation, synchronous-tumor screening, and family cascade testing; does not affect tarlatamab eligibility | [test info](https://myriad.com/genetic-tests/myrisk-hereditary-cancer/) · 320 Wakara Way, Salt Lake City, UT 84108 · 1-800-469-7423 |
+| Germline TP53 panel | Color Health | Reframes radiation, synchronous-tumor screening, and family cascade testing; does not affect tarlatamab eligibility | [test info](https://www.color.com/) · 831 Mitten Road, Burlingame, CA 94010 · 1-844-352-6567 |
+| PRAME IHC (clone EPR20330 or equivalent) | **NeoGenomics Laboratories *(preferred)*** | IMA203 (NCT03686124) and the PRAME ImmTAC class (brenetafusp, IMC-P115C); every program gates on PRAME IHC | [test info](https://neogenomics.com/test-menu) · 9490 NeoGenomics Way, Fort Myers, FL 33912 · 1-866-776-5907 |
+| PRAME IHC | Caris Life Sciences | IMA203 / brenetafusp / IMC-P115C; every program gates on PRAME IHC | [test info](https://www.carislifesciences.com/products-and-services/molecular-profiling/) · 4610 South 44th Place, Phoenix, AZ 85040 · 1-888-979-8669 |
+| PRAME IHC | Foundation Medicine | IMA203 / brenetafusp / IMC-P115C; every program gates on PRAME IHC | [test info](https://www.foundationmedicine.com/test/foundationone-cdx) · 150 Second Street, Cambridge, MA 02141 · 1-888-988-3639 |
+| PRAME IHC | LabCorp / Esoterix Oncology | IMA203 / brenetafusp / IMC-P115C; every program gates on PRAME IHC | [test info](https://www.labcorp.com/oncology) · 358 South Main Street, Burlington, NC 27215 · 1-800-345-4363 |
+| PRAME IHC | Mayo Clinic Laboratories | IMA203 / brenetafusp / IMC-P115C; every program gates on PRAME IHC | [test info](https://www.mayocliniclabs.com/test-catalog) · 200 First Street SW, Rochester, MN 55905 · 1-800-533-1710 |
+| HLA Class I high-resolution typing (HLA-A*02:01) | **HistoGenetics *(preferred)*** | IMA203 and the PRAME ImmTAC class; every program is HLA-A*02:01-restricted | [test info](https://www.histogenetics.com/) · 1 Patrick Henry Drive, Stewartsville, NJ 08886 · 1-845-356-3801 |
+| HLA Class I typing | Versiti / Wisconsin Diagnostic Laboratories | IMA203 and the PRAME ImmTAC class; every program is HLA-A*02:01-restricted | [test info](https://www.versiti.org/medical-professionals/diagnostic-labs) · 638 N 18th Street, Milwaukee, WI 53233 · 1-800-245-3117 |
+| HLA Class I typing | ARUP Laboratories | IMA203 and the PRAME ImmTAC class; every program is HLA-A*02:01-restricted | [test info](https://www.aruplab.com/) · 500 Chipeta Way, Salt Lake City, UT 84108 · 1-800-242-2787 |
+| HLA Class I typing | Mayo Clinic Laboratories | IMA203 and the PRAME ImmTAC class; every program is HLA-A*02:01-restricted | [test info](https://www.mayocliniclabs.com/test-catalog) · 200 First Street SW, Rochester, MN 55905 · 1-800-533-1710 |
+| HLA Class I typing | Stanford Histocompatibility Laboratory | IMA203 and the PRAME ImmTAC class; every program is HLA-A*02:01-restricted | [test info](https://stanfordbloodcenter.org/healthcare-professionals/histocompatibility/) · 3373 Hillview Avenue, Palo Alto, CA 94304 · 1-650-723-7960 |
+| PRAME multi-region IHC (heterogeneity) | **NeoGenomics Laboratories *(preferred)*** | Refines PRAME IHC gating result; does not gate enrollment | [test info](https://neogenomics.com/test-menu) · 9490 NeoGenomics Way, Fort Myers, FL 33912 · 1-866-776-5907 |
+| PRAME multi-region IHC | Caris Life Sciences | Refines PRAME IHC gating result; does not gate enrollment | [test info](https://www.carislifesciences.com/products-and-services/molecular-profiling/) · 4610 South 44th Place, Phoenix, AZ 85040 · 1-888-979-8669 |
+| PRAME multi-region IHC | Foundation Medicine | Refines PRAME IHC gating result; does not gate enrollment | [test info](https://www.foundationmedicine.com/test/foundationone-cdx) · 150 Second Street, Cambridge, MA 02141 · 1-888-988-3639 |
+| PRAME multi-region IHC | Mayo Clinic Laboratories | Refines PRAME IHC gating result; does not gate enrollment | [test info](https://www.mayocliniclabs.com/test-catalog) · 200 First Street SW, Rochester, MN 55905 · 1-800-533-1710 |
+| PRAME multi-region IHC | Memorial Sloan Kettering Diagnostic Molecular Pathology | Refines PRAME IHC gating result; does not gate enrollment | [test info](https://www.mskcc.org/clinical-services/diagnostic-laboratory) · 1275 York Avenue, New York, NY 10065 · 1-212-639-2000 |
+| Tumor NGS for HLA-LOH / B2M / antigen-presentation | **Memorial Sloan Kettering *(preferred)*** *(MSK-IMPACT)* | Frames durability and post-progression sequencing for PRAME-directed therapy | [test info](https://www.mskcc.org/clinical-services/diagnostic-laboratory) · 1275 York Avenue, New York, NY 10065 · 1-212-639-2000 |
+| Tumor NGS (HLA-LOH / B2M) | Foundation Medicine *(FoundationOne CDx)* | Frames durability and post-progression sequencing for PRAME-directed therapy | [test info](https://www.foundationmedicine.com/test/foundationone-cdx) · 150 Second Street, Cambridge, MA 02141 · 1-888-988-3639 |
+| Tumor NGS (HLA-LOH / B2M) | Caris Life Sciences *(Molecular Intelligence)* | Frames durability and post-progression sequencing for PRAME-directed therapy | [test info](https://www.carislifesciences.com/products-and-services/molecular-profiling/) · 4610 South 44th Place, Phoenix, AZ 85040 · 1-888-979-8669 |
+| Tumor NGS (HLA-LOH / B2M) | Tempus *(xT)* | Frames durability and post-progression sequencing for PRAME-directed therapy | [test info](https://www.tempus.com/oncology/diagnostics/) · 600 West Chicago Avenue, Chicago, IL 60654 · 1-800-739-4137 |
+| Tumor NGS (HLA-LOH / B2M) | NeoGenomics Laboratories *(NeoTYPE Comprehensive)* | Frames durability and post-progression sequencing for PRAME-directed therapy | [test info](https://neogenomics.com/test-menu) · 9490 NeoGenomics Way, Fort Myers, FL 33912 · 1-866-776-5907 |
+| CD8 / TIL density (multiplex IHC) | **NeoGenomics Laboratories *(preferred)*** *(MultiOmyx)* | Frames durability of PRAME-directed therapy; informs next-line plan if rank 4 / 5 fails | [test info](https://neogenomics.com/test-menu) · 9490 NeoGenomics Way, Fort Myers, FL 33912 · 1-866-776-5907 |
+| CD8 / TIL density | Caris Life Sciences | Frames durability of PRAME-directed therapy | [test info](https://www.carislifesciences.com/products-and-services/molecular-profiling/) · 4610 South 44th Place, Phoenix, AZ 85040 · 1-888-979-8669 |
+| CD8 / TIL density | Foundation Medicine | Frames durability of PRAME-directed therapy | [test info](https://www.foundationmedicine.com/test/foundationone-cdx) · 150 Second Street, Cambridge, MA 02141 · 1-888-988-3639 |
+| CD8 / TIL density | Mayo Clinic Laboratories | Frames durability of PRAME-directed therapy | [test info](https://www.mayocliniclabs.com/test-catalog) · 200 First Street SW, Rochester, MN 55905 · 1-800-533-1710 |
+| CD8 / TIL density | Memorial Sloan Kettering Diagnostic Molecular Pathology | Frames durability of PRAME-directed therapy | [test info](https://www.mskcc.org/clinical-services/diagnostic-laboratory) · 1275 York Avenue, New York, NY 10065 · 1-212-639-2000 |
 
 ---
 

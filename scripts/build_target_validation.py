@@ -130,32 +130,44 @@ def sort_key(r: dict) -> tuple:
 
 def providers_cell(providers: list[dict] | None) -> str:
     """Compact per-provider list. Each provider renders as a bold name + brand
-    inline + contact line(s), one provider per row."""
+    inline + contact line(s), one provider per row. The provider with
+    `preferred: true` gets a leading ★ + a yellow 'preferred' badge and is
+    moved to the top of the stack."""
     if not providers:
         return "—"
+    # Sort: preferred first, then by name (stable for ties).
+    sorted_providers = sorted(
+        [p for p in providers if p and p.get("name")],
+        key=lambda p: (0 if p.get("preferred") else 1, str(p.get("name") or "")),
+    )
     pieces: list[str] = []
-    for p in providers:
-        if not p or not p.get("name"):
-            continue
-        head_bits = [f"<strong>{html.escape(str(p['name']))}</strong>"]
+    for p in sorted_providers:
+        is_preferred = bool(p.get("preferred"))
+        name_html = html.escape(str(p["name"]))
+        head_bits = [f"<strong>{name_html}</strong>"]
         brand = p.get("assay_brand")
         if brand:
             head_bits.append(f"<em>{html.escape(str(brand))}</em>")
         head = " · ".join(head_bits)
+        if is_preferred:
+            head += ' <span class="fit-badge fit-strong">preferred</span>'
         contacts: list[str] = []
         url = p.get("contact_url")
         if url:
             contacts.append(f'<a href="{html.escape(str(url))}">test info</a>')
-        email = p.get("contact_email")
-        if email:
-            contacts.append(f'<a href="mailto:{html.escape(str(email))}">{html.escape(str(email))}</a>')
+        address = p.get("address")
+        if address:
+            contacts.append(html.escape(str(address)))
         phone = p.get("contact_phone")
         if phone:
             contacts.append(html.escape(str(phone)))
+        email = p.get("contact_email")
+        if email:
+            contacts.append(f'<a href="mailto:{html.escape(str(email))}">{html.escape(str(email))}</a>')
         contact_line = " · ".join(contacts) if contacts else "—"
         notes = p.get("notes")
         flag = ""
-        if p.get("us_based") is True:
+        if p.get("us_based") is True and not is_preferred:
             flag = ' <span class="fit-badge fit-strong">US</span>'
         elif p.get("us_based") is False:
             flag = ' <span class="fit-badge fit-weak">non-US</span>'
@@ -167,14 +179,28 @@ def providers_cell(providers: list[dict] | None) -> str:
     return "<br>".join(pieces) if pieces else "—"
 
 
+def decision_gated_cell(r: dict) -> str:
+    val = r.get("decision_gated")
+    if val:
+        return html.escape(str(val))
+    # Fall back to a derived label when the row hasn't been backfilled yet.
+    gates = r.get("gates_intervention") or []
+    if gates:
+        return html.escape(", ".join(str(g) for g in gates))
+    rel = r.get("decision_relevance")
+    if rel:
+        return html.escape(str(rel).replace("_", " "))
+    return "—"
+
+
 def render_table(rows: list[dict]) -> str:
     if not rows:
         return "_No validation rows for this feature._\n"
     head = (
         "<th>Priority</th><th>Test</th><th>Type</th>"
         "<th>Modality</th><th>Tissue</th><th>Turnaround</th>"
-        "<th>Gates intervention</th><th>Decision relevance</th>"
-        "<th>Rationale</th><th>Providers</th><th>References</th>"
+        "<th>Decision gated</th><th>Rationale</th>"
+        "<th>Providers</th><th>References</th>"
     )
     body: list[str] = []
     for r in rows:
@@ -186,8 +212,7 @@ def render_table(rows: list[dict]) -> str:
             f"<td>{fmt(r.get('assay_modality'))}</td>"
             f"<td>{fmt(r.get('tissue_required_estimate') or r.get('tissue_type'))}</td>"
             f"<td>{fmt(r.get('turnaround_estimate'))}</td>"
-            f"<td>{gates_cell(r.get('gates_intervention'))}</td>"
-            f"<td>{fmt((r.get('decision_relevance') or '').replace('_', ' ') or None)}</td>"
+            f"<td>{decision_gated_cell(r)}</td>"
             f"<td>{fmt(r.get('rationale'))}</td>"
             f"<td>{providers_cell(r.get('providers'))}</td>"
             f"<td>{references_cell(r.get('references'))}</td>"

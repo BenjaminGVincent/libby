@@ -127,12 +127,25 @@ Structure (per-feature narrative → assay-providers table):
 
 ### Where to order these assays
 
-| Assay | Provider | Contact |
-|---|---|---|
-| <test_name from row 1> | <provider.name> *(<assay_brand if any>)* | [test info](<provider.contact_url>) · <provider.contact_email> · <provider.contact_phone> |
-| ... | ... | ... |
+| Assay | Provider | Decision gated | Contact |
+|---|---|---|---|
+| <test_name from row 1> | **<provider.name>** *(preferred)* *(<assay_brand if any>)* | <decision_gated value, verbatim> | [<provider.contact_url short label>](<provider.contact_url>) · <provider.address> · <provider.contact_phone> |
+| <test_name from row 1> (continued) | <other provider> *(<assay_brand>)* | (same as preferred row) | (same shape) |
+| ... | ... | ... | ... |
 
-<This table comes after the narrative. One row per (assay, provider) pair, drawn from `target_validation.jsonl::providers[]`. When multiple rows reference the same assay, deduplicate. Keep the table compact — pull `contact_url`, `contact_email`, `contact_phone` into a single Contact column separated by " · ". Cap at the providers the JSONL already filtered to (≤ 5 per assay per the target_validator's selection rule). Use the provider's branded test name as a parenthetical when distinct from the generic test_name. The table is the practical "where to actually order this" reference; it follows the narrative because the narrative explains *which* assays to order before the reader needs the contact info.>
+<This table comes after the narrative. **Four columns**, one row per (assay, provider) pair, drawn from `target_validation.jsonl::providers[]`. When multiple rows reference the same assay, deduplicate.
+
+**Per-column rules:**
+- **Assay** — copy `test_name` verbatim. Repeat across each provider row for the same assay.
+- **Provider** — `<provider.name>`, optional brand parenthetical. **The provider with `preferred: true` is rendered as `**<name>** *(preferred)*` — bold name plus an italic `(preferred)` annotation immediately after.** Exactly one preferred per assay; the rest of the rows are plain. Use ASCII markdown only — no emoji, no star characters (`★` / `⭐`), no HTML. The rendered output must work cleanly in both mkdocs Material (HTML) and the PDF font subset.
+- **Decision gated** — copy `decision_gated` verbatim. Repeats across each provider row for the same assay (same value because the decision is per-assay, not per-provider).
+- **Contact** — combine the three contact fields into a single cell separated by " · ":
+    1. `[test info](<provider.contact_url>)` (clickable link with literal label "test info")
+    2. `<provider.address>` (verbatim street / city / state / ZIP from the JSONL)
+    3. `<provider.contact_phone>` (verbatim)
+  Drop any field that's `null`. Email goes in the Notes line under the address only when no phone is published.
+
+The table is the practical "where to actually order this" reference; it follows the narrative because the narrative explains *which* assays to order before the reader needs the contact info. Cap at the providers the JSONL already filtered to (≤ 5 per assay per the target_validator's selection rule).>
 
 ---
 

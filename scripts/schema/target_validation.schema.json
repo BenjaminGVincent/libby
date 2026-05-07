@@ -94,10 +94,15 @@
       "items": { "type": "string" },
       "description": "pmid:* / nct:* / guideline:* citations."
     },
+    "decision_gated": {
+      "type": ["string", "null"],
+      "maxLength": 280,
+      "description": "≤ 1 sentence (≤ ~280 chars) naming the therapeutic decision this assay informs. Drawn from gates_intervention[] when the row gates a specific drug/trial; otherwise from decision_relevance distilled to a clinician-grade phrase (e.g. 'Tarlatamab via NCT06788938', 'SCLC histologic-transformation surveillance', 'Confirms PRAME target-call'). Surfaces as a dedicated 'Decision gated' column in the reporter's providers table."
+    },
     "providers": {
       "type": "array",
       "maxItems": 5,
-      "description": "Companies / labs that offer this assay as a service. Capped at 5 per row. Selection priority: company size, reputation, and US-based location (target_validator contract).",
+      "description": "Companies / labs that offer this assay as a service. Capped at 5 per row. Selection priority: company size, reputation, and US-based location (target_validator contract). Exactly one provider per row should be marked `preferred: true`.",
       "items": {
         "type": "object",
         "additionalProperties": false,
@@ -110,12 +115,20 @@
             "description": "academic = NCI-designated / large academic medical center reference lab; mid = mid-cap commercial; major = large-cap commercial reference lab."
           },
           "us_based": { "type": ["boolean", "null"] },
+          "address": {
+            "type": ["string", "null"],
+            "description": "Public-facing company / lab address (street, city, state, ZIP). Used in the reporter's providers table so a treating team can route samples or paperwork."
+          },
           "contact_url": { "type": ["string", "null"] },
           "contact_email": { "type": ["string", "null"] },
           "contact_phone": { "type": ["string", "null"] },
           "assay_brand": {
             "type": ["string", "null"],
             "description": "Provider's branded name for the test (e.g. 'Guardant360', 'FoundationOne CDx'), when distinct from the generic test_name."
+          },
+          "preferred": {
+            "type": ["boolean", "null"],
+            "description": "Mark exactly one provider per row as the recommended default. Selection criteria: company size, reputation, US-based location, turnaround time. The reporter highlights this row in the 'Where to order these assays' table."
           },
           "notes": { "type": ["string", "null"] }
         }
