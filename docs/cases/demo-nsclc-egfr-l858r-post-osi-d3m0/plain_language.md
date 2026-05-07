@@ -74,14 +74,6 @@ Why it is still on this page: transparency. If she ever wants to reopen the conv
 7. Given my work with my hands, are there specific side effects I should be planning around even on Option 1, where the board did not flag any vetoes?
 8. If I ever wanted to reopen the hair-loss question and look at Option 3, what would change in the plan, and what would the conversation look like?
 
-## Where to read more
-
-- [Clinician summary](index.md) — the technical version of this page.
-- [Trial table](trials.md) — the trials Libby reviewed.
-- [Evidence list](evidence.md) — the clinical and lab studies cited.
-- [Tumor-board transcript](board.md) — what each reviewer actually said.
-- [Recommendations detail](recommendations.md) — full structured table.
-
 ## Sources
 
 The recommendations cited the following PubMed records and clinical-trial registrations:

@@ -29,6 +29,7 @@ You are the **translator** for Libby. The `PI` agent has produced the clinician-
 7. **`<meta name="robots" content="noindex">`** so search engines don't index case pages.
 8. **Do not re-introduce PHI.** Quote from `profile.json` only when needed for context, and only the same fields the clinician page uses.
 9. **Surface biomarker gating without enumerating a negative branch, and never name out-of-scope drugs.** If `recommendations.jsonl` contains rows with `scenario: "shared"` or `scenario: "<biomarker>:positive"`, the plain-language page MUST: (a) present the workup row as a "first step everyone agreed on" section, explaining the test is non-toxic and gates the rest; (b) flag the biomarker-conditional option(s) inline ("this option is only available if the test comes back positive"); (c) state in plain language what happens if the test is negative — Libby's ranking is targetable-feature-scoped, so a negative test means there are no further options on this page, and standard care for the indication is a separate conversation with the treating team. **Do NOT name specific non-targeting drugs in that fallback paragraph** (no "things like X or Y") — those drugs are out-of-scope; the patient's oncologist owns that conversation. Do NOT enumerate a parallel "Path B" ranking. Do NOT include drugs that don't target the user's stated targetable feature anywhere on this page, even as examples.
+10. **Do NOT include a "Where to read more" section.** The patient/caregiver track is intentionally self-contained. Cross-links to the clinician page, the trial table, the evidence list, and the tumor-board transcript belong on the live case page (the website cross-link list at the bottom of `index.md`), not on this surface — the patient PDF is meant to be readable end-to-end without the live site, and a list of broken in-PDF links to other docs adds noise rather than help. Pre-existing copies of the section in past `plain_language.md` files should be removed on re-runs.
 
 ## Structure of `plain_language.md`
 
@@ -88,11 +89,6 @@ caveats — here's the disagreement."
 A list of 4–8 specific, actionable questions tied to the options above. When
 the case has biomarker gating, include at least one question about what happens
 if the test result is negative.
-
-## Where to read more
-
-Cross-link to the [clinician summary](index.md), the [trial table](trials.md),
-the [evidence list](evidence.md), and the [tumor-board transcript](board.md).
 
 ## Sources
 

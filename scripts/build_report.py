@@ -1112,16 +1112,42 @@ def _render_blockquote(pdf, text: str) -> None:
     pdf.ln(1)
 
 
+def _coalesce_list_items(lines: list[str], marker_rx: re.Pattern) -> list[tuple[str, str]]:
+    """Group a list-block slice into (leading-whitespace, item-text) pairs.
+
+    The block-segmenter feeds continuation lines (lines starting with
+    whitespace) into the list slice so the list block is preserved. Each
+    `marker_rx` match opens a new item; subsequent non-marker indented
+    lines are appended to that item's text, joined by a single space, so
+    the inline-runs renderer can word-wrap the full item across multiple
+    visual lines. Continuation lines that contain only whitespace are
+    dropped — they're paragraph breaks within the item that we collapse
+    rather than render as a hard newline.
+    """
+    items: list[tuple[str, str]] = []
+    for line in lines:
+        m = marker_rx.match(line)
+        if m:
+            items.append((m.group(1), m.group(2).rstrip()))
+            continue
+        if not line.strip():
+            continue
+        if items:
+            prev_indent, prev_text = items[-1]
+            items[-1] = (prev_indent, (prev_text + " " + line.strip()).strip())
+    return items
+
+
+_BULLET_RX = re.compile(r"^(\s*)[-*+]\s+(.*)$")
+_ORDERED_RX = re.compile(r"^(\s*)\d+\.\s+(.*)$")
+
+
 def _render_bullets(pdf, lines: list[str]) -> None:
     pdf.set_text_color(*INK)
     pdf.set_font(_FONT_FAMILY, "", 10)
-    for line in lines:
-        m = re.match(r"^(\s*)[-*+]\s+(.*)$", line)
-        if not m:
-            continue
-        depth = (len(m.group(1)) // 2)
+    for indent_ws, text in _coalesce_list_items(lines, _BULLET_RX):
+        depth = len(indent_ws) // 2
         bullet_x = pdf.l_margin + depth * 4
-        text = m.group(2)
         pdf.set_x(bullet_x)
         pdf.cell(3, 5, _ascii_fallback("•"))
         pdf.set_x(bullet_x + 4)
@@ -1132,17 +1158,12 @@ def _render_bullets(pdf, lines: list[str]) -> None:
 def _render_ordered(pdf, lines: list[str]) -> None:
     pdf.set_text_color(*INK)
     pdf.set_font(_FONT_FAMILY, "", 10)
-    n = 1
-    for line in lines:
-        m = re.match(r"^\s*(\d+)\.\s+(.*)$", line)
-        if not m:
-            continue
-        text = m.group(2)
+    items = _coalesce_list_items(lines, _ORDERED_RX)
+    for n, (_indent_ws, text) in enumerate(items, start=1):
         pdf.set_x(pdf.l_margin)
         pdf.cell(7, 5, f"{n}.")
         pdf.set_x(pdf.l_margin + 7)
         _emit_inline_runs(pdf, text, line_height=5, indent=7)
-        n += 1
     pdf.ln(1)
 
 

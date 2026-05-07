@@ -288,14 +288,6 @@ A few things the inputs didn't tell us, which would sharpen the plan:
 9. Is there anything in my labs or imaging that would change which
    trials I'd be eligible for?
 
-## Where to read more
-
-- [Clinician summary](index.md). The technical version of this page.
-- [Trial table](trials.md). The trials Libby reviewed.
-- [Evidence list](evidence.md). The clinical and lab studies cited.
-- [Tumor-board transcript](board.md). What each reviewer actually said.
-- [Recommendations detail](recommendations.md). Full structured tables.
-
 ## Sources
 
 The recommendations cited the following published reports and
