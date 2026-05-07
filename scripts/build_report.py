@@ -2364,6 +2364,34 @@ _RX_BOLD_NO_SPACE_AFTER = re.compile(r"\*\*[^\s*][^*]*\*\*[A-Za-z0-9]")
 _RX_BOLD_NO_SPACE_BEFORE = re.compile(r"[A-Za-z0-9]\*\*[^\s*][^*]*\*\*")
 _RX_EM_DASH = re.compile(r"—")
 _RX_RANK_REF = re.compile(r"\branks?[\s\-][0-9]", flags=re.IGNORECASE)
+# `plain_language.md` must be a single unified voice — no board / persona
+# references. The patterns below cover the deliberation framing
+# (`the board`, `five reviewers`), individual persona names (`risktaker`,
+# `conservative`, `critic`, `concensusite`/`consensus reviewer`,
+# `advocate`/`patient advocate`), and the meta-framing of how Libby works
+# internally (`computer agents`, `tumor board`).
+_RX_BOARD_OR_PERSONA = re.compile(
+    r"\b("
+    r"the\s+board"
+    r"|tumor[\-\s]board"
+    r"|the\s+(?:five\s+)?reviewers?"
+    r"|(?:five|four|three|two|one)\s+(?:of\s+(?:five|the\s+five)\s+)?reviewers?"
+    r"|computer\s+agents?"
+    r"|risk[\-\s]?taker"
+    r"|risktaker"
+    r"|conservative\s+reviewer"
+    r"|the\s+conservative\b"
+    r"|the\s+critic\b"
+    r"|published[\-\s]evidence\s+skeptic"
+    r"|the\s+skeptic\b"
+    r"|concensusite"
+    r"|consensus\s+reviewer"
+    r"|guideline\s+reviewer"
+    r"|patient\s+advocate"
+    r"|the\s+advocate\b"
+    r")",
+    flags=re.IGNORECASE,
+)
 
 
 def _check_inline_bold_spacing(path: Path) -> list[tuple[int, str]]:
@@ -2395,6 +2423,23 @@ def _check_em_dashes(path: Path) -> list[tuple[int, str]]:
     for i, line in enumerate(path.read_text(encoding="utf-8").splitlines(), start=1):
         if _RX_EM_DASH.search(line):
             hits.append((i, line.rstrip()))
+    return hits
+
+
+def _check_board_or_persona(path: Path) -> list[tuple[int, str, str]]:
+    """Return (line_no, line, matched-fragment) tuples for any board /
+    persona / agent reference in `plain_language.md`. The translator
+    contract requires a single unified voice; a deliberation transcript
+    framing (*"the board"*, *"five reviewers"*, *"the conservative
+    dissented"*) is forbidden.
+    """
+    if not path.exists():
+        return []
+    hits: list[tuple[int, str, str]] = []
+    for i, line in enumerate(path.read_text(encoding="utf-8").splitlines(), start=1):
+        m = _RX_BOARD_OR_PERSONA.search(line)
+        if m:
+            hits.append((i, line.rstrip(), m.group(0)))
     return hits
 
 
@@ -2478,6 +2523,29 @@ def main(argv: list[str]) -> int:
         )
         for path, ln, line in em_dash_blockers:
             print(f"  {path}:{ln}: {line}", file=sys.stderr)
+        return 1
+
+    # Pre-flight #4: refuse to render when plain_language.md contains
+    # board / persona / agent references. The translator contract requires
+    # a single unified voice; deliberation framing belongs on the clinician
+    # page (`index.md`) and the board transcript (`board.md`), not on the
+    # patient/caregiver track.
+    plain_path = case_docs / "plain_language.md"
+    persona_blockers: list[tuple[Path, int, str, str]] = []
+    for ln, line, frag in _check_board_or_persona(plain_path):
+        persona_blockers.append((plain_path, ln, line, frag))
+    if persona_blockers:
+        print(
+            "build_report: refusing to render. Board / persona reference "
+            "found in plain_language.md. The patient/caregiver track must "
+            "speak in a single unified voice; translate dissent into "
+            "*what's contested* (evidence base, toxicity tradeoff, "
+            "eligibility uncertainty), never into *who contested it* (see "
+            "translator.md translation rule #11).",
+            file=sys.stderr,
+        )
+        for path, ln, line, frag in persona_blockers:
+            print(f"  {path}:{ln}: [{frag}]: {line}", file=sys.stderr)
         return 1
 
     # Pre-flight #3: refuse to render when target_validation_report.md
