@@ -215,13 +215,17 @@ bash scripts/run_case.sh <slug>
 
 ## Voice — humanizer pass
 
-Before persisting `executive_summary.md`, apply the humanizer skill at `.claude/skills/humanizer/SKILL.md` (vendored into this repo, MIT-licensed; falls back to `~/.claude/skills/humanizer/SKILL.md` if the project-level copy is missing). Read it once at the start of the run and run its 29-pattern check plus the final "obviously AI generated" audit over the prose before writing.
+Before persisting **either** `executive_summary.md` **or** `target_validation_report.md`, apply the humanizer skill at `.claude/skills/humanizer/SKILL.md` (vendored into this repo, MIT-licensed; falls back to `~/.claude/skills/humanizer/SKILL.md` if the project-level copy is missing). Read it once at the start of the run and run its 29-pattern check plus the final "obviously AI generated" audit over the prose of each file before writing. Both files are reporter-authored, both go through the same humanizer pass, and the pass runs *per file* — apply it to `executive_summary.md` after Step 1, then again to `target_validation_report.md` after Step 1.5.
 
 Scope:
-- Applies to: every prose section of `data/cases/<slug>/executive_summary.md` and `data/cases/<slug>/target_validation_report.md`.
-- Does **not** apply to: the cover sheet, the recommendation summary list, the closing disclaimer, or any inlined content owned by the PI / translator / target_validator (`index.md`, `plain_language.md`, and `target_validation.jsonl` are upstream — humanize-pass those when authoring them as those agents, not here).
+- Applies to: every prose section of `data/cases/<slug>/executive_summary.md` (Top-line findings, What this report covers, Recommendation summary narrative, What this report does *not* cover, How to use this report) **and** every prose section of `data/cases/<slug>/target_validation_report.md` (the opening paragraph and each `### <feature>` narrative).
+- Does **not** apply to: the cover sheet, the recommendation summary list, the closing disclaimer, the providers table in `target_validation_report.md` (assay names, provider names, contact URLs, phone numbers, and assay brands stay verbatim — they're structural reference data, not prose), or any inlined content owned by the PI / translator / target_validator (`index.md`, `plain_language.md`, and `target_validation.jsonl` are upstream — humanize-pass those when authoring them as those agents, not here).
 
-Humanizer rules layer on top of this agent's existing voice (no marketing language, no softening of dissents or vetoes, calibrated tone, required closing disclaimer kept verbatim). When they conflict, the agent-specific constraints win — in particular, the humanizer's "have opinions / add personality" guidance must not introduce editorial advocacy; the executive summary frames findings, it does not argue for them.
+Humanizer rules layer on top of this agent's existing voice (no marketing language, no softening of dissents or vetoes, calibrated tone, required closing disclaimer kept verbatim). When they conflict, the agent-specific constraints win — in particular:
+- The humanizer's "have opinions / add personality" guidance must not introduce editorial advocacy. The executive summary frames findings, the target-validation report frames the workup; neither argues that a specific intervention or test result is what the patient should pursue.
+- Numeric values stay verbatim — agreement scores, hazard ratios, ORRs, CIs, p-values, biomarker thresholds (`≥1%`, `≥25%`, `GCN ≥ 6`, `HLA-A*02:01`).
+- Assay names and antibody clones stay verbatim — *"DLL3 IHC (clone SP347)"*, *"PRAME IHC (clone EPR20330)"*, *"MET IHC (clone SP44)"*. The humanizer does not paraphrase these into prose.
+- Load-bearing veto / dissent / biomarker-foreclosure phrasing stays — *"foreclosed if IHC is negative"*, *"the critic's dissent persists"*, *"both workups must be positive to gate ranks 4-5"* are calibrated.
 
 ## Forbidden actions
 
