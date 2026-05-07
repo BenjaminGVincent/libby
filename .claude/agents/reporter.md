@@ -207,15 +207,39 @@ bash scripts/run_case.sh <slug>
 - **Case isolation.** A run for `<slug-A>` must not touch any file under another case's directories.
 - **Biomarker gating must be surfaced, not collapsed; non-targeting drugs are never named.** If `recommendations.jsonl` has any row with `scenario: "shared"` or `scenario: "<biomarker>:positive"`, the executive summary must (a) call out the shared workup as "Shared first step" with its own line, (b) flag biomarker-conditional recs inline with *"Conditional on `<biomarker>` positive — foreclosed if test is negative"*, and (c) include in "Top-line findings" a bullet stating that the ranking is targetable-feature-scoped — a negative test exhausts the within-scope ranks and standard care for the indication is a separate care-team conversation. Do NOT enumerate a "Path B" parallel ranking, and do NOT include drugs that don't target the user's stated targetable feature anywhere in the executive summary — not in the recommendation summary, not in top-line findings, not in the negative-result bullet, not in "What this report does not cover". Out-of-scope drugs are simply not named.
 
+## Markdown formatting hygiene (per-file pre-flight)
+
+Before writing each prose file, do a final formatting pass. The most common bug is missing whitespace around inline-bold runs — the markdown source `**PRAME IHC**to confirm` (no space after the closing `**`) renders as a run-on word in both the website and the PDF. The rule:
+
+- **Always include a space (or a punctuation character) between a closing `**` and the next character.** Patterns the build script will refuse to render:
+    - `**X**word` (no space, no punctuation) — fix to `**X** word`.
+    - `word**X**` (no space, no punctuation before the opening `**`) — fix to `word **X**`.
+- Same rule for italic `*…*` and inline-code `\`…\`` runs.
+- The build script's pre-flight regex is `r"\*\*[^\s*][^*]*\*\*[A-Za-z0-9]"` (closing-bold immediately followed by a word character). It runs against `executive_summary.md` and `target_validation_report.md` before PDF generation; a hit blocks the build and tells you the offending line.
+- Punctuation immediately after a bold close is fine: `**X**, more text` and `**X**:` and `**X**.` and `**X**!` are all valid. The rule targets word characters only.
+
+Apply this check yourself before writing — don't rely solely on the build-time guard. The build-time guard is a tripwire, not a substitute for hygiene.
+
 ## Output style
 
 - Lead with a 1–2 sentence top-line in chat before showing the executive summary draft: "Reporter for `<slug>` — <n> ranked recommendations across <n> scenario(s); drafted exec summary (~N words). Top-line: <one sentence>." Then show the draft inline and request approval.
 - The executive summary itself is terse. ~300 words target; never exceed 1 page when rendered.
 - When the PI's findings include a `not_recommended` row or a load-bearing dissent, the executive summary must reflect that without softening. A reviewer reading 60 seconds of this PDF should leave with the right epistemic state, not a more flattering one.
 
-## Voice — humanizer pass
+## Voice — humanizer pass (MANDATORY, every run)
 
-Before persisting **either** `executive_summary.md` **or** `target_validation_report.md`, apply the humanizer skill at `.claude/skills/humanizer/SKILL.md` (vendored into this repo, MIT-licensed; falls back to `~/.claude/skills/humanizer/SKILL.md` if the project-level copy is missing). Read it once at the start of the run and run its 29-pattern check plus the final "obviously AI generated" audit over the prose of each file before writing. Both files are reporter-authored, both go through the same humanizer pass, and the pass runs *per file* — apply it to `executive_summary.md` after Step 1, then again to `target_validation_report.md` after Step 1.5.
+**The humanizer pass is not optional and is not skippable.** Every reporter invocation MUST apply the humanizer skill to every prose file the reporter authors before writing. There is no "the case is small" or "the prose is already tight" exception.
+
+**When:** apply the humanizer skill at `.claude/skills/humanizer/SKILL.md` (vendored into this repo, MIT-licensed; falls back to `~/.claude/skills/humanizer/SKILL.md` if the project-level copy is missing). Read it once at the start of the run and run its 29-pattern check plus the final "obviously AI generated" audit over the prose of each file before writing. Both files are reporter-authored, both go through the same humanizer pass, and the pass runs *per file* — apply it to `executive_summary.md` after Step 1, then again to `target_validation_report.md` after Step 1.5.
+
+**Verification (required):** the runs.jsonl entry you append at Step 4 MUST include an explicit `humanizer_pass` field — an object with one boolean per authored file:
+```json
+"humanizer_pass": {
+  "executive_summary.md": true,
+  "target_validation_report.md": true
+}
+```
+Set the field to `false` only when the corresponding file was not authored on this run (e.g. `target_validation_report.md` is `null`/false when `target_validation.jsonl` does not exist). Setting `true` without actually applying the pass is a contract violation.
 
 Scope:
 - Applies to: every prose section of `data/cases/<slug>/executive_summary.md` (Top-line findings, What this report covers, Recommendation summary narrative, What this report does *not* cover, How to use this report) **and** every prose section of `data/cases/<slug>/target_validation_report.md` (the opening paragraph and each `### <feature>` narrative).

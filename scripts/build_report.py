@@ -790,7 +790,11 @@ def _emit_inline_runs(pdf, text: str, line_height: float, indent: float = 0.0) -
     for run in runs:
         s, style, color, link = run
         s = _ascii_fallback(s)
-        words = re.findall(r"\S+\s*", s)
+        # Capture leading + trailing whitespace per word so the space between
+        # a bold run's closing `**` and the next word is preserved. The earlier
+        # pattern `\S+\s*` discarded leading whitespace on a run, which made
+        # "**PRAME IHC** to confirm" render as "PRAME IHCto confirm".
+        words = re.findall(r"\s*\S+\s*", s)
         for word in words:
             pdf.set_font(_FONT_FAMILY, style, 10)
             pdf.set_text_color(*color)
@@ -1942,6 +1946,25 @@ def _inject_target_validation(index_path: Path, report_md: str) -> bool:
 # ---------- main ----------
 
 
+_RX_BOLD_NO_SPACE_AFTER = re.compile(r"\*\*[^\s*][^*]*\*\*[A-Za-z0-9]")
+_RX_BOLD_NO_SPACE_BEFORE = re.compile(r"[A-Za-z0-9]\*\*[^\s*][^*]*\*\*")
+
+
+def _check_inline_bold_spacing(path: Path) -> list[tuple[int, str]]:
+    """Return a list of (line_no, line) tuples where a bold run is glued
+    directly to a word character on either side. Used as a pre-flight tripwire
+    on reporter-authored prose so the rendered output never has run-on words
+    like `**PRAME IHC**to confirm`.
+    """
+    if not path.exists():
+        return []
+    hits: list[tuple[int, str]] = []
+    for i, line in enumerate(path.read_text(encoding="utf-8").splitlines(), start=1):
+        if _RX_BOLD_NO_SPACE_AFTER.search(line) or _RX_BOLD_NO_SPACE_BEFORE.search(line):
+            hits.append((i, line.rstrip()))
+    return hits
+
+
 def main(argv: list[str]) -> int:
     if len(argv) != 2:
         print("usage: build_report.py <slug>", file=sys.stderr)
@@ -1966,6 +1989,27 @@ def main(argv: list[str]) -> int:
             "the executive summary",
             file=sys.stderr,
         )
+        return 1
+
+    # Pre-flight: refuse to render when reporter-authored prose has bold runs
+    # glued to word characters. This is a markdown-hygiene tripwire — the fix
+    # is in the source markdown (add a space), never in the rendered PDF.
+    spacing_blockers: list[tuple[Path, int, str]] = []
+    for f in (
+        exec_path,
+        case_data / "target_validation_report.md",
+    ):
+        for ln, line in _check_inline_bold_spacing(f):
+            spacing_blockers.append((f, ln, line))
+    if spacing_blockers:
+        print(
+            "build_report: refusing to render — bold-run spacing violations "
+            "(closing `**` must be followed by a space or punctuation, not a word "
+            "character). Fix the source markdown.",
+            file=sys.stderr,
+        )
+        for path, ln, line in spacing_blockers:
+            print(f"  {path}:{ln}: {line}", file=sys.stderr)
         return 1
 
     recs = _load_jsonl(case_data / "recommendations.jsonl")
