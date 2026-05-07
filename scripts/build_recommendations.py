@@ -183,7 +183,7 @@ def downloads_block(case_docs: Path, slug: str) -> str:
         ),
         (
             f"{slug}-recommendations.html",
-            "Recommendations Table",
+            "Recommendations table",
             "ranked options + pipeline context — self-contained HTML that opens offline",
         ),
         (

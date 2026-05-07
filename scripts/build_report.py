@@ -2185,7 +2185,7 @@ def _downloads_section(slug: str, case_docs: Path) -> str:
         ),
         (
             f"{slug}-recommendations.html",
-            "Recommendations Table",
+            "Recommendations table",
             "ranked options + pipeline context — self-contained HTML that opens offline",
         ),
         (
