@@ -248,6 +248,44 @@ small.scenario-key { color: var(--ink-muted); }
   margin-left: 0.35em;
   white-space: nowrap;
 }
+.pipeline-note {
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+  margin: 0.25rem 0 0.75rem;
+}
+.pipeline-context-table { font-size: 0.82em; color: var(--ink-muted); }
+.pipeline-context-table thead th {
+  background: #FAFAFA;
+  border-top: 1px solid var(--ink-muted);
+  border-bottom: 1px solid var(--ink-muted);
+}
+.pipeline-context-table tbody tr:last-child td { border-bottom: 1px solid var(--ink-muted); }
+.pipeline-context-table .intervention-name { color: var(--ink); font-weight: 600; }
+.pipeline-context-table .alias-list { color: var(--ink-muted); font-size: 0.9em; }
+.pipeline-context-table .basket-flag {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #134E48;
+  background: #DDF1EE;
+  border: 1px solid #B0DBD3;
+  border-radius: 0.35em;
+  padding: 0.02em 0.4em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+.pipeline-context-table .discontinued-flag {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5A2A2A;
+  background: #F2E1E1;
+  border: 1px solid #DDB7B7;
+  border-radius: 0.35em;
+  padding: 0.02em 0.4em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
 footer.libby-footer {
   margin-top: 3rem;
   padding-top: 1rem;
@@ -488,10 +526,237 @@ def _profile_dl_html(profile: dict, preferences: dict) -> str:
     return f'<dl class="profile-grid">\n{items}\n</dl>\n'
 
 
-def _render_recommendations_html(slug: str, recs: list[dict], profile: dict, preferences: dict) -> str:
+_FEATURE_TOKENS: dict[str, tuple[str, ...]] = {
+    # Substring tokens (lowercased) used to assign a trial row to a feature
+    # for the pipeline-context tables. Matched against intervention,
+    # aliases, and biomarker fields.
+    "dll3_ihc": ("dll3",),
+    "prame_ihc_hla": ("prame",),
+}
+
+
+def _classify_trial_feature(trial: dict) -> str | None:
+    """Best-effort feature key for a trials.jsonl row.
+
+    Returns one of the keys in `_FEATURE_TOKENS` (e.g. `dll3_ihc`) when the
+    trial's intervention / aliases / biomarker mention that token, else None.
+    Used to bucket pipeline-context rows under the right per-feature heading
+    in the self-contained HTML report.
+    """
+    haystack_parts: list[str] = []
+    for key in ("intervention", "biomarker"):
+        val = trial.get(key)
+        if isinstance(val, str):
+            haystack_parts.append(val.lower())
+    aliases = trial.get("aliases") or []
+    if isinstance(aliases, list):
+        haystack_parts.extend(str(a).lower() for a in aliases)
+    haystack = " ".join(haystack_parts)
+    for feature_key, tokens in _FEATURE_TOKENS.items():
+        if any(tok in haystack for tok in tokens):
+            return feature_key
+    return None
+
+
+def _ranked_drug_aliases(recs: list[dict], trials: list[dict]) -> set[str]:
+    """Lowercased alias tokens for drugs already represented in ranked recs.
+
+    For each non-workup ranked rec, look up trials whose `nct_id` appears in
+    the rec's `evidence_anchor` (`nct:NCTxxxxxxxx`) and harvest their
+    `intervention` + `aliases`. Used to suppress those drugs from the
+    pipeline-context table — the user wants to see *other* options, not the
+    same drug twice.
+    """
+    ranked_ncts: set[str] = set()
+    for r in recs:
+        if r.get("scenario") == "shared":
+            continue
+        for anchor in r.get("evidence_anchor") or []:
+            if isinstance(anchor, str) and anchor.lower().startswith("nct:"):
+                ranked_ncts.add(anchor.split(":", 1)[1].strip())
+    aliases: set[str] = set()
+    for t in trials:
+        if t.get("nct_id") in ranked_ncts:
+            interv = t.get("intervention")
+            if isinstance(interv, str):
+                aliases.add(interv.lower())
+            for a in t.get("aliases") or []:
+                if isinstance(a, str):
+                    aliases.add(a.lower())
+    # Strip parenthetical class qualifiers like "tarlatamab (DLL3 × CD3 BiTE)"
+    # so a trial whose `intervention` is bare "tarlatamab" still matches.
+    cleaned: set[str] = set()
+    for a in aliases:
+        cleaned.add(a)
+        if "(" in a:
+            cleaned.add(a.split("(", 1)[0].strip())
+    return {a for a in cleaned if a}
+
+
+def _trial_matches_ranked_drug(trial: dict, ranked_aliases: set[str]) -> bool:
+    """True if the trial's intervention or aliases overlap a ranked drug.
+
+    Compared on lowercased exact string match against the cleaned alias set
+    (see `_ranked_drug_aliases`). Used to dedupe pipeline-context rows.
+    """
+    interv = (trial.get("intervention") or "").lower()
+    if interv in ranked_aliases:
+        return True
+    if "(" in interv and interv.split("(", 1)[0].strip() in ranked_aliases:
+        return True
+    for a in trial.get("aliases") or []:
+        if isinstance(a, str) and a.lower() in ranked_aliases:
+            return True
+    return False
+
+
+def _phase_sort_key(phase: object) -> float:
+    """Return a numeric ordering key for a phase string ('3' > '2' > '1/2' > '1').
+
+    Phase strings vary ('1', '1/2', '2', '3'); '1/2' is treated as halfway
+    between '1' and '2' so it sorts strictly between them. Negative so
+    descending sort puts the most-advanced phase first.
+    """
+    if not isinstance(phase, str):
+        return 0.0
+    s = phase.strip()
+    if "/" in s:
+        parts = [int(p) for p in s.split("/") if p.strip().isdigit()]
+        if parts:
+            return -(min(parts) + 0.5)
+    if s.isdigit():
+        return -int(s)
+    return 0.0
+
+
+def _tumor_relationship_sort_key(rel: object) -> int:
+    """Sort key: basket/biomarker rows before cross-tumor extrapolation.
+
+    `basket_or_biomarker_match` is the more decision-relevant class because
+    eligibility may turn on sponsor confirmation rather than a categorical
+    cross-tumor extrapolation; surface those first.
+    """
+    if rel == "basket_or_biomarker_match":
+        return 0
+    if rel == "cross_tumor_extrapolation":
+        return 1
+    return 2
+
+
+def _pipeline_context_rows(
+    feature_key: str, trials: list[dict], ranked_aliases: set[str]
+) -> list[dict]:
+    """Filter + sort trials.jsonl rows for the pipeline-context table.
+
+    Keeps trials that target `feature_key` and whose drug isn't already in
+    the ranked table. Sorted by tumor-type relationship (basket first), then
+    phase (most-advanced first), with NCT as a stable tiebreaker.
+    """
+    out: list[dict] = []
+    for t in trials:
+        if _classify_trial_feature(t) != feature_key:
+            continue
+        if _trial_matches_ranked_drug(t, ranked_aliases):
+            continue
+        out.append(t)
+    out.sort(
+        key=lambda t: (
+            1 if t.get("development_status") == "discontinued" else 0,
+            _tumor_relationship_sort_key(t.get("tumor_type_relationship")),
+            _phase_sort_key(t.get("phase")),
+            (t.get("nct_id") or ""),
+        )
+    )
+    return out
+
+
+_PIPELINE_HEAD_HTML = (
+    "<th>Intervention</th><th>Modality</th><th>Phase</th>"
+    "<th>Enrolling indication</th><th>Recruitment</th><th>Trial</th>"
+)
+
+
+def _pipeline_intervention_cell_html(t: dict) -> str:
+    interv = t.get("intervention") or "—"
+    aliases = t.get("aliases") or []
+    extras: list[str] = []
+    for a in aliases:
+        if not isinstance(a, str):
+            continue
+        if a.lower() in interv.lower():
+            continue
+        extras.append(a)
+    flag_html = ""
+    if t.get("tumor_type_relationship") == "basket_or_biomarker_match":
+        flag_html = ' <span class="basket-flag">basket / biomarker</span>'
+    if t.get("development_status") == "discontinued":
+        flag_html += ' <span class="discontinued-flag">discontinued</span>'
+    name = (
+        f'<span class="intervention-name">{_html.escape(str(interv))}</span>'
+        f"{flag_html}"
+    )
+    if extras:
+        alias_str = ", ".join(_html.escape(a) for a in extras[:3])
+        name += f'<br><span class="alias-list">{alias_str}</span>'
+    return f"<td>{name}</td>"
+
+
+def _pipeline_trial_cell_html(t: dict) -> str:
+    nct = t.get("nct_id")
+    if not nct:
+        return "<td>&mdash;</td>"
+    href = f"https://clinicaltrials.gov/study/{_html.escape(nct)}"
+    sponsor = t.get("sponsor")
+    sponsor_html = ""
+    if isinstance(sponsor, str) and sponsor.strip() and sponsor.strip() != "—":
+        sponsor_html = f'<br><span class="alias-list">{_html.escape(sponsor)}</span>'
+    return (
+        f'<td><a href="{href}" target="_blank" rel="noopener noreferrer">'
+        f"{_html.escape(nct)}</a>{sponsor_html}</td>"
+    )
+
+
+def _render_pipeline_context_table_html(rows: list[dict]) -> str:
+    """Render the pipeline-context (not-currently-enrollable) table for one feature.
+
+    Smaller / muted styling deliberately distinguishes it from the ranked
+    options table above. Columns are deliberately leaner: intervention,
+    modality, phase, enrolling indication, recruitment status, trial NCT.
+    """
+    if not rows:
+        return ""
+    body: list[str] = []
+    for t in rows:
+        body.append(
+            "    <tr>"
+            f"{_pipeline_intervention_cell_html(t)}"
+            f"<td>{_fmt_html(t.get('modality'))}</td>"
+            f"<td>{_fmt_html(t.get('phase'))}</td>"
+            f"<td>{_fmt_html(t.get('indication'))}</td>"
+            f"<td>{_fmt_html(t.get('recruitment_status'))}</td>"
+            f"{_pipeline_trial_cell_html(t)}"
+            "</tr>"
+        )
+    return (
+        '<div class="trial-table-wrap">\n'
+        '  <div class="trial-scroll">\n'
+        '    <table class="trial-table pipeline-context-table">\n'
+        f'      <thead><tr>{_PIPELINE_HEAD_HTML}</tr></thead>\n'
+        '      <tbody>\n' + "\n".join(body) + "\n      </tbody>\n"
+        "    </table>\n  </div>\n</div>\n"
+    )
+
+
+def _render_recommendations_html(
+    slug: str,
+    recs: list[dict],
+    profile: dict,
+    preferences: dict,
+    trials: list[dict] | None = None,
+) -> str:
     """Self-contained recommendations HTML, designed for forwarding offline.
 
-    Three deliberate departures from the deterministic recommendations.md page:
+    Four deliberate departures from the deterministic recommendations.md page:
       1. Persona pills (endorse / dissent / veto) are dropped — full per-persona
          rationale lives on board.md, and a forwardable artifact wants the
          clinical bottom line without the multi-agent voting metadata.
@@ -501,12 +766,20 @@ def _render_recommendations_html(slug: str, recs: list[dict], profile: dict, pre
          single mixed table.
       3. Workup rows (`scenario: "shared"`) are excluded — biomarker testing
          is documented in the standalone Target validation paths report.
+      4. Each per-feature section is followed by a "pipeline context" table
+         enumerating other agents in the same target class drawn from
+         trials.jsonl — the agents the patient cannot currently enroll in
+         (mostly cross-tumor SCLC/melanoma trials) but that shape how the
+         board reasons about the modality landscape. Drugs already in the
+         ranked table are excluded so the same agent doesn't appear twice.
     """
     today = datetime.now(timezone.utc).date().isoformat()
+    trials = trials or []
 
     # (1) drop workup rows; (2) group remaining by scenario prefix.
     therapeutic_rows = [r for r in recs if r.get("scenario") != "shared"]
     feature_groups = _group_by_feature(therapeutic_rows)
+    ranked_aliases = _ranked_drug_aliases(recs, trials)
 
     parts = [
         '<!DOCTYPE html>',
@@ -534,6 +807,25 @@ def _render_recommendations_html(slug: str, recs: list[dict], profile: dict, pre
         parts.append("<h2>Profile snapshot</h2>")
         parts.append(profile_html)
 
+    def _emit_feature_block(scenario_short: str, group_rows: list[dict], heading: str | None) -> None:
+        if heading:
+            parts.append(f"<h2>{_html.escape(heading)}</h2>")
+        parts.append(_render_recs_table_html(group_rows, show_personas=False, renumber=True))
+        if scenario_short == "__unscoped" or not trials:
+            return
+        pipeline_rows = _pipeline_context_rows(scenario_short, trials, ranked_aliases)
+        if not pipeline_rows:
+            return
+        parts.append("<h3>Pipeline context &mdash; not currently enrollable</h3>")
+        parts.append(
+            '<p class="pipeline-note">Other agents in this target class drawn from the case '
+            "dossier. The patient cannot currently enroll in these trials (most enroll a "
+            "different tumor type), but they are included for context on the broader "
+            "modality landscape. Drugs already listed in the ranked table above are not "
+            "repeated here.</p>"
+        )
+        parts.append(_render_pipeline_context_table_html(pipeline_rows))
+
     if not therapeutic_rows:
         parts.append("<p><em>No therapeutic recommendations.</em></p>")
     elif len(feature_groups) > 1:
@@ -548,8 +840,7 @@ def _render_recommendations_html(slug: str, recs: list[dict], profile: dict, pre
                 if scenario_short != "__unscoped"
                 else "Biomarker-independent options"
             )
-            parts.append(f"<h2>{_html.escape(heading)}</h2>")
-            parts.append(_render_recs_table_html(group_rows, show_personas=False, renumber=True))
+            _emit_feature_block(scenario_short, group_rows, heading)
     else:
         # Single feature — no need for per-feature headings.
         parts.append(
@@ -557,9 +848,12 @@ def _render_recommendations_html(slug: str, recs: list[dict], profile: dict, pre
             "Biomarker workup steps live in the standalone Target validation paths report.</em></p>"
         )
         scenario_short, group_rows = feature_groups[0]
-        if scenario_short != "__unscoped":
-            parts.append(f"<h2>{_html.escape(_feature_label_for_scenario(scenario_short))}</h2>")
-        parts.append(_render_recs_table_html(group_rows, show_personas=False, renumber=True))
+        heading = (
+            _feature_label_for_scenario(scenario_short)
+            if scenario_short != "__unscoped"
+            else None
+        )
+        _emit_feature_block(scenario_short, group_rows, heading)
 
     parts.append(
         '<footer class="libby-footer">'
@@ -2160,7 +2454,7 @@ def main(argv: list[str]) -> int:
 
     html_out = case_docs / f"{slug}-recommendations.html"
     html_out.write_text(
-        _render_recommendations_html(slug, recs, profile, preferences),
+        _render_recommendations_html(slug, recs, profile, preferences, trials),
         encoding="utf-8",
     )
     print(

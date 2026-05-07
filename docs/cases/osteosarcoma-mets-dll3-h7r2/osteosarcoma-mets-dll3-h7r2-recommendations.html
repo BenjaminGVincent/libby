@@ -106,6 +106,44 @@ small.scenario-key { color: var(--ink-muted); }
   margin-left: 0.35em;
   white-space: nowrap;
 }
+.pipeline-note {
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+  margin: 0.25rem 0 0.75rem;
+}
+.pipeline-context-table { font-size: 0.82em; color: var(--ink-muted); }
+.pipeline-context-table thead th {
+  background: #FAFAFA;
+  border-top: 1px solid var(--ink-muted);
+  border-bottom: 1px solid var(--ink-muted);
+}
+.pipeline-context-table tbody tr:last-child td { border-bottom: 1px solid var(--ink-muted); }
+.pipeline-context-table .intervention-name { color: var(--ink); font-weight: 600; }
+.pipeline-context-table .alias-list { color: var(--ink-muted); font-size: 0.9em; }
+.pipeline-context-table .basket-flag {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #134E48;
+  background: #DDF1EE;
+  border: 1px solid #B0DBD3;
+  border-radius: 0.35em;
+  padding: 0.02em 0.4em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+.pipeline-context-table .discontinued-flag {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5A2A2A;
+  background: #F2E1E1;
+  border: 1px solid #DDB7B7;
+  border-radius: 0.35em;
+  padding: 0.02em 0.4em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
 footer.libby-footer {
   margin-top: 3rem;
   padding-top: 1rem;
@@ -150,6 +188,35 @@ consulting a qualified oncologist.
   </div>
 </div>
 
+<h3>Pipeline context &mdash; not currently enrollable</h3>
+<p class="pipeline-note">Other agents in this target class drawn from the case dossier. The patient cannot currently enroll in these trials (most enroll a different tumor type), but they are included for context on the broader modality landscape. Drugs already listed in the ranked table above are not repeated here.</p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table pipeline-context-table">
+      <thead><tr><th>Intervention</th><th>Modality</th><th>Phase</th><th>Enrolling indication</th><th>Recruitment</th><th>Trial</th></tr></thead>
+      <tbody>
+    <tr><td><span class="intervention-name">alveltamig</span><br><span class="alias-list">ZG006</span></td><td>trispecific</td><td>3</td><td>relapsed SCLC</td><td>recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT07189455" target="_blank" rel="noopener noreferrer">NCT07189455</a><br><span class="alias-list">Suzhou Zelgen Biopharmaceuticals</span></td></tr>
+    <tr><td><span class="intervention-name">zocilurtatug pelitecan</span><br><span class="alias-list">ZL-1310</span></td><td>ADC</td><td>3</td><td>small-cell lung cancer</td><td>recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT07218146" target="_blank" rel="noopener noreferrer">NCT07218146</a><br><span class="alias-list">Zai Lab</span></td></tr>
+    <tr><td><span class="intervention-name">obrixtamig</span><br><span class="alias-list">BI 764532, BI-764532</span></td><td>BiTE</td><td>3</td><td>extensive-stage SCLC (1L)</td><td>recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT07472517" target="_blank" rel="noopener noreferrer">NCT07472517</a><br><span class="alias-list">Boehringer Ingelheim</span></td></tr>
+    <tr><td><span class="intervention-name">gocatamig</span><br><span class="alias-list">MK-6070, HPN328, DS3280</span></td><td>trispecific</td><td>1/2</td><td>DLL3-expressing SCLC, large-cell NEC, neuroendocrine prostate cancer, GEP-NEC</td><td>active not recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT04471727" target="_blank" rel="noopener noreferrer">NCT04471727</a><br><span class="alias-list">Harpoon Therapeutics → Merck</span></td></tr>
+    <tr><td><span class="intervention-name">peluntamig</span><br><span class="alias-list">PT217</span></td><td>bispecific_other</td><td>1/2</td><td>SCLC, LCNEC, NEPC, GEP-NEC, EP-NEC</td><td>recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT05652686" target="_blank" rel="noopener noreferrer">NCT05652686</a><br><span class="alias-list">Phanes Therapeutics</span></td></tr>
+    <tr><td><span class="intervention-name">QLS31904</span></td><td>BiTE</td><td>1</td><td>advanced solid tumors with DLL3 expression</td><td>unknown</td><td><a href="https://clinicaltrials.gov/study/NCT05461287" target="_blank" rel="noopener noreferrer">NCT05461287</a><br><span class="alias-list">Qilu Pharmaceutical</span></td></tr>
+    <tr><td><span class="intervention-name">DLL3-CAR-NK cells</span></td><td>CAR-NK</td><td>1</td><td>extensive-stage SCLC</td><td>unknown</td><td><a href="https://clinicaltrials.gov/study/NCT05507593" target="_blank" rel="noopener noreferrer">NCT05507593</a><br><span class="alias-list">Tianjin Medical University Cancer Institute</span></td></tr>
+    <tr><td><span class="intervention-name">clesitamig</span><br><span class="alias-list">RO7616789, RG6524, ALPS12</span></td><td>trispecific</td><td>1</td><td>SCLC, neuroendocrine carcinoma</td><td>completed</td><td><a href="https://clinicaltrials.gov/study/NCT05619744" target="_blank" rel="noopener noreferrer">NCT05619744</a><br><span class="alias-list">Hoffmann-La Roche</span></td></tr>
+    <tr><td><span class="intervention-name">LB2102</span></td><td>CAR-T</td><td>1</td><td>extensive-stage SCLC, LCNEC of lung</td><td>active not recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT05680922" target="_blank" rel="noopener noreferrer">NCT05680922</a><br><span class="alias-list">Legend Biotech</span></td></tr>
+    <tr><td><span class="intervention-name">FZ-AD005</span></td><td>ADC</td><td>1</td><td>advanced solid tumors, SCLC, LCNEC</td><td>recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT06424665" target="_blank" rel="noopener noreferrer">NCT06424665</a><br><span class="alias-list">Shanghai Fudan-Zhangjiang Bio-Pharmaceutical</span></td></tr>
+    <tr><td><span class="intervention-name">IBI3009</span></td><td>ADC</td><td>1</td><td>small-cell lung cancer</td><td>recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT06613009" target="_blank" rel="noopener noreferrer">NCT06613009</a><br><span class="alias-list">Innovent Biologics</span></td></tr>
+    <tr><td><span class="intervention-name">²²⁵Ac-ABD147</span><br><span class="alias-list">225Ac-ABD147</span></td><td>radioligand</td><td>1</td><td>SCLC, large-cell neuroendocrine carcinoma</td><td>active not recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT06736418" target="_blank" rel="noopener noreferrer">NCT06736418</a><br><span class="alias-list">Abdera Therapeutics</span></td></tr>
+    <tr><td><span class="intervention-name">¹⁷⁷Lu-DTPA-SC16.56</span><br><span class="alias-list">177Lu-SC16.56</span></td><td>radioimmunotherapy</td><td>1</td><td>neuroendocrine tumors / carcinomas (lung, prostate)</td><td>not yet recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT06941480" target="_blank" rel="noopener noreferrer">NCT06941480</a><br><span class="alias-list">Memorial Sloan Kettering Cancer Center</span></td></tr>
+    <tr><td><span class="intervention-name">²²⁵Ac-ETN029</span><br><span class="alias-list">225Ac-ETN029</span></td><td>radioligand</td><td>1</td><td>SCLC, LCNEC, NEPC, GEP-NEC</td><td>recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT07006727" target="_blank" rel="noopener noreferrer">NCT07006727</a><br><span class="alias-list">Novartis</span></td></tr>
+    <tr><td><span class="intervention-name">rovalpituzumab tesirine</span> <span class="discontinued-flag">discontinued</span><br><span class="alias-list">Rova-T, SC16LD6.5</span></td><td>ADC</td><td>3</td><td>small-cell lung cancer (2L)</td><td>completed</td><td><a href="https://clinicaltrials.gov/study/NCT03061812" target="_blank" rel="noopener noreferrer">NCT03061812</a><br><span class="alias-list">AbbVie / Stemcentrx</span></td></tr>
+    <tr><td><span class="intervention-name">SC-002</span> <span class="discontinued-flag">discontinued</span></td><td>ADC</td><td>1</td><td>small-cell lung cancer</td><td>terminated</td><td><a href="https://clinicaltrials.gov/study/NCT02500914" target="_blank" rel="noopener noreferrer">NCT02500914</a><br><span class="alias-list">Stemcentrx (acquired by AbbVie)</span></td></tr>
+    <tr><td><span class="intervention-name">AMG 119</span> <span class="discontinued-flag">discontinued</span></td><td>CAR-T</td><td>1</td><td>small-cell lung cancer</td><td>unknown</td><td><a href="https://clinicaltrials.gov/study/NCT03392064" target="_blank" rel="noopener noreferrer">NCT03392064</a><br><span class="alias-list">Amgen</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
 <h2>PRAME-targeting interventions</h2>
 <div class="trial-table-wrap">
   <div class="trial-scroll">
@@ -158,6 +225,22 @@ consulting a qualified oncologist.
       <tbody>
     <tr><td>1</td><td><strong>IMA203 (PRAME-TCR-T) via NCT03686124 (Immatics ACTengine pan-solid basket)</strong> <span class="scenario-conditional">(conditional on prame_ihc_hla positive)</span></td><td>Strong. ORR 54% (95% CI 34-73) in pan-solid PRAME+ HLA-A*02:01+ cohort (Wermke 2024 Lancet Oncol, n=28). Sarcoma cohorts on protocol; osteosarcoma fit unconfirmed but eligibility is mechanism-driven, not tumor-restricted.</td><td>High (CRS ~100% — G3-4 ~10%; ICANS-like ~25%; uniform post-Cy/Flu cytopenias; one treatment-related death in published cohort; CAR-T-style infusion infrastructure required)</td><td><strong>Moderate</strong> <span class="cpm-desc">(On-target / off-tumor toxicity to PRAME-expressing normal testis is class-managed (testis is immune-privileged); CRS / neurotoxicity from T-cell activation is the main mechanism-level risk)</span></td><td><strong>Best-evidenced PRAME pathway with pan-solid sarcoma-inclusive basket; conditional on PRAME IHC + HLA-A*02:01 typing both confirming.</strong></td></tr>
     <tr><td>2</td><td><strong>IMC-P115C via NCT07156136 (Immunocore next-gen PRAME ImmTAC pan-tumor)</strong> <span class="scenario-conditional">(conditional on prame_ihc_hla positive)</span></td><td>Speculative. No published clinical data for IMC-P115C; relies on brenetafusp class precedent (ORR ~9% in heavily pretreated melanoma; durable in subset).</td><td>Moderate (ImmTAC class: CRS ~85% mostly G1-2; rash ~70%; transient hypotension; pre-medication-managed)</td><td><strong>Moderate</strong> <span class="cpm-desc">(ImmTAC on-target / off-tumor signal in PRAME-expressing normal tissue (low; testis-restricted); CRS from T-cell activation)</span></td><td><strong>Mechanism-class alternative to IMA203 in the PRAME space, contingent on PRAME + HLA confirmation and sponsor confirmation osteosarcoma is in scope.</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Pipeline context &mdash; not currently enrollable</h3>
+<p class="pipeline-note">Other agents in this target class drawn from the case dossier. The patient cannot currently enroll in these trials (most enroll a different tumor type), but they are included for context on the broader modality landscape. Drugs already listed in the ranked table above are not repeated here.</p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table pipeline-context-table">
+      <thead><tr><th>Intervention</th><th>Modality</th><th>Phase</th><th>Enrolling indication</th><th>Recruitment</th><th>Trial</th></tr></thead>
+      <tbody>
+    <tr><td><span class="intervention-name">brenetafusp (IMC-F106C)</span> <span class="basket-flag">basket / biomarker</span><br><span class="alias-list">IMC F106C</span></td><td>bispecific_other</td><td>1/2</td><td>advanced solid tumors expressing PRAME (cutaneous and uveal melanoma, ovarian, lung, sarcoma cohorts)</td><td>active not recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT04262466" target="_blank" rel="noopener noreferrer">NCT04262466</a><br><span class="alias-list">Immunocore</span></td></tr>
+    <tr><td><span class="intervention-name">IMA402 (PRAME-TCER)</span> <span class="basket-flag">basket / biomarker</span><br><span class="alias-list">TCER PRAME</span></td><td>bispecific_other</td><td>1/2</td><td>refractory / recurrent solid tumors expressing PRAME</td><td>recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT05958121" target="_blank" rel="noopener noreferrer">NCT05958121</a><br><span class="alias-list">Immatics Biotechnologies</span></td></tr>
+    <tr><td><span class="intervention-name">brenetafusp (IMC-F106C)</span><br><span class="alias-list">IMC F106C</span></td><td>bispecific_other</td><td>3</td><td>previously untreated HLA-A*02:01-positive advanced cutaneous melanoma</td><td>recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT06112314" target="_blank" rel="noopener noreferrer">NCT06112314</a><br><span class="alias-list">Immunocore</span></td></tr>
+    <tr><td><span class="intervention-name">BPX-701</span> <span class="discontinued-flag">discontinued</span></td><td>CAR-T</td><td>1/2</td><td>AML, MDS, uveal melanoma</td><td>terminated</td><td><a href="https://clinicaltrials.gov/study/NCT02743611" target="_blank" rel="noopener noreferrer">NCT02743611</a><br><span class="alias-list">Bellicum Pharmaceuticals</span></td></tr>
       </tbody>
     </table>
   </div>
