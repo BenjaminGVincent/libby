@@ -4,10 +4,7 @@
 
 ## Downloads
 
-- [Clinician PDF report](osteosarcoma-mets-dll3-h7r2-libby-report.pdf) — ranked recommendations + evidence + sources
 - [Patient/caregiver PDF](osteosarcoma-mets-dll3-h7r2-plain-language.pdf) — plain-language summary
-- [Access guide (PDF)](osteosarcoma-mets-dll3-h7r2-accessibility.pdf) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines
-- [Master manuscripts table (PDF)](osteosarcoma-mets-dll3-h7r2-manuscripts.pdf) — every paper considered — n, effect, variance, toxicities
 - [Recommendations Table](osteosarcoma-mets-dll3-h7r2-recommendations.html) — ranked options + pipeline context — self-contained HTML that opens offline
 
 _5 rows: 1 workup + 4 ranked options._

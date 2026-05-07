@@ -6,13 +6,11 @@
 
 ## Downloads
 
-- [Clinician PDF report](demo-nsclc-egfr-l858r-post-osi-d3m0-libby-report.pdf?v=8d6e9f96) — ranked recommendations + evidence + sources
-- [Patient/caregiver PDF](demo-nsclc-egfr-l858r-post-osi-d3m0-plain-language.pdf?v=be392585) — plain-language summary
-- [Target validation paths](demo-nsclc-egfr-l858r-post-osi-d3m0-target-validation.pdf?v=0e596f3f) — diagnostic + biomarker workup that hardens the targetable-feature call
-- [Access guide (web)](accessibility.md?v=a9b23b43) — same access guide in an in-browser sortable table
-- [Master manuscripts table (PDF)](demo-nsclc-egfr-l858r-post-osi-d3m0-manuscripts.pdf?v=0472a3f6) — every paper considered — n, effect, variance, toxicities
-- [Master manuscripts table (web)](manuscripts.md?v=ccc49de6) — same inventory in a sortable in-browser table
-- [Self-contained HTML](demo-nsclc-egfr-l858r-post-osi-d3m0-recommendations.html?v=bf019cde) — recommendations table that opens offline
+- [Patient/caregiver PDF](demo-nsclc-egfr-l858r-post-osi-d3m0-plain-language.pdf?v=53d5b671) — plain-language summary
+- [Target validation paths](demo-nsclc-egfr-l858r-post-osi-d3m0-target-validation.pdf?v=6ab5576d) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Access guide](accessibility.md?v=a9b23b43) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table
+- [Master manuscripts table](manuscripts.md?v=ccc49de6) — every paper considered — n, effect, variance, toxicities, in a sortable in-browser table
+- [Recommendations Table](demo-nsclc-egfr-l858r-post-osi-d3m0-recommendations.html?v=bf019cde) — ranked options + pipeline context — self-contained HTML that opens offline
 
 <!-- libby:downloads:end -->
 

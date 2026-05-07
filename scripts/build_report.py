@@ -1308,16 +1308,36 @@ def _cell_link(cell: str) -> str:
     return m.group(2) if m else ""
 
 
+def _is_bold_cell(cell: str) -> tuple[bool, str]:
+    """Detect a cell whose entire content is wrapped in `**...**`.
+
+    Returns (is_bold, inner). When the cell starts and ends with `**`, the
+    outer wrapper is stripped and the inner content is returned (italic /
+    link / code markdown inside the inner is preserved). Otherwise the cell
+    is returned unchanged. Used by the table renderer to honor cell-level
+    bold (the convention reporter uses for preferred-provider rows in
+    `target_validation_report.md`).
+    """
+    s = cell.strip()
+    if len(s) >= 4 and s.startswith("**") and s.endswith("**"):
+        return True, s[2:-2]
+    return False, cell
+
+
 def _render_table_row(pdf, cells: list[str], widths: list[float], fill: bool, header: bool) -> None:
     line_h = 4.2 if not header else 4.6
     pad_v = 1.2
     cell_lines: list[list[str]] = []
     cell_links: list[str] = []
+    cell_bolds: list[bool] = []
     for cell, w in zip(cells, widths):
-        plain = _strip_inline_md(cell)
-        wrapped = _word_wrap(_ascii_fallback(plain), w - 2.4, pdf, font_style="B" if header else "")
+        is_bold, inner_cell = _is_bold_cell(cell)
+        plain = _strip_inline_md(inner_cell)
+        eff_style = "B" if (header or is_bold) else ""
+        wrapped = _word_wrap(_ascii_fallback(plain), w - 2.4, pdf, font_style=eff_style)
         cell_lines.append(wrapped)
-        cell_links.append("" if header else _cell_link(cell))
+        cell_links.append("" if header else _cell_link(inner_cell if is_bold else cell))
+        cell_bolds.append(is_bold)
     n_lines = max(1, max(len(c) for c in cell_lines))
     row_h = max(line_h * n_lines + pad_v * 2, 6)
 
@@ -1339,25 +1359,25 @@ def _render_table_row(pdf, cells: list[str], widths: list[float], fill: bool, he
         pdf.line(x0, y0, x0 + sum(widths), y0)
 
     cx = x0
-    for cell, w, lines, link in zip(cells, widths, cell_lines, cell_links):
+    for cell, w, lines, link, is_bold in zip(cells, widths, cell_lines, cell_links, cell_bolds):
         cy = y0 + pad_v
         for ln in lines:
             pdf.set_xy(cx + 1.2, cy)
-            _emit_table_cell_line(pdf, ln, w - 2.4, header, cell_link=link)
+            _emit_table_cell_line(pdf, ln, w - 2.4, header, cell_link=link, force_bold=is_bold)
             cy += line_h
         cx += w
 
     pdf.set_xy(x0, y0 + row_h)
 
 
-def _emit_table_cell_line(pdf, text: str, w: float, header: bool, cell_link: str = "") -> None:
+def _emit_table_cell_line(pdf, text: str, w: float, header: bool, cell_link: str = "", force_bold: bool = False) -> None:
     pdf.set_text_color(*INK)
     if cell_link and not header:
         # The whole cell is one hyperlinked run — `_render_table_row` already
         # stripped the markdown so `text` is the visible label. Render it as
         # ACCENT-colored clickable text with the URL attached.
         ascii_text = _ascii_fallback(text)
-        pdf.set_font(_FONT_FAMILY, "", 8)
+        pdf.set_font(_FONT_FAMILY, "B" if force_bold else "", 8)
         pdf.set_text_color(*ACCENT)
         ww = pdf.get_string_width(ascii_text)
         if ww > w + 0.01:
@@ -1368,7 +1388,10 @@ def _emit_table_cell_line(pdf, text: str, w: float, header: bool, cell_link: str
     cur_x = pdf.get_x()
     y = pdf.get_y()
     for run_text, style, color, link in runs:
-        pdf.set_font(_FONT_FAMILY, style if not header else "B", 8)
+        eff_style = style
+        if force_bold and not header and "B" not in eff_style:
+            eff_style = ("B" + eff_style) if eff_style else "B"
+        pdf.set_font(_FONT_FAMILY, eff_style if not header else "B", 8)
         run_color = color if not header else INK
         pdf.set_text_color(*run_color)
         pdf.set_xy(cur_x, y)
@@ -2156,11 +2179,6 @@ _RX_FIRST_H2 = re.compile(r"^## ", re.MULTILINE)
 def _downloads_section(slug: str, case_docs: Path) -> str:
     artifacts = [
         (
-            f"{slug}-libby-report.pdf",
-            "Clinician PDF report",
-            "ranked recommendations + evidence + sources",
-        ),
-        (
             f"{slug}-plain-language.pdf",
             "Patient/caregiver PDF",
             "plain-language summary",
@@ -2171,24 +2189,14 @@ def _downloads_section(slug: str, case_docs: Path) -> str:
             "diagnostic + biomarker workup that hardens the targetable-feature call",
         ),
         (
-            f"{slug}-accessibility.pdf",
-            "Access guide (PDF)",
-            "how to access each therapy — trial recruitment contacts + manufacturer medical-info lines",
-        ),
-        (
             "accessibility.md",
-            "Access guide (web)",
-            "same access guide in an in-browser sortable table",
-        ),
-        (
-            f"{slug}-manuscripts.pdf",
-            "Master manuscripts table (PDF)",
-            "every paper considered — n, effect, variance, toxicities",
+            "Access guide",
+            "how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table",
         ),
         (
             "manuscripts.md",
-            "Master manuscripts table (web)",
-            "same inventory in a sortable in-browser table",
+            "Master manuscripts table",
+            "every paper considered — n, effect, variance, toxicities, in a sortable in-browser table",
         ),
         (
             f"{slug}-recommendations.html",
@@ -2485,12 +2493,11 @@ def main(argv: list[str]) -> int:
     body_md = _drop_h1(body_md)
     sources_md = _sources_markdown(recs)
 
+    # Clinician PDF removed from the Downloads section; strip any stale copy
+    # so re-runs don't leave an unlinked artifact in `docs/`.
     clinician_out = case_docs / f"{slug}-libby-report.pdf"
-    _make_clinician_pdf(slug, exec_md, body_md, sources_md, clinician_out)
-    print(
-        f"built {clinician_out.relative_to(REPO_ROOT)} — "
-        f"{clinician_out.stat().st_size / 1024:.0f} KB"
-    )
+    if clinician_out.exists():
+        clinician_out.unlink()
 
     plain_path = case_docs / "plain_language.md"
     if plain_path.exists():
@@ -2506,28 +2513,18 @@ def main(argv: list[str]) -> int:
     clinical = _load_jsonl(case_data / "clinical_evidence.jsonl")
     preclinical = _load_jsonl(case_data / "preclinical_evidence.jsonl")
     trials = _load_jsonl(case_data / "trials.jsonl")
-    if clinical or preclinical or trials:
-        manuscripts_out = case_docs / f"{slug}-manuscripts.pdf"
-        _make_manuscripts_pdf(slug, clinical, preclinical, trials, manuscripts_out)
-        print(
-            f"built {manuscripts_out.relative_to(REPO_ROOT)} — "
-            f"{manuscripts_out.stat().st_size / 1024:.0f} KB "
-            f"(clinical={len(clinical)}, preclinical={len(preclinical)}, "
-            f"trials={len(trials)})"
-        )
+    # Master-manuscripts PDF removed from the Downloads section. The web
+    # version (`manuscripts.md`) remains as the primary artifact.
+    manuscripts_out = case_docs / f"{slug}-manuscripts.pdf"
+    if manuscripts_out.exists():
+        manuscripts_out.unlink()
 
     accessibility_rows = _load_jsonl(case_data / "accessibility.jsonl")
+    # Access guide PDF removed from the Downloads section. The web version
+    # (`accessibility.md`) remains as the primary artifact.
     accessibility_pdf_out = case_docs / f"{slug}-accessibility.pdf"
-    if accessibility_rows:
-        _make_accessibility_pdf(slug, accessibility_rows, accessibility_pdf_out)
-        print(
-            f"built {accessibility_pdf_out.relative_to(REPO_ROOT)} — "
-            f"{accessibility_pdf_out.stat().st_size / 1024:.0f} KB "
-            f"(interventions={len(accessibility_rows)})"
-        )
-    else:
-        if accessibility_pdf_out.exists():
-            accessibility_pdf_out.unlink()
+    if accessibility_pdf_out.exists():
+        accessibility_pdf_out.unlink()
 
     # Reporter-authored target-validation prose. Drives both the website
     # injection (after `## Preferences`) and the standalone PDF.

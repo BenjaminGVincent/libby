@@ -112,7 +112,7 @@ Per intervention, produce one row:
 Before writing each row, apply the humanizer skill at `.claude/skills/humanizer/SKILL.md` (vendored, MIT-licensed; falls back to `~/.claude/skills/humanizer/SKILL.md`) to the free-text fields. Read it once at the start of the run.
 
 Scope:
-- Applies to: `access_summary`, `payer_access_notes`, `next_steps[]` items, `notes`, trial-row `notes`, manufacturer-block `notes`. These render in the user-facing accessibility page and PDF download.
+- Applies to: `access_summary`, `payer_access_notes`, `next_steps[]` items, `notes`, trial-row `notes`, manufacturer-block `notes`. These render in the user-facing accessibility page (`accessibility.md`).
 - Does **not** apply to: structured fields (`access_status`, `regulatory_status` enums, `recruitment_status`, `nct_id`, contact emails / phones / URLs), `guideline_status` (typically a terse phrase like "NCCN cat 1"), `geographic_scope` (terse phrase).
 
 Override: contact strings, NCT IDs, and URLs stay verbatim. Phone formatting and email casing are preserved as published.

@@ -177,24 +177,9 @@ def downloads_block(case_docs: Path, slug: str) -> str:
     """
     artifacts = [
         (
-            f"{slug}-libby-report.pdf",
-            "Clinician PDF report",
-            "ranked recommendations + evidence + sources",
-        ),
-        (
             f"{slug}-plain-language.pdf",
             "Patient/caregiver PDF",
             "plain-language summary",
-        ),
-        (
-            f"{slug}-accessibility.pdf",
-            "Access guide (PDF)",
-            "how to access each therapy — trial recruitment contacts + manufacturer medical-info lines",
-        ),
-        (
-            f"{slug}-manuscripts.pdf",
-            "Master manuscripts table (PDF)",
-            "every paper considered — n, effect, variance, toxicities",
         ),
         (
             f"{slug}-recommendations.html",
