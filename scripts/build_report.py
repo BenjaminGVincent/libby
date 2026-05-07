@@ -2179,14 +2179,14 @@ _RX_FIRST_H2 = re.compile(r"^## ", re.MULTILINE)
 def _downloads_section(slug: str, case_docs: Path) -> str:
     artifacts = [
         (
-            f"{slug}-plain-language.pdf",
-            "Patient/caregiver PDF",
-            "plain-language summary",
-        ),
-        (
             f"{slug}-target-validation.pdf",
             "Target validation paths",
             "diagnostic + biomarker workup that hardens the targetable-feature call",
+        ),
+        (
+            f"{slug}-recommendations.html",
+            "Recommendations Table",
+            "ranked options + pipeline context — self-contained HTML that opens offline",
         ),
         (
             "accessibility.md",
@@ -2199,9 +2199,9 @@ def _downloads_section(slug: str, case_docs: Path) -> str:
             "every paper considered — n, effect, variance, toxicities, in a sortable in-browser table",
         ),
         (
-            f"{slug}-recommendations.html",
-            "Recommendations Table",
-            "ranked options + pipeline context — self-contained HTML that opens offline",
+            f"{slug}-plain-language.pdf",
+            "Patient/caregiver PDF",
+            "plain-language summary",
         ),
     ]
     present = [(n, lbl, b) for n, lbl, b in artifacts if (case_docs / n).exists()]

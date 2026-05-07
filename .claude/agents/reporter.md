@@ -211,6 +211,16 @@ The script reads `executive_summary.md`, `index.md`, `plain_language.md`, `recom
 
 `scripts/build_report.py` itself patches the case landing page (`docs/cases/<slug>/index.md`) — it inserts (or refreshes) a `## Downloads` section between stable HTML comment markers `<!-- libby:downloads:begin -->` and `<!-- libby:downloads:end -->`. The block lands before the first `##` heading on the page. The injection is idempotent: re-running the reporter replaces the block in place; if no artifacts exist it strips the block. **Note:** if the PI re-runs and re-authors `index.md` from scratch, the markers disappear, but the next reporter run re-inserts them. Reporter is the last stage in the pipeline, so this is not a problem in normal flow.
 
+**Downloads order (load-bearing).** The artifacts must render in this exact order in both `index.md` and `recommendations.md` (the same order is encoded in `_downloads_section` in `scripts/build_report.py` and `downloads_block` in `scripts/build_recommendations.py`):
+
+1. Target validation paths (`<slug>-target-validation.pdf`)
+2. Recommendations Table (`<slug>-recommendations.html`)
+3. Access guide (`accessibility.md`)
+4. Master manuscripts table (`manuscripts.md`)
+5. Patient/caregiver PDF (`<slug>-plain-language.pdf`)
+
+Missing artifacts are filtered out automatically; the relative order of the remaining ones is preserved. If you change one ordering you MUST change both.
+
 Then run:
 
 ```bash

@@ -177,14 +177,29 @@ def downloads_block(case_docs: Path, slug: str) -> str:
     """
     artifacts = [
         (
-            f"{slug}-plain-language.pdf",
-            "Patient/caregiver PDF",
-            "plain-language summary",
+            f"{slug}-target-validation.pdf",
+            "Target validation paths",
+            "diagnostic + biomarker workup that hardens the targetable-feature call",
         ),
         (
             f"{slug}-recommendations.html",
             "Recommendations Table",
             "ranked options + pipeline context — self-contained HTML that opens offline",
+        ),
+        (
+            "accessibility.md",
+            "Access guide",
+            "how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table",
+        ),
+        (
+            "manuscripts.md",
+            "Master manuscripts table",
+            "every paper considered — n, effect, variance, toxicities, in a sortable in-browser table",
+        ),
+        (
+            f"{slug}-plain-language.pdf",
+            "Patient/caregiver PDF",
+            "plain-language summary",
         ),
     ]
     present = [(name, label, blurb) for name, label, blurb in artifacts if (case_docs / name).exists()]
