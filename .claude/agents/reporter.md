@@ -127,17 +127,20 @@ Structure (per-feature narrative → assay-providers table):
 
 ### Where to order these assays
 
+```markdown
 | Assay | Provider | Decision gated | Contact |
 |---|---|---|---|
-| <test_name from row 1> | **<provider.name>** *(preferred)* *(<assay_brand if any>)* | <decision_gated value, verbatim> | [<provider.contact_url short label>](<provider.contact_url>) · <provider.address> · <provider.contact_phone> |
-| <test_name from row 1> (continued) | <other provider> *(<assay_brand>)* | (same as preferred row) | (same shape) |
+| **<test_name>** | **<provider.name> *(preferred)* *(<assay_brand if any>)*** | **<decision_gated value, verbatim>** | **[test info](<provider.contact_url>) · <provider.address> · <provider.contact_phone>** |
+| <test_name> | <other provider> *(<assay_brand>)* | <decision_gated> | [test info](<contact_url>) · <address> · <phone> |
 | ... | ... | ... | ... |
+```
 
-<This table comes after the narrative. **Four columns**, one row per (assay, provider) pair, drawn from `target_validation.jsonl::providers[]`. When multiple rows reference the same assay, deduplicate.
+This table comes after the narrative. **Four columns**, one row per (assay, provider) pair, drawn from `target_validation.jsonl::providers[]`. When multiple rows reference the same assay, deduplicate.
 
 **Per-column rules:**
+
 - **Assay** — copy `test_name` verbatim. Repeat across each provider row for the same assay.
-- **Provider** — `<provider.name>`, optional brand parenthetical. **The provider with `preferred: true` is rendered as `**<name>** *(preferred)*` — bold name plus an italic `(preferred)` annotation immediately after.** Exactly one preferred per assay; the rest of the rows are plain. Use ASCII markdown only — no emoji, no star characters (`★` / `⭐`), no HTML. The rendered output must work cleanly in both mkdocs Material (HTML) and the PDF font subset.
+- **Provider** — `<provider.name>`, optional brand parenthetical. The non-preferred rows are plain (no surrounding bold). Use ASCII markdown only — no emoji, no star characters (`★` / `⭐`), no HTML. The rendered output must work cleanly in both mkdocs Material (HTML) and the PDF font subset.
 - **Decision gated** — copy `decision_gated` verbatim. Repeats across each provider row for the same assay (same value because the decision is per-assay, not per-provider).
 - **Contact** — combine the three contact fields into a single cell separated by " · ":
     1. `[test info](<provider.contact_url>)` (clickable link with literal label "test info")
@@ -145,7 +148,22 @@ Structure (per-feature narrative → assay-providers table):
     3. `<provider.contact_phone>` (verbatim)
   Drop any field that's `null`. Email goes in the Notes line under the address only when no phone is published.
 
-The table is the practical "where to actually order this" reference; it follows the narrative because the narrative explains *which* assays to order before the reader needs the contact info. Cap at the providers the JSONL already filtered to (≤ 5 per assay per the target_validator's selection rule).>
+**Preferred-row formatting (load-bearing).** Exactly one provider per assay has `preferred: true`. The preferred provider's *entire row* (all four cells) renders **bold**. Wrap each cell's content in `**...**`. The Provider cell additionally carries an italic `*(preferred)*` annotation immediately after the name, which renders bold-italic inside the bold-wrapped cell. Examples:
+
+- Assay cell: `**DLL3 IHC (clone SP347)**`
+- Provider cell: `**Foundation Medicine *(preferred)* (FoundationOne CDx + IHC reflex)**`
+- Decision gated cell: `**Tarlatamab via NCT06788938**`
+- Contact cell: `**[test info](https://www.foundationmedicine.com/test/foundationone-cdx) · 150 Second Street, Cambridge, MA 02141 · 1-888-988-3639**` <!-- phi-scan: ignore -->  illustrative provider contact, not patient PHI
+
+Important parser conventions:
+
+- Do NOT double-bold the provider name (`****Foundation Medicine** *(preferred)***` is invalid).
+- Inside a preferred (bold-wrapped) Provider cell, the brand parenthetical is **plain (not italic)** — `(FoundationOne CDx + IHC reflex)`, not `*(FoundationOne CDx + IHC reflex)*`. Keeping italic markers around the brand inside the outer bold creates two adjacent italic spans (`*(preferred)* *(brand)*`) that mkdocs Material's parser handles incorrectly, producing malformed `<em>` nesting in the rendered HTML. Drop the italic on the brand in preferred rows — it inherits bold from the cell wrapper, which is enough emphasis.
+- Non-preferred rows keep the italic brand convention (`*(FoundationOne CDx)*`) since it's not nested inside an outer bold.
+
+The rest of the assay's rows (non-preferred providers) are plain — no surrounding bold on any cell.
+
+The table is the practical "where to actually order this" reference; it follows the narrative because the narrative explains *which* assays to order before the reader needs the contact info. Cap at the providers the JSONL already filtered to (≤ 5 per assay per the target_validator's selection rule).
 
 ---
 
