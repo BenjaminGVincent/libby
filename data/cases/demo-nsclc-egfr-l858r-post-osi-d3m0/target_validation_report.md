@@ -12,7 +12,7 @@ The FISH GCN 8.2 result clears SAFFRON's enrollment threshold (≥ 6) cleanly, b
 
 ### Where to order these assays
 
-The preferred provider for each assay is marked **(preferred)** — selected on company size, reputation, US-based location, and turnaround time. Other providers in the row are listed in case the preferred lab is unreachable for this patient.
+The preferred provider for each assay is marked **(preferred)**, selected on company size, reputation, US-based location, and turnaround time. Other providers in the row are listed in case the preferred lab is unreachable for this patient.
 
 | Assay | Provider | Decision gated | Contact |
 |---|---|---|---|

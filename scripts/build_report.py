@@ -2333,6 +2333,7 @@ def _inject_target_validation(index_path: Path, report_md: str) -> bool:
 
 _RX_BOLD_NO_SPACE_AFTER = re.compile(r"\*\*[^\s*][^*]*\*\*[A-Za-z0-9]")
 _RX_BOLD_NO_SPACE_BEFORE = re.compile(r"[A-Za-z0-9]\*\*[^\s*][^*]*\*\*")
+_RX_EM_DASH = re.compile(r"—")
 
 
 def _check_inline_bold_spacing(path: Path) -> list[tuple[int, str]]:
@@ -2346,6 +2347,23 @@ def _check_inline_bold_spacing(path: Path) -> list[tuple[int, str]]:
     hits: list[tuple[int, str]] = []
     for i, line in enumerate(path.read_text(encoding="utf-8").splitlines(), start=1):
         if _RX_BOLD_NO_SPACE_AFTER.search(line) or _RX_BOLD_NO_SPACE_BEFORE.search(line):
+            hits.append((i, line.rstrip()))
+    return hits
+
+
+def _check_em_dashes(path: Path) -> list[tuple[int, str]]:
+    """Return (line_no, line) tuples for any line containing a literal em-dash
+    (U+2014). The reporter contract forbids em-dashes anywhere in
+    `executive_summary.md` or `target_validation_report.md` — the humanizer
+    skill flags em-dash overuse as a top AI-prose tell, and the reporter is
+    expected to use periods, commas, colons, or sentence restructure instead.
+    Hyphens (`-`) and en-dashes (`–`, used inside numeric ranges) are unaffected.
+    """
+    if not path.exists():
+        return []
+    hits: list[tuple[int, str]] = []
+    for i, line in enumerate(path.read_text(encoding="utf-8").splitlines(), start=1):
+        if _RX_EM_DASH.search(line):
             hits.append((i, line.rstrip()))
     return hits
 
@@ -2376,24 +2394,42 @@ def main(argv: list[str]) -> int:
         )
         return 1
 
-    # Pre-flight: refuse to render when reporter-authored prose has bold runs
-    # glued to word characters. This is a markdown-hygiene tripwire — the fix
-    # is in the source markdown (add a space), never in the rendered PDF.
+    # Pre-flight #1: refuse to render when reporter-authored prose has bold
+    # runs glued to word characters. Markdown-hygiene tripwire; the fix is in
+    # the source markdown (add a space), never in the rendered PDF.
+    reporter_files = (exec_path, case_data / "target_validation_report.md")
     spacing_blockers: list[tuple[Path, int, str]] = []
-    for f in (
-        exec_path,
-        case_data / "target_validation_report.md",
-    ):
+    for f in reporter_files:
         for ln, line in _check_inline_bold_spacing(f):
             spacing_blockers.append((f, ln, line))
     if spacing_blockers:
         print(
-            "build_report: refusing to render — bold-run spacing violations "
+            "build_report: refusing to render. Bold-run spacing violation "
             "(closing `**` must be followed by a space or punctuation, not a word "
             "character). Fix the source markdown.",
             file=sys.stderr,
         )
         for path, ln, line in spacing_blockers:
+            print(f"  {path}:{ln}: {line}", file=sys.stderr)
+        return 1
+
+    # Pre-flight #2: refuse to render when reporter-authored prose contains an
+    # em-dash. The humanizer skill flags em-dash overuse as a top AI-prose
+    # tell, and the reporter contract forbids them outright in these files.
+    # Hyphens (-) and en-dashes (used inside numeric ranges) are unaffected.
+    em_dash_blockers: list[tuple[Path, int, str]] = []
+    for f in reporter_files:
+        for ln, line in _check_em_dashes(f):
+            em_dash_blockers.append((f, ln, line))
+    if em_dash_blockers:
+        print(
+            "build_report: refusing to render. Em-dash (U+2014) found in "
+            "reporter-authored prose. Replace with a period, comma, colon, or "
+            "sentence restructure (see reporter.md \"Markdown formatting "
+            "hygiene\" for guidance). Hyphens and en-dashes are unaffected.",
+            file=sys.stderr,
+        )
+        for path, ln, line in em_dash_blockers:
             print(f"  {path}:{ln}: {line}", file=sys.stderr)
         return 1
 

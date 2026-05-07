@@ -6,13 +6,13 @@
 
 ## Downloads
 
-- [Clinician PDF report](demo-nsclc-egfr-l858r-post-osi-d3m0-libby-report.pdf) — ranked recommendations + evidence + sources
-- [Patient/caregiver PDF](demo-nsclc-egfr-l858r-post-osi-d3m0-plain-language.pdf) — plain-language summary
-- [Target validation paths](demo-nsclc-egfr-l858r-post-osi-d3m0-target-validation.pdf) — diagnostic + biomarker workup that hardens the targetable-feature call
-- [Access guide (web)](accessibility.md) — same access guide in an in-browser sortable table
-- [Master manuscripts table (PDF)](demo-nsclc-egfr-l858r-post-osi-d3m0-manuscripts.pdf) — every paper considered — n, effect, variance, toxicities
-- [Master manuscripts table (web)](manuscripts.md) — same inventory in a sortable in-browser table
-- [Self-contained HTML](demo-nsclc-egfr-l858r-post-osi-d3m0-recommendations.html) — recommendations table that opens offline
+- [Clinician PDF report](demo-nsclc-egfr-l858r-post-osi-d3m0-libby-report.pdf?v=ec993a4e) — ranked recommendations + evidence + sources
+- [Patient/caregiver PDF](demo-nsclc-egfr-l858r-post-osi-d3m0-plain-language.pdf?v=5ebdaaed) — plain-language summary
+- [Target validation paths](demo-nsclc-egfr-l858r-post-osi-d3m0-target-validation.pdf?v=9774b17a) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Access guide (web)](accessibility.md?v=a9b23b43) — same access guide in an in-browser sortable table
+- [Master manuscripts table (PDF)](demo-nsclc-egfr-l858r-post-osi-d3m0-manuscripts.pdf?v=f5a2b329) — every paper considered — n, effect, variance, toxicities
+- [Master manuscripts table (web)](manuscripts.md?v=ccc49de6) — same inventory in a sortable in-browser table
+- [Self-contained HTML](demo-nsclc-egfr-l858r-post-osi-d3m0-recommendations.html?v=bf019cde) — recommendations table that opens offline
 
 <!-- libby:downloads:end -->
 
@@ -54,7 +54,7 @@ The FISH GCN 8.2 result clears SAFFRON's enrollment threshold (≥ 6) cleanly, b
 
 ### Where to order these assays
 
-The preferred provider for each assay is marked **(preferred)** — selected on company size, reputation, US-based location, and turnaround time. Other providers in the row are listed in case the preferred lab is unreachable for this patient.
+The preferred provider for each assay is marked **(preferred)**, selected on company size, reputation, US-based location, and turnaround time. Other providers in the row are listed in case the preferred lab is unreachable for this patient.
 
 | Assay | Provider | Decision gated | Contact |
 |---|---|---|---|

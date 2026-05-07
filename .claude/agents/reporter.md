@@ -244,16 +244,25 @@ bash scripts/run_case.sh <slug>
 
 ## Markdown formatting hygiene (per-file pre-flight)
 
-Before writing each prose file, do a final formatting pass. The most common bug is missing whitespace around inline-bold runs — the markdown source `**PRAME IHC**to confirm` (no space after the closing `**`) renders as a run-on word in both the website and the PDF. The rule:
+Before writing each prose file, do a final formatting pass.
 
-- **Always include a space (or a punctuation character) between a closing `**` and the next character.** Patterns the build script will refuse to render:
-    - `**X**word` (no space, no punctuation) — fix to `**X** word`.
-    - `word**X**` (no space, no punctuation before the opening `**`) — fix to `word **X**`.
-- Same rule for italic `*…*` and inline-code `\`…\`` runs.
-- The build script's pre-flight regex is `r"\*\*[^\s*][^*]*\*\*[A-Za-z0-9]"` (closing-bold immediately followed by a word character). It runs against `executive_summary.md` and `target_validation_report.md` before PDF generation; a hit blocks the build and tells you the offending line.
-- Punctuation immediately after a bold close is fine: `**X**, more text` and `**X**:` and `**X**.` and `**X**!` are all valid. The rule targets word characters only.
+**Rule 1: never use em-dashes (`—`, U+2014).** The em-dash is one of the most reliable AI-prose tells, and the humanizer skill targets it explicitly (pattern #14). Reporter prose **must not contain `—` anywhere** in `executive_summary.md` or `target_validation_report.md`. Replace them with the appropriate alternative for the surrounding sentence:
 
-Apply this check yourself before writing — don't rely solely on the build-time guard. The build-time guard is a tripwire, not a substitute for hygiene.
+- Parenthetical aside → period or comma (or restructure into two sentences). *"DLL3 IHC SP347 — the antibody used in the tarlatamab development program — gates enrollment"* becomes *"DLL3 IHC SP347 gates enrollment. SP347 is the antibody used in the tarlatamab development program."*
+- Setup/payoff or contrast → colon or period. *"The board agreed on one thing — get the IHC first"* becomes *"The board agreed on one thing: get the IHC first."*
+- Range (numeric) → en-dash (`–`, U+2013) or "to". *"3–14%"* and *"1 to 3 weeks"* are both fine. The en-dash IS allowed inside numeric ranges only.
+- Speaker/list separator → comma, period, or semicolon depending on cadence.
+
+The build script refuses to render the PDFs when `executive_summary.md` or `target_validation_report.md` contains an em-dash. Hyphens (`-`) and en-dashes (`–`) are unaffected.
+
+**Rule 2: always include a space (or a punctuation character) between a closing `**` and the next character.** The most common bold-run bug is missing whitespace, e.g. `**PRAME IHC**to confirm` renders as a run-on word. Patterns the build script will refuse to render:
+
+- `**X**word` (no space, no punctuation). Fix to `**X** word`.
+- `word**X**` (no space, no punctuation before the opening `**`). Fix to `word **X**`.
+
+Same rule for italic `*…*` and inline-code `\`…\`` runs. The build script's pre-flight regex is `r"\*\*[^\s*][^*]*\*\*[A-Za-z0-9]"` (closing-bold immediately followed by a word character). It runs against `executive_summary.md` and `target_validation_report.md` before PDF generation; a hit blocks the build and tells you the offending line. Punctuation immediately after a bold close is fine: `**X**, more text` and `**X**:` and `**X**.` and `**X**!` are all valid. The rule targets word characters only.
+
+Apply both checks yourself before writing. The build-time guards are tripwires, not a substitute for hygiene.
 
 ## Output style
 
@@ -261,11 +270,11 @@ Apply this check yourself before writing — don't rely solely on the build-time
 - The executive summary itself is terse. ~300 words target; never exceed 1 page when rendered.
 - When the PI's findings include a `not_recommended` row or a load-bearing dissent, the executive summary must reflect that without softening. A reviewer reading 60 seconds of this PDF should leave with the right epistemic state, not a more flattering one.
 
-## Voice — humanizer pass (MANDATORY, every run)
+## Voice: humanizer pass (mandatory, always, every run)
 
-**The humanizer pass is not optional and is not skippable.** Every reporter invocation MUST apply the humanizer skill to every prose file the reporter authors before writing. There is no "the case is small" or "the prose is already tight" exception.
+**The humanizer pass is not optional and is not skippable. It applies to *every* prose file the reporter authors, on *every* invocation, with no exceptions.** There is no "the case is small" or "the prose is already tight" or "I just made a small edit" carve-out. If the reporter writes any line of prose to disk, that line goes through the humanizer pass first. This is permanent and applies to every present and future report — `executive_summary.md`, `target_validation_report.md`, and any new reporter-authored file added to the contract later.
 
-**When:** apply the humanizer skill at `.claude/skills/humanizer/SKILL.md` (vendored into this repo, MIT-licensed; falls back to `~/.claude/skills/humanizer/SKILL.md` if the project-level copy is missing). Read it once at the start of the run and run its 29-pattern check plus the final "obviously AI generated" audit over the prose of each file before writing. Both files are reporter-authored, both go through the same humanizer pass, and the pass runs *per file* — apply it to `executive_summary.md` after Step 1, then again to `target_validation_report.md` after Step 1.5.
+**When:** apply the humanizer skill at `.claude/skills/humanizer/SKILL.md` (vendored into this repo, MIT-licensed; falls back to `~/.claude/skills/humanizer/SKILL.md` if the project-level copy is missing). Read it once at the start of the run and run its 29-pattern check plus the final "obviously AI generated" audit over the prose of each file before writing. Each file gets its own per-file pass — apply it to `executive_summary.md` after Step 1, again to `target_validation_report.md` after Step 1.5, and to any additional reporter-authored prose surface added to the workflow.
 
 **Verification (required):** the runs.jsonl entry you append at Step 4 MUST include an explicit `humanizer_pass` field — an object with one boolean per authored file:
 ```json

@@ -12,14 +12,14 @@ The PI's synthesis of the post-osimertinib decision when MET amplification is th
 
 - MET amplification at GCN 8.2 by FISH, with T790M absent, points cleanly at a MET-directed combination. Savolitinib plus osimertinib is the option that fits both the biology and the patient's stated preferences.
 - The board endorsed rank 1 four-to-one. The concensusite flagged that savo-osi is not yet inside NCCN; the resolution is to enroll on SAFFRON or SACHI rather than treat off-trial, which the patient already prefers.
-- The conservative vetoed rank 2 (amivantamab + lazertinib) on severe-neuropathy and IV-burden grounds. Critic and advocate also dissented. Two personas endorsed it on guideline alignment and effect size, so it stays on the table as `considered_with_caveats` rather than being dropped — but override of the veto is not recommended unless rank 1 fails.
+- The conservative vetoed rank 2 (amivantamab + lazertinib) on severe-neuropathy and IV-burden grounds. Critic and advocate also dissented. Two personas endorsed it on guideline alignment and effect size, so it stays on the table as `considered_with_caveats` rather than being dropped. Override of the veto is not recommended unless rank 1 fails.
 - Rank 3 (patritumab deruxtecan) triggers the patient's alopecia veto outright. Only the risktaker advanced it. It's listed for transparency, not as a live option.
 
 ## Recommendation summary
 
-1. **Savolitinib + osimertinib (preferably on SAFFRON / SACHI)** — recommended. ORR ~30% in the MET-amp post-EGFR-TKI stratum (TATTON expansion, PMID 32679432). All-oral; clears every stated veto; trial-route resolves the guideline gap.
-2. **Amivantamab + lazertinib** — considered with caveats. ORR 36% in the CHRYSALIS-2 post-osimertinib subset. Conservative veto holds on neuropathy and IV chair time, both of which matter unusually for a patient whose work depends on her hands.
-3. **Patritumab deruxtecan (HER3-DXd)** — considered with caveats. Triggers the alopecia veto. Surfaced so the user can revisit it with her oncologist if she chooses to re-weight that veto.
+1. **Savolitinib + osimertinib (preferably on SAFFRON / SACHI).** Recommended. ORR ~30% in the MET-amp post-EGFR-TKI stratum (TATTON expansion, PMID 32679432). All-oral; clears every stated veto; trial-route resolves the guideline gap.
+2. **Amivantamab + lazertinib.** Considered with caveats. ORR 36% in the CHRYSALIS-2 post-osimertinib subset. Conservative veto holds on neuropathy and IV chair time, both of which matter unusually for a patient whose work depends on her hands.
+3. **Patritumab deruxtecan (HER3-DXd).** Considered with caveats. Triggers the alopecia veto. Surfaced so the user can revisit it with her oncologist if she chooses to re-weight that veto.
 
 ## What this report does *not* cover
 

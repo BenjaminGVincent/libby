@@ -4,7 +4,7 @@ The case has two RNA-only targetable features, each with its own protein-level c
 
 ### DLL3 RNA expression
 
-Before any DLL3-directed therapy decision: DLL3 IHC SP347 on archival FFPE, ≥1% (preferably ≥25%) per NCT06788938's enrollment threshold. Turnaround is one to three weeks; cost is trivial relative to a treatment cycle. First, confirm SP347 assay availability at the treating institution — not every reference lab carries the Roche Tissue Diagnostics clone used in the tarlatamab development program.
+Before any DLL3-directed therapy decision: DLL3 IHC SP347 on archival FFPE, ≥1% (preferably ≥25%) per NCT06788938's enrollment threshold. Turnaround is one to three weeks; cost is trivial relative to a treatment cycle. First, confirm SP347 assay availability at the treating institution. Not every reference lab carries the Roche Tissue Diagnostics clone used in the tarlatamab development program.
 
 Two refinements sit one tier down. Spatial heterogeneity is a known confounder in solid-tumor DLL3 (Zhang 2023): if multiple tumor blocks are available, IHC on a metastatic site as well as the primary refines confidence in whether the gating result generalizes. Neuroendocrine context (ASCL1 / NEUROD1 / chromogranin / synaptophysin / INSM1 panel) is research-grade for an osteosarcoma. DLL3 is normally a Notch-pathway target on neuroendocrine lineage, so an unexpectedly positive DLL3 IHC in a non-NEC tumor is worth contextualizing before the trial enrollment paperwork.
 
@@ -18,7 +18,7 @@ Spatial heterogeneity refines confidence at the next tier. PRAME IHC on a metast
 
 ### Where to order these assays
 
-The preferred provider for each assay is marked **(preferred)** — selected on company size, reputation, US-based location, and turnaround time. Other providers in the row are listed in case the preferred lab is unreachable for this patient.
+The preferred provider for each assay is marked **(preferred)**, selected on company size, reputation, US-based location, and turnaround time. Other providers in the row are listed in case the preferred lab is unreachable for this patient.
 
 | Assay | Provider | Decision gated | Contact |
 |---|---|---|---|

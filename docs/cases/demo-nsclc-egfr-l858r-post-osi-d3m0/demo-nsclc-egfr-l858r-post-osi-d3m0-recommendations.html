@@ -106,6 +106,44 @@ small.scenario-key { color: var(--ink-muted); }
   margin-left: 0.35em;
   white-space: nowrap;
 }
+.pipeline-note {
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+  margin: 0.25rem 0 0.75rem;
+}
+.pipeline-context-table { font-size: 0.82em; color: var(--ink-muted); }
+.pipeline-context-table thead th {
+  background: #FAFAFA;
+  border-top: 1px solid var(--ink-muted);
+  border-bottom: 1px solid var(--ink-muted);
+}
+.pipeline-context-table tbody tr:last-child td { border-bottom: 1px solid var(--ink-muted); }
+.pipeline-context-table .intervention-name { color: var(--ink); font-weight: 600; }
+.pipeline-context-table .alias-list { color: var(--ink-muted); font-size: 0.9em; }
+.pipeline-context-table .basket-flag {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #134E48;
+  background: #DDF1EE;
+  border: 1px solid #B0DBD3;
+  border-radius: 0.35em;
+  padding: 0.02em 0.4em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+.pipeline-context-table .discontinued-flag {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5A2A2A;
+  background: #F2E1E1;
+  border: 1px solid #DDB7B7;
+  border-radius: 0.35em;
+  padding: 0.02em 0.4em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
 footer.libby-footer {
   margin-top: 3rem;
   padding-top: 1rem;
@@ -138,15 +176,15 @@ consulting a qualified oncologist.
   <dt>Modality constraints</dt><dd>oral preferred, no inpatient infusion, minimize IV chair time</dd>
 </dl>
 
-<p><em>3 ranked options.</em></p>
+<p><em>3 ranked therapeutic options. Biomarker workup steps live in the standalone Target validation paths report.</em></p>
 <div class="trial-table-wrap">
   <div class="trial-scroll">
     <table class="trial-table">
       <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th></tr></thead>
       <tbody>
-    <tr><td>1</td><td><strong>savolitinib + osimertinib (preferably on SAFFRON / SACHI)</strong><br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-critic">critic</span> <span class="persona persona-advocate">advocate</span></small></td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td></tr>
-    <tr><td>2</td><td><strong>amivantamab + lazertinib</strong><br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-concensusite">concensusite</span></small><br><small><em>dissent:</em> <span class="persona persona-critic">critic</span> <span class="persona persona-advocate">advocate</span></small><br><small><em>veto:</em> <span class="persona persona-conservative">conservative</span></small></td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td></tr>
-    <tr><td>3</td><td><strong>patritumab deruxtecan (HER3-DXd)</strong><br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span></small></td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td></tr>
+    <tr><td>1</td><td><strong>savolitinib + osimertinib (preferably on SAFFRON / SACHI)</strong></td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td></tr>
+    <tr><td>2</td><td><strong>amivantamab + lazertinib</strong></td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td></tr>
+    <tr><td>3</td><td><strong>patritumab deruxtecan (HER3-DXd)</strong></td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td></tr>
       </tbody>
     </table>
   </div>
