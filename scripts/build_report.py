@@ -341,14 +341,25 @@ def _overall_cell_html(r: dict) -> str:
     return f"<td><strong>{_html.escape(str(overall))}</strong></td>"
 
 
-def _render_recs_table_html(rows: list[dict], *, show_personas: bool = True) -> str:
+def _render_recs_table_html(
+    rows: list[dict], *, show_personas: bool = True, renumber: bool = False
+) -> str:
+    """Render rows as the recs HTML table.
+
+    `renumber=True` rewrites the Rank cell to the row's 1-based position
+    within `rows` (used by the per-feature tables in the self-contained
+    HTML, where each pathway gets its own ranked list 1..n rather than
+    inheriting the global ranking series). The underlying `rank` field on
+    the row is unchanged.
+    """
     if not rows:
         return "<p><em>No rows.</em></p>"
     body: list[str] = []
-    for r in rows:
+    for i, r in enumerate(rows, start=1):
+        rank_cell = i if renumber else r.get("rank")
         body.append(
             "    <tr>"
-            f"<td>{_fmt_html(r.get('rank'))}</td>"
+            f"<td>{_fmt_html(rank_cell)}</td>"
             f"{_intervention_cell_html(r, show_personas=show_personas)}"
             f"<td>{_fmt_html(r.get('likelihood_of_effect'))}</td>"
             f"<td>{_fmt_html(r.get('toxicity_burden'))}</td>"
@@ -538,7 +549,7 @@ def _render_recommendations_html(slug: str, recs: list[dict], profile: dict, pre
                 else "Biomarker-independent options"
             )
             parts.append(f"<h2>{_html.escape(heading)}</h2>")
-            parts.append(_render_recs_table_html(group_rows, show_personas=False))
+            parts.append(_render_recs_table_html(group_rows, show_personas=False, renumber=True))
     else:
         # Single feature — no need for per-feature headings.
         parts.append(
@@ -548,7 +559,7 @@ def _render_recommendations_html(slug: str, recs: list[dict], profile: dict, pre
         scenario_short, group_rows = feature_groups[0]
         if scenario_short != "__unscoped":
             parts.append(f"<h2>{_html.escape(_feature_label_for_scenario(scenario_short))}</h2>")
-        parts.append(_render_recs_table_html(group_rows, show_personas=False))
+        parts.append(_render_recs_table_html(group_rows, show_personas=False, renumber=True))
 
     parts.append(
         '<footer class="libby-footer">'
