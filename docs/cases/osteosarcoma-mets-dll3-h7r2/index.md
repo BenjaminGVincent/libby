@@ -6,14 +6,14 @@
 
 ## Downloads
 
-- [Clinician PDF report](osteosarcoma-mets-dll3-h7r2-libby-report.pdf?v=26bfec35) — ranked recommendations + evidence + sources
-- [Patient/caregiver PDF](osteosarcoma-mets-dll3-h7r2-plain-language.pdf?v=10b5d1c8) — plain-language summary
-- [Target validation paths](osteosarcoma-mets-dll3-h7r2-target-validation.pdf?v=53221267) — diagnostic + biomarker workup that hardens the targetable-feature call
-- [Access guide (PDF)](osteosarcoma-mets-dll3-h7r2-accessibility.pdf?v=b3fa53e6) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines
+- [Clinician PDF report](osteosarcoma-mets-dll3-h7r2-libby-report.pdf?v=6e6b3d85) — ranked recommendations + evidence + sources
+- [Patient/caregiver PDF](osteosarcoma-mets-dll3-h7r2-plain-language.pdf?v=7827c73f) — plain-language summary
+- [Target validation paths](osteosarcoma-mets-dll3-h7r2-target-validation.pdf?v=bd12c537) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Access guide (PDF)](osteosarcoma-mets-dll3-h7r2-accessibility.pdf?v=cf1ff3c5) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines
 - [Access guide (web)](accessibility.md?v=ced10fa1) — same access guide in an in-browser sortable table
-- [Master manuscripts table (PDF)](osteosarcoma-mets-dll3-h7r2-manuscripts.pdf?v=a075e841) — every paper considered — n, effect, variance, toxicities
+- [Master manuscripts table (PDF)](osteosarcoma-mets-dll3-h7r2-manuscripts.pdf?v=6956a67c) — every paper considered — n, effect, variance, toxicities
 - [Master manuscripts table (web)](manuscripts.md?v=0e17b1da) — same inventory in a sortable in-browser table
-- [Self-contained HTML](osteosarcoma-mets-dll3-h7r2-recommendations.html?v=84c96694) — recommendations table that opens offline
+- [Recommendations Table](osteosarcoma-mets-dll3-h7r2-recommendations.html?v=84c96694) — ranked options + pipeline context — self-contained HTML that opens offline
 
 <!-- libby:downloads:end -->
 
@@ -47,7 +47,7 @@ In metastatic osteosarcoma after first-line MAP, what interventions can target D
 
 The case has two RNA-only targetable features, each with its own protein-level confirmation step. **DLL3 IHC (clone SP347)** gates the DLL3-directed pathway: tarlatamab via NCT06788938 and the SHR-4849 / IDE849 ADC trial NCT07174583. **PRAME IHC plus HLA-A*02:01 typing** together gate the PRAME-directed pathway: IMA203 via NCT03686124 (Immatics ACTengine) and IMC-P115C via NCT07156136. The two pathways are independent. The patient may have neither, either, or both. All three workup tests can run in parallel on archival tissue and a single blood draw. If both workups return negative, this report has no within-scope recommendations, and the next conversation about standard 2L+ care is the treating team's, not Libby's.
 
-### DLL3 RNA expression
+### DLL3
 
 Before any DLL3-directed therapy decision: DLL3 IHC SP347 on archival FFPE, ≥1% (preferably ≥25%) per NCT06788938's enrollment threshold. Turnaround is one to three weeks; cost is trivial relative to a treatment cycle. First, confirm SP347 assay availability at the treating institution. Not every reference lab carries the Roche Tissue Diagnostics clone used in the tarlatamab development program.
 
@@ -55,7 +55,7 @@ Two refinements sit one tier down. Spatial heterogeneity is a known confounder i
 
 Germline TP53 sequencing (Li-Fraumeni panel) is a separate kind of finding. It does not affect tarlatamab eligibility, but late-teens / twenties osteosarcoma carries a meaningful prior probability for germline TP53. A positive result changes radiation-sensitivity planning, prompts screening for synchronous tumors, and triggers cascade testing for first-degree relatives. Discuss with a genetic counselor before ordering.
 
-### PRAME RNA expression
+### PRAME
 
 Two essential tests gate the entire PRAME-directed pathway: **PRAME IHC** confirms tumor protein expression, and **HLA-A*02:01 typing** confirms the patient can present the PRAME peptide. Every PRAME-directed ImmTAC and TCR-T in clinical development (IMA203, brenetafusp, IMC-P115C) is HLA-A*02:01-restricted; typing-negative patients are foreclosed even when PRAME IHC is strongly positive. PRAME IHC is positive in roughly 56% of osteosarcoma (Iura 2017, n=82); HLA-A*02:01 prevalence is ~40–50% in Caucasian populations. Order both alongside the DLL3 IHC: same block, same blood draw, same turnaround window.
 

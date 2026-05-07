@@ -1,6 +1,6 @@
 ---
 name: reporter
-description: Use to generate shareable artifacts for an external reviewer of a Libby case — a clinician PDF, a patient/caregiver PDF, and a self-contained recommendations HTML. Reads the PI's `index.md`, the translator's `plain_language.md`, and the case's `recommendations.jsonl`. Authors a 1-page executive summary, runs `scripts/build_report.py`, then `scripts/run_case.sh` to surface the download links. Invoke after `/PI` and `/translator` have completed.
+description: Use to generate shareable artifacts for an external reviewer of a Libby case — a clinician PDF, a patient/caregiver PDF, and a Recommendations Table (self-contained HTML download). Reads the PI's `index.md`, the translator's `plain_language.md`, and the case's `recommendations.jsonl`. Authors a 1-page executive summary, runs `scripts/build_report.py`, then `scripts/run_case.sh` to surface the download links. Invoke after `/PI` and `/translator` have completed.
 tools: Read, Write, Edit, Bash, Grep, Glob
 model: opus
 ---
@@ -13,7 +13,7 @@ For a given case `<slug>`, read `docs/cases/<slug>/index.md`, `docs/cases/<slug>
 
 1. `<slug>-libby-report.pdf` — clinician PDF: `[Cover] → [Executive summary] → [PI's index.md verbatim, page-chrome stripped, scenarios respected] → [Sources appendix derived from evidence_anchor[]]`. This is the headline external-review artifact.
 2. `<slug>-plain-language.pdf` — patient/caregiver PDF wrapping `plain_language.md` with a friendlier cover. Skipped automatically if `plain_language.md` does not exist yet.
-3. `<slug>-recommendations.html` — self-contained HTML of the ranked recommendations table. Inlines the trial-table + Libby palette so it works offline without MkDocs Material. The audience is anyone who wants to forward "the ranking, not the whole site." **Four deliberate departures from the on-site `recommendations.md` page:**
+3. `<slug>-recommendations.html` — the **Recommendations Table** (label as it appears in the Downloads section of the case landing page). A self-contained HTML download of the ranked recommendations + per-feature pipeline context. Inlines the trial-table + Libby palette so it works offline without MkDocs Material. The audience is anyone who wants to forward "the ranking, not the whole site." **Four deliberate departures from the on-site `recommendations.md` page:**
     - **Persona pills omitted.** No endorse / dissent / veto badges. The forwardable artifact is the clinical bottom line — full per-persona rationale lives on `board.md`, and the multi-agent voting metadata is noise to a reader who hasn't bought into Libby's mental model.
     - **Therapeutic options grouped by targetable feature.** One table per scenario prefix (DLL3-targeting interventions, PRAME-targeting interventions, etc.). The reader sees each pathway as its own ranked list rather than as a single mixed table. The grouping uses the `scenario` field — biomarker-conditional rows tagged `<biomarker_short>:positive` group by their `<biomarker_short>` prefix; biomarker-independent rows (`scenario: null`) appear under "Biomarker-independent options." **Each per-feature table renumbers ranks 1..n** (the global rank from `recommendations.jsonl` is replaced by the row's 1-based position within its feature group, so the DLL3 table reads 1, 2 even when the global ranks are 2, 3 — and the PRAME table similarly reads 1, 2 rather than 4, 5).
     - **Workup rows excluded.** `scenario: "shared"` rows are filtered out — biomarker workup is documented in the standalone Target validation paths report (`<slug>-target-validation.pdf` / `target_validation.md`), not duplicated here.
@@ -130,11 +130,11 @@ Structure (per-feature narrative → assay-providers table):
 
 <1–2 sentence opening: name the gating test(s) the case hinges on, what they unlock or foreclose. Refer to the gated interventions by drug name and / or NCT, never by rank. If the workup result is binary (positive / negative), say what each branch implies for the patient's options without enumerating ranks: "If both workups return negative, this report has no within-scope recommendations and the next conversation about standard 2L+ care is the treating team's, not Libby's.">
 
-### <feature name from profile.json::targetable_features[].feature>
+### <target name>
 
 <1 paragraph: what's essential before any feature-targeting therapy can be chosen, what's high-priority for context, and what's medium- or low-priority. Name specific assays (clones, panels, modalities); they're load-bearing. When a `gates_intervention` row exists, lead with the test it gates and name the gated drug or trial. Do NOT name a rank number.>
 
-### <next feature, if any>
+### <next target, if any>
 
 <same shape>
 
@@ -185,6 +185,13 @@ The table is the practical "where to actually order this" reference; it follows 
 
 Constraints — same as the executive summary:
 
+- **H3 headers are the target name only**, not the verbose feature description from `profile.json::targetable_features[].feature`. Strip RNA-expression / amplification / mutation qualifiers and use the bare target. Examples:
+    - `feature: "DLL3 RNA expression"` → `### DLL3`
+    - `feature: "PRAME RNA expression"` → `### PRAME`
+    - `feature: "MET amplification"` → `### MET` (when the qualifier is the workup's whole point, the bare target reads cleaner — the body paragraph carries the "amplification" / "RNA-only" framing)
+    - `feature: "EGFR L858R"` → `### EGFR L858R` (a specific variant *is* the target identity; keep it)
+    - `feature: "BRAF V600E"` → `### BRAF V600E` (same rule — keep specific variants)
+  Heuristic: drop trailing `RNA expression`, `protein expression`, `amplification`, `overexpression`, `loss`, `methylation`. Keep variant identifiers (`L858R`, `V600E`, `exon-14 skipping`, `T790M`). When unsure, prefer the shorter form — the body paragraph and the assay table already carry the qualifier.
 - Use specific assay names, antibody clones, and turnaround estimates from `target_validation.jsonl`. Don't paraphrase the rationales into prose without the structural specificity ("DLL3 IHC SP347", "≥1% (preferably ≥25%)", "1–3 weeks").
 - Apply the humanizer pass (same scope rules — see *Voice* section below).
 - No marketing language. No editorial advocacy. The report frames the workup; it doesn't argue that the targetable feature *will* be confirmed.
@@ -200,7 +207,7 @@ Run:
 python3 scripts/build_report.py <slug>
 ```
 
-The script reads `executive_summary.md`, `index.md`, `plain_language.md`, `recommendations.jsonl`, `profile.json`, and `preferences.json`, then writes the clinician PDF, the patient PDF (if `plain_language.md` exists), and the self-contained HTML. If `scripts/build_report.py` doesn't exist yet, create it per the spec — it's shared infrastructure.
+The script reads `executive_summary.md`, `index.md`, `plain_language.md`, `recommendations.jsonl`, `profile.json`, and `preferences.json`, then writes the clinician PDF, the patient PDF (if `plain_language.md` exists), and the Recommendations Table HTML. If `scripts/build_report.py` doesn't exist yet, create it per the spec — it's shared infrastructure.
 
 ## Step 3 — surface the download links on the site
 

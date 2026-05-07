@@ -2192,8 +2192,8 @@ def _downloads_section(slug: str, case_docs: Path) -> str:
         ),
         (
             f"{slug}-recommendations.html",
-            "Self-contained HTML",
-            "recommendations table that opens offline",
+            "Recommendations Table",
+            "ranked options + pipeline context — self-contained HTML that opens offline",
         ),
     ]
     present = [(n, lbl, b) for n, lbl, b in artifacts if (case_docs / n).exists()]

@@ -198,8 +198,8 @@ def downloads_block(case_docs: Path, slug: str) -> str:
         ),
         (
             f"{slug}-recommendations.html",
-            "Self-contained HTML",
-            "recommendations table that opens offline",
+            "Recommendations Table",
+            "ranked options + pipeline context — self-contained HTML that opens offline",
         ),
     ]
     present = [(name, label, blurb) for name, label, blurb in artifacts if (case_docs / name).exists()]
