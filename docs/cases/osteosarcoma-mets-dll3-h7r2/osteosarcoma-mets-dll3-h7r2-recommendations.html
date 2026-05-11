@@ -106,11 +106,33 @@ small.scenario-key { color: var(--ink-muted); }
   margin-left: 0.35em;
   white-space: nowrap;
 }
-.pipeline-note {
+.pipeline-note,
+.evidence-detail-note {
   color: var(--ink-muted);
   font-size: 0.9rem;
   margin: 0.25rem 0 0.75rem;
 }
+.evidence-detail-empty {
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+  margin: 0.25rem 0 0.75rem;
+  padding-left: 0.5rem;
+  border-left: 2px solid #E5E5E5;
+}
+.evidence-detail-table { font-size: 0.86em; }
+.evidence-detail-table thead th {
+  background: #FAFAFA;
+}
+.evidence-detail-table .tox-grade {
+  font-size: 0.85em;
+  color: var(--ink-muted);
+  font-weight: 500;
+}
+h4 + .trial-table-wrap,
+h4 + .evidence-detail-empty {
+  margin-top: 0.25rem;
+}
+h4 { margin-top: 1.25rem; margin-bottom: 0.25rem; font-size: 1rem; }
 .pipeline-context-table { font-size: 0.82em; color: var(--ink-muted); }
 .pipeline-context-table thead th {
   background: #FAFAFA;
@@ -217,6 +239,23 @@ consulting a qualified oncologist.
   </div>
 </div>
 
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance.</p>
+<h4>tarlatamab</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>previously treated SCLC</strong> (2L+)<br><small>SCLC after platinum-based therapy and ≥1 prior line; ECOG 0-1; brain mets allowed if treated</small></td><td>220</td><td><strong>CRS</strong> <span class="tox-grade">grade any</span>: 51% <small>(10 mg cohort; mostly grade 1-2)</small><br><strong>CRS</strong> <span class="tox-grade">grade &gt;=3</span>: 1% <small>(single grade-3 event)</small><br><strong>ICANS-like neurologic event</strong> <span class="tox-grade">grade any</span>: 10% <small>(neurotoxicity / immune-effector-cell-associated)</small><br><strong>treatment-related AE</strong> <span class="tox-grade">grade &gt;=3</span>: 30% <small>(all-cause TRAE rate)</small><br><strong>treatment discontinuation due to AE</strong> <span class="tox-grade">grade any</span>: 3%</td><td><strong>ORR (BICR)</strong>: 40% (95% CI 29–52)<br><small>mDoR not reached at 10.6 mo follow-up; mPFS 4.9 mo</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37861218">Ahn et al. <em>N Engl J Med</em> 2023</a></td></tr>
+    <tr><td><strong>SCLC after platinum-based chemo</strong> (2L)<br><small>Platinum-resistant or platinum-sensitive SCLC; ECOG 0-1</small></td><td>509</td><td><strong>CRS</strong> <span class="tox-grade">grade any</span>: 56% (n=254) <small>(tarlatamab arm; mostly grade 1-2)</small><br><strong>CRS</strong> <span class="tox-grade">grade &gt;=3</span>: 1% (n=254)<br><strong>ICANS-like neurologic event</strong> <span class="tox-grade">grade any</span>: 12% (n=254)<br><strong>treatment-related AE</strong> <span class="tox-grade">grade &gt;=3</span>: 24% (n=254) <small>(vs 53% on chemo comparator arm)</small><br><strong>neutropenia</strong> <span class="tox-grade">grade &gt;=3</span>: 3% (n=254) <small>(vs 25% on chemo arm)</small></td><td><strong>OS (HR vs chemo)</strong>: 0.6 HR (95% CI 0.47–0.77); p &lt;0.001<br><small>mPFS 4.2 vs 3.2 mo</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40454646">Mountzios et al. <em>N Engl J Med</em> 2025</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4>SHR-4849 / IDE849</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
 <h2>PRAME-targeting interventions</h2>
 <div class="trial-table-wrap">
   <div class="trial-scroll">
@@ -241,6 +280,32 @@ consulting a qualified oncologist.
     <tr><td><span class="intervention-name">IMA402 (PRAME-TCER)</span> <span class="basket-flag">basket / biomarker</span><br><span class="alias-list">TCER PRAME</span></td><td>bispecific_other</td><td>1/2</td><td>refractory / recurrent solid tumors expressing PRAME</td><td>recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT05958121" target="_blank" rel="noopener noreferrer">NCT05958121</a><br><span class="alias-list">Immatics Biotechnologies</span></td></tr>
     <tr><td><span class="intervention-name">brenetafusp (IMC-F106C)</span><br><span class="alias-list">IMC F106C</span></td><td>bispecific_other</td><td>3</td><td>previously untreated HLA-A*02:01-positive advanced cutaneous melanoma</td><td>recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT06112314" target="_blank" rel="noopener noreferrer">NCT06112314</a><br><span class="alias-list">Immunocore</span></td></tr>
     <tr><td><span class="intervention-name">BPX-701</span> <span class="discontinued-flag">discontinued</span></td><td>CAR-T</td><td>1/2</td><td>AML, MDS, uveal melanoma</td><td>terminated</td><td><a href="https://clinicaltrials.gov/study/NCT02743611" target="_blank" rel="noopener noreferrer">NCT02743611</a><br><span class="alias-list">Bellicum Pharmaceuticals</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance.</p>
+<h4>IMA203 (PRAME-TCR-T)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>PRAME-positive HLA-A*02:01-positive refractory solid tumors (basket: melanoma, sarcomas including synovial sarcoma, ovarian, NSCLC, head and neck, uterine, others)</strong> (2L+)<br><small>Heavily pretreated PRAME+ HLA-A*02:01+ patients; subset of synovial sarcoma cohort enrolled; lymphodepleting Cy/Flu prior to infusion</small></td><td>28</td><td><strong>CRS</strong> <span class="tox-grade">grade any</span>: 100% (28/28) <small>(TCR-T class effect; mostly G1-2)</small><br><strong>CRS</strong> <span class="tox-grade">grade &gt;=3</span>: 11% (n=28)<br><strong>ICANS-like neurotoxicity</strong> <span class="tox-grade">grade any</span>: 25% (n=28)<br><strong>post-Cy/Flu cytopenia</strong> <span class="tox-grade">grade &gt;=3</span>: 100% (28/28) <small>(expected lymphodepletion effect)</small><br><strong>treatment-related death</strong> <span class="tox-grade">grade 5</span>: 4% (1/28) <small>(septic shock)</small></td><td><strong>ORR (BICR)</strong>: 54% (95% CI 34–73)<br><small>mDoR not reached; mPFS 5.1 mo</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/38821093">Wermke et al. <em>Lancet Oncol</em> 2024</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4>IMC-P115C</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>PRAME-positive HLA-A*02:01-positive advanced cutaneous melanoma</strong> (2L+)<br><small>Heavily pretreated melanoma; subset with prior immunotherapy; HLA-A*02:01-positive; PRAME-positive by IHC</small></td><td>132</td><td><strong>CRS</strong> <span class="tox-grade">grade any</span>: 85% (n=132) <small>(ImmTAC class effect; mostly G1-2)</small><br><strong>CRS</strong> <span class="tox-grade">grade &gt;=3</span>: 3% (n=132)<br><strong>rash</strong> <span class="tox-grade">grade any</span>: 70% (n=132) <small>(ImmTAC on-target / off-tumor signal)</small><br><strong>transient hypotension</strong> <span class="tox-grade">grade any</span>: 35% (n=132)<br><strong>any treatment-related AE</strong> <span class="tox-grade">grade &gt;=3</span>: 30% (n=132)</td><td><strong>ORR; mPFS; mDoR</strong>: 9% (95% CI 4–17)<br><small>mPFS 2.1 mo overall; durable responses in subset</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/39007852">Hamid et al. <em>Cancer Discov</em> 2024</a></td></tr>
       </tbody>
     </table>
   </div>

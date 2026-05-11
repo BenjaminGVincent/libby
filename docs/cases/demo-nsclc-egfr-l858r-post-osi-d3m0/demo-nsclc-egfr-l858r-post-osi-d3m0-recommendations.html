@@ -106,11 +106,33 @@ small.scenario-key { color: var(--ink-muted); }
   margin-left: 0.35em;
   white-space: nowrap;
 }
-.pipeline-note {
+.pipeline-note,
+.evidence-detail-note {
   color: var(--ink-muted);
   font-size: 0.9rem;
   margin: 0.25rem 0 0.75rem;
 }
+.evidence-detail-empty {
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+  margin: 0.25rem 0 0.75rem;
+  padding-left: 0.5rem;
+  border-left: 2px solid #E5E5E5;
+}
+.evidence-detail-table { font-size: 0.86em; }
+.evidence-detail-table thead th {
+  background: #FAFAFA;
+}
+.evidence-detail-table .tox-grade {
+  font-size: 0.85em;
+  color: var(--ink-muted);
+  font-weight: 500;
+}
+h4 + .trial-table-wrap,
+h4 + .evidence-detail-empty {
+  margin-top: 0.25rem;
+}
+h4 { margin-top: 1.25rem; margin-bottom: 0.25rem; font-size: 1rem; }
 .pipeline-context-table { font-size: 0.82em; color: var(--ink-muted); }
 .pipeline-context-table thead th {
   background: #FAFAFA;
@@ -185,6 +207,44 @@ consulting a qualified oncologist.
     <tr><td>1</td><td><strong>savolitinib + osimertinib (preferably on SAFFRON / SACHI)</strong></td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/32679432">PMID&nbsp;32679432</a><br><a href="https://clinicaltrials.gov/study/NCT05261399">NCT05261399</a></td></tr>
     <tr><td>2</td><td><strong>amivantamab + lazertinib</strong></td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/36720074">PMID&nbsp;36720074</a></td></tr>
     <tr><td>3</td><td><strong>patritumab deruxtecan (HER3-DXd)</strong></td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37563559">PMID&nbsp;37563559</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance.</p>
+<h4>savolitinib + osimertinib (preferably on SAFFRON / SACHI)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>EGFR-mutant NSCLC + MET amp post-EGFR-TKI</strong></td><td>69</td><td>&mdash;</td><td><strong>ORR</strong>: 30 (95% CI 19-42)</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/32679432"><em>Lancet Oncol</em> 2020</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4>amivantamab + lazertinib</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>EGFR-mutant NSCLC, post-osimertinib</strong></td><td>162</td><td>&mdash;</td><td><strong>ORR (investigator)</strong>: 36 (95% CI 28-45)</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/36720074"><em>JCO</em> 2023</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4>patritumab deruxtecan (HER3-DXd)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>EGFR-mutant NSCLC after EGFR-TKI</strong></td><td>225</td><td>&mdash;</td><td><strong>ORR (BICR)</strong>: 29.8 (95% CI 23.9-36.2)</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37563559"><em>JCO</em> 2023</a></td></tr>
       </tbody>
     </table>
   </div>

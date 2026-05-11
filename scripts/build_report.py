@@ -249,11 +249,33 @@ small.scenario-key { color: var(--ink-muted); }
   margin-left: 0.35em;
   white-space: nowrap;
 }
-.pipeline-note {
+.pipeline-note,
+.evidence-detail-note {
   color: var(--ink-muted);
   font-size: 0.9rem;
   margin: 0.25rem 0 0.75rem;
 }
+.evidence-detail-empty {
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+  margin: 0.25rem 0 0.75rem;
+  padding-left: 0.5rem;
+  border-left: 2px solid #E5E5E5;
+}
+.evidence-detail-table { font-size: 0.86em; }
+.evidence-detail-table thead th {
+  background: #FAFAFA;
+}
+.evidence-detail-table .tox-grade {
+  font-size: 0.85em;
+  color: var(--ink-muted);
+  font-weight: 500;
+}
+h4 + .trial-table-wrap,
+h4 + .evidence-detail-empty {
+  margin-top: 0.25rem;
+}
+h4 { margin-top: 1.25rem; margin-bottom: 0.25rem; font-size: 1rem; }
 .pipeline-context-table { font-size: 0.82em; color: var(--ink-muted); }
 .pipeline-context-table thead th {
   background: #FAFAFA;
@@ -779,12 +801,246 @@ def _render_pipeline_context_table_html(rows: list[dict]) -> str:
     )
 
 
+_EVIDENCE_DETAIL_HEAD_HTML = (
+    "<th>Disease context</th>"
+    "<th>n</th>"
+    "<th>Toxicities</th>"
+    "<th>Efficacy</th>"
+    "<th>Reference</th>"
+)
+
+
+def _intervention_short_name(rec: dict) -> str:
+    """Best-effort short drug-name label for an intervention.
+
+    Strips the `" via NCT…"` suffix from the rec's `intervention_label`
+    so the H4 over the evidence-detail mini-table reads as the drug name
+    rather than the trial-pointer string. Falls back to the raw label
+    if there's no `" via "` separator.
+    """
+    label = rec.get("intervention_label") or rec.get("intervention_id") or "(unknown)"
+    if " via " in label:
+        return label.split(" via ", 1)[0].strip()
+    return label
+
+
+def _rec_pmids(rec: dict) -> list[str]:
+    """Extract the bare PMID strings from a rec's `evidence_anchor[]`.
+
+    The anchor format is `pmid:NNNNNNNN`; this returns `['NNNNNNNN', ...]`.
+    Order is preserved (the rec author picked the order deliberately).
+    """
+    pmids: list[str] = []
+    for a in rec.get("evidence_anchor") or []:
+        if isinstance(a, str) and a.lower().startswith("pmid:"):
+            pmid = a.split(":", 1)[1].strip()
+            if pmid:
+                pmids.append(pmid)
+    return pmids
+
+
+def _toxicities_cell_html(toxicities: list[dict] | None) -> str:
+    """Render the `toxicities[]` array as a per-term list with rate + grade.
+
+    Format: `<strong>term</strong> (grade): N% (denom)<br>notes`. Lines
+    separated by `<br>` so the cell scans top-to-bottom. Returns an em-dash
+    when the array is empty.
+    """
+    if not toxicities:
+        return "<td>&mdash;</td>"
+    pieces: list[str] = []
+    for tox in toxicities:
+        term = tox.get("term") or "AE"
+        grade = tox.get("grade")
+        rate = tox.get("rate_pct")
+        denom = tox.get("denominator")
+        n_events = tox.get("n_events")
+        notes = tox.get("notes")
+        head = f"<strong>{_html.escape(str(term))}</strong>"
+        if grade:
+            head += f' <span class="tox-grade">grade {_html.escape(str(grade))}</span>'
+        # Format: if rate% is present, that's the primary number. Add the
+        # cohort denominator only when it's an actual count (not the unit-rate
+        # placeholder of 100 used when rate is already expressed as a percent).
+        # Add n_events when present (some rows report event counts directly).
+        bits: list[str] = []
+        if rate is not None:
+            bits.append(f"{_html.escape(str(rate))}%")
+        if n_events is not None:
+            if denom is not None and denom != 100:
+                bits.append(f"({_html.escape(str(n_events))}/{_html.escape(str(denom))})")
+            else:
+                bits.append(f"(n={_html.escape(str(n_events))})")
+        elif denom is not None and denom != 100:
+            bits.append(f"(n={_html.escape(str(denom))})")
+        body = " ".join(bits) if bits else ""
+        line = f"{head}: {body}" if body else head
+        if notes:
+            line += f" <small>({_html.escape(str(notes))})</small>"
+        pieces.append(line)
+    return "<td>" + "<br>".join(pieces) + "</td>"
+
+
+def _efficacy_cell_html(ev: dict) -> str:
+    """Render the efficacy block from a clinical_evidence row.
+
+    Combines `outcome` / `endpoint_type` with `effect_size`+`effect_units`
+    and `ci_lower/ci_upper` (or fallback `variance_or_ci`) plus `p_value`
+    and `median_dor_or_pfs`. Empty fields are skipped silently.
+    """
+    pieces: list[str] = []
+    label = ev.get("outcome") or ev.get("endpoint_type")
+    eff = ev.get("effect_size")
+    units = ev.get("effect_units") or ""
+    ci_lo = ev.get("ci_lower")
+    ci_hi = ev.get("ci_upper")
+    variance = ev.get("variance_or_ci")
+    pval = ev.get("p_value")
+    median = ev.get("median_dor_or_pfs")
+
+    # When units is a multi-character word (HR, mo, etc.) prepend a space so
+    # we don't render "0.6HR"; when units is "%" or another punctuation-class
+    # marker, append directly so we render "40%".
+    units_str = str(units).strip()
+    if units_str and units_str[0].isalpha():
+        units_html = f" {_html.escape(units_str)}"
+    else:
+        units_html = _html.escape(units_str)
+
+    if label and eff is not None:
+        head = f"<strong>{_html.escape(str(label))}</strong>: {_html.escape(str(eff))}{units_html}"
+        if ci_lo is not None and ci_hi is not None:
+            head += f" (95% CI {_html.escape(str(ci_lo))}–{_html.escape(str(ci_hi))})"
+        elif variance and variance not in ("—", "-"):
+            head += f" ({_html.escape(str(variance))})"
+        if pval and pval not in ("—", "-"):
+            head += f"; p {_html.escape(str(pval))}"
+        pieces.append(head)
+    elif label:
+        pieces.append(f"<strong>{_html.escape(str(label))}</strong>")
+    elif eff is not None:
+        pieces.append(f"{_html.escape(str(eff))}{units_html}")
+
+    if median and median not in ("—", "-"):
+        pieces.append(f"<small>{_html.escape(str(median))}</small>")
+    if not pieces:
+        return "<td>&mdash;</td>"
+    return "<td>" + "<br>".join(pieces) + "</td>"
+
+
+def _reference_cell_html(ev: dict) -> str:
+    """Render a one-line citation linking to PubMed when possible.
+
+    Format: `<first_author> et al. <journal> <year>` linked to
+    `https://pubmed.ncbi.nlm.nih.gov/<pmid>`. Falls back to whatever
+    fields are present.
+    """
+    pmid = ev.get("pmid")
+    first_author = ev.get("first_author") or ""
+    journal = ev.get("journal") or ""
+    year = ev.get("year")
+    bits: list[str] = []
+    if first_author:
+        bits.append(f"{_html.escape(str(first_author))} et al.")
+    if journal:
+        bits.append(f"<em>{_html.escape(str(journal))}</em>")
+    if year:
+        bits.append(_html.escape(str(year)))
+    label = " ".join(bits) if bits else (f"PMID {pmid}" if pmid else "—")
+    if pmid:
+        return (
+            f'<td><a href="https://pubmed.ncbi.nlm.nih.gov/{_html.escape(str(pmid))}">'
+            f"{label}</a></td>"
+        )
+    return f"<td>{label}</td>"
+
+
+def _disease_context_cell_html(ev: dict) -> str:
+    """Combine `indication`, `line_of_therapy`, and `population_detail`."""
+    indication = ev.get("indication")
+    line = ev.get("line_of_therapy")
+    pop = ev.get("population_detail")
+    pieces: list[str] = []
+    if indication:
+        head = f"<strong>{_html.escape(str(indication))}</strong>"
+        if line and line not in ("—", "-"):
+            head += f" ({_html.escape(str(line))})"
+        pieces.append(head)
+    if pop:
+        pieces.append(f"<small>{_html.escape(str(pop))}</small>")
+    if not pieces:
+        return "<td>&mdash;</td>"
+    return "<td>" + "<br>".join(pieces) + "</td>"
+
+
+def _render_evidence_detail_per_intervention_html(
+    group_rows: list[dict], clinical: list[dict]
+) -> str:
+    """Per-intervention evidence-detail mini-tables for one feature group.
+
+    For each ranked rec in `group_rows`, finds clinical_evidence rows whose
+    `pmid` is in the rec's `evidence_anchor[]`. Renders one mini-table per
+    intervention (rank order) with columns: Disease context | n |
+    Toxicities | Efficacy | Reference. When a rec has no matching
+    clinical-evidence row (e.g. a first-in-class trial with no published
+    paper yet) the intervention still gets an H4 with a one-line
+    placeholder so the reader sees that the absence of data is intentional,
+    not an oversight.
+    """
+    if not group_rows:
+        return ""
+    by_pmid = {str(c.get("pmid")): c for c in clinical if c.get("pmid")}
+    sections: list[str] = []
+    any_evidence = False
+    for rec in group_rows:
+        pmids = _rec_pmids(rec)
+        matched = [by_pmid[p] for p in pmids if p in by_pmid]
+        if matched:
+            any_evidence = True
+        short_name = _intervention_short_name(rec)
+        sections.append(f"<h4>{_html.escape(short_name)}</h4>")
+        if not matched:
+            sections.append(
+                "<p class=\"evidence-detail-empty\"><em>No published clinical "
+                "manuscripts in the case dossier yet; the supporting evidence "
+                "for this intervention is the trial registration only.</em></p>"
+            )
+            continue
+        body: list[str] = []
+        for ev in matched:
+            n = ev.get("n")
+            body.append(
+                "    <tr>"
+                f"{_disease_context_cell_html(ev)}"
+                f"<td>{_fmt_html(n)}</td>"
+                f"{_toxicities_cell_html(ev.get('toxicities'))}"
+                f"{_efficacy_cell_html(ev)}"
+                f"{_reference_cell_html(ev)}"
+                "</tr>"
+            )
+        sections.append(
+            '<div class="trial-table-wrap">\n'
+            '  <div class="trial-scroll">\n'
+            '    <table class="trial-table evidence-detail-table">\n'
+            f'      <thead><tr>{_EVIDENCE_DETAIL_HEAD_HTML}</tr></thead>\n'
+            '      <tbody>\n' + "\n".join(body) + "\n      </tbody>\n"
+            "    </table>\n  </div>\n</div>\n"
+        )
+    if not any_evidence:
+        # All rows came up empty — skip the section entirely rather than
+        # render a list of "no published data" placeholders. Empty section
+        # is noise in the forwardable artifact.
+        return ""
+    return "\n".join(sections)
+
+
 def _render_recommendations_html(
     slug: str,
     recs: list[dict],
     profile: dict,
     preferences: dict,
     trials: list[dict] | None = None,
+    clinical: list[dict] | None = None,
 ) -> str:
     """Self-contained recommendations HTML, designed for forwarding offline.
 
@@ -807,6 +1063,7 @@ def _render_recommendations_html(
     """
     today = datetime.now(timezone.utc).date().isoformat()
     trials = trials or []
+    clinical = clinical or []
 
     # (1) drop workup rows; (2) group remaining by scenario prefix.
     therapeutic_rows = [r for r in recs if r.get("scenario") != "shared"]
@@ -843,20 +1100,36 @@ def _render_recommendations_html(
         if heading:
             parts.append(f"<h2>{_html.escape(heading)}</h2>")
         parts.append(_render_recs_table_html(group_rows, show_personas=False, renumber=True))
-        if scenario_short == "__unscoped" or not trials:
-            return
-        pipeline_rows = _pipeline_context_rows(scenario_short, trials, ranked_aliases)
-        if not pipeline_rows:
-            return
-        parts.append("<h3>Pipeline context &mdash; not currently enrollable</h3>")
-        parts.append(
-            '<p class="pipeline-note">Other agents in this target class drawn from the case '
-            "dossier. The patient cannot currently enroll in these trials (most enroll a "
-            "different tumor type), but they are included for context on the broader "
-            "modality landscape. Drugs already listed in the ranked table above are not "
-            "repeated here.</p>"
-        )
-        parts.append(_render_pipeline_context_table_html(pipeline_rows))
+        if scenario_short != "__unscoped" and trials:
+            pipeline_rows = _pipeline_context_rows(scenario_short, trials, ranked_aliases)
+            if pipeline_rows:
+                parts.append("<h3>Pipeline context &mdash; not currently enrollable</h3>")
+                parts.append(
+                    '<p class="pipeline-note">Other agents in this target class drawn from '
+                    "the case dossier. The patient cannot currently enroll in these trials "
+                    "(most enroll a different tumor type), but they are included for context "
+                    "on the broader modality landscape. Drugs already listed in the ranked "
+                    "table above are not repeated here.</p>"
+                )
+                parts.append(_render_pipeline_context_table_html(pipeline_rows))
+        # Evidence in detail: one mini-table per ranked intervention, populated
+        # from clinical_evidence.jsonl rows whose `pmid` is named in the rec's
+        # `evidence_anchor[]`. Renders below the pipeline-context table so the
+        # reader sees the ranked options first, then the broader modality
+        # landscape, then the per-manuscript detail backing each rank.
+        if clinical:
+            evidence_html = _render_evidence_detail_per_intervention_html(group_rows, clinical)
+            if evidence_html:
+                parts.append("<h3>Evidence in detail</h3>")
+                parts.append(
+                    '<p class="evidence-detail-note">One row per published clinical '
+                    "manuscript supporting each ranked intervention. Drawn from the case's "
+                    "clinical-evidence dossier. Disease context lists the indication, line "
+                    "of therapy, and the population the trial enrolled. Toxicities are "
+                    "broken out per term with grade and frequency. Efficacy lists the "
+                    "primary endpoint with effect size and variance.</p>"
+                )
+                parts.append(evidence_html)
 
     if not therapeutic_rows:
         parts.append("<p><em>No therapeutic recommendations.</em></p>")
@@ -2668,7 +2941,7 @@ def main(argv: list[str]) -> int:
 
     html_out = case_docs / f"{slug}-recommendations.html"
     html_out.write_text(
-        _render_recommendations_html(slug, recs, profile, preferences, trials),
+        _render_recommendations_html(slug, recs, profile, preferences, trials, clinical),
         encoding="utf-8",
     )
     print(
