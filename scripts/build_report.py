@@ -326,7 +326,37 @@ _RECS_HEAD_HTML = (
     "<th>Rank</th><th>Intervention</th>"
     "<th>Likelihood of effect</th><th>Toxicity burden</th>"
     "<th>Counter-productive MoA</th><th>Overall</th>"
+    "<th>Key references</th>"
 )
+
+
+def _key_references_cell_html(r: dict) -> str:
+    """Render `evidence_anchor[]` as a stacked list of clickable links.
+
+    PubMed (`pmid:NNNNNNNN`) and ClinicalTrials.gov (`nct:NCTNNNNNNNN`)
+    are the two anchor flavors emitted by the PI; everything else
+    renders as plain text. Returns a `<td>` cell with one link per
+    line (`<br>`-separated) so the column scans top-to-bottom.
+    """
+    anchors = r.get("evidence_anchor") or []
+    if not anchors:
+        return "<td>&mdash;</td>"
+    pieces: list[str] = []
+    for a in anchors:
+        s = str(a).strip()
+        if s.lower().startswith("pmid:"):
+            pid = s.split(":", 1)[1].strip()
+            pieces.append(
+                f'<a href="https://pubmed.ncbi.nlm.nih.gov/{_html.escape(pid)}">PMID&nbsp;{_html.escape(pid)}</a>'
+            )
+        elif s.lower().startswith("nct:"):
+            nid = s.split(":", 1)[1].strip()
+            pieces.append(
+                f'<a href="https://clinicaltrials.gov/study/{_html.escape(nid)}">{_html.escape(nid)}</a>'
+            )
+        else:
+            pieces.append(_html.escape(s))
+    return "<td>" + "<br>".join(pieces) + "</td>"
 
 
 def _persona_line_html(r: dict) -> str:
@@ -404,6 +434,7 @@ def _render_recs_table_html(
             f"<td>{_fmt_html(r.get('toxicity_burden'))}</td>"
             f"{_cpm_cell_html(r)}"
             f"{_overall_cell_html(r)}"
+            f"{_key_references_cell_html(r)}"
             "</tr>"
         )
     return (

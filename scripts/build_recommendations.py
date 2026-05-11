@@ -48,7 +48,36 @@ RECS_HEAD = (
     "<th>Rank</th><th>Intervention</th>"
     "<th>Likelihood of effect</th><th>Toxicity burden</th>"
     "<th>Counter-productive MoA</th><th>Overall</th>"
+    "<th>Key references</th>"
 )
+
+
+def _key_references_cell(r: dict) -> str:
+    """Render `evidence_anchor[]` as a stacked list of clickable links.
+
+    PubMed (`pmid:NNNNNNNN`) → pubmed.ncbi.nlm.nih.gov; ClinicalTrials.gov
+    (`nct:NCTNNNNNNNN`) → clinicaltrials.gov; anything else as plain text.
+    One link per line (`<br>`-separated) so the column scans top-to-bottom.
+    """
+    anchors = r.get("evidence_anchor") or []
+    if not anchors:
+        return "<td>—</td>"
+    pieces: list[str] = []
+    for a in anchors:
+        s = str(a).strip()
+        if s.lower().startswith("pmid:"):
+            pid = s.split(":", 1)[1].strip()
+            pieces.append(
+                f'<a href="https://pubmed.ncbi.nlm.nih.gov/{html.escape(pid)}">PMID&nbsp;{html.escape(pid)}</a>'
+            )
+        elif s.lower().startswith("nct:"):
+            nid = s.split(":", 1)[1].strip()
+            pieces.append(
+                f'<a href="https://clinicaltrials.gov/study/{html.escape(nid)}">{html.escape(nid)}</a>'
+            )
+        else:
+            pieces.append(html.escape(s))
+    return "<td>" + "<br>".join(pieces) + "</td>"
 
 
 def _persona_line(r: dict) -> str:
@@ -117,6 +146,7 @@ def render_recs_table(rows: list[dict]) -> str:
             f"<td>{fmt(r.get('toxicity_burden'))}</td>"
             f"{_cpm_cell(r)}"
             f"{_overall_cell(r)}"
+            f"{_key_references_cell(r)}"
             "</tr>"
         )
     return (
