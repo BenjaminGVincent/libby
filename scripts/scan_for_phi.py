@@ -121,6 +121,32 @@ ONCOLOGY_ACRONYM_ALLOWLIST = frozenset({
     "MRNA", "LNCRNA", "PDX", "WES", "WGS", "FFPE", "EHR", "CTDNA",
     "EGFR", "MET", "KRAS", "BRAF", "ALK", "ROS", "RET", "NTRK", "FGFR",
     "PD", "PDL", "HER",
+    # RAS isoforms, kinases, MAPK pathway
+    "NRAS", "HRAS", "RAS", "RAF", "MEK", "ERK", "MAPK", "SOS", "GEF",
+    "GAP", "GTP", "GDP", "SHP", "FAK", "CDK", "CDKN", "MYC", "AKT", "PI3K",
+    "MTOR", "MOA",
+    # Tumor-type acronyms / histology
+    "PDAC", "GBM", "TNBC", "HCC", "RCC", "CRC", "HNSCC", "LGSOC", "HGSOC",
+    "UM", "DIPG",
+    # Drug class / mechanism extensions
+    "HCQ", "PARP", "PARPi", "TKI", "ICI", "ICB", "FAP", "CAF", "MDSC", "TIL",
+    "MRD",
+    # Cancer-syndrome / risk acronyms
+    "LFS", "HBOC", "HNPCC", "MAP", "FAP",
+    # Methodology / metrology
+    "HRD", "LOH", "ROBINS", "ROB", "GRADE", "PICO",
+    # Mouse-model strains that surface in preclinical evidence
+    "KPC", "KPP", "GEMM",
+    # Trial-family names (PDAC + adjacent)
+    "POLO", "NEJM", "JCO",
+    # Outcome / endpoint shorthand
+    "RFS", "HR", "MSS",
+    # Journal abbreviations occasionally cited in agent prose
+    "CCR",
+    # SoC PDAC chemo regimen names that read as ALL-CAPS
+    "FOLFIRINOX", "NALIRIFOX", "FOLFOX", "FOLFIRI",
+    # Misc pancreatic-trial-family + adjacent acronyms
+    "MTAP", "PRMT", "SHP",
 })
 
 ALL_CAPS_PAIR_RE = re.compile(r"\b([A-Z][A-Z]+),\s*([A-Z][A-Z]+)\b")
@@ -183,6 +209,16 @@ _BYDESIGN_NAMES = {
     "target_validation.md",
     "target_validation.jsonl",
     "target_validation_report.md",
+    # `runs.jsonl` is the per-case agent-run log; its whole purpose is to
+    # record `run_id` strings and `timestamp_utc` ISO timestamps with day
+    # precision. These look like PHI dates to the regex but are by design.
+    "runs.jsonl",
+    # The clinical / preclinical evidence JSONLs carry `last_author_contact`
+    # emails by design — the clinician / researcher contracts treat
+    # corresponding-author emails (lifted from published papers) as part of
+    # the reviewer hand-off. These are public business contacts, not PHI.
+    "clinical_evidence.jsonl",
+    "preclinical_evidence.jsonl",
 }
 _BYDESIGN_LABELS = {"email", "us_phone", "iso_date_full"}
 

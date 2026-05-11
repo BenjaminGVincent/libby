@@ -1,0 +1,8 @@
+{
+  "case_slug": "pancreatic-recurrent-kras-g12r-m8f3",
+  "efficacy_toxicity_weight": 0.80,
+  "toxicity_vetoes": [],
+  "modality_constraints": [],
+  "free_text_constraints": "Treat to remission as the primary goal. Accepts high-risk-high-reward options. Minimize toxicity where possible, but no hard toxicity vetoes.",
+  "prefers_trials": true
+}

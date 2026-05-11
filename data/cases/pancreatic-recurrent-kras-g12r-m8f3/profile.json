@@ -1,0 +1,90 @@
+{
+  "case_slug": "pancreatic-recurrent-kras-g12r-m8f3",
+  "age_band": "50-59",
+  "sex": "unknown",
+  "primary_site": "pancreas",
+  "histology": "pancreatic adenocarcinoma",
+  "stage": "recurrent",
+  "ecog": 1,
+  "biomarkers": [
+    {
+      "name": "KRAS G12R",
+      "value": "mutated",
+      "method": "NGS",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "Tissue or plasma NGS confirming KRAS G12R; required for G12R-specific or pan-KRAS-G12X inhibitor eligibility."
+    },
+    {
+      "name": "TP53",
+      "value": "inactivating mutation",
+      "method": "NGS",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "Tissue NGS variant call with predicted loss-of-function or known hotspot; informs co-mutation context, not a direct therapy gate."
+    },
+    {
+      "name": "CDKN2A",
+      "value": "loss",
+      "method": "NGS (copy number) / IHC",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "NGS copy-number call or IHC p16 loss; relevant for CDK4/6 inhibitor rationale."
+    },
+    {
+      "name": "CCND3",
+      "value": "alteration",
+      "method": "NGS",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "NGS-detected amplification or activating alteration; relevant for cyclin/CDK-axis targeting rationale."
+    },
+    {
+      "name": "MSI status",
+      "value": "MSS",
+      "method": "NGS / IHC mismatch-repair panel",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "MSI-high required for tumor-agnostic ICI (pembrolizumab); MSS effectively excludes that pathway."
+    },
+    {
+      "name": "TMB",
+      "value": "4.1 mut/Mb",
+      "method": "NGS panel",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "TMB ≥10 mut/Mb required for tumor-agnostic pembrolizumab; 4.1 mut/Mb does not meet that threshold."
+    }
+  ],
+  "prior_therapies": [
+    {
+      "regimen": "FOLFIRI (adjuvant)",
+      "line": "adjuvant",
+      "best_response": "PD"
+    }
+  ],
+  "current_therapy": null,
+  "organ_function": {},
+  "targetable_features": [
+    {
+      "feature": "KRAS G12R",
+      "rationale": "Emerging G12X-pan and G12R-selective small-molecule inhibitors (e.g. RMC-6236 divarasib-class, dedicated G12R programs); historically the most actionable allele in PDAC after G12C and G12D."
+    },
+    {
+      "feature": "TP53 inactivating mutation",
+      "rationale": "Co-mutation marker — modifies expected response to DDR-directed and cell-cycle-directed approaches; some early-phase trials enrich for or stratify by TP53 status."
+    },
+    {
+      "feature": "CDKN2A loss",
+      "rationale": "Loss of p16 derepresses CDK4/6 — provides mechanistic rationale for CDK4/6 inhibitors (palbociclib, ribociclib, abemaciclib) alone or in KRAS-inhibitor combinations."
+    },
+    {
+      "feature": "CCND3 alteration",
+      "rationale": "Cyclin D3 amplification/activation drives CDK4/6 dependency; reinforces CDK4/6 inhibitor rationale and may support cyclin-D-degrader programs."
+    },
+    {
+      "feature": "MSS status",
+      "rationale": "Decision-relevant negative finding — excludes tumor-agnostic ICI on the MSI-H label and flags single-agent PD-1/PD-L1 as low-yield; pushes immunotherapy thinking toward combinations or trial-only."
+    },
+    {
+      "feature": "TMB 4.1 mut/Mb",
+      "rationale": "Below the 10 mut/Mb tumor-agnostic pembrolizumab threshold; reinforces low expected ICI monotherapy benefit and the need to look at non-ICI strategies first."
+    }
+  ],
+  "geography_band": null,
+  "private": false
+}
