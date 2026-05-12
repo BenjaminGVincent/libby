@@ -212,14 +212,14 @@ def downloads_block(case_docs: Path, slug: str) -> str:
             "diagnostic + biomarker workup that hardens the targetable-feature call",
         ),
         (
-            f"{slug}-recommendations.html",
+            f"{slug}-recommendations.pdf",
             "Recommendations table",
-            "ranked options + pipeline context — self-contained HTML that opens offline",
+            "ranked options + pipeline context + evidence in detail, in a print-friendly PDF",
         ),
         (
-            "accessibility.md",
+            f"{slug}-accessibility.pdf",
             "Access guide",
-            "how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table",
+            "how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF",
         ),
         (
             "manuscripts.md",

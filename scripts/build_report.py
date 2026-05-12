@@ -2550,6 +2550,394 @@ def _accessibility_md_for_pdf(slug: str, rows: list[dict]) -> str:
     return "\n".join(lines)
 
 
+def _recommendations_md_for_pdf(
+    slug: str,
+    recs: list[dict],
+    profile: dict,
+    preferences: dict,
+    trials: list[dict] | None,
+    clinical: list[dict] | None,
+) -> str:
+    """Markdown body for the Recommendations-table PDF.
+
+    Mirrors the structure of the self-contained recommendations HTML but in
+    a print-friendly markdown form: each rank becomes a `### N. <label>`
+    deep section with the column fields rendered as bold-prefixed prose
+    lines, rather than a wide table the PDF renderer would have to squeeze
+    into Letter page width. Pipeline-context and evidence-in-detail
+    sections render as markdown pipe tables, which fit comfortably.
+    """
+    trials = trials or []
+    clinical = clinical or []
+    therapeutic_rows = [r for r in recs if not _is_workup_row(r)]
+    feature_groups = _group_by_feature(therapeutic_rows)
+    ranked_aliases = _ranked_drug_aliases(recs, trials)
+    by_pmid = {str(c.get("pmid")): c for c in clinical if c.get("pmid")}
+
+    lines: list[str] = [f"# Recommendations — {slug}", ""]
+
+    if profile or preferences:
+        snap: list[str] = []
+        if profile:
+            for label, key in (
+                ("Primary site", "primary_site"),
+                ("Histology", "histology"),
+                ("Stage", "stage"),
+                ("ECOG", "ecog"),
+                ("Age band", "age_band"),
+                ("Sex", "sex"),
+            ):
+                v = profile.get(key)
+                if v not in (None, ""):
+                    snap.append(f"- **{label}:** {v}")
+            biomarkers = profile.get("biomarkers") or []
+            if biomarkers:
+                biomarker_strs = []
+                for b in biomarkers:
+                    pieces = [str(b.get("name") or "?")]
+                    if b.get("value") not in (None, ""):
+                        pieces.append(str(b["value"]))
+                    if b.get("confirmation_status") and b["confirmation_status"] != "confirmed":
+                        pieces.append(f"({b['confirmation_status']})")
+                    biomarker_strs.append(" ".join(pieces))
+                snap.append(f"- **Biomarkers:** {'; '.join(biomarker_strs)}")
+        if preferences:
+            w = preferences.get("efficacy_toxicity_weight")
+            if w is not None:
+                snap.append(f"- **Efficacy/toxicity weight:** {w}")
+            toxv = preferences.get("toxicity_vetoes") or []
+            if toxv:
+                snap.append(f"- **Toxicity vetoes:** {', '.join(str(x) for x in toxv)}")
+            mods = preferences.get("modality_constraints") or []
+            if mods:
+                snap.append(f"- **Modality constraints:** {', '.join(str(x) for x in mods)}")
+            if preferences.get("trials_preferred") is not None:
+                snap.append(
+                    f"- **Trials preferred:** {'yes' if preferences['trials_preferred'] else 'no'}"
+                )
+        if snap:
+            lines.append("## Profile snapshot")
+            lines.append("")
+            lines.extend(snap)
+            lines.append("")
+
+    if not therapeutic_rows:
+        lines.append("_No therapeutic recommendations._")
+        lines.append("")
+        return "\n".join(lines)
+
+    if len(feature_groups) > 1:
+        lines.append(
+            f"_{len(therapeutic_rows)} ranked therapeutic options across "
+            f"{len(feature_groups)} targetable features. Biomarker workup steps "
+            f"live in the standalone Target validation paths report._"
+        )
+    else:
+        lines.append(
+            f"_{len(therapeutic_rows)} ranked therapeutic options. "
+            f"Biomarker workup steps live in the standalone Target validation paths report._"
+        )
+    lines.append("")
+
+    def _refs_inline(rec: dict) -> str:
+        anchors = rec.get("evidence_anchor") or []
+        if not anchors:
+            return "—"
+        pieces: list[str] = []
+        for a in anchors:
+            s = str(a).strip()
+            if s.lower().startswith("pmid:"):
+                pid = s.split(":", 1)[1].strip()
+                pieces.append(f"PMID {pid}")
+            elif s.lower().startswith("nct:"):
+                pieces.append(s.split(":", 1)[1].strip())
+            else:
+                pieces.append(s)
+        return " · ".join(pieces)
+
+    def _cpm_inline(rec: dict) -> str:
+        cpm = rec.get("counter_productive_moa") or {}
+        sev = cpm.get("severity")
+        desc = cpm.get("description")
+        if not sev:
+            return "—"
+        if desc:
+            return f"**{sev}** ({desc})"
+        return f"**{sev}**"
+
+    def _intervention_heading(rec: dict, idx: int) -> str:
+        label = rec.get("intervention_label") or rec.get("intervention_id") or "(unknown)"
+        scen = rec.get("scenario")
+        if isinstance(scen, str) and scen.endswith(":positive"):
+            biomarker_short = scen.split(":", 1)[0]
+            return f"### {idx}. {label} *(conditional on {biomarker_short} positive)*"
+        return f"### {idx}. {label}"
+
+    def _emit_evidence_for_rec(rec: dict) -> None:
+        pmids = _rec_pmids(rec)
+        matched = [by_pmid[p] for p in pmids if p in by_pmid]
+        if not matched:
+            return
+        lines.append(f"##### {_intervention_short_name(rec)}")
+        lines.append("")
+        lines.append("| Disease context | n | Toxicities | Efficacy | Reference |")
+        lines.append("| --- | --- | --- | --- | --- |")
+        for ev in matched:
+            indication = ev.get("indication") or ""
+            line_of = ev.get("line_of_therapy") or ""
+            pop = ev.get("population_detail") or ""
+            disease_bits: list[str] = []
+            if indication:
+                head = f"**{indication}**"
+                if line_of and line_of not in ("—", "-"):
+                    head += f" ({line_of})"
+                disease_bits.append(head)
+            if pop:
+                disease_bits.append(pop)
+            disease = " — ".join(disease_bits) or "—"
+
+            tox_pieces: list[str] = []
+            for tox in ev.get("toxicities") or []:
+                term = tox.get("term") or "AE"
+                grade = tox.get("grade")
+                rate = tox.get("rate_pct")
+                denom = tox.get("denominator")
+                bits: list[str] = []
+                head_t = f"**{term}**"
+                if grade:
+                    head_t += f" (grade {grade})"
+                if rate is not None:
+                    bits.append(f"{rate}%")
+                if denom is not None and denom != 100:
+                    bits.append(f"(n={denom})")
+                tox_pieces.append(head_t + (": " + " ".join(bits) if bits else ""))
+            tox_cell = "; ".join(tox_pieces)
+            if not tox_cell and ev.get("safety_summary"):
+                tox_cell = ev["safety_summary"]
+            tox_cell = tox_cell or "—"
+
+            outcomes = ev.get("outcomes") or []
+            eff_pieces: list[str] = []
+            if outcomes:
+                for o in outcomes:
+                    name = o.get("name") or "outcome"
+                    effect = o.get("effect_size")
+                    units = o.get("effect_units") or ""
+                    ci_lo = o.get("ci_lower")
+                    ci_hi = o.get("ci_upper")
+                    pieces_e: list[str] = [f"**{name}**"]
+                    if effect is not None:
+                        units_str = str(units).strip()
+                        sep = " " if units_str and units_str[0].isalpha() else ""
+                        pieces_e.append(f"{effect}{sep}{units_str}")
+                    if ci_lo is not None and ci_hi is not None:
+                        pieces_e.append(f"(95% CI {ci_lo}-{ci_hi})")
+                    eff_pieces.append(" ".join(pieces_e))
+            else:
+                label = ev.get("outcome") or ev.get("endpoint_type")
+                eff = ev.get("effect_size")
+                units = ev.get("effect_units") or ""
+                if label and eff is not None:
+                    units_str = str(units).strip()
+                    sep = " " if units_str and units_str[0].isalpha() else ""
+                    eff_pieces.append(f"**{label}** {eff}{sep}{units_str}")
+                elif label:
+                    eff_pieces.append(f"**{label}**")
+                elif eff is not None:
+                    eff_pieces.append(f"{eff}")
+            eff_cell = "; ".join(eff_pieces) or "—"
+
+            pmid = ev.get("pmid")
+            first_author = ev.get("first_author") or ""
+            journal = ev.get("journal") or ""
+            year = ev.get("year")
+            ref_bits: list[str] = []
+            if first_author:
+                ref_bits.append(f"{first_author} et al.")
+            if journal:
+                ref_bits.append(f"*{journal}*")
+            if year:
+                ref_bits.append(str(year))
+            ref_label = " ".join(ref_bits) if ref_bits else (f"PMID {pmid}" if pmid else "—")
+            if pmid:
+                ref_cell = f"[{ref_label}](https://pubmed.ncbi.nlm.nih.gov/{pmid})"
+            else:
+                ref_cell = ref_label
+
+            n_cell = ev.get("n")
+            n_str = str(n_cell) if n_cell not in (None, "") else "—"
+            # Pipe-table cells: collapse any embedded `|` to a similar glyph.
+            def _safe(s: str) -> str:
+                return s.replace("|", "/").replace("\n", " ")
+            lines.append(
+                f"| {_safe(disease)} | {_safe(n_str)} | {_safe(tox_cell)} "
+                f"| {_safe(eff_cell)} | {_safe(ref_cell)} |"
+            )
+        lines.append("")
+
+    def _emit_feature_block(scenario_short: str, group_rows: list[dict], heading: str | None) -> None:
+        if heading:
+            lines.append(f"## {heading}")
+            lines.append("")
+        for i, rec in enumerate(group_rows, start=1):
+            lines.append(_intervention_heading(rec, i))
+            lines.append("")
+            if rec.get("likelihood_of_effect"):
+                lines.append(f"**Likelihood of effect:** {rec['likelihood_of_effect']}")
+                lines.append("")
+            if rec.get("toxicity_burden"):
+                lines.append(f"**Toxicity burden:** {rec['toxicity_burden']}")
+                lines.append("")
+            cpm_str = _cpm_inline(rec)
+            if cpm_str != "—":
+                lines.append(f"**Counter-productive MoA:** {cpm_str}")
+                lines.append("")
+            if rec.get("overall"):
+                lines.append(f"**Overall:** **{rec['overall']}**")
+                lines.append("")
+            refs = _refs_inline(rec)
+            if refs != "—":
+                lines.append(f"**Key references:** {refs}")
+                lines.append("")
+
+        # Pipeline context — leaner table, biomarker-class agents the patient
+        # cannot currently enroll in.
+        if scenario_short != "__unscoped" and trials:
+            pipeline_rows = _pipeline_context_rows(scenario_short, trials, ranked_aliases)
+            if pipeline_rows:
+                lines.append("### Pipeline context — not currently enrollable")
+                lines.append("")
+                lines.append(
+                    "_Other agents in this target class drawn from the case dossier. "
+                    "The patient cannot currently enroll in these trials, but they are "
+                    "included for context on the broader modality landscape._"
+                )
+                lines.append("")
+                lines.append("| Intervention | Modality | Phase | Enrolling indication | Recruitment | Trial |")
+                lines.append("| --- | --- | --- | --- | --- | --- |")
+                for t in pipeline_rows:
+                    interv = (t.get("intervention") or "—").replace("|", "/")
+                    extras: list[str] = []
+                    if t.get("tumor_type_relationship") == "basket_or_biomarker_match":
+                        extras.append("basket/biomarker")
+                    if t.get("regulatory_status") in ("approved_off_label", "approved_on_label"):
+                        extras.append("off-label")
+                    if t.get("development_status") == "discontinued":
+                        extras.append("discontinued")
+                    if extras:
+                        interv = f"{interv} _({', '.join(extras)})_"
+                    nct = t.get("nct_id") or "—"
+                    nct_cell = (
+                        f"[{nct}](https://clinicaltrials.gov/study/{nct})" if nct != "—" else "—"
+                    )
+                    lines.append(
+                        f"| {interv} "
+                        f"| {(t.get('modality') or '—').replace('|', '/')} "
+                        f"| {(t.get('phase') or '—').replace('|', '/')} "
+                        f"| {(t.get('indication') or '—').replace('|', '/')} "
+                        f"| {(t.get('recruitment_status') or '—').replace('|', '/')} "
+                        f"| {nct_cell} |"
+                    )
+                lines.append("")
+
+        # Evidence in detail — one mini-table per intervention with matched
+        # clinical_evidence rows.
+        any_evidence = any(
+            any(p in by_pmid for p in _rec_pmids(r)) for r in group_rows
+        )
+        if any_evidence:
+            lines.append("### Evidence in detail")
+            lines.append("")
+            lines.append(
+                "_One row per published clinical manuscript supporting each ranked "
+                "intervention, drawn from the case's clinical-evidence dossier._"
+            )
+            lines.append("")
+            for rec in group_rows:
+                _emit_evidence_for_rec(rec)
+
+    if len(feature_groups) > 1:
+        for scenario_short, group_rows in feature_groups:
+            heading = (
+                _feature_label_for_scenario(scenario_short)
+                if scenario_short != "__unscoped"
+                else "Biomarker-independent options"
+            )
+            _emit_feature_block(scenario_short, group_rows, heading)
+    else:
+        scenario_short, group_rows = feature_groups[0]
+        heading = (
+            _feature_label_for_scenario(scenario_short)
+            if scenario_short != "__unscoped"
+            else None
+        )
+        _emit_feature_block(scenario_short, group_rows, heading)
+
+    return "\n".join(lines) + "\n"
+
+
+def _make_recommendations_pdf(
+    slug: str,
+    recs: list[dict],
+    profile: dict,
+    preferences: dict,
+    trials: list[dict] | None,
+    clinical: list[dict] | None,
+    out_path: Path,
+) -> None:
+    """Render the ranked Recommendations table to a portrait-Letter PDF.
+
+    Companion to the rich self-contained HTML — same source data, but
+    structured as a print-friendly markdown body so each rank gets its own
+    readable deep section (rather than squeezing the 7-column HTML table
+    onto a portrait page).
+    """
+    try:
+        from fpdf import FPDF
+    except ImportError as e:
+        raise SystemExit(
+            "build_report: missing dependency `fpdf2`.\n  pip install fpdf2"
+        ) from e
+
+    today = datetime.now(timezone.utc).date().isoformat()
+
+    class RecommendationsPDF(FPDF):
+        def footer(self_):
+            if self_.page_no() <= 1:
+                return
+            self_.set_y(-12)
+            self_.set_font(_FONT_FAMILY, "I", 8)
+            self_.set_text_color(*INK_MUTED)
+            self_.cell(
+                0,
+                6,
+                _ascii_fallback(
+                    f"{self_.page_no()} of {{nb}}    ·    Libby — recommendations    ·    {slug}"
+                ),
+                align="C",
+            )
+
+    pdf = RecommendationsPDF(orientation="P", unit="mm", format="Letter")
+    pdf.set_auto_page_break(auto=True, margin=20)
+    pdf.set_margins(left=18, top=20, right=18)
+    pdf.alias_nb_pages()
+    _register_unicode_font(pdf)
+
+    _render_cover(
+        pdf, f"Recommendations — {slug}",
+        "Ranked therapeutic options with likelihood, toxicity, mechanism risk, and key references",
+        today, "LIBBY — RECOMMENDATIONS",
+        COVER_BG, _DISCLAIMER_CLINICIAN,
+    )
+
+    pdf.add_page()
+    body_md = _recommendations_md_for_pdf(slug, recs, profile, preferences, trials, clinical)
+    _render_markdown_block(pdf, body_md, top_h1=True)
+
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    pdf.output(str(out_path))
+
+
 def _make_accessibility_pdf(slug: str, rows: list[dict], out_path: Path) -> None:
     """Render the access guide to a portrait-Letter PDF for the Downloads section."""
     try:
@@ -2666,14 +3054,14 @@ def _downloads_section(slug: str, case_docs: Path) -> str:
             "diagnostic + biomarker workup that hardens the targetable-feature call",
         ),
         (
-            f"{slug}-recommendations.html",
+            f"{slug}-recommendations.pdf",
             "Recommendations table",
-            "ranked options + pipeline context — self-contained HTML that opens offline",
+            "ranked options + pipeline context + evidence in detail, in a print-friendly PDF",
         ),
         (
-            "accessibility.md",
+            f"{slug}-accessibility.pdf",
             "Access guide",
-            "how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table",
+            "how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF",
         ),
         (
             "manuscripts.md",
@@ -3070,10 +3458,16 @@ def main(argv: list[str]) -> int:
         manuscripts_out.unlink()
 
     accessibility_rows = _load_jsonl(case_data / "accessibility.jsonl")
-    # Access guide PDF removed from the Downloads section. The web version
-    # (`accessibility.md`) remains as the primary artifact.
     accessibility_pdf_out = case_docs / f"{slug}-accessibility.pdf"
-    if accessibility_pdf_out.exists():
+    if accessibility_rows:
+        _make_accessibility_pdf(slug, accessibility_rows, accessibility_pdf_out)
+        print(
+            f"built {accessibility_pdf_out.relative_to(REPO_ROOT)} — "
+            f"{accessibility_pdf_out.stat().st_size / 1024:.0f} KB"
+        )
+    elif accessibility_pdf_out.exists():
+        # Cleanup: if the case has no access rows, strip any stale PDF so the
+        # Downloads block doesn't surface a phantom link.
         accessibility_pdf_out.unlink()
 
     # Reporter-authored target-validation prose. Drives both the website
@@ -3105,6 +3499,18 @@ def main(argv: list[str]) -> int:
         f"built {html_out.relative_to(REPO_ROOT)} — "
         f"{html_out.stat().st_size / 1024:.0f} KB"
     )
+
+    recs_pdf_out = case_docs / f"{slug}-recommendations.pdf"
+    if recs:
+        _make_recommendations_pdf(
+            slug, recs, profile, preferences, trials, clinical, recs_pdf_out
+        )
+        print(
+            f"built {recs_pdf_out.relative_to(REPO_ROOT)} — "
+            f"{recs_pdf_out.stat().st_size / 1024:.0f} KB"
+        )
+    elif recs_pdf_out.exists():
+        recs_pdf_out.unlink()
 
     if _inject_target_validation(index_path, tv_report_md):
         print(
