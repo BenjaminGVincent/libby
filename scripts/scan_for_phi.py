@@ -140,7 +140,7 @@ ONCOLOGY_ACRONYM_ALLOWLIST = frozenset({
     # Trial-family names (PDAC + adjacent)
     "POLO", "NEJM", "JCO",
     # Outcome / endpoint shorthand
-    "RFS", "HR", "MSS",
+    "RFS", "DFS", "EFS", "TTR", "TTP", "TTNT", "HR", "MSS",
     # Journal abbreviations occasionally cited in agent prose
     "CCR",
     # SoC PDAC chemo regimen names that read as ALL-CAPS

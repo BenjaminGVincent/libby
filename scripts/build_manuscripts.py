@@ -164,7 +164,78 @@ def status_badge(row: dict) -> str:
     return '<span class="fit-badge fit-strong">included</span>'
 
 
+_OUTCOME_LABEL_MAP = {
+    "ORR": "ORR",
+    "RR": "RR",
+    "CR_rate": "CR rate",
+    "DCR": "DCR",
+    "DoR": "mDoR",
+    "PFS": "mPFS",
+    "PFS_rate": "PFS rate",
+    "OS": "mOS",
+    "OS_rate": "OS rate",
+    "RFS": "mRFS",
+    "DFS": "mDFS",
+    "EFS": "mEFS",
+    "TTR": "mTTR",
+    "TTP": "mTTP",
+    "TTNT": "mTTNT",
+    "HR_OS": "OS HR",
+    "HR_PFS": "PFS HR",
+    "HR_DFS": "DFS HR",
+    "HR_RFS": "RFS HR",
+    "HR_EFS": "EFS HR",
+    "AE_rate": "AE rate",
+    "TRAE_rate": "TRAE rate",
+    "discontinuation_rate": "Discontinuation",
+    "biomarker": "Biomarker",
+    "other": "Other",
+}
+
+
+def _fmt_outcome_effect(o: dict) -> str:
+    """Render `<label>: <effect>[ <units>]` for one structured outcome entry."""
+    name = o.get("name") or "other"
+    label = _OUTCOME_LABEL_MAP.get(name, html.escape(str(name)))
+    eff = o.get("effect_size")
+    units = o.get("effect_units")
+    if eff is None or eff == "":
+        body = "—"
+    else:
+        body = num_fmt(eff, places=2) if isinstance(eff, (int, float)) else html.escape(str(eff))
+        if units:
+            body += f" {html.escape(str(units))}"
+    subgroup = o.get("subgroup")
+    out = f"<strong>{label}</strong>: {body}"
+    if subgroup:
+        out += f' <small>({html.escape(str(subgroup))})</small>'
+    notes = o.get("notes")
+    if notes:
+        out += f' <small><em>{html.escape(str(notes))}</em></small>'
+    return out
+
+
+def _fmt_outcome_variance(o: dict) -> str:
+    """Render the CI / variance / p-value bundle for one structured outcome entry."""
+    parts: list[str] = []
+    lo, hi = o.get("ci_lower"), o.get("ci_upper")
+    if lo is not None and hi is not None:
+        parts.append(f"95% CI {num_fmt(lo)}–{num_fmt(hi)}")
+    free = o.get("variance_or_ci")
+    if free:
+        parts.append(html.escape(str(free)))
+    p = o.get("p_value")
+    if p not in (None, "", "—"):
+        parts.append(f"p={html.escape(str(p))}")
+    return " · ".join(parts) if parts else "—"
+
+
 def effect_cell_clinical(r: dict) -> str:
+    # Prefer the structured `outcomes[]` array — one stacked line per outcome.
+    outcomes = r.get("outcomes") or []
+    if outcomes:
+        return "<br>".join(_fmt_outcome_effect(o) for o in outcomes)
+    # Legacy fallback: single-outcome row from the original schema.
     e = r.get("effect_size")
     units = r.get("effect_units")
     if e is None or e == "":
@@ -176,6 +247,12 @@ def effect_cell_clinical(r: dict) -> str:
 
 
 def variance_cell_clinical(r: dict) -> str:
+    # Prefer the structured `outcomes[]` array — render the CI / p-value
+    # bundle on the line that lines up with the matching Effect-size entry.
+    outcomes = r.get("outcomes") or []
+    if outcomes:
+        return "<br>".join(_fmt_outcome_variance(o) for o in outcomes)
+    # Legacy fallback: single-outcome row.
     lo, hi = r.get("ci_lower"), r.get("ci_upper")
     free = r.get("variance_or_ci")
     parts = []

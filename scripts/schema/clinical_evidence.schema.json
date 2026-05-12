@@ -68,6 +68,58 @@
     "variance_or_ci": { "type": "string", "description": "Free-text variance description when numeric CI bounds are not separable (e.g. 'IQR 1.5-4.2')." },
     "p_value": { "type": ["string", "number", "null"], "description": "p-value string or numeric; '<0.001' convention." },
     "median_dor_or_pfs": { "type": "string", "description": "Durability — median DoR / PFS / time-on-treatment as reported. e.g. 'mDoR 7.0 mo', 'mPFS 3.6 mo'." },
+    "outcomes": {
+      "type": "array",
+      "description": "Structured list of every reported outcome on this paper — response-rate, OS, PFS, RFS, DFS, DCR, etc. — captured one per array entry. Renders directly into the Effect size + Variance columns of the master manuscripts table, one stacked line per outcome. Lets a single paper carry multiple endpoints cleanly (e.g. DeLLphi-304 reports OS HR, PFS, ORR, mDoR — four entries) instead of collapsing into one number plus free-text overflow. When `outcomes[]` is populated, the renderer prefers it; the legacy single-outcome fields (`endpoint_type`, `effect_size`, `effect_units`, `ci_lower`, `ci_upper`, `variance_or_ci`, `p_value`, `median_dor_or_pfs`) remain for backwards compatibility and as a fallback when `outcomes[]` is absent.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "enum": [
+              "ORR", "RR", "CR_rate", "DCR", "DoR", "PFS", "PFS_rate", "OS", "OS_rate",
+              "RFS", "DFS", "EFS", "TTR", "TTP", "TTNT",
+              "HR_OS", "HR_PFS", "HR_DFS", "HR_RFS", "HR_EFS",
+              "AE_rate", "TRAE_rate", "discontinuation_rate", "biomarker", "other"
+            ],
+            "description": "Outcome family. ORR = overall response rate (CR+PR). RR = response rate (synonym; for cases where the paper just says 'response rate'). DCR = disease-control rate (CR+PR+SD). DoR = median duration of response. PFS / OS / RFS / DFS / EFS = median time in months. *_rate variants = % of patients meeting a landmark threshold (e.g. 1y OS rate). HR_* = hazard ratio vs comparator. TTR = time to response. TTP = time to progression. TTNT = time to next therapy."
+          },
+          "effect_size": {
+            "type": ["number", "string", "null"],
+            "description": "Numeric or short string. ORR / DCR / *_rate use % (e.g. 40); median time variants use months (e.g. 4.9); HR_* use the ratio (e.g. 0.60)."
+          },
+          "effect_units": {
+            "type": "string",
+            "description": "Free-text units. %, months, HR, etc. Optional when implied by the `name` (HR_OS implies ratio; ORR implies %)."
+          },
+          "ci_lower": { "type": ["number", "null"], "description": "95% CI lower bound on `effect_size`." },
+          "ci_upper": { "type": ["number", "null"], "description": "95% CI upper bound on `effect_size`." },
+          "variance_or_ci": {
+            "type": "string",
+            "description": "Free-text variance when numeric CI bounds aren't separable (e.g. 'IQR 1.5-4.2', '95% CI by Kaplan-Meier')."
+          },
+          "p_value": {
+            "type": ["string", "number", "null"],
+            "description": "p-value (numeric or '<0.001'). Mostly meaningful for HR_* / comparator-based outcomes."
+          },
+          "n": {
+            "type": ["integer", "null"],
+            "minimum": 0,
+            "description": "Patients evaluable for THIS outcome (may differ from the row-level `n` for biomarker-restricted analyses, ITT vs PP cuts, etc.). Null when same as row `n`."
+          },
+          "subgroup": {
+            "type": "string",
+            "description": "Optional subgroup label when the outcome is from a stratified analysis — e.g. 'KRAS G12 subset', 'BRCA2 carriers', 'PD-L1 ≥50%'. Leave empty for the full-population estimand."
+          },
+          "notes": {
+            "type": "string",
+            "description": "Short qualifier — '10 mg cohort', 'BICR-confirmed', 'investigator-assessed', 'landmark at 12 months', 'interim cut'."
+          }
+        }
+      }
+    },
     "safety_summary": { "type": "string", "description": "1-2 line summary: G3+ AE rate, treatment-related deaths, characteristic AEs (CRS, ILD, neuropathy, etc)." },
     "toxicities": {
       "type": "array",
