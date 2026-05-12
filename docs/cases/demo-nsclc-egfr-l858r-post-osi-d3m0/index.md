@@ -6,11 +6,11 @@
 
 ## Downloads
 
-- [Target validation paths](demo-nsclc-egfr-l858r-post-osi-d3m0-target-validation.pdf?v=a66297f1) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Target validation paths](demo-nsclc-egfr-l858r-post-osi-d3m0-target-validation.pdf?v=35491665) — diagnostic + biomarker workup that hardens the targetable-feature call
 - [Recommendations table](demo-nsclc-egfr-l858r-post-osi-d3m0-recommendations.html?v=99f33fdb) — ranked options + pipeline context — self-contained HTML that opens offline
 - [Access guide](accessibility.md?v=a9b23b43) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table
 - [Master manuscripts table](manuscripts.md?v=ccc49de6) — every paper considered — n, effect, variance, toxicities, in a sortable in-browser table
-- [Patient/caregiver PDF](demo-nsclc-egfr-l858r-post-osi-d3m0-plain-language.pdf?v=7ca686d9) — plain-language summary
+- [Patient/caregiver PDF](demo-nsclc-egfr-l858r-post-osi-d3m0-plain-language.pdf?v=54dd4f22) — plain-language summary
 
 <!-- libby:downloads:end -->
 
@@ -86,6 +86,17 @@ The preferred provider for each assay is marked **(preferred)**, selected on com
 | Comprehensive bypass NGS | Tempus *(xT)* | Frames durability and next-line plan for MET-directed therapy | [test info](https://www.tempus.com/oncology/diagnostics/) · 600 West Chicago Avenue, Chicago, IL 60654 · 1-800-739-4137 |
 | Comprehensive bypass NGS | NeoGenomics Laboratories *(NeoTYPE Comprehensive)* | Frames durability and next-line plan for MET-directed therapy | [test info](https://neogenomics.com/test-menu) · 9490 NeoGenomics Way, Fort Myers, FL 33912 · 1-866-776-5907 |
 | Comprehensive bypass NGS | Memorial Sloan Kettering *(MSK-IMPACT)* | Frames durability and next-line plan for MET-directed therapy | [test info](https://www.mskcc.org/clinical-services/diagnostic-laboratory) · 1275 York Avenue, New York, NY 10065 · 1-212-639-2000 |
+
+### Biomarker plan
+
+| Recommended assay | Rationale | Suggested assay provider | Tissue requirements |
+|---|---|---|---|
+| ctDNA panel including EGFR C797S, T790M, and exon 20 insertions | After osimertinib progression, the resistance landscape divides cleanly between on-target EGFR mutations (C797S, exon-20 inserts, less commonly T790M) and bypass mechanisms. Detecting C797S in cis vs trans changes whether a fourth-generation EGFR-TKI or a combination strategy is the rational next move. Skipping ctDNA at progression risks treating the case as bypass-resistance-only when the biology is mixed. | Guardant Health *(Guardant360 CDx)* | 10–20 mL whole blood; archival tissue not required |
+| Tumor NGS including TP53 and RB1 status | TP53 + RB1 co-loss is the strongest predictor of small-cell histologic transformation as a resistance mechanism in EGFR-mutant NSCLC progressing on osimertinib. The probability of transformation is non-trivial (3–14% across cohorts), and missing it changes the next-line conversation entirely; chemotherapy backbones and platinum-etoposide enter the picture. Pair this with re-biopsy guidance below. | Foundation Medicine *(FoundationOne CDx)* | archival FFPE; if exhausted, ctDNA broad panel |
+| Re-biopsy with neuroendocrine IHC panel (chromogranin, synaptophysin, INSM1, Ki-67) if imaging morphology shifts | Histologic small-cell transformation is the most consequential resistance pattern that no liquid biopsy can confirm. When TP53/RB1 are co-lost or imaging shows new visceral / explosive growth atypical for adenocarcinoma, fresh tissue with a neuroendocrine IHC panel is the only way to confirm. Without this, a transformed case can be treated as adenocarcinoma indefinitely. | Mayo Clinic Laboratories | fresh biopsy of the most-active site |
+| MET FISH on a second site (metastatic biopsy or matched archival block) | MET amplification can be focal and discordant between primary and metastatic sites in EGFR-resistant NSCLC. The patient's GCN 8.2 from a single block clears SAFFRON's threshold, but a second-site test rules out the scenario where one biopsy hits a focal amplicon and the dominant disease is unaffected. Without it, a positive trial enrollment can rest on a non-representative result. | NeoGenomics Laboratories | second-site archival FFPE if available; not gating |
+| MET IHC (clone SP44) for orthogonal expression confirmation | FISH-confirmed MET amplification at GCN 8.2 is the load-bearing finding, and SAFFRON enrollment accepts FISH or IHC 3+. IHC adds an orthogonal modality and surfaces protein-level MET expression; concordance increases confidence that the FISH result reflects active MET signaling. Discordance (FISH-amp without IHC overexpression) is a soft signal worth flagging but does not foreclose the trial. | Mayo Clinic Laboratories | archival FFPE; same block as prior testing |
+| Comprehensive NGS for HER2 amp, BRAF, KRAS, FGFR1-3, and bypass-pathway alterations | Bypass amplifications co-occur with MET amp in roughly 10–20% of post-osimertinib cases and modify expected response to MET-directed therapy. Detecting co-bypass alterations doesn't foreclose savolitinib + osimertinib but reframes the durability expectation and informs subsequent-line planning. Pair this with the TP53 / RB1 panel if running comprehensive NGS; same blood draw / block. | Foundation Medicine *(FoundationOne CDx)* | archival FFPE; ctDNA as backup |
 
 ---
 
