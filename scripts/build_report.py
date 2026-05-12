@@ -810,6 +810,32 @@ _EVIDENCE_DETAIL_HEAD_HTML = (
 )
 
 
+def _is_workup_row(rec: dict) -> bool:
+    """Identify diagnostic / workup-hardening rows that the Recommendations
+    table HTML should exclude.
+
+    The forwardable Recommendations table is the clinical bottom line —
+    therapeutic options only. Biomarker confirmation, orthogonal NGS,
+    germline testing, and related diagnostic steps belong on the Target
+    Validation paths report, not duplicated on the ranked therapy list.
+
+    Two signals catch a workup row:
+      - `scenario == "shared"` — the contract-mandated rank-1 confirmatory
+        test in a biomarker-gated case.
+      - `counter_productive_moa.severity == "N/A"` — the contract-defined
+        marker for diagnostic / workup rows in the PI's recommendations
+        schema. The PI contract pins this rule explicitly.
+
+    Either signal is sufficient.
+    """
+    if rec.get("scenario") == "shared":
+        return True
+    cpm = rec.get("counter_productive_moa") or {}
+    if cpm.get("severity") == "N/A":
+        return True
+    return False
+
+
 def _intervention_short_name(rec: dict) -> str:
     """Best-effort short drug-name label for an intervention.
 
@@ -1065,8 +1091,20 @@ def _render_recommendations_html(
     trials = trials or []
     clinical = clinical or []
 
-    # (1) drop workup rows; (2) group remaining by scenario prefix.
-    therapeutic_rows = [r for r in recs if r.get("scenario") != "shared"]
+    # (1) drop workup / diagnostic rows; (2) group remaining by scenario prefix.
+    #
+    # Two signals identify a workup row:
+    #   (a) `scenario == "shared"` — the contract-mandated rank-1 confirmatory
+    #       test in a biomarker-gated case (osteo DLL3 / PRAME pathway pattern).
+    #   (b) `counter_productive_moa.severity == "N/A"` — the contract-defined
+    #       marker for diagnostic / workup rows. The PI contract is explicit:
+    #       "Workup / diagnostic rows always `N/A`." This catches workup-
+    #       hardening rows the PI may have emitted even in non-gated cases
+    #       (e.g. an "orthogonal NGS confirmation" row for a `confirmed`
+    #       biomarker, where the PI chose not to use `scenario: "shared"`).
+    #
+    # Both filters fold into `_is_workup_row` so the rule stays in one place.
+    therapeutic_rows = [r for r in recs if not _is_workup_row(r)]
     feature_groups = _group_by_feature(therapeutic_rows)
     ranked_aliases = _ranked_drug_aliases(recs, trials)
 

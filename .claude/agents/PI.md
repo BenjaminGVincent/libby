@@ -69,6 +69,8 @@ not as separate ranked recs.
 
 **If all biomarkers are `confirmed`,** do not use `scenario: "shared"` or `:positive`. Use `scenario: null` on every row and produce a single unbranched ranking as before. The ranking still scopes to drugs that target the user's stated targetable features.
 
+**Workup / diagnostic rows belong on the Target Validation paths report, NOT in `recommendations.jsonl`** — with one exception: when biomarker confirmation gates a specific approved drug or trial enrollment in a biomarker-gated case, the gating workup row IS emitted at rank 1 with `scenario: "shared"`. In any non-gated case (every biomarker `confirmed`), do NOT emit a workup-hardening row in `recommendations.jsonl` even when the `target_validator` flagged an `essential` / `gates_intervention` row for orthogonal confirmation, germline testing, MMR IHC re-confirmation, etc. Those steps are already on the Target Validation paths report and the forwardable Recommendations table filters them out anyway (see the reporter's "Workup / diagnostic rows excluded" departure). Surface the workup as a one-line bullet in the `## Workup considerations` paragraph in `index.md` instead, where the reader sees it adjacent to the patient profile without confusing the therapeutic-options ranking with a diagnostic step.
+
 ## Synthesis logic
 
 For each unique `intervention_id` cited across the five board positions:
