@@ -112,7 +112,7 @@ def render_trials_block(trials: list[dict]) -> str:
     rows: list[str] = [
         '<table class="trial-table">',
         '<thead><tr>'
-        '<th>NCT</th><th>Phase</th><th>Indication</th>'
+        '<th class="col-nct">NCT</th><th>Phase</th><th>Indication</th>'
         '<th>Status</th><th>Patient eligible</th>'
         '<th>Central contact</th><th>Notes</th>'
         '</tr></thead>',
@@ -136,7 +136,7 @@ def render_trials_block(trials: list[dict]) -> str:
         contact = "<br>".join(contact_bits) if contact_bits else "—"
         rows.append(
             "<tr>"
-            f"<td>{nct_link}</td>"
+            f'<td class="col-nct">{nct_link}</td>'
             f"<td>{fmt(t.get('phase'))}</td>"
             f"<td>{fmt(t.get('indication'))}</td>"
             f"<td>{fmt(t.get('recruitment_status'))}</td>"
@@ -400,7 +400,7 @@ def main() -> int:
             "section further down the page._\n"
         )
         parts.append('<table class="trial-table"><thead><tr>'
-                     '<th>#</th><th>Intervention</th><th>Target</th>'
+                     '<th class="col-num">#</th><th>Intervention</th><th>Target</th>'
                      '<th>Access status</th><th>Regulatory</th>'
                      '<th>Recommended first action</th>'
                      '</tr></thead><tbody>\n')
@@ -413,7 +413,7 @@ def main() -> int:
             )
             parts.append(
                 "<tr>"
-                f'<td><a href="#access-{num}"><strong>{num}</strong></a></td>'
+                f'<td class="col-num"><a href="#access-{num}"><strong>{num}</strong></a></td>'
                 f"<td><strong>{fmt(r.get('intervention_label'))}</strong></td>"
                 f"<td>{target_html}</td>"
                 f'<td>{status_badges(r["_statuses"])}</td>'
