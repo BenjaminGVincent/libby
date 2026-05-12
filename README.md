@@ -76,4 +76,4 @@ git push
 
 ## License
 
-TBD.
+MIT. See [`LICENSE`](LICENSE).
