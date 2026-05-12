@@ -205,7 +205,24 @@ def downloads_block(case_docs: Path, slug: str) -> str:
     has run, and the page doesn't need a re-render once it does (the
     reporter calls back through run_case.sh which re-runs this script).
     """
-    artifacts = [
+    html_artifacts = [
+        (
+            f"{slug}-recommendations.html",
+            "Recommendations table",
+            "ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline",
+        ),
+        (
+            "accessibility.md",
+            "Access guide",
+            "how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table",
+        ),
+        (
+            "manuscripts.md",
+            "Master manuscripts table",
+            "every paper considered — n, effect, variance, toxicities, in a sortable in-browser table",
+        ),
+    ]
+    pdf_artifacts = [
         (
             f"{slug}-target-validation.pdf",
             "Target validation paths",
@@ -219,12 +236,7 @@ def downloads_block(case_docs: Path, slug: str) -> str:
         (
             f"{slug}-accessibility.pdf",
             "Access guide",
-            "how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF",
-        ),
-        (
-            "manuscripts.md",
-            "Master manuscripts table",
-            "every paper considered — n, effect, variance, toxicities, in a sortable in-browser table",
+            "trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF",
         ),
         (
             f"{slug}-plain-language.pdf",
@@ -232,13 +244,21 @@ def downloads_block(case_docs: Path, slug: str) -> str:
             "plain-language summary",
         ),
     ]
-    present = [(name, label, blurb) for name, label, blurb in artifacts if (case_docs / name).exists()]
-    if not present:
+    html_present = [(n, l, b) for n, l, b in html_artifacts if (case_docs / n).exists()]
+    pdf_present = [(n, l, b) for n, l, b in pdf_artifacts if (case_docs / n).exists()]
+    if not html_present and not pdf_present:
         return ""
     lines = ["## Downloads\n"]
-    for name, label, blurb in present:
-        lines.append(f"- [{label}]({html.escape(name)}) — {blurb}")
-    lines.append("")
+    if html_present:
+        lines.append("### HTML\n")
+        for name, label, blurb in html_present:
+            lines.append(f"- [{label}]({html.escape(name)}) — {blurb}")
+        lines.append("")
+    if pdf_present:
+        lines.append("### PDF\n")
+        for name, label, blurb in pdf_present:
+            lines.append(f"- [{label}]({html.escape(name)}) — {blurb}")
+        lines.append("")
     return "\n".join(lines)
 
 

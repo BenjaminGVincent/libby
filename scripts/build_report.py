@@ -3047,7 +3047,35 @@ _RX_FIRST_H2 = re.compile(r"^## ", re.MULTILINE)
 
 
 def _downloads_section(slug: str, case_docs: Path) -> str:
-    artifacts = [
+    """Split downloads into two subgroups: HTML (in-browser) and PDF (print-friendly).
+
+    Both groups can coexist when the same content has both forms
+    (Recommendations table + Access guide). The HTML group surfaces the
+    self-contained / in-browser artifacts; the PDF group surfaces the
+    print-friendly companions. Patient/caregiver lands under PDF
+    because the translator's plain-language track is PDF-only as a
+    download. Groups render only when at least one artifact in them is
+    present, so cases without an access guide / patient track still get
+    a clean Downloads section.
+    """
+    html_artifacts = [
+        (
+            f"{slug}-recommendations.html",
+            "Recommendations table",
+            "ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline",
+        ),
+        (
+            "accessibility.md",
+            "Access guide",
+            "how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table",
+        ),
+        (
+            "manuscripts.md",
+            "Master manuscripts table",
+            "every paper considered — n, effect, variance, toxicities, in a sortable in-browser table",
+        ),
+    ]
+    pdf_artifacts = [
         (
             f"{slug}-target-validation.pdf",
             "Target validation paths",
@@ -3061,12 +3089,7 @@ def _downloads_section(slug: str, case_docs: Path) -> str:
         (
             f"{slug}-accessibility.pdf",
             "Access guide",
-            "how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF",
-        ),
-        (
-            "manuscripts.md",
-            "Master manuscripts table",
-            "every paper considered — n, effect, variance, toxicities, in a sortable in-browser table",
+            "trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF",
         ),
         (
             f"{slug}-plain-language.pdf",
@@ -3074,8 +3097,9 @@ def _downloads_section(slug: str, case_docs: Path) -> str:
             "plain-language summary",
         ),
     ]
-    present = [(n, lbl, b) for n, lbl, b in artifacts if (case_docs / n).exists()]
-    if not present:
+    html_present = [(n, l, b) for n, l, b in html_artifacts if (case_docs / n).exists()]
+    pdf_present = [(n, l, b) for n, l, b in pdf_artifacts if (case_docs / n).exists()]
+    if not html_present and not pdf_present:
         return ""
     lines = [
         _DOWNLOADS_BEGIN,
@@ -3083,9 +3107,20 @@ def _downloads_section(slug: str, case_docs: Path) -> str:
         "## Downloads",
         "",
     ]
-    for name, label, blurb in present:
-        lines.append(f"- [{label}]({_cache_busted_link(case_docs / name, name)}) — {blurb}")
-    lines.extend(["", _DOWNLOADS_END, ""])
+    if html_present:
+        lines.append("### HTML")
+        lines.append("")
+        for name, label, blurb in html_present:
+            lines.append(f"- [{label}]({_cache_busted_link(case_docs / name, name)}) — {blurb}")
+        lines.append("")
+    if pdf_present:
+        lines.append("### PDF")
+        lines.append("")
+        for name, label, blurb in pdf_present:
+            lines.append(f"- [{label}]({_cache_busted_link(case_docs / name, name)}) — {blurb}")
+        lines.append("")
+    lines.append(_DOWNLOADS_END)
+    lines.append("")
     return "\n".join(lines)
 
 

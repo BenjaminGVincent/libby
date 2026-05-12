@@ -251,15 +251,22 @@ The script reads `executive_summary.md`, `index.md`, `plain_language.md`, `recom
 
 `scripts/build_report.py` itself patches the case landing page (`docs/cases/<slug>/index.md`) — it inserts (or refreshes) a `## Downloads` section between stable HTML comment markers `<!-- libby:downloads:begin -->` and `<!-- libby:downloads:end -->`. The block lands before the first `##` heading on the page. The injection is idempotent: re-running the reporter replaces the block in place; if no artifacts exist it strips the block. **Note:** if the PI re-runs and re-authors `index.md` from scratch, the markers disappear, but the next reporter run re-inserts them. Reporter is the last stage in the pipeline, so this is not a problem in normal flow.
 
-**Downloads order (load-bearing).** The artifacts must render in this exact order in both `index.md` and `recommendations.md` (the same order is encoded in `_downloads_section` in `scripts/build_report.py` and `downloads_block` in `scripts/build_recommendations.py`):
+**Downloads structure (load-bearing).** The Downloads section is split into two H3 subgroups — **HTML** (in-browser artifacts) and **PDF** (print-friendly companions) — so a reader can pick the form that matches how they want to consume the data without losing visibility on either. The same content can appear in both groups when it has both forms (Recommendations table, Access guide). Patient/caregiver lands under PDF because the translator's plain-language track is published as a download in PDF form only. The order inside each subgroup is fixed and the same order is encoded in `_downloads_section` (`scripts/build_report.py`) and `downloads_block` (`scripts/build_recommendations.py`).
 
-1. Target validation paths (`<slug>-target-validation.pdf`)
-2. Recommendations table (`<slug>-recommendations.pdf`)
-3. Access guide (`<slug>-accessibility.pdf`)
-4. Master manuscripts table (`manuscripts.md`)
-5. Patient/caregiver PDF (`<slug>-plain-language.pdf`)
+**HTML group** (in-browser):
 
-Missing artifacts are filtered out automatically; the relative order of the remaining ones is preserved. If you change one ordering you MUST change both.
+1. Recommendations table (`<slug>-recommendations.html`) — self-contained, opens offline.
+2. Access guide (`accessibility.md`) — sortable mkdocs page.
+3. Master manuscripts table (`manuscripts.md`) — sortable mkdocs page.
+
+**PDF group** (print-friendly):
+
+1. Target validation paths (`<slug>-target-validation.pdf`).
+2. Recommendations table (`<slug>-recommendations.pdf`).
+3. Access guide (`<slug>-accessibility.pdf`).
+4. Patient/caregiver PDF (`<slug>-plain-language.pdf`).
+
+Missing artifacts inside each group are filtered out automatically; the relative order of the remaining ones is preserved. A group with zero artifacts present is suppressed (no orphan H3). If you change one ordering you MUST change both `_downloads_section` and `downloads_block`.
 
 Then run:
 
