@@ -1768,6 +1768,12 @@ def _column_widths(headers: list[str], page_w: float, n: int) -> list[float]:
         ratios = [0.15, 0.20, 0.25, 0.40]
     elif n == 5:
         ratios = [0.06, 0.18, 0.28, 0.20, 0.28]
+    elif n == 6 and "intervention" in (headers[0] or "").lower():
+        # Recommendations PDF pipeline-context table: Intervention | Modality |
+        # Phase | Enrolling indication | Recruitment | Trial. Col 0 is prose, so
+        # the default rank-leading 6% ratio explodes it into a one-word-per-line
+        # mess. Give Intervention + Enrolling indication + Trial the room they need.
+        ratios = [0.20, 0.13, 0.07, 0.22, 0.13, 0.25]
     elif n == 6:
         ratios = [0.06, 0.16, 0.22, 0.16, 0.16, 0.24]
     else:
@@ -2674,14 +2680,22 @@ def _recommendations_md_for_pdf(
         return f"### {idx}. {label}"
 
     def _emit_evidence_for_rec(rec: dict) -> None:
+        """Render matched clinical-evidence rows as a per-manuscript bullet list.
+
+        The HTML version uses a 5-column table (Disease context | n |
+        Toxicities | Efficacy | Reference), but on a portrait Letter PDF
+        the Disease-context cell carries enough prose to explode into a
+        word-per-line mess when the markdown renderer's 5-col ratios put
+        the leftmost column at 6%. We sidestep the issue by rendering
+        each manuscript as a heading + bullet list — cleaner read and
+        no column-width tuning required.
+        """
         pmids = _rec_pmids(rec)
         matched = [by_pmid[p] for p in pmids if p in by_pmid]
         if not matched:
             return
         lines.append(f"##### {_intervention_short_name(rec)}")
         lines.append("")
-        lines.append("| Disease context | n | Toxicities | Efficacy | Reference |")
-        lines.append("| --- | --- | --- | --- | --- |")
         for ev in matched:
             indication = ev.get("indication") or ""
             line_of = ev.get("line_of_therapy") or ""
@@ -2760,20 +2774,20 @@ def _recommendations_md_for_pdf(
                 ref_bits.append(str(year))
             ref_label = " ".join(ref_bits) if ref_bits else (f"PMID {pmid}" if pmid else "—")
             if pmid:
-                ref_cell = f"[{ref_label}](https://pubmed.ncbi.nlm.nih.gov/{pmid})"
+                ref_line = f"**[{ref_label}](https://pubmed.ncbi.nlm.nih.gov/{pmid})**"
             else:
-                ref_cell = ref_label
+                ref_line = f"**{ref_label}**"
 
             n_cell = ev.get("n")
             n_str = str(n_cell) if n_cell not in (None, "") else "—"
-            # Pipe-table cells: collapse any embedded `|` to a similar glyph.
-            def _safe(s: str) -> str:
-                return s.replace("|", "/").replace("\n", " ")
-            lines.append(
-                f"| {_safe(disease)} | {_safe(n_str)} | {_safe(tox_cell)} "
-                f"| {_safe(eff_cell)} | {_safe(ref_cell)} |"
-            )
-        lines.append("")
+
+            lines.append(ref_line)
+            lines.append("")
+            lines.append(f"- **Disease context:** {disease}")
+            lines.append(f"- **n:** {n_str}")
+            lines.append(f"- **Toxicities:** {tox_cell}")
+            lines.append(f"- **Efficacy:** {eff_cell}")
+            lines.append("")
 
     def _emit_feature_block(scenario_short: str, group_rows: list[dict], heading: str | None) -> None:
         if heading:
