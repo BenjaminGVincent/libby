@@ -112,9 +112,13 @@ def render_trials_block(trials: list[dict]) -> str:
     rows: list[str] = [
         '<table class="trial-table">',
         '<thead><tr>'
-        '<th class="col-nct">NCT</th><th>Phase</th><th>Indication</th>'
-        '<th>Status</th><th>Patient eligible</th>'
-        '<th>Central contact</th><th>Notes</th>'
+        '<th class="col-nct">NCT</th>'
+        '<th class="col-phase">Phase</th>'
+        '<th class="col-indication">Indication</th>'
+        '<th class="col-status">Status</th>'
+        '<th class="col-eligibility">Patient eligible</th>'
+        '<th class="col-contact">Central contact</th>'
+        '<th class="col-notes">Notes</th>'
         '</tr></thead>',
         '<tbody>',
     ]
@@ -137,12 +141,12 @@ def render_trials_block(trials: list[dict]) -> str:
         rows.append(
             "<tr>"
             f'<td class="col-nct">{nct_link}</td>'
-            f"<td>{fmt(t.get('phase'))}</td>"
-            f"<td>{fmt(t.get('indication'))}</td>"
-            f"<td>{fmt(t.get('recruitment_status'))}</td>"
-            f"<td>{eligibility_badge(t.get('patient_eligible'))}</td>"
-            f"<td>{contact}</td>"
-            f"<td>{fmt(t.get('notes'))}</td>"
+            f'<td class="col-phase">{fmt(t.get("phase"))}</td>'
+            f'<td class="col-indication">{fmt(t.get("indication"))}</td>'
+            f'<td class="col-status">{fmt(t.get("recruitment_status"))}</td>'
+            f'<td class="col-eligibility">{eligibility_badge(t.get("patient_eligible"))}</td>'
+            f'<td class="col-contact">{contact}</td>'
+            f'<td class="col-notes">{fmt(t.get("notes"))}</td>'
             "</tr>"
         )
     rows.append("</tbody></table>")
@@ -399,10 +403,19 @@ def main() -> int:
             "The number in the first column links to the per-intervention "
             "section further down the page._\n"
         )
+        # Side-scrollable wrapper around the Summary table so wide content
+        # cells (Intervention / Regulatory / Recommended first action) push
+        # horizontally instead of stacking into tall narrow rows. Per-cell
+        # CSS classes pin minimum widths so the browser engages the scroll
+        # bar before vertical wrap kicks in.
+        parts.append('<div class="trial-table-wrap"><div class="trial-scroll">\n')
         parts.append('<table class="trial-table"><thead><tr>'
-                     '<th class="col-num">#</th><th>Intervention</th><th>Target</th>'
-                     '<th>Access status</th><th>Regulatory</th>'
-                     '<th>Recommended first action</th>'
+                     '<th class="col-num">#</th>'
+                     '<th class="col-intervention">Intervention</th>'
+                     '<th class="col-target">Target</th>'
+                     '<th class="col-access-status">Access status</th>'
+                     '<th class="col-regulatory">Regulatory</th>'
+                     '<th class="col-first-action">Recommended first action</th>'
                      '</tr></thead><tbody>\n')
         for num, target_key, r in numbered:
             first_step = (r.get("next_steps") or ["—"])[0]
@@ -414,14 +427,15 @@ def main() -> int:
             parts.append(
                 "<tr>"
                 f'<td class="col-num"><a href="#access-{num}"><strong>{num}</strong></a></td>'
-                f"<td><strong>{fmt(r.get('intervention_label'))}</strong></td>"
-                f"<td>{target_html}</td>"
-                f'<td>{status_badges(r["_statuses"])}</td>'
-                f"<td>{fmt(r.get('regulatory_status'))}</td>"
-                f"<td>{html.escape(str(first_step))}</td>"
+                f'<td class="col-intervention"><strong>{fmt(r.get("intervention_label"))}</strong></td>'
+                f'<td class="col-target">{target_html}</td>'
+                f'<td class="col-access-status">{status_badges(r["_statuses"])}</td>'
+                f'<td class="col-regulatory">{fmt(r.get("regulatory_status"))}</td>'
+                f'<td class="col-first-action">{html.escape(str(first_step))}</td>'
                 "</tr>"
             )
         parts.append("</tbody></table>\n")
+        parts.append("</div></div>\n")
 
         # Per-intervention deep sections, grouped by target. Each H3 carries
         # the entry number from the summary table plus a `#access-<n>` anchor,
