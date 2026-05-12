@@ -52,6 +52,13 @@ extra_css:
   - stylesheets/trial-table.css
   - stylesheets/libby.css
 
+# Append `?v=<content-hash>` cache-busters to extra_css / extra_javascript
+# links so CSS / JS edits ship with a fresh URL and the browser is forced to
+# re-fetch instead of serving the prior version from disk cache. Same pattern
+# the case-page download links already use for PDFs / HTML artifacts.
+hooks:
+  - scripts/mkdocs_hooks.py
+
 nav:
   - Home: index.md
   - Cases: cases/index.md
