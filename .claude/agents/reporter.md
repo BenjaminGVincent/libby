@@ -123,7 +123,7 @@ If `data/cases/<slug>/target_validation.jsonl` exists and is non-empty, also aut
 
 This is a self-contained "what biomarker workup do you need, and why" narrative for a clinician reading just the PDF. Anything that requires another report to understand belongs in another report.
 
-Structure (per-feature narrative → assay-providers table):
+Structure (per-feature narrative → assay-providers table → biomarker-plan summary table):
 
 ```markdown
 ## Target validation paths
@@ -177,6 +177,30 @@ Important parser conventions:
 The rest of the assay's rows (non-preferred providers) are plain — no surrounding bold on any cell.
 
 The table is the practical "where to actually order this" reference; it follows the narrative because the narrative explains *which* assays to order before the reader needs the contact info. Cap at the providers the JSONL already filtered to (≤ 5 per assay per the target_validator's selection rule).
+
+### Biomarker plan
+
+```markdown
+| Recommended assay | Rationale | Suggested assay provider | Tissue requirements |
+|---|---|---|---|
+| <test_name> | <rationale> | <preferred provider name> *(<assay_brand if any>)* | <tissue_required_estimate> |
+| ... | ... | ... | ... |
+```
+
+A concise per-assay summary, **one row per assay** (deduplicated against the multi-row provider table above). The reader uses it as the at-a-glance ordering checklist; the providers table above is the detailed contact directory and the prose narrative is the clinical reasoning. Three artifacts, three jobs.
+
+**Per-column rules:**
+
+- **Recommended assay** — copy `test_name` verbatim from `target_validation.jsonl`. Match the casing and clone identifiers used in the providers table above so a reader cross-referencing the two tables sees the same string.
+- **Rationale** — copy `rationale` verbatim from the JSONL. Already humanized by the target_validator; do not paraphrase. If the JSONL `rationale` exceeds ~280 characters, soft-wrap inside the cell with sentence breaks rather than rewriting.
+- **Suggested assay provider** — name of the row's `preferred: true` provider (and the `assay_brand` parenthetical when distinct from the generic `test_name`). One name per row — this column is *the recommendation*, not the directory. The providers table above carries the non-preferred backup options.
+- **Tissue requirements** — copy `tissue_required_estimate` verbatim (e.g. *"archival FFPE acceptable"*, *"5–10 mL whole blood"*, *"fresh biopsy required"*). When the JSONL field is absent, render `—` and flag in `notes` upstream rather than fabricating.
+
+**Row order:** by JSONL row order, which is already sorted by `priority` (essential → high → medium → low) then `decision_relevance` (gates_intervention → confirms_target_call → refines_target_subtype → … → null). Do not re-sort; the target_validator's ordering is load-bearing.
+
+**No bolding.** Unlike the providers table, the biomarker-plan table treats every assay equally — no "preferred row" highlighting (the preferred provider already drives the Suggested-provider column). Keep all four cells plain.
+
+This table sits at the very end of the report (after the providers table, before the closing disclaimer). It is the section a hurried clinician scrolls to first.
 
 ---
 

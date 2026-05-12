@@ -44,6 +44,11 @@ For each entry in `profile.json::targetable_features[]`, ask the following quest
 
 Each row matches `scripts/schema/target_validation.schema.json`. Required fields: `validation_id`, `case_slug`, `feature`, `test_type`, `test_name`, `priority`, `rationale`.
 
+**Downstream rendering.** The reporter renders this JSONL into two tables in `target_validation_report.md`:
+
+1. The **providers table** (one row per assay × provider pair) — uses `test_name`, `decision_gated`, and `providers[]`.
+2. The **"Biomarker plan" summary table** (one row per assay) — uses `test_name`, `rationale`, the `preferred: true` provider's `name` (and `assay_brand` when present), and `tissue_required_estimate`. Because these four fields are copied verbatim into clinician-facing cells, write them as finished prose / values rather than as internal shorthand.
+
 Field guidance:
 
 - `validation_id` — stable kebab-case (e.g. `dll3-ihc-confirmatory`, `egfr-met-amp-resistance`, `brca-germline`).
@@ -58,9 +63,9 @@ Field guidance:
   - `high`: meaningfully shifts the target's actionability in a clinically-relevant way.
   - `medium`: refines the call or informs sequencing but is not gating.
   - `low`: research-grade; nice-to-have.
-- `rationale` — ≤ 3 sentences. Lead with what the test resolves; cite a reference when one exists; name the consequence of NOT doing the test.
+- `rationale` — ≤ 3 sentences. Lead with what the test resolves; cite a reference when one exists; name the consequence of NOT doing the test. **Render-critical:** this string is copied verbatim into the Rationale column of the reporter's "Biomarker plan" summary table in `target_validation_report.md`; write it as clean clinician-facing prose, not as internal-note shorthand. **No em-dashes (`—`, U+2014).** The reporter's build pre-flight blocks any em-dash in `target_validation_report.md`; an em-dash in the JSONL `rationale` propagates verbatim and breaks the build. Use semicolons, periods, parenthetical phrasing, or en-dashes (`–`) instead.
 - `turnaround_estimate` — concrete (e.g. *"1-3 weeks"*, *"48 hours"*, *"4-6 weeks"*).
-- `tissue_required_estimate` — e.g. *"archival FFPE acceptable"*, *"fresh biopsy required"*, *"5-10 mL whole blood"*.
+- `tissue_required_estimate` — e.g. *"archival FFPE acceptable"*, *"fresh biopsy required"*, *"5-10 mL whole blood"*. **Render-critical:** also copied verbatim into the "Biomarker plan" summary table's Tissue requirements column. Always populate it; a `null` here forces the reporter to render a placeholder dash in a load-bearing cell. Same em-dash ban applies.
 - `cost_relative` — `low | moderate | high`, relative to a treatment cycle for the indication.
 - `references[]` — `pmid:*`, `nct:*`, or `guideline:*` (e.g. `guideline:nccn-NSCLC-v3.2025`). Never invent.
 - `decision_gated` — ≤ 1 sentence (≤ ~280 chars) naming the therapeutic decision this assay informs. The reporter surfaces it as a dedicated "Decision gated" column in the providers table. Examples: *"Tarlatamab via NCT06788938"*, *"PRAME-directed ImmTAC / TCR-T (IMA203, brenetafusp, IMC-P115C)"*, *"SCLC histologic-transformation surveillance"*, *"Refines DLL3 IHC interpretation; does not gate enrollment"*. When `gates_intervention[]` is non-empty, lead with the gated drug/trial. When the row is not gating, use `decision_relevance` distilled to a clinician-grade phrase.
