@@ -271,6 +271,10 @@ small.scenario-key { color: var(--ink-muted); }
   color: var(--ink-muted);
   font-weight: 500;
 }
+.evidence-detail-table .safety-summary-fallback {
+  font-style: italic;
+  color: var(--ink-muted);
+}
 h4 + .trial-table-wrap,
 h4 + .evidence-detail-empty {
   margin-top: 0.25rem;
@@ -891,14 +895,27 @@ def _rec_pmids(rec: dict) -> list[str]:
     return pmids
 
 
-def _toxicities_cell_html(toxicities: list[dict] | None) -> str:
+def _toxicities_cell_html(toxicities: list[dict] | None, safety_summary: str | None = None) -> str:
     """Render the `toxicities[]` array as a per-term list with rate + grade.
 
     Format: `<strong>term</strong> (grade): N% (denom)<br>notes`. Lines
-    separated by `<br>` so the cell scans top-to-bottom. Returns an em-dash
-    when the array is empty.
+    separated by `<br>` so the cell scans top-to-bottom.
+
+    Fallback: when `toxicities[]` is empty but the row carries a free-text
+    `safety_summary`, render that prose instead of an em-dash. The
+    clinician contract requires `toxicities[]` for any included row whose
+    source paper reports AE data; this fallback covers rows where the
+    source genuinely has no per-term breakdown (abstract-only, topline
+    press release, etc.) plus any legacy rows that pre-date the tightened
+    contract. An em-dash still fires when both fields are empty.
     """
     if not toxicities:
+        if safety_summary and str(safety_summary).strip():
+            return (
+                '<td><span class="safety-summary-fallback">'
+                f"{_html.escape(str(safety_summary).strip())}"
+                "</span></td>"
+            )
         return "<td>&mdash;</td>"
     pieces: list[str] = []
     for tox in toxicities:
@@ -1065,7 +1082,7 @@ def _render_evidence_detail_per_intervention_html(
                 "    <tr>"
                 f"{_disease_context_cell_html(ev)}"
                 f"<td>{_fmt_html(n)}</td>"
-                f"{_toxicities_cell_html(ev.get('toxicities'))}"
+                f"{_toxicities_cell_html(ev.get('toxicities'), ev.get('safety_summary'))}"
                 f"{_efficacy_cell_html(ev)}"
                 f"{_reference_cell_html(ev)}"
                 "</tr>"
