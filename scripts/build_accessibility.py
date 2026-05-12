@@ -239,6 +239,93 @@ def render_intervention_section(r: dict, number: int) -> str:
     return "\n".join(parts)
 
 
+_FEATURE_LABELS: dict[str, str] = {
+    # Mirror of `_FEATURE_LABELS` in `scripts/build_report.py`. Keep in sync.
+    "dll3_ihc": "DLL3-targeting interventions",
+    "prame_ihc_hla": "PRAME-targeting interventions",
+    "kras_g12r": "KRAS G12R-targeting interventions",
+    "cdkn2a_loss": "CDKN2A-loss / MTAP-targeting interventions",
+    "germline_brca": "Germline BRCA / HRD-targeting interventions",
+    "tp53_inactivating": "TP53-targeting interventions",
+    "ccnd3_alteration": "CCND3 / CDK4-6-targeting interventions",
+    "egfr_l858r": "EGFR L858R-targeting interventions",
+    "met_amplification": "MET amplification-targeting interventions",
+}
+
+
+def _feature_label(key: str) -> str:
+    if key in _FEATURE_LABELS:
+        return _FEATURE_LABELS[key]
+    if key == "__unscoped":
+        return "Biomarker-independent interventions"
+    pretty = key.replace("_", " ").title()
+    return f"{pretty} interventions"
+
+
+def _is_workup_rec(r: dict) -> bool:
+    """Match the rule in `build_report.py::_is_workup_row`."""
+    if r.get("scenario") == "shared":
+        return True
+    cpm = r.get("counter_productive_moa") or {}
+    return cpm.get("severity") == "N/A"
+
+
+def _build_canonical_order(recs: list[dict]) -> dict[str, tuple[int, int]]:
+    """Compute the Recommendations-table order for each intervention.
+
+    Returns `intervention_id → (group_index, rank_in_group)`. Group index is
+    the position of the intervention's target group in the rendered
+    Recommendations table (DLL3-targeting first if present, then PRAME,
+    then KRAS G12R, etc. — driven by first-appearance order in the recs).
+    Rank-in-group is the row's rank within its group. Workup rows are
+    excluded.
+
+    Used by the access guide to mirror the Recommendations table's
+    grouping + ordering: KRAS-targeting access rows appear before
+    germline-BRCA access rows, daraxonrasib appears before PF-07934040,
+    etc.
+    """
+    seen: list[str] = []
+    grouped: dict[str, list[dict]] = {}
+    for r in recs:
+        if _is_workup_rec(r):
+            continue
+        scen = r.get("scenario")
+        if isinstance(scen, str) and ":" in scen:
+            key = scen.split(":", 1)[0]
+        else:
+            tgts = r.get("targets") or []
+            key = tgts[0] if tgts and isinstance(tgts[0], str) else "__unscoped"
+        if key not in grouped:
+            grouped[key] = []
+            seen.append(key)
+        grouped[key].append(r)
+    out: dict[str, tuple[int, int]] = {}
+    for g_idx, key in enumerate(seen):
+        # Sort within group by global rank ascending.
+        rows = sorted(grouped[key], key=lambda r: r.get("rank") or 999)
+        for r_idx, r in enumerate(rows):
+            iid = r.get("intervention_id")
+            if iid:
+                out[iid] = (g_idx, r_idx)
+    return out
+
+
+def _rec_target_for_access_row(
+    row: dict, recs: list[dict]
+) -> str | None:
+    """Return the rec row's primary target key for an access row, when matched."""
+    iid = row.get("intervention_id")
+    for r in recs:
+        if r.get("intervention_id") == iid:
+            scen = r.get("scenario")
+            if isinstance(scen, str) and ":" in scen:
+                return scen.split(":", 1)[0]
+            tgts = r.get("targets") or []
+            return tgts[0] if tgts and isinstance(tgts[0], str) else None
+    return None
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("slug")
@@ -247,6 +334,8 @@ def main() -> int:
 
     case_dir = REPO / "data" / "cases" / slug
     rows = load_jsonl(case_dir / "accessibility.jsonl")
+    recs = load_jsonl(case_dir / "recommendations.jsonl")
+    canonical = _build_canonical_order(recs)
 
     parts: list[str] = [
         '<meta name="robots" content="noindex">\n',
@@ -266,48 +355,67 @@ def main() -> int:
             + "` to populate this page._\n"
         )
     else:
-        # Normalize statuses to lists, then group each row by its most
-        # actionable status (so a row tagged ["off_label_use",
-        # "clinical_trial_only"] groups under Off-label use, not Clinical
-        # trial). Within each group, sort by intervention_label so numbers
-        # are reproducible run to run.
+        # Normalize statuses to lists for badge rendering; the grouping itself
+        # follows the Recommendations table (target group → rank within group)
+        # rather than the access status, so the access guide reads in the same
+        # sequence as the upstream ranking.
         for r in rows:
             r["_statuses"] = normalize_status(r.get("access_status"))
             r["_primary"] = primary_status(r["_statuses"])
-        by_status: dict[str, list[dict]] = {}
-        for r in rows:
-            by_status.setdefault(r["_primary"], []).append(r)
-        for s in by_status:
-            by_status[s].sort(key=lambda x: x.get("intervention_label") or "")
 
-        # Build a single ordered list of (number, status, row) so the summary
-        # table and the per-intervention deep sections share the same numbering.
+        # Build the canonical order from `recommendations.jsonl` and group
+        # each access row by its rec's target. Rows whose `intervention_id`
+        # has no matching rec land in a sentinel "__orphan" group at the
+        # very end — these should be rare (an upstream contract violation
+        # where the accessibility_screener surfaced a drug the PI did not
+        # rank).
+        target_for_row: dict[int, str] = {}
+        for i, r in enumerate(rows):
+            tgt = _rec_target_for_access_row(r, recs)
+            target_for_row[i] = tgt or "__orphan"
+
+        # Order each row by (group_index, rank_in_group, intervention_label).
+        # Orphans get a high group_index so they sort to the end.
+        def _sort_key(idx: int) -> tuple[int, int, str]:
+            r = rows[idx]
+            iid = r.get("intervention_id") or ""
+            pos = canonical.get(iid)
+            if pos is None:
+                return (10_000, 0, r.get("intervention_label") or iid)
+            return (pos[0], pos[1], r.get("intervention_label") or iid)
+
+        ordered_indices = sorted(range(len(rows)), key=_sort_key)
         numbered: list[tuple[int, str, dict]] = []
-        n = 1
-        for status in _STATUS_ORDER:
-            for r in by_status.get(status, []):
-                numbered.append((n, status, r))
-                n += 1
+        for n, idx in enumerate(ordered_indices, start=1):
+            r = rows[idx]
+            numbered.append((n, target_for_row[idx], r))
 
         # Top-of-page summary table — first column is the entry number, which
         # links directly to the per-intervention deep section anchor below.
         parts.append("## Summary\n")
         parts.append(
-            "_The number in the first column links to the per-intervention "
-            "section further down the page. Use it for quick navigation._\n"
+            "_Entries are ordered to match the Recommendations table: "
+            "by therapeutic target group, then by rank within each group. "
+            "The number in the first column links to the per-intervention "
+            "section further down the page._\n"
         )
         parts.append('<table class="trial-table"><thead><tr>'
-                     '<th>#</th><th>Intervention</th><th>Modality</th>'
+                     '<th>#</th><th>Intervention</th><th>Target</th>'
                      '<th>Access status</th><th>Regulatory</th>'
                      '<th>Recommended first action</th>'
                      '</tr></thead><tbody>\n')
-        for num, status, r in numbered:
+        for num, target_key, r in numbered:
             first_step = (r.get("next_steps") or ["—"])[0]
+            target_html = (
+                html.escape(_feature_label(target_key).replace(" interventions", ""))
+                if target_key != "__orphan"
+                else "—"
+            )
             parts.append(
                 "<tr>"
                 f'<td><a href="#access-{num}"><strong>{num}</strong></a></td>'
                 f"<td><strong>{fmt(r.get('intervention_label'))}</strong></td>"
-                f"<td>{fmt(r.get('modality'))}</td>"
+                f"<td>{target_html}</td>"
                 f'<td>{status_badges(r["_statuses"])}</td>'
                 f"<td>{fmt(r.get('regulatory_status'))}</td>"
                 f"<td>{html.escape(str(first_step))}</td>"
@@ -315,17 +423,24 @@ def main() -> int:
             )
         parts.append("</tbody></table>\n")
 
-        # Per-intervention deep sections, grouped by status. Each H3 carries
-        # the entry number from the summary table plus a `#access-<n>` anchor.
-        by_status_numbered: dict[str, list[tuple[int, dict]]] = {}
-        for num, status, r in numbered:
-            by_status_numbered.setdefault(status, []).append((num, r))
-        for status in _STATUS_ORDER:
-            group = by_status_numbered.get(status, [])
-            if not group:
-                continue
-            label, _cls = _STATUS_META.get(status, (status, "fit-none"))
-            parts.append(f"\n## {label} ({len(group)})\n")
+        # Per-intervention deep sections, grouped by target. Each H3 carries
+        # the entry number from the summary table plus a `#access-<n>` anchor,
+        # preserving the same ordering as the summary table above.
+        target_order: list[str] = []
+        by_target: dict[str, list[tuple[int, dict]]] = {}
+        for num, target_key, r in numbered:
+            if target_key not in by_target:
+                by_target[target_key] = []
+                target_order.append(target_key)
+            by_target[target_key].append((num, r))
+        for target_key in target_order:
+            group = by_target[target_key]
+            heading = (
+                _feature_label(target_key)
+                if target_key != "__orphan"
+                else "Unmatched interventions"
+            )
+            parts.append(f"\n## {html.escape(heading)} ({len(group)})\n")
             for num, r in group:
                 parts.append(render_intervention_section(r, num))
 
