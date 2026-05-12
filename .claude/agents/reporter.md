@@ -183,17 +183,24 @@ The table is the practical "where to actually order this" reference; it follows 
 ```markdown
 | Recommended assay | Rationale | Suggested assay provider | Tissue requirements |
 |---|---|---|---|
-| <test_name> | <rationale> | <preferred provider name> *(<assay_brand if any>)* | <tissue_required_estimate> |
+| <test_name> | <rationale> | <name> *(<assay_brand if any>)* · [test info](<contact_url>) · <address> · <phone> · <email if no phone> | <tissue_required_estimate> |
 | ... | ... | ... | ... |
 ```
 
-A concise per-assay summary, **one row per assay** (deduplicated against the multi-row provider table above). The reader uses it as the at-a-glance ordering checklist; the providers table above is the detailed contact directory and the prose narrative is the clinical reasoning. Three artifacts, three jobs.
+A concise per-assay summary, **one row per assay** (deduplicated against the multi-row provider table above). The reader uses it as the at-a-glance ordering checklist *with* the contact info needed to actually place the order; the providers table above is the wider directory of backup options (typically 3–5 per assay) and the prose narrative is the clinical reasoning. Three artifacts, three jobs.
 
 **Per-column rules:**
 
 - **Recommended assay** — copy `test_name` verbatim from `target_validation.jsonl`. Match the casing and clone identifiers used in the providers table above so a reader cross-referencing the two tables sees the same string.
 - **Rationale** — copy `rationale` verbatim from the JSONL. Already humanized by the target_validator; do not paraphrase. If the JSONL `rationale` exceeds ~280 characters, soft-wrap inside the cell with sentence breaks rather than rewriting.
-- **Suggested assay provider** — name of the row's `preferred: true` provider (and the `assay_brand` parenthetical when distinct from the generic `test_name`). One name per row — this column is *the recommendation*, not the directory. The providers table above carries the non-preferred backup options.
+- **Suggested assay provider** — the row's `preferred: true` provider, with the contact info needed to place the order. One provider per row; this column is *the recommendation plus its ordering details*, not the wider directory. Render as a single cell with " · " separators (same convention as the providers table's Contact column), in this order:
+    1. `<provider.name>` — required.
+    2. ` *(<provider.assay_brand>)*` — italicized parenthetical when the provider has a distinct branded test name (omit when `assay_brand` is null or duplicates `test_name`).
+    3. `[test info](<provider.contact_url>)` — clickable link with literal label "test info" when `contact_url` is present.
+    4. `<provider.address>` — verbatim street / city / state / ZIP from the JSONL when present.
+    5. `<provider.contact_phone>` — verbatim phone, formatted as the provider publishes it. <!-- phi-scan: ignore -->
+    6. `<provider.contact_email>` — render only when `contact_phone` is absent and an email is published; otherwise skip (avoids a noisier-than-helpful cell when the phone is the primary ordering channel).
+  Drop any segment whose source field is `null` and collapse adjacent " · " separators so the rendered cell doesn't carry stranded dots. Always include at least one contact channel (the target_validator's contract guarantees one of `contact_url` / `contact_email` / `contact_phone`).
 - **Tissue requirements** — copy `tissue_required_estimate` verbatim (e.g. *"archival FFPE acceptable"*, *"5–10 mL whole blood"*, *"fresh biopsy required"*). When the JSONL field is absent, render `—` and flag in `notes` upstream rather than fabricating.
 
 **Row order:** by JSONL row order, which is already sorted by `priority` (essential → high → medium → low) then `decision_relevance` (gates_intervention → confirms_target_call → refines_target_subtype → … → null). Do not re-sort; the target_validator's ordering is load-bearing.
