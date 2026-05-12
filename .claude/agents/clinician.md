@@ -79,7 +79,20 @@ Keep notes ≤ 2 sentences. Do not duplicate the `exclusion_reason` here — tha
 3. **Triage and log every reviewed paper.** For each paper you read closely (abstract or full-text):
     - **If you keep it for synthesis,** write a row with `inclusion_status: "included"` (or omit the field — `included` is the default) and the full per-manuscript detail described below.
     - **If you reviewed it and decided not to use it,** write a minimal row with `inclusion_status: "considered_excluded"` and a brief `exclusion_reason`. Common reasons: drug discontinued (e.g. Rova-T after TAHOE), wrong line of therapy, wrong tumor / no biomarker match, superseded by a larger trial in the same population, preprint without peer review, retracted, abstract-only with insufficient detail. Do NOT log every search hit — only papers you read closely enough to make a triage call.
-3a. **Safety extraction — multi-source fallback chain.** When a row is `inclusion_status: "included"`, the contract requires populating `toxicities[]` from the source's per-term AE data (see Schema: Safety (structured)). Publisher full-text pages are frequently paywalled and WebFetch may return 403 — that does *not* license falling back to `safety_summary` alone. Work through this fallback chain in order, and stop at the first source that yields per-term AE rates:
+3a. **Safety extraction — multi-source fallback chain.** When a row is `inclusion_status: "included"`, the contract requires populating `toxicities[]` from the source's per-term AE data (see Schema: Safety (structured)). Publisher full-text pages are frequently paywalled and WebFetch may return 403 — that does *not* license falling back to `safety_summary` alone.
+
+    **Section-title variants to scan for.** Different journals and trial sponsors title the same data differently. When reading any source — abstract, full text, supplementary material, registry record — scan for *all* of these headings before concluding the source has no AE data:
+
+    - *Safety*, *Safety analysis*, *Safety profile*, *Safety and tolerability*, *Treatment-emergent safety*.
+    - *Toxicity*, *Toxicities*, *Tolerability*, *Dose-limiting toxicity / DLT*.
+    - *Adverse events*, *Adverse reactions*, *Adverse drug reactions*, *AEs*, *TEAEs* (treatment-emergent adverse events), *TRAEs* (treatment-related adverse events), *SAEs* (serious adverse events).
+    - Tables specifically titled *Grade ≥3 adverse events*, *Most common adverse events*, *Treatment-related grade 3-5 AEs*, *Hematologic / non-hematologic toxicities*.
+    - On ClinicalTrials.gov: the *Adverse Events* tab on the Results page (not the *Outcome Measures* tab).
+    - In supplementary appendices: tables labelled *Table S1 / Table A1 / etc.* — the headline safety table is often in supplementary material rather than the main paper. The Reiss et al. JCO 2021 case is the canonical example: main-paper Safety section has the headline percentages; Appendix Table A4 has the complete per-term breakdown.
+
+    A paper whose abstract says *"no new safety signals were noted"* almost always has a full per-term Safety section in the main body or supplement — the abstract sentence is a one-line teaser, not a substitute. Do not treat a sparse abstract as evidence that the source lacks AE data; check the full text and the supplement first.
+
+    Work through this fallback chain in order, and stop at the first source that yields per-term AE rates:
 
     1. **PubMed abstract** — fast, free, sometimes carries the headline G3 rates for top AEs. PMID lookup via `https://pubmed.ncbi.nlm.nih.gov/<id>/`.
     2. **PMC full text** — when the paper has a PMC ID. Look it up via NCBI eutils elink (`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/elink.fcgi?dbfrom=pubmed&db=pmc&id=<pmid>`). Many academic papers are in PMC even when the publisher page is paywalled.
