@@ -15,10 +15,10 @@
 
 ### PDF
 
-- [Target validation paths](demo-nsclc-egfr-l858r-post-osi-d3m0-target-validation.pdf?v=19ddbafd) — diagnostic + biomarker workup that hardens the targetable-feature call
-- [Recommendations table](demo-nsclc-egfr-l858r-post-osi-d3m0-recommendations.pdf?v=90728f7e) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
-- [Master manuscripts table](demo-nsclc-egfr-l858r-post-osi-d3m0-manuscripts.pdf?v=16e27e11) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
-- [Patient/caregiver PDF](demo-nsclc-egfr-l858r-post-osi-d3m0-plain-language.pdf?v=07451854) — plain-language summary
+- [Target validation paths](demo-nsclc-egfr-l858r-post-osi-d3m0-target-validation.pdf?v=c81085f8) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Recommendations table](demo-nsclc-egfr-l858r-post-osi-d3m0-recommendations.pdf?v=8dc2b1fa) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
+- [Master manuscripts table](demo-nsclc-egfr-l858r-post-osi-d3m0-manuscripts.pdf?v=23923215) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
+- [Patient/caregiver PDF](demo-nsclc-egfr-l858r-post-osi-d3m0-plain-language.pdf?v=45c944fd) — plain-language summary
 
 <!-- libby:downloads:end -->
 

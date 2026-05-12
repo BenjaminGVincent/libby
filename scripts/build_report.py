@@ -2117,7 +2117,7 @@ def _row_for_pdf(r: dict, kind: str) -> list[str]:
     yr = r.get("year") or "—"
     journal = r.get("journal") or ""
     report = f"{first}/{last} ({yr})"
-    if journal:
+    if journal and journal not in ("—", "-"):
         report = f"{report} — {journal}"
 
     reference = _reference_for_pdf(r)
@@ -2237,11 +2237,17 @@ def _trial_to_synthetic_for_pdf(t: dict) -> dict:
 
 
 def _manuscripts_md_for_pdf(slug: str, clinical: list[dict], preclinical: list[dict], trials: list[dict]) -> str:
-    headers = [
-        "Report", "Reference", "Type", "Inclusion", "Intervention", "Indication / model",
-        "Design", "n", "Effect size", "Variance",
-        "Toxicities (type, n/N, rate)", "Case fit", "Notes",
-    ]
+    """Markdown body for the Master manuscripts PDF — per-manuscript cards.
+
+    The web table is 13 columns wide and works because the browser scrolls
+    horizontally. On a printed page even a landscape 13-column layout
+    squeezes every prose cell (Intervention, Indication, Toxicities,
+    Notes) down to ~20mm, which the markdown renderer treats as too
+    narrow and explodes into a one-word-per-line mess. We sidestep the
+    issue by rendering each manuscript as a heading + structured bullet
+    list — cleaner read, no column-width tuning, and the inclusion
+    status is more visually obvious.
+    """
     seen_pmids: set[str] = {str(r.get("pmid")) for r in clinical + preclinical if r.get("pmid")}
     extra_trials = [_trial_to_synthetic_for_pdf(t) for t in trials
                     if not (t.get("pmid") and str(t["pmid"]) in seen_pmids)]
@@ -2257,23 +2263,49 @@ def _manuscripts_md_for_pdf(slug: str, clinical: list[dict], preclinical: list[d
         f"{n_clin_exc} considered & excluded) + {len(preclinical)} pre-clinical "
         f"({n_prec_inc} included, {n_prec_exc} considered & excluded) + "
         f"{len(extra_trials)} additional trial publications/registrations. "
-        "One row per manuscript, sorted by year (newest first). Excluded rows are "
+        "One entry per manuscript, sorted by year (newest first). Excluded entries are "
         "papers a Libby agent reviewed and chose NOT to feed to the board, with the "
         "exclusion reason captured.",
         "",
-        "| " + " | ".join(headers) + " |",
-        "| " + " | ".join(["---"] * len(headers)) + " |",
     ]
+
     triples = (
         [(r, "clinical") for r in clinical]
         + [(r, "preclinical") for r in preclinical]
         + [(r, "trial") for r in extra_trials]
     )
     triples.sort(key=lambda pair: -(pair[0].get("year") or 0))
+
+    field_labels = [
+        ("Intervention", 4),
+        ("Indication / model", 5),
+        ("Design", 6),
+        ("n", 7),
+        ("Effect size", 8),
+        ("Variance", 9),
+        ("Toxicities", 10),
+        ("Case fit", 11),
+        ("Notes", 12),
+    ]
+
     for r, kind in triples:
         cells = _row_for_pdf(r, kind)
-        lines.append("| " + " | ".join(_pipe_escape(c) for c in cells) + " |")
-    lines.append("")
+        # cells[0] = Report, [1] = Reference, [2] = Type, [3] = Inclusion.
+        report = cells[0]
+        reference = cells[1]
+        type_label = cells[2]
+        inclusion = cells[3]
+        lines.append(f"### {report}")
+        lines.append("")
+        meta_bits = [f"**Reference:** {reference}", f"**Type:** {type_label}", f"**Inclusion:** {inclusion}"]
+        lines.append(" · ".join(meta_bits))
+        lines.append("")
+        for label, idx in field_labels:
+            value = cells[idx] if idx < len(cells) else ""
+            if value and value != "—":
+                lines.append(f"- **{label}:** {value}")
+        lines.append("")
+
     return "\n".join(lines)
 
 
@@ -2303,9 +2335,9 @@ def _make_manuscripts_pdf(slug: str, clinical: list[dict], preclinical: list[dic
                 align="C",
             )
 
-    pdf = ManuscriptsPDF(orientation="L", unit="mm", format="Letter")
-    pdf.set_auto_page_break(auto=True, margin=18)
-    pdf.set_margins(left=12, top=14, right=12)
+    pdf = ManuscriptsPDF(orientation="P", unit="mm", format="Letter")
+    pdf.set_auto_page_break(auto=True, margin=20)
+    pdf.set_margins(left=18, top=20, right=18)
     pdf.alias_nb_pages()
     _register_unicode_font(pdf)
 
