@@ -1430,7 +1430,20 @@ def YPos_NEXT():
 _TABLE_LINE = re.compile(r"^\s*\|.*\|\s*$")
 _TABLE_SEP = re.compile(r"^\s*\|?[\s|:\-]+\|?\s*$")
 _INLINE_BOLD = re.compile(r"\*\*(.+?)\*\*")
-_INLINE_ITALIC = re.compile(r"(?<!\*)\*([^*]+?)\*(?!\*)")
+# Italic supports both `*x*` and `_x_`. The underscore variant guards against
+# in-word matches (e.g. `intervention_id`, `TRAE_rate`) by requiring non-word
+# flanks on both sides — same convention CommonMark uses.
+_INLINE_ITALIC = re.compile(
+    r"(?<!\*)\*([^*\n]+?)\*(?!\*)"
+    r"|"
+    r"(?<![A-Za-z0-9_])_([^_\n]+?)_(?![A-Za-z0-9_])"
+)
+
+
+def _italic_content(m: "re.Match") -> str:
+    return m.group(1) or m.group(2) or ""
+
+
 _INLINE_LINK = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
 _INLINE_CODE = re.compile(r"`([^`]+)`")
 
@@ -1714,7 +1727,7 @@ def _tokenize_italic(text: str, color: tuple, link: str) -> list[tuple[str, str,
     for m in _INLINE_ITALIC.finditer(text):
         if m.start() > last:
             runs.append((text[last : m.start()], "", color, link))
-        runs.append((m.group(1), "I", color, link))
+        runs.append((_italic_content(m), "I", color, link))
         last = m.end()
     if last < len(text):
         runs.append((text[last:], "", color, link))
@@ -1893,7 +1906,7 @@ def _emit_table_cell_line(pdf, text: str, w: float, header: bool, cell_link: str
 def _strip_inline_md(text: str) -> str:
     text = _INLINE_LINK.sub(r"\1", text)
     text = _INLINE_BOLD.sub(r"\1", text)
-    text = _INLINE_ITALIC.sub(r"\1", text)
+    text = _INLINE_ITALIC.sub(_italic_content, text)
     text = _INLINE_CODE.sub(r"\1", text)
     return text
 
@@ -2893,11 +2906,6 @@ def _recommendations_md_for_pdf(
         )
         if any_evidence:
             lines.append("### Evidence in detail")
-            lines.append("")
-            lines.append(
-                "_One row per published clinical manuscript supporting each ranked "
-                "intervention, drawn from the case's clinical-evidence dossier._"
-            )
             lines.append("")
             for rec in group_rows:
                 _emit_evidence_for_rec(rec)
