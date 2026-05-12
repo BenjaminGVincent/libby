@@ -437,7 +437,11 @@ def _overall_cell_html(r: dict) -> str:
 
 
 def _render_recs_table_html(
-    rows: list[dict], *, show_personas: bool = True, renumber: bool = False
+    rows: list[dict],
+    *,
+    show_personas: bool = True,
+    renumber: bool = False,
+    anchored_ids: set[str] | None = None,
 ) -> str:
     """Render rows as the recs HTML table.
 
@@ -446,15 +450,29 @@ def _render_recs_table_html(
     HTML, where each pathway gets its own ranked list 1..n rather than
     inheriting the global ranking series). The underlying `rank` field on
     the row is unchanged.
+
+    `anchored_ids` is the set of `intervention_id` values whose evidence-
+    in-detail H4 will be present further down the page. When a rec's id
+    is in this set the Rank cell renders as a clickable link pointing at
+    `#evidence-<id>` so the reader can jump from rank to the supporting
+    evidence with one click. When the set is None or doesn't contain the
+    id, the Rank cell renders as plain text (no broken anchor).
     """
     if not rows:
         return "<p><em>No rows.</em></p>"
     body: list[str] = []
     for i, r in enumerate(rows, start=1):
         rank_cell = i if renumber else r.get("rank")
+        iid = r.get("intervention_id") or ""
+        if anchored_ids and iid in anchored_ids:
+            rank_html = (
+                f'<a href="#{_evidence_anchor_id(r)}">{_fmt_html(rank_cell)}</a>'
+            )
+        else:
+            rank_html = _fmt_html(rank_cell)
         body.append(
             "    <tr>"
-            f"<td>{_fmt_html(rank_cell)}</td>"
+            f"<td>{rank_html}</td>"
             f"{_intervention_cell_html(r, show_personas=show_personas)}"
             f"<td>{_fmt_html(r.get('likelihood_of_effect'))}</td>"
             f"<td>{_fmt_html(r.get('toxicity_burden'))}</td>"
@@ -866,6 +884,20 @@ def _is_workup_row(rec: dict) -> bool:
     return False
 
 
+def _evidence_anchor_id(rec: dict) -> str:
+    """Stable HTML anchor id for the Evidence-in-detail H4 of a rec.
+
+    The same id is used in the Recommendations table's Rank-cell href so
+    clicking a rank jumps to the matching evidence-in-detail mini-table
+    below. The id is derived from `intervention_id` (kebab-cased and
+    safe-charactered); `evidence-` prefix avoids collisions with other
+    HTML ids on the page.
+    """
+    iid = rec.get("intervention_id") or "intervention"
+    safe = re.sub(r"[^a-z0-9]+", "-", str(iid).lower()).strip("-") or "intervention"
+    return f"evidence-{safe}"
+
+
 def _intervention_short_name(rec: dict) -> str:
     """Best-effort short drug-name label for an intervention.
 
@@ -1067,7 +1099,10 @@ def _render_evidence_detail_per_intervention_html(
         if matched:
             any_evidence = True
         short_name = _intervention_short_name(rec)
-        sections.append(f"<h4>{_html.escape(short_name)}</h4>")
+        anchor = _evidence_anchor_id(rec)
+        sections.append(
+            f'<h4 id="{anchor}">{_html.escape(short_name)}</h4>'
+        )
         if not matched:
             sections.append(
                 "<p class=\"evidence-detail-empty\"><em>No published clinical "
@@ -1180,7 +1215,30 @@ def _render_recommendations_html(
     def _emit_feature_block(scenario_short: str, group_rows: list[dict], heading: str | None) -> None:
         if heading:
             parts.append(f"<h2>{_html.escape(heading)}</h2>")
-        parts.append(_render_recs_table_html(group_rows, show_personas=False, renumber=True))
+        # Pre-compute the evidence-in-detail HTML so we know whether each
+        # rec in this group will have a matching H4 anchor further down the
+        # page. When the section renders (any rec in the group matched ≥ 1
+        # clinical_evidence row by PMID), EVERY rec in the group gets an
+        # H4 — including rec-without-evidence rows that fall back to the
+        # placeholder paragraph. So we anchor every rec id in this group
+        # when the section renders, and none when it doesn't.
+        evidence_html = (
+            _render_evidence_detail_per_intervention_html(group_rows, clinical)
+            if clinical else ""
+        )
+        anchored_ids: set[str] = set()
+        if evidence_html:
+            anchored_ids = {
+                str(r.get("intervention_id")) for r in group_rows if r.get("intervention_id")
+            }
+        parts.append(
+            _render_recs_table_html(
+                group_rows,
+                show_personas=False,
+                renumber=True,
+                anchored_ids=anchored_ids,
+            )
+        )
         if scenario_short != "__unscoped" and trials:
             pipeline_rows = _pipeline_context_rows(scenario_short, trials, ranked_aliases)
             if pipeline_rows:
@@ -1198,19 +1256,18 @@ def _render_recommendations_html(
         # `evidence_anchor[]`. Renders below the pipeline-context table so the
         # reader sees the ranked options first, then the broader modality
         # landscape, then the per-manuscript detail backing each rank.
-        if clinical:
-            evidence_html = _render_evidence_detail_per_intervention_html(group_rows, clinical)
-            if evidence_html:
-                parts.append("<h3>Evidence in detail</h3>")
-                parts.append(
-                    '<p class="evidence-detail-note">One row per published clinical '
-                    "manuscript supporting each ranked intervention. Drawn from the case's "
-                    "clinical-evidence dossier. Disease context lists the indication, line "
-                    "of therapy, and the population the trial enrolled. Toxicities are "
-                    "broken out per term with grade and frequency. Efficacy lists the "
-                    "primary endpoint with effect size and variance.</p>"
-                )
-                parts.append(evidence_html)
+        if evidence_html:
+            parts.append("<h3>Evidence in detail</h3>")
+            parts.append(
+                '<p class="evidence-detail-note">One row per published clinical '
+                "manuscript supporting each ranked intervention. Drawn from the case's "
+                "clinical-evidence dossier. Disease context lists the indication, line "
+                "of therapy, and the population the trial enrolled. Toxicities are "
+                "broken out per term with grade and frequency. Efficacy lists the "
+                "primary endpoint with effect size and variance. The Rank-cell numbers "
+                "in the table above link directly to the matching mini-table below.</p>"
+            )
+            parts.append(evidence_html)
 
     if not therapeutic_rows:
         parts.append("<p><em>No therapeutic recommendations.</em></p>")
