@@ -6,6 +6,7 @@
 
 ### HTML
 
+- [Target validation paths](target_validation.md) — per-feature biomarker-workup table with providers and references, sortable in-browser
 - [Recommendations table](demo-nsclc-egfr-l858r-post-osi-d3m0-recommendations.html) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
 - [Access guide](accessibility.md) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table
 - [Master manuscripts table](manuscripts.md) — every paper considered — n, effect, variance, toxicities, in a sortable in-browser table

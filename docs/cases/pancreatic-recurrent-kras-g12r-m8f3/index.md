@@ -8,16 +8,17 @@
 
 ### HTML
 
+- [Target validation paths](target_validation.md?v=dc34379c) — per-feature biomarker-workup table with providers and references, sortable in-browser
 - [Recommendations table](pancreatic-recurrent-kras-g12r-m8f3-recommendations.html?v=8eeb26f9) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
 - [Access guide](accessibility.md?v=2958eb74) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table
 - [Master manuscripts table](manuscripts.md?v=9ea36b70) — every paper considered — n, effect, variance, toxicities, in a sortable in-browser table
 
 ### PDF
 
-- [Target validation paths](pancreatic-recurrent-kras-g12r-m8f3-target-validation.pdf?v=0d1c565d) — diagnostic + biomarker workup that hardens the targetable-feature call
-- [Recommendations table](pancreatic-recurrent-kras-g12r-m8f3-recommendations.pdf?v=45c568d5) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
-- [Access guide](pancreatic-recurrent-kras-g12r-m8f3-accessibility.pdf?v=bf425231) — trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF
-- [Patient/caregiver PDF](pancreatic-recurrent-kras-g12r-m8f3-plain-language.pdf?v=2455149f) — plain-language summary
+- [Target validation paths](pancreatic-recurrent-kras-g12r-m8f3-target-validation.pdf?v=733a83e8) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Recommendations table](pancreatic-recurrent-kras-g12r-m8f3-recommendations.pdf?v=21793558) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
+- [Access guide](pancreatic-recurrent-kras-g12r-m8f3-accessibility.pdf?v=e155ad5f) — trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF
+- [Patient/caregiver PDF](pancreatic-recurrent-kras-g12r-m8f3-plain-language.pdf?v=1e5119fa) — plain-language summary
 
 <!-- libby:downloads:end -->
 ## Research question

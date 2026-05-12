@@ -207,6 +207,11 @@ def downloads_block(case_docs: Path, slug: str) -> str:
     """
     html_artifacts = [
         (
+            "target_validation.md",
+            "Target validation paths",
+            "per-feature biomarker-workup table with providers and references, sortable in-browser",
+        ),
+        (
             f"{slug}-recommendations.html",
             "Recommendations table",
             "ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline",

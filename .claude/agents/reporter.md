@@ -255,9 +255,10 @@ The script reads `executive_summary.md`, `index.md`, `plain_language.md`, `recom
 
 **HTML group** (in-browser):
 
-1. Recommendations table (`<slug>-recommendations.html`) — self-contained, opens offline.
-2. Access guide (`accessibility.md`) — sortable mkdocs page.
-3. Master manuscripts table (`manuscripts.md`) — sortable mkdocs page.
+1. Target validation paths (`target_validation.md`) — per-feature sortable biomarker-workup table built deterministically by `scripts/build_target_validation.py` from `target_validation.jsonl`.
+2. Recommendations table (`<slug>-recommendations.html`) — self-contained, opens offline.
+3. Access guide (`accessibility.md`) — sortable mkdocs page.
+4. Master manuscripts table (`manuscripts.md`) — sortable mkdocs page.
 
 **PDF group** (print-friendly):
 
