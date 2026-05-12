@@ -16,6 +16,7 @@
 - [Target validation paths](pancreatic-recurrent-kras-g12r-m8f3-target-validation.pdf) — diagnostic + biomarker workup that hardens the targetable-feature call
 - [Recommendations table](pancreatic-recurrent-kras-g12r-m8f3-recommendations.pdf) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
 - [Access guide](pancreatic-recurrent-kras-g12r-m8f3-accessibility.pdf) — trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF
+- [Master manuscripts table](pancreatic-recurrent-kras-g12r-m8f3-manuscripts.pdf) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
 - [Patient/caregiver PDF](pancreatic-recurrent-kras-g12r-m8f3-plain-language.pdf) — plain-language summary
 
 _11 ranked options._

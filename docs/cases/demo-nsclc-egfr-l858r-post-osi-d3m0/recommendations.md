@@ -15,6 +15,7 @@
 
 - [Target validation paths](demo-nsclc-egfr-l858r-post-osi-d3m0-target-validation.pdf) — diagnostic + biomarker workup that hardens the targetable-feature call
 - [Recommendations table](demo-nsclc-egfr-l858r-post-osi-d3m0-recommendations.pdf) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
+- [Master manuscripts table](demo-nsclc-egfr-l858r-post-osi-d3m0-manuscripts.pdf) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
 - [Patient/caregiver PDF](demo-nsclc-egfr-l858r-post-osi-d3m0-plain-language.pdf) — plain-language summary
 
 _3 ranked options._

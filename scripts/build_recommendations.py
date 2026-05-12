@@ -244,6 +244,11 @@ def downloads_block(case_docs: Path, slug: str) -> str:
             "trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF",
         ),
         (
+            f"{slug}-manuscripts.pdf",
+            "Master manuscripts table",
+            "every paper considered — n, effect, variance, toxicities, in a print-friendly PDF",
+        ),
+        (
             f"{slug}-plain-language.pdf",
             "Patient/caregiver PDF",
             "plain-language summary",

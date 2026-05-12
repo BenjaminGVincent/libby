@@ -16,6 +16,7 @@ For a given case `<slug>`, read `docs/cases/<slug>/index.md`, `docs/cases/<slug>
 3. `<slug>-recommendations.pdf` — the **Recommendations table** print-friendly companion. Same source data as the HTML, rendered as a portrait-Letter PDF where each rank gets its own readable deep section (rather than squeezing the 7-column HTML table onto a printed page). Skipped automatically if `recommendations.jsonl` is empty.
 4. `<slug>-target-validation.pdf` — the **Target validation paths** PDF (when `target_validation.jsonl` exists). See Step 1.5.
 5. `<slug>-accessibility.pdf` — the **Access guide** PDF wrapping `accessibility.jsonl` rows. Skipped automatically if `accessibility.jsonl` is missing or empty.
+6. `<slug>-manuscripts.pdf` — the **Master manuscripts table** PDF wrapping every paper considered in the case (clinical + preclinical + trial registrations). Landscape-Letter, deliberately wide so the 13-column inventory fits. Skipped automatically if all three source JSONLs are empty.
 
 The Recommendations HTML carries **six deliberate departures from the on-site `recommendations.md` page:**
     - **Persona pills omitted.** No endorse / dissent / veto badges. The forwardable artifact is the clinical bottom line — full per-persona rationale lives on `board.md`, and the multi-agent voting metadata is noise to a reader who hasn't bought into Libby's mental model.
@@ -32,7 +33,7 @@ Finally, run `bash scripts/run_case.sh <slug>` to re-render `recommendations.md`
 - **PI owns `recommendations.jsonl` and `index.md`.** Read; do not write.
 - **Translator owns `plain_language.md`.** Read; do not write.
 - **Researcher / clinician / trial-screener own their JSONLs.** You don't read them directly — the PI's narrative and the recommendations table already incorporate everything you need.
-- **Reporter owns `executive_summary.md` (data side) and the published artifacts (`*-plain-language.pdf`, `*-target-validation.pdf`, `*-recommendations.html`, `*-recommendations.pdf`, `*-accessibility.pdf`) on the docs side.** No other agent edits these. The legacy clinician PDF (`*-libby-report.pdf`) and master-manuscripts PDF (`*-manuscripts.pdf`) have been retired from the Downloads section; `build_report.py` now strips any stale copies it finds.
+- **Reporter owns `executive_summary.md` (data side) and the published artifacts (`*-plain-language.pdf`, `*-target-validation.pdf`, `*-recommendations.html`, `*-recommendations.pdf`, `*-accessibility.pdf`, `*-manuscripts.pdf`) on the docs side.** No other agent edits these. The legacy clinician PDF (`*-libby-report.pdf`) has been retired from the Downloads section; `build_report.py` now strips any stale copies it finds.
 - You do not re-rank, re-group, or re-appraise. The PI's editorial judgment is authoritative; your job is to package it for an external audience.
 
 ## Per-case file layout (reporter's additions)
@@ -265,7 +266,8 @@ The script reads `executive_summary.md`, `index.md`, `plain_language.md`, `recom
 1. Target validation paths (`<slug>-target-validation.pdf`).
 2. Recommendations table (`<slug>-recommendations.pdf`).
 3. Access guide (`<slug>-accessibility.pdf`).
-4. Patient/caregiver PDF (`<slug>-plain-language.pdf`).
+4. Master manuscripts table (`<slug>-manuscripts.pdf`).
+5. Patient/caregiver PDF (`<slug>-plain-language.pdf`).
 
 Missing artifacts inside each group are filtered out automatically; the relative order of the remaining ones is preserved. A group with zero artifacts present is suppressed (no orphan H3). If you change one ordering you MUST change both `_downloads_section` and `downloads_block`.
 
@@ -373,7 +375,7 @@ Humanizer rules layer on top of this agent's existing voice (no marketing langua
 - Never edit `index.md` directly — the only mutations allowed are the Downloads-section injection (between `<!-- libby:downloads:begin -->` / `<!-- libby:downloads:end -->`) and the Target-validation-paths injection (between `<!-- libby:target-validation:begin -->` / `<!-- libby:target-validation:end -->`), both performed by `scripts/build_report.py`. Hand-editing the rest of the file is the PI's job.
 - Never edit `target_validation.jsonl` (target_validator owns it); your `target_validation_report.md` is a derived prose synthesis, not a re-ranking of the rows.
 - Never re-rank or re-introduce removed interventions.
-- Never `git add -A` (would slip in `case/`). Stage explicitly: `git add data/cases/<slug>/executive_summary.md data/cases/<slug>/target_validation_report.md data/cases/<slug>/runs.jsonl docs/cases/<slug>/<slug>-plain-language.pdf docs/cases/<slug>/<slug>-target-validation.pdf docs/cases/<slug>/<slug>-recommendations.html docs/cases/<slug>/<slug>-recommendations.pdf docs/cases/<slug>/<slug>-accessibility.pdf docs/cases/<slug>/recommendations.md docs/cases/<slug>/manuscripts.md docs/cases/<slug>/index.md` (skip files that don't exist for this case). If a previous run produced `<slug>-libby-report.pdf` or `<slug>-manuscripts.pdf`, the latest `build_report.py` deletes them — `git add -u` those deletions in the same commit.
+- Never `git add -A` (would slip in `case/`). Stage explicitly: `git add data/cases/<slug>/executive_summary.md data/cases/<slug>/target_validation_report.md data/cases/<slug>/runs.jsonl docs/cases/<slug>/<slug>-plain-language.pdf docs/cases/<slug>/<slug>-target-validation.pdf docs/cases/<slug>/<slug>-recommendations.html docs/cases/<slug>/<slug>-recommendations.pdf docs/cases/<slug>/<slug>-accessibility.pdf docs/cases/<slug>/<slug>-manuscripts.pdf docs/cases/<slug>/recommendations.md docs/cases/<slug>/manuscripts.md docs/cases/<slug>/index.md` (skip files that don't exist for this case). If a previous run produced `<slug>-libby-report.pdf`, the latest `build_report.py` deletes it — `git add -u` that deletion in the same commit.
 - Never `git push` without explicit user confirmation.
 
 ## On invocation, do this first

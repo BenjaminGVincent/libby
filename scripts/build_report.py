@@ -3097,6 +3097,11 @@ def _downloads_section(slug: str, case_docs: Path) -> str:
             "trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF",
         ),
         (
+            f"{slug}-manuscripts.pdf",
+            "Master manuscripts table",
+            "every paper considered — n, effect, variance, toxicities, in a print-friendly PDF",
+        ),
+        (
             f"{slug}-plain-language.pdf",
             "Patient/caregiver PDF",
             "plain-language summary",
@@ -3491,10 +3496,14 @@ def main(argv: list[str]) -> int:
     clinical = _load_jsonl(case_data / "clinical_evidence.jsonl")
     preclinical = _load_jsonl(case_data / "preclinical_evidence.jsonl")
     trials = _load_jsonl(case_data / "trials.jsonl")
-    # Master-manuscripts PDF removed from the Downloads section. The web
-    # version (`manuscripts.md`) remains as the primary artifact.
     manuscripts_out = case_docs / f"{slug}-manuscripts.pdf"
-    if manuscripts_out.exists():
+    if clinical or preclinical or trials:
+        _make_manuscripts_pdf(slug, clinical, preclinical, trials, manuscripts_out)
+        print(
+            f"built {manuscripts_out.relative_to(REPO_ROOT)} — "
+            f"{manuscripts_out.stat().st_size / 1024:.0f} KB"
+        )
+    elif manuscripts_out.exists():
         manuscripts_out.unlink()
 
     accessibility_rows = _load_jsonl(case_data / "accessibility.jsonl")
