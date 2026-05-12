@@ -313,6 +313,18 @@ h4 { margin-top: 1.25rem; margin-bottom: 0.25rem; font-size: 1rem; }
   margin-left: 0.35em;
   white-space: nowrap;
 }
+.pipeline-context-table .offlabel-flag {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5F4310;
+  background: #FBEFD3;
+  border: 1px solid #E8C977;
+  border-radius: 0.35em;
+  padding: 0.02em 0.4em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
 footer.libby-footer {
   margin-top: 3rem;
   padding-top: 1rem;
@@ -791,6 +803,13 @@ def _pipeline_intervention_cell_html(t: dict) -> str:
     flag_html = ""
     if t.get("tumor_type_relationship") == "basket_or_biomarker_match":
         flag_html = ' <span class="basket-flag">basket / biomarker</span>'
+    # Off-label pill: render when the intervention has FDA / equivalent
+    # approval for any indication. In the pipeline-context table the trial
+    # by definition does NOT fit the patient's indication, so any FDA
+    # approval — on- or off-label for the trial's enrolling indication —
+    # is off-label from the patient's perspective.
+    if t.get("regulatory_status") in ("approved_off_label", "approved_on_label"):
+        flag_html += ' <span class="offlabel-flag">off-label</span>'
     if t.get("development_status") == "discontinued":
         flag_html += ' <span class="discontinued-flag">discontinued</span>'
     name = (

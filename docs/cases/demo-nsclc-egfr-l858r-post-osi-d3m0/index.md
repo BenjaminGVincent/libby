@@ -6,11 +6,11 @@
 
 ## Downloads
 
-- [Target validation paths](demo-nsclc-egfr-l858r-post-osi-d3m0-target-validation.pdf?v=8c74050d) — diagnostic + biomarker workup that hardens the targetable-feature call
-- [Recommendations table](demo-nsclc-egfr-l858r-post-osi-d3m0-recommendations.html?v=2c5f0b6e) — ranked options + pipeline context — self-contained HTML that opens offline
+- [Target validation paths](demo-nsclc-egfr-l858r-post-osi-d3m0-target-validation.pdf?v=50e8f477) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Recommendations table](demo-nsclc-egfr-l858r-post-osi-d3m0-recommendations.html?v=3198ebfd) — ranked options + pipeline context — self-contained HTML that opens offline
 - [Access guide](accessibility.md?v=a9b23b43) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table
 - [Master manuscripts table](manuscripts.md?v=ccc49de6) — every paper considered — n, effect, variance, toxicities, in a sortable in-browser table
-- [Patient/caregiver PDF](demo-nsclc-egfr-l858r-post-osi-d3m0-plain-language.pdf?v=3f8c29e3) — plain-language summary
+- [Patient/caregiver PDF](demo-nsclc-egfr-l858r-post-osi-d3m0-plain-language.pdf?v=ef4313ee) — plain-language summary
 
 <!-- libby:downloads:end -->
 
