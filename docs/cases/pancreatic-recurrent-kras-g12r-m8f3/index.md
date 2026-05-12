@@ -6,11 +6,11 @@
 
 ## Downloads
 
-- [Target validation paths](pancreatic-recurrent-kras-g12r-m8f3-target-validation.pdf?v=cf71f0b9) — diagnostic + biomarker workup that hardens the targetable-feature call
-- [Recommendations table](pancreatic-recurrent-kras-g12r-m8f3-recommendations.html?v=10693e64) — ranked options + pipeline context — self-contained HTML that opens offline
+- [Target validation paths](pancreatic-recurrent-kras-g12r-m8f3-target-validation.pdf?v=b5771fdc) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Recommendations table](pancreatic-recurrent-kras-g12r-m8f3-recommendations.html?v=36a9a8ab) — ranked options + pipeline context — self-contained HTML that opens offline
 - [Access guide](accessibility.md?v=75e87a68) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table
 - [Master manuscripts table](manuscripts.md?v=a9a888db) — every paper considered — n, effect, variance, toxicities, in a sortable in-browser table
-- [Patient/caregiver PDF](pancreatic-recurrent-kras-g12r-m8f3-plain-language.pdf?v=03e05889) — plain-language summary
+- [Patient/caregiver PDF](pancreatic-recurrent-kras-g12r-m8f3-plain-language.pdf?v=7422661e) — plain-language summary
 
 <!-- libby:downloads:end -->
 ## Research question

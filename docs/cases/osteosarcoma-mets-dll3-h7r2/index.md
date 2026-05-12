@@ -6,11 +6,11 @@
 
 ## Downloads
 
-- [Target validation paths](osteosarcoma-mets-dll3-h7r2-target-validation.pdf?v=2ba7df9e) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Target validation paths](osteosarcoma-mets-dll3-h7r2-target-validation.pdf?v=00b0399e) — diagnostic + biomarker workup that hardens the targetable-feature call
 - [Recommendations table](osteosarcoma-mets-dll3-h7r2-recommendations.html?v=6d943f56) — ranked options + pipeline context — self-contained HTML that opens offline
 - [Access guide](accessibility.md?v=ced10fa1) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table
 - [Master manuscripts table](manuscripts.md?v=0e17b1da) — every paper considered — n, effect, variance, toxicities, in a sortable in-browser table
-- [Patient/caregiver PDF](osteosarcoma-mets-dll3-h7r2-plain-language.pdf?v=01ac02a3) — plain-language summary
+- [Patient/caregiver PDF](osteosarcoma-mets-dll3-h7r2-plain-language.pdf?v=96828e68) — plain-language summary
 
 <!-- libby:downloads:end -->
 

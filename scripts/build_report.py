@@ -470,10 +470,17 @@ def _render_recs_table_html(
 
 
 _FEATURE_LABELS: dict[str, str] = {
-    # Friendlier human-readable names for known scenario_short prefixes.
-    # Any prefix not in this map renders title-cased.
+    # Friendlier human-readable names for known scenario_short / target keys.
+    # Any key not in this map renders title-cased via `_feature_label_for_scenario`.
     "dll3_ihc": "DLL3-targeting interventions",
     "prame_ihc_hla": "PRAME-targeting interventions",
+    "kras_g12r": "KRAS G12R-targeting interventions",
+    "cdkn2a_loss": "CDKN2A-loss / MTAP-targeting interventions",
+    "germline_brca": "Germline BRCA / HRD-targeting interventions",
+    "tp53_inactivating": "TP53-targeting interventions",
+    "ccnd3_alteration": "CCND3 / CDK4-6-targeting interventions",
+    "egfr_l858r": "EGFR L858R-targeting interventions",
+    "met_amplification": "MET amplification-targeting interventions",
 }
 
 
@@ -485,12 +492,21 @@ def _feature_label_for_scenario(scenario_short: str) -> str:
 
 
 def _group_by_feature(rows: list[dict]) -> "list[tuple[str, list[dict]]]":
-    """Group biomarker-conditional rows by their scenario prefix.
+    """Group rows by therapeutic target.
 
-    Returns an ordered list of (scenario_short, rows) pairs, preserving the
-    order in which scenarios first appear in `rows`. Untagged (`scenario`
-    null/empty/'shared') rows go under the synthetic key `__unscoped`.
-    The HTML composer renders one table per feature.
+    Returns an ordered list of (feature_key, rows) pairs, preserving the
+    order in which feature keys first appear in `rows`. The HTML composer
+    renders one table per feature.
+
+    Grouping signal, in priority order:
+      1. `scenario == "<short>:positive"` (biomarker-gated case) → group by
+         the `<short>` prefix.
+      2. `targets[0]` (non-gated case where the PI tagged each rec with the
+         therapeutic target it acts on, snake-cased to mirror the user-
+         stated targetable feature). This lets non-gated cases still split
+         e.g. KRAS-G12R-targeting recs from CDKN2A-loss-targeting recs into
+         separate ranked tables.
+      3. Synthetic key `__unscoped` (rare — non-gated and `targets` empty).
     """
     seen: list[str] = []
     by_feature: dict[str, list[dict]] = {}
@@ -499,7 +515,8 @@ def _group_by_feature(rows: list[dict]) -> "list[tuple[str, list[dict]]]":
         if isinstance(scen, str) and ":" in scen:
             key = scen.split(":", 1)[0]
         else:
-            key = "__unscoped"
+            tgts = r.get("targets") or []
+            key = tgts[0] if tgts and isinstance(tgts[0], str) else "__unscoped"
         if key not in by_feature:
             by_feature[key] = []
             seen.append(key)
@@ -583,9 +600,18 @@ def _profile_dl_html(profile: dict, preferences: dict) -> str:
 _FEATURE_TOKENS: dict[str, tuple[str, ...]] = {
     # Substring tokens (lowercased) used to assign a trial row to a feature
     # for the pipeline-context tables. Matched against intervention,
-    # aliases, and biomarker fields.
+    # aliases, and biomarker fields. Keys here mirror the snake-cased
+    # target identifiers used in `recommendations.jsonl::targets[]` plus
+    # the scenario-prefix keys used in biomarker-gated cases.
     "dll3_ihc": ("dll3",),
     "prame_ihc_hla": ("prame",),
+    "kras_g12r": ("kras", "ras(on)", "ras-on", "pan-ras", "pan-kras"),
+    "cdkn2a_loss": ("cdkn2a", "mtap", "prmt5", "cdk4", "cdk6", "palbociclib", "abemaciclib", "ribociclib"),
+    "germline_brca": ("brca", "parp", "olaparib", "rucaparib", "niraparib", "talazoparib"),
+    "tp53_inactivating": ("tp53", "p53", "apr-246", "eprenetapopt"),
+    "ccnd3_alteration": ("ccnd3", "cyclin d", "cdk4", "cdk6"),
+    "egfr_l858r": ("egfr", "osimertinib", "lazertinib", "amivantamab", "patritumab"),
+    "met_amplification": ("met ", "savolitinib", "tepotinib", "capmatinib", "amivantamab"),
 }
 
 

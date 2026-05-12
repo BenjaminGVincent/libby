@@ -80,6 +80,11 @@
     "scenario_label": {
       "type": ["string", "null"],
       "description": "Human-readable label for a `:positive` scenario, used inline in rendered docs (e.g. 'If DLL3 IHC ≥1% (preferably ≥25%)'). Null for `shared` workup rows and `null`-scenario rows."
+    },
+    "targets": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+      "description": "Snake-case identifiers for the targetable features this intervention acts on. Drives per-target grouping in the Recommendations table HTML. First entry is the primary target. Keys mirror the user-stated `profile.json::targetable_features[].feature` (snake-cased), e.g. `[\"kras_g12r\"]`, `[\"cdkn2a_loss\"]`, `[\"kras_g12r\", \"cdkn2a_loss\"]` for a dual-target combination. For biomarker-gated cases the `scenario` field carries the same grouping signal; `targets[]` is the canonical source for non-gated cases."
     }
   }
 }
