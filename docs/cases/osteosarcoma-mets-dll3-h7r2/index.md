@@ -2,27 +2,17 @@
 
 # `osteosarcoma-mets-dll3-h7r2`
 
-<!-- libby:downloads:begin -->
+<!-- libby:case-output:begin -->
 
-## Downloads
+## Case output
 
-### HTML
+- [Target validation paths (PDF)](osteosarcoma-mets-dll3-h7r2-target-validation.pdf?v=ea68cd01) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Recommendations table (HTML)](osteosarcoma-mets-dll3-h7r2-recommendations.html?v=aecc1dcb) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
+- [Access guide (HTML)](accessibility.md?v=52a32e84) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, sortable in-browser
+- [Master manuscripts table (HTML)](manuscripts.md?v=b57c92e8) — every paper considered — n, effect, variance, toxicities, sortable in-browser
+- [Patient/caregiver PDF](osteosarcoma-mets-dll3-h7r2-plain-language.pdf?v=993c7c09) — plain-language summary
 
-- [Target validation paths](target_validation.md?v=98962654) — per-feature biomarker-workup table with providers and references, sortable in-browser
-- [Recommendations table](osteosarcoma-mets-dll3-h7r2-recommendations.html?v=689e06fd) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
-- [Access guide](accessibility.md?v=52a32e84) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table
-- [Master manuscripts table](manuscripts.md?v=b57c92e8) — every paper considered — n, effect, variance, toxicities, in a sortable in-browser table
-
-### PDF
-
-- [Target validation paths](osteosarcoma-mets-dll3-h7r2-target-validation.pdf?v=842afb6a) — diagnostic + biomarker workup that hardens the targetable-feature call
-- [Recommendations table](osteosarcoma-mets-dll3-h7r2-recommendations.pdf?v=494fb07a) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
-- [Access guide](osteosarcoma-mets-dll3-h7r2-accessibility.pdf?v=0c3d03ce) — trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF
-- [Master manuscripts table](osteosarcoma-mets-dll3-h7r2-manuscripts.pdf?v=e229d826) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
-- [Patient/caregiver PDF](osteosarcoma-mets-dll3-h7r2-plain-language.pdf?v=536bf40a) — plain-language summary
-
-<!-- libby:downloads:end -->
-
+<!-- libby:case-output:end -->
 ## Research question
 
 In metastatic osteosarcoma after first-line MAP, what interventions can target DLL3 and PRAME, gated on protein-level confirmation (DLL3 IHC SP347; PRAME IHC + HLA-A*02:01 typing)?
@@ -489,6 +479,27 @@ Lower than rank 4 because (a) no published clinical data for IMC-P115C and (b) e
 ## Run log
 
 Authored May 2026. Inputs: targetable feature ("DLL3 RNA expression"), clinical descriptor ("metastatic osteosarcoma"), preference summary ("accepts high-risk high-reward options"). Re-rendered when Libby's case scope tightened to drugs that act on the user's stated targetable feature; out-of-scope drugs (standard care for the indication that does not act on DLL3) no longer enter the dossier or appear on any case surface. The cross-cutting caveat carries the negative-result foreclosure mapping. The standard-of-care conversation for the indication is the treating team's, not Libby's. Humanizer pass applied May 2026.
+
+<!-- libby:downloads:begin -->
+
+## Downloads
+
+### HTML
+
+- [Target validation paths](target_validation.md?v=98962654) — per-feature biomarker-workup table with providers and references, sortable in-browser
+- [Recommendations table](osteosarcoma-mets-dll3-h7r2-recommendations.html?v=aecc1dcb) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
+- [Access guide](accessibility.md?v=52a32e84) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table
+- [Master manuscripts table](manuscripts.md?v=b57c92e8) — every paper considered — n, effect, variance, toxicities, in a sortable in-browser table
+
+### PDF
+
+- [Target validation paths](osteosarcoma-mets-dll3-h7r2-target-validation.pdf?v=ea68cd01) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Recommendations table](osteosarcoma-mets-dll3-h7r2-recommendations.pdf?v=5ee34c72) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
+- [Access guide](osteosarcoma-mets-dll3-h7r2-accessibility.pdf?v=71f5ec5a) — trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF
+- [Master manuscripts table](osteosarcoma-mets-dll3-h7r2-manuscripts.pdf?v=52c4e25f) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
+- [Patient/caregiver PDF](osteosarcoma-mets-dll3-h7r2-plain-language.pdf?v=993c7c09) — plain-language summary
+
+<!-- libby:downloads:end -->
 
 !!! danger disclaimer "Decision support, not medical advice"
     Libby is an experimental decision-support tool. The recommendations on

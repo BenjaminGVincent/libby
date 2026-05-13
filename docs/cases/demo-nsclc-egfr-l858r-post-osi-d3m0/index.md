@@ -2,26 +2,17 @@
 
 # `demo-nsclc-egfr-l858r-post-osi-d3m0`
 
-<!-- libby:downloads:begin -->
+<!-- libby:case-output:begin -->
 
-## Downloads
+## Case output
 
-### HTML
+- [Target validation paths (PDF)](demo-nsclc-egfr-l858r-post-osi-d3m0-target-validation.pdf?v=ae6694c2) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Recommendations table (HTML)](demo-nsclc-egfr-l858r-post-osi-d3m0-recommendations.html?v=60a21ba9) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
+- [Access guide (HTML)](accessibility.md?v=a9b23b43) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, sortable in-browser
+- [Master manuscripts table (HTML)](manuscripts.md?v=46cdbd66) — every paper considered — n, effect, variance, toxicities, sortable in-browser
+- [Patient/caregiver PDF](demo-nsclc-egfr-l858r-post-osi-d3m0-plain-language.pdf?v=9256826e) — plain-language summary
 
-- [Target validation paths](target_validation.md?v=c8af7f62) — per-feature biomarker-workup table with providers and references, sortable in-browser
-- [Recommendations table](demo-nsclc-egfr-l858r-post-osi-d3m0-recommendations.html?v=3198ebfd) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
-- [Access guide](accessibility.md?v=a9b23b43) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table
-- [Master manuscripts table](manuscripts.md?v=46cdbd66) — every paper considered — n, effect, variance, toxicities, in a sortable in-browser table
-
-### PDF
-
-- [Target validation paths](demo-nsclc-egfr-l858r-post-osi-d3m0-target-validation.pdf?v=42072681) — diagnostic + biomarker workup that hardens the targetable-feature call
-- [Recommendations table](demo-nsclc-egfr-l858r-post-osi-d3m0-recommendations.pdf?v=7d045909) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
-- [Master manuscripts table](demo-nsclc-egfr-l858r-post-osi-d3m0-manuscripts.pdf?v=d972a596) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
-- [Patient/caregiver PDF](demo-nsclc-egfr-l858r-post-osi-d3m0-plain-language.pdf?v=928e9431) — plain-language summary
-
-<!-- libby:downloads:end -->
-
+<!-- libby:case-output:end -->
 ## Research question
 
 A working artist in her 60s has stage IV EGFR L858R lung adenocarcinoma. She got 22 months out of first-line osimertinib (PR), and now she is progressing. The tumor is T790M-negative but MET-amplified at GCN 8.2 by FISH. What should the next line of therapy target, given that she needs her hands, prefers oral therapy, and is open to trials?
@@ -315,6 +306,26 @@ Below ranks 1 and 2 because the alopecia veto is unconditional. The rec is on th
 ## Run log
 
 This is a demo case authored in May 2026 with synthetic data so the pipeline can be smoke-tested. No real patient is represented. The page was re-rendered into the shieldbreak-flavored layout the same month after Libby's PI authoring contract was updated to mirror `pirl-unc/io-shieldbreak`, then re-run with the humanizer pass once that was added to the contract.
+
+<!-- libby:downloads:begin -->
+
+## Downloads
+
+### HTML
+
+- [Target validation paths](target_validation.md?v=c8af7f62) — per-feature biomarker-workup table with providers and references, sortable in-browser
+- [Recommendations table](demo-nsclc-egfr-l858r-post-osi-d3m0-recommendations.html?v=60a21ba9) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
+- [Access guide](accessibility.md?v=a9b23b43) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table
+- [Master manuscripts table](manuscripts.md?v=46cdbd66) — every paper considered — n, effect, variance, toxicities, in a sortable in-browser table
+
+### PDF
+
+- [Target validation paths](demo-nsclc-egfr-l858r-post-osi-d3m0-target-validation.pdf?v=ae6694c2) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Recommendations table](demo-nsclc-egfr-l858r-post-osi-d3m0-recommendations.pdf?v=323d8c6d) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
+- [Master manuscripts table](demo-nsclc-egfr-l858r-post-osi-d3m0-manuscripts.pdf?v=73c3ca57) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
+- [Patient/caregiver PDF](demo-nsclc-egfr-l858r-post-osi-d3m0-plain-language.pdf?v=9256826e) — plain-language summary
+
+<!-- libby:downloads:end -->
 
 !!! danger disclaimer "Decision support, not medical advice"
     Libby is experimental. The recommendations on this page have **not** been

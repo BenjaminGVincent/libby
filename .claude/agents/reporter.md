@@ -250,7 +250,22 @@ The script reads `executive_summary.md`, `index.md`, `plain_language.md`, `recom
 
 ## Step 3 — surface the download links on the site
 
-`scripts/build_report.py` itself patches the case landing page (`docs/cases/<slug>/index.md`) — it inserts (or refreshes) a `## Downloads` section between stable HTML comment markers `<!-- libby:downloads:begin -->` and `<!-- libby:downloads:end -->`. The block lands before the first `##` heading on the page. The injection is idempotent: re-running the reporter replaces the block in place; if no artifacts exist it strips the block. **Note:** if the PI re-runs and re-authors `index.md` from scratch, the markers disappear, but the next reporter run re-inserts them. Reporter is the last stage in the pipeline, so this is not a problem in normal flow.
+`scripts/build_report.py` itself patches the case landing page (`docs/cases/<slug>/index.md`) — it inserts (or refreshes) two link sections between stable HTML comment markers, both injected idempotently:
+
+- **Case output** (top of page) — between `<!-- libby:case-output:begin -->` and `<!-- libby:case-output:end -->`, placed before the first `##` heading. A curated 5-item shortlist of the artifacts a reader will most often reach for, with the form (HTML or PDF) picked per artifact for what reads best. See "Case Output items" below.
+- **Downloads** (bottom of page) — between `<!-- libby:downloads:begin -->` and `<!-- libby:downloads:end -->`, anchored immediately above the `!!! danger disclaimer` admonition that closes every case page. Falls back to appending at end-of-file if no disclaimer admonition is present. Carries the full inventory in two H3 subgroups (HTML + PDF). See "Downloads structure" below.
+
+Both injections are idempotent — re-running the reporter replaces each block in place; when no artifacts exist any pre-existing block is stripped. **Note:** if the PI re-runs and re-authors `index.md` from scratch, the markers disappear, but the next reporter run re-inserts them. Reporter is the last stage in the pipeline, so this is not a problem in normal flow.
+
+**Case Output items (load-bearing).** Five entries, in this exact order, encoded in `_case_output_section` (`scripts/build_report.py`):
+
+1. Target validation paths (PDF) → `<slug>-target-validation.pdf`
+2. Recommendations table (HTML) → `<slug>-recommendations.html`
+3. Access guide (HTML) → `accessibility.md`
+4. Master manuscripts table (HTML) → `manuscripts.md`
+5. Patient/caregiver PDF → `<slug>-plain-language.pdf`
+
+Form rationale: target-validation and patient/caregiver content is prose/narrative best read as PDF; the three middle entries are sortable tables best consumed in-browser. Each entry's label carries the form suffix (`(PDF)` / `(HTML)`) for at-a-glance clarity in the curated section. Missing artifacts are filtered out automatically; the relative order of the remaining ones is preserved. If you change the ordering you MUST change `_case_output_section`.
 
 **Downloads structure (load-bearing).** The Downloads section is split into two H3 subgroups — **HTML** (in-browser artifacts) and **PDF** (print-friendly companions) — so a reader can pick the form that matches how they want to consume the data without losing visibility on either. The same content can appear in both groups when it has both forms (Recommendations table, Access guide). Patient/caregiver lands under PDF because the translator's plain-language track is published as a download in PDF form only. The order inside each subgroup is fixed and the same order is encoded in `_downloads_section` (`scripts/build_report.py`) and `downloads_block` (`scripts/build_recommendations.py`).
 
@@ -372,7 +387,7 @@ Humanizer rules layer on top of this agent's existing voice (no marketing langua
 
 - Never read `case/<slug>/clinical/`.
 - Never edit `recommendations.jsonl` or `plain_language.md` (PI / translator own those).
-- Never edit `index.md` directly — the only mutations allowed are the Downloads-section injection (between `<!-- libby:downloads:begin -->` / `<!-- libby:downloads:end -->`) and the Target-validation-paths injection (between `<!-- libby:target-validation:begin -->` / `<!-- libby:target-validation:end -->`), both performed by `scripts/build_report.py`. Hand-editing the rest of the file is the PI's job.
+- Never edit `index.md` directly — the only mutations allowed are the Case-output injection (between `<!-- libby:case-output:begin -->` / `<!-- libby:case-output:end -->`), the Downloads-section injection (between `<!-- libby:downloads:begin -->` / `<!-- libby:downloads:end -->`), and the Target-validation-paths injection (between `<!-- libby:target-validation:begin -->` / `<!-- libby:target-validation:end -->`), all performed by `scripts/build_report.py`. Hand-editing the rest of the file is the PI's job.
 - Never edit `target_validation.jsonl` (target_validator owns it); your `target_validation_report.md` is a derived prose synthesis, not a re-ranking of the rows.
 - Never re-rank or re-introduce removed interventions.
 - Never `git add -A` (would slip in `case/`). Stage explicitly: `git add data/cases/<slug>/executive_summary.md data/cases/<slug>/target_validation_report.md data/cases/<slug>/runs.jsonl docs/cases/<slug>/<slug>-plain-language.pdf docs/cases/<slug>/<slug>-target-validation.pdf docs/cases/<slug>/<slug>-recommendations.html docs/cases/<slug>/<slug>-recommendations.pdf docs/cases/<slug>/<slug>-accessibility.pdf docs/cases/<slug>/<slug>-manuscripts.pdf docs/cases/<slug>/recommendations.md docs/cases/<slug>/manuscripts.md docs/cases/<slug>/index.md` (skip files that don't exist for this case). If a previous run produced `<slug>-libby-report.pdf`, the latest `build_report.py` deletes it — `git add -u` that deletion in the same commit.

@@ -3085,8 +3085,15 @@ def _make_patient_pdf(slug: str, body_md: str, out_path: Path) -> None:
     pdf.output(str(out_path))
 
 
-# ---------- index.md downloads-section injection ----------
+# ---------- index.md case-output + downloads injection ----------
 
+
+_CASE_OUTPUT_BEGIN = "<!-- libby:case-output:begin -->"
+_CASE_OUTPUT_END = "<!-- libby:case-output:end -->"
+_RX_CASE_OUTPUT_BLOCK = re.compile(
+    re.escape(_CASE_OUTPUT_BEGIN) + r".*?" + re.escape(_CASE_OUTPUT_END),
+    re.DOTALL,
+)
 
 _DOWNLOADS_BEGIN = "<!-- libby:downloads:begin -->"
 _DOWNLOADS_END = "<!-- libby:downloads:end -->"
@@ -3094,10 +3101,13 @@ _RX_DOWNLOADS_BLOCK = re.compile(
     re.escape(_DOWNLOADS_BEGIN) + r".*?" + re.escape(_DOWNLOADS_END),
     re.DOTALL,
 )
-# Insert before the first H2 (## …) when no markers exist yet, so the section
-# lands above "Profile snapshot" / "Recommendation summary" rather than at the
-# bottom of the page.
+# Insert before the first H2 (## …) when no markers exist yet — used by the
+# top-of-page Case Output block. The Downloads block lands at the bottom of
+# the page (before the disclaimer admonition), so it uses a different anchor.
 _RX_FIRST_H2 = re.compile(r"^## ", re.MULTILINE)
+# Insertion anchor for the Downloads block at the bottom of the page: just
+# before the `!!! danger disclaimer` admonition that every case page ends with.
+_RX_DISCLAIMER_ADMONITION_START = re.compile(r"^!!! danger disclaimer", re.MULTILINE)
 
 
 def _downloads_section(slug: str, case_docs: Path) -> str:
@@ -3205,23 +3215,80 @@ def _cache_busted_link(path: Path, name: str) -> str:
     return f"{name}?v={digest}"
 
 
-def _inject_downloads(index_path: Path, slug: str, case_docs: Path) -> bool:
-    """Idempotently insert/refresh the Downloads section in index.md.
+def _case_output_section(slug: str, case_docs: Path) -> str:
+    """Curated 5-item Case Output list at the top of the case page.
 
-    Returns True when the file was modified. Strategy:
-      - If markers already exist, replace the block in place.
-      - Otherwise insert before the first H2; if no H2, append.
-      - When no artifacts exist, strip any pre-existing markers (cleanup).
+    Picks the form (HTML or PDF) each artifact reads best in:
+      - Target validation paths → PDF (prose narrative the reporter authors)
+      - Recommendations table → HTML (self-contained, opens offline, links inline)
+      - Access guide → HTML (sortable in-browser table)
+      - Master manuscripts table → HTML (sortable in-browser table)
+      - Patient/caregiver → PDF (plain-language summary)
+
+    Renders only when at least one artifact exists. The full Downloads
+    inventory (both HTML and PDF forms for every artifact, in two
+    subgroups) still ships at the bottom of the page.
+    """
+    artifacts = [
+        (
+            f"{slug}-target-validation.pdf",
+            "Target validation paths (PDF)",
+            "diagnostic + biomarker workup that hardens the targetable-feature call",
+        ),
+        (
+            f"{slug}-recommendations.html",
+            "Recommendations table (HTML)",
+            "ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline",
+        ),
+        (
+            "accessibility.md",
+            "Access guide (HTML)",
+            "how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, sortable in-browser",
+        ),
+        (
+            "manuscripts.md",
+            "Master manuscripts table (HTML)",
+            "every paper considered — n, effect, variance, toxicities, sortable in-browser",
+        ),
+        (
+            f"{slug}-plain-language.pdf",
+            "Patient/caregiver PDF",
+            "plain-language summary",
+        ),
+    ]
+    present = [(n, l, b) for n, l, b in artifacts if (case_docs / n).exists()]
+    if not present:
+        return ""
+    lines = [
+        _CASE_OUTPUT_BEGIN,
+        "",
+        "## Case output",
+        "",
+    ]
+    for name, label, blurb in present:
+        lines.append(f"- [{label}]({_cache_busted_link(case_docs / name, name)}) — {blurb}")
+    lines.extend(["", _CASE_OUTPUT_END, ""])
+    return "\n".join(lines)
+
+
+def _inject_case_output(index_path: Path, slug: str, case_docs: Path) -> bool:
+    """Idempotently insert/refresh the Case Output section at the top of index.md.
+
+    Placement: between the new `<!-- libby:case-output:begin/end -->` markers,
+    inserted before the first H2 heading on the page (so the section lands
+    above "Research question" / "Profile snapshot"). Idempotent — re-running
+    the reporter replaces the block in place; when no artifacts exist any
+    pre-existing markers are stripped.
     """
     text = index_path.read_text(encoding="utf-8")
-    block = _downloads_section(slug, case_docs)
+    block = _case_output_section(slug, case_docs)
 
-    if _RX_DOWNLOADS_BLOCK.search(text):
+    if _RX_CASE_OUTPUT_BLOCK.search(text):
         if not block:
-            new_text = _RX_DOWNLOADS_BLOCK.sub("", text)
+            new_text = _RX_CASE_OUTPUT_BLOCK.sub("", text)
             new_text = re.sub(r"\n{3,}", "\n\n", new_text)
         else:
-            new_text = _RX_DOWNLOADS_BLOCK.sub(block.rstrip("\n"), text)
+            new_text = _RX_CASE_OUTPUT_BLOCK.sub(block.rstrip("\n"), text)
     elif block:
         m = _RX_FIRST_H2.search(text)
         if m:
@@ -3230,6 +3297,53 @@ def _inject_downloads(index_path: Path, slug: str, case_docs: Path) -> bool:
             new_text = text.rstrip() + "\n\n" + block + "\n"
     else:
         return False
+
+    if new_text == text:
+        return False
+    index_path.write_text(new_text, encoding="utf-8")
+    return True
+
+
+def _inject_downloads(index_path: Path, slug: str, case_docs: Path) -> bool:
+    """Idempotently insert/refresh the Downloads section in index.md.
+
+    Placement: between the stable `<!-- libby:downloads:begin/end -->`
+    markers, anchored at the BOTTOM of the page — specifically just above
+    the `!!! danger disclaimer` admonition that every case page ends with.
+    If no disclaimer admonition is present, the block is appended to the
+    end. The curated 5-item Case Output section lives at the top of the
+    page; this Downloads block is the full inventory (HTML and PDF
+    subgroups) and lives at the bottom so the page leads with the case
+    findings rather than the file menu.
+
+    Idempotent — re-running the reporter strips any pre-existing block
+    (which may include a top-of-page placement from older runs) and
+    re-emits at the bottom. When no artifacts exist, any pre-existing
+    block is stripped without a replacement.
+    """
+    text = index_path.read_text(encoding="utf-8")
+    block = _downloads_section(slug, case_docs)
+
+    # Strip any pre-existing Downloads block (top or bottom). We re-emit
+    # below at the canonical bottom placement.
+    stripped = text
+    if _RX_DOWNLOADS_BLOCK.search(stripped):
+        stripped = _RX_DOWNLOADS_BLOCK.sub("", stripped)
+        stripped = re.sub(r"\n{3,}", "\n\n", stripped)
+
+    if not block:
+        # No artifacts → cleanup mode. Persist the stripped text if the
+        # block was previously present, otherwise no-op.
+        if stripped == text:
+            return False
+        index_path.write_text(stripped, encoding="utf-8")
+        return True
+
+    m = _RX_DISCLAIMER_ADMONITION_START.search(stripped)
+    if m:
+        new_text = stripped[: m.start()].rstrip() + "\n\n" + block + "\n" + stripped[m.start() :]
+    else:
+        new_text = stripped.rstrip() + "\n\n" + block + "\n"
 
     if new_text == text:
         return False
@@ -3620,6 +3734,9 @@ def main(argv: list[str]) -> int:
             f"patched {index_path.relative_to(REPO_ROOT)} — target-validation section "
             f"({'inserted' if tv_report_md else 'cleared'})"
         )
+
+    if _inject_case_output(index_path, slug, case_docs):
+        print(f"patched {index_path.relative_to(REPO_ROOT)} — case-output section")
 
     if _inject_downloads(index_path, slug, case_docs):
         print(f"patched {index_path.relative_to(REPO_ROOT)} — downloads section")

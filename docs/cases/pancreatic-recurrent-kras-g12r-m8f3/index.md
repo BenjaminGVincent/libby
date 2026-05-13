@@ -2,26 +2,17 @@
 
 # `pancreatic-recurrent-kras-g12r-m8f3`
 
-<!-- libby:downloads:begin -->
+<!-- libby:case-output:begin -->
 
-## Downloads
+## Case output
 
-### HTML
+- [Target validation paths (PDF)](pancreatic-recurrent-kras-g12r-m8f3-target-validation.pdf?v=a2097d09) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Recommendations table (HTML)](pancreatic-recurrent-kras-g12r-m8f3-recommendations.html?v=463dd0b0) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
+- [Access guide (HTML)](accessibility.md?v=2958eb74) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, sortable in-browser
+- [Master manuscripts table (HTML)](manuscripts.md?v=9ea36b70) — every paper considered — n, effect, variance, toxicities, sortable in-browser
+- [Patient/caregiver PDF](pancreatic-recurrent-kras-g12r-m8f3-plain-language.pdf?v=753d0fda) — plain-language summary
 
-- [Target validation paths](target_validation.md?v=dc34379c) — per-feature biomarker-workup table with providers and references, sortable in-browser
-- [Recommendations table](pancreatic-recurrent-kras-g12r-m8f3-recommendations.html?v=8eeb26f9) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
-- [Access guide](accessibility.md?v=2958eb74) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table
-- [Master manuscripts table](manuscripts.md?v=9ea36b70) — every paper considered — n, effect, variance, toxicities, in a sortable in-browser table
-
-### PDF
-
-- [Target validation paths](pancreatic-recurrent-kras-g12r-m8f3-target-validation.pdf?v=65dd4d18) — diagnostic + biomarker workup that hardens the targetable-feature call
-- [Recommendations table](pancreatic-recurrent-kras-g12r-m8f3-recommendations.pdf?v=1e114511) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
-- [Access guide](pancreatic-recurrent-kras-g12r-m8f3-accessibility.pdf?v=24ea5db6) — trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF
-- [Master manuscripts table](pancreatic-recurrent-kras-g12r-m8f3-manuscripts.pdf?v=f6dd2111) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
-- [Patient/caregiver PDF](pancreatic-recurrent-kras-g12r-m8f3-plain-language.pdf?v=4ab72e3e) — plain-language summary
-
-<!-- libby:downloads:end -->
+<!-- libby:case-output:end -->
 ## Research question
 
 In recurrent pancreatic adenocarcinoma after adjuvant FOLFIRI, what interventions can target KRAS G12R, CDKN2A loss, and CCND3 alteration in an MSS / sub-threshold-TMB background?
@@ -869,6 +860,27 @@ Rank 11 because the closest published basket precedent (Z1C ORR 4%) is actively 
 ## Run log
 
 Authored May 2026. Inputs: 26 trials, 16 clinical-evidence rows, 22 preclinical rows, 12 target-validation rows, 5 board positions with 20 cross-critiques. The case slug carries six confirmed biomarkers — KRAS G12R, TP53 inactivating, CDKN2A loss, CCND3 alteration, MSS, TMB 4.1 — so this is a non-gated case with `scenario: null` on every recommendation row. The user's report of KRAS G12R as confirmed turned the orthogonal NGS / ctDNA target-validator row from a pre-enrollment gate into workup hardening; it ranks first because pan-RAS / RAS(ON) sponsors re-test at screening regardless. The germline panel, MSS + TMB foreclosure, and TP53 variant-class workup are surfaced in the cross-cutting caveat rather than as ranked rows because they reframe the option set rather than gate a single trial. Humanizer pass applied to all prose sections per `.claude/skills/humanizer/SKILL.md`.
+
+<!-- libby:downloads:begin -->
+
+## Downloads
+
+### HTML
+
+- [Target validation paths](target_validation.md?v=dc34379c) — per-feature biomarker-workup table with providers and references, sortable in-browser
+- [Recommendations table](pancreatic-recurrent-kras-g12r-m8f3-recommendations.html?v=463dd0b0) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
+- [Access guide](accessibility.md?v=2958eb74) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table
+- [Master manuscripts table](manuscripts.md?v=9ea36b70) — every paper considered — n, effect, variance, toxicities, in a sortable in-browser table
+
+### PDF
+
+- [Target validation paths](pancreatic-recurrent-kras-g12r-m8f3-target-validation.pdf?v=a2097d09) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Recommendations table](pancreatic-recurrent-kras-g12r-m8f3-recommendations.pdf?v=fc8c3f04) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
+- [Access guide](pancreatic-recurrent-kras-g12r-m8f3-accessibility.pdf?v=c76f12ce) — trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF
+- [Master manuscripts table](pancreatic-recurrent-kras-g12r-m8f3-manuscripts.pdf?v=88322f33) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
+- [Patient/caregiver PDF](pancreatic-recurrent-kras-g12r-m8f3-plain-language.pdf?v=753d0fda) — plain-language summary
+
+<!-- libby:downloads:end -->
 
 !!! danger disclaimer "Decision support, not medical advice"
     Libby is an experimental decision-support tool. The recommendations on
