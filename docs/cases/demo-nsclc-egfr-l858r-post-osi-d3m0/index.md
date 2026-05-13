@@ -6,11 +6,13 @@
 
 ## Case output
 
-- [Target validation paths (PDF)](demo-nsclc-egfr-l858r-post-osi-d3m0-target-validation.pdf?v=ae6694c2) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Target validation paths (PDF)](demo-nsclc-egfr-l858r-post-osi-d3m0-target-validation.pdf?v=e5ac38b3) — diagnostic + biomarker workup that hardens the targetable-feature call
 - [Recommendations table (HTML)](demo-nsclc-egfr-l858r-post-osi-d3m0-recommendations.html?v=60a21ba9) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
 - [Access guide (HTML)](accessibility.md?v=a9b23b43) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, sortable in-browser
+- [Access guide (offline HTML)](demo-nsclc-egfr-l858r-post-osi-d3m0-accessibility.html?v=878fa5c7) — same access-guide content as the in-browser page, packaged as a self-contained HTML that opens offline
 - [Master manuscripts table (HTML)](manuscripts.md?v=46cdbd66) — every paper considered — n, effect, variance, toxicities, sortable in-browser
-- [Patient/caregiver PDF](demo-nsclc-egfr-l858r-post-osi-d3m0-plain-language.pdf?v=9256826e) — plain-language summary
+- [Master manuscripts table (offline HTML)](demo-nsclc-egfr-l858r-post-osi-d3m0-manuscripts.html?v=1fc936ef) — same manuscripts inventory as the in-browser page, packaged as a self-contained HTML that opens offline
+- [Patient/caregiver PDF](demo-nsclc-egfr-l858r-post-osi-d3m0-plain-language.pdf?v=16c32a0a) — plain-language summary
 
 <!-- libby:case-output:end -->
 ## Research question
@@ -316,14 +318,16 @@ This is a demo case authored in May 2026 with synthetic data so the pipeline can
 - [Target validation paths](target_validation.md?v=c8af7f62) — per-feature biomarker-workup table with providers and references, sortable in-browser
 - [Recommendations table](demo-nsclc-egfr-l858r-post-osi-d3m0-recommendations.html?v=60a21ba9) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
 - [Access guide](accessibility.md?v=a9b23b43) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table
+- [Access guide (offline)](demo-nsclc-egfr-l858r-post-osi-d3m0-accessibility.html?v=878fa5c7) — same access-guide content packaged as a self-contained HTML that opens offline
 - [Master manuscripts table](manuscripts.md?v=46cdbd66) — every paper considered — n, effect, variance, toxicities, in a sortable in-browser table
+- [Master manuscripts table (offline)](demo-nsclc-egfr-l858r-post-osi-d3m0-manuscripts.html?v=1fc936ef) — same manuscripts inventory packaged as a self-contained HTML that opens offline
 
 ### PDF
 
-- [Target validation paths](demo-nsclc-egfr-l858r-post-osi-d3m0-target-validation.pdf?v=ae6694c2) — diagnostic + biomarker workup that hardens the targetable-feature call
-- [Recommendations table](demo-nsclc-egfr-l858r-post-osi-d3m0-recommendations.pdf?v=323d8c6d) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
-- [Master manuscripts table](demo-nsclc-egfr-l858r-post-osi-d3m0-manuscripts.pdf?v=73c3ca57) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
-- [Patient/caregiver PDF](demo-nsclc-egfr-l858r-post-osi-d3m0-plain-language.pdf?v=9256826e) — plain-language summary
+- [Target validation paths](demo-nsclc-egfr-l858r-post-osi-d3m0-target-validation.pdf?v=e5ac38b3) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Recommendations table](demo-nsclc-egfr-l858r-post-osi-d3m0-recommendations.pdf?v=0a1fb112) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
+- [Master manuscripts table](demo-nsclc-egfr-l858r-post-osi-d3m0-manuscripts.pdf?v=45f714c6) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
+- [Patient/caregiver PDF](demo-nsclc-egfr-l858r-post-osi-d3m0-plain-language.pdf?v=16c32a0a) — plain-language summary
 
 <!-- libby:downloads:end -->
 

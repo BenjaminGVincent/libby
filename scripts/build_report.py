@@ -3040,6 +3040,129 @@ def _make_accessibility_pdf(slug: str, rows: list[dict], out_path: Path) -> None
     pdf.output(str(out_path))
 
 
+def _render_self_contained_html_page(
+    slug: str, title: str, page_kind: str, body_md: str
+) -> str:
+    """Render a markdown page (e.g. accessibility.md, manuscripts.md) to a
+    self-contained HTML file with inlined CSS.
+
+    Used for `<slug>-accessibility.html` and `<slug>-manuscripts.html` —
+    print-and-forward variants of the mkdocs in-browser pages that work
+    offline without the Material theme loaded. Inlines the case
+    stylesheets (`trial-table.css` + `libby.css`) plus a small chrome
+    style so the page reads the same as on the live site.
+    """
+    try:
+        import markdown
+    except ImportError as e:
+        raise SystemExit(
+            "build_report: missing dependency `markdown`.\n  pip install markdown"
+        ) from e
+
+    body = body_md
+    body = _RX_NOINDEX.sub("", body)
+    body = _RX_DISCLAIMER_ADMONITION.sub("", body)
+    body = _RX_NAV_FOOTER.sub("", body)
+    body = body.strip()
+
+    md_html = markdown.markdown(
+        body,
+        extensions=["tables", "attr_list", "md_in_html", "footnotes", "toc"],
+        output_format="html5",
+    )
+
+    css_files = [
+        REPO_ROOT / "docs" / "stylesheets" / "trial-table.css",
+        REPO_ROOT / "docs" / "stylesheets" / "libby.css",
+    ]
+    inline_css = "\n".join(p.read_text(encoding="utf-8") for p in css_files if p.exists())
+
+    today = datetime.now(timezone.utc).date().isoformat()
+    chrome_css = """
+      :root { color-scheme: light; }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        max-width: 1200px;
+        margin: 2em auto;
+        padding: 0 1.5em 3em;
+        color: #1A202C;
+        background: #FFFFFF;
+        line-height: 1.55;
+      }
+      h1 { border-bottom: 2px solid #5B3A87; padding-bottom: 0.3em; margin-top: 0; }
+      h2 { color: #5B3A87; margin-top: 1.8em; }
+      h3 { color: #1A202C; margin-top: 1.4em; }
+      a { color: #5B3A87; text-decoration: underline; }
+      code { background: #F4F6F8; padding: 0.1em 0.4em; border-radius: 2px; font-size: 0.92em; }
+      .disclaimer {
+        background: #FFF4E5; border-left: 4px solid #B45309;
+        padding: 0.8em 1em; margin: 1em 0 2em; font-size: 0.95em;
+      }
+      .libby-footer {
+        margin-top: 3em; padding-top: 1em; border-top: 1px solid #E2E8F0;
+        color: #6B6B7F; font-size: 0.85em;
+      }
+    """
+
+    parts = [
+        '<!DOCTYPE html>',
+        '<html lang="en">',
+        '<head>',
+        '<meta charset="utf-8">',
+        '<meta name="robots" content="noindex">',
+        f'<title>{_html.escape(title)}</title>',
+        '<style>',
+        chrome_css,
+        inline_css,
+        '</style>',
+        '</head>',
+        '<body data-md-color-scheme="default">',
+        '<div class="disclaimer">',
+        '<strong>Decision support, not medical advice.</strong> Libby is an experimental ',
+        'multi-agent decision-support tool. The information on this page has not been ',
+        'reviewed by a clinician treating this patient. Information ages — confirm details ',
+        'directly with the relevant sources before relying on them.',
+        '</div>',
+        md_html,
+        f'<footer class="libby-footer">Generated {_html.escape(today)} &middot; Libby &middot; '
+        f'<code>{_html.escape(slug)}</code> &middot; {_html.escape(page_kind)}</footer>',
+        '</body></html>',
+    ]
+    return "\n".join(parts) + "\n"
+
+
+def _build_self_contained_html_artifacts(slug: str, case_docs: Path) -> None:
+    """Build `<slug>-accessibility.html` and `<slug>-manuscripts.html`.
+
+    Each is rendered from the corresponding mkdocs source markdown file
+    (which `run_case.sh` builds via `build_accessibility.py` /
+    `build_manuscripts.py`) with the case CSS inlined so the page works
+    offline. Skipped (and any stale copy stripped) if the source `.md`
+    isn't on disk yet — typically that means the user invoked
+    `build_report.py` standalone before running `run_case.sh`.
+    """
+    pairs = [
+        ("accessibility.md", f"{slug}-accessibility.html",
+         f"Libby access guide — {slug}", "Access guide"),
+        ("manuscripts.md", f"{slug}-manuscripts.html",
+         f"Libby manuscripts inventory — {slug}", "Master manuscripts table"),
+    ]
+    for src_name, dst_name, title, page_kind in pairs:
+        src = case_docs / src_name
+        dst = case_docs / dst_name
+        if not src.exists():
+            if dst.exists():
+                dst.unlink()
+            continue
+        body_md = src.read_text(encoding="utf-8")
+        html_out = _render_self_contained_html_page(slug, title, page_kind, body_md)
+        dst.write_text(html_out, encoding="utf-8")
+        print(
+            f"built {dst.relative_to(REPO_ROOT)} — "
+            f"{dst.stat().st_size / 1024:.0f} KB"
+        )
+
+
 def _make_patient_pdf(slug: str, body_md: str, out_path: Path) -> None:
     try:
         from fpdf import FPDF
@@ -3139,9 +3262,19 @@ def _downloads_section(slug: str, case_docs: Path) -> str:
             "how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table",
         ),
         (
+            f"{slug}-accessibility.html",
+            "Access guide (offline)",
+            "same access-guide content packaged as a self-contained HTML that opens offline",
+        ),
+        (
             "manuscripts.md",
             "Master manuscripts table",
             "every paper considered — n, effect, variance, toxicities, in a sortable in-browser table",
+        ),
+        (
+            f"{slug}-manuscripts.html",
+            "Master manuscripts table (offline)",
+            "same manuscripts inventory packaged as a self-contained HTML that opens offline",
         ),
     ]
     pdf_artifacts = [
@@ -3246,9 +3379,19 @@ def _case_output_section(slug: str, case_docs: Path) -> str:
             "how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, sortable in-browser",
         ),
         (
+            f"{slug}-accessibility.html",
+            "Access guide (offline HTML)",
+            "same access-guide content as the in-browser page, packaged as a self-contained HTML that opens offline",
+        ),
+        (
             "manuscripts.md",
             "Master manuscripts table (HTML)",
             "every paper considered — n, effect, variance, toxicities, sortable in-browser",
+        ),
+        (
+            f"{slug}-manuscripts.html",
+            "Master manuscripts table (offline HTML)",
+            "same manuscripts inventory as the in-browser page, packaged as a self-contained HTML that opens offline",
         ),
         (
             f"{slug}-plain-language.pdf",
@@ -3734,6 +3877,11 @@ def main(argv: list[str]) -> int:
             f"patched {index_path.relative_to(REPO_ROOT)} — target-validation section "
             f"({'inserted' if tv_report_md else 'cleared'})"
         )
+
+    # Self-contained HTML companions for accessibility.md / manuscripts.md.
+    # Must run BEFORE _inject_case_output so the artifacts exist when the
+    # case-output section's existence filter runs.
+    _build_self_contained_html_artifacts(slug, case_docs)
 
     if _inject_case_output(index_path, slug, case_docs):
         print(f"patched {index_path.relative_to(REPO_ROOT)} — case-output section")

@@ -222,9 +222,19 @@ def downloads_block(case_docs: Path, slug: str) -> str:
             "how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table",
         ),
         (
+            f"{slug}-accessibility.html",
+            "Access guide (offline)",
+            "same access-guide content packaged as a self-contained HTML that opens offline",
+        ),
+        (
             "manuscripts.md",
             "Master manuscripts table",
             "every paper considered — n, effect, variance, toxicities, in a sortable in-browser table",
+        ),
+        (
+            f"{slug}-manuscripts.html",
+            "Master manuscripts table (offline)",
+            "same manuscripts inventory packaged as a self-contained HTML that opens offline",
         ),
     ]
     pdf_artifacts = [

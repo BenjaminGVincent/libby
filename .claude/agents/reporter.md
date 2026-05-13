@@ -257,15 +257,19 @@ The script reads `executive_summary.md`, `index.md`, `plain_language.md`, `recom
 
 Both injections are idempotent — re-running the reporter replaces each block in place; when no artifacts exist any pre-existing block is stripped. **Note:** if the PI re-runs and re-authors `index.md` from scratch, the markers disappear, but the next reporter run re-inserts them. Reporter is the last stage in the pipeline, so this is not a problem in normal flow.
 
-**Case Output items (load-bearing).** Five entries, in this exact order, encoded in `_case_output_section` (`scripts/build_report.py`):
+**Case Output items (load-bearing).** Seven entries, in this exact order, encoded in `_case_output_section` (`scripts/build_report.py`). For Access guide and Master manuscripts table the section surfaces **both** the in-browser mkdocs page (`accessibility.md` / `manuscripts.md` — sortable, server-rendered) and the standalone self-contained HTML companion (`<slug>-accessibility.html` / `<slug>-manuscripts.html` — opens offline, save-and-forward). Same content; different consumption surfaces.
 
 1. Target validation paths (PDF) → `<slug>-target-validation.pdf`
-2. Recommendations table (HTML) → `<slug>-recommendations.html`
-3. Access guide (HTML) → `accessibility.md`
-4. Master manuscripts table (HTML) → `manuscripts.md`
-5. Patient/caregiver PDF → `<slug>-plain-language.pdf`
+2. Recommendations table (HTML) → `<slug>-recommendations.html` (self-contained, opens offline)
+3. Access guide (HTML) → `accessibility.md` (mkdocs in-browser page)
+4. Access guide (offline HTML) → `<slug>-accessibility.html` (self-contained, opens offline)
+5. Master manuscripts table (HTML) → `manuscripts.md` (mkdocs in-browser page)
+6. Master manuscripts table (offline HTML) → `<slug>-manuscripts.html` (self-contained, opens offline)
+7. Patient/caregiver PDF → `<slug>-plain-language.pdf`
 
-Form rationale: target-validation and patient/caregiver content is prose/narrative best read as PDF; the three middle entries are sortable tables best consumed in-browser. Each entry's label carries the form suffix (`(PDF)` / `(HTML)`) for at-a-glance clarity in the curated section. Missing artifacts are filtered out automatically; the relative order of the remaining ones is preserved. If you change the ordering you MUST change `_case_output_section`.
+Form rationale: target-validation and patient/caregiver content is prose/narrative best read as PDF; the rest is sortable / linkable content best consumed in HTML, surfaced in both an in-browser (mkdocs) variant and a self-contained-download variant. Each entry's label carries the form suffix for at-a-glance clarity. Missing artifacts are filtered out automatically; the relative order of the remaining ones is preserved. If you change the ordering you MUST change `_case_output_section`.
+
+The two self-contained companions are built by `_build_self_contained_html_artifacts` in `scripts/build_report.py` — it converts the existing `accessibility.md` / `manuscripts.md` source with Python `markdown` (extensions: tables, attr_list, md_in_html, footnotes, toc), inlines `docs/stylesheets/{trial-table,libby}.css` plus a small chrome stylesheet, strips the mkdocs disclaimer admonition, and wraps with a standalone disclaimer + footer. Skipped if the source `.md` isn't on disk yet (which happens when `build_report.py` runs before `run_case.sh`).
 
 **Downloads structure (load-bearing).** The Downloads section is split into two H3 subgroups — **HTML** (in-browser artifacts) and **PDF** (print-friendly companions) — so a reader can pick the form that matches how they want to consume the data without losing visibility on either. The same content can appear in both groups when it has both forms (Recommendations table, Access guide). Patient/caregiver lands under PDF because the translator's plain-language track is published as a download in PDF form only. The order inside each subgroup is fixed and the same order is encoded in `_downloads_section` (`scripts/build_report.py`) and `downloads_block` (`scripts/build_recommendations.py`).
 

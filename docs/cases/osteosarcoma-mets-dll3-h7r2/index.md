@@ -6,11 +6,13 @@
 
 ## Case output
 
-- [Target validation paths (PDF)](osteosarcoma-mets-dll3-h7r2-target-validation.pdf?v=ea68cd01) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Target validation paths (PDF)](osteosarcoma-mets-dll3-h7r2-target-validation.pdf?v=fd03c3e0) — diagnostic + biomarker workup that hardens the targetable-feature call
 - [Recommendations table (HTML)](osteosarcoma-mets-dll3-h7r2-recommendations.html?v=aecc1dcb) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
 - [Access guide (HTML)](accessibility.md?v=52a32e84) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, sortable in-browser
+- [Access guide (offline HTML)](osteosarcoma-mets-dll3-h7r2-accessibility.html?v=72fd8517) — same access-guide content as the in-browser page, packaged as a self-contained HTML that opens offline
 - [Master manuscripts table (HTML)](manuscripts.md?v=b57c92e8) — every paper considered — n, effect, variance, toxicities, sortable in-browser
-- [Patient/caregiver PDF](osteosarcoma-mets-dll3-h7r2-plain-language.pdf?v=993c7c09) — plain-language summary
+- [Master manuscripts table (offline HTML)](osteosarcoma-mets-dll3-h7r2-manuscripts.html?v=a099e34b) — same manuscripts inventory as the in-browser page, packaged as a self-contained HTML that opens offline
+- [Patient/caregiver PDF](osteosarcoma-mets-dll3-h7r2-plain-language.pdf?v=583fdf50) — plain-language summary
 
 <!-- libby:case-output:end -->
 ## Research question
@@ -489,15 +491,17 @@ Authored May 2026. Inputs: targetable feature ("DLL3 RNA expression"), clinical 
 - [Target validation paths](target_validation.md?v=98962654) — per-feature biomarker-workup table with providers and references, sortable in-browser
 - [Recommendations table](osteosarcoma-mets-dll3-h7r2-recommendations.html?v=aecc1dcb) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
 - [Access guide](accessibility.md?v=52a32e84) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table
+- [Access guide (offline)](osteosarcoma-mets-dll3-h7r2-accessibility.html?v=72fd8517) — same access-guide content packaged as a self-contained HTML that opens offline
 - [Master manuscripts table](manuscripts.md?v=b57c92e8) — every paper considered — n, effect, variance, toxicities, in a sortable in-browser table
+- [Master manuscripts table (offline)](osteosarcoma-mets-dll3-h7r2-manuscripts.html?v=a099e34b) — same manuscripts inventory packaged as a self-contained HTML that opens offline
 
 ### PDF
 
-- [Target validation paths](osteosarcoma-mets-dll3-h7r2-target-validation.pdf?v=ea68cd01) — diagnostic + biomarker workup that hardens the targetable-feature call
-- [Recommendations table](osteosarcoma-mets-dll3-h7r2-recommendations.pdf?v=5ee34c72) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
-- [Access guide](osteosarcoma-mets-dll3-h7r2-accessibility.pdf?v=71f5ec5a) — trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF
-- [Master manuscripts table](osteosarcoma-mets-dll3-h7r2-manuscripts.pdf?v=52c4e25f) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
-- [Patient/caregiver PDF](osteosarcoma-mets-dll3-h7r2-plain-language.pdf?v=993c7c09) — plain-language summary
+- [Target validation paths](osteosarcoma-mets-dll3-h7r2-target-validation.pdf?v=fd03c3e0) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Recommendations table](osteosarcoma-mets-dll3-h7r2-recommendations.pdf?v=461f3a1d) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
+- [Access guide](osteosarcoma-mets-dll3-h7r2-accessibility.pdf?v=83df0613) — trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF
+- [Master manuscripts table](osteosarcoma-mets-dll3-h7r2-manuscripts.pdf?v=9b782721) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
+- [Patient/caregiver PDF](osteosarcoma-mets-dll3-h7r2-plain-language.pdf?v=583fdf50) — plain-language summary
 
 <!-- libby:downloads:end -->
 

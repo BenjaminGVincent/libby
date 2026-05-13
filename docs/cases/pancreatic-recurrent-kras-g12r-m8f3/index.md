@@ -6,11 +6,13 @@
 
 ## Case output
 
-- [Target validation paths (PDF)](pancreatic-recurrent-kras-g12r-m8f3-target-validation.pdf?v=a2097d09) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Target validation paths (PDF)](pancreatic-recurrent-kras-g12r-m8f3-target-validation.pdf?v=777ae40e) — diagnostic + biomarker workup that hardens the targetable-feature call
 - [Recommendations table (HTML)](pancreatic-recurrent-kras-g12r-m8f3-recommendations.html?v=463dd0b0) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
 - [Access guide (HTML)](accessibility.md?v=2958eb74) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, sortable in-browser
+- [Access guide (offline HTML)](pancreatic-recurrent-kras-g12r-m8f3-accessibility.html?v=8b63d58a) — same access-guide content as the in-browser page, packaged as a self-contained HTML that opens offline
 - [Master manuscripts table (HTML)](manuscripts.md?v=9ea36b70) — every paper considered — n, effect, variance, toxicities, sortable in-browser
-- [Patient/caregiver PDF](pancreatic-recurrent-kras-g12r-m8f3-plain-language.pdf?v=753d0fda) — plain-language summary
+- [Master manuscripts table (offline HTML)](pancreatic-recurrent-kras-g12r-m8f3-manuscripts.html?v=5511f962) — same manuscripts inventory as the in-browser page, packaged as a self-contained HTML that opens offline
+- [Patient/caregiver PDF](pancreatic-recurrent-kras-g12r-m8f3-plain-language.pdf?v=63491fcd) — plain-language summary
 
 <!-- libby:case-output:end -->
 ## Research question
@@ -870,15 +872,17 @@ Authored May 2026. Inputs: 26 trials, 16 clinical-evidence rows, 22 preclinical 
 - [Target validation paths](target_validation.md?v=dc34379c) — per-feature biomarker-workup table with providers and references, sortable in-browser
 - [Recommendations table](pancreatic-recurrent-kras-g12r-m8f3-recommendations.html?v=463dd0b0) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
 - [Access guide](accessibility.md?v=2958eb74) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table
+- [Access guide (offline)](pancreatic-recurrent-kras-g12r-m8f3-accessibility.html?v=8b63d58a) — same access-guide content packaged as a self-contained HTML that opens offline
 - [Master manuscripts table](manuscripts.md?v=9ea36b70) — every paper considered — n, effect, variance, toxicities, in a sortable in-browser table
+- [Master manuscripts table (offline)](pancreatic-recurrent-kras-g12r-m8f3-manuscripts.html?v=5511f962) — same manuscripts inventory packaged as a self-contained HTML that opens offline
 
 ### PDF
 
-- [Target validation paths](pancreatic-recurrent-kras-g12r-m8f3-target-validation.pdf?v=a2097d09) — diagnostic + biomarker workup that hardens the targetable-feature call
-- [Recommendations table](pancreatic-recurrent-kras-g12r-m8f3-recommendations.pdf?v=fc8c3f04) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
-- [Access guide](pancreatic-recurrent-kras-g12r-m8f3-accessibility.pdf?v=c76f12ce) — trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF
-- [Master manuscripts table](pancreatic-recurrent-kras-g12r-m8f3-manuscripts.pdf?v=88322f33) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
-- [Patient/caregiver PDF](pancreatic-recurrent-kras-g12r-m8f3-plain-language.pdf?v=753d0fda) — plain-language summary
+- [Target validation paths](pancreatic-recurrent-kras-g12r-m8f3-target-validation.pdf?v=777ae40e) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Recommendations table](pancreatic-recurrent-kras-g12r-m8f3-recommendations.pdf?v=dc946b85) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
+- [Access guide](pancreatic-recurrent-kras-g12r-m8f3-accessibility.pdf?v=dcb6e0e8) — trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF
+- [Master manuscripts table](pancreatic-recurrent-kras-g12r-m8f3-manuscripts.pdf?v=a79ad201) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
+- [Patient/caregiver PDF](pancreatic-recurrent-kras-g12r-m8f3-plain-language.pdf?v=63491fcd) — plain-language summary
 
 <!-- libby:downloads:end -->
 
