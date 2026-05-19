@@ -168,6 +168,20 @@ ONCOLOGY_ACRONYM_ALLOWLIST = frozenset({
     "TSH", "BP", "ECG", "EKG", "CBC", "BMP", "CMP", "EDTA",
     # Genes / proteins that appear as ALL-CAPS in agent prose
     "VEGFA", "VEGFR", "EPO", "HIF", "IGF",
+    # TNBC + breast vocabulary (BRCA / HRD / PARP-i adjacent)
+    "BRCA", "PALB", "ATM", "ATR", "CHK", "BARD", "RAD", "BRIP", "CHEK",
+    "CDK", "CDK12", "CCNE", "CCNE1", "PTEN", "PIK3CA", "TP53", "AKT",
+    "DDR", "ITWG", "TIL", "TILS", "TIRC", "CPS", "TPS",
+    # TNBC trial families
+    "MEDIOLA", "TOPACIO", "DORA", "EMBRACA", "OLYMPIAD", "OLYMPIA",
+    "ASCENT", "TROPION", "KEYLYNK", "TROFUSE", "IMPASSION", "NRG", "SABR",
+    "BRAVO", "EORTC", "TNT", "CRUK", "BROCADE", "CAPITELLO", "EPIK",
+    # PDX label / drug class extension
+    "TMT", "MK", "TPC", "SN", "SGS", "DXD",
+    # Targets / receptors common in TNBC + breast
+    "TROP", "TROP2", "DLL", "HLA", "B2M",
+    # Imaging / pathology
+    "FISH", "PFTS", "HRCT", "MRI", "CT",
 })
 
 ALL_CAPS_PAIR_RE = re.compile(r"\b([A-Z][A-Z]+),\s*([A-Z][A-Z]+)\b")
@@ -256,6 +270,12 @@ _BYDESIGN_REGION_MARKERS = (
     ("<!-- libby:accessibility:begin -->", "<!-- libby:accessibility:end -->"),
 )
 
+# Section-heading markers that open a by-design region in `index.md` until
+# the next H2 (`## `) heading or EOF. The PI's Run log section records
+# day-precision authoring timestamps by design (same rationale as
+# `runs.jsonl`); the date is an agent-run identifier, not patient PHI.
+_BYDESIGN_HEADING_OPENERS = ("## Run log",)
+
 
 def scan_file(path: Path) -> list[tuple[int, str, str, str]]:
     """Return (lineno, label, description, line) for each hit."""
@@ -269,6 +289,7 @@ def scan_file(path: Path) -> list[tuple[int, str, str, str]]:
     hits: list[tuple[int, str, str, str]] = []
     in_bydesign_region = False
     region_end_marker: str | None = None
+    in_bydesign_heading = False
     for lineno, line in enumerate(text.splitlines(), start=1):
         if IGNORE_TOKEN in line:
             # Toggle region state if a marker appears even on an ignored line.
@@ -280,13 +301,22 @@ def scan_file(path: Path) -> list[tuple[int, str, str, str]]:
                     in_bydesign_region = False
                     region_end_marker = None
             continue
+        # Heading-bracketed by-design region: opens on a known H2, closes
+        # on the next H2 (or EOF). The opener line itself is in-region.
+        stripped = line.lstrip()
+        if stripped.startswith("## "):
+            in_bydesign_heading = any(
+                stripped.startswith(opener) for opener in _BYDESIGN_HEADING_OPENERS
+            )
         if not in_bydesign_region:
             for begin, _end in _BYDESIGN_REGION_MARKERS:
                 if begin in line:
                     in_bydesign_region = True
                     region_end_marker = _end
                     break
-        suppress_labels = file_level_suppress | (_BYDESIGN_LABELS if in_bydesign_region else set())
+        suppress_labels = file_level_suppress | (
+            _BYDESIGN_LABELS if (in_bydesign_region or in_bydesign_heading) else set()
+        )
         for label, pattern, description in PATTERNS:
             if label in suppress_labels:
                 continue
