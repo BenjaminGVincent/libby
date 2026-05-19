@@ -1,0 +1,8 @@
+{
+  "case_slug": "gist-sdh-multifocal-resected-m1-k4n8",
+  "efficacy_toxicity_weight": 0.65,
+  "toxicity_vetoes": [],
+  "modality_constraints": [],
+  "free_text_constraints": "User did not state explicit preferences. Defaults assumed: post-R0 resection with no measurable disease at present, so the operative question is adjuvant / surveillance strategy and a contingency plan for first recurrence. Efficacy/toxicity weight set to 0.65 (mildly efficacy-leaning) because (a) M1 disease that has been completely resected still carries a high recurrence risk and (b) SDH-deficient GIST is indolent, which raises the bar for committing to chronic-toxicity adjuvant therapy. Trial preference defaulted to true because targeted options (HIF-2α, hypomethylating agents) sit predominantly in trial territory.",
+  "prefers_trials": true
+}

@@ -1,0 +1,163 @@
+{
+  "case_slug": "gist-sdh-multifocal-resected-m1-k4n8",
+  "age_band": "40-49",
+  "sex": "unknown",
+  "primary_site": "stomach",
+  "histology": "gastrointestinal stromal tumor (GIST), SDH-deficient subtype (KIT/PDGFRA wild-type)",
+  "stage": "ypT3(m)N0M1 — multifocal gastric GIST with a single M1 deposit in the ligament of Treitz; R0 distal gastrectomy + Roux-en-Y; 0/7 nodes; largest mass 7.5 cm; M1 deposit completely resected",
+  "ecog": 1,
+  "biomarkers": [
+    {
+      "name": "SDHA L306P",
+      "value": "mutated (VAF 44%; germline-vs-somatic not yet established)",
+      "method": "tumor NGS",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "Germline-vs-somatic determination via paired germline NGS (blood or buccal). Required for genetic counseling and for confidence that the tumor is biallelically SDHA-inactivated (the dominant driver call for KIT/PDGFRA-WT, SDH-deficient GIST)."
+    },
+    {
+      "name": "SDHA Y408N",
+      "value": "mutated (VAF 41%, somatic)",
+      "method": "tumor NGS",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "Tumor NGS variant call at decision-relevant resolution. Combined with the SDHA L306P call, this gives biallelic SDHA inactivation — the canonical SDH-deficient-GIST molecular phenotype."
+    },
+    {
+      "name": "SDHA E350fs",
+      "value": "mutated (ctDNA)",
+      "method": "ctDNA NGS",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "ctDNA call only — confirm in tumor tissue NGS to establish whether this is a third SDHA hit, a subclonal event, or a ctDNA artifact. Decision relevance: stability of the SDH-deficient driver call."
+    },
+    {
+      "name": "PIK3CA R93W",
+      "value": "mutated (ctDNA)",
+      "method": "ctDNA NGS",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "Tissue NGS confirmation required. R93W is a non-helical-domain hotspot variant of weaker functional consequence than the canonical E542K/E545K/H1047R hotspots; clinical actionability for PI3Kα inhibitors (alpelisib, inavolisib) is uncertain at R93W."
+    },
+    {
+      "name": "MAP2K1 P124S",
+      "value": "mutated (ctDNA)",
+      "method": "ctDNA NGS",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "Tissue NGS confirmation required. P124 is a known MAP2K1 activating hotspot — confirmed presence would create a mechanistic rationale for MEK-inhibitor consideration."
+    },
+    {
+      "name": "POLE R1679C",
+      "value": "mutated (germline)",
+      "method": "germline NGS",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "Germline NGS variant call. R1679 is outside the canonical POLE exonuclease/proofreading domain (P286R / V411L / S459F hotspots); given TMB < 1 mut/Mb and MSS, this is most plausibly a VUS without therapy implications. Cancer-predisposition counseling is still warranted."
+    },
+    {
+      "name": "CD117 (KIT) protein",
+      "value": "positive",
+      "method": "IHC",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "IHC. Supports GIST diagnosis; does NOT imply KIT-mutant GIST given the KIT-WT genotype."
+    },
+    {
+      "name": "DOG1 protein",
+      "value": "positive",
+      "method": "IHC",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "IHC. Supports GIST diagnosis."
+    },
+    {
+      "name": "Desmin",
+      "value": "negative",
+      "method": "IHC",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "IHC. Helps exclude smooth-muscle / leiomyosarcoma mimics."
+    },
+    {
+      "name": "SDHB protein",
+      "value": "intact",
+      "method": "IHC",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "IHC. INTERPRETIVE CAVEAT: biallelic SDHA inactivation classically destabilizes the SDH complex and produces SDHB-loss-of-staining. Retained SDHB IHC in the face of two SDHA somatic variants (≈85% combined VAF) is unusual; re-cut and re-stain (with a positive internal control) before accepting SDH-proficient phenotype on IHC alone."
+    },
+    {
+      "name": "KIT",
+      "value": "wild-type",
+      "method": "tumor NGS",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "Tumor NGS. Excludes KIT-mutant GIST and the imatinib first-line label tied to exon 11."
+    },
+    {
+      "name": "PDGFRA",
+      "value": "wild-type",
+      "method": "tumor NGS",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "Tumor NGS. Excludes PDGFRA D842V-mutant GIST and the avapritinib label."
+    },
+    {
+      "name": "TMB",
+      "value": "<1 mut/Mb",
+      "method": "tumor NGS panel",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "TMB ≥10 mut/Mb required for tumor-agnostic pembrolizumab; <1 mut/Mb does not meet that threshold."
+    },
+    {
+      "name": "MSI status",
+      "value": "MSS",
+      "method": "NGS / IHC mismatch-repair panel",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "MSI-high required for tumor-agnostic ICI (pembrolizumab); MSS effectively excludes that pathway."
+    },
+    {
+      "name": "NTRK",
+      "value": "no fusion detected",
+      "method": "NGS",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "Fusion-detection NGS. Excludes larotrectinib/entrectinib label."
+    },
+    {
+      "name": "RET",
+      "value": "no actionable alteration",
+      "method": "NGS",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "NGS. Excludes selpercatinib/pralsetinib labels."
+    },
+    {
+      "name": "BRAF",
+      "value": "wild-type",
+      "method": "NGS",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "NGS. Excludes the BRAF V600E-driven WT-GIST subset and BRAF/MEK-inhibitor label."
+    }
+  ],
+  "prior_therapies": [
+    {
+      "regimen": "distal gastrectomy with Roux-en-Y reconstruction; R0 resection of multifocal primary gastric GIST + complete resection of M1 deposit at the ligament of Treitz; 0/7 nodes involved",
+      "line": "definitive surgery",
+      "best_response": "NE"
+    }
+  ],
+  "current_therapy": null,
+  "organ_function": {},
+  "targetable_features": [
+    {
+      "feature": "SDH-deficient GIST (biallelic SDHA inactivation, KIT/PDGFRA-WT)",
+      "rationale": "User-stated targetable phenotype. Mechanistically: SDH loss → succinate accumulation → pseudo-hypoxia / HIF stabilization / global DNA hypermethylation. Decision-relevant for: belzutifan (HIF-2α inhibitor) and DNA-hypomethylating agents (guadecitabine, decitabine) as rational targeted approaches; temozolomide on the basis of single-arm phase-II activity specifically in SDH-deficient GIST; sunitinib/regorafenib/ripretinib as the imatinib-resistant systemic backbone."
+    },
+    {
+      "feature": "PIK3CA R93W (ctDNA)",
+      "rationale": "User-stated targetable feature. Mechanism: PI3Kα activation; therapeutics include alpelisib and inavolisib. Caveat: R93W is a low-frequency, non-canonical variant with weaker activating consequence than the E542K/E545K/H1047R hotspots — clinical actionability is uncertain and trial enrollment is gated by tissue confirmation."
+    },
+    {
+      "feature": "MAP2K1 P124S (ctDNA)",
+      "rationale": "User-stated targetable feature. Mechanism: MEK1 activating hotspot at P124; therapeutic rationale exists for MEK inhibitors (trametinib, selumetinib, binimetinib) and MEK+RAF combos; clinical evidence in GIST is anecdotal at best, but P124 is a recognized activating site in other histologies."
+    },
+    {
+      "feature": "POLE R1679C (germline)",
+      "rationale": "User-stated. Mechanism would be POLE proofreading deficiency → hypermutation → ICI-responsiveness; however R1679 sits outside the canonical exonuclease domain and the patient is TMB-low + MSS, so the standard POLE-hypermutator therapy rationale does not apply. Listed here for completeness; the decision-relevant action is genetic-counseling referral, not ICI."
+    },
+    {
+      "feature": "KIT/PDGFRA wild-type, KIT-WT GIST molecular subtype",
+      "rationale": "Negative finding with decision consequences: imatinib first-line response rate is sharply lower in SDH-deficient GIST (~PR rate single-digit %); sunitinib and regorafenib have better activity in this subset. Pulls the systemic-therapy plan away from imatinib-first."
+    }
+  ],
+  "geography_band": null,
+  "private": false
+}
