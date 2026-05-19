@@ -147,6 +147,27 @@ ONCOLOGY_ACRONYM_ALLOWLIST = frozenset({
     "FOLFIRINOX", "NALIRIFOX", "FOLFOX", "FOLFIRI",
     # Misc pancreatic-trial-family + adjacent acronyms
     "MTAP", "PRMT", "SHP",
+    # GIST + SDH-deficient GIST vocabulary
+    "GIST", "SDH", "SDHA", "SDHB", "SDHC", "SDHD", "SDHAF", "SDHAF2",
+    "KIT", "PDGFRA", "DOG", "MGMT", "VHL", "MAX", "VAF", "WT",
+    # Paraganglioma / pheochromocytoma syndromes + adjacent
+    "PPGL", "PCC", "HLRCC", "PGL",
+    # Trial families surfaced by GIST + dSDH-GIST literature
+    "LITESPARK", "PEMIGIST", "GRID", "INVICTUS", "SOLAR", "INVAGO",
+    "MEGALIT", "INAVO",
+    # Drug shorthands / brand names that appear as ALL-CAPS
+    "TMZ", "TEMODAR", "TEMODAL",
+    # Institutions + cancer centers
+    "DFCI", "UCLA", "UCSD", "UCSF", "MSK", "MSKCC", "MDACC", "BWH",
+    "MGH", "FHCC", "FCCC",
+    # Statistical / readout shorthand
+    "CI", "RR", "BR",
+    # Misc histology / tumor-type acronyms
+    "ATC", "PTC", "FTC",
+    # Common physiology / lab labels
+    "TSH", "BP", "ECG", "EKG", "CBC", "BMP", "CMP", "EDTA",
+    # Genes / proteins that appear as ALL-CAPS in agent prose
+    "VEGFA", "VEGFR", "EPO", "HIF", "IGF",
 })
 
 ALL_CAPS_PAIR_RE = re.compile(r"\b([A-Z][A-Z]+),\s*([A-Z][A-Z]+)\b")
