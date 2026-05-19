@@ -1,0 +1,8 @@
+{
+  "case_slug": "tnbc-brca1-oligomet-liver-r7p3",
+  "efficacy_toxicity_weight": 0.7,
+  "toxicity_vetoes": [],
+  "modality_constraints": [],
+  "prefers_trials": true,
+  "free_text_constraints": "Defaults applied by intake agent — user did not explicitly state preferences. Rationale for moderately efficacy-leaning weight (0.7): newly diagnosed de novo M1 TNBC in a 42-year-old with high disease burden plus an oligometastatic single liver lesion — curative-intent strategy plausible (resection/ablation of solitary liver lesion after systemic conversion), so the operative goal weighs efficacy higher than tolerability. Trial preference set to true because the profile (BRCA1, PIK3CA, MYC/IRS2/PTEN, TMB-H, TIL-rich, basal-like, young, oligometastatic) is strongly trial-eligible and several of the best options sit in trial territory."
+}

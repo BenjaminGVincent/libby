@@ -1,0 +1,143 @@
+{
+  "case_slug": "tnbc-brca1-oligomet-liver-r7p3",
+  "age_band": "40-49",
+  "sex": "female",
+  "primary_site": "breast",
+  "histology": "invasive ductal carcinoma, no special type, triple-negative; basal-like by molecular subtyping",
+  "stage": "cT2-3 cN1 cM1 — newly diagnosed; right breast primary with ipsilateral axillary nodal involvement and a solitary 1.5cm hepatic lesion consistent with oligometastatic de novo M1 disease (liver-only single-site)",
+  "ecog": 1,
+  "biomarkers": [
+    {
+      "name": "BRCA1",
+      "value": "mutated; germline vs somatic not specified",
+      "method": "tumor NGS",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "Germline-vs-somatic determination required to guide risk-reducing surgery and cascade genetic testing; however, somatic BRCA1 is still PARP-inhibitor actionable so PARP-i actionability is not gated on this distinction."
+    },
+    {
+      "name": "TP53",
+      "value": "mutated",
+      "method": "tumor NGS",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "Functionally informative for TP53-dependent stratification (e.g. WEE1 inhibitor rationale); not directly drug-gating."
+    },
+    {
+      "name": "PIK3CA",
+      "value": "mutated",
+      "method": "tumor NGS",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "Specific hotspot variant (E542K/E545K/H1047R vs non-hotspot) needed to confirm alpelisib actionability per FDA label; capivasertib indication also relies on PIK3CA/AKT1/PTEN alteration confirmation."
+    },
+    {
+      "name": "MYC amplification",
+      "value": "copy-number amplified",
+      "method": "tumor NGS / copy-number",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "Informs BET inhibitors, CDK7/9 inhibitors, and transcriptional-addiction approaches; primarily trial-territory."
+    },
+    {
+      "name": "IRS2 amplification",
+      "value": "copy-number amplified",
+      "method": "tumor NGS / copy-number",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "IGF-1R / IRS signaling axis rationale; experimental — trial-territory only."
+    },
+    {
+      "name": "PTEN",
+      "value": "copy-number loss",
+      "method": "tumor NGS / copy-number",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "PI3K/AKT pathway axis; reinforces AKT-inhibitor (capivasertib) rationale, potentially synergistic with PIK3CA-mut."
+    },
+    {
+      "name": "Intrinsic molecular subtype",
+      "value": "basal-like",
+      "method": "expression-based intrinsic-subtype call (PAM50 or equivalent)",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "Basal-specific therapeutic strategies (TROP2-ADC sacituzumab govitecan, datopotamab-deruxtecan; ICI combos in basal/TIL-rich tumors)."
+    },
+    {
+      "name": "TMB",
+      "value": "14 mut/Mb",
+      "method": "tumor NGS panel",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "Meets ≥10 mut/Mb threshold for tumor-agnostic pembrolizumab (KEYNOTE-158 label)."
+    },
+    {
+      "name": "MSI status",
+      "value": "MSS",
+      "method": "NGS / MMR IHC panel",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "MSS — does not qualify for MSI-H/dMMR tumor-agnostic ICI indication; TMB-H pathway remains."
+    },
+    {
+      "name": "Stromal TILs",
+      "value": "3+ stromal TILs (TILs-WG criteria, high)",
+      "method": "H&E review per International TILs Working Group",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "High TIL infiltration is favorable to ICI-containing strategies; reinforces KEYNOTE-522 / IMpassion-style neoadjuvant ICI + chemo backbone."
+    },
+    {
+      "name": "ER",
+      "value": "negative",
+      "method": "IHC",
+      "confirmation_status": "confirmed"
+    },
+    {
+      "name": "PR",
+      "value": "negative",
+      "method": "IHC",
+      "confirmation_status": "confirmed"
+    },
+    {
+      "name": "HER2",
+      "value": "negative",
+      "method": "IHC with reflex FISH if equivocal",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "HER2 0 vs HER2-low (1+ / 2+ FISH-) distinction would gate trastuzumab-deruxtecan eligibility under DESTINY-Breast04/06; not specified here."
+    }
+  ],
+  "prior_therapies": [],
+  "current_therapy": null,
+  "organ_function": {},
+  "targetable_features": [
+    {
+      "feature": "BRCA1 mutation",
+      "rationale": "PARP-inhibitor (olaparib per OlympiAD, talazoparib per EMBRACA) actionability in BRCA1/2-mutated HER2-negative metastatic breast cancer; also predicts platinum sensitivity (carboplatin/cisplatin preference in TNBC backbone, e.g. TNT trial signal in BRCA-mut subset)."
+    },
+    {
+      "feature": "TP53 mutation",
+      "rationale": "Not directly targetable but functionally relevant — TP53-loss / replication-stress phenotype informs WEE1 inhibitor rationale (e.g. adavosertib) and supports DNA-damaging backbones (platinum, PARP-i)."
+    },
+    {
+      "feature": "PIK3CA mutation",
+      "rationale": "PI3Kα-inhibitor (alpelisib; inavolisib) rationale, with capivasertib (pan-AKT) specifically studied in PIK3CA/AKT1/PTEN-altered HR+ breast cancer (CAPItello-291); TNBC PIK3CA-mut evidence is more limited but is an active trial space."
+    },
+    {
+      "feature": "MYC copy number amplification",
+      "rationale": "Drives transcriptional addiction; informs BET-bromodomain inhibitors, CDK7/CDK9 inhibitors, and selected MYC-pathway approaches — predominantly clinical-trial territory."
+    },
+    {
+      "feature": "IRS2 copy number amplification",
+      "rationale": "IGF-1R / IRS signaling axis; experimental rationale for IGF-1R-axis agents — trial-only at present."
+    },
+    {
+      "feature": "PTEN copy number loss",
+      "rationale": "Activates PI3K/AKT pathway (synergistic with PIK3CA-mut); reinforces AKT-inhibitor (capivasertib) rationale and dual PI3K/AKT-pathway combinations."
+    },
+    {
+      "feature": "Basal-like molecular subtype",
+      "rationale": "Basal-specific strategies — TROP2-directed ADC sacituzumab govitecan (ASCENT) and datopotamab-deruxtecan (TROPION-Breast02 in 1L mTNBC); immune-checkpoint combinations show enrichment in basal/TIL-rich tumors."
+    },
+    {
+      "feature": "TMB-high (14 mut/Mb)",
+      "rationale": "Meets ≥10 mut/Mb threshold for tumor-agnostic pembrolizumab indication (KEYNOTE-158); ICI rationale further reinforced by 3+ stromal TILs."
+    },
+    {
+      "feature": "3+ stromal TIL infiltration",
+      "rationale": "High TILs are an established positive predictive marker for ICI benefit and pCR with KEYNOTE-522-style neoadjuvant pembrolizumab + chemotherapy; also IMpassion-style atezolizumab + nab-paclitaxel signal in PD-L1+ TNBC."
+    }
+  ],
+  "geography_band": null,
+  "private": false
+}

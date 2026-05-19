@@ -182,6 +182,16 @@ ONCOLOGY_ACRONYM_ALLOWLIST = frozenset({
     "TROP", "TROP2", "DLL", "HLA", "B2M",
     # Imaging / pathology
     "FISH", "PFTS", "HRCT", "MRI", "CT",
+    # Radiation oncology / interventional radiology procedural acronyms
+    "SBRT", "SBRS", "SABR", "IR", "IORT", "EBRT", "IMRT", "VMAT",
+    # Hormone-receptor acronyms (breast)
+    "ER", "PR", "HR",
+    # US state postal codes (common in trial-site geography lists)
+    "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI",
+    "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI",
+    "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC",
+    "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT",
+    "VT", "VA", "WA", "WV", "WI", "WY", "DC",
 })
 
 ALL_CAPS_PAIR_RE = re.compile(r"\b([A-Z][A-Z]+),\s*([A-Z][A-Z]+)\b")
