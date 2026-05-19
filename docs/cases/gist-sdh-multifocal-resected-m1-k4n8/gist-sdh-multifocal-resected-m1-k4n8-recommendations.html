@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>Libby recommendations &mdash; gist-sdh-multifocal-resected-m1-k4n8</title>
+<style>
+
+:root {
+  --ink: #1A202C;
+  --ink-muted: #4A5568;
+  --rule: #E2E8F0;
+  --header-bg: #F4F6F8;
+  --accent: #5B3A87;
+  --bg: #FFFFFF;
+  --warn-fg: #6F2E1A;
+  --warn-bg: #FBE9E7;
+  --warn-border: #ECC4BB;
+}
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  max-width: 80rem;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  line-height: 1.5;
+}
+h1, h2, h3 { color: var(--ink); }
+h1 { font-size: 1.6rem; }
+h2 { font-size: 1.2rem; margin-top: 2rem; }
+h3 { font-size: 1.05rem; margin-top: 1.5rem; }
+small.scenario-key { color: var(--ink-muted); }
+.disclaimer {
+  border: 1px solid var(--warn-border);
+  background: var(--warn-bg);
+  color: var(--warn-fg);
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  margin: 1rem 0 2rem;
+  font-size: 0.95rem;
+}
+.disclaimer strong { color: #B71C1C; }
+.profile-grid {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.25rem 1rem;
+  margin: 1rem 0 2rem;
+  font-size: 0.95rem;
+}
+.profile-grid dt { font-weight: 600; color: var(--ink-muted); }
+.profile-grid dd { margin: 0; }
+.trial-table-wrap { color: var(--ink); }
+.trial-scroll { overflow-x: auto; }
+.trial-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.88em;
+}
+.trial-table thead th {
+  background: var(--header-bg);
+  font-weight: 600;
+  text-align: left;
+  padding: 0.5em 0.6em;
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  white-space: nowrap;
+}
+.trial-table tbody td {
+  padding: 0.5em 0.6em;
+  border-bottom: 1px solid var(--rule);
+  font-variant-numeric: tabular-nums;
+  vertical-align: top;
+}
+.trial-table tbody tr:last-child td {
+  border-bottom: 2px solid var(--ink);
+}
+.persona {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.35em;
+  font-size: 0.78em;
+  font-weight: 600;
+  margin-right: 0.25em;
+  border: 1px solid transparent;
+}
+.persona-risktaker    { background: #FFE9D6; color: #6F3A0F; border-color: #F0CFAE; }
+.persona-conservative { background: #DFEBFB; color: #1B3A6B; border-color: #B5CDEE; }
+.persona-critic       { background: #F1E5FF; color: #441E72; border-color: #D4BBF2; }
+.persona-concensusite { background: #DDF1EE; color: #134E48; border-color: #B0DBD3; }
+.persona-advocate     { background: #FFE5EE; color: #6E1638; border-color: #F0BBCB; }
+.split-glyph { font-weight: 700; color: #5A4500; }
+.not-recommended {
+  color: var(--ink-muted);
+  text-decoration: line-through;
+}
+.scenario-conditional {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5A4500;
+  background: #FFF7E0;
+  border: 1px solid #F1DD9A;
+  border-radius: 0.35em;
+  padding: 0.05em 0.45em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+.pipeline-note,
+.evidence-detail-note {
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+  margin: 0.25rem 0 0.75rem;
+}
+.evidence-detail-empty {
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+  margin: 0.25rem 0 0.75rem;
+  padding-left: 0.5rem;
+  border-left: 2px solid #E5E5E5;
+}
+.evidence-detail-table { font-size: 0.86em; }
+.evidence-detail-table thead th {
+  background: #FAFAFA;
+}
+.evidence-detail-table .tox-grade {
+  font-size: 0.85em;
+  color: var(--ink-muted);
+  font-weight: 500;
+}
+.evidence-detail-table .safety-summary-fallback {
+  font-style: italic;
+  color: var(--ink-muted);
+}
+h4 + .trial-table-wrap,
+h4 + .evidence-detail-empty {
+  margin-top: 0.25rem;
+}
+h4 { margin-top: 1.25rem; margin-bottom: 0.25rem; font-size: 1rem; }
+.pipeline-context-table { font-size: 0.82em; color: var(--ink-muted); }
+.pipeline-context-table thead th {
+  background: #FAFAFA;
+  border-top: 1px solid var(--ink-muted);
+  border-bottom: 1px solid var(--ink-muted);
+}
+.pipeline-context-table tbody tr:last-child td { border-bottom: 1px solid var(--ink-muted); }
+.pipeline-context-table .intervention-name { color: var(--ink); font-weight: 600; }
+.pipeline-context-table .alias-list { color: var(--ink-muted); font-size: 0.9em; }
+.pipeline-context-table .basket-flag {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #134E48;
+  background: #DDF1EE;
+  border: 1px solid #B0DBD3;
+  border-radius: 0.35em;
+  padding: 0.02em 0.4em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+.pipeline-context-table .discontinued-flag {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5A2A2A;
+  background: #F2E1E1;
+  border: 1px solid #DDB7B7;
+  border-radius: 0.35em;
+  padding: 0.02em 0.4em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+.pipeline-context-table .offlabel-flag {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5F4310;
+  background: #FBEFD3;
+  border: 1px solid #E8C977;
+  border-radius: 0.35em;
+  padding: 0.02em 0.4em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+footer.libby-footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  color: var(--ink-muted);
+  font-size: 0.85rem;
+}
+
+</style>
+</head>
+<body>
+<h1>Libby recommendations &mdash; <code>gist-sdh-multifocal-resected-m1-k4n8</code></h1>
+<div class="disclaimer">
+<strong>Decision support, not medical advice.</strong> Libby is an experimental 
+multi-agent decision-support tool. The recommendations below have not been 
+reviewed by a clinician treating this patient. Do not act on this page without 
+consulting a qualified oncologist.
+</div>
+<h2>Profile snapshot</h2>
+<dl class="profile-grid">
+  <dt>Primary site</dt><dd>stomach</dd>
+  <dt>Histology</dt><dd>gastrointestinal stromal tumor (GIST), SDH-deficient subtype (KIT/PDGFRA wild-type)</dd>
+  <dt>Stage</dt><dd>ypT3(m)N0M1 — multifocal gastric GIST with a single M1 deposit in the ligament of Treitz; R0 distal gastrectomy + Roux-en-Y; 0/7 nodes; largest mass 7.5 cm; M1 deposit completely resected</dd>
+  <dt>ECOG</dt><dd>1</dd>
+  <dt>Age band</dt><dd>40-49</dd>
+  <dt>Sex</dt><dd>unknown</dd>
+  <dt>Biomarkers</dt><dd>SDHA L306P mutated (VAF 44%; germline-vs-somatic not yet established) (ngs_pending); SDHA Y408N mutated (VAF 41%, somatic); SDHA E350fs mutated (ctDNA) (ngs_pending); PIK3CA R93W mutated (ctDNA) (ngs_pending); MAP2K1 P124S mutated (ctDNA) (ngs_pending); POLE R1679C mutated (germline); CD117 (KIT) protein positive; DOG1 protein positive; Desmin negative; SDHB protein intact; KIT wild-type; PDGFRA wild-type; TMB &lt;1 mut/Mb; MSI status MSS; NTRK no fusion detected; RET no actionable alteration; BRAF wild-type</dd>
+  <dt>Efficacy/toxicity weight</dt><dd>0.65</dd>
+</dl>
+
+<p><em>8 ranked therapeutic options across 2 targetable features. Biomarker workup steps live in the standalone Target validation paths report.</em></p>
+<h2>Sdh Deficient Gist interventions</h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr><td><a href="#evidence-ctdna-mrd-surveillance">1</a></td><td><strong>Signatera tumor-informed ctDNA MRD assay as recurrence-surveillance adjunct to imaging (informative, not therapy-triggering)</strong></td><td>Lead-time signal ahead of imaging — informative for recurrence monitoring; weaker prospective GIST validation than colorectal/lung MRD data.</td><td>Low (none — venipuncture; FFPE block re-use for baseline build)</td><td><strong>Low</strong> <span class="cpm-desc">(False-positive ctDNA without imaging correlate could drive premature TKI initiation; imaging-gating guardrail is the mitigation.)</span></td><td><strong>Adjunct to imaging surveillance with a clear guardrail — a positive Signatera prompts shorter-interval imaging, not systemic therapy.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/34754095">PMID&nbsp;34754095</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/34380780">PMID&nbsp;34380780</a></td></tr>
+    <tr><td><a href="#evidence-sunitinib">2</a></td><td><strong>Sunitinib 50 mg PO daily 4-on/2-off (or 37.5 mg continuous) — first systemic line at measurable recurrence; NOT adjuvant</strong></td><td>Moderate at first measurable recurrence — Boikos 2016 dSDH-GIST 18% ORR (n=38 retrospective, no CI); Demetri 2006 registration-grade 2L GIST (TTP HR 0.33).</td><td>Moderate (HFSR, hypothyroidism, fatigue, hypertension — well-characterized chronic class AEs; published management algorithms apply)</td><td><strong>Low</strong> <span class="cpm-desc">(Class-effect VEGFR signaling withdrawal on chronic dosing; no mechanism-level dissent for THIS subset in the board&#x27;s deliberation.)</span></td><td><strong>Best-characterized 2L TKI for KIT/PDGFRA-WT GIST; contingency-only at measurable recurrence, with the trial-route options as a co-equal conversation rather than a downstream fallback.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/17046465">PMID&nbsp;17046465</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/27011036">PMID&nbsp;27011036</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/40045030">PMID&nbsp;40045030</a></td></tr>
+    <tr><td><a href="#evidence-regorafenib">3</a></td><td><strong>Regorafenib 160 mg PO 3-on/1-off — 3L contingency at sunitinib progression</strong></td><td>Low-to-moderate in dSDH-GIST — GRID PFS HR 0.27 is registration-grade in KIT-mutant 3L; dSDH-subset activity is by extrapolation, no published subset CI.</td><td>Moderate (G3+ hypertension 23%, G3+ HFSR 20%, G3+ diarrhea 5%; dose modifications are the rule)</td><td><strong>Low</strong> <span class="cpm-desc">(Advocate dissent was preference-fit on sequencing against the trial-route, not on the mechanism.)</span></td><td><strong>Registration-grade 3L anchor with weak dSDH-GIST subset evidence; sequencing against the trial-route at 3L is the live preference question.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/23177515">PMID&nbsp;23177515</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/40045030">PMID&nbsp;40045030</a></td></tr>
+    <tr><td><a href="#evidence-adjuvant-imatinib">4</a></td><td><strong>Adjuvant imatinib — NOT RECOMMENDED in dSDH-GIST (logged on the record so the no-imatinib decision is documented and not re-litigated)</strong></td><td>None in dSDH-GIST — Boikos 2016 1/49 (2%) PR on imatinib; adjuvant trials structurally excluded this subset.</td><td>High (3-year exposure: G2+ edema ~30%, fatigue ~50%, hepatic / cardiac monitoring burden) measured against a 2% PR rate — not a defensible tradeoff.</td><td><strong>High</strong> <span class="cpm-desc">(Both vetoes stood on mechanism + toxicity: imatinib insensitivity in dSDH-GIST plus chronic AE burden at the 2% PR floor; PERSIST-5 confirmed imatinib-insensitive genotypes recur regardless of treatment.)</span></td><td><strong>Logged as NOT RECOMMENDED so the reflex &#x27;GIST equals imatinib&#x27; reach is documented and rejected on the record — every persona vetoed in concept.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/27011036">PMID&nbsp;27011036</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/30383140">PMID&nbsp;30383140</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/19303137">PMID&nbsp;19303137</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/22453568">PMID&nbsp;22453568</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/32469385">PMID&nbsp;32469385</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-ctdna-mrd-surveillance">Signatera tumor-informed ctDNA MRD assay as recurrence-surveillance adjunct to imaging (informative, not therapy-triggering)</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-sunitinib">Sunitinib 50 mg PO daily 4-on/2-off (or 37.5 mg continuous) — first systemic line at measurable recurrence; NOT adjuvant</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>advanced/metastatic GIST after imatinib failure or intolerance</strong> (2L+)<br><small>312 patients (207 sunitinib, 105 placebo) with imatinib-resistant or -intolerant GIST. No SDH-status stratification; the cohort was overwhelmingly KIT-mutant by historical molecular epidemiology, with dSDH-GIST under-represented.</small></td><td>312</td><td><strong>fatigue</strong> <span class="tox-grade">grade any</span> <small>(Most frequent treatment-related AE; G3+ rate not in abstract)</small><br><strong>diarrhea</strong> <span class="tox-grade">grade any</span><br><strong>skin discoloration</strong> <span class="tox-grade">grade any</span> <small>(Characteristic sunitinib AE)</small><br><strong>nausea</strong> <span class="tox-grade">grade any</span></td><td><strong>time to progression</strong>: 0.33 HR; p &lt;0.0001<br><small>mTTP 27.3 wks vs 6.4 wks</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/17046465">Demetri GD et al. <em>Lancet</em> 2006</a></td></tr>
+    <tr><td><strong>KIT/PDGFRA wild-type GIST (NIH Pediatric &amp; Wild-Type GIST Clinic cohort; majority SDH-deficient)</strong> (2L+)<br><small>95 patients with adequate tumor specimens from the NIH wt-GIST clinic; median age 23; 70% female; molecular subtypes: SDH-mutant (n=63), SDH-epimutant (n=21), SDH-competent (n=11). The cohort skews young and pediatric-onset, with gastric primaries dominating the SDH-deficient strata.</small></td><td>95</td><td><span class="safety-summary-fallback">Toxicity not the focus of this cohort report; sunitinib and imatinib safety as expected for label dosing.</span></td><td><strong>objective response stratified by molecular subtype and drug</strong>: imatinib 1/49 (2%) PR in SDH-deficient; sunitinib 7/38 (18%) objective response in same group%</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/27011036">Boikos SA et al. <em>JAMA Oncology</em> 2016</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-regorafenib">Regorafenib 160 mg PO 3-on/1-off — 3L contingency at sunitinib progression</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>advanced GIST after imatinib + sunitinib failure</strong> (3L+)<br><small>199 patients (133 regorafenib, 66 placebo) with progression after both imatinib and sunitinib. No prospective SDH-status stratification; KIT-mutant disease dominated the population.</small></td><td>199</td><td><strong>hypertension</strong> <span class="tox-grade">grade &gt;=3</span>: 23% (31/132) <small>(Most common G3 AE on regorafenib arm)</small><br><strong>hand-foot skin reaction</strong> <span class="tox-grade">grade &gt;=3</span>: 20% (26/132) <small>(Characteristic VEGFR-TKI class effect)</small><br><strong>diarrhea</strong> <span class="tox-grade">grade &gt;=3</span>: 5% (7/132)</td><td><strong>progression-free survival (BICR)</strong>: 0.27 HR (95% CI 0.19–0.39); p &lt;0.0001<br><small>mPFS 4.8 mo vs 0.9 mo</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/23177515">Demetri GD et al. <em>Lancet</em> 2013</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-adjuvant-imatinib">Adjuvant imatinib — NOT RECOMMENDED in dSDH-GIST (logged on the record so the no-imatinib decision is documented and not re-litigated)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>KIT/PDGFRA wild-type GIST (NIH Pediatric &amp; Wild-Type GIST Clinic cohort; majority SDH-deficient)</strong> (2L+)<br><small>95 patients with adequate tumor specimens from the NIH wt-GIST clinic; median age 23; 70% female; molecular subtypes: SDH-mutant (n=63), SDH-epimutant (n=21), SDH-competent (n=11). The cohort skews young and pediatric-onset, with gastric primaries dominating the SDH-deficient strata.</small></td><td>95</td><td><span class="safety-summary-fallback">Toxicity not the focus of this cohort report; sunitinib and imatinib safety as expected for label dosing.</span></td><td><strong>objective response stratified by molecular subtype and drug</strong>: imatinib 1/49 (2%) PR in SDH-deficient; sunitinib 7/38 (18%) objective response in same group%</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/27011036">Boikos SA et al. <em>JAMA Oncology</em> 2016</a></td></tr>
+    <tr><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/30383140">Raut CP et al. <em>JAMA Oncology</em> 2018</a></td></tr>
+    <tr><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/19303137">DeMatteo RP et al. <em>Lancet</em> 2009</a></td></tr>
+    <tr><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/22453568">Joensuu H et al. <em>JAMA</em> 2012</a></td></tr>
+    <tr><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/32469385">Joensuu H et al. <em>JAMA Oncology</em> 2020</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2>Sdh Confirmed interventions</h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr><td><a href="#evidence-belzutifan">1</a></td><td><strong>Belzutifan 120 mg PO daily on LITESPARK-015 wt-GIST cohort (NCT04924075) — contingency at first measurable recurrence, gated on dSDH phenotype confirmation</strong> <span class="scenario-conditional">(conditional on sdh_confirmed positive)</span></td><td>Moderate if dSDH phenotype confirms — PPGL adjacency (ORR 26%, mPFS 22 mo) does not quantitatively transport to GIST; cleanest mechanism case but no GIST efficacy readout yet.</td><td>Moderate (anemia and hypoxia dose-limiting in 25-30% on broader dataset; stacked anemia management problem in Roux-en-Y; ~5-year post-marketing surveillance)</td><td><strong>Low</strong> <span class="cpm-desc">(Cross-tumor mechanism transport from PPGL to GIST is the gating uncertainty — modality-level risk, not patient-AE risk.)</span></td><td><strong>Cleanest mechanism case for dSDH-GIST in the dossier — 14 US sites recruiting; cross-tumor transport from PPGL is the live question and Roux-en-Y anemia management is the patient-specific complication.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT04924075">NCT04924075</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/15652751">PMID&nbsp;15652751</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/35324464">PMID&nbsp;35324464</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/27595394">PMID&nbsp;27595394</a></td></tr>
+    <tr><td><a href="#evidence-temozolomide">2</a></td><td><strong>Temozolomide on NCT05661643 (Asan, 200 mg/m² d1-5 q28d) or NCT03556384 (UCSD, 85 mg/m² d1-21 q28d, watch-for-readout); off-label generic TMZ with MGMT methylation as enrichment lever — contingency at first measurable recurrence</strong> <span class="scenario-conditional">(conditional on sdh_confirmed positive)</span></td><td>Low-to-moderate — Yebra 2022 2/5 PR (95% CI ~5-85%) is mechanism-coherent but uninformative at n=5; Ligon 2023 guadecitabine 0/9 is the cautionary precedent for mechanism-vs-clinic disconnect in this subset.</td><td>Moderate (myelosuppression, fatigue, nausea well-characterized; MDS/AML long-tail ~1% at cumulative exposure &gt;6-12 months is the chronic signal)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Critic dissented on the Yebra n=5 point-estimate framing; Ligon 2023 (guadecitabine 0/9) is the mechanism-coherent precedent where the hypomethylator/alkylator class disconnect already played out in this subset.)</span></td><td><strong>Mechanism-coherent contingency with mature parent-drug safety, but n=5 efficacy + the Ligon 2023 negative precedent argue for trial-route, MGMT-enriched, with a pre-specified cumulative-exposure stopping rule.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/34426440">PMID&nbsp;34426440</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/38132569">PMID&nbsp;38132569</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/36198483">PMID&nbsp;36198483</a><br><a href="https://clinicaltrials.gov/study/NCT05661643">NCT05661643</a><br><a href="https://clinicaltrials.gov/study/NCT03556384">NCT03556384</a></td></tr>
+    <tr><td><a href="#evidence-pemigatinib">3</a></td><td><strong>Pemigatinib on PEMIGIST (NCT07434843, DFCI single-site, Suzanne George) — contingency at first measurable recurrence</strong> <span class="scenario-conditional">(conditional on sdh_confirmed positive)</span></td><td>Low-to-moderate — rogaratinib NCT04595747 41.7% ORR at n=24 (95% CI ~22-63%) is the cited bridge; pemigatinib NCT07434843 itself is n=24 single-arm phase 2 with no readout yet.</td><td>Moderate (FGFR-class: serous retinal detachment ~25%, hyperphosphatemia ~60% all-grade, nail/mucosal AEs; monitoring-intensive class)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Critic and advocate dissented on evidence-pyramid narrowness and preference-fit; FGFR-class toxicity-as-monitoring-burden is the mechanism-adjacent concern.)</span></td><td><strong>Freshest mechanism story in the dossier with the strongest preclinical-to-clinic signal so far, but the evidence pyramid is shallow and two personas dissented on rank-1 framing.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT07434843">NCT07434843</a><br>doi:10.1158/1538-7445.AM2025-CT215</td></tr>
+    <tr><td><a href="#evidence-olaparib-temozolomide">4</a></td><td><strong>Olaparib 300 mg PO BID + temozolomide — late-line / post-trial-exhaustion contingency, trial-route only with hematology co-management (NOT off-label cash-pay default)</strong> <span class="scenario-conditional">(conditional on sdh_confirmed positive)</span></td><td>Low for population-level effect — Singh 2023 is n=1; Sulkowski mechanism work is robust at chromatin level but no replicated clinical readout in dSDH-GIST.</td><td>High (overlapping PARP + alkylator cytopenias; cumulative MDS/AML risk on sustained exposure; no published combination safety dataset in dSDH-GIST)</td><td><strong>High</strong> <span class="cpm-desc">(Conservative veto stood on chronic-toxicity-as-mechanism: PARP + alkylator MDS/AML compounding in sustained-response scenarios is the mechanism-level risk to durable use.)</span></td><td><strong>Mechanism-strong, evidence-thin late-line contingency — acceptable only in bounded trial-route or hematology-comanaged framing; off-label cash-pay default is not signable.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/30013182">PMID&nbsp;30013182</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/32494005">PMID&nbsp;32494005</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/36151992">PMID&nbsp;36151992</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-belzutifan">Belzutifan 120 mg PO daily on LITESPARK-015 wt-GIST cohort (NCT04924075) — contingency at first measurable recurrence, gated on dSDH phenotype confirmation</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-temozolomide">Temozolomide on NCT05661643 (Asan, 200 mg/m² d1-5 q28d) or NCT03556384 (UCSD, 85 mg/m² d1-21 q28d, watch-for-readout); off-label generic TMZ with MGMT methylation as enrichment lever — contingency at first measurable recurrence</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>advanced SDH-mutant GIST (SDHA/SDHB/SDHC/SDHD mutation, biallelic in tumor)</strong> (2L+)<br><small>5 SDH-mutant GIST patients (1 SDHA, 2 SDHB, 1 SDHC, 1 SDHD); median age 29.7; 2F/3M; median 1 prior TKI line (range 0-2). Sicklick / UCSD case series paired with patient-derived xenograft modeling.</small></td><td>5</td><td><span class="safety-summary-fallback">Paper does not publish a per-AE safety table for the clinical cohort; the translational focus is on the PDX-driven mechanism rationale. Standard TMZ low-dose continuous schedule toxicity profile (cytopenias, fatigue, nausea) presumed.</span></td><td><strong>objective response rate to TMZ in SDH-mutant GIST</strong>: 40%<br><small>mOS 1.9 yr from TMZ start; 6.4 yr from diagnosis</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/34426440">Yebra M et al. <em>Clinical Cancer Research</em> 2022</a></td></tr>
+    <tr><td><strong>SDH-deficient and KIT/PDGFRA-WT GIST</strong> (any)<br><small>65 GIST tumors profiled: 47 wt-GIST (33 SDH-deficient), 21 tyrosine-kinase-mutant. Single-institution Cambridge cohort.</small></td><td>65</td><td>&mdash;</td><td><strong>frequency of MGMT promoter hypermethylation by GIST subtype</strong>: MGMT hypermethylation in 8/33 (24%) SDH-deficient GIST; 0% in TKI-mutant or SDH-preserved wt-GIST%</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/36198483">Giger OT et al. <em>Journal of Clinical Pathology</em> 2022</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-pemigatinib">Pemigatinib on PEMIGIST (NCT07434843, DFCI single-site, Suzanne George) — contingency at first measurable recurrence</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-olaparib-temozolomide">Olaparib 300 mg PO BID + temozolomide — late-line / post-trial-exhaustion contingency, trial-route only with hematology co-management (NOT off-label cash-pay default)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>metastatic, multiply-relapsed SDH-deficient GIST + paraganglioma (single patient)</strong> (5L+)<br><small>Single pediatric/young-adult patient with SDHB-mutant GIST plus paraganglioma; multiply relapsed after prior TKI lines. Yale single-institution case report.</small></td><td>1</td><td><span class="safety-summary-fallback">Case-report; per-AE detail not in the published letter.</span></td><td><strong>clinical response (case-level)</strong>: clinical response reported</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/36151992">Singh C et al. <em>Pediatric Blood &amp; Cancer</em> 2023</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<footer class="libby-footer">Generated 2026-05-19 &middot; Libby &middot; <code>gist-sdh-multifocal-resected-m1-k4n8</code></footer>
+</body></html>
