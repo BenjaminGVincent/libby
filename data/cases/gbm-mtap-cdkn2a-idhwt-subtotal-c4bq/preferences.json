@@ -1,0 +1,8 @@
+{
+  "case_slug": "gbm-mtap-cdkn2a-idhwt-subtotal-c4bq",
+  "efficacy_toxicity_weight": 0.7,
+  "toxicity_vetoes": [],
+  "modality_constraints": [],
+  "free_text_constraints": "User explicit intent: 'surface all possible options for treatment' — interpret as maximally inclusive across standard-of-care (Stupp: RT + concurrent/adjuvant temozolomide; TTFields/Optune), off-label use, clinical trials (including phase 1), expanded-access / compassionate-use, and rational targeted approaches keyed to MTAP loss (PRMT5 inhibitors: AMG 193, MRTX1719, TNG908, TNG462; MAT2A inhibitors: IDE397) and CDKN2A loss (CDK4/6 inhibitors: abemaciclib favored for CNS penetration). No modality vetoes. No toxicity vetoes beyond standard clinical reasonableness. ECOG 1 is ASSUMED — confirm with treating neuro-oncologist. MGMT promoter methylation status is UNKNOWN and is a high-priority diagnostic gap that should be resolved before finalizing the Stupp adjuvant TMZ commitment; downstream agents should branch recommendations across methylated vs unmethylated MGMT scenarios. Geography defaulted to US. Risk tolerance balanced-to-mildly-efficacy-leaning (0.7) given newly diagnosed grade-4 disease and the explicit 'all options' framing. Carry forward the intratumoral-hemorrhage history as a safety annotation against bevacizumab / antiangiogenic exposure.",
+  "prefers_trials": true
+}

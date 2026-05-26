@@ -1,0 +1,114 @@
+{
+  "case_slug": "gbm-mtap-cdkn2a-idhwt-subtotal-c4bq",
+  "age_band": "60-69",
+  "sex": "female",
+  "primary_site": "brain",
+  "histology": "glioblastoma, IDH-wildtype, WHO grade 4 (CNS WHO 2021); presenting tumor demonstrated intratumoral hemorrhage",
+  "stage": "newly diagnosed; status post subtotal (partial) resection — gross-total resection NOT achieved; residual enhancing disease presumed on post-op MRI; no extracranial disease (GBM does not stage by AJCC TNM)",
+  "ecog": 1,
+  "biomarkers": [
+    {
+      "name": "IDH1",
+      "value": "wild-type",
+      "method": "NGS / IHC",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "Tumor NGS and/or IDH1 R132H IHC. Confirms IDH-wildtype glioblastoma classification (CNS WHO 2021); excludes IDH-mutant astrocytoma/oligodendroglioma classification and the vorasidenib label (which is restricted to IDH-mutant grade 2 glioma)."
+    },
+    {
+      "name": "CDKN2A (p16)",
+      "value": "homozygous loss",
+      "method": "NGS / FISH (assumed)",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "Tumor NGS with copy-number calls, or FISH for 9p21 deletion. Decision relevance: CDKN2A/B homozygous deletion is a poor-prognosis molecular marker in glioma and is mechanistically linked to CDK4/6 inhibitor rationale (palbociclib, abemaciclib, ribociclib); co-occurs with MTAP loss on 9p21 and creates the PRMT5/MAT2A synthetic-lethal vulnerability."
+    },
+    {
+      "name": "MTAP",
+      "value": "loss (homozygous deletion of 9p21, co-deleted with CDKN2A)",
+      "method": "NGS copy-number / IHC (assumed)",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "MTAP IHC (loss of cytoplasmic staining) and/or NGS copy-number is the decision-grade resolution required by MTAP-selective PRMT5 inhibitor trials (e.g. AMG 193 / MRTX1719 / TNG908 / TNG462). Most current MTAP-loss-selective PRMT5 trial protocols require MTAP-null confirmation by an assay specified in the protocol."
+    },
+    {
+      "name": "MGMT promoter methylation",
+      "value": "unknown",
+      "method": "not yet performed (methylation-specific PCR or pyrosequencing required)",
+      "confirmation_status": "unknown",
+      "decision_resolution": "MGMT promoter methylation by MSP, pyrosequencing, or methylation array. HIGH-PRIORITY DIAGNOSTIC GAP: methylation status dictates expected benefit from temozolomide (the standard-of-care backbone of Stupp regimen) — methylated tumors derive substantial TMZ benefit, unmethylated tumors derive minimal benefit and are candidates for TMZ-sparing or TMZ-alternative trial enrollment (e.g. TTFields-only after RT, or front-line trials)."
+    },
+    {
+      "name": "EGFR",
+      "value": "unknown (amplification / EGFRvIII status not stated)",
+      "method": "tumor NGS / FISH not yet reported",
+      "confirmation_status": "unknown",
+      "decision_resolution": "Tumor NGS (amplification call) and EGFRvIII-specific testing (RT-PCR or NGS fusion call). EGFR amplification is present in ~40-50% of IDH-wildtype GBM; EGFRvIII opens enrollment into EGFRvIII-directed CAR-T and bispecific trials. Decision-relevant gap."
+    },
+    {
+      "name": "TERT promoter",
+      "value": "unknown",
+      "method": "not yet reported",
+      "confirmation_status": "unknown",
+      "decision_resolution": "TERT promoter Sanger / NGS. Decision relevance: supports IDH-wildtype GBM classification per cIMPACT-NOW; not directly therapeutically actionable but part of complete molecular workup."
+    },
+    {
+      "name": "Chromosome 7 gain / chromosome 10 loss (+7/-10)",
+      "value": "unknown",
+      "method": "not yet reported",
+      "confirmation_status": "unknown",
+      "decision_resolution": "NGS copy-number or FISH. Decision relevance: classification (supports molecular GBM diagnosis under cIMPACT-NOW Update 3 even without histologic grade 4 features)."
+    },
+    {
+      "name": "BRAF V600E",
+      "value": "unknown",
+      "method": "not yet reported",
+      "confirmation_status": "unknown",
+      "decision_resolution": "NGS or IHC (VE1). Rare in adult GBM but if positive opens dabrafenib + trametinib (tumor-agnostic label in BRAF V600E solid tumors when no satisfactory alternatives)."
+    },
+    {
+      "name": "NTRK fusions",
+      "value": "unknown",
+      "method": "not yet reported",
+      "confirmation_status": "unknown",
+      "decision_resolution": "RNA-based fusion NGS. Rare but actionable (larotrectinib / entrectinib tumor-agnostic label)."
+    },
+    {
+      "name": "MMR / MSI",
+      "value": "unknown",
+      "method": "not yet reported",
+      "confirmation_status": "unknown",
+      "decision_resolution": "IHC for MMR proteins (MLH1/MSH2/MSH6/PMS2) and/or NGS MSI call. Primary MMR-deficient GBM is uncommon; hypermutated GBM (often post-TMZ) opens pembrolizumab tumor-agnostic label and ICI trials."
+    }
+  ],
+  "prior_therapies": [
+    {
+      "regimen": "craniotomy with subtotal (partial) resection of the GBM mass; gross-total resection was not achieved; presenting tumor had intratumoral hemorrhage",
+      "line": "definitive surgery (initial)",
+      "best_response": "NE"
+    }
+  ],
+  "current_therapy": null,
+  "organ_function": {},
+  "targetable_features": [
+    {
+      "feature": "MTAP loss (homozygous 9p21 deletion, co-deleted with CDKN2A)",
+      "rationale": "User-stated targetable feature. Mechanism: MTAP-null tumors accumulate the substrate MTA, which partially inhibits PRMT5; this creates a synthetic-lethal therapeutic window for MTAP-selective PRMT5 inhibitors (AMG 193 / MRTX1719 / TNG908 brain-penetrant / TNG462) and MAT2A inhibitors (AG-270 / IDE397). Multiple phase 1/2 trials are actively enrolling MTAP-deleted solid tumors, several with GBM-specific or CNS-penetrant arms. This is the single highest-yield molecularly targeted axis for this case."
+    },
+    {
+      "feature": "CDKN2A/p16 homozygous loss",
+      "rationale": "User-stated targetable feature. Mechanism: loss of p16/INK4a derepresses CDK4/6 activity, providing rationale for CDK4/6 inhibitors (abemaciclib — CNS-penetrant and studied in GBM; palbociclib; ribociclib). Several GBM trials enroll on CDK4/6-pathway alteration including CDKN2A loss. Also a poor-prognostic marker that strengthens the case for aggressive combination strategies and trial enrollment over conservative monotherapy."
+    },
+    {
+      "feature": "IDH1 wild-type status",
+      "rationale": "User-stated. A negative finding with decision consequences: IDH1-WT classifies the tumor as molecular glioblastoma under CNS WHO 2021, locks in the standard-of-care framework (maximal safe resection → Stupp: radiation + concurrent/adjuvant temozolomide ± TTFields), and excludes the IDH-mutant pathway therapies (vorasidenib, ivosidenib). Aligns trial eligibility toward GBM-specific trials rather than IDH-mutant glioma trials."
+    },
+    {
+      "feature": "Subtotal resection with residual measurable enhancing disease",
+      "rationale": "Not a molecular target but a clinical-state feature that materially shapes the treatment plan: residual measurable disease (a) is independently prognostic for worse outcome, (b) enables response assessment on subsequent therapy (RANO criteria), and (c) makes the patient eligible for measurable-disease trial cohorts and for re-resection / laser interstitial thermal therapy (LITT) consideration at a high-volume neuro-oncology center."
+    },
+    {
+      "feature": "Intratumoral hemorrhage at presentation",
+      "rationale": "Not a molecular target but a safety-relevant feature: prior intratumoral hemorrhage tightens the risk/benefit of bevacizumab (anti-VEGF; FDA-approved for recurrent GBM) and of any antiangiogenic or anticoagulant exposure. Should be carried forward as a safety annotation by downstream agents when scoring bevacizumab-containing or regorafenib-containing options."
+    }
+  ],
+  "geography_band": "US",
+  "private": false
+}
