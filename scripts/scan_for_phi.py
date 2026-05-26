@@ -192,6 +192,11 @@ ONCOLOGY_ACRONYM_ALLOWLIST = frozenset({
     "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC",
     "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT",
     "VT", "VA", "WA", "WV", "WI", "WY", "DC",
+    # GBM / neuro-oncology vocabulary (CNS WHO classification, trial families,
+    # performance status, gene names, ADC payloads, PD biomarkers)
+    "HGG", "LGG", "KPS", "MSP", "SDMA", "MMAF", "MPNST", "GEJ",
+    "ATRX", "IDH", "CSF", "RT", "PI", "AM",
+    "AGILE", "ROAR", "SURVIVE", "INCIPIENT", "EANO", "PVSRIPO",
 })
 
 ALL_CAPS_PAIR_RE = re.compile(r"\b([A-Z][A-Z]+),\s*([A-Z][A-Z]+)\b")
@@ -264,6 +269,19 @@ _BYDESIGN_NAMES = {
     # the reviewer hand-off. These are public business contacts, not PHI.
     "clinical_evidence.jsonl",
     "preclinical_evidence.jsonl",
+    # The PI-authored clinician dossier (`index.md`), the deterministic
+    # recommendations table (`recommendations.md`), the board proceedings
+    # (`board.md`), and the upstream recommendations / board JSONLs inline
+    # published business contacts (lab customer-service phones, trial-sponsor
+    # contact emails, navigator phone numbers) inside prose that explains how
+    # to actually order the workup or screen for the named trial. Same
+    # rationale as `accessibility.md`: PHI patterns that indicate patient
+    # identifiers (MRN, SSN, ALL-CAPS NAME pairs) still scan; only
+    # `_BYDESIGN_LABELS` (us_phone, email, iso_date_full) are suppressed.
+    "index.md",
+    "recommendations.md",
+    "recommendations.jsonl",
+    "board.md",
 }
 _BYDESIGN_LABELS = {"email", "us_phone", "iso_date_full"}
 

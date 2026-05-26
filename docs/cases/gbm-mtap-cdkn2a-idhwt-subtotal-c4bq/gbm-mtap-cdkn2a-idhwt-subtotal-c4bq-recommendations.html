@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>Libby recommendations &mdash; gbm-mtap-cdkn2a-idhwt-subtotal-c4bq</title>
+<style>
+
+:root {
+  --ink: #1A202C;
+  --ink-muted: #4A5568;
+  --rule: #E2E8F0;
+  --header-bg: #F4F6F8;
+  --accent: #5B3A87;
+  --bg: #FFFFFF;
+  --warn-fg: #6F2E1A;
+  --warn-bg: #FBE9E7;
+  --warn-border: #ECC4BB;
+}
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  max-width: 80rem;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  line-height: 1.5;
+}
+h1, h2, h3 { color: var(--ink); }
+h1 { font-size: 1.6rem; }
+h2 { font-size: 1.2rem; margin-top: 2rem; }
+h3 { font-size: 1.05rem; margin-top: 1.5rem; }
+small.scenario-key { color: var(--ink-muted); }
+.disclaimer {
+  border: 1px solid var(--warn-border);
+  background: var(--warn-bg);
+  color: var(--warn-fg);
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  margin: 1rem 0 2rem;
+  font-size: 0.95rem;
+}
+.disclaimer strong { color: #B71C1C; }
+.profile-grid {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.25rem 1rem;
+  margin: 1rem 0 2rem;
+  font-size: 0.95rem;
+}
+.profile-grid dt { font-weight: 600; color: var(--ink-muted); }
+.profile-grid dd { margin: 0; }
+.trial-table-wrap { color: var(--ink); }
+.trial-scroll { overflow-x: auto; }
+.trial-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.88em;
+}
+.trial-table thead th {
+  background: var(--header-bg);
+  font-weight: 600;
+  text-align: left;
+  padding: 0.5em 0.6em;
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  white-space: nowrap;
+}
+.trial-table tbody td {
+  padding: 0.5em 0.6em;
+  border-bottom: 1px solid var(--rule);
+  font-variant-numeric: tabular-nums;
+  vertical-align: top;
+}
+.trial-table tbody tr:last-child td {
+  border-bottom: 2px solid var(--ink);
+}
+.persona {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.35em;
+  font-size: 0.78em;
+  font-weight: 600;
+  margin-right: 0.25em;
+  border: 1px solid transparent;
+}
+.persona-risktaker    { background: #FFE9D6; color: #6F3A0F; border-color: #F0CFAE; }
+.persona-conservative { background: #DFEBFB; color: #1B3A6B; border-color: #B5CDEE; }
+.persona-critic       { background: #F1E5FF; color: #441E72; border-color: #D4BBF2; }
+.persona-concensusite { background: #DDF1EE; color: #134E48; border-color: #B0DBD3; }
+.persona-advocate     { background: #FFE5EE; color: #6E1638; border-color: #F0BBCB; }
+.split-glyph { font-weight: 700; color: #5A4500; }
+.not-recommended {
+  color: var(--ink-muted);
+  text-decoration: line-through;
+}
+.scenario-conditional {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5A4500;
+  background: #FFF7E0;
+  border: 1px solid #F1DD9A;
+  border-radius: 0.35em;
+  padding: 0.05em 0.45em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+.pipeline-note,
+.evidence-detail-note {
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+  margin: 0.25rem 0 0.75rem;
+}
+.evidence-detail-empty {
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+  margin: 0.25rem 0 0.75rem;
+  padding-left: 0.5rem;
+  border-left: 2px solid #E5E5E5;
+}
+.evidence-detail-table { font-size: 0.86em; }
+.evidence-detail-table thead th {
+  background: #FAFAFA;
+}
+.evidence-detail-table .tox-grade {
+  font-size: 0.85em;
+  color: var(--ink-muted);
+  font-weight: 500;
+}
+.evidence-detail-table .safety-summary-fallback {
+  font-style: italic;
+  color: var(--ink-muted);
+}
+h4 + .trial-table-wrap,
+h4 + .evidence-detail-empty {
+  margin-top: 0.25rem;
+}
+h4 { margin-top: 1.25rem; margin-bottom: 0.25rem; font-size: 1rem; }
+.pipeline-context-table { font-size: 0.82em; color: var(--ink-muted); }
+.pipeline-context-table thead th {
+  background: #FAFAFA;
+  border-top: 1px solid var(--ink-muted);
+  border-bottom: 1px solid var(--ink-muted);
+}
+.pipeline-context-table tbody tr:last-child td { border-bottom: 1px solid var(--ink-muted); }
+.pipeline-context-table .intervention-name { color: var(--ink); font-weight: 600; }
+.pipeline-context-table .alias-list { color: var(--ink-muted); font-size: 0.9em; }
+.pipeline-context-table .basket-flag {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #134E48;
+  background: #DDF1EE;
+  border: 1px solid #B0DBD3;
+  border-radius: 0.35em;
+  padding: 0.02em 0.4em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+.pipeline-context-table .discontinued-flag {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5A2A2A;
+  background: #F2E1E1;
+  border: 1px solid #DDB7B7;
+  border-radius: 0.35em;
+  padding: 0.02em 0.4em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+.pipeline-context-table .offlabel-flag {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5F4310;
+  background: #FBEFD3;
+  border: 1px solid #E8C977;
+  border-radius: 0.35em;
+  padding: 0.02em 0.4em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+footer.libby-footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  color: var(--ink-muted);
+  font-size: 0.85rem;
+}
+
+</style>
+</head>
+<body>
+<h1>Libby recommendations &mdash; <code>gbm-mtap-cdkn2a-idhwt-subtotal-c4bq</code></h1>
+<div class="disclaimer">
+<strong>Decision support, not medical advice.</strong> Libby is an experimental 
+multi-agent decision-support tool. The recommendations below have not been 
+reviewed by a clinician treating this patient. Do not act on this page without 
+consulting a qualified oncologist.
+</div>
+<h2>Profile snapshot</h2>
+<dl class="profile-grid">
+  <dt>Primary site</dt><dd>brain</dd>
+  <dt>Histology</dt><dd>glioblastoma, IDH-wildtype, WHO grade 4 (CNS WHO 2021); presenting tumor demonstrated intratumoral hemorrhage</dd>
+  <dt>Stage</dt><dd>newly diagnosed; status post subtotal (partial) resection — gross-total resection NOT achieved; residual enhancing disease presumed on post-op MRI; no extracranial disease (GBM does not stage by AJCC TNM)</dd>
+  <dt>ECOG</dt><dd>1</dd>
+  <dt>Age band</dt><dd>60-69</dd>
+  <dt>Sex</dt><dd>female</dd>
+  <dt>Biomarkers</dt><dd>IDH1 wild-type; CDKN2A (p16) homozygous loss; MTAP loss (homozygous deletion of 9p21, co-deleted with CDKN2A); MGMT promoter methylation unknown (unknown); EGFR unknown (amplification / EGFRvIII status not stated) (unknown); TERT promoter unknown (unknown); Chromosome 7 gain / chromosome 10 loss (+7/-10) unknown (unknown); BRAF V600E unknown (unknown); NTRK fusions unknown (unknown); MMR / MSI unknown (unknown)</dd>
+  <dt>Efficacy/toxicity weight</dt><dd>0.7</dd>
+</dl>
+
+<p><em>11 ranked therapeutic options across 6 targetable features. Biomarker workup steps live in the standalone Target validation paths report.</em></p>
+<h2>Idhwt Gbm Backbone interventions</h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr><td><a href="#evidence-temozolomide-ttfields">1</a></td><td><strong>Stupp regimen + TTFields: RT 60 Gy/30 fx + concurrent TMZ 75 mg/m^2/day × 6 weeks, then 6 cycles adjuvant TMZ 150-200 mg/m^2 d1-5 q28d, with Optune Gio (200 kHz) added from adjuvant cycle 1 at ≥18 hr/day</strong></td><td>High — Stupp HR_OS 0.63 (95% CI 0.52-0.75, replicated 5-yr) + EF-14 HR_OS 0.63 (95% CI 0.53-0.76) layered on TMZ; the 20.9-mo median is the threshold every other rank is measured against.</td><td>Moderate (G≥3 hematologic 14% adjuvant-phase, lymphopenia under TMZ requiring PJP prophylaxis, scalp dermatitis 52% any grade / 2% G≥3 under arrays)</td><td><strong>Low</strong> <span class="cpm-desc">(TMZ-induced hypermutation at recurrence can paradoxically open MMR-deficient ICI eligibility — a delayed pro-mechanism effect rather than a true counter-productive one.)</span></td><td><strong>**The OS-anchored standard the entire ranking is built around; every other rank either layers on this backbone or is measured against it.**</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/15758010">PMID&nbsp;15758010</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/15758009">PMID&nbsp;15758009</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/19269895">PMID&nbsp;19269895</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/29392280">PMID&nbsp;29392280</a><br><a href="https://clinicaltrials.gov/study/NCT00006353">NCT00006353</a><br><a href="https://clinicaltrials.gov/study/NCT00916409">NCT00916409</a></td></tr>
+    <tr><td><a href="#evidence-gbm-agile-platform">2</a></td><td><strong>GBM AGILE adaptive platform (NCT03970447) — Bayesian-randomized multi-site backbone alternative; current arms AZD1390 + RT (newly diagnosed only), tinostamustine, ADI-PEG 20, troriluzole, VT1021</strong></td><td>Moderate — Bayesian randomization against SoC; current arms (AZD1390+RT, tinostamustine, ADI-PEG 20) are not MTAP-matched, so mechanism-axis upside is lower than BGB-58067.</td><td>Moderate (varies by arm assignment; AZD1390+RT carries CNS toxicity and lymphopenia signal, tinostamustine carries hematologic AE typical of alkylators)</td><td><strong>Low</strong> <span class="cpm-desc">(Arm randomization can land the patient on a non-mechanism-matched investigational agent — efficiency cost rather than counter-productive mechanism.)</span></td><td><strong>**The strongest multi-site randomized-platform alternative when the Phoenix slot is infeasible; mechanism axis is weaker than BGB-58067 because no current arm targets MTAP.**</strong></td><td><a href="https://clinicaltrials.gov/study/NCT03970447">NCT03970447</a></td></tr>
+    <tr><td><a href="#evidence-survaxm">3</a></td><td><strong>SurVaxM (survivin peptide vaccine SVN53-67/M57-KLH) + GM-CSF on the SURVIVE phase 2b NCT05163080, layered on adjuvant TMZ</strong></td><td>Low-to-moderate — Ahluwalia 2023 single-arm n=63 reported PFS6 95.2%, mOS 25.9 mo against ~16-mo historical control; SURVIVE phase 2b is the randomized validation gate.</td><td>Low (injection-site reactions, low-grade flu-like symptoms; zero SurVaxM-attributable G≥3 SAEs in n=63)</td><td><strong>Low</strong> <span class="cpm-desc">(Vaccine adjuvant immune activation has no established counter-productive mechanism in GBM; the main concern is Optune incompatibility (foregoing EF-14-anchored OS) rather than a mechanism-level risk.)</span></td><td><strong>**The lowest-toxicity add-on in the dossier with a real but unreplicated single-arm signal; forces a binary choice against TTFields because SURVIVE excludes concurrent Optune.**</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/36473145">PMID&nbsp;36473145</a><br><a href="https://clinicaltrials.gov/study/NCT05163080">NCT05163080</a></td></tr>
+    <tr><td><a href="#evidence-can-3110">4</a></td><td><strong>CAN-3110 (rQNestin34.5v.2) oncolytic HSV-1 intratumoral injection — recurrence pre-position; order HSV-1 IgG serology now to inform the prior probability of benefit</strong></td><td>Low overall, moderate in HSV-1 seropositive subset — Ling 2023 single-dose mOS 11.6 mo overall, 14.2 mo seropositive vs ~9 mo historical recurrent-GBM benchmark.</td><td>Low (no DLTs across the Ling 2023 dose range; perilesional inflammation is the modal AE)</td><td><strong>Low</strong> <span class="cpm-desc">(Perilesional inflammation from viral lysis could re-bleed in a pre-bled brain — a hemorrhage-history-specific relative caution rather than a class-level counter-productive mechanism.)</span></td><td><strong>**Recurrence-time pre-position with a cheap up-front serology that doubles the prior probability of benefit; hemorrhage history is a relative caution not an exclusion.**</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37853118">PMID&nbsp;37853118</a><br><a href="https://clinicaltrials.gov/study/NCT03152318">NCT03152318</a></td></tr>
+    <tr><td><a href="#evidence-fus-bbb-opening">5</a></td><td><strong>FUS-mediated BBB opening (SonoCloud-9 / SONOBIRD NCT04528680) at first recurrence — pre-position at a US SONOBIRD site (Northwestern/Sonabend, Columbia, MD Anderson)</strong></td><td>Low-to-moderate — Sonabend 2023 (n=17) demonstrated 4-6× peri-tumoral drug concentration enhancement; SONOBIRD OS data not yet mature.</td><td>Low (no implant-related deaths in Sonabend 2023; tolerated through 6 cycles)</td><td><strong>Low</strong> <span class="cpm-desc">(BBB opening could theoretically increase off-target CNS exposure of partner cytotoxics, but the Sonabend cohort showed no implant-related deaths or severe CNS toxicity.)</span></td><td><strong>**Recurrence-time delivery-enhancement pre-position; requires pre-screening at a SONOBIRD US site at the first-recurrence resection conversation.**</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37087102">PMID&nbsp;37087102</a><br><a href="https://clinicaltrials.gov/study/NCT04528680">NCT04528680</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-temozolomide-ttfields">Stupp regimen + TTFields: RT 60 Gy/30 fx + concurrent TMZ 75 mg/m^2/day × 6 weeks, then 6 cycles adjuvant TMZ 150-200 mg/m^2 d1-5 q28d, with Optune Gio (200 kHz) added from adjuvant cycle 1 at ≥18 hr/day</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>Newly diagnosed glioblastoma</strong> (1L)<br><small>Adults age 18-70 with newly diagnosed histologically confirmed GBM, WHO PS 0-2, post-resection or biopsy. MGMT status not used for stratification at randomization but later shown to be the strongest effect modifier.</small></td><td>573</td><td><strong>grade 3-4 hematologic AE during concurrent phase</strong> <span class="tox-grade">grade &gt;=3</span>: 7% (n=284) <small>(TMZ + RT arm; mostly thrombocytopenia and neutropenia)</small><br><strong>grade 3-4 hematologic AE during adjuvant phase</strong> <span class="tox-grade">grade &gt;=3</span>: 14% (n=223)<br><strong>any grade 3-4 AE</strong> <span class="tox-grade">grade &gt;=3</span> <small>(rates similar between arms during RT phase)</small><br><strong>pneumocystis pneumonia</strong> <span class="tox-grade">grade any</span> <small>(rare events; prophylaxis recommended during concurrent phase)</small></td><td><strong>OS</strong>: 0.63 HR (95% CI 0.52–0.75); p &lt;0.001<br><small>mOS 14.6 vs 12.1 mo</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/15758010">Stupp R et al. <em>N Engl J Med</em> 2005</a></td></tr>
+    <tr><td><strong>Newly diagnosed glioblastoma; MGMT-methylated vs unmethylated subsets</strong> (1L)<br><small>MGMT promoter methylation by methylation-specific PCR on 206 of 573 EORTC 26981 patients with assessable tumor. Methylated 45%, unmethylated 55%.</small></td><td>206</td><td><span class="safety-summary-fallback">No new safety signals; this is a biomarker analysis of EORTC 26981, safety reported in the parent trial.</span></td><td><strong>OS by MGMT methylation status</strong>: Methylated mOS 21.7 vs 15.3 mo (TMZ+RT vs RT); unmethylated mOS 12.7 vs 11.8 mo months; p 0.007 (methylated subset)<br><small>Methylated subset mOS 21.7 (TMZ+RT) vs 15.3 (RT alone)</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/15758009">Hegi ME et al. <em>N Engl J Med</em> 2005</a></td></tr>
+    <tr><td><strong>Newly diagnosed glioblastoma — long-term follow-up</strong> (1L)<br><small>Full EORTC 26981 cohort with 5+ years of follow-up.</small></td><td>573</td><td><span class="safety-summary-fallback">No new late toxicities beyond the parent trial. MGMT methylation was the dominant predictor of long-term survival; methylated MGMT and TMZ exposure together identified the patients who reached 5-year survival.</span></td><td><strong>OS at 2, 3, 4, 5 years</strong>: 5-yr OS 9.8% (TMZ+RT) vs 1.9% (RT)%; p &lt;0.0001<br><small>5-yr OS 9.8% vs 1.9%</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/19269895">Stupp R et al. <em>Lancet Oncology</em> 2009</a></td></tr>
+    <tr><td><strong>Newly diagnosed glioblastoma post-RT+TMZ; adjuvant maintenance</strong> (maintenance)<br><small>Age 18+, completed RT+TMZ without progression, KPS &gt;=70, both MGMT methylated and unmethylated enrolled.</small></td><td>695</td><td><strong>scalp dermatitis / irritation under arrays</strong> <span class="tox-grade">grade any</span>: 52% (n=466) <small>(TTFields arm)</small><br><strong>scalp dermatitis</strong> <span class="tox-grade">grade &gt;=3</span>: 2% (n=466)<br><strong>thrombocytopenia</strong> <span class="tox-grade">grade &gt;=3</span>: 4% (n=466) <small>(TMZ-attributed, similar between arms)</small><br><strong>fatigue</strong> <span class="tox-grade">grade any</span> <small>(rates similar between arms)</small></td><td><strong>OS</strong>: 0.63 HR (95% CI 0.53–0.76); p &lt;0.001<br><small>mOS 20.9 vs 16.0 mo; mPFS 6.7 vs 4.0 mo</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/29392280">Stupp R et al. <em>JAMA</em> 2017</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-gbm-agile-platform">GBM AGILE adaptive platform (NCT03970447) — Bayesian-randomized multi-site backbone alternative; current arms AZD1390 + RT (newly diagnosed only), tinostamustine, ADI-PEG 20, troriluzole, VT1021</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-survaxm">SurVaxM (survivin peptide vaccine SVN53-67/M57-KLH) + GM-CSF on the SURVIVE phase 2b NCT05163080, layered on adjuvant TMZ</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>Newly diagnosed glioblastoma</strong> (1L (adjuvant))<br><small>63 adults with newly diagnosed GBM who completed Stupp RT+TMZ without progression; KPS &gt;=70; survivin expression confirmed by IHC.</small></td><td>63</td><td><strong>injection-site reaction</strong> <span class="tox-grade">grade any</span> <small>(most common AE; mild grade 1-2)</small><br><strong>fatigue</strong> <span class="tox-grade">grade any</span><br><strong>any SAE attributable to SurVaxM</strong> <span class="tox-grade">grade &gt;=3</span>: 0% (n=63)</td><td><strong>PFS6 (primary), OS</strong>: 95.2% (PFS6)<br><small>mPFS 11.4 mo; mOS 25.9 mo; 2-yr OS 51%; 3-yr OS 41%</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/36473145">Ahluwalia MS et al. <em>Journal of Clinical Oncology</em> 2023</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-can-3110">CAN-3110 (rQNestin34.5v.2) oncolytic HSV-1 intratumoral injection — recurrence pre-position; order HSV-1 IgG serology now to inform the prior probability of benefit</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>Recurrent high-grade glioma (mostly recurrent GBM)</strong> (2L+)<br><small>41 evaluable patients with recurrent HGG, KPS &gt;=70, accessible enhancing tumor for stereotactic injection. Pre-existing HSV-1 serology was the key effect-modifier.</small></td><td>41</td><td><strong>any DLT</strong> <span class="tox-grade">grade &gt;=3</span>: 0% (n=41) <small>(no DLTs across the full dose range)</small><br><strong>perilesional edema</strong> <span class="tox-grade">grade any</span> <small>(characteristic; managed with steroids)</small><br><strong>headache</strong> <span class="tox-grade">grade any</span><br><strong>seizure</strong> <span class="tox-grade">grade any</span> <small>(managed with antiepileptics)</small><br><strong>intratumoral hemorrhage</strong> <span class="tox-grade">grade any</span> <small>(rare; flagged because of this patient&#x27;s history)</small></td><td><strong>Safety, OS, immune-activation biomarker</strong>: 11.6 months (95% CI 7.8–14.9)<br><small>mOS 11.6 mo overall; 14.2 mo in HSV-seropositive; 7.8 mo in seronegative</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37853118">Ling AL et al. <em>Nature</em> 2023</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-fus-bbb-opening">FUS-mediated BBB opening (SonoCloud-9 / SONOBIRD NCT04528680) at first recurrence — pre-position at a US SONOBIRD site (Northwestern/Sonabend, Columbia, MD Anderson)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>Recurrent glioblastoma — peri-tumoral BBB disruption to enable systemic chemotherapy delivery</strong> (2L+)<br><small>17 adults with recurrent GBM, KPS &gt;=60, surgically implanted with the SonoCloud-9 skull device at time of resection. Single-center Northwestern.</small></td><td>17</td><td><strong>implant-related complication</strong> <span class="tox-grade">grade &gt;=3</span>: 0% (n=17) <small>(no implant-related deaths or device explants required)</small><br><strong>FUS-related transient edema</strong> <span class="tox-grade">grade any</span> <small>(expected, managed conservatively)</small><br><strong>nab-paclitaxel related peripheral neuropathy</strong> <span class="tox-grade">grade &gt;=3</span> <small>(characteristic of nab-paclitaxel)</small></td><td><strong>Safety, feasibility, intracerebral nab-paclitaxel concentration</strong>: 4-6x increased peri-tumoral drug concentration vs unsonicated tissue; up to 6 cycles tolerated—<br><small>Not the primary endpoint; efficacy signal not the focus of this phase 1</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37087102">Sonabend AM et al. <em>Lancet Oncology</em> 2023</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2>Mtap Loss interventions</h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr><td><a href="#evidence-bgb-58067">1</a></td><td><strong>BGB-58067 (brain-penetrant MTA-cooperative PRMT5 inhibitor) on the Sanai phase 0/2 NCT07485049 at Ivy Brain Tumor Center, Phoenix — Arm A (unmethylated MGMT + RT) or Arm B (methylated MGMT + RT + TMZ); layered on the Stupp backbone, not substituting for it</strong></td><td>Moderate uncertainty — mechanism-matched at MTAP/CDKN2A with brain-penetrant chemistry but no published BGB-58067 efficacy on the molecule itself; class proxy ORR ~11% in pre-treated all-comer MTAP-null tumors (anvumetostat MTAPESTRY-101).</td><td>Low (class proxy: G≥3 TRAE 13.8%, discontinuation 2.5%, no treatment-related deaths in anvumetostat MTAPESTRY-101; BGB-58067 CNS-specific tox unpublished)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Inadequate CNS exposure was the proximate failure mode of TNG908 — design rationale addresses it but human CSF PK on BGB-58067 itself is not yet public.)</span></td><td><strong>**The cleanest mechanistic match in the dossier for this patient&#x27;s 9p21 co-deletion; biomarker fit is exact and the trial preserves the Stupp backbone, but the molecule has no published human efficacy and the class&#x27;s CNS record is two failures.**</strong></td><td><a href="https://clinicaltrials.gov/study/NCT07485049">NCT07485049</a><br>doi:10.1016/j.annonc.2024.06.005<br><a href="https://pubmed.ncbi.nlm.nih.gov/39282709">PMID&nbsp;39282709</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/38108025">PMID&nbsp;38108025</a></td></tr>
+    <tr><td><a href="#evidence-navlimetostat">2</a></td><td><strong>Navlimetostat (BMS-986504) on the MountainTAP-5 phase 2 NCT07492680 — Cohort 4 explicitly combines BMS-986504 with TMZ + RT for newly diagnosed MTAP-deleted GBM; pin for July 2026 re-screen</strong></td><td>Moderate — same class as BGB-58067 with explicit GBM + Stupp-backbone cohort; class proxy is anvumetostat MTAPESTRY-101 (ORR 11% in pre-treated all-comer MTAP-null tumors).</td><td>Low (class proxy: G≥3 TRAE 13.8% in anvumetostat MTAPESTRY-101; BMS-986504 specific tox profile in escalation)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Same class-level concern as BGB-58067: human CSF PK on BMS-986504 in GBM is not yet public; CNS exposure is the historical failure mode for the class.)</span></td><td><strong>**Parallel-track insurance on the MTAP axis against BGB-58067 single-site fragility; not actionable today, calendar-trigger July 2026 the week MountainTAP-5 opens.**</strong></td><td><a href="https://clinicaltrials.gov/study/NCT07492680">NCT07492680</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/39282709">PMID&nbsp;39282709</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-bgb-58067">BGB-58067 (brain-penetrant MTA-cooperative PRMT5 inhibitor) on the Sanai phase 0/2 NCT07485049 at Ivy Brain Tumor Center, Phoenix — Arm A (unmethylated MGMT + RT) or Arm B (methylated MGMT + RT + TMZ); layered on the Stupp backbone, not substituting for it</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>MTAP-deleted advanced solid tumors</strong> (2L+)<br><small>Combined preclinical + early clinical translational characterization; patient cohorts overlap with the AnnOnc 2024 phase 1 paper.</small></td><td>80</td><td><span class="safety-summary-fallback">Safety detailed in the AnnOnc 2024 phase 1 paper; same dataset. Translational sections in this paper carry preclinical hematologic-sparing data (no impact on normal hematopoietic lineages in xenografts).</span></td><td><strong>Mechanism + clinical activity in MTAP-deleted cancers</strong>: Robust antitumor activity in MTAP-null CDX/PDX models; clinical ORR and ctDNA clearance corroborating—</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/39282709">Rodon J et al. <em>Cancer Discovery</em> 2025</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-navlimetostat">Navlimetostat (BMS-986504) on the MountainTAP-5 phase 2 NCT07492680 — Cohort 4 explicitly combines BMS-986504 with TMZ + RT for newly diagnosed MTAP-deleted GBM; pin for July 2026 re-screen</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>MTAP-deleted advanced solid tumors</strong> (2L+)<br><small>Combined preclinical + early clinical translational characterization; patient cohorts overlap with the AnnOnc 2024 phase 1 paper.</small></td><td>80</td><td><span class="safety-summary-fallback">Safety detailed in the AnnOnc 2024 phase 1 paper; same dataset. Translational sections in this paper carry preclinical hematologic-sparing data (no impact on normal hematopoietic lineages in xenografts).</span></td><td><strong>Mechanism + clinical activity in MTAP-deleted cancers</strong>: Robust antitumor activity in MTAP-null CDX/PDX models; clinical ORR and ctDNA clearance corroborating—</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/39282709">Rodon J et al. <em>Cancer Discovery</em> 2025</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2>Mgmt Methylated interventions</h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr><td><a href="#evidence-lomustine-tmz">1</a></td><td><strong>CeTeG / NOA-09: lomustine (CCNU) 100 mg/m^2 day 1 + TMZ 100-200 mg/m^2 days 2-6 every 6 weeks × 6 cycles, with concurrent RT 60 Gy — conditional on MGMT promoter methylated AND adequate baseline marrow reserve</strong> <span class="scenario-conditional">(conditional on mgmt_methylated positive)</span></td><td>High in MGMT-methylated subset — Herrlinger 2019 HR_OS 0.60 (95% CI 0.35-1.03), mOS 48.1 vs 31.4 mo; CI precision is modest at n=141 and unreplicated.</td><td>Moderate (G≥3 hematologic 41%: lymphopenia 27%, thrombocytopenia 16%, neutropenia 13%; no treatment-related deaths in CeTeG arm)</td><td><strong>Low</strong> <span class="cpm-desc">(Cumulative CCNU myelosuppression can foreclose later cytotoxic combinations at recurrence (lomustine + bevacizumab) — a sequencing rather than a counter-productive concern.)</span></td><td><strong>**The largest published front-line OS signal in MGMT-methylated GBM, conditional on a result the workup row will return; toxicity at age 66 is the binding constraint and the CI is wider than the headline number suggests.**</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/31488360">PMID&nbsp;31488360</a><br><a href="https://clinicaltrials.gov/study/NCT01149109">NCT01149109</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-lomustine-tmz">CeTeG / NOA-09: lomustine (CCNU) 100 mg/m^2 day 1 + TMZ 100-200 mg/m^2 days 2-6 every 6 weeks × 6 cycles, with concurrent RT 60 Gy — conditional on MGMT promoter methylated AND adequate baseline marrow reserve</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>Newly diagnosed MGMT-methylated glioblastoma</strong> (1L)<br><small>Adults age 18-70, KPS &gt;=70, newly diagnosed GBM with MGMT promoter methylated by MSP, post-resection or biopsy. 17 German university centers.</small></td><td>141</td><td><strong>any grade 3-4 hematologic AE</strong> <span class="tox-grade">grade &gt;=3</span>: 41% (n=63) <small>(CCNU+TMZ arm)</small><br><strong>lymphopenia</strong> <span class="tox-grade">grade &gt;=3</span>: 27% (n=63)<br><strong>thrombocytopenia</strong> <span class="tox-grade">grade &gt;=3</span>: 16% (n=63)<br><strong>neutropenia</strong> <span class="tox-grade">grade &gt;=3</span>: 13% (n=63)<br><strong>any grade 3-4 hematologic AE</strong> <span class="tox-grade">grade &gt;=3</span>: 13% (n=66) <small>(TMZ-alone comparator arm)</small></td><td><strong>OS (per-protocol)</strong>: 0.6 HR (95% CI 0.35–1.03); p 0.049<br><small>mOS 48.1 vs 31.4 mo (CCNU+TMZ vs TMZ)</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/31488360">Herrlinger U et al. <em>Lancet</em> 2019</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2>Braf V600E interventions</h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr><td><a href="#evidence-comprehensive-ngs-conditional-plays">1</a></td><td><strong>Tumor-agnostic conditional plays unlocked by the rank-1 NGS panel: dabrafenib + trametinib for BRAF V600E (ROAR HGG cohort); larotrectinib or entrectinib for NTRK fusion-positive; pembrolizumab for MSI-H / dMMR or TMB-H — all recurrence-only and biomarker-conditional</strong></td><td>Low prior probability across all three biomarkers in adult IDH-WT GBM (BRAF V600E ~1-2%, NTRK &lt;1%, MMR-D uncommon); ORR conditional on a positive hit is ROAR 33%, larotrectinib 75-80%, pembrolizumab TMB-H 29%.</td><td>Moderate (class AEs by axis; mostly manageable on outpatient monitoring)</td><td><strong>Low</strong> <span class="cpm-desc">(Each axis is biomarker-selected; mechanism-level risk only arises if a positive call is acted on without confirmation (e.g. NTRK call without RNA-fusion verification).)</span></td><td><strong>**Free conditional options that fall out of the rank-1 NGS bundle at zero marginal cost; low prior probability across all three but the upside on a positive hit reframes the recurrence-time decision tree.**</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/34838156">PMID&nbsp;34838156</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/29466156">PMID&nbsp;29466156</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/32919526">PMID&nbsp;32919526</a><br><a href="https://clinicaltrials.gov/study/NCT02034110">NCT02034110</a><br><a href="https://clinicaltrials.gov/study/NCT02122913">NCT02122913</a><br><a href="https://clinicaltrials.gov/study/NCT02628067">NCT02628067</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-comprehensive-ngs-conditional-plays">Tumor-agnostic conditional plays unlocked by the rank-1 NGS panel: dabrafenib + trametinib for BRAF V600E (ROAR HGG cohort); larotrectinib or entrectinib for NTRK fusion-positive; pembrolizumab for MSI-H / dMMR or TMB-H — all recurrence-only and biomarker-conditional</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>BRAF V600E-mutant high-grade glioma (HGG) — recurrent after standard therapy</strong> (2L+)<br><small>Adults with BRAF V600E-mutant HGG (glioblastoma, anaplastic astrocytoma, anaplastic ganglioglioma, anaplastic pleomorphic xanthoastrocytoma), KPS &gt;=70, prior RT and standard chemotherapy. 13 of 45 HGG patients had GBM.</small></td><td>45</td><td><strong>any grade &gt;=3 AE</strong> <span class="tox-grade">grade &gt;=3</span>: 53% (n=58) <small>(across full glioma cohort)</small><br><strong>fatigue</strong> <span class="tox-grade">grade &gt;=3</span>: 9% (n=58)<br><strong>neutrophil count decreased</strong> <span class="tox-grade">grade &gt;=3</span>: 9% (n=58)<br><strong>headache</strong> <span class="tox-grade">grade &gt;=3</span>: 5% (n=58)<br><strong>neutropenia</strong> <span class="tox-grade">grade &gt;=3</span>: 5% (n=58)<br><strong>pyrexia</strong> <span class="tox-grade">grade any</span> <small>(most common all-grade AE; characteristic of dabrafenib)</small><br><strong>rash / dermatitis</strong> <span class="tox-grade">grade any</span></td><td><strong>ORR (investigator-assessed RANO); OS</strong>: 33% (95% CI 20–49)<br><small>mDoR 13.6 months in HGG cohort; mPFS 4.5 mo; 12-mo OS 41%</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/34838156">Wen PY et al. <em>Lancet Oncology</em> 2022</a></td></tr>
+    <tr><td><strong>TRK fusion-positive advanced solid tumors (tumor-agnostic)</strong> (2L+)<br><small>55 patients (children + adults) with TRK fusion-positive tumors pooled from three early-phase trials. 17 tumor types represented; primary CNS not in this initial pool.</small></td><td>55</td><td><strong>any grade &gt;=3 AE</strong> <span class="tox-grade">grade &gt;=3</span> <small>(lower than typical cytotoxics; specific rate in supplement)</small><br><strong>anemia</strong> <span class="tox-grade">grade &gt;=3</span><br><strong>increased AST</strong> <span class="tox-grade">grade &gt;=3</span>: 3% (n=55)<br><strong>increased ALT</strong> <span class="tox-grade">grade &gt;=3</span>: 3% (n=55)<br><strong>dizziness</strong> <span class="tox-grade">grade any</span>: 22% (n=55)</td><td><strong>ORR (investigator + central review)</strong>: 75% (95% CI 61–85)<br><small>Median DoR not reached at primary analysis (&gt;= 9 months in 71% of responders)</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/29466156">Drilon A et al. <em>N Engl J Med</em> 2018</a></td></tr>
+    <tr><td><strong>TMB-H (&gt;=10 mut/Mb) advanced solid tumors, tumor-agnostic</strong> (2L+)<br><small>102 patients with TMB-H by FoundationOne CDx from 10 KEYNOTE-158 tumor-type cohorts. Glioma not specifically in the primary TMB-H cohort.</small></td><td>102</td><td><strong>any immune-related AE</strong> <span class="tox-grade">grade any</span> <small>(class profile)</small><br><strong>pneumonitis</strong> <span class="tox-grade">grade &gt;=3</span> <small>(characteristic class effect)</small><br><strong>colitis</strong> <span class="tox-grade">grade &gt;=3</span><br><strong>thyroiditis (any)</strong> <span class="tox-grade">grade any</span><br><strong>hepatitis</strong> <span class="tox-grade">grade &gt;=3</span></td><td><strong>ORR (RECIST 1.1, BICR)</strong>: 29% (95% CI 21–39)<br><small>mDoR not reached at primary analysis (&gt;=12 months in most responders)</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/32919526">Marabelle A et al. <em>Lancet Oncology</em> 2020</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2>CDKN2A-loss / MTAP-targeting interventions</h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr><td><a href="#evidence-abemaciclib">1</a></td><td><strong>Abemaciclib (CDK4/6 inhibitor, CNS-penetrant) off-label or on a PRMT5 + CDK4/6 combination protocol at first progression — leveraging the 9p21 co-deletion (CDKN2A loss + MTAP loss) synthetic-lethal logic; gated on RB1 functional confirmation</strong></td><td>Low for monotherapy (PFS6 ~9.7% recurrent CDKN2A-loss GBM, Wen 2024); the combination case (CDK4/6i + PRMT5i) is preclinical and untested in clinic.</td><td>Moderate (G≥3 diarrhea characteristic of class, neutropenia, fatigue; at age 66 start at 150 mg BID rather than on-label 200 mg BID)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Pgp efflux at the BBB blunts the CDK4/6 class in CNS (Taal palbociclib failure); abemaciclib was selected for partial CNS penetration but intratumoral concentrations are modest.)</span></td><td><strong>**Recurrence-time pre-position keyed to the patient&#x27;s exact 9p21 co-deletion biology; monotherapy ceiling is modest and the combination thesis is preclinical, so the rank is honest about the evidence gap.**</strong></td><td><a href="https://clinicaltrials.gov/study/NCT02981940">NCT02981940</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/37722087">PMID&nbsp;37722087</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/30151703">PMID&nbsp;30151703</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Pipeline context &mdash; not currently enrollable</h3>
+<p class="pipeline-note">Other agents in this target class drawn from the case dossier. The patient cannot currently enroll in these trials (most enroll a different tumor type), but they are included for context on the broader modality landscape. Drugs already listed in the ranked table above are not repeated here.</p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table pipeline-context-table">
+      <thead><tr><th>Intervention</th><th>Modality</th><th>Phase</th><th>Enrolling indication</th><th>Recruitment</th><th>Trial</th></tr></thead>
+      <tbody>
+    <tr><td><span class="intervention-name">Anvumetostat (AMG 193) monotherapy or + docetaxel (docetaxel arms not relevant here)</span> <span class="basket-flag">basket / biomarker</span><br><span class="alias-list">AMG-193</span></td><td>small_molecule</td><td>1/2</td><td>Advanced MTAP-null solid tumors (MTAPESTRY 101); Part 1m is a dedicated glioma cohort</td><td>active not recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT05094336" target="_blank" rel="noopener noreferrer">NCT05094336</a><br><span class="alias-list">Amgen</span></td></tr>
+    <tr><td><span class="intervention-name">S095035 (MAT2A inhibitor) monotherapy or + TNG462 (PRMT5 inhibitor)</span> <span class="basket-flag">basket / biomarker</span><br><span class="alias-list">S-095035</span></td><td>small_molecule</td><td>1/2</td><td>Advanced/metastatic MTAP-deleted solid tumors including IDH-wildtype GBM (explicit cohort)</td><td>active not recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT06188702" target="_blank" rel="noopener noreferrer">NCT06188702</a><br><span class="alias-list">Servier Bio-Innovation</span></td></tr>
+    <tr><td><span class="intervention-name">TNG462 (peripheral-only PRMT5 inhibitor)</span><br><span class="alias-list">TNG-462</span></td><td>small_molecule</td><td>1/2</td><td>MTAP-deleted advanced solid tumors EXCLUDING primary CNS</td><td>recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT05732831" target="_blank" rel="noopener noreferrer">NCT05732831</a><br><span class="alias-list">Tango Therapeutics</span></td></tr>
+    <tr><td><span class="intervention-name">IDE397 (MAT2A inhibitor) monotherapy and combinations (e.g. + anvumetostat — see NCT05975073)</span><br><span class="alias-list">IDE-397</span></td><td>small_molecule</td><td>1</td><td>Advanced MTAP-deleted solid tumors (lung, bladder, others — no GBM cohort)</td><td>active not recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT04794699" target="_blank" rel="noopener noreferrer">NCT04794699</a><br><span class="alias-list">IDEAYA Biosciences</span></td></tr>
+    <tr><td><span class="intervention-name">Anvumetostat (AMG 193) monotherapy</span></td><td>small_molecule</td><td>1</td><td>MTAP-null advanced solid tumors (MTAPESTRY 101 phase 1 backbone)</td><td>active not recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT05094336" target="_blank" rel="noopener noreferrer">NCT05094336</a><br><span class="alias-list">Amgen</span></td></tr>
+    <tr><td><span class="intervention-name">MRTX1719 (PRMT5-MTA inhibitor)</span><br><span class="alias-list">MRTX-1719</span></td><td>small_molecule</td><td>1</td><td>MTAP-deleted advanced solid tumors (mesothelioma, NSCLC, MPNST, pancreatic — no CNS)</td><td>recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT05245500" target="_blank" rel="noopener noreferrer">NCT05245500</a><br><span class="alias-list">Bristol-Myers Squibb (acquired from Mirati Therapeutics)</span></td></tr>
+    <tr><td><span class="intervention-name">IDE892 (next-generation MAT2A inhibitor)</span><br><span class="alias-list">IDE-892</span></td><td>small_molecule</td><td>1</td><td>MTAP-deleted advanced solid tumors (NSCLC, GEJ, urothelial, mesothelioma; no GBM cohort listed at start)</td><td>recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT07277413" target="_blank" rel="noopener noreferrer">NCT07277413</a><br><span class="alias-list">IDEAYA Biosciences</span></td></tr>
+    <tr><td><span class="intervention-name">Standard TMZ control vs. neratinib + TMZ vs. abemaciclib + TMZ (closed to accrual) vs. CC-115 (closed) vs. QBS10072S</span><br><span class="alias-list">INSIGhT, AGILE-NCI</span></td><td>small_molecule</td><td>2</td><td>Newly diagnosed IDH-wildtype GBM, MGMT unmethylated</td><td>recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT02977780" target="_blank" rel="noopener noreferrer">NCT02977780</a><br><span class="alias-list">Dana-Farber Cancer Institute / NCI</span></td></tr>
+    <tr><td><span class="intervention-name">TNG908 (brain-penetrant PRMT5 inhibitor)</span> <span class="basket-flag">basket / biomarker</span> <span class="discontinued-flag">discontinued</span><br><span class="alias-list">TNG-908</span></td><td>small_molecule</td><td>1/2</td><td>MTAP-deleted advanced solid tumors including relapsed/refractory GBM (dedicated GBM expansion arm)</td><td>terminated</td><td><a href="https://clinicaltrials.gov/study/NCT05275478" target="_blank" rel="noopener noreferrer">NCT05275478</a><br><span class="alias-list">Tango Therapeutics</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-abemaciclib">Abemaciclib (CDK4/6 inhibitor, CNS-penetrant) off-label or on a PRMT5 + CDK4/6 combination protocol at first progression — leveraging the 9p21 co-deletion (CDKN2A loss + MTAP loss) synthetic-lethal logic; gated on RB1 functional confirmation</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>Newly diagnosed MGMT-unmethylated glioblastoma</strong> (1L (adjuvant, post-RT))<br><small>Adults with newly diagnosed MGMT-unmethylated IDH-wildtype GBM, post-resection or biopsy, completed standard chemoradiation. Bayesian adaptive randomization across abemaciclib, neratinib, CC-115, and control TMZ arms.</small></td><td>73</td><td><strong>diarrhea</strong> <span class="tox-grade">grade any</span> <small>(characteristic of abemaciclib; rates broadly consistent with breast-cancer label)</small><br><strong>neutropenia</strong> <span class="tox-grade">grade &gt;=3</span> <small>(class effect; specific arm rates not separately reported in primary paper)</small><br><strong>fatigue</strong> <span class="tox-grade">grade any</span></td><td><strong>PFS (primary); OS (secondary)</strong>: 0.72 HR (95% CI 0.49–1.06); p 0.046 (one-sided)<br><small>PFS benefit vs control TMZ; OS not significantly improved</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37722087">Wen PY et al. <em>Clinical Cancer Research</em> 2023</a></td></tr>
+    <tr><td><strong>Recurrent glioblastoma, RB1-proficient by IHC</strong> (2L+)<br><small>Adults with recurrent GBM, KPS &gt;=60, RB1 protein expression confirmed by IHC, &lt;=3 prior relapses. Arm 1 = palbociclib pre-op then adjuvant; Arm 2 = palbociclib without resection.</small></td><td>22</td><td><strong>neutropenia</strong> <span class="tox-grade">grade &gt;=3</span> <small>(characteristic of palbociclib)</small><br><strong>thrombocytopenia</strong> <span class="tox-grade">grade &gt;=3</span><br><strong>fatigue</strong> <span class="tox-grade">grade any</span></td><td><strong>PFS, OS</strong>: 1.2 months<br><small>mPFS 5.14 weeks (~1.2 mo); mOS 15.4 weeks (~3.6 mo)</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/30151703">Taal W et al. <em>Journal of Neuro-Oncology</em> 2018</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2>Egfr Viii interventions</h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr><td><a href="#evidence-carv3-team-e-mgh">1</a></td><td><strong>Front-line EGFRvIII / EGFR-amp CAR-T (MGH CARv3-TEAM-E NCT05660369 Arm 2 newly-diagnosed unmethylated; UCSF E-SYNC NCT06186401 Cohort 1; Penn dual-CAR family NCT07209241) — front-line use NOT recommended in this patient</strong></td><td>Hypothesis-generating only — Choi 2024 n=3 transient signal with 2/3 progressing inside two months; class signal is single-digit-n single-arm with no OS validation.</td><td>High (Bagley 2024 100% transient ICANS-like neurotoxicity, Goff 2019 1 treatment-related death at &gt;1e10 cells, hemorrhage-compounded edema risk in this patient)</td><td><strong>High</strong> <span class="cpm-desc">(CRS / ICANS-mediated cerebral edema on a pre-bled brain is the conservative-flagged mechanism-level risk; no phase 1 cohort specifically addresses re-bleed risk under cellular-therapy inflammation.)</span></td><td><strong>**Front-line CAR-T is not recommended in this patient — conservative veto stands on hemorrhage-compounded CRS / ICANS edema risk that the published phase 1 cohorts do not address. Recurrence-time conversation re-opens with EGFRvIII positivity and a hemorrhage-aware re-bleed surveillance plan.**</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/38477966">PMID&nbsp;38477966</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/38497615">PMID&nbsp;38497615</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/30418325">PMID&nbsp;30418325</a><br><a href="https://clinicaltrials.gov/study/NCT05660369">NCT05660369</a><br><a href="https://clinicaltrials.gov/study/NCT06186401">NCT06186401</a><br><a href="https://clinicaltrials.gov/study/NCT07209241">NCT07209241</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-carv3-team-e-mgh">Front-line EGFRvIII / EGFR-amp CAR-T (MGH CARv3-TEAM-E NCT05660369 Arm 2 newly-diagnosed unmethylated; UCSF E-SYNC NCT06186401 Cohort 1; Penn dual-CAR family NCT07209241) — front-line use NOT recommended in this patient</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>Recurrent EGFR-expressing glioblastoma</strong> (2L+)<br><small>3 adults with recurrent GBM expressing EGFR (not requiring vIII); intraventricular delivery via Ommaya. Single-center MGH.</small></td><td>3</td><td><strong>any TRAE</strong> <span class="tox-grade">grade &gt;=3</span>: 0% (n=3)<br><strong>fever</strong> <span class="tox-grade">grade any</span> <small>(transient, self-limited)</small><br><strong>headache</strong> <span class="tox-grade">grade any</span><br><strong>CRS</strong> <span class="tox-grade">grade &gt;=2</span>: 0% (n=3)<br><strong>ICANS</strong> <span class="tox-grade">grade &gt;=3</span>: 0% (n=3)</td><td><strong>Safety, radiographic response</strong>: 3/3 had rapid radiographic regression within days of infusion; 2/3 progressed within 1-2 months; 1/3 had durable response sustained at 150 days—<br><small>1/3 durable through 150 days; 2/3 transient (recurrence within 1-2 months)</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/38477966">Choi BD et al. <em>N Engl J Med</em> 2024</a></td></tr>
+    <tr><td><strong>Recurrent EGFR-amplified glioblastoma</strong> (2L+)<br><small>6 adults with recurrent GBM, EGFR amplification (no vIII required), measurable disease. Intrathecal delivery via Ommaya reservoir.</small></td><td>6</td><td><strong>neurotoxicity (ICANS-like)</strong> <span class="tox-grade">grade any</span>: 100% (n=6) <small>(all 6 patients; fully reversible with steroids and supportive care)</small><br><strong>neurotoxicity</strong> <span class="tox-grade">grade &gt;=3</span> <small>(specific grade-3 rate per the interim paper requires the Nature Medicine supplement)</small><br><strong>CRS</strong> <span class="tox-grade">grade any</span> <small>(mild or absent across the cohort)</small><br><strong>headache</strong> <span class="tox-grade">grade any</span>: 100% (n=6)<br><strong>fatigue</strong> <span class="tox-grade">grade any</span>: 100% (n=6)</td><td><strong>Safety, radiographic tumor reduction</strong>: 6/6 patients showed tumor volume reduction within 2 days of infusion; no patient met RANO objective response criteria; responses generally transient—<br><small>Median time to progression short; responses transient in most patients</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/38497615">Bagley SJ et al. <em>Nature Medicine</em> 2024</a></td></tr>
+    <tr><td><strong>Recurrent EGFRvIII-positive glioblastoma</strong> (2L+)<br><small>18 adults with EGFRvIII+ recurrent GBM, KPS &gt;=60; lymphodepletion pre-conditioning before CAR-T infusion. NCI Surgery Branch.</small></td><td>18</td><td><strong>treatment-related death</strong> <span class="tox-grade">grade 5</span>: (1/18) <small>(one death at &gt;1e10 cell dose)</small><br><strong>CRS</strong> <span class="tox-grade">grade &gt;=3</span>: 0% (n=17) <small>(at standard doses below the fatal-event ceiling)</small><br><strong>lymphodepletion-related cytopenias</strong> <span class="tox-grade">grade &gt;=3</span> <small>(expected per lymphodepletion conditioning)</small></td><td><strong>Safety, response, persistence</strong>: 1 long-term survivor at 59 months; no objective RANO responses; 1 treatment-related death at high dose (&gt;1e10 CD3+ cells)—<br><small>1 long-term survivor at 59 months; remainder progressed</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/30418325">Goff SL et al. <em>Journal of Immunotherapy</em> 2019</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<footer class="libby-footer">Generated 2026-05-26 &middot; Libby &middot; <code>gbm-mtap-cdkn2a-idhwt-subtotal-c4bq</code></footer>
+</body></html>
