@@ -195,8 +195,9 @@ ONCOLOGY_ACRONYM_ALLOWLIST = frozenset({
     # GBM / neuro-oncology vocabulary (CNS WHO classification, trial families,
     # performance status, gene names, ADC payloads, PD biomarkers)
     "HGG", "LGG", "KPS", "MSP", "SDMA", "MMAF", "MPNST", "GEJ",
-    "ATRX", "IDH", "CSF", "RT", "PI", "AM",
+    "ATRX", "IDH", "CSF", "CNS", "RT", "PI", "AM",
     "AGILE", "ROAR", "SURVIVE", "INCIPIENT", "EANO", "PVSRIPO",
+    "INTELLANCE", "BRAIN",
 })
 
 ALL_CAPS_PAIR_RE = re.compile(r"\b([A-Z][A-Z]+),\s*([A-Z][A-Z]+)\b")
