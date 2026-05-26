@@ -198,6 +198,8 @@ ONCOLOGY_ACRONYM_ALLOWLIST = frozenset({
     "ATRX", "IDH", "CSF", "CNS", "RT", "PI", "AM",
     "AGILE", "ROAR", "SURVIVE", "INCIPIENT", "EANO", "PVSRIPO",
     "INTELLANCE", "BRAIN",
+    # CCTG trial-identifier prefix tokens (CCTG CE.6 elderly GBM hypofractionated)
+    "CE",
 })
 
 ALL_CAPS_PAIR_RE = re.compile(r"\b([A-Z][A-Z]+),\s*([A-Z][A-Z]+)\b")
@@ -283,6 +285,14 @@ _BYDESIGN_NAMES = {
     "recommendations.md",
     "recommendations.jsonl",
     "board.md",
+    # The persona-authored board JSONLs (positions.jsonl, critiques.jsonl)
+    # surface trial-navigator phones and sponsor medical-info emails inside
+    # rationale prose by design — same rationale as `board.md` and
+    # `recommendations.md`. PHI patterns that indicate patient identifiers
+    # (MRN, SSN, ALL-CAPS NAME pairs) still scan; only `_BYDESIGN_LABELS`
+    # (us_phone, email, iso_date_full) are suppressed.
+    "positions.jsonl",
+    "critiques.jsonl",
 }
 _BYDESIGN_LABELS = {"email", "us_phone", "iso_date_full"}
 
