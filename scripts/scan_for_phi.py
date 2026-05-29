@@ -200,6 +200,50 @@ ONCOLOGY_ACRONYM_ALLOWLIST = frozenset({
     "INTELLANCE", "BRAIN",
     # CCTG trial-identifier prefix tokens (CCTG CE.6 elderly GBM hypofractionated)
     "CE",
+    # mCRC + peritoneal-disease vocabulary (atypical-KRAS / PIK3CA / CRS-HIPEC cases)
+    # Tumor markers
+    "CEA", "CA",
+    # Trial families / RCT acronyms surfaced in mCRC literature
+    "CRYSTAL", "PRIME", "OPUS", "FIRE", "VII", "MRC", "NORDIC", "COIN",
+    "PEAK", "CALGB", "SWOG", "TRIBE", "MAVERICC", "BICC", "BEACON",
+    "AVF", "AVF2107", "RAISE", "VELOUR", "SUNLIGHT", "FRESCO", "CORRECT",
+    "CONCUR", "CAIRO", "PRODIGE", "COLOPEC", "PROPHYLOCHIP", "EFFIPEC",
+    "RASOLVE", "KRYSTAL", "CODEBREAK", "DESTINY", "MOUNTAINEER", "HERACLES",
+    "INTRINSIC", "INAVO120", "ASCEND", "BATTMAN", "ALASCCA", "PYNNACLE",
+    "OLYMPIA", "OPTIMOX", "INVAGO",
+    # Cohort / epidemiology study acronyms
+    "NHS", "HPFS",
+    # RNA-seq / transcriptomic profiling
+    "WTS", "WTX", "CMS", "RNASEQ",
+    # Mouse-model and PDX strain vocabulary
+    "KPF",
+    # Hematologic abbreviations alongside MM (already in)
+    "NHL",
+    # MAPK / RAS pathway descriptors
+    "LOF", "GOF",
+    # Tumor-type acronyms specific to mCRC neighborhood
+    "BTC", "NEPC", "GEC",
+    # Pancreatic / biliary / GU acronyms occasionally cited cross-tumor
+    "PIPAC",
+    # Disease-phenotype shorthands surfaced in mCRC peritoneal-disease prose
+    "NLM", "LM", "PCI",
+    # ICI / immunotherapy combo / agent shorthands
+    "BOT", "BAL", "EAP", "FMD", "ICI",
+    # Pharmacogenomics / dosing
+    "DPYD", "UGT", "UGT1A1", "CPIC",
+    # Cancer-related genes appearing in ALL-CAPS prose
+    "APC", "MUTYH", "POLE", "POLD", "SMAD", "ERBB", "BCL2L1", "TOP1",
+    "AURKA", "MYBL", "ZNF217", "CDX",
+    # Institutions / cancer-center acronyms not yet listed
+    "USC", "UPMC",
+    # Trial-program / cancer-network tokens
+    "NRG", "CCTG", "NEXT", "AACR",
+    # Procedure / regimen tokens
+    "CRS", "HIPEC", "SBRT", "PIPAC",
+    # Chemo backbone acronyms used in mCRC
+    "FOLFOXIRI",
+    # Quality-of-life / scoring instruments
+    "TTR",
 })
 
 ALL_CAPS_PAIR_RE = re.compile(r"\b([A-Z][A-Z]+),\s*([A-Z][A-Z]+)\b")
@@ -262,6 +306,13 @@ _BYDESIGN_NAMES = {
     "target_validation.md",
     "target_validation.jsonl",
     "target_validation_report.md",
+    # The reporter's executive summary is a synthesis of `index.md` and may
+    # surface the same sponsor-inquiry email / phone (e.g. `medinfo@revmed.com`
+    # / `1-844-2-REVMED`) the PI inlined for the load-bearing single phone
+    # call on the case. Same rationale as `index.md`: PHI patterns that
+    # indicate patient identifiers still scan; only `_BYDESIGN_LABELS`
+    # (us_phone, email, iso_date_full) are suppressed.
+    "executive_summary.md",
     # `runs.jsonl` is the per-case agent-run log; its whole purpose is to
     # record `run_id` strings and `timestamp_utc` ISO timestamps with day
     # precision. These look like PHI dates to the regex but are by design.
