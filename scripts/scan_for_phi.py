@@ -234,6 +234,10 @@ ONCOLOGY_ACRONYM_ALLOWLIST = frozenset({
     # Cancer-related genes appearing in ALL-CAPS prose
     "APC", "MUTYH", "POLE", "POLD", "SMAD", "ERBB", "BCL2L1", "TOP1",
     "AURKA", "MYBL", "ZNF217", "CDX",
+    # Lynch-syndrome / hereditary CRC germline panel genes
+    "EPCAM",
+    # Treatment-arm / clinical-shorthand vocabulary
+    "BSC",
     # Institutions / cancer-center acronyms not yet listed
     "USC", "UPMC",
     # Trial-program / cancer-network tokens
