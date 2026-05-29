@@ -1,0 +1,8 @@
+{
+  "case_slug": "mcrc-kras-a59t-pik3ca-peritoneal-pre-hipec-q8k4",
+  "efficacy_toxicity_weight": 0.70,
+  "toxicity_vetoes": [],
+  "modality_constraints": [],
+  "free_text_constraints": "Auto-mode intake: surface the full option space - standard of care, off-label rational combinations, clinical trials, and compassionate-use pathways. No modality vetoes and no hard toxicity vetoes beyond standard clinical reasonableness. Treat the planned cytoreductive-surgery-plus-HIPEC window as a sequencing constraint (systemic-therapy options should be evaluated for how they sequence with or pause around peri-operative HIPEC). Sex not specified at intake - downstream agents should flag if their recommendation depends on sex-specific dosing or contraindications. Primary tumor resection status not specified - flag as a gap. ECOG 1 is an assumption from current FOLFIRI tolerance and should be confirmed.",
+  "prefers_trials": true
+}

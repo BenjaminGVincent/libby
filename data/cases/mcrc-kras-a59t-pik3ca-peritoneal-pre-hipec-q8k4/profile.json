@@ -1,0 +1,154 @@
+{
+  "case_slug": "mcrc-kras-a59t-pik3ca-peritoneal-pre-hipec-q8k4",
+  "age_band": "30-39",
+  "sex": "unknown",
+  "primary_site": "colon",
+  "histology": "colon adenocarcinoma (presumed; histologic subtype not specified at intake)",
+  "stage": "IV (metastatic; liver metastases status post-resection, peritoneal involvement present)",
+  "ecog": 1,
+  "biomarkers": [
+    {
+      "name": "Germline hereditary cancer panel",
+      "value": "negative",
+      "method": "germline NGS panel",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "Multi-gene germline panel (Lynch syndrome genes MLH1/MSH2/MSH6/PMS2/EPCAM, APC, MUTYH, others) reported negative; excludes hereditary syndromes from current decision tree."
+    },
+    {
+      "name": "KRAS A59T",
+      "value": "mutated (atypical, switch-II region; non-G12/G13/Q61)",
+      "method": "tumor NGS",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "Tissue NGS confirming KRAS A59T with variant allele frequency (clonality), plus co-occurring RAS family (NRAS, HRAS) and BRAF V600 status. A59 mutations are non-canonical RAS-pathway activators and read differently from G12C/G12D for the available KRAS-G12X selective inhibitors; clonality and co-mutations gate anti-EGFR (cetuximab/panitumumab) eligibility."
+    },
+    {
+      "name": "APC E1295",
+      "value": "mutated (likely truncating; presumed mutation cluster region)",
+      "method": "tumor NGS",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "Confirm exact codon-1295 variant (E1295* vs E1295fs vs missense) and whether the lesion falls in the mutation cluster region (MCR, ~codons 1250-1500). MCR-truncated APC loses beta-catenin downregulation domains; relevant for Wnt-pathway biology and potential tankyrase/PORCN-class trials."
+    },
+    {
+      "name": "TP53 R273",
+      "value": "mutated (hotspot; specific substitution not specified)",
+      "method": "tumor NGS",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "Specify the R273 substitution (R273H vs R273C vs R273L vs R273S). R273H and R273C are gain-of-function mutants with distinct chaperone (HSP90) and structural-rescue (PRIMA-1/APR-246-class, arsenic-trioxide derivatives) pharmacology profiles."
+    },
+    {
+      "name": "PIK3CA M1043I",
+      "value": "mutated (kinase-domain activating)",
+      "method": "tumor NGS",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "Confirm M1043I as somatic and kinase-domain-activating; relevant for PI3K-alpha-selective inhibitors (alpelisib, inavolisib) and AKT/mTOR-axis strategies; M1043 is a recurrent but non-canonical hotspot relative to H1047R/E545K/E542K."
+    },
+    {
+      "name": "SMAD4 R361H",
+      "value": "mutated (MH2-domain hotspot; loss-of-function)",
+      "method": "tumor NGS",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "Confirm R361H as MH2-domain DNA-binding hotspot; loss-of-function disrupts TGF-beta tumor-suppressor signaling and is associated with peritoneal-spread biology and worse prognosis in CRC."
+    },
+    {
+      "name": "20q11 amplification (BCL2L1/TOP1 co-amplified)",
+      "value": "amplified",
+      "method": "tumor NGS copy number",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "Define amplification boundaries: 20q11.21 (BCL2L1, TOP1) vs broader 20q gain including 20q13 (ZNF217, MYBL2, AURKA). BCL2L1 amplification supports BCL-xL-directed strategies (navitoclax-class, PROTAC degraders); TOP1 amplification supports irinotecan/topotecan sensitivity rationale."
+    },
+    {
+      "name": "MSI status",
+      "value": "MSS",
+      "method": "NGS / IHC MMR panel",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "MSI-H/dMMR required for tumor-agnostic ICI (pembrolizumab, dostarlimab); MSS effectively excludes single-agent ICI from the standard pathway."
+    },
+    {
+      "name": "TMB",
+      "value": "low",
+      "method": "NGS panel",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "TMB ≥10 mut/Mb required for tumor-agnostic pembrolizumab label; 'low' fails that gate. Capture the exact mut/Mb number for trial eligibility."
+    },
+    {
+      "name": "PD-L1",
+      "value": "negative",
+      "method": "IHC",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "Capture IHC clone (22C3, SP263, SP142) and scoring system (TPS/CPS) and exact value; PD-L1 has limited but non-zero relevance for CRC ICI combinations."
+    },
+    {
+      "name": "HER2 (ERBB2) amplification",
+      "value": "not reported",
+      "method": "not performed / not reported",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "Decision-grade for mCRC: HER2 amplification (IHC 3+ or ISH ratio ≥2.0, or NGS amplification) gates tucatinib + trastuzumab (MOUNTAINEER label) and trastuzumab deruxtecan (T-DXd) off-label use. Must be checked."
+    },
+    {
+      "name": "BRAF V600E",
+      "value": "not explicitly reported",
+      "method": "tumor NGS",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "BRAF V600E status gates encorafenib + cetuximab (BEACON label). Co-occurrence with KRAS A59T would be unusual but must be excluded explicitly rather than presumed wild-type."
+    },
+    {
+      "name": "NRAS / HRAS",
+      "value": "not explicitly reported",
+      "method": "tumor NGS",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "RAS-family co-mutation status (NRAS, HRAS) gates anti-EGFR eligibility alongside KRAS. Confirm full RAS panel was clean apart from KRAS A59T."
+    },
+    {
+      "name": "Consensus molecular subtype (CMS) / CDX2",
+      "value": "not reported",
+      "method": "transcriptomic / IHC",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "CMS1-4 (immune / canonical / metabolic / mesenchymal) and CDX2 IHC are prognostic and therapy-stratifying. Peritoneal-dominant disease with SMAD4 loss suggests possible CMS4 (mesenchymal) - if available it sharpens TGF-beta-axis and stromal-targeting rationale."
+    }
+  ],
+  "prior_therapies": [
+    {
+      "regimen": "FOLFIRI + bevacizumab",
+      "line": "1L (current)",
+      "best_response": "unknown"
+    }
+  ],
+  "current_therapy": "FOLFIRI + bevacizumab (Avastin); planned cytoreductive surgery + HIPEC after systemic-therapy completion",
+  "organ_function": {},
+  "targetable_features": [
+    {
+      "feature": "KRAS A59T (atypical switch-II mutation)",
+      "rationale": "Non-canonical KRAS allele. Not directly addressed by G12C-selective (sotorasib, adagrasib) or G12D-selective (MRTX1133) inhibitors, but plausibly within reach of pan-KRAS / RAS(ON) inhibitors (RMC-6236, RMC-9805, divarasib-class) and pan-RAS-pathway downstream blockade (SHP2 inhibitors RMC-4630/TNO155, MEK inhibitors, ERK inhibitors). Anti-EGFR eligibility depends on whether A59T is treated as a RAS-activating mutation by current consensus - generally yes, but worth surfacing as a research question."
+    },
+    {
+      "feature": "PIK3CA M1043I (kinase-domain activating)",
+      "rationale": "Activating PI3K-alpha alteration supports PI3K-alpha selective inhibitors (alpelisib, inavolisib) in combination strategies, AKT inhibitors (capivasertib, ipatasertib), and mTOR-axis approaches. Co-occurrence with KRAS activation argues for vertical (PI3K + MEK) or horizontal (PI3K + downstream KRAS-pathway) combination biology - higher-toxicity profile but mechanistically rational."
+    },
+    {
+      "feature": "APC E1295 (Wnt-pathway loss)",
+      "rationale": "Canonical CRC tumor-suppressor loss. Wnt-pathway-directed approaches remain investigational: tankyrase inhibitors, PORCN inhibitors (LGK974/WNT974), beta-catenin/TCF disruptors, frizzled-directed antibodies. Mostly trial-only territory but worth surfacing."
+    },
+    {
+      "feature": "TP53 R273 (gain-of-function hotspot)",
+      "rationale": "Specific p53 hotspot with emerging pharmacology: structural reactivators (APR-246/eprenetapopt, arsenic-trioxide derivatives), HSP90 inhibitors that destabilize mutant p53, and synthetic-lethal approaches (ATR inhibitors in TP53-null context). R273H particularly studied."
+    },
+    {
+      "feature": "SMAD4 R361H (TGF-beta-axis loss)",
+      "rationale": "Loss-of-function in TGF-beta tumor-suppressor signaling - associated with peritoneal-dominant CRC biology and worse prognosis. Opens rationale for TGF-beta-axis modulation (bintrafusp alfa-class bifunctionals, anti-TGF-beta antibodies) and stromal-remodeling strategies; also a candidate biomarker for response to immunotherapy combinations that target TGF-beta-mediated immune exclusion."
+    },
+    {
+      "feature": "BCL2L1 / TOP1 amplification at 20q11",
+      "rationale": "BCL2L1 (BCL-xL) amplification supports BCL-xL-directed strategies (navitoclax, BCL-xL-selective PROTAC degraders DT2216-class) - relevant given anti-apoptotic dependence often correlates with chemotherapy resistance. TOP1 amplification supports continued irinotecan sensitivity rationale (FOLFIRI already in use) and potentially camptothecin-payload ADCs (e.g. T-DXd, datopotamab deruxtecan, sacituzumab govitecan) if a target antigen lights up."
+    },
+    {
+      "feature": "MSS / TMB-low / PD-L1-negative",
+      "rationale": "Decision-relevant negative finding - excludes tumor-agnostic ICI on MSI-H or TMB-high labels and flags single-agent PD-1/PD-L1 as low-yield. Pushes immunotherapy thinking toward combination strategies (ICI + MEK, ICI + TGF-beta, ICI + bevacizumab continuation, ICI + radiation/HIPEC abscopal logic) and trial-only contexts."
+    },
+    {
+      "feature": "Peritoneal carcinomatosis with planned HIPEC",
+      "rationale": "Loco-regional disease control via cytoreductive surgery + HIPEC defines a window in which systemic targeted therapy can be sequenced. Choice of HIPEC agent (mitomycin C, oxaliplatin, irinotecan-based regimens) interacts with prior FOLFIRI exposure and with the BCL2L1/TOP1 amplification biology. Surfaces as a sequencing question rather than a drug-class question."
+    }
+  ],
+  "geography_band": "US",
+  "private": false
+}
