@@ -9,6 +9,7 @@
 - [mCRC KRAS A59T + PIK3CA M1043I, peritoneal disease, pre-CRS-HIPEC, 37yo](mcrc-kras-a59t-pik3ca-peritoneal-pre-hipec-q8k4/index.md)
 - [de novo M1 TNBC with BRCA1 + basal-like + TIL-rich phenotype and solitary liver oligomet](tnbc-brca1-oligomet-liver-r7p3/index.md)
 - [newly diagnosed IDH-WT glioblastoma with MTAP loss + CDKN2A loss post-subtotal resection, MGMT pending](gbm-mtap-cdkn2a-idhwt-subtotal-c4bq/index.md)
+- [metastatic cholangiocarcinoma, scope-unknown intake (no molecular profiling supplied)](cca-mets-scope-unknown-z3p9/index.md)
 
 ## Conventions
 

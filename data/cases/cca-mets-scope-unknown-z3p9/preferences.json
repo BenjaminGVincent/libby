@@ -1,0 +1,8 @@
+{
+  "case_slug": "cca-mets-scope-unknown-z3p9",
+  "efficacy_toxicity_weight": 0.5,
+  "toxicity_vetoes": [],
+  "modality_constraints": [],
+  "free_text_constraints": "SCOPE-UNKNOWN CASE. Input was 'metastatic cholangiocarcinoma, no other information.' No molecular profiling, prior-therapy history, organ-function labs, demographics, or patient preferences were supplied. The case is deliberately framed as a targetable-feature ranker over the recognized actionable cholangiocarcinoma panel (FGFR2 fusion, IDH1 R132, HER2/ERBB2, BRAF V600E, MSI-H/dMMR, high TMB, NTRK/RET fusion, KRAS G12C), every feature flagged ngs_pending. The rank-1 shared workup is therefore comprehensive genomic profiling itself; all therapeutic recommendations are conditional on a positive confirmatory test. ASSUMPTIONS (flag to treating team, all unconfirmed): age_band 60-69 (near the CCA median, placeholder only); sex unknown; ECOG 1 assumed; stage IV metastatic taken from the stated diagnosis; geography defaulted to US; no prior therapies recorded (history not supplied). Efficacy/toxicity weight set to 0.5 (balanced) as a neutral default since the user did not state a preference. No toxicity vetoes, no modality constraints stated. If real molecular results, prior lines, performance status, or patient preferences become available, re-run intake; the ranking will narrow sharply to whichever feature(s) test positive.",
+  "prefers_trials": true
+}

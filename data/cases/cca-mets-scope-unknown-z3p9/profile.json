@@ -1,0 +1,109 @@
+{
+  "case_slug": "cca-mets-scope-unknown-z3p9",
+  "age_band": "60-69",
+  "sex": "unknown",
+  "primary_site": "biliary tract (cholangiocarcinoma)",
+  "histology": "cholangiocarcinoma (adenocarcinoma of the biliary epithelium); intrahepatic vs perihilar vs distal/extrahepatic subsite not specified at intake",
+  "stage": "IV (metastatic) per the stated diagnosis; full AJCC TNM staging and metastatic-site inventory not supplied at intake",
+  "ecog": 1,
+  "biomarkers": [
+    {
+      "name": "FGFR2 fusion/rearrangement",
+      "value": "unknown (not yet tested)",
+      "method": "no molecular profiling supplied at intake; RNA-based fusion NGS / DNA NGS with fusion calling required",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "RNA-based fusion panel (preferred) or comprehensive DNA NGS with structural-variant/fusion calling. FGFR2 fusions/rearrangements occur in roughly 10-15% of intrahepatic cholangiocarcinoma and gate the FGFR inhibitors pemigatinib, futibatinib, and infigratinib. A positive call opens FDA-approved second-line therapy."
+    },
+    {
+      "name": "IDH1 R132 mutation",
+      "value": "unknown (not yet tested)",
+      "method": "tumor DNA NGS or IDH1 hotspot assay required; not supplied at intake",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "Tumor NGS covering the IDH1 R132 hotspot. IDH1 mutations occur in roughly 15-20% of intrahepatic cholangiocarcinoma and gate ivosidenib (FDA-approved, second line, ClarIDHy)."
+    },
+    {
+      "name": "HER2 (ERBB2) amplification/overexpression",
+      "value": "unknown (not yet tested)",
+      "method": "IHC plus reflex ISH and/or NGS copy-number; not supplied at intake",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "HER2 IHC with reflex ISH (breast/gastric-style scoring is not validated in biliary tract; trial protocols specify their own thresholds) and/or NGS amplification call. More common in extrahepatic/gallbladder disease. Gates zanidatamab, trastuzumab + pertuzumab, and trastuzumab deruxtecan."
+    },
+    {
+      "name": "BRAF V600E",
+      "value": "unknown (not yet tested)",
+      "method": "tumor NGS or VE1 IHC; not supplied at intake",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "Tumor NGS (or VE1 IHC as a screen, confirmed by NGS). BRAF V600E gates dabrafenib + trametinib (tumor-agnostic label) and appears in roughly 1-5% of biliary tract cancers (ROAR basket)."
+    },
+    {
+      "name": "MSI-H / dMMR",
+      "value": "unknown (not yet tested)",
+      "method": "MMR IHC (MLH1/MSH2/MSH6/PMS2) and/or MSI by PCR or NGS; not supplied at intake",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "MMR IHC and/or MSI assay. MSI-H/dMMR gates pembrolizumab (tumor-agnostic label); uncommon in biliary tract (roughly 1-3%) but decision-changing when present."
+    },
+    {
+      "name": "Tumor mutational burden (TMB)",
+      "value": "unknown (not yet tested)",
+      "method": "comprehensive NGS panel reporting TMB; not supplied at intake",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "NGS panel with validated TMB output (>=10 mut/Mb). Gates pembrolizumab under the tumor-agnostic TMB-high label."
+    },
+    {
+      "name": "NTRK1/2/3 fusion",
+      "value": "unknown (not yet tested)",
+      "method": "RNA-based fusion NGS (preferred) or pan-TRK IHC screen; not supplied at intake",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "RNA fusion panel. NTRK fusions are rare (<1%) but gate larotrectinib and entrectinib (tumor-agnostic labels)."
+    },
+    {
+      "name": "RET fusion",
+      "value": "unknown (not yet tested)",
+      "method": "RNA-based fusion NGS; not supplied at intake",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "RNA fusion panel. RET fusions are rare in biliary tract but gate selpercatinib (tumor-agnostic label)."
+    },
+    {
+      "name": "KRAS G12C",
+      "value": "unknown (not yet tested)",
+      "method": "tumor DNA NGS; not supplied at intake",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "Tumor NGS covering the KRAS G12C codon. Uncommon in biliary tract but gates adagrasib/sotorasib-class KRAS G12C inhibitors and trial enrollment."
+    }
+  ],
+  "prior_therapies": [],
+  "current_therapy": null,
+  "organ_function": {},
+  "targetable_features": [
+    {
+      "feature": "FGFR2 fusion/rearrangement (candidate; untested, pending comprehensive genomic profiling)",
+      "rationale": "Scope-unknown case: no molecular profiling was supplied, so the actionable landscape of cholangiocarcinoma is enumerated as candidate features whose confirmation is itself the gating first step. FGFR2 fusions/rearrangements are the highest-yield molecularly targeted axis in intrahepatic CCA (roughly 10-15%); a positive call opens FDA-approved FGFR inhibitors (pemigatinib, futibatinib, infigratinib). Mechanism: oncogenic FGFR2 fusion drives constitutive FGFR signaling, directly inhibited by these agents."
+    },
+    {
+      "feature": "IDH1 R132 mutation (candidate; untested, pending comprehensive genomic profiling)",
+      "rationale": "Scope-unknown candidate. IDH1 mutations occur in roughly 15-20% of intrahepatic CCA. Mechanism: mutant IDH1 produces the oncometabolite 2-hydroxyglutarate; ivosidenib inhibits the mutant enzyme (FDA-approved second line, ClarIDHy). Confirmation by tumor NGS is the gate."
+    },
+    {
+      "feature": "HER2 (ERBB2) amplification/overexpression (candidate; untested, pending HER2 IHC/ISH and NGS)",
+      "rationale": "Scope-unknown candidate, more common in extrahepatic/gallbladder disease (roughly 5-15%). Mechanism: HER2 amplification drives ERBB2 signaling, targeted by zanidatamab (HERIZON-BTC-01), trastuzumab + pertuzumab (MyPathway), and trastuzumab deruxtecan (HERB/DESTINY). Confirmation by IHC/ISH and NGS is the gate."
+    },
+    {
+      "feature": "BRAF V600E (candidate; untested, pending comprehensive genomic profiling)",
+      "rationale": "Scope-unknown candidate (roughly 1-5% of biliary tract cancer). Mechanism: BRAF V600E drives constitutive MAPK signaling, inhibited by dabrafenib + trametinib (tumor-agnostic label; ROAR basket). Confirmation by tumor NGS is the gate."
+    },
+    {
+      "feature": "MSI-H / dMMR or high TMB (candidate; untested, pending MMR IHC, MSI assay, and NGS-derived TMB)",
+      "rationale": "Scope-unknown candidate; uncommon in biliary tract (roughly 1-3% MSI-H) but decision-changing. Mechanism: mismatch-repair deficiency or high mutational burden increases neoantigen load and predicts benefit from pembrolizumab (tumor-agnostic labels). Confirmation by MMR IHC, MSI assay, and/or NGS TMB is the gate."
+    },
+    {
+      "feature": "NTRK or RET fusion (candidate; untested, pending RNA-based fusion NGS)",
+      "rationale": "Scope-unknown candidates; rare (<1%) but tumor-agnostically actionable. Mechanism: oncogenic NTRK fusion targeted by larotrectinib/entrectinib; RET fusion targeted by selpercatinib. RNA-based fusion panel is the gate."
+    },
+    {
+      "feature": "KRAS G12C (candidate; untested, pending comprehensive genomic profiling)",
+      "rationale": "Scope-unknown candidate; uncommon in biliary tract. Mechanism: KRAS G12C covalent inhibitors (adagrasib, sotorasib) trap the mutant in its inactive state. Confirmation by tumor NGS is the gate."
+    }
+  ],
+  "geography_band": "US",
+  "private": false
+}

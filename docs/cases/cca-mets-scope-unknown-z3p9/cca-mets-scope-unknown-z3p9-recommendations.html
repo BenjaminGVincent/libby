@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>Libby recommendations &mdash; cca-mets-scope-unknown-z3p9</title>
+<style>
+
+:root {
+  --ink: #1A202C;
+  --ink-muted: #4A5568;
+  --rule: #E2E8F0;
+  --header-bg: #F4F6F8;
+  --accent: #5B3A87;
+  --bg: #FFFFFF;
+  --warn-fg: #6F2E1A;
+  --warn-bg: #FBE9E7;
+  --warn-border: #ECC4BB;
+}
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  max-width: 80rem;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  line-height: 1.5;
+}
+h1, h2, h3 { color: var(--ink); }
+h1 { font-size: 1.6rem; }
+h2 { font-size: 1.2rem; margin-top: 2rem; }
+h3 { font-size: 1.05rem; margin-top: 1.5rem; }
+small.scenario-key { color: var(--ink-muted); }
+.disclaimer {
+  border: 1px solid var(--warn-border);
+  background: var(--warn-bg);
+  color: var(--warn-fg);
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  margin: 1rem 0 2rem;
+  font-size: 0.95rem;
+}
+.disclaimer strong { color: #B71C1C; }
+.profile-grid {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.25rem 1rem;
+  margin: 1rem 0 2rem;
+  font-size: 0.95rem;
+}
+.profile-grid dt { font-weight: 600; color: var(--ink-muted); }
+.profile-grid dd { margin: 0; }
+.trial-table-wrap { color: var(--ink); }
+.trial-scroll { overflow-x: auto; }
+.trial-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.88em;
+}
+.trial-table thead th {
+  background: var(--header-bg);
+  font-weight: 600;
+  text-align: left;
+  padding: 0.5em 0.6em;
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  white-space: nowrap;
+}
+.trial-table tbody td {
+  padding: 0.5em 0.6em;
+  border-bottom: 1px solid var(--rule);
+  font-variant-numeric: tabular-nums;
+  vertical-align: top;
+}
+.trial-table tbody tr:last-child td {
+  border-bottom: 2px solid var(--ink);
+}
+.persona {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.35em;
+  font-size: 0.78em;
+  font-weight: 600;
+  margin-right: 0.25em;
+  border: 1px solid transparent;
+}
+.persona-risktaker    { background: #FFE9D6; color: #6F3A0F; border-color: #F0CFAE; }
+.persona-conservative { background: #DFEBFB; color: #1B3A6B; border-color: #B5CDEE; }
+.persona-critic       { background: #F1E5FF; color: #441E72; border-color: #D4BBF2; }
+.persona-concensusite { background: #DDF1EE; color: #134E48; border-color: #B0DBD3; }
+.persona-advocate     { background: #FFE5EE; color: #6E1638; border-color: #F0BBCB; }
+.split-glyph { font-weight: 700; color: #5A4500; }
+.not-recommended {
+  color: var(--ink-muted);
+  text-decoration: line-through;
+}
+.scenario-conditional {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5A4500;
+  background: #FFF7E0;
+  border: 1px solid #F1DD9A;
+  border-radius: 0.35em;
+  padding: 0.05em 0.45em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+.pipeline-note,
+.evidence-detail-note {
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+  margin: 0.25rem 0 0.75rem;
+}
+.evidence-detail-empty {
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+  margin: 0.25rem 0 0.75rem;
+  padding-left: 0.5rem;
+  border-left: 2px solid #E5E5E5;
+}
+.evidence-detail-table { font-size: 0.86em; }
+.evidence-detail-table thead th {
+  background: #FAFAFA;
+}
+.evidence-detail-table .tox-grade {
+  font-size: 0.85em;
+  color: var(--ink-muted);
+  font-weight: 500;
+}
+.evidence-detail-table .safety-summary-fallback {
+  font-style: italic;
+  color: var(--ink-muted);
+}
+h4 + .trial-table-wrap,
+h4 + .evidence-detail-empty {
+  margin-top: 0.25rem;
+}
+h4 { margin-top: 1.25rem; margin-bottom: 0.25rem; font-size: 1rem; }
+.pipeline-context-table { font-size: 0.82em; color: var(--ink-muted); }
+.pipeline-context-table thead th {
+  background: #FAFAFA;
+  border-top: 1px solid var(--ink-muted);
+  border-bottom: 1px solid var(--ink-muted);
+}
+.pipeline-context-table tbody tr:last-child td { border-bottom: 1px solid var(--ink-muted); }
+.pipeline-context-table .intervention-name { color: var(--ink); font-weight: 600; }
+.pipeline-context-table .alias-list { color: var(--ink-muted); font-size: 0.9em; }
+.pipeline-context-table .basket-flag {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #134E48;
+  background: #DDF1EE;
+  border: 1px solid #B0DBD3;
+  border-radius: 0.35em;
+  padding: 0.02em 0.4em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+.pipeline-context-table .discontinued-flag {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5A2A2A;
+  background: #F2E1E1;
+  border: 1px solid #DDB7B7;
+  border-radius: 0.35em;
+  padding: 0.02em 0.4em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+.pipeline-context-table .offlabel-flag {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5F4310;
+  background: #FBEFD3;
+  border: 1px solid #E8C977;
+  border-radius: 0.35em;
+  padding: 0.02em 0.4em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+footer.libby-footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  color: var(--ink-muted);
+  font-size: 0.85rem;
+}
+
+</style>
+</head>
+<body>
+<h1>Libby recommendations &mdash; <code>cca-mets-scope-unknown-z3p9</code></h1>
+<div class="disclaimer">
+<strong>Decision support, not medical advice.</strong> Libby is an experimental 
+multi-agent decision-support tool. The recommendations below have not been 
+reviewed by a clinician treating this patient. Do not act on this page without 
+consulting a qualified oncologist.
+</div>
+<h2>Profile snapshot</h2>
+<dl class="profile-grid">
+  <dt>Primary site</dt><dd>biliary tract (cholangiocarcinoma)</dd>
+  <dt>Histology</dt><dd>cholangiocarcinoma (adenocarcinoma of the biliary epithelium); intrahepatic vs perihilar vs distal/extrahepatic subsite not specified at intake</dd>
+  <dt>Stage</dt><dd>IV (metastatic) per the stated diagnosis; full AJCC TNM staging and metastatic-site inventory not supplied at intake</dd>
+  <dt>ECOG</dt><dd>1</dd>
+  <dt>Age band</dt><dd>60-69</dd>
+  <dt>Sex</dt><dd>unknown</dd>
+  <dt>Biomarkers</dt><dd>FGFR2 fusion/rearrangement unknown (not yet tested) (ngs_pending); IDH1 R132 mutation unknown (not yet tested) (ngs_pending); HER2 (ERBB2) amplification/overexpression unknown (not yet tested) (ngs_pending); BRAF V600E unknown (not yet tested) (ngs_pending); MSI-H / dMMR unknown (not yet tested) (ngs_pending); Tumor mutational burden (TMB) unknown (not yet tested) (ngs_pending); NTRK1/2/3 fusion unknown (not yet tested) (ngs_pending); RET fusion unknown (not yet tested) (ngs_pending); KRAS G12C unknown (not yet tested) (ngs_pending)</dd>
+  <dt>Efficacy/toxicity weight</dt><dd>0.5</dd>
+</dl>
+
+<p><em>8 ranked therapeutic options across 6 targetable features. Biomarker workup steps live in the standalone Target validation paths report.</em></p>
+<h2>Idh1 R132 interventions</h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr><td><a href="#evidence-ivosidenib">1</a></td><td><strong>Ivosidenib (if IDH1 R132 confirmed on tumor NGS)</strong> <span class="scenario-conditional">(conditional on idh1_r132 positive)</span></td><td>Moderate — only RCT-grade evidence here (ClarIDHy PFS HR 0.37) but the absolute single-agent effect is small (mPFS 2.7 vs 1.4 mo, ORR 2%); benefit is disease control, not shrinkage.</td><td>Low (QT prolongation ~1% G3, ascites ~7% G3+, fatigue ~3% G3; near-placebo profile)</td><td><strong>Low</strong> <span class="cpm-desc">(No counter-productive vector; dissent is about depth-of-response rank order, not mechanism.)</span></td><td><strong>The cleanest evidence in the set on a randomized phase 3, but the single-agent payoff is disease stabilization rather than shrinkage; foreclosed if IDH1 R132 is wild-type.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/32416072">PMID&nbsp;32416072</a><br><a href="https://clinicaltrials.gov/study/NCT02989857">NCT02989857</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-ivosidenib">Ivosidenib (if IDH1 R132 confirmed on tumor NGS)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>Previously treated advanced cholangiocarcinoma with IDH1 R132 mutation</strong> (2L+)<br><small>IDH1 R132-mutant CCA after 1-2 prior regimens; crossover from placebo to ivosidenib permitted on progression</small></td><td>185</td><td><strong>Ascites</strong> <span class="tox-grade">grade &gt;=3</span>: 7.0% (9/121) <small>(placebo 4/59 (7%))</small><br><strong>Fatigue</strong> <span class="tox-grade">grade &gt;=3</span>: 3.0% (4/121)<br><strong>Nausea</strong> <span class="tox-grade">grade &gt;=3</span>: 2.0% (3/121)<br><strong>QT prolongation</strong> <span class="tox-grade">grade 3</span>: 1.0% (1/121) <small>(class effect; ECG monitoring warranted)</small><br><strong>Serious AE (any)</strong> <span class="tox-grade">grade any</span>: 30.0% (36/121) <small>(placebo 13/59 (22%))</small></td><td><strong>PFS HR vs placebo (independent review)</strong>: 0.37 HR (95% CI 0.25–0.54); p &lt;0.0001<br><small>mPFS 2.7 mo (ivosidenib) vs 1.4 mo (placebo)</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/32416072">Abou-Alfa et al. <em>Lancet Oncology</em> 2020</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2>Fgfr2 Fusion interventions</h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr><td><a href="#evidence-futibatinib">1</a></td><td><strong>Futibatinib (if FGFR2 fusion/rearrangement confirmed on RNA-based CGP)</strong> <span class="scenario-conditional">(conditional on fgfr2_fusion positive)</span></td><td>High in FGFR2-fusion subset — ORR 42% (FOENIX-CCA2) with cross-trial concordance to pemigatinib (FIGHT-202); the nearest thing to replication in this dossier.</td><td>Moderate (hyperphosphatemia G3 ~30%, AST increase ~7%, stomatitis/fatigue ~6%)</td><td><strong>Low</strong> <span class="cpm-desc">(Hyperphosphatemia is on-target and manageable, not counter-productive to efficacy; conservative dissent is toxicity-burden, not mechanism.)</span></td><td><strong>Targets the highest-yield CCA axis with cross-trial-concordant 42% ORR; the on-target 30% grade-3 hyperphosphatemia is the tradeoff against the gentler pemigatinib.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/36652354">PMID&nbsp;36652354</a><br><a href="https://clinicaltrials.gov/study/NCT02052778">NCT02052778</a></td></tr>
+    <tr><td><a href="#evidence-pemigatinib">2</a></td><td><strong>Pemigatinib (if FGFR2 fusion/rearrangement confirmed)</strong> <span class="scenario-conditional">(conditional on fgfr2_fusion positive)</span></td><td>High in FGFR2-fusion subset — ORR 35.5% (FIGHT-202), concordant with futibatinib; gentler grade-3 toxicity profile but immature OS.</td><td>Moderate (hypophosphatemia G3+ ~12%, serous retinal detachment ~4%, PPE/nail toxicity; hyperphosphatemia 55% any-grade with no G3-4)</td><td><strong>Low</strong> <span class="cpm-desc">(On-target FGFR phosphate dysregulation is managed, not counter-productive to the antitumor goal.)</span></td><td><strong>The same FGFR2-fusion gate as futibatinib with a gentler grade-3 profile and longer track record; the within-lane choice turns on the toxicity-versus-resistance-coverage tradeoff once the fusion confirms.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/32203698">PMID&nbsp;32203698</a><br><a href="https://clinicaltrials.gov/study/NCT02924376">NCT02924376</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-futibatinib">Futibatinib (if FGFR2 fusion/rearrangement confirmed on RNA-based CGP)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>Previously treated advanced intrahepatic cholangiocarcinoma with FGFR2 fusion or rearrangement</strong> (2L+)<br><small>Centrally confirmed FGFR2 fusion/rearrangement in intrahepatic CCA, &gt;=1 prior line; activity retained against some pemigatinib-resistance kinase-domain mutations</small></td><td>103</td><td><strong>Hyperphosphatemia</strong> <span class="tox-grade">grade &gt;=3</span>: 30.0% (n=103) <small>(on-target FGFR class effect; most common grade 3 TRAE)</small><br><strong>Increased AST</strong> <span class="tox-grade">grade &gt;=3</span>: 7.0% (n=103)<br><strong>Stomatitis</strong> <span class="tox-grade">grade &gt;=3</span>: 6.0% (n=103)<br><strong>Fatigue</strong> <span class="tox-grade">grade &gt;=3</span>: 6.0% (n=103)<br><strong>Treatment-related discontinuation</strong> <span class="tox-grade">grade any</span>: 2.0% (n=103) <small>(permanent discontinuation for TRAE)</small></td><td><strong>ORR (independent central review)</strong>: 42.0% (95% CI 32.0–52.0)<br><small>mDoR 9.7 mo; mPFS 9.0 mo</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/36652354">Goyal et al. <em>New England Journal of Medicine</em> 2023</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-pemigatinib">Pemigatinib (if FGFR2 fusion/rearrangement confirmed)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>Previously treated advanced/metastatic cholangiocarcinoma with FGFR2 fusion or rearrangement</strong> (2L+)<br><small>FGFR2 fusion/rearrangement cohort (cohort A), prior gemcitabine-based chemotherapy; ECOG 0-2</small></td><td>107</td><td><strong>Treatment-related grade 3+ AE (any)</strong> <span class="tox-grade">grade &gt;=3</span>: 64.0% (n=146) <small>(grade 3 or worse, all-cause in safety population)</small><br><strong>Hyperphosphatemia</strong> <span class="tox-grade">grade any</span>: 55.0% (81/146) <small>(on-target FGFR class effect; no grade 3-4)</small><br><strong>Hypophosphatemia</strong> <span class="tox-grade">grade &gt;=3</span>: 12.0% (18/146)<br><strong>Alopecia</strong> <span class="tox-grade">grade any</span>: 46.0% (67/146)<br><strong>Dysgeusia</strong> <span class="tox-grade">grade any</span>: 38.0% (55/146)<br><strong>Nail toxicity</strong> <span class="tox-grade">grade any</span>: 42.0% (62/146)<br><strong>Arthralgia</strong> <span class="tox-grade">grade &gt;=3</span>: 6.0% (9/146)<br><strong>Stomatitis</strong> <span class="tox-grade">grade &gt;=3</span>: 5.0% (8/146)<br><strong>Palmar-plantar erythrodysesthesia</strong> <span class="tox-grade">grade any</span>: 11.0% (16/146) <small>(6 patients grade 3-4)</small><br><strong>Serous retinal detachment</strong> <span class="tox-grade">grade any</span>: 4.0% (6/146) <small>(one grade 3)</small></td><td><strong>ORR (independent central review)</strong>: 35.5% (95% CI 26.5–45.4)<br><small>mDoR 7.5 mo; mPFS 6.9 mo</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/32203698">Abou-Alfa et al. <em>Lancet Oncology</em> 2020</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2>Erbb2 Amp interventions</h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr><td><a href="#evidence-zanidatamab">1</a></td><td><strong>Zanidatamab (if HER2 IHC 3+ with reflex ISH confirmed)</strong> <span class="scenario-conditional">(conditional on erbb2_amp positive)</span></td><td>High in HER2-positive subset — confirmed ORR 41.3% with mDoR 12.9 mo in the only dedicated biliary HER2 trial (HERIZON-BTC-01).</td><td>Low (decreased ejection fraction G3 ~3%, diarrhea G3 ~5%; standard echo monitoring)</td><td><strong>Low</strong> <span class="cpm-desc">(No counter-productive vector; HER2 blockade is direct and on-target with a managed cardiac signal.)</span></td><td><strong>The guideline-endorsed HER2 lead on dedicated biliary-trial data; gated on HER2 IHC/ISH (not an NGS copy-number call) and on a subsite that drives HER2 prevalence.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37423227">PMID&nbsp;37423227</a><br><a href="https://clinicaltrials.gov/study/NCT04466891">NCT04466891</a></td></tr>
+    <tr><td><a href="#evidence-trastuzumab-deruxtecan">2</a></td><td><strong>Trastuzumab deruxtecan (if HER2 IHC 3+ confirmed) — kept to document the board&#x27;s veto</strong> <span class="scenario-conditional">(conditional on erbb2_amp positive)</span></td><td>Low-to-moderate as registered (biliary-cohort ORR 22%); the 61.3% IHC 3+ figure is a post-hoc unadjusted subgroup, not the pre-specified endpoint.</td><td>High (adjudicated ILD/pneumonitis 10.5% with three treatment-related deaths; grade 3+ AEs ~40.8% study-wide)</td><td><strong>High</strong> <span class="cpm-desc">(Conservative veto stands on the uncharacterized ILD long-tail; treatment-related deaths make the toxicity itself the goal-defeating mechanism here.)</span></td><td><strong>Not recommended as the HER2 lead: a documented ILD signal with three treatment-related deaths and no pulmonary baseline to gate against, where zanidatamab covers HER2 more safely on dedicated biliary data.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37870536">PMID&nbsp;37870536</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/37423227">PMID&nbsp;37423227</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-zanidatamab">Zanidatamab (if HER2 IHC 3+ with reflex ISH confirmed)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>Previously treated HER2-amplified biliary tract cancer</strong> (2L+)<br><small>Cohort 1: HER2 amplified by ISH plus IHC 2+/3+ (4B5 companion antibody); prior gemcitabine-based therapy</small></td><td>80</td><td><strong>Diarrhea</strong> <span class="tox-grade">grade any</span>: 40.0% (n=80)<br><strong>Diarrhea</strong> <span class="tox-grade">grade 3</span>: 5.0% (4/80) <small>(most common grade 3 TRAE)</small><br><strong>Infusion-related reaction</strong> <span class="tox-grade">grade any</span>: 35.0% (n=80)<br><strong>Decreased ejection fraction</strong> <span class="tox-grade">grade 3</span>: 3.0% (3/80) <small>(HER2-directed cardiac class effect)</small></td><td><strong>Confirmed ORR (independent central review)</strong>: 41.3% (95% CI 30.4–52.8)<br><small>mDoR 12.9 mo; mPFS 5.5 mo</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37423227">Harding et al. <em>Lancet Oncology</em> 2023</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-trastuzumab-deruxtecan">Trastuzumab deruxtecan (if HER2 IHC 3+ confirmed) — kept to document the board&#x27;s veto</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>HER2-expressing biliary tract cancer (pan-tumor basket cohort)</strong> (2L+)<br><small>Biliary tract cohort of a HER2-expressing solid-tumor basket; central HER2 IHC 3+ or 2+. IHC 3+ subgroup responded markedly better than the overall cohort</small></td><td>41</td><td><strong>Drug-related grade 3+ AE (any)</strong> <span class="tox-grade">grade &gt;=3</span>: 40.8% <small>(across full study population)</small><br><strong>ILD/pneumonitis</strong> <span class="tox-grade">grade any</span>: 10.5% <small>(adjudicated drug-related; characteristic T-DXd class effect)</small><br><strong>ILD/pneumonitis</strong> <span class="tox-grade">grade 5</span>: (n=3) <small>(three treatment-related deaths from ILD)</small><br><strong>Nausea</strong> <span class="tox-grade">grade any</span> <small>(common GI TRAE; per-term rate not separated for biliary cohort)</small></td><td><strong>ORR, biliary tract cohort (investigator)</strong>: 22.0% (95% CI 10.6–37.6)<br><small>Biliary cohort; IHC 3+ subgroup ORR 56.3-61.3%</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37870536">Meric-Bernstam et al. <em>Journal of Clinical Oncology</em> 2024</a></td></tr>
+    <tr><td><strong>Previously treated HER2-amplified biliary tract cancer</strong> (2L+)<br><small>Cohort 1: HER2 amplified by ISH plus IHC 2+/3+ (4B5 companion antibody); prior gemcitabine-based therapy</small></td><td>80</td><td><strong>Diarrhea</strong> <span class="tox-grade">grade any</span>: 40.0% (n=80)<br><strong>Diarrhea</strong> <span class="tox-grade">grade 3</span>: 5.0% (4/80) <small>(most common grade 3 TRAE)</small><br><strong>Infusion-related reaction</strong> <span class="tox-grade">grade any</span>: 35.0% (n=80)<br><strong>Decreased ejection fraction</strong> <span class="tox-grade">grade 3</span>: 3.0% (3/80) <small>(HER2-directed cardiac class effect)</small></td><td><strong>Confirmed ORR (independent central review)</strong>: 41.3% (95% CI 30.4–52.8)<br><small>mDoR 12.9 mo; mPFS 5.5 mo</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37423227">Harding et al. <em>Lancet Oncology</em> 2023</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2>Braf V600E interventions</h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr><td><a href="#evidence-dabrafenib-trametinib">1</a></td><td><strong>Dabrafenib + trametinib (if BRAF V600E confirmed on NGS/PCR)</strong> <span class="scenario-conditional">(conditional on braf_v600e positive)</span></td><td>High in BRAF V600E subset — ORR 47%, mPFS 9.0 mo (ROAR), but on a small single-arm basket cohort (n=43) at 1-5% prevalence.</td><td>Moderate (pyrexia ~19%, treatment-related serious AEs ~21%, GGT increase G3+ ~12%; any serious AE ~40%)</td><td><strong>Low</strong> <span class="cpm-desc">(No counter-productive vector; the pyrexia/serious-AE load is a patient-AE burden, not a goal-blunting mechanism.)</span></td><td><strong>Strong 47% ORR on a true V600E with dual guideline-plus-agnostic-label backing; the higher serious-AE and pyrexia load is what keeps it below the gentler oral options at equal agreement.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/32818466">PMID&nbsp;32818466</a><br><a href="https://clinicaltrials.gov/study/NCT02034110">NCT02034110</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-dabrafenib-trametinib">Dabrafenib + trametinib (if BRAF V600E confirmed on NGS/PCR)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>BRAF V600E-mutated biliary tract cancer</strong> (2L+)<br><small>Molecularly confirmed BRAF V600E (NGS/PCR; VE1 IHC suggestive but not sufficient); non-V600E class 2/3 BRAF alterations do not qualify</small></td><td>43</td><td><strong>Serious AE (any)</strong> <span class="tox-grade">grade any</span>: 40.0% (17/43)<br><strong>Treatment-related serious AE</strong> <span class="tox-grade">grade any</span>: 21.0% (9/43) <small>(predominantly pyrexia)</small><br><strong>Pyrexia</strong> <span class="tox-grade">grade any</span>: 19.0% (8/43) <small>(characteristic dabrafenib+trametinib class effect)</small><br><strong>Increased gamma-glutamyltransferase</strong> <span class="tox-grade">grade &gt;=3</span>: 12.0% (5/43) <small>(most frequent grade 3+ event)</small></td><td><strong>ORR (investigator)</strong>: 47.0% (95% CI 31.0–62.0)<br><small>mDoR 8.9 mo; mPFS 9.0 mo</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/32818466">Subbiah et al. <em>Lancet Oncology</em> 2020</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2>Ntrk Fusion interventions</h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr><td><a href="#evidence-larotrectinib">1</a></td><td><strong>Larotrectinib (if NTRK1/2/3 fusion confirmed on RNA-based CGP)</strong> <span class="scenario-conditional">(conditional on ntrk_fusion positive)</span></td><td>High in NTRK-fusion subset — ORR 79% pooled, mDoR 35.2 mo; but sub-1% prevalence and no CCA-specific cohort temper the prior.</td><td>Low (grade 3 AEs ~13%, grade 4 &lt;1%, ALT increase ~3%; no treatment-related deaths)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Critic dissented on cross-tumor extrapolation; acquired NTRK kinase-domain resistance can blunt durability over time.)</span></td><td><strong>The largest response signal anywhere here if the rare fusion confirms, but the evidence is cross-tumor pooled with no biliary cohort and prevalence is sub-1%.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/32092306">PMID&nbsp;32092306</a><br><a href="https://clinicaltrials.gov/study/NCT02576431">NCT02576431</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-larotrectinib">Larotrectinib (if NTRK1/2/3 fusion confirmed on RNA-based CGP)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>TRK fusion-positive advanced solid tumors (pooled basket)</strong> (2L+)<br><small>NTRK1/2/3 fusion across tumor types and ages; biliary patients treated on the fusion irrespective of subsite</small></td><td>159</td><td><strong>Grade 3 AE (any)</strong> <span class="tox-grade">grade 3</span>: 13.0% (33/260)<br><strong>Grade 4 AE (any)</strong> <span class="tox-grade">grade 4</span>: 1.0% (2/260)<br><strong>Increased ALT</strong> <span class="tox-grade">grade &gt;=3</span>: 3.0% (n=260)<br><strong>Anemia</strong> <span class="tox-grade">grade &gt;=3</span>: 2.0% (n=260)<br><strong>Decreased neutrophils</strong> <span class="tox-grade">grade &gt;=3</span>: 2.0% (n=260)</td><td><strong>ORR (independent review)</strong>: 79.0% (95% CI 72.0–85.0)<br><small>mDoR 35.2 mo; mPFS 28.3 mo; mOS 44.4 mo</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/32092306">Hong et al. <em>Lancet Oncology</em> 2020</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2>Msi Tmb interventions</h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr><td><a href="#evidence-pembrolizumab">1</a></td><td><strong>Pembrolizumab (if MSI-H/dMMR or TMB-high confirmed)</strong> <span class="scenario-conditional">(conditional on msi_tmb positive)</span></td><td>Moderate in MSI-H/TMB-high subset — ORR ~29-34% (KEYNOTE-158) with durable responders, but no CCA-specific subgroup and ~1-3% prevalence.</td><td>Low (immune-mediated grade 3-5 TRAEs ~14.6%; one treatment-related death)</td><td><strong>Low</strong> <span class="cpm-desc">(No counter-productive vector at this evidence depth; checkpoint resistance is possible but the dissent was preference/evidence-flavored, not mechanistic.)</span></td><td><strong>Offers a durable immunotherapy tail if MSI-H/dMMR or TMB-high confirms, but the biliary magnitude is inferred from a cross-tumor basket with no CCA-specific subgroup.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/31682550">PMID&nbsp;31682550</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/32919526">PMID&nbsp;32919526</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-pembrolizumab">Pembrolizumab (if MSI-H/dMMR or TMB-high confirmed)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>MSI-H/dMMR advanced noncolorectal solid tumors (incl. biliary)</strong> (2L+)<br><small>MSI-H/dMMR by PCR or IHC; 27 tumor types, cholangiocarcinoma among the most common. No CCA-specific subgroup ORR published</small></td><td>233</td><td><strong>Treatment-related grade 3-5 AE (any)</strong> <span class="tox-grade">grade &gt;=3</span>: 14.6% (34/233)<br><strong>Treatment-related AE (any)</strong> <span class="tox-grade">grade any</span>: 64.8% (151/233)<br><strong>Pneumonia</strong> <span class="tox-grade">grade 5</span>: (1/233) <small>(only treatment-related death)</small></td><td><strong>ORR (independent central review)</strong>: 34.3% (95% CI 28.3–40.8)<br><small>mPFS 4.1 mo; mOS 23.5 mo</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/31682550">Marabelle et al. <em>Journal of Clinical Oncology</em> 2020</a></td></tr>
+    <tr><td><strong>TMB-high advanced solid tumors (&gt;=10 mut/Mb), incl. biliary</strong> (2L+)<br><small>tTMB-high &gt;=10 mut/Mb on FoundationOne CDx; biliary admitted through the biomarker, not a dedicated cohort</small></td><td>102</td><td><span class="safety-summary-fallback">Safety mirrors the broader KEYNOTE-158 pembrolizumab population; this biomarker analysis did not report separate grade 3+ rates for the TMB-high subgroup.</span></td><td><strong>ORR in tTMB-high subgroup</strong>: 29.0% (95% CI 21.0–39.0)<br><small>mDoR not reached (range 2.2+ to 34.8+); mPFS 2.1 mo; mOS 11.7 mo</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/32919526">Marabelle et al. <em>Lancet Oncology</em> 2020</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<footer class="libby-footer">Generated 2026-06-01 &middot; Libby &middot; <code>cca-mets-scope-unknown-z3p9</code></footer>
+</body></html>
