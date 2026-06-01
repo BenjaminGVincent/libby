@@ -117,7 +117,7 @@ ONCOLOGY_ACRONYM_ALLOWLIST = frozenset({
     # Toxicity / AE acronyms
     "CRS", "ILD", "ICANS", "VTE", "DVT", "PE", "AKI", "GI", "HFS",
     "HTN", "QTC", "LVEF", "LFT", "AST", "ALT", "ANC", "WBC", "BUN",
-    "PMID", "DOI", "NCT", "CDX", "IHC", "FISH", "NGS", "RNA", "DNA",
+    "PMID", "DOI", "NCT", "CDX", "IHC", "ISH", "FISH", "NGS", "RNA", "DNA",
     "MRNA", "LNCRNA", "PDX", "WES", "WGS", "FFPE", "EHR", "CTDNA",
     "EGFR", "MET", "KRAS", "BRAF", "ALK", "ROS", "RET", "NTRK", "FGFR",
     "PD", "PDL", "HER",
