@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>Libby recommendations &mdash; pancreatic-mets-kras-g12d-basal-arid1a-k9r3</title>
+<style>
+
+:root {
+  --ink: #1A202C;
+  --ink-muted: #4A5568;
+  --rule: #E2E8F0;
+  --header-bg: #F4F6F8;
+  --accent: #5B3A87;
+  --bg: #FFFFFF;
+  --warn-fg: #6F2E1A;
+  --warn-bg: #FBE9E7;
+  --warn-border: #ECC4BB;
+}
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  max-width: 80rem;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  line-height: 1.5;
+}
+h1, h2, h3 { color: var(--ink); }
+h1 { font-size: 1.6rem; }
+h2 { font-size: 1.2rem; margin-top: 2rem; }
+h3 { font-size: 1.05rem; margin-top: 1.5rem; }
+small.scenario-key { color: var(--ink-muted); }
+.disclaimer {
+  border: 1px solid var(--warn-border);
+  background: var(--warn-bg);
+  color: var(--warn-fg);
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  margin: 1rem 0 2rem;
+  font-size: 0.95rem;
+}
+.disclaimer strong { color: #B71C1C; }
+.profile-grid {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.25rem 1rem;
+  margin: 1rem 0 2rem;
+  font-size: 0.95rem;
+}
+.profile-grid dt { font-weight: 600; color: var(--ink-muted); }
+.profile-grid dd { margin: 0; }
+.trial-table-wrap { color: var(--ink); }
+.trial-scroll { overflow-x: auto; }
+.trial-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.88em;
+}
+.trial-table thead th {
+  background: var(--header-bg);
+  font-weight: 600;
+  text-align: left;
+  padding: 0.5em 0.6em;
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  white-space: nowrap;
+}
+.trial-table tbody td {
+  padding: 0.5em 0.6em;
+  border-bottom: 1px solid var(--rule);
+  font-variant-numeric: tabular-nums;
+  vertical-align: top;
+}
+.trial-table tbody tr:last-child td {
+  border-bottom: 2px solid var(--ink);
+}
+.persona {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.35em;
+  font-size: 0.78em;
+  font-weight: 600;
+  margin-right: 0.25em;
+  border: 1px solid transparent;
+}
+.persona-risktaker    { background: #FFE9D6; color: #6F3A0F; border-color: #F0CFAE; }
+.persona-conservative { background: #DFEBFB; color: #1B3A6B; border-color: #B5CDEE; }
+.persona-critic       { background: #F1E5FF; color: #441E72; border-color: #D4BBF2; }
+.persona-concensusite { background: #DDF1EE; color: #134E48; border-color: #B0DBD3; }
+.persona-advocate     { background: #FFE5EE; color: #6E1638; border-color: #F0BBCB; }
+.split-glyph { font-weight: 700; color: #5A4500; }
+.not-recommended {
+  color: var(--ink-muted);
+  text-decoration: line-through;
+}
+.scenario-conditional {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5A4500;
+  background: #FFF7E0;
+  border: 1px solid #F1DD9A;
+  border-radius: 0.35em;
+  padding: 0.05em 0.45em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+.pipeline-note,
+.evidence-detail-note {
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+  margin: 0.25rem 0 0.75rem;
+}
+.evidence-detail-empty {
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+  margin: 0.25rem 0 0.75rem;
+  padding-left: 0.5rem;
+  border-left: 2px solid #E5E5E5;
+}
+.evidence-detail-table { font-size: 0.86em; }
+.evidence-detail-table thead th {
+  background: #FAFAFA;
+}
+.evidence-detail-table .tox-grade {
+  font-size: 0.85em;
+  color: var(--ink-muted);
+  font-weight: 500;
+}
+.evidence-detail-table .safety-summary-fallback {
+  font-style: italic;
+  color: var(--ink-muted);
+}
+h4 + .trial-table-wrap,
+h4 + .evidence-detail-empty {
+  margin-top: 0.25rem;
+}
+h4 { margin-top: 1.25rem; margin-bottom: 0.25rem; font-size: 1rem; }
+.pipeline-context-table { font-size: 0.82em; color: var(--ink-muted); }
+.pipeline-context-table thead th {
+  background: #FAFAFA;
+  border-top: 1px solid var(--ink-muted);
+  border-bottom: 1px solid var(--ink-muted);
+}
+.pipeline-context-table tbody tr:last-child td { border-bottom: 1px solid var(--ink-muted); }
+.pipeline-context-table .intervention-name { color: var(--ink); font-weight: 600; }
+.pipeline-context-table .alias-list { color: var(--ink-muted); font-size: 0.9em; }
+.pipeline-context-table .basket-flag {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #134E48;
+  background: #DDF1EE;
+  border: 1px solid #B0DBD3;
+  border-radius: 0.35em;
+  padding: 0.02em 0.4em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+.pipeline-context-table .discontinued-flag {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5A2A2A;
+  background: #F2E1E1;
+  border: 1px solid #DDB7B7;
+  border-radius: 0.35em;
+  padding: 0.02em 0.4em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+.pipeline-context-table .offlabel-flag {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5F4310;
+  background: #FBEFD3;
+  border: 1px solid #E8C977;
+  border-radius: 0.35em;
+  padding: 0.02em 0.4em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+footer.libby-footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  color: var(--ink-muted);
+  font-size: 0.85rem;
+}
+
+</style>
+</head>
+<body>
+<h1>Libby recommendations &mdash; <code>pancreatic-mets-kras-g12d-basal-arid1a-k9r3</code></h1>
+<div class="disclaimer">
+<strong>Decision support, not medical advice.</strong> Libby is an experimental 
+multi-agent decision-support tool. The recommendations below have not been 
+reviewed by a clinician treating this patient. Do not act on this page without 
+consulting a qualified oncologist.
+</div>
+<h2>Profile snapshot</h2>
+<dl class="profile-grid">
+  <dt>Primary site</dt><dd>pancreas</dd>
+  <dt>Histology</dt><dd>pancreatic ductal adenocarcinoma (PDAC); PurIST RNA signature classifies the tumor as the basal-like transcriptional subtype</dd>
+  <dt>Stage</dt><dd>IV (metastatic): large primary pancreatic mass with multiple liver metastases each &gt;1 cm</dd>
+  <dt>ECOG</dt><dd>1</dd>
+  <dt>Age band</dt><dd>70-79</dd>
+  <dt>Sex</dt><dd>male</dd>
+  <dt>Biomarkers</dt><dd>KRAS G12D mutated; MLH1 mutation somatic mutation reported (single MMR-gene variant; tumor is microsatellite stable and germline-negative); SMAD4 E520* stop-gain (predicted loss of function); TP53 Y126S and A138V (two missense variants); ARID1A frameshift (predicted loss of function); TMB 8.6 mutations/Mb; Microsatellite status MSS (microsatellite stable); PurIST subtype basal-like; Germline status no germline variants detected; Gene rearrangements none detected; HLA type A*01:01, A*02:01, B*37:01, B*44:02, C*05:01, C*06:02; Additional xR variants ABCC3 missense; ASXL1 frameshift; BCL7A splice-region; BCLAF1 stop-gain; LRP1B splice-region</dd>
+  <dt>Efficacy/toxicity weight</dt><dd>0.5</dd>
+</dl>
+
+<p><em>4 ranked therapeutic options across 2 targetable features. Biomarker workup steps live in the standalone Target validation paths report.</em></p>
+<h2>Kras G12D interventions</h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr><td><a href="#evidence-daraxonrasib">1</a></td><td><strong>daraxonrasib (RMC-6236), pan-RAS(ON) inhibitor — front-line via RASolute 303 (NCT07491445)</strong></td><td>High in 2L RAS G12 PDAC — OS HR 0.40 (95% CI 0.30-0.53) in RASolute 302 (n=500); first-line benefit inferred from the unread RASolute 303.</td><td>Moderate (rash G3+ 14%, stomatitis G3+ 12%; G3+ TRAE 43.6% overall, below chemo)</td><td><strong>Low</strong> <span class="cpm-desc">(Mucocutaneous toxicity can force dose reductions that erode the exposure the survival signal depends on; no mechanism-level antagonism of the therapeutic goal.)</span></td><td><strong>The only feature-targeting option with randomized phase 3 survival evidence; first-line benefit inferred from an unread trial and the allele estimate borrowed from a RAS G12 subgroup.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/42223072">PMID&nbsp;42223072</a><br><a href="https://clinicaltrials.gov/study/NCT07491445">NCT07491445</a><br><a href="https://clinicaltrials.gov/study/NCT06445062">NCT06445062</a></td></tr>
+    <tr><td><a href="#evidence-zoldonrasib">2</a></td><td><strong>zoldonrasib (RMC-9805), KRAS G12D(ON)-selective inhibitor — front-line via RASolute 305 (NCT07621718)</strong></td><td>Moderate, allele-matched — ORR 30% / DCR 80% in G12D PDAC (phase 1, n=40, no CI; PFS/DoR immature). RASolute 305 will test it front-line.</td><td>Low (nausea 27%, diarrhea 20%, rash 10%; no G4/5 events at monotherapy dose)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Critic and concensusite dissented on the thin single-arm evidence base; durability unmeasured, so on-target activity may not translate to a durable effect.)</span></td><td><strong>The allele-matched, gentlest agent in the set — best tolerability for a 79-year-old, but the evidence is a single-arm n=40 abstract with no durability readout.</strong></td><td>doi:10.1200/JCO.2025.43.4_suppl.724<br><a href="https://clinicaltrials.gov/study/NCT07621718">NCT07621718</a><br><a href="https://clinicaltrials.gov/study/NCT06040541">NCT06040541</a></td></tr>
+    <tr><td><a href="#evidence-incb161734">3</a></td><td><strong>INCB161734, KRAS G12D-selective inhibitor — front-line + chemo via DAWN-303 (NCT07522073)</strong></td><td>Moderate to high single-agent — ORR 37% / DCR 78% in pretreated G12D PDAC (phase 1, n=41, no CI; PFS not reached at ~5 mo). DAWN-303 tests it front-line.</td><td>High (combination-cohort G3+ neutropenia ~40%; monotherapy GI 50-60% grade 1-2)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Conservative dissented on additive marrow toxicity: chemo-combination neutropenia can force dose reductions in an older patient that erode delivered intensity.)</span></td><td><strong>Strongest single-agent response number in the dossier, but the enrollable front-line construct bundles chemotherapy with ~40% grade &gt;=3 neutropenia and no dedicated combination-safety data.</strong></td><td>doi:10.1200/JCO.2026.44.2_suppl.654<br><a href="https://clinicaltrials.gov/study/NCT07522073">NCT07522073</a><br><a href="https://clinicaltrials.gov/study/NCT06179160">NCT06179160</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-daraxonrasib">daraxonrasib (RMC-6236), pan-RAS(ON) inhibitor — front-line</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>previously treated metastatic RAS-mutant pancreatic ductal adenocarcinoma</strong> (2L+)<br><small>metastatic PDAC after one prior line of chemotherapy; ~92% RAS G12, KRAS G12D included in the G12 stratum</small></td><td>500</td><td><strong>any treatment-related AE</strong> <span class="tox-grade">grade &gt;=3</span>: 43.6% <small>(chemo arm 57.5%)</small><br><strong>rash</strong> <span class="tox-grade">grade &gt;=3</span>: 14% <small>(most frequent grade &gt;=3 TRAE)</small><br><strong>stomatitis</strong> <span class="tox-grade">grade &gt;=3</span>: 12%<br><strong>treatment discontinuation due to TRAE</strong> <span class="tox-grade">grade any</span>: 1.2% <small>(chemo 11.2%)</small></td><td><strong>median overall survival vs chemotherapy</strong>: 0.4 HR (95% CI 0.3–0.53); p 4.6e-11<br><small>mOS 13.2 mo (daraxonrasib) vs 6.7 mo (chemo); mPFS 7.2 vs 3.6 mo</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/42223072">Wolpin et al. <em>N Engl J Med</em> 2026</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-zoldonrasib">zoldonrasib (RMC-9805), KRAS G12D(ON)-selective inhibitor — front-line</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-incb161734">INCB161734, KRAS G12D-selective inhibitor — front-line + chemo</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h2>Arid1A Loss interventions</h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr><td><a href="#evidence-ceralasertib">1</a></td><td><strong>ceralasertib (AZD6738), ATR inhibitor (ARID1A synthetic-lethal axis) — via NCT03682289, gated on BAF250a IHC loss</strong></td><td>Low for PDAC — confirmed ORR 14% across ARID1A-deficient tumors (pmid:41686845), activity concentrated in gynecologic histologies with zero pancreatic responders shown.</td><td>Moderate (ATR-class anemia / thrombocytopenia / neutropenia; per-term G3+ rates unreported, zero treatment-related deaths)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Cross-tumor extrapolation with no PDAC responder; the synthetic-lethal effect may not engage in basal-like PDAC, and class anemia limits exposure at 79.)</span></td><td><strong>A mechanistically independent banked second axis off the ARID1A frameshift, but no PDAC responder exists, entry is BAF250a-IHC-gated, and the lead basket is not recruiting.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/41686845">PMID&nbsp;41686845</a><br><a href="https://clinicaltrials.gov/study/NCT03682289">NCT03682289</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/27958275">PMID&nbsp;27958275</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-ceralasertib">ceralasertib (AZD6738), ATR inhibitor (ARID1A synthetic-lethal axis) —</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>ARID1A-deficient advanced solid tumors (gynecologic-predominant)</strong> (2L+)<br><small>29 evaluable, ARID1A loss by IHC required; mostly gynecologic (endometrioid endometrial, ovarian clear cell); non-gynecologic tumors under-represented</small></td><td>29</td><td><strong>treatment-related death</strong> <span class="tox-grade">grade 5</span>: 0% (n=0)</td><td><strong>confirmed ORR (all ARID1A-deficient)</strong>: 14%<br><small>mDoR 33.7 mo in gynecologic responders</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/41686845">Zhu et al. <em>Clin Cancer Res</em> 2026</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<footer class="libby-footer">Generated 2026-06-06 &middot; Libby &middot; <code>pancreatic-mets-kras-g12d-basal-arid1a-k9r3</code></footer>
+</body></html>

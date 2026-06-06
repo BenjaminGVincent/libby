@@ -1,0 +1,130 @@
+{
+  "case_slug": "pancreatic-mets-kras-g12d-basal-arid1a-k9r3",
+  "age_band": "70-79",
+  "sex": "male",
+  "primary_site": "pancreas",
+  "histology": "pancreatic ductal adenocarcinoma (PDAC); PurIST RNA signature classifies the tumor as the basal-like transcriptional subtype",
+  "stage": "IV (metastatic): large primary pancreatic mass with multiple liver metastases each >1 cm",
+  "ecog": 1,
+  "biomarkers": [
+    {
+      "name": "KRAS G12D",
+      "value": "mutated",
+      "method": "Tempus xF (plasma ctDNA)",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "ctDNA NGS call; tissue NGS confirmation strengthens eligibility for KRAS G12D-selective and pan-RAS(ON) inhibitor trials. Gates daraxonrasib (RMC-6236, pan-RAS), RMC-9805 (KRAS G12D-selective), MRTX1133, and KRAS-directed vaccine/T-cell programs."
+    },
+    {
+      "name": "MLH1 mutation",
+      "value": "somatic mutation reported (single MMR-gene variant; tumor is microsatellite stable and germline-negative)",
+      "method": "Tempus xF (plasma ctDNA); germline-negative on Tempus xG",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "MMR protein IHC (MLH1/PMS2/MSH2/MSH6) on tumor tissue is the decision-grade test. A single somatic MLH1 variant with MSS status, TMB 8.6 mut/Mb, and no germline finding most likely reflects MMR-proficient biology; pembrolizumab on the dMMR/MSI-H label would require IHC loss or an MSI-H call, neither present here."
+    },
+    {
+      "name": "SMAD4",
+      "value": "E520* stop-gain (predicted loss of function)",
+      "method": "Tempus xF (plasma ctDNA)",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "NGS truncating-variant call; not a direct therapy gate. SMAD4 loss is a poor-prognosis marker associated with a metastatic-dominant pattern; carried as co-alteration context."
+    },
+    {
+      "name": "TP53",
+      "value": "Y126S and A138V (two missense variants)",
+      "method": "Tempus xF (plasma ctDNA)",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "NGS variant calls; informs co-mutation context (near-universal in PDAC), not a direct therapy gate. Relevant to DDR-directed and cell-cycle trial stratification."
+    },
+    {
+      "name": "ARID1A",
+      "value": "frameshift (predicted loss of function)",
+      "method": "Tempus xR / xF",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "NGS frameshift call; ARID1A loss creates candidate synthetic-lethal vulnerabilities (ATR inhibitors, EZH2 inhibitors) explored in early-phase basket trials. Tissue confirmation and, where a trial requires it, ARID1A/BAF IHC strengthen eligibility."
+    },
+    {
+      "name": "TMB",
+      "value": "8.6 mutations/Mb",
+      "method": "Tempus xF NGS panel",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "Below the >=10 mut/Mb threshold for the tumor-agnostic pembrolizumab TMB-high label; reinforces low expected benefit from single-agent immune-checkpoint blockade."
+    },
+    {
+      "name": "Microsatellite status",
+      "value": "MSS (microsatellite stable)",
+      "method": "Tempus xF",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "MSI-high/dMMR is required for tumor-agnostic pembrolizumab; MSS effectively excludes that pathway. Confirm against MMR IHC given the concurrent somatic MLH1 variant."
+    },
+    {
+      "name": "PurIST subtype",
+      "value": "basal-like",
+      "method": "PurIST RNA gene-expression signature",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "Single-sample RNA classifier; predictive/prognostic context. Basal-like PDAC carries a worse prognosis and has been associated in retrospective series with relatively less benefit from FOLFIRINOX versus gemcitabine/nab-paclitaxel; informs chemotherapy-backbone discussion with the treating team rather than gating a targeted agent."
+    },
+    {
+      "name": "Germline status",
+      "value": "no germline variants detected",
+      "method": "Tempus xG",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "Germline-negative: no BRCA1/2, PALB2, ATM, or Lynch germline finding. Removes the germline-HRD/PARP-maintenance (olaparib POLO) rationale and argues against germline Lynch as the source of the somatic MLH1 variant."
+    },
+    {
+      "name": "Gene rearrangements",
+      "value": "none detected",
+      "method": "Tempus xR",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "No fusions/rearrangements: no NRG1, NTRK, ALK, ROS1, RET, FGFR, or BRAF fusion. Forecloses the fusion-directed tumor-agnostic options that are otherwise high-yield in KRAS-wildtype PDAC."
+    },
+    {
+      "name": "HLA type",
+      "value": "A*01:01, A*02:01, B*37:01, B*44:02, C*05:01, C*06:02",
+      "method": "Tempus HLA typing",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "HLA class I genotype gates HLA-restricted KRAS-directed immunotherapy. The patient is NOT HLA-C*08:02, so the published HLA-C*08:02-restricted anti-KRAS-G12D TCR-T does not apply. A*02:01 and A*01:01 are common restriction elements relevant to several KRAS-mutant vaccine and TCR programs; match each candidate immunotherapy against the patient's actual alleles before enrollment."
+    },
+    {
+      "name": "Additional xR variants",
+      "value": "ABCC3 missense; ASXL1 frameshift; BCL7A splice-region; BCLAF1 stop-gain; LRP1B splice-region",
+      "method": "Tempus xR",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "Largely variants of uncertain significance / passengers in PDAC. ASXL1 frameshift detected in plasma should be evaluated for clonal hematopoiesis of indeterminate potential (CHIP) rather than tumor origin (paired blood-cell sequencing). LRP1B loss is a weak correlate of immunotherapy responsiveness but not decision-grade here given MSS and TMB 8.6."
+    }
+  ],
+  "prior_therapies": [],
+  "current_therapy": null,
+  "organ_function": {},
+  "targetable_features": [
+    {
+      "feature": "KRAS G12D mutation",
+      "rationale": "The lead actionable driver. Direct small-molecule axis: daraxonrasib (RMC-6236, pan-RAS(ON)), RMC-9805 (KRAS G12D(ON)-selective), and MRTX1133 (KRAS G12D), all in early-phase PDAC trials. Immunologic axis: KRAS-mutant vaccines (e.g. ELI-002 amphiphile targeting G12D and other alleles) and adoptive T-cell/TCR programs directed at KRAS G12D. This is the highest-yield molecularly targeted feature in the case."
+    },
+    {
+      "feature": "HLA-restricted KRAS-directed immunotherapy (HLA class I genotype A*01:01, A*02:01, B*37:01, B*44:02, C*05:01, C*06:02)",
+      "rationale": "The HLA genotype determines which KRAS G12D vaccine/TCR/cell-therapy products can present the mutant epitope. Decision-relevant negative: the patient is not HLA-C*08:02, so the published C*08:02-restricted anti-KRAS-G12D TCR-T is not an option. A*02:01- and A*01:01-restricted KRAS programs should be screened against these alleles. Pairing KRAS G12D with the patient's actual HLA is what makes the immunotherapy axis concrete rather than generic."
+    },
+    {
+      "feature": "ARID1A frameshift (loss of function)",
+      "rationale": "ARID1A (SWI/SNF subunit) loss-of-function creates candidate synthetic-lethal dependencies on ATR and on EZH2, explored in early-phase basket trials enrolling ARID1A-deficient solid tumors. A secondary but genuinely targetable axis distinct from the KRAS driver."
+    },
+    {
+      "feature": "MLH1 mutation / mismatch-repair status (in an MSS, TMB-8.6, germline-negative context)",
+      "rationale": "Decision-relevant feature requiring validation, not a confirmed actionable target. A single somatic MLH1 variant alongside MSS status and TMB below 10 mut/Mb most likely reflects MMR-proficient biology, which makes checkpoint-inhibitor monotherapy low-yield. MMR protein IHC on tissue is the gating test: dMMR by IHC would open pembrolizumab, while retained expression confirms the immunotherapy axis is not indicated on the tumor-agnostic label."
+    },
+    {
+      "feature": "MSS status with TMB 8.6 mut/Mb (decision-relevant negative immunotherapy findings)",
+      "rationale": "Microsatellite stability plus sub-threshold TMB jointly argue against single-agent immune-checkpoint blockade on the tumor-agnostic labels. Carried so downstream agents treat checkpoint monotherapy as low-yield and route immunotherapy thinking toward KRAS-directed vaccines/T-cell therapy or combination trials rather than off-label PD-1 monotherapy."
+    },
+    {
+      "feature": "SMAD4 E520* loss and TP53 (Y126S, A138V) co-mutations",
+      "rationale": "Co-alteration context rather than direct drug targets. SMAD4 loss is a poor-prognosis, metastasis-associated marker; TP53 inactivation is near-universal in PDAC and informs DDR-directed and cell-cycle trial stratification. Carried so the board weighs prognosis and combination rationale, not as standalone targetable drivers."
+    },
+    {
+      "feature": "PurIST basal-like transcriptional subtype",
+      "rationale": "Predictive/prognostic RNA-signature feature. Basal-like PDAC carries a worse prognosis and a debated chemo-backbone signal (relatively less FOLFIRINOX benefit in some retrospective series). Informs the treating team's chemotherapy choice and trial stratification rather than gating a specific targeted agent; carried as context for the board's risk weighting."
+    }
+  ],
+  "geography_band": "US",
+  "private": false
+}

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>Libby manuscripts inventory — pancreatic-mets-kras-g12d-basal-arid1a-k9r3</title>
+<style>
+
+      :root { color-scheme: light; }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        max-width: 1200px;
+        margin: 2em auto;
+        padding: 0 1.5em 3em;
+        color: #1A202C;
+        background: #FFFFFF;
+        line-height: 1.55;
+      }
+      h1 { border-bottom: 2px solid #5B3A87; padding-bottom: 0.3em; margin-top: 0; }
+      h2 { color: #5B3A87; margin-top: 1.8em; }
+      h3 { color: #1A202C; margin-top: 1.4em; }
+      a { color: #5B3A87; text-decoration: underline; }
+      code { background: #F4F6F8; padding: 0.1em 0.4em; border-radius: 2px; font-size: 0.92em; }
+      .disclaimer {
+        background: #FFF4E5; border-left: 4px solid #B45309;
+        padding: 0.8em 1em; margin: 1em 0 2em; font-size: 0.95em;
+      }
+      .libby-footer {
+        margin-top: 3em; padding-top: 1em; border-top: 1px solid #E2E8F0;
+        color: #6B6B7F; font-size: 0.85em;
+      }
+    
+/* Trial-table style — vendored from /Users/benjaminvincent/turtle/pfo/conductor/styles/trial-table/
+   Scoped via .trial-table-wrap so it does not leak into surrounding MkDocs page.
+
+   Uses explicit [data-md-color-scheme] selectors to bypass any CSS-variable
+   inheritance issues — the table reads correctly in both default (light) and
+   slate (dark) Material color schemes regardless of cascade quirks. */
+
+.trial-table-wrap caption {
+  caption-side: top;
+  text-align: left;
+  font-weight: 600;
+  padding: 0.4em 0;
+  font-size: 1em;
+}
+.trial-scroll { overflow-x: auto; }
+.trial-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.88em;
+}
+.trial-table thead th {
+  font-weight: 600;
+  text-align: left;
+  padding: 0.5em 0.6em;
+  white-space: nowrap;
+}
+.trial-table tbody td {
+  padding: 0.5em 0.6em;
+  font-variant-numeric: tabular-nums;
+  vertical-align: top;
+}
+.trial-table .num { text-align: right; }
+
+/* Narrow ID-style columns — the entry number in the access-guide summary
+   table and the NCT id in the access-guide trial-pathways table. Keep
+   numbers / NCTs on a single line so "10" doesn't wrap to "1\n0" and
+   "NCT05379985" doesn't break across four lines. min-width is large
+   enough to comfortably fit the widest expected value (3-digit entry
+   number, NCT + 8 digits = 11 chars in a monospace fallback). */
+.trial-table th.col-num,
+.trial-table td.col-num,
+.trial-table th.col-nct,
+.trial-table td.col-nct {
+  white-space: nowrap;
+}
+.trial-table th.col-num,
+.trial-table td.col-num { min-width: 2.4em; }
+.trial-table th.col-nct,
+.trial-table td.col-nct { min-width: 6.5em; }
+
+/* Access-guide column widths — kept generous so the wrapping `.trial-scroll`
+   div engages horizontal scroll before the cell text squeezes into a tall
+   narrow stack. Tuned for the access-guide tables specifically; other
+   trial-tables on the site keep their default auto layout. */
+.trial-table th.col-intervention,
+.trial-table td.col-intervention { min-width: 14em; }
+.trial-table th.col-target,
+.trial-table td.col-target { min-width: 12em; }
+.trial-table th.col-access-status,
+.trial-table td.col-access-status { min-width: 10em; }
+.trial-table th.col-regulatory,
+.trial-table td.col-regulatory { min-width: 22em; }
+.trial-table th.col-first-action,
+.trial-table td.col-first-action { min-width: 22em; }
+
+.trial-table th.col-phase,
+.trial-table td.col-phase { min-width: 3.5em; white-space: nowrap; }
+.trial-table th.col-indication,
+.trial-table td.col-indication { min-width: 18em; }
+.trial-table th.col-status,
+.trial-table td.col-status { min-width: 7em; white-space: nowrap; }
+.trial-table th.col-eligibility,
+.trial-table td.col-eligibility { min-width: 8em; white-space: nowrap; }
+.trial-table th.col-contact,
+.trial-table td.col-contact { min-width: 14em; }
+.trial-table th.col-notes,
+.trial-table td.col-notes { min-width: 24em; }
+.trial-table a {
+  text-decoration: underline;
+  font-weight: 700;
+}
+.trial-table .mark {
+  font-size: 0.75em;
+  vertical-align: super;
+}
+
+/* ---------- Default (light) scheme ---------- */
+[data-md-color-scheme="default"] .trial-table-wrap { color: #1A202C; }
+[data-md-color-scheme="default"] .trial-table thead th {
+  background: #F4F6F8;
+  color: #1A202C;
+  border-top: 2px solid #1A202C;
+  border-bottom: 1px solid #1A202C;
+}
+[data-md-color-scheme="default"] .trial-table tbody td {
+  color: #1A202C;
+  border-bottom: 1px solid #E2E8F0;
+}
+[data-md-color-scheme="default"] .trial-table tbody tr:last-child td {
+  border-bottom: 2px solid #1A202C;
+}
+[data-md-color-scheme="default"] .trial-table a { color: #1A202C; }
+[data-md-color-scheme="default"] .trial-table-wrap .notes {
+  font-size: 0.85em;
+  color: #4A5568;
+  margin-top: 0.6em;
+}
+
+/* ---------- Slate (dark) scheme ---------- */
+[data-md-color-scheme="slate"] .trial-table-wrap { color: #E2E8F0; }
+[data-md-color-scheme="slate"] .trial-table thead th {
+  background: #2D3344;
+  color: #F1F5F9;
+  border-top: 2px solid #94A3B8;
+  border-bottom: 1px solid #94A3B8;
+}
+[data-md-color-scheme="slate"] .trial-table tbody td {
+  color: #E2E8F0;
+  border-bottom: 1px solid #3A4159;
+}
+[data-md-color-scheme="slate"] .trial-table tbody tr:last-child td {
+  border-bottom: 2px solid #94A3B8;
+}
+[data-md-color-scheme="slate"] .trial-table a {
+  color: #93C5FD;
+}
+[data-md-color-scheme="slate"] .trial-table-wrap .notes {
+  font-size: 0.85em;
+  color: #94A3B8;
+  margin-top: 0.6em;
+}
+
+/* Libby-specific styling: case-fit / toxicity badges, agreement matrix, persona pills. */
+
+/* Bold links across all rendered content. */
+.md-typeset a {
+  font-weight: 700;
+}
+
+/* Case-fit badges (in trials.md). */
+.fit-badge {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.4em;
+  font-size: 0.78em;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+.fit-strong  { background: #E6F5EA; color: #14532D; border-color: #BBE2C7; }
+.fit-partial { background: #FFF7E0; color: #5A4500; border-color: #F1DD9A; }
+.fit-weak    { background: #FBE9E7; color: #6F2E1A; border-color: #ECC4BB; }
+.fit-none    { background: #F1F3F5; color: #4A5568; border-color: #E2E8F0; }
+
+/* Tumor-type-relation badges (trial table). */
+.rel-badge {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.4em;
+  font-size: 0.78em;
+  font-weight: 600;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.rel-indication  { background: #DDF1EE; color: #134E48; border-color: #B0DBD3; }
+.rel-basket      { background: #FFE9D6; color: #6F3A0F; border-color: #F0CFAE; }
+.rel-same-drug   { background: #DFEBFB; color: #1B3A6B; border-color: #B5CDEE; }
+.rel-cross-tumor { background: #F1E5FF; color: #441E72; border-color: #D4BBF2; }
+.rel-other       { background: #F1F3F5; color: #4A5568; border-color: #E2E8F0; }
+
+/* Risk-of-bias badges (evidence table). */
+.rob-badge {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.4em;
+  font-size: 0.78em;
+  font-weight: 600;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.rob-low  { background: #E6F5EA; color: #14532D; border-color: #BBE2C7; }
+.rob-med  { background: #FFF7E0; color: #5A4500; border-color: #F1DD9A; }
+.rob-high { background: #FBE9E7; color: #6F2E1A; border-color: #ECC4BB; }
+
+/* Toxicity flag pills. */
+.tox-flag {
+  display: inline-block;
+  padding: 0.05em 0.45em;
+  border-radius: 999px;
+  font-size: 0.75em;
+  background: #FBE9E7;
+  color: #6F2E1A;
+  border: 1px solid #ECC4BB;
+  margin-right: 0.25em;
+}
+
+/* Persona badges (board.md, recommendations.md). */
+.persona {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.35em;
+  font-size: 0.78em;
+  font-weight: 600;
+  margin-right: 0.25em;
+  border: 1px solid transparent;
+}
+.persona-risktaker    { background: #FFE9D6; color: #6F3A0F; border-color: #F0CFAE; }
+.persona-conservative { background: #DFEBFB; color: #1B3A6B; border-color: #B5CDEE; }
+.persona-critic       { background: #F1E5FF; color: #441E72; border-color: #D4BBF2; }
+.persona-concensusite { background: #DDF1EE; color: #134E48; border-color: #B0DBD3; }
+.persona-advocate     { background: #FFE5EE; color: #6E1638; border-color: #F0BBCB; }
+
+/* Agreement-level decorations. */
+.agree-endorse   { color: #14532D; font-weight: 600; }
+.agree-qualified { color: #5A4500; font-weight: 600; }
+.agree-dissent   { color: #6F2E1A; font-weight: 600; }
+.agree-veto      { color: #6F2E1A; font-weight: 700; text-decoration: underline; }
+
+/* Biomarker-conditional flag (inline in Intervention cell when scenario ends with :positive). */
+.scenario-conditional {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5A4500;
+  background: #FFF7E0;
+  border: 1px solid #F1DD9A;
+  border-radius: 0.35em;
+  padding: 0.05em 0.45em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+
+/* Counter-productive MoA descriptor (parenthetical text after the bold severity). */
+.cpm-desc {
+  font-size: 0.92em;
+  color: #4A5568;
+}
+
+/* Persona pill row inside the Intervention cell on the ranked-prioritization table. */
+.persona-line {
+  display: inline-block;
+  margin-top: 0.15em;
+  font-size: 0.78em;
+  color: #4A5568;
+}
+.persona-line + .persona-line {
+  margin-left: 0.6em;
+}
+
+/* Recommendation table marks. */
+.split-glyph { font-weight: 700; color: #5A4500; }
+.not-recommended {
+  color: #4A5568;
+  text-decoration: line-through;
+}
+
+/* Disclaimer banner — applied to every case page via admonition. */
+.md-typeset .admonition.disclaimer {
+  border-color: #B71C1C;
+}
+.md-typeset .admonition.disclaimer > .admonition-title {
+  background-color: rgba(183, 28, 28, 0.08);
+  color: #B71C1C;
+}
+
+/* Agreement matrix heatmap (board.md). Pastel cells carry explicit
+   foreground+background that remain legible regardless of scheme; matrix
+   chrome (header, borders, no-opinion cells) uses scheme-aware selectors. */
+.agreement-matrix {
+  border-collapse: collapse;
+  font-size: 0.85em;
+}
+.agreement-matrix th, .agreement-matrix td {
+  padding: 0.35em 0.5em;
+  text-align: center;
+}
+.agreement-matrix th { font-weight: 600; }
+
+/* Pastel cell colors — same in both schemes (high contrast on their own bg). */
+.agreement-matrix td.cell-endorse   { background: #C8E6D0; color: #14532D; }
+.agreement-matrix td.cell-qualified { background: #FCEEC2; color: #5A4500; }
+.agreement-matrix td.cell-dissent   { background: #F4C7BE; color: #6F2E1A; }
+.agreement-matrix td.cell-veto      { background: #E8A399; color: #4A1408; font-weight: 700; }
+
+/* Default (light) scheme chrome. */
+[data-md-color-scheme="default"] .agreement-matrix th,
+[data-md-color-scheme="default"] .agreement-matrix td {
+  border: 1px solid #E2E8F0;
+  color: #1A202C;
+}
+[data-md-color-scheme="default"] .agreement-matrix th {
+  background: #F4F6F8;
+  color: #1A202C;
+}
+[data-md-color-scheme="default"] .agreement-matrix td.cell-absent {
+  background: #F1F3F5;
+  color: #94A3B8;
+}
+
+/* Slate (dark) scheme chrome. */
+[data-md-color-scheme="slate"] .agreement-matrix th,
+[data-md-color-scheme="slate"] .agreement-matrix td {
+  border: 1px solid #3A4159;
+  color: #E2E8F0;
+}
+[data-md-color-scheme="slate"] .agreement-matrix th {
+  background: #2D3344;
+  color: #F1F5F9;
+}
+[data-md-color-scheme="slate"] .agreement-matrix td.cell-absent {
+  background: #232838;
+  color: #64748B;
+}
+
+</style>
+</head>
+<body data-md-color-scheme="default">
+<div class="disclaimer">
+<strong>Decision support, not medical advice.</strong> Libby is an experimental 
+multi-agent decision-support tool. The information on this page has not been 
+reviewed by a clinician treating this patient. Information ages — confirm details 
+directly with the relevant sources before relying on them.
+</div>
+<h1 id="manuscripts-considered-pancreatic-mets-kras-g12d-basal-arid1a-k9r3">Manuscripts considered — <code>pancreatic-mets-kras-g12d-basal-arid1a-k9r3</code></h1>
+<p>Master inventory: 13 clinical (7 included, 6 considered &amp; excluded) + 8 pre-clinical (6 included, 2 considered &amp; excluded) + 13 additional trial publications/registrations. One row per paper, sorted by year (newest first). Excluded rows are papers a Libby agent reviewed and chose NOT to feed to the board, with the exclusion reason captured. Toxicities use CTCAE-style term · grade · n/N · rate. Pre-clinical rows leave the toxicity cell blank by design. A printable PDF version is linked from the case <strong>Downloads</strong> section.</p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>Reference</th><th>Type</th><th>Inclusion</th><th>Intervention</th><th>Indication / model</th><th>Design</th><th>n</th><th>Effect size</th><th>Variance</th><th>Toxicities (type · n/N · rate)</th><th>Case fit</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Wolpin/Hong (2026)<br><em>N Engl J Med</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/42223072">PMID&nbsp;42223072</a></td><td><span class="rel-badge rel-indication">clinical</span></td><td><span class="fit-badge fit-strong">included</span></td><td>daraxonrasib (RMC-6236), pan-RAS(ON) multi-selective inhibitor</td><td>previously treated metastatic RAS-mutant pancreatic ductal adenocarcinoma <em>(2L+)</em><br><small>metastatic PDAC after one prior line of chemotherapy; ~92% RAS G12, KRAS G12D included in the G12 stratum</small></td><td>randomized open-label phase 3 (RASolute 302), daraxonrasib vs investigator&#x27;s-choice chemotherapy</td><td class="num">500</td><td class="num"><strong>mOS</strong>: 13.20 months <small><em>daraxonrasib arm; chemo 6.7 mo ITT / 6.6 mo G12</em></small><br><strong>OS HR</strong>: 0.40 <small><em>ITT</em></small><br><strong>OS HR</strong>: 0.40 <small>(RAS G12 population)</small> <small><em>includes KRAS G12D</em></small><br><strong>OS rate</strong>: 53.20 % <small><em>12-month OS; chemo 17.3%</em></small><br><strong>mPFS</strong>: 7.20 months <small><em>daraxonrasib; chemo 3.6 mo</em></small><br><strong>PFS HR</strong>: 0.49 <small><em>ITT; RAS G12 HR 0.45</em></small><br><strong>ORR</strong>: 31.60 % <small><em>daraxonrasib; chemo 11.2%</em></small><br><strong>AE rate</strong>: 43.60 % <small><em>grade &gt;=3 TRAE daraxonrasib; chemo 57.5%</em></small><br><strong>Discontinuation</strong>: 1.20 % <small><em>TRAE discontinuation daraxonrasib; chemo 11.2%</em></small><br><small>median overall survival vs chemotherapy</small></td><td class="num">—<br>95% CI 0.30–0.53 · p=4.6e-11<br>95% CI 0.30–0.54 · p=5.9e-10<br>—<br>—<br>p=5.2e-9<br>p=&lt;0.0001<br>—<br>—</td><td><strong>any treatment-related AE</strong> G&gt;=3 — 43.6%<br><strong>rash</strong> G&gt;=3 — 14%<br><strong>stomatitis</strong> G&gt;=3 — 12%<br><strong>treatment discontinuation due to TRAE</strong> — 1.2%</td><td><span class="fit-badge fit-strong">strong</span></td><td>Pivotal phase 3 behind daraxonrasib&#x27;s pancreatic development and the FDA breakthrough designation. Sits at second line while this patient is treatment-naive, so it reads as the efficacy anchor for the first-line RASolute 303/305 options rather than a slot he enters now. Per-term grade &gt;=3 rates from ASCO 2026 plenary coverage; NCT06625320.</td></tr>
+        <tr><td>Wolpin/Hong (2026)<br><em>N Engl J Med</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/42090791">PMID&nbsp;42090791</a></td><td><span class="rel-badge rel-indication">clinical</span></td><td><span class="fit-badge fit-strong">included</span></td><td>daraxonrasib (RMC-6236), pan-RAS(ON) multi-selective inhibitor</td><td>previously treated advanced RAS-mutant pancreatic ductal adenocarcinoma <em>(2L+)</em><br><small>168 PDAC patients dosed &lt;=300 mg after fluoropyrimidine- or gemcitabine-based therapy; efficacy subgroup n=26 RAS G12 at 300 mg in 2L; 68% ECOG 1, 67% liver mets</small></td><td>phase 1/2 dose-escalation/expansion monotherapy (RMC-6236-001), single-arm</td><td class="num">168</td><td class="num"><strong>ORR</strong>: 35.00 % <small>(RAS G12, 300 mg, second line)</small> <small><em>includes KRAS G12D</em></small><br><strong>mPFS</strong>: 8.50 months <small>(RAS G12, 300 mg, 2L)</small><br><strong>mOS</strong>: 13.10 months <small>(RAS G12, 300 mg, 2L)</small><br><strong>mDoR</strong>: 8.20 months <small>(RAS G12, 300 mg, 2L)</small><br><strong>AE rate</strong>: 30.00 % <small><em>grade &gt;=3 TRAE, all PDAC &lt;=300 mg</em></small><br><strong>TRAE rate</strong>: 96.00 % <small><em>any-grade TRAE</em></small><br><small>ORR (RAS G12, 300 mg, 2L)</small></td><td class="num">95% CI 17.00–56.00<br>—<br>—<br>95% CI 3.8 to NE<br>—<br>—</td><td><strong>any treatment-related AE</strong> — n=168 · 96%<br><strong>any treatment-related AE</strong> G&gt;=3 — n=168 · 30%<br><strong>rash</strong> — n=168 · 91%<br><strong>diarrhea</strong> — n=168 · 48%<br><strong>nausea</strong> — n=168 · 43%<br><strong>vomiting</strong> — n=168 · 31%<br><strong>stomatitis</strong> — n=168 · 31%<br><strong>fatigue</strong> — n=168 · 20%<br><strong>paronychia</strong> — n=168 · 13%<br><strong>dose modification</strong> — n=168 · 48%</td><td><span class="fit-badge fit-partial">partial</span></td><td>Per-term any-grade AE rates from OncLive/CancerNetwork coverage of the NEJM paper; NCT05379985. Same drug, earlier line than the patient; the response and survival numbers in the RAS G12 subset are the cleanest single-agent read for the KRAS axis.</td></tr>
+        <tr><td>Wainberg/— (2026)<br><em>J Clin Oncol (ASCO GI abstract 654)</em></td><td><a href="https://doi.org/10.1200/JCO.2026.44.2_suppl.654">doi:10.1200/JCO.2026.44.2_suppl.654</a></td><td><span class="rel-badge rel-indication">clinical</span></td><td><span class="fit-badge fit-strong">included</span></td><td>INCB161734, oral KRAS G12D ON/OFF-selective inhibitor</td><td>advanced/metastatic KRAS G12D pancreatic ductal adenocarcinoma <em>(2L+)</em><br><small>heavily pretreated KRAS G12D PDAC, all &gt;=2 prior lines, many &gt;=3; monotherapy at RP2D</small></td><td>phase 1 monotherapy and chemo-combination, single-arm (NCT06179160)</td><td class="num">41</td><td class="num"><strong>ORR</strong>: 37.00 % <small><em>15/41 monotherapy at RP2D</em></small><br><strong>DCR</strong>: 78.00 % <small><em>32 with stable disease</em></small><br><strong>mPFS</strong>: — <small><em>not reached at ~5 mo follow-up</em></small><br><small>ORR (monotherapy, RP2D)</small></td><td class="num">—<br>—<br>—</td><td><strong>gastrointestinal AE</strong> G1-2 — 55%<br><strong>neutropenia</strong> G&gt;=3 — 40%<br><strong>treatment-related death</strong> G5 — 0%</td><td><span class="fit-badge fit-partial">partial</span></td><td>ASCO GI 2026 abstract; mPFS/mDoR immature. Second-sponsor G12D-selective agent and the strongest single-agent response rate surfaced in G12D PDAC; motivates the front-line DAWN-303 combination (NCT07522073). First author Wainberg ZA, discussant Ko AH.</td></tr>
+        <tr><td>Huff/Zaidi (2026)<br><em>Nat Commun</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/41667470">PMID&nbsp;41667470</a></td><td><span class="rel-badge rel-indication">clinical</span></td><td><span class="fit-badge fit-strong">included</span></td><td>pooled mutant-KRAS peptide vaccine + nivolumab + ipilimumab</td><td>resected pancreatic ductal adenocarcinoma <em>(adj)</em><br><small>12 vaccinated patients; HLA-agnostic pooled peptides covering G12V/G12A/G12R/G12C/G12D/G13D; G12D among the targeted alleles</small></td><td>single-arm phase 1 vaccine + dual checkpoint blockade</td><td class="num">12</td><td class="num"><strong>Biomarker</strong>: 92.00 % <small><em>11/12 with significant increase in average T-cell response across 6 mKRAS antigens</em></small><br><strong>Biomarker</strong>: 83.00 % <small>(tumor-specific response)</small> <small><em>10/12</em></small><br><small>mKRAS-specific T-cell response rate</small></td><td class="num">—<br>—</td><td><strong>vaccine-related AE</strong> G1-2</td><td><span class="fit-badge fit-weak">weak</span></td><td>Per-term irAE rates not in the PubMed abstract and PMC full text not retrieved; the nivo/ipi-attributable G3+ immune toxicity is the decision-relevant gap. Shows the vaccine-plus-checkpoint mechanism being tested in immunologically cold, largely MSS PDAC, which is the relevant immunotherapy framing here given MSS/TMB-8.6. Adjuvant setting does not match metastatic disease.</td></tr>
+        <tr><td>Zhu/Aggarwal (2026)<br><em>Clin Cancer Res</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/41686845">PMID&nbsp;41686845</a></td><td><span class="rel-badge rel-indication">clinical</span></td><td><span class="fit-badge fit-strong">included</span></td><td>ceralasertib (AZD6738), oral ATR kinase inhibitor</td><td>ARID1A-deficient advanced solid tumors (gynecologic-predominant) <em>(2L+)</em><br><small>29 evaluable, ARID1A loss by IHC required; mostly gynecologic (endometrioid endometrial, ovarian clear cell); non-gynecologic tumors under-represented</small></td><td>phase 2 Simon two-stage monotherapy (NCT03682289)</td><td class="num">29</td><td class="num"><strong>ORR</strong>: 14.00 % <small><em>4/29 confirmed, full ARID1A-deficient population</em></small><br><strong>ORR</strong>: 31.00 % <small>(gynecologic (endometrioid endometrial, ovarian clear cell))</small> <small><em>33% in the endometrioid/clear-cell subset</em></small><br><strong>mDoR</strong>: 33.70 months <small>(gynecologic responders)</small><br><small>confirmed ORR (all ARID1A-deficient)</small></td><td class="num">—<br>—<br>—</td><td><strong>treatment-related death</strong> G5 — 0%</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td>Per-term cytopenia rates not in the abstract; full text and CT.gov AE tab (NCT03682289) not retrieved, so toxicities[] holds only the death count. The cleanest clinical read on the patient&#x27;s ARID1A axis: ATR-inhibitor activity concentrates in ARID1A-deficient gynecologic histologies, with the non-gynecologic (PDAC-relevant) signal weaker, and entry gated on BAF250a IHC loss rather than the frameshift call alone.</td></tr>
+        <tr><td>—/— (2026)<br><em>—</em></td><td><a href="https://clinicaltrials.gov/study/NCT07491445">NCT07491445</a></td><td><span class="rel-badge rel-basket">trial publication</span></td><td><span class="fit-badge fit-strong">included</span></td><td>daraxonrasib (RMC-6236), pan-RAS(ON) inhibitor</td><td>metastatic pancreatic ductal adenocarcinoma, first-line <em>(1L)</em><br><small>RAS mutant or wild-type (KRAS G12D qualifies)</small></td><td>randomized, 3-arm: daraxonrasib mono vs daraxonrasib + gem/nab-paclitaxel vs gem/nab-paclitaxel</td><td class="num">—</td><td class="num">—<br><small>overall survival</small></td><td class="num">—</td><td>—</td><td><span class="fit-badge fit-strong">strong</span></td><td>RASolute 303 enrolls treatment-naive metastatic PDAC and accepts the patient&#x27;s KRAS G12D under its RAS-mutant criterion, matching tumor type, first line, and ECOG 1. Tissue NGS confirmation of the ctDNA G12D call strengthens the eligibility token. This is the lead enrollable option on the KRAS axis at the patient&#x27;s line. · Trial registration only — no peer-reviewed publication yet<br><em>registration only — no peer-reviewed publication yet; toxicity table not extracted; primary endpoint not extracted</em></td></tr>
+        <tr><td>—/— (2026)<br><em>—</em></td><td><a href="https://clinicaltrials.gov/study/NCT06445062">NCT06445062</a></td><td><span class="rel-badge rel-basket">trial publication</span></td><td><span class="fit-badge fit-strong">included</span></td><td>daraxonrasib (RMC-6236) and/or zoldonrasib (RMC-9805)</td><td>gastrointestinal solid tumors (CRC, PDAC) <em>(1L)</em><br><small>KRAS G12D (subprotocols D/E/F)</small></td><td>platform study of RAS(ON) inhibitors (RMC-6236, RMC-9805) +/- chemo, cetuximab, bevacizumab</td><td class="num">—</td><td class="num">—<br><small>safety, ORR</small></td><td class="num">—</td><td>—</td><td><span class="fit-badge fit-strong">strong</span></td><td>RMC-GI-102 has KRAS G12D subprotocols that enroll PDAC, so the patient&#x27;s tumor type and allele both qualify. It gives access to the G12D-selective zoldonrasib and to combination cohorts that the single-agent phase 3 trials do not. Tissue NGS confirmation of G12D supports the eligibility token here as well. · Trial registration only — no peer-reviewed publication yet<br><em>registration only — no peer-reviewed publication yet; toxicity table not extracted; primary endpoint not extracted</em></td></tr>
+        <tr><td>—/— (2026)<br><em>—</em></td><td><a href="https://clinicaltrials.gov/study/NCT07621718">NCT07621718</a></td><td><span class="rel-badge rel-basket">trial publication</span></td><td><span class="fit-badge fit-strong">included</span></td><td>zoldonrasib (RMC-9805), KRAS G12D(ON)-selective inhibitor</td><td>metastatic KRAS G12D-mutated pancreatic adenocarcinoma, first-line <em>(1L)</em><br><small>KRAS G12D (required)</small></td><td>randomized double-blind, zoldonrasib + investigator&#x27;s-choice chemo vs placebo + chemo (RASolute 305)</td><td class="num">670</td><td class="num">—<br><small>overall survival</small></td><td class="num">—</td><td>—</td><td><span class="fit-badge fit-strong">strong</span></td><td>RASolute 305 requires KRAS G12D specifically and enrolls treatment-naive metastatic PDAC, so it matches the patient on allele, tumor type, and first line. Zoldonrasib is the G12D-selective RAS(ON) agent, distinct from the pan-RAS daraxonrasib, which corrects the earlier note conflating RMC-9805 with RMC-6236. A documented tissue G12D call is the enrollment token. · Trial registration only — no peer-reviewed publication yet<br><em>registration only — no peer-reviewed publication yet; toxicity table not extracted; primary endpoint not extracted</em></td></tr>
+        <tr><td>—/— (2026)<br><em>—</em></td><td><a href="https://clinicaltrials.gov/study/NCT06040541">NCT06040541</a></td><td><span class="rel-badge rel-basket">trial publication</span></td><td><span class="fit-badge fit-strong">included</span></td><td>zoldonrasib (RMC-9805) +/- daraxonrasib (RMC-6236)</td><td>advanced KRAS G12D-mutant solid tumors (NSCLC, CRC, PDAC) <em>(2L+)</em><br><small>KRAS G12D (required)</small></td><td>open-label dose-escalation/expansion, RMC-9805 mono or with RMC-6236</td><td class="num">—</td><td class="num">—<br><small>safety, RP2D, ORR</small></td><td class="num">—</td><td>—</td><td><span class="fit-badge fit-partial">partial</span></td><td>This first-in-human zoldonrasib basket accepts G12D PDAC but enrolls patients who have progressed on or are intolerant to standard therapy, so a treatment-naive patient does not match the line criterion yet. It becomes relevant after a first-line regimen or if he is intolerant of chemotherapy. Tumor type and allele otherwise fit. · Trial registration only — no peer-reviewed publication yet<br><em>registration only — no peer-reviewed publication yet; toxicity table not extracted; primary endpoint not extracted</em></td></tr>
+        <tr><td>—/— (2026)<br><em>—</em></td><td><a href="https://clinicaltrials.gov/study/NCT07522073">NCT07522073</a></td><td><span class="rel-badge rel-basket">trial publication</span></td><td><span class="fit-badge fit-strong">included</span></td><td>INCB161734, KRAS G12D-selective inhibitor + chemotherapy</td><td>metastatic KRAS G12D-mutated PDAC, previously untreated <em>(1L)</em><br><small>KRAS G12D (required)</small></td><td>randomized double-blind, chemo +/- INCB161734 (DAWN-303)</td><td class="num">—</td><td class="num">—<br><small>overall survival</small></td><td class="num">—</td><td>—</td><td><span class="fit-badge fit-strong">strong</span></td><td>DAWN-303 requires KRAS G12D and enrolls previously untreated metastatic PDAC, matching the patient on allele, tumor type, and first line. The phase 1 read-out for INCB161734 at ASCO GI 2026 showed 37% ORR and 78% disease control in pretreated G12D PDAC, which motivates the front-line combination test. A second sponsor&#x27;s G12D-selective agent broadens the front-line options beyond Revolution Medicines. · Trial registration only — no peer-reviewed publication yet<br><em>registration only — no peer-reviewed publication yet; toxicity table not extracted; primary endpoint not extracted</em></td></tr>
+        <tr><td>—/— (2026)<br><em>—</em></td><td><a href="https://clinicaltrials.gov/study/NCT06179160">NCT06179160</a></td><td><span class="rel-badge rel-basket">trial publication</span></td><td><span class="fit-badge fit-strong">included</span></td><td>INCB161734, KRAS G12D-selective inhibitor</td><td>advanced/metastatic KRAS G12D solid tumors incl. PDAC <em>(1L)</em><br><small>KRAS G12D (required)</small></td><td>open-label, INCB161734 mono and combinations (cetuximab, retifanlimab, gem/nab-paclitaxel, INCA33890)</td><td class="num">—</td><td class="num">ORR 37%; DCR 78% (pretreated PDAC, phase 1)<br><small>safety, ORR, DCR</small></td><td class="num">—</td><td>—</td><td><span class="fit-badge fit-strong">strong</span></td><td>The phase 1 parent study enrolls G12D PDAC at first line and beyond, so the patient qualifies on allele and tumor type at his current line. Combination cohorts pair the inhibitor with gem/nab-paclitaxel and with the anti-PD-1 retifanlimab. The early efficacy signal (37% ORR, 78% DCR) is the strongest single-agent G12D-PDAC response data surfaced in this search. · Trial registration only — no peer-reviewed publication yet<br><em>registration only — no peer-reviewed publication yet; toxicity table not extracted</em></td></tr>
+        <tr><td>—/— (2026)<br><em>—</em></td><td><a href="https://clinicaltrials.gov/study/NCT06218914">NCT06218914</a></td><td><span class="rel-badge rel-basket">trial publication</span></td><td><span class="fit-badge fit-strong">included</span></td><td>NT-112 (KRAS G12D/HLA-C*08:02 TCR-T) and AZD0240 (KRAS G12D/HLA-A*11:01 TCR-T)</td><td>advanced/metastatic KRAS G12D solid tumors (NSCLC, CRC, PDAC, endometrial) <em>(2L+)</em><br><small>KRAS G12D + HLA-C*08:02 (NT-112 arm) or HLA-A*11:01/11:02 (AZD0240 arm)</small></td><td>open-label TCR-engineered T-cell therapy, two HLA-restricted arms</td><td class="num">—</td><td class="num">—<br><small>safety, ORR</small></td><td class="num">—</td><td>—</td><td><span class="fit-badge fit-none">none</span></td><td>Both arms are HLA-restricted and the patient matches neither: NT-112 requires HLA-C*08:02 and AZD0240 requires HLA-A*11:01/11:02, while he is C*05:01/C*06:02 and A*01:01/A*02:01. The KRAS G12D target and PDAC tumor type fit, but the HLA gate excludes him from both products, so the row exists to document that the published C*08:02-restricted anti-G12D TCR-T does not apply here. This is the concrete HLA-screening result the case flagged. · Trial registration only — no peer-reviewed publication yet<br><em>registration only — no peer-reviewed publication yet; toxicity table not extracted; primary endpoint not extracted</em></td></tr>
+        <tr><td>—/— (2026)<br><em>—</em></td><td><a href="https://clinicaltrials.gov/study/NCT03682289">NCT03682289</a></td><td><span class="rel-badge rel-basket">trial publication</span></td><td><span class="fit-badge fit-strong">included</span></td><td>ceralasertib (AZD6738), ATR inhibitor +/- olaparib or durvalumab</td><td>solid tumors incl. pancreatic (ARID1A/BAF250a-stratified) <em>(2L+)</em><br><small>ARID1A / BAF250a status determines arm</small></td><td>ceralasertib alone and with olaparib or durvalumab, ARID1A-stratified</td><td class="num">—</td><td class="num">—<br><small>ORR / disease control</small></td><td class="num">—</td><td>—</td><td><span class="fit-badge fit-partial">partial</span></td><td>This ATR-inhibitor study accepts pancreatic cancer and assigns treatment by ARID1A/BAF250a status, so it directly targets the patient&#x27;s secondary synthetic-lethal axis via a basket that takes his tumor type. The match is partial because eligibility turns on BAF250a loss by IHC, and only about two-thirds of ARID1A-mutant tumors show protein loss, so the frameshift call alone does not confirm entry. ARID1A IHC is the validation step before this becomes concrete. · Trial registration only — no peer-reviewed publication yet<br><em>registration only — no peer-reviewed publication yet; toxicity table not extracted; primary endpoint not extracted</em></td></tr>
+        <tr><td>—/— (2026)<br><em>—</em></td><td><a href="https://clinicaltrials.gov/study/NCT05396833">NCT05396833</a></td><td><span class="rel-badge rel-basket">trial publication</span></td><td><span class="fit-badge fit-strong">included</span></td><td>tuvusertib (M1774), ATR inhibitor</td><td>metastatic/advanced solid tumors (ARID1A LOF cohort) <em>(2L+)</em><br><small>ARID1A loss-of-function (Part A3)</small></td><td>tuvusertib + DDR inhibitor or checkpoint inhibitor (DDRiver Solid Tumors 320)</td><td class="num">—</td><td class="num">—<br><small>safety, ORR</small></td><td class="num">—</td><td>—</td><td><span class="fit-badge fit-weak">weak</span></td><td>Tuvusertib is an ATR inhibitor with an ARID1A loss-of-function cohort, so it targets the patient&#x27;s synthetic-lethal axis, but the named ARID1A arm centers on endometrial cancer rather than PDAC. Whether a pancreatic patient enters depends on the broader solid-tumor eligibility and on confirmed ARID1A protein loss. Included as mechanism support for the ATR axis; check the current protocol for tumor-type breadth. · Trial registration only — no peer-reviewed publication yet<br><em>registration only — no peer-reviewed publication yet; toxicity table not extracted; primary endpoint not extracted</em></td></tr>
+        <tr><td>—/— (2026)<br><em>—</em></td><td><a href="https://clinicaltrials.gov/study/NCT05023655">NCT05023655</a></td><td><span class="rel-badge rel-basket">trial publication</span></td><td><span class="fit-badge fit-strong">included</span></td><td>tazemetostat (EPZ-6438), EZH2 inhibitor</td><td>solid tumors with ARID1A mutation (incl. pancreas) <em>(2L+)</em><br><small>ARID1A mutation (required)</small></td><td>single-arm tazemetostat in ARID1A-mutant solid tumors</td><td class="num">20</td><td class="num">—<br><small>ORR</small></td><td class="num">—</td><td>—</td><td><span class="fit-badge fit-weak">weak</span></td><td>This basket targeted the EZH2 arm of the ARID1A synthetic-lethal hypothesis and explicitly listed pancreas among eligible tumor types, so it matched the patient&#x27;s secondary axis on both biomarker and tumor type. Ipsen discontinued tazemetostat trials in March 2026 on an unfavorable benefit-risk read, so the row is now informational. The board should weigh that the EZH2 route in ARID1A-deficient solid tumors lost its lead agent while the ATR route remains active. · Trial registration only — no peer-reviewed publication yet<br><em>registration only — no peer-reviewed publication yet; toxicity table not extracted; primary endpoint not extracted</em></td></tr>
+        <tr><td>Spira/— (2025)<br><em>J Clin Oncol (ASCO GI abstract 724)</em></td><td><a href="https://doi.org/10.1200/JCO.2025.43.4_suppl.724">doi:10.1200/JCO.2025.43.4_suppl.724</a></td><td><span class="rel-badge rel-indication">clinical</span></td><td><span class="fit-badge fit-strong">included</span></td><td>zoldonrasib (RMC-9805), KRAS G12D(ON)-selective tri-complex inhibitor</td><td>KRAS G12D-mutant pancreatic ductal adenocarcinoma <em>(2L+)</em><br><small>KRAS G12D PDAC enrolled &gt;=14 weeks before cutoff; prior standard therapy; data cutoff 2 Sep 2024</small></td><td>phase 1 dose-escalation/expansion, single-arm (NCT06040541)</td><td class="num">40</td><td class="num"><strong>ORR</strong>: 30.00 % <small><em>confirmed or pending confirmation</em></small><br><strong>DCR</strong>: 80.00 %<br><small>ORR (KRAS G12D PDAC)</small></td><td class="num">—<br>—</td><td><strong>nausea</strong> — 27%<br><strong>diarrhea</strong> — 20%<br><strong>vomiting</strong> — 15%<br><strong>rash</strong> — 10%<br><strong>ALT increased</strong> G3 — 1%<br><strong>treatment-related AE</strong> G4 — 0%</td><td><span class="fit-badge fit-partial">partial</span></td><td>ASCO GI 2025 abstract; mature PFS/DoR and 95% CI on ORR not in the abstract. This is the G12D-selective RAS(ON) agent that maps to the patient&#x27;s exact allele, distinct from pan-RAS daraxonrasib; the front-line phase 3 RASolute 305 builds on it.</td></tr>
+        <tr><td>Wainberg/O&#x27;Reilly (2025)<br><em>Nat Med</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40790272">PMID&nbsp;40790272</a></td><td><span class="rel-badge rel-indication">clinical</span></td><td><span class="fit-badge fit-strong">included</span></td><td>ELI-002 2P, lymph-node-targeted amphiphile mKRAS peptide vaccine (G12D/G12R + Amph-CpG-7909)</td><td>minimal-residual-disease PDAC and colorectal cancer after resection <em>(adj)</em><br><small>25 patients (20 PDAC, 5 CRC) ctDNA/biomarker MRD-positive post-resection; HLA-agnostic multivalent design covering G12D and G12R</small></td><td>phase 1 single-arm (AMPLIFY-201), final results</td><td class="num">25</td><td class="num"><strong>Biomarker</strong>: 84.00 % <small><em>mKRAS T-cell response, 21/25; CD4+ and CD8+ in 71%</em></small><br><strong>RFS HR</strong>: 0.12 <small>(T-cell response above 9.17-fold threshold vs below)</small> <small><em>median RFS not reached vs 3.02 mo</em></small><br><strong>OS HR</strong>: 0.23 <small>(T-cell response above threshold vs below)</small> <small><em>median OS not reached vs 15.98 mo</em></small><br><small>mKRAS-specific T-cell response rate; RFS by vaccine-response biomarker</small></td><td class="num">—<br>p=0.0002<br>p=0.0099</td><td><strong>any treatment-related AE</strong> — 12/25 · 48%<br><strong>any treatment-related AE</strong> G&gt;=3 — 0/25 · 0%<br><strong>fatigue</strong> — 6/25 · 24%<br><strong>injection-site reaction</strong> — 4/25 · 16%<br><strong>myalgia</strong> — 3/25 · 12%<br><strong>cytokine release syndrome</strong> — 0/25 · 0%</td><td><span class="fit-badge fit-weak">weak</span></td><td>Per-term safety from the original Pant 2024 AMPLIFY-201 report (PMID 38195752); the 2025 final-results abstract only says &#x27;no new safety signals.&#x27; HLA-agnostic, so the patient&#x27;s class I genotype does not exclude it, but the MRD/adjuvant setting does not match unresectable metastatic disease. The efficacy split is by on-treatment immune response, not randomization, so it anchors the vaccine mechanism rather than a metastatic efficacy estimate.</td></tr>
+        <tr><td>Knox/— (2025)<br><em>Science</em></td><td><a href="https://doi.org/10.1126/science.ads0239">doi:10.1126/science.ads0239</a></td><td><span class="rel-badge rel-cross-tumor">preclinical</span></td><td><span class="fit-badge fit-strong">included</span></td><td>zoldonrasib (RMC-9805), KRAS G12D(ON)-selective covalent tri-complex inhibitor</td><td>KRAS G12D cell lines and xenograft models of KRAS G12D cancers incl. pancreatic; co-crystal tri-complex structure (PDB 9CTB)</td><td>Cyclophilin A and active RAS form a neomorphic interface that catalyzes a covalent bond between the drug&#x27;s weakly reactive warhead and the G12D aspartate. The enzyme-like rate enhancement buys G12D selectivity that a bare electrophile could not reach.</td><td class="num">not specified in available text</td><td>moderate — The covalent tri-complex chemistry gave orally available compounds with antitumor activity across KRAS G12D models, and zoldonrasib was the molecule carried into the clinic. This is the mechanistic basis for the agent that matches the patient&#x27;s exact allele.</td><td>vs vehicle<br>translatability: high</td><td><em>n/a (preclinical)</em></td><td><span class="fit-badge fit-strong">strong</span></td><td>A discovery/chemistry paper; per-model regression magnitudes and n per arm are not in the abstract-level text retrieved. Directly relevant because it underpins the G12D(ON)-selective agent (RASolute 305, RMC-GI-102) rather than the discontinued MRTX1133.</td></tr>
+        <tr><td>—/— (2025)<br><em>—</em></td><td><a href="https://clinicaltrials.gov/study/NCT04972110">NCT04972110</a></td><td><span class="rel-badge rel-basket">trial publication</span></td><td><span class="fit-badge fit-strong">included</span></td><td>camonsertib (RP-3500), ATR inhibitor + PARP inhibitor</td><td>advanced solid tumors, DDR-selected <em>(2L+)</em><br><small>DDR/synthetic-lethal biomarkers incl. ARID1A</small></td><td>camonsertib + niraparib or olaparib (ATTACC), molecularly selected</td><td class="num">156</td><td class="num">—<br><small>safety, ORR</small></td><td class="num">—</td><td>—</td><td><span class="fit-badge fit-weak">weak</span></td><td>ATTACC tested the ATR inhibitor camonsertib with a PARP inhibitor in molecularly selected solid tumors, a design relevant to the ARID1A axis, but the trial was terminated when the sponsor did not run the phase 2 expansion. ARID1A&#x27;s place in the selected-biomarker list and pancreatic eligibility are not confirmed from the registry text. Kept as ATR-axis mechanism context rather than an open option. · Trial registration only — no peer-reviewed publication yet<br><em>registration only — no peer-reviewed publication yet; toxicity table not extracted; primary endpoint not extracted</em></td></tr>
+        <tr><td>—/— (2024)<br><em>—</em></td><td>—</td><td><span class="rel-badge rel-indication">clinical</span></td><td><span class="rel-badge rel-other">excluded</span><br><small>Program discontinued. The first-in-human phase 1/2 (NCT05737706) was terminated before phase 2 on drug-like-property/formulation grounds, with no efficacy read-out published. Target validity carried forward by zoldonrasib and INCB161734; kept as mechanism history only.</small></td><td>MRTX1133, KRAS G12D-selective noncovalent inhibitor</td><td>—</td><td>—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td>—</td><td>—</td><td><strong>Excluded:</strong> Program discontinued. The first-in-human phase 1/2 (NCT05737706) was terminated before phase 2 on drug-like-property/formulation grounds, with no efficacy read-out published. Target validity carried forward by zoldonrasib and INCB161734; kept as mechanism history only.</td></tr>
+        <tr><td>Pant/O&#x27;Reilly (2024)<br><em>Nat Med</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/38195752">PMID&nbsp;38195752</a></td><td><span class="rel-badge rel-indication">clinical</span></td><td><span class="rel-badge rel-other">excluded</span><br><small>Superseded by the 2025 final AMPLIFY-201 results (PMID 40790272) from the same cohort with longer follow-up. Retained as the source of the per-term safety table, which the synthesis row cites, but not double-counted as a separate efficacy finding.</small></td><td>ELI-002 2P amphiphile mKRAS vaccine</td><td>—</td><td>—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td>—</td><td>—</td><td><strong>Excluded:</strong> Superseded by the 2025 final AMPLIFY-201 results (PMID 40790272) from the same cohort with longer follow-up. Retained as the source of the per-term safety table, which the synthesis row cites, but not double-counted as a separate efficacy finding.</td></tr>
+        <tr><td>Yap/de Bono (2024)<br><em>Clin Cancer Res</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/38407317">PMID&nbsp;38407317</a></td><td><span class="rel-badge rel-indication">clinical</span></td><td><span class="rel-badge rel-other">excluded</span><br><small>First-in-human dose-finding without an ARID1A-selected cohort or PDAC efficacy signal; the only response was a single unconfirmed PR in BRCA-wildtype ovarian cancer. Mechanism support for the ATR axis only. Class toxicity is marked: grade &gt;=3 anemia 36%, any-grade anemia 71%, with 11 DLTs (mostly anemia). The ARID1A loss-of-function arm of DDRiver 320 (NCT05396833) is the construct that would actually test this patient&#x27;s axis.</small></td><td>tuvusertib (M1774), oral ATR inhibitor</td><td>—</td><td>—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td>—</td><td>—</td><td><strong>Excluded:</strong> First-in-human dose-finding without an ARID1A-selected cohort or PDAC efficacy signal; the only response was a single unconfirmed PR in BRCA-wildtype ovarian cancer. Mechanism support for the ATR axis only. Class toxicity is marked: grade &gt;=3 anemia 36%, any-grade anemia 71%, with 11 DLTs (mostly anemia). The ARID1A loss-of-function arm of DDRiver 320 (NCT05396833) is the construct that would actually test this patient&#x27;s axis.</td></tr>
+        <tr><td>—/— (2024)<br><em>Gynecol Oncol</em></td><td>—</td><td><span class="rel-badge rel-indication">clinical</span></td><td><span class="rel-badge rel-other">excluded</span><br><small>Negative cross-tumor read plus drug withdrawal. NRG-GY014 tested the ARID1A-EZH2 synthetic-lethal hypothesis in ARID1A-context endometrioid endometrial and ovarian clear cell cancer and closed early for futility (endometrial cohort stopped after stage 1, accrual closed Jun 2022); specific ORR not retrievable from the paywalled paper. Tazemetostat was subsequently withdrawn from all trials/markets on an unfavorable benefit-risk read, so the EZH2 route into the patient&#x27;s ARID1A axis lost both its supporting efficacy signal and its lead agent.</small></td><td>tazemetostat (EPZ-6438), EZH2 inhibitor</td><td>—</td><td>—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td>—</td><td>—</td><td><strong>Excluded:</strong> Negative cross-tumor read plus drug withdrawal. NRG-GY014 tested the ARID1A-EZH2 synthetic-lethal hypothesis in ARID1A-context endometrioid endometrial and ovarian clear cell cancer and closed early for futility (endometrial cohort stopped after stage 1, accrual closed Jun 2022); specific ORR not retrievable from the paywalled paper. Tazemetostat was subsequently withdrawn from all trials/markets on an unfavorable benefit-risk read, so the EZH2 route into the patient&#x27;s ARID1A axis lost both its supporting efficacy signal and its lead agent.</td></tr>
+        <tr><td>Jiang/Singh (2024)<br><em>Cancer Discovery</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/38593348">PMID&nbsp;38593348</a></td><td><span class="rel-badge rel-cross-tumor">preclinical</span></td><td><span class="fit-badge fit-strong">included</span></td><td>daraxonrasib (RMC-6236), pan-RAS(ON) multi-selective tri-complex inhibitor</td><td>82 KRAS G12X mouse-clinical-trial models (22 PDAC); CDX, PDX, GEMM, and eCT26 syngeneic incl. KrasG12D/G12D</td><td>Recruits cyclophilin A to form a tri-complex that clamps active GTP-bound RAS and blocks effector binding across G12 variants, so it covers KRAS G12D as one of several RASMULTI targets rather than a single allele.</td><td class="num">8-10 mice/arm; mouse clinical trial 82 models (22 PDAC)</td><td>strong — Across 22 PDAC models the mouse clinical trial returned a 64% objective response and 91% disease control; the G12D line HPAC regressed deeply at 25 mg/kg. In the eCT26 syngeneic model every animal cleared its tumor, 60% stayed disease-free after dosing stopped, and adding anti-PD-1 gave durable complete regressions in all animals.</td><td>vs vehicle; anti-PD-1 combination in syngeneic arm<br>translatability: high</td><td><em>n/a (preclinical)</em></td><td><span class="fit-badge fit-strong">strong</span></td><td>The syngeneic immune arm is KrasG12C/G12D CT26 colorectal, not a PDAC immune model, so the anti-PD-1 synergy is cross-tumor for the immunotherapy claim. PDAC efficacy itself sits on xenograft/GEMM regression data.</td></tr>
+        <tr><td>—/— (2024)<br><em>—</em></td><td><a href="https://clinicaltrials.gov/study/NCT05737706">NCT05737706</a></td><td><span class="rel-badge rel-basket">trial publication</span></td><td><span class="fit-badge fit-strong">included</span></td><td>MRTX1133, KRAS G12D inhibitor</td><td>advanced KRAS G12D solid tumors (NSCLC, CRC, PDAC) <em>(2L+)</em><br><small>KRAS G12D (required)</small></td><td>open-label dose-escalation, MRTX1133 monotherapy</td><td class="num">63</td><td class="num">—<br><small>safety, RP2D</small></td><td class="num">—</td><td>—</td><td><span class="fit-badge fit-weak">weak</span></td><td>Included for mechanism context: MRTX1133 was the first clinical KRAS G12D-selective small molecule and its program was terminated for formulation problems, not lack of target validity. The board should see that the first-generation G12D drug stalled on drug-like properties while later agents (zoldonrasib, INCB161734) carried the mechanism forward. Not an enrollable option. · Trial registration only — no peer-reviewed publication yet<br><em>registration only — no peer-reviewed publication yet; toxicity table not extracted; primary endpoint not extracted</em></td></tr>
+        <tr><td>Yap/Rosen (2023)<br><em>Nat Med</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37277454">PMID&nbsp;37277454</a></td><td><span class="rel-badge rel-indication">clinical</span></td><td><span class="rel-badge rel-other">excluded</span><br><small>ARID1A not in the selected-biomarker list. TRESR enriched for ~18 DDR loss-of-function genes (ATM, BRCA1/2, CDK12, SETD2 and others) but not ARID1A, and reported no ARID1A cohort, so it gives ATR-class precedent without testing the patient&#x27;s actual synthetic-lethal vulnerability. Class-toxicity reference: grade 3 anemia ~26%, the dose-limiting ATR-inhibitor effect.</small></td><td>camonsertib (RP-3500), oral ATR inhibitor</td><td>—</td><td>—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td>—</td><td>—</td><td><strong>Excluded:</strong> ARID1A not in the selected-biomarker list. TRESR enriched for ~18 DDR loss-of-function genes (ATM, BRCA1/2, CDK12, SETD2 and others) but not ARID1A, and reported no ARID1A cohort, so it gives ATR-class precedent without testing the patient&#x27;s actual synthetic-lethal vulnerability. Class-toxicity reference: grade 3 anemia ~26%, the dose-limiting ATR-inhibitor effect.</td></tr>
+        <tr><td>Mahadevan/Kalluri (2023)<br><em>Cancer Cell</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37625401">PMID&nbsp;37625401</a></td><td><span class="rel-badge rel-cross-tumor">preclinical</span></td><td><span class="fit-badge fit-strong">included</span></td><td>MRTX1133, KRAS G12D-selective noncovalent inhibitor</td><td>16 KRAS G12D PDAC models: orthotopic syngeneic, autochthonous GEMM, PDX, and human patient-derived organoids</td><td>Shutting off KRAS G12D demethylates the FAS promoter and restores FAS surface expression on tumor cells, which lets infiltrating CD8 T cells kill via FAS/FAS-L. The drug also thins the myeloid compartment and reprograms cancer-associated fibroblasts.</td><td class="num">n=4-10 mice/arm across cohorts</td><td>strong — In advanced orthotopic PDAC, MRTX1133 raised intratumoral CD8 effector T cells and shrank tumors; CD8 depletion abolished the regression, so the late-stage effect runs through adaptive immunity rather than RAS signaling alone. Pairing the inhibitor with PD-1/CTLA-4 blockade produced durable regressions and longer survival. The FAS induction was reproduced in human patient-derived organoids.</td><td>vs vehicle; CD8-depletion and anti-PD-1/anti-CTLA-4 combination arms<br>translatability: high</td><td><em>n/a (preclinical)</em></td><td><span class="fit-badge fit-strong">strong</span></td><td>The most decision-relevant preclinical row for this MSS, TMB-8.6 case: it argues that the immunotherapy route into this tumor is KRAS-inhibitor-driven antigen/FAS restoration plus checkpoint, not checkpoint monotherapy. Done with MRTX1133 (discontinued clinically); whether zoldonrasib or INCB161734 reproduces the FAS/CD8 axis at clinical exposures is untested.</td></tr>
+        <tr><td>Mahadevan/Kalluri (2023)<br><em>Dev Cell</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37625403">PMID&nbsp;37625403</a></td><td><span class="rel-badge rel-cross-tumor">preclinical</span></td><td><span class="rel-badge rel-other">excluded</span><br><small>Not a drug. Conditional KRAS knockout in PiKP/PiKT GEMMs eradicated tumors via FAS-promoter demethylation and CD8-dependent FAS/FAS-L killing (CD8 depletion abolished the effect, n=4-10/group), which is the genetic companion to the MRTX1133 Cancer Cell row. The pharmacologic version of this axis is already captured under MRTX1133, so this is logged as supporting mechanism rather than a separate intervention.</small></td><td>genetic ablation of oncogenic KRAS in PDAC GEMM (mechanistic proof of concept)</td><td>—</td><td>—</td><td class="num">—</td><td>—</td><td>—</td><td><em>n/a (preclinical)</em></td><td>—</td><td><strong>Excluded:</strong> Not a drug. Conditional KRAS knockout in PiKP/PiKT GEMMs eradicated tumors via FAS-promoter demethylation and CD8-dependent FAS/FAS-L killing (CD8 depletion abolished the effect, n=4-10/group), which is the genetic companion to the MRTX1133 Cancer Cell row. The pharmacologic version of this axis is already captured under MRTX1133, so this is logged as supporting mechanism rather than a separate intervention.</td></tr>
+        <tr><td>—/— (2023)<br><em>—</em></td><td><a href="https://clinicaltrials.gov/study/NCT03948763">NCT03948763</a></td><td><span class="rel-badge rel-basket">trial publication</span></td><td><span class="fit-badge fit-strong">included</span></td><td>mRNA-5671/V941 (mRNA KRAS vaccine) +/- pembrolizumab</td><td>KRAS-mutant NSCLC, CRC, PDAC <em>(2L+)</em><br><small>KRAS G12D/G12V/G13D/G12C + HLA-A*11:01 and/or HLA-C*08:02</small></td><td>open-label mRNA KRAS vaccine +/- pembrolizumab</td><td class="num">—</td><td class="num">—<br><small>safety</small></td><td class="num">—</td><td>—</td><td><span class="fit-badge fit-none">none</span></td><td>The Merck/Moderna mRNA KRAS vaccine required HLA-A*11:01 and/or HLA-C*08:02, neither of which the patient carries, so the HLA gate excludes him even though the construct included G12D. The program was terminated for business reasons. Kept as informational context: an HLA-restricted mRNA KRAS vaccine that this patient&#x27;s genotype would have screened out regardless. · Trial registration only — no peer-reviewed publication yet<br><em>registration only — no peer-reviewed publication yet; toxicity table not extracted; primary endpoint not extracted</em></td></tr>
+        <tr><td>Leidner/Tran (2022)<br><em>N Engl J Med</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/35648703">PMID&nbsp;35648703</a></td><td><span class="rel-badge rel-indication">clinical</span></td><td><span class="rel-badge rel-other">excluded</span><br><small>HLA restriction mismatch. The published 72% partial response targeted KRAS G12D presented on HLA-C*08:02; this patient is HLA-C*05:01/C*06:02 (and A*01:01/A*02:01), so the product cannot present his mutant epitope. This is the concrete negative behind case judgment call (b): the C*08:02-restricted TCR-T does not apply, and the NT-112 arm of NCT06218914 carries the same gate.</small></td><td>anti-KRAS G12D HLA-C*08:02-restricted TCR-engineered T cells</td><td>—</td><td>—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td>—</td><td>—</td><td><strong>Excluded:</strong> HLA restriction mismatch. The published 72% partial response targeted KRAS G12D presented on HLA-C*08:02; this patient is HLA-C*05:01/C*06:02 (and A*01:01/A*02:01), so the product cannot present his mutant epitope. This is the concrete negative behind case judgment call (b): the C*08:02-restricted TCR-T does not apply, and the NT-112 arm of NCT06218914 carries the same gate.</td></tr>
+        <tr><td>Hallin/Christensen (2022)<br><em>Nat Med</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/36216931">PMID&nbsp;36216931</a></td><td><span class="rel-badge rel-cross-tumor">preclinical</span></td><td><span class="fit-badge fit-strong">included</span></td><td>MRTX1133, KRAS G12D-selective noncovalent inhibitor</td><td>KRAS G12D cell-line and patient-derived xenografts; 11 PDAC CDX/PDX models incl. Panc 04.03</td><td>Binds KRAS G12D in both the GDP- and GTP-bound states and blocks RAS-effector coupling, so it suppresses MAPK output from the mutant allele without touching wild-type RAS.</td><td class="num">8-10 mice/arm; 11 PDAC models in the panel</td><td>strong — Tumor regression of at least 30% occurred in 8 of 11 (73%) KRAS G12D PDAC xenograft models. In Panc 04.03, 10 and 30 mg/kg BID drove regressions of -62% and -73%. Adding EGFR or PI3Kalpha blockade deepened the response where feedback reactivation limited the single agent.</td><td>vs vehicle<br>translatability: high</td><td><em>n/a (preclinical)</em></td><td><span class="fit-badge fit-strong">strong</span></td><td>This is the tool compound that validated the G12D target; the clinical MRTX1133 program was later halted for formulation reasons, so the translatable agents are zoldonrasib and INCB161734, not MRTX1133 itself. Xenografts are immunodeficient, so no immune contribution is captured here.</td></tr>
+        <tr><td>Tomihara/Genovese (2021)<br><em>Cancer Res</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/33158812">PMID&nbsp;33158812</a></td><td><span class="rel-badge rel-cross-tumor">preclinical</span></td><td><span class="rel-badge rel-other">excluded</span><br><small>Mechanism sits outside the patient&#x27;s in-scope ARID1A axes. This is a clean PDAC-specific ARID1A vulnerability (CRISPR ARID1A-null lines dropped HSP90-inhibitor IC50 from ~45-385 nM to ~6-11 nM, with smaller tumors in vivo at n=5/group), but the target is HSP90, not ATR or EZH2, and no HSP90 trial is on this case&#x27;s option list. Logged so the board sees the ARID1A-PDAC synthetic-lethal landscape is broader than the two axes being pursued.</small></td><td>HSP90 inhibition (NVP-AUY922) in ARID1A-deficient PDAC</td><td>—</td><td>—</td><td class="num">—</td><td>—</td><td>—</td><td><em>n/a (preclinical)</em></td><td>—</td><td><strong>Excluded:</strong> Mechanism sits outside the patient&#x27;s in-scope ARID1A axes. This is a clean PDAC-specific ARID1A vulnerability (CRISPR ARID1A-null lines dropped HSP90-inhibitor IC50 from ~45-385 nM to ~6-11 nM, with smaller tumors in vivo at n=5/group), but the target is HSP90, not ATR or EZH2, and no HSP90 trial is on this case&#x27;s option list. Logged so the board sees the ARID1A-PDAC synthetic-lethal landscape is broader than the two axes being pursued.</td></tr>
+        <tr><td>Williamson/Lord (2016)<br><em>Nat Commun</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/27958275">PMID&nbsp;27958275</a></td><td><span class="rel-badge rel-cross-tumor">preclinical</span></td><td><span class="fit-badge fit-strong">included</span></td><td>ATR inhibition in ARID1A-deficient tumors (VE-821 / VX-970, ATR-class proof of concept)</td><td>Isogenic ARID1A-/- vs +/+ HCT116; ARID1A-mutant OCCC TOV21G; mouse ES cells; subcutaneous xenografts</td><td>ARID1A loss strands topoisomerase 2A off chromatin and leaves a DNA decatenation defect, which slows S and G2/M progression. ATR inhibition forces premature mitotic entry onto those unresolved topological tangles, and the cells die from the resulting genomic chaos.</td><td class="num">11 mice/cohort (established tumors); 15 mice/cohort (incidence)</td><td>moderate — ARID1A-deficient cells were selectively sensitive to ATR inhibitors in clonogenic and viability assays. In vivo VX-970 held back ARID1A-/- HCT116 xenografts (P=0.024) with no effect on the wild-type isogenic line, and it cut tumor establishment from 73% to 27%. The ARID1A-mutant OCCC line TOV21G responded too, though less sharply.</td><td>vs isogenic ARID1A-wild-type; vehicle<br>translatability: med</td><td><em>n/a (preclinical)</em></td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td>The synthetic-lethal mechanism is the basis for the ceralasertib/tuvusertib ARID1A arms, but no pancreatic model was tested here; colorectal and ovarian-clear-cell only. The PDAC ATR-class signal in the patient&#x27;s setting rests on extrapolation plus the ARID1A-stratified clinical baskets.</td></tr>
+        <tr><td>Bitler/Zhang (2015)<br><em>Nat Med</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/25686104">PMID&nbsp;25686104</a></td><td><span class="rel-badge rel-cross-tumor">preclinical</span></td><td><span class="fit-badge fit-strong">included</span></td><td>EZH2 methyltransferase inhibition in ARID1A-mutant tumors (GSK126, EZH2-class proof of concept)</td><td>ARID1A-mutant vs wild-type ovarian clear-cell carcinoma lines; ARID1A-mutant OCCC xenografts</td><td>ARID1A and EZH2 oppose each other at shared targets; when ARID1A is lost, EZH2 silences PIK3IP1 and PI3K-AKT runs unchecked. Inhibiting EZH2 reverses that repression, and the restored PIK3IP1 drives the synthetic-lethal cell death.</td><td class="num">not specified in abstract-level text</td><td>moderate — EZH2 inhibitor sensitivity tracked with ARID1A-mutant status across cell lines. GSK126 regressed established ARID1A-mutant OCCC xenografts and reduced disseminated tumor nodules, while ARID1A-wild-type tumors were spared.</td><td>vs ARID1A-wild-type lines; vehicle<br>translatability: low</td><td><em>n/a (preclinical)</em></td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td>Ovarian clear-cell only, no PDAC model, and the EZH2 route lost its lead agent when tazemetostat was withdrawn after the negative NRG-GY014 read. Kept as the mechanistic origin of the ARID1A-EZH2 hypothesis, not as a live option for this patient.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<footer class="libby-footer">Generated 2026-06-06 &middot; Libby &middot; <code>pancreatic-mets-kras-g12d-basal-arid1a-k9r3</code> &middot; Master manuscripts table</footer>
+</body></html>
