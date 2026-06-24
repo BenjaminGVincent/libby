@@ -11,6 +11,7 @@
 - [newly diagnosed IDH-WT glioblastoma with MTAP loss + CDKN2A loss post-subtotal resection, MGMT pending](gbm-mtap-cdkn2a-idhwt-subtotal-c4bq/index.md)
 - [metastatic cholangiocarcinoma, scope-unknown intake (no molecular profiling supplied)](cca-mets-scope-unknown-z3p9/index.md)
 - [newly diagnosed metastatic basal-like PDAC with KRAS G12D + ARID1A loss, somatic MLH1 in an MSS background, 79yo](pancreatic-mets-kras-g12d-basal-arid1a-k9r3/index.md)
+- [newly diagnosed R0 Stage IIIc high-grade serous tubo-ovarian carcinoma, germline-BRCA-wild-type, tumor HRD / somatic-BRCA pending](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq/index.md)
 
 ## Conventions
 

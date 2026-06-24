@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>Libby access guide — hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq</title>
+<style>
+
+      :root { color-scheme: light; }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        max-width: 1200px;
+        margin: 2em auto;
+        padding: 0 1.5em 3em;
+        color: #1A202C;
+        background: #FFFFFF;
+        line-height: 1.55;
+      }
+      h1 { border-bottom: 2px solid #5B3A87; padding-bottom: 0.3em; margin-top: 0; }
+      h2 { color: #5B3A87; margin-top: 1.8em; }
+      h3 { color: #1A202C; margin-top: 1.4em; }
+      a { color: #5B3A87; text-decoration: underline; }
+      code { background: #F4F6F8; padding: 0.1em 0.4em; border-radius: 2px; font-size: 0.92em; }
+      .disclaimer {
+        background: #FFF4E5; border-left: 4px solid #B45309;
+        padding: 0.8em 1em; margin: 1em 0 2em; font-size: 0.95em;
+      }
+      .libby-footer {
+        margin-top: 3em; padding-top: 1em; border-top: 1px solid #E2E8F0;
+        color: #6B6B7F; font-size: 0.85em;
+      }
+    
+/* Trial-table style — vendored from /Users/benjaminvincent/turtle/pfo/conductor/styles/trial-table/
+   Scoped via .trial-table-wrap so it does not leak into surrounding MkDocs page.
+
+   Uses explicit [data-md-color-scheme] selectors to bypass any CSS-variable
+   inheritance issues — the table reads correctly in both default (light) and
+   slate (dark) Material color schemes regardless of cascade quirks. */
+
+.trial-table-wrap caption {
+  caption-side: top;
+  text-align: left;
+  font-weight: 600;
+  padding: 0.4em 0;
+  font-size: 1em;
+}
+.trial-scroll { overflow-x: auto; }
+.trial-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.88em;
+}
+.trial-table thead th {
+  font-weight: 600;
+  text-align: left;
+  padding: 0.5em 0.6em;
+  white-space: nowrap;
+}
+.trial-table tbody td {
+  padding: 0.5em 0.6em;
+  font-variant-numeric: tabular-nums;
+  vertical-align: top;
+}
+.trial-table .num { text-align: right; }
+
+/* Narrow ID-style columns — the entry number in the access-guide summary
+   table and the NCT id in the access-guide trial-pathways table. Keep
+   numbers / NCTs on a single line so "10" doesn't wrap to "1\n0" and
+   "NCT05379985" doesn't break across four lines. min-width is large
+   enough to comfortably fit the widest expected value (3-digit entry
+   number, NCT + 8 digits = 11 chars in a monospace fallback). */
+.trial-table th.col-num,
+.trial-table td.col-num,
+.trial-table th.col-nct,
+.trial-table td.col-nct {
+  white-space: nowrap;
+}
+.trial-table th.col-num,
+.trial-table td.col-num { min-width: 2.4em; }
+.trial-table th.col-nct,
+.trial-table td.col-nct { min-width: 6.5em; }
+
+/* Access-guide column widths — kept generous so the wrapping `.trial-scroll`
+   div engages horizontal scroll before the cell text squeezes into a tall
+   narrow stack. Tuned for the access-guide tables specifically; other
+   trial-tables on the site keep their default auto layout. */
+.trial-table th.col-intervention,
+.trial-table td.col-intervention { min-width: 14em; }
+.trial-table th.col-target,
+.trial-table td.col-target { min-width: 12em; }
+.trial-table th.col-access-status,
+.trial-table td.col-access-status { min-width: 10em; }
+.trial-table th.col-regulatory,
+.trial-table td.col-regulatory { min-width: 22em; }
+.trial-table th.col-first-action,
+.trial-table td.col-first-action { min-width: 22em; }
+
+.trial-table th.col-phase,
+.trial-table td.col-phase { min-width: 3.5em; white-space: nowrap; }
+.trial-table th.col-indication,
+.trial-table td.col-indication { min-width: 18em; }
+.trial-table th.col-status,
+.trial-table td.col-status { min-width: 7em; white-space: nowrap; }
+.trial-table th.col-eligibility,
+.trial-table td.col-eligibility { min-width: 8em; white-space: nowrap; }
+.trial-table th.col-contact,
+.trial-table td.col-contact { min-width: 14em; }
+.trial-table th.col-notes,
+.trial-table td.col-notes { min-width: 24em; }
+.trial-table a {
+  text-decoration: underline;
+  font-weight: 700;
+}
+.trial-table .mark {
+  font-size: 0.75em;
+  vertical-align: super;
+}
+
+/* ---------- Default (light) scheme ---------- */
+[data-md-color-scheme="default"] .trial-table-wrap { color: #1A202C; }
+[data-md-color-scheme="default"] .trial-table thead th {
+  background: #F4F6F8;
+  color: #1A202C;
+  border-top: 2px solid #1A202C;
+  border-bottom: 1px solid #1A202C;
+}
+[data-md-color-scheme="default"] .trial-table tbody td {
+  color: #1A202C;
+  border-bottom: 1px solid #E2E8F0;
+}
+[data-md-color-scheme="default"] .trial-table tbody tr:last-child td {
+  border-bottom: 2px solid #1A202C;
+}
+[data-md-color-scheme="default"] .trial-table a { color: #1A202C; }
+[data-md-color-scheme="default"] .trial-table-wrap .notes {
+  font-size: 0.85em;
+  color: #4A5568;
+  margin-top: 0.6em;
+}
+
+/* ---------- Slate (dark) scheme ---------- */
+[data-md-color-scheme="slate"] .trial-table-wrap { color: #E2E8F0; }
+[data-md-color-scheme="slate"] .trial-table thead th {
+  background: #2D3344;
+  color: #F1F5F9;
+  border-top: 2px solid #94A3B8;
+  border-bottom: 1px solid #94A3B8;
+}
+[data-md-color-scheme="slate"] .trial-table tbody td {
+  color: #E2E8F0;
+  border-bottom: 1px solid #3A4159;
+}
+[data-md-color-scheme="slate"] .trial-table tbody tr:last-child td {
+  border-bottom: 2px solid #94A3B8;
+}
+[data-md-color-scheme="slate"] .trial-table a {
+  color: #93C5FD;
+}
+[data-md-color-scheme="slate"] .trial-table-wrap .notes {
+  font-size: 0.85em;
+  color: #94A3B8;
+  margin-top: 0.6em;
+}
+
+/* Libby-specific styling: case-fit / toxicity badges, agreement matrix, persona pills. */
+
+/* Bold links across all rendered content. */
+.md-typeset a {
+  font-weight: 700;
+}
+
+/* Case-fit badges (in trials.md). */
+.fit-badge {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.4em;
+  font-size: 0.78em;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+.fit-strong  { background: #E6F5EA; color: #14532D; border-color: #BBE2C7; }
+.fit-partial { background: #FFF7E0; color: #5A4500; border-color: #F1DD9A; }
+.fit-weak    { background: #FBE9E7; color: #6F2E1A; border-color: #ECC4BB; }
+.fit-none    { background: #F1F3F5; color: #4A5568; border-color: #E2E8F0; }
+
+/* Tumor-type-relation badges (trial table). */
+.rel-badge {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.4em;
+  font-size: 0.78em;
+  font-weight: 600;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.rel-indication  { background: #DDF1EE; color: #134E48; border-color: #B0DBD3; }
+.rel-basket      { background: #FFE9D6; color: #6F3A0F; border-color: #F0CFAE; }
+.rel-same-drug   { background: #DFEBFB; color: #1B3A6B; border-color: #B5CDEE; }
+.rel-cross-tumor { background: #F1E5FF; color: #441E72; border-color: #D4BBF2; }
+.rel-other       { background: #F1F3F5; color: #4A5568; border-color: #E2E8F0; }
+
+/* Risk-of-bias badges (evidence table). */
+.rob-badge {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.4em;
+  font-size: 0.78em;
+  font-weight: 600;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.rob-low  { background: #E6F5EA; color: #14532D; border-color: #BBE2C7; }
+.rob-med  { background: #FFF7E0; color: #5A4500; border-color: #F1DD9A; }
+.rob-high { background: #FBE9E7; color: #6F2E1A; border-color: #ECC4BB; }
+
+/* Toxicity flag pills. */
+.tox-flag {
+  display: inline-block;
+  padding: 0.05em 0.45em;
+  border-radius: 999px;
+  font-size: 0.75em;
+  background: #FBE9E7;
+  color: #6F2E1A;
+  border: 1px solid #ECC4BB;
+  margin-right: 0.25em;
+}
+
+/* Persona badges (board.md, recommendations.md). */
+.persona {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.35em;
+  font-size: 0.78em;
+  font-weight: 600;
+  margin-right: 0.25em;
+  border: 1px solid transparent;
+}
+.persona-risktaker    { background: #FFE9D6; color: #6F3A0F; border-color: #F0CFAE; }
+.persona-conservative { background: #DFEBFB; color: #1B3A6B; border-color: #B5CDEE; }
+.persona-critic       { background: #F1E5FF; color: #441E72; border-color: #D4BBF2; }
+.persona-concensusite { background: #DDF1EE; color: #134E48; border-color: #B0DBD3; }
+.persona-advocate     { background: #FFE5EE; color: #6E1638; border-color: #F0BBCB; }
+
+/* Agreement-level decorations. */
+.agree-endorse   { color: #14532D; font-weight: 600; }
+.agree-qualified { color: #5A4500; font-weight: 600; }
+.agree-dissent   { color: #6F2E1A; font-weight: 600; }
+.agree-veto      { color: #6F2E1A; font-weight: 700; text-decoration: underline; }
+
+/* Biomarker-conditional flag (inline in Intervention cell when scenario ends with :positive). */
+.scenario-conditional {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5A4500;
+  background: #FFF7E0;
+  border: 1px solid #F1DD9A;
+  border-radius: 0.35em;
+  padding: 0.05em 0.45em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+
+/* Counter-productive MoA descriptor (parenthetical text after the bold severity). */
+.cpm-desc {
+  font-size: 0.92em;
+  color: #4A5568;
+}
+
+/* Persona pill row inside the Intervention cell on the ranked-prioritization table. */
+.persona-line {
+  display: inline-block;
+  margin-top: 0.15em;
+  font-size: 0.78em;
+  color: #4A5568;
+}
+.persona-line + .persona-line {
+  margin-left: 0.6em;
+}
+
+/* Recommendation table marks. */
+.split-glyph { font-weight: 700; color: #5A4500; }
+.not-recommended {
+  color: #4A5568;
+  text-decoration: line-through;
+}
+
+/* Disclaimer banner — applied to every case page via admonition. */
+.md-typeset .admonition.disclaimer {
+  border-color: #B71C1C;
+}
+.md-typeset .admonition.disclaimer > .admonition-title {
+  background-color: rgba(183, 28, 28, 0.08);
+  color: #B71C1C;
+}
+
+/* Agreement matrix heatmap (board.md). Pastel cells carry explicit
+   foreground+background that remain legible regardless of scheme; matrix
+   chrome (header, borders, no-opinion cells) uses scheme-aware selectors. */
+.agreement-matrix {
+  border-collapse: collapse;
+  font-size: 0.85em;
+}
+.agreement-matrix th, .agreement-matrix td {
+  padding: 0.35em 0.5em;
+  text-align: center;
+}
+.agreement-matrix th { font-weight: 600; }
+
+/* Pastel cell colors — same in both schemes (high contrast on their own bg). */
+.agreement-matrix td.cell-endorse   { background: #C8E6D0; color: #14532D; }
+.agreement-matrix td.cell-qualified { background: #FCEEC2; color: #5A4500; }
+.agreement-matrix td.cell-dissent   { background: #F4C7BE; color: #6F2E1A; }
+.agreement-matrix td.cell-veto      { background: #E8A399; color: #4A1408; font-weight: 700; }
+
+/* Default (light) scheme chrome. */
+[data-md-color-scheme="default"] .agreement-matrix th,
+[data-md-color-scheme="default"] .agreement-matrix td {
+  border: 1px solid #E2E8F0;
+  color: #1A202C;
+}
+[data-md-color-scheme="default"] .agreement-matrix th {
+  background: #F4F6F8;
+  color: #1A202C;
+}
+[data-md-color-scheme="default"] .agreement-matrix td.cell-absent {
+  background: #F1F3F5;
+  color: #94A3B8;
+}
+
+/* Slate (dark) scheme chrome. */
+[data-md-color-scheme="slate"] .agreement-matrix th,
+[data-md-color-scheme="slate"] .agreement-matrix td {
+  border: 1px solid #3A4159;
+  color: #E2E8F0;
+}
+[data-md-color-scheme="slate"] .agreement-matrix th {
+  background: #2D3344;
+  color: #F1F5F9;
+}
+[data-md-color-scheme="slate"] .agreement-matrix td.cell-absent {
+  background: #232838;
+  color: #64748B;
+}
+
+</style>
+</head>
+<body data-md-color-scheme="default">
+<div class="disclaimer">
+<strong>Decision support, not medical advice.</strong> Libby is an experimental 
+multi-agent decision-support tool. The information on this page has not been 
+reviewed by a clinician treating this patient. Information ages — confirm details 
+directly with the relevant sources before relying on them.
+</div>
+<h1 id="access-guide-hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq">Access guide — <code>hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq</code></h1>
+<p>How a patient or treating team could practically access each intervention in this case's dossier. One section per unique drug; trial recruitment contacts and manufacturer medical-information lines are captured for direct outreach. <strong>Information ages — each row carries a <code>Verified</code> date; re-screen before relying on a specific contact or trial slot.</strong></p>
+<h2 id="summary">Summary</h2>
+<p><em>Entries are ordered to match the Recommendations table: by therapeutic target group, then by rank within each group. The number in the first column links to the per-intervention section further down the page.</em></p>
+<div class="trial-table-wrap"><div class="trial-scroll">
+
+<table class="trial-table"><thead><tr><th class="col-num">#</th><th class="col-intervention">Intervention</th><th class="col-target">Target</th><th class="col-access-status">Access status</th><th class="col-regulatory">Regulatory</th><th class="col-first-action">Recommended first action</th></tr></thead><tbody>
+
+<tr><td class="col-num"><a href="#access-1"><strong>1</strong></a></td><td class="col-intervention"><strong>niraparib (1L maintenance)</strong></td><td class="col-target">Hrd Status</td><td class="col-access-status"><span class="fit-badge fit-strong">Standard of care</span></td><td class="col-regulatory">FDA-approved (Zejula) for first-line maintenance of advanced ovarian cancer in complete or partial response to platinum chemotherapy (all-comers, regardless of biomarker status); also EMA-approved.</td><td class="col-first-action">Confirm a platinum response is documented (she qualifies) and prescribe on-label.</td></tr>
+<tr><td class="col-num"><a href="#access-2"><strong>2</strong></a></td><td class="col-intervention"><strong>olaparib + bevacizumab (1L maintenance)</strong></td><td class="col-target">Hrd Status</td><td class="col-access-status"><span class="fit-badge fit-strong">Standard of care</span></td><td class="col-regulatory">Both components FDA-approved; the combination is FDA-approved (Lynparza + bevacizumab) for first-line maintenance of HRD-positive advanced ovarian cancer (HRD defined by a deleterious BRCA mutation and/or genomic instability). Also EMA-approved. Reachable on-label only if the pending HRD assay reads positive.</td><td class="col-first-action">Wait on the HRD/somatic-BRCA result; this path is foreclosed if HRD reads negative.</td></tr>
+<tr><td class="col-num"><a href="#access-3"><strong>3</strong></a></td><td class="col-intervention"><strong>olaparib monotherapy (1L maintenance)</strong></td><td class="col-target">Hrd Status</td><td class="col-access-status"><span class="fit-badge fit-strong">Standard of care</span></td><td class="col-regulatory">FDA-approved (Lynparza) for first-line maintenance of BRCA-mutated (germline or somatic) advanced ovarian cancer in response to platinum chemotherapy; also EMA-approved. Reachable on-label only if tumor NGS returns a somatic BRCA1/2 mutation, since her germline is wild-type.</td><td class="col-first-action">Wait on the tumor NGS somatic BRCA1/2 call; this path is foreclosed if the somatic result is wild-type.</td></tr>
+<tr><td class="col-num"><a href="#access-4"><strong>4</strong></a></td><td class="col-intervention"><strong>bevacizumab (concurrent + maintenance)</strong></td><td class="col-target">Vegf Angiogenesis</td><td class="col-access-status"><span class="fit-badge fit-strong">Standard of care</span></td><td class="col-regulatory">FDA-approved (Avastin) in combination with chemotherapy followed by single-agent maintenance for stage III/IV epithelial ovarian, fallopian-tube, or primary-peritoneal cancer after initial surgical resection; also EMA-approved. Multiple FDA-approved biosimilars (Mvasi, Zirabev, Alymsys, Vegzelma) exist.</td><td class="col-first-action">Continue the bevacizumab maintenance she is already on; no new access step needed.</td></tr>
+<tr><td class="col-num"><a href="#access-5"><strong>5</strong></a></td><td class="col-intervention"><strong>letrozole (endocrine maintenance)</strong></td><td class="col-target">Er Expression</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span></td><td class="col-regulatory">FDA-approved (Femara) for hormone-receptor-positive breast cancer; widely available as a low-cost generic. No ovarian-cancer indication, so use in HGSC is off-label.</td><td class="col-first-action">Prescribe generic letrozole 2.5 mg PO once daily off-label; no prior authorization is usually needed.</td></tr>
+<tr><td class="col-num"><a href="#access-6"><strong>6</strong></a></td><td class="col-intervention"><strong>GEN-1 (IMNN-001) program incl. OVATION-3 maintenance trial</strong></td><td class="col-target">Il12 Microenvironment</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">Investigational IL-12 immunogene therapy; no FDA or EMA approval in any indication. No regulatory filing for marketing.</td><td class="col-first-action">Email or call the OVATION-3 central contact (Douglas Faller, dfaller@imunon.com, +1 609 896 9100) to confirm whether a post-interval-debulking patient fits the enrollment window.</td></tr>
+<tr><td class="col-num"><a href="#access-7"><strong>7</strong></a></td><td class="col-intervention"><strong>Tumor HRD genomic-instability score + somatic BRCA1/2 (FDA companion diagnostic on archival FFPE)</strong></td><td class="col-target">Hrd Status</td><td class="col-access-status"><span class="fit-badge fit-strong">Standard of care</span></td><td class="col-regulatory">FDA-approved companion diagnostics: Myriad myChoice CDx (PMA P190014) and FoundationOne CDx (PMA P170019) are both FDA-approved CDx for HRD / genomic instability and BRCA1/2 in ovarian cancer.</td><td class="col-first-action">Confirm with the treating institution&#x27;s pathology lab which CDx it uses (Myriad myChoice GIS cutoff &gt;=42 vs FoundationOne genomic LOH) and that the cutoff matches PAOLA-1 / PRIMA eligibility.</td></tr>
+<tr><td class="col-num"><a href="#access-8"><strong>8</strong></a></td><td class="col-intervention"><strong>anastrozole (endocrine therapy, off-label)</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span></td><td class="col-regulatory">FDA-approved (Arimidex) for hormone-receptor-positive breast cancer; widely available as a low-cost generic. No ovarian-cancer indication, so use in ovarian disease is off-label.</td><td class="col-first-action">Default to the ranked endocrine option (letrozole) for her ER-positive serous disease; anastrozole is an in-class substitute.</td></tr>
+<tr><td class="col-num"><a href="#access-9"><strong>9</strong></a></td><td class="col-intervention"><strong>rucaparib (1L maintenance, off-label timing)</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span></td><td class="col-regulatory">FDA-approved (Rubraca) for maintenance of recurrent ovarian cancer in response to platinum chemotherapy, and for BRCA-mutated recurrent ovarian cancer after &gt;=2 prior chemotherapies. The 1L-maintenance use studied in ATHENA-MONO is not an FDA-approved indication, so first-line use is off-label; also EMA-approved for recurrent settings.</td><td class="col-first-action">Treat as a later-line option; the on-label first-line PARP choices (niraparib, olaparib) take precedence now.</td></tr>
+</tbody></table>
+
+</div></div>
+
+<h2 id="hrd-status-interventions-4">Hrd Status interventions (4)</h2>
+<h3 id="access-1">1. niraparib (1L maintenance) <small><code>niraparib, MK-4827, Zejula</code></small></h3>
+<p><strong>Access status:</strong> <span class="fit-badge fit-strong">Standard of care</span> &nbsp; <strong>Modality:</strong> small_molecule &nbsp; <strong>Verified:</strong> 2026-06-24</p>
+<p>Niraparib is approved and prescribable on-label for her exact setting today, and it is the one PARP option that does not wait on the pending HRD score. The realistic path is a routine on-label prescription with prior authorization. The load-bearing constraint is not access but tolerability: the cytopenia profile sits on her myelosuppression veto, so the individualized weight-and-platelet starting dose is the prerequisite, not a footnote.</p>
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>FDA-approved (Zejula) for first-line maintenance of advanced ovarian cancer in complete or partial response to platinum chemotherapy (all-comers, regardless of biomarker status); also EMA-approved.</dd>
+  <dt>Guidelines</dt><dd>NCCN Ovarian v3.2025 category 2A first-line maintenance for all-comers after a platinum response.</dd>
+  <dt>Geographic scope</dt><dd>US-wide (also EU); no geographic barrier.</dd>
+</dl>
+
+<p><strong>Next steps</strong></p>
+<ol>
+<li>Confirm a platinum response is documented (she qualifies) and prescribe on-label.</li>
+<li>Set the individualized starting dose (200 mg if weight &lt;77 kg or platelets &lt;150k) up front to limit grade 3+ thrombocytopenia and anemia.</li>
+<li>Submit prior authorization; enroll in the GSK Oncology co-pay program (1-844-447-5662) if cost-sharing is a barrier.</li>
+<li>Call GSK Medical Information (1-877-475-6448) for any dosing or drug-interaction questions across a multi-year maintenance window in a 70-79 patient.</li>
+<li>Schedule weekly CBCs for the first month per label to catch early cytopenias.</li>
+</ol>
+<p><strong>Trial pathways</strong></p>
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT02655016">NCT02655016</a></td><td class="col-phase">3</td><td class="col-indication">newly-diagnosed advanced ovarian cancer at high risk of recurrence</td><td class="col-status">completed</td><td class="col-eligibility"><span class="fit-badge fit-strong">eligible: yes</span></td><td class="col-contact"><a href="https://clinicaltrials.gov/study/NCT02655016">trial sites</a></td><td class="col-notes">Registrational trial, now closed; cited as the evidence base, not an enrollment path. The drug is approved and prescribable on-label.</td></tr>
+</tbody></table></div></div>
+
+<p><strong>Manufacturer / sponsor contact</strong></p>
+<dl class="profile-grid">
+  <dt>Company</dt><dd>GSK</dd>
+  <dt>Country</dt><dd>UK</dd>
+  <dt>Medical info phone</dt><dd><code>1-877-475-6448 (1-877-GSK-MI4U)</code></dd>
+  <dt>Product information</dt><dd><a href="https://gskpro.com/content/dam/global/hcpportal/en_US/Prescribing_Information/Zejula_Tablets/pdf/ZEJULA-TABLETS-PI-PIL.PDF">https://gskpro.com/content/dam/global/hcpportal/en_US/Prescribing_Information/Zejula_Tablets/pdf/ZEJULA-TABLETS-PI-PIL.PDF</a></dd>
+  <dt>Notes</dt><dd>GSK Oncology patient-support / co-pay line: 1-844-447-5662 (1-844-4GSK-ONC).</dd>
+</dl>
+
+<p><strong>Payer / coverage notes.</strong> On-label first-line maintenance in this exact indication, so it is the most straightforward to cover. Medicare Part D / commercial prior authorization is routine. GSK runs the TogetherWithGSK Oncology co-pay and patient-assistance program; the individualized weight-and-platelet starting dose should be documented in the PA request.</p>
+<p><strong>Notes.</strong> All-comers benefit is real now (PRIMA ITT PFS HR 0.62); magnitude sharpens to HR 0.43 once a positive HRD score returns.</p>
+<hr>
+<h3 id="access-2">2. olaparib + bevacizumab (1L maintenance) <small><code>olaparib, AZD2281, Lynparza, bevacizumab, Avastin</code></small></h3>
+<p><strong>Access status:</strong> <span class="fit-badge fit-strong">Standard of care</span> &nbsp; <strong>Modality:</strong> small_molecule &nbsp; <strong>Verified:</strong> 2026-06-24</p>
+<p>This is an on-label prescription, not a trial-only path, but it unlocks only if the HRD assay returns positive. It adds olaparib to the bevacizumab she already receives, and it carries the largest magnitude on the board in the HRD-positive subgroup (PAOLA-1 HR 0.33). The load-bearing constraint is the compounded bleeding/VTE and anemia load: a documented bleeding/VTE and CBC monitoring plan is the prerequisite that lifts the conservative persona&#x27;s toxicity veto, given her prior IVC filter.</p>
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Both components FDA-approved; the combination is FDA-approved (Lynparza + bevacizumab) for first-line maintenance of HRD-positive advanced ovarian cancer (HRD defined by a deleterious BRCA mutation and/or genomic instability). Also EMA-approved. Reachable on-label only if the pending HRD assay reads positive.</dd>
+  <dt>Guidelines</dt><dd>NCCN Ovarian v3.2025 category 1 for HRD-positive disease (ESMO concurs); the on-label combination is reserved for HRD-positive tumors, so it is conditional on the pending assay.</dd>
+  <dt>Geographic scope</dt><dd>US-wide (also EU); no geographic barrier.</dd>
+</dl>
+
+<p><strong>Next steps</strong></p>
+<ol>
+<li>Wait on the HRD/somatic-BRCA result; this path is foreclosed if HRD reads negative.</li>
+<li>If HRD-positive, document a concrete bleeding/VTE and CBC monitoring plan before adding olaparib to ongoing bevacizumab.</li>
+<li>Submit prior authorization with the positive HRD/CDx report attached.</li>
+<li>Enroll in AstraZeneca Access 360 (1-844-275-2360) for the olaparib co-pay if cost-sharing is a barrier.</li>
+<li>Call AstraZeneca Medical Information (1-800-236-9933) for olaparib-bevacizumab co-administration and anemia-management questions.</li>
+</ol>
+<p><strong>Trial pathways</strong></p>
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT02477644">NCT02477644</a></td><td class="col-phase">3</td><td class="col-indication">newly-diagnosed advanced high-grade serous/endometrioid ovarian cancer on bevacizumab</td><td class="col-status">completed</td><td class="col-eligibility"><span class="fit-badge fit-strong">eligible: yes</span></td><td class="col-contact"><a href="https://clinicaltrials.gov/study/NCT02477644">trial sites</a></td><td class="col-notes">Registrational trial, closed; the evidence base for the on-label combination, not an enrollment path. Eligibility shown as &#x27;yes&#x27; for the on-label indication contingent on a positive HRD result.</td></tr>
+</tbody></table></div></div>
+
+<p><strong>Manufacturer / sponsor contact</strong></p>
+<dl class="profile-grid">
+  <dt>Company</dt><dd>AstraZeneca (olaparib / Lynparza) + Genentech-Roche (bevacizumab / Avastin)</dd>
+  <dt>Country</dt><dd>UK / US</dd>
+  <dt>Medical info phone</dt><dd><code>AstraZeneca (Lynparza): 1-800-236-9933; Genentech (Avastin): 1-800-821-8590</code></dd>
+  <dt>Product information</dt><dd><a href="https://medicalinformation.astrazeneca-us.com/home/prescribing-information/lynparza-tablets.html">https://medicalinformation.astrazeneca-us.com/home/prescribing-information/lynparza-tablets.html</a></dd>
+  <dt>Notes</dt><dd>AstraZeneca Access 360 patient-support line: 1-844-275-2360 (1-844-ASK-A360). Lynparza nurse line: 1-800-770-8337.</dd>
+</dl>
+
+<p><strong>Payer / coverage notes.</strong> On-label only for HRD-positive disease, so prior authorization will require the HRD/somatic-BRCA result attached. She is already on bevacizumab, so this adds olaparib rather than starting a new regimen. AstraZeneca Access 360 handles benefits investigation and co-pay assistance for the olaparib component.</p>
+<p><strong>Notes.</strong> Conditional on HRD-positive confirmation (Myriad MyChoice GIS &gt;=42, FoundationOne genomic LOH-high, or a somatic BRCA1/2 mutation). ITT OS was not significant; the 5-year OS gain rests on the HRD-positive subgroup.</p>
+<hr>
+<h3 id="access-3">3. olaparib monotherapy (1L maintenance) <small><code>olaparib, AZD2281, KU-0059436, Lynparza</code></small></h3>
+<p><strong>Access status:</strong> <span class="fit-badge fit-strong">Standard of care</span> &nbsp; <strong>Modality:</strong> small_molecule &nbsp; <strong>Verified:</strong> 2026-06-24</p>
+<p>Olaparib monotherapy is an on-label prescription with the highest-quality evidence in the set (SOLO1, the only mature OS readout), but it has the strictest gate. It is reachable only if tumor NGS returns a somatic BRCA1/2 mutation; her germline is wild-type, so this could be a dead end. The path is a routine on-label prescription once a qualifying somatic variant is documented.</p>
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>FDA-approved (Lynparza) for first-line maintenance of BRCA-mutated (germline or somatic) advanced ovarian cancer in response to platinum chemotherapy; also EMA-approved. Reachable on-label only if tumor NGS returns a somatic BRCA1/2 mutation, since her germline is wild-type.</dd>
+  <dt>Guidelines</dt><dd>NCCN Ovarian v3.2025 category 1, but only for BRCA-mutated tumors; her germline is wild-type and the somatic call is pending, so she is currently outside that population.</dd>
+  <dt>Geographic scope</dt><dd>US-wide (also EU); no geographic barrier.</dd>
+</dl>
+
+<p><strong>Next steps</strong></p>
+<ol>
+<li>Wait on the tumor NGS somatic BRCA1/2 call; this path is foreclosed if the somatic result is wild-type.</li>
+<li>If a somatic BRCA mutation is confirmed, prescribe olaparib monotherapy on-label.</li>
+<li>Submit prior authorization with the BRCA-mutation report attached.</li>
+<li>Enroll in AstraZeneca Access 360 (1-844-275-2360) if cost-sharing is a barrier.</li>
+<li>Monitor for cumulative anemia and counsel on the long-term myeloid (AML ~1.2%) risk across a multi-year maintenance window in a 70-79 patient.</li>
+</ol>
+<p><strong>Trial pathways</strong></p>
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT01844986">NCT01844986</a></td><td class="col-phase">3</td><td class="col-indication">newly-diagnosed advanced high-grade serous/endometrioid ovarian cancer, BRCA-mutated</td><td class="col-status">active not recruiting</td><td class="col-eligibility"><span class="fit-badge fit-weak">eligible: unconfirmed</span></td><td class="col-contact"><a href="https://clinicaltrials.gov/study/NCT01844986">trial sites</a></td><td class="col-notes">Registrational trial, not enrolling; the evidence base. Eligibility for the on-label drug hinges on the pending somatic BRCA call, hence &#x27;unconfirmed&#x27;.</td></tr>
+</tbody></table></div></div>
+
+<p><strong>Manufacturer / sponsor contact</strong></p>
+<dl class="profile-grid">
+  <dt>Company</dt><dd>AstraZeneca</dd>
+  <dt>Country</dt><dd>UK</dd>
+  <dt>Medical info phone</dt><dd><code>1-800-236-9933</code></dd>
+  <dt>Product information</dt><dd><a href="https://medicalinformation.astrazeneca-us.com/home/prescribing-information/lynparza-tablets.html">https://medicalinformation.astrazeneca-us.com/home/prescribing-information/lynparza-tablets.html</a></dd>
+  <dt>Notes</dt><dd>AstraZeneca Access 360 patient-support line: 1-844-275-2360 (1-844-ASK-A360). Lynparza nurse line: 1-800-770-8337.</dd>
+</dl>
+
+<p><strong>Payer / coverage notes.</strong> On-label only for BRCA-mutated tumors, so prior authorization requires a documented somatic (or germline) BRCA1/2 mutation. Her germline is wild-type, so coverage depends entirely on the pending tumor NGS somatic call. AstraZeneca Access 360 handles benefits investigation and co-pay support.</p>
+<p><strong>Notes.</strong> Single-agent profile is cleaner than the olaparib + bevacizumab stack on the bleeding axis. Foreclosed if the somatic BRCA call is wild-type.</p>
+<hr>
+<h3 id="access-7">7. Tumor HRD genomic-instability score + somatic BRCA1/2 (FDA companion diagnostic on archival FFPE) <small><code>Myriad MyChoice CDx, FoundationOne CDx, genomic-instability score, GIS, somatic BRCA tumor NGS, HRD assay</code></small></h3>
+<p><strong>Access status:</strong> <span class="fit-badge fit-strong">Standard of care</span> &nbsp; <strong>Modality:</strong> diagnostic &nbsp; <strong>Verified:</strong> 2026-06-24</p>
+<p>This is a diagnostic, not a drug, and it is the rank-1 move. Both Myriad myChoice CDx and FoundationOne CDx are FDA-approved companion diagnostics that report a genomic-instability score and somatic BRCA1/2 status from the archival tumor block, so no new procedure is needed. The single load-bearing constraint is turnaround: order it now, because the result decides whether the HRD-positive PARP options below are reachable.</p>
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>FDA-approved companion diagnostics: Myriad myChoice CDx (PMA P190014) and FoundationOne CDx (PMA P170019) are both FDA-approved CDx for HRD / genomic instability and BRCA1/2 in ovarian cancer.</dd>
+  <dt>Guidelines</dt><dd>NCCN Ovarian v3.2025 ties first-line maintenance selection to HRD / somatic-BRCA status, so the assay is the precondition the guideline&#x27;s own biomarker conditions assume.</dd>
+  <dt>Geographic scope</dt><dd>US-wide; both labs accept specimens nationally.</dd>
+</dl>
+
+<p><strong>Next steps</strong></p>
+<ol>
+<li>Confirm with the treating institution&#x27;s pathology lab which CDx it uses (Myriad myChoice GIS cutoff &gt;=42 vs FoundationOne genomic LOH) and that the cutoff matches PAOLA-1 / PRIMA eligibility.</li>
+<li>Order the assay on the existing archival FFPE block; no fresh biopsy needed.</li>
+<li>Add MSI/MMR and a broad somatic panel to the same block to screen for dMMR (checkpoint eligibility) and non-BRCA HR genes (RAD51C/D, PALB2, BRIP1).</li>
+<li>Expect a 2-4 week turnaround; hold the final maintenance decision until the score and somatic BRCA call return.</li>
+</ol>
+<p><strong>Trial pathways</strong></p>
+<p><em>No registered trials in the dossier.</em></p>
+<p><strong>Manufacturer / sponsor contact</strong></p>
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Myriad Genetics (MyChoice CDx) / Foundation Medicine (FoundationOne CDx)</dd>
+  <dt>Country</dt><dd>US</dd>
+  <dt>Medical info phone</dt><dd><code>Myriad: 1-800-469-7423; Foundation Medicine: 1-888-988-3639</code></dd>
+  <dt>Product information</dt><dd><a href="https://myriad.com/gynecologic-oncology/mychoice-cdx/">https://myriad.com/gynecologic-oncology/mychoice-cdx/</a></dd>
+  <dt>Notes</dt><dd>Both assays run on archival FFPE; no fresh biopsy is required. Foundation Medicine client services line is for ordering and report status.</dd>
+</dl>
+
+<p><strong>Payer / coverage notes.</strong> Medicare covers FDA-approved CDx testing for HRD/BRCA in ovarian cancer when used to guide PARP-inhibitor maintenance; both labs run patient-assistance and financial-hardship programs. Confirm the ordering pathway and turnaround with the institution&#x27;s pathology lab before committing to a maintenance plan.</p>
+<p><strong>Notes.</strong> Germline BRCA is already wild-type, so this one FFPE order covers the somatic-BRCA and genomic-scar gap that germline testing cannot resolve.</p>
+<hr>
+<h2 id="vegf-angiogenesis-interventions-1">Vegf Angiogenesis interventions (1)</h2>
+<h3 id="access-4">4. bevacizumab (concurrent + maintenance) <small><code>bevacizumab, Avastin, rhuMAb-VEGF</code></small></h3>
+<p><strong>Access status:</strong> <span class="fit-badge fit-strong">Standard of care</span> &nbsp; <strong>Modality:</strong> monoclonal_antibody &nbsp; <strong>Verified:</strong> 2026-06-24</p>
+<p>She is already on bevacizumab, so access is a solved problem; this row is about continuing what she tolerates. It is approved on-label for first-line ovarian maintenance and is the lowest-regret guideline-aligned hold while the HRD assay is out. The constraint is clinical, not logistical: the bleeding/VTE vector given her prior IVC filter stays on the active monitoring list, a risk already built into her current plan.</p>
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>FDA-approved (Avastin) in combination with chemotherapy followed by single-agent maintenance for stage III/IV epithelial ovarian, fallopian-tube, or primary-peritoneal cancer after initial surgical resection; also EMA-approved. Multiple FDA-approved biosimilars (Mvasi, Zirabev, Alymsys, Vegzelma) exist.</dd>
+  <dt>Guidelines</dt><dd>NCCN Ovarian v3.2025 category 2A first-line maintenance in her exact indication.</dd>
+  <dt>Geographic scope</dt><dd>US-wide (also EU); no geographic barrier.</dd>
+</dl>
+
+<p><strong>Next steps</strong></p>
+<ol>
+<li>Continue the bevacizumab maintenance she is already on; no new access step needed.</li>
+<li>Decide whether to hold it as monotherapy maintenance or position it as the backbone for an olaparib add-on once the HRD score returns.</li>
+<li>Keep bleeding/thrombosis and blood-pressure monitoring active given her high-VTE history and prior IVC filter.</li>
+<li>Consider a payer-preferred biosimilar if cost-sharing is a barrier; confirm the switch with the treating team.</li>
+</ol>
+<p><strong>Trial pathways</strong></p>
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT00262847">NCT00262847</a></td><td class="col-phase">3</td><td class="col-indication">newly-diagnosed advanced epithelial ovarian / fallopian-tube / primary-peritoneal cancer</td><td class="col-status">completed</td><td class="col-eligibility"><span class="fit-badge fit-strong">eligible: yes</span></td><td class="col-contact"><a href="https://clinicaltrials.gov/study/NCT00262847">trial sites</a></td><td class="col-notes">Registrational trial, closed; the evidence base for the maintenance regimen she is already on, not an enrollment path.</td></tr>
+</tbody></table></div></div>
+
+<p><strong>Manufacturer / sponsor contact</strong></p>
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Genentech (a member of the Roche Group)</dd>
+  <dt>Country</dt><dd>US</dd>
+  <dt>Medical info phone</dt><dd><code>1-800-821-8590</code></dd>
+  <dt>Product information</dt><dd><a href="https://www.gene.com/medical-professionals/medicines/avastin">https://www.gene.com/medical-professionals/medicines/avastin</a></dd>
+  <dt>Notes</dt><dd>Genentech medical information hours Mon-Fri 5am-5pm PT. Biosimilars carry their own manufacturer medical-info lines (Amgen Mvasi, Pfizer Zirabev).</dd>
+</dl>
+
+<p><strong>Payer / coverage notes.</strong> On-label in her indication; she is already receiving it, so coverage is established. Biosimilars often lower cost-sharing and may be the payer-preferred product. Genentech Access Solutions handles benefits investigation and patient assistance for the originator.</p>
+<p><strong>Notes.</strong> PFS-only benefit (GOG-218 HR 0.717; ICON7 HR 0.81); no ITT OS benefit in either trial.</p>
+<hr>
+<h2 id="er-expression-interventions-1">Er Expression interventions (1)</h2>
+<h3 id="access-5">5. letrozole (endocrine maintenance) <small><code>letrozole, Femara, CGS-20267</code></small></h3>
+<p><strong>Access status:</strong> <span class="fit-badge fit-partial">Off-label use</span> &nbsp; <strong>Modality:</strong> small_molecule &nbsp; <strong>Verified:</strong> 2026-06-24</p>
+<p>Letrozole is a cheap generic pill her clinician can prescribe off-label today; there is no real access barrier. It targets her ER-positive biology with the lowest toxicity of any option and clears every stated preference. The honest constraint is evidence, not access: the maintenance signal rests on a single tier-4 non-randomized cohort and her PR-negativity tempers the expected magnitude, so this reads as a low-burden holding strategy rather than a frontline backbone.</p>
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>FDA-approved (Femara) for hormone-receptor-positive breast cancer; widely available as a low-cost generic. No ovarian-cancer indication, so use in HGSC is off-label.</dd>
+  <dt>Guidelines</dt><dd>NCCN Ovarian v3.2025 lists aromatase inhibitors among hormone-therapy options for ER-positive disease, but does not elevate them to frontline maintenance alongside the category 1/2A PARP and bevacizumab data.</dd>
+  <dt>Geographic scope</dt><dd>US-wide; generic availability nationwide.</dd>
+</dl>
+
+<p><strong>Next steps</strong></p>
+<ol>
+<li>Prescribe generic letrozole 2.5 mg PO once daily off-label; no prior authorization is usually needed.</li>
+<li>Set expectations that the maintenance evidence is a single non-randomized cohort and PR-negativity tempers the magnitude.</li>
+<li>Sequence it relative to PARP / bevacizumab maintenance once the HRD score returns; it can serve as a later-line or low-burden holding option.</li>
+<li>Monitor for class effects (hot flushes, arthralgia, bone density) over a long oral course.</li>
+</ol>
+<p><strong>Trial pathways</strong></p>
+<p><em>No registered trials in the dossier.</em></p>
+<p><strong>Manufacturer / sponsor contact</strong></p>
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Novartis (originator, Femara); multiple generic manufacturers</dd>
+  <dt>Country</dt><dd>Switzerland</dd>
+  <dt>Medical info phone</dt><dd><code>1-888-669-6682 (Novartis Medical Information)</code></dd>
+  <dt>Product information</dt><dd><a href="https://www.novartis.com/us-en/sites/novartis_us/files/Femara.pdf">https://www.novartis.com/us-en/sites/novartis_us/files/Femara.pdf</a></dd>
+  <dt>Notes</dt><dd>Letrozole is an inexpensive generic, so most prescriptions are filled as generic rather than branded Femara. The Novartis line is for the originator product.</dd>
+</dl>
+
+<p><strong>Payer / coverage notes.</strong> As a low-cost generic, letrozole is the easiest option to fill and the cheapest. Off-label use in ovarian cancer is generally not a coverage barrier because the drug is inexpensive and the off-label oncology use is supported by compendia; no prior authorization is typically required.</p>
+<p><strong>Notes.</strong> Off-label in ovarian cancer. The cleanest match to her age and stated preference for low-burden oral therapy, on the weakest evidence tier in the set.</p>
+<hr>
+<h2 id="il12-microenvironment-interventions-1">Il12 Microenvironment interventions (1)</h2>
+<h3 id="access-6">6. GEN-1 (IMNN-001) program incl. OVATION-3 maintenance trial <small><code>GEN-1, IMNN-001, EGEN-001, IL-12 plasmid lipopolymer</code></small></h3>
+<p><strong>Access status:</strong> <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; <strong>Modality:</strong> other &nbsp; <strong>Verified:</strong> 2026-06-24</p>
+<p>GEN-1 is investigational with no approval anywhere, so trial enrollment is the only path; she is already on the IMNN-001 program through her current investigational program. The active registrational study is OVATION-3 (NCT06915025), recruiting at seven US sites and allowing optional PARP maintenance. The constraint is eligibility timing: she has already completed neoadjuvant chemoimmunotherapy and interval debulking, so confirm with the OVATION-3 contact whether her post-surgical stage still fits the enrollment window before treating this as reachable. This was a not-recommended board item, kept visible so the on-study program shows as the trial&#x27;s and treating team&#x27;s conversation rather than a Libby recommendation.</p>
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Investigational IL-12 immunogene therapy; no FDA or EMA approval in any indication. No regulatory filing for marketing.</dd>
+  <dt>Guidelines</dt><dd>Investigational; no consensus guideline lists IL-12 immunogene therapy in this setting.</dd>
+  <dt>Geographic scope</dt><dd>US sites only (FL, MO, OR, SD, TN, WA, WI for OVATION-3); confirm a site near US-South.</dd>
+</dl>
+
+<p><strong>Next steps</strong></p>
+<ol>
+<li>Email or call the OVATION-3 central contact (Douglas Faller, dfaller@imunon.com, +1 609 896 9100) to confirm whether a post-interval-debulking patient fits the enrollment window.</li>
+<li>Confirm which OVATION-3 site is nearest her US-South geography and is actively screening.</li>
+<li>Clarify whether the protocol&#x27;s optional olaparib/niraparib maintenance arm would apply to her, which itself depends on the pending HRD/somatic-BRCA result.</li>
+<li>Coordinate any access question through her existing trial team first, since she is already on the IMNN-001 program.</li>
+</ol>
+<p><strong>Trial pathways</strong></p>
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT06915025">NCT06915025</a></td><td class="col-phase">3</td><td class="col-indication">newly-diagnosed advanced epithelial ovarian / fallopian-tube / primary-peritoneal cancer</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-weak">eligible: unconfirmed</span></td><td class="col-contact"><strong>Douglas Faller, M.D.</strong><br><a href="mailto:dfaller@imunon.com">dfaller@imunon.com</a><br><code>+1 609 896 9100</code><br><a href="https://clinicaltrials.gov/study/NCT06915025">trial sites</a></td><td class="col-notes">Recruiting at seven US sites (FL, MO, OR, SD, TN, WA, WI). Allows optional olaparib/niraparib maintenance per HRD, so whether a PARP arm applies to her depends on the pending HRD/somatic-BRCA result. She has already completed neoadjuvant therapy, so confirm whether the protocol&#x27;s enrollment window accepts a post-interval-debulking patient.</td></tr>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT05739981">NCT05739981</a></td><td class="col-phase">1/2</td><td class="col-indication">newly-diagnosed advanced ovarian / fallopian-tube / primary-peritoneal cancer</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><strong>Douglas Faller, MD</strong><br><a href="mailto:dfaller@imunon.com">dfaller@imunon.com</a><br><code>609.896.9100</code><br><a href="https://clinicaltrials.gov/study/NCT05739981">trial sites</a></td><td class="col-notes">Neoadjuvant entry point; she is already post-interval-debulking, so this enrollment window has likely passed for her. Listed for completeness of the IMNN-001 program.</td></tr>
+</tbody></table></div></div>
+
+<p><strong>Manufacturer / sponsor contact</strong></p>
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Imunon, Inc.</dd>
+  <dt>Country</dt><dd>US</dd>
+  <dt>Medical info phone</dt><dd><code>+1 609 896 9100</code></dd>
+  <dt>Medical info email</dt><dd><a href="mailto:dfaller@imunon.com">dfaller@imunon.com</a></dd>
+  <dt>Product information</dt><dd><a href="https://imunon.com/">https://imunon.com/</a></dd>
+  <dt>Notes</dt><dd>Imunon is a small-cap biotech; no posted compassionate-use / expanded-access portal was found. The OVATION-3 medical-monitor contacts (Douglas Faller, Lauren Musso) are the route for any access question.</dd>
+</dl>
+
+<p><strong>Payer / coverage notes.</strong> Investigational; not reimbursable outside trial enrollment. Trial drug is provided by the sponsor.</p>
+<p><strong>Notes.</strong> Not recommended on the board: efficacy rests on unpublished OVATION-2 conference toplines (no PMID), and the critic vetoed it on evidence quality. No compassionate-use program was found; access is via trial enrollment only.</p>
+<hr>
+<h2 id="unmatched-interventions-2">Unmatched interventions (2)</h2>
+<h3 id="access-8">8. anastrozole (endocrine therapy, off-label) <small><code>anastrozole, Arimidex, ZD-1033</code></small></h3>
+<p><strong>Access status:</strong> <span class="fit-badge fit-partial">Off-label use</span> &nbsp; <strong>Modality:</strong> small_molecule &nbsp; <strong>Verified:</strong> 2026-06-24</p>
+<p>Anastrozole is a cheap generic in the same aromatase-inhibitor class as letrozole, prescribable off-label with no real access barrier. It surfaced in the dossier only as cross-histology mechanism precedent (PARAGON, in granulosa-cell tumours) and was not carried onto the recommendation list; letrozole is the ranked endocrine option for her serous histology. It is an interchangeable-class alternative if letrozole is not tolerated.</p>
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>FDA-approved (Arimidex) for hormone-receptor-positive breast cancer; widely available as a low-cost generic. No ovarian-cancer indication, so use in ovarian disease is off-label.</dd>
+  <dt>Guidelines</dt><dd>Same aromatase-inhibitor class NCCN lists among hormone-therapy options for ER-positive ovarian disease; not elevated to frontline maintenance. PARAGON (granulosa-cell/sex-cord stromal) is mechanism precedent, not a serous-histology match.</dd>
+  <dt>Geographic scope</dt><dd>US-wide; generic availability nationwide.</dd>
+</dl>
+
+<p><strong>Next steps</strong></p>
+<ol>
+<li>Default to the ranked endocrine option (letrozole) for her ER-positive serous disease; anastrozole is an in-class substitute.</li>
+<li>If used, prescribe generic anastrozole 1 mg PO once daily off-label; no prior authorization is usually needed.</li>
+<li>Call AstraZeneca Medical Information (1-800-236-9933) for off-label dosing questions.</li>
+<li>Monitor for class effects (hot flushes, arthralgia, bone density) on a long oral course.</li>
+</ol>
+<p><strong>Trial pathways</strong></p>
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT01698099">NCT01698099</a></td><td class="col-phase">2</td><td class="col-indication">ER/PR-positive recurrent granulosa-cell / sex-cord stromal ovarian tumours</td><td class="col-status">completed</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><a href="https://clinicaltrials.gov/study/NCT01698099">trial sites</a></td><td class="col-notes">Closed; cross-histology mechanism precedent (granulosa-cell, not her high-grade serous histology). Not an enrollment path.</td></tr>
+</tbody></table></div></div>
+
+<p><strong>Manufacturer / sponsor contact</strong></p>
+<dl class="profile-grid">
+  <dt>Company</dt><dd>AstraZeneca (originator, Arimidex); multiple generic manufacturers</dd>
+  <dt>Country</dt><dd>UK</dd>
+  <dt>Medical info phone</dt><dd><code>1-800-236-9933 (AstraZeneca Medical Information)</code></dd>
+  <dt>Product information</dt><dd><a href="https://www.azpicentral.com/arimidex/arimidex.pdf">https://www.azpicentral.com/arimidex/arimidex.pdf</a></dd>
+  <dt>Notes</dt><dd>Anastrozole is an inexpensive generic; most prescriptions are filled as generic rather than branded Arimidex. The AstraZeneca line is for the originator product.</dd>
+</dl>
+
+<p><strong>Payer / coverage notes.</strong> As a low-cost generic, anastrozole is easy and cheap to fill. Off-label ovarian use is generally not a coverage barrier given the price and compendia support; no prior authorization is typically required.</p>
+<p><strong>Notes.</strong> Unmatched to the recommendations list: surfaced in evidence as cross-tumor endocrine precedent (PARAGON) but not ranked by the PI. Captured for completeness as an in-class alternative to letrozole.</p>
+<hr>
+<h3 id="access-9">9. rucaparib (1L maintenance, off-label timing) <small><code>rucaparib, AG-014699, CO-338, PF-01367338, Rubraca</code></small></h3>
+<p><strong>Access status:</strong> <span class="fit-badge fit-partial">Off-label use</span> &nbsp; <strong>Modality:</strong> small_molecule &nbsp; <strong>Verified:</strong> 2026-06-24</p>
+<p>Rucaparib is FDA-approved for recurrent ovarian maintenance, so a clinician can prescribe it off-label for first-line timing, but the approved first-line PARP options (niraparib for all-comers, olaparib for the HRD/BRCA-positive branch) make that off-label move unnecessary now. It surfaced in the dossier as 1L-maintenance evidence (ATHENA-MONO) but was not carried onto the recommendation list. Its realistic role is a later-line maintenance alternative if she recurs.</p>
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>FDA-approved (Rubraca) for maintenance of recurrent ovarian cancer in response to platinum chemotherapy, and for BRCA-mutated recurrent ovarian cancer after &gt;=2 prior chemotherapies. The 1L-maintenance use studied in ATHENA-MONO is not an FDA-approved indication, so first-line use is off-label; also EMA-approved for recurrent settings.</dd>
+  <dt>Guidelines</dt><dd>NCCN Ovarian v3.2025 includes rucaparib among recurrent-disease maintenance options; ATHENA-MONO supports 1L maintenance but that timing is off-label.</dd>
+  <dt>Geographic scope</dt><dd>US-wide (also EU); no geographic barrier.</dd>
+</dl>
+
+<p><strong>Next steps</strong></p>
+<ol>
+<li>Treat as a later-line option; the on-label first-line PARP choices (niraparib, olaparib) take precedence now.</li>
+<li>If considered for off-label 1L use, the HRD/somatic-BRCA result would still refine expected benefit.</li>
+<li>Call the Rubraca medical-information line (1-844-779-7707) for off-label dosing or coverage questions.</li>
+<li>Reassess at recurrence, where rucaparib maintenance is on-label.</li>
+</ol>
+<p><strong>Trial pathways</strong></p>
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT03522246">NCT03522246</a></td><td class="col-phase">3</td><td class="col-indication">newly-diagnosed advanced epithelial ovarian cancer (stage III-IV)</td><td class="col-status">active not recruiting</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><a href="https://clinicaltrials.gov/study/NCT03522246">trial sites</a></td><td class="col-notes">Registrational ATHENA-MONO trial, not enrolling; the 1L evidence base. Not an open enrollment path.</td></tr>
+</tbody></table></div></div>
+
+<p><strong>Manufacturer / sponsor contact</strong></p>
+<dl class="profile-grid">
+  <dt>Company</dt><dd>pharma&amp; (pharmaand GmbH); US promotion by Tolmar, Inc.</dd>
+  <dt>Country</dt><dd>Austria (pharma&amp;) / US (Tolmar)</dd>
+  <dt>Medical info phone</dt><dd><code>1-844-779-7707 (Rubraca patient/medical support); Tolmar: 1-844-486-5627 (1-844-4TOLMAR)</code></dd>
+  <dt>Product information</dt><dd><a href="https://www.rubraca.com/">https://www.rubraca.com/</a></dd>
+  <dt>Notes</dt><dd>pharma&amp; owns Rubraca; Tolmar holds the US promotional agreement. The 1-844-779-7707 line covers patient assistance and medical information.</dd>
+</dl>
+
+<p><strong>Payer / coverage notes.</strong> FDA-approved for recurrent ovarian maintenance, so on-label recurrent use is coverable; first-line maintenance use is off-label and may face prior-authorization friction. With niraparib (all-comers 1L) and the olaparib options already on-label for the first-line setting, rucaparib is most relevant as a later-line alternative if she recurs.</p>
+<p><strong>Notes.</strong> Unmatched to the recommendations list: surfaced in trials.jsonl / evidence as 1L-maintenance evidence (ATHENA-MONO) but not ranked by the PI. Captured here for completeness as an off-label / later-line alternative within the PARP class.</p>
+<hr>
+<footer class="libby-footer">Generated 2026-06-24 &middot; Libby &middot; <code>hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq</code> &middot; Access guide</footer>
+</body></html>

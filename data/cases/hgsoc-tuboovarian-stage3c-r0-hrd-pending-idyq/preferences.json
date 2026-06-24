@@ -1,0 +1,14 @@
+{
+  "case_slug": "hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq",
+  "efficacy_toxicity_weight": 0.7,
+  "toxicity_vetoes": [
+    "additional peripheral neuropathy",
+    "severe myelosuppression / febrile neutropenia"
+  ],
+  "modality_constraints": [
+    "oral or low-infusion-burden preferred",
+    "caution with agents carrying thrombotic or bleeding risk (history of high VTE risk; prior IVC filter)"
+  ],
+  "free_text_constraints": "Efficacy-leaning overall (0.7) but tolerability-aware given age band 70-79. ECOG estimated at 1 (not explicitly documented in records; patient tolerated full neoadjuvant chemoimmunotherapy and radical interval cytoreduction). Highest-value open question is the tumor HRD / somatic-BRCA result, which is pending and gates PARP-inhibitor maintenance; treat its confirmatory assay as the rank-1 shared workup.",
+  "prefers_trials": true
+}

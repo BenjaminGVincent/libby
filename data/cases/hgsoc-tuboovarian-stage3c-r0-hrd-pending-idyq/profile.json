@@ -1,0 +1,124 @@
+{
+  "case_slug": "hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq",
+  "age_band": "70-79",
+  "sex": "female",
+  "primary_site": "ovary",
+  "histology": "high-grade serous carcinoma (tubo-ovarian / primary peritoneal; WT1+, PAX8+, SOX17+, CK7+)",
+  "biomarkers": [
+    {
+      "name": "TP53 (p53 IHC surrogate)",
+      "value": "mutated (inferred) — p53 diffuse strong nuclear overexpression in >80% of tumor cells",
+      "method": "p53 IHC",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "p53 IHC abnormal pattern is an accepted surrogate for a TP53 mutation; tumor NGS would formally confirm the variant but is not required to define HGSC biology."
+    },
+    {
+      "name": "BRCA1/2 (germline)",
+      "value": "wild-type — no pathogenic or likely-pathogenic variant",
+      "method": "germline NGS, 74-gene hereditary-cancer panel",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "Germline NGS; resolves hereditary BRCA status but does NOT resolve somatic BRCA or tumor HRD."
+    },
+    {
+      "name": "HRD / genomic instability (tumor)",
+      "value": "unknown — not yet resulted",
+      "method": "tumor NGS (somatic panel ordered, result not returned)",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "Genomic-instability/HRD score (e.g. Myriad MyChoice GIS >=42 or equivalent) and/or somatic BRCA1/2 from tumor NGS; gates PARP-inhibitor maintenance eligibility and magnitude of benefit."
+    },
+    {
+      "name": "Somatic BRCA1/2 (tumor)",
+      "value": "unknown — not yet resulted",
+      "method": "tumor NGS (somatic panel ordered, result not returned)",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "Tumor NGS variant call; somatic BRCA reversion/mutation status further refines PARP-inhibitor expectation independent of germline."
+    },
+    {
+      "name": "MSI / MMR",
+      "value": "unknown — not yet resulted",
+      "method": "tumor NGS / IHC (not returned)",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "MSI-high or dMMR would open tumor-agnostic checkpoint-inhibitor eligibility; not available."
+    },
+    {
+      "name": "ER",
+      "value": "positive (~80% of tumor nuclei, weak-moderate intensity)",
+      "method": "IHC",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "IHC ER positivity supports an endocrine-therapy rationale in HGSC; magnitude tempered by PR-negativity."
+    },
+    {
+      "name": "PR",
+      "value": "negative",
+      "method": "IHC",
+      "confirmation_status": "confirmed"
+    },
+    {
+      "name": "HER2",
+      "value": "negative (IHC 1+)",
+      "method": "IHC (gastric/DESTINY-PanTumor scoring)",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "Does not meet HER2-expression threshold for trastuzumab-deruxtecan; forecloses that HER2-directed ADC on current specimen."
+    },
+    {
+      "name": "FOLR1 (folate receptor alpha)",
+      "value": "negative (<75% of cells at moderate/strong membranous intensity)",
+      "method": "Ventana FOLR1 CDx IHC",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "FRalpha >=75% (PS2+) required for mirvetuximab soravtansine; below threshold, so that ADC is out of scope on current specimen."
+    },
+    {
+      "name": "CA-125",
+      "value": "normalized on therapy (peak 940 -> 11.6 U/mL)",
+      "method": "serum",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "Response/monitoring marker, not a therapeutic target."
+    },
+    {
+      "name": "Signatera ctDNA (MRD)",
+      "value": "cleared to Not Detected (30.3 -> 3.32 -> 0 MTM/mL)",
+      "method": "tumor-informed ctDNA (WGS-designed mPCR-NGS)",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "Molecular-residual-disease marker; informs relapse risk and maintenance intensity, not target selection."
+    }
+  ],
+  "stage": "IIIc",
+  "ecog": 1,
+  "prior_therapies": [
+    {
+      "regimen": "Neoadjuvant carboplatin + paclitaxel + bevacizumab with GEN-1 (IMNN-01), an investigational IL-12 immunogene therapy, x4 cycles",
+      "line": "1L neoadjuvant",
+      "best_response": "PR",
+      "duration_months": 4
+    }
+  ],
+  "current_therapy": "Post-interval-debulking carboplatin + paclitaxel + GEN-1 (IMNN-01), an investigational IL-12 immunogene therapy; status-post interval radical tumor-reductive surgery (TAH/BSO + omentectomy + bilateral ureterolysis) with R0 resection.",
+  "organ_function": {
+    "eGFR_ml_min_1_73": 98,
+    "creatinine_mg_dl": 0.49,
+    "AST_U_L": 27,
+    "ALT_U_L": 16,
+    "bilirubin_mg_dl": 1.5,
+    "WBC_10e3_uL": 3.5
+  },
+  "targetable_features": [
+    {
+      "feature": "HRD / homologous-recombination status (somatic BRCA + genomic-instability score) — PENDING",
+      "rationale": "The single highest-value decision point for this newly-diagnosed, platinum-responsive, R0 Stage IIIc HGSC. Germline BRCA is wild-type but somatic BRCA and a tumor HRD/genomic-instability score are not yet resulted; they gate PARP-inhibitor maintenance (e.g. niraparib regardless of HRD; olaparib +/- bevacizumab in HRD-positive). The deep platinum response is consistent with, but not diagnostic of, HRD. Treat the HRD/somatic-BRCA assay as the rank-1 shared workup."
+    },
+    {
+      "feature": "VEGF / angiogenesis pathway",
+      "rationale": "Patient is already receiving bevacizumab; VEGF is an established actionable maintenance axis in advanced HGSC (bevacizumab maintenance; combinable with PARP inhibitor in HRD-positive disease). In scope for maintenance strategy."
+    },
+    {
+      "feature": "ER expression (ER-positive, PR-negative)",
+      "rationale": "ER-positive HGSC provides a low-toxicity endocrine-therapy rationale (e.g. aromatase inhibition) as a maintenance or later-line option, attractive given the patient's age and stated preference for low-burden, oral therapy. PR-negativity tempers expected magnitude."
+    },
+    {
+      "feature": "IL-12 / tumor immune microenvironment (on-study GEN-1/IMNN-01)",
+      "rationale": "Active investigational IL-12 immunogene therapy (GEN-1 / IMNN-01); relevant to immunotherapy-combination reasoning and to the board's on-study context, though not a standard-of-care target."
+    }
+  ],
+  "geography_band": "US-South",
+  "private": false
+}
