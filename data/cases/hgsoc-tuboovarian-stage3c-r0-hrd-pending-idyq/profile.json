@@ -6,39 +6,53 @@
   "histology": "high-grade serous carcinoma (tubo-ovarian / primary peritoneal; WT1+, PAX8+, SOX17+, CK7+)",
   "biomarkers": [
     {
-      "name": "TP53 (p53 IHC surrogate)",
-      "value": "mutated (inferred) — p53 diffuse strong nuclear overexpression in >80% of tumor cells",
-      "method": "p53 IHC",
+      "name": "TP53 V157G (somatic)",
+      "value": "somatic missense mutation in the DNA-binding domain; concordant with diffuse p53 IHC overexpression",
+      "method": "tumor NGS (tumor/normal exome) + p53 IHC",
       "confirmation_status": "confirmed",
-      "decision_resolution": "p53 IHC abnormal pattern is an accepted surrogate for a TP53 mutation; tumor NGS would formally confirm the variant but is not required to define HGSC biology."
+      "decision_resolution": "Defines HGSC biology; not itself a direct drug gate. Several early-phase TP53-directed trials list this variant."
     },
     {
-      "name": "BRCA1/2 (germline)",
-      "value": "wild-type — no pathogenic or likely-pathogenic variant",
-      "method": "germline NGS, 74-gene hereditary-cancer panel",
+      "name": "BRCA1/2 (germline and somatic)",
+      "value": "wild-type — no pathogenic variant germline (74-gene panel) and no actionable somatic alteration on tumor NGS (BRCA-proficient)",
+      "method": "germline NGS + tumor NGS (Altera)",
       "confirmation_status": "confirmed",
-      "decision_resolution": "Germline NGS; resolves hereditary BRCA status but does NOT resolve somatic BRCA or tumor HRD."
+      "decision_resolution": "Both germline and somatic BRCA resolved as wild-type; forecloses BRCA-mutation-gated PARP indications (e.g. olaparib monotherapy / SOLO1)."
     },
     {
       "name": "HRD / genomic instability (tumor)",
-      "value": "unknown — not yet resulted",
-      "method": "tumor NGS (somatic panel ordered, result not returned)",
-      "confirmation_status": "ngs_pending",
-      "decision_resolution": "Genomic-instability/HRD score (e.g. Myriad MyChoice GIS >=42 or equivalent) and/or somatic BRCA1/2 from tumor NGS; gates PARP-inhibitor maintenance eligibility and magnitude of benefit."
-    },
-    {
-      "name": "Somatic BRCA1/2 (tumor)",
-      "value": "unknown — not yet resulted",
-      "method": "tumor NGS (somatic panel ordered, result not returned)",
-      "confirmation_status": "ngs_pending",
-      "decision_resolution": "Tumor NGS variant call; somatic BRCA reversion/mutation status further refines PARP-inhibitor expectation independent of germline."
+      "value": "genomic instability PRESENT but qualitative only — multiple chromosomal imbalances / frequent LOH; BRCA-proficient; NO quantitative GIS/HRD score reported",
+      "method": "tumor NGS (Altera tumor/normal exome)",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "Altera reports genomic complexity qualitatively and notes PARP (niraparib/olaparib) may benefit genomically-unstable HGSC, but does NOT provide a validated genomic-instability score. A Myriad MyChoice CDx GIS >=42 (or equivalent FDA companion diagnostic) is still required to establish formal HRD-positive eligibility for olaparib + bevacizumab (PAOLA-1)."
     },
     {
       "name": "MSI / MMR",
-      "value": "unknown — not yet resulted",
-      "method": "tumor NGS / IHC (not returned)",
-      "confirmation_status": "ngs_pending",
-      "decision_resolution": "MSI-high or dMMR would open tumor-agnostic checkpoint-inhibitor eligibility; not available."
+      "value": "Microsatellite Stable (MSS)",
+      "method": "tumor NGS (Altera)",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "MSS forecloses MSI-high tumor-agnostic checkpoint-inhibitor eligibility."
+    },
+    {
+      "name": "TMB",
+      "value": "Low (1 mut/Mb)",
+      "method": "tumor NGS (Altera)",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "Below the >=10 mut/Mb tumor-agnostic pembrolizumab threshold; forecloses TMB-high ICI eligibility."
+    },
+    {
+      "name": "PIK3CA amplification (somatic)",
+      "value": "focal amplification",
+      "method": "tumor NGS (Altera)",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "VUS/investigational-level actionability; PI3K/AKT/mTOR-axis early-phase trials list PIK3CA amplification. No approved PI3K-directed therapy in HGSC."
+    },
+    {
+      "name": "MAP2K4 deletion (somatic)",
+      "value": "focal deletion",
+      "method": "tumor NGS (Altera)",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "VUS/investigational-level actionability; early-phase trials list MAP2K4 deletion. No approved matched therapy."
     },
     {
       "name": "ER",
@@ -56,7 +70,7 @@
     {
       "name": "HER2",
       "value": "negative (IHC 1+)",
-      "method": "IHC (gastric/DESTINY-PanTumor scoring)",
+      "method": "IHC (gastric/DESTINY-PanTumor scoring; Altera IHC not evaluable due to insufficient material)",
       "confirmation_status": "confirmed",
       "decision_resolution": "Does not meet HER2-expression threshold for trastuzumab-deruxtecan; forecloses that HER2-directed ADC on current specimen."
     },
@@ -103,8 +117,8 @@
   },
   "targetable_features": [
     {
-      "feature": "HRD / homologous-recombination status (somatic BRCA + genomic-instability score) — PENDING",
-      "rationale": "The single highest-value decision point for this newly-diagnosed, platinum-responsive, R0 Stage IIIc HGSC. Germline BRCA is wild-type but somatic BRCA and a tumor HRD/genomic-instability score are not yet resulted; they gate PARP-inhibitor maintenance (e.g. niraparib regardless of HRD; olaparib +/- bevacizumab in HRD-positive). The deep platinum response is consistent with, but not diagnostic of, HRD. Treat the HRD/somatic-BRCA assay as the rank-1 shared workup."
+      "feature": "HRD / homologous-recombination status (genomic instability present, BRCA wild-type) — RESOLVED",
+      "rationale": "Tumor NGS now resolves the question that previously gated the case: the tumor is BRCA-proficient (germline AND somatic BRCA wild-type) but genomically unstable (multiple chromosomal imbalances / LOH). This supports a genomic-instability-based PARP-maintenance rationale and the report explicitly names niraparib and olaparib. niraparib (PRIMA, all-comers) does not require a BRCA mutation or a validated HRD score and is the cleanest fit. BRCA-mutation-gated olaparib monotherapy (SOLO1) is foreclosed. olaparib + bevacizumab (PAOLA-1) remains contingent on obtaining a validated genomic-instability score (e.g. Myriad MyChoice CDx GIS >=42), which Altera's qualitative call does not establish."
     },
     {
       "feature": "VEGF / angiogenesis pathway",
@@ -115,8 +129,16 @@
       "rationale": "ER-positive HGSC provides a low-toxicity endocrine-therapy rationale (e.g. aromatase inhibition) as a maintenance or later-line option, attractive given the patient's age and stated preference for low-burden, oral therapy. PR-negativity tempers expected magnitude."
     },
     {
+      "feature": "PIK3CA amplification (somatic)",
+      "rationale": "Newly identified focal somatic amplification on tumor NGS. No approved PI3K/AKT/mTOR-directed therapy in HGSC, but the Altera report lists early-phase PI3K-pathway trials. Low-priority, investigational-only axis; surfaced for completeness."
+    },
+    {
+      "feature": "MAP2K4 deletion (somatic)",
+      "rationale": "Newly identified focal somatic deletion on tumor NGS, with early-phase trials listed on the Altera report. No approved matched therapy; low-priority, investigational-only axis surfaced for completeness."
+    },
+    {
       "feature": "IL-12 / tumor immune microenvironment (on-study GEN-1/IMNN-01)",
-      "rationale": "Active investigational IL-12 immunogene therapy (GEN-1 / IMNN-01); relevant to immunotherapy-combination reasoning and to the board's on-study context, though not a standard-of-care target."
+      "rationale": "Active investigational IL-12 immunogene therapy (GEN-1 / IMNN-01); relevant to immunotherapy-combination reasoning and to the board's on-study context, though not a standard-of-care target. Note MSS / TMB-low status argues against single-agent checkpoint inhibition."
     }
   ],
   "geography_band": "US-South",

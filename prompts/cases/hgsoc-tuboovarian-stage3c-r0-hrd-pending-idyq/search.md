@@ -2,19 +2,31 @@
 
 Patient: 70-79F, high-grade serous tubo-ovarian/primary-peritoneal carcinoma, FIGO IIIc,
 ECOG 1, R0 after neoadjuvant carbo/paclitaxel/bevacizumab + GEN-1 (IMNN-01) and interval
-debulking. Germline BRCA wild-type. Tumor HRD / somatic BRCA / genomic-instability score
-PENDING. ER-positive (~80%, weak-moderate) / PR-negative. HER2 IHC 1+ (negative). FOLR1
-below threshold (negative). Signatera MRD cleared to Not Detected.
+debulking. Germline BRCA wild-type. Tumor NGS (Altera) RESULTED: somatic BRCA wild-type
+(BRCA-proficient), genomically unstable but QUALITATIVE only — no validated GIS/HRD score.
+MSS, TMB-low (1 mut/Mb). ER-positive (~80%, weak-moderate) / PR-negative. HER2 IHC 1+
+(negative). FOLR1 below threshold (negative). Signatera MRD cleared to Not Detected.
+New low-priority investigational axes: PIK3CA amplification, MAP2K4 deletion.
 
 ## Targetable features (drive every keep decision)
-1. HRD / homologous-recombination status (somatic BRCA + GIS) — gates PARP-inhibitor maintenance. RANK 1.
+1. HRD / homologous-recombination status — RESOLVED: BRCA wild-type + genomically unstable.
+   PARP rationale is now genomic-instability-based, NOT BRCA-gated. niraparib (PRIMA,
+   all-comers) is the cleanest fit; rucaparib (ATHENA-MONO ITT) also all-comers. olaparib
+   monotherapy (SOLO1) FORECLOSED (BRCA WT). olaparib+bevacizumab (PAOLA-1) contingent on a
+   validated GIS (MyChoice >=42) Altera does not provide. RANK 1.
 2. VEGF / angiogenesis — already on bevacizumab; anti-angiogenic maintenance axis.
-3. ER expression (ER+/PR-) — endocrine option (aromatase inhibition).
-4. IL-12 / tumor immune microenvironment — on-study GEN-1/IMNN-01; immunotherapy-combo context.
+3. ER expression (ER+/PR-) — endocrine option (aromatase inhibition / letrozole).
+4. IL-12 / tumor immune microenvironment — on-study GEN-1/IMNN-001; immunotherapy-combo context.
+5. PIK3CA amplification (somatic) — low-priority investigational; PI3K-pathway early-phase
+   baskets (NCT05216432, NCT05683418).
+6. MAP2K4 deletion (somatic) — low-priority investigational; early-phase baskets
+   (NCT03340506, NCT03454035, NCT05557045, NCT05691504).
 
 ## Out of scope (mechanism-scope rule)
+- olaparib monotherapy / SOLO1 — BRCA-mutation-gated, patient is BRCA WT. DROP as fit (none).
 - Trastuzumab-deruxtecan / HER2-directed ADCs — HER2 IHC 1+, below threshold. DROP as fit.
 - Mirvetuximab soravtansine / FRalpha ADCs — FOLR1 below PS2+ threshold. DROP as fit.
+- MSI-high / TMB-high tumor-agnostic checkpoint baskets — MSS + TMB-low. DROP as fit.
 - Standard-of-care drugs whose mechanism does NOT target a listed feature.
 
 ## Search axes
@@ -28,7 +40,8 @@ below threshold (negative). Signatera MRD cleared to Not Detected.
     - Anti-angiogenic maintenance: bevacizumab; cediranib (+olaparib); pazopanib.
     - PARP+anti-angiogenic combos: olaparib+bevacizumab (PAOLA-1), olaparib+cediranib.
     - Endocrine: letrozole, anastrozole, fulvestrant, tamoxifen in ovarian.
-    - IL-12: GEN-1 / IMNN-01 (Imunon), other IL-12 immunotherapy ovarian.
+    - IL-12: GEN-1 / IMNN-001 (Imunon), other IL-12 immunotherapy ovarian.
+    - PIK3CA / MAP2K4: biomarker-matched solid-tumor early-phase baskets (investigational, low-priority).
 
 ## Sources
 1. ClinicalTrials.gov v2 API (primary discovery).
@@ -40,4 +53,6 @@ below threshold (negative). Signatera MRD cleared to Not Detected.
 - Vetoes: additional peripheral neuropathy; severe myelosuppression / febrile neutropenia.
 - Modality: oral / low-infusion-burden preferred; caution with thrombotic / bleeding risk
   (high VTE history, prior IVC filter) — flag bevacizumab/anti-angiogenic VTE+bleeding.
-- HRD result PENDING -> PARP-maintenance fit capped at "partial" pending the gating assay.
+- HRD RESOLVED -> niraparib/rucaparib (all-comers) score "strong"; PAOLA-1 (olaparib+bev)
+  capped at "partial" pending a validated GIS; olaparib monotherapy/SOLO1 scored "none" (BRCA WT).
+- PIK3CA / MAP2K4 basket rows scored "weak" (investigational, low-priority, biomarker-match only).
