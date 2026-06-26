@@ -58,17 +58,22 @@ met.
 Tag each row with `tumor_type_relationship` so the board and PI can
 distinguish enrollable-now from informational-only.
 
-**HER2-low handling.** When `targetable_features[]` includes HER2-low (IHC 1+
-or 2+/ISH−; see the HER2 classification in the intake contract), search
-HER2-low–specific eligibility, not only HER2-amplified / IHC 3+ baskets. Many
-HER2 antibody-drug-conjugate trials and pan-tumor baskets now enroll or
-stratify by HER2-low, so capture each trial's HER2 cutoff in the
-eligibility field. Honor the actionability split: in breast cancer HER2-low is
+**Low-positive IHC expression handling.** When `targetable_features[]` includes
+a low-positive IHC marker (a `1+` result, e.g. HER2-low; see the IHC
+expression-tier rule in the intake contract), search the marker's
+low-expression–specific eligibility, not only the high-expression / amplified
+baskets. Many antibody-drug-conjugate trials and pan-tumor baskets now enroll or
+stratify by low / intermediate expression, so capture each trial's IHC cutoff in
+the eligibility field. Honor the actionability split: a drug may be on-label at a
+higher tier or in another tumor type while a `1+` result in this patient is below
+that bar, so the low-expression rows are investigational
+(`basket_or_biomarker_match` or `cross_tumor_extrapolation`), never standard
+care. Do not drop an expression-directed trial just because the patient is
+low-positive rather than high. *Worked example (HER2):* search HER2-low baskets
+and HER2 ADC trials, not only HER2 IHC 3+ / amplified ones; in breast HER2-low is
 on-label for trastuzumab deruxtecan, but in non-breast solid tumors the
 tumor-agnostic T-DXd approval is IHC 3+ only, so HER2-low non-breast rows are
-investigational (`basket_or_biomarker_match` or `cross_tumor_extrapolation`),
-never standard care. Do not drop a HER2-directed trial just because the patient
-is HER2-low rather than 3+.
+investigational.
 
 When the patient's primary tumor type is rare and the targetable-feature
 search returns few hits, **broaden by mechanism / target / pathway — not by

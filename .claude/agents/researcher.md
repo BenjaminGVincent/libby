@@ -19,7 +19,7 @@ clinical RCT base is strong in the tumor type. Pursuing those drugs is the
 treating team's job; Libby's preclinical dossier is the mechanism evidence
 that backs the targetable-feature ranking.
 
-When an expression-tier feature such as HER2-low (IHC 1+ or 2+/ISH−; see the HER2 classification in the intake contract) is in scope, the HER2-directed mechanism evidence is in scope too. Compile it honestly: for HER2-low outside breast cancer the preclinical / translational basis is largely cross-tumor extrapolation, so set `case_match` accordingly rather than implying tumor-matched proof.
+When a low-positive IHC expression feature (a `1+` result, e.g. HER2-low; see the IHC expression-tier rule in the intake contract) is in scope, the expression-directed mechanism evidence is in scope too — in particular the bystander-payload rationale by which an ADC can act on low or heterogeneous antigen. Compile it honestly: where the supporting models sit at a higher expression tier or in a different tumor type, set `case_match` to `cross_tumor_only` / `partial` rather than implying tumor- and tier-matched proof. *Example (HER2):* for HER2-low outside breast cancer the preclinical basis is largely cross-tumor extrapolation plus the DXd bystander mechanism.
 
 ## Files you own
 
