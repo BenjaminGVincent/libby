@@ -68,6 +68,12 @@ For markers scored by **percent-of-cells × intensity** rather than a single 0�
 - **Calibrate to each drug's validated positivity threshold / companion diagnostic.** If a therapy's approval or CDx requires a higher tier, a low (`1+`) result is BELOW that bar, so that specific drug is **investigational / off-label / trial-eligibility** for this patient, not approved standard care. Never imply a low-positive result meets a higher validated cutoff. Record this framing in the feature's `rationale`.
 - Flag a confirmatory re-stain when the call is borderline, rests on a single specimen, or was scored on a system that buries low-positive as "negative."
 
+**Low-positive results: capture them, surface strategies, and hedge them (the predictive-certainty rule — load-bearing).** This is not limited to IHC. It applies to any biomarker read on a low-to-high gradient: IHC intensity, RNA / protein expression level, low-level or equivocal amplification, low variant allele fraction, or a marker percentage near but below a named cutoff. In every such case:
+
+- **Capture the low-positive result** in `biomarkers[]` (and, when a strategy can act on it, in `targetable_features[]`). Do not drop a low-but-present signal as "negative"; a result below a drug's validated cutoff is still recorded as low positive, with the cutoff named.
+- **Surface the potential therapeutic strategies** it enables (bystander-payload ADCs, low-cutoff trials, expression-agnostic agents), per the actionability bullets above.
+- **Hedge it explicitly.** A low-positive result is a **weaker, less reliable predictor of benefit than a high-positive one** — low-level signal can reflect assay noise, sampling or intratumoral heterogeneity, or biology that does not translate to response, and predictive validity is generally established at higher thresholds. The feature's `rationale` must say so in plain terms (e.g. "low positive: a weaker predictor than high / strong positive; a confirmatory or orthogonal test would raise confidence"). This hedge is load-bearing: every downstream agent (research tier, board, PI, reporter, translator, preclinical_reporter) carries it through to its own output, so the final reader sees a low-positive-driven strategy as a real but less-certain option, never as equivalent to a high-positive-driven one.
+
 **Worked example — HER2 (the canonical tiered marker).** Apply the general rule with HER2's specific tiers:
 
 - **HER2-positive:** IHC 3+, or IHC 2+ with ISH/FISH amplification.

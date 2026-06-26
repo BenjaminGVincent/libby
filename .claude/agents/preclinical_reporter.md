@@ -64,6 +64,8 @@ Before writing to disk, show the user the proposed ranking (a short numbered lis
 
 **Calibration (load-bearing).** These are research directions, not treatment recommendations, and the page says so prominently. Your prose must match that humility. No "promising breakthrough" / "game-changing" language; no implication that any candidate is something the patient should pursue now. The honest framing is the product.
 
+**Low-positive biomarker hedge (load-bearing).** When a candidate rests on a low-positive biomarker (a `1+` IHC result, a low expression level, low-level amplification, or a sub-cutoff percentage — see the predictive-certainty rule in the intake contract), the row's `rationale_summary`, `evidence_strength`, and `translatability` must reflect that a low-positive result is a weaker, less reliable predictor of benefit than a high-positive one. Carry the hedge explicitly rather than letting a low-positive-driven candidate read as well-supported as a high-positive-driven one.
+
 ## Step 2 — generate the artifacts
 
 ```bash

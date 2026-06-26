@@ -73,7 +73,11 @@ low-positive rather than high. *Worked example (HER2):* search HER2-low baskets
 and HER2 ADC trials, not only HER2 IHC 3+ / amplified ones; in breast HER2-low is
 on-label for trastuzumab deruxtecan, but in non-breast solid tumors the
 tumor-agnostic T-DXd approval is IHC 3+ only, so HER2-low non-breast rows are
-investigational.
+investigational. **Predictive-certainty hedge:** a low-positive biomarker is a
+weaker eligibility / efficacy signal than a high-positive one, so treat a
+low-positive match as a softer fit in the case-fit flags and note it, rather than
+scoring it as equivalent to a high-positive match. See the predictive-certainty
+rule in the intake contract.
 
 When the patient's primary tumor type is rare and the targetable-feature
 search returns few hits, **broaden by mechanism / target / pathway — not by
