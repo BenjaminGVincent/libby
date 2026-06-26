@@ -6,13 +6,14 @@
 
 ## Case output
 
-- [Target validation paths (PDF)](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-target-validation.pdf?v=61c049cb) — diagnostic + biomarker workup that hardens the targetable-feature call
-- [Recommendations table (HTML)](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-recommendations.html?v=3917f376) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
+- [Target validation paths (PDF)](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-target-validation.pdf?v=b33b4c84) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Recommendations table (HTML)](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-recommendations.html?v=d857c125) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
+- [Preclinical recommendations (HTML)](preclinical_recommendations.md?v=b1de2539) — forward-looking horizon scan of earlier-than-clinical candidate drugs, compounds, and strategies, sortable in-browser
 - [Access guide (HTML)](accessibility.md?v=12395bb7) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, sortable in-browser
-- [Access guide (offline HTML)](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-accessibility.html?v=c3dcc498) — same access-guide content as the in-browser page, packaged as a self-contained HTML that opens offline
+- [Access guide (offline HTML)](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-accessibility.html?v=df63a4bf) — same access-guide content as the in-browser page, packaged as a self-contained HTML that opens offline
 - [Master manuscripts table (HTML)](manuscripts.md?v=bce4ca77) — every paper considered — n, effect, variance, toxicities, sortable in-browser
-- [Master manuscripts table (offline HTML)](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-manuscripts.html?v=e517da71) — same manuscripts inventory as the in-browser page, packaged as a self-contained HTML that opens offline
-- [Patient/caregiver PDF](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-plain-language.pdf?v=1e8a24e7) — plain-language summary
+- [Master manuscripts table (offline HTML)](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-manuscripts.html?v=2270a898) — same manuscripts inventory as the in-browser page, packaged as a self-contained HTML that opens offline
+- [Patient/caregiver PDF](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-plain-language.pdf?v=721d329c) — plain-language summary
 
 <!-- libby:case-output:end -->
 
@@ -407,19 +408,22 @@ Authored 2026-06-24 by the PI agent on the re-run after tumor NGS resulted. Supp
 ### HTML
 
 - [Target validation paths](target_validation.md?v=118795d2) — per-feature biomarker-workup table with providers and references, sortable in-browser
-- [Recommendations table](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-recommendations.html?v=3917f376) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
+- [Recommendations table](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-recommendations.html?v=d857c125) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
+- [Preclinical recommendations](preclinical_recommendations.md?v=b1de2539) — forward-looking horizon scan of earlier-than-clinical candidate drugs, compounds, and strategies, in a sortable in-browser table
+- [Preclinical recommendations (offline)](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-preclinical.html?v=cd547dda) — same preclinical horizon scan packaged as a self-contained HTML that opens offline
 - [Access guide](accessibility.md?v=12395bb7) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table
-- [Access guide (offline)](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-accessibility.html?v=c3dcc498) — same access-guide content packaged as a self-contained HTML that opens offline
+- [Access guide (offline)](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-accessibility.html?v=df63a4bf) — same access-guide content packaged as a self-contained HTML that opens offline
 - [Master manuscripts table](manuscripts.md?v=bce4ca77) — every paper considered — n, effect, variance, toxicities, in a sortable in-browser table
-- [Master manuscripts table (offline)](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-manuscripts.html?v=e517da71) — same manuscripts inventory packaged as a self-contained HTML that opens offline
+- [Master manuscripts table (offline)](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-manuscripts.html?v=2270a898) — same manuscripts inventory packaged as a self-contained HTML that opens offline
 
 ### PDF
 
-- [Target validation paths](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-target-validation.pdf?v=61c049cb) — diagnostic + biomarker workup that hardens the targetable-feature call
-- [Recommendations table](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-recommendations.pdf?v=4f2a28c6) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
-- [Access guide](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-accessibility.pdf?v=db1c9edf) — trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF
-- [Master manuscripts table](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-manuscripts.pdf?v=9dfcf7f9) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
-- [Patient/caregiver PDF](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-plain-language.pdf?v=1e8a24e7) — plain-language summary
+- [Target validation paths](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-target-validation.pdf?v=b33b4c84) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Recommendations table](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-recommendations.pdf?v=13bca9ee) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
+- [Preclinical recommendations](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-preclinical.pdf?v=4b23d790) — forward-looking horizon scan of earlier-than-clinical candidates, one deep section per candidate, in a print-friendly PDF
+- [Access guide](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-accessibility.pdf?v=9441d758) — trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF
+- [Master manuscripts table](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-manuscripts.pdf?v=385f20a5) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
+- [Patient/caregiver PDF](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-plain-language.pdf?v=721d329c) — plain-language summary
 
 <!-- libby:downloads:end -->
 
