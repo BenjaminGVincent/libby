@@ -21,10 +21,16 @@ New low-priority investigational axes: PIK3CA amplification, MAP2K4 deletion.
    baskets (NCT05216432, NCT05683418).
 6. MAP2K4 deletion (somatic) — low-priority investigational; early-phase baskets
    (NCT03340506, NCT03454035, NCT05557045, NCT05691504).
+7. HER2-low expression (IHC 1+) — investigational [ADDED 2026-06 re-run]. Reclassified from
+   out-of-scope to in-scope under Libby HER2-low handling guidance: IHC 1+ is HER2-low, an
+   actionable expression tier. Tumor-agnostic T-DXd approval is IHC 3+ ONLY, so any HER2 ADC
+   in this HER2-low ovarian tumor is INVESTIGATIONAL, supported by cross-tumor extrapolation
+   from breast HER2-low evidence (DESTINY-Breast04 enrolled IHC 1+). Capture each trial's HER2
+   cutoff. T-DXd basket (DESTINY-PanTumor02) gates at IHC 2+/3+, so patient does NOT meet it;
+   disitamab vedotin solid-tumor baskets (NCT06003231, NCT06660511) accept IHC 1+ -> actionable.
 
 ## Out of scope (mechanism-scope rule)
 - olaparib monotherapy / SOLO1 — BRCA-mutation-gated, patient is BRCA WT. DROP as fit (none).
-- Trastuzumab-deruxtecan / HER2-directed ADCs — HER2 IHC 1+, below threshold. DROP as fit.
 - Mirvetuximab soravtansine / FRalpha ADCs — FOLR1 below PS2+ threshold. DROP as fit.
 - MSI-high / TMB-high tumor-agnostic checkpoint baskets — MSS + TMB-low. DROP as fit.
 - Standard-of-care drugs whose mechanism does NOT target a listed feature.

@@ -28,8 +28,26 @@ Agents whose mechanism targets a listed targetable feature. Drives per-drug regi
 |---|---|---|---|---|---|
 | GEN-1 | IMNN-001, EGEN-001, IL-12 plasmid/PEG-PEI-cholesterol lipopolymer | other (IL-12 immunogene) | Imunon | phase_3 | phase_3_active (OVATION 2 done; Phase 3 NCT06915025 recruiting) |
 
+## Feature 7 — HER2-low expression (IHC 1+) — HER2-directed ADCs [ADDED 2026-06 re-run]
+HER2-low (IHC 1+) reclassified in-scope. Tumor-agnostic T-DXd approval is IHC 3+ ONLY; all
+HER2 ADCs are investigational in this HER2-low ovarian tumor (cross-tumor extrapolation from
+breast HER2-low). Capture HER2 cutoff per trial.
+| INN / generic | Aliases (codes) | Modality | Sponsor | Latest phase | Development status |
+|---|---|---|---|---|---|
+| trastuzumab deruxtecan | T-DXd, DS-8201, DS-8201a, fam-trastuzumab deruxtecan-nxki, Enhertu | ADC (topo-I payload) | Daiichi Sankyo / AstraZeneca | approved | approved (agnostic IHC 3+; HER2-low breast) |
+| disitamab vedotin | RC48, RC48-ADC, hertuzumab vedotin, Aidixi | ADC (MMAE payload) | RemeGen / Pfizer (ex-Seagen) | phase_2/3 | phase_2_active (China-approved gastric/urothelial; US investigational) |
+| trastuzumab duocarmazine | SYD985, vic-trastuzumab duocarmazine | ADC (duocarmazine payload) | Byondis | phase_3 | discontinued (FDA CRL on HER2+ breast filing) |
+
+Key HER2 trials mapped:
+- DESTINY-PanTumor02 (Meric-Bernstam 2024, NCT04482309, PMID 37870536) — T-DXd HER2 IHC 2+/3+ pan-tumor basket incl ovarian cohort (ORR 45%). Patient IHC 1+ below cutoff.
+- DESTINY-Breast04 (Modi 2022, NCT03734029, PMID 35665782) — T-DXd HER2-low (IHC 1+ or 2+/ISH-) breast. The IHC 1+ cross-tumor anchor.
+- DESTINY-Breast06 (Bardia 2024, NCT04494425, PMID 39282896) — T-DXd HR+ HER2-low/ultralow breast; ER+ analog.
+- DAISY (Mosele 2023, NCT04132960, PMID 37488289) — T-DXd across HER2 range incl IHC 0 cohort.
+- Disitamab vedotin solid-tumor basket (NCT06003231) — HER2 IHC 1+/2+/3+ incl ovarian; accepts IHC 1+ -> actionable.
+- Disitamab vedotin + anlotinib platinum-resistant ovarian (NCT06660511) — HER2 IHC 1+/2+/3+; tumor-type match, anlotinib VTE caution.
+- SYD985 phase 1 (Banerji 2019, NCT02277717, PMID 31257177) — HER2-low/expressing breast/gastric/urothelial/endometrial; program shelved post-CRL.
+
 ## Out-of-scope (foreclosed on current specimen) — NOT entered as fits
-- trastuzumab-deruxtecan (HER2 ADC) — HER2 IHC 1+, below threshold.
 - mirvetuximab soravtansine (FRalpha ADC) — FOLR1 below PS2+ threshold.
 
 ## Key trials / publications mapped

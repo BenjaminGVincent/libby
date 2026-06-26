@@ -4,99 +4,88 @@
 
 ## What this page is
 
-Your tumor was surgically removed with no visible cancer left behind, and you have finished the heavy part of treatment. The question now is maintenance: a gentler, longer-running therapy meant to keep the cancer from coming back, or to push back the day it does. Libby looked at the maintenance options that fit your tumor's specific features and your stated preferences, then ranked them and wrote down the tradeoffs in plain terms.
-
-A word on the numbers below. When a trial reports how long people went before their cancer grew again, that is "progression-free survival." It is not the same as living longer overall, and where the two differ we say so. Median means the halfway point: half the people did better than that number, half did worse. None of these are promises about you. They are what happened, on average, to groups of patients in studies.
+This is the patient and caregiver version of a longer report Libby put together about maintenance treatment options for your ovarian cancer. Libby is a research tool. It read your pathology and genetic results, looked at the published studies behind each option, weighed those against what you said matters to you, and ranked the choices. What follows is each option in plain language: what it is, what the studies actually showed, the main side effects, how well it fits your wishes, and where the evidence is shaky or still being argued over. None of it replaces a conversation with your own oncologist. Think of it as something to bring to that conversation.
 
 ## What we know about your cancer
 
-You have high-grade serous ovarian cancer, stage IIIc, which is an advanced stage but one where maintenance treatment is standard and worthwhile. Surgery removed all the cancer the surgeon could see (an "R0" result). Your blood tumor marker (CA-125) has come down into the normal range, and a sensitive blood test that looks for traces of tumor DNA now reads "not detected." Both are good signs.
+You have high-grade serous carcinoma, the most common type of ovarian cancer, which started in the ovary, fallopian tube, or the lining of the abdomen. It was stage IIIc, meaning it had spread within the abdomen before treatment. You have already been through a lot: chemotherapy (carboplatin and paclitaxel) together with bevacizumab and an investigational immune therapy called GEN-1, and then surgery that removed all of the cancer the surgeon could see. After all of that, your CA-125 blood marker came back to normal, and a blood test that looks for traces of tumor DNA now shows none. Those are both good signs.
 
-The tumor gene test is back, and it answers the question that was holding up the maintenance decision. You do not carry a BRCA mutation, in your tumor or inherited. That matters because the very best-studied PARP-inhibitor maintenance is reserved for BRCA-mutated cancers, and that door is closed for you. But the test also shows your tumor is "genomically unstable," meaning its chromosomes are scrambled and broken in a way that, in trials, predicts PARP-inhibitor pills can still help even without a BRCA mutation. So PARP inhibitors are still on the table, just a different group of them.
-
-Two other findings rule some things out rather than in. The tumor is "microsatellite stable" with a low number of mutations, which together mean the immunotherapy drugs that work for mutation-heavy cancers would not be expected to help here. Your tumor is also estrogen-receptor positive, which opens the door to a gentle hormone-blocking pill as a low-key option.
+Your tumor's molecular testing tells us a few things that shape the options below. The cancer does not carry a BRCA mutation, in either your inherited DNA or the tumor itself. It does look genetically scrambled (what doctors call genomically unstable), but the test that measured this gave a yes-or-no answer, not the precise score that some treatments require. The cancer is ER-positive, meaning it carries the estrogen receptor on about 80% of its cells, though it is PR-negative (the related progesterone receptor is absent), which usually means a weaker response to hormone-blocking pills. A separate marker called HER2 came back "low" (a score of 1+ on a 0-to-3 scale). That HER2 result opens up a couple of options worth talking through, but it also comes with some important fine print, which I get to below.
 
 ## What you told us matters most
 
-You leaned toward chasing effectiveness, while staying mindful of side effects given your age. Two side effects you specifically did not want: more nerve damage in your hands or feet, and severe drops in your blood counts, the kind that bring infections or bleeding. You preferred a pill, or something with a light infusion schedule, over heavy IV regimens. And because of your history of blood clots and a filter placed in a vein, you asked for caution with any drug that raises clotting or bleeding risk. You were also open to trials.
-
-## One lab test worth getting first
-
-There is a single lab test still worth ordering, and it does one specific job. It is a validated "genomic instability score" run on tumor tissue you already have stored, with results back in about two to three weeks. It does not involve a new biopsy and has no side effects.
-
-Here is what it decides. Most of the options below are available to you no matter what this test shows. But one option, the strongest on paper, is a combination of a PARP pill (olaparib) added to the bevacizumab you are already on. That combination is only approved for tumors that score above a set threshold on this exact test. Your tumor looks unstable on the gene report, but that report does not measure the score this approval requires. If the score comes back high enough, that combination opens up. If it comes back below the line, it is off the table, and the other options below are unaffected.
+You lean toward going after the cancer hard, while staying realistic about side effects at your age. Two side effects are firm lines you do not want to cross: new or worsening nerve damage (numbness, tingling, or pain in the hands and feet, called neuropathy), and severe drops in your blood counts (the kind that bring infections or need transfusions). You would rather take a pill or have a low-burden infusion than be hooked up often. Because you have a history of blood clots and an IVC filter, anything that raises the risk of clots or bleeding needs to be handled carefully. And you are open to clinical trials.
 
 ## The options
 
-### Option 1 — Rucaparib (a PARP-inhibitor pill)
+These are listed in the order Libby ranked them. The ranking reflects a mix of how strong the evidence is, how well each option fits your wishes, and how the side effects line up against the lines you drew. It is not a verdict. Your oncologist may reasonably weigh things differently.
 
-Rucaparib is an oral pill you would take twice a day for up to two years. In a large, well-run trial where neither patients nor doctors knew who got the drug, people on rucaparib went a median of about 20 months before their cancer grew again, versus about 9 months on placebo, so roughly double. The benefit held up in patients without a BRCA mutation, which is why it fits your tumor without needing any further test.
+### Option 1 — Rucaparib (a maintenance pill)
 
-The main cost is your blood counts. About 29 in every 100 people had a severe drop in red blood cells (anemia), and a smaller share had drops in infection-fighting white cells. This lands directly on one of the side effects you said you wanted to avoid, so it is not something to wave away. About 12 in 100 stopped the drug because of side effects. There can also be a temporary rise in liver blood tests, which here would start from a normal baseline. The honest ceiling: this is a "delays recurrence" benefit. The trial has not shown that it makes people live longer overall.
+Rucaparib is a PARP inhibitor, a pill taken twice a day to help keep the cancer from coming back after chemotherapy. In its main study, half the women taking rucaparib went about 20 months before the cancer started growing again, compared with about 9 months for women taking a placebo. That benefit held up even in women whose tumors, like yours, did not have a BRCA mutation, which is what makes this a fair fit for your cancer. One honest limit: the study showed it delays the cancer's return; it has not yet been shown to help people live longer overall.
 
-This is the lead option to discuss first. It is oral, which matches what you wanted, and the evidence is strong and has been confirmed in more than one study. The catch is the blood-count risk, which would mean regular blood tests, a plan worked out with a blood specialist before starting, and dose adjustments along the way.
+The main catch is your blood counts. About 3 in 10 women on rucaparib had a serious drop in red blood cells (anemia), and smaller numbers had drops in their infection-fighting white cells. That sits right on top of one of the side effects you said you want to avoid. It does not cause nerve damage, and there was no signal of the dangerous fever-with-low-white-counts problem. It is a pill, which matches what you wanted. If you went this route, it would mean regular blood tests and a clear plan for managing low counts.
 
-### Option 2 — Niraparib (a PARP-inhibitor pill)
+### Option 2 — Niraparib (a maintenance pill)
 
-**This option carries caveats.** Niraparib is the close cousin of rucaparib: another once-daily PARP pill, with its own large, blinded trial. There, people went a median of about 14 months before the cancer grew again, versus about 8 months on placebo. It enrolled patients regardless of BRCA status, so it fits your tumor directly. There is also a small lab-dish signal suggesting niraparib may concentrate inside tumors like yours better than some other PARP drugs, though that is early, indirect evidence rather than proof.
+**This option carries caveats. Here is the tradeoff to weigh.**
 
-The tradeoff to weigh sits squarely on your blood counts, and it is why this carries caveats. Severe drops in platelets (the cells that clot your blood) happened in about 29 of every 100 people, and severe anemia in about 31 of 100. Your white-cell count is already on the low side, which leaves less reserve. This is exactly the side effect you flagged. None of that means the drug is wrong for your tumor; the open question is whether it can be delivered safely at your starting counts. The usual answer is to set the starting dose by your weight and platelet count and to have a written plan for managing low counts. With that plan documented, the concern shifts from "should we" to "how." Like rucaparib, the proven benefit is delaying recurrence, not lengthening overall survival, and the bigger effect seen in BRCA-style tumors does not apply to you.
+Niraparib is another PARP inhibitor pill, a very close cousin to rucaparib. In its main study, half the women taking it went about 14 months before the cancer grew again, versus about 8 months on placebo, and like rucaparib it works without needing a BRCA mutation. There is also some early laboratory evidence that niraparib may get into tumors like yours especially well, which is a point in its favor, though that evidence is thin. As with rucaparib, the benefit shown so far is about delaying the cancer's return, not yet about living longer.
 
-### Option 3 — Bevacizumab (continue what you are on)
+Here is the caveat. Niraparib hits your blood counts harder than rucaparib does. Roughly 3 in 10 women had a serious drop in platelets (the cells that help blood clot), and about the same fraction had serious anemia. Your white count is already on the low side to begin with, which leaves less cushion. This is exactly the kind of side effect you said you did not want. It is not a reason to rule the drug out, but it is the reason it sits behind rucaparib here rather than ahead of it. If you and your team wanted to use niraparib, the sensible path is a starting dose tailored to your weight and platelet count, with a written plan for managing low counts. With that plan in hand, the concern is largely manageable.
 
-Bevacizumab is an IV drug, given every three weeks, that you are already taking. It starves the tumor's blood supply. In its anchor trial, people on it went a median of about 14 months before progression versus about 10 months without, a real but smaller gap than the PARP options. Be clear-eyed about the ceiling: across the whole study population it did not help people live longer overall, only delayed progression.
+### Option 3 — Bevacizumab (continuing the IV drug you are already on)
 
-What makes it attractive is what it does not do. It does not cause the nerve damage or the severe blood-count drops you wanted to avoid. Its main side effects are high blood pressure (in about 23 of 100, manageable with standard medicine) and, rarely, a tear in the bowel wall (under 3 in 100). The one real tension with your history is that this class can raise clotting and bleeding risk, which matters given your prior clots and vein filter. That is handled by monitoring blood pressure and watching for bleeding rather than by stopping, and you are already tolerating it. The open question is whether to keep bevacizumab on its own or add a PARP pill once the lab score is back.
+Bevacizumab is an antibody given by IV that works by cutting off the blood supply tumors use to grow. You are already on it, so continuing it adds nothing new to learn. In its main study, half the women went about 14 months before the cancer grew again, versus about 10 months without it. Like the PARP pills, it has been shown to delay the cancer's return but not to help people live longer overall, so it is a smaller bet on that front than the numbers above.
 
-### Option 4 — GEN-1 (the trial drug you are already on)
+What makes it stand out is that it clears both of your firm lines. It does not cause nerve damage, and it does not crater your blood counts. The side effects to watch are high blood pressure, which showed up in about 1 in 4 women and is usually controllable with medication, and rare but serious problems like a tear in the bowel wall (around 1 in 40). Because it can raise the risk of clots and bleeding, your clot history and IVC filter mean this needs careful monitoring rather than being a dealbreaker. The open question is whether continuing bevacizumab on its own is enough, or whether a PARP pill should be added once the genetic score below is sorted out.
 
-GEN-1 is the investigational immune-gene therapy you received as part of a trial, delivered into the abdominal cavity rather than as a pill or a standard IV. It works by stirring up the immune system right where the cancer lives, which sidesteps the reason ordinary immunotherapy would not help your tumor. In its trial, people went a median of about 15 months before progression versus about 12 months, and there was an early signal that it might help people live longer, though that survival number is not yet mature and the data have not been fully published.
+### Option 4 — GEN-1 / IMNN-001 (the investigational immune therapy you have been receiving)
 
-The honest weaknesses: the effectiveness numbers come from a company summary and a conference abstract, not a peer-reviewed paper with a full safety table, so the side-effect picture is incomplete. The delivery route is into the belly, not the pill you preferred. And access outside the trial is not guaranteed. The case for staying on it is continuity: this is part of the regimen that got you to a clean surgery, and you said you were open to trials.
+GEN-1 is an experimental treatment that puts a gene for an immune-signaling protein (IL-12) directly into the abdomen to rally the immune system against the cancer. You have already been on it, and it was part of the treatment that got you to a clean surgery. In its study, half the women went about 15 months before the cancer grew again, versus about 12 months without it, and there was an encouraging early hint that it might help women live longer. I want to be straight with you about the limits of that hint: it comes from a company summary and a conference presentation, not yet a full published paper, so the precise size of the benefit is not nailed down, and there is no published table of the serious side effects.
+
+It is given into the abdomen rather than as a pill, so it does not fit your preference for low-burden treatment. It has not triggered any of the side effects on your do-not-want list so far. Because it is still investigational, staying on it depends on the trial structure. The argument for it is mostly continuity: it is the regimen that helped get you here, and you are open to trials.
 
 ### Option 5 — Letrozole (a hormone-blocking pill)
 
-Letrozole is a once-daily pill that lowers estrogen, which can slow estrogen-driven tumors like yours. It is the gentlest option here: no nerve damage, no blood-count drops, none of the side effects you flagged. Its main downsides are joint aches and gradual bone thinning with long use. It suits your preference for a simple oral drug.
+Letrozole is a once-a-day pill that lowers estrogen, used because your cancer is ER-positive. It is the gentlest option on this list. It does not touch your blood counts and does not cause nerve damage, which fits your wishes and your age well.
 
-The reason it sits low on the list is the evidence. It rests on a single look-back study of past patients rather than a proper trial, so the numbers (about 60% of patients free of recurrence at two years versus about 39%) should be read as a hint, not a result you can bank on. Your tumor is estrogen-positive but progesterone-negative, and that combination usually means a more modest hormone response than the estrogen reading alone would suggest. Think of letrozole as a low-burden fallback or add-on, especially if you would rather not take a drug that hits your blood counts.
+The honest weakness is the evidence. The main support comes from a single look-back study, where researchers reviewed records of women who had already been treated rather than running a head-to-head trial. In that study, about 60 out of 100 women on letrozole were free of recurrence at two years, compared with about 39 out of 100 who were not on it. That looks good, but a look-back study cannot prove the pill caused the difference the way a proper trial could, so treat that number with caution. Your cancer being PR-negative also points to a more modest effect than the estrogen reading alone might suggest. This is best thought of as a low-side-effect fallback, useful later or if you want to stay off the harsher options, rather than as your strongest shot at holding the cancer back.
 
-### Option 6 — Olaparib plus bevacizumab (the combination, only if the lab score qualifies)
+### Option 6 — Olaparib plus bevacizumab (a pill-plus-IV combination, only if a genetic test qualifies you)
 
-**This option is only available if the genomic-instability test comes back high enough.** If it comes back below the threshold, this combination is off the table, and Libby's options on this page are scoped to your tumor's specific features, so there are no other ranked choices that depend on that result. Standard later-line care for ovarian cancer still exists, but it is outside this page's scope and is a conversation for your oncologist.
+**This option carries caveats, and it depends on a test result you do not have yet.** Olaparib is a PARP inhibitor pill; combined with the bevacizumab you are already on, it was the most powerful option on this whole list in its study, but only for a specific group of women. In that group, half went about 37 months before the cancer grew again, versus about 18 months. The important fine print: that big number came from a subgroup of the study, not everyone in it, and to qualify you need a specific validated test showing your tumor is genetically unstable above a set cutoff. The simpler yes-or-no instability result you already have does not meet that bar. If that test comes back below the cutoff, this combination is off the table, and the other options on this page still stand. If it comes back above the cutoff, this jumps up the list as a serious contender.
 
-**This option also carries caveats.** On paper it is the strongest of the lot: in the qualifying group, people went a median of about 37 months before progression versus about 18 months, roughly double again, and you are already taking the bevacizumab half. But two real concerns hold it back. First, that big number comes from a slice of the trial population, not the whole trial; across everyone the gap was smaller (about 22 versus 17 months). Second, the side effects stack. Combining the two drugs pushed severe side effects up toward 57 of every 100 people, with high blood pressure in about 19 of 100 (which presses on your clotting history) and anemia in about 17 of 100 (the blood-count drop you flagged). So this one trips two of your concerns at once. It only becomes worth serious discussion if the lab score qualifies you and a clotting-and-blood-pressure plan is in place; if so, it could move from last choice toward first.
+The other caveat is side effects, and this one is real. The combination is the hardest-hitting option here: more than half the women had a serious side effect of some kind, including high blood pressure in about 1 in 5 and serious anemia in roughly 1 in 6. For you specifically, it stacks two of your concerns at once: the blood-count drops you want to avoid, and the clot-and-bleeding caution from your history. If this option becomes available, it would need a concrete plan for your blood pressure, your clotting risk, and your blood counts before it makes sense.
+
+### Option 7 — Trastuzumab deruxtecan, a HER2 drug (investigational for your cancer)
+
+**This option carries caveats, and it is not approved for your type of cancer at your HER2 level.** This is where the HER2 result comes in. Trastuzumab deruxtecan is a drug that homes in on the HER2 marker and delivers chemotherapy straight to the cancer cell. It is approved and works well in breast cancer, including breast cancers with low HER2 like yours. The problem is that the approval for ovarian and other cancers requires a high HER2 level (a score of 3+), and your tumor is HER2-low (1+). That means there is no direct evidence in ovarian cancer at your HER2 level. Everything we can say about it for you is borrowed from breast cancer studies plus the way the drug is built to work. In those breast studies, women whose cancers had hormone receptors like yours went roughly twice as long before the cancer grew again. Whether that carries over to ovarian cancer at a low HER2 level is genuinely unknown.
+
+A few things to be clear about. Because it is not approved for this situation, it is not standard care: getting it would mean a clinical trial or a special off-label request your oncologist would have to arrange. It is given by IV, not as a pill. And it carries a serious lung side effect, inflammation of the lung tissue, that affected about 1 in 9 women in the breast studies and has in rare cases been fatal, so anyone on it needs regular chest scans. On the plus side, it does not cause nerve damage or the severe fever-with-low-counts problem, so it does not cross either of your firm lines. One more thing worth knowing: your HER2-low result rests on a single tissue sample, and the lab that did the genetic testing could not check HER2 at all because there was not enough material. The 1+ versus 0 call is the hardest one for pathologists to agree on. So a sensible first step before taking any HER2 drug seriously would be to re-stain the tumor and confirm the HER2 result. This is most realistic as something to keep in your back pocket for later, if the cancer returns, rather than a treatment to start now.
+
+### Option 8 — Disitamab vedotin, another HER2 drug
+
+**This option was considered but not recommended.** It is on the page because Libby shows you what was weighed and set aside, not only what was kept. Disitamab vedotin is another HER2-targeting drug, and on paper it could technically accept a tumor like yours. It was set aside for one clear reason: its two most common serious side effects are exactly the two you said you do not want. It causes nerve damage in a large share of people (more than half had some, and close to 1 in 5 had it severely), and it drops the infection-fighting blood counts. Both of those land squarely on your do-not-want list, with no good way around them. There is also almost no evidence for it in ovarian cancer, and the practical ways to get it have dried up. For all those reasons it is not recommended for you.
 
 ## Questions to ask your oncologist
 
-- The genomic-instability score is the one test that decides whether the olaparib-plus-bevacizumab combination is open to me. Can we order it now, and what is our plan for each result, high or low?
-- If we start a PARP pill (rucaparib or niraparib), how often will you check my blood counts, and at what point would you lower the dose or pause? Can a blood specialist help set my starting dose given my counts are already on the low side?
-- Between rucaparib and niraparib, is there a reason to prefer one for my tumor, and do they differ in how hard they hit blood counts?
-- I am already on bevacizumab. Is the plan to continue it alone, or to add a PARP pill once the lab score is back? What would tip that decision?
-- Given my history of blood clots and my vein filter, how will we watch for clotting or bleeding on bevacizumab, and would adding olaparib make that risk meaningfully worse?
-- If the genomic-instability score comes back below the cutoff, what changes, and what would you recommend then?
-- Letrozole is the gentlest option but the weakest evidence. Is it worth considering on its own, or only as an add-on or later fallback?
-- For GEN-1, what does staying on the trial look like from here, and what happens to my access if the trial ends?
+- If we start a PARP pill like rucaparib or niraparib, what exactly is the plan for watching and managing my blood counts, and at what point would we lower the dose or stop?
+- Given my low starting white count and my age, is one PARP pill safer for me than the other, and would a tailored starting dose change that?
+- I am already on bevacizumab. Should I simply continue it on its own, or is it worth adding a PARP pill once my genetic test comes back?
+- Can we order the validated genomic-instability score, and if it comes back below the cutoff, what does that mean for my choices? (The other options on this page would still apply.)
+- Is it worth re-staining my tumor to confirm the HER2 result before we treat that finding as real, given that it rests on a single sample?
+- The HER2 drug is not approved for my cancer. Is there a clinical trial I could join, and how would the lung side effect be watched if I ever tried it?
+- Given my clot history and IVC filter, how would we manage the bleeding and clotting risk with bevacizumab, or with the olaparib-plus-bevacizumab combination?
+- If I want to keep side effects as low as possible, is letrozole a reasonable option now, or is it better saved for later?
 
 ## Sources
 
-**PMIDs**
+The recommendations above draw on the following published studies and clinical-trial records.
 
-- [20033066](https://pubmed.ncbi.nlm.nih.gov/20033066)
-- [22204724](https://pubmed.ncbi.nlm.nih.gov/22204724)
-- [22204725](https://pubmed.ncbi.nlm.nih.gov/22204725)
-- [29157627](https://pubmed.ncbi.nlm.nih.gov/29157627)
-- [30647846](https://pubmed.ncbi.nlm.nih.gov/30647846)
-- [31562799](https://pubmed.ncbi.nlm.nih.gov/31562799)
-- [31851799](https://pubmed.ncbi.nlm.nih.gov/31851799)
-- [35658487](https://pubmed.ncbi.nlm.nih.gov/35658487)
+**PMIDs:** 20033066, 22204724, 22204725, 29157627, 30647846, 31562799, 31851799, 35658487, 35665782, 37870536, 37988648, 39282896
 
-**NCTs**
-
-- [NCT00262847](https://clinicaltrials.gov/study/NCT00262847)
-- [NCT02477644](https://clinicaltrials.gov/study/NCT02477644)
-- [NCT02655016](https://clinicaltrials.gov/study/NCT02655016)
-- [NCT03393884](https://clinicaltrials.gov/study/NCT03393884)
-- [NCT03522246](https://clinicaltrials.gov/study/NCT03522246)
+**Clinical trials:** NCT00262847, NCT02477644, NCT02655016, NCT03393884, NCT03522246, NCT06003231
 
 !!! warning "Decision support, not medical advice"
     This is decision-support information, not a treatment plan. Talk to

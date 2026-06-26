@@ -69,10 +69,10 @@
     },
     {
       "name": "HER2",
-      "value": "negative (IHC 1+)",
-      "method": "IHC (gastric/DESTINY-PanTumor scoring; Altera IHC not evaluable due to insufficient material)",
+      "value": "HER2-low (IHC 1+)",
+      "method": "IHC, scored 1+ (ASCO-CAP gastric / DESTINY-PanTumor scoring labels 1+ as 'negative', but case-level status is HER2-low); Altera platform could not evaluate HER2 due to insufficient material",
       "confirmation_status": "confirmed",
-      "decision_resolution": "Does not meet HER2-expression threshold for trastuzumab-deruxtecan; forecloses that HER2-directed ADC on current specimen."
+      "decision_resolution": "HER2-low (IHC 1+). Below the IHC 3+ threshold of the tumor-agnostic trastuzumab-deruxtecan approval, so HER2-directed ADCs are investigational in this ovarian tumor (cross-tumor extrapolation from breast HER2-low). A confirmatory HER2 re-stain would harden the call given the single-specimen basis."
     },
     {
       "name": "FOLR1 (folate receptor alpha)",
@@ -139,6 +139,10 @@
     {
       "feature": "IL-12 / tumor immune microenvironment (on-study GEN-1/IMNN-01)",
       "rationale": "Active investigational IL-12 immunogene therapy (GEN-1 / IMNN-01); relevant to immunotherapy-combination reasoning and to the board's on-study context, though not a standard-of-care target. Note MSS / TMB-low status argues against single-agent checkpoint inhibition."
+    },
+    {
+      "feature": "HER2-low expression (IHC 1+) — investigational",
+      "rationale": "Tumor HER2 IHC is 1+ in an ER-positive, PR-negative HGSOC. Under Libby's HER2 status classification this is HER2-low, not HER2-negative, even though the surgical-pathology report scored 1+ as 'negative' using ASCO-CAP gastric / DESTINY-PanTumor scoring. HER2-low is an actionable expression tier: in breast cancer it is on-label for trastuzumab deruxtecan (DESTINY-Breast04; HER2-ultralow per DESTINY-Breast06). In ovarian and other non-breast solid tumors the tumor-agnostic T-DXd approval requires IHC 3+, so for this HER2-low 1+ tumor any HER2-directed ADC is investigational / trial-eligibility, supported by cross-tumor extrapolation from the breast HER2-low evidence. Specimen caveat: the Altera platform could not evaluate HER2 (insufficient material), so the 1+ rests on a single surgical-path IHC and a confirmatory re-stain would harden the call."
     }
   ],
   "geography_band": "US-South",

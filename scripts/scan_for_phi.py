@@ -167,7 +167,11 @@ ONCOLOGY_ACRONYM_ALLOWLIST = frozenset({
     # Common physiology / lab labels
     "TSH", "BP", "ECG", "EKG", "CBC", "BMP", "CMP", "EDTA",
     # Genes / proteins that appear as ALL-CAPS in agent prose
-    "VEGFA", "VEGFR", "EPO", "HIF", "IGF",
+    "VEGFA", "VEGFR", "VEGF", "EPO", "HIF", "IGF",
+    # Administration-route shorthand (intravenous / intraperitoneal)
+    "IV", "IP",
+    # Genomic-instability-score shorthand (PAOLA-1 HRD companion-diagnostic)
+    "GIS",
     # TNBC + breast vocabulary (BRCA / HRD / PARP-i adjacent)
     "BRCA", "PALB", "ATM", "ATR", "CHK", "BARD", "RAD", "BRIP", "CHEK",
     "CDK", "CDK12", "CCNE", "CCNE1", "PTEN", "PIK3CA", "TP53", "AKT",
