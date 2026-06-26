@@ -8,6 +8,8 @@
 
 - [Target validation paths](target_validation.md) — per-feature biomarker-workup table with providers and references, sortable in-browser
 - [Recommendations table](gist-sdh-multifocal-resected-m1-k4n8-recommendations.html) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
+- [Preclinical recommendations](preclinical_recommendations.md) — forward-looking horizon scan of earlier-than-clinical candidate drugs, compounds, and strategies, in a sortable in-browser table
+- [Preclinical recommendations (offline)](gist-sdh-multifocal-resected-m1-k4n8-preclinical.html) — same preclinical horizon scan packaged as a self-contained HTML that opens offline
 - [Access guide](accessibility.md) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table
 - [Access guide (offline)](gist-sdh-multifocal-resected-m1-k4n8-accessibility.html) — same access-guide content packaged as a self-contained HTML that opens offline
 - [Master manuscripts table](manuscripts.md) — every paper considered — n, effect, variance, toxicities, in a sortable in-browser table
@@ -17,6 +19,7 @@
 
 - [Target validation paths](gist-sdh-multifocal-resected-m1-k4n8-target-validation.pdf) — diagnostic + biomarker workup that hardens the targetable-feature call
 - [Recommendations table](gist-sdh-multifocal-resected-m1-k4n8-recommendations.pdf) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
+- [Preclinical recommendations](gist-sdh-multifocal-resected-m1-k4n8-preclinical.pdf) — forward-looking horizon scan of earlier-than-clinical candidates, one deep section per candidate, in a print-friendly PDF
 - [Access guide](gist-sdh-multifocal-resected-m1-k4n8-accessibility.pdf) — trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF
 - [Master manuscripts table](gist-sdh-multifocal-resected-m1-k4n8-manuscripts.pdf) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
 - [Patient/caregiver PDF](gist-sdh-multifocal-resected-m1-k4n8-plain-language.pdf) — plain-language summary
@@ -66,7 +69,7 @@ _Biomarker-conditional recs are flagged inline. The ranking is scoped to drugs t
 !!! note "Reading the columns"
     **Toxicity burden** is patient-level G3+ AE severity (Low / Moderate / High) summarized from trial publications. **Counter-productive MoA** is the mechanism-level risk that the intervention's own pathway could blunt the therapeutic goal — distinct from patient AEs. The board's endorse / dissent / veto state appears as pills under each intervention; full per-persona rationale lives on the [board page](board.md).
 
-[Back to case](index.md) · [Trials](trials.md) · [Evidence](evidence.md) · [Manuscripts](manuscripts.md) · [Target validation](target_validation.md) · [Board](board.md) · [Plain language](plain_language.md)
+[Back to case](index.md) · [Trials](trials.md) · [Evidence](evidence.md) · [Manuscripts](manuscripts.md) · [Target validation](target_validation.md) · [Board](board.md) · [Plain language](plain_language.md) · [Preclinical](preclinical_recommendations.md)
 
 !!! danger disclaimer "Decision support, not medical advice"
     Libby is experimental. Recommendations on this page have not been

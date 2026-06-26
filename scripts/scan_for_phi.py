@@ -104,6 +104,10 @@ ONCOLOGY_ACRONYM_ALLOWLIST = frozenset({
     "PRAME", "TCR", "TCER", "HLA",
     # Geographies (regions / countries, frequent in access guides)
     "US", "EU", "UK", "AU", "JP",
+    # Roman numerals adjacent to gene / complex / grade tokens in mechanism prose
+    # (e.g. "complex II, SDH-deficient", "grade III"); only suppresses a pair when
+    # the other token is also allowlisted, so a real surname pair still flags.
+    "II", "III", "VI", "VII",
     # Drug-class / mechanism modality acronyms
     "BITE", "CAR", "ADC", "DXD", "PBD", "TOP",
     # Pipeline-program tokens that surface in narrative

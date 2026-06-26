@@ -6,13 +6,14 @@
 
 ## Case output
 
-- [Target validation paths (PDF)](gist-sdh-multifocal-resected-m1-k4n8-target-validation.pdf?v=63839ab3) — diagnostic + biomarker workup that hardens the targetable-feature call
-- [Recommendations table (HTML)](gist-sdh-multifocal-resected-m1-k4n8-recommendations.html?v=9a3de93f) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
+- [Target validation paths (PDF)](gist-sdh-multifocal-resected-m1-k4n8-target-validation.pdf?v=161ca509) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Recommendations table (HTML)](gist-sdh-multifocal-resected-m1-k4n8-recommendations.html?v=019e36df) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
+- [Preclinical recommendations (HTML)](preclinical_recommendations.md?v=755fab5a) — forward-looking horizon scan of earlier-than-clinical candidate drugs, compounds, and strategies, sortable in-browser
 - [Access guide (HTML)](accessibility.md?v=888bc293) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, sortable in-browser
-- [Access guide (offline HTML)](gist-sdh-multifocal-resected-m1-k4n8-accessibility.html?v=41613b04) — same access-guide content as the in-browser page, packaged as a self-contained HTML that opens offline
+- [Access guide (offline HTML)](gist-sdh-multifocal-resected-m1-k4n8-accessibility.html?v=4790bbb0) — same access-guide content as the in-browser page, packaged as a self-contained HTML that opens offline
 - [Master manuscripts table (HTML)](manuscripts.md?v=803f8425) — every paper considered — n, effect, variance, toxicities, sortable in-browser
-- [Master manuscripts table (offline HTML)](gist-sdh-multifocal-resected-m1-k4n8-manuscripts.html?v=61202013) — same manuscripts inventory as the in-browser page, packaged as a self-contained HTML that opens offline
-- [Patient/caregiver PDF](gist-sdh-multifocal-resected-m1-k4n8-plain-language.pdf?v=2c7b7bfa) — plain-language summary
+- [Master manuscripts table (offline HTML)](gist-sdh-multifocal-resected-m1-k4n8-manuscripts.html?v=07f726fd) — same manuscripts inventory as the in-browser page, packaged as a self-contained HTML that opens offline
+- [Patient/caregiver PDF](gist-sdh-multifocal-resected-m1-k4n8-plain-language.pdf?v=cdfcacd3) — plain-language summary
 
 <!-- libby:case-output:end -->
 ## Research question
@@ -746,19 +747,22 @@ Authored 2026-05 by the Libby PI agent synthesizing `target_validation.jsonl` (1
 ### HTML
 
 - [Target validation paths](target_validation.md?v=575ea9eb) — per-feature biomarker-workup table with providers and references, sortable in-browser
-- [Recommendations table](gist-sdh-multifocal-resected-m1-k4n8-recommendations.html?v=9a3de93f) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
+- [Recommendations table](gist-sdh-multifocal-resected-m1-k4n8-recommendations.html?v=019e36df) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
+- [Preclinical recommendations](preclinical_recommendations.md?v=755fab5a) — forward-looking horizon scan of earlier-than-clinical candidate drugs, compounds, and strategies, in a sortable in-browser table
+- [Preclinical recommendations (offline)](gist-sdh-multifocal-resected-m1-k4n8-preclinical.html?v=03e08c6b) — same preclinical horizon scan packaged as a self-contained HTML that opens offline
 - [Access guide](accessibility.md?v=888bc293) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table
-- [Access guide (offline)](gist-sdh-multifocal-resected-m1-k4n8-accessibility.html?v=41613b04) — same access-guide content packaged as a self-contained HTML that opens offline
+- [Access guide (offline)](gist-sdh-multifocal-resected-m1-k4n8-accessibility.html?v=4790bbb0) — same access-guide content packaged as a self-contained HTML that opens offline
 - [Master manuscripts table](manuscripts.md?v=803f8425) — every paper considered — n, effect, variance, toxicities, in a sortable in-browser table
-- [Master manuscripts table (offline)](gist-sdh-multifocal-resected-m1-k4n8-manuscripts.html?v=61202013) — same manuscripts inventory packaged as a self-contained HTML that opens offline
+- [Master manuscripts table (offline)](gist-sdh-multifocal-resected-m1-k4n8-manuscripts.html?v=07f726fd) — same manuscripts inventory packaged as a self-contained HTML that opens offline
 
 ### PDF
 
-- [Target validation paths](gist-sdh-multifocal-resected-m1-k4n8-target-validation.pdf?v=63839ab3) — diagnostic + biomarker workup that hardens the targetable-feature call
-- [Recommendations table](gist-sdh-multifocal-resected-m1-k4n8-recommendations.pdf?v=970d680e) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
-- [Access guide](gist-sdh-multifocal-resected-m1-k4n8-accessibility.pdf?v=bf2d882c) — trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF
-- [Master manuscripts table](gist-sdh-multifocal-resected-m1-k4n8-manuscripts.pdf?v=c91b1c5d) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
-- [Patient/caregiver PDF](gist-sdh-multifocal-resected-m1-k4n8-plain-language.pdf?v=2c7b7bfa) — plain-language summary
+- [Target validation paths](gist-sdh-multifocal-resected-m1-k4n8-target-validation.pdf?v=161ca509) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Recommendations table](gist-sdh-multifocal-resected-m1-k4n8-recommendations.pdf?v=983fdaaa) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
+- [Preclinical recommendations](gist-sdh-multifocal-resected-m1-k4n8-preclinical.pdf?v=717cb09f) — forward-looking horizon scan of earlier-than-clinical candidates, one deep section per candidate, in a print-friendly PDF
+- [Access guide](gist-sdh-multifocal-resected-m1-k4n8-accessibility.pdf?v=c7428d16) — trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF
+- [Master manuscripts table](gist-sdh-multifocal-resected-m1-k4n8-manuscripts.pdf?v=990272aa) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
+- [Patient/caregiver PDF](gist-sdh-multifocal-resected-m1-k4n8-plain-language.pdf?v=cdfcacd3) — plain-language summary
 
 <!-- libby:downloads:end -->
 
