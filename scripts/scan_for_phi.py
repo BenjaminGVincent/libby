@@ -146,7 +146,7 @@ ONCOLOGY_ACRONYM_ALLOWLIST = frozenset({
     # Outcome / endpoint shorthand
     "RFS", "DFS", "EFS", "TTR", "TTP", "TTNT", "HR", "MSS",
     # Journal abbreviations occasionally cited in agent prose
-    "CCR",
+    "CCR", "STTT",
     # SoC PDAC chemo regimen names that read as ALL-CAPS
     "FOLFIRINOX", "NALIRIFOX", "FOLFOX", "FOLFIRI",
     # Misc pancreatic-trial-family + adjacent acronyms
@@ -159,8 +159,10 @@ ONCOLOGY_ACRONYM_ALLOWLIST = frozenset({
     # Trial families surfaced by GIST + dSDH-GIST literature
     "LITESPARK", "PEMIGIST", "GRID", "INVICTUS", "SOLAR", "INVAGO",
     "MEGALIT", "INAVO",
-    # Drug shorthands / brand names that appear as ALL-CAPS
-    "TMZ", "TEMODAR", "TEMODAL",
+    # Adjuvant-GIST RCT acronyms (Z9001 / SSGXVIII / PERSIST-5)
+    "SSGXVIII", "PERSIST",
+    # Drug shorthands / brand names + tool compounds that appear as ALL-CAPS
+    "TMZ", "TEMODAR", "TEMODAL", "BPTES",
     # Institutions + cancer centers
     "DFCI", "UCLA", "UCSD", "UCSF", "MSK", "MSKCC", "MDACC", "BWH",
     "MGH", "FHCC", "FCCC",

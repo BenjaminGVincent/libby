@@ -45,6 +45,24 @@
 | Rare-tumor natural-history & biospecimen registry | NCT03739827 | NCI | Includes SDH-deficient GIST on eligibility list; biospecimen + longitudinal follow-up |
 | DART rare-tumor immunotherapy (S1609) | NCT02834013 | SWOG | GIST cohort closed 2018; not enrollable |
 
+## Refresh additions (June 2026 re-run)
+
+New agents/trials found on the full re-run and added to trials.jsonl:
+
+| Drug / regimen | Aliases | Modality | Sponsor | Trial | Status |
+|---|---|---|---|---|---|
+| Olverembatinib | HQP1351, GZD824, D824 | small_molecule (multi-kinase TKI; NMPA-approved CML T315I) | Ascentage Pharma | NCT06640361 (Phase 3, SDH-deficient GIST) | recruiting |
+| Vandetanib | ZD6474, Caprelsa | small_molecule (VEGFR2/RET/EGFR TKI) | NCI | NCT02015065 (Phase 2, dSDH-GIST; Glod/Widemann 2019, PMID 31439578) | completed (negative; legacy) |
+| Telaglenastat | CB-839 | small_molecule (glutaminase inhibitor) | Calithera | NCT02071862 (Phase 1, dedicated SDH-deficient GIST cohort) | completed; program discontinued |
+| Rogaratinib | BAY 1163877 | small_molecule (pan-FGFR inhibitor) | NCI | NCT04595747 (Phase 2, FGFR-altered sarcoma + dSDH-GIST regardless of FGFR) | active not recruiting |
+| RLY-2608 | RLY-2608 | small_molecule (mutant-selective PI3Kα) | Relay Therapeutics | NCT05216432 (Phase 1, PIK3CA-mutant solid tumors; accepts ctDNA calls + sponsor-approved non-canonical variants) | recruiting |
+| Multinational GIST registry | — | other (observational) | Universität Duisburg-Essen | NCT07273045 | not yet recruiting |
+| wt-GIST oncopanel registry | — | other (observational) | NHRI Taiwan | NCT04821895 | active not recruiting |
+
+Dropped on this re-run (out of mechanism scope): INBRX-109 (DR5 agonist, no SDH/MAP2K1/PIK3CA link); NCT06962254 imatinib+trametinib (eligibility is KRAS-mutated, not MAP2K1); PAS-004 (MEK inhibitor but eligibility requires RAS/NF1/RAF, not MAP2K1, and the MEK route is already covered by cobimetinib and trametinib rows that do accept MAP2K1).
+
+Recruitment-status re-verification (June 2026): all 11 previously-captured trial NCTs were re-checked against the ClinicalTrials.gov v2 API; none had changed status since the prior file.
+
 ## Coverage gap notes
 
 - The NCI "Pediatric and Wild-Type GIST Clinic" referenced in target_validation does not appear to have a single registry NCT — it operates as a referral clinic under the NCI Pediatric Oncology Branch and feeds patients into NCT03739827 and into the negative-result NCT01560260 linsitinib trial. Treat the clinic as a referral pathway rather than a trial row.

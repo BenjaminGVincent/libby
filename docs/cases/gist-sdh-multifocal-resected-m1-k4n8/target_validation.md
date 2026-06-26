@@ -2,7 +2,7 @@
 
 # Target validation — `gist-sdh-multifocal-resected-m1-k4n8`
 
-_12 validation rows across 5 feature(s) — 8 essential, 3 gating an intervention. Sorted within each feature by priority, then by decision relevance._
+_13 validation rows across 5 feature(s) — 8 essential, 3 gating an intervention. Sorted within each feature by priority, then by decision relevance._
 
 _Essential / gates-intervention rows are the diagnostic prerequisites that must resolve before any feature-targeting therapy can be chosen. Rows tagged `confirms_target_call` harden the target call without gating a specific therapy; resistance / co-mutation / microenvironment rows refine sequencing and risk._
 
@@ -68,7 +68,16 @@ _Essential / gates-intervention rows are the diagnostic prerequisites that must 
 
 ## KIT/PDGFRA wild-type, KIT-WT GIST molecular subtype
 
-_No validation rows for this feature._
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Priority</th><th>Test</th><th>Type</th><th>Modality</th><th>Tissue</th><th>Turnaround</th><th>Decision gated</th><th>Rationale</th><th>Providers</th><th>References</th></tr></thead>
+      <tbody>
+    <tr><td><span class="fit-badge fit-weak">medium</span></td><td><strong>NF1 assessment: somatic NF1 sequencing + del/dup on the comprehensive tumor panel; germline NF1 covered by the row-1 hereditary PGL/PCC panel</strong></td><td>subtyping</td><td>NGS_panel</td><td>shared FFPE block with the PIK3CA/MAP2K1 panel for somatic NF1; germline NF1 is included in the row-1 PGL blood/saliva panel</td><td>2-4 weeks</td><td>WT-GIST subtype classification (SDH-deficient vs NF1-related) if SDH deficiency is not confirmed; informs the imatinib-sparing rationale.</td><td>NF1-related GIST is the other KIT/PDGFRA-WT subtype that keeps SDHB staining intact, so it sits squarely in the differential raised by this case&#x27;s retained-SDHB result. It is RAS/MAPK-driven through neurofibromin loss (pmid:16096406, pmid:27011036), which would also give the ctDNA MAP2K1 P124S call a coherent mechanistic home. Assessing NF1 matters mainly if the SDHA workup fails to confirm SDH deficiency; skipping it in that scenario would leave the WT-GIST subtype call, and the imatinib-sparing rationale, on weaker footing.</td><td><div><strong>Foundation Medicine</strong> · <em>FoundationOne CDx</em> <span class="fit-badge fit-strong">preferred</span><br><small><a href="https://www.foundationmedicine.com/test/foundationone-cdx">test info</a> · 150 Second Street, Cambridge, MA 02141 · 1-888-988-3639</small><br><small><em>Reports somatic NF1 including rearrangements; runs off the same archival block as the PIK3CA/MAP2K1/SDHA E350fs confirmation, so it adds no separate specimen draw.</em></small></div><br><div><strong>Caris Life Sciences</strong> · <em>MI Cancer Seek</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.carislifesciences.com/">test info</a> · 4610 South 44th Place, Suite 100, Phoenix, AZ 85040 · 1-888-979-8669</small></div><br><div><strong>Labcorp Genetics (formerly Invitae)</strong> · <em>Invitae Neurofibromatosis / germline NF1 analysis</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.invitae.com/">test info</a> · 1400 16th Street, San Francisco, CA 94103 · 1-800-436-3037</small><br><small><em>Germline NF1 is already captured by the row-1 PGL/PCC panel; order a standalone NF1 germline test only if that panel did not include full NF1 del/dup.</em></small></div><br><div><strong>NeoGenomics Laboratories</strong> · <em>NeoTYPE Comprehensive Tumor Profile</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://neogenomics.com/">test info</a> · 9490 NeoGenomics Way, Fort Myers, FL 33912 · 1-866-776-5907</small></div><br><div><strong>Tempus Labs</strong> · <em>Tempus xT</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.tempus.com/oncology/genomic-profiling/">test info</a> · 600 W Chicago Avenue, Chicago, IL 60654 · 1-800-739-4137</small><br><small><em>DNA+RNA assay; RNA read improves detection of NF1 structural events.</em></small></div></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/16096406">PMID&nbsp;16096406</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/27011036">PMID&nbsp;27011036</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 [Back to case](index.md) · [Trials](trials.md) · [Evidence](evidence.md) · [Manuscripts](manuscripts.md) · [Board](board.md) · [Recommendations](recommendations.md)
 

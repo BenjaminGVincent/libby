@@ -2,9 +2,9 @@
 
 # Evidence — `gist-sdh-multifocal-resected-m1-k4n8`
 
-_This page shows 13 included clinical + 14 included pre-clinical rows, grouped by intervention. 9 clinical and 8 pre-clinical papers were reviewed and excluded — see the [master manuscripts table](manuscripts.md) for the full audit trail._
+_This page shows 16 included clinical + 18 included pre-clinical rows, grouped by intervention. 12 clinical and 9 pre-clinical papers were reviewed and excluded — see the [master manuscripts table](manuscripts.md) for the full audit trail._
 
-## Clinical evidence (13 rows)
+## Clinical evidence (16 rows)
 
 Per-manuscript detail grouped by intervention. Each row is one published clinical-evidence finding. Columns mirror the per-publication decision-support layout used in companion projects (`io-shieldbreak`'s Pharmacodynamic-Results table).
 
@@ -151,7 +151,49 @@ Per-manuscript detail grouped by intervention. Each row is one published clinica
   </div>
 </div>
 
-## Pre-clinical evidence (14 rows)
+### olverembatinib (HQP1351, multikinase inhibitor)  
+<small><code>intervention_id: olverembatinib</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Qiu HB/Xu RH (2025)<br><em>Signal Transduction and Targeted Therapy</em></td><td class="num">26</td><td>26 SDH-deficient GIST patients within a 66-patient phase 1b that also enrolled other solid tumors; median age 30 (range 13-56), 26.9% male, heavily pretreated with 65.4% having had at least two prior TKIs and 42.3% three.</td><td>2L+</td><td>open-label phase 1b dose-escalation plus biomarker-defined expansion cohort</td><td>—</td><td>olverembatinib 40 mg PO every other day (RP2D; escalation range 20-50 mg QOD), continuous 28-day cycles</td><td>ORR</td><td>objective response rate (RECIST 1.1)</td><td class="num">23.10 %</td><td class="num">9.00–43.70</td><td class="num">—</td><td>mPFS 25.7 mo (95% CI 12.9-NR)</td><td>All 66 patients had treatment-emergent AEs, mostly grade 1-2; grade 3 or higher treatment-related AEs occurred in 13.6% and no patient stopped for toxicity. The common events were leukocytosis, anemia, transaminase rise, hyperuricemia, and pyrexia.</td><td><span class="rob-badge rob-med">ROBINS-I:Moderate</span></td><td>2b</td><td><span class="fit-badge fit-strong">strong</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/41184234">41184234</a></td><td><a href="https://doi.org/10.1038/s41392-025-02456-9">DOI</a></td><td>Largest prospective trial to date in this subtype and the signal behind the phase 3 NCT06640361. The safety table is reported across the full 66-patient phase 1b population rather than the 26-patient GIST cohort alone.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### vandetanib (VEGFR/RET/EGFR TKI)  
+<small><code>intervention_id: vandetanib</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Glod J/Widemann BC (2019)<br><em>Clinical Cancer Research</em></td><td class="num">9</td><td>Nine patients (7 female, 2 male), median age 24 (range 11-52); all KIT/PDGFRA wild-type and SDH-deficient.</td><td>2L+</td><td>NCI open-label single-arm phase 2</td><td>—</td><td>vandetanib 300 mg PO daily in adults (100 mg/m^2 in patients under 18); reduced to 200 mg in two adults for toxicity</td><td>ORR</td><td>objective response rate (RECIST 1.1)</td><td class="num">0.00 %</td><td class="num">—</td><td class="num">—</td><td>mPFS 5.1 mo (95% CI 1.8-24.1)</td><td>Three of five adults started at 300 mg developed treatment-limiting toxicity (grade 3 hypertension, grade 2 seizure, grade 3 pneumonitis); the two children tolerated the drug without treatment-limiting events. No QT prolongation was seen.</td><td><span class="rob-badge rob-med">ROBINS-I:Moderate</span></td><td>2b</td><td><span class="fit-badge fit-strong">strong</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/31439578">31439578</a></td><td><a href="https://doi.org/10.1158/1078-0432.CCR-19-0986">DOI</a></td><td>Negative phase 2 in exactly this molecular subtype: no objective responses across nine patients, with a 5.1-month median PFS and two prolonged stable diseases that plausibly reflect dSDH-GIST indolence rather than drug effect. Closes single-agent VEGFR/RET-directed TKI therapy as a strategy here. Grade-resolved safety from PMC6825553 Table 2; CT.gov NCT02015065 also posts an all-cause AE table.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### rogaratinib (BAY 1163877, pan-FGFR1-4 inhibitor)  
+<small><code>intervention_id: rogaratinib</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Merriam P/George S (2026)<br><em>Nature Medicine</em></td><td class="num">24</td><td>24 SDH-deficient GIST patients enrolled regardless of FGFR alteration status, on the rationale of FGFR/FGF upregulation in the subtype.</td><td>2L+</td><td>NCI multicenter open-label two-stage single-arm phase 2 (dSDH-GIST cohort)</td><td>—</td><td>rogaratinib 800 mg PO twice daily, continuous 28-day cycles</td><td>ORR</td><td>objective response rate (RECIST 1.1)</td><td class="num">41.70 %</td><td class="num">—</td><td class="num">—</td><td>mPFS 31.0 mo (95% CI 20.2-NR)</td><td>Toxicities were manageable and dominated by the pan-FGFR class effects, chiefly hyperphosphatemia that tracked FGFR1 target engagement, plus fatigue and diarrhea. Per-term rates and grades are not in the abstract.</td><td><span class="rob-badge rob-med">ROBINS-I:Moderate</span></td><td>2b</td><td><span class="fit-badge fit-strong">strong</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/42191879">42191879</a></td><td><a href="https://doi.org/10.1038/s41591-026-04376-9">DOI</a></td><td>Positive readout and the highest objective response rate yet reported for any systemic agent in dSDH-GIST, well above imatinib&#x27;s roughly 2%. Per-term safety rates were not retrievable: the abstract names only hyperphosphatemia, fatigue, and diarrhea, the CT.gov NCT04595747 results tab has no posted AE data, and the Nature Medicine full text is paywalled.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+## Pre-clinical evidence (18 rows)
 
 ### belzutifan (HIF-2alpha inhibitor) / SDH-loss pseudohypoxia biology  
 <small><code>intervention_id: belzutifan</code> · 4 row(s)</small>
@@ -201,7 +243,7 @@ Per-manuscript detail grouped by intervention. Each row is one published clinica
 </div>
 
 ### olaparib + temozolomide / PARP-trapping in SDH-loss models — Sulkowski 2018 Nat Genet  
-<small><code>intervention_id: olaparib-tmz</code> · 2 row(s)</small>
+<small><code>intervention_id: olaparib-temozolomide</code> · 2 row(s)</small>
 
 <div class="trial-table-wrap">
   <div class="trial-scroll">
@@ -266,6 +308,49 @@ Per-manuscript detail grouped by intervention. Each row is one published clinica
       <thead><tr><th>Report</th><th>Model</th><th>n</th><th>Control</th><th>Dose</th><th>Mechanism</th><th>Key finding</th><th>Effect (qual)</th><th>Translatability</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Caveats</th></tr></thead>
       <tbody>
         <tr><td>Belalcazar/Trent (2013)<br><em>Molecular Diagnosis &amp; Therapy</em></td><td>GIST cell lines (including KIT-mutant GIST-T1 and GIST-882) with IGF1R siRNA knockdown and IGF1R small-molecule inhibitors; expression-survey work on KIT/PDGFRA-WT human GIST tissue</td><td>n=3 biological replicates per cell-line condition</td><td>scrambled siRNA; DMSO vehicle</td><td>in vitro IGF1R inhibitor dose-response over 48-72 hours</td><td>SDH loss stabilizes HIF-1alpha, which transcriptionally upregulates IGF1R. The receptor is overexpressed at mRNA and protein level in dSDH-GIST without gene-level amplification, and the active receptor signals through PI3K-AKT and MAPK to drive proliferation independent of KIT.</td><td>IGF1R knockdown and IGF1R small-molecule inhibition induced apoptosis in GIST cell lines and arrested proliferation. The dSDH-GIST tissue surveys confirmed IGF1R overexpression in 70-90% of cases. This was the preclinical engine for the SARC phase II linsitinib trial — which then returned 0/20 objective responses in the clinic.</td><td>moderate</td><td>low</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/23046288">23046288</a></td><td><a href="https://doi.org/10.1007/s40291-013-0024-9">DOI</a></td><td>Preclinical work was done largely on KIT-mutant GIST cell lines because dSDH-GIST cell lines did not exist at the time. The IGF1R-overexpression observation is real, but the clinical linsitinib trial (von Mehren 2020, PMID 31792037) is a hard negative for ORR. Kept as audit-trail evidence so the board sees the IGF1R hypothesis was tested and clinically discredited.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### olverembatinib (HQP1351) — translational MOA in SDH-deficient GIST  
+<small><code>intervention_id: olverembatinib</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>Model</th><th>n</th><th>Control</th><th>Dose</th><th>Mechanism</th><th>Key finding</th><th>Effect (qual)</th><th>Translatability</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Caveats</th></tr></thead>
+      <tbody>
+        <tr><td>Qiu/Xu (2025)<br><em>Signal Transduction and Targeted Therapy</em></td><td>SDHB-knockdown PC12 pheochromocytoma cells, GIST-T1 SDHB-knockout line, SDH-mutant lines (Jurkat, OS-RC-2, RKO), and freshly isolated primary SDH-deficient GIST cells from 4 patients</td><td>4 primary patient cultures; n=3 biological replicates per in-vitro condition</td><td>SDHB-overexpression rescue; parental SDH-intact cells; imatinib / sunitinib / regorafenib as TKI comparators</td><td>olverembatinib in-vitro dose-response; lipid-depleted (3% FBS) vs replete (10% FBS) medium</td><td>Because this tumor is KIT/PDGFRA wild-type, the canonical KIT-blockade logic does not carry the drug. The translational work pins activity instead on two non-KIT routes: inhibition of VEGFR2/FGFR1/PDGFR/SRC, and suppression of a HIF-driven lipid-scavenging program. Olverembatinib lowers HIF-1alpha/HIF-2alpha and the fatty-acid transporter CD36, which cuts off the exogenous-lipid uptake that SDH-deficient cells lean on for energy.</td><td>In SDHB-knockdown and patient-derived SDH-deficient GIST cells, olverembatinib cut lipid-droplet accumulation, dropped triglyceride and diglyceride pools, and triggered caspase-3 and PARP cleavage, whereas imatinib, sunitinib, and regorafenib did not reproduce the CD36 effect. Re-expressing SDHB restored CD36 and lipid uptake and made the cells resistant, tying the effect to the SDH-loss state. Sensitivity was greater under lipid-depleted conditions, in line with the lipid-dependency model.</td><td>moderate</td><td>med</td><td><span class="fit-badge fit-strong">strong</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/41184234">41184234</a></td><td><a href="https://doi.org/10.1038/s41392-025-02456-9">DOI</a></td><td>Translational arm of the same paper that carries the phase 1b clinical cohort, so it is not independent confirmation of that trial. No animal model — the authors flag the absence of an SDH-deficient GIST xenograft as a limitation, so in-vivo potency is untested.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### rogaratinib / FGFR-pathway — insulator disruption and FGF4 activation in SDH-deficient GIST (Flavahan 2019)  
+<small><code>intervention_id: rogaratinib</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>Model</th><th>n</th><th>Control</th><th>Dose</th><th>Mechanism</th><th>Key finding</th><th>Effect (qual)</th><th>Translatability</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Caveats</th></tr></thead>
+      <tbody>
+        <tr><td>Flavahan/Bernstein (2019)<br><em>Nature</em></td><td>SDH-deficient GIST patient tumors profiled for methylation and chromatin topology; patient-derived xenograft (PDX) from an SDH-deficient GIST retaining parental hypermethylation and insulator defects</td><td>PDX treatment cohort (group sizes per the Nature figures); multiple GIST tumor specimens for the genomic arm</td><td>vehicle; KIT-mutant GIST for the methylation/topology comparison</td><td>FGFR inhibitor (BGJ398-class) and KIT inhibitor (imatinib) as single agents and in combination in the PDX</td><td>Genome-wide hypermethylation in SDH-deficient GIST methylates a CTCF-bound insulator that normally walls off a core GIST super-enhancer from the FGF4 oncogene. Once the boundary is lost, the enhancer reaches across and switches on FGF4, and the secreted ligand drives autocrine signaling through FGFR1, which makes FGFR a tractable downstream node.</td><td>The SDH-deficient GIST PDX, which kept the parental methylation and insulator loss, responded to FGFR inhibition, and the response deepened when FGFR and KIT blockade were combined. This connected the epigenetic lesion directly to an FGFR dependency and gave the mechanistic footing for the FGFR-inhibitor trials in this subtype.</td><td>strong</td><td>high</td><td><span class="fit-badge fit-strong">strong</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/31666694">31666694</a></td><td><a href="https://doi.org/10.1038/s41586-019-1668-3">DOI</a></td><td>Single PDX for the in-vivo arm, and the FGFR inhibitor tested was a tool compound rather than rogaratinib, so the class rationale transfers but the specific-agent potency does not. The added FGFR+KIT benefit is worth noting given CD117 positivity here despite the KIT-WT genotype.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### telaglenastat (CB-839) / glutaminase dependency — GLS1 in SDHB-deficient cells (Sarkadi 2020)  
+<small><code>intervention_id: telaglenastat</code> · 2 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>Model</th><th>n</th><th>Control</th><th>Dose</th><th>Mechanism</th><th>Key finding</th><th>Effect (qual)</th><th>Translatability</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Caveats</th></tr></thead>
+      <tbody>
+        <tr><td>Sarkadi/Patocs (2020)<br><em>Cancers (Basel)</em></td><td>rat PC12 chromaffin cells with SDHB siRNA silencing, 2D and 3D spheroid culture; IHC on 35 patient PPGL tumors (13 malignant, 22 benign)</td><td>n=35 patient tumors for IHC; n=3 biological replicates for the cell assays</td><td>SDH-intact PC12 cells; SDHB-silenced cells without BPTES</td><td>BPTES (glutaminase inhibitor) combined with SDH inhibition in 2D and 3D culture</td><td>SDH loss truncates the TCA cycle at succinate, which pushes cells toward glutamine as an anaplerotic carbon source fed in through glutaminase (GLS1). Blocking GLS1 starves that route, so SDH-impaired cells should be selectively vulnerable to glutaminase inhibition.</td><td>GLS1 inhibition with BPTES cut proliferation of SDHB-silenced PC12 cells in both 2D and 3D culture, and GLS1 protein ran higher in low-SDHB patient PPGL tumors than in SDHB-intact ones (7/13 vs 5/22 high-staining). The metabolic dependency the telaglenastat trial was built on holds up in an SDH-loss model, though the proliferation effect was modest.</td><td>moderate</td><td>low</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/32150977">32150977</a></td><td><a href="https://doi.org/10.3390/cancers12030599">DOI</a></td><td>PPGL/PC12 chromaffin model, not GIST, and the inhibitor used was BPTES rather than telaglenastat itself (shared GLS1 target). No in-vivo arm, and the 3D viability drop was only 13-18%, so the dependency is real but shallow.</td></tr>
+        <tr><td>Cardaci/Gottlieb (2015)<br><em>Nature Cell Biology</em></td><td>Sdhb-deleted mouse kidney cells (Sdhb-delta/delta vs floxed); H-RasV12-transformed derivatives xenografted in athymic nude mice for the pyruvate-carboxylase knockdown arm</td><td>n=3 biological replicates in vitro; xenograft groups per the Nat Cell Biol figures</td><td>Sdhb-floxed (SDH-intact) cells; pyruvate-carboxylase-silenced vs control xenografts</td><td>13C tracer flux analysis; genetic pyruvate-carboxylase (PC) silencing</td><td>With SDH gone, the open question is which carbon source refills the broken TCA cycle. Tracer work here puts the load on pyruvate carboxylation rather than glutamine: SDH-deficient cells commit to extracellular pyruvate and route glucose-derived carbon into aspartate through pyruvate carboxylase, while glutamine&#x27;s contribution to aspartate drops off.</td><td>In Sdhb-null cells, pyruvate carboxylation rather than glutamine supplied most of the aspartate, and silencing pyruvate carboxylase blunted proliferation and slowed xenograft growth. The dominant anaplerotic route under SDH loss was pyruvate carboxylase, which tempers the assumption that glutaminase blockade alone collapses these cells.</td><td>negative</td><td>med</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/26302408">26302408</a></td><td><a href="https://doi.org/10.1038/ncb3233">DOI</a></td><td>Sdhb-null kidney/Ras model, not GIST. Filed under telaglenastat as counter-evidence: it points to pyruvate carboxylation, not glutamine, as the main anaplerotic crutch in SDH-deficient cells, part of why the CB-839 effort in this space never produced a positive readout.</td></tr>
       </tbody>
     </table>
   </div>
