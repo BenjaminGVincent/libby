@@ -31,6 +31,8 @@ treat those rows as out-of-scope and do NOT compile clinical evidence for
 them. Flag the discrepancy in your run-log notes so the user can re-run the
 screener.
 
+**HER2-low handling.** When a HER2-low feature (IHC 1+ or 2+/ISH−; see the HER2 classification in the intake contract) is in scope, compile the HER2-directed evidence base honestly. For HER2-low in **breast cancer**, the on-label T-DXd evidence is DESTINY-Breast04 (and DESTINY-Breast06 for HER2-ultralow). For HER2-low in **non-breast solid tumors**, the tumor-agnostic T-DXd approval rests on IHC 3+ (DESTINY-PanTumor02), so HER2-low non-breast evidence is cross-tumor extrapolation from the breast HER2-low data plus any HER2-low-enrolling solid-tumor reports. Frame those rows as investigational / off-label precedent, with the effect sizes anchored to the population actually studied. Do not present a HER2-low non-breast indication as if it carried an approved HER2-directed therapy.
+
 **Audit-trail principle.** Write a row for every paper you read closely enough to make a triage decision — both papers you keep for synthesis (`inclusion_status: "included"`) and papers you reviewed and excluded (`inclusion_status: "considered_excluded"`). The master `manuscripts.md` page surfaces every row so a reviewer can see the full literature-search corpus, not only the curated subset that fed the board. Excluded rows need only the minimum-required fields plus an `exclusion_reason`; do NOT extract effect sizes, toxicities, or full population details for excluded rows.
 
 ## Files you own

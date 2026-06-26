@@ -46,6 +46,26 @@ Ask in small batches; do not dump a wall of questions.
 
 Summarize what you heard back after each batch and confirm before moving on.
 
+### Biomarker classification rules (load-bearing)
+
+Some biomarkers have a standard tiered classification that is not a binary positive/negative. Record the tier, not a collapsed yes/no, because the tier is what gates downstream therapeutic options.
+
+**HER2 status — classify by expression tier, never as a bare positive/negative.** This is the authoritative HER2 classification for the whole workflow; downstream agents reference it.
+
+- **HER2-positive:** IHC 3+, or IHC 2+ with ISH/FISH amplification.
+- **HER2-low:** IHC 1+, or IHC 2+ without ISH amplification (2+/ISH−).
+- **HER2-ultralow:** IHC 0 with faint, incomplete membrane staining in ≤10% of cells (an emerging finer category; capture it when the report distinguishes it).
+- **HER2-negative (null):** IHC 0 with no staining.
+
+Do **not** record IHC 1+ as "HER2 negative." Record it as `value: "HER2-low (IHC 1+)"`. **HER2-low (and HER2-positive) is an actionable expression category, so surface it as a `targetable_features[]` entry**, not merely a `biomarkers[]` row that documents a foreclosure. HER2-directed antibody-drug conjugates and HER2-low–enrolling trials are real strategies in this context, so the feature belongs in the ranker's scope.
+
+**Actionability framing to record in the feature's rationale (so downstream agents calibrate without over-promising):**
+
+- In **breast cancer**, HER2-low (IHC 1+ or 2+/ISH−) is **on-label** for trastuzumab deruxtecan (T-DXd) after prior chemotherapy (DESTINY-Breast04; HER2-ultralow per DESTINY-Breast06).
+- In **non-breast solid tumors**, the tumor-agnostic T-DXd approval requires **IHC 3+**. For HER2-low (1+ or 2+/ISH−) there is no approved HER2-directed therapy, so the lane is **investigational / trial-eligibility** (HER2-low–enrolling baskets, emerging HER2 ADCs), supported by cross-tumor extrapolation from the breast HER2-low evidence. Frame it as a real but caveated option; never imply approval.
+
+If the source pathology report itself scored HER2 1+ as "negative" (common under ASCO-CAP gastric / DESTINY-PanTumor scoring), capture that the report said so in `method`, but still classify the case-level status as **HER2-low** per the rule above and surface the feature. Note any specimen-sufficiency caveat (e.g. an NGS/IHC platform that could not evaluate HER2) in the rationale.
+
 ## Step 2 — scrub and write `profile.json`
 
 Build a `case/<slug>/derived/profile.json` matching `scripts/schema/profile.schema.json`. Fields:

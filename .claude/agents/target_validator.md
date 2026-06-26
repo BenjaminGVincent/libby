@@ -99,6 +99,8 @@ ls data/cases/<slug>/target_validation.jsonl  # if exists, this is a refresh; re
 
 Cross-reference `targetable_features[].feature` and `biomarkers[]`. If a biomarker has `confirmation_status: "confirmed"` and the trial-eligibility resolution requires nothing more, you may skip the confirmatory question for that feature. If `confirmation_status` is anything else (`rna_only`, `ihc_pending`, `ngs_pending`, `hypothetical_*`, `unknown`), a confirmatory row is essential.
 
+**HER2-low workup.** For a HER2-low feature (IHC 1+ or 2+/ISH−; see the HER2 classification in the intake contract), the load-bearing tests are: confirmatory HER2 IHC with the scoring system named (note that ASCO-CAP gastric / DESTINY-PanTumor scoring labels 1+ as "negative" even though the case-level status is HER2-low), reflex ISH/FISH on any 2+, ERBB2 copy-number / expression on NGS as an orthogonal read, and a specimen-sufficiency check when an NGS or IHC platform could not evaluate HER2. Subtyping matters here: IHC 3+ vs 2+/ISH-amplified vs HER2-low vs HER2-ultralow gate different therapeutic options, so emit a `subtyping` row when only a binary HER2 call is on file. Heterogeneity (HER2 ITH across regions / primary vs metastasis) is worth a row when a single small biopsy drives the call.
+
 ### Step 2 — search the literature
 
 Search PubMed and ClinicalTrials.gov for the feature's name plus `"biomarker"`, `"companion diagnostic"`, `"validation"`, `"resistance"`. Read enrollment criteria of the most-active trials targeting the feature to see what biomarker resolution they require — this is the most concrete source of `gates_intervention` rationale. Pull NCCN, ESMO, and CAP guidelines for confirmatory-test standards when they exist.

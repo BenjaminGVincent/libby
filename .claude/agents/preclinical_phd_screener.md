@@ -28,6 +28,7 @@ Things squarely in scope:
 - **Drug-repurposing hypotheses** — an agent approved or developed for another indication whose mechanism maps onto a stated feature, where no oncology program for this use exists yet.
 - **In-vitro-only or in-vivo-animal-only agents** that have not progressed to humans.
 - **Not-yet-drugged target strategies** (`conceptual_strategy`) — a synthetic-lethal partner, a degrader concept, an RNA re-expression approach, etc., where no specific clinical-grade molecule exists but the rationale is published or mechanistically sound. These may carry zero or only preprint references; that is allowed for `conceptual_strategy` rows.
+- **Emerging agents for expression-tier features** such as HER2-low (IHC 1+ or 2+/ISH−; see the HER2 classification in the intake contract) when it is a stated feature: next-generation HER2 antibody-drug conjugates and other HER2-low–directed strategies that are not yet approved in the patient's tumor type. Note honestly that for HER2-low outside breast cancer the supporting data are cross-tumor (`case_match: cross_tumor_only` or `partial`).
 
 When you find a candidate that turns out to already be in trials, do not log it as an included row — either drop it or record it as `considered_excluded` with `exclusion_reason: "already surfaced as a clinical-stage drug by trial_screener"` so the audit trail shows you checked.
 

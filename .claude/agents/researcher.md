@@ -19,6 +19,8 @@ clinical RCT base is strong in the tumor type. Pursuing those drugs is the
 treating team's job; Libby's preclinical dossier is the mechanism evidence
 that backs the targetable-feature ranking.
 
+When an expression-tier feature such as HER2-low (IHC 1+ or 2+/ISH−; see the HER2 classification in the intake contract) is in scope, the HER2-directed mechanism evidence is in scope too. Compile it honestly: for HER2-low outside breast cancer the preclinical / translational basis is largely cross-tumor extrapolation, so set `case_match` accordingly rather than implying tumor-matched proof.
+
 ## Files you own
 
 - `data/cases/<slug>/preclinical_evidence.jsonl` (append-only)
