@@ -3257,6 +3257,16 @@ def _downloads_section(slug: str, case_docs: Path) -> str:
             "ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline",
         ),
         (
+            "preclinical_recommendations.md",
+            "Preclinical recommendations",
+            "forward-looking horizon scan of earlier-than-clinical candidate drugs, compounds, and strategies, in a sortable in-browser table",
+        ),
+        (
+            f"{slug}-preclinical.html",
+            "Preclinical recommendations (offline)",
+            "same preclinical horizon scan packaged as a self-contained HTML that opens offline",
+        ),
+        (
             "accessibility.md",
             "Access guide",
             "how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table",
@@ -3287,6 +3297,11 @@ def _downloads_section(slug: str, case_docs: Path) -> str:
             f"{slug}-recommendations.pdf",
             "Recommendations table",
             "ranked options + pipeline context + evidence in detail, in a print-friendly PDF",
+        ),
+        (
+            f"{slug}-preclinical.pdf",
+            "Preclinical recommendations",
+            "forward-looking horizon scan of earlier-than-clinical candidates, one deep section per candidate, in a print-friendly PDF",
         ),
         (
             f"{slug}-accessibility.pdf",
@@ -3372,6 +3387,11 @@ def _case_output_section(slug: str, case_docs: Path) -> str:
             f"{slug}-recommendations.html",
             "Recommendations table (HTML)",
             "ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline",
+        ),
+        (
+            "preclinical_recommendations.md",
+            "Preclinical recommendations (HTML)",
+            "forward-looking horizon scan of earlier-than-clinical candidate drugs, compounds, and strategies, sortable in-browser",
         ),
         (
             "accessibility.md",

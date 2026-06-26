@@ -1,0 +1,159 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://libby.local/schema/preclinical_pipeline.schema.json",
+  "title": "Libby preclinical-pipeline candidate row",
+  "description": "Row per candidate drug / compound / treatment strategy that is EARLY in development or not yet developed, surfaced by the preclinical_PhD_screener from the scientific literature. Distinct from preclinical_evidence.jsonl (which is mechanism evidence for interventions already in or near the clinic): this file is the forward-looking horizon scan of ideas not already surfaced by trial_screener / clinician / researcher.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "candidate_id",
+    "case_slug",
+    "intervention_label",
+    "targets",
+    "development_stage",
+    "mechanism",
+    "rationale"
+  ],
+  "allOf": [
+    {
+      "if": {
+        "anyOf": [
+          { "not": { "required": ["inclusion_status"] } },
+          { "properties": { "inclusion_status": { "const": "included" } } }
+        ]
+      },
+      "then": {
+        "required": ["evidence_strength", "novelty"]
+      },
+      "else": {
+        "required": ["exclusion_reason"]
+      }
+    }
+  ],
+  "properties": {
+    "candidate_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9_-]*$",
+      "description": "Stable snake-case / kebab id for this candidate idea. The preclinical_reporter reuses it as the link key between preclinical_recommendations.jsonl and this file."
+    },
+    "case_slug": { "type": "string" },
+    "inclusion_status": {
+      "type": "string",
+      "enum": ["included", "considered_excluded"],
+      "default": "included",
+      "description": "Did this candidate enter the synthesis handed to the preclinical_reporter (`included`), or was it reviewed and set aside (`considered_excluded`)?"
+    },
+    "exclusion_reason": {
+      "type": "string",
+      "description": "Required when `inclusion_status: considered_excluded`. Brief reason — e.g. 'already surfaced as a clinical-stage drug by trial_screener', 'mechanism does not target a stated feature', 'evidence is a single non-reproduced in-vitro report'."
+    },
+    "intervention_label": {
+      "type": "string",
+      "description": "Human-readable name of the drug, compound, tool molecule, or strategy (e.g. 'WRN helicase inhibitor HRO761', 'USP1 inhibitor KSQ-4279', 'POLQ-inhibitor + PARP-inhibitor combination', 'BRCA1 mRNA re-expression strategy')."
+    },
+    "intervention_type": {
+      "type": "string",
+      "enum": [
+        "small_molecule",
+        "biologic",
+        "antibody",
+        "adc",
+        "bispecific",
+        "cell_therapy",
+        "vaccine",
+        "oligonucleotide",
+        "protac_degrader",
+        "radioligand",
+        "combination",
+        "repurposed_drug",
+        "conceptual_strategy",
+        "other"
+      ],
+      "description": "Modality / shape of the candidate. `conceptual_strategy` is for not-yet-drugged target ideas where no specific compound exists yet."
+    },
+    "targets": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+      "description": "Snake-case identifiers for the patient targetable feature(s) this candidate acts on. Mirror profile.json::targetable_features[].feature (snake-cased). First entry is the primary target."
+    },
+    "target_feature_label": {
+      "type": "string",
+      "description": "Human-readable label of the targetable feature this candidate addresses (e.g. 'genomic instability / HRD', 'CCNE1 amplification')."
+    },
+    "development_stage": {
+      "type": "string",
+      "enum": [
+        "conceptual",
+        "in_silico",
+        "in_vitro",
+        "in_vivo_animal",
+        "early_translational",
+        "ind_enabling",
+        "first_in_human_planned"
+      ],
+      "description": "How far along the candidate is. Bounded BELOW clinical maturity by design: anything already enrolling patients belongs to trial_screener, not here. `conceptual` = an idea with no compound yet; `early_translational` = patient-derived models / co-clinical data but no trial."
+    },
+    "mechanism": {
+      "type": "string",
+      "description": "How the candidate engages the targetable feature. <= 3 sentences."
+    },
+    "rationale": {
+      "type": "string",
+      "description": "Why this is a promising idea FOR THIS PATIENT'S stated feature(s). <= 4 sentences. The load-bearing argument the preclinical_reporter ranks on."
+    },
+    "novelty": {
+      "type": "string",
+      "description": "Required for included rows. One sentence stating why this candidate is NOT already covered by trial_screener / clinician / researcher — the boundary guard that keeps this file forward-looking (e.g. 'no registered trial in any indication', 'academic tool compound, no IND', 'repurposing hypothesis with no oncology development program')."
+    },
+    "evidence_strength": {
+      "type": "string",
+      "enum": ["speculative", "emerging", "moderate", "strong"],
+      "description": "Required for included rows. Qualitative strength of the preclinical / conceptual support. Calibrated for early-stage work: `speculative` = mechanistic hypothesis only; `strong` = reproduced in-vivo proof-of-concept in a relevant model."
+    },
+    "key_manuscripts": {
+      "type": "array",
+      "description": "The 'potential manuscripts' passed to the preclinical_reporter. One object per supporting paper / preprint. Empty array allowed only for `conceptual_strategy` candidates with no published support yet.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["finding"],
+        "properties": {
+          "first_author": { "type": "string" },
+          "last_author": { "type": "string" },
+          "journal": { "type": "string" },
+          "year": { "type": ["integer", "null"], "minimum": 1980, "maximum": 2100 },
+          "pmid": { "type": ["string", "null"] },
+          "doi": { "type": ["string", "null"] },
+          "preprint_server": { "type": ["string", "null"], "description": "e.g. 'bioRxiv', 'medRxiv' when the source is a preprint rather than a peer-reviewed paper." },
+          "finding": { "type": "string", "description": "<= 2 sentences: what this paper showed that supports the candidate." }
+        }
+      }
+    },
+    "model_systems": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Model systems behind the supporting evidence (e.g. 'HGSOC PDX', 'BRCA-WT ovarian organoid', 'CRISPR synthetic-lethality screen')."
+    },
+    "translatability_score": {
+      "type": "string",
+      "enum": ["low", "med", "high"],
+      "description": "Judgment of how readily this idea could move toward this patient (model fidelity, target homology, dose plausibility)."
+    },
+    "case_match": {
+      "type": "string",
+      "enum": ["strong", "partial", "weak", "none", "cross_tumor_only"],
+      "description": "How well the supporting models match the patient's tumor / biomarker profile."
+    },
+    "developability": {
+      "type": "string",
+      "description": "How far the candidate is from something a patient could access, and what it would take to get there (e.g. 'tool compound only, no clinical-grade molecule', 'approved for another indication — repurposing trial would be needed')."
+    },
+    "risks": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Counter-productive-MoA, toxicity unknowns, target-validation gaps, or resistance liabilities that temper enthusiasm."
+    },
+    "caveats": { "type": "string", "description": "<= 2 sentences. Translation cautions or superseded-by relationships. Don't duplicate exclusion_reason." }
+  }
+}

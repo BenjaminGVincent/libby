@@ -217,6 +217,16 @@ def downloads_block(case_docs: Path, slug: str) -> str:
             "ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline",
         ),
         (
+            "preclinical_recommendations.md",
+            "Preclinical recommendations",
+            "forward-looking horizon scan of earlier-than-clinical candidate drugs, compounds, and strategies, in a sortable in-browser table",
+        ),
+        (
+            f"{slug}-preclinical.html",
+            "Preclinical recommendations (offline)",
+            "same preclinical horizon scan packaged as a self-contained HTML that opens offline",
+        ),
+        (
             "accessibility.md",
             "Access guide",
             "how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table",
@@ -247,6 +257,11 @@ def downloads_block(case_docs: Path, slug: str) -> str:
             f"{slug}-recommendations.pdf",
             "Recommendations table",
             "ranked options + pipeline context + evidence in detail, in a print-friendly PDF",
+        ),
+        (
+            f"{slug}-preclinical.pdf",
+            "Preclinical recommendations",
+            "forward-looking horizon scan of earlier-than-clinical candidates, one deep section per candidate, in a print-friendly PDF",
         ),
         (
             f"{slug}-accessibility.pdf",
@@ -332,7 +347,8 @@ def main() -> int:
         f"[Back to case](index.md) · [Trials](trials.md) · "
         f"[Evidence](evidence.md) · [Manuscripts](manuscripts.md) · "
         f"[Target validation](target_validation.md) · "
-        f"[Board](board.md) · [Plain language](plain_language.md)\n"
+        f"[Board](board.md) · [Plain language](plain_language.md) · "
+        f"[Preclinical](preclinical_recommendations.md)\n"
     )
     parts.append(
         '!!! danger disclaimer "Decision support, not medical advice"\n'

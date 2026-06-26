@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://libby.local/schema/preclinical_recommendations.schema.json",
+  "title": "Libby preclinical-recommendation row",
+  "description": "Ranked 'Preclinical recommendations' row synthesized by the preclinical_reporter from preclinical_pipeline.jsonl. The forward-looking companion to recommendations.jsonl: candidate ideas earlier than clinical development, ranked by promise for this patient's targetable features. NOT reviewed by the virtual tumor board — no persona fields.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "rank",
+    "case_slug",
+    "candidate_id",
+    "intervention_label",
+    "targets",
+    "development_stage",
+    "evidence_strength",
+    "rationale_summary"
+  ],
+  "properties": {
+    "rank": { "type": "integer", "minimum": 1 },
+    "case_slug": { "type": "string" },
+    "candidate_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9_-]*$",
+      "description": "Links back to the preclinical_pipeline.jsonl row this rec is built from."
+    },
+    "intervention_label": { "type": "string" },
+    "intervention_type": {
+      "type": "string",
+      "enum": [
+        "small_molecule",
+        "biologic",
+        "antibody",
+        "adc",
+        "bispecific",
+        "cell_therapy",
+        "vaccine",
+        "oligonucleotide",
+        "protac_degrader",
+        "radioligand",
+        "combination",
+        "repurposed_drug",
+        "conceptual_strategy",
+        "other"
+      ]
+    },
+    "targets": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+      "description": "Snake-case targetable-feature identifiers this candidate acts on. First entry is the primary target; drives per-target grouping in the rendered table."
+    },
+    "target_feature_label": { "type": "string" },
+    "development_stage": {
+      "type": "string",
+      "enum": [
+        "conceptual",
+        "in_silico",
+        "in_vitro",
+        "in_vivo_animal",
+        "early_translational",
+        "ind_enabling",
+        "first_in_human_planned"
+      ]
+    },
+    "mechanism": { "type": "string" },
+    "rationale_summary": { "type": "string", "description": "Why this candidate earns this rank for this patient. Distilled from the pipeline row's rationale." },
+    "evidence_strength": {
+      "type": "string",
+      "enum": ["speculative", "emerging", "moderate", "strong"]
+    },
+    "translatability": {
+      "type": "string",
+      "description": "<= 25-word qualitative narrative for the at-a-glance table. Lead with a tier ('High in HGSOC PDX', 'Moderate', 'Low / cross-tumor only') + the load-bearing model or finding."
+    },
+    "developability": {
+      "type": "string",
+      "description": "<= 25 words: how far from a patient this is and what it would take (tool compound vs IND-ready vs approved-elsewhere repurposing)."
+    },
+    "key_risks": { "type": "array", "items": { "type": "string" } },
+    "counter_productive_moa": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["severity"],
+      "properties": {
+        "severity": { "type": "string", "enum": ["Low", "Moderate", "High", "N/A"] },
+        "description": { "type": "string", "description": "<= 20 words. Mechanism-level risk that the candidate's own pathway could blunt the therapeutic goal." }
+      },
+      "description": "Mechanism-level counter-productive risk, same axis as the main recommendations table."
+    },
+    "evidence_anchor": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Supporting references as `pmid:NNNNNNNN`, `doi:...`, or `biorxiv:...` strings. Rendered as clickable links in the Key references column."
+    },
+    "overall": {
+      "type": "string",
+      "description": "<= 30-word declarative summary, rendered bold. Names the load-bearing tradeoff or scope, not the rank ordering."
+    },
+    "open_questions": { "type": "array", "items": { "type": "string" } }
+  }
+}

@@ -234,6 +234,8 @@ ONCOLOGY_ACRONYM_ALLOWLIST = frozenset({
     # Cancer-related genes appearing in ALL-CAPS prose
     "APC", "MUTYH", "POLE", "POLD", "SMAD", "ERBB", "BCL2L1", "TOP1",
     "AURKA", "MYBL", "ZNF217", "CDX",
+    # Replication-fork-protection / DNA-repair genes in preclinical-horizon prose
+    "TIMELESS", "TIPIN", "CLASPIN",
     # Lynch-syndrome / hereditary CRC germline panel genes
     "EPCAM",
     # Treatment-arm / clinical-shorthand vocabulary

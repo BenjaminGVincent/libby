@@ -18,6 +18,7 @@ python3 scripts/build_evidence.py "$SLUG"
 python3 scripts/build_manuscripts.py "$SLUG"
 python3 scripts/build_board.py "$SLUG"
 python3 scripts/build_recommendations.py "$SLUG"
+python3 scripts/build_preclinical.py "$SLUG"
 python3 scripts/build_target_validation.py "$SLUG"
 python3 scripts/build_accessibility.py "$SLUG"
 
@@ -27,6 +28,7 @@ python3 scripts/scan_for_phi.py --mode=files \
   "docs/cases/$SLUG/index.md" \
   "docs/cases/$SLUG/plain_language.md" \
   "docs/cases/$SLUG/recommendations.md" \
+  "docs/cases/$SLUG/preclinical_recommendations.md" \
   "docs/cases/$SLUG/board.md" \
   "docs/cases/$SLUG/evidence.md" \
   "docs/cases/$SLUG/manuscripts.md" \
