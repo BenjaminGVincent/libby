@@ -51,9 +51,11 @@ cp /path/to/patient/files case/<slug>/clinical/
 # Run the agent pipeline (manual invocation)
 /intake <slug>
 python3 scripts/promote_profile.py <slug>
+/target_validator <slug>
 /trial_screener <slug>
 /clinician <slug>
 /researcher <slug>
+/accessibility_screener <slug>
 /risktaker <slug> --round 1
 /conservative <slug> --round 1
 /critic <slug> --round 1
@@ -66,8 +68,15 @@ python3 scripts/promote_profile.py <slug>
 /advocate <slug> --round 2
 /PI <slug>
 /translator <slug>
+/reporter <slug>
 
-# Render and publish
+# Optional standalone horizon-scan track (does not feed the board/PI)
+/preclinical_phd_screener <slug>
+/preclinical_reporter <slug>
+
+# Validate, render, and publish
+python3 scripts/validate_case.py <slug>    # schema-check every artifact (also run inside run_case.sh)
+python3 scripts/check_pipeline.py <slug>   # confirm every required stage ran
 bash scripts/run_case.sh <slug>
 git add data/cases/<slug>/ docs/cases/<slug>/   # NEVER `git add -A` — case/ would slip in
 git commit -m "case <slug>: initial run"
