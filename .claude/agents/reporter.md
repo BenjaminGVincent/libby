@@ -238,6 +238,15 @@ Constraints — same as the executive summary:
 
 If `target_validation.jsonl` does not exist or is empty, skip this step entirely and tell the user. The build script tolerates a missing report — no PDF, no injection, no Downloads link.
 
+## Step 1.75 — verify references
+
+Before generating artifacts, run the shared reference-verification protocol in
+`.claude/snippets/reference_check.md` over every `pmid`/`doi`/`nct` identifier that
+appears in the `executive_summary.md` and `target_validation_report.md` you just
+authored. These are the shareable, download-facing surfaces — a wrong identifier here
+reaches an external reviewer directly. Fail-closed on any unresolved or mismatched
+identifier, and record the `reference_check` outcome in the Step-4 `runs.jsonl` row.
+
 ## Step 2 — generate the artifacts
 
 Run:

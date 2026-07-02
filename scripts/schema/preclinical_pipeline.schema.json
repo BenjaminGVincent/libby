@@ -123,8 +123,8 @@
           "last_author": { "type": "string" },
           "journal": { "type": "string" },
           "year": { "type": ["integer", "null"], "minimum": 1980, "maximum": 2100 },
-          "pmid": { "type": ["string", "null"] },
-          "doi": { "type": ["string", "null"] },
+          "pmid": { "type": ["string", "null"], "pattern": "^[1-9][0-9]{0,8}$" },
+          "doi": { "type": ["string", "null"], "pattern": "^10\\.[0-9]{4,9}/\\S+$" },
           "preprint_server": { "type": ["string", "null"], "description": "e.g. 'bioRxiv', 'medRxiv' when the source is a preprint rather than a peer-reviewed paper." },
           "finding": { "type": "string", "description": "<= 2 sentences: what this paper showed that supports the candidate." }
         }

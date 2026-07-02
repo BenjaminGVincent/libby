@@ -111,6 +111,15 @@ Keep notes ≤ 2 sentences. Do not duplicate the `exclusion_reason` here — tha
 6. **Validate.** Each row against `scripts/schema/clinical_evidence.schema.json`.
 7. **Log.** Append to `data/cases/<slug>/runs.jsonl`.
 
+## Verify references
+
+Between step 6 (Validate) and step 7 (Log), run the shared reference-verification
+protocol in `.claude/snippets/reference_check.md` over every `pmid`/`doi` you just
+wrote to `clinical_evidence.jsonl`. It catches hallucinated identifiers,
+wrong-identifier bugs, and citation drift — the failure modes the schema's format
+check cannot see. Fail-closed on any unresolved or mismatched identifier, and record
+the `reference_check` outcome in the step-7 `runs.jsonl` row.
+
 ## Voice — humanizer pass (free-text fields)
 
 Before writing each row, apply the humanizer skill at `.claude/skills/humanizer/SKILL.md` (vendored, MIT-licensed; falls back to `~/.claude/skills/humanizer/SKILL.md`) to the row's free-text fields. Read it once at the start of the run. The 29-pattern check is overkill for a 1-2-sentence cell, but the principles still bite: no marketing language, no formulaic openers, no "stands as" / "serves as" copula evasions, no rule-of-three padding, no slogan closers.

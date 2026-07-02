@@ -12,7 +12,7 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    needs: phi-scan
+    needs: [phi-scan, validate]
     steps:
       - uses: actions/checkout@v4
         with:
@@ -36,3 +36,6 @@ jobs:
 
   phi-scan:
     uses: ./.github/workflows/phi-scan.yml
+
+  validate:
+    uses: ./.github/workflows/validate.yml

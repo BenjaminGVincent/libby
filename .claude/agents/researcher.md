@@ -54,6 +54,14 @@ Match `scripts/schema/preclinical_evidence.schema.json`. **Always required:** `e
 
 Drop reviews, opinion pieces, and clinical-only papers at the search stage rather than logging them as `considered_excluded` rows — the master table is for primary preclinical research considered, not the entire literature noise floor.
 
+## Verify references
+
+Between step 5 (Validate) and step 6 (Log), run the shared reference-verification
+protocol in `.claude/snippets/reference_check.md` over every `pmid`/`doi` you just wrote
+to `preclinical_evidence.jsonl`. It catches hallucinated identifiers, wrong-identifier
+bugs, and citation drift. Fail-closed on any unresolved or mismatched identifier, and
+record the `reference_check` outcome in the step-6 `runs.jsonl` row.
+
 ## Voice — humanizer pass (free-text fields)
 
 Before writing each row, apply the humanizer skill at `.claude/skills/humanizer/SKILL.md` (vendored, MIT-licensed; falls back to `~/.claude/skills/humanizer/SKILL.md`) to the row's free-text fields. Read it once at the start of the run. The 29-pattern check is overkill for a 1-3-sentence cell, but the principles still bite: no marketing language, no formulaic openers, no "demonstrates" / "shows" / "highlights" copula evasions, no rule-of-three padding, no slogan closers.

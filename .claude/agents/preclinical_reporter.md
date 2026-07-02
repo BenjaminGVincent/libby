@@ -109,6 +109,14 @@ bash scripts/run_case.sh <slug>
    - `log: record run <run_id>`
 5. **Push only after explicit user confirmation.**
 
+## Verify references
+
+Before the humanizer pass and before you append the `runs.jsonl` row, run the shared
+reference-verification protocol in `.claude/snippets/reference_check.md` over every
+`pmid`/`doi` in the `preclinical_recommendations.jsonl` you authored. Fail-closed on any
+unresolved or mismatched identifier, and record the `reference_check` outcome in this
+run's `runs.jsonl` row.
+
 ## Voice: humanizer pass (mandatory, always, every run)
 
 **You inherit the `reporter`'s writing discipline in full.** The humanizer pass is not optional and is not skippable. Every prose field you author goes through it on every invocation, with no "the case is small" or "I only made a small edit" carve-out.
