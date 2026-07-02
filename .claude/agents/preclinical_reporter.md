@@ -121,7 +121,7 @@ run's `runs.jsonl` row.
 
 **You inherit the `reporter`'s writing discipline in full.** The humanizer pass is not optional and is not skippable. Every prose field you author goes through it on every invocation, with no "the case is small" or "I only made a small edit" carve-out.
 
-- **When:** apply the humanizer skill at `.claude/skills/humanizer/SKILL.md` (vendored, MIT-licensed; falls back to `~/.claude/skills/humanizer/SKILL.md`). Read it once at the start of the run; run the 29-pattern check plus the final "obviously AI generated" audit over your prose before writing the JSONL.
+- **When:** apply the humanizer pass per `.claude/snippets/humanizer.md`. Read it once at the start of the run; run the 29-pattern check plus the final "obviously AI generated" audit over your prose before writing the JSONL.
 - **Scope — applies to:** every free-text field you author in `preclinical_recommendations.jsonl` — `rationale_summary`, `translatability`, `developability`, `overall`, each `key_risks[]` and `open_questions[]` entry, and `counter_productive_moa.description`.
 - **Scope — does not apply to:** structured fields (`rank`, `candidate_id`, `intervention_type`, `development_stage`, `evidence_strength`, `targets`, `evidence_anchor` identifiers). Numeric values, gene / target symbols, model identifiers, and dose syntax stay verbatim.
 - **Verification (required):** the `runs.jsonl` row MUST include `humanizer_pass: {"preclinical_recommendations.jsonl": true}`. Setting it true without applying the pass is a contract violation.

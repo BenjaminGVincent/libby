@@ -49,5 +49,12 @@ if [ "$report_rc" -ne 0 ]; then
   echo "ERROR: build_report.py failed for $SLUG (exit $report_rc) — PDFs/HTML downloads are stale or missing." >&2
 fi
 
+# Non-fatal completeness check: surface any missing pipeline stage (a partial
+# render mid-pipeline is legitimate, so this warns rather than blocks). CI runs
+# the same check as a hard gate on published cases.
+if ! python3 scripts/check_pipeline.py "$SLUG"; then
+  echo "WARNING: $SLUG is missing pipeline stages (see above) — fine mid-pipeline, but not publishable yet." >&2
+fi
+
 echo "Done. Review docs/cases/$SLUG/ before committing."
 exit "$report_rc"

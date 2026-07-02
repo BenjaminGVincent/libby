@@ -83,7 +83,7 @@ the step-6 `runs.jsonl` row.
 
 ## Voice — humanizer pass (free-text fields)
 
-Before writing each row, apply the humanizer skill at `.claude/skills/humanizer/SKILL.md` (vendored, MIT-licensed; falls back to `~/.claude/skills/humanizer/SKILL.md`) to the row's free-text fields. Read it once at the start of the run.
+Before writing each row, apply the humanizer pass per `.claude/snippets/humanizer.md` to the row's free-text fields. Read it once at the start of the run.
 
 - Applies to: `mechanism`, `rationale`, `novelty`, `developability`, `caveats`, `exclusion_reason`, and each `key_manuscripts[].finding`. These render downstream in the Preclinical recommendations page, so templated voice is visible to every reader.
 - Does **not** apply to: structured fields (`candidate_id`, `intervention_type`, `development_stage`, `evidence_strength`, `translatability_score`, `case_match`, `targets`, identifiers like `pmid` / `doi`). `model_systems` entries stay terse and structural.

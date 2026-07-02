@@ -243,7 +243,7 @@ evidence agents already did. Record the `reference_check` outcome in this run's
 
 ## Voice — humanizer pass
 
-Before persisting `index.md`, apply the humanizer skill at `.claude/skills/humanizer/SKILL.md` (vendored into this repo, MIT-licensed; falls back to `~/.claude/skills/humanizer/SKILL.md` if the project-level copy is missing). Read it once at the start of the run and run its 29-pattern check plus the final "obviously AI generated" audit over the prose before writing. The page is the longest narrative surface in Libby; the humanizer pass is the difference between a clinician-grade synthesis and a templated AI report.
+Before persisting `index.md`, apply the humanizer pass per `.claude/snippets/humanizer.md`. Read it once at the start of the run and run its 29-pattern check plus the final "obviously AI generated" audit over the prose before writing. The page is the longest narrative surface in Libby; the humanizer pass is the difference between a clinician-grade synthesis and a templated AI report.
 
 Scope:
 - Applies to: every prose section of `docs/cases/<slug>/index.md` — Research question, Cross-cutting caveat, Intervention grouping, the per-rank narratives under "Top interventions" (Evidence base, Likelihood of desired effect, Toxicity profile, Counter-productive mechanisms / dissent, Practical considerations, Why this rank), "Classes examined but not ranked", the Caveats bullet list, and the Run log paragraph.

@@ -110,7 +110,7 @@ Per intervention, produce one row:
 
 ## Voice — humanizer pass (free-text fields)
 
-Before writing each row, apply the humanizer skill at `.claude/skills/humanizer/SKILL.md` (vendored, MIT-licensed; falls back to `~/.claude/skills/humanizer/SKILL.md`) to the free-text fields. Read it once at the start of the run.
+Before writing each row, apply the humanizer pass per `.claude/snippets/humanizer.md` to the free-text fields. Read it once at the start of the run.
 
 Scope:
 - Applies to: `access_summary`, `payer_access_notes`, `next_steps[]` items, `notes`, trial-row `notes`, manufacturer-block `notes`. These render in the user-facing accessibility page (`accessibility.md`).

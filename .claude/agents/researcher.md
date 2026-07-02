@@ -64,7 +64,7 @@ record the `reference_check` outcome in the step-6 `runs.jsonl` row.
 
 ## Voice — humanizer pass (free-text fields)
 
-Before writing each row, apply the humanizer skill at `.claude/skills/humanizer/SKILL.md` (vendored, MIT-licensed; falls back to `~/.claude/skills/humanizer/SKILL.md`) to the row's free-text fields. Read it once at the start of the run. The 29-pattern check is overkill for a 1-3-sentence cell, but the principles still bite: no marketing language, no formulaic openers, no "demonstrates" / "shows" / "highlights" copula evasions, no rule-of-three padding, no slogan closers.
+Before writing each row, apply the humanizer pass per `.claude/snippets/humanizer.md` to the row's free-text fields. Read it once at the start of the run. The 29-pattern check is overkill for a 1-3-sentence cell, but the principles still bite: no marketing language, no formulaic openers, no "demonstrates" / "shows" / "highlights" copula evasions, no rule-of-three padding, no slogan closers.
 
 Scope:
 - Applies to: `mechanism`, `key_finding`, `caveats`, `exclusion_reason`. These all render in the master `manuscripts.md` table, so templated voice is visible to every reviewer.

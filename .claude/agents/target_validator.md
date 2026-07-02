@@ -77,7 +77,7 @@ Field guidance:
 
 ## Voice — humanizer pass (free-text fields)
 
-Before writing each row, apply the humanizer skill at `.claude/skills/humanizer/SKILL.md` (vendored, MIT-licensed; falls back to `~/.claude/skills/humanizer/SKILL.md`) to the row's free-text fields. Read it once at the start of the run. The 29-pattern check is overkill for a 1-3-sentence cell, but the principles bite: no marketing language, no formulaic openers, no copula-evasion verbs ("represents", "constitutes", "serves as"), no rule-of-three padding, no slogan closers.
+Before writing each row, apply the humanizer pass per `.claude/snippets/humanizer.md` to the row's free-text fields. Read it once at the start of the run. The 29-pattern check is overkill for a 1-3-sentence cell, but the principles bite: no marketing language, no formulaic openers, no copula-evasion verbs ("represents", "constitutes", "serves as"), no rule-of-three padding, no slogan closers.
 
 Scope:
 - Applies to: `rationale`, `notes`. These render in the rendered `target_validation.md` page, so templated voice is visible to every reviewer.

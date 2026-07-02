@@ -22,5 +22,8 @@ jobs:
       - name: Validate every case against its schemas
         run: python3 scripts/validate_case.py --all --strict
 
+      - name: Check every published case ran all required stages
+        run: python3 scripts/check_pipeline.py --all
+
       - name: Run test suite
         run: python3 -m pytest -q
