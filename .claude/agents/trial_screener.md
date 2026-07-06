@@ -194,7 +194,7 @@ Tell the user how many rows were appended and recommend they run `/clinician <sl
 
 ## Voice — humanizer pass (free-text fields)
 
-Before writing each row, apply the humanizer skill at `.claude/skills/humanizer/SKILL.md` (vendored, MIT-licensed; falls back to `~/.claude/skills/humanizer/SKILL.md`) to the row's free-text fields. Read it once at the start of the run. The 29-pattern check is overkill for a 1-3-sentence cell, but the principles still bite: no marketing language, no formulaic openers, no "represents" / "constitutes" copula evasions, no rule-of-three padding, no slogan closers.
+Before writing each row, apply the humanizer pass per `.claude/snippets/humanizer.md` to the row's free-text fields. Read it once at the start of the run. The 29-pattern check is overkill for a 1-3-sentence cell, but the principles still bite: no marketing language, no formulaic openers, no "represents" / "constitutes" copula evasions, no rule-of-three padding, no slogan closers.
 
 Scope:
 - Applies to: `inclusion_match_notes` (the ≤ 3-sentence eligibility-axis explanation that drives `fit_to_case`). This field surfaces in `trials.md` and the master `manuscripts.md`, so templated voice is visible to every reviewer.

@@ -58,7 +58,7 @@ Per-manuscript detail grouped by intervention. Each row is one published clinica
     <table class="trial-table">
       <thead><tr><th>Report</th><th>Model</th><th>n</th><th>Control</th><th>Dose</th><th>Mechanism</th><th>Key finding</th><th>Effect (qual)</th><th>Translatability</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Caveats</th></tr></thead>
       <tbody>
-        <tr><td>—/— (2019)<br><em>Mol Cancer Ther</em></td><td>MET-amplified PC-9-derived xenograft</td><td>—</td><td>—</td><td>—</td><td>Combined inhibition of bypass MET pathway with continued EGFR suppression overcomes adaptive resistance.</td><td>Combination produced sustained tumor regression where either agent alone showed regrowth at 30 days.</td><td>strong</td><td>high</td><td>—</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/—">—</a></td><td>—</td><td>Single model; clinical efficacy depends on documented MET amplification.</td></tr>
+        <tr><td>—/— (2019)<br><em>Mol Cancer Ther</em></td><td>MET-amplified PC-9-derived xenograft</td><td>—</td><td>—</td><td>—</td><td>Combined inhibition of bypass MET pathway with continued EGFR suppression overcomes adaptive resistance.</td><td>Combination produced sustained tumor regression where either agent alone showed regrowth at 30 days.</td><td>strong</td><td>high</td><td>—</td><td>—</td><td>—</td><td>Single model; clinical efficacy depends on documented MET amplification.</td></tr>
       </tbody>
     </table>
   </div>
@@ -72,7 +72,7 @@ Per-manuscript detail grouped by intervention. Each row is one published clinica
     <table class="trial-table">
       <thead><tr><th>Report</th><th>Model</th><th>n</th><th>Control</th><th>Dose</th><th>Mechanism</th><th>Key finding</th><th>Effect (qual)</th><th>Translatability</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Caveats</th></tr></thead>
       <tbody>
-        <tr><td>—/— (2021)<br><em>Cancer Discov</em></td><td>Ba/F3 cells expressing EGFR L858R + lazertinib-resistant lines</td><td>—</td><td>—</td><td>—</td><td>Bispecific EGFR/MET antibody enhances internalization; lazertinib provides intracellular EGFR inhibition.</td><td>Combination retained activity in models where lazertinib alone failed.</td><td>moderate</td><td>high</td><td>—</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/—">—</a></td><td>—</td><td>Cell-line model; in-vivo activity confirmed clinically (CHRYSALIS-2).</td></tr>
+        <tr><td>—/— (2021)<br><em>Cancer Discov</em></td><td>Ba/F3 cells expressing EGFR L858R + lazertinib-resistant lines</td><td>—</td><td>—</td><td>—</td><td>Bispecific EGFR/MET antibody enhances internalization; lazertinib provides intracellular EGFR inhibition.</td><td>Combination retained activity in models where lazertinib alone failed.</td><td>moderate</td><td>high</td><td>—</td><td>—</td><td>—</td><td>Cell-line model; in-vivo activity confirmed clinically (CHRYSALIS-2).</td></tr>
       </tbody>
     </table>
   </div>
@@ -86,7 +86,7 @@ Per-manuscript detail grouped by intervention. Each row is one published clinica
     <table class="trial-table">
       <thead><tr><th>Report</th><th>Model</th><th>n</th><th>Control</th><th>Dose</th><th>Mechanism</th><th>Key finding</th><th>Effect (qual)</th><th>Translatability</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Caveats</th></tr></thead>
       <tbody>
-        <tr><td>—/— (2020)<br><em>Cancer Discov</em></td><td>HER3-expressing NSCLC PDX panel</td><td>—</td><td>—</td><td>—</td><td>HER3-directed ADC delivers topoisomerase-I-inhibitor payload to tumor cells with surface HER3.</td><td>Tumor regression observed across HER3-high and HER3-mid expressors; broader activity than expected.</td><td>moderate</td><td>med</td><td>—</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/—">—</a></td><td>—</td><td>Bystander payload effect complicates predicting which patients benefit.</td></tr>
+        <tr><td>—/— (2020)<br><em>Cancer Discov</em></td><td>HER3-expressing NSCLC PDX panel</td><td>—</td><td>—</td><td>—</td><td>HER3-directed ADC delivers topoisomerase-I-inhibitor payload to tumor cells with surface HER3.</td><td>Tumor regression observed across HER3-high and HER3-mid expressors; broader activity than expected.</td><td>moderate</td><td>med</td><td>—</td><td>—</td><td>—</td><td>Bystander payload effect complicates predicting which patients benefit.</td></tr>
       </tbody>
     </table>
   </div>

@@ -12,14 +12,11 @@ import html
 import json
 import sys
 from pathlib import Path
+from libbylib import load_jsonl
 
 REPO = Path(__file__).resolve().parent.parent
 
 
-def load_jsonl(path: Path) -> list[dict]:
-    if not path.exists():
-        return []
-    return [json.loads(l) for l in path.read_text(encoding="utf-8").splitlines() if l.strip()]
 
 
 def persona_badges(personas: list[str] | None) -> str:

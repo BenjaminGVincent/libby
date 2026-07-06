@@ -112,6 +112,19 @@ Each persona reads the research dossier and appends one row to
 `data/cases/<slug>/board/positions.jsonl` — 3–5 ranked picks with rationale,
 evidence citations, primary concerns, and confidence. Order is independent.
 
+The five personas deliberate from the assembled dossier. One asymmetry is
+intentional: `concensusite` (the guidelines persona) alone has `WebSearch` /
+`WebFetch`, because professional guidelines (NCCN/ESMO/ASCO) update faster than
+the indexed literature the dossier was built from. The other four personas have
+no web access by design — this is not tool-config drift.
+
+Canonical on-disk layout: board output lives only in
+`data/cases/<slug>/board/{positions,critiques}.jsonl` (the merged files the
+renderers read). Per-persona split files and top-level copies are not part of
+the schema and should not be committed. The persona id is spelled
+`concensusite` everywhere in code, schemas, and data (a canonical misspelling);
+keep it consistent rather than "correcting" individual files.
+
 ### 6. Tumor board — round 2 (cross-critiques)
 
 ```
@@ -150,8 +163,28 @@ need different *omissions*, not just different word choices.
 bash scripts/run_case.sh <slug>
 ```
 
-Runs `build_table.py`, `build_evidence.py`, `build_board.py`,
-`build_recommendations.py`, and a final PHI re-scan against rendered docs.
+Fails fast on `validate_case.py` (schema-checks every committed artifact), then
+runs `build_table.py`, `build_evidence.py`, `build_manuscripts.py`,
+`build_board.py`, `build_recommendations.py`, `build_preclinical.py`,
+`build_target_validation.py`, `build_accessibility.py`, a PHI re-scan against
+rendered docs, and finally `build_report.py` (PDF/HTML downloads). It closes with
+a non-fatal `check_pipeline.py` completeness warning. Shared render helpers
+(`load_jsonl`, `FEATURE_LABELS`) live in `scripts/libbylib.py`.
+
+### 8a. Validation and completeness gates
+
+Two deterministic gates guard the committed artifacts, both also enforced in the
+`validate.yml` CI workflow:
+
+- `scripts/validate_case.py <slug> [--all] [--strict]` validates every JSONL row
+  and JSON document against `scripts/schema/*.schema.json`. Referenced identifiers
+  are format-checked here (`pmid` numeric, `doi` well-formed); existence and
+  contextual correctness are the job of the `reference_checking` skill, which the
+  evidence/synthesis agents invoke via `.claude/snippets/reference_check.md`.
+- `scripts/check_pipeline.py <slug> [--all]` proves every required stage ran, from
+  the board artifacts (5 personas in round 1, 5 critics in round 2, no
+  self-critique) through PI + translator surfaces. It keys off artifacts rather
+  than `runs.jsonl` because per-persona round telemetry is logged inconsistently.
 
 ### 9. Publish
 
@@ -167,17 +200,23 @@ any hit. The `pages.yml` workflow then runs `mkdocs gh-deploy` to publish.
 
 ## Schemas
 
-All committed JSONL artifacts validate against schemas in
-`scripts/schema/`:
+Every committed JSONL/JSON artifact validates against a schema in
+`scripts/schema/`, enforced by `validate_case.py` (in `run_case.sh` and CI) —
+not merely documented:
 
 - `profile.schema.json` — scrubbed patient profile.
 - `preferences.schema.json` — user tradeoff weights and vetoes.
+- `target_validation.schema.json` — target-validator row.
 - `trials.schema.json` — trial-screener row.
 - `clinical_evidence.schema.json` — clinical-evidence row.
 - `preclinical_evidence.schema.json` — pre-clinical evidence row.
+- `preclinical_pipeline.schema.json` / `preclinical_recommendations.schema.json` — horizon-scan track.
+- `accessibility.schema.json` — accessibility-screener row.
 - `positions.schema.json` — board round-1 position.
 - `critiques.schema.json` — board round-2 cross-critique.
 - `recommendations.schema.json` — PI's ranked recommendation row.
+- `runs.schema.json` — per-agent run-log row (`agent` is pinned to the canonical
+  agent id; extra telemetry is permitted).
 
 ## Cross-tumor and basket trials
 

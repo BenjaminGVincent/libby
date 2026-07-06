@@ -26,6 +26,7 @@
     },
     "case_slug": { "type": "string" },
     "target_intervention_id": { "type": "string" },
+    "target_intervention_label": { "type": "string", "description": "Optional human-readable label for target_intervention_id, mirrored from the position being critiqued." },
     "agreement_level": {
       "type": "string",
       "enum": ["endorse", "qualified", "dissent", "veto"]

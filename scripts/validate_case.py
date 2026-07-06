@@ -1,0 +1,183 @@
+#!/usr/bin/env python3
+"""Validate a Libby case's committed artifacts against scripts/schema/*.schema.json.
+
+Usage:
+  python3 scripts/validate_case.py <slug> [<slug> ...]
+  python3 scripts/validate_case.py --all
+
+Every JSONL row and every JSON document under data/cases/<slug>/ is checked against
+its schema. Until now only profile/preferences were validated (in promote_profile.py);
+the other artifacts had schemas that nothing loaded. This closes that gap and is wired
+into scripts/run_case.sh (fail-fast, before the renderers) and CI.
+
+Exit codes: 0 = all valid, 1 = one or more schema errors, 2 = usage / missing input.
+Warnings (unexpected/ drifted files) do not fail the run on their own; pass --strict
+to promote warnings to errors.
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import sys
+from pathlib import Path
+
+try:
+    import jsonschema
+except ImportError:
+    print(
+        "Missing dependency `jsonschema`. Install with `pip install jsonschema>=4.21`.",
+        file=sys.stderr,
+    )
+    sys.exit(2)
+
+REPO = Path(__file__).resolve().parent.parent
+SCHEMA_DIR = REPO / "scripts" / "schema"
+CASES_DIR = REPO / "data" / "cases"
+
+# Single-document JSON artifacts → schema name.
+JSON_ARTIFACTS = {
+    "profile.json": "profile",
+    "preferences.json": "preferences",
+}
+
+# JSONL artifacts (one object per line) → schema name. Paths are relative to the
+# case directory so the board/ subdir is addressed explicitly.
+JSONL_ARTIFACTS = {
+    "trials.jsonl": "trials",
+    "clinical_evidence.jsonl": "clinical_evidence",
+    "preclinical_evidence.jsonl": "preclinical_evidence",
+    "preclinical_pipeline.jsonl": "preclinical_pipeline",
+    "preclinical_recommendations.jsonl": "preclinical_recommendations",
+    "recommendations.jsonl": "recommendations",
+    "target_validation.jsonl": "target_validation",
+    "accessibility.jsonl": "accessibility",
+    "runs.jsonl": "runs",
+    "board/positions.jsonl": "positions",
+    "board/critiques.jsonl": "critiques",
+}
+
+# Known-but-non-canonical files we tolerate without a schema mapping. Anything else
+# ending in .jsonl that isn't mapped above is reported as drift.
+_SCHEMA_CACHE: dict[str, jsonschema.Draft202012Validator] = {}
+
+
+def validator_for(schema_name: str) -> jsonschema.Draft202012Validator:
+    if schema_name not in _SCHEMA_CACHE:
+        schema = json.loads((SCHEMA_DIR / f"{schema_name}.schema.json").read_text("utf-8"))
+        _SCHEMA_CACHE[schema_name] = jsonschema.Draft202012Validator(schema)
+    return _SCHEMA_CACHE[schema_name]
+
+
+def _format_errors(validator, payload, where: str) -> list[str]:
+    errs = sorted(validator.iter_errors(payload), key=lambda e: list(e.path))
+    out = []
+    for err in errs:
+        loc = "/".join(str(p) for p in err.path) or "<root>"
+        out.append(f"  {where}: {loc}: {err.message}")
+    return out
+
+
+def validate_json_doc(path: Path, schema_name: str) -> list[str]:
+    try:
+        payload = json.loads(path.read_text("utf-8"))
+    except json.JSONDecodeError as e:
+        return [f"  {path.name}: JSON parse error: {e}"]
+    return _format_errors(validator_for(schema_name), payload, path.name)
+
+
+def validate_jsonl(path: Path, schema_name: str) -> list[str]:
+    validator = validator_for(schema_name)
+    errors: list[str] = []
+    for lineno, raw in enumerate(path.read_text("utf-8").splitlines(), start=1):
+        raw = raw.strip()
+        if not raw:
+            continue
+        try:
+            row = json.loads(raw)
+        except json.JSONDecodeError as e:
+            errors.append(f"  {path.name}:{lineno}: JSON parse error: {e}")
+            continue
+        errors.extend(_format_errors(validator, row, f"{path.name}:{lineno}"))
+    return errors
+
+
+def validate_case(slug: str) -> tuple[list[str], list[str]]:
+    """Return (errors, warnings) for one case."""
+    case_dir = CASES_DIR / slug
+    errors: list[str] = []
+    warnings: list[str] = []
+
+    if not case_dir.is_dir():
+        return ([f"{slug}: no such case directory {case_dir}"], [])
+
+    for name, schema_name in JSON_ARTIFACTS.items():
+        p = case_dir / name
+        if p.exists():
+            errors.extend(validate_json_doc(p, schema_name))
+
+    for rel, schema_name in JSONL_ARTIFACTS.items():
+        p = case_dir / rel
+        if p.exists():
+            errors.extend(validate_jsonl(p, schema_name))
+
+    # Drift detection: any .jsonl in the case tree not covered by the maps above.
+    mapped = {(case_dir / rel).resolve() for rel in JSONL_ARTIFACTS}
+    for p in sorted(case_dir.rglob("*.jsonl")):
+        if p.resolve() in mapped:
+            continue
+        warnings.append(f"{slug}: unexpected artifact not in schema map: {p.relative_to(case_dir)}")
+
+    # A stray top-level positions.jsonl / critiques.jsonl is drift — board files
+    # belong under board/ (build_board.py only reads board/).
+    for stray in ("positions.jsonl", "critiques.jsonl"):
+        if (case_dir / stray).exists():
+            warnings.append(f"{slug}: stray top-level {stray} (canonical location is board/{stray})")
+
+    return (errors, warnings)
+
+
+def iter_slugs(args) -> list[str]:
+    if args.all:
+        return sorted(p.name for p in CASES_DIR.iterdir() if p.is_dir())
+    return args.slugs
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("slugs", nargs="*", help="Case slug(s) to validate")
+    parser.add_argument("--all", action="store_true", help="Validate every case under data/cases/")
+    parser.add_argument("--strict", action="store_true", help="Treat warnings as errors")
+    args = parser.parse_args()
+
+    slugs = iter_slugs(args)
+    if not slugs:
+        parser.error("give at least one slug, or --all")
+
+    total_errors = 0
+    total_warnings = 0
+    for slug in slugs:
+        errors, warnings = validate_case(slug)
+        for w in warnings:
+            print(f"WARN  {w}", file=sys.stderr)
+        if errors:
+            print(f"FAIL  {slug}: {len(errors)} schema error(s)", file=sys.stderr)
+            for line in errors:
+                print(line, file=sys.stderr)
+        else:
+            print(f"OK    {slug}")
+        total_errors += len(errors)
+        total_warnings += len(warnings)
+
+    if total_warnings:
+        print(f"\n{total_warnings} warning(s).", file=sys.stderr)
+    if total_errors:
+        print(f"{total_errors} schema error(s) across {len(slugs)} case(s).", file=sys.stderr)
+        return 1
+    if args.strict and total_warnings:
+        return 1
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

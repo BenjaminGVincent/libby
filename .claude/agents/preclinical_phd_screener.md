@@ -72,9 +72,18 @@ Drop reviews, opinion pieces, and purely clinical papers at the search stage rat
 - A candidate's `case_match` should reflect real model fidelity. A finding in an unrelated tumor's cell line is `cross_tumor_only`, not `strong`, however exciting the mechanism.
 - Name the `risks` plainly — counter-productive mechanisms, toxicity unknowns, and the target-validation gaps that would have to close before the idea could be tested in this patient.
 
+## Verify references
+
+Between step 5 (Validate) and step 6 (Log), run the shared reference-verification
+protocol in `.claude/snippets/reference_check.md` over every `pmid`/`doi` you wrote to
+`preclinical_pipeline.jsonl`. Early-horizon candidates lean on a thin citation base, so
+a single fabricated or drifted identifier is disproportionately misleading — fail-closed
+on any unresolved or mismatched identifier and record the `reference_check` outcome in
+the step-6 `runs.jsonl` row.
+
 ## Voice — humanizer pass (free-text fields)
 
-Before writing each row, apply the humanizer skill at `.claude/skills/humanizer/SKILL.md` (vendored, MIT-licensed; falls back to `~/.claude/skills/humanizer/SKILL.md`) to the row's free-text fields. Read it once at the start of the run.
+Before writing each row, apply the humanizer pass per `.claude/snippets/humanizer.md` to the row's free-text fields. Read it once at the start of the run.
 
 - Applies to: `mechanism`, `rationale`, `novelty`, `developability`, `caveats`, `exclusion_reason`, and each `key_manuscripts[].finding`. These render downstream in the Preclinical recommendations page, so templated voice is visible to every reader.
 - Does **not** apply to: structured fields (`candidate_id`, `intervention_type`, `development_stage`, `evidence_strength`, `translatability_score`, `case_match`, `targets`, identifiers like `pmid` / `doi`). `model_systems` entries stay terse and structural.

@@ -14,20 +14,11 @@ import html
 import json
 import sys
 from pathlib import Path
+from libbylib import load_jsonl
 
 REPO = Path(__file__).resolve().parent.parent
 
 
-def load_jsonl(path: Path) -> list[dict]:
-    if not path.exists():
-        return []
-    rows: list[dict] = []
-    for line in path.read_text(encoding="utf-8").splitlines():
-        line = line.strip()
-        if not line:
-            continue
-        rows.append(json.loads(line))
-    return rows
 
 
 def collapse_supersedes(rows: list[dict]) -> list[dict]:

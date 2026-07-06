@@ -14,15 +14,12 @@ import json
 import sys
 from collections import defaultdict
 from pathlib import Path
+from libbylib import load_jsonl
 
 REPO = Path(__file__).resolve().parent.parent
 PERSONAS = ["risktaker", "conservative", "critic", "concensusite", "advocate"]
 
 
-def load_jsonl(path: Path) -> list[dict]:
-    if not path.exists():
-        return []
-    return [json.loads(l) for l in path.read_text(encoding="utf-8").splitlines() if l.strip()]
 
 
 def fmt(v) -> str:

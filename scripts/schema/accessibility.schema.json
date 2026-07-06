@@ -63,7 +63,7 @@
           "phase": { "type": "string" },
           "indication": { "type": "string" },
           "patient_eligible": { "type": "string", "enum": ["yes", "likely", "unconfirmed", "no"], "description": "Does this trial accept the patient's tumor type per published eligibility?" },
-          "recruitment_status": { "type": "string", "enum": ["recruiting", "active not recruiting", "not yet recruiting", "completed", "terminated", "withdrawn", "suspended", "unknown"] },
+          "recruitment_status": { "type": "string", "enum": ["recruiting", "active not recruiting", "not yet recruiting", "enrolling by invitation", "completed", "terminated", "withdrawn", "suspended", "available", "no longer available", "temporarily not available", "approved for marketing", "unknown"] },
           "central_contact_name": { "type": "string" },
           "central_contact_email": { "type": "string" },
           "central_contact_phone": { "type": "string" },

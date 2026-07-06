@@ -238,6 +238,15 @@ Constraints — same as the executive summary:
 
 If `target_validation.jsonl` does not exist or is empty, skip this step entirely and tell the user. The build script tolerates a missing report — no PDF, no injection, no Downloads link.
 
+## Step 1.75 — verify references
+
+Before generating artifacts, run the shared reference-verification protocol in
+`.claude/snippets/reference_check.md` over every `pmid`/`doi`/`nct` identifier that
+appears in the `executive_summary.md` and `target_validation_report.md` you just
+authored. These are the shareable, download-facing surfaces — a wrong identifier here
+reaches an external reviewer directly. Fail-closed on any unresolved or mismatched
+identifier, and record the `reference_check` outcome in the Step-4 `runs.jsonl` row.
+
 ## Step 2 — generate the artifacts
 
 Run:
@@ -369,7 +378,7 @@ Apply both checks yourself before writing. The build-time guards are tripwires, 
 
 **The humanizer pass is not optional and is not skippable. It applies to *every* prose file the reporter authors, on *every* invocation, with no exceptions.** There is no "the case is small" or "the prose is already tight" or "I just made a small edit" carve-out. If the reporter writes any line of prose to disk, that line goes through the humanizer pass first. This is permanent and applies to every present and future report — `executive_summary.md`, `target_validation_report.md`, and any new reporter-authored file added to the contract later.
 
-**When:** apply the humanizer skill at `.claude/skills/humanizer/SKILL.md` (vendored into this repo, MIT-licensed; falls back to `~/.claude/skills/humanizer/SKILL.md` if the project-level copy is missing). Read it once at the start of the run and run its 29-pattern check plus the final "obviously AI generated" audit over the prose of each file before writing. Each file gets its own per-file pass — apply it to `executive_summary.md` after Step 1, again to `target_validation_report.md` after Step 1.5, and to any additional reporter-authored prose surface added to the workflow.
+**When:** apply the humanizer pass per `.claude/snippets/humanizer.md`. Read it once at the start of the run and run its 29-pattern check plus the final "obviously AI generated" audit over the prose of each file before writing. Each file gets its own per-file pass — apply it to `executive_summary.md` after Step 1, again to `target_validation_report.md` after Step 1.5, and to any additional reporter-authored prose surface added to the workflow.
 
 **Verification (required):** the runs.jsonl entry you append at Step 4 MUST include an explicit `humanizer_pass` field — an object with one boolean per authored file:
 ```json

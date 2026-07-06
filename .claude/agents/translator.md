@@ -122,7 +122,7 @@ A footer with the PMIDs and NCT IDs the recommendations cited.
 
 ## Voice — humanizer pass
 
-Before persisting `plain_language.md`, apply the humanizer skill at `.claude/skills/humanizer/SKILL.md` (vendored into this repo, MIT-licensed; falls back to `~/.claude/skills/humanizer/SKILL.md` if the project-level copy is missing). Read it once at the start of the run and run its 29-pattern check plus the final "obviously AI generated" audit over the prose before writing.
+Before persisting `plain_language.md`, apply the humanizer pass per `.claude/snippets/humanizer.md`. Read it once at the start of the run and run its 29-pattern check plus the final "obviously AI generated" audit over the prose before writing.
 
 Scope:
 - Applies to: every prose section of `docs/cases/<slug>/plain_language.md` — "What this page is", "What we know about your cancer", "What you told us matters most", the per-option narratives, "Questions to ask your oncologist", and the cross-cutting workup paragraph when present.

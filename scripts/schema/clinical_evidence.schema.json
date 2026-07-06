@@ -50,11 +50,11 @@
     "design": { "type": "string", "description": "RCT, single-arm phase 2, basket, retrospective cohort, etc." },
     "comparator": { "type": "string", "description": "— for single-arm; named comparator for RCTs." },
     "n": { "type": ["integer", "null"], "minimum": 0 },
-    "first_author": { "type": "string" },
-    "last_author": { "type": "string" },
+    "first_author": { "type": ["string", "null"] },
+    "last_author": { "type": ["string", "null"] },
     "last_author_contact": { "type": ["string", "null"] },
     "year": { "type": "integer", "minimum": 1980, "maximum": 2100 },
-    "journal": { "type": "string" },
+    "journal": { "type": ["string", "null"] },
     "outcome": { "type": "string", "description": "Free-text outcome name; e.g. 'ORR (BICR)', 'median PFS', 'OS HR vs comparator'." },
     "endpoint_type": {
       "type": "string",
@@ -67,7 +67,7 @@
     "ci_upper": { "type": ["number", "null"] },
     "variance_or_ci": { "type": "string", "description": "Free-text variance description when numeric CI bounds are not separable (e.g. 'IQR 1.5-4.2')." },
     "p_value": { "type": ["string", "number", "null"], "description": "p-value string or numeric; '<0.001' convention." },
-    "median_dor_or_pfs": { "type": "string", "description": "Durability — median DoR / PFS / time-on-treatment as reported. e.g. 'mDoR 7.0 mo', 'mPFS 3.6 mo'." },
+    "median_dor_or_pfs": { "type": ["string", "null"], "description": "Durability — median DoR / PFS / time-on-treatment as reported. e.g. 'mDoR 7.0 mo', 'mPFS 3.6 mo'." },
     "outcomes": {
       "type": "array",
       "description": "Structured list of every reported outcome on this paper — response-rate, OS, PFS, RFS, DFS, DCR, etc. — captured one per array entry. Renders directly into the Effect size + Variance columns of the master manuscripts table, one stacked line per outcome. Lets a single paper carry multiple endpoints cleanly (e.g. DeLLphi-304 reports OS HR, PFS, ORR, mDoR — four entries) instead of collapsing into one number plus free-text overflow. When `outcomes[]` is populated, the renderer prefers it; the legacy single-outcome fields (`endpoint_type`, `effect_size`, `effect_units`, `ci_lower`, `ci_upper`, `variance_or_ci`, `p_value`, `median_dor_or_pfs`) remain for backwards compatibility and as a fallback when `outcomes[]` is absent.",
@@ -153,8 +153,8 @@
       "enum": ["1a", "1b", "2a", "2b", "3a", "3b", "4", "5"],
       "description": "OCEBM-style tier."
     },
-    "pmid": { "type": ["string", "null"] },
-    "doi": { "type": ["string", "null"] },
+    "pmid": { "type": ["string", "null"], "pattern": "^[1-9][0-9]{0,8}$", "description": "PubMed ID as a bare numeric string (no 'PMID:' prefix); null when the source has no PubMed record. Existence/correctness is verified by the reference_checking skill, not this format gate." },
+    "doi": { "type": ["string", "null"], "pattern": "^10\\.[0-9]{4,9}/\\S+$", "description": "DOI in bare 10.xxxx/... form (no https:// or doi.org prefix); null when none." },
     "notes": { "type": "string" }
   }
 }

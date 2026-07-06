@@ -16,7 +16,7 @@
     "picks": {
       "type": "array",
       "minItems": 0,
-      "maxItems": 7,
+      "maxItems": 10,
       "items": {
         "type": "object",
         "additionalProperties": false,

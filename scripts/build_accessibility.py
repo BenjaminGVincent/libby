@@ -14,14 +14,12 @@ import html
 import json
 import sys
 from pathlib import Path
+from libbylib import load_jsonl
+from libbylib import FEATURE_LABELS as _FEATURE_LABELS
 
 REPO = Path(__file__).resolve().parent.parent
 
 
-def load_jsonl(path: Path) -> list[dict]:
-    if not path.exists():
-        return []
-    return [json.loads(l) for l in path.read_text(encoding="utf-8").splitlines() if l.strip()]
 
 
 def fmt(v, dash: str = "—") -> str:
@@ -243,18 +241,6 @@ def render_intervention_section(r: dict, number: int) -> str:
     return "\n".join(parts)
 
 
-_FEATURE_LABELS: dict[str, str] = {
-    # Mirror of `_FEATURE_LABELS` in `scripts/build_report.py`. Keep in sync.
-    "dll3_ihc": "DLL3-targeting interventions",
-    "prame_ihc_hla": "PRAME-targeting interventions",
-    "kras_g12r": "KRAS G12R-targeting interventions",
-    "cdkn2a_loss": "CDKN2A-loss / MTAP-targeting interventions",
-    "germline_brca": "Germline BRCA / HRD-targeting interventions",
-    "tp53_inactivating": "TP53-targeting interventions",
-    "ccnd3_alteration": "CCND3 / CDK4-6-targeting interventions",
-    "egfr_l858r": "EGFR L858R-targeting interventions",
-    "met_amplification": "MET amplification-targeting interventions",
-}
 
 
 def _feature_label(key: str) -> str:

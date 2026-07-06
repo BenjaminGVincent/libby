@@ -13,6 +13,10 @@ SLUG="$1"
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$REPO_ROOT"
 
+# Fail fast: every committed JSONL/JSON artifact must validate against its schema
+# before we render anything from it. Catches agent output drift at the source.
+python3 scripts/validate_case.py "$SLUG"
+
 python3 scripts/build_table.py "$SLUG"
 python3 scripts/build_evidence.py "$SLUG"
 python3 scripts/build_manuscripts.py "$SLUG"
@@ -37,6 +41,20 @@ python3 scripts/scan_for_phi.py --mode=files \
   "docs/cases/$SLUG/trials.md" 2>&1 | tee /dev/stderr | tail -5
 
 # Build PDFs + HTML downloads (clinician report, plain-language, manuscripts, recs HTML).
-python3 scripts/build_report.py "$SLUG" 2>&1 || true
+# Capture the exit code instead of swallowing it with `|| true`, so a broken report
+# is loud rather than a silent no-op.
+report_rc=0
+python3 scripts/build_report.py "$SLUG" 2>&1 || report_rc=$?
+if [ "$report_rc" -ne 0 ]; then
+  echo "ERROR: build_report.py failed for $SLUG (exit $report_rc) — PDFs/HTML downloads are stale or missing." >&2
+fi
+
+# Non-fatal completeness check: surface any missing pipeline stage (a partial
+# render mid-pipeline is legitimate, so this warns rather than blocks). CI runs
+# the same check as a hard gate on published cases.
+if ! python3 scripts/check_pipeline.py "$SLUG"; then
+  echo "WARNING: $SLUG is missing pipeline stages (see above) — fine mid-pipeline, but not publishable yet." >&2
+fi
 
 echo "Done. Review docs/cases/$SLUG/ before committing."
+exit "$report_rc"

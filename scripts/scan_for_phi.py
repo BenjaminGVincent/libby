@@ -58,7 +58,11 @@ PATTERNS: list[tuple[str, re.Pattern[str], str]] = [
     ),
     (
         "dob_label",
-        re.compile(r"\b(?:DOB|D\.O\.B\.|Date of Birth)\b", re.IGNORECASE),
+        # Per-alternative word boundaries: the dotted form D.O.B. ends in a
+        # literal '.', so a trailing \b would never align after it (dot is a
+        # non-word char) and the label would slip through. Anchor \b only where
+        # a word char actually ends the token.
+        re.compile(r"\b(?:DOB\b|D\.O\.B\.|Date of Birth\b)", re.IGNORECASE),
         "labeled date of birth",
     ),
     (

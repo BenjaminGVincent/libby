@@ -231,9 +231,19 @@ If this is a new case, also append a row to `docs/cases/index.md` linking to the
 
 The page is the editorial synthesis — dense, opinionated about which evidence is load-bearing, but transparent about disagreement and biomarker dependencies. A reviewer reading the first three sections (Research question, Patient profile, Cross-cutting caveat) should leave with the right epistemic state in 60 seconds. Everything below that is the substantiation.
 
+## Verify references
+
+Before the humanizer pass and before you persist `index.md`, run the shared
+reference-verification protocol in `.claude/snippets/reference_check.md` over every
+`pmid`/`doi`/`nct` identifier you carried into `recommendations.jsonl` and `index.md`.
+As the synthesis surface, the page is where an upstream hallucinated or drifted citation
+becomes clinician-facing — verify the identifiers you promote, don't assume the
+evidence agents already did. Record the `reference_check` outcome in this run's
+`runs.jsonl` row.
+
 ## Voice — humanizer pass
 
-Before persisting `index.md`, apply the humanizer skill at `.claude/skills/humanizer/SKILL.md` (vendored into this repo, MIT-licensed; falls back to `~/.claude/skills/humanizer/SKILL.md` if the project-level copy is missing). Read it once at the start of the run and run its 29-pattern check plus the final "obviously AI generated" audit over the prose before writing. The page is the longest narrative surface in Libby; the humanizer pass is the difference between a clinician-grade synthesis and a templated AI report.
+Before persisting `index.md`, apply the humanizer pass per `.claude/snippets/humanizer.md`. Read it once at the start of the run and run its 29-pattern check plus the final "obviously AI generated" audit over the prose before writing. The page is the longest narrative surface in Libby; the humanizer pass is the difference between a clinician-grade synthesis and a templated AI report.
 
 Scope:
 - Applies to: every prose section of `docs/cases/<slug>/index.md` — Research question, Cross-cutting caveat, Intervention grouping, the per-rank narratives under "Top interventions" (Evidence base, Likelihood of desired effect, Toxicity profile, Counter-productive mechanisms / dissent, Practical considerations, Why this rank), "Classes examined but not ranked", the Caveats bullet list, and the Run log paragraph.

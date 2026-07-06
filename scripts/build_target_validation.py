@@ -16,6 +16,7 @@ import json
 import sys
 from collections import OrderedDict
 from pathlib import Path
+from libbylib import load_jsonl
 
 REPO = Path(__file__).resolve().parent.parent
 
@@ -51,10 +52,6 @@ TEST_TYPE_LABEL = {
 }
 
 
-def load_jsonl(path: Path) -> list[dict]:
-    if not path.exists():
-        return []
-    return [json.loads(l) for l in path.read_text(encoding="utf-8").splitlines() if l.strip()]
 
 
 def load_json(path: Path) -> dict:

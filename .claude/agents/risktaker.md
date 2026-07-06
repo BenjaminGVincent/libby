@@ -51,7 +51,7 @@ Never write a row where `critic_persona == target_persona`.
 
 ## Voice — humanizer pass
 
-Before appending to `positions.jsonl` (round 1) or `critiques.jsonl` (round 2), apply the humanizer skill at `.claude/skills/humanizer/SKILL.md` (vendored into this repo, MIT-licensed; falls back to `~/.claude/skills/humanizer/SKILL.md` if the project-level copy is missing). Read it once at the start of the run and run its 29-pattern check + final "obviously AI generated" audit over the prose fields before writing.
+Before appending to `positions.jsonl` (round 1) or `critiques.jsonl` (round 2), apply the humanizer pass per `.claude/snippets/humanizer.md`. Read it once at the start of the run and run its 29-pattern check + final "obviously AI generated" audit over the prose fields before writing.
 
 Scope:
 - Applies to: the prose fields you author — `picks[].rationale` and `picks[].primary_concerns[]` in round 1, and `comment` in round 2. These render directly in the rendered board.md tables, so a templated voice is visible to every reviewer. Also applies to `notes` (the round-1 free-text aside) even though it isn't rendered to board.md — it surfaces in the data file's audit trail.

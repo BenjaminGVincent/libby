@@ -44,6 +44,7 @@ import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
+from libbylib import load_jsonl as _load_jsonl, FEATURE_LABELS as _FEATURE_LABELS
 
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -54,10 +55,6 @@ DOCS_DIR = REPO_ROOT / "docs" / "cases"
 # ---------- input loading ----------
 
 
-def _load_jsonl(path: Path) -> list[dict]:
-    if not path.exists():
-        return []
-    return [json.loads(l) for l in path.read_text(encoding="utf-8").splitlines() if l.strip()]
 
 
 def _load_json(path: Path) -> dict:
@@ -503,19 +500,6 @@ def _render_recs_table_html(
     )
 
 
-_FEATURE_LABELS: dict[str, str] = {
-    # Friendlier human-readable names for known scenario_short / target keys.
-    # Any key not in this map renders title-cased via `_feature_label_for_scenario`.
-    "dll3_ihc": "DLL3-targeting interventions",
-    "prame_ihc_hla": "PRAME-targeting interventions",
-    "kras_g12r": "KRAS G12R-targeting interventions",
-    "cdkn2a_loss": "CDKN2A-loss / MTAP-targeting interventions",
-    "germline_brca": "Germline BRCA / HRD-targeting interventions",
-    "tp53_inactivating": "TP53-targeting interventions",
-    "ccnd3_alteration": "CCND3 / CDK4-6-targeting interventions",
-    "egfr_l858r": "EGFR L858R-targeting interventions",
-    "met_amplification": "MET amplification-targeting interventions",
-}
 
 
 def _feature_label_for_scenario(scenario_short: str) -> str:
