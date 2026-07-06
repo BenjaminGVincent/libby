@@ -104,6 +104,16 @@ ONCOLOGY_ACRONYM_ALLOWLIST = frozenset({
     "SCLC", "NSCLC", "NEC", "LCNEC", "NEPC", "GEP", "MTC", "EP",
     # Hematologic + non-solid (PRAME pipeline overlap)
     "AML", "MDS", "ALL", "CLL", "CML", "DLBCL", "FL", "HL", "MM",
+    # AML / MDS regimens, transplant conditioning, and drug shorthands
+    # (relapsed/refractory AML + allo-HCT vocabulary)
+    "FLAG", "IDA", "FLAGIDA", "GO", "CMA", "TBI", "ATG", "RIC", "MAC",
+    "FLAMSA", "DLI", "GVHD", "GVL", "HCT", "HSCT", "NRM", "VOD", "SOS",
+    "MRD", "LSC", "HMA", "AZA", "DEC", "CPX", "MEC", "HIDAC", "CLAG",
+    "NPM", "CEBPA", "DNMT", "TET", "ASXL", "RUNX", "MECOM", "EVI",
+    "KMT", "IDH", "FLT", "BPDCN", "TCR", "MHAG", "STR",
+    # MDS subtype / prognostic-score / assay acronyms + AML trial families
+    "RCMD", "IPSS", "RARS", "RAEB", "LOD", "CNV", "VAF", "PYNNACLE",
+    "SIERRA", "ALLOHA", "AUGMENT",
     # PRAME / TCR / ImmTAC platform / mechanism
     "PRAME", "TCR", "TCER", "HLA",
     # Geographies (regions / countries, frequent in access guides)

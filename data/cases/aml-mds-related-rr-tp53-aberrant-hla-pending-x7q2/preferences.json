@@ -1,0 +1,8 @@
+{
+  "case_slug": "aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2",
+  "efficacy_toxicity_weight": 0.75,
+  "toxicity_vetoes": [],
+  "modality_constraints": [],
+  "free_text_constraints": "Curative intent. Efficacy-leaning but fitness-constrained (no ECOG/cardiac/organ-function data documented yet — fitness and goals-of-care assessment is an explicit open item, so the efficacy weight of 0.75 should be revisited once fitness is known). No specific toxicities were vetoed. Clinical trials are acceptable INCLUDING travel. Second allo-HCT (HCT2) and cellular/immunotherapy are acceptable modalities consistent with the curative goal — no modality is ruled out. The EXPLICIT reason for this Libby run is HLA-restricted immunotherapy eligibility (HA-1/HA-2 TCR-T, WT1, PRAME), which is gated on HLA-A*02:01 status and HA-1/HA-2 genotyping of the patient and the HLA-identical sibling donor; surfacing and de-risking that pathway is the priority.",
+  "prefers_trials": true
+}
