@@ -121,6 +121,8 @@ ONCOLOGY_ACRONYM_ALLOWLIST = frozenset({
     "PLASMAMATCH", "REDISCOVER", "MOUNTAINTAP", "SURVIVE", "MATRIX", "DRUP",
     "PANTUMOR", "PANTUMOUR", "REFOCUS", "HERTHENA", "DELLPHI", "MERU", "FORTRAS",
     "CROSSCHECK", "ALLOHA", "MOUNTAINTAP", "AUGMENT", "COMET", "PYNNACLE",
+    # ClinicalTrials.gov recruitment-status tokens that appear in agent run-log notes
+    "RECRUITING", "ENROLLING", "SUSPENDED", "WITHHELD", "AVAILABLE",
     "SIERRA", "ALLOHA", "AUGMENT",
     # PRAME / TCR / ImmTAC platform / mechanism
     "PRAME", "TCR", "TCER", "HLA",

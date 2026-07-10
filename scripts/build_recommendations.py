@@ -340,13 +340,15 @@ def main() -> int:
 
     parts.append(_TABLE_LEGEND)
 
-    parts.append(
-        f"[Back to case](index.md) · [Trials](trials.md) · "
-        f"[Evidence](evidence.md) · [Manuscripts](manuscripts.md) · "
-        f"[Target validation](target_validation.md) · "
-        f"[Board](board.md) · [Plain language](plain_language.md) · "
-        f"[Preclinical](preclinical_recommendations.md)\n"
-    )
+    nav = [
+        "[Back to case](index.md)", "[Trials](trials.md)", "[Evidence](evidence.md)",
+        "[Manuscripts](manuscripts.md)", "[Target validation](target_validation.md)",
+        "[Board](board.md)", "[Plain language](plain_language.md)",
+    ]
+    # Only link the preclinical page when this case actually has that track.
+    if (case_docs / "preclinical_recommendations.md").exists():
+        nav.append("[Preclinical](preclinical_recommendations.md)")
+    parts.append(" · ".join(nav) + "\n")
     parts.append(
         '!!! danger disclaimer "Decision support, not medical advice"\n'
         "    Libby is experimental. Recommendations on this page have not been\n"

@@ -2,9 +2,9 @@
 
 # Evidence — `gbm-mtap-cdkn2a-idhwt-subtotal-c4bq`
 
-_This page shows 34 included clinical + 35 included pre-clinical rows, grouped by intervention. 3 clinical and 7 pre-clinical papers were reviewed and excluded — see the [master manuscripts table](manuscripts.md) for the full audit trail._
+_This page shows 36 included clinical + 35 included pre-clinical rows, grouped by intervention. 8 clinical and 7 pre-clinical papers were reviewed and excluded — see the [master manuscripts table](manuscripts.md) for the full audit trail._
 
-## Clinical evidence (34 rows)
+## Clinical evidence (36 rows)
 
 Per-manuscript detail grouped by intervention. Each row is one published clinical-evidence finding. Columns mirror the per-publication decision-support layout used in companion projects (`io-shieldbreak`'s Pharmacodynamic-Results table).
 
@@ -375,6 +375,21 @@ Per-manuscript detail grouped by intervention. Each row is one published clinica
       <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
       <tbody>
         <tr><td>Wick W/Gorlia T (2017)<br><em>N Engl J Med</em></td><td class="num">437</td><td>437 adults with recurrent GBM, WHO PS 0-2, post-Stupp.</td><td>2L</td><td>Randomized phase 3</td><td>Lomustine alone</td><td>Lomustine 90 mg/m2 PO q6w + bevacizumab 10 mg/kg IV q2w, until progression or unacceptable toxicity</td><td>OS</td><td>OS</td><td class="num">0.95 HR</td><td class="num">0.74–1.21</td><td class="num">0.65</td><td>mOS 9.1 vs 8.6 mo (no OS benefit); mPFS 4.2 vs 1.5 mo (PFS gain)</td><td>Bevacizumab class AEs (hypertension, proteinuria, bleeding) + lomustine cytopenias. Grade &gt;=3 AE rate 64% (combo) vs 38% (lomustine alone). Treatment-related deaths: 4 vs 4 (similar).</td><td><span class="rob-badge rob-low">RoB2:Low</span></td><td>1b</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/29091557">29091557</a></td><td><a href="https://doi.org/10.1056/NEJMoa1707358">DOI</a></td><td>PFS gain but no OS benefit — the published statement of recurrent-GBM bevacizumab activity. Together with BRAIN it defines the recurrence bevacizumab option set. Same intratumoral-hemorrhage caveat applies as on the Friedman 2009 row.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### Navlimetostat (BMS-986504)  
+<small><code>intervention_id: navlimetostat</code> · 2 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Sanai N/Mehta S (2025)<br><em>Neuro-Oncology (SNO 2025 abstract TIP-09)</em></td><td class="num">2</td><td>MTAP deletion on archival tissue; recurrent GBM with planned re-resection for paired tumor/plasma/CSF PK</td><td>2L+</td><td>Phase 0/1 surgical window-of-opportunity, dose-escalation with PK-triggered expansion (NCT06883747)</td><td>—</td><td>Oral 200/400/600 mg once daily for 6 days pre-resection, final dose 3-5 h before surgery</td><td>biomarker</td><td>Intratumoral drug concentration / target engagement (SDMA H-score reduction)</td><td class="num">77% SDMA H-score reduction vs baseline (1 patient, 200 mg cohort) %</td><td class="num">—</td><td class="num">—</td><td>—</td><td>No safety data reported in this early trial-in-progress abstract (2 enrolled, 1 post-surgery as of 06/06/25).</td><td><span class="rob-badge rob-med">informal:high</span></td><td>4</td><td><span class="fit-badge fit-partial">partial</span></td><td>—</td><td><a href="https://doi.org/10.1093/neuonc/noaf201.1669">DOI</a></td><td>Trial-in-progress abstract with first PK/PD readout: the CNS-penetration question this case turns on. As of the 06/06/25 cutoff only 1 patient had completed surgery, so n is minimal and no AE table exists yet — toxicities left empty by source, not by omission. Recurrent-disease + re-resection gate means a newly-diagnosed patient is not eligible now; pin for the recurrence conversation.</td></tr>
+        <tr><td>Jänne PA/— (2025)<br><em>Journal of Thoracic Oncology (WCLC 2025 abstract OA08.01)</em></td><td class="num">35</td><td>Heavily pretreated homozygous MTAP-deletion NSCLC; higher response fraction in EGFR-mut (4/7) and ALK+ (2/4) subsets</td><td>2L+</td><td>First-in-human phase 1/2 dose-escalation and expansion (NCT06855771 program); NSCLC cohort report</td><td>—</td><td>Oral once daily, 200-800 mg (phase 2 dose range explored)</td><td>ORR</td><td>ORR (RECIST 1.1)</td><td class="num">29.00 %</td><td class="num">—</td><td class="num">—</td><td>mDoR 10.5 mo</td><td>Mostly grade 1-2 events; grade &gt;=3 treatment-related AEs in 14% across the solid-tumor safety population. Hematologic toxicity was limited (anemia, neutropenia, thrombocytopenia each grade 1-3). No treatment-related deaths; discontinuation for toxicity in 2%.</td><td><span class="rob-badge rob-med">informal:med</span></td><td>4</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td>—</td><td><a href="https://doi.org/10.1016/j.jtho.2025.09.054">DOI</a></td><td>Cross-tumor efficacy/safety anchor for the same brain-penetrant MTA-cooperative PRMT5 inhibitor the patient could reach in GBM. NSCLC, not glioma — the response numbers do not transfer to GBM, but they establish the class delivers durable single-agent activity and a lighter myelosuppression profile than first-generation PRMT5 inhibitors. Safety percentages are the all-solid-tumor population per the IASLC/ASCO Post reports; conference abstract, no full paper yet. Related solid-tumor PK/PD abstract: JCO 2025 43:3011 (10.1200/JCO.2025.43.16_suppl.3011).</td></tr>
       </tbody>
     </table>
   </div>

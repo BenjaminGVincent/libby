@@ -6,7 +6,7 @@
 
 This is the plain-language companion to a longer clinician page on the same case. It walks through what Libby found about a newly diagnosed glioblastoma, what tests need to happen before some decisions can be made, and what treatment options were ranked highest for a conversation with the neuro-oncology team. It is meant to help you arrive at appointments with sharper questions, not to replace anything your team says.
 
-A few ground rules before reading. Libby looks at *targetable features* — specific molecular fingerprints of the tumor — and ranks options that act on those fingerprints, plus the standard-of-care treatment that has the strongest survival evidence. Several pending test results gate several of the options below, so a lot of this page reads as "if X comes back, then Y is on the table." No statistic here is a promise.
+A few ground rules before reading. Libby looks at *targetable features* — specific molecular fingerprints of the tumor — and ranks options that act on those fingerprints, plus the standard-of-care treatment that has the strongest survival evidence. Several pending test results gate several of the options below, so a lot of this page reads as "if X comes back, then Y is on the table." No statistic here is a promise. Two of the options below (Options 7 and 8, both experimental trials in the MTAP drug class) were added after the expert panel finished its review, so the panel did not weigh in on them — that is flagged where each one appears.
 
 ## What we know about the cancer
 
@@ -123,25 +123,39 @@ The prior probability that any of these comes back positive is low. But the NGS 
 
 A note on immunotherapy specifically: pembrolizumab and similar drugs have repeatedly failed in *unselected* glioblastoma — the published phase 3 trials in this disease are uniformly negative when the patient population is not pre-selected by biomarker. So pembrolizumab is only on this page through the narrow biomarker-gated door (MSI-H or TMB-H confirmed on the FDA-recognized platform), not as a general option.
 
-### Option 7 — Navlimetostat on the MountainTAP-5 trial (parallel-track insurance, July 2026)
+### Option 7 — Navlimetostat, a second brain-penetrant PRMT5 inhibitor
 
-This is the same drug class as Option 2 (a PRMT5 inhibitor targeting MTAP-loss tumors), from a different sponsor (Bristol-Myers Squibb). The trial (NCT07492680) has a cohort specifically for newly diagnosed glioblastoma combined with standard temozolomide plus radiation — the same backbone-preserving design as the Phoenix trial. The key difference is that this is a multi-site trial, which would dramatically lower the geographic burden.
+**This option was added after the expert panel finished its review, so the panel did not weigh in on it.** It is the same drug class as Option 2 — a PRMT5 inhibitor built to exploit MTAP loss — from a different sponsor (Bristol-Myers Squibb). What moved it onto the page is new data on one specific, hard problem: does the drug actually get into a brain tumor? Earlier drugs in this class failed on exactly that hurdle.
 
-The catch: the trial is planned to open July 17, 2026 and is not enrolling yet. So this cannot be acted on today. The practical step is to pin the July 2026 date in the chart and have the neuro-oncology team check enrollment status with the BMS Clinical Trials Contact Center the week the trial opens (contact details on the clinician page). The MTAP staining from the workup step will still be the gate — confirm whether the trial accepts the same antibody or requires a re-stain at their central lab.
+Here is what changed. There is now a dedicated brain-tumor trial (NCT06883747) running at the same Phoenix center as Option 2, and it is recruiting. It is built around a short course of the drug followed by a second operation that samples the tumor, so the lab can measure two things: whether the drug reached the tumor, and whether it switched off its target inside brain-tumor tissue. The first readout said yes to both — measurable drug levels in the non-enhancing part of the tumor, above the threshold the team had set in advance, and a strong drop in the marker that tells you the target is being shut off. In a separate cancer type (a lung cancer with the same MTAP loss), the drug shrank tumors in about 29% of heavily pretreated patients, with side effects that were on the lighter end for this class.
 
-If the BGB-58067 slot in Phoenix becomes infeasible for any reason — the slot is taken, travel does not work, the second brain operation is not viable — this becomes the patient-relevant backup on the MTAP axis once it opens.
+The honest framing matters here, because it is easy to over-read. The brain data so far is about the drug reaching and engaging its target — it is not proof that the drug shrinks brain tumors. No glioblastoma response data on this molecule has been published, and the lung-cancer shrinkage rate does not carry over to brain tumors; different disease, different odds. So what this data does is answer the "can the drug even get there" question that sank earlier drugs in the class. It does not answer the "does it help people with glioblastoma live longer" question. That one is still open.
 
-### Option 8 — Abemaciclib (a CDK4/6 inhibitor) at first progression
+Two practical limits. The recruiting brain-tumor trial requires the cancer to have come back and requires a planned re-operation, so a newly diagnosed patient is not eligible for it right now. And a separate cohort of the sponsor's larger trial (NCT07492680) is built for newly diagnosed glioblastoma with standard temozolomide and radiation — the same backbone-preserving design as Option 2, and multi-site, which would lower the travel burden a lot — but it is planned to open around July 2026 and is not enrolling yet. So neither piece is actionable today; both are worth pinning in the chart. The MTAP staining from the workup step is still the gate, and it is worth confirming whether these trials accept the same antibody or want a re-stain at their own lab.
+
+If the Phoenix slot in Option 2 does not work out, this program is the strongest MTAP-axis backup to watch — with the caveat that the newly diagnosed cohort is a calendar trigger, not an option you can take this month.
+
+### Option 8 — TNG456 plus abemaciclib, a combination hitting both molecular changes at once
+
+**This option was also added after the expert panel finished its review, so the panel did not weigh in on it.** It is the one option on the whole page that goes after both of this tumor's molecular changes at the same time. TNG456 is a brain-penetrant PRMT5 inhibitor aimed at the MTAP loss; abemaciclib is a CDK4/6 inhibitor aimed at the CDKN2A loss. Because those two deletions sit side by side on chromosome 9 in this tumor, a combination that hits both is, on paper, the most complete mechanistic match in the dossier. The trial (NCT06810544) is recruiting and lists glioblastoma as eligible.
+
+The reason it sits this far down the list is that the evidence is at the earliest possible stage. So far there is laboratory data only — the combination shrank tumors in mouse models more deeply than either drug alone, and the PRMT5 piece was highly selective for MTAP-deleted cells — plus a trial that has just started enrolling. There is no human response data, no human safety table for the combination in glioblastoma, and the first patient was dosed only in mid-2025. So this is a promising idea backed by mechanism and animal data, not a treatment with a track record.
+
+Two things to know. It is recurrence-gated: enrollment requires the cancer to have progressed, so it is a conversation for later, not now. And a combination of two drugs that can each lower blood counts has an unknown combined toxicity in this setting — that is a real open question, not a footnote. The CDK4/6 half of the combination also depends on the RB1 staining from the workup coming back intact; if RB1 is lost, that half of the rationale falls away.
+
+Worth pinning for the recurrence conversation as the most mechanistically complete trial on the MTAP-plus-CDKN2A axis, with the plain caveat that it is unproven in people.
+
+### Option 9 — Abemaciclib (a CDK4/6 inhibitor) at first progression
 
 **This option carries caveats.** It is on this page because the patient's tumor has the exact biology (CDKN2A loss with intact RB1) that this drug class was designed to attack, and the recurrence-time conversation deserves to be on the radar early. It is not a first-line option at any rank.
 
 Abemaciclib is a twice-daily pill, FDA-approved for breast cancer, and used off-label in glioblastoma. The case for it in this tumor is mechanistic: CDKN2A loss removes the natural brake on cell division, and abemaciclib reinstalls that brake pharmacologically. Of the three available CDK4/6 inhibitors, abemaciclib was specifically selected for its (partial) ability to get into the brain — an earlier related drug (palbociclib) does not get into brain tumors at meaningful concentrations and failed when tested.
 
-What is contested: the published evidence in glioblastoma is modest. A trial in recurrent CDKN2A-deleted glioblastoma reported that less than 10% of patients had their disease controlled at six months, and a second trial showed a marginal benefit on progression-free survival with no survival benefit. The preclinical case for combining a CDK4/6 inhibitor with a PRMT5 inhibitor (the same drug class as Options 2 and 7) is intriguing — there is laboratory data showing deeper responses with the combination than either drug alone — but no clinical trial has tested that combination in glioblastoma yet. Off-label, off-protocol use also faces an insurance fight: the major drug compendium does not currently list glioblastoma as a supported off-label indication for abemaciclib, so a medical-exception letter would be needed.
+What is contested: the published evidence in glioblastoma is modest. A trial in recurrent CDKN2A-deleted glioblastoma reported that less than 10% of patients had their disease controlled at six months, and a second trial showed a marginal benefit on progression-free survival with no survival benefit. The preclinical case for combining a CDK4/6 inhibitor with a PRMT5 inhibitor (the same pairing Option 8 puts into a single trial) is intriguing — there is laboratory data showing deeper responses with the combination than either drug alone — but no clinical trial has read out that combination in glioblastoma yet. Off-label, off-protocol use also faces an insurance fight: the major drug compendium does not currently list glioblastoma as a supported off-label indication for abemaciclib, so a medical-exception letter would be needed.
 
 Worth flagging for the recurrence conversation, not worth committing to before the cancer comes back.
 
-### Option 9 — CAN-3110 (an engineered cold-sore virus) at first progression
+### Option 10 — CAN-3110 (an engineered cold-sore virus) at first progression
 
 This is a "pre-position" option — an experimental treatment that becomes potentially relevant at recurrence, not now. Including it here as a heads-up so the relevant test can be ordered cheaply, in advance.
 
@@ -151,13 +165,13 @@ The practical step now is cheap: order an HSV-1 IgG blood test (about $20). The 
 
 The trial (NCT03152318) is currently active but not recruiting at the lead site (Dana-Farber). Worth checking again at recurrence.
 
-### Option 10 — FUS-mediated blood-brain barrier opening (at first progression)
+### Option 11 — FUS-mediated blood-brain barrier opening (at first progression)
 
 Another recurrence-time pre-position. FUS (focused ultrasound) uses sound waves directed through the skull to temporarily open the blood-brain barrier, which lets chemotherapy drugs reach the tumor at much higher concentrations. A small phase 1 trial showed 4–6× higher drug concentrations in the tumor with the device than without. The phase 3 trial (SONOBIRD, NCT04528680) is testing this with carboplatin in recurrent glioblastoma.
 
 The practical step is to be in contact with a SONOBIRD-participating US site (Northwestern, Columbia, or MD Anderson) before recurrence rather than after, because the decision to implant the device has to be made at the operating table during the re-resection — not on a separate visit afterward. Calling Adam Sonabend's team at Northwestern is a reasonable starting point.
 
-### Option 11 — Front-line CAR-T (EGFRvIII-directed cellular therapy)
+### Option 12 — Front-line CAR-T (EGFRvIII-directed cellular therapy)
 
 **This option was considered but not recommended at this point in the disease.** It is on this page because Libby surfaces what was weighed and rejected, not just what was kept.
 
@@ -181,13 +195,14 @@ Two things are deliberately not listed:
 3. For the Optune device: what does the 18-hour-a-day wear-time look like in practice for a 66-year-old who wants to keep daily life as normal as possible? Is the survival benefit worth the daily commitment, in our judgment?
 4. If the MTAP staining confirms, how do we feel about the Phoenix trial? Specifically: would a second brain operation be feasible given what surgery already showed about the tumor? Is the travel realistic? What is the latest on the published BGB-58067 phase 0 data?
 5. If MGMT comes back methylated, where do you land on adding lomustine (the CeTeG regimen)? The 17-month median survival gain is striking but the trial was small and the confidence interval crosses zero — how does that read in this case?
-6. If the NGS panel comes back negative for all the rare actionable findings (which is the most likely outcome), and the MTAP staining does not confirm, what is left on the menu beyond standard Stupp plus Optune? At that point, what does the post-recurrence plan look like?
-7. Is there a SONOBIRD-participating site we should be in contact with now, before recurrence, so that the focused ultrasound option is in play if and when first progression happens? And should we order the HSV-1 antibody test now to know whether CAN-3110 would be a stronger option later?
-8. Are there genetic counseling or family-history considerations from the germline panel that we should be thinking about for our family?
+6. The two newer MTAP-class trials (Options 7 and 8) were added after the expert panel finished, so it did not review them — one where a related drug just showed it reaches a brain tumor, and one combining two drugs against both molecular changes. Are either worth tracking now, and what would trigger a real conversation about them: a published readout, a nearer-to-home site opening, or the cancer coming back?
+7. If the NGS panel comes back negative for all the rare actionable findings (which is the most likely outcome), and the MTAP staining does not confirm, what is left on the menu beyond standard Stupp plus Optune? At that point, what does the post-recurrence plan look like?
+8. Is there a SONOBIRD-participating site we should be in contact with now, before recurrence, so that the focused ultrasound option is in play if and when first progression happens? And should we order the HSV-1 antibody test now to know whether CAN-3110 would be a stronger option later?
+9. Are there genetic counseling or family-history considerations from the germline panel that we should be thinking about for our family?
 
 ## Where things stand, honestly
 
-This is a hard diagnosis. The standard treatment (radiation plus temozolomide plus Optune) is the regimen with the strongest randomized evidence in the disease, and it remains the recommendation here, but the median survival numbers from those trials — around 21 months — are sobering. The tumor has two unusual molecular features that point toward a new class of experimental drugs (PRMT5 inhibitors), and there is a single open US trial that fits this case well, at the cost of travel to Phoenix and a second brain operation. A second trial in the same class is planned to open in July 2026 closer to home. Several other "if the test comes back X" branches exist, mostly low-probability but worth checking because the test is being run anyway. The pending results from the workup step shape almost everything else on the page, so the most important thing right now is to get all of those tests ordered in parallel, this week. The rest of the conversation gets sharper once they come back.
+This is a hard diagnosis. The standard treatment (radiation plus temozolomide plus Optune) is the regimen with the strongest randomized evidence in the disease, and it remains the recommendation here, but the median survival numbers from those trials — around 21 months — are sobering. The tumor has two unusual molecular features that point toward a new class of experimental drugs (PRMT5 inhibitors), and there is a single open US trial that fits this case well, at the cost of travel to Phoenix and a second brain operation. The same drug class has a couple of newer parallel tracks worth watching — one where a related drug has just shown it actually reaches a brain tumor (a hurdle that sank earlier drugs), and one that goes after both of this tumor's molecular changes at once — but those are early, mostly gated on the cancer coming back, and unproven in people so far. Several other "if the test comes back X" branches exist, mostly low-probability but worth checking because the test is being run anyway. The pending results from the workup step shape almost everything else on the page, so the most important thing right now is to get all of those tests ordered in parallel, this week. The rest of the conversation gets sharper once they come back.
 
 ## Sources
 
@@ -200,9 +215,9 @@ The recommendations on this page draw on the following publications and clinical
 - CeTeG / NOA-09 (lomustine plus temozolomide): PMID 31488360
 - BGB-58067 at Ivy Brain Tumor Center: NCT07485049
 - Anvumetostat MTAPESTRY-101 (PRMT5 class proxy): PMID 39282709
-- TNG908 (earlier PRMT5 with inadequate brain exposure): PMID 38108025
 - GBM AGILE platform: NCT03970447
-- Navlimetostat MountainTAP-5: NCT07492680
+- Navlimetostat (BMS-986504) brain-tumor CNS-penetration trial: NCT06883747; newly diagnosed GBM cohort: NCT07492680
+- TNG456 plus abemaciclib combination trial: NCT06810544
 - SurVaxM phase 2a: PMID 36473145; SURVIVE phase 2b: NCT05163080
 - Dabrafenib plus trametinib in BRAF V600E high-grade glioma (ROAR): PMID 34838156
 - Larotrectinib (tumor-agnostic NTRK fusion): PMID 29466156
