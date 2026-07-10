@@ -2,9 +2,9 @@
 
 # Evidence — `tnbc-brca1-oligomet-liver-r7p3`
 
-_This page shows 30 included clinical + 22 included pre-clinical rows, grouped by intervention. 6 clinical and 2 pre-clinical papers were reviewed and excluded — see the [master manuscripts table](manuscripts.md) for the full audit trail._
+_This page shows 41 included clinical + 22 included pre-clinical rows, grouped by intervention. 7 clinical and 2 pre-clinical papers were reviewed and excluded — see the [master manuscripts table](manuscripts.md) for the full audit trail._
 
-## Clinical evidence (30 rows)
+## Clinical evidence (41 rows)
 
 Per-manuscript detail grouped by intervention. Each row is one published clinical-evidence finding. Columns mirror the per-publication decision-support layout used in companion projects (`io-shieldbreak`'s Pharmacodynamic-Results table).
 
@@ -241,7 +241,7 @@ Per-manuscript detail grouped by intervention. Each row is one published clinica
 </div>
 
 ### Olaparib + ceralasertib (ATR-i)  
-<small><code>intervention_id: olaparib-ceralasertib</code> · 1 row(s)</small>
+<small><code>intervention_id: olaparib-ceralasertib</code> · 2 row(s)</small>
 
 <div class="trial-table-wrap">
   <div class="trial-scroll">
@@ -249,6 +249,7 @@ Per-manuscript detail grouped by intervention. Each row is one published clinica
       <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
       <tbody>
         <tr><td>Tutt ANJ/Yap TA (2024)<br><em>—</em></td><td class="num">70</td><td>mTNBC; stratified BRCA-mut vs HRR-mut non-BRCA vs HRR-WT; up to 2 prior chemo lines.</td><td>2L+</td><td>Randomized phase 2 (VIOLETTE, NCT03330847)</td><td>Olaparib monotherapy</td><td>Olaparib 300 mg PO BID continuous + ceralasertib 160 mg PO days 1-7 of 28-day cycle</td><td>HR_PFS</td><td>PFS by stratum</td><td class="num">0.81 HR</td><td class="num">—</td><td class="num">not significant</td><td>—</td><td>Hematologic toxicity additive — anemia and thrombocytopenia heightened with the combination. Adavosertib arm closed early for toxicity.</td><td><span class="rob-badge rob-med">RoB2:Some</span></td><td>2b</td><td><span class="fit-badge fit-partial">partial</span></td><td>—</td><td>—</td><td>VIOLETTE is the dedicated PARPi + DDR combination phase 2 in mTNBC. Both combinations failed to beat olaparib monotherapy; adavosertib arm closed for toxicity. Decision-relevant evidence against routinely combining ATR/WEE1 with olaparib in BRCA1-mut TNBC outside of trials.</td></tr>
+        <tr><td>Ring/Turner (2023)<br><em>Clinical Cancer Research</em></td><td class="num">70</td><td>plasmaMATCH Cohort E; 70 evaluable mTNBC patients, mostly HRR-wildtype (73% no germline/somatic BRCA), 14% germline BRCA1/2, 4% somatic BRCA2. 27% relapsed within 12 mo of adjuvant therapy; 56% one prior chemo line.</td><td>2L+</td><td>single-arm phase 2 cohort (plasmaMATCH Cohort E, CRUK/15/010)</td><td>—</td><td>Olaparib 300 mg PO BID continuous + ceralasertib 160 mg PO daily on days 1-7 of a 28-day cycle</td><td>ORR</td><td>ORR</td><td class="num">17.10 %</td><td class="num">10.40–25.50</td><td class="num">—</td><td>mPFS 4.3 mo; mDoR 9.1 mo</td><td>Grade 3+ events were led by hypertension (14%) and anemia (13%); the ATR-plus-PARP combination was deliverable in a pretreated mTNBC population. Thrombocytopenia/neutropenia rates not separately tabulated in text.</td><td><span class="rob-badge rob-med">ROBINS-I:Moderate</span></td><td>2b</td><td><span class="fit-badge fit-strong">strong</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37773077">37773077</a></td><td><a href="https://doi.org/10.1158/1078-0432.CCR-23-1696">DOI</a></td><td>TNBC-specific published evidence for the ATR + PARP axis (ceralasertib), distinct from the negative VIOLETTE randomized comparison already in the dossier. Responses in HRR-wildtype tumors support the TP53/replication-stress rationale her tumor fits (BRCA1 + TP53), not just BRCA-driven benefit. Directly relevant to the recruiting olaparib+ceralasertib arm (NCT04090567) and the ATRiBRAVE ceralasertib-priming design.</td></tr>
       </tbody>
     </table>
   </div>
@@ -306,6 +307,146 @@ Per-manuscript detail grouped by intervention. Each row is one published clinica
       <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
       <tbody>
         <tr><td>Aftimos PG/Schmid P (2022)<br><em>—</em></td><td class="num">51</td><td>mTNBC; germline BRCA1/2-WT required; up to 3 prior lines; MYC-driven / basal-like enriched.</td><td>2L+</td><td>Phase 1b/2 single-arm (NCT03901469)</td><td>—</td><td>ZEN-3694 oral daily + talazoparib 1 mg PO daily</td><td>ORR</td><td>ORR</td><td class="num">22.00 %</td><td class="num">—</td><td class="num">—</td><td>—</td><td>BET inhibitor class effects: thrombocytopenia, fatigue, nausea. Talazoparib contributes anemia. Manageable with dose modification per the phase 1b portion.</td><td><span class="rob-badge rob-high">ROBINS-I:Serious</span></td><td>3b</td><td><span class="fit-badge fit-weak">weak</span></td><td>—</td><td>—</td><td>ASCO 2022 abstract only; full publication pending. The trial restricted to BRCA-WT TNBC, so it does NOT directly apply to this patient (BRCA1-mut). Included to anchor the BET-inhibitor evidence base for the MYC-amplification axis — patient is BRCA1-mut so this regimen is not enrollable for her.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### CX-5461 (pidnarulex; G-quadruplex stabilizer / RNA Pol I inhibitor)  
+<small><code>intervention_id: cx-5461</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Hilton/Cescon (2022)<br><em>Nature Communications</em></td><td class="num">40</td><td>40 patients over 10 dose levels; enriched for germline/somatic HRD; breast the most common tumor type (47.5%); 6 germline BRCA1 carriers. Prior systemic therapy expected.</td><td>2L+</td><td>phase 1 dose-escalation, single-agent (CCTG IND.231)</td><td>—</td><td>CX-5461 IV, 10 dose levels 50-650 mg/m^2; RP2D 475 mg/m^2 on days 1, 8, 15 every 4 weeks</td><td>ORR</td><td>ORR (partial responses in HRD subset)</td><td class="num">14.00 %</td><td class="num">—</td><td class="num">—</td><td>—</td><td>Dose-limiting toxicity was phototoxicity (grade 3-4 in 15%; any-grade 60%), a chemotype effect independent of the synthetic-lethal mechanism. Hematologic grade 3-4 events were uncommon (anemia 5%, neutropenia 5%).</td><td><span class="rob-badge rob-med">ROBINS-I:Moderate</span></td><td>2b</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/35750695">35750695</a></td><td><a href="https://doi.org/10.1038/s41467-022-31199-2">DOI</a></td><td>The dual HRD+MYC eligibility gate (NCT04890613) is what surfaced this drug; the published IND.231 responses cluster in BRCA2/PALB2 breast carriers, so BRCA1-specific benefit is inferred rather than shown. Later Nat Genet 2023 work flagged CX-5461 as a nonselective mutagen, a safety concern for a curative-intent candidate.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### ART6043 (POLθ / DNA polymerase theta inhibitor) ± olaparib  
+<small><code>intervention_id: art6043</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Yap/— (2025)</td><td class="num">61</td><td>61 patients: 19 monotherapy (median age 58, 37% prior PARPi), 42 ART6043 + olaparib (median age 65.5, 31% prior PARPi); median 4 prior therapies. Activity seen only in the olaparib-combination arm.</td><td>2L+</td><td>first-in-human phase 1/2a dose-escalation, monotherapy and olaparib-combination (NCT05898399)</td><td>—</td><td>ART6043 oral once daily (dose per escalation) ± olaparib 300 mg PO BID</td><td>ORR</td><td>Preliminary anti-tumor activity (combination arm)</td><td class="num">1 confirmed PR + 1 unconfirmed CR across 42 combination patients; 1 PSA response responses</td><td class="num">—</td><td class="num">—</td><td>—</td><td>The sponsor described the monotherapy tolerability as favorable, with no toxicity beyond olaparib&#x27;s when combined; PK supports once-daily oral dosing with no ART6043-olaparib drug interaction. Per-term grade 3+ rates not released in the ESMO press summary.</td><td><span class="rob-badge rob-high">ROBINS-I:Serious</span></td><td>4</td><td><span class="fit-badge fit-partial">partial</span></td><td>—</td><td>—</td><td>ESMO 2025 oral presentation (Yap); no peer-reviewed paper and no per-term AE table released, so toxicities[] left empty — abstract-level press summary only. FDA Fast Track (Feb 2026) for gBRCA HER2-negative breast cancer and a randomized phase 2 (POLKA) in that population make this the most advanced POLθ program for the BRCA1 axis; not a 1L option (washout expected).</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### Novobiocin sodium (POLθ ATPase inhibitor)  
+<small><code>intervention_id: novobiocin</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>—/— (2023)</td><td class="num">—</td><td>PARP-inhibitor-naive or -resistant HR/DDR-altered solid tumors; germline-only testing accepted. Tumors where a PARPi is standard of care require prior PARPi exposure.</td><td>2L+</td><td>phase 1 dose-finding, single-agent (NCI 10528, NCT05687110)</td><td>—</td><td>Novobiocin sodium oral, 5-days-on/2-days-off, dose per escalation</td><td>other</td><td>MTD / RP2D and safety (primary)</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td>—</td><td>—</td><td>—</td><td>5</td><td><span class="fit-badge fit-partial">partial</span></td><td>—</td><td>—</td><td>Repurposed antibiotic acting on the POLθ ATPase; NCI-sponsored dose-finding still recruiting, no efficacy or safety readout published, so the row anchors mechanism only. The gate names BRCA1 with germline testing accepted; a somatic-only BRCA1 call could keep her PARP-naive-eligible where a germline call would require prior PARPi first.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### SYN818 (POLθ / DNA polymerase theta inhibitor)  
+<small><code>intervention_id: syn818</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>—/— (2024)</td><td class="num">—</td><td>BRCA mutation or other HR-pathway deficiency by NGS; standard-of-care must be exhausted, placing it well past a treatment-naive 1L slot.</td><td>2L+</td><td>phase 1 dose-escalation, single-agent (NCT06666270)</td><td>—</td><td>SYN818 oral, dose per escalation</td><td>other</td><td>MTD / RP2D and safety (primary)</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td>—</td><td>—</td><td>—</td><td>5</td><td><span class="fit-badge fit-weak">weak</span></td><td>—</td><td>—</td><td>Third distinct POLθ program on the BRCA1 axis alongside ART6043 and novobiocin; no clinical data published, mechanism-only row. Requires exhausted standard-of-care, so informational for the DDR pipeline rather than a near-term option for a 1L patient.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### Saruparib (AZD5305; selective PARP1 inhibitor)  
+<small><code>intervention_id: saruparib</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Yap/— (2024)</td><td class="num">306</td><td>PETRA trial, 306 patients across four tumor types; heavily pretreated HER2-negative breast cancer (both HR+ and TNBC) in the breast subset; 31 breast patients at 60 mg.</td><td>2L+</td><td>first-in-human phase 1/2a (PETRA, NCT04644068)</td><td>—</td><td>Saruparib 60 mg PO daily (dose-expansion; 20-140 mg escalation range)</td><td>ORR</td><td>ORR (breast subset, 60 mg)</td><td class="num">48.40 %</td><td class="num">35.70–61.30</td><td class="num">—</td><td>mPFS 9.1 mo; mDoR 7.3 mo (breast, 60 mg)</td><td>Generally well tolerated with a wide therapeutic index; most adverse events grade 1-2 and less hematologic toxicity than approved PARP1/2 inhibitors. Per-term grade 3+ table not in the conference abstract.</td><td><span class="rob-badge rob-high">ROBINS-I:Serious</span></td><td>4</td><td><span class="fit-badge fit-partial">partial</span></td><td>—</td><td>—</td><td>AACR 2024 presentation (Yap); no peer-reviewed clinical paper yet, so identifiers null and toxicities[] empty (abstract lacks the per-term AE table). The distinct PMID 39187844 is a preclinical model paper, not this trial. Strongest published evidence for the PARP1-selective class that HS-10502 belongs to; breast subset mixes HR+ and TNBC, so read as cross-subtype class precedent for the BRCA1 axis rather than a TNBC-specific estimate.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### HS-10502 (selective PARP1 inhibitor)  
+<small><code>intervention_id: hs-10502</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>—/— (2023)</td><td class="num">—</td><td>Dedicated HRR-mutant HER2-negative breast cohort (BRCA1/2 qualifying); prior standard therapy required, so a later-line slot for a treatment-naive patient.</td><td>2L+</td><td>phase 1a/1b dose-escalation with tumor-specific expansion (NCT05740956)</td><td>—</td><td>HS-10502 oral, dose per escalation</td><td>other</td><td>MTD / RP2D, preliminary activity (primary)</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td>—</td><td>—</td><td>—</td><td>5</td><td><span class="fit-badge fit-partial">partial</span></td><td>—</td><td>—</td><td>PARP1-selective agent designed to spare the hematologic toxicity that limits olaparib and talazoparib; no efficacy or safety readout published, mechanism-only row. Class efficacy precedent sits in the saruparib PETRA row; the HRR-mutant HER2-negative breast cohort matches her BRCA1 status directly.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### RLY-2608 (zovegalisib; mutant-selective allosteric PI3Kα inhibitor) + fulvestrant  
+<small><code>intervention_id: rly-2608</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>—/— (2025)</td><td class="num">31</td><td>ReDiscover trial; 31 response-evaluable PIK3CA-mutant HR+/HER2- breast patients on the fulvestrant combination. HR+ population — not TNBC.</td><td>2L+</td><td>first-in-human phase 1, combination with fulvestrant (NCT05216432)</td><td>—</td><td>RLY-2608 oral (dose per escalation) + standard-dose fulvestrant</td><td>ORR</td><td>ORR (PIK3CA-mutant HR+ breast)</td><td class="num">38.70 %</td><td class="num">21.80–57.80</td><td class="num">—</td><td>mPFS 10.3 mo</td><td>Treatment-related adverse events mostly low-grade, manageable and reversible; the mutant-selective design spares much of the hyperglycemia and rash that limit alpelisib. Per-term grade 3+ rates not in the abstract.</td><td><span class="rob-badge rob-high">ROBINS-I:Serious</span></td><td>4</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td>—</td><td>—</td><td>ASCO 2025 / SABCS abstract; no peer-reviewed clinical paper, identifiers null and toxicities[] empty (no per-term AE table in abstract). Efficacy is in PIK3CA-mutant HR+/HER2- disease with fulvestrant, so it is cross-subtype precedent for the patient&#x27;s PIK3CA feature in TNBC, where a fulvestrant partner does not apply. Actionability hinges on confirming her PIK3CA variant is a recognized oncogenic hotspot (pending).</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### Tersolisib (STX-478 / LY4064809; mutant-selective PI3Kα inhibitor)  
+<small><code>intervention_id: tersolisib</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>—/— (2024)</td><td class="num">61</td><td>61 patients (29 HR+/HER2- breast, 32 other solid tumors); 52% pre-diabetic/diabetic; 41% of breast patients had prior PI3K-pathway inhibitor; median 3 prior lines.</td><td>2L+</td><td>first-in-human phase 1/2 monotherapy (ESMO 2024 LBA27; NCT05768139)</td><td>—</td><td>STX-478 monotherapy 20-160 mg PO daily; MTD 100 mg daily</td><td>ORR</td><td>ORR (confirmed/unconfirmed, all-comers)</td><td class="num">21.00 %</td><td class="num">—</td><td class="num">—</td><td>—</td><td>MTD 100 mg daily; PI3Kα-WT class effects (hyperglycemia 23%, diarrhea, rash) were grade 1-2, a cleaner profile than alpelisib whose monotherapy ORR is 4-6%. Fatigue 30%, nausea 20% all-grade.</td><td><span class="rob-badge rob-high">ROBINS-I:Serious</span></td><td>4</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td>—</td><td>—</td><td>ESMO 2024 LBA27; conference abstract, no peer-reviewed clinical paper so identifiers null. Reported ORR is all-comers (21%) and HR+ breast (23%); no TNBC-specific estimate, so this is cross-subtype precedent for the PIK3CA feature. Complements RLY-2608 as a second mutant-selective PI3Kα program with a favorable metabolic-toxicity profile.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### IDE161 (PARG inhibitor)  
+<small><code>intervention_id: ide161</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>—/— (2023)</td><td class="num">—</td><td>Phase 1 expansion enriched for ER+/HER2- HRD+ breast (~10-14% of breast) and HRD+ ovarian; preliminary proof-of-concept, including a PR in a BRCA1/2 endometrial subject.</td><td>2L+</td><td>first-in-human phase 1 dose-escalation/expansion, single-agent (NCT05787587)</td><td>—</td><td>IDE161 oral, dose per escalation/expansion</td><td>ORR</td><td>Preliminary anti-tumor activity / target engagement</td><td class="num">PR in a BRCA1/2 endometrial subject; tumor shrinkage in multiple HRD patients responses</td><td class="num">—</td><td class="num">—</td><td>—</td><td>—</td><td><span class="rob-badge rob-high">ROBINS-I:Serious</span></td><td>4</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td>—</td><td>—</td><td>Included as the class-leading PARG-inhibitor precedent for DAT-2645 (the case&#x27;s PARG trial has no clinical data of its own). PARG inhibition is a distinct DDR mechanism that exploits the same HRD context as PARP; the reported activity is cross-tumor (endometrial, ovarian) and ER+ breast, not TNBC. Press-release-level proof-of-concept only, no per-term safety table published.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### DAT-2645 (PARG inhibitor)  
+<small><code>intervention_id: dat-2645</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>—/— (2024)</td><td class="num">—</td><td>BRCA1/2 LOF and/or other DDR defect by validated testing; standard-of-care must have failed or be unsuitable. Prior PARPi allowed either way.</td><td>2L+</td><td>phase 1 dose-escalation, single-agent (NCT06614751)</td><td>—</td><td>DAT-2645 tablet, dose per escalation</td><td>other</td><td>MTD / RP2D and safety (primary)</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td>—</td><td>—</td><td>—</td><td>5</td><td><span class="fit-badge fit-weak">weak</span></td><td>—</td><td>—</td><td>The case&#x27;s own PARG-inhibitor trial; not-yet-recruiting with no clinical data, so this is a mechanism-only row and the class precedent lives in the IDE161 row. PARG inhibition exploits the same HRD vulnerability her BRCA1 loss creates but is pipeline context, not a near-term 1L slot.</td></tr>
       </tbody>
     </table>
   </div>

@@ -1,41 +1,40 @@
 # Executive summary
 
 **Case:** `tnbc-brca1-oligomet-liver-r7p3`
-**Question:** In newly diagnosed de novo M1 triple-negative breast cancer with a BRCA1 mutation, basal-like subtype, TMB-high / TIL-rich phenotype, and a single 1.5 cm hepatic oligometastasis, what 1L interventions act on the patient's biomarker axes once germline-vs-somatic BRCA1, PD-L1 CPS by 22C3, and TMB platform are resolved?
-**Evidence base:** 23 trials, 25 included clinical-evidence rows (5 logged as `considered_excluded` per scope rule), 24 preclinical rows, 13 target-validation rows; agreement scores range from 1.0 (rank 1 shared workup) down to -0.2 (rank 10 considered_with_caveats), with one conditional conservative veto at rank 11.
+**Question:** In treatment-naive de novo metastatic triple-negative breast cancer that is BRCA1-mutant, basal-like, TMB-high and TIL-rich, with a solitary 1.5 cm liver oligometastasis and a curative-intent goal, which 1L interventions act on the BRCA1 and basal/immune axes, and which recruiting on-axis trials deliver them on-protocol?
+**Evidence base:** 38 trial rows, 22 clinical-evidence rows, and a preclinical set anchoring BRCA1/PARP synthetic lethality. Nine ranked recommendations, agreement scores from 1.0 (unanimous) down to -0.2; no persona issued a veto anywhere in the case.
 
 ## What this report covers
 
-The PI synthesized 11 ranked rows across a unified ranking that branches on three pending biomarker results. The clinician page carries the full rank-by-rank narrative; this PDF is the synthesis for a second-opinion reviewer who has not seen the live case.
+The PI synthesized nine ranked rows into a single ranking (no scenario branches). The clinician page carries the full rank-by-rank narrative and per-trial evidence tables; this PDF is the synthesis for a reviewer who has not seen the live case.
 
 ## Top-line findings
 
-- Six parallel gating tests load the first conversation, but germline-BRCA-positive return is sufficient to start the rank-2 PARP inhibitor before CPS resolves per NCCN v2.2026.
-- Rank 2 is olaparib (OlympiAD PFS HR 0.58, replicated by EMBRACA at 0.54; lowest discontinuation rate on the ranking at 4.9%), conditional on germline BRCA1 confirmation. Rank 9 talazoparib carries equivalent efficacy with G3+ anemia 39% vs 16%, so it is the contingency on intolerance.
-- The board genuinely splits on rank 6 (SBRT consolidation on NCT05534438). Advocate and risktaker push for it on biology selection; concensusite ranks against routine off-trial consolidation on NRG-BR002 phase IIR PFS HR ~1.31 and SABR-COMET's 4.5% treatment-related death rate. The synthesis honors both by anchoring on trial enrollment after documented systemic response.
-- The ranking is targetable-feature-scoped. A negative germline BRCA1 return collapses ranks 2 and 9 to the somatic-BRCA Stanford trial (NCT03990896, n=13 interim). A CPS <10 return closes ranks 3, 5, and 7 and routes the patient to rank 8 (SG monotherapy on the Feb 2026 NCCN cat-1 elevation) or rank 4 (carbo/gem). Standard 2L+ care that does not act on a named feature is a separate care-team conversation that this report does not cover.
-- The conservative filed a conditional veto on rank 11 (ZEN-3694 + pembrolizumab + nab-paclitaxel triplet) on the absence of a published triplet safety dossier. The veto lifts on published dose-expansion safety data.
+- Two pending tests load the first conversation before any prescription: 22C3 PD-L1 CPS on the breast primary, and the germline-versus-somatic BRCA1 determination. Neither branches the ranking; each decides on-label versus off-label and which lane the patient enters.
+- Rank 1, pembrolizumab plus carboplatin/gemcitabine (KEYNOTE-355), is the board's only unanimous endorsement and the maturest 1L survival evidence in metastatic TNBC (OS HR 0.73, median OS 23.0 versus 16.1 months). The entire labeled benefit lives in the CPS >=10 stratum, and CPS is pending; the favorable TMB-14 and 3+ TIL phenotype does not rescue a CPS-low result.
+- The two category-1 PARP inhibitors, olaparib (rank 2) and talazoparib (rank 3), hold only while BRCA1 reads germline. A somatic-only call moves both off-label, and the enrollable route becomes the Stanford somatic-BRCA talazoparib trial (NCT03990896).
+- The ranking is targetable-feature-scoped. If both gating tests resolve against the patient, the within-scope options narrow to the biomarker-agnostic carboplatin/gemcitabine backbone (rank 4) and the trial routes; standard 2L+ care that acts on no named feature is a separate care-team conversation this report does not cover.
+- Off-protocol local therapy for the liver lesion is not supported. Both randomized consolidation trials point against it in unselected patients (NRG-BR002 PFS HR ~1.31; E2108 OS HR 1.11), which is why the curative-intent goal is carried only as the MSK SABR trial slot at rank 9.
 
 ## Recommendation summary
 
-**Shared first step:** Germline BRCA1 panel, PD-L1 CPS by 22C3 on the breast primary block, TMB on F1CDx, HER2 IHC 0 vs low, ITWG TIL re-score, PIK3CA hotspot resolution.
-
-1. **Olaparib 300 mg PO BID (OlympiAD).** Strongest evidence-quality + guideline-fit anchor in the dossier; two registrational phase 3 replications. *Conditional on `germline_brca` positive; foreclosed if the test is negative.*
-2. **Pembrolizumab + carboplatin / gemcitabine (KEYNOTE-355).** OS HR 0.73, 7-month median OS gain in the CPS ≥10 stratum.
-3. **Carboplatin + gemcitabine.** PD-L1-agnostic BRCA1-directed backbone; TNT BRCA-mut subgroup ORR 68% in n=43.
-4. **Datopotamab deruxtecan ± durvalumab on TROPION-Breast05 (NCT06103864).** Trial-preference anchor; control arm equals the rank-3 regimen.
-5. **SBRT on the MSK SABR protocol (NCT05534438).** Curative-intent layer after documented systemic response; the board is split, trial enrollment is the consensus-aligned path.
-6. **Sacituzumab govitecan + pembrolizumab (ASCENT-04).** NCCN v2.2026 cat-1 preferred for CPS ≥10 on PFS HR 0.65 and DoR 16.5 vs 9.2 months.
-7. **Sacituzumab govitecan monotherapy (ASCENT-03 1L).** NCCN v2.2026 cat-1 preferred for CPS <10; displaces carbo/gem in the post-Feb 2026 stack.
-8. **Talazoparib (EMBRACA).** Efficacy parity with olaparib; tolerability is the binding differentiator.
+1. **Pembrolizumab + carboplatin/gemcitabine (KEYNOTE-355).** Unanimous, OS-mature 1L standard; benefit lives entirely in CPS >=10, which is pending.
+2. **Olaparib 300 mg PO BID (OlympiAD).** Category-1, replicated, oral single-agent on the BRCA1 axis; gentlest hematologic profile of the PARP options. *Conditional on germline BRCA1; off-label if somatic-only.*
+3. **Talazoparib 1 mg PO daily (EMBRACA).** Efficacy parity with olaparib and the deepest ORR on the axis; ranks below only on heavier G3+ anemia (~39% versus 16%). *Same germline gate.*
+4. **Carboplatin + gemcitabine.** The biomarker-agnostic BRCA1 platinum backbone no pending test can foreclose; a floor and induction platform, not the efficacy ceiling.
+5. **Datopotamab deruxtecan +/- durvalumab on TROPION-Breast05 (NCT06103864).** Recruiting 1L on-protocol route whose control arm reproduces rank 1; considered with caveats (two dissents, TROP2 mechanism off the BRCA1 axis).
+6. **Niraparib + pembrolizumab (TOPACIO).** Mechanistically clean chemo-free PARP+IO bet, but the headline 47% ORR is an n=15 subgroup and niraparib is off-label; later-line, considered with caveats.
+7. **PARP1-selective inhibitor trial (HS-10502; saruparib as class precedent).** Toxicity-sparing bet for a young patient, but the efficacy is cross-subtype abstract-level and the enrollable agent has no readout of its own; 2L+.
+8. **Olaparib + ceralasertib (ATR-i, NCT04090567).** Best-evidenced DDR-combination entry, but VIOLETTE was negative over olaparib alone; 2L+ only.
+9. **SBRT to the liver lesion on the MSK SABR trial (NCT05534438).** The on-protocol route to the curative-intent goal, layered on the systemic backbone after a documented response; trial-only, never standalone.
 
 ## What this report does *not* cover
 
-Dose adjustments, monitoring schedules, sequencing across later lines, payer / access logistics, and standard chemotherapy backbones that do not act on a named targetable feature. The PI's rank-by-rank narrative and per-trial evidence tables live on the case page.
+Dose adjustments, monitoring schedules, sequencing across later lines, payer and access logistics, and standard chemotherapy that acts on no named targetable feature. The rank-by-rank narrative and per-trial extractions live on the case page.
 
 ## How to use this report
 
-Each ranked option carries an agreement state (endorsed / dissent / veto by persona), evidence anchors with PMID and NCT links, and the foreclosure conditions that change the ranking. This PDF is the synthesis for a hand-off conversation; the live page is the worked-out audit trail.
+Each ranked option carries the board's agreement state by persona, evidence anchors with PMID and NCT links, and the foreclosure conditions that change the ranking. This PDF is the synthesis for a hand-off conversation; the live page is the worked-out audit trail.
 
 ---
 
