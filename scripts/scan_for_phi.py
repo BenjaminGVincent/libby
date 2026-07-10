@@ -416,6 +416,13 @@ def scan_file(path: Path) -> list[tuple[int, str, str, str]]:
     except (FileNotFoundError, IsADirectoryError, PermissionError):
         return []
     file_level_suppress = _BYDESIGN_LABELS if _is_bydesign_artifact(path) else set()
+    # runs.jsonl is agent-authored process telemetry written AFTER the intake
+    # scrub — it never carries patient identifiers, but its free-text notes are
+    # dense with ALL-CAPS oncology acronym lists (e.g. "AML PDX, CBX", "GBM,
+    # RECRUITING") that trip the NAME,NAME heuristic. Suppress that one label
+    # here; MRN/SSN/labeled-DOB/patient-name-label patterns still scan.
+    if path.name == "runs.jsonl":
+        file_level_suppress = file_level_suppress | {"all_caps_name"}
     hits: list[tuple[int, str, str, str]] = []
     in_bydesign_region = False
     region_end_marker: str | None = None
