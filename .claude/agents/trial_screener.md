@@ -58,6 +58,22 @@ met.
 Tag each row with `tumor_type_relationship` so the board and PI can
 distinguish enrollable-now from informational-only.
 
+**Restriction / platform features admit shared-handle agents.** Some nominated
+targetable features are not a single drug target but a *restriction* or
+*platform* the patient is eligible through — most commonly an HLA allele
+(e.g. HLA-A\*02:01), a required surface antigen the disease expresses, or a
+cellular-therapy / allograft context. When the nominated feature is one of
+these, a trial is in-scope if it is *gated on that same restriction / platform*,
+even if the drug's specific molecular target was not itself nominated. Rationale:
+for HLA-restricted immunotherapy the actionable handle is the restriction — a
+CG1/HLA-A\*02:01 T-cell engager and a WT1/HLA-A\*02:01 TCR-T share the same
+eligibility gate and belong in the same board discussion, whether or not the
+specific peptide (CG1) ever appeared on the feature list. Do **not** scope-drop
+an agent that rides the patient's nominated restriction / platform merely because
+its antigen is novel or unlisted. This is the complement of the mechanism-scope
+rule, not an exception to it: standard-of-care drugs unrelated to *any* nominated
+feature still stay out.
+
 **Low-positive IHC expression handling.** When `targetable_features[]` includes
 a low-positive IHC marker (a `1+` result, e.g. HER2-low; see the IHC
 expression-tier rule in the intake contract), search the marker's
@@ -140,6 +156,48 @@ Workflow:
 6. **Show the roster to the user and ask "Roster complete?"** before running per-drug per-trial searches in Step 2. The user's answer is decisive — if they add agents, those go into the roster too.
 
 **Hard rule.** If the targetable feature has ≥ 3 known investigational drugs and any are missing from the per-drug trial search after Step 2, surface this as a coverage gap in the run-log and re-prompt the user before declaring Step 4 complete. Missing investigational agents from a known pipeline is a Libby failure, not an out-of-scope decision.
+
+### Step 1.75 — eligibility-gate registry sweep (REQUIRED when a feature is a restriction, required antigen, or platform)
+
+Step 1.5 finds drugs by *name*. This step finds them by *the eligibility gate the
+patient shares* — the only way to surface a novel-antigen or novel-sponsor agent
+that rides the same actionable handle. Skipping it is the failure mode where an
+on-axis trial from an unlisted sponsor is missed because its specific target was
+never nominated (e.g. missing CBX-250 / CROSSCHECK-001, a CG1/HLA-A\*02:01 T-cell
+engager, in an HLA-A\*02:01-restricted-immunotherapy case).
+
+Run this for every targetable feature that is a **restriction or platform** rather
+than a single named drug target:
+- an **HLA allele restriction** (HLA-A\*02:01, A\*24:02, …) — the handle for every
+  peptide-HLA-directed therapy (TCR-T, TCR-mimetic antibody / T-cell engager,
+  peptide vaccine), whatever the specific peptide;
+- a **required surface antigen** the disease expresses (CD123, CD33, DLL3, …) —
+  to enumerate every agent that requires it, not only the named ones;
+- a **cellular-therapy or allograft platform** the patient is a candidate for
+  (post-allo-HCT donor-derived cell therapy, second transplant, …).
+
+Workflow:
+1. **Query the registry by the eligibility gate, not the drug.** Use the
+   ClinicalTrials.gov v2 API to enumerate every recruiting / not-yet-recruiting
+   trial whose condition matches the patient's disease class AND whose eligibility
+   contains the restriction / platform term — e.g.
+   `query.cond=AML&query.term=HLA-A*02:01&filter.overallStatus=RECRUITING,NOT_YET_RECRUITING`,
+   then repeat for tokenization variants (`"HLA A2"`, `"A*02:01"`, `"A2-restricted"`)
+   and for each required-antigen / platform term. Registries index HLA notation
+   inconsistently, so vary the `*`, colon, and spacing.
+2. **Enumerate the full result set** — page through every hit; do not stop at the
+   most-cited one. This is a completeness enumeration, not a relevance ranking.
+3. **Reconcile against the Step 1.5 roster.** Any trial the sweep returns that is
+   not already on the roster is one you would otherwise have missed — add it and
+   identify its drug + target.
+4. **Fold newly-found agents into `pipeline.md`** and carry them into Step 2.
+
+**Hard rule.** A recruiting trial that *requires the patient's nominated HLA
+restriction (or required antigen, or platform)* in its eligibility is on-axis by
+definition and must be kept — do not drop it because its specific peptide/antigen
+target was not separately nominated (see the restriction / platform clause in the
+Scope rule). Missing such a trial is a Libby recall failure, not an out-of-scope
+decision; surface any gap in the run log.
 
 ### Step 2 — run the search
 

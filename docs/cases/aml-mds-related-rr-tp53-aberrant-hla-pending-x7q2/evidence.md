@@ -2,9 +2,9 @@
 
 # Evidence — `aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2`
 
-_This page shows 13 included clinical + 13 included pre-clinical rows, grouped by intervention. 3 clinical and 2 pre-clinical papers were reviewed and excluded — see the [master manuscripts table](manuscripts.md) for the full audit trail._
+_This page shows 14 included clinical + 14 included pre-clinical rows, grouped by intervention. 3 clinical and 2 pre-clinical papers were reviewed and excluded — see the [master manuscripts table](manuscripts.md) for the full audit trail._
 
-## Clinical evidence (13 rows)
+## Clinical evidence (14 rows)
 
 Per-manuscript detail grouped by intervention. Each row is one published clinical-evidence finding. Columns mirror the per-publication decision-support layout used in companion projects (`io-shieldbreak`'s Pharmacodynamic-Results table).
 
@@ -190,7 +190,21 @@ Per-manuscript detail grouped by intervention. Each row is one published clinica
   </div>
 </div>
 
-## Pre-clinical evidence (13 rows)
+### CBX-250 (TCR-mimetic bispecific T-cell engager targeting CG1/HLA-A*02:01)  
+<small><code>intervention_id: cbx-250</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>—/— (2025)<br><em>Blood (ASH 2025 trial-in-progress abstract)</em></td><td class="num">—</td><td>HLA-A*02:01-positive R/R myeloid leukemia; prior allogeneic HCT permitted once at least 60 days have elapsed.</td><td>2L+</td><td>First-in-human open-label phase 1 dose-escalation, single-agent (CROSSCHECK-001, NCT06994676)</td><td>—</td><td>Subcutaneous; dose-escalation, recommended phase 2 dose not yet established</td><td>other</td><td>Trial in progress; no efficacy readout reported</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td>—</td><td>Trial in progress, so there is no clinical safety or efficacy readout yet. As a CD3-engaging T-cell engager the anticipated class toxicity is cytokine release syndrome; the preclinical program reported high CG1/Cathepsin-G antigen selectivity with relative sparing of normal myeloid cells.</td><td>—</td><td>4</td><td><span class="fit-badge fit-partial">partial</span></td><td>—</td><td>—</td><td>On the patient&#x27;s primary HLA-A*02:01 axis, but gated on the same pending HLA typing as the rest of that axis. Distinct advantage over the TCR-T options: an off-the-shelf T-cell engager with no autologous or donor cell manufacturing. Added after the initial screen, which missed the trial because CG1/Cathepsin-G was not a nominated feature. Identifiers left null: the ASH 2025 trial-in-progress abstract DOI could not be verified through available channels during this run (fail-closed per the reference-check protocol), so no identifier was guessed.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+## Pre-clinical evidence (14 rows)
 
 ### HA-1-directed minor-histocompatibility-antigen TCR-T (Bleakley/TSC-100 platform)  
 <small><code>intervention_id: ha1-tcr-t</code> · 2 row(s)</small>
@@ -317,6 +331,20 @@ Per-manuscript detail grouped by intervention. Each row is one published clinica
       <thead><tr><th>Report</th><th>Model</th><th>n</th><th>Control</th><th>Dose</th><th>Mechanism</th><th>Key finding</th><th>Effect (qual)</th><th>Translatability</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Caveats</th></tr></thead>
       <tbody>
         <tr><td>Lambert/Bykov (2009)<br><em>Cancer Cell</em></td><td>Recombinant mutant p53 proteins and human tumor cell lines in vitro</td><td>—</td><td>—</td><td>—</td><td>PRIMA-1/APR-246 converts to methylene quinuclidinone (MQ), which covalently binds cysteine thiols in the p53 core domain and shifts mutant p53 toward a wild-type-like, DNA-binding fold.</td><td>Lambert traced reactivation to covalent thiol adducts formed by the MQ metabolite, active across several different p53 mutants rather than one pocket. This thiol-based, sequence-nonselective mechanism is what separates eprenetapopt from a Y220C-pocket binder.</td><td>moderate</td><td>low</td><td><span class="fit-badge fit-weak">weak</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/19411067">19411067</a></td><td><a href="https://doi.org/10.1016/j.ccr.2009.03.003">DOI</a></td><td>Because the mechanism is covalent and not variant-selective, benefit does not concentrate on Y220C; the profile flags eprenetapopt as low-yield after the phase 3 TP53-MDS miss. In vitro only. Kept to contrast the pan-reactivator route against variant-selective rezatapopt.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### CBX-250 (TCR-mimetic bispecific T-cell engager targeting CG1/HLA-A*02:01)  
+<small><code>intervention_id: cbx-250</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>Model</th><th>n</th><th>Control</th><th>Dose</th><th>Mechanism</th><th>Key finding</th><th>Effect (qual)</th><th>Translatability</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Caveats</th></tr></thead>
+      <tbody>
+        <tr><td>Lee/Wiederschain (2024)<br><em>Blood</em></td><td>AML cell lines + aggressive primary-AML PDX (FLT3-ITD/DNMT3A/NPM1) mouse model</td><td>—</td><td>vehicle/untreated control arm in the PDX model</td><td>in vivo tumor control at doses as low as 0.005 mg/kg</td><td>TCR-mimetic bispecific antibody binding the CG1 nonamer (FLLPTGAEA, from Cathepsin G) presented on HLA-A*02:01, cross-linked to CD3 to redirect polyclonal T cells against blasts. CG1 sits high on AML/myeloid-leukemia cells and low or absent on normal myeloid cells, and the mechanism does not rely on graft-versus-leukemia, so it works off-the-shelf independent of a donor product.</td><td>Sub-nanomolar EC50 T-cell-mediated killing of leukemia lines spanning a range of antigen density, with no T-cell activation or cytotoxicity against healthy-donor neutrophils, CD34+ cells, or PBMCs. In the primary-AML PDX, CBX-250 cut tumor burden and extended survival over control, active down to 0.005 mg/kg.</td><td>strong</td><td>med</td><td><span class="fit-badge fit-partial">partial</span></td><td>—</td><td><a href="https://doi.org/10.1182/blood-2024-201699">DOI</a></td><td>ASH 2024 conference abstract (Blood 144 Suppl 1:208), not a peer-reviewed full paper; no PMID and per-arm n not reported. Antigen and HLA-A*02:01 restriction line up with the patient&#x27;s AML and A*02:01 axis, but that allele is still pending typing and no clinical activity has been shown.</td></tr>
       </tbody>
     </table>
   </div>

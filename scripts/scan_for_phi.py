@@ -113,6 +113,7 @@ ONCOLOGY_ACRONYM_ALLOWLIST = frozenset({
     "KMT", "IDH", "FLT", "BPDCN", "TCR", "MHAG", "STR",
     # MDS subtype / prognostic-score / assay acronyms + AML trial families
     "RCMD", "IPSS", "RARS", "RAEB", "LOD", "CNV", "VAF", "PYNNACLE",
+    "CBX", "TCRM", "TCE", "CG", "TRD",
     "SIERRA", "ALLOHA", "AUGMENT",
     # PRAME / TCR / ImmTAC platform / mechanism
     "PRAME", "TCR", "TCER", "HLA",

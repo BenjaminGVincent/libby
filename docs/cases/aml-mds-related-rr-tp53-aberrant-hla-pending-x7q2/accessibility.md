@@ -18,18 +18,19 @@ _Entries are ordered to match the Recommendations table: by therapeutic target g
 <tr><td class="col-num"><a href="#access-4"><strong>4</strong></a></td><td class="col-intervention"><strong>FLAMSA-RIC sequential chemotherapy + reduced-intensity allo-HCT (+ prophylactic DLI)</strong></td><td class="col-target">Allograft Hct2</td><td class="col-access-status"><span class="fit-badge fit-strong">Standard of care</span></td><td class="col-regulatory">established conditioning regimen; no drug approval involved</td><td class="col-first-action">Ask the transplant center whether it runs FLAMSA-RIC sequencing and how it compares, for this patient, with targeted Iomab-B conditioning.</td></tr>
 <tr><td class="col-num"><a href="#access-5"><strong>5</strong></a></td><td class="col-intervention"><strong>Gemtuzumab ozogamicin (Mylotarg, CD33 ADC)</strong></td><td class="col-target">Cd33</td><td class="col-access-status"><span class="fit-badge fit-strong">Standard of care</span></td><td class="col-regulatory">FDA-approved (Mylotarg) for CD33-positive AML, including relapsed/refractory</td><td class="col-first-action">Request quantitative CD33 antigen density to gauge likely ADC benefit before committing.</td></tr>
 <tr><td class="col-num"><a href="#access-6"><strong>6</strong></a></td><td class="col-intervention"><strong>Dual/multi-antigen CD33/CD123-directed CAR-T (CD123-CD33 cCAR; CLL-1/CD33/CD123 CAR-T)</strong></td><td class="col-target">Cd33</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span> <span class="fit-badge fit-weak">Not yet accessible</span></td><td class="col-regulatory">investigational, no approval anywhere</td><td class="col-first-action">First confirm whether either sponsor will accept an overseas patient and a US geography, since both trials run out of China.</td></tr>
-<tr><td class="col-num"><a href="#access-7"><strong>7</strong></a></td><td class="col-intervention"><strong>HA-1/HA-2 minor-histocompatibility-antigen TCR-T (TSC-100/TSC-101, Bleakley HA-1, BSB-1001)</strong></td><td class="col-target">Hla A0201 Ha</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">investigational, no approval anywhere</td><td class="col-first-action">Retrieve the HLA-A*02:01 allele-level result from the 2020 first-transplant / donor-registry chart. This is the master switch; without it none of the three trials can screen.</td></tr>
-<tr><td class="col-num"><a href="#access-8"><strong>8</strong></a></td><td class="col-intervention"><strong>Pivekimab sunirine (Decnupaz, IMGN632, CD123 antibody-drug conjugate)</strong></td><td class="col-target">Cd123</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">FDA-approved (Decnupaz, BPDCN, 27 May 2026); investigational/off-label in AML</td><td class="col-first-action">Request quantitative CD123 antigen density (shared with the tagraxofusp workup).</td></tr>
+<tr><td class="col-num"><a href="#access-7"><strong>7</strong></a></td><td class="col-intervention"><strong>Pivekimab sunirine (Decnupaz, IMGN632, CD123 antibody-drug conjugate)</strong></td><td class="col-target">Cd123</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">FDA-approved (Decnupaz, BPDCN, 27 May 2026); investigational/off-label in AML</td><td class="col-first-action">Request quantitative CD123 antigen density (shared with the tagraxofusp workup).</td></tr>
+<tr><td class="col-num"><a href="#access-8"><strong>8</strong></a></td><td class="col-intervention"><strong>HA-1/HA-2 minor-histocompatibility-antigen TCR-T (TSC-100/TSC-101, Bleakley HA-1, BSB-1001)</strong></td><td class="col-target">Hla A0201 Ha</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">investigational, no approval anywhere</td><td class="col-first-action">Retrieve the HLA-A*02:01 allele-level result from the 2020 first-transplant / donor-registry chart. This is the master switch; without it none of the three trials can screen.</td></tr>
 <tr><td class="col-num"><a href="#access-9"><strong>9</strong></a></td><td class="col-intervention"><strong>HLA-A*02:01-restricted WT1 TCR-T (FH-WT1-E50; Greenberg WT1-TCRc4 lineage)</strong></td><td class="col-target">Hla A0201</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">investigational, no approval anywhere</td><td class="col-first-action">Retrieve HLA-A*02:01 status (shared with the HA-1/HA-2 workup).</td></tr>
 <tr><td class="col-num"><a href="#access-10"><strong>10</strong></a></td><td class="col-intervention"><strong>Rezatapopt (PC14586, selective p53 Y220C reactivator)</strong></td><td class="col-target">Tp53 Y220C</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">investigational, no approval anywhere</td><td class="col-first-action">Resolve TP53 first without collapsing the 2019-vs-2026 discrepancy: retrieve the original 2019 variant identity and VAF, add p53 IHC and 17p (TP53) FISH.</td></tr>
-<tr><td class="col-num"><a href="#access-11"><strong>11</strong></a></td><td class="col-intervention"><strong>Eprenetapopt (APR-246, pan-p53 reactivator)</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-none">Unavailable</span></td><td class="col-regulatory">investigational; on clinical hold in myeloid malignancies after negative phase 3; FDA Orphan/Fast Track designations only</td><td class="col-first-action">Treat eprenetapopt as closed for this patient and route any TP53-directed effort to confirming Y220C for rezatapopt instead.</td></tr>
-<tr><td class="col-num"><a href="#access-12"><strong>12</strong></a></td><td class="col-intervention"><strong>Flotetuzumab (MGD006, CD123xCD3 DART bispecific)</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-none">Unavailable</span></td><td class="col-regulatory">investigational; program deprioritized/terminated</td><td class="col-first-action">Treat as closed; the CD123 route runs through tagraxofusp, pivekimab, or the dual CAR-T instead.</td></tr>
-<tr><td class="col-num"><a href="#access-13"><strong>13</strong></a></td><td class="col-intervention"><strong>HLA-A*24:02-restricted WT1-siTCR gene-transduced lymphocytes (TBI-1301)</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span> <span class="fit-badge fit-weak">Not yet accessible</span></td><td class="col-regulatory">investigational, no approval; early-phase Japanese/academic development</td><td class="col-first-action">Check A*24:02 in parallel with A*02:01, but only pursue this branch if A*02:01 comes back negative.</td></tr>
-<tr><td class="col-num"><a href="#access-14"><strong>14</strong></a></td><td class="col-intervention"><strong>PRAME-directed TCR-T with iCasp9 safety switch (BPX-701)</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-none">Unavailable</span></td><td class="col-regulatory">investigational; program terminated</td><td class="col-first-action">Do not spend workup effort here; treat PRAME as closed and concentrate the A*02:01 immunotherapy plan on the HA-1/HA-2 and WT1 handles.</td></tr>
-<tr><td class="col-num"><a href="#access-15"><strong>15</strong></a></td><td class="col-intervention"><strong>Revumenib (Revuforj, SNDX-5613, menin inhibitor)</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">FDA-approved (Revuforj) for KMT2A-rearranged acute leukemia (2024) and NPM1-mutant R/R AML (Oct 2025)</td><td class="col-first-action">Recheck the relapse karyotype/FISH to be certain the lesion is KMT2A amplification, not a cryptic rearrangement, since a true rearrangement would change everything here.</td></tr>
-<tr><td class="col-num"><a href="#access-16"><strong>16</strong></a></td><td class="col-intervention"><strong>Tagraxofusp (Elzonris, CD123-directed IL-3/diphtheria-toxin fusion)</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">FDA-approved (Elzonris, BPDCN, 2018); investigational/off-label in AML</td><td class="col-first-action">Request quantitative (antigen-density) CD123 flow, which predicts benefit for this class and is still pending.</td></tr>
-<tr><td class="col-num"><a href="#access-17"><strong>17</strong></a></td><td class="col-intervention"><strong>Vibecotamab (XmAb14045, CD123xCD3 bispecific)</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-none">Unavailable</span></td><td class="col-regulatory">investigational; program terminated</td><td class="col-first-action">Treat as closed; no action.</td></tr>
-<tr><td class="col-num"><a href="#access-18"><strong>18</strong></a></td><td class="col-intervention"><strong>Ziftomenib (Komzifti, KO-539, menin inhibitor)</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-weak">Expanded access program</span></td><td class="col-regulatory">FDA-approved (Komzifti) for NPM1-mutant R/R AML (2025)</td><td class="col-first-action">Reconfirm NPM1 status and the KMT2A lesion type at relapse before spending effort here.</td></tr>
+<tr><td class="col-num"><a href="#access-11"><strong>11</strong></a></td><td class="col-intervention"><strong>CBX-250</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">investigational; IND-cleared first-in-human, no approval in any jurisdiction</td><td class="col-first-action">Pull the patient&#x27;s high-resolution HLA typing from the 2020 transplant/donor-registry chart to establish A*02:01 status before any outreach; this one result gates CBX-250 and the rest of the HLA-restricted axis.</td></tr>
+<tr><td class="col-num"><a href="#access-12"><strong>12</strong></a></td><td class="col-intervention"><strong>Eprenetapopt (APR-246, pan-p53 reactivator)</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-none">Unavailable</span></td><td class="col-regulatory">investigational; on clinical hold in myeloid malignancies after negative phase 3; FDA Orphan/Fast Track designations only</td><td class="col-first-action">Treat eprenetapopt as closed for this patient and route any TP53-directed effort to confirming Y220C for rezatapopt instead.</td></tr>
+<tr><td class="col-num"><a href="#access-13"><strong>13</strong></a></td><td class="col-intervention"><strong>Flotetuzumab (MGD006, CD123xCD3 DART bispecific)</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-none">Unavailable</span></td><td class="col-regulatory">investigational; program deprioritized/terminated</td><td class="col-first-action">Treat as closed; the CD123 route runs through tagraxofusp, pivekimab, or the dual CAR-T instead.</td></tr>
+<tr><td class="col-num"><a href="#access-14"><strong>14</strong></a></td><td class="col-intervention"><strong>HLA-A*24:02-restricted WT1-siTCR gene-transduced lymphocytes (TBI-1301)</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span> <span class="fit-badge fit-weak">Not yet accessible</span></td><td class="col-regulatory">investigational, no approval; early-phase Japanese/academic development</td><td class="col-first-action">Check A*24:02 in parallel with A*02:01, but only pursue this branch if A*02:01 comes back negative.</td></tr>
+<tr><td class="col-num"><a href="#access-15"><strong>15</strong></a></td><td class="col-intervention"><strong>PRAME-directed TCR-T with iCasp9 safety switch (BPX-701)</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-none">Unavailable</span></td><td class="col-regulatory">investigational; program terminated</td><td class="col-first-action">Do not spend workup effort here; treat PRAME as closed and concentrate the A*02:01 immunotherapy plan on the HA-1/HA-2 and WT1 handles.</td></tr>
+<tr><td class="col-num"><a href="#access-16"><strong>16</strong></a></td><td class="col-intervention"><strong>Revumenib (Revuforj, SNDX-5613, menin inhibitor)</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">FDA-approved (Revuforj) for KMT2A-rearranged acute leukemia (2024) and NPM1-mutant R/R AML (Oct 2025)</td><td class="col-first-action">Recheck the relapse karyotype/FISH to be certain the lesion is KMT2A amplification, not a cryptic rearrangement, since a true rearrangement would change everything here.</td></tr>
+<tr><td class="col-num"><a href="#access-17"><strong>17</strong></a></td><td class="col-intervention"><strong>Tagraxofusp (Elzonris, CD123-directed IL-3/diphtheria-toxin fusion)</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">FDA-approved (Elzonris, BPDCN, 2018); investigational/off-label in AML</td><td class="col-first-action">Request quantitative (antigen-density) CD123 flow, which predicts benefit for this class and is still pending.</td></tr>
+<tr><td class="col-num"><a href="#access-18"><strong>18</strong></a></td><td class="col-intervention"><strong>Vibecotamab (XmAb14045, CD123xCD3 bispecific)</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-none">Unavailable</span></td><td class="col-regulatory">investigational; program terminated</td><td class="col-first-action">Treat as closed; no action.</td></tr>
+<tr><td class="col-num"><a href="#access-19"><strong>19</strong></a></td><td class="col-intervention"><strong>Ziftomenib (Komzifti, KO-539, menin inhibitor)</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-weak">Expanded access program</span></td><td class="col-regulatory">FDA-approved (Komzifti) for NPM1-mutant R/R AML (2025)</td><td class="col-first-action">Reconfirm NPM1 status and the KMT2A lesion type at relapse before spending effort here.</td></tr>
 </tbody></table>
 
 </div></div>
@@ -293,9 +294,62 @@ Dual/multi-antigen CD33/CD123 CAR-T is the antigen-escape hedge the profile flag
 ---
 
 
+## Cd123 interventions (1)
+
+### 7. Pivekimab sunirine (Decnupaz, IMGN632, CD123 antibody-drug conjugate) <small><code>pivekimab sunirine, pivekimab sunirine-pvzy, Decnupaz, IMGN632, PVEK</code></small> { #access-7 }
+
+**Access status:** <span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** ADC &nbsp; **Verified:** 2026-07-06
+
+
+This shifted since the dossier was built: pivekimab sunirine was FDA-approved (Decnupaz) for BPDCN on 27 May 2026, so it is no longer trial-only. A clinician can now prescribe it off-label for this CD123-positive AML, though reimbursement will be a fight this soon after approval. Both AML-relevant trials are closed to new enrollment, so off-label is the more actionable path. The boxed VOD warning is a real concern with a second transplant on the plan.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>FDA-approved (Decnupaz, BPDCN, 27 May 2026); investigational/off-label in AML</dd>
+  <dt>Guidelines</dt><dd>Newly approved for BPDCN; off-guideline for AML</dd>
+  <dt>Geographic scope</dt><dd>US (newly marketed); AML trials closed to enrollment.</dd>
+</dl>
+
+
+**Next steps**
+
+1. Request quantitative CD123 antigen density (shared with the tagraxofusp workup).
+2. Weigh the boxed veno-occlusive-disease risk against the planned second allo-HCT with the transplant team before committing.
+3. Call AbbVie medical information (844-663-3742) to confirm current off-label AML supply and the prior-authorization route now that it is a marketed product.
+4. If off-label is blocked, ask AbbVie about single-patient expanded access via the pre-approval access policy page.
+
+
+**Trial pathways**
+
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT03386513">NCT03386513</a></td><td class="col-phase">1/2</td><td class="col-indication">BPDCN (the registration program)</td><td class="col-status">active not recruiting</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><a href="https://clinicaltrials.gov/study/NCT03386513">trial sites</a></td><td class="col-notes">BPDCN registration study, closed to new enrollment. Not the patient&#x27;s disease.</td></tr>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT06034470">NCT06034470</a></td><td class="col-phase">1</td><td class="col-indication">Newly diagnosed adverse-risk AML / high-grade myeloid neoplasms</td><td class="col-status">active not recruiting</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><a href="https://clinicaltrials.gov/study/NCT06034470">trial sites</a></td><td class="col-notes">Fred Hutch combo on a FLAG-Ida backbone the patient has already failed as reinduction, and it enrolls newly diagnosed disease, not R/R. Also closed to new enrollment.</td></tr>
+</tbody></table></div></div>
+
+
+**Manufacturer / sponsor contact**
+
+<dl class="profile-grid">
+  <dt>Company</dt><dd>AbbVie (formerly ImmunoGen)</dd>
+  <dt>Country</dt><dd>United States</dd>
+  <dt>Medical info phone</dt><dd><code>844-663-3742</code></dd>
+  <dt>Product information</dt><dd><a href="https://www.abbviemedinfo.com/">https://www.abbviemedinfo.com/</a></dd>
+  <dt>Compassionate / expanded access</dt><dd><a href="https://www.abbvie.com/who-we-are/access-to-investigational-drugs-policy.html">https://www.abbvie.com/who-we-are/access-to-investigational-drugs-policy.html</a></dd>
+  <dt>Notes</dt><dd>AbbVie&#x27;s pre-approval access policy covers single-patient and multi-patient expanded access; each request is judged case by case.</dd>
+</dl>
+
+
+**Payer / coverage notes.** Just approved for BPDCN (May 2026), so AML use is off-label and will need prior authorization; reimbursement outside a trial is uncertain this early. The boxed warning for hepatic veno-occlusive disease matters directly here given the planned second transplant.
+
+
+---
+
+
 ## Hla A0201 Ha interventions (1)
 
-### 7. HA-1/HA-2 minor-histocompatibility-antigen TCR-T (TSC-100/TSC-101, Bleakley HA-1, BSB-1001) <small><code>TSC-100, TSC-101, HA-1 TCR-T, HA-2 TCR-T, BSB-1001, ALLOHA</code></small> { #access-7 }
+### 8. HA-1/HA-2 minor-histocompatibility-antigen TCR-T (TSC-100/TSC-101, Bleakley HA-1, BSB-1001) <small><code>TSC-100, TSC-101, HA-1 TCR-T, HA-2 TCR-T, BSB-1001, ALLOHA</code></small> { #access-8 }
 
 **Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** other &nbsp; **Verified:** 2026-07-06
 
@@ -343,59 +397,6 @@ This is the primary reason for the run, and it is trial-only. Three HA-directed 
 
 
 **Notes.** TSC-101 is the HA-2 product on the same ALLOHA protocol; it becomes the lever if the pair mismatches at HA-2 rather than HA-1.
-
-
----
-
-
-## Cd123 interventions (1)
-
-### 8. Pivekimab sunirine (Decnupaz, IMGN632, CD123 antibody-drug conjugate) <small><code>pivekimab sunirine, pivekimab sunirine-pvzy, Decnupaz, IMGN632, PVEK</code></small> { #access-8 }
-
-**Access status:** <span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** ADC &nbsp; **Verified:** 2026-07-06
-
-
-This shifted since the dossier was built: pivekimab sunirine was FDA-approved (Decnupaz) for BPDCN on 27 May 2026, so it is no longer trial-only. A clinician can now prescribe it off-label for this CD123-positive AML, though reimbursement will be a fight this soon after approval. Both AML-relevant trials are closed to new enrollment, so off-label is the more actionable path. The boxed VOD warning is a real concern with a second transplant on the plan.
-
-
-<dl class="profile-grid">
-  <dt>Regulatory</dt><dd>FDA-approved (Decnupaz, BPDCN, 27 May 2026); investigational/off-label in AML</dd>
-  <dt>Guidelines</dt><dd>Newly approved for BPDCN; off-guideline for AML</dd>
-  <dt>Geographic scope</dt><dd>US (newly marketed); AML trials closed to enrollment.</dd>
-</dl>
-
-
-**Next steps**
-
-1. Request quantitative CD123 antigen density (shared with the tagraxofusp workup).
-2. Weigh the boxed veno-occlusive-disease risk against the planned second allo-HCT with the transplant team before committing.
-3. Call AbbVie medical information (844-663-3742) to confirm current off-label AML supply and the prior-authorization route now that it is a marketed product.
-4. If off-label is blocked, ask AbbVie about single-patient expanded access via the pre-approval access policy page.
-
-
-**Trial pathways**
-
-<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
-<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
-<tbody>
-<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT03386513">NCT03386513</a></td><td class="col-phase">1/2</td><td class="col-indication">BPDCN (the registration program)</td><td class="col-status">active not recruiting</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><a href="https://clinicaltrials.gov/study/NCT03386513">trial sites</a></td><td class="col-notes">BPDCN registration study, closed to new enrollment. Not the patient&#x27;s disease.</td></tr>
-<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT06034470">NCT06034470</a></td><td class="col-phase">1</td><td class="col-indication">Newly diagnosed adverse-risk AML / high-grade myeloid neoplasms</td><td class="col-status">active not recruiting</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><a href="https://clinicaltrials.gov/study/NCT06034470">trial sites</a></td><td class="col-notes">Fred Hutch combo on a FLAG-Ida backbone the patient has already failed as reinduction, and it enrolls newly diagnosed disease, not R/R. Also closed to new enrollment.</td></tr>
-</tbody></table></div></div>
-
-
-**Manufacturer / sponsor contact**
-
-<dl class="profile-grid">
-  <dt>Company</dt><dd>AbbVie (formerly ImmunoGen)</dd>
-  <dt>Country</dt><dd>United States</dd>
-  <dt>Medical info phone</dt><dd><code>844-663-3742</code></dd>
-  <dt>Product information</dt><dd><a href="https://www.abbviemedinfo.com/">https://www.abbviemedinfo.com/</a></dd>
-  <dt>Compassionate / expanded access</dt><dd><a href="https://www.abbvie.com/who-we-are/access-to-investigational-drugs-policy.html">https://www.abbvie.com/who-we-are/access-to-investigational-drugs-policy.html</a></dd>
-  <dt>Notes</dt><dd>AbbVie&#x27;s pre-approval access policy covers single-patient and multi-patient expanded access; each request is judged case by case.</dd>
-</dl>
-
-
-**Payer / coverage notes.** Just approved for BPDCN (May 2026), so AML use is off-label and will need prior authorization; reimbursement outside a trial is uncertain this early. The boxed warning for hepatic veno-occlusive disease matters directly here given the planned second transplant.
 
 
 ---
@@ -502,9 +503,55 @@ Rezatapopt is trial-only and gated behind a double contingency. There is a myelo
 ---
 
 
-## Unmatched interventions (8)
+## Unmatched interventions (9)
 
-### 11. Eprenetapopt (APR-246, pan-p53 reactivator) <small><code>eprenetapopt, APR-246, PRIMA-1MET</code></small> { #access-11 }
+### 11. CBX-250 <small><code>CBX-250, CBX250, CROSSCHECK-001</code></small> { #access-11 }
+
+**Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** bispecific_other &nbsp; **Verified:** 2026-07-09
+
+
+CBX-250 is reachable only through the CROSSCHECK-001 phase 1 trial (NCT06994676), which is recruiting at 11 US sites; there is no approval or compassionate-use route. Enrollment turns on documented HLA-A*02:01 positivity, the same pending high-resolution typing that gates this patient&#x27;s other HLA-restricted options, so resolving that allele is the gate for the whole axis. Prior allo-HCT is fine as long as 60 days have elapsed, which fits a post-transplant relapse.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>investigational; IND-cleared first-in-human, no approval in any jurisdiction</dd>
+  <dt>Geographic scope</dt><dd>US only; 11 open sites across CA, FL, IL, MA, MO, NY, PA, TN, TX. No ex-US sites listed.</dd>
+</dl>
+
+
+**Next steps**
+
+1. Pull the patient&#x27;s high-resolution HLA typing from the 2020 transplant/donor-registry chart to establish A*02:01 status before any outreach; this one result gates CBX-250 and the rest of the HLA-restricted axis.
+2. If A*02:01-positive, email trial central contact Rachel Ghiraldi (rachel.ghiraldi@crossbowtx.com, 857-301-6432) to confirm an open dose-escalation slot and the nearest site.
+3. Confirm the patient meets the transplant-timing window (&gt;=60 days from allo-HCT; &gt;=4 weeks from any non-conditioned DLI) and current organ-function/fitness criteria, which are still an open item in this case.
+4. Ask the sponsor whether any compassionate or single-patient access exists if the patient screen-fails or no slot is open, since neither the registry nor the corporate site currently lists one.
+
+
+**Trial pathways**
+
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT06994676">NCT06994676</a></td><td class="col-phase">1</td><td class="col-indication">R/R AML / high-risk MDS / CMML / CML (first-in-human)</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-weak">eligible: unconfirmed</span></td><td class="col-contact"><strong>Rachel Ghiraldi</strong><br><a href="mailto:rachel.ghiraldi@crossbowtx.com">rachel.ghiraldi@crossbowtx.com</a><br><code>857-301-6432</code><br><a href="https://clinicaltrials.gov/study/NCT06994676">trial sites</a></td><td class="col-notes">Eligibility hinges on historical documented evidence of HLA-A*02:01 positivity, which is the same typing still pending for this patient&#x27;s HA-1/HA-2 and WT1 options. Prior allo-HCT is allowed once at least 60 days have passed, and at least 4 weeks from any DLI given without conditioning, so the ~2020 transplant is not a barrier. Dose escalation is adults only (18+). Eleven US sites are open, including City of Hope, Stanford, Moffitt, Northwestern, Dana-Farber, Washington University, MSK, Thomas Jefferson, Sarah Cannon, Vanderbilt, and MD Anderson.</td></tr>
+</tbody></table></div></div>
+
+
+**Manufacturer / sponsor contact**
+
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Crossbow Therapeutics, Inc.</dd>
+  <dt>Country</dt><dd>United States (Cambridge, MA)</dd>
+  <dt>Product information</dt><dd><a href="https://www.crossbowtx.com/">https://www.crossbowtx.com/</a></dd>
+  <dt>Notes</dt><dd>No dedicated medical-information line or compassionate-use portal is published on the corporate site, and the registry&#x27;s structured expanded-access flag reads false. The trial central contact (Rachel Ghiraldi, rachel.ghiraldi@crossbowtx.com) is the verified route to the sponsor. Study chair is Briggs Morrison, MD.</dd>
+</dl>
+
+
+**Payer / coverage notes.** Investigational agent supplied by the sponsor at no drug cost inside the trial; routine care and screening costs follow the enrolling site&#x27;s trial-billing terms. No off-label or payer pathway exists because the drug is not approved anywhere.
+
+
+---
+
+### 12. Eprenetapopt (APR-246, pan-p53 reactivator) <small><code>eprenetapopt, APR-246, PRIMA-1MET</code></small> { #access-12 }
 
 **Access status:** <span class="fit-badge fit-none">Unavailable</span> &nbsp; **Modality:** small_molecule &nbsp; **Verified:** 2026-07-06
 
@@ -546,7 +593,7 @@ Eprenetapopt is the low-yield option, and it is functionally unavailable. It is 
 
 ---
 
-### 12. Flotetuzumab (MGD006, CD123xCD3 DART bispecific) <small><code>flotetuzumab, MGD006, S80880</code></small> { #access-12 }
+### 13. Flotetuzumab (MGD006, CD123xCD3 DART bispecific) <small><code>flotetuzumab, MGD006, S80880</code></small> { #access-13 }
 
 **Access status:** <span class="fit-badge fit-none">Unavailable</span> &nbsp; **Modality:** bispecific_other &nbsp; **Verified:** 2026-07-06
 
@@ -585,7 +632,7 @@ Flotetuzumab showed real salvage responses in chemo-refractory AML close to this
 
 ---
 
-### 13. HLA-A*24:02-restricted WT1-siTCR gene-transduced lymphocytes (TBI-1301) <small><code>WT1-siTCR, TBI-1301</code></small> { #access-13 }
+### 14. HLA-A*24:02-restricted WT1-siTCR gene-transduced lymphocytes (TBI-1301) <small><code>WT1-siTCR, TBI-1301</code></small> { #access-14 }
 
 **Access status:** <span class="fit-badge fit-partial">Clinical trial</span> <span class="fit-badge fit-weak">Not yet accessible</span> &nbsp; **Modality:** other &nbsp; **Verified:** 2026-07-06
 
@@ -624,7 +671,7 @@ _No registered trials in the dossier._
 
 ---
 
-### 14. PRAME-directed TCR-T with iCasp9 safety switch (BPX-701) <small><code>BPX-701, PRAME TCR-T</code></small> { #access-14 }
+### 15. PRAME-directed TCR-T with iCasp9 safety switch (BPX-701) <small><code>BPX-701, PRAME TCR-T</code></small> { #access-15 }
 
 **Access status:** <span class="fit-badge fit-none">Unavailable</span> &nbsp; **Modality:** other &nbsp; **Verified:** 2026-07-06
 
@@ -663,7 +710,7 @@ PRAME was the third A*02:01 handle named in the profile, but the only clinical p
 
 ---
 
-### 15. Revumenib (Revuforj, SNDX-5613, menin inhibitor) <small><code>revumenib, Revuforj, SNDX-5613</code></small> { #access-15 }
+### 16. Revumenib (Revuforj, SNDX-5613, menin inhibitor) <small><code>revumenib, Revuforj, SNDX-5613</code></small> { #access-16 }
 
 **Access status:** <span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** small_molecule &nbsp; **Verified:** 2026-07-06
 
@@ -710,7 +757,7 @@ Revumenib is approved and easy to obtain, but the biomarker does not fit. Its la
 
 ---
 
-### 16. Tagraxofusp (Elzonris, CD123-directed IL-3/diphtheria-toxin fusion) <small><code>tagraxofusp, tagraxofusp-erzs, SL-401, Elzonris</code></small> { #access-16 }
+### 17. Tagraxofusp (Elzonris, CD123-directed IL-3/diphtheria-toxin fusion) <small><code>tagraxofusp, tagraxofusp-erzs, SL-401, Elzonris</code></small> { #access-17 }
 
 **Access status:** <span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** other &nbsp; **Verified:** 2026-07-06
 
@@ -758,7 +805,7 @@ Tagraxofusp is FDA-approved for BPDCN, so a clinician can prescribe it off-label
 
 ---
 
-### 17. Vibecotamab (XmAb14045, CD123xCD3 bispecific) <small><code>vibecotamab, XmAb14045</code></small> { #access-17 }
+### 18. Vibecotamab (XmAb14045, CD123xCD3 bispecific) <small><code>vibecotamab, XmAb14045</code></small> { #access-18 }
 
 **Access status:** <span class="fit-badge fit-none">Unavailable</span> &nbsp; **Modality:** bispecific_other &nbsp; **Verified:** 2026-07-06
 
@@ -797,7 +844,7 @@ Vibecotamab is a second CD123xCD3 bispecific, terminated, and studied in an MRD-
 
 ---
 
-### 18. Ziftomenib (Komzifti, KO-539, menin inhibitor) <small><code>ziftomenib, Komzifti, KO-539</code></small> { #access-18 }
+### 19. Ziftomenib (Komzifti, KO-539, menin inhibitor) <small><code>ziftomenib, Komzifti, KO-539</code></small> { #access-19 }
 
 **Access status:** <span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-weak">Expanded access program</span> &nbsp; **Modality:** small_molecule &nbsp; **Verified:** 2026-07-06
 
