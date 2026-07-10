@@ -6,14 +6,14 @@
 
 ## Case output
 
-- [Target validation paths (PDF)](gist-sdh-multifocal-resected-m1-k4n8-target-validation.pdf?v=45bb9e22) — diagnostic + biomarker workup that hardens the targetable-feature call
-- [Recommendations table (HTML)](gist-sdh-multifocal-resected-m1-k4n8-recommendations.html?v=a96c5a40) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
+- [Target validation paths (PDF)](gist-sdh-multifocal-resected-m1-k4n8-target-validation.pdf?v=98f928ab) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Recommendations table (HTML)](gist-sdh-multifocal-resected-m1-k4n8-recommendations.html?v=4d7cd20f) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
 - [Preclinical recommendations (HTML)](preclinical_recommendations.md?v=755fab5a) — forward-looking horizon scan of earlier-than-clinical candidate drugs, compounds, and strategies, sortable in-browser
-- [Access guide (HTML)](accessibility.md?v=888bc293) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, sortable in-browser
-- [Access guide (offline HTML)](gist-sdh-multifocal-resected-m1-k4n8-accessibility.html?v=4790bbb0) — same access-guide content as the in-browser page, packaged as a self-contained HTML that opens offline
-- [Master manuscripts table (HTML)](manuscripts.md?v=803f8425) — every paper considered — n, effect, variance, toxicities, sortable in-browser
-- [Master manuscripts table (offline HTML)](gist-sdh-multifocal-resected-m1-k4n8-manuscripts.html?v=07f726fd) — same manuscripts inventory as the in-browser page, packaged as a self-contained HTML that opens offline
-- [Patient/caregiver PDF](gist-sdh-multifocal-resected-m1-k4n8-plain-language.pdf?v=898651d5) — plain-language summary
+- [Access guide (HTML)](accessibility.md?v=f803e779) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, sortable in-browser
+- [Access guide (offline HTML)](gist-sdh-multifocal-resected-m1-k4n8-accessibility.html?v=beb725f7) — same access-guide content as the in-browser page, packaged as a self-contained HTML that opens offline
+- [Master manuscripts table (HTML)](manuscripts.md?v=44534af2) — every paper considered — n, effect, variance, toxicities, sortable in-browser
+- [Master manuscripts table (offline HTML)](gist-sdh-multifocal-resected-m1-k4n8-manuscripts.html?v=ff477860) — same manuscripts inventory as the in-browser page, packaged as a self-contained HTML that opens offline
+- [Patient/caregiver PDF](gist-sdh-multifocal-resected-m1-k4n8-plain-language.pdf?v=d06a809e) — plain-language summary
 
 <!-- libby:case-output:end -->
 ## Research question
@@ -261,7 +261,21 @@ The most contested row on the board. The risktaker ranked it first as the bigges
 - **Why this rank:** the established 3L rung once sunitinib is exhausted, with the inference gap stated out loud rather than letting the HR 0.27 carry weight it did not earn in this genotype (NCCN sequencing is category-2A consensus).
 - **Evidence:** [PMID 23177515](https://pubmed.ncbi.nlm.nih.gov/23177515), [PMID 40045030](https://pubmed.ncbi.nlm.nih.gov/40045030).
 
-## Rank 11. Adjuvant imatinib — NOT RECOMMENDED
+## Rank 11. DRUP off-label matched-therapy basket (NCT02925234) — post-board re-screen addition
+
+*Post-board addition, not board-voted. A recurrence-contingent access route to matched trametinib (for MAP2K1 P124S) or alpelisib (for PIK3CA R93W), not a variant-matched efficacy readout.*
+
+**Status: considered with caveats. Not deliberated by the board — surfaced by a post-board re-screen of the trial registry, so agreement is 0.0 by absence of a vote, not by neutral consensus.**
+
+A registry re-screen after the board adjourned turned up the Drug Rediscovery Protocol, which matches an approved drug to a genomic profile through its own molecular tumor board rather than a fixed gene list. On paper that opens two routes for this patient: trametinib against the ctDNA MAP2K1 P124S call, alpelisib against the ctDNA PIK3CA R93W call. What it does not open is an efficacy readout — DRUP publishes pooled clinical benefit across all its cohorts, never per-arm, so no number attaches to either route here.
+
+- **Likelihood of desired effect:** unknown at these variants. The only figure DRUP reports is pooled: 34% clinical benefit (objective response or SD ≥16 weeks), median duration 9 months (95% CI 8–11), across 215 patients spanning many drug-variant pairs ([PMID 31570881](https://pubmed.ncbi.nlm.nih.gov/31570881)). Neither the MAP2K1 nor the PIK3CA arm has a published effect size, both calls are ctDNA-only, and R93W is non-canonical.
+- **Toxicity:** Moderate — pooled treatment-related grade ≥3 AEs ran 18% (rare-cancer subgroup) to 24% (common-cancer subgroup) in the 500-patient DRUP update, with no fatal treatment-related events ([PMID 35046062](https://pubmed.ncbi.nlm.nih.gov/35046062)). There is no per-arm AE table; trametinib-arm (rash, diarrhea, retinopathy, cardiomyopathy) and alpelisib-arm (hyperglycemia, rash, diarrhea) class effects come from each drug's label, not from DRUP.
+- **Counter-productive MoA:** Moderate — the MEK / PI3Kα match rests on ctDNA-only, non-canonical variants; R93W outside the alpelisib hotspots may not confer the pathway dependence the match assumes.
+- **Why this rank:** it lands low for the same reason the board declined to rank any PI3Kα or MEK option in round 1 — the critic and the concensusite both passed on that axis because R93W and P124S are ctDNA-only and non-canonical, and that objection carries straight over. The same gates that hold the other MAP2K1/PIK3CA baskets (MEGALiT, tersolisib, RLY-2608) at weak fit apply here: tissue confirmation of the variants, R93W outside the alpelisib companion-diagnostic hotspots, a protocol that requires progression on standard therapy with measurable disease, and Dutch-only siting. It is logged so the enrollment door is visible, framed as an access route rather than evidence of benefit — the board did not endorse, dissent from, or veto it, and this row does not manufacture a vote it never received.
+- **Evidence:** [NCT02925234](https://clinicaltrials.gov/study/NCT02925234), [PMID 31570881](https://pubmed.ncbi.nlm.nih.gov/31570881), [PMID 35046062](https://pubmed.ncbi.nlm.nih.gov/35046062).
+
+## Rank 12. Adjuvant imatinib — NOT RECOMMENDED
 
 **Status: not recommended (veto by advocate; agreement −0.4).**
 
@@ -273,8 +287,8 @@ Logged so the reflex "GIST means imatinib" reach is documented and not re-litiga
 
 ## Classes examined but not ranked
 
-- **PI3Kα inhibitors (alpelisib, inavolisib, RLY-2608)** — the only PIK3CA call is R93W, a non-canonical, out-of-hotspot variant detected on ctDNA only; predictive validity is not established at this variant, so the class is not ranked until tissue confirms it.
-- **MEK inhibitors (trametinib, cobimetinib)** — rest on the ctDNA-only MAP2K1 P124S call; cross-tumor and unconfirmed, so not ranked pending tissue confirmation.
+- **PI3Kα inhibitors (alpelisib, inavolisib, RLY-2608) as standalone recs** — the only PIK3CA call is R93W, a non-canonical, out-of-hotspot variant detected on ctDNA only; predictive validity is not established at this variant, so none is ranked on its own merits. Alpelisib appears only as one arm of the DRUP access route at Rank 11, contingent on tissue confirmation and molecular-tumor-board sign-off.
+- **MEK inhibitors (trametinib, cobimetinib) as standalone recs** — rest on the ctDNA-only MAP2K1 P124S call; cross-tumor and unconfirmed. Trametinib appears only as the other arm of the DRUP access route at Rank 11, not as an evidenced pick.
 - **Glutaminase inhibition (telaglenastat / CB-839)** — a dedicated SDH-deficient GIST trial cohort existed but the program was discontinued, and the metabolic rationale is mechanistically undercut (pyruvate carboxylation, not glutamine, is the dominant anaplerotic route in SDH-loss). Not enrollable.
 - **Mechanism-matched agents already closed by negative subtype-specific trials:** guadecitabine (0/9), linsitinib / IGF1R (0/20), vandetanib (0/9).
 - **Tumor-agnostic ICI (pembrolizumab) for POLE** — excluded: POLE R1679C is outside the proofreading hotspots and the tumor is TMB <1 / MSS, so this is a counseling item, not a therapy.
@@ -293,13 +307,16 @@ Logged so the reflex "GIST means imatinib" reach is documented and not re-litiga
 | 8 | Belzutifan (off-label / trial) | considered with caveats | dSDH-confirmed | 0.4 |
 | 9 | Pemigatinib (PEMIGIST trial) | considered with caveats | dSDH-confirmed | 0.4 |
 | 10 | Regorafenib (3L, at recurrence) | considered with caveats | dSDH-confirmed | 0.2 |
-| 11 | Adjuvant imatinib | not recommended | shared | −0.4 |
+| 11 | DRUP matched-therapy basket (post-board re-screen, not board-voted) | considered with caveats | biomarker-independent (recurrence-contingent) | 0.0 (no vote) |
+| 12 | Adjuvant imatinib | not recommended | shared | −0.4 |
 
 The forwardable [Recommendations table](recommendations.md) carries the same ranking with per-intervention evidence detail; the [Preclinical recommendations](preclinical_recommendations.md) page carries the forward-looking horizon scan.
 
 ## Run log
 
 Full end-to-end re-run on 2026-06-26 under the updated Libby workflow. The research tier was refreshed (trials 22, clinical-evidence 28, preclinical-evidence 27, target-validation 13, accessibility 25), the virtual tumor board was run for the first time on this case (5 positions, 20 cross-critiques), and this synthesis was produced from the board plus the refreshed dossier. The refresh surfaced new positive dSDH-GIST systemic signals that postdate the case's initial run — olverembatinib (Qiu 2025) and rogaratinib (Merriam 2026) — which enter as recurrence contingencies. The recommendations table was authored by the PI agent; this page was finalized deterministically after repeated infrastructure interruptions to the long-form generation, preserving the agent's ranking and board appraisal verbatim. ctDNA-only and non-canonical calls (PIK3CA R93W, MAP2K1 P124S) carry the predictive-certainty hedge. The case has no low-positive IHC expression markers, so that rule did not fire.
+
+Refreshed on 2026-07-09 (lighter re-run, no board re-vote). A post-board trial re-screen added the DRUP molecular-tumor-board basket (NCT02925234, trametinib/alpelisib arms) and the clinician appended one evidence row anchored on van der Velden 2019 (PMID 31570881, the primary DRUP outcomes paper) with safety from Hoes 2022 (PMID 35046062). DRUP folds in at Rank 11 as `considered_with_caveats` with empty endorsed/dissent/veto and a 0.0 agreement score, because the board did not deliberate on it — it is a recurrence-contingent access route to matched trametinib or alpelisib, not a variant-matched efficacy readout, and DRUP publishes only pooled clinical benefit (34%, no per-arm figure). All board-derived rankings and agreement scores for ranks 1–10 and the imatinib veto row (now rank 12) are unchanged. Reference-verification on this refresh confirmed all three promoted DRUP identifiers resolve and match their claims (NCT02925234 recruiting; PMID 31570881 the Nature DRUP paper; PMID 35046062 the Clin Cancer Res rare-cancers safety update).
 
 [Trials](trials.md) · [Evidence](evidence.md) · [Manuscripts](manuscripts.md) · [Target validation](target_validation.md) · [Board](board.md) · [Recommendations](recommendations.md) · [Preclinical](preclinical_recommendations.md) · [Plain language](plain_language.md)
 
@@ -309,23 +326,23 @@ Full end-to-end re-run on 2026-06-26 under the updated Libby workflow. The resea
 
 ### HTML
 
-- [Target validation paths](target_validation.md?v=575ea9eb) — per-feature biomarker-workup table with providers and references, sortable in-browser
-- [Recommendations table](gist-sdh-multifocal-resected-m1-k4n8-recommendations.html?v=a96c5a40) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
+- [Target validation paths](target_validation.md?v=20cc017d) — per-feature biomarker-workup table with providers and references, sortable in-browser
+- [Recommendations table](gist-sdh-multifocal-resected-m1-k4n8-recommendations.html?v=4d7cd20f) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
 - [Preclinical recommendations](preclinical_recommendations.md?v=755fab5a) — forward-looking horizon scan of earlier-than-clinical candidate drugs, compounds, and strategies, in a sortable in-browser table
-- [Preclinical recommendations (offline)](gist-sdh-multifocal-resected-m1-k4n8-preclinical.html?v=03e08c6b) — same preclinical horizon scan packaged as a self-contained HTML that opens offline
-- [Access guide](accessibility.md?v=888bc293) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table
-- [Access guide (offline)](gist-sdh-multifocal-resected-m1-k4n8-accessibility.html?v=4790bbb0) — same access-guide content packaged as a self-contained HTML that opens offline
-- [Master manuscripts table](manuscripts.md?v=803f8425) — every paper considered — n, effect, variance, toxicities, in a sortable in-browser table
-- [Master manuscripts table (offline)](gist-sdh-multifocal-resected-m1-k4n8-manuscripts.html?v=07f726fd) — same manuscripts inventory packaged as a self-contained HTML that opens offline
+- [Preclinical recommendations (offline)](gist-sdh-multifocal-resected-m1-k4n8-preclinical.html?v=024bd72f) — same preclinical horizon scan packaged as a self-contained HTML that opens offline
+- [Access guide](accessibility.md?v=f803e779) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table
+- [Access guide (offline)](gist-sdh-multifocal-resected-m1-k4n8-accessibility.html?v=beb725f7) — same access-guide content packaged as a self-contained HTML that opens offline
+- [Master manuscripts table](manuscripts.md?v=44534af2) — every paper considered — n, effect, variance, toxicities, in a sortable in-browser table
+- [Master manuscripts table (offline)](gist-sdh-multifocal-resected-m1-k4n8-manuscripts.html?v=ff477860) — same manuscripts inventory packaged as a self-contained HTML that opens offline
 
 ### PDF
 
-- [Target validation paths](gist-sdh-multifocal-resected-m1-k4n8-target-validation.pdf?v=45bb9e22) — diagnostic + biomarker workup that hardens the targetable-feature call
-- [Recommendations table](gist-sdh-multifocal-resected-m1-k4n8-recommendations.pdf?v=bcee81a5) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
-- [Preclinical recommendations](gist-sdh-multifocal-resected-m1-k4n8-preclinical.pdf?v=717cb09f) — forward-looking horizon scan of earlier-than-clinical candidates, one deep section per candidate, in a print-friendly PDF
-- [Access guide](gist-sdh-multifocal-resected-m1-k4n8-accessibility.pdf?v=e5233165) — trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF
-- [Master manuscripts table](gist-sdh-multifocal-resected-m1-k4n8-manuscripts.pdf?v=0e952781) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
-- [Patient/caregiver PDF](gist-sdh-multifocal-resected-m1-k4n8-plain-language.pdf?v=898651d5) — plain-language summary
+- [Target validation paths](gist-sdh-multifocal-resected-m1-k4n8-target-validation.pdf?v=98f928ab) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Recommendations table](gist-sdh-multifocal-resected-m1-k4n8-recommendations.pdf?v=16bebd50) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
+- [Preclinical recommendations](gist-sdh-multifocal-resected-m1-k4n8-preclinical.pdf?v=cdf604f9) — forward-looking horizon scan of earlier-than-clinical candidates, one deep section per candidate, in a print-friendly PDF
+- [Access guide](gist-sdh-multifocal-resected-m1-k4n8-accessibility.pdf?v=97b8e053) — trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF
+- [Master manuscripts table](gist-sdh-multifocal-resected-m1-k4n8-manuscripts.pdf?v=bf2ff916) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
+- [Patient/caregiver PDF](gist-sdh-multifocal-resected-m1-k4n8-plain-language.pdf?v=d06a809e) — plain-language summary
 
 <!-- libby:downloads:end -->
 

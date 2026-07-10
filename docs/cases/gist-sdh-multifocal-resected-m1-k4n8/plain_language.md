@@ -95,6 +95,16 @@ One practical point in its favor: it is already approved for other cancers, so i
 
 **This option carries caveats.** Regorafenib is an approved GIST drug usually used after sunitinib. The trouble is there is no data on how well it works specifically in your subtype. Its approval comes from the KIT-driven type, and its use here is an educated extrapolation rather than a tested result. Treatment guidelines list it as the next rung after sunitinib, but with that gap stated plainly. Side effects include sore hands and feet, raised blood pressure, and diarrhea, which can be significant.
 
+### Option 8 — A Dutch matched-drug program (DRUP)
+
+**This option carries caveats, and it is a late, marginal one.** This is not one of the SDH-targeted choices above, and unlike the rest of this menu it does not depend on the re-stain. It is a different kind of route worth knowing exists, but it is far down the list for good reasons.
+
+DRUP is a program in the Netherlands that tries to match patients to drugs already approved for other cancers, based on molecular changes in their tumor. Two changes turned up in your blood-based (ctDNA) testing, and each one has an existing drug aimed at it. On paper, that is what DRUP could offer: a way to access one of those already-approved drugs.
+
+Here is why it is a marginal option rather than a real recommendation. First, those two changes have only shown up in blood so far, not in the tumor tissue itself, so they would need to be confirmed in tissue before anyone could act on them, and one of them is an unusual version that may not respond to its matching drug the way the textbook versions do. Second, DRUP does not report how well any single drug-and-change pair works. It only publishes a pooled figure across all its patients and all its drugs together, so there is no number that tells you the odds for your specific situation. It is an access door, not evidence that these drugs would help you. Third, the program requires that the cancer has come back and grown despite standard treatment, so it is a late-line route, not an early one. And it is based in the Netherlands, so reaching it is a separate problem from qualifying for it.
+
+One more thing to be straight about: this option was added after the expert-panel review of your case, from a later search of the trial registry. The panel that weighed the other options did not look at this one. It is listed so the door is visible, not because it earned a place alongside the choices above.
+
 ## One option that was considered and set aside
 
 ### Imatinib (the standard GIST pill) — not recommended here
@@ -113,13 +123,14 @@ Taking it would mean roughly three years of side effects (puffiness around the e
 - Can we test the tumor for the MGMT marker ahead of time, so we know whether temozolomide is worth considering if it is ever needed?
 - For the trial-based options, which ones have sites I could realistically reach, and would it help to connect with a specialist center now rather than later?
 - How would we decide between sticking with the approved pill and trying a newer trial drug if a recurrence happens?
+- The two blood-only changes that the Dutch matched-drug program keys on: is it worth confirming them in tumor tissue, and would you consider that route realistic given it is overseas and later-line?
 
 ## Sources
 
 Recommendations on this page draw on the following references, listed for your care team.
 
-- Published studies (PubMed IDs): 27011036, 29413424, 30383140, 39927693, 35546442, 23023976, 21173220, 32424176, 17046465, 34426440, 36198483, 41184234, 42191879, 31666694, 35324464, 15652751, 23177515, 40045030, 19303137.
-- Clinical trials (ClinicalTrials.gov IDs): NCT03739827, NCT05661643, NCT06640361, NCT04595747, NCT04924075, NCT07434843.
+- Published studies (PubMed IDs): 27011036, 29413424, 30383140, 39927693, 35546442, 23023976, 21173220, 32424176, 17046465, 34426440, 36198483, 41184234, 42191879, 31666694, 35324464, 15652751, 23177515, 40045030, 31570881, 35046062, 19303137.
+- Clinical trials (ClinicalTrials.gov IDs): NCT03739827, NCT05661643, NCT06640361, NCT04595747, NCT04924075, NCT07434843, NCT02925234.
 
 !!! warning "Decision support, not medical advice"
     This is decision-support information, not a treatment plan. Talk to

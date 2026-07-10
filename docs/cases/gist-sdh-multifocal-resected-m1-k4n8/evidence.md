@@ -2,9 +2,9 @@
 
 # Evidence — `gist-sdh-multifocal-resected-m1-k4n8`
 
-_This page shows 16 included clinical + 18 included pre-clinical rows, grouped by intervention. 12 clinical and 9 pre-clinical papers were reviewed and excluded — see the [master manuscripts table](manuscripts.md) for the full audit trail._
+_This page shows 17 included clinical + 18 included pre-clinical rows, grouped by intervention. 12 clinical and 9 pre-clinical papers were reviewed and excluded — see the [master manuscripts table](manuscripts.md) for the full audit trail._
 
-## Clinical evidence (16 rows)
+## Clinical evidence (17 rows)
 
 Per-manuscript detail grouped by intervention. Each row is one published clinical-evidence finding. Columns mirror the per-publication decision-support layout used in companion projects (`io-shieldbreak`'s Pharmacodynamic-Results table).
 
@@ -188,6 +188,20 @@ Per-manuscript detail grouped by intervention. Each row is one published clinica
       <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
       <tbody>
         <tr><td>Merriam P/George S (2026)<br><em>Nature Medicine</em></td><td class="num">24</td><td>24 SDH-deficient GIST patients enrolled regardless of FGFR alteration status, on the rationale of FGFR/FGF upregulation in the subtype.</td><td>2L+</td><td>NCI multicenter open-label two-stage single-arm phase 2 (dSDH-GIST cohort)</td><td>—</td><td>rogaratinib 800 mg PO twice daily, continuous 28-day cycles</td><td>ORR</td><td>objective response rate (RECIST 1.1)</td><td class="num">41.70 %</td><td class="num">—</td><td class="num">—</td><td>mPFS 31.0 mo (95% CI 20.2-NR)</td><td>Toxicities were manageable and dominated by the pan-FGFR class effects, chiefly hyperphosphatemia that tracked FGFR1 target engagement, plus fatigue and diarrhea. Per-term rates and grades are not in the abstract.</td><td><span class="rob-badge rob-med">ROBINS-I:Moderate</span></td><td>2b</td><td><span class="fit-badge fit-strong">strong</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/42191879">42191879</a></td><td><a href="https://doi.org/10.1038/s41591-026-04376-9">DOI</a></td><td>Positive readout and the highest objective response rate yet reported for any systemic agent in dSDH-GIST, well above imatinib&#x27;s roughly 2%. Per-term safety rates were not retrievable: the abstract names only hyperphosphatemia, fatigue, and diarrhea, the CT.gov NCT04595747 results tab has no posted AE data, and the Nature Medicine full text is paywalled.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### DRUP off-label matched-therapy basket (trametinib for MAP2K1/MAPK-pathway alterations; alpelisib for PIK3CA)  
+<small><code>intervention_id: drup-basket</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>van der Velden DL/Voest EE (2019)<br><em>Nature</em></td><td class="num">215</td><td>215 patients across parallel tumour-type/variant/drug cohorts; each cohort matched to an approved drug used outside its label. No dedicated GIST cohort and no separate MAP2K1 P124 or PIK3CA R93W subset reported.</td><td>2L+</td><td>pan-cancer adaptive basket, Simon two-stage per cohort (non-randomized)</td><td>—</td><td>trametinib 2 mg PO daily (MAP2K1 arm); alpelisib 300 mg PO daily (PIK3CA arm); per-cohort matched dosing</td><td>other</td><td>clinical benefit (objective response or stable disease &gt;=16 weeks), pooled across cohorts</td><td class="num">34.00 %</td><td class="num">—</td><td class="num">—</td><td>median duration of clinical benefit 9 months (95% CI 8-11)</td><td>The 500-patient DRUP update (Hoes 2022, Clin Cancer Res) put the treatment-related grade &gt;=3 AE rate at 18% in rare cancers and 24% in common cancers, with no fatal treatment-related events; the primary Nature report gives no per-arm toxicity for the trametinib or alpelisib cohort.</td><td><span class="rob-badge rob-med">ROBINS-I:Moderate</span></td><td>2b</td><td><span class="fit-badge fit-weak">weak</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/31570881">31570881</a></td><td><a href="https://doi.org/10.1038/s41586-019-1600-x">DOI</a></td><td>Primary DRUP outcomes paper; the enrollment route for this case, not a variant-matched efficacy readout. DRUP reports pooled clinical benefit rather than per-arm figures, so neither the MAP2K1 P124S nor the PIK3CA R93W arm has a published effect size, both variants are ctDNA-only, R93W falls outside the alpelisib companion-diagnostic hotspots, eligibility is recurrence-contingent, and the trial is Dutch-only. Safety anchored to the Hoes 2022 500-patient update (PMID 35046062).</td></tr>
       </tbody>
     </table>
   </div>

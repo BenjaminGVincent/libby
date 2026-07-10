@@ -6,13 +6,14 @@
 
 ## What this report covers
 
-The PI's synthesis of the board into an 11-row ranking: three shared first steps to take while NED, seven recurrence contingencies gated on confirming SDH-deficiency, and one option logged as rejected.
+The PI's synthesis of the board into a 12-row ranking: three shared first steps to take while NED, eight recurrence-contingent options (seven board-ranked plus one access route added by a post-board re-screen) gated on confirming SDH-deficiency, and one option logged as rejected.
 
 ## Top-line findings
 
 - Active surveillance is the now-move. No adjuvant agent bends the recurrence curve in this subtype, so committing chronic toxicity buys nothing. All five personas endorsed it (agreement 1.0).
 - The SDHB/SDHA IHC re-cut is the load-bearing gate. It resolves the SDHB-intact / biallelic-SDHA paradox and locks the dSDH label that every recurrence trial screens on (agreement 1.0).
 - Systemic agents are recurrence contingencies, not now-moves. The newest positive signals, olverembatinib (23.1% ORR) and rogaratinib (41.7% ORR, but the trial is closed to accrual and its per-grade safety table is unretrievable), stay at single-arm grade. Rogaratinib is the most contested row, with a clean concensusite dissent and a conservative dissent on the unverifiable toxicity.
+- A post-board registry re-screen added DRUP (NCT02925234), a Dutch molecular-tumor-board basket that could match trametinib to the MAP2K1 P124S call or alpelisib to the PIK3CA R93W call. It is a weak access route, not an efficacy finding: the board never voted on it (agreement 0.0 by absence of a vote), it publishes only pooled clinical benefit with no per-arm number, both variants are ctDNA-only, R93W sits outside the alpelisib companion diagnostic, and enrollment is recurrence-contingent and Netherlands-only.
 - Adjuvant imatinib is not recommended (advocate veto, agreement −0.4): KIT is wild-type and the response rate is roughly 2%.
 - The ranking is scoped to the patient's targetable features. A re-cut that does not confirm SDH-deficiency forecloses the systemic contingencies, makes SDHC promoter methylation the next call, and turns standard care into a separate care-team conversation this report does not cover.
 
@@ -33,6 +34,7 @@ The PI's synthesis of the board into an 11-row ranking: three shared first steps
 5. **Belzutifan**: direct HIF-2α shot, accessible off-label, no GIST readout yet.
 6. **Pemigatinib**: the open FGFR door (recruiting), riding the rogaratinib signal.
 7. **Regorafenib**: guideline-sequenced 3L; dSDH benefit extrapolated from KIT-mutant data.
+8. **DRUP matched-therapy basket**: post-board access route to matched trametinib or alpelisib; not board-voted, pooled-only efficacy, ctDNA-only variants, Dutch-only. Logged so the door is visible, not as evidence of benefit.
 
 ## What this report does *not* cover
 
