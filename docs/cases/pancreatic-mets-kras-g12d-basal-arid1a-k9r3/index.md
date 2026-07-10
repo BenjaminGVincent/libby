@@ -6,13 +6,13 @@
 
 ## Case output
 
-- [Target validation paths (PDF)](pancreatic-mets-kras-g12d-basal-arid1a-k9r3-target-validation.pdf?v=8ea0ad75) — diagnostic + biomarker workup that hardens the targetable-feature call
-- [Recommendations table (HTML)](pancreatic-mets-kras-g12d-basal-arid1a-k9r3-recommendations.html?v=28af508b) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
+- [Target validation paths (PDF)](pancreatic-mets-kras-g12d-basal-arid1a-k9r3-target-validation.pdf?v=8cacad2a) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Recommendations table (HTML)](pancreatic-mets-kras-g12d-basal-arid1a-k9r3-recommendations.html?v=4d3f9cbc) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
 - [Access guide (HTML)](accessibility.md?v=81963249) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, sortable in-browser
-- [Access guide (offline HTML)](pancreatic-mets-kras-g12d-basal-arid1a-k9r3-accessibility.html?v=4a04da67) — same access-guide content as the in-browser page, packaged as a self-contained HTML that opens offline
-- [Master manuscripts table (HTML)](manuscripts.md?v=3f80e7af) — every paper considered — n, effect, variance, toxicities, sortable in-browser
-- [Master manuscripts table (offline HTML)](pancreatic-mets-kras-g12d-basal-arid1a-k9r3-manuscripts.html?v=054c3258) — same manuscripts inventory as the in-browser page, packaged as a self-contained HTML that opens offline
-- [Patient/caregiver PDF](pancreatic-mets-kras-g12d-basal-arid1a-k9r3-plain-language.pdf?v=539bfeef) — plain-language summary
+- [Access guide (offline HTML)](pancreatic-mets-kras-g12d-basal-arid1a-k9r3-accessibility.html?v=e11a3e6a) — same access-guide content as the in-browser page, packaged as a self-contained HTML that opens offline
+- [Master manuscripts table (HTML)](manuscripts.md?v=03974f19) — every paper considered — n, effect, variance, toxicities, sortable in-browser
+- [Master manuscripts table (offline HTML)](pancreatic-mets-kras-g12d-basal-arid1a-k9r3-manuscripts.html?v=f1c638bd) — same manuscripts inventory as the in-browser page, packaged as a self-contained HTML that opens offline
+- [Patient/caregiver PDF](pancreatic-mets-kras-g12d-basal-arid1a-k9r3-plain-language.pdf?v=5ef8df36) — plain-language summary
 
 <!-- libby:case-output:end -->
 ## Research question
@@ -120,13 +120,13 @@ Two lower-priority blood-based steps round out the picture. Paired peripheral-bl
 
 ## Scope summary
 
-16 trials surfaced, 13 clinical-evidence rows (4 included as ranked anchors, 9 logged `considered_excluded` as mechanism history or out-of-setting), 8 preclinical rows, and 6 target-validation rows (2 essential `gates_intervention`, 2 high-priority, 2 lower-priority). The ranked list holds 4 therapeutic rows, all `scenario: null` since every biomarker is confirmed, spanning agreement scores from 0.6 to 1.0. All five personas endorsed all four interventions; the disagreement is about order, not membership. Four of five put daraxonrasib at rank 1; the risktaker and advocate would lead with the gentler allele-matched zoldonrasib, and the critic and concensusite dissented on ranking an n=40 phase 1 abstract above the one randomized phase 3. Nobody issued a veto.
+16 trials surfaced, 13 clinical-evidence rows (6 carried as ranked anchors, 7 logged `considered_excluded` as mechanism history or out-of-setting), 8 preclinical rows, and 6 target-validation rows (2 essential `gates_intervention`, 2 high-priority, 2 lower-priority). This re-run followed a full board re-deliberation over 9 new on-axis KRAS trials: 5 fresh positions and 31 cross-critiques. The ranked list holds 7 rows, all `scenario: null` since every biomarker is confirmed, spanning agreement scores from -0.2 to 1.0. The top three tie at 1.0 — every persona endorsed daraxonrasib, GFH375/VS-7375, and zoldonrasib — and the fight is about order, not membership. Four of five put daraxonrasib at rank 1; two led with the louder allele-matched GFH375; the critic and concensusite pressed the randomized daraxonrasib evidence over the single-arm abstracts. One persistent down-rank falls on HRS-4642, where three personas dissented on a 90.3% grade >=3 rate with a treatment-related death. Nobody issued a veto.
 
 ## Cross-cutting caveat (read first)
 
 **The immunotherapy axis here is a mirage, and the ranking is scoped to two molecular targets, not the whole first-line conversation.** Three reads shape everything below, and the user should hold them before reading the ranks.
 
-- **The somatic MLH1 variant most likely reflects MMR-proficient biology, so checkpoint-inhibitor monotherapy is low-yield.** A single somatic MLH1 mutation sits alongside MSS status, TMB 8.6 mut/Mb (below the >=10 tumor-agnostic threshold), and a negative germline panel. Pembrolizumab on the dMMR/MSI-H label requires IHC protein loss or an MSI-H call, and neither is present. MMR protein IHC (MLH1/PMS2/MSH2/MSH6) on tissue is the gate that settles it; until it shows loss, do not treat the dMMR/MSI-H label as established here. The relevant immunotherapy biology in this MSS tumor is KRAS-inhibitor-driven FAS/CD8 restoration ([PMID 37625401](https://pubmed.ncbi.nlm.nih.gov/37625401)), which is a reason to favor the small molecules, not a standalone option.
+- **The somatic MLH1 variant most likely reflects MMR-proficient biology, so checkpoint-inhibitor monotherapy is low-yield.** A single somatic MLH1 mutation sits alongside MSS status, TMB 8.6 mut/Mb (below the >=10 tumor-agnostic threshold), and a negative germline panel. Pembrolizumab on the dMMR/MSI-H label requires IHC protein loss or an MSI-H call, and neither is present. MMR protein IHC (MLH1/PMS2/MSH2/MSH6) on tissue is the gate that settles it, because a missense variant can leave a functional protein and IHC and MSI occasionally disagree; until IHC shows loss, do not treat the dMMR/MSI-H label as established here. The relevant immunotherapy biology in this MSS tumor is KRAS-inhibitor-driven FAS/CD8 restoration ([PMID 37625401](https://pubmed.ncbi.nlm.nih.gov/37625401)), which is a reason to favor the small molecules, not a standalone option.
 - **The published anti-KRAS-G12D TCR-T does not apply to this patient.** That product is HLA-C*08:02-restricted ([PMID 35648703](https://pubmed.ncbi.nlm.nih.gov/35648703)); this man is C*05:01/C*06:02 (and A*01:01/A*02:01), so it cannot present his mutant epitope. The NT-112 arm of [NCT06218914](https://clinicaltrials.gov/study/NCT06218914) carries the same C*08:02 gate, and the terminated Merck/Moderna mRNA KRAS vaccine required A*11:01 and/or C*08:02 — both screen him out. Every KRAS immunotherapy was matched against his actual class I alleles; only the HLA-agnostic peptide vaccines survive the genotype, and they fail on setting instead.
 - **The ASXL1 frameshift may be clonal hematopoiesis, not tumor.** ASXL1 is one of the top three CHIP genes, and a frameshift seen only in plasma cannot be assigned to tumor versus blood by VAF alone. Send paired peripheral-blood-cell (buffy-coat) sequencing before counting it as a tumor target or toward TMB; if it is CHIP, drop it from the target list.
 - **The ranking is targetable-feature-scoped.** Only KRAS-G12D-directed agents and the ARID1A synthetic-lethal axis appear below. Standard first-line chemotherapy for metastatic PDAC (mFOLFIRINOX, NALIRIFOX, gem/nab-paclitaxel) carries the NCCN category 1 / 2A endorsement here and is the treating team's call — it does not target the patient's listed molecular features and is out of scope, so it is named only as the backbone the trials build on, not ranked. The basal-like PurIST signal (a debated chemo-backbone consideration) belongs to that same out-of-scope conversation.
@@ -135,16 +135,17 @@ Two lower-priority blood-based steps round out the picture. Paired peripheral-bl
 
 These steps harden the targetable-feature calls but are diagnostic, not therapeutic, so they sit here rather than in the ranked list. The full per-assay table with providers lives on the Target Validation paths report.
 
-- **MMR protein IHC (MLH1/PMS2/MSH2/MSH6) on tumor tissue — essential.** This is the gate on the whole immunotherapy question. Retained nuclear staining argues against single-agent checkpoint blockade and closes the dMMR/MSI-H pembrolizumab door; IHC and MSI can disagree because a missense variant can leave a functional protein and ~6% of MSI-H tumors retain MMR protein ([PMID 32152268](https://pubmed.ncbi.nlm.nih.gov/32152268)). Read MLH1 and PMS2 together, since PMS2 is unstable without MLH1. Turnaround 3-7 days once a block is in hand.
+- **MMR protein IHC (MLH1/PMS2/MSH2/MSH6) on tumor tissue — essential.** This is the gate on the whole immunotherapy question. Retained nuclear staining argues against single-agent checkpoint blockade and closes the dMMR/MSI-H pembrolizumab door; IHC and MSI occasionally disagree, since a missense variant can leave a functional protein and a small fraction of MSI-H tumors retain MMR protein. Read MLH1 and PMS2 together, since PMS2 is unstable without MLH1. Turnaround 3-7 days once a block is in hand.
 - **Tissue NGS confirming KRAS G12D (with SMAD4 / TP53 / ARID1A / MLH1 co-calls) — essential.** The driver came from plasma; the RAS(ON) inhibitor trials want the mutation pathologically documented on tissue, which also re-confirms the co-alterations and rules out a ctDNA artifact before a trial slot. If no archival block exists, this drives the decision about a liver-met core.
-- **ARID1A/BAF250a IHC — high priority.** The ATR/EZH2 baskets define ARID1A deficiency by BAF250a protein loss, not the frameshift; only ~67% of ARID1A-mutant tumors lose the protein ([PMID 41686845](https://pubmed.ncbi.nlm.nih.gov/41686845)), so this is what actually gates rank 4. Runs off the same block as the MMR IHC.
+- **ARID1A/BAF250a IHC — high priority.** The ATR/EZH2 baskets define ARID1A deficiency by BAF250a protein loss, not the frameshift; only ~67% of ARID1A-mutant tumors lose the protein ([PMID 41686845](https://pubmed.ncbi.nlm.nih.gov/41686845)), so this is what actually gates the ceralasertib option (rank 7). Runs off the same block as the MMR IHC.
 - **High-resolution HLA class I typing — high priority.** Documents the C*08:02-negative status for trial paperwork and lets the screener match A*02:01- and A*01:01-restricted KRAS programs cleanly. Whole blood or buccal swab; no tumor needed.
 - **Paired buffy-coat sequencing for the ASXL1 call — medium priority.** Separates CHIP from a true tumor variant; bundles with the whole-blood draw for HLA typing.
 
 ## Intervention grouping
 
 - **Pan-RAS / RAS(ON) class targeting KRAS G12D:** daraxonrasib (RMC-6236) front-line via RASolute 303 ([NCT07491445](https://clinicaltrials.gov/study/NCT07491445)). Anchor evidence: RASolute 302 ([PMID 42223072](https://pubmed.ncbi.nlm.nih.gov/42223072)); Jiang *Cancer Discovery* 2024 ([PMID 38593348](https://pubmed.ncbi.nlm.nih.gov/38593348)).
-- **KRAS G12D(ON)-selective inhibitors at the patient's exact allele:** zoldonrasib (RMC-9805) via RASolute 305 ([NCT07621718](https://clinicaltrials.gov/study/NCT07621718)) and the RMC-GI-102 platform ([NCT06445062](https://clinicaltrials.gov/study/NCT06445062)); INCB161734 via DAWN-303 ([NCT07522073](https://clinicaltrials.gov/study/NCT07522073)) and its phase 1 parent ([NCT06179160](https://clinicaltrials.gov/study/NCT06179160)). The discontinued tool compound MRTX1133 ([PMID 36216931](https://pubmed.ncbi.nlm.nih.gov/36216931), [PMID 37625401](https://pubmed.ncbi.nlm.nih.gov/37625401)) anchors the target biology and the FAS/CD8 immune mechanism.
+- **KRAS G12D-selective inhibitors at the patient's exact allele:** GFH375 / VS-7375 + cetuximab via the 1L cohort of [NCT07644559](https://clinicaltrials.gov/study/NCT07644559) (ESMO 2025 LBA84, [DOI 10.1016/j.annonc.2025.09.099](https://doi.org/10.1016/j.annonc.2025.09.099)); zoldonrasib (RMC-9805) via RASolute 305 ([NCT07621718](https://clinicaltrials.gov/study/NCT07621718)) and the RMC-GI-102 platform ([NCT06445062](https://clinicaltrials.gov/study/NCT06445062)); INCB161734 via DAWN-303 ([NCT07522073](https://clinicaltrials.gov/study/NCT07522073)) and its phase 1 parent ([NCT06179160](https://clinicaltrials.gov/study/NCT06179160)); HRS-4642 + gem/nab-paclitaxel via [NCT07232875](https://clinicaltrials.gov/study/NCT07232875) ([DOI 10.1038/s41591-026-04538-9](https://doi.org/10.1038/s41591-026-04538-9)). The discontinued tool compound MRTX1133 ([PMID 36216931](https://pubmed.ncbi.nlm.nih.gov/36216931), [PMID 37625401](https://pubmed.ncbi.nlm.nih.gov/37625401)) anchors the target biology and the FAS/CD8 immune mechanism.
+- **Pan-KRAS(ON) first-in-human inhibitors covering G12D (pre-data):** BBO-11818 ([NCT06917079](https://clinicaltrials.gov/study/NCT06917079)), BLU-924 ([NCT07629960](https://clinicaltrials.gov/study/NCT07629960)), PF-07934040 ([NCT06447662](https://clinicaltrials.gov/study/NCT06447662)), LY3962673 ([NCT06586515](https://clinicaltrials.gov/study/NCT06586515)).
 - **ARID1A synthetic-lethal axis (ATR):** ceralasertib (AZD6738) via [NCT03682289](https://clinicaltrials.gov/study/NCT03682289). Mechanism: Williamson *Nat Commun* 2016 ([PMID 27958275](https://pubmed.ncbi.nlm.nih.gov/27958275)).
 - **HLA-agnostic KRAS peptide vaccines (mechanism only — adjuvant/MRD setting):** ELI-002 ([PMID 40790272](https://pubmed.ncbi.nlm.nih.gov/40790272), [NCT05726864](https://clinicaltrials.gov/study/NCT05726864)) and the Hopkins pooled vaccine + nivolumab/ipilimumab ([PMID 41667470](https://pubmed.ncbi.nlm.nih.gov/41667470)).
 
@@ -172,7 +173,7 @@ High in the 2L RAS G12 population that produced the HR. The 0.40 hazard ratio wi
 
 #### Counter-productive mechanisms / dissent
 
-The risktaker dissented on preference-fit in round 2: their own notes concede the neutral 0.5 weight understates a 79-year-old's likely toxicity aversion, and prefers_trials does not separate daraxonrasib from the gentler allele-matched zoldonrasib since both recruit front-line. The conservative, critic, and concensusite all qualified rather than dissented — they share the rank-1 placement but press the same gap: the safety and efficacy data that earn this pick its grade were measured at 2L, not in the population the patient is actually in. The concensusite added that proximity-to-future-listing and the FDA Breakthrough Therapy Designation are a regulatory flag, not evidence, and the rank should rest on the trial result. No mechanism-level antagonism of the therapeutic goal was raised, and no veto.
+No persona dissented on this row and none vetoed it. The conservative, critic, and concensusite all qualified rather than dissented: they share the rank-1 placement but press the same gap, that the safety and efficacy data earning this pick its grade were measured at 2L, not in the population the patient is actually in. The risktaker's round-2 note is a preference qualifier, not an objection to the drug — their own reasoning concedes the neutral 0.5 weight understates a 79-year-old's likely toxicity aversion, and prefers_trials does not separate daraxonrasib from the gentler allele-matched zoldonrasib since both recruit front-line. The concensusite added that the FDA Breakthrough Therapy Designation is a regulatory flag, not evidence, and the rank should rest on the trial result. No mechanism-level antagonism of the therapeutic goal was raised.
 
 #### Practical considerations
 
@@ -180,7 +181,7 @@ RASolute 303 is recruiting, enrolls treatment-naive metastatic PDAC, and accepts
 
 #### Why this rank
 
-Rank 1 because it is the only feature-targeting option carrying a positive randomized phase 3, and four of five personas placed it there. The gap to rank 2 is real but narrow: zoldonrasib matches the exact allele and is gentler, but its evidence is a single-arm n=40 abstract, so the randomized survival result outweighs the tolerability edge on a neutral preference weight. If a toxicity-averse preference were captured for this 79-year-old, the risktaker and advocate would flip these two.
+Rank 1 because it is the only feature-targeting option carrying a positive randomized phase 3, and four of five personas placed it there. The gap to rank 2 is narrow and it is a tie on agreement score: GFH375/VS-7375 posts a louder allele-matched ORR (41%) at an open 1L cohort, but that number is a single-country phase 1/2 one line early, so the randomized survival result keeps daraxonrasib ahead on evidence strength. If a toxicity-averse preference were captured for this 79-year-old, the risktaker and advocate would lead with a G12D-selective agent instead.
 
 #### Per-trial detail
 
@@ -192,7 +193,48 @@ Rank 1 because it is the only feature-targeting option carrying a positive rando
 
 ---
 
-### Rank 2. zoldonrasib (RMC-9805), KRAS G12D(ON)-selective inhibitor — front-line via RASolute 305 (NCT07621718)
+### Rank 2. GFH375 / VS-7375, KRAS G12D(ON/OFF)-selective inhibitor + cetuximab — 1L cohort via NCT07644559
+
+*The loudest allele-matched response on the board with an open 1L cohort. All five endorsed it; two personas led with it. No dissent that it belongs, no veto.*
+
+#### Evidence base
+
+The efficacy anchor is GFH375X1101 ([DOI 10.1016/j.annonc.2025.09.099](https://doi.org/10.1016/j.annonc.2025.09.099), ESMO 2025 LBA84), a single-arm phase 1/2 monotherapy dose-expansion run in China: confirmed ORR 41% (90% CI 30-52) with 97% disease control in 59 evaluable previously treated KRAS G12D PDAC patients at 600 mg, mPFS 5.52 months. That is the highest single-agent response on the patient's exact allele anywhere in the dossier, but read it with two limits the critic named: the interval is a 90% CI, wider than the 95% you would want quoted, and 68% of the cohort had two or more prior lines while the patient is treatment-naive. The enrollable slot is the 1L cohort of [NCT07644559](https://clinicaltrials.gov/study/NCT07644559) (VS-7375 + cetuximab), which admits treatment-naive G12D PDAC at ECOG 1; the randomized phase 3 that would actually test the drug sits at second line ([NCT07262567](https://clinicaltrials.gov/study/NCT07262567)) and has not read out.
+
+#### Likelihood of desired effect
+
+High on response magnitude for the allele, but one line removed from the patient's setting and geographically single-source. The 41% ORR was measured directly in G12D PDAC, which is a cleaner target read than daraxonrasib's pooled RAS G12 estimate, yet an uncontrolled 2L+ cohort cannot tell you what the treatment-naive 1L number will be, and PDAC front-line response fractions usually run lower than late-line selection would suggest — or higher, once the disease is chemo-naive. RASolute 303's randomization gives daraxonrasib a floor this drug does not yet have. The open bet is whether the 1L cohort reproduces the 41%.
+
+#### Toxicity profile
+
+- Grade >=3 treatment-related AEs 30.3% (one grade 4 neutropenia); no dose-limiting toxicities at 600 mg
+- Myelosuppression plus GI: grade >=3 neutrophil decrease 8%, anemia 8%; any-grade diarrhea 56% (grade >=3 3%), neutrophils 49%, nausea and vomiting 47% each, anemia 42%
+- The cytopenia backbone has standard management algorithms, so it is plannable
+- The cetuximab partner in the 1L cohort adds acneiform rash, hypomagnesemia, and infusion reactions, and the doublet has no dedicated PDAC combination-safety table — the uncharacterized layer the conservative flags at 79
+
+#### Counter-productive mechanisms / dissent
+
+No persona dissented that this drug belongs on the ranked list, and the risktaker and advocate endorsed it as their lead. The critic qualified on evidence grade — a China phase 1/2 with a 90% CI should not outrank the randomized OS result — and the concensusite made the same guideline-fit point, that both agents have open 1L slots so the tie-break falls to evidence strength, not the louder ORR. The conservative and advocate both qualified on the cetuximab doublet's uncharacterized tolerability rather than the drug's own profile. So the objections are all about position and the combination partner, not the agent's fit to the target. No veto.
+
+#### Practical considerations
+
+The 1L cohort of NCT07644559 is recruiting and admits treatment-naive patients (or up to one cycle of standard care) at ECOG 1, so it matches on allele, tumor type, and line. VS-7375 is oral; cetuximab is IV, which is worth naming for a 79-year-old even though the modality field is silent. A US sponsor (Verastem) and the ESMO 2025 presentation keep it inside the Western-sponsored, guideline-consonant frame under NCCN Pancreatic v2.2025, though the efficacy anchor itself is the China-based GFH375X1101. No NCCN category. A documented tissue G12D call is the enrollment token; confirm the US cohort's line and ECOG fit before relying on the abstract.
+
+#### Why this rank
+
+Rank 2, tied with daraxonrasib and zoldonrasib on agreement score at 1.0, but placed second because the tie-break runs through evidence strength on a neutral preference weight: a 41% single-arm ORR one line removed is a weaker anchor than a randomized OS hit. Above zoldonrasib at rank 3 because the response magnitude is higher on the same allele and the 1L cohort is open now, even though zoldonrasib's monotherapy tolerability is cleaner — the cetuximab doublet costs GFH375 some of that tolerability edge, which is why the gap between ranks 2 and 3 is small.
+
+#### Per-trial detail
+
+| Therapeutic agent | Efficacy | Toxicity | Reference |
+|---|---|---|---|
+| GFH375 / VS-7375 monotherapy, 2L+ G12D PDAC (600 mg) | ORR 41% (90% CI 30-52), DCR 97%; mPFS 5.52 mo | G3+ TRAE 30.3%; neutrophils 8%, anemia 8% at G3+ | [DOI 10.1016/j.annonc.2025.09.099](https://doi.org/10.1016/j.annonc.2025.09.099) |
+| VS-7375 + cetuximab, 1L + 2L PDAC cohorts | ORR readout pending; 1L cohort admits treatment-naive | Adds cetuximab rash / hypomagnesemia (uncharacterized in combination) | [NCT07644559](https://clinicaltrials.gov/study/NCT07644559) |
+| GFH375 vs chemotherapy, 2L G12D PDAC (randomized phase 3) | Readout pending; stronger design than the single-arm baskets | Not yet reported | [NCT07262567](https://clinicaltrials.gov/study/NCT07262567) |
+
+---
+
+### Rank 3. zoldonrasib (RMC-9805), KRAS G12D(ON)-selective inhibitor — front-line via RASolute 305 (NCT07621718)
 
 *The allele-matched, gentlest agent in the set. All five endorsed it; the critic and concensusite dissented on ranking it above the randomized daraxonrasib evidence.*
 
@@ -221,7 +263,7 @@ RASolute 305 is recruiting, requires KRAS G12D specifically, and enrolls treatme
 
 #### Why this rank
 
-Rank 2 because the allele match and tolerability are real advantages, but the evidence base is a single-arm abstract against daraxonrasib's randomized phase 3. On a neutral 0.5 preference weight, the survival result outranks the tolerability edge. Above rank 3 (INCB161734) because both are n~40 phase 1 abstracts at the same evidence level, and the critic reads the 30% vs 37% gap as within-noise — so the tie-break falls to zoldonrasib's cleaner monotherapy profile and the fact that its front-line trial does not bundle the ~40% grade >=3 neutropenia that INCB161734's combination cohort carries.
+Rank 3 because the allele match and tolerability are real advantages, but the evidence base is a single-arm n=40 abstract against daraxonrasib's randomized phase 3 and GFH375's louder allele-matched ORR. On a neutral 0.5 preference weight, the survival result and the higher response number both edge ahead of the tolerability lead; a captured toxicity-averse preference would lift this to the front. Above rank 4 (INCB161734) because both are n~40 phase 1 abstracts at the same evidence level, and the critic reads the 30% vs 37% gap as within-noise — so the tie-break falls to zoldonrasib's cleaner monotherapy profile and the fact that its front-line trial does not bundle the ~40% grade >=3 neutropenia that INCB161734's combination cohort carries.
 
 #### Per-trial detail
 
@@ -233,7 +275,7 @@ Rank 2 because the allele match and tolerability are real advantages, but the ev
 
 ---
 
-### Rank 3. INCB161734, KRAS G12D-selective inhibitor — front-line + chemo via DAWN-303 (NCT07522073)
+### Rank 4. INCB161734, KRAS G12D-selective inhibitor — front-line + chemo via DAWN-303 (NCT07522073)
 
 *The strongest single-agent response number on the board, but the enrollable front-line construct bundles chemotherapy. All five endorsed it; the conservative dissented on the combination's marrow toxicity.*
 
@@ -262,7 +304,7 @@ DAWN-303 is recruiting, requires KRAS G12D, and enrolls previously untreated met
 
 #### Why this rank
 
-Rank 3, not rank 2, because it sits at the same evidence grade as zoldonrasib (both n~40 phase 1 abstracts) but the enrollable front-line construct bundles chemotherapy with ~40% grade >=3 neutropenia, while zoldonrasib's front-line trial does not carry that documented marrow hit. On a neutral weight the cleaner-route allele-matched agent edges ahead. Above rank 4 by a wide margin: this targets the lead driver directly, while ceralasertib is a cross-tumor extrapolation on the secondary axis.
+Rank 4, not rank 3, because it sits at the same evidence grade as zoldonrasib (both n~40 phase 1 abstracts) but the enrollable front-line construct bundles chemotherapy with ~40% grade >=3 neutropenia, while zoldonrasib's front-line trial does not carry that documented marrow hit. On a neutral weight the cleaner-route allele-matched agent edges ahead. Above rank 5 (HRS-4642) because its response signal, while confounded-adjacent, is not carried by a 90.3% grade >=3 backbone, and its front-line trial is recruiting; this is still a KRAS-directed agent targeting the lead driver.
 
 #### Per-trial detail
 
@@ -274,9 +316,92 @@ Rank 3, not rank 2, because it sits at the same evidence grade as zoldonrasib (b
 
 ---
 
-### Rank 4. ceralasertib (AZD6738), ATR inhibitor (ARID1A synthetic-lethal axis) — via NCT03682289, gated on BAF250a IHC loss
+### Rank 5. HRS-4642 (KRAS G12D inhibitor) + gemcitabine/nab-paclitaxel — front-line via NCT07232875
 
-*A mechanistically independent banked second axis off the ARID1A frameshift. Every persona ranked it last; it is the thinnest evidence on the board for this patient.*
+*The highest front-line ORR on the exact allele, held at considered_with_caveats. Two personas kept it; three dissented on a 90.3% grade >=3 rate with a treatment-related death. No veto.*
+
+#### Evidence base
+
+The front-line combination read is a phase 1b/2 single-arm study, HRS-4642 added to gem/nab-paclitaxel, reported in Nature Medicine ([DOI 10.1038/s41591-026-04538-9](https://doi.org/10.1038/s41591-026-04538-9)): confirmed ORR 63.3% (95% CI 43.9-80.1) in 30 treatment-naive KRAS G12D PDAC patients, the primary endpoint met. That is the highest front-line response on the patient's exact allele and line anywhere in the dossier. The problem the critic cannot get past is attribution: the 63.3% is measured on top of a gem/nab-paclitaxel backbone that delivers roughly 20-23% ORR on its own, and the same program's HRS-4642 monotherapy read was only 20.8% ([DOI 10.1016/j.annonc.2025.08.1484](https://doi.org/10.1016/j.annonc.2025.08.1484), ESMO 2025 915O), so without a control arm the drug's independent contribution is not isolable. The enrollable option, the confirmatory phase 3 [NCT07232875](https://clinicaltrials.gov/study/NCT07232875), is not yet recruiting. One evidence-integrity note carried honestly: the Nature Medicine paper has no PubMed record yet, so it is cited by DOI and the enrollable slot is anchored on the NCT.
+
+#### Likelihood of desired effect
+
+High as an observed front-line number in the exact setting, but confounded. A treatment-naive patient is in the population the 63.3% was measured in, which is the risktaker's point — the confound cuts the effect, it does not erase a doubling over historical gem/nab-paclitaxel. The critic's point stands alongside it: 20.8% is the honest ceiling on HRS-4642's own contribution, and the rest is chemotherapy the patient would receive anyway. What the drug adds, net of the backbone, is the open question a randomized trial has not yet answered.
+
+#### Toxicity profile
+
+- **Grade >=3 treatment-related AEs 90.3%**, mostly hematologic, driven by the gem/nab-paclitaxel backbone
+- One treatment-related death (1/84) in the monotherapy safety set — the datum the conservative and critic weight most at 79
+- HRS-4642 monotherapy adds a metabolic signature: hypertriglyceridemia, hypercholesterolemia, neutropenia
+- IV route, not oral; no dose-limiting toxicities in phase 1b, but the combination toxicity tracks the chemotherapy rather than a novel drug signal
+- The user logged no toxicity veto, so nothing here is formally disqualifying — but the 90.3% grade >=3 rate is exactly the profile the free_text's age-79 note argues against
+
+#### Counter-productive mechanisms / dissent
+
+This is the case's one persistent down-rank. The risktaker and critic kept it on their lists (ranks 2 and 4) for the exact-line response; the conservative, concensusite, and advocate dissented on putting it high. The conservative's dissent is the load-bearing one: a 90.3% grade >=3 rate with a treatment-related death is a tolerability floor they will not top-rank in a 79-year-old the free_text flags as likely more toxicity-averse than the neutral 0.5 weight encodes, and the monotherapy metabolic signature has no combination-specific management algorithm published. The advocate reached the same place on preference-fit (IV doublet, phase 3 not recruiting, so prefers_trials only half-served), and the concensusite on guideline-fit (China-based, front-line slot pairs with a full chemo backbone). The critic's own dissent is on evidence: the confounded ORR does not settle the question. No formal veto was issued — every objection is a dissent, not a safety contraindication.
+
+#### Practical considerations
+
+NCT07232875 requires KRAS G12D and enrolls first-line advanced/metastatic PDAC, matching the patient on allele, tumor type, and line — but it is not yet recruiting, so the door is not currently open. HRS-4642 is IV every 2-3 weeks on a gem/nab-paclitaxel backbone. The program is China-based (Jiangsu Hengrui); NCCN just says profile-and-enroll and does not rank sponsors by geography, so the geographic caveat is about population generalizability and current enrollability, not disqualified evidence. No NCCN category. If a growth-factor and metabolic-monitoring plan were in place and the phase 3 opened, this becomes a live conversation for a patient who prioritized response ceiling over tolerability — which is not where this 79-year-old's unstated preference points.
+
+#### Why this rank
+
+Rank 5 and considered_with_caveats because it carries the single highest front-line ORR on the board yet lands at a negative agreement score (-0.2): two endorse, three dissent. It sits below the four cleaner KRAS-directed options because the 90.3% grade >=3 rate, the treatment-related death, the IV backbone, and the not-yet-recruiting phase 3 stack against a toxicity-averse 79-year-old, and above the pre-data pan-KRAS class at rank 6 because it has an actual front-line efficacy read, confounded or not.
+
+#### Per-trial detail
+
+| Therapeutic agent | Efficacy | Toxicity | Reference |
+|---|---|---|---|
+| HRS-4642 + gem/nab-paclitaxel, 1L G12D PDAC (phase 1b/2) | ORR 63.3% (95% CI 43.9-80.1, n=30); primary endpoint met | G3+ TRAE 90.3%, mostly hematologic | [DOI 10.1038/s41591-026-04538-9](https://doi.org/10.1038/s41591-026-04538-9) |
+| HRS-4642 monotherapy, 2L+ G12D solid tumors | PDAC ORR 20.8%, DCR 79.2%; mPFS 4.4 mo | G3+ TRAE 23.8%; 1 treatment-related death (1/84) | [DOI 10.1016/j.annonc.2025.08.1484](https://doi.org/10.1016/j.annonc.2025.08.1484) |
+| HRS-4642 + gem/nab-paclitaxel vs placebo + chemo, 1L (phase 3) | Readout pending; not yet recruiting | Backbone hematologic toxicity | [NCT07232875](https://clinicaltrials.gov/study/NCT07232875) |
+
+---
+
+### Rank 6. Pan-KRAS(ON) first-in-human inhibitors (BBO-11818, BLU-924, PF-07934040, LY3962673) — phase 1 baskets covering G12D
+
+*On-axis but pre-data. No persona ranked them; surfaced at considered_with_caveats / low because they target the driver and have recruiting slots. No dissent, no veto.*
+
+#### Evidence base
+
+Four pan-KRAS or G12D-selective agents sit at tier 5 with no efficacy denominator: BBO-11818 (KONQUER-101, [NCT06917079](https://clinicaltrials.gov/study/NCT06917079)), BLU-924 (Blueprint/Sanofi, [NCT07629960](https://clinicaltrials.gov/study/NCT07629960)), PF-07934040 (Pfizer, [NCT06447662](https://clinicaltrials.gov/study/NCT06447662)), and LY3962673 (MOONRAY-01, Lilly, [NCT06586515](https://clinicaltrials.gov/study/NCT06586515)). The only public efficacy signal across the four is a December 2025 sponsor update citing one BBO-11818 PDAC partial response (56% tumor shrinkage) with no denominator and no ORR; the rest are registry-stage. There is no per-term grade >=3 safety table for any of them.
+
+#### Likelihood of desired effect
+
+Unquantified. These cover G12D through pan-KRAS baskets, so the target rationale is sound, but a mechanism without an efficacy denominator cannot support a likelihood estimate. The honest read the conservative and critic gave in round 1 is that ranking these would be ranking novelty, not evidence — so they are banked, not recommended, until an abstract-level readout arrives (BBO-11818 expected in the second half of 2026).
+
+#### Toxicity profile
+
+- No per-term grade >=3 safety table published for any of the four (empty toxicities across the dossier rows)
+- Early monotherapy escalation reads describe predominantly grade 1-2 GI toxicity with no dose-limiting toxicities
+- The safety base does not yet exist, so the tier reflects absence of data, not a benign profile
+
+#### Counter-productive mechanisms / dissent
+
+No persona ranked these, so there was no target row for a round-2 critique to attach to — the conservative logged the missing-AE-data flag for the record. That silence is not endorsement and not dissent; it is the board declining to score a pre-data mechanism. No plausible counter-productive vector is established because there is no clinical read to establish one from.
+
+#### Practical considerations
+
+All four have recruiting phase 1 slots, but most enroll after standard therapy, so line-fit for a treatment-naive patient depends on the specific cohort — BBO-11818's combination arms with gem/nab-paclitaxel, mFOLFIRINOX, cetuximab, and pembrolizumab open front-line-compatible options that the monotherapy escalations do not. Oral. A tissue or ctDNA G12D call is the enrollment token. No NCCN category; investigational and pre-data.
+
+#### Why this rank
+
+Rank 6 and considered_with_caveats because they genuinely target the driver and recruit, but no efficacy denominator exists, so they cannot be ranked among the agents that have one. Below HRS-4642 (rank 5), which at least has a front-line efficacy read; above ceralasertib (rank 7) only in that these hit the lead KRAS driver directly rather than the secondary ARID1A axis — but on a present-day recommendation basis both are bank-for-later.
+
+#### Per-trial detail
+
+| Therapeutic agent | Efficacy | Toxicity | Reference |
+|---|---|---|---|
+| BBO-11818 (KONQUER-101), pan-KRAS(ON) | 1 PDAC PR (56% shrinkage), no denominator | No per-term table; GI-predominant, no DLTs | [NCT06917079](https://clinicaltrials.gov/study/NCT06917079) |
+| BLU-924 (SAR449336), pan-KRAS | No readout | No data | [NCT07629960](https://clinicaltrials.gov/study/NCT07629960) |
+| PF-07934040, KRAS G12D | No readout | No data | [NCT06447662](https://clinicaltrials.gov/study/NCT06447662) |
+| LY3962673 (MOONRAY-01), KRAS G12D-selective | No readout | No data | [NCT06586515](https://clinicaltrials.gov/study/NCT06586515) |
+
+---
+
+### Rank 7. ceralasertib (AZD6738), ATR inhibitor (ARID1A synthetic-lethal axis) — via NCT03682289, gated on BAF250a IHC loss
+
+*A mechanistically independent banked second axis off the ARID1A frameshift. Every persona ranked it last; it is the thinnest in-indication evidence on the board for this patient.*
 
 #### Evidence base
 
@@ -294,7 +419,7 @@ Low for this patient. No pancreatic responder exists in the ARID1A clinical data
 
 #### Counter-productive mechanisms / dissent
 
-No persona issued a round-2 dissent or veto on this row, but that silence is not endorsement — the board spent its critiques on the top-tier disagreement among the KRAS agents, and all five ranked ceralasertib last in round 1. The concensusite's round-2 note (directed at the conservative) names the load-bearing problem as guideline fit: no society endorses ATR inhibition for PDAC, and the only positive read is a gynecologic subset with zero pancreatic responders. The mechanism-level risk is that cross-tumor extrapolation may simply not translate to basal-like PDAC, and class anemia limits exposure at 79.
+No persona issued a round-2 dissent or veto on this row, but that silence is not endorsement — the board spent its critiques on the top-tier disagreement among the KRAS agents. Three personas (conservative, critic, concensusite) ranked it, each at their own floor; the risktaker and advocate left it off their picks entirely once the KRAS field ran this deep. The concensusite's round-2 note (directed at the conservative) names the load-bearing problem as guideline fit: no society endorses ATR inhibition for PDAC, and the only positive read is a gynecologic subset with zero pancreatic responders. The mechanism-level risk is that cross-tumor extrapolation may simply not translate to basal-like PDAC, and class anemia limits exposure at 79.
 
 #### Practical considerations
 
@@ -302,7 +427,7 @@ NCT03682289 takes pancreatic tumors stratified by ARID1A status, so it directly 
 
 #### Why this rank
 
-Rank 4 by unanimous round-1 consensus, even though the synthesis formula scores it 1.0 (it drew no round-2 critiques because the personas argued about the KRAS agents instead). That score is an artifact, not a signal that ceralasertib outranks the RAS-directed options — every persona placed it below all three. It is last on evidence grade: cross-tumor extrapolation with no PDAC responder, not-confirmed enrollable, and the enrollable door is closed. It stays on the page because the ARID1A frameshift is a real, independent target worth banking if the KRAS axis fails.
+Rank 7, the floor, by unanimous round-1 consensus — every persona placed it below all the KRAS agents. The synthesis formula scores it 0.6 (it drew no round-2 down-rank critiques because the personas argued about the KRAS-agent ordering instead), but that score is an artifact, not a signal that ceralasertib outranks HRS-4642 or the pre-data pan-KRAS class; it is placed last to match the board's actual placement. It is last on in-indication evidence grade: cross-tumor extrapolation with no PDAC responder, not-confirmed enrollable, and the lead basket's door is closed. It stays on the page because the ARID1A frameshift is a real, independent target worth banking if the KRAS axis fails.
 
 #### Per-trial detail
 
@@ -317,7 +442,7 @@ Rank 4 by unanimous round-1 consensus, even though the synthesis formula scores 
 
 - **HLA-agnostic KRAS peptide vaccines (ELI-002; Hopkins pooled vaccine + nivolumab/ipilimumab).** These clear the HLA gate the C*08:02-restricted TCR-T fails, and ELI-002's safety is the cleanest in the case (no grade >=3 events across 25 patients, [PMID 40790272](https://pubmed.ncbi.nlm.nih.gov/40790272)). But the data come from resected, minimal-residual-disease PDAC, and this man has a large primary and liver metastases, so the efficacy read does not transfer to bulky metastatic disease. The ELI-002 hazard ratios (RFS HR 0.12, OS HR 0.23) split patients by on-treatment T-cell response, not randomization, so they anchor the vaccine mechanism rather than a metastatic benefit estimate. Excluded on setting, not on biology.
 - **HLA-C*08:02-restricted anti-KRAS-G12D TCR-T (NT-112, NCT06218914) and the C*08:02/A*11:01-restricted mRNA KRAS vaccine.** Excluded on HLA mismatch: the patient is C*05:01/C*06:02 and A*01:01/A*02:01, so these products cannot present his mutant epitope ([PMID 35648703](https://pubmed.ncbi.nlm.nih.gov/35648703)). This is the concrete negative behind the case's second judgment call.
-- **EZH2 inhibition for the ARID1A axis (tazemetostat).** On-axis mechanism, but the lead agent was withdrawn from all trials in March 2026 after the negative NRG-GY014 read, so the EZH2 route lost both its supporting efficacy signal and its drug. ATR inhibition (rank 4) is the surviving route.
+- **EZH2 inhibition for the ARID1A axis (tazemetostat).** On-axis mechanism, but the lead agent was withdrawn from all trials in March 2026 after the negative NRG-GY014 read, so the EZH2 route lost both its supporting efficacy signal and its drug. ATR inhibition (ceralasertib, rank 7) is the surviving route.
 - **MRTX1133, first-generation KRAS G12D-selective inhibitor.** Validated the target and the FAS/CD8 immune mechanism preclinically ([PMID 36216931](https://pubmed.ncbi.nlm.nih.gov/36216931), [PMID 37625401](https://pubmed.ncbi.nlm.nih.gov/37625401)), but the clinical program was terminated for formulation problems, not loss of target validity. Carried forward as mechanism history by zoldonrasib and INCB161734.
 - **Single-agent checkpoint blockade (pembrolizumab on the dMMR/MSI-H or TMB-high label).** Foreclosed: MSS, TMB 8.6 (below the >=10 threshold), and a somatic MLH1 variant that most likely reflects MMR-proficient biology. MMR IHC is the gate before any dMMR/MSI-H claim. Not recommended on that label here.
 
@@ -330,14 +455,22 @@ Rank 4 by unanimous round-1 consensus, even though the synthesis formula scores 
       <tbody>
         <tr>
           <td>1</td>
-          <td><strong>daraxonrasib (RMC-6236) pan-RAS(ON) front-line on NCT07491445</strong><br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span> <span class="persona persona-advocate">advocate</span></small><br><small><em>dissent:</em> <span class="persona persona-risktaker">risktaker</span></small></td>
-          <td>High in 2L RAS G12 PDAC — OS HR 0.40 (95% CI 0.30-0.53) in RASolute 302 (n=500); first-line benefit inferred from the unread RASolute 303.</td>
+          <td><strong>daraxonrasib (RMC-6236) pan-RAS(ON) front-line on NCT07491445</strong><br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span> <span class="persona persona-advocate">advocate</span></small></td>
+          <td>High in 2L RAS G12 PDAC — OS HR 0.40 (95% CI 0.30-0.53), RASolute 302 (n=500); first-line benefit inferred from the unread RASolute 303.</td>
           <td>Moderate (rash G3+ 14%, stomatitis G3+ 12%; G3+ TRAE 43.6% overall, below chemo)</td>
           <td><strong>Low</strong> <span class="cpm-desc">(Mucocutaneous toxicity can force dose reductions that erode the exposure the survival signal depends on; no mechanism-level antagonism)</span></td>
           <td><strong>The only feature-targeting option with randomized phase 3 survival evidence; first-line benefit inferred from an unread trial and the allele estimate borrowed from a RAS G12 subgroup.</strong></td>
         </tr>
         <tr>
           <td>2</td>
+          <td><strong>GFH375 / VS-7375 G12D-selective + cetuximab, 1L cohort on NCT07644559</strong><br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span> <span class="persona persona-advocate">advocate</span></small></td>
+          <td>High allele-matched response — ORR 41% (90% CI 30-52), ESMO 2025 LBA84 (n=59), but single-country phase 1/2 and one line beyond the treatment-naive patient.</td>
+          <td>Moderate (neutropenia G3+ 8%, anemia G3+ 8%, diarrhea G3+ 3%; cetuximab rash/hypomagnesemia uncharacterized in combination)</td>
+          <td><strong>Low</strong> <span class="cpm-desc">(Cytopenias and cetuximab dermatologic toxicity can force dose reductions; no mechanism-level antagonism of the therapeutic goal)</span></td>
+          <td><strong>The highest allele-matched single-agent response on the board with an open 1L slot, but the read is China-based, one line early, and the cetuximab doublet's tolerability at 79 is uncharacterized.</strong></td>
+        </tr>
+        <tr>
+          <td>3</td>
           <td><strong>zoldonrasib (RMC-9805) G12D-selective front-line on NCT07621718</strong><br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span> <span class="persona persona-advocate">advocate</span></small><br><small><em>dissent:</em> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span></small></td>
           <td>Moderate, allele-matched — ORR 30% / DCR 80% in G12D PDAC (phase 1, n=40, no CI; PFS/DoR immature). RASolute 305 will test it front-line.</td>
           <td>Low (nausea 27%, diarrhea 20%, rash 10%; no G4/5 events at monotherapy dose)</td>
@@ -345,16 +478,32 @@ Rank 4 by unanimous round-1 consensus, even though the synthesis formula scores 
           <td><strong>The allele-matched, gentlest agent in the set — best tolerability for a 79-year-old, but the evidence is a single-arm n=40 abstract with no durability readout.</strong></td>
         </tr>
         <tr>
-          <td>3</td>
-          <td><strong>INCB161734 G12D-selective + chemo front-line on NCT07522073 (DAWN-303)</strong><br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span> <span class="persona persona-advocate">advocate</span></small><br><small><em>dissent:</em> <span class="persona persona-conservative">conservative</span></small></td>
+          <td>4</td>
+          <td><strong>INCB161734 G12D-selective + chemo front-line on NCT07522073 (DAWN-303)</strong><br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-concensusite">concensusite</span> <span class="persona persona-advocate">advocate</span></small><br><small><em>dissent:</em> <span class="persona persona-conservative">conservative</span></small></td>
           <td>Moderate to high single-agent — ORR 37% / DCR 78% in pretreated G12D PDAC (phase 1, n=41, no CI; PFS not reached at ~5 mo). DAWN-303 tests it front-line.</td>
           <td>High (combination-cohort G3+ neutropenia ~40%; monotherapy GI 50-60% grade 1-2)</td>
           <td><strong>Moderate</strong> <span class="cpm-desc">(Conservative dissented on additive marrow toxicity: chemo-combination neutropenia can force dose reductions that erode delivered intensity at 79)</span></td>
           <td><strong>Strongest single-agent response number in the dossier, but the enrollable front-line construct bundles chemotherapy with ~40% grade >=3 neutropenia and no dedicated combination-safety data.</strong></td>
         </tr>
         <tr>
-          <td>4</td>
-          <td><strong>ceralasertib (AZD6738) ATR inhibitor on NCT03682289</strong> (ARID1A axis; gated on BAF250a IHC loss)<br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span> <span class="persona persona-advocate">advocate</span></small></td>
+          <td>5</td>
+          <td><strong>HRS-4642 + gem/nab-paclitaxel front-line on NCT07232875</strong><br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-critic">critic</span></small><br><small><em>dissent:</em> <span class="persona persona-conservative">conservative</span> <span class="persona persona-concensusite">concensusite</span> <span class="persona persona-advocate">advocate</span></small></td>
+          <td>High front-line response but confounded — ORR 63.3% (95% CI 43.9-80.1, n=30) on a chemo backbone; monotherapy contribution only ~20.8%.</td>
+          <td>High (grade >=3 TRAE 90.3%, mostly hematologic; one treatment-related death; hypertriglyceridemia/hypercholesterolemia signature)</td>
+          <td><strong>Moderate</strong> <span class="cpm-desc">(Backbone myelosuppression plus one treatment-related death can force intensity cuts that erode delivered benefit in an older marrow-limited patient)</span></td>
+          <td><strong>The highest front-line ORR on the exact allele, but a 90.3% grade >=3 rate with a treatment-related death, an IV backbone, and a not-yet-recruiting phase 3 down-rank it against a toxicity-averse 79-year-old.</strong></td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td><strong>Pan-KRAS(ON) FIH inhibitors (BBO-11818, BLU-924, PF-07934040, LY3962673)</strong> (phase 1 baskets covering G12D)<br><small><em>no persona ranked (pre-data)</em></small></td>
+          <td>Low / unquantified — no efficacy denominator; the only public signal is a single BBO-11818 PDAC partial response with no ORR (registry-stage class).</td>
+          <td>Low (none characterized — early reads describe predominantly grade 1-2 GI, no per-term G3+ table published)</td>
+          <td><strong>Low</strong> <span class="cpm-desc">(Pre-data mechanism with no plausible counter-productive vector established; the risk is absence of evidence, not a mechanistic antagonism)</span></td>
+          <td><strong>On-axis pan-KRAS agents covering G12D with recruiting phase 1 slots, but no efficacy denominator exists yet, so they are a bank-for-later class rather than a present recommendation.</strong></td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td><strong>ceralasertib (AZD6738) ATR inhibitor on NCT03682289</strong> (ARID1A axis; gated on BAF250a IHC loss)<br><small><em>endorse:</em> <span class="persona persona-conservative">conservative</span> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span></small></td>
           <td>Low for PDAC — confirmed ORR 14% across ARID1A-deficient tumors (PMID 41686845), activity concentrated in gynecologic histologies with zero pancreatic responders shown.</td>
           <td>Moderate (ATR-class anemia / thrombocytopenia / neutropenia; per-term G3+ rates unreported, zero treatment-related deaths)</td>
           <td><strong>Moderate</strong> <span class="cpm-desc">(Cross-tumor extrapolation with no PDAC responder; the synthetic-lethal effect may not engage in basal-like PDAC, and class anemia limits exposure at 79)</span></td>
@@ -370,21 +519,21 @@ Rank 4 by unanimous round-1 consensus, even though the synthesis formula scores 
 
 ## Caveats
 
-- **Evidence-base caveats.** Only one ranked option carries randomized evidence: daraxonrasib's RASolute 302 ([PMID 42223072](https://pubmed.ncbi.nlm.nih.gov/42223072), n=500, RoB2:Some, open-label, 2L). The other three rest on thinner ground — zoldonrasib and INCB161734 are uncontrolled n=40/n=41 phase 1 conference abstracts with no CI on ORR and immature PFS/DoR, and ceralasertib's only positive read is a post-hoc gynecologic subgroup with zero pancreatic responders. The RoB judgments on the three abstract-stage agents are provisional until full-text publication.
-- **Compartment / biomarker dependencies.** Rank 4 (ceralasertib) is contingent on BAF250a IHC loss — the frameshift call alone does not confirm it, and only ~67% of ARID1A-mutant tumors lose the protein. All four ranks assume tissue NGS confirmation of the ctDNA KRAS G12D call, which the RAS(ON) trials require at screening. The immunotherapy axis is foreclosed pending MMR IHC: MSS plus TMB 8.6 plus a somatic MLH1 variant most likely reflects MMR-proficient biology, and the dMMR/MSI-H pembrolizumab label is not established until IHC shows protein loss.
+- **Evidence-base caveats.** Only one ranked option carries randomized evidence: daraxonrasib's RASolute 302 ([PMID 42223072](https://pubmed.ncbi.nlm.nih.gov/42223072), n=500, RoB2:Some, open-label, 2L). Everything below it rests on thinner ground — GFH375/VS-7375, zoldonrasib, and INCB161734 are uncontrolled n=40 to n=66 phase 1/2 conference abstracts, several China-based, with wide or absent CIs on ORR and immature PFS/DoR; HRS-4642's front-line combination read is a single-arm phase 1b/2 whose 63.3% ORR is confounded with the chemo backbone and whose Nature Medicine paper has no PubMed record yet (cited by DOI); the pan-KRAS FIH agents have no efficacy denominator at all; and ceralasertib's only positive read is a gynecologic subgroup with zero pancreatic responders. The RoB judgments on the abstract-stage agents are provisional until full-text publication.
+- **Compartment / biomarker dependencies.** Rank 7 (ceralasertib) is contingent on BAF250a IHC loss — the frameshift call alone does not confirm it, and only ~67% of ARID1A-mutant tumors lose the protein. Every KRAS-directed rank assumes tissue NGS confirmation of the ctDNA KRAS G12D call, which the RAS(ON) trials require at screening. The immunotherapy axis is foreclosed pending MMR IHC: MSS plus TMB 8.6 plus a somatic MLH1 variant most likely reflects MMR-proficient biology, and the dMMR/MSI-H pembrolizumab label is not established until IHC shows protein loss.
 - **What would change the ranking.**
-    - The RASolute 303 first-line OS readout landing would convert rank 1's inferred first-line benefit into measured benefit and tighten its confidence.
-    - A captured toxicity-averse preference for this 79-year-old would flip ranks 1 and 2 — the risktaker and advocate already read the gentler allele-matched zoldonrasib as the patient-facing lead.
-    - A BAF250a IHC showing retained protein would foreclose rank 4 (ceralasertib) entirely, since entry requires protein loss.
+    - The RASolute 303 first-line OS readout landing would convert rank 1's inferred first-line benefit into measured benefit and tighten its confidence over the single-arm allele-selective agents.
+    - A captured toxicity-averse preference for this 79-year-old would reorder the top: the risktaker and advocate already read a G12D-selective agent (GFH375 or the gentler zoldonrasib) as the patient-facing lead, and it would push HRS-4642 and the INCB161734 chemo combination further down.
+    - A BAF250a IHC showing retained protein would foreclose rank 7 (ceralasertib) entirely, since entry requires protein loss.
+    - The GFH375 1L cohort or the RASolute 303/305 and DAWN-303 front-line readouts arriving would move the allele-selective agents up relative to the 2L-anchored daraxonrasib evidence.
     - An MMR IHC showing protein loss would re-open the dMMR/MSI-H immunotherapy axis that is currently foreclosed — a change to the option set, not just the order.
-- **Re-scoping caveat.** If performance status proves worse than the assumed ECOG 1, the chemo-combination option (INCB161734 on DAWN-303, with ~40% grade >=3 neutropenia) drops on additive-toxicity grounds, and the willingness to surface aggressive trial-only options narrows; re-run intake if PS, goals-of-care, or a preferred efficacy/toxicity balance become available.
+- **Re-scoping caveat.** If performance status proves worse than the assumed ECOG 1, the chemo-combination options (INCB161734 on DAWN-303 and HRS-4642 on gem/nab-paclitaxel, both with heavy grade >=3 hematologic toxicity) drop on additive-toxicity grounds, and the willingness to surface aggressive trial-only options narrows; re-run intake if PS, goals-of-care, or a preferred efficacy/toxicity balance become available.
 
 ## Sources
 
 **PubMed (PMID):**
 
 - [27958275](https://pubmed.ncbi.nlm.nih.gov/27958275) — Williamson / Lord, ATR inhibition in ARID1A-deficient tumors, *Nat Commun* 2016
-- [32152268](https://pubmed.ncbi.nlm.nih.gov/32152268) — MMR IHC vs MSI concordance reference (workup)
 - [35648703](https://pubmed.ncbi.nlm.nih.gov/35648703) — Leidner / Tran, HLA-C*08:02-restricted anti-KRAS-G12D TCR-T, *NEJM* 2022
 - [36216931](https://pubmed.ncbi.nlm.nih.gov/36216931) — Hallin / Christensen, MRTX1133 target validation, *Nat Med* 2022
 - [37625401](https://pubmed.ncbi.nlm.nih.gov/37625401) — Mahadevan / Kalluri, KRAS G12D shutoff restores FAS/CD8 killing, *Cancer Cell* 2023
@@ -394,6 +543,14 @@ Rank 4 by unanimous round-1 consensus, even though the synthesis formula scores 
 - [41686845](https://pubmed.ncbi.nlm.nih.gov/41686845) — Zhu / Aggarwal, ceralasertib in ARID1A-deficient tumors, *Clin Cancer Res* 2026
 - [42223072](https://pubmed.ncbi.nlm.nih.gov/42223072) — O'Reilly / Wolpin, daraxonrasib RASolute 302 in 2L RAS-mutant PDAC, *NEJM* 2026
 
+**DOI (conference abstracts and papers without a PubMed record):**
+
+- [10.1016/j.annonc.2025.08.1484](https://doi.org/10.1016/j.annonc.2025.08.1484) — Xiong, HRS-4642 monotherapy in KRAS G12D solid tumors, ESMO 2025 (915O)
+- [10.1016/j.annonc.2025.09.099](https://doi.org/10.1016/j.annonc.2025.09.099) — Zhou, GFH375 monotherapy in KRAS G12D PDAC, ESMO 2025 (LBA84)
+- [10.1038/s41591-026-04538-9](https://doi.org/10.1038/s41591-026-04538-9) — Cui, HRS-4642 + gem/nab-paclitaxel front-line PDAC, *Nat Med* 2026 (no PubMed record yet)
+- [10.1200/JCO.2025.43.4_suppl.724](https://doi.org/10.1200/JCO.2025.43.4_suppl.724) — Spira, zoldonrasib (RMC-9805) in KRAS G12D PDAC, ASCO GI 2025
+- [10.1200/JCO.2026.44.2_suppl.654](https://doi.org/10.1200/JCO.2026.44.2_suppl.654) — Wainberg, INCB161734 phase 1 in KRAS G12D PDAC, ASCO GI 2026
+
 **ClinicalTrials.gov (NCT):**
 
 - [NCT03682289](https://clinicaltrials.gov/study/NCT03682289) — ceralasertib ARID1A-stratified basket (ATR axis)
@@ -401,7 +558,17 @@ Rank 4 by unanimous round-1 consensus, even though the synthesis formula scores 
 - [NCT06040541](https://clinicaltrials.gov/study/NCT06040541) — zoldonrasib (RMC-9805) first-in-human G12D basket
 - [NCT06179160](https://clinicaltrials.gov/study/NCT06179160) — INCB161734 phase 1 parent (mono + combinations)
 - [NCT06445062](https://clinicaltrials.gov/study/NCT06445062) — RMC-GI-102 platform (RMC-6236 / RMC-9805 ± chemo)
+- [NCT06447662](https://clinicaltrials.gov/study/NCT06447662) — PF-07934040 phase 1 (pan-KRAS FIH)
+- [NCT06586515](https://clinicaltrials.gov/study/NCT06586515) — LY3962673 (MOONRAY-01, KRAS G12D-selective FIH)
 - [NCT06625320](https://clinicaltrials.gov/study/NCT06625320) — RASolute 302 (daraxonrasib phase 3, 2L+)
+- [NCT06917079](https://clinicaltrials.gov/study/NCT06917079) — BBO-11818 (KONQUER-101, pan-KRAS FIH)
+- [NCT07232875](https://clinicaltrials.gov/study/NCT07232875) — HRS-4642 + gem/nab-paclitaxel front-line phase 3 (Hengrui)
+- [NCT07262567](https://clinicaltrials.gov/study/NCT07262567) — GFH375 vs chemotherapy, 2L G12D PDAC (randomized phase 3)
+- [NCT07491445](https://clinicaltrials.gov/study/NCT07491445) — RASolute 303 (daraxonrasib front-line, 3-arm)
+- [NCT07522073](https://clinicaltrials.gov/study/NCT07522073) — DAWN-303 (INCB161734 + chemo front-line)
+- [NCT07621718](https://clinicaltrials.gov/study/NCT07621718) — RASolute 305 (zoldonrasib + chemo front-line)
+- [NCT07629960](https://clinicaltrials.gov/study/NCT07629960) — BLU-924 (SAR449336, pan-KRAS FIH)
+- [NCT07644559](https://clinicaltrials.gov/study/NCT07644559) — VS-7375 / GFH375 + cetuximab, 1L + 2L PDAC cohorts
 - [NCT07491445](https://clinicaltrials.gov/study/NCT07491445) — RASolute 303 (daraxonrasib front-line, 3-arm)
 - [NCT07522073](https://clinicaltrials.gov/study/NCT07522073) — DAWN-303 (INCB161734 + chemo front-line)
 - [NCT07621718](https://clinicaltrials.gov/study/NCT07621718) — RASolute 305 (zoldonrasib + chemo front-line)
@@ -409,15 +576,15 @@ Rank 4 by unanimous round-1 consensus, even though the synthesis formula scores 
 ## Transparency artifacts
 
 - [Trial table](trials.md) — 16 rows, all columns
-- [Evidence list](evidence.md) — 13 clinical-evidence rows (4 ranked anchors, 9 considered_excluded) + 8 preclinical rows
+- [Evidence list](evidence.md) — 13 clinical-evidence rows (6 ranked anchors, 7 considered_excluded) + 8 preclinical rows
 - [Manuscripts master table](manuscripts.md) — every paper considered with structured n, effect, variance, toxicity columns
-- [Tumor-board transcript](board.md) — 5 positions, 20 cross-critiques
+- [Tumor-board transcript](board.md) — 5 positions, 31 cross-critiques
 - [Recommendations table](recommendations.md) — full ranked detail
 - [Plain-language summary](plain_language.md) — patient/caregiver track
 
 ## Run log
 
-Authored June 2026. Inputs: 16 trials, 13 clinical-evidence rows, 8 preclinical rows, 6 target-validation rows, 5 board positions with 20 cross-critiques. Every biomarker reads as confirmed on the Tempus plasma/germline/RNA profiling, so this is a non-gated case with `scenario: null` on all four recommendation rows and a single unbranched ranking scoped to KRAS-G12D-directed and ARID1A-directed interventions. No workup-hardening row appears in the ranking; the MMR IHC, tissue NGS, BAF250a IHC, HLA typing, and ASXL1 CHIP adjudication are surfaced under Workup considerations and on the Target Validation paths report instead. Three clinical judgment calls are honored throughout: the somatic MLH1 variant most likely reflects MMR-proficient biology (checkpoint monotherapy low-yield, MMR IHC the gate); the patient is HLA-C*05:01/C*06:02, not C*08:02, so the published anti-KRAS-G12D TCR-T does not apply; and the ASXL1 plasma frameshift may be CHIP. ECOG 1, US geography, treatment-naive status, and the neutral 0.5 efficacy/toxicity weight are all assumed and flagged; re-run intake if performance status or goals-of-care become available. Humanizer pass applied to all prose sections per `.claude/skills/humanizer/SKILL.md`.
+Re-run July 2026 after a full board re-deliberation over 9 new on-axis KRAS trials. Inputs: 16 trials, 13 clinical-evidence rows, 8 preclinical rows, 6 target-validation rows, 5 fresh board positions with 31 cross-critiques. Every biomarker reads as confirmed on the Tempus plasma/germline/RNA profiling, so this is a non-gated case with `scenario: null` on all seven recommendation rows and a single unbranched ranking scoped to KRAS-G12D-directed and ARID1A-directed interventions. The re-run added GFH375/VS-7375 (rank 2) and HRS-4642 (rank 5) as on-axis options and grouped the four pre-data pan-KRAS FIH agents as a single considered_with_caveats class (rank 6). No workup-hardening row appears in the ranking; the MMR IHC, tissue NGS, BAF250a IHC, HLA typing, and ASXL1 CHIP adjudication are surfaced under Workup considerations and on the Target Validation paths report instead. Three clinical judgment calls are honored throughout: the somatic MLH1 variant most likely reflects MMR-proficient biology (checkpoint monotherapy low-yield, MMR IHC the gate); the patient is HLA-C*05:01/C*06:02, not C*08:02, so the published anti-KRAS-G12D TCR-T and the A*11:01-restricted programs do not apply; and the ASXL1 plasma frameshift may be CHIP. Reference-checked: the load-bearing PMIDs and DOIs resolved and matched their claims, the HRS-4642 Nature Medicine paper confirms it has no PubMed record (cited by DOI, enrollable option anchored on NCT07232875), and one workup-supporting citation (PMID 32152268) was dropped because it resolves to an unrelated hepatocellular-carcinoma paper — its descriptive detail was moved into free text. ECOG 1, US geography, treatment-naive status, and the neutral 0.5 efficacy/toxicity weight are all assumed and flagged; re-run intake if performance status or goals-of-care become available. Humanizer pass applied to all prose sections per `.claude/skills/humanizer/SKILL.md`.
 
 <!-- libby:downloads:begin -->
 
@@ -426,19 +593,19 @@ Authored June 2026. Inputs: 16 trials, 13 clinical-evidence rows, 8 preclinical 
 ### HTML
 
 - [Target validation paths](target_validation.md?v=a767f75d) — per-feature biomarker-workup table with providers and references, sortable in-browser
-- [Recommendations table](pancreatic-mets-kras-g12d-basal-arid1a-k9r3-recommendations.html?v=28af508b) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
+- [Recommendations table](pancreatic-mets-kras-g12d-basal-arid1a-k9r3-recommendations.html?v=4d3f9cbc) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
 - [Access guide](accessibility.md?v=81963249) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table
-- [Access guide (offline)](pancreatic-mets-kras-g12d-basal-arid1a-k9r3-accessibility.html?v=4a04da67) — same access-guide content packaged as a self-contained HTML that opens offline
-- [Master manuscripts table](manuscripts.md?v=3f80e7af) — every paper considered — n, effect, variance, toxicities, in a sortable in-browser table
-- [Master manuscripts table (offline)](pancreatic-mets-kras-g12d-basal-arid1a-k9r3-manuscripts.html?v=054c3258) — same manuscripts inventory packaged as a self-contained HTML that opens offline
+- [Access guide (offline)](pancreatic-mets-kras-g12d-basal-arid1a-k9r3-accessibility.html?v=e11a3e6a) — same access-guide content packaged as a self-contained HTML that opens offline
+- [Master manuscripts table](manuscripts.md?v=03974f19) — every paper considered — n, effect, variance, toxicities, in a sortable in-browser table
+- [Master manuscripts table (offline)](pancreatic-mets-kras-g12d-basal-arid1a-k9r3-manuscripts.html?v=f1c638bd) — same manuscripts inventory packaged as a self-contained HTML that opens offline
 
 ### PDF
 
-- [Target validation paths](pancreatic-mets-kras-g12d-basal-arid1a-k9r3-target-validation.pdf?v=8ea0ad75) — diagnostic + biomarker workup that hardens the targetable-feature call
-- [Recommendations table](pancreatic-mets-kras-g12d-basal-arid1a-k9r3-recommendations.pdf?v=a47c02a8) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
-- [Access guide](pancreatic-mets-kras-g12d-basal-arid1a-k9r3-accessibility.pdf?v=cc90e1b8) — trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF
-- [Master manuscripts table](pancreatic-mets-kras-g12d-basal-arid1a-k9r3-manuscripts.pdf?v=7399aa08) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
-- [Patient/caregiver PDF](pancreatic-mets-kras-g12d-basal-arid1a-k9r3-plain-language.pdf?v=539bfeef) — plain-language summary
+- [Target validation paths](pancreatic-mets-kras-g12d-basal-arid1a-k9r3-target-validation.pdf?v=8cacad2a) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Recommendations table](pancreatic-mets-kras-g12d-basal-arid1a-k9r3-recommendations.pdf?v=e42a6775) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
+- [Access guide](pancreatic-mets-kras-g12d-basal-arid1a-k9r3-accessibility.pdf?v=2df1b9f2) — trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF
+- [Master manuscripts table](pancreatic-mets-kras-g12d-basal-arid1a-k9r3-manuscripts.pdf?v=02d115a4) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
+- [Patient/caregiver PDF](pancreatic-mets-kras-g12d-basal-arid1a-k9r3-plain-language.pdf?v=5ef8df36) — plain-language summary
 
 <!-- libby:downloads:end -->
 

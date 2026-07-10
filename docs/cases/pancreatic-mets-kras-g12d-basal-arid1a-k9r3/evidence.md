@@ -2,9 +2,9 @@
 
 # Evidence — `pancreatic-mets-kras-g12d-basal-arid1a-k9r3`
 
-_This page shows 7 included clinical + 6 included pre-clinical rows, grouped by intervention. 6 clinical and 2 pre-clinical papers were reviewed and excluded — see the [master manuscripts table](manuscripts.md) for the full audit trail._
+_This page shows 16 included clinical + 6 included pre-clinical rows, grouped by intervention. 6 clinical and 2 pre-clinical papers were reviewed and excluded — see the [master manuscripts table](manuscripts.md) for the full audit trail._
 
-## Clinical evidence (7 rows)
+## Clinical evidence (16 rows)
 
 Per-manuscript detail grouped by intervention. Each row is one published clinical-evidence finding. Columns mirror the per-publication decision-support layout used in companion projects (`io-shieldbreak`'s Pharmacodynamic-Results table).
 
@@ -88,6 +88,119 @@ Per-manuscript detail grouped by intervention. Each row is one published clinica
       <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
       <tbody>
         <tr><td>Zhu/Aggarwal (2026)<br><em>Clin Cancer Res</em></td><td class="num">29</td><td>29 evaluable, ARID1A loss by IHC required; mostly gynecologic (endometrioid endometrial, ovarian clear cell); non-gynecologic tumors under-represented</td><td>2L+</td><td>phase 2 Simon two-stage monotherapy (NCT03682289)</td><td>—</td><td>160 mg PO BID, days 1-14 of a 28-day cycle</td><td>ORR</td><td>confirmed ORR (all ARID1A-deficient)</td><td class="num">14.00 %</td><td class="num">—</td><td class="num">—</td><td>mDoR 33.7 mo in gynecologic responders</td><td>No treatment-related deaths. Per-term grade &gt;=3 toxicity (the expected ATR-inhibitor cytopenias) was not broken out in the abstract; the class signature from this drug is anemia, thrombocytopenia and neutropenia.</td><td><span class="rob-badge rob-med">ROBINS-I:Moderate</span></td><td>2b</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/41686845">41686845</a></td><td><a href="https://doi.org/10.1158/1078-0432.CCR-25-4043">DOI</a></td><td>Per-term cytopenia rates not in the abstract; full text and CT.gov AE tab (NCT03682289) not retrieved, so toxicities[] holds only the death count. The cleanest clinical read on the patient&#x27;s ARID1A axis: ATR-inhibitor activity concentrates in ARID1A-deficient gynecologic histologies, with the non-gynecologic (PDAC-relevant) signal weaker, and entry gated on BAF250a IHC loss rather than the frameshift call alone.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### GFH375 / VS-7375, oral KRAS G12D(ON/OFF)-selective inhibitor  
+<small><code>intervention_id: gfh375-vs7375</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Zhou/Cui (2025)<br><em>Ann Oncol (ESMO 2025 abstract LBA84)</em></td><td class="num">66</td><td>66 KRAS G12D PDAC treated at 600 mg QD, 59 evaluable with &gt;=1 post-baseline assessment; 45/66 (68%) had &gt;=2 prior lines; median exposure 117 days</td><td>2L+</td><td>phase 1/2 open-label monotherapy dose-expansion, single-arm (GFH375X1101, China)</td><td>—</td><td>600 mg PO once daily (RP2D)</td><td>ORR</td><td>confirmed ORR (KRAS G12D PDAC, 600 mg)</td><td class="num">41.00 %</td><td class="num">30.00–52.00</td><td class="num">—</td><td>mPFS 5.52 mo (90% CI 4.27-7.20); 3-mo PFS ~83%; DoR not reported</td><td>Grade &gt;=3 treatment-related AEs in 30% (one grade 4 neutropenia), with the burden split between GI toxicity and myelosuppression. Diarrhea (56% any grade), decreased neutrophils (49%), nausea and vomiting (47% each), and anemia (42%) were the commonest events; grade &gt;=3 rates stayed low apart from neutropenia (8%) and anemia (8%). No dose-limiting toxicities at the 600 mg dose.</td><td><span class="rob-badge rob-med">ROBINS-I:Moderate</span></td><td>2b</td><td><span class="fit-badge fit-partial">partial</span></td><td>—</td><td><a href="https://doi.org/10.1016/j.annonc.2025.09.099">DOI</a></td><td>Per-term AE rates from the Verastem/GenFleet ESMO 2025 release (data cutoff 27 Aug 2025; NCT06500676). Same drug as the patient&#x27;s newly-added VS-7375 1L+cetuximab (NCT07644559) and GFH375 phase 3 (NCT07262567) options; the evidence sits one line beyond the treatment-naive patient. G12D-selective ON/OFF inhibitor mapping to his exact allele.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### HRS-4642, long-acting non-covalent KRAS G12D inhibitor (IV)  
+<small><code>intervention_id: hrs-4642</code> · 2 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Cui/Li (2026)<br><em>Nat Med</em></td><td class="num">31</td><td>31 treated (30 treatment-naive, 1 previously treated); phase 2 efficacy analysis in 30 treatment-naive patients</td><td>1L</td><td>phase 1b/2 single-arm, HRS-4642 added to gemcitabine/nab-paclitaxel (NCT06520488)</td><td>—</td><td>HRS-4642 500 mg IV day 1 + 1200 mg IV day 8, every 3 weeks (RP2D) with gemcitabine/nab-paclitaxel</td><td>ORR</td><td>confirmed ORR (treatment-naive, phase 2)</td><td class="num">63.30 %</td><td class="num">43.90–80.10</td><td class="num">—</td><td>median follow-up 12.3 mo; mPFS/mOS not yet reported in abstract</td><td>Grade &gt;=3 treatment-related AEs in 90.3%, driven by the gemcitabine/nab-paclitaxel hematologic toxicity rather than a new HRS-4642 signal. No dose-limiting toxicities in phase 1b; the safety profile tracked the chemotherapy backbone.</td><td><span class="rob-badge rob-med">ROBINS-I:Moderate</span></td><td>2b</td><td><span class="fit-badge fit-strong">strong</span></td><td>—</td><td><a href="https://doi.org/10.1038/s41591-026-04538-9">DOI</a></td><td>Peer-reviewed phase 1b/2 (data cutoff 5 Dec 2025); no PubMed record yet, cited by DOI. This is the front-line combination read behind the newly-added phase 3 HRS-4642 + gem/nab-paclitaxel (NCT07232875), which matches the patient on allele, tumor type and 1L. Per-term grade &gt;=3 breakdown not in the abstract; toxicities[] holds only the union rate.</td></tr>
+        <tr><td>Xiong/— (2025)<br><em>Ann Oncol (ESMO 2025 abstract 915O)</em></td><td class="num">84</td><td>84 KRAS G12D solid tumors after chemo/immuno/targeted therapy; PDAC and NSCLC subsets reported; MTD not reached</td><td>2L+</td><td>first-in-human phase 1 dose-escalation/expansion monotherapy, single-arm (NCT05533463)</td><td>—</td><td>800 mg or 1200 mg IV every 2 weeks</td><td>ORR</td><td>ORR (KRAS G12D PDAC subset)</td><td class="num">20.80 %</td><td class="num">—</td><td class="num">—</td><td>PDAC mPFS 4.4 mo (95% CI 2.6-7.2) at 1200 mg; PDAC mOS not reached</td><td>Grade &gt;=3 treatment-related AEs in 23.8%, with a metabolic rather than GI signature: hypertriglyceridemia, neutropenia and hypercholesterolemia were the characteristic events. One treatment-related death and one TRAE-driven discontinuation; MTD not reached.</td><td><span class="rob-badge rob-med">ROBINS-I:Moderate</span></td><td>2b</td><td><span class="fit-badge fit-partial">partial</span></td><td>—</td><td><a href="https://doi.org/10.1016/j.annonc.2025.08.1484">DOI</a></td><td>Per-term grade &gt;=3 rates not fully broken out in the ESMO daily-reporter coverage; only the top-3 characteristic terms and the 23.8% union rate are given. Monotherapy read for HRS-4642, one line beyond the treatment-naive patient; the front-line combination is the enrollable HRS-4642 option (NCT07232875).</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### LY3962673, oral KRAS G12D-selective inhibitor  
+<small><code>intervention_id: ly3962673</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Lakhani/— (2025)<br><em>J Clin Oncol (ASCO GI 2025 abstract TPS845)</em></td><td class="num">—</td><td>first-in-human, KRAS G12D-mutant solid tumors after standard therapy; PDAC eligible; phase 1a monotherapy escalation plus phase 1b combination arms (cetuximab, chemotherapy)</td><td>2L+</td><td>phase 1 dose-escalation/optimization, monotherapy and combinations (MOONRAY-01, NCT06586515)</td><td>—</td><td>oral, dose per escalation cohort (not yet established)</td><td>other</td><td>safety, RP2D, antitumor activity (endpoints; no efficacy reported yet)</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td>—</td><td>No safety or efficacy data reported; the ASCO GI 2025 record is a trial-in-progress abstract for an actively enrolling dose-escalation study.</td><td>—</td><td>5</td><td><span class="fit-badge fit-partial">partial</span></td><td>—</td><td><a href="https://doi.org/10.1200/JCO.2025.43.4_suppl.TPS845">DOI</a></td><td>Trial-in-progress abstract only; no clinical readout as of this run. Adds Lilly&#x27;s G12D-selective agent to the pipeline; the newly-added trials row (NCT06586515) requires &gt;=1 prior line, so it reads as a future second-line option for the treatment-naive patient. Empty toxicities[]: source is a design abstract with no AE data.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### BBO-11818, oral pan-KRAS(ON/OFF) inhibitor  
+<small><code>intervention_id: bbo-11818</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>—/— (2026)<br><em>—</em></td><td class="num">—</td><td>first-in-human, locally advanced/metastatic KRAS-mutant solid tumors; PDAC eligible; monotherapy and combination cohorts (gem/nab-paclitaxel, mFOLFIRINOX, cetuximab, pembrolizumab)</td><td>2L+</td><td>phase 1 dose-escalation/expansion, monotherapy and combinations (KONQUER-101, NCT06917079)</td><td>—</td><td>oral, dose per escalation cohort (not yet established)</td><td>other</td><td>safety, tolerability, ORR (endpoints; formal efficacy not yet reported)</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td>—</td><td>No dose-limiting toxicities reported in the early monotherapy escalation, with treatment-related AEs described as predominantly gastrointestinal; no formal per-term safety table published yet.</td><td>—</td><td>5</td><td><span class="fit-badge fit-strong">strong</span></td><td>—</td><td>—</td><td>No peer-reviewed clinical readout; the only public efficacy signal is a December 2025 sponsor update citing one PDAC partial response (56% tumor shrinkage) with no denominator or ORR. Preclinical characterization is published (Cancer Discovery, PMID 41790032) but is out of scope for clinical evidence. Empty toxicities[]: no per-term AE table released; abstract-level readout expected 2H 2026 per sponsor. NCT06917079.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### BLU-924 (SAR449336), oral pan-KRAS inhibitor  
+<small><code>intervention_id: blu-924</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>—/— (2026)<br><em>—</em></td><td class="num">—</td><td>first-in-human, metastatic KRAS-mutant PDAC, NSCLC, CRC after standard therapy; monotherapy dose escalation/enrichment/expansion</td><td>2L+</td><td>phase 1/2 first-in-human dose-escalation, single-arm (NCT07629960)</td><td>—</td><td>oral, dose per escalation cohort (not yet established)</td><td>other</td><td>safety, tolerability, ORR (endpoints; no efficacy reported yet)</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td>—</td><td>No safety or efficacy data reported; the study is a newly opened first-in-human dose-escalation with no published readout.</td><td>—</td><td>5</td><td><span class="fit-badge fit-strong">strong</span></td><td>—</td><td>—</td><td>Registry-stage only (NCT07629960); Blueprint/Sanofi pan-KRAS program with no clinical data as of this run. Empty toxicities[]: no AE data exists yet. Included to document the mechanism and trial stage for the KRAS axis.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### PF-07934040, oral KRAS G12D inhibitor  
+<small><code>intervention_id: pf-07934040</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>—/— (2026)<br><em>—</em></td><td class="num">—</td><td>first-in-human, KRAS-mutant PDAC, CRC, NSCLC; monotherapy and combinations with chemotherapy, cetuximab, and anti-PD-1</td><td>2L+</td><td>phase 1 dose-escalation, monotherapy and combinations (NCT06447662)</td><td>—</td><td>oral, dose per escalation cohort (not yet established)</td><td>other</td><td>safety, RP2D (endpoints; no efficacy reported yet)</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td>—</td><td>No safety or efficacy data reported; the first-in-human study opened in 2024 and has no published readout.</td><td>—</td><td>5</td><td><span class="fit-badge fit-partial">partial</span></td><td>—</td><td>—</td><td>Registry-stage only (NCT06447662); Pfizer G12D program with no clinical data as of this run. The PDAC arm accepts any KRAS variant, so G12D qualifies. Empty toxicities[]: no AE data exists yet.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### ABO2102, off-the-shelf KRAS neoantigen mRNA vaccine + toripalimab (anti-PD-1)  
+<small><code>intervention_id: abo2102</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>—/— (2026)<br><em>—</em></td><td class="num">—</td><td>KRAS-mutant advanced PDAC; targeted variants include G12D; not HLA-restricted; dose-escalation (Part I) and dose-expansion (Part II), stage-2 admits systemically untreated patients</td><td>2L+</td><td>early phase 1 single-arm, mRNA vaccine + anti-PD-1 (NCT06577532)</td><td>—</td><td>mRNA vaccine + toripalimab, schedule per protocol (not yet established)</td><td>other</td><td>safety, tolerability, immunogenicity (endpoints; no efficacy reported yet)</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td>—</td><td>No safety or efficacy data reported; the study is recruiting with no published readout.</td><td>—</td><td>5</td><td><span class="fit-badge fit-partial">partial</span></td><td>—</td><td>—</td><td>Registry-stage only (NCT06577532, Ruijin Hospital). HLA-agnostic mRNA vaccine keyed to the KRAS mutation, so the patient&#x27;s A*01:01/A*02:01 genotype does not screen him out the way the HLA-restricted TCR-T programs do; match pends confirmation G12D is covered for the enrolling cohort. Empty toxicities[]: no AE data exists yet.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### SPL mKRASvax (pooled synthetic long peptide KRAS vaccine, poly-ICLC) + balstilimab (anti-PD-1) + botensilimab (Fc-enhanced anti-CTLA-4)  
+<small><code>intervention_id: mkras-vax-balstilimab-botensilimab</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Liang/— (2025)<br><em>J Clin Oncol (ASCO 2025 abstract TPS2698)</em></td><td class="num">—</td><td>stage IV MMR-proficient PDAC and CRC in the maintenance setting after first-line FOLFIRINOX/FOLFOXIRI; ~21 per cohort planned; HLA-agnostic pooled peptides (G12D, G12V among covered); ECOG 0 and biopsiable disease required</td><td>maintenance</td><td>phase 1b single-arm, KRAS peptide vaccine + dual checkpoint blockade (NCT06411691)</td><td>—</td><td>pooled long-peptide vaccine + poly-ICLC prime/boost + balstilimab + botensilimab</td><td>other</td><td>safety, immune response, early efficacy (endpoints; no results reported yet)</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td>—</td><td>No safety or efficacy data reported; the ASCO 2025 record is a trial-in-progress abstract with accrual opened October 2024.</td><td>—</td><td>5</td><td><span class="fit-badge fit-partial">partial</span></td><td>—</td><td><a href="https://doi.org/10.1200/JCO.2025.43.16_suppl.TPS2698">DOI</a></td><td>Trial-in-progress abstract only. Distinct from the JHU adjuvant mKRAS-vax + nivo/ipi row (PMID 41667470): this is a stage IV maintenance-setting cohort with balstilimab/botensilimab, reached after the treatment-naive patient starts and completes ~4-6 months of first-line chemotherapy. Entry requires ECOG 0, so his assumed ECOG 1 needs checking. Empty toxicities[]: design abstract with no AE data.</td></tr>
       </tbody>
     </table>
   </div>
