@@ -2,9 +2,9 @@
 
 # Evidence — `hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq`
 
-_This page shows 14 included clinical + 14 included pre-clinical rows, grouped by intervention. 1 clinical and 3 pre-clinical papers were reviewed and excluded — see the [master manuscripts table](manuscripts.md) for the full audit trail._
+_This page shows 21 included clinical + 14 included pre-clinical rows, grouped by intervention. 1 clinical and 3 pre-clinical papers were reviewed and excluded — see the [master manuscripts table](manuscripts.md) for the full audit trail._
 
-## Clinical evidence (14 rows)
+## Clinical evidence (21 rows)
 
 Per-manuscript detail grouped by intervention. Each row is one published clinical-evidence finding. Columns mirror the per-publication decision-support layout used in companion projects (`io-shieldbreak`'s Pharmacodynamic-Results table).
 
@@ -66,13 +66,14 @@ Per-manuscript detail grouped by intervention. Each row is one published clinica
 </div>
 
 ### Letrozole (endocrine maintenance)  
-<small><code>intervention_id: letrozole</code> · 1 row(s)</small>
+<small><code>intervention_id: letrozole</code> · 2 row(s)</small>
 
 <div class="trial-table-wrap">
   <div class="trial-scroll">
     <table class="trial-table">
       <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
       <tbody>
+        <tr><td>—/— (2024)<br><em>protocol: BMC Cancer 2022 (PMC9074273); primary results pending</em></td><td class="num">540</td><td>Primary newly diagnosed low- or high-grade serous or endometrioid disease after standard surgery and platinum chemotherapy. ER status is recorded and the primary analysis is powered on the ER-positive stratum; entry is not restricted to ER-positive. This patient matches on high-grade serous histology, FIGO stage, and maintenance timing, and is ER-positive (~80% nuclei); PR-negativity tempers expected magnitude.</td><td>maintenance</td><td>randomized double-blind placebo-controlled phase 3 (ENGOT-ov54 / Swiss-GO-2 / MATAO)</td><td>placebo</td><td>oral letrozole 2.5 mg once daily</td><td>HR_PFS</td><td>progression-free survival (design endpoint; results not yet reported)</td><td class="num">— HR</td><td class="num">—</td><td class="num">—</td><td>design assumption: mPFS 25.7 mo letrozole vs 18 mo placebo (HR 0.7); observed results pending</td><td>No safety readout published yet. Aromatase-inhibitor class toxicity is arthralgia and bone-density loss on prolonged use; oral and low-burden, no named patient veto applies.</td><td><span class="rob-badge rob-med">RoB2:Some</span></td><td>2b</td><td><span class="fit-badge fit-strong">strong</span></td><td>—</td><td>—</td><td>The randomized phase 3 test of the endocrine-maintenance rationale the single-arm/retrospective letrozole rows only hinted at; enrollable at this patient&#x27;s maintenance timepoint and the strongest new fit on the ER axis. Design and statistical assumptions from the BMC Cancer protocol (PMC9074273); no efficacy or per-term AE data yet, so effect sizes and toxicities left null pending the primary publication. Identifiers null until the results paper indexes.</td></tr>
         <tr><td>Heinzelmann-Schwarz/Jacob (2018)<br><em>Gynecol Oncol</em></td><td class="num">—</td><td>ER-positive HGSOC by IHC; a translational study with a clinical letrozole-maintenance series, enriched for platinum-resistant and residual-disease patients. The patient is ER-positive (~80% nuclei) but PR-negative, which tempers expected magnitude.</td><td>maintenance</td><td>translational study with retrospective clinical letrozole-maintenance comparison (TCGA/IHC analysis + treated cohort)</td><td>no-letrozole control (non-randomized)</td><td>oral letrozole 2.5 mg once daily</td><td>PFS</td><td>recurrence-free interval at 24 months</td><td class="num">60% vs 38.5% RFS at 24 mo %</td><td class="num">—</td><td class="num">0.035</td><td>RFS benefit favoring letrozole; control mRFS ~13.2 mo</td><td>No per-term toxicity table in the source; aromatase-inhibitor class toxicity is arthralgia and bone-density loss on prolonged use. Oral, low-burden, no named patient veto applies.</td><td><span class="rob-badge rob-high">ROBINS-I:Serious</span></td><td>4</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/29157627">29157627</a></td><td><a href="https://doi.org/10.1016/j.ygyno.2017.11.013">DOI</a></td><td>Low-toxicity oral option that fits the patient&#x27;s age and oral-preference, but the evidence is a non-randomized retrospective comparison nested in a translational ESR1/ER-expression study, not the single-arm phase 2 the trials.jsonl row described - flag the design mismatch. Benefit modest and tempered by PR-negativity. No per-term AE table in source (translational paper, no safety section); toxicities left empty accordingly.</td></tr>
       </tbody>
     </table>
@@ -134,6 +135,90 @@ Per-manuscript detail grouped by intervention. Each row is one published clinica
       <tbody>
         <tr><td>Sheng/Zhou (2024)<br><em>J Clin Oncol</em></td><td class="num">107</td><td>HER2-positive urothelial carcinoma pooled from two phase 2 trials. Different tumor type and a higher HER2 tier than hers, but the best-powered published read on the drug&#x27;s MMAE toxicity, which is what her neuropathy veto turns on.</td><td>2L+</td><td>combined analysis of two single-arm phase 2 trials (RC48-C005, RC48-C009)</td><td>—</td><td>disitamab vedotin 2.0 mg/kg IV every 2 weeks</td><td>ORR</td><td>confirmed ORR</td><td class="num">50.50 %</td><td class="num">40.60–60.30</td><td class="num">—</td><td>mDoR 7.3 mo; mPFS 5.9 mo; mOS 14.2 mo</td><td>Grade 3+ treatment-related AEs in 54.2%. Peripheral sensory neuropathy hit 68.2% any grade and 18.7% grade 3+, the MMAE signal that collides with her neuropathy veto; neutropenia 42.1% any, 12.1% grade 3+.</td><td><span class="rob-badge rob-med">informal:med</span></td><td>4</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37988648">37988648</a></td><td><a href="https://doi.org/10.1200/JCO.22.02912">DOI</a></td><td>Kept mainly for the MMAE safety read: the 68% peripheral neuropathy and 12% grade 3+ neutropenia map straight onto her two named vetoes. HER2-positive urothelial, not ovarian HER2-low, so efficacy is mechanism context.</td></tr>
         <tr><td>—/— (2024)<br><em>Ann Oncol (ESMO 2024 abstract 384P)</em></td><td class="num">62</td><td>Pretreated HER2-expressing breast cancer selected for PI3K/AKT/mTOR pathway activation; 36 of 62 were HER2-low. The HER2-low response rate is the only published disitamab vedotin efficacy read in the low-expression tier, but the pathway selection and breast setting limit how far it carries to her ovarian tumor.</td><td>2L+</td><td>single-arm prospective phase 2</td><td>—</td><td>disitamab vedotin 2.0 mg/kg IV every 2 weeks</td><td>ORR</td><td>ORR (HER2-low subgroup)</td><td class="num">34.30 %</td><td class="num">—</td><td class="num">—</td><td>mPFS 3.4 mo (HER2-low); mPFS 3.5 mo (overall)</td><td>No per-term safety data in the available abstract text. MMAE-payload class effects are peripheral neuropathy and neutropenia, both named vetoes for this patient.</td><td><span class="rob-badge rob-med">informal:med</span></td><td>4</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td>—</td><td>—</td><td>The only published disitamab vedotin HER2-low efficacy datapoint (ORR ~34%), but PAM-pathway-selected breast cancer and abstract-only. Per-term AE not extractable: publisher page 403, no PMC ID, no ClinicalTrials.gov results record found, so toxicities left empty.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### Anastrozole (aromatase inhibitor, PARAGON)  
+<small><code>intervention_id: anastrozole</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Kok/Friedlander (2019)<br><em>J Gynecol Oncol</em></td><td class="num">52</td><td>Asymptomatic patients with ER- and/or PR-positive recurrent ovarian cancer and CA125-defined progression; the largest published aromatase-inhibitor read in ER-positive recurrent ovarian disease. This patient is ER-positive but PR-negative, and the report found ER histoscore did not correlate with benefit, so hormone-receptor status was a coarse predictor here.</td><td>2L+</td><td>single-arm phase 2 (PARAGON / ANZGOG-0903)</td><td>—</td><td>oral anastrozole 1 mg once daily</td><td>DCR</td><td>clinical benefit rate at 3 months</td><td class="num">34.60 %</td><td class="num">23.00–48.00</td><td class="num">—</td><td>median PFS 2.7 mo (95% CI 2.1-3.1); median duration of clinical benefit 6.5 mo (95% CI 2.8-11.7)</td><td>Anastrozole was well tolerated with no per-term grade 3+ toxicity table extracted from the abstract; aromatase-inhibitor class toxicity is arthralgia and bone-density loss. No named patient veto applies.</td><td><span class="rob-badge rob-med">ROBINS-I:Moderate</span></td><td>2b</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/31328463">31328463</a></td><td><a href="https://doi.org/10.3802/jgo.2019.30.e86">DOI</a></td><td>Published aromatase-inhibitor anchor for the ER-maintenance axis; a distinct AI from letrozole but the same mechanism, so it scopes the realistic magnitude of endocrine benefit while MATAO&#x27;s randomized letrozole readout is pending. Modest clinical benefit (34.6% at 3 mo) with short whole-cohort PFS, and ER histoscore did not predict response, which tempers the ER-positive rationale. No per-term AE table in the abstract.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### Ribociclib + letrozole (CDK4/6 + AI)  
+<small><code>intervention_id: cdk46-inhibitor-plus-ai</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Colon-Otero/Weroha (2020)<br><em>ESMO Open</em></td><td class="num">20</td><td>Relapsed ER-positive ovarian cancer, 20-patient ovarian cohort within a two-cohort ovarian/endometrial trial. Histologies were mixed; the three low-grade serous patients drove the durable responses, which is relevant because this patient&#x27;s tumor is high-grade serous rather than low-grade.</td><td>2L+</td><td>single-arm phase 2, ovarian cohort</td><td>—</td><td>ribociclib 600 mg PO daily 3-weeks-on/1-week-off + letrozole 2.5 mg PO daily</td><td>PFS</td><td>progression-free at 12 weeks (ovarian cohort)</td><td class="num">50.00 %</td><td class="num">—</td><td class="num">—</td><td>PFS24 20% (4/20); durable multi-year responses confined to the 3 low-grade serous patients</td><td>Across both cohorts (n=40) 60% had at least one grade 3+ AE; grade 3+ leukopenia 23%, lymphocytopenia 23%, neutropenia 15%, fatigue 13%. Cytopenias are the CDK4/6 class effect and touch the myelosuppression veto, though febrile neutropenia was not a prominent signal.</td><td><span class="rob-badge rob-med">informal:med</span></td><td>2b</td><td><span class="fit-badge fit-weak">weak</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/33109627">33109627</a></td><td><a href="https://doi.org/10.1136/esmoopen-2020-000926">DOI</a></td><td>Published CDK4/6-plus-aromatase-inhibitor evidence in ER-positive ovarian cancer, standing in for the abemaciclib+AI trial (NCT04469764, ALEPRO) whose own readout is abstract-only. Ovarian-cohort activity was modest (ORR 5%, PFS12 50%) and the durable benefit sat in low-grade serous, not the high-grade serous biology here, so the cross-drug read is weak. Grade 3+ AEs pooled across the ovarian and endometrial cohorts.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### Trastuzumab deruxtecan + olaparib  
+<small><code>intervention_id: trastuzumab-deruxtecan-olaparib</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Lee/Lee (2026)<br><em>AACR Annual Meeting 2026 (conference presentation)</em></td><td class="num">28</td><td>28 patients with HER2-expressing advanced/recurrent solid tumors, 16 ovarian and 12 uterine, enrolled across HER2 expression levels; activity was reported across HER2 tiers. This patient&#x27;s HER2 IHC 1+ ovarian tumor fits the biomarker and tumor-type frame, but she is in first-line remission rather than the recurrent setting the trial enrolled.</td><td>2L+</td><td>phase 1 dose-finding, three dosing modules (CTEP #10355 / NCT04585958)</td><td>—</td><td>T-DXd IV q3w + olaparib PO, alternate dosing modules per protocol (Module 2 selected for expansion)</td><td>ORR</td><td>objective response rate (all modules)</td><td class="num">54.00 %</td><td class="num">—</td><td class="num">—</td><td>median PFS 15.2 mo; 19/28 alive and progression-free at 6 mo</td><td>Modules 1 and 3 hit dose-limiting low-blood-count toxicities and were halted; Module 2 was more tolerable with grade 3 neutropenia 12% (vs 30%) and grade 3 anemia 25% (vs 70%), plus one dose-limiting colitis. Stacking olaparib marrow toxicity on the T-DXd payload is the operative concern against this patient&#x27;s myelosuppression veto.</td><td><span class="rob-badge rob-med">informal:med</span></td><td>2b</td><td><span class="fit-badge fit-partial">partial</span></td><td>—</td><td>—</td><td>First combination read pairing a HER2 ADC with a PARP inhibitor and the only clinical datapoint behind NCT04585958&#x27;s ovarian rationale; activity held across HER2 tiers, which matters for this HER2-low tumor. Data are AACR 2026 conference/press (Elizabeth Lee, Dana-Farber, CTEP #10355), not peer-reviewed, so identifiers are null and the module-level AE rates come from the meeting release. HER2-low remains a weaker predictor than IHC 3+, so read the ORR with that hedge.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### Azenosertib (ZN-c3, WEE1 inhibitor)  
+<small><code>intervention_id: azenosertib</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>—/— (2025)<br><em>sponsor disclosure (Zentalis, Jan 2025) / SGO 2024 (conference)</em></td><td class="num">43</td><td>Heavily pretreated cyclin E1-positive platinum-resistant ovarian cancer (DENALI part 1b). This patient&#x27;s genomic instability sits on the same replication-stress axis WEE1 inhibition exploits, but the reported activity is biomarker-selected for cyclin E1 positivity, which is not established for her, and she is in first-line remission rather than platinum-resistant relapse.</td><td>2L+</td><td>phase 2 monotherapy (DENALI / ZN-c3-001; NCT05128825)</td><td>—</td><td>oral azenosertib total daily dose &gt;=300 mg, per protocol schedule</td><td>ORR</td><td>objective response rate (cyclin E1-positive, response-evaluable)</td><td class="num">34.90 %</td><td class="num">21.00–50.90</td><td class="num">—</td><td>median DoR ~5.5 mo (95% CI 2.7-NE), still maturing</td><td>Sponsor reports tolerability at &gt;=300 mg total daily dose with no grade 3+ gastrointestinal treatment-related AEs and low rates of grade 3+ hematologic toxicity; no per-term grade 3+ table in the public disclosure. WEE1 inhibition drives cytopenias, hence the myelosuppression flag, and a partial clinical hold on the program was later lifted.</td><td><span class="rob-badge rob-med">informal:med</span></td><td>2b</td><td><span class="fit-badge fit-weak">weak</span></td><td>—</td><td>—</td><td>WEE1 replication-stress option for a future platinum-resistant relapse, not current maintenance. Efficacy from Zentalis&#x27;s January 2025 disclosure and SGO 2024, both conference/press rather than peer-reviewed, so identifiers are null and no per-term AE table was extractable. Reported activity is gated on cyclin E1 positivity, a biomarker not established for this patient.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### Adavosertib (AZD1775, WEE1) + gemcitabine  
+<small><code>intervention_id: adavosertib</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Lheureux/Oza (2021)<br><em>Lancet</em></td><td class="num">99</td><td>Measurable platinum-resistant or platinum-refractory high-grade serous ovarian cancer from 11 academic centers. Histology matches this patient&#x27;s high-grade serous tumor, but the setting is platinum-resistant relapse rather than her current first-line remission, and there was no biomarker gate.</td><td>2L+</td><td>randomized double-blind placebo-controlled phase 2 (2:1)</td><td>placebo + gemcitabine</td><td>oral adavosertib 175 mg once daily on days 1,2,8,9,15,16 + gemcitabine 1000 mg/m2 IV days 1,8,15, every 28 days</td><td>HR_PFS</td><td>progression-free survival</td><td class="num">0.55 HR</td><td class="num">0.35–0.90</td><td class="num">0.015</td><td>mPFS 4.6 mo adavosertib+gem vs 3.0 mo placebo+gem</td><td>Grade 3+ toxicity was largely hematologic: neutropenia 62%, thrombocytopenia 31%, anemia 31%, fatigue 16% in the adavosertib+gemcitabine arm. The heavy myelosuppression is the operative concern against this patient&#x27;s severe-myelosuppression / febrile-neutropenia veto.</td><td><span class="rob-badge rob-med">RoB2:Some</span></td><td>1b</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/33485453">33485453</a></td><td><a href="https://doi.org/10.1016/S0140-6736(20)32554-X">DOI</a></td><td>The published randomized WEE1 anchor in high-grade serous ovarian cancer, standing in for azenosertib&#x27;s still-unpublished DENALI data on the same replication-stress axis. First WEE1-inhibitor trial to improve both PFS (HR 0.55) and OS (HR 0.56) in platinum-resistant disease, so it scopes the realistic magnitude of the WEE1 approach; a relapse option, not maintenance. Marked myelosuppression triggers the patient&#x27;s veto.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### ART0380 (ATR inhibitor)  
+<small><code>intervention_id: art0380</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>—/— (2023)<br><em>ESMO 2023 (conference); AACR 2025 abstract CT267 (irinotecan combination)</em></td><td class="num">49</td><td>Phase 1/1b enriched for DNA-damage-response-deficient tumors by the sponsor&#x27;s DcoDeR platform; the early monotherapy signal was in high-grade endometrial cancer, with platinum-resistant ovarian enrolled in later phase 2 cohorts. This patient&#x27;s genomic instability sits on the ATR replication-stress axis, but her BRCA-wild-type, qualitatively-unstable status would need checking against the trial&#x27;s DDR entry route.</td><td>2L+</td><td>phase 1/1b dose-escalation/expansion, monotherapy and combinations (NCT04657068)</td><td>—</td><td>oral ART0380 monotherapy, or with low-dose irinotecan / gemcitabine, per protocol</td><td>other</td><td>molecular responses / tumor-size reduction (formal ORR not reported for the phase 1 monotherapy cohort)</td><td class="num">— —</td><td class="num">—</td><td class="num">—</td><td>durable confirmed responses reported in high-grade endometrial cancer; ovarian phase 2 readout pending</td><td>Sponsor reports a safe and well-tolerated profile with predictable, manageable, reversible on-target anemia; no per-term grade 3+ table in the disclosed conference data. The gemcitabine and irinotecan combination arms add marrow toxicity, hence the myelosuppression flag.</td><td><span class="rob-badge rob-med">informal:med</span></td><td>4</td><td><span class="fit-badge fit-weak">weak</span></td><td>—</td><td>—</td><td>ATR replication-stress option for a future relapse rather than current maintenance. Only conference-disclosed data exist (ESMO 2023 monotherapy; AACR 2025 CT267 irinotecan combination; the AACR page returned 403), with no formal ORR for the ovarian setting and no peer-reviewed publication, so identifiers are null and no per-term AE table was extractable. The DDR entry route would need reconciling with her BRCA-wild-type, qualitative-instability status.</td></tr>
       </tbody>
     </table>
   </div>

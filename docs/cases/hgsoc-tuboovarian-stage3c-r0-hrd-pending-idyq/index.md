@@ -6,14 +6,14 @@
 
 ## Case output
 
-- [Target validation paths (PDF)](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-target-validation.pdf?v=7a9f3ba4) — diagnostic + biomarker workup that hardens the targetable-feature call
-- [Recommendations table (HTML)](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-recommendations.html?v=83b565ec) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
+- [Target validation paths (PDF)](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-target-validation.pdf?v=6cc80bcd) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Recommendations table (HTML)](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-recommendations.html?v=2317fe90) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
 - [Preclinical recommendations (HTML)](preclinical_recommendations.md?v=6e4babf2) — forward-looking horizon scan of earlier-than-clinical candidate drugs, compounds, and strategies, sortable in-browser
 - [Access guide (HTML)](accessibility.md?v=c675a486) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, sortable in-browser
-- [Access guide (offline HTML)](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-accessibility.html?v=4bcd4526) — same access-guide content as the in-browser page, packaged as a self-contained HTML that opens offline
-- [Master manuscripts table (HTML)](manuscripts.md?v=4c89f134) — every paper considered — n, effect, variance, toxicities, sortable in-browser
-- [Master manuscripts table (offline HTML)](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-manuscripts.html?v=bb3a11c6) — same manuscripts inventory as the in-browser page, packaged as a self-contained HTML that opens offline
-- [Patient/caregiver PDF](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-plain-language.pdf?v=81b64e34) — plain-language summary
+- [Access guide (offline HTML)](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-accessibility.html?v=804a9f27) — same access-guide content as the in-browser page, packaged as a self-contained HTML that opens offline
+- [Master manuscripts table (HTML)](manuscripts.md?v=17d9c741) — every paper considered — n, effect, variance, toxicities, sortable in-browser
+- [Master manuscripts table (offline HTML)](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-manuscripts.html?v=74799d0b) — same manuscripts inventory as the in-browser page, packaged as a self-contained HTML that opens offline
+- [Patient/caregiver PDF](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-plain-language.pdf?v=71845e13) — plain-language summary
 
 <!-- libby:case-output:end -->
 
@@ -120,7 +120,7 @@ Tumor-informed ctDNA has cleared to Not Detected after cytoreduction and chemoim
 
 ## Scope summary
 
-This case draws on 21 screened trials, 14 clinical-evidence rows, and 17 preclinical-evidence rows. Seven feature-targeting interventions made the ranked list and an eighth, disitamab vedotin, is kept as a board-vetoed not-recommended row. Agreement scores span 0.8 down to -0.4 across the ranked options, with disitamab vedotin sitting at -2 on a unanimous veto. The board did not converge on a single lead: the two registered all-comer PARP options (rucaparib, niraparib) carry the strongest evidence but both press the myelosuppression veto; bevacizumab is the only option clearing both vetoes outright, but it is PFS-only; the highest-magnitude regimen, olaparib + bevacizumab, sits sixth under a toxicity veto and an open eligibility gate; and the two HER2-directed ADCs split sharply, with trastuzumab deruxtecan landing seventh as an investigational relapse option that clears both vetoes while disitamab vedotin is rejected by all five personas because its MMAE payload triggers both.
+This case draws on 26 screened trials, 21 clinical-evidence rows, and 17 preclinical-evidence rows. A post-board re-screen (this refresh) added five on-axis trials and seven evidence rows; the board did not re-deliberate them, so they enter the ranking as evidence-ranked additions at `considered_with_caveats` with no board vote attached. Seven board-voted interventions occupy ranks 1-7, four post-board additions fill ranks 8-11, and disitamab vedotin stays at rank 12 as a board-vetoed not-recommended row. Board-derived agreement scores span 0.8 down to -0.4; the post-board rows carry a neutral 0 (no board signal); disitamab sits at -2 on a unanimous veto. The board did not converge on a single lead: the two registered all-comer PARP options (rucaparib, niraparib) carry the strongest evidence but both press the myelosuppression veto; bevacizumab is the only option clearing both vetoes outright, but it is PFS-only; the highest-magnitude regimen, olaparib + bevacizumab, sits sixth under a toxicity veto and an open eligibility gate; and the HER2-directed ADCs split sharply, with trastuzumab deruxtecan landing seventh as an investigational relapse option that clears both vetoes while disitamab vedotin is rejected by all five personas because its MMAE payload triggers both.
 
 ## Cross-cutting caveat (read first)
 
@@ -137,6 +137,8 @@ Neither question moves the lead:
 - The HER2-directed option (trastuzumab deruxtecan, rank 7) is an investigational relapse consideration, not a current maintenance pick. A confirmatory HER2 re-stain hardens it before it is on the table, and if the re-stain reads HER2 0 the option falls away.
 - Because all biomarkers have resulted, both the GIS and the HER2 re-stain are surfaced below under Workup considerations rather than as ranked diagnostic rows.
 
+**One more thing shapes how to read the tail of this ranking.** This page is a lighter refresh: a post-board re-screen added five on-axis trials and seven evidence rows after the board had finished deliberating. The board did not vote on them. So ranks 8-11 — the T-DXd + olaparib combination, the two DDR (WEE1 / ATR) options, and the CDK4/6 + aromatase-inhibitor combination — enter as evidence-ranked additions, not board-endorsed picks, and they carry no persona pills because there is no board signal to show. The strongest new fit, letrozole maintenance on the randomized MATAO phase 3, folds into the existing board-voted rank-5 letrozole row rather than displacing anything, since it is the same drug on the same ER axis. The board-voted ranks 1-7 and their agreement scores are unchanged from the prior synthesis.
+
 ## Workup considerations
 
 - **Validated genomic-instability score (Myriad MyChoice CDx GIS >=42, or FDA-approved equivalent) — essential, gates olaparib + bevacizumab only.** Runs on archival FFPE (surgical resection block preferred for tumor content), turnaround 2-3 weeks, moderate cost. A result at or above 42 makes the patient PAOLA-1-eligible and promotes olaparib + bevacizumab; below 42 she is HRD-negative and defaults to all-comer niraparib or rucaparib. The MyChoice CDx is the only assay whose threshold maps directly to the olaparib + bevacizumab label; FoundationOne CDx and Caris report LOH-based HRD surrogates that are not the label-recognized companion diagnostic, so confirm the score maps to the >=42 threshold before relying on it (validation row `gis-hrd-validated-score`, [PMID 31851799](https://pubmed.ncbi.nlm.nih.gov/31851799), [NCT02477644](https://clinicaltrials.gov/study/NCT02477644)).
@@ -149,9 +151,10 @@ Neither question moves the lead:
 - All-comer PARP maintenance for a BRCA-wild-type, genomically-unstable tumor — rucaparib (ATHENA-MONO, [NCT03522246](https://clinicaltrials.gov/study/NCT03522246), [PMID 35658487](https://pubmed.ncbi.nlm.nih.gov/35658487)) and niraparib (PRIMA, [NCT02655016](https://clinicaltrials.gov/study/NCT02655016), [PMID 31562799](https://pubmed.ncbi.nlm.nih.gov/31562799); BRCA-wild-type PDX pharmacology [PMID 30647846](https://pubmed.ncbi.nlm.nih.gov/30647846)).
 - VEGF / angiogenesis maintenance — bevacizumab (GOG-218 [NCT00262847](https://clinicaltrials.gov/study/NCT00262847) / [PMID 22204724](https://pubmed.ncbi.nlm.nih.gov/22204724); ICON7 [PMID 22204725](https://pubmed.ncbi.nlm.nih.gov/22204725)).
 - HRD-gated PARP + anti-angiogenic combination — olaparib + bevacizumab (PAOLA-1, [NCT02477644](https://clinicaltrials.gov/study/NCT02477644), [PMID 31851799](https://pubmed.ncbi.nlm.nih.gov/31851799)).
-- ER-directed endocrine maintenance — letrozole ([PMID 29157627](https://pubmed.ncbi.nlm.nih.gov/29157627)).
+- ER-directed endocrine maintenance — letrozole, now enrollable on the randomized MATAO phase 3 ([NCT04111978](https://clinicaltrials.gov/study/NCT04111978)), with the retrospective series ([PMID 29157627](https://pubmed.ncbi.nlm.nih.gov/29157627)) and PARAGON anastrozole ([PMID 31328463](https://pubmed.ncbi.nlm.nih.gov/31328463)) scoping the endocrine magnitude. A CDK4/6 + AI extension — abemaciclib + aromatase inhibitor ([NCT04469764](https://clinicaltrials.gov/study/NCT04469764); ribociclib + letrozole anchor [PMID 33109627](https://pubmed.ncbi.nlm.nih.gov/33109627)).
 - IL-12 immunogene / tumor immune microenvironment — GEN-1 / IMNN-001 (OVATION 2, [NCT03393884](https://clinicaltrials.gov/study/NCT03393884); IL-12 TME mechanism [PMID 20033066](https://pubmed.ncbi.nlm.nih.gov/20033066)).
-- HER2-directed ADCs for HER2-low (IHC 1+) disease, investigational in ovarian cancer — trastuzumab deruxtecan (DESTINY-Breast04 [PMID 35665782](https://pubmed.ncbi.nlm.nih.gov/35665782); DESTINY-PanTumor02 ovarian cohort [PMID 37870536](https://pubmed.ncbi.nlm.nih.gov/37870536); DESTINY-Breast06 [PMID 39282896](https://pubmed.ncbi.nlm.nih.gov/39282896)). Disitamab vedotin (NCT06003231) was rejected on MMAE toxicity; see Classes examined but not ranked.
+- HER2-directed ADCs for HER2-low (IHC 1+) disease, investigational in ovarian cancer — trastuzumab deruxtecan (DESTINY-Breast04 [PMID 35665782](https://pubmed.ncbi.nlm.nih.gov/35665782); DESTINY-PanTumor02 ovarian cohort [PMID 37870536](https://pubmed.ncbi.nlm.nih.gov/37870536); DESTINY-Breast06 [PMID 39282896](https://pubmed.ncbi.nlm.nih.gov/39282896)) and, from the post-board re-screen, T-DXd + olaparib ([NCT04585958](https://clinicaltrials.gov/study/NCT04585958)). Disitamab vedotin (NCT06003231) was rejected on MMAE toxicity; see Classes examined but not ranked.
+- DDR / replication-stress inhibitors for a future platinum-resistant relapse, on the axis of the tumor's genomic instability — azenosertib (WEE1, [NCT05128825](https://clinicaltrials.gov/study/NCT05128825)) and ART0380 (ATR, [NCT04657068](https://clinicaltrials.gov/study/NCT04657068)), with the adavosertib + gemcitabine randomized trial ([PMID 33485453](https://pubmed.ncbi.nlm.nih.gov/33485453)) scoping the class magnitude.
 
 ## Rank 1. Rucaparib (1L maintenance)
 
@@ -301,17 +304,17 @@ GEN-1 ranks just below bevacizumab (0.4 vs 0.6) because bevacizumab's evidence i
 |---|---|---|---|
 | IMNN-001 (GEN-1) + neoadjuvant chemo (OVATION 2) | ITT mPFS 14.9 vs 11.9 mo, HR 0.79; OS HR 0.69 (immature) | IP delivery well tolerated; no per-term G3+ table published | [NCT03393884](https://clinicaltrials.gov/study/NCT03393884) |
 
-## Rank 5. Letrozole (endocrine maintenance)
+## Rank 5. Letrozole (endocrine maintenance; MATAO-enrollable)
 
-*The lowest-toxicity oral option that clears every veto and fits the age band. The evidence is a single retrospective ROBINS-I-serious series, though, and PR-negativity tempers the expected magnitude.*
+*The lowest-toxicity oral option that clears every veto and fits the age band — and, after this refresh, one that is enrollable on a randomized phase 3 rather than resting on a retrospective series. PR-negativity and PARAGON's non-predictive ER histoscore still temper the expected magnitude.*
 
 ### Evidence base
 
-The supporting data are a non-randomized retrospective letrozole-maintenance comparison nested in a translational ER-expression study ([PMID 29157627](https://pubmed.ncbi.nlm.nih.gov/29157627)): 60% vs 38.5% recurrence-free at 24 months (p=0.035), control mRFS roughly 13.2 months, ROBINS-I serious, n=80, evidence tier 4. The critic insists the ROBINS-I Serious tag sit next to the rank so a reader does not take the 60% for a trial result. The clinician also flagged a design mismatch — the trials row described a single-arm phase 2, but the source is a retrospective translational series. The patient is ER-positive (~80% nuclei) but PR-negative, which predicts a more modest response than the ER reading alone suggests.
+The board originally ranked letrozole on a single non-randomized retrospective maintenance comparison nested in a translational ER-expression study ([PMID 29157627](https://pubmed.ncbi.nlm.nih.gov/29157627)): 60% vs 38.5% recurrence-free at 24 months (p=0.035), control mRFS roughly 13.2 months, ROBINS-I serious, n=80, evidence tier 4. The critic asked that the ROBINS-I Serious tag sit next to the rank so a reader does not take the 60% for a trial result, and the clinician flagged a design mismatch against the trials row. This refresh materially firms up the axis. A post-board re-screen added MATAO ([NCT04111978](https://clinicaltrials.gov/study/NCT04111978), ENGOT-ov54), a randomized double-blind placebo-controlled phase 3 of aromatase-inhibitor maintenance that the patient matches on high-grade serous histology, FIGO stage, and maintenance timing — she is enrollable at this exact timepoint. MATAO's primary readout is not yet published, so its HR 0.7 is a design assumption rather than an observed result. The re-screen also added PARAGON ([PMID 31328463](https://pubmed.ncbi.nlm.nih.gov/31328463)), the largest published aromatase-inhibitor read in ER-positive recurrent ovarian cancer, which is the sobering counterweight: anastrozole delivered only 34.6% clinical benefit at 3 months with a 2.7-month whole-cohort PFS, and ER histoscore did not correlate with benefit. Her ER-positive (~80% nuclei), PR-negative status is therefore a coarse predictor, not a strong one.
 
 ### Likelihood of desired effect
 
-Low, and weakly evidenced. There is no randomized letrozole-maintenance data in HGSC to anchor the estimate, and PR-negativity tempers even the retrospective signal. This is a tolerability floor, not an efficacy bet.
+Low-to-modest, and now trial-anchored rather than retrospective-only. MATAO makes this an enrollable randomized option, but its result is pending, so the demonstrated endocrine magnitude still comes from PARAGON's modest clinical-benefit rate and the earlier retrospective series. PR-negativity and PARAGON's finding that ER histoscore did not predict benefit both argue against over-reading the ~80% ER stain. This is a tolerability-driven, trial-eligible endocrine option, not a high-efficacy bet.
 
 ### Toxicity profile
 
@@ -325,16 +328,18 @@ No persona vetoed or dissented outright. The critic and concensusite both filed 
 
 ### Practical considerations
 
-Oral 2.5 mg once daily, no infusion burden — the best fit on the board for the age band and the oral preference. NCCN Ovarian v1.2025 includes aromatase inhibitors among hormone-therapy options, at a softer tier than the category 2A PARP and bevacizumab recommendations. The natural role is a later-line or adjunct fallback, particularly if a GIS returns HRD-negative and the patient wants to stay off cytopenia-inducing maintenance.
+Oral 2.5 mg once daily, no infusion burden — the best fit on the board for the age band and the oral preference, and now with a randomized trial (MATAO) she can enrol on, which suits her stated trial preference. NCCN Ovarian v1.2025 includes aromatase inhibitors among hormone-therapy options, at a softer tier than the category 2A PARP and bevacizumab recommendations. The natural role is a later-line or adjunct fallback, particularly if a GIS returns HRD-negative and the patient wants to stay off cytopenia-inducing maintenance — or, via MATAO, as a randomized maintenance option in its own right.
 
 ### Why this rank
 
-Letrozole's agreement_score ties rucaparib's at 0.6 because nobody objected to it — but that score reflects the absence of dissent on a low-stakes, low-toxicity option, not evidence strength. It ranks fifth, below options with weaker board signal but materially stronger evidence, because the efficacy-toxicity-weighted preference fit (efficacy weight 0.7) pulls a tier-4 retrospective series down past the registered phase 3 and the regimen-matched on-study options.
+Letrozole's agreement_score ties rucaparib's at 0.6 because nobody objected to it — but that score reflects the absence of dissent on a low-stakes, low-toxicity option, not evidence strength, and the board voted it before MATAO surfaced. Its rank holds at fifth: the efficacy-toxicity-weighted preference fit (efficacy weight 0.7) keeps it below the registered PARP options and the regimen-matched on-study choice, since MATAO's benefit is a pending design assumption and PARAGON pegs the observed endocrine magnitude as modest. The MATAO/PARAGON evidence entered by a post-board re-screen and was not board-voted, so it strengthens the rationale under an unchanged rank rather than moving the option up the list.
 
 ### Per-trial detail
 
 | Therapeutic agent | Efficacy | Toxicity | Reference |
 |---|---|---|---|
+| Letrozole maintenance (MATAO phase 3, post-board) | Randomized, enrollable; results pending (design-assumed HR 0.7) | Arthralgia, bone-density loss; no readout yet | [NCT04111978](https://clinicaltrials.gov/study/NCT04111978) |
+| Anastrozole (PARAGON, endocrine anchor) | 34.6% clinical benefit at 3 mo; mPFS 2.7 mo; ER histoscore non-predictive | Well tolerated; no per-term table | [31328463](https://pubmed.ncbi.nlm.nih.gov/31328463) |
 | Letrozole maintenance (retrospective series) | 60% vs 38.5% RFS at 24 mo (p=0.035); ROBINS-I serious | Arthralgia, bone-density loss; no per-term table | [29157627](https://pubmed.ncbi.nlm.nih.gov/29157627) |
 
 ## Rank 6. Olaparib + bevacizumab (PAOLA-1 maintenance, contingent on validated HRD-positive)
@@ -413,6 +418,155 @@ T-DXd sits seventh, below every active maintenance option and below the continge
 | T-DXd, ovarian cohort (DESTINY-PanTumor02) | ORR 45% at IHC 2+/3+ (above this tumor's tier) | ILD 10.5% (3 fatal); G3+ TRAE 40.8% | [37870536](https://pubmed.ncbi.nlm.nih.gov/37870536) |
 | T-DXd, HER2-low/ultralow breast (DESTINY-Breast06) | HER2-low PFS HR 0.62 (mPFS 13.2 vs 8.1 mo) | ILD 11.3% incl. 3 G5; G3+ AE 52.8% | [39282896](https://pubmed.ncbi.nlm.nih.gov/39282896) |
 
+## Rank 8. Trastuzumab deruxtecan + olaparib (HER2-low, NCT04585958)
+
+*Post-board addition — not board-voted. A directly enrollable HER2-low-plus-PARP relapse combination with a promising but non-peer-reviewed phase 1 signal, offset by stacked marrow toxicity and a weak-predictor IHC 1+ base.*
+
+### Evidence base
+
+A post-board re-screen surfaced NCT04585958 ([NCT04585958](https://clinicaltrials.gov/study/NCT04585958)), a recruiting phase 1 dose-finding study of T-DXd plus olaparib whose escalation modules accept HER2 IHC 1+ and whose one expansion cohort is platinum-resistant ovarian HGSC — so unlike single-agent T-DXd, this is a HER2 trial the patient could actually enrol on once she relapses. The efficacy read is CTEP #10355, presented at AACR 2026 (n=28, 16 ovarian): ORR 54% (46% confirmed) and median PFS 15.2 months, with activity holding across HER2 tiers and tumor types. That signal is conference-level, not peer-reviewed, so the identifiers stay null and the citable HER2-low anchor remains DESTINY-Breast04 ([PMID 35665782](https://pubmed.ncbi.nlm.nih.gov/35665782)). Read the ORR with the HER2-low hedge: a 1+ result is a weaker, less reliable predictor of ADC benefit than IHC 3+, and the combination's ovarian activity has not been reported at her expression tier specifically.
+
+### Likelihood of desired effect
+
+Moderate but unproven at her tier. The phase 1 ORR is genuinely encouraging and held across HER2 tiers, but no peer-reviewed ovarian HER2-low readout exists, and the predictive certainty of a 1+ stain is lower than a high-positive result. This is a relapse-context hypothesis with an early clinical signal, not a demonstrated maintenance benefit — and it is foreclosed if the confirmatory re-stain reads HER2 0.
+
+### Toxicity profile
+
+- Stacked marrow toxicity: pairing olaparib with the T-DXd payload halted Modules 1 and 3 for dose-limiting cytopenias; even the tolerable Module 2 ran grade 3 anemia 25% and neutropenia 12%. **This presses the patient's severe-myelosuppression veto, and her baseline WBC of 3.5 leaves thin reserve.**
+- T-DXd ILD/pneumonitis 10-12% class risk, including fatal cases in the monotherapy trials — baseline and serial chest imaging required.
+- IV q3w T-DXd plus oral olaparib, against the low-infusion preference.
+- She is in first-line remission, not platinum-resistant relapse, so entry waits for progression.
+
+### Counter-productive mechanisms / dissent
+
+No board persona evaluated this option — it entered after deliberation closed, so it carries no endorsement, dissent, or veto, and no persona pills. On mechanism, the same caveat as single-agent T-DXd applies: bystander DXd reach is unproven at IHC 1+ antigen density, where sparse HER2-positive cells may under-seed the payload. The stacked cytopenia risk is a patient-AE burden that presses her veto rather than a counter-productive vector against the therapeutic goal.
+
+### Practical considerations
+
+The trial is recruiting, which makes it a live enrollment route at relapse — the advantage single-agent T-DXd lacks, since no T-DXd monotherapy trial currently takes this tumor type. Order the confirmatory HER2 re-stain first; the 1+ rests on a single specimen Altera could not evaluate. A hematology-supported plan would be needed before committing, given the stacked marrow toxicity against her veto.
+
+### Why this rank
+
+It sits at rank 8, directly below the board-voted single-agent T-DXd, for two reasons: it was not board-voted (agreement_score 0, no board signal), and the combination adds olaparib marrow toxicity on top of the ADC without a peer-reviewed ovarian efficacy base to justify the extra risk. Against the DDR options below it, it ranks higher because it has an actual early ovarian ORR and a directly matching enrollment cohort, where the DDR options rest on class-analogue anchors.
+
+### Per-trial detail
+
+| Therapeutic agent | Efficacy | Toxicity | Reference |
+|---|---|---|---|
+| T-DXd + olaparib (CTEP #10355, phase 1) | ORR 54% (46% confirmed), mPFS 15.2 mo across HER2 tiers (AACR 2026, not peer-reviewed) | Module 2 G3 anemia 25%, neutropenia 12%; Modules 1/3 halted for cytopenias | [NCT04585958](https://clinicaltrials.gov/study/NCT04585958) |
+| T-DXd, HER2-low breast (DESTINY-Breast04, anchor) | HR+ PFS HR 0.51 (mPFS 10.1 vs 5.4 mo) | ILD 12.1% incl. G5 0.8%; G3+ AE 52.6% | [35665782](https://pubmed.ncbi.nlm.nih.gov/35665782) |
+
+## Rank 9. Azenosertib (ZN-c3, WEE1 inhibitor, NCT05128825)
+
+*Post-board addition — not board-voted. A later-line DDR / replication-stress option on-axis with her genomic instability, but gated on an untested cyclin E1 marker, backed by conference-only data, and heavily myelosuppressive.*
+
+### Evidence base
+
+A post-board re-screen surfaced DENALI ([NCT05128825](https://clinicaltrials.gov/study/NCT05128825)), a recruiting phase 2 of the WEE1 inhibitor azenosertib in platinum-resistant HGSC. The tumor's genomic instability sits on the replication-stress axis WEE1 inhibition exploits, which is the mechanistic draw. The azenosertib efficacy is sponsor/SGO conference disclosure only — ORR roughly 35% in cyclin E1-positive disease, no peer-reviewed readout, identifiers null. The citable magnitude anchor is therefore the peer-reviewed adavosertib + gemcitabine randomized phase 2 ([PMID 33485453](https://pubmed.ncbi.nlm.nih.gov/33485453)), the first WEE1 trial to improve both PFS (HR 0.55) and OS (HR 0.56) in platinum-resistant HGSC. Two things keep expectations in check: the reported DENALI activity is gated on cyclin E1 positivity, which has not been tested for this patient, and the class magnitude comes from a different WEE1 agent.
+
+### Likelihood of desired effect
+
+Modest and biomarker-gated. If she is cyclin E1-positive the WEE1 axis has a real, if short-duration, signal in platinum-resistant disease; if she is not, the DENALI read may not apply. The peer-reviewed adavosertib anchor shows the class improves both PFS and OS in the platinum-resistant setting, which scopes the ceiling — but this is a future-relapse option, not maintenance, and azenosertib's own ovarian data are not yet published.
+
+### Toxicity profile
+
+- WEE1 inhibition drives cytopenias: the adavosertib anchor ran grade 3+ neutropenia 62%, thrombocytopenia 31%, and anemia 31%. **This presses the patient's severe-myelosuppression / febrile-neutropenia veto.**
+- Oral administration fits the modality preference.
+- Reported activity requires cyclin E1 positivity, a biomarker not established for her.
+
+### Counter-productive mechanisms / dissent
+
+No board persona evaluated this option — it entered after deliberation closed and carries no board signal. On mechanism, WEE1 replication-stress inhibition is on-axis for a genomically-unstable tumor rather than counter-productive; the heavy myelosuppression is a patient-AE burden that hits her veto, not a vector that blunts the therapeutic goal.
+
+### Practical considerations
+
+The trial is recruiting. Two workups would precede any commitment: a cyclin E1 assay to check the eligibility the reported activity depends on, and hematology support given the WEE1 class's marrow toxicity against her thin baseline reserve. This belongs in a relapse conversation, not the current maintenance decision.
+
+### Why this rank
+
+It ranks 9, below the HER2 combination, because it is biomarker-gated on a marker she has not had tested and its azenosertib-specific evidence is conference-only. It ranks above ART0380 because the WEE1 axis has a peer-reviewed randomized ovarian anchor (adavosertib) that the ATR axis lacks at the ovarian-efficacy level.
+
+### Per-trial detail
+
+| Therapeutic agent | Efficacy | Toxicity | Reference |
+|---|---|---|---|
+| Azenosertib (DENALI, phase 2) | ORR ~35% cyclin E1-positive HGSC (SGO/sponsor, not peer-reviewed) | WEE1-class cytopenias; no per-term table disclosed | [NCT05128825](https://clinicaltrials.gov/study/NCT05128825) |
+| Adavosertib + gemcitabine (WEE1 anchor) | mPFS 4.6 vs 3.0 mo, HR 0.55; mOS 11.4 vs 7.2 mo, HR 0.56 | G3+ neutropenia 62%, thrombocytopenia 31%, anemia 31% | [33485453](https://pubmed.ncbi.nlm.nih.gov/33485453) |
+
+## Rank 10. ART0380 (ATR inhibitor, NCT04657068)
+
+*Post-board addition — not board-voted. A second later-line DDR option on the ATR axis of her genomic instability, but with no ovarian efficacy estimand, an unconfirmed DDR entry route for her genotype, and conference-only data.*
+
+### Evidence base
+
+A post-board re-screen surfaced NCT04657068 ([NCT04657068](https://clinicaltrials.gov/study/NCT04657068)), a recruiting phase 1/2 of the ATR inhibitor ART0380 with a platinum-resistant ovarian expansion — a second DDR / replication-stress option on the same axis as azenosertib. The evidence is thinner than the WEE1 row: only conference-disclosed data exist (ESMO 2023 monotherapy, AACR 2025 irinotecan combination), the early monotherapy signal was in high-grade endometrial rather than ovarian cancer, and no formal ovarian ORR has been reported, so identifiers are null. The citable class magnitude runs through the same adavosertib anchor ([PMID 33485453](https://pubmed.ncbi.nlm.nih.gov/33485453)) pending ATR-specific ovarian data. Her BRCA-wild-type, qualitatively-unstable status would need reconciling against the trial's DDR entry route.
+
+### Likelihood of desired effect
+
+Uncertain — there is no ovarian efficacy estimand for ART0380 to anchor a probability. The ATR mechanism is on-axis for replication stress, and DDR-class activity in platinum-resistant HGSC is plausible from the WEE1 anchor, but the monotherapy signal to date was in endometrial cancer and the ovarian cohort has not read out. Treat this as an early DDR hypothesis for relapse.
+
+### Toxicity profile
+
+- On-target anemia, described as predictable and reversible in the sponsor disclosure.
+- The gemcitabine and irinotecan combination arms add marrow toxicity. **This presses the severe-myelosuppression veto.**
+- Oral administration fits the modality preference.
+
+### Counter-productive mechanisms / dissent
+
+No board persona evaluated this option. On mechanism, ATR replication-stress inhibition is on-axis for genomic instability with no counter-productive vector flagged; the combination-arm marrow toxicity is a patient-AE burden.
+
+### Practical considerations
+
+The trial is recruiting. Before it could be considered, the DDR entry route would need reconciling with her BRCA-wild-type, qualitative-instability status — the trial enriches for DNA-damage-response deficiency, and it is not clear her qualitative instability call satisfies that route. A future-relapse option, contingent on that eligibility check.
+
+### Why this rank
+
+It ranks 10, below azenosertib, because ART0380 has no formal ovarian ORR, its monotherapy signal was in a different tumor type, and its DDR entry route for her genotype is unconfirmed. It ranks above the CDK4/6 combination because its mechanism is squarely on the axis of her tumor's dominant biology, where the CDK4/6 ovarian evidence is weak and low-grade-skewed.
+
+### Per-trial detail
+
+| Therapeutic agent | Efficacy | Toxicity | Reference |
+|---|---|---|---|
+| ART0380 (phase 1/2) | Molecular responses / tumor-size reduction; no formal ovarian ORR (ESMO 2023 / AACR 2025, conference) | On-target anemia; combination arms add marrow toxicity | [NCT04657068](https://clinicaltrials.gov/study/NCT04657068) |
+| Adavosertib + gemcitabine (DDR-class anchor) | mPFS 4.6 vs 3.0 mo, HR 0.55; mOS HR 0.56 | G3+ neutropenia 62%, thrombocytopenia 31%, anemia 31% | [33485453](https://pubmed.ncbi.nlm.nih.gov/33485453) |
+
+## Rank 11. Abemaciclib + aromatase inhibitor (CDK4/6 + AI, NCT04469764)
+
+*Post-board addition — not board-voted. A speculative oral later-line ER/CDK combination adjacent to letrozole, but the published ovarian CDK4/6+AI signal is weak and driven by low-grade serous, not this high-grade tumor.*
+
+### Evidence base
+
+A post-board re-screen surfaced NCT04469764 ([NCT04469764](https://clinicaltrials.gov/study/NCT04469764)), a recurrent-disease phase 2 pairing the CDK4/6 inhibitor abemaciclib with an aromatase inhibitor on the ER axis. The trial has no readout and enrolls behind molecular-tumor-board confirmation of a qualifying alteration. The published CDK4/6 + AI ovarian anchor is ribociclib + letrozole ([PMID 33109627](https://pubmed.ncbi.nlm.nih.gov/33109627)): in its 20-patient ovarian cohort the ORR was 5% and PFS12 was 50%, but the durable multi-year responses sat entirely in the three low-grade serous patients — not the high-grade serous biology here. The read across drugs and histology is weak.
+
+### Likelihood of desired effect
+
+Low for high-grade serous specifically. The CDK4/6 + AI combination has produced durable benefit in low-grade serous ovarian cancer, but the ovarian-cohort ORR was 5% overall and the high-grade serous signal is essentially absent in the published anchor. NCT04469764 has no readout, so there is no direct estimand. This is the most speculative therapeutic option on the list.
+
+### Toxicity profile
+
+- CDK4/6-class cytopenias: the ribociclib + letrozole anchor ran grade 3+ neutropenia 15% and leukopenia 23%. This touches the myelosuppression veto but sits below the febrile-neutropenia threshold.
+- Abemaciclib diarrhea is the characteristic non-heme toxicity.
+- Oral administration fits the modality preference.
+
+### Counter-productive mechanisms / dissent
+
+No board persona evaluated this option. CDK4/6 plus endocrine blockade has no plausible counter-productive vector in ER-positive disease; the limiting factor is weak activity in high-grade serous histology, not a counter-mechanism.
+
+### Practical considerations
+
+The trial is recruiting, but entry hinges on molecular-tumor-board confirmation of a qualifying alteration, so eligibility is uncertain until that review. Oral and relatively low-toxicity, it sits adjacent to letrozole as a later-line ER-axis option — but the histology mismatch in the supporting data is the reason it ranks last of the therapeutic options.
+
+### Why this rank
+
+It ranks 11, last of the therapeutic options and above only the not-recommended disitamab vedotin, because the published ovarian CDK4/6 + AI signal is weak (ORR 5%) and its durable benefit was confined to low-grade serous. Below the DDR options because those act on the axis of this tumor's dominant biology, where this combination's ovarian evidence points away from high-grade serous.
+
+### Per-trial detail
+
+| Therapeutic agent | Efficacy | Toxicity | Reference |
+|---|---|---|---|
+| Abemaciclib + AI (phase 2) | No readout; enrolls behind molecular-tumor-board confirmation | CDK4/6 cytopenias; abemaciclib diarrhea | [NCT04469764](https://clinicaltrials.gov/study/NCT04469764) |
+| Ribociclib + letrozole (CDK4/6+AI ovarian anchor) | Ovarian-cohort ORR 5%, PFS12 50%; durable benefit only in low-grade serous | G3+ leukopenia 23%, lymphocytopenia 23%, neutropenia 15% | [33109627](https://pubmed.ncbi.nlm.nih.gov/33109627) |
+
 ## Classes examined but not ranked
 
 - **Disitamab vedotin (RC48) — not recommended, board-vetoed unanimously.** The open solid-tumor basket (NCT06003231) does accept HER2 IHC 1+ ovarian, so on biomarker and tumor type it is the most directly enrollable HER2 option — yet all five personas rejected it, because its MMAE payload runs peripheral sensory neuropathy at 68% any-grade / 18.7% grade 3+ and neutropenia at 12.1% grade 3+ ([PMID 37988648](https://pubmed.ncbi.nlm.nih.gov/37988648)), hitting both of the patient's named vetoes head-on. Its only HER2-low efficacy read is an abstract-only PAM-pathway-selected breast series, and the accessibility pass flags that the US basket is now active-not-recruiting and the only recruiting trial is China-only. Kept as a not-recommended row so the rejection is visible, not silent.
@@ -432,15 +586,20 @@ T-DXd sits seventh, below every active maintenance option and below the continge
 | 5 | **Letrozole (endocrine maintenance)**<br><small><em>endorse:</em> <span class="persona persona-conservative">conservative</span> <span class="persona persona-concensusite">concensusite</span> <span class="persona persona-advocate">advocate</span></small> | Low and weakly evidenced: only a retrospective ROBINS-I-serious series (60% vs 38.5% RFS at 24 mo, pmid:29157627); PR-negativity tempers the ER-driven signal. | Low (arthralgia, bone-density loss on prolonged aromatase inhibition; no named veto triggered) | **Low** (Endocrine blockade has no plausible counter-productive vector in ER-positive HGSC; the dissent here is evidence-quality, not mechanism.) | **The lowest-toxicity oral option that clears every veto and fits the age band, but the evidence is a single retrospective ROBINS-I-serious series and PR-negativity tempers the expected magnitude.** |
 | 6 | **Olaparib + bevacizumab (PAOLA-1, contingent on validated HRD-positive)**<br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-concensusite">concensusite</span></small><br><small><em>dissent:</em> <span class="persona persona-critic">critic</span> <span class="persona persona-advocate">advocate</span></small><br><small><em>veto:</em> <span class="persona persona-conservative">conservative</span></small> | High ONLY if GIS >=42 confirms HRD-positive: PAOLA-1 subgroup HR 0.33 (37.2 vs 17.7 mo); contingent and foreclosed below 42, ITT effect is a smaller HR 0.59. | High (combination grade 3+ AE ~57%; hypertension 19%, anemia 17%, up to 20% olaparib discontinuation) | **High** (Anti-angiogenic VTE/bleeding stacked on PARP myelosuppression against an IVC-filter history; the conservative's toxicity veto stood on this mechanism.) | **Highest-magnitude maintenance if HRD-positive is confirmed, but contingent on a GIS she lacks and held back by a toxicity veto and an evidence-quality dissent on a subgroup-only effect estimate.** |
 | 7 | **Trastuzumab deruxtecan (HER2-low IHC 1+, investigational)**<br><small><em>endorse:</em> <span class="persona persona-advocate">advocate</span> <span class="persona persona-critic">critic</span> <span class="persona persona-risktaker">risktaker</span></small><br><small><em>dissent:</em> <span class="persona persona-concensusite">concensusite</span></small> | Low-to-moderate, cross-tumor only: no ovarian IHC 1+ data; rests on HER2-low breast extrapolation (DESTINY-Breast04 PFS HR 0.51) plus the DXd bystander mechanism. | High (ILD/pneumonitis 10-12% incl. fatal cases; grade 3+ AE 52.6%; nausea; anemia) | **Moderate** (Bystander DXd reach is unproven at IHC 1+ antigen density; sparse HER2-positive cells may not seed enough payload to kill neighbors.) | **The one HER2-directed option that clears both named vetoes, but investigational at IHC 1+ ovarian on breast-only extrapolation — a relapse consideration after a confirmatory re-stain, not a maintenance pick.** |
+| 8 | **Trastuzumab deruxtecan + olaparib (HER2-low, NCT04585958)**<br><small><em>post-board addition — not board-voted</em></small> | Moderate but unproven at IHC 1+: phase 1 CTEP #10355 ORR 54% / mPFS 15.2 mo held across HER2 tiers (AACR 2026, not peer-reviewed); HER2-low is a weaker predictor than 3+. | High (stacked PARP + ADC marrow toxicity; Module 2 grade 3 anemia 25%, neutropenia 12%; T-DXd ILD 10-12% incl. fatal) | **Moderate** (Bystander DXd reach unproven at IHC 1+ antigen density; sparse HER2-positive cells may under-seed payload, as for T-DXd monotherapy.) | **A directly enrollable HER2-low + PARP relapse combination with a promising but non-peer-reviewed phase 1 signal — offset by stacked marrow toxicity that presses her veto and a weak-predictor IHC 1+ base.** |
+| 9 | **Azenosertib (WEE1, NCT05128825)**<br><small><em>post-board addition — not board-voted</em></small> | Modest and biomarker-gated: DENALI ORR ~35% in cyclin E1-positive HGSC (conference-only); peer-reviewed WEE1 anchor is adavosertib+gem (pmid:33485453, PFS HR 0.55) in platinum-resistant disease. | High (WEE1-class cytopenias; adavosertib anchor grade 3+ neutropenia 62%, thrombocytopenia 31%, anemia 31%) | **Low** (WEE1 replication-stress mechanism is on-axis for genomic instability; myelosuppression is a patient-AE burden, not a counter-mechanism.) | **A later-line DDR / replication-stress option on-axis with her genomic instability, but gated on an untested cyclin E1 marker, backed by conference-only azenosertib data, and heavily myelosuppressive.** |
+| 10 | **ART0380 (ATR, NCT04657068)**<br><small><em>post-board addition — not board-voted</em></small> | Uncertain, no ovarian estimand: ART0380 phase 1/2 (NCT04657068) has only conference-disclosed molecular responses, no formal ovarian ORR; class magnitude via adavosertib anchor (pmid:33485453). | Moderate (on-target anemia; gemcitabine/irinotecan combination arms add marrow toxicity) | **Low** (ATR replication-stress mechanism is on-axis for genomic instability; no plausible counter-productive vector flagged.) | **A second later-line DDR option on the ATR axis of her genomic instability, but with no ovarian efficacy estimand, an unconfirmed DDR entry route for her genotype, and conference-only data.** |
+| 11 | **Abemaciclib + aromatase inhibitor (CDK4/6 + AI, NCT04469764)**<br><small><em>post-board addition — not board-voted</em></small> | Low for high-grade serous: CDK4/6 + AI ovarian anchor (ribociclib+letrozole, pmid:33109627) posted ORR 5% with durable benefit only in low-grade serous; NCT04469764 has no readout. | Low (CDK4/6-class cytopenias — grade 3+ neutropenia 15%, leukopenia 23%; abemaciclib diarrhea; below febrile-neutropenia threshold) | **Low** (CDK4/6 + endocrine blockade has no plausible counter-productive vector in ER-positive disease; the limit is weak high-grade-serous activity.) | **A speculative oral later-line ER/CDK combination adjacent to letrozole, but the published ovarian CDK4/6+AI signal is weak (ORR 5%) and driven by low-grade serous, not this high-grade tumor.** |
 
 !!! note "How to read this table"
-    **Toxicity burden** is patient-level adverse-event severity — the cytopenias, hypertension, ILD, and bleeding a patient would actually experience. **Counter-productive MoA** is a different axis: the mechanism-level risk that a treatment could blunt its own therapeutic goal. The persona pills under each intervention are the at-a-glance board signal; the full per-persona rationale lives on the [board page](board.md). Disitamab vedotin is omitted from this table as a not-recommended, board-vetoed row; it is documented under Classes examined but not ranked.
+    **Toxicity burden** is patient-level adverse-event severity — the cytopenias, hypertension, ILD, and bleeding a patient would actually experience. **Counter-productive MoA** is a different axis: the mechanism-level risk that a treatment could blunt its own therapeutic goal. The persona pills under each intervention are the at-a-glance board signal; ranks 8-11 were surfaced by a post-board re-screen and carry no pills because the board did not vote on them. The full per-persona rationale for the board-voted options lives on the [board page](board.md). Disitamab vedotin is omitted from this table as a not-recommended, board-vetoed row; it is documented under Classes examined but not ranked.
 
 ## Caveats
 
-- **Evidence-base caveats.** The two PARP options and bevacizumab rest on RoB2-low registered phase 3 trials, but bevacizumab is PFS-only with no overall-population OS gain, and ICON7 was open-label. PAOLA-1's load-bearing HR 0.33 is a pre-specified subgroup, not the ITT (HR 0.59). GEN-1's efficacy comes from a sponsor topline and a 2025 abstract with no peer-reviewed safety table. Letrozole rests on a single non-randomized retrospective series (ROBINS-I serious, n=80), and its design source is flagged for screener reconciliation. T-DXd at IHC 1+ ovarian has no indication data at all — the case is cross-tumor extrapolation from HER2-low breast plus a preclinical bystander mechanism, with a 10-12% ILD rate that has been fatal — and disitamab vedotin's only HER2-low read is an abstract-only PAM-selected breast series.
+- **Post-board additions (this refresh).** Ranks 8-11 — T-DXd + olaparib, azenosertib, ART0380, and abemaciclib + AI — were surfaced by a post-board re-screen and were NOT part of the board's deliberation. They carry no persona endorsement, dissent, or veto (agreement_score 0) and are ranked on evidence alone at `considered_with_caveats`. Their evidence is correspondingly softer: the T-DXd + olaparib ORR (54%) is AACR 2026 conference-level, the azenosertib and ART0380 readouts are sponsor/conference-only with null identifiers, and the abemaciclib row has no readout and rests on a low-grade-serous-skewed ovarian anchor. Treat them as relapse-context leads to raise with the treating team, not board-vetted maintenance picks. The MATAO phase 3 (rank 5) is also a post-board add, but folded into the existing board-voted letrozole row on the same ER axis.
+- **Evidence-base caveats.** The two PARP options and bevacizumab rest on RoB2-low registered phase 3 trials, but bevacizumab is PFS-only with no overall-population OS gain, and ICON7 was open-label. PAOLA-1's load-bearing HR 0.33 is a pre-specified subgroup, not the ITT (HR 0.59). GEN-1's efficacy comes from a sponsor topline and a 2025 abstract with no peer-reviewed safety table. Letrozole is now enrollable on the randomized MATAO phase 3, but that readout is pending, and the observed endocrine magnitude rests on PARAGON (34.6% clinical benefit at 3 mo, ER histoscore non-predictive) and the earlier ROBINS-I-serious retrospective series. T-DXd at IHC 1+ ovarian has no indication data at all — the case is cross-tumor extrapolation from HER2-low breast plus a preclinical bystander mechanism, with a 10-12% ILD rate that has been fatal — and disitamab vedotin's only HER2-low read is an abstract-only PAM-selected breast series.
 - **Compartment / biomarker dependencies.** The maintenance ranking is stable across the GIS result except for rank 6: olaparib + bevacizumab is foreclosed unless a validated MyChoice CDx GIS returns at least 42, and the Altera qualitative instability call does not satisfy the companion-diagnostic definition. The HER2-directed option depends on the confirmatory re-stain: the IHC 1+ rests on a single specimen Altera could not evaluate, and a re-stain reading HER2 0 would take T-DXd off the table. SOLO1 olaparib monotherapy is foreclosed by confirmed BRCA-wild-type status, and the MSS/TMB-low profile forecloses tumor-agnostic checkpoint inhibition.
-- **What would change the ranking.** A MyChoice GIS at least 42, paired with a documented anticoagulation/BP-management plan, would move olaparib + bevacizumab from last toward first. A documented hematology-supported dose plan would lift the conservative's conditional veto on niraparib and close its gap with rucaparib. A confirmatory HER2 re-stain that holds at 1+ keeps T-DXd as a documented relapse option; a re-stain of HER2 0 forecloses it, while a 2+/3+ result would move it toward (or onto) the tumor-agnostic label.
+- **What would change the ranking.** A MyChoice GIS at least 42, paired with a documented anticoagulation/BP-management plan, would move olaparib + bevacizumab from last of the maintenance options toward first. A documented hematology-supported dose plan would lift the conservative's conditional veto on niraparib and close its gap with rucaparib. A confirmatory HER2 re-stain that holds at 1+ keeps both HER2 options (T-DXd, T-DXd + olaparib) as documented relapse leads; a re-stain of HER2 0 forecloses them, while a 2+/3+ result would move single-agent T-DXd toward (or onto) the tumor-agnostic label. A board re-vote on the four post-board additions would replace their neutral agreement_score of 0 with real board signal and could reorder ranks 8-11 substantially. A published MATAO readout would convert letrozole's endocrine rationale from a pending design assumption to observed evidence.
 - **Re-scoping caveat.** If the patient's preference shifts to accept myelosuppression risk with hematology support, the PARP options strengthen at the top; if tolerability concerns deepen, bevacizumab or letrozole rise as the veto-clearing, lower-burden choices, and T-DXd stays a relapse-only HER2 option regardless.
 
 ## Sources
@@ -452,8 +611,11 @@ T-DXd sits seventh, below every active maintenance option and below the continge
 - [22204725](https://pubmed.ncbi.nlm.nih.gov/22204725)
 - [29157627](https://pubmed.ncbi.nlm.nih.gov/29157627)
 - [30647846](https://pubmed.ncbi.nlm.nih.gov/30647846)
+- [31328463](https://pubmed.ncbi.nlm.nih.gov/31328463)
 - [31562799](https://pubmed.ncbi.nlm.nih.gov/31562799)
 - [31851799](https://pubmed.ncbi.nlm.nih.gov/31851799)
+- [33109627](https://pubmed.ncbi.nlm.nih.gov/33109627)
+- [33485453](https://pubmed.ncbi.nlm.nih.gov/33485453)
 - [35658487](https://pubmed.ncbi.nlm.nih.gov/35658487)
 - [35665782](https://pubmed.ncbi.nlm.nih.gov/35665782)
 - [37870536](https://pubmed.ncbi.nlm.nih.gov/37870536)
@@ -467,12 +629,17 @@ T-DXd sits seventh, below every active maintenance option and below the continge
 - [NCT02655016](https://clinicaltrials.gov/study/NCT02655016)
 - [NCT03393884](https://clinicaltrials.gov/study/NCT03393884)
 - [NCT03522246](https://clinicaltrials.gov/study/NCT03522246)
+- [NCT04111978](https://clinicaltrials.gov/study/NCT04111978)
+- [NCT04469764](https://clinicaltrials.gov/study/NCT04469764)
+- [NCT04585958](https://clinicaltrials.gov/study/NCT04585958)
+- [NCT04657068](https://clinicaltrials.gov/study/NCT04657068)
+- [NCT05128825](https://clinicaltrials.gov/study/NCT05128825)
 - [NCT06003231](https://clinicaltrials.gov/study/NCT06003231)
 
 ## Transparency artifacts
 
-- [Trial table](trials.md) — 21 screened trials, all columns.
-- [Evidence table](evidence.md) — 14 clinical-evidence rows with effect sizes, variance, and toxicity.
+- [Trial table](trials.md) — 26 screened trials, all columns.
+- [Evidence table](evidence.md) — 21 clinical-evidence rows with effect sizes, variance, and toxicity.
 - [Manuscripts inventory](manuscripts.md) — master flat list of every paper considered (clinical + preclinical).
 - [Board proceedings](board.md) — 5 positions and 20 cross-critiques with the full agreement matrix.
 - [Recommendations table](recommendations.md) — the forwardable ranked-options table.
@@ -480,7 +647,11 @@ T-DXd sits seventh, below every active maintenance option and below the continge
 
 ## Run log
 
-Authored 2026-06-26 by the PI agent on the re-run after a HER2-low (IHC 1+) targetable feature was added and the full dossier and board were refreshed. Supplied: a scrubbed profile (now seven targetable features), preferences, the target-validation file (with five HER2 workup rows), 21 trials, 14 clinical-evidence and 17 preclinical-evidence rows, and a fresh board record (5 positions, 20 critiques regenerated with HER2 in the mix). Every biomarker reads `confirmed`, including HER2-low, so the ranking stays a single unbranched list with `scenario: null` on each row; the GIS and the HER2 re-stain are surfaced under Workup considerations rather than as ranked diagnostic rows. The HER2-low ADCs were integrated per Hard Rule 6: trastuzumab deruxtecan is ranked seventh as a real but investigational, relapse-context option (status considered_with_caveats, target her2_low), never as approved standard care, and disitamab vedotin is kept as a rank-8 not-recommended row on a unanimous MMAE-toxicity veto. Two departures from the prior six-feature synthesis are recomputed from the refreshed board and worth flagging: rucaparib rose to agreement_score 0.8 (the refreshed board added conservative and advocate endorsements and dropped risktaker, who now ranks niraparib first), and olaparib + bevacizumab now carries a single conservative toxicity veto plus critic and advocate dissents (refreshed critic ranked it fourth rather than vetoing, so it is scored as a dissent), landing at -0.4. The clinical order of the six prior options is preserved. Agreement scores, ranks, vetoes, and dissents were computed from the board files; the DESTINY-Breast06 PFS HR is reported as the published 0.62 (the screener row's 0.64 was reconciled to the publication). All eight recommendation rows validate against the schema. The letrozole design-source mismatch is inherited from the dossier and logged for a screener re-run.
+Refreshed 2026-07-09 by the PI agent as a lighter PI-REFRESH (no board re-vote). A post-board re-screen added five on-axis trials (MATAO letrozole maintenance NCT04111978, T-DXd + olaparib NCT04585958, azenosertib NCT05128825, ART0380 NCT04657068, abemaciclib + AI NCT04469764) and seven clinical-evidence rows (MATAO, PARAGON anastrozole, ribociclib + letrozole, T-DXd + olaparib CTEP #10355, azenosertib DENALI, adavosertib + gemcitabine, ART0380). The board did NOT re-deliberate these, so the seven board-voted interventions keep their prior ranks (1-7) and agreement scores unchanged, and the material new options enter as post-board additions at `considered_with_caveats` with empty board arrays and a neutral agreement_score of 0 — no fabricated endorsement or veto. The strongest new fit, letrozole maintenance on the randomized MATAO phase 3, folds into the existing board-voted rank-5 letrozole row (same drug, same ER axis) rather than displacing anything; it is tempered by PR-negativity and by PARAGON's finding that ER histoscore did not predict benefit. T-DXd + olaparib (rank 8) carries the HER2-low predictive-certainty hedge (IHC 1+ is a weaker predictor than 3+). The DDR pair (azenosertib rank 9, ART0380 rank 10) and abemaciclib + AI (rank 11) are later-line / future-relapse options. Disitamab vedotin moves to rank 12, unchanged as a not-recommended board-vetoed row. HRD-pending gating is unchanged: every biomarker reads `confirmed`, so the ranking stays a single unbranched list with `scenario: null`, and the GIS and HER2 re-stain remain under Workup considerations. Reference-verification (this run): the promoted new identifiers were checked against PubMed and ClinicalTrials.gov — PMIDs 31328463 (PARAGON), 33485453 (adavosertib), 33109627 (ribociclib+letrozole) resolve and match their claims; NCTs NCT04111978, NCT04585958, NCT05128825, NCT04657068, NCT04469764 all resolve, recruiting, with matching titles/phases. Conference-only data (CTEP #10355, DENALI, ART0380) carry null identifiers by design. All 12 recommendation rows validate against the schema.
+
+---
+
+Prior run: authored 2026-06-26 by the PI agent on the re-run after a HER2-low (IHC 1+) targetable feature was added and the full dossier and board were refreshed. Supplied: a scrubbed profile (now seven targetable features), preferences, the target-validation file (with five HER2 workup rows), 21 trials, 14 clinical-evidence and 17 preclinical-evidence rows, and a fresh board record (5 positions, 20 critiques regenerated with HER2 in the mix). Every biomarker reads `confirmed`, including HER2-low, so the ranking stays a single unbranched list with `scenario: null` on each row; the GIS and the HER2 re-stain are surfaced under Workup considerations rather than as ranked diagnostic rows. The HER2-low ADCs were integrated per Hard Rule 6: trastuzumab deruxtecan is ranked seventh as a real but investigational, relapse-context option (status considered_with_caveats, target her2_low), never as approved standard care, and disitamab vedotin is kept as a rank-8 not-recommended row on a unanimous MMAE-toxicity veto. Two departures from the prior six-feature synthesis are recomputed from the refreshed board and worth flagging: rucaparib rose to agreement_score 0.8 (the refreshed board added conservative and advocate endorsements and dropped risktaker, who now ranks niraparib first), and olaparib + bevacizumab now carries a single conservative toxicity veto plus critic and advocate dissents (refreshed critic ranked it fourth rather than vetoing, so it is scored as a dissent), landing at -0.4. The clinical order of the six prior options is preserved. Agreement scores, ranks, vetoes, and dissents were computed from the board files; the DESTINY-Breast06 PFS HR is reported as the published 0.62 (the screener row's 0.64 was reconciled to the publication). All eight recommendation rows validate against the schema. The letrozole design-source mismatch is inherited from the dossier and logged for a screener re-run.
 
 <!-- libby:downloads:begin -->
 
@@ -489,22 +660,22 @@ Authored 2026-06-26 by the PI agent on the re-run after a HER2-low (IHC 1+) targ
 ### HTML
 
 - [Target validation paths](target_validation.md?v=9923877e) — per-feature biomarker-workup table with providers and references, sortable in-browser
-- [Recommendations table](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-recommendations.html?v=83b565ec) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
+- [Recommendations table](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-recommendations.html?v=2317fe90) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
 - [Preclinical recommendations](preclinical_recommendations.md?v=6e4babf2) — forward-looking horizon scan of earlier-than-clinical candidate drugs, compounds, and strategies, in a sortable in-browser table
-- [Preclinical recommendations (offline)](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-preclinical.html?v=de5f8378) — same preclinical horizon scan packaged as a self-contained HTML that opens offline
+- [Preclinical recommendations (offline)](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-preclinical.html?v=48e5791d) — same preclinical horizon scan packaged as a self-contained HTML that opens offline
 - [Access guide](accessibility.md?v=c675a486) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table
-- [Access guide (offline)](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-accessibility.html?v=4bcd4526) — same access-guide content packaged as a self-contained HTML that opens offline
-- [Master manuscripts table](manuscripts.md?v=4c89f134) — every paper considered — n, effect, variance, toxicities, in a sortable in-browser table
-- [Master manuscripts table (offline)](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-manuscripts.html?v=bb3a11c6) — same manuscripts inventory packaged as a self-contained HTML that opens offline
+- [Access guide (offline)](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-accessibility.html?v=804a9f27) — same access-guide content packaged as a self-contained HTML that opens offline
+- [Master manuscripts table](manuscripts.md?v=17d9c741) — every paper considered — n, effect, variance, toxicities, in a sortable in-browser table
+- [Master manuscripts table (offline)](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-manuscripts.html?v=74799d0b) — same manuscripts inventory packaged as a self-contained HTML that opens offline
 
 ### PDF
 
-- [Target validation paths](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-target-validation.pdf?v=7a9f3ba4) — diagnostic + biomarker workup that hardens the targetable-feature call
-- [Recommendations table](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-recommendations.pdf?v=57631e33) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
-- [Preclinical recommendations](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-preclinical.pdf?v=d6f1a1e8) — forward-looking horizon scan of earlier-than-clinical candidates, one deep section per candidate, in a print-friendly PDF
-- [Access guide](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-accessibility.pdf?v=38e69e61) — trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF
-- [Master manuscripts table](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-manuscripts.pdf?v=1483d570) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
-- [Patient/caregiver PDF](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-plain-language.pdf?v=81b64e34) — plain-language summary
+- [Target validation paths](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-target-validation.pdf?v=6cc80bcd) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Recommendations table](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-recommendations.pdf?v=ae16381a) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
+- [Preclinical recommendations](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-preclinical.pdf?v=579690fb) — forward-looking horizon scan of earlier-than-clinical candidates, one deep section per candidate, in a print-friendly PDF
+- [Access guide](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-accessibility.pdf?v=830b8581) — trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF
+- [Master manuscripts table](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-manuscripts.pdf?v=f7c47cac) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
+- [Patient/caregiver PDF](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq-plain-language.pdf?v=71845e13) — plain-language summary
 
 <!-- libby:downloads:end -->
 

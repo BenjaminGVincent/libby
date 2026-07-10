@@ -114,6 +114,13 @@ ONCOLOGY_ACRONYM_ALLOWLIST = frozenset({
     # MDS subtype / prognostic-score / assay acronyms + AML trial families
     "RCMD", "IPSS", "RARS", "RAEB", "LOD", "CNV", "VAF", "PYNNACLE",
     "CBX", "TCRM", "TCE", "CG", "TRD",
+    # Oncology trial-family acronyms surfaced by the re-run (avoid NAME,NAME false positives)
+    "MATAO", "PARAGON", "DENALI", "FALCON", "MOONRAY", "KONQUER", "PRIMROSE",
+    "PRIMAVERA", "REGOBONE", "CABONE", "ATHENA", "HERIZON", "FOENIX", "FIGHT",
+    "CLARIDHY", "ROAR", "KRYSTAL", "MOUNTAINEER", "REFOCUS", "VIOLETTE", "PETRA",
+    "PLASMAMATCH", "REDISCOVER", "MOUNTAINTAP", "SURVIVE", "MATRIX", "DRUP",
+    "PANTUMOR", "PANTUMOUR", "REFOCUS", "HERTHENA", "DELLPHI", "MERU", "FORTRAS",
+    "CROSSCHECK", "ALLOHA", "MOUNTAINTAP", "AUGMENT", "COMET", "PYNNACLE",
     "SIERRA", "ALLOHA", "AUGMENT",
     # PRAME / TCR / ImmTAC platform / mechanism
     "PRAME", "TCR", "TCER", "HLA",
