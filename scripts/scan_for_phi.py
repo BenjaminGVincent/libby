@@ -143,6 +143,7 @@ ONCOLOGY_ACRONYM_ALLOWLIST = frozenset({
     # Misc oncology / pharm
     "CAR", "ADC", "TKI", "DXD", "PROTAC", "IO", "IND", "BLA", "ORR",
     "PFS", "OS", "DCR", "DOR", "TTR", "PR", "CR", "SD", "PD", "NE",
+    "PK", "PKPD", "TEAE", "TRAE",
     "BICR", "IRC", "AE", "TRAE", "SAE", "DLT", "MTD", "RP2D",
     # Trial-stage / dose-finding shorthands + control-arm trial names in rendered tables
     "FIH", "RDE", "RDD", "MABEL", "MPACT", "MABEL",

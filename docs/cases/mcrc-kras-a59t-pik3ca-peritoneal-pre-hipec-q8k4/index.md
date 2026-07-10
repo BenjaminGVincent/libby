@@ -6,51 +6,40 @@
 
 ## Case output
 
-- [Target validation paths (PDF)](mcrc-kras-a59t-pik3ca-peritoneal-pre-hipec-q8k4-target-validation.pdf?v=a3e93fd8) — diagnostic + biomarker workup that hardens the targetable-feature call
-- [Recommendations table (HTML)](mcrc-kras-a59t-pik3ca-peritoneal-pre-hipec-q8k4-recommendations.html?v=9deeb66c) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
-- [Access guide (HTML)](accessibility.md?v=5c99e682) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, sortable in-browser
-- [Access guide (offline HTML)](mcrc-kras-a59t-pik3ca-peritoneal-pre-hipec-q8k4-accessibility.html?v=6133b7ca) — same access-guide content as the in-browser page, packaged as a self-contained HTML that opens offline
-- [Master manuscripts table (HTML)](manuscripts.md?v=d90da807) — every paper considered — n, effect, variance, toxicities, sortable in-browser
-- [Master manuscripts table (offline HTML)](mcrc-kras-a59t-pik3ca-peritoneal-pre-hipec-q8k4-manuscripts.html?v=a3a786ce) — same manuscripts inventory as the in-browser page, packaged as a self-contained HTML that opens offline
-- [Patient/caregiver PDF](mcrc-kras-a59t-pik3ca-peritoneal-pre-hipec-q8k4-plain-language.pdf?v=0010a141) — plain-language summary
+- [Target validation paths (PDF)](mcrc-kras-a59t-pik3ca-peritoneal-pre-hipec-q8k4-target-validation.pdf?v=dea5df47) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Recommendations table (HTML)](mcrc-kras-a59t-pik3ca-peritoneal-pre-hipec-q8k4-recommendations.html?v=fa5277de) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
+- [Access guide (HTML)](accessibility.md?v=0654cc79) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, sortable in-browser
+- [Access guide (offline HTML)](mcrc-kras-a59t-pik3ca-peritoneal-pre-hipec-q8k4-accessibility.html?v=b16c7a6b) — same access-guide content as the in-browser page, packaged as a self-contained HTML that opens offline
+- [Master manuscripts table (HTML)](manuscripts.md?v=191f024a) — every paper considered — n, effect, variance, toxicities, sortable in-browser
+- [Master manuscripts table (offline HTML)](mcrc-kras-a59t-pik3ca-peritoneal-pre-hipec-q8k4-manuscripts.html?v=b371677e) — same manuscripts inventory as the in-browser page, packaged as a self-contained HTML that opens offline
+- [Patient/caregiver PDF](mcrc-kras-a59t-pik3ca-peritoneal-pre-hipec-q8k4-plain-language.pdf?v=039a080a) — plain-language summary
 
 <!-- libby:case-output:end -->
 ## Research question
 
-In metastatic colon adenocarcinoma with KRAS A59T (atypical switch-II) plus PIK3CA M1043I in a 37-year-old on 1L FOLFIRI + bevacizumab with resected liver metastases and active peritoneal disease entering a planned CRS-HIPEC window, what interventions target the atypical RAS allele, the PI3K-alpha activation, and the peritoneal compartment, gated on comprehensive NGS confirmation (KRAS A59T VAF, full extended RAS, BRAF V600, ERBB2 amplification, PIK3CA M1043I clonality, TP53 R273 substitution), HER2 IHC/FISH per HERACLES, MMR IHC orthogonal to NGS-MSI, DPYD + UGT1A1 germline pharmacogenomics, and a Signatera baseline draw before surgery?
+In metastatic MSS colon adenocarcinoma with peritoneal carcinomatosis and resected liver metastases, on 1L FOLFIRI-bevacizumab and awaiting cytoreductive surgery plus HIPEC, what interventions could target the atypical KRAS A59T switch-II mutation and the PIK3CA M1043I kinase-domain alteration?
 
 ## Patient profile (scrubbed)
 
-- **Primary site / histology:** colon adenocarcinoma (histologic subtype not specified at intake)
-- **Stage:** IV — metastatic; liver metastases status post-resection, active peritoneal involvement
-- **Performance status:** ECOG 1 (assumed from current FOLFIRI tolerance; intake flagged for confirmation)
-- **Age band:** 30–39 (37)
-- **Sex:** not specified at intake — downstream sex-specific dosing or contraindications would need to be re-checked when known
-- **Biomarkers (intake state):**
-    - **KRAS A59T** mutated by tumor NGS — *ngs_pending* for VAF / clonality and full extended-RAS clearance; the dominant uncertainty axis on the case
-    - **PIK3CA M1043I** mutated by tumor NGS — *ngs_pending* for somatic vs germline + clonal-VAF confirmation; kinase-domain activating allele, ALASCCA Group A by exon-20 position
-    - **APC E1295** mutated by tumor NGS — *ngs_pending* for exact substitution (E1295* vs E1295fs vs missense) and second-allele status; mutation cluster region position
-    - **TP53 R273** hotspot — *ngs_pending* for exact substitution (R273H vs C vs L vs S vs P); gain-of-function alleles have distinct pharmacology
-    - **SMAD4 R361H** MH2-domain hotspot — *ngs_pending*; loss-of-function consistent with peritoneal-spread biology
-    - **20q11 amplification (BCL2L1 / TOP1 co-amplified)** — *ngs_pending* for segment boundary
-    - **MSI status:** MSS — *confirmed*
-    - **TMB:** low — *confirmed* (exact mut/Mb value and panel-definition needed for the ≥10 mut/Mb pembrolizumab label gate)
-    - **PD-L1:** negative — *confirmed* (IHC clone + CPS value needed for combination-trial stratification)
-    - **HER2 (ERBB2) amplification:** *not performed / not reported* — the single most-actionable target check not yet done
-    - **BRAF V600E:** *not explicitly reported* — must be excluded to scope BEACON and the encorafenib-cetuximab door
-    - **NRAS / HRAS:** *not explicitly reported* — full extended-RAS clearance is a parallel anti-EGFR gate
-    - **CMS / CDX2:** *not reported* — SMAD4 loss + peritoneal phenotype raises the prior for CMS4 (mesenchymal)
-    - **Germline hereditary cancer panel:** negative — confirmed; POLE / POLD1 proofreading-domain coverage worth verifying given the 37yo early-onset bracket
-- **Prior therapy:** liver metastasectomy; 1L FOLFIRI + bevacizumab in progress
-- **Current therapy:** FOLFIRI + bevacizumab; planned cytoreductive surgery + HIPEC after systemic-therapy completion
+- Age band 30-39; sex not specified at intake; ECOG 1 (assumed from FOLFIRI tolerance, to confirm).
+- Colon adenocarcinoma, stage IV: liver metastases status post-resection, active peritoneal involvement.
+- **KRAS A59T** — atypical switch-II activating mutation, non-G12/G13/Q61 (tumor NGS; VAF and co-mutation status pending confirmation).
+- **PIK3CA M1043I** — kinase-domain (exon 20) activating allele (pending somatic/clonal confirmation).
+- APC E1295, TP53 R273, SMAD4 R361H — additional drivers (pending exact-substitution resolution).
+- 20q11 amplification (BCL2L1 / TOP1 co-amplified).
+- **MSS**, **TMB-low**, **PD-L1-negative** (all confirmed).
+- Germline hereditary-cancer panel negative (confirmed).
+- HER2 (ERBB2), BRAF V600E, NRAS/HRAS: not yet reported.
+- Current therapy: FOLFIRI + bevacizumab; planned CRS + HIPEC after systemic completion.
+- Geography: US.
 
 ## Preferences
 
-- **Efficacy/toxicity weight:** 0.70 (moderate efficacy lean)
-- **Toxicity vetoes:** none
-- **Modality constraints:** none
-- **Free text:** *"Auto-mode intake: surface the full option space — standard of care, off-label rational combinations, clinical trials, and compassionate-use pathways. No modality vetoes and no hard toxicity vetoes beyond standard clinical reasonableness. Treat the planned cytoreductive-surgery-plus-HIPEC window as a sequencing constraint. Sex not specified at intake; downstream agents should flag if their recommendation depends on sex-specific dosing or contraindications. Primary tumor resection status not specified — flag as a gap. ECOG 1 is an assumption from current FOLFIRI tolerance and should be confirmed."*
-- **Trials preferred:** yes
+- Efficacy/toxicity weight: 0.70 (efficacy-leaning).
+- Toxicity vetoes: none declared.
+- Modality constraints: none.
+- Trial preference: **prefers trials** (surface named on-axis trials rather than generic categories).
+- Free text: auto-mode intake — surface the full option space (standard of care, off-label rational combinations, trials, compassionate use). Treat the CRS-HIPEC window as a sequencing constraint. Sex not specified (flag if a recommendation depends on it). Primary-tumor resection status not specified. ECOG 1 is an assumption to confirm.
 
 <!-- libby:target-validation:begin -->
 
@@ -199,572 +188,254 @@ Medium priority: exact APC codon-1295 variant type (E1295* nonsense vs E1295fs f
 
 ## Scope summary
 
-59 trials surfaced, 61 clinical-evidence rows, 39 preclinical rows, and 18 target-validation rows (7 essential `gates_intervention`: KRAS A59T VAF + RAS/BRAF panel, HER2 IHC/FISH, TP53 R273 substitution, MMR IHC orthogonal, TMB mut/Mb, PD-L1 clone + CPS, DPYD genotype; 4 high-priority: UGT1A1, 20q segment boundary, ctDNA MRD, CMS subtyping). The ranked list contains 14 rows spanning agreement scores from 1.0 (rank 1 shared workup; rank 2 FOLFIRI-bev backbone; rank 3 aspirin; rank 7 T-DXd HER2-conditional) down to -2.0 (three Hard-Rule-1 documented vetoes at ranks 11-14). All five personas converged on the rank-1 workup, the rank-2 backbone continuation, and the rank-3 aspirin adjunct. The critic vetoed the rank-8 RMC-6236 sponsor-inquiry route on evidence-quality grounds; the conservative and concensusite dissented on the rank-5 inavolisib 2L positioning and on the rank-10 anti-EGFR research-framework lane.
+The refreshed dossier holds 40 trials, 72 clinical-evidence rows, and a large preclinical set, spanning the pan-RAS / RAS(ON) programs, the mutant-selective PI3K-alpha field, MSS-CRC immunotherapy, the HER2 and BCL-xL landscapes, and the CRS-HIPEC sequencing literature. This ranking scopes to the four interventions that act on the patient's stated targetable features — the PIK3CA axis (aspirin, mutant-selective PI3K-alpha inhibition) and the MSS-peritoneal and KRAS A59T axes (botensilimab/balstilimab, codon-agnostic pan-RAS). Standard chemotherapy backbones, anti-EGFR-for-the-population, CRS-HIPEC itself, and HER2-directed therapy sit outside Libby's feature-targeting scope and belong to the treating team. Board agreement across the ranked recs runs from +0.60 (aspirin) down to -0.20 (pan-RAS). The spread: aspirin drew four endorsements and one rank-only dissent; botensilimab drew four endorsements and no dissent; the PI3K-alpha class drew broad but heavily cross-tumor-caveated support; and the pan-RAS class split the board, with the risktaker and advocate ranking it first and the conservative, critic, and concensusite all dissenting on evidence quality and guideline fit. No veto was issued anywhere.
 
 ## Cross-cutting caveat (read first)
 
-**The rank-1 workup is itself the load-bearing intervention. Seven essential diagnostic gates have to land before the rest of the ranking moves from biomarker-conditional to actionable.** The single comprehensive NGS send-out (FoundationOne CDx or equivalent) returns KRAS A59T VAF + clonality, full extended RAS, BRAF V600, ERBB2 amplification, PIK3CA M1043I clonality, TP53 R273 substitution, SMAD4, and the 20q segment boundaries; HERACLES-graded HER2 IHC/FISH covers the single most-actionable target check not yet done; MMR IHC orthogonal closes the ICI door definitively rather than presumptively; DPYD + UGT1A1 genotyping is mandated by the March 2024 FDA fluoropyrimidine label update; Signatera baseline before CRS gives the lead-time signal for peritoneal recurrence. None of this requires a new biopsy.
+**KRAS A59T is an atypical switch-II variant, and codon-agnostic trial eligibility is not A59T efficacy.** The single most load-bearing fact in this case is that A59T is a non-canonical RAS activator that no approved or investigational KRAS drug has ever been shown to work on. The codon-selective inhibitors (sotorasib, adagrasib for G12C; MRTX1133 for G12D) cannot engage it, and the pan-RAS / RAS(ON) programs reach it only by structural read-across: daraxonrasib binds a pocket outside the mutated codon groove, so A59T is a *plausible* extension of a mechanism validated on G12/G13/Q61 — not a demonstrated one. Every clinical readout for that class enrolled canonical codons, and the CRC-specific signal is a single-digit company-disclosed ORR.
 
-- **Sponsor confirmation on KRAS A59T eligibility is the single highest-yield phone call on the case.** RMC-6236 (RASolve-GI NCT06445062; medinfo@revmed.com / 1-844-2-REVMED), JAB-23E73 (NCT06973564, Jacobio; codon-agnostic by public protocol text and excludes prior KRAS-inhibitor exposure which the patient has none of), and S241656 (NCT05786924, Servier ERK inhibitor; codon-agnostic) are all gated by sponsor judgment on whether A59T qualifies under the protocol's RAS-mutant criterion. The flagship RMC-6236 monotherapy basket NCT05379985 restricts to codons 12/13/61 by published protocol text, so basket-level access is closed; the GI platform may or may not be open. Make the call before scheduling screening visits anywhere.
-
-- **PRODIGE 7 is the load-bearing surgical-evidence caveat the family needs to hear honestly.** CRS retains the OS spine (NCCN-endorsed mOS 30-40 mo in selected patients at experienced centers). Oxaliplatin HIPEC does not (PRODIGE 7 OS 41.7 vs 41.2 mo, HR ~1.00, with higher 60-day morbidity in the HIPEC arm). COLOPEC and PROPHYLOCHIP complete the negative trifecta. Mitomycin C HIPEC at a high-volume center is the lower-bad choice if HIPEC is performed at all (Van der Speeten's MMC peritoneal:plasma AUC ~20-25× pharmacokinetic argument carries even though no positive randomized OS readout exists for the MMC agent either). Surgeon volume drives 60-day morbidity more than perfusate choice.
-
-- **The bevacizumab peri-operative hold is non-negotiable.** 4-6 weeks pre-CRS and 4-6 weeks post-CRS, with documented wound closure before resumption. Skipping this is the single highest-yield way to harm the patient before any KRAS or PIK3CA question matters.
-
-- **HER2 amplification is the wildcard.** If the rank-1 HER2 IHC returns 3+ (or 2+ with FISH ratio ≥2.0), trastuzumab deruxtecan (DESTINY-CRC02 ORR ~38% including RAS-mutant per the 2024 pan-tumor accelerated approval) jumps the post-1L queue. MOUNTAINEER tucatinib + trastuzumab is RAS-WT-restricted by label and the A59T patient is closed out of that door even with HER2 amp; T-DXd is the RAS-allowed substitute. Prior probability of HER2 amp in mCRC is 3-5%; the test costs nothing relative to the upside.
-
-- **The TP53 R273 reactivator question is foreclosed.** Eprenetapopt's solid-tumor program is effectively closed after the Park 2022 ORR 8% phase 1b readout. Rezatapopt (PYNNACLE) is Y220C-binding-pocket-restricted by structural design AND requires KRAS wild-type — A59T fails both gates. The rank-1 NGS R273-substitution call still sharpens any future ATR / WEE1 / HSP90 synthetic-lethal trial discussion at recurrence, but there is no current drug accessible to this patient.
+- Read the pan-RAS rank (rank 4) as a mechanism bet and a sponsor-gated trial referral, not as therapy proven in this allele. "Any KRAS variant" on a protocol is an enrollment question that turns on a sponsor phone call; it is not evidence the drug suppresses A59T-driven signaling. The highest-leverage single action for the KRAS axis is that eligibility call, made once the confirmatory NGS locks the allele.
+- A59T reads as RAS-mutant under NCCN/ESMO, so routine anti-EGFR (cetuximab, panitumumab) stays off-label against a 5,948-patient meta-analytic null (Sorich HR 1.08). The Lochhead A59T panitumumab responder is a single case against that population signal — an individually-reviewed, low-probability door, not a recommendation. It is out of this feature-targeting ranking and named only so the treating team can weigh it deliberately.
+- The strongest genuine biomarker match is on the *other* driver: PIK3CA M1043I, through low-dose aspirin (ALASCCA, RoB-low phase 3, HR 0.49). It leads the ranking because it is the one place the evidence and the biomarker line up cleanly — with the honest caveat that ALASCCA studied resected disease, not active peritoneal metastasis.
+- **Sequencing constraint:** the patient is pre-HIPEC. The VEGF-axis agents in the pan-RAS combination arms (ivonescimab, cetuximab-containing regimens) and aspirin's bleeding risk both interact with the CRS-HIPEC wound-healing window; the immunotherapy and pan-RAS trial slots are 2L+ / post-operative, not day-one moves that displace the operative plan. CRS carries the OS signal in peritoneal CRC (PRODIGE 7); the oxaliplatin HIPEC component did not add OS and is a quality-of-evidence choice the surgical team owns.
 
 ## Intervention grouping
 
-- **PI3K-alpha-selective targeting PIK3CA M1043I:** inavolisib + bevacizumab on INTRINSIC ([NCT04929223](https://clinicaltrials.gov/study/NCT04929223), [PMID 39476340](https://pubmed.ncbi.nlm.nih.gov/39476340), [PMID 29401002](https://pubmed.ncbi.nlm.nih.gov/29401002)).
-- **PIK3CA-mutant adjuvant aspirin (ALASCCA-derived) targeting PIK3CA M1043I:** [PMID 40979555](https://pubmed.ncbi.nlm.nih.gov/40979555), [PMID 38889377](https://pubmed.ncbi.nlm.nih.gov/38889377), [PMID 23094721](https://pubmed.ncbi.nlm.nih.gov/23094721).
-- **Pan-RAS(ON) and ERK targeting KRAS A59T (atypical switch-II):** RMC-6236 on RASolve-GI ([NCT06445062](https://clinicaltrials.gov/study/NCT06445062), [PMID 38778097](https://pubmed.ncbi.nlm.nih.gov/38778097), [PMID 38778099](https://pubmed.ncbi.nlm.nih.gov/38778099)); JAB-23E73 ([NCT06973564](https://clinicaltrials.gov/study/NCT06973564)); S241656 ([NCT05786924](https://clinicaltrials.gov/study/NCT05786924)); Arena 2021 functional characterization [PMID 34031055](https://pubmed.ncbi.nlm.nih.gov/34031055).
-- **Fc-enhanced anti-CTLA-4 + PD-1 targeting MSS / peritoneal-dominant phenotype:** botensilimab + balstilimab USC NCT06336902, BATTMAN [NCT07152821](https://clinicaltrials.gov/study/NCT07152821), Agenus EAP [NCT06751524](https://clinicaltrials.gov/study/NCT06751524); Bullock 2024 [PMID 38871975](https://pubmed.ncbi.nlm.nih.gov/38871975).
-- **HER2-directed ADC targeting HER2 amplification (conditional):** trastuzumab deruxtecan DESTINY-CRC02 [NCT04744831](https://clinicaltrials.gov/study/NCT04744831), [PMID 39058319](https://pubmed.ncbi.nlm.nih.gov/39058319); HERACLES scoring [PMID 27108243](https://pubmed.ncbi.nlm.nih.gov/27108243).
-- **mCRC chemotherapy + anti-angiogenic backbones (SoC floor):** FOLFIRI + bev ([PMID 15175435](https://pubmed.ncbi.nlm.nih.gov/15175435), [PMID 17947725](https://pubmed.ncbi.nlm.nih.gov/17947725)); FOLFOXIRI + bev TRIBE / TRIBE2 ([PMID 25337750](https://pubmed.ncbi.nlm.nih.gov/25337750), [PMID 32007158](https://pubmed.ncbi.nlm.nih.gov/32007158)); CAIRO6 perioperative chemo + CRS-HIPEC [PMID 39550351](https://pubmed.ncbi.nlm.nih.gov/39550351); 2L+ aflibercept / ramucirumab / TAS-102+bev / fruquintinib / regorafenib bench.
-- **Peritoneal loco-regional control:** CRS at high-volume center per NCCN; HIPEC framed honestly per PRODIGE 7 ([PMID 33417845](https://pubmed.ncbi.nlm.nih.gov/33417845)) + COLOPEC ([PMID 31272834](https://pubmed.ncbi.nlm.nih.gov/31272834)) + PROPHYLOCHIP ([PMID 32717181](https://pubmed.ncbi.nlm.nih.gov/32717181)); EFFIPEC trial route [NCT04861558](https://clinicaltrials.gov/study/NCT04861558).
-- **Anti-EGFR research-framework lane (default avoid, not welded shut):** Sorich 2015 anti-EGFR meta-analysis [PMID 25115304](https://pubmed.ncbi.nlm.nih.gov/25115304); Schirripa 2015 [PMID 24806288](https://pubmed.ncbi.nlm.nih.gov/24806288); Arena 2021 functional [PMID 34031055](https://pubmed.ncbi.nlm.nih.gov/34031055); Lochhead 2018 single-patient PR [PMID 30538852](https://pubmed.ncbi.nlm.nih.gov/30538852); ASCEND-CRC platform NCT07318389.
+- **PIK3CA-directed low-dose aspirin** (ALASCCA [40961426](https://pubmed.ncbi.nlm.nih.gov/40961426), 80702 celecoxib [38889377](https://pubmed.ncbi.nlm.nih.gov/38889377), Liao [23094721](https://pubmed.ncbi.nlm.nih.gov/23094721)).
+- **MSS-CRC Fc-enhanced dual ICI** — botensilimab + balstilimab (Bullock [38871975](https://pubmed.ncbi.nlm.nih.gov/38871975); NCT07152821, NCT06336902, NCT05608044).
+- **Mutant-selective PI3K-alpha inhibition** (INAVO120 [39476340](https://pubmed.ncbi.nlm.nih.gov/39476340), alpelisib [29401002](https://pubmed.ncbi.nlm.nih.gov/29401002); NCT07383506, NCT05768139, NCT06993844, NCT04929223).
+- **Codon-agnostic pan-RAS / RAS(ON)** for KRAS A59T (daraxonrasib PDAC pivotal [42090791](https://pubmed.ncbi.nlm.nih.gov/42090791), discovery [40056080](https://pubmed.ncbi.nlm.nih.gov/40056080); NCT06447662, NCT06884618, NCT06973564, NCT07252479, NCT07397338).
 
-## Top interventions
+## Workup considerations
 
-### Rank 1. Diagnostic gates: comprehensive NGS + HER2 IHC/FISH + MMR IHC + TMB + PD-L1 + DPYD/UGT1A1 + Signatera baseline
+The confirmatory diagnostics are on the [Target validation paths](target_validation.md) report and are not ranked as therapeutic recs, but they gate this ranking and should run first. A single comprehensive tissue NGS send-out (FoundationOne CDx or equivalent) resolves the KRAS A59T VAF and clonality, full extended RAS/BRAF V600, ERBB2 amplification, and the somatic/clonal confirmation of PIK3CA M1043I that rank 1 and rank 3 both depend on — the target_validator flagged this as the essential gating row. On the same block: MMR IHC orthogonal to NGS-MSI (closes the ICI door definitively rather than presumptively), an explicit TMB mut/Mb value, and PD-L1 clone/CPS. DPYD and UGT1A1 germline genotyping are FDA- and NCCN-advised before further fluoropyrimidine/irinotecan exposure and should be documented ahead of the peri-operative window. HER2 IHC/FISH is worth chasing on the same block: if amplified, it opens options that lie outside this feature ranking but are decision-grade for the treating team. Germline POLE/POLD1 coverage is worth confirming given the early-onset presentation.
 
-*The rank-1 row is the precondition for everything below — workup, not therapy. None of it requires a new biopsy. All seven essential gates can run in parallel off the archival FFPE block plus a peripheral blood draw plus a pre-CRS Signatera tube.*
+## Rank 1. Low-dose aspirin 160 mg PO daily — PIK3CA-directed adjunct
 
-#### Evidence base
+*The strongest RoB-low biomarker match in the case: a cheap oral adjunct the patient's own PIK3CA biology argues for, layered onto whatever backbone runs.*
 
-Seven confirmatory tests, each anchored to a specific decision. **Comprehensive tumor NGS** (FoundationOne CDx, Tempus xT CDx, Caris MI Cancer Seek, or MSK-IMPACT — [PMID 30538852](https://pubmed.ncbi.nlm.nih.gov/30538852), [PMID 27959278](https://pubmed.ncbi.nlm.nih.gov/27959278), [PMID 34754095](https://pubmed.ncbi.nlm.nih.gov/34754095), NCCN Colon v1.2026) returns KRAS A59T VAF + clonality, full extended RAS (KRAS / NRAS / HRAS exons 2/3/4), BRAF V600, ERBB2 amplification, PIK3CA M1043I somatic call, TP53 R273 substitution, SMAD4 R361H, the 20q segment boundaries, and TMB in mut/Mb with panel-definition documented for the ≥10 mut/Mb tumor-agnostic pembrolizumab cutoff. **HER2 IHC/FISH per HERACLES scoring** (clone 4B5 or HercepTest with reflex dual-probe FISH — [PMID 39058319](https://pubmed.ncbi.nlm.nih.gov/39058319), [PMID 27108243](https://pubmed.ncbi.nlm.nih.gov/27108243)) is the most-actionable target check not yet done; MOUNTAINEER ORR 38.1% with 12.4 mo median DOR if positive ([NCT03043313](https://clinicaltrials.gov/study/NCT03043313)), and the T-DXd 2024 pan-tumor accelerated approval makes the call RAS-allele-agnostic at the label level. **MMR IHC orthogonal** (four-antibody MLH1 / MSH2 / MSH6 / PMS2 — [PMID 31416808](https://pubmed.ncbi.nlm.nih.gov/31416808)) closes the ICI door definitively rather than presumptively; the ~5% MSS-vs-MSI-H discordance rate is the reason this stays a real defensive call. **PD-L1 IHC with documented clone + CPS** ([PMID 30604034](https://pubmed.ncbi.nlm.nih.gov/30604034)) covers combination-trial stratification even when the headline value is negative. **DPYD genotyping** for the four CPIC variants and **UGT1A1 *6 / *28** ([PMID 40958923](https://pubmed.ncbi.nlm.nih.gov/40958923), [PMID 21570278](https://pubmed.ncbi.nlm.nih.gov/21570278), CPIC + March 2024 FDA fluoropyrimidine label update) close the pharmacogenomic safety gap before the next FOLFIRI cycle and any future capecitabine maintenance. **Signatera baseline + serial ctDNA** ([PMID 32576704](https://pubmed.ncbi.nlm.nih.gov/32576704), [PMID 34754095](https://pubmed.ncbi.nlm.nih.gov/34754095)) brackets the CRS-HIPEC window for the lead-time signal on peritoneal recurrence — Medicare-covered in stage II-IV CRC.
+### Evidence base
 
-#### Likelihood of desired effect
+ALASCCA (Frödin/Martling 2025, NEJM, n=626, [40961426](https://pubmed.ncbi.nlm.nih.gov/40961426)) randomized resected CRC carrying a PI3K-pathway alteration to aspirin 160 mg/day for three years. It met its primary endpoint: in Group A — PIK3CA exon 9/20, the stratum M1043I (exon 20, kinase-domain) maps into — 3-year time-to-recurrence hit HR 0.49 (95% CI 0.24-0.98), with 3-year recurrence 7.7% vs 14.1%. Group B (other PI3K-pathway alterations) ran HR 0.42. Direction holds in the pre-specified PIK3CA-activating subset of CALGB/SWOG 80702 (celecoxib DFS HR 0.56, OS HR 0.41; [38889377](https://pubmed.ncbi.nlm.nih.gov/38889377)) and in the Liao observational cohort (CRC-specific mortality HR 0.18; [23094721](https://pubmed.ncbi.nlm.nih.gov/23094721)) — three biomarker-stratified datasets, two of them randomized, over a coherent COX-2 / PGE2 / PI3K mechanism. The load-bearing limit: all three enrolled resected stage I-III disease, not stage IV with active peritoneal spread.
 
-Diagnostic certainty across seven dimensions. The result branching:
+### Likelihood of desired effect
 
-- **HER2 IHC 3+ or ISH ratio ≥2.0 (3-5% prior) → rank 7 T-DXd jumps the post-1L queue.**
-- **MMR IHC discordant dMMR (~5% prior) → reverses the entire ranking; single-agent pembrolizumab leaps to 1L consideration.**
-- **TMB on F1CDx ≥10 mut/Mb (low prior given intake "low" call) → tumor-agnostic pembrolizumab label unlocks at later lines.**
-- **PIK3CA M1043I confirmed somatic + clonal → rank 5 inavolisib trial slot enabled.**
-- **DPYD *2A / HapB3 / c.2846A>T carrier (3-5% prior) → FOLFIRI dose-rationalize for the remaining cycles per CPIC.**
-- **UGT1A1 *28/*28 (~10% prior in European-ancestry; *6/*28 in Asian-ancestry) → starting-dose reduction on irinotecan; impacts irinotecan HIPEC if elected.**
-- **Signatera positive at day 30-60 post-CRS → escalates the adjuvant-therapy duration conversation toward extended systemic exposure rather than observation.**
+Moderate as a recurrence-risk adjunct in the post-CRS window. The biomarker match to Group A is clean and the effect direction is replicated three ways, but the endpoint that cleared alpha was recurrence in resected patients, so the effect size does not transfer verbatim to active metastatic disease. The honest read is that the biology travels and the effect magnitude does not; treat this as a low-risk layer on the post-HIPEC adjuvant-equivalent state rather than a disease-controlling agent for the peritoneal compartment.
 
-#### Toxicity profile
+### Toxicity profile
 
-- Archival FFPE block release + EDTA peripheral blood draw + a pre-op Signatera tube
-- No patient-facing toxicity
-- The only operational risk is Signatera bespoke-build delay (4-6 weeks for the first sample); start the order before CRS scheduling
+- G3+ GI bleeding ~3% on the ALASCCA aspirin arm vs ~2% placebo; serious AEs ~5%, no discontinuation-driving excess.
+- Additive bleeding risk with concurrent bevacizumab and across the CRS-HIPEC operative window — the one real interaction.
+- No toxicity veto is triggered (preferences carry none), and the aspirin bleeding algorithm is decades-mapped.
 
-#### Counter-productive mechanisms / dissent
+### Counter-productive mechanisms / dissent
 
-Board endorsement was unanimous. The workup row carries no mechanism-level counter-productive vector.
+Four personas endorsed this and only the risktaker dissented — on rank, not on use. The risktaker's argument is that an efficacy-weighted patient (0.70) with a real KRAS driver should not have an adjuvant-setting adjunct at the top slot ahead of the first trials that act on the actual driver; that is an ordering objection, and the adjunct still earns a place. The critic and concensusite ranked it first on RoB2 grounds and the guideline-adoption flag respectively, and the conservative endorsed it as the do-no-harm biomarker-matched choice. There is no mechanism-level counter-productive vector — the COX-2/PI3K direction is supportive; the only care point is the bleeding-timing hold around bevacizumab and surgery.
 
-#### Practical considerations
+### Practical considerations
 
-Bundle the comprehensive NGS, HERACLES HER2 IHC + reflex FISH, MMR IHC, PD-L1 22C3 with CPS scoring, and the SMAD4 + 20q-segment requisitions on one block release to avoid multiple FFPE pulls. Order DPYD + UGT1A1 on a single pharmacogenomic blood draw at the next infusion visit. Initiate the Signatera bespoke build at the same time as the master NGS — the tumor-informed assay needs an FFPE block for the 16-variant WES design, and the baseline plasma draw has to land BEFORE CRS for the perioperative kinetic to stay interpretable. The PIK3CA M1043I clonality + somatic confirmation and the TP53 R273-substitution call (R273H vs R273C vs R273L vs R273S vs R273P) come off the same comprehensive NGS report — request the lab to explicitly call the substitution rather than abbreviating to a generic 'p.R273'.
+Oral, roughly five cents a dose, over-the-counter, no modality constraint. Hold peri-operatively per surgical protocol and reintroduce in the post-HIPEC maintenance window where the ALASCCA evidence actually lives. NCCN adopted the ALASCCA recommendation for resected stage II-III PIK3CA-mutant disease; for this stage IV patient the use is off-label by indication, which the whole board flagged plainly. Confirm M1043I is somatic and clonal on the pending NGS before leaning on the Group A read-across.
 
-#### Why this rank
+### Why this rank
 
-Rank 1 because seven downstream decisions hang from it (anti-EGFR eligibility, HER2-directed options, ICI doors, PIK3CA confirmation, fluoropyrimidine safety, post-CRS surveillance) and all five personas endorsed the workup without reservation. Ranks 2-9 are biomarker-conditional in narrow ways and the gates resolve in 2-3 weeks of turnaround.
+This is rank 1 over the higher-raw-agreement botensilimab because it is the one place in the case where a RoB-low randomized endpoint and the patient's biomarker line up, and because it is a do-no-harm adjunct that stacks on any backbone rather than competing for the primary-therapy slot. Botensilimab has a stronger raw agreement score but rests on single-arm subgroup data and carries a ~35% immune-toxicity envelope and a 2L+ timing gate; aspirin's clean phase-3 evidence and near-zero downside earn the top slot.
 
-#### Per-trial detail
-
-| Diagnostic gate | Decision unlocked | Provider | Reference |
-|---|---|---|---|
-| Comprehensive tumor NGS (FoundationOne CDx preferred) | KRAS A59T VAF + extended RAS + BRAF V600 + ERBB2 amp + PIK3CA M1043I clonality + TP53 R273 substitution + SMAD4 + 20q + TMB mut/Mb | Foundation Medicine — 1-888-988-3639 | [PMID 30538852](https://pubmed.ncbi.nlm.nih.gov/30538852) |
-| HER2 IHC (4B5 or HercepTest) + reflex dual-probe FISH per HERACLES | Tucatinib + trastuzumab (RAS-WT only, A59T-excluded) and T-DXd (RAS-allowed) | NeoGenomics — 1-866-776-5907 | [PMID 39058319](https://pubmed.ncbi.nlm.nih.gov/39058319) |
-| MMR IHC four-antibody panel | Orthogonal MSI-H vs MSS confirmation (~5% NGS-vs-IHC discordance) | NeoGenomics — 1-866-776-5907 | [PMID 31416808](https://pubmed.ncbi.nlm.nih.gov/31416808) |
-| DPYD 4-variant CPIC panel + UGT1A1 *6 / *28 | Fluoropyrimidine + irinotecan dose adjustment per CPIC + 2024 FDA label | Mayo Clinic Labs — 1-800-533-1710 | [PMID 40958923](https://pubmed.ncbi.nlm.nih.gov/40958923) |
-| Signatera tumor-informed bespoke ctDNA | Peri-CRS recurrence surveillance (Medicare-covered in stage II-IV CRC) | Natera — 1-650-249-9090 | [PMID 32576704](https://pubmed.ncbi.nlm.nih.gov/32576704) |
-
-### Rank 2. FOLFIRI + bevacizumab through the peri-operative window (FOLFOXIRI + bev intensification permitted)
-
-*The SoC backbone the patient is already tolerating, with the bev peri-op hold as the binding safety thread and FOLFOXIRI intensification as a permitted upgrade per TRIBE/TRIBE2.*
-
-#### Evidence base
-
-FOLFIRI + bev is NCCN category 1 for 1L mCRC. AVF2107g (Hurwitz 2004, [PMID 15175435](https://pubmed.ncbi.nlm.nih.gov/15175435)) anchored the IFL backbone at mOS 20.3 vs 15.6 mo, HR 0.66, p<0.001; BICC-C (Fuchs 2007, [PMID 17947725](https://pubmed.ncbi.nlm.nih.gov/17947725)) established FOLFIRI as the favored irinotecan schedule at mOS 23.1 mo; MAVERICC ([PMID 30224341](https://pubmed.ncbi.nlm.nih.gov/30224341)) supports FOLFIRI-bev = FOLFOX-bev in 1L. FOLFOXIRI + bev intensification is NCCN category 2A preferred for fit patients and ESMO MCBS 3: TRIBE (Loupakis 2014, [PMID 25337750](https://pubmed.ncbi.nlm.nih.gov/25337750), mPFS 12.1 vs 9.7 mo, HR 0.75) and TRIBE2 (Cremolini 2020, [PMID 32007158](https://pubmed.ncbi.nlm.nih.gov/32007158), mOS 27.4 vs 22.5 mo, HR 0.82) are the registrational anchors.
-
-#### Likelihood of desired effect
-
-High — replicated phase 3 OS signal across AVF2107g, BICC-C, MAVERICC, and TRIBE2 in a 37-year-old ECOG 1 patient who is exactly the TRIBE-eligible population. The realistic question is whether the team intensifies to triplet + bev before CRS-HIPEC or holds the regimen the patient is already tolerating; both are guideline-supported and the right framing is permitted preferred upgrade rather than mandatory switch.
-
-#### Toxicity profile
-
-- FOLFIRI: G3+ neutropenia ~25-30%, G3+ diarrhea ~14%; UGT1A1 *28/*28 carriers warrant dose reduction
-- Bevacizumab: wound-healing impairment in the peri-op window — 4-6 weeks pre-CRS and 4-6 weeks post-CRS, documented wound closure before resumption is the binding safety thread
-- FOLFOXIRI intensification: cumulative oxaliplatin neuropathy is rate-limiting for a 37yo with a long runway — bake OPTIMOX stop-and-go in if pursued
-- DPYD *2A / HapB3 carriers can compensate early and decompensate later on 5-FU; the rank-1 genotyping closes that surveillance gap
-
-#### Counter-productive mechanisms / dissent
-
-Board endorsement was unanimous on the rank. The single mechanism-flavored caveat is bevacizumab wound-healing impairment in the peri-op window, managed by the hold rather than by drug avoidance. No persona dissented on the backbone choice.
-
-#### Practical considerations
-
-Coordinate the systemic-to-surgical handoff so the last irinotecan dose lands at least 3 weeks before CRS to limit perioperative neutropenia. CAIRO6 ([NCT02758951](https://clinicaltrials.gov/study/NCT02758951)) is the perioperative-chemo + CRS-HIPEC protocol template even though new enrollment is closed; the team can mirror the schedule off-trial. If switching to FOLFOXIRI + bev, confirm oxaliplatin-naive status (the prior-therapy list shows FOLFIRI only) and lay in an OPTIMOX-style stop-and-go from the start. Pharmacy access is universal; no payer obstacles.
-
-#### Why this rank
-
-Rank 2 because no other intervention has comparable replicated OS signal and the patient is already tolerating it. Rank 3 (aspirin) sits below this on agreement-score grounds only because aspirin is a layered adjunct rather than a systemic backbone; rank 5 (inavolisib) and rank 6 (bot/bal) are sequenced for progression / 2L+ slots rather than 1L displacement.
-
-#### Per-trial detail
+### Per-trial detail
 
 | Therapeutic agent | Efficacy | Toxicity | Reference |
-|---|---|---|---|
-| FOLFIRI + bevacizumab (BICC-C / MAVERICC) | mOS 23.1 mo BICC-C; 1L category 1 | G3+ neutropenia 25-30%, G3+ diarrhea ~14%, bev wound-healing/perforation | [PMID 17947725](https://pubmed.ncbi.nlm.nih.gov/17947725), [PMID 30224341](https://pubmed.ncbi.nlm.nih.gov/30224341) |
-| FOLFOXIRI + bevacizumab (TRIBE / TRIBE2) | mPFS 12.1 vs 9.7 mo HR 0.75 (TRIBE); mOS 27.4 vs 22.5 mo HR 0.82 (TRIBE2) | G3+ neutropenia 50%, G3+ diarrhea 19%, cumulative oxaliplatin neuropathy | [PMID 25337750](https://pubmed.ncbi.nlm.nih.gov/25337750), [PMID 32007158](https://pubmed.ncbi.nlm.nih.gov/32007158) |
-| Bevacizumab + irinotecan / 5-FU (AVF2107g) | mOS 20.3 vs 15.6 mo, HR 0.66 | bev class AEs: hypertension, proteinuria, wound healing | [PMID 15175435](https://pubmed.ncbi.nlm.nih.gov/15175435) |
-| CAIRO6 (perioperative chemo + CRS-HIPEC) | PFS / DFS improved; OS unchanged in interim | Compounded chemo + surgical morbidity | [PMID 39550351](https://pubmed.ncbi.nlm.nih.gov/39550351), [NCT02758951](https://clinicaltrials.gov/study/NCT02758951) |
+| --- | --- | --- | --- |
+| Aspirin 160 mg/day (ALASCCA, resected PI3K-altered CRC) | TTR HR 0.49 (95% CI 0.24-0.98), Group A | G3+ GI bleed ~3% vs 2% | [40961426](https://pubmed.ncbi.nlm.nih.gov/40961426) |
+| Celecoxib (CALGB/SWOG 80702, PIK3CA-activating subset) | DFS HR 0.56; OS HR 0.41 | CV/GI class-typical | [38889377](https://pubmed.ncbi.nlm.nih.gov/38889377) |
+| Regular aspirin (Liao, NHS/HPFS PIK3CA-mut) | CRC-specific mortality HR 0.18 (0.06-0.61) | GI-bleed class-typical | [23094721](https://pubmed.ncbi.nlm.nih.gov/23094721) |
 
-### Rank 3. Low-dose aspirin 160 mg PO QD (PIK3CA-pathway-altered adjunct, ALASCCA-derived)
+## Rank 2. Botensilimab + balstilimab — MSS-CRC Fc-enhanced dual ICI
 
-*The only RoB2:Low phase 3 RCT in the dossier with a biomarker match to the patient. Cheap layered adjunct that stacks on top of whichever systemic backbone the team runs.*
+*The only immunotherapy with a signal at this patient's exact disease compartment; a 2L+ move gated by immune toxicity and the peri-operative window.*
 
-#### Evidence base
+### Evidence base
 
-ALASCCA (Frödin / Martling 2025 NEJM, [PMID 40979555](https://pubmed.ncbi.nlm.nih.gov/40979555), n=626) randomized resected stage I-III rectal or stage II-III colon cancer with somatic PI3K-pathway alteration to aspirin 160 mg daily for 3 years vs placebo. Group A (PIK3CA exon 9/20 mutated, M1043I qualifies via exon 20 kinase-domain position): 3-year time-to-recurrence HR 0.49 (95% CI 0.24-0.98, p=0.044). Group B (other PI3K-pathway alterations): HR 0.42 (95% CI 0.21-0.83, p=0.013). Direction is independently supported by Liao 2012 NHS/HPFS observational signal ([PMID 23094721](https://pubmed.ncbi.nlm.nih.gov/23094721), HR 0.18 CRC-specific mortality in PIK3CA-mut, n=964) and the CALGB/SWOG 80702 celecoxib PIK3CA-activating subset (Yang/Meyerhardt 2024, [PMID 38889377](https://pubmed.ncbi.nlm.nih.gov/38889377), DFS HR 0.56 (95% CI 0.35-0.88), OS HR 0.41 (95% CI 0.21-0.79)). Three concordant biomarker-stratified datasets, two RCT-grade; COX-2 / PGE2 / PI3K mechanism coherent.
+Bullock 2024 (Nat Med, n=101, [38871975](https://pubmed.ncbi.nlm.nih.gov/38871975)) treated relapsed/refractory MSS mCRC with Fc-enhanced anti-CTLA-4 (botensilimab) plus anti-PD-1 (balstilimab). All-comer confirmed ORR was 17% (95% CI 10-26), but the no-liver-metastasis subset — this patient's phenotype after liver-met resection — reached ORR 22% with mOS 20.9 months, against 5% ORR when liver mets were active. The randomized phase-2 update (n=123 NLM, combination vs monotherapy) held the combination at ORR 19% and specifically reported confirmed responses at peritoneal sites, the patient's dominant compartment. This is the strongest MSS-CRC immunotherapy signal of the modern era, and it is single-arm phase 1b plus a phase 2 whose comparator is monotherapy, not BSC. The NLM subset was carved out as the responder phenotype, and the peritoneal-site and 22% ORR figures are subgroup numbers without CIs in the dossier.
 
-#### Likelihood of desired effect
+### Likelihood of desired effect
 
-Moderate. The mechanism direction is the cleanest in the dossier and three independent biomarker-stratified studies agree on it. The honest qualifier the whole board co-signed: ALASCCA enrolled resected stage I-III, not stage IV with active peritoneal disease. The post-CRS-HIPEC state is adjuvant-equivalent and the class safety profile transfers, but the metastatic-setting efficacy claim is biology-driven extrapolation rather than endpoint-validated. The Group A 95% CI upper bound at 0.98 also means magnitude is fragile even within the adjuvant indication; direction is robust.
+Moderate in the NLM/peritoneal subset, framed against a normally ICI-cold background. MSS/TMB-low/PD-L1-negative usually closes the immunotherapy conversation; the Fc-enhanced CTLA-4 construct is the one exception with a real MSS signal, and the anatomic match here (post-liver-resection, peritoneal-dominant) is exactly where that signal lives. The caveat that keeps expectations honest: the numbers are subgroup-level from a post-hoc responder carve-out, and the confirmatory CCTG phase 3 against BSC (NCT07152821) has not read out.
 
-#### Toxicity profile
+### Toxicity profile
 
-- G3+ GI bleeding ~3% on the ALASCCA aspirin arm vs ~2% placebo
-- Compounded bleeding risk with bevacizumab co-administration is real; coordinate aspirin hold with the bev cycle
-- Peri-operative hold 5-7 days pre-CRS, resume post-op once surgical hemostasis allows
-- No user toxicity vetoes apply
+- G3+ immune-mediated diarrhea/colitis 12-13%; G3+ hepatitis/transaminitis ~8%.
+- Overall G3+ irAE ~35-38%, with characteristic pyrexia/cytokine-release; no treatment-related deaths across the reported cohorts (0/101).
+- The irAE set has a codified steroid/infliximab management algorithm, but the envelope is real in a patient also heading into major cytoreductive surgery — immune toxicity that overlaps the peri-operative window is the specific concern.
 
-#### Counter-productive mechanisms / dissent
+### Counter-productive mechanisms / dissent
 
-Board endorsement was unanimous. The critic flagged the indication gap (adjuvant vs metastatic) honestly; the concensusite noted NCCN v4.2025 adopted the recommendation despite the same Group A CI fragility, treating it as collective expert calibration of the evidence rather than a separate problem. No mechanism-level counter-productive vector.
+No persona dissented or vetoed. The risktaker, conservative, critic, and advocate all ranked it; the conservative's round-2 critique explicitly endorsed the critic's placement and put the toxicity on the record. The mechanism-level risk is not antigen escape or T-cell exhaustion here — it is that Fc-enhanced CTLA-4 colitis/hepatitis could delay or complicate the planned CRS if the timing overlaps, which is why the board positioned this as a 2L+ / post-operative pivot rather than a current move.
 
-#### Practical considerations
+### Practical considerations
 
-OTC product, ~$0.05/pill at any pharmacy, no payer involvement. NCCN Colon Cancer v4.2025 adopted the ALASCCA recommendation: consider PIK3CA testing in stage II-III colon cancer and offer low-dose aspirin 100-162 mg PO daily for 3 years in PIK3CA-mutated patients. Discuss baseline GI history and any reflux or NSAID intolerance; consider PPI co-administration. Document the peri-operative hold plan explicitly with the CRS-HIPEC surgical team.
+IV, no modality constraint. Every biomarker-eligible protocol requires prior fluoropyrimidine/oxaliplatin/irinotecan progression, so realistic entry is after FOLFIRI-bev progresses or in the post-HIPEC setting — the USC any-KRAS protocol (NCT06336902) additionally requires prior oxaliplatin the current regimen does not include, and adds a fasting-mimicking-diet / IV-vitamin-C arm whose burden should surface at consent. The plain Agenus bot/bal protocol (NCT05608044) and the expanded-access route (NCT06751524) are lower-burden channels. Enroll only at a center running a standing irAE algorithm with baseline hepatic/endocrine monitoring. Investigational — no NCCN category yet; CCTG NCT07152821 vs BSC is the confirmatory step.
 
-#### Why this rank
+### Why this rank
 
-Rank 3 because aspirin is a layered adjunct that stacks on top of the systemic backbone rather than competing for the lead slot — it does not substitute for systemic targeted therapy and the rank-1 + rank-2 picks own the precondition + the chemotherapy floor. Above the rank-4 CRS-HIPEC row because the evidence quality (phase 3 RCT with biomarker match) is higher than the surgical row's negative-randomized-HIPEC component, even though the surgical question carries higher decision urgency.
+Botensilimab carries the higher raw agreement (four endorsements, no dissent) but sits below aspirin because its evidence is single-arm and subgroup-level where aspirin's is a RoB-low randomized endpoint, and because its toxicity and 2L+ timing make it a later move rather than a do-no-harm layer. It sits above the PI3K-alpha and pan-RAS ranks because its signal is compartment-matched and directly observed in this patient's disease sites, where those two rest on cross-tumor extrapolation and structural read-across respectively.
 
-#### Per-trial detail
+### Per-trial detail
 
 | Therapeutic agent | Efficacy | Toxicity | Reference |
-|---|---|---|---|
-| Aspirin 160 mg QD (ALASCCA) | PIK3CA exon 9/20 (Group A): 3-yr TTR HR 0.49 (95% CI 0.24-0.98); Group B (other PI3K-path): HR 0.42 (0.21-0.83) | G3+ GI bleeding ~3% vs ~2% placebo | [PMID 40979555](https://pubmed.ncbi.nlm.nih.gov/40979555) |
-| Celecoxib (CALGB/SWOG 80702 PIK3CA subset) | DFS HR 0.56 (0.35-0.88); OS HR 0.41 (0.21-0.79) in PIK3CA-activated subset | COX-2 class AEs; CV risk | [PMID 38889377](https://pubmed.ncbi.nlm.nih.gov/38889377) |
-| Aspirin observational (Liao 2012 NHS/HPFS) | CRC-specific mortality HR 0.18 (0.06-0.61) in PIK3CA-mut | Observational; baseline GI bleed | [PMID 23094721](https://pubmed.ncbi.nlm.nih.gov/23094721) |
+| --- | --- | --- | --- |
+| Botensilimab + balstilimab (r/r MSS mCRC, phase 1b) | ORR 17% all-comer; 22% NLM subset, mOS 20.9 mo | G3+ irAE ~35%; colitis 12%, hepatitis 8% | [38871975](https://pubmed.ncbi.nlm.nih.gov/38871975) |
+| Botensilimab + balstilimab (MSS NLM, phase 2 vs BSC) | Confirmatory OS endpoint, not yet read out | — | [NCT07152821](https://clinicaltrials.gov/study/NCT07152821) |
+| Botensilimab + balstilimab (MSS + any KRAS, USC phase 1) | A59T eligible on protocol text; ORR endpoint | Adds FMD + IV vitamin C arm burden | [NCT06336902](https://clinicaltrials.gov/study/NCT06336902) |
 
-### Rank 4. CRS at a high-volume center; mitomycin C HIPEC if elected (PRODIGE 7 framing)
+## Rank 3. Mutant-selective PI3K-alpha inhibition — CGT6297 (CRC + PIK3CA cohort)
 
-*The surgical autonomy lane. CRS retains the OS signal per NCCN; HIPEC does not under the randomized-evidence read.*
+*The one trial naming a CRC-and-PIK3CA cohort, aimed at the patient's kinase-domain allele; efficacy rests on cross-tumor abstract-tier data.*
 
-#### Evidence base
+### Evidence base
 
-NCCN Colon Cancer v1.2026 endorses cytoreductive surgery at category 2A for selected patients with limited resectable peritoneal disease (PCI < 20) at experienced centers. The HIPEC question is unsettled by randomized OS data. PRODIGE 7 (Quenet 2021 Lancet Oncol, [PMID 33417845](https://pubmed.ncbi.nlm.nih.gov/33417845), n=265, RoB2:Low): oxaliplatin HIPEC vs no HIPEC after CRS — OS 41.7 vs 41.2 mo, HR ~1.00, RFS 13.1 vs 11.1 mo, with higher 60-day morbidity in the HIPEC arm. COLOPEC (Klaver 2019, [PMID 31272834](https://pubmed.ncbi.nlm.nih.gov/31272834)) and PROPHYLOCHIP-PRODIGE 15 (Goere 2020, [PMID 32717181](https://pubmed.ncbi.nlm.nih.gov/32717181)) complete the negative trifecta. Mitomycin C HIPEC was not the agent PRODIGE 7 eliminated; Van der Speeten ([PMID 20689948](https://pubmed.ncbi.nlm.nih.gov/20689948)) gives MMC a peritoneal:plasma AUC of ~20-25× — the pharmacokinetic argument PRODIGE 7 did not test, though no positive randomized OS signal exists for MMC either. CAIRO6 (Rovers 2024, [PMID 39550351](https://pubmed.ncbi.nlm.nih.gov/39550351)) supports the perioperative-chemo + CRS-HIPEC structure for PFS even where OS is unchanged.
+CGT6297 (NCT07383506) is the cleanest PIK3CA-and-CRC match on the board: its phase-1b Cohort 3 names PIK3CA-mutant colorectal cancer by protocol text, and M1043I is a kinase-domain activating allele that fits the oncogenic-mutation gate. The efficacy base for the class is entirely cross-tumor. The RCT-grade anchor, INAVO120 (Jhaveri 2024, NEJM, [39476340](https://pubmed.ncbi.nlm.nih.gov/39476340)), gave PFS HR 0.43 (95% CI 0.32-0.59) — in HR+/HER2- breast cancer. The mutant-selective agents behind CGT6297 report kinase-domain-PIK3CA activity in breast/gyn conference abstracts (RLY-2608 ORR 66.7%, 95% CI 38.4-88.2; tersolisib/STX-478 21% all-comer). The only CRC readout anywhere is 2 PRs in the CRC subset of alpelisib's first-in-human n=134 (~6% ORR; Juric 2018, [29401002](https://pubmed.ncbi.nlm.nih.gov/29401002)). No PI3K-alpha agent has RCT-grade CRC efficacy.
 
-#### Likelihood of desired effect
+### Likelihood of desired effect
 
-Moderate for CRS (NCCN-endorsed selected-patient mOS 30-40 mo). Low for the HIPEC component specifically — the only randomized OS readout in CRC peritoneal disease is negative for the oxaliplatin agent, and the mitomycin C lane has no positive randomized OS signal either. The right framing for the family conversation is that the survival math runs through the cytoreduction, not the perfusate.
+Low-to-moderate for CRC, with a predictive hedge that has to be carried explicitly. The kinase-domain-PIK3CA cross-tumor signal is genuine, but M1043I is a recurrent non-canonical allele, and predictive confidence for it is lower than for the canonical H1047R/E545K hotspots the class was built and tested on — a low-positive predictor read, not a high-confidence one. A negative or subclonal M1043I call on the pending NGS weakens the gate. And KRAS A59T co-activation historically blunts single-agent PI3K-alpha response in CRC, so the realistic best case is activity in combination or in the wild-type-sparing generation, not proven monotherapy benefit.
 
-#### Toxicity profile
+### Toxicity profile
 
-- 60-day G3+ morbidity 25-40% at high-volume centers, higher at lower-volume
-- Treatment-related mortality 1-3% at high-volume centers
-- Surgeon volume drives morbidity more than HIPEC agent choice
-- Bleeding, anastomotic leak, infection, prolonged ileus; recovery delays systemic therapy 4-8 weeks
-- **Oxaliplatin HIPEC**: PRODIGE 7 added 60-day morbidity without OS benefit; closed for CRC at the agent level
+- Class hyperglycemia is the signal: G3+ ~20% on alpelisib ([29401002](https://pubmed.ncbi.nlm.nih.gov/29401002)), ~6% on inavolisib, and near-zero on the wild-type-sparing mutant-selective agents (tersolisib reported no G3+ hyperglycemia/rash/mucositis/diarrhea at MTD in abstract data).
+- Stomatitis, rash, diarrhea — all attenuated in the mutant-selective generation relative to alpelisib.
+- Hyperglycemia management overlaps poorly with the peri-operative window; baseline fasting glucose and HbA1c with a metformin pathway ready before start.
 
-#### Counter-productive mechanisms / dissent
+### Counter-productive mechanisms / dissent
 
-The critic dissented honestly. The strict-evidence read is that no randomized OS signal exists for mitomycin C HIPEC either, and the negative trifecta closes the HIPEC OS claim at the class level. Four-of-five endorsement on the surgical row depends on the user's free-text framing ("treat the planned CRS-HIPEC window as a sequencing constraint") and the explicit honoring of patient autonomy with the treating surgical team. The risktaker qualified rather than vetoed because the Van der Speeten MMC pharmacokinetic argument was about mitomycin C, not oxaliplatin. The synthesis: CRS = survival spine; HIPEC = patient-autonomy + surgeon-judgment call with the family hearing the PRODIGE 7 result plainly.
+No veto and no formal dissent, but the endorsement is heavily qualified. The advocate and risktaker ranked the mutant-selective class high on the strength of the CRC-cohort protocol fit; the conservative carried inavolisib+INTRINSIC as the characterized vehicle with the mutant-selective agents flagged as better-tolerated alternatives; the critic ranked the class rank 3 at low confidence, naming the cross-tumor extrapolation as the binding limit. The mechanism-level counter-productive risk is the A59T co-activation route: parallel MAPK signaling can bypass PI3K-alpha blockade and blunt a single-agent response, which is the argument for vertical combination and the reason monotherapy expectations should stay modest.
 
-#### Practical considerations
+### Practical considerations
 
-Confirm the CRS-HIPEC center is high-volume (>20 cases/yr). Major US peritoneal-surface-malignancy centers include MSK, MD Anderson, Mayo (Rochester, Phoenix, Jacksonville), City of Hope, Wake Forest, UPMC (Pittsburgh Sugarbaker network), Cleveland Clinic, Moffitt. Document PCI and CC-0/CC-1 cytoreduction probability at the surgical consult. Bracket with Signatera (rank-1 row): baseline pre-op, day 30-60 post-op, then every 8-12 weeks. Hold bevacizumab 4-6 weeks pre-op and resume 4-6 weeks post-op once the wound is healed. Mitomycin C HIPEC is the post-PRODIGE 7 default at most US centers. Trial routes: EFFIPEC ([NCT04861558](https://clinicaltrials.gov/study/NCT04861558)) is Sweden + India only (not US-accessible); University of Kentucky flat-dose vs weight-based MMC dosing trial ([NCT04779554](https://clinicaltrials.gov/study/NCT04779554), Prakash Pandalai, 859-323-8920) is US-accessible; Yale MRT-guided HIPEC selection ([NCT07291180](https://clinicaltrials.gov/study/NCT07291180)) personalizes the agent choice on resected tissue.
+Oral, prefers-trials satisfied by a named CRC-and-PIK3CA slot rather than a breast read-across. Confirm Cohort 3 is open and accruing before counting on it; tersolisib (NCT05768139) and ETX-636 (NCT06993844) take activating PIK3CA across solid tumors if it is closed, and inavolisib+bevacizumab on INTRINSIC (NCT04929223) is the characterized-safety fallback with bevacizumab continuation that aligns with the current 1L. Document diabetes status and prior PI3K/AKT/mTOR exposure (both exclusion axes) at screening. Investigational/off-label — inavolisib is approved only in HR+/HER2- breast.
 
-#### Why this rank
+### Why this rank
 
-Rank 4 because the CRS half is OS-validated and the patient already has surgery planned, but the HIPEC component drops the row below the rank-3 aspirin adjunct on evidence quality. Above rank 5 (inavolisib) and rank 6 (bot/bal) because the surgical window is now-or-never for a peritoneal-dominant patient with resected liver mets; the trial slots wait, the operative window does not.
+This sits below botensilimab because botensilimab's signal is directly observed in the patient's disease compartment while the entire PI3K-alpha efficacy base is cross-tumor and abstract-tier, and because the M1043I predictive hedge and A59T-driven bypass risk lower the expected yield. It sits above the pan-RAS rank because it drew broad endorsement with no dissent and has a named CRC cohort, where pan-RAS split the board three-to-two on dissent and reaches its target only by structural read-across.
 
-#### Per-trial detail
+### Per-trial detail
 
 | Therapeutic agent | Efficacy | Toxicity | Reference |
-|---|---|---|---|
-| CRS + oxaliplatin HIPEC (PRODIGE 7) | OS 41.7 vs 41.2 mo (CRS alone), HR ~1.00; RFS 13.1 vs 11.1 mo | 60-day morbidity ~25-40% G3+; higher than CRS-alone arm | [PMID 33417845](https://pubmed.ncbi.nlm.nih.gov/33417845) |
-| Adjuvant oxaliplatin HIPEC T4/perforated (COLOPEC) | 18-mo peritoneal DFS 80.9 vs 76.2%, NS | Compounded surgical + chemo AEs | [PMID 31272834](https://pubmed.ncbi.nlm.nih.gov/31272834) |
-| Second-look + HIPEC (PROPHYLOCHIP) | 3-yr DFS 44 vs 53%, HR 0.97, p=0.82 | Compounded surgical morbidity | [PMID 32717181](https://pubmed.ncbi.nlm.nih.gov/32717181) |
-| Perioperative chemo + CRS-HIPEC (CAIRO6) | PFS / DFS improved; OS unchanged | Compounded chemo + surgical AEs | [PMID 39550351](https://pubmed.ncbi.nlm.nih.gov/39550351) |
-| Flat-dose vs weight-based MMC HIPEC ([NCT04779554](https://clinicaltrials.gov/study/NCT04779554)) | PK + clearance endpoint | Mitomycin C myelosuppression | University of Kentucky / Pandalai |
+| --- | --- | --- | --- |
+| CGT6297 (mutant-selective PI3Kα, CRC+PIK3CA cohort) | Eligibility fit; no CRC efficacy readout yet | Hyperglycemia (wild-type-sparing design) | [NCT07383506](https://clinicaltrials.gov/study/NCT07383506) |
+| Inavolisib + palbociclib + fulvestrant (INAVO120, breast) | PFS HR 0.43 (0.32-0.59); mPFS 15.0 vs 7.3 mo | G3+ hyperglycemia 5.6%, stomatitis 5.6% | [39476340](https://pubmed.ncbi.nlm.nih.gov/39476340) |
+| Alpelisib (first-in-human, PIK3CA-altered solid tumors) | 2 PRs in CRC subset of n=134 (~6% ORR) | G3+ hyperglycemia ~20%, rash ~10% | [29401002](https://pubmed.ncbi.nlm.nih.gov/29401002) |
+| Tersolisib / STX-478 (mutant-selective PI3Kα, solid tumors) | 21% all-comer ORR (breast/gyn); no CRC break-out | No G3+ hyperglycemia/rash/mucositis at MTD | [NCT05768139](https://clinicaltrials.gov/study/NCT05768139) |
 
-### Rank 5. Inavolisib + bevacizumab on INTRINSIC (NCT04929223)
+## Rank 4. Codon-agnostic pan-RAS / RAS(ON) inhibition — KRAS A59T
 
-*Conditional on PIK3CA M1043I somatic + clonal confirmation from the rank-1 NGS. Sequenced at progression past FOLFIRI-bev or post-CRS-HIPEC, not 1L displacement.*
+*The only option reaching the patient's actual KRAS driver, on eligibility text and structural read-across with zero allele-matched efficacy; a sponsor-gated trial referral.*
 
-#### Evidence base
+### Evidence base
 
-INAVO120 (Jhaveri 2024 NEJM, [PMID 39476340](https://pubmed.ncbi.nlm.nih.gov/39476340), n=325, RoB2:Low) in HR+/HER2- PIK3CA-mutant breast: PFS HR 0.43 (95% CI 0.32-0.59), mPFS 15.0 vs 7.3 mo — the registrational anchor that drove the Oct 2024 FDA breast approval. INTRINSIC ([NCT04929223](https://clinicaltrials.gov/study/NCT04929223)) is the Roche-Genentech umbrella mCRC platform with multiple biomarker-defined arms; the PIK3CA-mut arm routes inavolisib + bev directly. CRC fallback is Juric 2018 alpelisib phase 1a ([PMID 29401002](https://pubmed.ncbi.nlm.nih.gov/29401002)): 2 PRs across the n=134 CRC subset of a PI3K-altered solid-tumor basket — anecdote-grade. Vasan 2019 ([PMID 31699932](https://pubmed.ncbi.nlm.nih.gov/31699932)) tagged M1043 as a kinase-domain activating allele sensitizing to PI3K-alpha-selective inhibition.
+RAS(ON) tri-complex inhibitors bind GTP-loaded RAS at a CypA-SWI/SWII composite pocket, leaving the G12/G13/Q61 groove unoccupied — the structural basis (Knox 2025, [40056080](https://pubmed.ncbi.nlm.nih.gov/40056080)) for reaching a switch-II A59T that codon-selective drugs cannot. Knox tested wild-type plus G12/G13/Q61; A59T was not among them. The peer-reviewed pivotal readout, Wolpin 2026 (NEJM, [42090791](https://pubmed.ncbi.nlm.nih.gov/42090791)), is RAS-mutant PDAC on codons 12/13/61: 2L RAS-G12 ORR 35% (95% CI 17-56, n=26), G12/G13/Q61 ORR 29%. The CRC-specific signal is a Revolution Medicines corporate update (30-Sep-2024 cutoff) at monotherapy ORR ~9% with no disclosed N and no CI — described here as trial/company-disclosed context with no minted identifier, because none exists. The newly-surfaced codon-agnostic baskets read "any KRAS variant" (Pfizer PF-07934040, NCT06447662) or "documented RAS mutation" (Roche RO7673396, Jacobio JAB-23E73, Adlai AN9025, RevMed RAS(ON)+ivonescimab), so A59T clears the biomarker gate on protocol text — pending sponsor interpretation. No trial has dosed an A59T patient.
 
-#### Likelihood of desired effect
+### Likelihood of desired effect
 
-Moderate assuming M1043I confirms somatic + clonal. The cross-tumor breast PFS HR 0.43 is the strongest cross-tumor anchor in the case, but the CRC efficacy translation is hypothesis-grade: Juric 2018's 2 PRs / 134 CRC subset and an unpublished INTRINSIC arm-specific readout are the available data. M1043I is also non-canonical relative to the H1047R / E545K / E542K hotspots INAVO120 powered on. The realistic upside is depth-of-response augmentation and PFS extension, not a single-agent home run; KRAS A59T co-activation may blunt single-pathway PI3K-alpha response by routing escape through RAS-MAPK signaling.
+Low and formally unquantified for A59T. There is no allele-matched data point anywhere; the estimate is extrapolated from a PDAC canonical-codon ORR of 35% and a structural argument that A59T was never tested against. The CRC monotherapy signal in the class runs at single digits even on canonical codons, which tempers any pan-RAS-in-CRC expectation before the allele mismatch is even factored in. Framed honestly, this is a mechanism bet on a plausible but unproven extension, and it should be presented to the patient as such — not as a therapy shown to work on their mutation.
 
-#### Toxicity profile
+### Toxicity profile
 
-- Any-grade hyperglycemia 58.6%, G3+ hyperglycemia 5.6% — fasting glucose + HbA1c baseline; preemptive metformin / SGLT2-inhibitor plan if HbA1c ≥7%
-- G3+ stomatitis 5.6%, G3+ diarrhea 3.7%
-- Treatment discontinuation rate 6.5%
-- Bevacizumab continuation tracks the patient's current regimen; peri-op hold logic from rank 2 applies
+- Daraxonrasib monotherapy G3+ treatment-related AEs ~30% in the PDAC dataset (rash, stomatitis/mucositis, diarrhea, plus nausea/vomiting/fatigue; [42090791](https://pubmed.ncbi.nlm.nih.gov/42090791)).
+- The RAS(ON)+ivonescimab (PD-1/VEGF bispecific) and cetuximab-containing combination arms stack overlapping GI, rash, and hepatic toxicity with no CRC combination-toxicity dataset to bound the envelope.
+- The VEGF-axis agent in the combination arms is the specific interaction that argues for holding this class until the CRS-HIPEC wound-healing window has passed.
 
-#### Counter-productive mechanisms / dissent
+### Counter-productive mechanisms / dissent
 
-Three personas dissented for separate but coherent reasons. The conservative reserved for 2L on cross-tumor evidence grounds (INAVO120 is breast; CRC efficacy lives in 2 PRs from a phase 1a basket). The critic dissented on cross-tumor extrapolation generally and on M1043I non-canonical positioning specifically. The concensusite dissented on guideline-fit (1L displacement of category-1 chemo+bev backbone is outside NCCN endorsement). Synthesis: position as INTRINSIC trial enrollment at progression past FOLFIRI-bev or post-CRS-HIPEC, with the cross-tumor caveat carried forward in the consent conversation. The trial slot is real and the mechanism match is the cleanest PIK3CA play in the dossier; the off-label use case outside a trial is not.
+This rank split the board. The risktaker and advocate ranked the class first, reading the codon-agnostic baskets as A59T's first real trial door and flagging the sponsor eligibility call as the highest-leverage action. The conservative, critic, and concensusite all dissented, and the reasons are distinct and durable: the conservative on evidence quality (a #1 rank built on structural read-across across a switch-II allele belongs below the characterized options) and on toxicity (the combination arms are uncharacterized in CRC, and the VEGF agent argues for a hold); the critic on evidence quality (the row carrying A59T is a discovery paper that did not test A59T, and the only efficacy is PDAC on canonical codons); the concensusite on guideline fit (NCCN endorses trial enrollment as a pathway at category 2A but attaches no category to daraxonrasib or any A59T regimen). None of these objections lifts with time or biomarker confirmation — they are about the absence of allele-matched efficacy, not about eligibility. The mechanism-level risk is that switch-II A59T may signal weakly through MAPK, so pan-RAS binders optimized for G12/G13 could under-suppress the pathway.
 
-#### Practical considerations
+### Practical considerations
 
-Off-label outside the trial has no compendium support and payer access is unlikely. INTRINSIC is the cleanest route because Genentech covers the drug under protocol. Contact global-roche-genentech-trials@gene.com or 888-662-6728 with the PIK3CA M1043I + KRAS A59T molecular profile to ask which INTRINSIC arm fits and whether M1043I is treated as kinase-domain-activating without a sponsor exception. If INTRINSIC is not accessible, do not pursue inavolisib off-label outside a trial — alpelisib has more mCRC-relevant trial signal. The KRAS A59T arm question may be parallel-tractable; INTRINSIC has multiple biomarker-defined cohorts including a divarasib-containing RAS arm worth surfacing in the same sponsor inquiry.
+Oral. Prefers-trials is fully satisfied and this is the only class touching the actual KRAS driver, so it stays surfaced despite the low agreement — dropping a veto-free, feature-targeting referral the patient prefers would hide what the board genuinely weighed. The immediate action is a sponsor A59T-eligibility call on the US-feasible programs (Pfizer, Roche, Jacobio, RevMed, Adlai) once the NGS locks the allele; the China-based baskets (YL-17231, GH55, BPI-572270) are access-limited fallbacks. Lead with the codon-agnostic daraxonrasib / PF-07934040 gates: the RAS(ON)+ivonescimab suite (NCT07397338) mixes in elironrasib (G12C) and zoldonrasib (G12D), which are mechanism-mismatched to A59T. Sequence after 1L progression and outside the VEGF wound-healing window.
 
-#### Why this rank
+### Why this rank
 
-Rank 5 because the mechanism match is clean but the CRC evidence is hypothesis-grade and three personas dissented on positioning. Above rank 6 (bot/bal) because the biomarker-targeting biology is direct (M1043I → PI3K-alpha-selective inhibitor) whereas bot/bal targets the patient's MSS / peritoneal phenotype rather than a stated targetable feature. Below rank 4 (CRS) because the operative window is now-or-never and inavolisib waits.
+Rank 4, below the PI3K-alpha class, because the agreement score is negative (three dissents to two endorsements) and because A59T applicability rests on structural read-across with zero allele-matched efficacy, where the PI3K-alpha rank at least has cross-tumor clinical activity and a named CRC cohort. It stays in the ranking rather than being dropped because it is the sole feature-targeting option for the KRAS driver and carries no veto — the reader should see the board's most-contested consideration, not just the survivors.
 
-#### Per-trial detail
+### Per-trial detail
 
 | Therapeutic agent | Efficacy | Toxicity | Reference |
-|---|---|---|---|
-| Inavolisib + palbociclib + fulvestrant (INAVO120, breast) | PFS HR 0.43 (0.32-0.59); mPFS 15.0 vs 7.3 mo | G3+ hyperglycemia 5.6% (any-grade 58.6%); G3+ stomatitis 5.6%; G3+ diarrhea 3.7% | [PMID 39476340](https://pubmed.ncbi.nlm.nih.gov/39476340) |
-| INTRINSIC umbrella mCRC ([NCT04929223](https://clinicaltrials.gov/study/NCT04929223)) | PIK3CA-mut + RAS-mut arms; arm-specific PFS unpublished | Per backbone (bev / cetuximab / divarasib / FOLFOX / FOLFIRI / atezolizumab) | Sponsor: Roche-Genentech |
-| Alpelisib phase 1a PIK3CA-altered basket (Juric 2018) | 2 PRs / 134 CRC subset; ~6% all-comer ORR | G3+ hyperglycemia ~20%; G3+ rash; G3+ diarrhea | [PMID 29401002](https://pubmed.ncbi.nlm.nih.gov/29401002) |
-
-### Rank 6. Botensilimab + balstilimab at 2L+ (USC NCT06336902 / Agenus EAP NCT06751524 / BATTMAN NCT07152821)
-
-*The post-1L MSS-mCRC immunotherapy slot. The patient's NLM peritoneal-dominant phenotype matches the Bullock 2024 responder subset; the trial route activates at progression past FOLFIRI-bev.*
-
-#### Evidence base
-
-Bullock 2024 Nat Med ([PMID 38871975](https://pubmed.ncbi.nlm.nih.gov/38871975), n=101 phase 1b in refractory MSS mCRC): all-comer ORR 17% (95% CI 10-26); no-liver-metastases (NLM) subset ORR 22% with mOS 20.9 mo; active-liver-mets subset ORR 5%. Randomized phase 2 update (Bullock 2024 ASCO GI / ESMO GI, n=123 NLM): BOT+BAL ORR 19% with mOS approaching 21 mo, peritoneal-site responses called out specifically. The CCTG BATTMAN phase 3 ([NCT07152821](https://clinicaltrials.gov/study/NCT07152821), Chris O'Callaghan, cocallaghan@ctg.queensu.ca) is the registrational confirmation vs BSC. USC's BOT/BAL + fasting-mimicking diet + IV vitamin C ([NCT06336902](https://clinicaltrials.gov/study/NCT06336902), Charlean Ketchens, 323-865-0451) explicitly enrolls KRAS-mutant MSS mCRC. The Agenus EAP ([NCT06751524](https://clinicaltrials.gov/study/NCT06751524), med.info@agenusbio.com, 781-202-1614) is FDA-authorized for chemo-refractory patients across multiple cancers including CRC.
-
-#### Likelihood of desired effect
-
-Moderate in the NLM peritoneal-dominant subset. ORR 22%, mOS 20.9 mo is the strongest MSS-CRC ICI signal of the decade and the patient's resected-liver + active-peritoneal profile maps onto the responder phenotype. The honest qualifiers: NLM was selected post-hoc as the responder subset in the Bullock expansion, not pre-specified as a primary stratum; the randomized phase 2 compared BOT+BAL to BOT monotherapy rather than to BSC or chemo; BATTMAN OS readout is 2027-2028. The liver-mets contingency matters — if recurrence appears at the liver after CRS, the response probability drops to the ~5% LM-subset rate.
-
-#### Toxicity profile
-
-- G3+ irAE 35-38% across phase 1 and phase 2
-- G3+ colitis 12%, G3+ hepatitis 8%, pyrexia 38% any-grade
-- No treatment-related deaths in the dossier
-- Baseline thyroid / hepatic / endocrine panel mandatory before initiation
-- irAE management algorithm per SITC / ASCO / NCCN; high-dose steroids → infliximab → vedolizumab for refractory colitis
-
-#### Counter-productive mechanisms / dissent
-
-The critic dissented on RoB2 / evidence-quality grounds: single-arm phase 1b plus randomized phase 2 vs monotherapy, no BSC comparator until BATTMAN; the NLM phenotype was post-hoc-defined. The conservative dissented on stacking research-only adjuncts (the USC FMD + IV vitamin C layer) on top of an investigational ICI signal in a patient recovering from CRS-HIPEC. Both dissents are honest and load-bearing. Synthesis: position as the 2L+ pivot once FOLFIRI-bev has progressed and the peritoneal-only phenotype persists; consider asking the USC PI whether the FMD + IV-C adjuncts can be modified or whether the EAP route bypasses them.
-
-#### Practical considerations
-
-Most actionable today: USC NCT06336902 (KRAS-mutant MSS mCRC cohort, ~15 patients across southern California sites; travel logistics matter — contact Charlean Ketchens, Charlean.Ketchens@med.usc.edu, 323-865-0451). Bank the Agenus EAP request packet at med.info@agenusbio.com for the moment the patient progresses past 1L FOLFIRI-bev; the EAP requires standard-line exhaustion. The MGH SBRT + BOT/BAL combination ([NCT07128355](https://clinicaltrials.gov/study/NCT07128355), Aparna Parikh, aparna.parikh@mgh.harvard.edu) is a parallel option if a peritoneal or recurrent hepatic SBRT target can be defined. BATTMAN is Canadian-primary and chemo-refractory-restricted; useful as the registrational readout to track, not currently enrollable for a 1L patient.
-
-#### Why this rank
-
-Rank 6 because the trial slot activates only on progression past 1L (the patient is currently on FOLFIRI-bev) and two personas dissented on evidence-quality grounds. Below rank 5 (inavolisib) on biomarker-targeting strictness — bot/bal targets the patient's MSS / peritoneal phenotype rather than a stated single targetable feature — and the rank-5 PIK3CA mechanism match is more direct. Above ranks 8-10 because the Bullock 2024 NLM signal is the strongest modern MSS-CRC ICI readout the dossier contains.
-
-#### Per-trial detail
-
-| Therapeutic agent | Efficacy | Toxicity | Reference |
-|---|---|---|---|
-| BOT+BAL phase 1b refractory MSS mCRC (Bullock 2024) | All-comer ORR 17% (10-26); NLM ORR 22%, mOS 20.9 mo; LM ORR 5% | G3+ irAE 35%; G3+ colitis 12%; G3+ hepatitis 8% | [PMID 38871975](https://pubmed.ncbi.nlm.nih.gov/38871975) |
-| BOT+BAL randomized phase 2 vs BOT mono (Bullock 2024) | BOT+BAL ORR 19%, mOS ~21 mo; peritoneal-site responses | G3+ irAE 38% | Bullock ASCO GI / ESMO GI 2024 |
-| BOT+BAL + FMD + IV vitamin C ([NCT06336902](https://clinicaltrials.gov/study/NCT06336902)) | KRAS-mutant MSS mCRC; ongoing | Per ICI + dietary intervention | USC / Ketchens |
-| BATTMAN phase 3 vs BSC ([NCT07152821](https://clinicaltrials.gov/study/NCT07152821)) | OS endpoint pending 2027-2028 | TBD | CCTG / O'Callaghan |
-| BOT/BAL EAP ([NCT06751524](https://clinicaltrials.gov/study/NCT06751524)) | Treating-physician-initiated; case-by-case | Per ICI class | Agenus |
-
-### Rank 7. Trastuzumab deruxtecan (T-DXd) on DESTINY-CRC02 — CONDITIONAL on HER2 IHC 3+ from rank-1 workup
-
-*The HER2 wildcard. RAS-mutant-allowed under the April 2024 T-DXd pan-tumor accelerated approval, distinct from MOUNTAINEER tucatinib + trastuzumab which the RAS-WT label excludes for this A59T patient.*
-
-#### Evidence base
-
-DESTINY-CRC02 (Raghav 2024, [PMID 39058319](https://pubmed.ncbi.nlm.nih.gov/39058319), [NCT04744831](https://clinicaltrials.gov/study/NCT04744831)): T-DXd 5.4 mg/kg in HER2-positive mCRC, ORR ~38% including the RAS-mutant subset (the trial specifically enrolled RAS-mutant patients in parallel to RAS-WT). The April 2024 FDA pan-tumor accelerated approval for HER2-positive (IHC 3+) unresectable / metastatic solid tumors removed the RAS-WT restriction at the label level. HERACLES scoring ([PMID 27108243](https://pubmed.ncbi.nlm.nih.gov/27108243)) is the historically defensible IHC + FISH call: IHC 3+ in >50% of cells, or IHC 2+ with HER2:CEP17 ratio ≥2.0 by FISH. The TOP1 deruxtecan payload rationale aligns with the patient's 20q11 TOP1 co-amplification on existing NGS.
-
-#### Likelihood of desired effect
-
-High in the HER2 IHC 3+ subset (~3-5% prior probability of HER2 amp in mCRC). Foreclosed if HER2 returns negative. RAS-mutant subset within DESTINY-CRC02 carries lower absolute response than RAS-WT (mid-30% range vs RAS-WT) and A59T-specific data are not reported; the realistic positive-branch expectation is ORR in the 30-38% range with DOR comparable to the breast experience.
-
-#### Toxicity profile
-
-- G3+ ILD / pneumonitis 5-10% across DESTINY trials; treatment-related ILD deaths reported
-- Baseline + Q3W chest imaging surveillance; PFTs at baseline
-- G3+ neutropenia ~30%, G3+ nausea/vomiting 10-15%, G3+ fatigue 10%
-- ILD monitoring infrastructure at the treating center is the operational gate
-
-#### Counter-productive mechanisms / dissent
-
-Board endorsement was unanimous on the conditional. The risktaker named T-DXd as the wildcard upside; the concensusite called out that the pan-tumor approval is RAS-mutant-allowed; the conservative agreed HER2 status is the binding pre-2L decision; the advocate framed T-DXd as the cleanest HER2-pathway option for an A59T patient; the critic flagged DESTINY-CRC02 ORR ~38% without dissent. No mechanism-level counter-productive vector identified beyond on-target ILD.
-
-#### Practical considerations
-
-If HER2 returns 3+ or 2+ with FISH ratio ≥2.0, T-DXd jumps the post-1L queue and ranks 5 (inavolisib) and 6 (bot/bal) get re-prioritized against it. The 2024 pan-tumor accelerated approval means access is on-label after prior systemic therapy; payer support is generally available with the HER2 amp documentation. NCT04744831 is the DESTINY-CRC02 trial slot if expansion-cohort enrollment is preferred; NCT07407465 is a follow-up arm. ILD surveillance at the treating center is the operational gate. Coordinate with the rank-1 workup so the HER2 IHC reflexes to FISH before the post-CRS decision point.
-
-#### Why this rank
-
-Rank 7 because the entire row is contingent on the rank-1 HER2 IHC result returning positive (3-5% prior probability). If positive, the conditional likelihood of effect is the highest in the dossier and the row jumps ahead of inavolisib and bot/bal in the post-1L sequence. If negative, the row is foreclosed and the rank-5 / rank-6 ordering stands. Listed at rank 7 in the unified table rather than higher because the prior probability of a positive test is 3-5%; the expected value across the prior conditions the placement.
-
-#### Per-trial detail
-
-| Therapeutic agent | Efficacy | Toxicity | Reference |
-|---|---|---|---|
-| Trastuzumab deruxtecan 5.4 mg/kg (DESTINY-CRC02) | HER2+ mCRC ORR ~38% including RAS-mutant; pan-tumor accelerated approval | G3+ ILD 5-10% with treatment-related deaths; G3+ neutropenia ~30%; G3+ nausea/vomiting 10-15% | [PMID 39058319](https://pubmed.ncbi.nlm.nih.gov/39058319), [NCT04744831](https://clinicaltrials.gov/study/NCT04744831) |
-| HERACLES IHC + FISH scoring | IHC 3+ in >50% cells OR IHC 2+ with FISH ratio ≥2.0 | Diagnostic only | [PMID 27108243](https://pubmed.ncbi.nlm.nih.gov/27108243) |
-
-### Rank 8. Daraxonrasib (RMC-6236) on RASolve-GI (NCT06445062) — GATED on sponsor confirming KRAS A59T eligibility
-
-*The asymmetric-upside single phone call for the atypical KRAS A59T allele. Critic-vetoed on evidence-quality grounds; carried per Hard Rule 1 so the user sees what was considered and what the dissent rests on.*
-
-#### Evidence base
-
-RMC-6236 is the first pan-RAS(ON) tri-complex inhibitor with documented regression across G12/G13/Q61 PDXs at 25-50 mg/kg (Knox / Jiang Nature 2024, [PMID 38778097](https://pubmed.ncbi.nlm.nih.gov/38778097), [PMID 38778099](https://pubmed.ncbi.nlm.nih.gov/38778099)). A59T sits in switch-II in a way that preserves the binding interface so the mechanism plausibly carries, but the published RMC-6236 / RMC-7977 package contains zero A59T in-vivo regression data. RASolve-GI ([NCT06445062](https://clinicaltrials.gov/study/NCT06445062)) protocol text reads "RAS-mutated CRC" without an explicit codon gate; sponsor-level operational definition usually narrows to codons 12/13/61. The flagship RMC-6236 monotherapy basket ([NCT05379985](https://clinicaltrials.gov/study/NCT05379985)) restricts to codons 12/13/61 by published protocol text, so basket-level access is explicitly closed. JAB-23E73 ([NCT06973564](https://clinicaltrials.gov/study/NCT06973564), Jacobio) reads codon-agnostic in the public protocol and excludes only patients with prior G12C/G12D/pan-KRAS-inhibitor exposure (the patient has none). S241656 ([NCT05786924](https://clinicaltrials.gov/study/NCT05786924), Servier ERK inhibitor) lists KRAS / HRAS / NRAS / BRAF / CRAF alterations without codon restriction. Arena 2021 ([PMID 34031055](https://pubmed.ncbi.nlm.nih.gov/34031055)) functionally characterized A59 alleles as showing partial residual MAPK activity with weaker output than canonical G12 mutants — hypothesis-generating only.
-
-#### Likelihood of desired effect
-
-Low. Zero published A59T clinical efficacy in any RAS(ON) or pan-RAS program. Mechanism plausibility from preclinical PDX work only. If RevMed confirms A59T eligibility, the realistic upside is a phase 1/2 expansion-cohort slot with a class-typical response rate (RMC-6236 in G12X PDAC ORR ~20-30% in the breakthrough-designation readout) attenuated by the atypical allele's lower MAPK output. If sponsor declines, the pick collapses to JAB-23E73 (Jacobio, codon-agnostic) or S241656 (Servier, codon-agnostic) as fallback inquiries.
-
-#### Toxicity profile
-
-- Class-typical RAS(ON) toxicity: acneiform rash (any-grade 30-40%), GI nausea / diarrhea, hepatic transaminitis
-- Cumulative CRC-population AE profile still maturing; the breakthrough-designation PDAC dataset is the closest neighbor
-- Pause around CRS-HIPEC required; eats into PFS clock
-
-#### Counter-productive mechanisms / dissent
-
-This is the dissent-heavy row of the case. **The critic vetoed on evidence-quality grounds** — ranking a sponsor-confirmation-gated n=0 A59T pick above replicated category-1 backbones inverts the evidence hierarchy. The conservative dissented ("hypothetical until sponsor confirms" framing — accurate but ranks the pick low rather than vetoing it). The concensusite dissented on guideline-fit (no NCCN / ESMO endorsement for atypical-KRAS off-protocol use; 1L displacement is outside the consensus stack). The advocate and risktaker endorsed on the asymmetric-upside argument: A59T is the single allele in the case dossier that the G12C-selective programs cannot touch, the preference file authorizes "surface all options" with efficacy-weight 0.7, and the load-bearing single phone call is the highest-leverage move on the file.
-
-Synthesis per Hard Rule 1: the row stays in the table with status considered_with_caveats and the veto + dissents documented. The honest framing is that the highest-yield single action on the case is the **medinfo@revmed.com / 1-844-2-REVMED inquiry for A59T eligibility on NCT06445062** — if RevMed confirms, this becomes a real 2L+ contingent pick; if declines, **medical-affairs@jacobiopharma** for JAB-23E73 is the structural fallback (the codon-agnostic protocol text + no-prior-KRAS-inhibitor exclusion both fit), and S241656 is the secondary fallback. If all three sponsor inquiries return no, this rec collapses.
-
-#### Practical considerations
-
-Email medinfo@revmed.com or call 1-844-2-REVMED with the KRAS A59T VAF and clinical summary; ask explicitly whether atypical codon 59 mutations are accepted into the CRC arms of RMC-GI-102 (NCT06445062). If accepted, ask which arm fits (monotherapy / + cetuximab / + chemo combo). Note that the cetuximab arm runs into the A59T anti-EGFR question (rank 10) and the chemo-combo arm may interact with the peri-CRS-HIPEC window. Geographic scope: US + select EU + Australia sites for RASolve-GI. Sponsor covers the drug under protocol. Standard-of-care procedures bill the patient's insurance.
-
-#### Why this rank
-
-Rank 8 because the critic veto and two persona dissents bring the agreement score to -0.2, but the asymmetric-upside argument and the preference-file alignment keep the row in the considered_with_caveats column. Above rank 9 (post-HIPEC 2L+ SoC bench) on biomarker-targeting strictness — this row targets the user's stated targetable feature (KRAS A59T) where the SoC bench does not — but below rank 6 (bot/bal) because bot/bal has a published n=101 phase 1b signal in the patient's phenotype where this row has n=0 A59T clinical data.
-
-#### Per-trial detail
-
-| Therapeutic agent | Efficacy | Toxicity | Reference |
-|---|---|---|---|
-| RMC-6236 RASolve-GI ([NCT06445062](https://clinicaltrials.gov/study/NCT06445062)) | n=0 A59T; sponsor confirmation gates eligibility | Class: rash 30-40%, GI nausea/diarrhea, hepatic | Sponsor: Revolution Medicines; medinfo@revmed.com / 1-844-2-REVMED |
-| RMC-6236 monotherapy basket ([NCT05379985](https://clinicaltrials.gov/study/NCT05379985)) | Codon 12/13/61 only by protocol — A59T excluded | Class same as above | Sponsor: Revolution Medicines |
-| JAB-23E73 ([NCT06973564](https://clinicaltrials.gov/study/NCT06973564)) | Codon-agnostic by protocol; A59T plausibly eligible | Phase 1/2; AE profile maturing | Sponsor: Jacobio |
-| S241656 ERK inhibitor ([NCT05786924](https://clinicaltrials.gov/study/NCT05786924)) | KRAS/HRAS/NRAS/BRAF/CRAF codon-agnostic; CRC arms with FOLFOX/FOLFIRI ± anti-EGFR | Class: rash, GI, hepatic; AE profile maturing | Sponsor: Servier |
-| Knox / Jiang RAS(ON) preclinical | PDX regression across G12/G13/Q61 at 25-50 mg/kg | n/a (preclinical) | [PMID 38778097](https://pubmed.ncbi.nlm.nih.gov/38778097), [PMID 38778099](https://pubmed.ncbi.nlm.nih.gov/38778099) |
-
-### Rank 9. Post-CRS-HIPEC 2L+ SoC bench (FOLFOX-bev → aflibercept-FOLFIRI / ramucirumab-FOLFIRI → SUNLIGHT TAS-102+bev → FRESCO-2 fruquintinib → regorafenib)
-
-*The replicated phase 3 OS floor the experimental picks have to beat. Sequenced post-CRS-HIPEC, around the bev peri-op hold, and modulated by rank-1 DPYD/UGT1A1 results.*
-
-#### Evidence base
-
-NCCN category 1 at each line. NO16966 (Saltz 2008, [PMID 18421054](https://pubmed.ncbi.nlm.nih.gov/18421054)) anchored FOLFOX/XELOX + bev at mPFS 9.4 vs 8.0 mo (HR 0.83). VELOUR (Van Cutsem 2012) aflibercept-FOLFIRI mOS 13.5 vs 12.1 (HR 0.82). RAISE (Tabernero 2015, [PMID 25862517](https://pubmed.ncbi.nlm.nih.gov/25862517)) ramucirumab-FOLFIRI mOS 13.3 vs 11.7 (HR 0.84). SUNLIGHT TAS-102 + bev mOS 10.8 vs 7.5 (HR 0.61). FRESCO-2 fruquintinib HR_OS 0.66. CORRECT regorafenib HR 0.77; CONCUR HR 0.55. Stacked, the field reaches 28-32 mo mOS for fit patients on optimal sequencing — that is the bar the experimental picks need to beat.
-
-#### Likelihood of desired effect
-
-Moderate-High at each line individually; stacked sequencing through the full bench achieves the 28-32 mo mOS the critic anchored on. No biomarker enrichment — the bench targets the patient's mCRC backbone phenotype rather than a specific targetable feature.
-
-#### Toxicity profile
-
-- Cumulative oxaliplatin neuropathy is rate-limiting for a 37yo with a long runway — bake OPTIMOX stop-and-go in
-- Anti-angiogenic continuation past 2L compounds wound-healing / bleeding / hypertension
-- TAS-102 G3+ neutropenia ~40%; fruquintinib hypertension and hand-foot syndrome
-- DPYD + UGT1A1 results (rank 1) modulate dose calibration at each line
-
-#### Counter-productive mechanisms / dissent
-
-Endorsed by the three guideline / evidence-anchored seats (conservative, critic, concensusite); the advocate and risktaker did not formally rank this row but did not dissent on it either — both noted the SoC bench as the floor their experimental picks layered on or replaced. No mechanism-level counter-productive vector. The critic's notes section specifically named this as "the interventions with replicated RCT evidence the patient should actually receive."
-
-#### Practical considerations
-
-Whether the team runs FOLFOX or FOLFOXIRI pre-CRS (rank 2 intensification path) changes the 2L drug choice: FOLFOX-exposed patients have less to gain from aflibercept-FOLFIRI vs ramucirumab-FOLFIRI vs continuing bev. The oxaliplatin-naive lane is preserved by continuing FOLFIRI + bev pre-CRS, saving the cleaner 2L drug for after the surgical window. NRG-GI008 CIRCULATE-US ([NCT05174169](https://clinicaltrials.gov/study/NCT05174169)) is the ctDNA-guided adjuvant-duration trial the concensusite flagged for the post-CRS surveillance question.
-
-#### Why this rank
-
-Rank 9 because Libby's primary deliverable is the feature-targeted ranking and this row is the SoC reference frame rather than a feature-targeting pick. Surfaced explicitly to honor the user's "surface all options" framing and to anchor the experimental picks above against the replicated-RCT floor below. The critic's evidence-pyramid argument that the field reaches 28-32 mo mOS through this bench (not 21 mo through a single experimental pick) is the load-bearing reason this row sits in the ranking rather than under "classes examined but not ranked."
-
-#### Per-trial detail
-
-| Therapeutic agent | Efficacy | Toxicity | Reference |
-|---|---|---|---|
-| FOLFOX + bev (NO16966) | mPFS 9.4 vs 8.0 mo, HR 0.83 | G3+ neutropenia, cumulative neuropathy, bev class | [PMID 18421054](https://pubmed.ncbi.nlm.nih.gov/18421054) |
-| Aflibercept-FOLFIRI (VELOUR) | mOS 13.5 vs 12.1 mo, HR 0.82 | Hypertension, proteinuria, hemorrhage | NCCN cat 1 2L |
-| Ramucirumab-FOLFIRI (RAISE) | mOS 13.3 vs 11.7 mo, HR 0.84 | Anti-angiogenic class | [PMID 25862517](https://pubmed.ncbi.nlm.nih.gov/25862517) |
-| TAS-102 + bev (SUNLIGHT) | mOS 10.8 vs 7.5 mo, HR 0.61 | G3+ neutropenia ~40%; nausea | NCCN cat 1 3L |
-| Fruquintinib (FRESCO-2) | mOS HR 0.66 | Hypertension, hand-foot syndrome | NCCN cat 1 4L |
-| Regorafenib (CORRECT / CONCUR) | HR_OS 0.77 / 0.55 | Hand-foot skin reaction; hepatic | NCCN cat 1 4L |
-
-### Rank 10. Anti-EGFR (cetuximab / panitumumab) — default AVOID at 1L; structured research-framework lane only at later lines
-
-*The atypical-KRAS anti-EGFR question. Default avoid per Sorich 2015 population-level meta-analytic data; not welded shut for later lines under a documented A59T functional argument.*
-
-#### Evidence base
-
-Sorich 2015 ([PMID 25115304](https://pubmed.ncbi.nlm.nih.gov/25115304), n=5,948 across 9 RCTs, RoB2:Low): in the any-new-RAS-mutant subset, OS HR 1.08 (95% CI 0.91-1.28) and PFS HR 1.03 (95% CI 0.78-1.36) — no anti-EGFR benefit. Schirripa 2015 ([PMID 24806288](https://pubmed.ncbi.nlm.nih.gov/24806288), n=786 retrospective): 0/9 responders among NRAS-mutant anti-EGFR-treated patients. Arena 2021 ([PMID 34031055](https://pubmed.ncbi.nlm.nih.gov/34031055), n=169, ROBINS-I:Moderate): A59 / A146 / K117 alleles show "occasional responders" with weaker MAPK signaling than canonical G12 mutants — hypothesis-generating only. Lochhead 2018 ([PMID 30538852](https://pubmed.ncbi.nlm.nih.gov/30538852)): single-patient case report of -36% target-lesion change on panitumumab + FOLFIRI in a KRAS A59T tumor — anecdote, not population-level evidence.
-
-#### Likelihood of desired effect
-
-Low at 1L. The population-level evidence (n=5,948 RoB2:Low meta-analytic OS HR 1.08) wins against the Lochhead n=1 PR by a wide margin. The Arena 2021 functional data are the strongest argument that A59 alleles should be assessed individually rather than as a flat anti-EGFR contraindication, but that argument carries cleaner at later lines under a research framework than at 1L displacement of the chemo + bev backbone. Uncharacterized at later lines under ASCEND-CRC NCT07318389 with a documented A59T-specific functional argument.
-
-#### Toxicity profile
-
-- Anti-EGFR-class acneiform rash G3+ 10-20%, hypomagnesemia, paronychia, infusion reactions
-- Compounded wound-healing risk if administered around CRS-HIPEC
-
-#### Counter-productive mechanisms / dissent
-
-The concensusite and conservative seats vetoed on guideline-fit and population-evidence grounds. The advocate and risktaker dissented on the population-level closure: the preference file's "surface all options" framing with efficacy-weight 0.7 authorizes outside-guideline thinking when biology supports it, and the Arena 2021 functional data are the strongest atypical-KRAS anti-EGFR-rechallenge argument in the field. The conservative seat itself softened on cross-critique to "default AVOID pending functional characterization, with anti-EGFR rechallenge under a research framework (ASCEND-CRC NCT07318389) defensible at later lines if a specific A59T functional argument is made." Synthesis per Hard Rule 1: carried as considered_with_caveats with the structured research-framework path explicitly named; default AVOID at 1L; not welded shut for later lines.
-
-#### Practical considerations
-
-Cetuximab off-label use in KRAS-mutant mCRC has no compendium support and payer access is unlikely. The defensible path at later lines is a research framework (ASCEND-CRC platform [NCT07318389] or the RMC-6236 + cetuximab arm of RASolve-GI if RevMed accepts A59T per rank 8) where the A59T-specific functional argument can be made and tracked. Lilly medical information: 1-800-545-5979 for Erbitux specific questions; Amgen for Vectibix.
-
-#### Why this rank
-
-Rank 10 because two personas vetoed and two dissented — the conservative softened on cross-critique but did not endorse, the concensusite stood on the population-evidence veto. The structured research-framework lane at later lines keeps the door open per the dissenters' argument while honoring the veto-grade objections to 1L use.
-
-#### Per-trial detail
-
-| Therapeutic agent | Efficacy | Toxicity | Reference |
-|---|---|---|---|
-| Anti-EGFR + chemo (Sorich 2015 meta-analysis) | New-RAS-mutant: OS HR 1.08 (0.91-1.28), PFS HR 1.03 (0.78-1.36) — no benefit | Acneiform rash G3+ 10-20%, hypomagnesemia | [PMID 25115304](https://pubmed.ncbi.nlm.nih.gov/25115304) |
-| Anti-EGFR in NRAS-mut CRC (Schirripa 2015) | 0/9 ORR in NRAS-mutant cohort | Class as above | [PMID 24806288](https://pubmed.ncbi.nlm.nih.gov/24806288) |
-| A59 / A146 / K117 functional + anti-EGFR (Arena 2021) | "Occasional responders" with weaker MAPK signaling | n/a (functional study) | [PMID 34031055](https://pubmed.ncbi.nlm.nih.gov/34031055) |
-| Panitumumab + FOLFIRI A59T case report (Lochhead 2018) | -36% target-lesion change, n=1 | Anecdotal | [PMID 30538852](https://pubmed.ncbi.nlm.nih.gov/30538852) |
+| --- | --- | --- | --- |
+| Daraxonrasib (RMC-6236, RAS-mutant PDAC pivotal) | 2L RAS-G12 ORR 35% (17-56); G12/G13/Q61 ORR 29% | G3+ TRAE ~30%: rash, stomatitis, diarrhea | [42090791](https://pubmed.ncbi.nlm.nih.gov/42090791) |
+| Daraxonrasib discovery (codon-agnostic RAS(ON) binding) | pERK suppression across WT + G12/G13/Q61; A59T untested | — | [40056080](https://pubmed.ncbi.nlm.nih.gov/40056080) |
+| PF-07934040 ± cetuximab/FOLFOX/bev ("any KRAS variant" CRC) | A59T eligible on protocol text; phase-1 dose-finding | Not established (dose-escalation) | [NCT06447662](https://clinicaltrials.gov/study/NCT06447662) |
+| Daraxonrasib CRC monotherapy (company-disclosed) | ORR ~9% (no N, no CI, no peer review) | Not reported at cohort level | company update, null identifier |
 
 ## Classes examined but not ranked
 
-- **BCL-xL-directed (navitoclax, DT2216, AZD0466, pelcitoclax) for 20q11 BCL2L1 + TOP1 co-amplification** — navitoclax solid-tumor program discontinued; DT2216 has no CRC trial slot (pediatric COG + irinotecan trial NCT06620302 is the closest precedent and accepts pediatric patients only); AZD0466 / pelcitoclax abstract-only. Surface as a recurrence pre-position for compassionate-use conversation if the 20q segment boundary confirms BCL2L1-restricted amplification; not currently enrollable for this patient.
-- **ATR / WEE1 / HSP90 synthetic-lethal-with-mutant-p53 (ceralasertib, camonsertib, elimusertib) for TP53 R273** — thin mCRC evidence; surface as a 3L+ trial-slot watch list. The rank-1 NGS R273-substitution call (R273H vs C vs L vs S) sharpens any future trial discussion.
-- **Wnt-axis (PORCN inhibitors LGK974/WNT974, tankyrase inhibitors, ST316, frizzled antibodies) for APC E1295** — Rodon 2021 WNT974 0% RECIST responses across 94 patients; ST316 ASCO GI 2025 abstract-only with prolonged SD but no ORRs; porcupine class faces APC-loss bypass biology (Liu / Cong 2013 PMID 23258887). Not currently enrollable on an actionable axis for this patient.
-- **TGF-beta-axis (galunisertib + nivolumab, bintrafusp alfa-class, NIS793, BCA101) for SMAD4 R361H** — galunisertib + nivolumab Yamazaki 2023 ORR 5% with no CRC subset responses; Lilly wound the program down. Surface as a 3L+ trial-slot watch list if CMS4 + immune-excluded phenotype confirms on the rank-1 transcriptomic add-on.
-- **KRAS peptide vaccines (ELI-002, JHU NCT06411691)** — vaccine peptides encode G12C/G12D/G12V/G12R/G12A/G12S/G13D; A59T is not among them. Patient is not biomarker-eligible.
-- **TCR-T / ImmTAC (afami-cel, lete-cel, IMA203, brenetafusp)** — currently not approved for CRC; flagged on the rank-1 workup as a low-priority HLA-A typing bank for future trial readiness.
-- **MOUNTAINEER tucatinib + trastuzumab** — RAS-WT label restriction; A59T fails the gate regardless of HER2 status. T-DXd (rank 7) is the RAS-allowed HER2-directed substitute.
-- **PIPAC oxaliplatin or 5-FU (NCT04329494 City of Hope, NCT06367270 Hong Kong)** — relevant only if upfront CRS-HIPEC is deferred or peritoneal recurrence develops post-CRS; flagged as recurrence pre-position.
+- **Anti-EGFR (cetuximab / panitumumab) as routine therapy** — A59T reads as RAS-mutant, so this is off-label against a 5,948-patient meta-analytic null (Sorich HR 1.08, [25115304](https://pubmed.ncbi.nlm.nih.gov/25115304)). The Lochhead A59T panitumumab responder ([28404754](https://pubmed.ncbi.nlm.nih.gov/28404754)) and the Arena functional heterogeneity work (DOI 10.1158/1078-0432.CCR-21-0830, PMID nulled upstream) support an individually-reviewed PI/tumor-board judgment call, not a ranked recommendation; the board (advocate rank 6, endorsed by risktaker) surfaced it as a low-probability door with both datasets in front of the patient.
+- **NST-628 pan-RAF/MEK molecular glue and darlifarnib (KO-2806) FTI** — reach A59T only downstream of the RAS node; single-node MAPK inhibition has repeatedly underperformed in MSS/RAS-mutant CRC (IMblaze370-adjacent), and the clinical readouts to date are melanoma corporate updates and G12C-restricted CRC. Mechanism without A59T efficacy.
+- **TP53 R273 reactivators (eprenetapopt, arsenic derivatives) and rezatapopt** — no allele-matched pharmacology; eprenetapopt gave ORR ~8% with the R273 subset unanalyzed and the program closed for solid tumors, and rezatapopt is Y220C-specific by design. Mechanism without efficacy.
+- **BCL-xL-directed strategies (navitoclax, DT2216 PROTAC) for the 20q11 BCL2L1/TOP1 amplification** — hypothesis-grade across the class: navitoclax+irinotecan ORR 5% unselected with G3+ thrombocytopenia 24%, and the DT2216 first-in-human gave stable disease only with no CRC cohort. A rational combination partner, not a standalone; the risktaker ranked it sixth of six for exactly this reason.
+- **Wnt/APC (ST316, porcupine inhibitors) and SMAD4/TGF-beta-axis modulation** — mechanism-without-efficacy; porcupine inhibition produced no RECIST responses in APC-mutant contexts, and the TGF-beta + ICI readouts show no CRC responder signal.
 
 ## Ranked prioritization
 
-### Workup (rank 1 — precondition)
-
 | Rank | Intervention | Likelihood of effect | Toxicity burden | Counter-productive MoA | Overall |
-|---|---|---|---|---|---|
-| 1 | **Diagnostic gates: comprehensive NGS + HER2 IHC/FISH + MMR IHC + TMB + PD-L1 + DPYD/UGT1A1 + Signatera baseline**<br><small><em>endorse:</em> <span class="persona persona-advocate">advocate</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span></small> | High — diagnostic certainty across seven decision gates; precondition for every therapeutic call below. | Low (none — diagnostic test on archival tissue + peripheral blood draw) | <strong>N/A</strong> (Diagnostic workup; no mechanism-level risk to a therapeutic goal.) | **Unblocks anti-EGFR eligibility, HER2-directed options, ICI doors, PIK3CA confirmation, fluoropyrimidine safety, and post-CRS surveillance from a single archival-block send-out plus blood draws.** |
+| --- | --- | --- | --- | --- | --- |
+| 1 | **Low-dose aspirin 160 mg/day — PIK3CA adjunct**<br><small><em>endorse:</em> <span class="persona persona-conservative">conservative</span> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span> <span class="persona persona-advocate">advocate</span></small><br><small><em>dissent:</em> <span class="persona persona-risktaker">risktaker</span></small> | Moderate as a recurrence-risk adjunct: ALASCCA HR 0.49 in the exon-9/20 subset M1043I maps into; direction concordant across three datasets, but validated in resected not metastatic disease. | Low (G3+ GI bleeding ~3%; serious AEs ~5%) | **Low** (additive bleeding with bevacizumab and the CRS-HIPEC window; a timing hold, not a mechanism that blunts the goal) | **The strongest RoB-low biomarker match and a do-no-harm PIK3CA-directed adjunct; effect validated in resected, not metastatic, disease, so it layers on the backbone rather than replacing it.** |
+| 2 | **Botensilimab + balstilimab (2L+)**<br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-critic">critic</span> <span class="persona persona-advocate">advocate</span></small> | Moderate in this NLM/peritoneal subset: ORR ~22% and mOS 20.9 mo (Bullock 2024), the strongest MSS-CRC ICI signal, but subgroup-level and not yet confirmed vs BSC. | Moderate (immune-mediated colitis 12-13%, hepatitis ~8%, pyrexia/cytokine-release; overall G3+ irAE ~35-38%) | **Moderate** (Fc-enhanced CTLA-4 irAE colitis/hepatitis overlaps the peri-operative CRS window; could delay or complicate surgery) | **The only MSS-CRC immunotherapy with a compartment-matched signal at the patient's peritoneal disease; a 2L+ proposition gated by ~35% immune toxicity and single-arm, subgroup-level evidence.** |
+| 3 | **Mutant-selective PI3K-alpha (CGT6297)**<br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-advocate">advocate</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-critic">critic</span></small> | Low-to-moderate for CRC: cross-tumor kinase-domain-PIK3CA signal (INAVO120 HR 0.43 in breast; RLY-2608 ORR 66.7% breast) with only 2 alpelisib CRC PRs and a non-canonical-allele hedge. | Moderate (hyperglycemia G3+ ~20% alpelisib / ~6% inavolisib, stomatitis, rash, diarrhea; near-absent on wild-type-sparing agents) | **Moderate** (KRAS A59T co-activation can bypass PI3K-alpha blockade via parallel MAPK signaling, blunting single-agent response) | **The one trial naming a CRC-and-PIK3CA cohort, targeting the patient's kinase-domain allele directly; efficacy rests entirely on cross-tumor abstract-tier data with a non-canonical-allele predictive hedge.** |
+| 4 | **Codon-agnostic pan-RAS / RAS(ON)**<br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-advocate">advocate</span></small><br><small><em>dissent:</em> <span class="persona persona-conservative">conservative</span> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span></small> | Low / unquantified for A59T: zero allele-matched data; extrapolated from PDAC canonical-codon ORR 35% (pmid:42090791) and structural binding (pmid:40056080, A59T untested); CRC monotherapy signal ~9%. | Moderate (daraxonrasib G3+ TRAE ~30%: rash, stomatitis/mucositis, diarrhea; combination arms uncharacterized in CRC) | **Moderate** (switch-II A59T may signal weakly through MAPK, so pan-RAS engagement optimized for G12/G13 could under-suppress the pathway; VEGF-arm wound-healing peri-HIPEC) | **The only option reaching the patient's actual KRAS A59T driver, but on codon-agnostic eligibility and structural read-across with zero allele-matched efficacy; a sponsor-gated trial referral, not proven A59T therapy.** |
 
-### Unified ranked options (ranks 2-14)
-
-| Rank | Intervention | Likelihood of effect | Toxicity burden | Counter-productive MoA | Overall |
-|---|---|---|---|---|---|
-| 2 | **Continue FOLFIRI + bevacizumab (FOLFOXIRI + bev intensification permitted)**<br><small><em>endorse:</em> <span class="persona persona-conservative">conservative</span> <span class="persona persona-concensusite">concensusite</span> <span class="persona persona-critic">critic</span> <span class="persona persona-advocate">advocate</span> <span class="persona persona-risktaker">risktaker</span></small> | High — replicated phase 3 OS signal across AVF2107g, BICC-C, MAVERICC, TRIBE2; ESMO MCBS 3. | Moderate (G3+ neutropenia ~25-30%, G3+ diarrhea ~14% on FOLFIRI; cumulative neuropathy and bev wound-healing constraints with intensification) | <strong>Low</strong> (Bevacizumab wound-healing impairment in the peri-operative window — managed by the 4-6 week hold; not a mechanism-level blunting of the cytotoxic backbone.) | **The replicated 1L OS backbone with the longest safety dossier in the case; the bev peri-op hold is the load-bearing safety thread, and FOLFOXIRI intensification is a permitted upgrade for a fit 37-year-old.** |
-| 3 | **Low-dose aspirin 160 mg PO QD (PIK3CA-pathway adjunct, ALASCCA-derived)**<br><small><em>endorse:</em> <span class="persona persona-advocate">advocate</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span></small> | Moderate — three concordant biomarker-stratified signals (ALASCCA HR 0.49, 80702 celecoxib OS HR 0.41, Liao 2012 HR 0.18) but indication gap from resected adjuvant to metastatic-equivalent post-HIPEC. | Low (G3+ GI bleed ~3% vs 2% on ALASCCA; manageable with PPI + perioperative hold) | <strong>Low</strong> (Aspirin hold required around bev cycles and CRS-HIPEC to avoid additive bleeding; mechanism direction itself is supportive, not counter-productive.) | **The only RoB2:Low phase 3 RCT in the dossier with a biomarker match — a cheap, layered, guideline-adopted adjunct that almost any other pick stacks on top of.** |
-| 4 | **CRS at high-volume center; mitomycin C HIPEC if elected (PRODIGE 7 framing)**<br><small><em>endorse:</em> <span class="persona persona-advocate">advocate</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-concensusite">concensusite</span> <span class="persona persona-risktaker">risktaker</span><br><em>dissent:</em> <span class="persona persona-critic">critic</span></small> | Moderate for CRS (NCCN-endorsed selected-patient mOS 30-40 mo); Low for the HIPEC component specifically (PRODIGE 7 negative for oxaliplatin; no positive randomized signal for mitomycin C). | High (CRS-HIPEC 60-day morbidity ~25-40% G3+; bleeding, anastomotic leak, infection, prolonged ileus; treatment-related mortality 1-3% at high-volume centers, higher at lower-volume) | <strong>Moderate</strong> (Critic dissent stands on mechanism grounds: oxaliplatin HIPEC negative randomized OS readout; mitomycin C HIPEC has no positive randomized OS readout either — the procedure window itself delays systemic therapy.) | **CRS retains the OS spine for resectable peritoneal CRC; HIPEC sits outside randomized OS validation — mitomycin C is the defensible perfusate at a high-volume center if HIPEC is elected.** |
-| 5 | **Inavolisib + bevacizumab on INTRINSIC ([NCT04929223](https://clinicaltrials.gov/study/NCT04929223))** (conditional on PIK3CA M1043I somatic + clonal confirmation)<br><small><em>endorse:</em> <span class="persona persona-advocate">advocate</span> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-concensusite">concensusite</span> <span class="persona persona-critic">critic</span><br><em>dissent:</em> <span class="persona persona-critic">critic</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-concensusite">concensusite</span></small> | Moderate ASSUMING M1043I confirmed — INAVO120 PFS HR 0.43 is cross-tumor breast; CRC efficacy is hypothesis-grade (Juric 2018 2 PRs / 134 CRC subset; INTRINSIC arm-specific PFS unpublished). | Moderate (G3+ hyperglycemia 5.6%, any-grade 58.6%; G3+ stomatitis 5.6%; G3+ diarrhea 3.7%; discontinuation 6.5%) | <strong>Moderate</strong> (Critic and concensusite dissented on mechanism grounds: KRAS A59T co-activation may blunt single-pathway PI3K-alpha inhibition; cross-tumor breast extrapolation does not address CRC's downstream-RAS escape biology.) | **The cleanest PIK3CA M1043I mechanism match in the dossier, gated by cross-tumor extrapolation and KRAS A59T co-activation — trial-route only, sequenced at progression rather than 1L displacement.** |
-| 6 | **Botensilimab + balstilimab at 2L+ (USC NCT06336902 / EAP NCT06751524 / BATTMAN NCT07152821)**<br><small><em>endorse:</em> <span class="persona persona-advocate">advocate</span> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-concensusite">concensusite</span> <span class="persona persona-critic">critic</span><br><em>dissent:</em> <span class="persona persona-critic">critic</span> <span class="persona persona-conservative">conservative</span></small> | Moderate in the NLM peritoneal-dominant subset (ORR 22%, mOS 20.9 mo Bullock 2024) — strongest MSS-CRC ICI signal of the decade but selection bias + no BSC comparator until BATTMAN reads out. | Moderate (G3+ colitis 12%, G3+ hepatitis 8%, G3+ pyrexia in subset; cumulative G3+ irAE 35-38%) | <strong>Moderate</strong> (Critic dissented on evidence-quality mechanism (post-hoc NLM subgroup); conservative dissented on stacking research-only FMD + IV-C adjuncts on Fc-enhanced anti-CTLA-4 in active peritoneal disease.) | **Strongest modern MSS-CRC immunotherapy signal mapped to the patient's NLM peritoneal phenotype; 2L+ trial-route only, gated by FOLFIRI-bev progression and travel logistics.** |
-| 7 | **Trastuzumab deruxtecan (T-DXd) on DESTINY-CRC02 ([NCT04744831](https://clinicaltrials.gov/study/NCT04744831))** (conditional on HER2 IHC 3+ from rank-1 workup)<br><small><em>endorse:</em> <span class="persona persona-advocate">advocate</span> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-concensusite">concensusite</span> <span class="persona persona-critic">critic</span></small> | High in HER2 IHC 3+ subset (DESTINY-CRC02 ORR ~38% including RAS-mutant); contingent on HER2 status — foreclosed if HER2 negative (3-5% prior probability of positive). | Moderate (G3+ neutropenia ~30%, G3+ ILD 5-10% with treatment-related deaths reported, G3+ nausea/vomiting 10-15%) | <strong>Low</strong> (On-target ILD is the dominant counter-productive vector; RAS-mutant subset has lower absolute response than RAS-WT but A59T-specific behavior unreported.) | **The single most-actionable wildcard if HER2 amplification returns positive — RAS-mutant-allowed under the 2024 pan-tumor accelerated approval, and the cleanest HER2 path for an A59T patient.** |
-| 8 | **Daraxonrasib (RMC-6236) on RASolve-GI ([NCT06445062](https://clinicaltrials.gov/study/NCT06445062))** (gated on sponsor confirming A59T eligibility)<br><small><em>endorse:</em> <span class="persona persona-advocate">advocate</span> <span class="persona persona-risktaker">risktaker</span><br><em>dissent:</em> <span class="persona persona-conservative">conservative</span> <span class="persona persona-concensusite">concensusite</span><br><em>veto:</em> <span class="persona persona-critic">critic</span></small> | Low — zero published A59T clinical efficacy in any RAS(ON) or pan-RAS program; mechanism plausibility from Knox/Jiang Nature 2024 preclinical PDX work only. | Moderate (class-typical RAS(ON) acneiform rash 30-40% any-grade, GI nausea/diarrhea, hepatic; cumulative CRC profile maturing) | <strong>High</strong> (Critic veto stands on evidence-quality / mechanism grounds: ranking a sponsor-confirmation-gated n=0 A59T pick above replicated category-1 backbones inverts the evidence hierarchy.) | **The asymmetric-upside single phone call for the atypical KRAS A59T allele — sponsor-confirmation-gated and critic-vetoed; document the inquiry result before any other RAS(ON) action.** |
-| 9 | **Post-CRS-HIPEC 2L+ SoC bench (FOLFOX-bev → aflibercept-FOLFIRI / ramucirumab-FOLFIRI → SUNLIGHT TAS-102+bev → FRESCO-2 fruquintinib → regorafenib)**<br><small><em>endorse:</em> <span class="persona persona-conservative">conservative</span> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span></small> | Moderate-High — replicated phase 3 OS signal at each line; stacked sequencing 28-32 mo mOS achievable in fit patients. | Moderate (cumulative oxaliplatin neuropathy is rate-limiting; G3+ neutropenia and diarrhea at each line; anti-angiogenic AE compound) | <strong>Low</strong> (No mechanism-level counter-productive vector; cumulative neuropathy and anti-angiogenic compound AEs are patient-level toxicity, not therapeutic-goal blunting.) | **The replicated 2L+ phase 3 OS floor the experimental picks have to beat — bake OPTIMOX in for the long young-patient runway and modulate by DPYD/UGT1A1 results.** |
-| 10 | **Cetuximab / panitumumab — default AVOID at 1L; ASCEND-CRC research framework only at later lines**<br><small><em>dissent:</em> <span class="persona persona-advocate">advocate</span> <span class="persona persona-risktaker">risktaker</span><br><em>veto:</em> <span class="persona persona-concensusite">concensusite</span> <span class="persona persona-conservative">conservative</span></small> | Low at 1L (Sorich 2015 OS HR 1.08 in any-new-RAS-mutant n=5,948); uncharacterized at later lines under a research framework with A59T-specific functional argument. | Moderate (G3+ acneiform rash 10-20%, hypomagnesemia, paronychia; manageable but real) | <strong>High</strong> (Conservative + concensusite veto stands on mechanism: A59T is treated as RAS-activating by NCCN consensus, so anti-EGFR is mechanism-counter-productive at the population level.) | **Default AVOID at 1L per population-level meta-analysis; structured research-framework rechallenge defensible at later lines on Arena 2021 functional grounds — not welded shut, not 1L-recommendable.** |
-| 11 | **Sotorasib + panitumumab and adagrasib + cetuximab — NOT RECOMMENDED for KRAS A59T (allele-incompatible)**<br><small><em>veto:</em> <span class="persona persona-advocate">advocate</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span></small> | None — mechanism-incompatible at the covalent-warhead level; A59T lacks the switch-II cysteine the drugs target. | Moderate (class acneiform rash, GI nausea/diarrhea, hepatic) — but zero efficacy for A59T makes any AE counter-productive by definition. | <strong>High</strong> (Universal veto on mechanism grounds: drug binds G12C-specific cysteine; A59T lacks the warhead substrate entirely.) | **Allele-incompatible — listed so the consultation team sees the closed door explicitly; the G12C-selective drugs cannot reach A59T at the covalent-warhead level.** |
-| 12 | **Single-agent pembrolizumab / dostarlimab / nivolumab-ipilimumab — NOT RECOMMENDED in MSS / TMB-low / PD-L1-negative**<br><small><em>veto:</em> <span class="persona persona-advocate">advocate</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span></small> | None — phenotype-incompatible (MSS / TMB-low / PD-L1-neg); unless rank-1 MMR IHC unexpectedly returns dMMR. | Moderate (G3+ irAE colitis, hepatitis, pneumonitis, endocrinopathy) — counter-productive without target engagement. | <strong>High</strong> (Universal veto on phenotype grounds: ICI biology requires MSI-H or TMB-H or PD-L1-high substrate, none of which the patient presents.) | **Phenotype-foreclosed in MSS / TMB-low / PD-L1-negative — listed so the door is explicitly closed; the rank-1 MMR IHC orthogonal is the only path that reopens it.** |
-| 13 | **Eprenetapopt (APR-246) and rezatapopt (PC14586) for TP53 R273 — NOT RECOMMENDED**<br><small><em>veto:</em> <span class="persona persona-advocate">advocate</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span></small> | None — eprenetapopt solid-tumor program closed; rezatapopt is Y220C-restricted and KRAS-WT-only. | Low (none — drugs not accessible to this patient) | <strong>High</strong> (Universal veto on program-status + structural-design grounds: drug-allele mismatch at the binding-pocket level.) | **Closed at the program + structural-design level; documented so the TP53 R273 reactivator question is explicitly addressed and the future ATR/WEE1 watch-list framing is preserved.** |
-| 14 | **Oxaliplatin HIPEC framed as OS-positive — NOT RECOMMENDED**<br><small><em>veto:</em> <span class="persona persona-advocate">advocate</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span></small> | None over CRS alone — PRODIGE 7 negative for OS; COLOPEC and PROPHYLOCHIP reinforce the negative. | High (60-day G3+ morbidity 25-40%, treatment-related mortality 1-3%; without OS benefit) | <strong>High</strong> (Veto stands on mechanism: oxaliplatin HIPEC adds operative-window morbidity that delays systemic therapy without offsetting the patient with an OS gain.) | **Closed on randomized evidence — surgical team retains autonomy on HIPEC agent choice; oxaliplatin perfusate specifically should not be framed as OS-validated in the family conversation.** |
-
-!!! note "Reading the table"
-    **Toxicity burden** is patient-level AE severity; **Counter-productive MoA** is mechanism-level risk to the therapeutic goal (distinct from patient AEs in the toxicity column). The persona pills under each intervention are the at-a-glance board signal; the full per-persona rationale lives on the board page.
+!!! note "How to read this table"
+    **Toxicity burden** is patient-level adverse-event severity (what the patient feels — bleeding, colitis, hyperglycemia). **Counter-productive MoA** is a separate, mechanism-level axis: the risk that the intervention's mechanism could blunt the therapeutic goal (MAPK bypass of PI3K-alpha, immune toxicity delaying surgery, anti-angiogenic wound-healing impairment). The persona pills under each intervention are the at-a-glance board signal; the full per-persona rationale lives on the [board page](board.md).
 
 ## Caveats
 
-- **Evidence-base caveats.** Two of the experimental picks rest on cross-tumor or hypothesis-grade evidence in CRC. Inavolisib's PFS HR 0.43 anchor is HR+/HER2- breast (INAVO120); the CRC arm-specific INTRINSIC PFS / OS has not posted, and the M1043I-specific subset within Group A is unreported at scale. Bot/bal's NLM-subset ORR 22% / mOS 20.9 mo comes from a post-hoc-defined responder phenotype within a single-arm phase 1b (Bullock 2024 Nat Med); the CCTG BATTMAN phase 3 OS readout vs BSC is 2027-2028. RMC-6236 has zero published A59T clinical efficacy across any program — the sponsor-inquiry gate is the entire decision. ALASCCA's PIK3CA Group A 95% CI upper bound at 0.98 means magnitude is fragile even within the resected adjuvant indication; the post-CRS-HIPEC metastatic-equivalent state adds an extrapolation layer.
-- **Compartment / biomarker dependencies.** The ranking is biomarker-conditional in narrow ways at three rank positions. Rank 5 (inavolisib) requires PIK3CA M1043I somatic + clonal confirmation from the rank-1 NGS; if M1043I is subclonal or germline, the trial slot is foreclosed. Rank 7 (T-DXd) is HER2-amp-conditional and the prior probability of a positive test is 3-5%; the row is the highest-yield wildcard if positive and foreclosed if negative. Rank 8 (RMC-6236) is sponsor-confirmation-conditional on RevMed accepting A59T; if declined, the JAB-23E73 and S241656 fallback inquiries decide whether the RAS-pathway-direct lane stays open. The rank-1 MMR IHC orthogonal closes the ICI door definitively (concordant MSS, ~95% prior) or reopens it entirely (discordant dMMR, ~5% prior).
-- **What would change the ranking.**
-    - **RevMed confirms A59T eligible on NCT06445062** → rank 8 jumps to a real contingent 2L+ pick with the asymmetric-upside argument intact.
-    - **HER2 IHC returns 3+ or 2+ with FISH ratio ≥2.0** → rank 7 jumps to the front of the post-1L queue and ranks 5/6 get re-prioritized against it.
-    - **MMR IHC unexpectedly returns dMMR** → reverses the entire ranking; single-agent pembrolizumab leaps to 1L consideration.
-    - **TMB on F1CDx ≥10 mut/Mb** → tumor-agnostic pembrolizumab label unlocks at later lines.
-    - **DPYD *2A / HapB3 carrier** → FOLFIRI dose-rationalize for remaining cycles per CPIC; modifies the rank-2 plan.
-    - **Signatera positive at day 30-60 post-CRS** → escalates the adjuvant-therapy duration conversation toward extended systemic exposure rather than observation.
-    - **POLE / POLD1 proofreading variant on germline add-on** → reopens the ICI door even with MSS / TMB-low intake calls.
-- **Re-scoping caveat.** If the patient's preferences shift (toxicity vetoes introduced, trial-prefer revoked, ECOG drops to 2) or the clinical state changes (liver mets recur, peritoneal phenotype expands beyond resectable, primary tumor becomes symptomatic), the ranking is re-scoped: the bot/bal NLM responder phenotype assumption (rank 6) is the most preference-sensitive, and the FOLFOXIRI intensification path (rank 2) is the most performance-status-sensitive.
+- **Evidence-base caveats.** Rank 1 rests on a randomized adjuvant trial extrapolated to metastatic disease. Rank 2 is single-arm phase 1b plus a phase 2 whose comparator is monotherapy, with the responder subset carved out post-hoc and no CIs on the peritoneal-site figure. Rank 3 has no RCT-grade CRC efficacy at all — its clinical activity is breast/gyn, some of it conference-abstract only. Rank 4 has zero A59T-specific data and leans on a company-disclosed CRC ORR with no N or CI.
+- **Compartment / biomarker dependencies.** The ranking assumes the pending comprehensive NGS confirms KRAS A59T (VAF/clonality) and PIK3CA M1043I as somatic and clonal. A subclonal M1043I call weakens rank 1's Group A read-across and rank 3's gate. The whole ranking is targetable-feature-scoped: standard chemotherapy backbones, anti-EGFR-for-the-population, HER2-directed therapy, and CRS-HIPEC itself are out of scope and belong to the treating team.
+- **What would change the ranking.** A negative or subclonal M1043I confirmation would demote ranks 1 and 3. An allele-matched A59T response — from a sponsor accepting A59T onto a codon-agnostic basket and an early signal emerging — would move rank 4 up sharply. A HER2 amplification return on the pending NGS would open a decision-grade option (outside this feature ranking) that the treating team would weigh against these. A negative CCTG phase-3 readout for botensilimab vs BSC would soften rank 2's confidence.
+- **Re-scoping caveat.** If the patient's disease state moves (progression past 1L, peritoneal recurrence after HIPEC, or a change in preferences toward or away from trial participation), the 2L+ options (botensilimab, the pan-RAS and PI3K-alpha trials) shift from reserve to actionable, and the sequencing constraints around the operative window fall away.
 
 ## Sources
 
-### PubMed
+### PMIDs
 
-- [PMID 15175435](https://pubmed.ncbi.nlm.nih.gov/15175435) — Hurwitz 2004, AVF2107g bevacizumab + IFL mCRC
-- [PMID 17947725](https://pubmed.ncbi.nlm.nih.gov/17947725) — Fuchs 2007, BICC-C FOLFIRI as irinotecan reference
-- [PMID 18421054](https://pubmed.ncbi.nlm.nih.gov/18421054) — Saltz 2008, NO16966 FOLFOX/XELOX + bev
-- [PMID 20689948](https://pubmed.ncbi.nlm.nih.gov/20689948) — Van der Speeten mitomycin C HIPEC pharmacokinetics
-- [PMID 21570278](https://pubmed.ncbi.nlm.nih.gov/21570278) — UGT1A1 *28 irinotecan safety
-- [PMID 23094721](https://pubmed.ncbi.nlm.nih.gov/23094721) — Liao 2012 NEJM aspirin in PIK3CA-mutant CRC
-- [PMID 24806288](https://pubmed.ncbi.nlm.nih.gov/24806288) — Schirripa 2015 NRAS-mut anti-EGFR
-- [PMID 25115304](https://pubmed.ncbi.nlm.nih.gov/25115304) — Sorich 2015 anti-EGFR meta-analysis n=5,948
-- [PMID 25337750](https://pubmed.ncbi.nlm.nih.gov/25337750) — Loupakis 2014 TRIBE FOLFOXIRI + bev
-- [PMID 25862517](https://pubmed.ncbi.nlm.nih.gov/25862517) — Tabernero 2015 RAISE ramucirumab-FOLFIRI
-- [PMID 26028255](https://pubmed.ncbi.nlm.nih.gov/26028255) — Le 2015 NEJM dMMR pembrolizumab selectivity
-- [PMID 27108243](https://pubmed.ncbi.nlm.nih.gov/27108243) — HERACLES HER2 IHC + FISH scoring
-- [PMID 27959278](https://pubmed.ncbi.nlm.nih.gov/27959278) — comprehensive NGS in mCRC reference
-- [PMID 29355075](https://pubmed.ncbi.nlm.nih.gov/29355075) — Overman 2018 CheckMate 142 nivo-ipi MSI-H
-- [PMID 29401002](https://pubmed.ncbi.nlm.nih.gov/29401002) — Juric 2018 alpelisib phase 1a PI3K-altered solid tumors
-- [PMID 30224341](https://pubmed.ncbi.nlm.nih.gov/30224341) — MAVERICC FOLFOX-bev vs FOLFIRI-bev 1L
-- [PMID 30538852](https://pubmed.ncbi.nlm.nih.gov/30538852) — Lochhead 2018 KRAS A59T panitumumab PR case report
-- [PMID 30604034](https://pubmed.ncbi.nlm.nih.gov/30604034) — PD-L1 clone / CPS / TPS scoring reference
-- [PMID 31272834](https://pubmed.ncbi.nlm.nih.gov/31272834) — Klaver 2019 COLOPEC adjuvant HIPEC T4/perforated
-- [PMID 31416808](https://pubmed.ncbi.nlm.nih.gov/31416808) — NGS-MSI vs MMR-IHC concordance
-- [PMID 31699932](https://pubmed.ncbi.nlm.nih.gov/31699932) — Vasan 2019 M1043 kinase-domain PI3K-alpha sensitization
-- [PMID 32007158](https://pubmed.ncbi.nlm.nih.gov/32007158) — Cremolini 2020 TRIBE2 FOLFOXIRI + bev
-- [PMID 32576704](https://pubmed.ncbi.nlm.nih.gov/32576704) — peritoneal CRC ctDNA prognostic
-- [PMID 32717181](https://pubmed.ncbi.nlm.nih.gov/32717181) — Goere 2020 PROPHYLOCHIP-PRODIGE 15 second-look + HIPEC
-- [PMID 33417845](https://pubmed.ncbi.nlm.nih.gov/33417845) — Quenet 2021 PRODIGE 7 oxaliplatin HIPEC negative OS
-- [PMID 34031055](https://pubmed.ncbi.nlm.nih.gov/34031055) — Arena 2021 atypical KRAS functional characterization
-- [PMID 34754095](https://pubmed.ncbi.nlm.nih.gov/34754095) — Signatera tumor-informed ctDNA / GALAXY MRD
-- [PMID 36546659](https://pubmed.ncbi.nlm.nih.gov/36546659) — Yaeger 2023 KRYSTAL-1 adagrasib G12C
-- [PMID 37870968](https://pubmed.ncbi.nlm.nih.gov/37870968) — Fakih 2023 CodeBreaK 300 sotorasib + panitumumab G12C
-- [PMID 38778097](https://pubmed.ncbi.nlm.nih.gov/38778097) — Knox 2024 Nature RAS(ON) preclinical
-- [PMID 38778099](https://pubmed.ncbi.nlm.nih.gov/38778099) — Jiang 2024 Nature RAS(ON) preclinical
-- [PMID 38871975](https://pubmed.ncbi.nlm.nih.gov/38871975) — Bullock 2024 Nat Med BOT/BAL MSS mCRC NLM ORR 22%
-- [PMID 38889377](https://pubmed.ncbi.nlm.nih.gov/38889377) — Yang/Meyerhardt 2024 CALGB/SWOG 80702 celecoxib PIK3CA subset
-- [PMID 39058319](https://pubmed.ncbi.nlm.nih.gov/39058319) — Raghav 2024 DESTINY-CRC02 T-DXd ORR ~38%
-- [PMID 39476340](https://pubmed.ncbi.nlm.nih.gov/39476340) — Jhaveri 2024 NEJM INAVO120 PFS HR 0.43
-- [PMID 39550351](https://pubmed.ncbi.nlm.nih.gov/39550351) — Rovers 2024 CAIRO6 perioperative chemo + CRS-HIPEC
-- [PMID 40932470](https://pubmed.ncbi.nlm.nih.gov/40932470) — rezatapopt Y220C structural restriction
-- [PMID 40958923](https://pubmed.ncbi.nlm.nih.gov/40958923) — DPYD genotyping NCCN v1.2026 + FDA label update
-- [PMID 40979555](https://pubmed.ncbi.nlm.nih.gov/40979555) — Frödin/Martling 2025 NEJM ALASCCA aspirin PIK3CA exon 9/20
+- [23094721](https://pubmed.ncbi.nlm.nih.gov/23094721)
+- [25115304](https://pubmed.ncbi.nlm.nih.gov/25115304)
+- [28404754](https://pubmed.ncbi.nlm.nih.gov/28404754)
+- [29401002](https://pubmed.ncbi.nlm.nih.gov/29401002)
+- [38871975](https://pubmed.ncbi.nlm.nih.gov/38871975)
+- [38889377](https://pubmed.ncbi.nlm.nih.gov/38889377)
+- [39476340](https://pubmed.ncbi.nlm.nih.gov/39476340)
+- [40056080](https://pubmed.ncbi.nlm.nih.gov/40056080)
+- [40961426](https://pubmed.ncbi.nlm.nih.gov/40961426)
+- [42090791](https://pubmed.ncbi.nlm.nih.gov/42090791)
 
-### ClinicalTrials.gov
+### NCTs
 
-- [NCT02758951](https://clinicaltrials.gov/study/NCT02758951) — CAIRO6 perioperative chemo + CRS-HIPEC
-- [NCT04585750](https://clinicaltrials.gov/study/NCT04585750) — PYNNACLE rezatapopt Y220C-restricted (rule-out)
-- [NCT04744831](https://clinicaltrials.gov/study/NCT04744831) — DESTINY-CRC02 T-DXd
-- [NCT04779554](https://clinicaltrials.gov/study/NCT04779554) — Flat-dose vs weight-based mitomycin C HIPEC (Kentucky)
-- [NCT04861558](https://clinicaltrials.gov/study/NCT04861558) — EFFIPEC CRS vs CRS + HIPEC (Sweden/India)
-- [NCT04929223](https://clinicaltrials.gov/study/NCT04929223) — INTRINSIC inavolisib + bev mCRC platform
-- [NCT05379985](https://clinicaltrials.gov/study/NCT05379985) — RMC-6236 monotherapy basket (codon 12/13/61 only — A59T excluded)
-- [NCT05786924](https://clinicaltrials.gov/study/NCT05786924) — S241656 Servier ERK inhibitor RAS/MAPK basket
-- [NCT06336902](https://clinicaltrials.gov/study/NCT06336902) — USC BOT/BAL + FMD + IV vitamin C in KRAS-mutant MSS mCRC
-- [NCT06445062](https://clinicaltrials.gov/study/NCT06445062) — RASolve-GI RMC-6236 (A59T sponsor-inquiry gate)
-- [NCT06751524](https://clinicaltrials.gov/study/NCT06751524) — Agenus BOT/BAL Expanded Access Protocol
-- [NCT06973564](https://clinicaltrials.gov/study/NCT06973564) — JAB-23E73 Jacobio (codon-agnostic atypical-KRAS fallback)
-- [NCT07152821](https://clinicaltrials.gov/study/NCT07152821) — CCTG BATTMAN BOT/BAL vs BSC (registrational)
-- [NCT07291180](https://clinicaltrials.gov/study/NCT07291180) — Yale MRT-guided HIPEC selection
+- [NCT04929223](https://clinicaltrials.gov/study/NCT04929223)
+- [NCT05608044](https://clinicaltrials.gov/study/NCT05608044)
+- [NCT05768139](https://clinicaltrials.gov/study/NCT05768139)
+- [NCT06336902](https://clinicaltrials.gov/study/NCT06336902)
+- [NCT06447662](https://clinicaltrials.gov/study/NCT06447662)
+- [NCT06751524](https://clinicaltrials.gov/study/NCT06751524)
+- [NCT06884618](https://clinicaltrials.gov/study/NCT06884618)
+- [NCT06973564](https://clinicaltrials.gov/study/NCT06973564)
+- [NCT06993844](https://clinicaltrials.gov/study/NCT06993844)
+- [NCT07152821](https://clinicaltrials.gov/study/NCT07152821)
+- [NCT07252479](https://clinicaltrials.gov/study/NCT07252479)
+- [NCT07383506](https://clinicaltrials.gov/study/NCT07383506)
+- [NCT07397338](https://clinicaltrials.gov/study/NCT07397338)
 
 ## Transparency artifacts
 
-- [Trial table](trials.md) — 59 rows, all columns
-- [Clinical evidence table](evidence.md) — 61 rows
-- [Manuscripts inventory](manuscripts.md) — flat master table with sample size, effect size, variance, toxicity columns
-- [Board page](board.md) — 5 persona positions, 20 cross-critiques, full agreement matrix
-- [Recommendations table](recommendations.md) — ranked rec rows with full evidence anchors
-- [Plain-language summary](plain_language.md) — patient / caregiver layer (downstream of this page)
+- [Trial table](trials.md) — all screened trials with eligibility and fit notes.
+- [Evidence table](evidence.md) — clinical-evidence rows with effect sizes and toxicities.
+- [Master manuscripts table](manuscripts.md) — every paper considered, with sample size, effect size, variance, and toxicity columns.
+- [Board proceedings](board.md) — the five persona positions, the round-2 cross-critiques, and the full agreement matrix.
+- [Recommendations table](recommendations.md) — the forwardable ranked-options table.
+- [Plain-language summary](plain_language.md) — the patient/caregiver track (written by the translator).
 
 ## Run log
 
-Authored 2026-05-29 by the PI agent on the standard Libby pipeline. Inputs supplied: `profile.json`, `preferences.json`, `target_validation.jsonl` (18 rows), `trials.jsonl` (59 rows), `clinical_evidence.jsonl` (61 rows), `preclinical_evidence.jsonl` (39 rows), `accessibility.jsonl` (61 rows), `board/positions.jsonl` (5 rows), `board/critiques.jsonl` (20 rows). Inferences carried forward: ECOG 1 from intake-stated FOLFIRI tolerance (flagged for confirmation per the user free text); HIPEC framing per the explicit user request to surface PRODIGE 7 honestly rather than veto the surgical plan; KRAS A59T sponsor-inquiry-gated picks ranked as considered_with_caveats per Hard Rule 1 with the critic veto and conservative / concensusite dissents documented; HER2 amplification ranked as a conditional positive-branch wildcard at rank 7 rather than splitting the table into a separate Path B because the prior probability is 3-5% and the rank-1 workup gates it. The single unified ranking covers workup (rank 1) + feature-targeting therapeutic options (ranks 2-10) + Hard-Rule-1 documented vetoes (ranks 11-14). For re-runs: the load-bearing single action is the medinfo@revmed.com inquiry on NCT06445062 A59T eligibility; the second load-bearing action is the HER2 IHC + reflex FISH result; both shape ranks 5-8 directly.
+Authored by the PI agent on 2026-07-09, synthesizing fresh from the re-deliberated board (5 round-1 positions, 26 round-2 critiques) over the refreshed dossier (40 trials, 72 clinical-evidence rows, preclinical set, target_validation, accessibility, profile, preferences). The ranking scopes to the four feature-targeting interventions on the PIK3CA and KRAS A59T / MSS-peritoneal axes; all biomarkers gating candidate drugs are treated as confirmed, so the ranking is single and unbranched (scenario null), with the orthogonal-NGS, germline (DPYD/UGT1A1), and MMR/HER2 gates surfaced in the Workup considerations paragraph rather than as ranked workup rows. Corrected citations from the upstream refresh were used throughout: ALASCCA pmid:40961426, daraxonrasib PDAC pivotal pmid:42090791, Knox discovery pmid:40056080, Lochhead A59T pmid:28404754, PRODIGE 7 pmid:33476595. The botensilimab phase-2 update and the Arena atypical-KRAS identifiers were nulled upstream and are cited as trial/company-disclosed context with no minted PMID (fail-closed). Inferred: agreement scores computed per the synthesis rule from positions + critiques; status calibrations from dissent/veto counts; the aspirin-over-botensilimab rank-1 call weighting RoB-low evidence and do-no-harm fit over higher raw agreement.
+
+**Reference check.** Ran the shared reference-verification protocol over every identifier carried into `recommendations.jsonl` and this page. Ten load-bearing PMIDs verified on PubMed as pointing to the correct papers (40961426 ALASCCA, 42090791 daraxonrasib PDAC, 40056080 daraxonrasib discovery, 28404754 Lochhead A59T panitumumab, 33476595 PRODIGE 7, 38871975 botensilimab MSS, 39476340 INAVO120, 29401002 alpelisib, 23094721 Liao aspirin, 38889377 celecoxib 80702, 25115304 Sorich meta-analysis). One dossier identifier — pmid:41213988 (DT2216 first-in-human, Khan) — resolves to an unrelated microbiology paper (drifted/wrong-identifier); DT2216 is out of the ranked scope (BCL-xL class not ranked) so it was not carried, and the drift is flagged here for an upstream re-run. The nulled identifiers (39283994 botensilimab update, 34031055 Arena) were not reintroduced. Outcome: `{"checked": 11, "corrected": 0, "nulled_by_upstream_and_honored": 2, "drifted_not_carried": 1, "clean": true}`.
 
 <!-- libby:downloads:begin -->
 
@@ -773,19 +444,19 @@ Authored 2026-05-29 by the PI agent on the standard Libby pipeline. Inputs suppl
 ### HTML
 
 - [Target validation paths](target_validation.md?v=60ae8f51) — per-feature biomarker-workup table with providers and references, sortable in-browser
-- [Recommendations table](mcrc-kras-a59t-pik3ca-peritoneal-pre-hipec-q8k4-recommendations.html?v=9deeb66c) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
-- [Access guide](accessibility.md?v=5c99e682) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table
-- [Access guide (offline)](mcrc-kras-a59t-pik3ca-peritoneal-pre-hipec-q8k4-accessibility.html?v=6133b7ca) — same access-guide content packaged as a self-contained HTML that opens offline
-- [Master manuscripts table](manuscripts.md?v=d90da807) — every paper considered — n, effect, variance, toxicities, in a sortable in-browser table
-- [Master manuscripts table (offline)](mcrc-kras-a59t-pik3ca-peritoneal-pre-hipec-q8k4-manuscripts.html?v=a3a786ce) — same manuscripts inventory packaged as a self-contained HTML that opens offline
+- [Recommendations table](mcrc-kras-a59t-pik3ca-peritoneal-pre-hipec-q8k4-recommendations.html?v=fa5277de) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
+- [Access guide](accessibility.md?v=0654cc79) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table
+- [Access guide (offline)](mcrc-kras-a59t-pik3ca-peritoneal-pre-hipec-q8k4-accessibility.html?v=b16c7a6b) — same access-guide content packaged as a self-contained HTML that opens offline
+- [Master manuscripts table](manuscripts.md?v=191f024a) — every paper considered — n, effect, variance, toxicities, in a sortable in-browser table
+- [Master manuscripts table (offline)](mcrc-kras-a59t-pik3ca-peritoneal-pre-hipec-q8k4-manuscripts.html?v=b371677e) — same manuscripts inventory packaged as a self-contained HTML that opens offline
 
 ### PDF
 
-- [Target validation paths](mcrc-kras-a59t-pik3ca-peritoneal-pre-hipec-q8k4-target-validation.pdf?v=a3e93fd8) — diagnostic + biomarker workup that hardens the targetable-feature call
-- [Recommendations table](mcrc-kras-a59t-pik3ca-peritoneal-pre-hipec-q8k4-recommendations.pdf?v=5a893110) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
-- [Access guide](mcrc-kras-a59t-pik3ca-peritoneal-pre-hipec-q8k4-accessibility.pdf?v=f8b16172) — trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF
-- [Master manuscripts table](mcrc-kras-a59t-pik3ca-peritoneal-pre-hipec-q8k4-manuscripts.pdf?v=eb7f2023) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
-- [Patient/caregiver PDF](mcrc-kras-a59t-pik3ca-peritoneal-pre-hipec-q8k4-plain-language.pdf?v=0010a141) — plain-language summary
+- [Target validation paths](mcrc-kras-a59t-pik3ca-peritoneal-pre-hipec-q8k4-target-validation.pdf?v=dea5df47) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Recommendations table](mcrc-kras-a59t-pik3ca-peritoneal-pre-hipec-q8k4-recommendations.pdf?v=bddfd24a) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
+- [Access guide](mcrc-kras-a59t-pik3ca-peritoneal-pre-hipec-q8k4-accessibility.pdf?v=9908135a) — trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF
+- [Master manuscripts table](mcrc-kras-a59t-pik3ca-peritoneal-pre-hipec-q8k4-manuscripts.pdf?v=fcf745ae) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
+- [Patient/caregiver PDF](mcrc-kras-a59t-pik3ca-peritoneal-pre-hipec-q8k4-plain-language.pdf?v=039a080a) — plain-language summary
 
 <!-- libby:downloads:end -->
 
