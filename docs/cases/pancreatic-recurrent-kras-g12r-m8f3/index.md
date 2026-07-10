@@ -6,43 +6,43 @@
 
 ## Case output
 
-- [Target validation paths (PDF)](pancreatic-recurrent-kras-g12r-m8f3-target-validation.pdf?v=777ae40e) — diagnostic + biomarker workup that hardens the targetable-feature call
-- [Recommendations table (HTML)](pancreatic-recurrent-kras-g12r-m8f3-recommendations.html?v=463dd0b0) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
-- [Access guide (HTML)](accessibility.md?v=2958eb74) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, sortable in-browser
-- [Access guide (offline HTML)](pancreatic-recurrent-kras-g12r-m8f3-accessibility.html?v=8b63d58a) — same access-guide content as the in-browser page, packaged as a self-contained HTML that opens offline
-- [Master manuscripts table (HTML)](manuscripts.md?v=9ea36b70) — every paper considered — n, effect, variance, toxicities, sortable in-browser
-- [Master manuscripts table (offline HTML)](pancreatic-recurrent-kras-g12r-m8f3-manuscripts.html?v=5511f962) — same manuscripts inventory as the in-browser page, packaged as a self-contained HTML that opens offline
-- [Patient/caregiver PDF](pancreatic-recurrent-kras-g12r-m8f3-plain-language.pdf?v=63491fcd) — plain-language summary
+- [Target validation paths (PDF)](pancreatic-recurrent-kras-g12r-m8f3-target-validation.pdf?v=78d5ccdb) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Recommendations table (HTML)](pancreatic-recurrent-kras-g12r-m8f3-recommendations.html?v=7e6a4247) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
+- [Access guide (HTML)](accessibility.md?v=7f8302f2) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, sortable in-browser
+- [Access guide (offline HTML)](pancreatic-recurrent-kras-g12r-m8f3-accessibility.html?v=b706015f) — same access-guide content as the in-browser page, packaged as a self-contained HTML that opens offline
+- [Master manuscripts table (HTML)](manuscripts.md?v=78268b5f) — every paper considered — n, effect, variance, toxicities, sortable in-browser
+- [Master manuscripts table (offline HTML)](pancreatic-recurrent-kras-g12r-m8f3-manuscripts.html?v=d1e36bcd) — same manuscripts inventory as the in-browser page, packaged as a self-contained HTML that opens offline
+- [Patient/caregiver PDF](pancreatic-recurrent-kras-g12r-m8f3-plain-language.pdf?v=713353f1) — plain-language summary
 
 <!-- libby:case-output:end -->
 ## Research question
 
-In recurrent pancreatic adenocarcinoma after adjuvant FOLFIRI, what interventions can target KRAS G12R, CDKN2A loss, and CCND3 alteration in an MSS / sub-threshold-TMB background?
+In recurrent KRAS G12R pancreatic adenocarcinoma after adjuvant FOLFIRI (ECOG 1, MSS, TMB 4.1, with CDKN2A loss and CCND3 co-alteration), what interventions could target KRAS G12R or the CDKN2A/CCND3 cell-cycle axis?
 
 ## Patient profile (scrubbed)
 
-- **Primary site / histology:** pancreas — pancreatic adenocarcinoma
-- **Stage:** recurrent
+- **Primary site / histology:** pancreas — pancreatic ductal adenocarcinoma
+- **Stage:** recurrent, post-resection and post-adjuvant chemotherapy
 - **Performance status:** ECOG 1
 - **Age band:** 50-59
 - **Sex:** unknown
-- **Biomarkers (all confirmed):**
-    - **KRAS G12R** by NGS — RAS-GTP-binding-deficient allele; pan-KRAS / RAS(ON) class is the relevant lane, not G12C / G12D-selective agents
-    - **TP53** inactivating mutation by NGS — variant class (LOF vs dominant-negative vs GOF) not yet annotated; informs co-mutation context
-    - **CDKN2A** loss by NGS / IHC — derepresses CDK4/6; supports CDK4/6 inhibitor rationale; MTAP co-deletion likely (~80-90% co-deletion on 9p21) and reflex-testable
-    - **CCND3** alteration by NGS — class refinement pending (amplification vs activating mutation); reinforces CDK4/6 axis
-    - **MSI status:** MSS — biomarker-excluded from tumor-agnostic pembrolizumab
-    - **TMB:** 4.1 mut/Mb — below the 10 mut/Mb tumor-agnostic pembrolizumab threshold
-- **Prior therapy:** FOLFIRI adjuvant; best response PD. Patient is oxaliplatin-naive and platinum-naive.
-- **Current therapy:** none
+- **Biomarkers (all confirmed on NGS):**
+    - **KRAS G12R** — mutated, NGS. Confirmed. The lead driver.
+    - **TP53** — inactivating mutation, NGS. Confirmed. Co-mutation context; variant class (missense vs truncating) not annotated on file.
+    - **CDKN2A** — loss, NGS copy-number / IHC. Confirmed. The secondary cell-cycle axis.
+    - **CCND3** — alteration, NGS. Confirmed. Reinforces CDK4/6 dependency.
+    - **MSI status** — MSS, NGS/IHC MMR panel. Confirmed. Forecloses tumor-agnostic ICI on the MSI-H label.
+    - **TMB** — 4.1 mut/Mb. Confirmed. Below the 10 mut/Mb tumor-agnostic pembrolizumab threshold.
+- **Prior therapy:** FOLFIRI (adjuvant), best response PD. Irinotecan-based, so the patient is **platinum-naive** and **oxaliplatin-naive**.
+- **Current therapy:** none.
 
 ## Preferences
 
-- **Efficacy/toxicity weight:** 0.80 (strong efficacy lean)
+- **Efficacy/toxicity weight:** 0.80 (efficacy-leaning)
 - **Toxicity vetoes:** none
 - **Modality constraints:** none
 - **Free text:** "Treat to remission as the primary goal. Accepts high-risk-high-reward options. Minimize toxicity where possible, but no hard toxicity vetoes."
-- **Trials preferred:** yes
+- **Trial preference:** prefers trials
 
 <!-- libby:target-validation:begin -->
 
@@ -173,695 +173,519 @@ Documentation review rather than a new order. TMB values are sensitive to panel 
 
 ## Scope summary
 
-26 trials surfaced, 16 clinical-evidence rows (11 included + 5 standard-of-care chemo rows logged as `considered_excluded` per the targetable-feature scope rule), 22 preclinical rows, and 12 target-validation rows (1 essential `gates_intervention`, 5 high-priority, 6 medium-priority workups). The ranked list contains 11 rows spanning agreement scores from 1.0 (rank 1 workup; rank 2 daraxonrasib monotherapy) down to -0.2 (rank 7 RMC-7977 + ivonescimab). All five personas converged on daraxonrasib monotherapy as the lead therapeutic option. The remaining ranks split across pan-KRAS-class backup, dual-feature trials, gated PARP / vaccine pathways, and informational-context entries (palbociclib, RAMP-205) carrying explicit caveats.
+The dossier holds 32 trial rows, 19 included clinical-evidence rows (plus 4 standard-chemo rows logged as out-of-scope), and 22 preclinical rows. Eleven interventions carry a ranked recommendation, with board-agreement scores from 1.0 down to 0.2. All five personas converged on daraxonrasib at rank 1 — the only unanimous pick. Below that the board splits: two personas dissent on ranking the ERAS-0015 glue second (a maturity objection), two dissent on seating gated olaparib as high as rank 3 (a deliverability objection), and one dissents on placing pre-data pan-KRAS trials above the guideline-listed PARP option. No formal veto was issued.
 
 ## Cross-cutting caveat (read first)
 
-**All six biomarkers are confirmed. The load-bearing decisions for this case sit elsewhere — in three places the user should hold in mind before reading the ranks.**
+**The whole menu is dominated by pre-approval agents, and the one drug the guideline actually names cannot start today.** This is an MSS, sub-TMB-threshold, KRAS G12R recurrent PDAC — a genotype where the actionable options are almost entirely investigational and immunotherapy is off the table. The load-bearing tension the board kept returning to: the deepest efficacy signal (daraxonrasib, and the ERAS-0015 glue behind it) comes from single-arm or press-release data with G12R folded into a pooled G12X estimand, while the only guideline-listed drug (olaparib) is double-gated and inapplicable at this moment.
 
-- **Workup hardening is not optional even though biomarkers read as confirmed.** Pan-RAS and RAS(ON) sponsors re-test KRAS G12R on plasma at screening regardless of the local report, and a baseline ctDNA VAF is the on-treatment-monitoring anchor that flags resistance weeks ahead of imaging. Rank 1 is the orthogonal NGS + ctDNA confirmation; it gates trial entry on the lead recommendation, not the patient's eligibility in principle.
-- **PDAC carries a meaningful germline prior. Order the germline panel.** BRCA1, BRCA2, PALB2, ATM, MLH1/MSH2/MSH6/PMS2, EPCAM, CDKN2A, TP53, and STK11 are all worth knowing in PDAC regardless of family history (NCCN Pancreatic Adenocarcinoma v2.2026 recommends germline testing for every patient with the diagnosis). A pathogenic BRCA1/2 or PALB2 result moves olaparib (rank 5) and rucaparib (rank 10) from "off-table without these gates" to "decision-relevant after a platinum induction." A Lynch hit changes family cascade testing. A CDKN2A germline variant in PDAC with melanoma family history (FAMMM) changes screening. None of this is on file yet; the germline panel turnaround is 3-6 weeks.
-- **MSS + TMB 4.1 forecloses biomarker-agnostic ICI cleanly.** KEYNOTE-158 (Marabelle 2020) requires MSI-H for the tumor-agnostic pembrolizumab indication; this patient is MSS by both NGS and (recommended) MMR IHC. TMB 4.1 mut/Mb is well below the 10 mut/Mb threshold for the TMB-based tumor-agnostic indication. CCTG PA.7 (Renouf 2022, RoB2:Low, p=0.72) is the load-bearing negative RCT for adding biomarker-agnostic ICI to chemo in unselected metastatic PDAC. The implication: rank 7 (RMC-7977 + ivonescimab) is the only entry on the page that touches the immune axis at all, and it does so under three persona dissents because the published clinical PDAC data are zero.
-
-The case ranking is targetable-feature-scoped. Standard-of-care chemotherapy for recurrent PDAC (FOLFIRINOX, NALIRIFOX, gem/nab-paclitaxel, nal-IRI/5FU) is NCCN cat-1 / 2A and is the treating team's call; it does not target the patient's listed features and is logged as `considered_excluded` rather than ranked. The page enumerates what Libby has to say about KRAS G12R, CDKN2A loss, and CCND3, not what the medical oncologist already knows.
+- **G12R is not read on its own anywhere.** The daraxonrasib NEJM cohort, the ERAS-0015 topline, and every pan-KRAS trial cover G12R inside a broader G12X or KRAS-mutation gate. G12R also has atypical biology — lower ERK flux and impaired PI3K/macropinocytosis signaling (Hobbs 2020) — which cuts both ways for the pan-RAS and ERK-directed options and is an untested variable, not a settled advantage.
+- **The daraxonrasib rank-1 anchor is the peer-reviewed NEJM subgroup only.** Revolution Medicines and the FDA have disclosed a positive RASolute 302 phase-3 readout (mOS 13.2 vs 6.7 mo, HR 0.40, ITT) and an FDA Expanded Access Program effective May 2026. Those figures are not in the dossier evidence files and are not yet peer-reviewed or indexed. The board's critic and risktaker flagged this directly. They are presented here as company/FDA-disclosed context that strengthens the enrollment rationale, not as a citable dossier result — the rank-1 evidence weight rests on Wolpin's NEJM n=26 pooled-G12 cohort.
+- **Olaparib is gated on two things that are not on file.** It needs a germline BRCA1/2 (or PALB2) hit and a platinum induction the patient has never had — adjuvant FOLFIRI was irinotecan-only. Order the germline panel now; NCCN recommends it for every PDAC patient regardless of family history. Until it returns and a platinum induction holds, olaparib is a workup line, not an active option.
+- **Standard-of-care chemotherapy is out of Libby's scope.** FOLFIRINOX, NALIRIFOX, gemcitabine/nab-paclitaxel, and nal-IRI/5-FU are category 1/2A for recurrent PDAC in NCCN v2.2026, but none targets the patient's molecular features, so they are the treating team's call and are not ranked or named as recommendations here.
 
 ## Intervention grouping
 
-- **Pan-RAS / RAS(ON) class targeting KRAS G12R:** daraxonrasib (RMC-6236) monotherapy and chemo-combo, zoldonrasib (RMC-7977) with PD-1xVEGF bispecific. Anchor evidence: Wolpin NEJM 2026 ([PMID 42090791](https://pubmed.ncbi.nlm.nih.gov/42090791)); Holderfield Nature 2024 ([PMID 38589574](https://pubmed.ncbi.nlm.nih.gov/38589574)); Jiang Cancer Discovery 2024 ([PMID 38593348](https://pubmed.ncbi.nlm.nih.gov/38593348)); Wasko Nature 2024 ([PMID 38588697](https://pubmed.ncbi.nlm.nih.gov/38588697)); Hobbs Cancer Discovery 2020 ([PMID 31649109](https://pubmed.ncbi.nlm.nih.gov/31649109)) for the G12R-specific biology.
-- **Pan-KRAS small-molecule and IV programs (G12R explicit in eligibility):** PF-07934040 ([NCT06447662](https://clinicaltrials.gov/study/NCT06447662)), ASP5834 ([NCT07094204](https://clinicaltrials.gov/study/NCT07094204)).
-- **MTA-cooperative PRMT5 class hitting CDKN2A / MTAP co-deletion:** anvumetostat (AMG 193, [NCT06360354](https://clinicaltrials.gov/study/NCT06360354)) with a daraxonrasib combination arm; BMS-986504 ([NCT07492680](https://clinicaltrials.gov/study/NCT07492680) — not yet recruiting). Anchor evidence: Mavrakis Science 2016 ([PMID 26912361](https://pubmed.ncbi.nlm.nih.gov/26912361)); Kryukov Science 2016 ([PMID 26912360](https://pubmed.ncbi.nlm.nih.gov/26912360)); Smith Cancer Discovery 2023 ([PMID 37552839](https://pubmed.ncbi.nlm.nih.gov/37552839)).
-- **PARP-class maintenance (gated on germline BRCA / PALB2 + platinum induction):** olaparib (POLO, [PMID 31157963](https://pubmed.ncbi.nlm.nih.gov/31157963)); rucaparib (Reiss JCO 2021, [PMID 33970687](https://pubmed.ncbi.nlm.nih.gov/33970687)).
-- **KRAS-peptide vaccine targeting G12R (MRD-positive enrollment window):** ELI-002 7P ([NCT05726864](https://clinicaltrials.gov/study/NCT05726864)). Anchor evidence: AMPLIFY-201 (Pant Nat Med 2024 [PMID 38195752](https://pubmed.ncbi.nlm.nih.gov/38195752); Wainberg Nat Med 2025 [PMID 40790272](https://pubmed.ncbi.nlm.nih.gov/40790272)).
-- **MAPK + autophagy / RAF-MEK + FAK combinations:** avutometinib + defactinib + gem/nab (RAMP-205, [NCT05669482](https://clinicaltrials.gov/study/NCT05669482)) — informational, abstract-only PDAC efficacy at n=6.
-- **CDK4/6 axis combinations:** palbociclib + MEK or IGF1R or chemo via ADOPT ([NCT06813079](https://clinicaltrials.gov/study/NCT06813079)) or off-label — Z1C basket monotherapy precedent is negative (O'Hara CCR 2025, [PMID 39437014](https://pubmed.ncbi.nlm.nih.gov/39437014)).
+- **RAS(ON) multi-selective inhibitors** — daraxonrasib / RMC-6236 ([NCT05379985](https://clinicaltrials.gov/study/NCT05379985), [NCT06445062](https://clinicaltrials.gov/study/NCT06445062), [NCT06625320](https://clinicaltrials.gov/study/NCT06625320); [PMID 42090791](https://pubmed.ncbi.nlm.nih.gov/42090791), [PMID 38589574](https://pubmed.ncbi.nlm.nih.gov/38589574), [PMID 38593348](https://pubmed.ncbi.nlm.nih.gov/38593348))
+- **Pan-RAS molecular glue** — JYP0015 / ERAS-0015 ([NCT06895031](https://clinicaltrials.gov/study/NCT06895031))
+- **Pan-KRAS ON/OFF inhibitors** — KST-6051/FALCON ([NCT07458347](https://clinicaltrials.gov/study/NCT07458347)), JAB-23E73 ([NCT06959615](https://clinicaltrials.gov/study/NCT06959615)), PF-07934040 ([NCT06447662](https://clinicaltrials.gov/study/NCT06447662))
+- **PARP maintenance (HRD-gated)** — olaparib ([PMID 31157963](https://pubmed.ncbi.nlm.nih.gov/31157963)), rucaparib ([PMID 33970687](https://pubmed.ncbi.nlm.nih.gov/33970687))
+- **ERK + CDK4/6 vertical blockade** — ulixertinib + palbociclib ([NCT03454035](https://clinicaltrials.gov/study/NCT03454035); [PMID 39437014](https://pubmed.ncbi.nlm.nih.gov/39437014))
+- **MTA-cooperative PRMT5 inhibition (MTAP-gated)** — anvumetostat ([NCT06360354](https://clinicaltrials.gov/study/NCT06360354); [PMID 26912361](https://pubmed.ncbi.nlm.nih.gov/26912361), [PMID 26912360](https://pubmed.ncbi.nlm.nih.gov/26912360), [PMID 37552839](https://pubmed.ncbi.nlm.nih.gov/37552839))
+- **mKRAS peptide vaccines** — ELI-002 ([NCT05726864](https://clinicaltrials.gov/study/NCT05726864); [PMID 40790272](https://pubmed.ncbi.nlm.nih.gov/40790272), [PMID 38195752](https://pubmed.ncbi.nlm.nih.gov/38195752))
 
 ## Top interventions
 
-### Rank 1. KRAS G12R orthogonal NGS + ctDNA confirmation
+## Rank 1. daraxonrasib (RMC-6236) monotherapy
 
-*Workup hardening. The user reported KRAS G12R as confirmed; this row is the orthogonal second-platform check that pan-RAS / RAS(ON) sponsors require at screening, plus a baseline ctDNA VAF for monitoring.*
+*The deepest published efficacy on the KRAS axis, and the only pick all five personas agreed on.*
 
-#### Evidence base
+### Evidence base
 
-Pan-RAS and RAS(ON) trial programs re-test KRAS G12X variants on plasma at screening regardless of the local report (target-validation row `kras-g12r-orthogonal-ngs-ctdna`, priority: essential, decision_relevance: gates_intervention). A second-platform call plus baseline ctDNA anchors both eligibility for [NCT05379985](https://clinicaltrials.gov/study/NCT05379985) (RMC-6236-001) and [NCT06445062](https://clinicaltrials.gov/study/NCT06445062) (RMC-GI-102) and seeds the serial-monitoring protocol for cycle 2 and cycle 4 VAF reads. Reference platforms: Guardant360 CDx, FoundationOne Liquid CDx, Tempus xF+, Natera Signatera, Caris Assure. The same draw returns SMAD4 / KEAP1 / STK11 co-mutations ([PMID 30019789](https://pubmed.ncbi.nlm.nih.gov/30019789), [PMID 30100704](https://pubmed.ncbi.nlm.nih.gov/30100704), [PMID 29773717](https://pubmed.ncbi.nlm.nih.gov/29773717)) and the KRAS copy-number read ([PMID 36952657](https://pubmed.ncbi.nlm.nih.gov/36952657), [PMID 34471132](https://pubmed.ncbi.nlm.nih.gov/34471132)) that frame durability on pan-RAS therapy.
+Wolpin's NEJM 2026 report ([PMID 42090791](https://pubmed.ncbi.nlm.nih.gov/42090791)) is the load-bearing evidence: an open-label phase 1/2 dose-expansion in which the 2L RAS G12 PDAC subgroup at 300 mg (n=26) reached ORR 35%, mPFS 8.5 months, and mOS 13.1 months. G12R sits inside that pooled G12 subgroup rather than a named cohort, and no allele-resolved ORR was published — the field reads G12X as a single estimand pending the phase 3. The mechanism is anchored by two translational papers, Holderfield ([PMID 38589574](https://pubmed.ncbi.nlm.nih.gov/38589574)) and Jiang ([PMID 38593348](https://pubmed.ncbi.nlm.nih.gov/38593348)), which show G12R-mutant lines regress in the same exposure window as G12D. The trial routes are [NCT05379985](https://clinicaltrials.gov/study/NCT05379985) and the chemo-combination platform [NCT06445062](https://clinicaltrials.gov/study/NCT06445062); the registrational RASolute 302 ([NCT06625320](https://clinicaltrials.gov/study/NCT06625320)) is active-not-recruiting.
 
-#### Likelihood of desired effect
+### Likelihood of desired effect
 
-Diagnostic certainty. Locks the G12R call for trial entry and seeds the on-treatment monitoring baseline. No therapeutic claim on its own.
+For a G12 PDAC patient in the second line, a 35% response rate roughly doubles what chemotherapy delivers, so the probability of a meaningful response is moderate-to-high — the best on offer here. The honest discount is that G12R was never read on its own, and its lower ERK flux (Hobbs 2020) leaves the allele-specific number genuinely uncertain. Company and FDA disclosures of a positive RASolute 302 (mOS 13.2 vs 6.7 mo, HR 0.40) point the same direction but are not dossier evidence and do not carry the confidence weight here.
 
-#### Toxicity profile
+### Toxicity profile
 
-- None. Blood draw plus archival FFPE retest.
+- Any-grade treatment-related AE 96%; grade 3+ 30% across the 168-patient PDAC pool.
+- EGFR-like rash 91% any-grade, 8% grade 3+.
+- Diarrhea 48% (2% G3+), nausea 43%, stomatitis 31% (3% G3+), fatigue 20%.
+- No treatment-related deaths and no DLT-class surprises through dose-escalation.
 
-#### Counter-productive mechanisms / dissent
+The patient carries no toxicity vetoes, so none of this trips a hard constraint. The conservative endorsed the pick specifically because every one of these events maps to a written EGFR-inhibitor management ladder — topical steroid plus low-dose doxycycline for rash, a loperamide step-up for diarrhea, dexamethasone mouthwash for stomatitis.
 
-Board endorsement was unanimous. No persona dissented or vetoed.
+### Counter-productive mechanisms / dissent
 
-#### Practical considerations
+Board endorsement was unanimous. The dissent that exists is not against the drug but against a number: the critic dissented on the RASolute 302 phase-3 figures appearing in some board rationales, because they are not in the dossier and cannot be reference-checked, and warned that the 6.7-month control figure looks migrated from an unrelated 1L trial. That objection is honored here by anchoring the rank on the NEJM subgroup alone. On mechanism, pan-RAS blockade can select adaptive RTK/MAPK reactivation, but no persona raised that as a reason to downgrade.
 
-Order in parallel with the germline panel (3-6 week turnaround), MMR IHC (1-2 weeks), p16 IHC (1-2 weeks), MTAP reflex (often returnable on the same NGS request), and the TMB platform / pipeline documentation review. Most academic centers can run all of this on a single archival block plus a single blood draw. Ask the molecular pathologist to annotate KRAS copy-number, SMAD4 status, and MTAP explicitly rather than burying them in a 500-gene appendix. The target-validator surfaced this row as essential / gates_intervention; the user-reported G12R confirmation means this is hardening rather than pre-enrollment gating.
+### Practical considerations
 
-#### Why this rank
+Recruiting, oral once daily. Screening entails orthogonal NGS/ctDNA G12R confirmation, which is standard and already scoped. Because RASolute 302 is active-not-recruiting, the practical routes are the RMC-6236-001 monotherapy trial, the RMC-GI-102 combination platform, or the FDA Expanded Access Program. No NCCN evidence category or ESMO score attaches to the drug; the guideline fit is the NCCN v2.2026 trial-enrollment principle plus a now-disclosed positive phase 3.
 
-Rank 1 because every downstream pan-RAS / RAS(ON) lane requires central-lab orthogonal confirmation regardless of the local report. The serial ctDNA dynamics (cycle 2, cycle 4) are the early-response readout that tracks ahead of imaging.
+### Why this rank
 
-#### Per-trial detail
+Nothing else on the board has both peer-reviewed efficacy and an indication match. The next tier (ERAS-0015) shows a similar ORR but from a press release, and the guideline-listed option (olaparib) cannot start today. That combination — real data, real access, primary-axis fit — is why the agreement score is a clean 1.0.
 
-| Therapeutic agent | Efficacy | Toxicity | Reference |
-|---|---|---|---|
-| Orthogonal KRAS G12R NGS + baseline ctDNA (Guardant360 CDx / FoundationOne CDx / Tempus xF+ / Natera Signatera / Caris Assure) | Gates pan-RAS / RAS(ON) trial entry; seeds monitoring baseline | None — diagnostic | [NCT05379985](https://clinicaltrials.gov/study/NCT05379985), [NCT06445062](https://clinicaltrials.gov/study/NCT06445062), [PMID 36952657](https://pubmed.ncbi.nlm.nih.gov/36952657) |
-
----
-
-### Rank 2. daraxonrasib (RMC-6236) 300 mg PO daily monotherapy on NCT05379985
-
-*Lead therapeutic option. All five personas put this at rank 1.*
-
-#### Evidence base
-
-The Wolpin NEJM 2026 publication ([PMID 42090791](https://pubmed.ncbi.nlm.nih.gov/42090791)) is the load-bearing efficacy anchor: 168 PDAC patients dosed at 300 mg or below in the RMC-6236-001 phase 1/2; the 2L RAS G12 subgroup at 300 mg (n=26) returned ORR 35%, mDoR 8.2 mo, mPFS 8.5 mo, mOS 13.1 mo. G12X variants enrolled include G12D, G12V, G12R, and Q61H — the patient's G12R sits inside the pooled estimand. Preclinical activity is replicated across G12R-bearing PDAC lines (Holderfield Nature 2024 [PMID 38589574](https://pubmed.ncbi.nlm.nih.gov/38589574); Jiang Cancer Discovery 2024 [PMID 38593348](https://pubmed.ncbi.nlm.nih.gov/38593348)), and the G12R-specific biology (Hobbs Cancer Discovery 2020 [PMID 31649109](https://pubmed.ncbi.nlm.nih.gov/31649109)) puts this allele squarely in the RAS(ON) tri-complex window rather than the GDP-state covalent G12C window. RASolute-302 ([NCT06625320](https://clinicaltrials.gov/study/NCT06625320)) is the registrational phase 3; status is active not recruiting and the OS readout has not landed.
-
-#### Likelihood of desired effect
-
-High in 2L RAS G12 PDAC at the 300 mg dose. The ORR 35% / mPFS 8.5 mo / mOS 13.1 mo in n=26 is the best published efficacy on this allele anywhere, and G12R sits inside the pooled G12X estimand on biology that Hobbs 2020 explains. The open question is allele resolution: the G12R-specific subgroup ORR has not been broken out from the pooled estimand, and the field reads G12X as a single number pending the RASolute-302 phase 3 readout. The Singhi 2025 finding that G12R PDAC carries a relatively lower baseline ERK flux and an immune-enriched microenvironment is consistent with a wider therapeutic window for active-state RAS blockade in this allele than in G12D, but that hypothesis has not been tested clinically at allele resolution.
-
-#### Toxicity profile
-
-The AE distribution is fully mapped in the 168-patient PDAC cohort:
-
-- Any-grade treatment-related AE 96%; G3+ TRAE 30%; no grade-5 events
-- Rash any-grade 91% / G3+ 8% — EGFR-inhibitor management playbook applies (topical steroids plus low-dose doxycycline)
-- Diarrhea any-grade 48% / G3+ 2% — loperamide ladder
-- Stomatitis any-grade 31% / G3+ 3% — dexamethasone mouthwash
-- Nausea any-grade 43%, vomiting 31%, fatigue 20%
-
-The user has no toxicity vetoes and the rash / GI / stomatitis profile fits inside the consent envelope. Visit burden for rash management is real but not dose-limiting at 300 mg.
-
-#### Counter-productive mechanisms / dissent
-
-Board endorsement was unanimous in round 1. The critic's evidence caveat (ROBINS-I:Moderate, n=26, no allele-resolved G12R subgroup, RASolute-302 not yet read out) persists and is acknowledged. The concensusite reframed this in round 2 as a trial-enrollment-principle pick rather than a guideline-listed regimen — pan-RAS is not yet listed in any NCCN evidence category for PDAC. The risktaker and advocate filed round-2 qualified critiques arguing for the chemo-combo lane (NCT06445062) above monotherapy given the patient's oxaliplatin-naive status and treat-to-remission goal; that argument is captured separately at rank 6. No persona dissented or vetoed monotherapy.
-
-#### Practical considerations
-
-- Trial open at [NCT05379985](https://clinicaltrials.gov/study/NCT05379985) (recruiting) — the registrational RASolute-302 trial is active not recruiting, so access most likely runs through RMC-6236-001 or RMC-GI-102.
-- Eligibility requires orthogonal G12R confirmation (rank 1).
-- FDA Breakthrough Therapy designation is a regulatory process status, not a guideline category. NCCN Pancreatic Adenocarcinoma v2.2026 lists the trial-enrollment principle for recurrent disease with an actionable alteration, which is the framing for this pick.
-- 5-year safety follow-up for the pan-RAS class is not yet available; longest-followed patients are at roughly 2 years.
-
-#### Why this rank
-
-Rank 2 only because rank 1 is the workup that gates everything. On therapeutic merit this is rank 1 with a unanimous board: only published meaningful effect size on KRAS G12R PDAC, recruiting trial, fully mapped AE distribution, matched mechanism. The agreement score (1.0) is the maximum for any therapeutic row.
-
-#### Per-trial detail
+### Per-trial detail
 
 | Therapeutic agent | Efficacy | Toxicity | Reference |
 |---|---|---|---|
-| daraxonrasib (RMC-6236) 300 mg PO daily monotherapy — RMC-6236-001 ([NCT05379985](https://clinicaltrials.gov/study/NCT05379985)) 2L+ PDAC | ORR 35% (n=26); mPFS 8.5 mo; mOS 13.1 mo; mDoR 8.2 mo | G3+ TRAE 30%; rash G3+ 8%; diarrhea G3+ 2%; stomatitis G3+ 3%; no G5 | [PMID 42090791](https://pubmed.ncbi.nlm.nih.gov/42090791) |
-| daraxonrasib monotherapy — RASolute-302 phase 3 vs investigator's choice SoC ([NCT06625320](https://clinicaltrials.gov/study/NCT06625320)) | OS, PFS, ORR — registrational readout pending | Per RMC-6236-001 profile | [NCT06625320](https://clinicaltrials.gov/study/NCT06625320) |
-| RMC-6236 + RMC-7977 translational PDAC efficacy across G12X alleles including G12R | Strong preclinical activity across G12 variants; ERK pathway suppression at sub-100 nM | n/a | [PMID 38589574](https://pubmed.ncbi.nlm.nih.gov/38589574), [PMID 38593348](https://pubmed.ncbi.nlm.nih.gov/38593348) |
+| daraxonrasib 300 mg (2L RAS G12 PDAC, n=26) | ORR 35%; mPFS 8.5 mo; mOS 13.1 mo | Any TRAE 96%; G3+ 30%; rash, GI | [PMID 42090791](https://pubmed.ncbi.nlm.nih.gov/42090791) |
+| daraxonrasib monotherapy (FIH, RAS G12X) | RP2D / expansion; ORR per above | Rash, diarrhea, stomatitis | [NCT05379985](https://clinicaltrials.gov/study/NCT05379985) |
+| RMC-6236 / RMC-7977 translational | G12R lines regress at G12D-equivalent exposure | Preclinical | [PMID 38589574](https://pubmed.ncbi.nlm.nih.gov/38589574), [PMID 38593348](https://pubmed.ncbi.nlm.nih.gov/38593348) |
+| RASolute 302 (phase 3, registrational) | Company/FDA-disclosed mOS 13.2 vs 6.7 mo, HR 0.40 (not in dossier) | Not published | [NCT06625320](https://clinicaltrials.gov/study/NCT06625320) |
 
----
+## Rank 2. JYP0015 / ERAS-0015 (pan-RAS molecular glue)
 
-### Rank 3. PF-07934040 pan-KRAS small-molecule on NCT06447662
+*A second pan-RAS shot with a striking ORR — but the safety table is a blank the board could not fill.*
 
-*Backup pan-KRAS class with explicit G12R inclusion in eligibility. Endorsed by critic, concensusite, and advocate.*
+### Evidence base
 
-#### Evidence base
+The efficacy comes from a single Erasca topline release dated April 2026: PDAC unconfirmed ORR 40% (n=20) and 42% at the recommended dose (n=12), with 14 of 14 KRAS G12X patients dropping ctDNA at least 75% and five clearing to zero ([NCT06895031](https://clinicaltrials.gov/study/NCT06895031)). Responses are unconfirmed at a 14-week cutoff. There is no abstract and no peer-reviewed paper, per-term grade 3+ AE rates are undisclosed, and G12R is folded into the pooled G12X figure rather than reported on its own. This is a cyclophilin-A molecular glue that engages GTP-bound KRAS across G12X alleles.
 
-Pfizer's first-in-human pan-KRAS phase 1 ([NCT06447662](https://clinicaltrials.gov/study/NCT06447662)) is one of the few programs that names G12R explicitly in the inclusion criteria rather than burying it in pan-codon-12 language. Eligibility covers G12C, G12D, G12V, G12R, G12S, G13D, and Q61H across NSCLC, CRC, and PDAC. Two cohorts fit: Part 2a Cohort A1 is 2L+ PDAC monotherapy and matches the patient's recurrent post-FOLFIRI status; Part 2b Cohort A2 is the 1L gem/nab combination arm. No published efficacy data exist; the rank is class-extrapolation from the daraxonrasib precedent (PMID 42090791) under the assumption that small-molecule pan-KRAS chemistry can deliver similar effects as the RAS(ON) tri-complex class. Astellas's ASP5834 ([NCT07094204](https://clinicaltrials.gov/study/NCT07094204)) is the IV-dosed parallel option also naming G12R explicitly; PDAC is in the expansion cohorts.
+### Likelihood of desired effect
 
-#### Likelihood of desired effect
+The topline ORR sits in the same range as daraxonrasib, and deep ctDNA clearance is a molecular-response signal worth weighting — but ctDNA reduction has never been shown to translate to RECIST benefit in PDAC, so the effect estimate is moderate and provisional. Predictive confidence for G12R specifically is lower than the pooled figure implies. A confirmed dataset would move this materially.
 
-Moderate — class extrapolation rather than direct evidence. No PF-07934040 efficacy readout has been published; the rank stands on the daraxonrasib precedent and the G12R-explicit eligibility. Useful access-positioning if a daraxonrasib slot is unavailable.
+### Toxicity profile
 
-#### Toxicity profile
+- No dose-limiting toxicities reported through the data cutoff.
+- **Per-term grade 3+ AE rates are not disclosed** — the single most load-bearing gap. The conservative treats the missing grade-resolved table as disqualifying because it leaves no management algorithm to hand a treating team.
+- Long-tail toxicity and durability for a first-in-class molecular glue are unknown.
 
-- No published AE-grade distribution — phase 1 dose-finding still in progress
-- Class-effect rash and GI toxicity expected per pan-KRAS mechanism
-- Grade 2+ sensory neuropathy is an enrollment exclusion — watch-item given prior FOLFIRI, though irinotecan-based regimens are usually neuropathy-sparing
+### Counter-productive mechanisms / dissent
 
-User has no toxicity vetoes; the rash / GI watch-items are not pre-flagged.
+The board split hard here. The advocate and risktaker rank it second, reading a second independent 40%-range PDAC signal as class corroboration the patient's preferences reward. The conservative leaves it off entirely on the absent grade-resolved safety. The critic and concensusite keep it at rank 3 on maturity — a press release cannot be weighted against an NEJM anchor at the same grade. On mechanism, a pan-RAS glue can drive adaptive RAS-pathway reactivation, which is why the counter-productive risk is Moderate rather than Low. The advocate flagged it preference-aligned while the conservative dissented, so it lands as considered_with_caveats.
 
-#### Counter-productive mechanisms / dissent
+### Practical considerations
 
-No round-2 dissent critiques were filed against this row. The critic, concensusite, and advocate all flagged it on roughly the same logic: G12R is in eligibility, no efficacy yet, useful as a backup if RMC-6236 access is blocked.
+Recruiting, oral once daily, PDAC a named cohort — the preference fit is strong for an efficacy-leaning, high-risk-tolerant, trials-preferring patient. Confirm an open PDAC slot at a participating site. No NCCN category or ESMO score; trial-enrollment-principle option.
 
-#### Practical considerations
+### Why this rank
 
-- Trial open at [NCT06447662](https://clinicaltrials.gov/study/NCT06447662) (recruiting)
-- Confirm residual neuropathy from prior FOLFIRI clears the grade-2 exclusion threshold before screening
-- Decision between Part 2a (2L+ monotherapy) and Part 2b (1L gem/nab combo) depends on whether the protocol counts adjuvant FOLFIRI as prior systemic
-- Not an NCCN-listed or ESMO-scored regimen for PDAC; the framing is the NCCN trial-enrollment principle
+It sits below daraxonrasib for one reason: evidence maturity. Same ORR range, same primary axis, but one is an NEJM publication and the other is a topline release with no safety table. The agreement score (0.6) reflects four personas keeping it on their lists against one firm dissent.
 
-#### Why this rank
-
-Rank 3 because the class case is plausible and the G12R-explicit eligibility is operationally distinctive, but no clinical efficacy is published and the dossier has no PF-07934040 AE-grade distribution. Tied with rank 4 on agreement score (0.6); broken on stage of development (PF-07934040 has no biomarker reflex requirement; rank 4 is gated on MTAP).
-
-#### Per-trial detail
+### Per-trial detail
 
 | Therapeutic agent | Efficacy | Toxicity | Reference |
 |---|---|---|---|
-| PF-07934040 oral pan-KRAS — Part 2a Cohort A1 2L+ PDAC monotherapy ([NCT06447662](https://clinicaltrials.gov/study/NCT06447662)) | Safety, RP2D, ORR primary; no efficacy readout yet | Not yet published; G2+ neuropathy excluded | [NCT06447662](https://clinicaltrials.gov/study/NCT06447662) |
-| ASP5834 IV pan-KRAS — parallel program also naming G12R ([NCT07094204](https://clinicaltrials.gov/study/NCT07094204)) | Safety, RP2D, ORR primary; PDAC in expansion | Not yet published | [NCT07094204](https://clinicaltrials.gov/study/NCT07094204) |
+| JYP0015 / ERAS-0015 (PDAC, RDE) | uORR 40-42%; 14/14 with >=75% ctDNA drop | No DLTs; per-term G3+ undisclosed | [NCT06895031](https://clinicaltrials.gov/study/NCT06895031) |
 
----
+## Rank 3. olaparib maintenance after platinum induction (POLO regimen)
 
-### Rank 4. anvumetostat (AMG 193) + daraxonrasib on NCT06360354 — gated on MTAP co-deletion
+*The only guideline-listed drug on the board — and the one that cannot start today. Gated on germline BRCA1/2 plus a platinum induction the patient has never had.*
 
-*Two-feature trial covering KRAS G12R and CDKN2A / MTAP loss on a single regimen. Endorsed by risktaker, advocate, and concensusite.*
+### Evidence base
 
-#### Evidence base
+POLO (Golan, [PMID 31157963](https://pubmed.ncbi.nlm.nih.gov/31157963)) is the one RoB2-low RCT in the dossier: randomized, double-blind, placebo-controlled, with a pre-specified PFS primary met at HR 0.53 (95% CI 0.35-0.82, p=0.004; 7.4 vs 3.8 months). It enrolled germline BRCA1/2 metastatic PDAC with no progression after at least 16 weeks of first-line platinum. Reiss's rucaparib phase 2 ([PMID 33970687](https://pubmed.ncbi.nlm.nih.gov/33970687)) widens the eligible genotypes to somatic BRCA and PALB2 and is carried as the rank-9 fallback.
 
-CDKN2A and MTAP are adjacent on the 9p21 locus and co-deleted in roughly 80-90% of CDKN2A homozygous deletions. The MTA-cooperative PRMT5 class is one of the cleanest synthetic-lethal axes in preclinical oncology: Mavrakis Science 2016 ([PMID 26912361](https://pubmed.ncbi.nlm.nih.gov/26912361)) and Kryukov Science 2016 ([PMID 26912360](https://pubmed.ncbi.nlm.nih.gov/26912360)) established the underlying biology back-to-back, and Smith Cancer Discovery 2023 ([PMID 37552839](https://pubmed.ncbi.nlm.nih.gov/37552839)) showed MRTX1719 with greater than 70-fold MTAP-deleted selectivity in xenografts, sparing the bone-marrow toxicity that killed first-generation PRMT5 inhibitors. [NCT06360354](https://clinicaltrials.gov/study/NCT06360354) (MTAPESTRY-103) carries an anvumetostat + daraxonrasib combination arm — a single trial that targets the patient's KRAS G12R feature and the CDKN2A-loss / MTAP-deletion axis simultaneously. PDAC-cohort efficacy is not yet published; the bulk of in-vivo data is in NSCLC and mesothelioma.
+### Likelihood of desired effect
 
-#### Likelihood of desired effect
+In the right patient this is a real PFS benefit. Two things temper it. First, POLO's interim OS separated poorly — HR 0.91, not significant — so the PFS win has not carried through to survival even in the registrational population. Second, and decisive here, the patient is not yet in the eligible population: germline status is unknown and there has been no platinum exposure. Assume no benefit until both gates resolve.
 
-Moderate if MTAP is co-deleted. The preclinical foundation is unusually clean and the cooperative MTA chemistry is designed to spare MTAP-proficient tissue. The clinical signal in PDAC specifically is not yet public; the trial is still in phase 1b combination dose-finding.
+### Toxicity profile
 
-#### Toxicity profile
+- Grade 3+ AEs 40% (vs 23% on placebo): anemia, fatigue, nausea.
+- AE-driven discontinuation 5%.
+- MDS/AML risk around 1.5% on prolonged PARP exposure — the long-tail signal to watch at year 2 and beyond.
 
-- No published clinical AE distribution for anvumetostat + daraxonrasib in PDAC
-- MTA-cooperative chemistry designed to spare hematologic toxicity (the dose-limiting feature of first-generation PRMT5 inhibitors)
-- Daraxonrasib class effects (rash, GI, stomatitis) layer in the combination arm
+### Counter-productive mechanisms / dissent
 
-#### Counter-productive mechanisms / dissent
+The conservative, critic, and concensusite rank it second because when the guideline speaks at drug level, that outweighs a deeper pre-approval option. The risktaker and advocate dissent on preference-fit: for a remission-seeking, trials-preferring patient, an option double-gated on an unordered result and an unstarted induction, whose survival curve stayed flat where it was tested, is not a rank-2. The dissent is about deliverability, not mechanism — PARP maintenance carries no goal-blunting mechanism, so the counter-productive severity is Low.
 
-No round-2 dissent critiques filed against this row. The risktaker placed it at rank 4 as a high-mechanism-stack pick, advocate at rank 5 for dual-feature targeting consistent with treat-to-remission, and concensusite at rank 5 under the trial-enrollment principle.
+### Practical considerations
 
-#### Practical considerations
+Order the germline BRCA1/2/PALB2 panel now — NCCN recommends it for every PDAC patient regardless of family history, so this is a test to run today, not a reason to defer. A platinum induction (NALIRIFOX or FOLFIRINOX, the treating team's call) would need to control disease for 16+ weeks before the POLO indication opens. If germline returns positive and the induction holds, this climbs above every uncategorized pan-KRAS trial on the board.
 
-- Trial open at [NCT06360354](https://clinicaltrials.gov/study/NCT06360354) (recruiting)
-- **Order the MTAP IHC or NGS copy-number reflex on the existing tumor block before banking on this row** — cheap to order, decisive to read, the entire row collapses if MTAP is retained
-- Most comprehensive NGS panels already return MTAP copy-number; ask the molecular pathologist to call it explicitly
-- BMS-986504 ([NCT07492680](https://clinicaltrials.gov/study/NCT07492680)) MountainTAP-5 is the parallel option but not yet recruiting (July 2026 start)
+### Why this rank
 
-#### Why this rank
+It outranks the daraxonrasib-plus-chemo combination and the pan-KRAS trials on guideline weight — it is the only categorized drug for this patient. It sits below the two pan-RAS efficacy signals because it cannot start today and its survival benefit is unproven. The 0.2 agreement score reflects the two preference-fit dissents.
 
-Rank 4 on the dual-feature mechanism stack and clean preclinical foundation. Tied with rank 3 on agreement score (0.6); breaks below because of the MTAP reflex gate. If MTAP confirms, this row rises operationally — particularly under the treat-to-remission preference, because the daraxonrasib combination arm hits both targetable features on a single regimen.
-
-#### Per-trial detail
+### Per-trial detail
 
 | Therapeutic agent | Efficacy | Toxicity | Reference |
 |---|---|---|---|
-| anvumetostat (AMG 193) + daraxonrasib — MTAPESTRY-103 ([NCT06360354](https://clinicaltrials.gov/study/NCT06360354)) GI tumors with homozygous MTAP deletion | Safety, RP2D, ORR primary; no PDAC efficacy yet | Not yet published; class-cooperative design spares MTAP-proficient tissue | [NCT06360354](https://clinicaltrials.gov/study/NCT06360354) |
-| MRTX1719 (MTA-cooperative PRMT5i) preclinical translational anchor | >70-fold MTAP-deleted vs MTAP-WT selectivity; xenograft regression | Hematologic and bone-marrow effects not observed at efficacious doses | [PMID 37552839](https://pubmed.ncbi.nlm.nih.gov/37552839) |
-| BMS-986504 (navlimetostat) ± daraxonrasib — MountainTAP-5 platform | TBD; not yet recruiting | TBD | [NCT07492680](https://clinicaltrials.gov/study/NCT07492680) |
+| olaparib maintenance (gBRCA mPDAC, POLO) | PFS HR 0.53; interim OS HR 0.91 (NS) | G3+ 40%; anemia, fatigue, nausea | [PMID 31157963](https://pubmed.ncbi.nlm.nih.gov/31157963) |
+| rucaparib maintenance (BRCA/PALB2, phase 2) | mPFS 13.1 mo; ORR 41.7% | Anemia 22% G3+ | [PMID 33970687](https://pubmed.ncbi.nlm.nih.gov/33970687) |
 
----
+## Rank 4. daraxonrasib + mFOLFIRINOX or gem/nab (RMC-GI-102)
 
-### Rank 5. olaparib maintenance after platinum induction — POLO regimen
+*Combination intensification for a remission-seeking, oxaliplatin-naive patient — deeper responses at the cost of stacked toxicity.*
 
-*Considered with caveats. Two locked gates: germline BRCA1/2 / PALB2 status, and a 16-plus-week platinum induction the patient has not had.*
+### Evidence base
 
-#### Evidence base
+This extends the rank-1 agent onto a chemo backbone ([NCT06445062](https://clinicaltrials.gov/study/NCT06445062)), leaning on the same NEJM daraxonrasib anchor ([PMID 42090791](https://pubmed.ncbi.nlm.nih.gov/42090791)) plus the RAMP-205 dose-level-1 preview, where 5 of 6 patients had confirmed partial responses on a chemo-plus-targeted backbone in RAS-mutant PDAC ([abstract](https://doi.org/10.1200/JCO.2024.42.16_suppl.4140)). That signal is striking but tiny — a 6-patient early cohort.
 
-POLO (Golan NEJM 2019, [PMID 31157963](https://pubmed.ncbi.nlm.nih.gov/31157963), [NCT02184195](https://clinicaltrials.gov/study/NCT02184195)) is the only RoB2:Low phase 3 RCT in this dossier and the only PARP-class regimen with seven years of post-marketing PDAC surveillance. PFS HR 0.53 (95% CI 0.35-0.82, p=0.004), mPFS 7.4 vs 3.8 mo on placebo. The PFS hit is unambiguous; the interim OS HR was 0.91 with no separation, which is the relevant ceiling. Reiss 2021 JCO ([PMID 33970687](https://pubmed.ncbi.nlm.nih.gov/33970687)) extends the PARP signal to somatic BRCA and PALB2 in a phase 2 single-arm (n=46) — useful for net-widening but not RCT-grade.
+### Likelihood of desired effect
 
-#### Likelihood of desired effect
+For depth of response, this is the most aggressive on-axis option, and the patient's oxaliplatin-naive status after FOLFIRI-only adjuvant leaves mFOLFIRINOX biologically available. The depth-of-response ceiling is genuinely higher than monotherapy; whether it holds at scale is unproven.
 
-High in PFS, conditional on both locked gates opening. The germline panel has not returned (target-validation row `germline-pdac-hboc-lynch-lfs-panel` is the workup) and the patient is platinum-naive after irinotecan-only adjuvant FOLFIRI. POLO requires at least 16 weeks of first-line platinum without progression as the entry condition — that is a NALIRIFOX or FOLFIRINOX induction (treating team's call, outside Libby's scope) before the maintenance pathway opens. The OS ceiling is the binding interpretation: PFS HR 0.53 has not converted to an OS hit at the registrational analysis.
+### Toxicity profile
 
-#### Toxicity profile
+- Pan-RAS rash and GI toxicity stacked on chemo cytopenias and neuropathy.
+- No dedicated PDAC combination-safety readout for the daraxonrasib + chemo backbone exists.
+- Prior FOLFIRI may push the backbone toward gem/nab if residual neuropathy is present.
 
-- G3+ AEs in 40% of olaparib patients vs 23% on placebo
-- AE-driven discontinuation 5% vs 2%
-- PARP-class MDS / AML risk at roughly 1.5% on prolonged exposure — the long-tail signal to monitor at year 2 and beyond
-- Class effects: anemia, fatigue, nausea (NCCN-published management algorithms)
+### Counter-productive mechanisms / dissent
 
-User has no toxicity vetoes.
+The advocate ranked this third and the risktaker's critique argued it deserves parity with the glue for an oxaliplatin-naive remission-seeker. The conservative's standing watch-item applies: layering pan-RAS toxicity onto chemo without a combination-safety readout draws qualified dissent on toxicity. No mechanism-level objection was raised; the risk is that overlapping toxicity forces dose compromises that erode the intended intensity.
 
-#### Counter-productive mechanisms / dissent
+### Practical considerations
 
-Critic ranked olaparib at 2 (only RCT-grade option in the dossier), conservative at 2 (most mature safety dataset), concensusite at 2 (only NCCN category 1 listing in the case). Risktaker filed a round-2 dissent on preference-fit grounds: two sequential locked gates stack against a tumor that is already recurrent, and the POLO interim OS HR of 0.91 means even when the gates open the payoff is PFS, not OS. Advocate filed a qualified-on-preference round-2 critique on the same logic and parked it as a deferred option pending germline reflex. The evidence-quality case is unambiguous; the preference-fit case is the disagreement.
+Confirm the PDAC subprotocol is open at the referral site — arm openness varies. Let residual neuropathy from prior FOLFIRI steer the backbone toward gem/nab if needed. Trial-enrollment-principle option; not NCCN-listed.
 
-Status: `considered_with_caveats` per Hard Rule 3 — two dissents (risktaker, advocate) on a non-veto option.
+### Why this rank
 
-#### Practical considerations
+It sits below monotherapy daraxonrasib and the ERAS-0015 glue because it trades a characterized single-agent safety profile for an uncharacterized combination one, and below the guideline-listed olaparib on the same guideline-weight logic that seats olaparib third. It ranks above the pan-KRAS trials because it carries real efficacy behind it.
 
-- Trial / regimen is FDA-approved, not a recruiting trial — this is a standard-of-care option after the gates open
-- Germline BRCA1/2 / PALB2 panel: 3-6 week turnaround; order alongside the orthogonal NGS in rank 1
-- Platinum induction is the treating team's decision; Libby's scope does not include SoC chemo selection
-- Rucaparib (rank 10) is the somatic-BRCA / PALB2 backup if germline is negative but somatic HRD is positive
-
-#### Why this rank
-
-Rank 5 because the gating timeline (germline panel + platinum induction + 16-week disease control) puts this option weeks-to-months behind the pan-KRAS lanes for a tumor that is already recurrent. Higher than rank 6 because the underlying evidence is RoB2:Low RCT rather than ASCO-abstract n=6; lower than rank 4 because it requires two sequential bets on a tumor with active progression.
-
-#### Per-trial detail
+### Per-trial detail
 
 | Therapeutic agent | Efficacy | Toxicity | Reference |
 |---|---|---|---|
-| olaparib 300 mg PO BID maintenance — POLO ([NCT02184195](https://clinicaltrials.gov/study/NCT02184195)) gBRCA1/2 metastatic PDAC after >=16 wk platinum | PFS HR 0.53 (95% CI 0.35-0.82, p=0.004); mPFS 7.4 vs 3.8 mo; interim OS HR 0.91 NS | G3+ AEs 40% olaparib vs 23% placebo; AE discontinuation 5% | [PMID 31157963](https://pubmed.ncbi.nlm.nih.gov/31157963) |
-| rucaparib 600 mg PO BID — Reiss 2021 single-arm phase 2 (somatic BRCA + PALB2 extension) | mPFS 13.1 mo; mOS 23.5 mo; ORR 41.7% | PARP-class effects per olaparib | [PMID 33970687](https://pubmed.ncbi.nlm.nih.gov/33970687) |
+| daraxonrasib + mFOLFIRINOX / gem-nab | Deep-response ceiling; RAMP-205 dose-1 5/6 PRs (n=6) | Rash, diarrhea, cytopenia, neuropathy | [NCT06445062](https://clinicaltrials.gov/study/NCT06445062), [abstract](https://doi.org/10.1200/JCO.2024.42.16_suppl.4140) |
 
----
+## Rank 5. ulixertinib (ERK1/2i) + palbociclib (CDK4/6i)
 
-### Rank 6. daraxonrasib + mFOLFIRINOX or gem/nab-paclitaxel on NCT06445062 (RMC-GI-102)
+*The only regimen that hits three of the patient's drivers at once. Clean mechanistic logic, thin clinical substrate.*
 
-*Considered with caveats. Preference-aligned escalation lane; two persona dissents on missing combination-safety data.*
+### Evidence base
 
-#### Evidence base
+This combination targets ERK downstream of KRAS G12R and the CDK4/6 dependency created by CDKN2A loss and CCND3 alteration ([NCT03454035](https://clinicaltrials.gov/study/NCT03454035)). The published pancreatic signal is Raybould's ASCO 2021 abstract (n=26; 9 PDAC), where the pancreatic readout was stable disease — 2 SD — not objective response ([abstract](https://doi.org/10.1200/JCO.2021.39.15_suppl.3103)). Single-agent palbociclib already read negative in the CDK4/6-amplified NCI-MATCH basket at ORR 4% (O'Hara, [PMID 39437014](https://pubmed.ncbi.nlm.nih.gov/39437014)).
 
-[NCT06445062](https://clinicaltrials.gov/study/NCT06445062) is the open-label multi-arm RAS(ON) platform combining daraxonrasib with mFOLFIRINOX or gemcitabine/nab-paclitaxel in 1L and 2L+ RAS-mutant GI tumors. PDAC arms cover G12X variants including G12R. The Wolpin NEJM 2026 ([PMID 42090791](https://pubmed.ncbi.nlm.nih.gov/42090791)) monotherapy data are the floor; the combination ceiling has not been publicly characterized in PDAC yet. The closest precedent is RAMP-205 dose-level-1 (avutometinib + defactinib + gem/nab; ASCO 2024 abstract, [doi:10.1200/JCO.2024.42.16_suppl.4140](https://doi.org/10.1200/JCO.2024.42.16_suppl.4140)) reporting 5/6 confirmed PRs in 1L KRAS-mutant metastatic PDAC at n=6 — an exact binomial 95% CI on 5/6 runs roughly 36-100%, and a single non-responder collapses the point estimate. The patient is oxaliplatin-naive (adjuvant FOLFIRI only), so an mFOLFIRINOX combination arm is biologically available rather than just nominally on protocol.
+### Likelihood of desired effect
 
-#### Likelihood of desired effect
+Low for objective response. The rationale is mechanistic vertical blockade, not efficacy-backed: the best published PDAC readout is disease stabilization, and the organoid synergy that motivates the combination was worked out mostly in G12D/G12V lines while G12R runs a lower baseline ERK flux. The dual-feature coverage is real; the depth-of-response prior is not.
 
-Moderate-to-high in principle; uncharacterized in published evidence. Combination intensification is the route the treat-to-remission preference points at, and the RAMP-205 precedent suggests pan-RAS-class plus chemo backbones can produce deeper responses than monotherapy in PDAC. The honest read: no published daraxonrasib + chemo PDAC efficacy data exist as of this run.
+### Toxicity profile
 
-#### Toxicity profile
+- Overlapping myelosuppression: CDK4/6 cytopenias stacked on MAPK-inhibitor GI toxicity.
+- Grade 3 TRAEs named but not rate-tabulated in the abstract: decreased WBC, decreased lymphocytes, anemia, fatigue.
+- Common all-grade: fatigue 70%, rash 62%, nausea 54%.
 
-- Pan-RAS class toxicity (rash 91% any-grade, diarrhea 48%) layered on chemo-class toxicity (cytopenias, neuropathy)
-- No published dedicated combination-safety readout for daraxonrasib + chemo in PDAC
-- Residual neuropathy from prior FOLFIRI may push the chemo backbone choice toward gem/nab rather than mFOLFIRINOX
-- Cumulative GI toxicity is the load-bearing watch-item
+### Counter-productive mechanisms / dissent
 
-User has no toxicity vetoes; high-risk-high-reward is explicit in the free-text preference.
+Three personas ranked it as a multi-feature keeper; none dissented against including it. The mechanism-level risk is real, which is why the counter-productive severity is Moderate: G12R's lower ERK flux may blunt the ERK-inhibitor arm, and overlapping toxicity can force dose reductions that undo the vertical blockade the combination is built on.
 
-#### Counter-productive mechanisms / dissent
+### Practical considerations
 
-Advocate ranked this at 2 (treat to remission, efficacy weight 0.80, oxaliplatin-naive backbone available) and risktaker pushed it to rank 1 in round-2 qualified critiques on the monotherapy lane. Conservative did not rank and filed a round-2 qualified critique noting no published dedicated combination-safety table; concensusite filed a round-2 qualified critique on guideline-fit (stacks an unlisted pan-RAS agent onto an NCCN cat-1 chemo backbone — a step further off the guideline than monotherapy). Critic did not rank.
+Recruiting, oral, admits PDAC by histology so G12R is no eligibility barrier; the 2L+ line and ECOG 1 both fit. Off-label, off-guideline combination on a single-arm phase 1.
 
-Status: `considered_with_caveats` per Hard Rule 3 (advocate flagged as preference-aligned; conservative and concensusite dissented in round 2).
+### Why this rank
 
-#### Practical considerations
+Its agreement score (0.6) matches the ERAS-0015 glue, but it sits below the pan-RAS efficacy tier because its best clinical signal is stable disease against the glue's 40%-range ORR. It ranks above the pre-data pan-KRAS trials because it at least carries a published — if abstract-level — toxicity table and a triple-feature mechanistic case.
 
-- Trial open at [NCT06445062](https://clinicaltrials.gov/study/NCT06445062) (recruiting)
-- Sponsor confirmation of PDAC subprotocol openness at the referral site is the operational gate
-- Whether prior adjuvant FOLFIRI counts as prior systemic therapy is protocol-dependent
-- Treat as a contingent escalation pending public release of the RMC-GI-102 PDAC-cohort AE distribution
-
-#### Why this rank
-
-Rank 6 — preference-aligned with the highest user-side ceiling on the page, but the load-bearing combination-safety publication is missing. Higher than ranks 7-11 on agreement-score and on the unambiguous preference-fit; lower than ranks 1-5 because the AE-distribution gap is real and the conservative + concensusite dissents are calibrated to that gap rather than to the mechanism.
-
-#### Per-trial detail
+### Per-trial detail
 
 | Therapeutic agent | Efficacy | Toxicity | Reference |
 |---|---|---|---|
-| daraxonrasib + mFOLFIRINOX or gem/nab — RMC-GI-102 ([NCT06445062](https://clinicaltrials.gov/study/NCT06445062)) GI tumors with RAS mutation | Safety, RP2D, ORR, PFS — PDAC efficacy not yet published | Not yet published; pan-RAS + chemo overlap expected | [NCT06445062](https://clinicaltrials.gov/study/NCT06445062) |
-| avutometinib + defactinib + gem/nab — RAMP-205 dose-level-1 (closest precedent) | 5/6 confirmed PRs (ORR 83%, n=6); 95% CI 36-100% | Not yet published in full | [doi:10.1200/JCO.2024.42.16_suppl.4140](https://doi.org/10.1200/JCO.2024.42.16_suppl.4140) |
-| daraxonrasib monotherapy floor | ORR 35% (n=26); mPFS 8.5 mo | G3+ TRAE 30% | [PMID 42090791](https://pubmed.ncbi.nlm.nih.gov/42090791) |
+| ulixertinib + palbociclib (PDAC subset) | 2 SD, no objective response | Cytopenias; fatigue 70%, rash 62% | [NCT03454035](https://clinicaltrials.gov/study/NCT03454035), [abstract](https://doi.org/10.1200/JCO.2021.39.15_suppl.3103) |
+| palbociclib monotherapy (CDK4/6-amp basket) | ORR 4%; mPFS 2.0 mo | Neutropenia | [PMID 39437014](https://pubmed.ncbi.nlm.nih.gov/39437014) |
 
----
+## Rank 6. KST-6051 / FALCON (pan-KRAS ON/OFF inhibitor)
 
-### Rank 7. zoldonrasib (RMC-7977) + ivonescimab (PD-1xVEGF bispecific) on NCT07397338
+*Mechanistic optionality on the primary axis — a distinct pan-KRAS shot for when the RAS(ON) route runs into resistance. No data yet.*
 
-*Considered with caveats. Highest-ceiling preclinical option the patient could touch; three persona dissents on evidence, toxicity, and guideline-fit. Only entry on the page that touches the immune axis.*
+### Evidence base
 
-#### Evidence base
+An oral Switch-II-pocket pan-KRAS inhibitor active against both ON and OFF states, with PDAC named as a target tumor ([NCT07458347](https://clinicaltrials.gov/study/NCT07458347)). The first patient was dosed in April 2026, so no efficacy or safety readout exists. G12R qualifies on the documented-KRAS-mutation gate alone; prior RAS inhibitor is an exclusion, intact for this RAS-inhibitor-naive patient. The rationale rests on G12R's biology sitting in the active-state window (Hobbs, [PMID 31649109](https://pubmed.ncbi.nlm.nih.gov/31649109)).
 
-[NCT07397338](https://clinicaltrials.gov/study/NCT07397338) is the open-label dose-exploration combining RAS(ON) inhibitors with ivonescimab (AK112, PD-1xVEGF bispecific). Primary listed indications are NSCLC and CRC; PDAC enrollment depends on cohort schedule. The preclinical case for the RAS(ON) class in PDAC is the strongest in the dossier: Wasko Nature 2024 ([PMID 38588697](https://pubmed.ncbi.nlm.nih.gov/38588697)) showed RMC-7977 in the autochthonous KPC GEMM produced the longest survival extension recorded for that model with complete radiologic responses in a subset, and Holderfield Nature 2024 ([PMID 38589574](https://pubmed.ncbi.nlm.nih.gov/38589574)) anchors the pharmacology across G12 alleles. The Singhi 2025 finding that G12R PDAC carries a relatively lower-ERK and immune-enriched microenvironment relative to G12D suggests the ICI layer may behave differently in G12R than in G12D, though that hypothesis is unproven clinically. Zero published clinical PDAC data exist for this combination.
+### Likelihood of desired effect
 
-#### Likelihood of desired effect
+Unknown. This is pure class extrapolation. The reason to hold a slot is that an ON/OFF-active pan-KRAS drug is a distinct dependency shot if the RAS(ON) agents fail or the rash proves intolerable.
 
-Low in the published-evidence sense. The preclinical ceiling is the highest on the page; the clinical floor is unmeasured because no PDAC patient has been reported on this combination. KPC GEMM data are G12D-allele rather than G12R-matched.
+### Toxicity profile
 
-#### Toxicity profile
+- No clinical safety data exist yet.
+- Early dose-escalation carries the usual risk of sub-therapeutic starting doses.
 
-- No published PDAC clinical AE distribution
-- Pan-RAS class toxicity (rash 91% any-grade, diarrhea 48%) stacked on PD-1xVEGF class immune-mediated AEs
-- Diagnostic ambiguity between class rash and immune-rash is the load-bearing toxicity-attribution watch-item
-- No management algorithm published for overlapping AE profiles
+### Counter-productive mechanisms / dissent
 
-User has no toxicity vetoes.
+The risktaker and advocate hold the slot as forward-looking optionality. The concensusite dissents on guideline-fit — ranking a pre-data 2026-dosed trial above the guideline-listed olaparib inverts the guideline order — but here it sits well below olaparib, which largely addresses that objection. No mechanism-level dissent.
 
-#### Counter-productive mechanisms / dissent
+### Practical considerations
 
-Risktaker ranked this at 2, advocate at 3. Conservative filed a round-2 dissent on toxicity grounds (no published PDAC combination-safety data; rash-vs-immune-rash diagnostic ambiguity). Critic filed a round-2 qualified critique on evidence-quality grounds (zero published clinical PDAC efficacy; preclinical KPC is G12D not G12R; layering pan-RAS class toxicity onto PD-1xVEGF without combination-safety publication is the specific gap). Concensusite filed a round-2 dissent on guideline-fit grounds (two pre-approval layers off the NCCN menu; PD-1xVEGF has no NCCN, ESMO, or ASCO PDAC line).
+Recruiting, oral, PDAC named. Early-phase slots will be scarce. JAB-23E73 (rank 8) is the near-identical fallback.
 
-Status: `considered_with_caveats` per the three round-2 dissents.
+### Why this rank
 
-#### Practical considerations
+Below the options with real or published data because it has neither, above JAB-23E73 only because FALCON names PDAC explicitly while the other enrolls all-comers.
 
-- Trial open at [NCT07397338](https://clinicaltrials.gov/study/NCT07397338) (recruiting) — confirm PDAC cohort openness with the sponsor before screening labs
-- MSS + TMB 4.1 forecloses every standard ICI lane; this trial is the only route that touches the immune axis at all
-- Off every guideline; the case for keeping this on the page is the patient's accept-high-risk-high-reward stance plus the preclinical KPC data
-
-#### Why this rank
-
-Rank 7 because the preclinical ceiling justifies surfacing it but the clinical floor is unmeasured and three persona dissents are calibrated to that gap. Higher than ranks 8-11 on the mechanism stack and the unique route to an immune axis; lower than ranks 1-6 because the published clinical PDAC effect size is zero.
-
-#### Per-trial detail
+### Per-trial detail
 
 | Therapeutic agent | Efficacy | Toxicity | Reference |
 |---|---|---|---|
-| zoldonrasib (RMC-7977) + ivonescimab — open-label dose-exploration ([NCT07397338](https://clinicaltrials.gov/study/NCT07397338)) RAS-mutant solid tumors | Safety, RP2D, ORR primary; no PDAC efficacy yet | Not yet published; pan-RAS + PD-1xVEGF overlap unmapped | [NCT07397338](https://clinicaltrials.gov/study/NCT07397338) |
-| RMC-7977 preclinical KPC GEMM anchor (Wasko Nature 2024) | Longest survival extension recorded for KPC; complete radiologic responses in subset | n/a | [PMID 38588697](https://pubmed.ncbi.nlm.nih.gov/38588697) |
-| Pan-RAS pharmacology cross-allele (Holderfield Nature 2024) | Strong activity across G12 alleles including G12R | n/a | [PMID 38589574](https://pubmed.ncbi.nlm.nih.gov/38589574) |
+| KST-6051 / FALCON | No clinical data (first dosed April 2026) | No AE data | [NCT07458347](https://clinicaltrials.gov/study/NCT07458347) |
 
----
+## Rank 7. PF-07934040 (pan-KRAS inhibitor, G12R named in eligibility)
 
-### Rank 8. ELI-002 7P amphiphile mKRAS peptide vaccine on NCT05726864 (AMPLIFY-7P)
+*A first-in-human pan-KRAS program that names G12R in writing — a clean axis backup with no efficacy readout.*
 
-*Considered with caveats. Cleanest safety profile in the dossier and G12R-explicit mechanism, but the MRD-positive enrollment window forecloses this patient's overt-recurrent state.*
+### Evidence base
 
-#### Evidence base
+Pfizer's pan-KRAS program is one of the few first-in-human agents that names G12R in its written eligibility rather than relying on codon-12 language ([NCT06447662](https://clinicaltrials.gov/study/NCT06447662)). It is dose-finding with no responses reported; the toxicity picture is limited to protocol exclusions. A 2L+ PDAC monotherapy cohort matches the post-FOLFIRI setting.
 
-[NCT05726864](https://clinicaltrials.gov/study/NCT05726864) (AMPLIFY-7P) is the phase 1/2 successor to AMPLIFY-201, enrolling resected PDAC and other KRAS / NRAS-mutant solid tumors in the adjuvant minimal-residual-disease setting. The 7-peptide panel covers G12D, G12R, G12V, G12A, G12C, G12S, and G13D — the patient's G12R is explicitly in scope. AMPLIFY-201 (Pant Nat Med 2024 [PMID 38195752](https://pubmed.ncbi.nlm.nih.gov/38195752); Wainberg Nat Med 2025 [PMID 40790272](https://pubmed.ncbi.nlm.nih.gov/40790272)) reported ctDNA reduction in 21/25 MRD-positive resected PDAC and CRC patients, mKRAS-specific T-cell responses in 84%, mRFS not reached vs 3.02 mo in high- vs low-T-cell-responders. The preclinical foundation (Rakhra JITC 2021 [PMID 34376552](https://pubmed.ncbi.nlm.nih.gov/34376552)) is the amphiphile-peptide platform with greater than 10-fold T-cell expansion vs soluble peptide.
+### Likelihood of desired effect
 
-#### Likelihood of desired effect
+Unknown — no efficacy has been published. It is ranked for its explicit G12R eligibility and clean axis fit, not for demonstrated activity.
 
-Low for this patient's clinical state. The mechanism is purpose-built for MRD-positive resected disease, not overt recurrence. AMPLIFY-7P enrolls the MRD window; the patient is past it. AMPLIFY-201's striking immunogenicity does not transpose to bulk overt disease.
+### Toxicity profile
 
-#### Toxicity profile
+- No published toxicity profile beyond protocol exclusions.
+- Grade 2+ sensory neuropathy is an exclusion, a watch-item given prior FOLFIRI, though irinotecan-based regimens are usually neuropathy-sparing.
+- RP2D in the PDAC cohort is still being set.
 
-- Zero dose-limiting toxicities across the AMPLIFY-201 dose-escalation
-- No grade 3+ vaccine-attributed events across n=25
-- Injection-site reactions are the dominant AE class
-- Cleanest safety profile in the entire dossier
+### Counter-productive mechanisms / dissent
 
-#### Counter-productive mechanisms / dissent
+The critic and concensusite surface it as access redundancy behind the tri-complex class. No dissent against inclusion; no mechanism objection.
 
-Conservative ranked at 3 (cleanest safety in dossier), concensusite at 4 (clean G12R mechanism-fit). In round 2 the concensusite filed a guideline-fit dissent on the conservative's placement — patient is overt-recurrent while AMPLIFY-7P enrolls MRD-positive resected; the indication is off, not just borderline. Conservative qualified-on-guideline-fit response acknowledged the enrollment-window issue is the binding constraint. The mechanism-fit case is unusually clean; the operational case has closed.
+### Practical considerations
 
-Status: `considered_with_caveats`.
+Recruiting, oral. Confirm an open PDAC dose-level slot rather than trusting the global enrollment statement. Trial-enrollment-principle option.
 
-#### Practical considerations
+### Why this rank
 
-- Trial active not recruiting per registry — access is binding even if eligibility were open
-- Vaccine requires immune competence and a 2-3 month T-cell expansion window; not a bridge for rapidly progressing disease
-- Logged on the page so the reader can see this was considered and rejected on indication grounds, not mechanism — if a curative-intent salvage resection ever becomes feasible, this row would re-enter scope
+Above the ON/OFF trials on the strength of naming G12R explicitly in eligibility; below the data-backed tiers because it has no efficacy readout.
 
-#### Why this rank
-
-Rank 8 because the mechanism-fit is unusually clean for G12R specifically, but the eligibility window does not match the patient's clinical state. Higher than ranks 9-11 on mechanism quality and safety profile; lower than ranks 1-7 because the operational route is closed for this patient.
-
-#### Per-trial detail
+### Per-trial detail
 
 | Therapeutic agent | Efficacy | Toxicity | Reference |
 |---|---|---|---|
-| ELI-002 7P — AMPLIFY-7P ([NCT05726864](https://clinicaltrials.gov/study/NCT05726864)) resected PDAC + KRAS-mutant solid tumors, MRD-positive | RFS, ctDNA reduction, immunogenicity — pending | Class-clean per AMPLIFY-201 | [NCT05726864](https://clinicaltrials.gov/study/NCT05726864) |
-| ELI-002 2P — AMPLIFY-201 (Wainberg Nat Med 2025) | ctDNA reduction 21/25; T-cell response 84%; mRFS NR vs 3.02 mo by responder stratification | Zero DLTs; no G3+ vaccine-attributed events | [PMID 40790272](https://pubmed.ncbi.nlm.nih.gov/40790272), [PMID 38195752](https://pubmed.ncbi.nlm.nih.gov/38195752) |
-| Amphiphile-peptide preclinical platform (Rakhra JITC 2021) | >10-fold T-cell expansion vs soluble peptide; durable cures in fraction of KRAS-mutant syngeneic models | Class-clean | [PMID 34376552](https://pubmed.ncbi.nlm.nih.gov/34376552) |
+| PF-07934040 (pan-KRAS, 2L+ PDAC cohort) | Dose-finding; no responses reported | Grade 2+ neuropathy excluded | [NCT06447662](https://clinicaltrials.gov/study/NCT06447662) |
 
----
+## Rank 8. JAB-23E73 (pan-KRAS ON/OFF inhibitor)
 
-### Rank 9. avutometinib (RAF/MEK clamp) + defactinib (FAKi) + gem/nab-paclitaxel on NCT05669482 (RAMP-205)
+*A second pan-KRAS ON/OFF option, kept for axis redundancy. G12R named preclinically; the trial is an all-comer basket.*
 
-*Considered with caveats. Striking abstract-only n=6 signal in 1L PDAC; trial active not recruiting; one round-2 critic dissent on evidence quality.*
+### Evidence base
 
-#### Evidence base
+An oral pan-KRAS ON/OFF inhibitor whose preclinical profile names G12R among its covered G12X alleles and spares HRAS/NRAS ([NCT06959615](https://clinicaltrials.gov/study/NCT06959615)). The only clinical disclosure so far is a qualitative "early antitumor activity" mention with no numbers. The trial enrolls any advanced solid tumor rather than naming PDAC.
 
-[NCT05669482](https://clinicaltrials.gov/study/NCT05669482) (RAMP-205) is the phase 1b/2 of the avutometinib + defactinib + gem/nab combination in treatment-naive metastatic PDAC. The Krebs ASCO 2024 abstract ([doi:10.1200/JCO.2024.42.16_suppl.4140](https://doi.org/10.1200/JCO.2024.42.16_suppl.4140)) reported 5/6 confirmed PRs at dose level 1 (ORR 83%, n=6) — a striking early signal at a small N; an exact binomial 95% CI on 5/6 runs roughly 36-100%. Cross-tumor LGSOC validation (Banerjee JCO 2025 [PMID 40644648](https://pubmed.ncbi.nlm.nih.gov/40644648)) gave 44% ORR with mPFS 22 mo and mDoR 31.1 mo in KRAS-mutant subset — FDA-accelerated approval for that indication. Preclinical Jiang Nat Med 2016 ([PMID 27376576](https://pubmed.ncbi.nlm.nih.gov/27376576)) is the KPC FAK-stroma anchor.
+### Likelihood of desired effect
 
-#### Likelihood of desired effect
+Unknown. Class extrapolation on the primary axis, with the added uncertainty that a PDAC slot is not guaranteed.
 
-Moderate-to-high in cross-tumor KRAS-mutant disease (LGSOC). PDAC signal at n=6 is hypothesis-generating; the exact 95% CI is wide enough that a single non-responder collapses the point estimate.
+### Toxicity profile
 
-#### Toxicity profile
+- No clinical safety data released.
+- No per-term AE data.
 
-- Four-agent stack: RAF/MEK class rash, edema, CK elevation, reversible ocular events; FAKi GI; chemo cytopenias and neuropathy
-- No published dedicated PDAC combination AE table
-- Residual neuropathy from prior FOLFIRI is the watch-item with the gem/nab backbone
+### Counter-productive mechanisms / dissent
 
-#### Counter-productive mechanisms / dissent
+The advocate keeps it as redundancy — if one early-phase trial has no slot, the next might. No dissent against inclusion; no mechanism objection.
 
-Risktaker ranked at 3. Critic filed a round-2 dissent on evidence-quality grounds (ASCO 2024 abstract with no peer-reviewed publication, ROBINS-I:Serious, n=6 with wide CI, four-agent stack with no published PDAC combination characterization). Conservative did not rank and noted the missing dedicated four-agent PDAC combination-safety publication. Status `considered_with_caveats` because the load-bearing efficacy datum is an unpeer-reviewed abstract at n=6 and the trial is active not recruiting.
+### Practical considerations
 
-#### Practical considerations
+Recruiting, oral, G12R named among covered alleles, RAS-inhibitor-naive. Confirm a pancreatic slot at a participating site rather than assuming one.
 
-- Trial active not recruiting — access is the gating issue
-- Line mismatch: trial is 1L untreated metastatic, patient is recurrent post-adjuvant FOLFIRI; some protocols count adjuvant chemo as prior systemic
-- FDA orphan drug designation granted on the back of the dose-level-1 signal — formal accelerated approval in PDAC is contingent on the full RAMP-205 readout
+### Why this rank
 
-#### Why this rank
+Below KST-6051 only because that trial names PDAC explicitly while this one enrolls all-comers; otherwise near-identical in maturity.
 
-Rank 9 because the published evidence is one unpeer-reviewed abstract at n=6 and the trial is access-gated. Higher than ranks 10-11 because the signal is on a KRAS-mutant PDAC cohort directly rather than a basket precedent that read negative. Lower than ranks 1-8 because the evidence base is genuinely thin.
-
-#### Per-trial detail
+### Per-trial detail
 
 | Therapeutic agent | Efficacy | Toxicity | Reference |
 |---|---|---|---|
-| avutometinib + defactinib + gem/nab — RAMP-205 ([NCT05669482](https://clinicaltrials.gov/study/NCT05669482)) 1L metastatic PDAC | 5/6 confirmed PRs at dose level 1 (n=6); full publication pending | Not yet published in full | [doi:10.1200/JCO.2024.42.16_suppl.4140](https://doi.org/10.1200/JCO.2024.42.16_suppl.4140) |
-| avutometinib + defactinib — RAMP-201 cross-tumor LGSOC (Banerjee JCO 2025) | 44% ORR KRAS-mutant LGSOC; mPFS 22 mo; mDoR 31.1 mo | Manageable AE profile; class effects rash, edema, CK, reversible ocular | [PMID 40644648](https://pubmed.ncbi.nlm.nih.gov/40644648) |
-| FAK + ICI preclinical KPC anchor (Jiang Nat Med 2016) | KPC survival doubled with FAK monotherapy; sustained regression with ICI add-on | n/a | [PMID 27376576](https://pubmed.ncbi.nlm.nih.gov/27376576) |
+| JAB-23E73 (pan-KRAS ON/OFF, all-comer basket) | Qualitative "early activity"; no numbers | No AE data | [NCT06959615](https://clinicaltrials.gov/study/NCT06959615) |
 
----
+## Rank 9. rucaparib maintenance (BRCA/PALB2, HRD-gated)
 
-### Rank 10. rucaparib maintenance — gated on germline or somatic BRCA / PALB2 + platinum induction
+*The PARP backup that widens the biomarker net — same germline-plus-platinum gate as olaparib.*
 
-*Considered with caveats. PARP-class backup to olaparib that widens the biomarker net to somatic BRCA / PALB2.*
+### Evidence base
 
-#### Evidence base
+Reiss's phase 2 (n=46; [PMID 33970687](https://pubmed.ncbi.nlm.nih.gov/33970687)) reported mPFS 13.1 months, mOS 23.5 months, and ORR 41.7% in the measurable-disease subset, extending the PARP signal beyond germline BRCA to somatic BRCA and PALB2. It is single-arm rather than RCT-grade, which is why it sits below olaparib.
 
-Reiss JCO 2021 ([PMID 33970687](https://pubmed.ncbi.nlm.nih.gov/33970687)) is the single-arm phase 2 (n=46) supporting rucaparib maintenance in platinum-sensitive advanced PDAC with germline or somatic BRCA1/2 or PALB2. Primary endpoint was PFS rate at 6 months. Secondary readouts: mPFS 13.1 mo, mOS 23.5 mo, ORR 41.7% (15/36 with measurable disease), mDoR 17.3 mo. The cohort enriched for platinum-sensitive disease; the population breakdown was germline BRCA1 n=7, BRCA2 n=27, PALB2 n=6, somatic BRCA2 n=2.
+### Likelihood of desired effect
 
-#### Likelihood of desired effect
+Contingent. In an HRD-positive patient the numbers are strong, but the gate is the same as olaparib — a germline or somatic HRD hit plus a platinum induction. Inapplicable until both resolve.
 
-Moderate when both gates open. The somatic-BRCA / PALB2 extension is the value proposition vs olaparib — wider biomarker net at a phase 2 single-arm evidence floor.
+### Toxicity profile
 
-#### Toxicity profile
+- Anemia 74% any-grade, 22% grade 3+.
+- Nausea 48%, ALT elevation 47%, fatigue 45%, thrombocytopenia 39%.
+- PARP-class MDS/AML long-tail risk on prolonged exposure.
 
-Same PARP class as olaparib: fatigue, anemia, nausea at expected rates; MDS / AML class risk on prolonged exposure.
+### Counter-productive mechanisms / dissent
 
-#### Counter-productive mechanisms / dissent
+The conservative ranks it as the somatic/PALB2 fallback to olaparib. No dissent against inclusion. PARP maintenance carries no goal-blunting mechanism, so the counter-productive severity is Low — contingency limits it, not mechanism.
 
-Conservative ranked at 4. Critic filed a round-2 qualified critique on evidence-quality — the mPFS and mOS figures are secondary readouts in a single-arm design, not registrational. No round-2 dissents.
+### Practical considerations
 
-Status: `considered_with_caveats` — same locked gates as olaparib (germline / somatic HRD + platinum induction) with weaker evidence base.
+Same germline panel and platinum induction as olaparib open it. Covers genotypes POLO excludes.
 
-#### Practical considerations
+### Why this rank
 
-- FDA-approved for the maintenance setting; not a recruiting trial
-- Revisit if germline panel returns BRCA1/2 or PALB2 (or if somatic NGS already returned a hit) and an olaparib slot is unavailable
+Below olaparib because the evidence is phase 2 not RCT, and below the pan-KRAS trials on the ranked list because it depends on a biomarker off the patient's stated targetable features — a supplementary HRD axis surfaced through the germline workup, not a primary-feature target.
 
-#### Why this rank
-
-Rank 10 below olaparib (rank 5) on evidence floor (phase 2 single-arm vs phase 3 RCT) and above palbociclib (rank 11) because the PARP class has a registrational PDAC precedent while CDK4/6i in CDKN2A-altered tumors has a registrational basket negative readout.
-
-#### Per-trial detail
+### Per-trial detail
 
 | Therapeutic agent | Efficacy | Toxicity | Reference |
 |---|---|---|---|
-| rucaparib 600 mg PO BID maintenance — Reiss 2021 single-arm phase 2 (germline / somatic BRCA + PALB2) | mPFS 13.1 mo; mOS 23.5 mo; ORR 41.7%; mDoR 17.3 mo | Class effects per PARP; no new safety signals | [PMID 33970687](https://pubmed.ncbi.nlm.nih.gov/33970687) |
+| rucaparib maintenance (BRCA/PALB2, phase 2) | mPFS 13.1 mo; ORR 41.7% | Anemia 22% G3+; thrombocytopenia | [PMID 33970687](https://pubmed.ncbi.nlm.nih.gov/33970687) |
 
----
+## Rank 10. anvumetostat (AMG 193, MTA-cooperative PRMT5i, MTAP-gated)
 
-### Rank 11. palbociclib + MEK/ERK or IGF1R combination via ADOPT or off-label
+*A synthetic-lethal option for the CDKN2A-loss axis — entirely gated on an MTAP reflex test that has not been run.*
 
-*Considered with caveats. Mechanism-fit on CDKN2A / CCND3 axis but Z1C basket monotherapy precedent (ORR 4%) is actively negative.*
+### Evidence base
 
-#### Evidence base
+CDKN2A and MTAP are 9p21 neighbors, co-deleted in roughly 80-90% of homozygous CDKN2A deletions, and MTA-cooperative PRMT5 inhibition is the synthetic-lethal partner for MTAP loss ([PMID 26912361](https://pubmed.ncbi.nlm.nih.gov/26912361), [PMID 26912360](https://pubmed.ncbi.nlm.nih.gov/26912360); MRTX1719 chemistry, [PMID 37552839](https://pubmed.ncbi.nlm.nih.gov/37552839)). NCT06360354 carries a daraxonrasib combination arm that would cover both the KRAS G12R and the CDKN2A-loss/MTAP features in one trial ([NCT06360354](https://clinicaltrials.gov/study/NCT06360354)). No PDAC efficacy is published.
 
-CDKN2A loss derepresses CDK4/6 and CCND3 alteration reinforces the cyclin-D axis dependency — the textbook biomarker setup for CDK4/6 inhibitor strategy. Preclinical Knudsen Cancer Research 2023 ([PMID 36346366](https://pubmed.ncbi.nlm.nih.gov/36346366)) showed synergistic suppression in all six PDAC organoid models when palbociclib was combined with trametinib or ulixertinib. Earlier work (Franco/Knudsen Oncotarget 2014 [PMID 25156567](https://pubmed.ncbi.nlm.nih.gov/25156567); Heilmann/Knudsen Cancer Res 2014 [PMID 24986516](https://pubmed.ncbi.nlm.nih.gov/24986516)) showed palbociclib + IGF1R / mTOR converts cytostasis into regression in p16-deficient PDAC PDX. The NCI-MATCH Z1C basket (O'Hara CCR 2025 [PMID 39437014](https://pubmed.ncbi.nlm.nih.gov/39437014)) is the load-bearing negative clinical precedent — palbociclib monotherapy in CDK4/6-amplified solid tumors gave ORR 4% with mPFS 2.0 mo. [NCT06813079](https://clinicaltrials.gov/study/NCT06813079) (ADOPT) is the PDO-guided platform that could route a PDAC patient onto abemaciclib based on organoid sensitivity; not yet recruiting.
+### Likelihood of desired effect
 
-#### Likelihood of desired effect
+Contingent and unproven. The rationale is preclinical synthetic lethality; there is no PDAC efficacy readout, and it collapses entirely if MTAP is retained rather than co-deleted.
 
-Low for monotherapy (Z1C confirmed). Preclinical combination synergy in PDAC organoids (Knudsen 2023) has no PDAC clinical translation yet, and the G12R-specific lower-ERK phenotype (Singhi 2025) is an open variable for the MEK + CDK4/6 synergy logic.
+### Toxicity profile
 
-#### Toxicity profile
+- No clinical safety row in the dossier.
+- Class-level PRMT5 myelosuppression and GI signal are uncharacterized in PDAC.
+- In the daraxonrasib-combination arm, stacked pan-RAS rash/GI with no combination-safety readout.
 
-- G3+ neutropenia is the class-defining AE
-- Cumulative cytopenia risk when stacking with chemo or MEKi
+### Counter-productive mechanisms / dissent
 
-#### Counter-productive mechanisms / dissent
+The concensusite surfaces the synthetic-lethal axis; the conservative qualifies on the absent safety row. The counter-productive severity is Moderate because the whole rationale hinges on an unconfirmed deletion — if MTAP is retained, the mechanism does not apply at all.
 
-Risktaker ranked at 5 on the mechanism stack. Critic and conservative both excluded with explicit rationale (Z1C negative precedent in basket; ADOPT not yet recruiting; off-label combination requires institutional pharmacy support). No formal round-2 dissents were filed but the exclusion rationales are calibrated in the positions.
+### Practical considerations
 
-Status: `considered_with_caveats` — informational context for the CDKN2A / CCND3 axis rather than a recommended action.
+Order the MTAP IHC/NGS reflex. Biomarker-plus-trial alignment only; no NCCN category.
 
-#### Practical considerations
+### Why this rank
 
-- ADOPT not yet recruiting; off-label combination requires institutional pharmacy support and is not a registered trial
-- Watch the MTAP reflex on rank 1 — if MTAP is co-deleted, rank 4 (PRMT5 + RAS axis) is the cleaner mechanism-stack lane for the CDKN2A-loss feature than CDK4/6i
+Below the primary-feature options because it depends on a supplementary CDKN2A/MTAP axis and a test that has not been run.
 
-#### Why this rank
-
-Rank 11 because the closest published basket precedent (Z1C ORR 4%) is actively negative, the combination logic is preclinical-only in PDAC, and the operational route (ADOPT PDO-guided or off-label) is structurally weaker than every trial-enrollment lane above it. The row appears so the reader can see the CDKN2A / CCND3 axis was considered and the negative basket readout is the load-bearing reason it does not rise higher.
-
-#### Per-trial detail
+### Per-trial detail
 
 | Therapeutic agent | Efficacy | Toxicity | Reference |
 |---|---|---|---|
-| palbociclib monotherapy — NCI-MATCH Z1C CDK4/6-amplified solid tumors (load-bearing negative precedent) | ORR 4%; mPFS 2.0 mo; mOS 8.8 mo | Class-defining neutropenia | [PMID 39437014](https://pubmed.ncbi.nlm.nih.gov/39437014) |
-| palbociclib + trametinib or ulixertinib — Knudsen 2023 PDAC organoid synergy | All 6 PDOs synergistic; xenograft regression where monotherapy was cytostatic | n/a (preclinical) | [PMID 36346366](https://pubmed.ncbi.nlm.nih.gov/36346366) |
-| abemaciclib via ADOPT PDO-guided platform ([NCT06813079](https://clinicaltrials.gov/study/NCT06813079)) | PDO-guided ORR, PFS, organoid-clinical concordance | TBD | [NCT06813079](https://clinicaltrials.gov/study/NCT06813079) |
+| anvumetostat (PRMT5i, MTAP-del) ± daraxonrasib | No PDAC efficacy published | No clinical safety row | [NCT06360354](https://clinicaltrials.gov/study/NCT06360354) |
+
+## Rank 11. ELI-002 (amphiphile mKRAS peptide vaccine, G12R-encoded)
+
+*The cleanest allele-matched mechanism and safety on the board — foreclosed by an enrollment window this patient sits outside.*
+
+### Evidence base
+
+AMPLIFY-201 (n=25; [PMID 40790272](https://pubmed.ncbi.nlm.nih.gov/40790272), [PMID 38195752](https://pubmed.ncbi.nlm.nih.gov/38195752)) directly encodes the G12R neoantigen and reported an 84% mKRAS T-cell response rate, with RFS and OS not reached in high responders versus 3-16 months in low responders. Every human datum is in MRD-positive resected disease. The registered 7-peptide successor ([NCT05726864](https://clinicaltrials.gov/study/NCT05726864)) is active-not-recruiting.
+
+### Likelihood of desired effect
+
+Low in this setting. The immunogenicity is real, but it was measured in MRD-positive resected disease, and there is no evidence a vaccine controls overt bulk recurrent PDAC. The survival separation rests on a below- vs above-median T-cell responder split — a post-hoc subgroup, not a pre-specified endpoint.
+
+### Toxicity profile
+
+- Zero DLTs and no grade 3+ vaccine-attributed events — the cleanest safety in the dossier.
+- Injection-site reactions dominate.
+- The related mKRASvax + dual-checkpoint route logged grade 3 immune-related events (pneumonitis, adrenal insufficiency, myalgias, arthralgias) in 2 of 12 patients (17%), which is why a bare vaccine ranks ahead of the checkpoint-combination version.
+
+### Counter-productive mechanisms / dissent
+
+The risktaker, conservative, and critic kept it on their lists for the clean allele fit and the immune route in MSS disease; the concensusite and advocate hold it off their active lists on eligibility. The counter-productive severity is Moderate: in an MSS immune-cold, bulky recurrent tumor, T-cell priming may not overcome the immunosuppressive stroma, and the setting mismatch is the core risk.
+
+### Practical considerations
+
+Reachable only via a recurrent-setting protocol. The related mKRASvax + dual-checkpoint trial ([NCT06411691](https://clinicaltrials.gov/study/NCT06411691)) fails the ECOG-0 and prior-metastatic-line gate for this ECOG-1, post-adjuvant patient, so it is not surfaced as a separate recommendation.
+
+### Why this rank
+
+Last, and mainly to document why. The mechanism and safety are excellent; the enrollment window and the immunogenicity-not-response readout keep it below every actionable option.
+
+### Per-trial detail
+
+| Therapeutic agent | Efficacy | Toxicity | Reference |
+|---|---|---|---|
+| ELI-002 2P (AMPLIFY-201, MRD resected) | 84% T-cell response; RFS/OS NR in high responders | 0 DLTs; no G3+ | [PMID 40790272](https://pubmed.ncbi.nlm.nih.gov/40790272), [PMID 38195752](https://pubmed.ncbi.nlm.nih.gov/38195752) |
+| ELI-002 7P (successor) | Not yet read out | Injection-site reactions | [NCT05726864](https://clinicaltrials.gov/study/NCT05726864) |
 
 ## Classes examined but not ranked
 
-- **G12C-selective inhibitors (sotorasib, adagrasib):** off-target at the molecular level for KRAS G12R. Sotorasib in PDAC (Strickler NEJM 2023 [PMID 36546651](https://pubmed.ncbi.nlm.nih.gov/36546651), ORR 21%, n=38 G12C-only) and adagrasib in PDAC (Bekaii-Saab JCO 2023 [PMID 37099736](https://pubmed.ncbi.nlm.nih.gov/37099736), PDAC subset ORR 33%, n=21 G12C-only) anchor the allele-selective KRAS class precedent that the pan-RAS programs are extending to G12R, but G12R is GTP-loaded and structurally distinct (Hobbs 2020 [PMID 31649109](https://pubmed.ncbi.nlm.nih.gov/31649109)) — these drugs do not bind G12R. Reviewed and rejected on allele grounds.
-- **G12D-selective inhibitors (INCB161734, ASP3082 / setidegrasib, MRTX1133):** off-target by allele design. DAWN-303 ([NCT07522073](https://clinicaltrials.gov/study/NCT07522073)) and the ASP3082 phase 3 ([NCT07409272](https://clinicaltrials.gov/study/NCT07409272)) are registrational programs in G12D PDAC; MRTX1133 ([NCT05737706](https://clinicaltrials.gov/study/NCT05737706)) was terminated for formulation issues. Anchor the parallel class precedent for allele-selective pan-RAS programs the patient is eligible for; not actionable for G12R.
-- **MEK + autophagy combinations (trametinib + hydroxychloroquine):** PaTcH ([NCT05518110](https://clinicaltrials.gov/study/NCT05518110)) closed for futility in March 2026. Preclinical Bryant / Kinsey 2019 back-to-back Nat Med ([PMID 30833752](https://pubmed.ncbi.nlm.nih.gov/30833752); [PMID 30833748](https://pubmed.ncbi.nlm.nih.gov/30833748)) showed the synthetic-lethal axis preclinically; the clinical translate did not deliver. NTO-RAS basket ([NCT06229340](https://clinicaltrials.gov/study/NCT06229340)) is the next iteration but inherits the PaTcH cloud. Reviewed and rejected on negative clinical readout.
-- **TP53 reactivators (eprenetapopt / APR-246):** mechanism is selective for missense / dominant-negative variants (R175H, R248W, R273H). The patient's TP53 variant class is annotated as inactivating without missense specification; target-validation row `tp53-lof-classification` is the workup. APROC ([NCT02999893](https://clinicaltrials.gov/study/NCT02999893)) was terminated. Off-target for this case until the variant class resolves.
-- **Single-agent CDK4/6 inhibition for CDKN2A loss (CAPTUR Group 8 [NCT03297606](https://clinicaltrials.gov/study/NCT03297606), NCI rare-tumor platform [NCT04423185](https://clinicaltrials.gov/study/NCT04423185)):** mechanism is on-axis for CDKN2A loss + CCND3 alteration, but the load-bearing Z1C readout (O'Hara 2025 [PMID 39437014](https://pubmed.ncbi.nlm.nih.gov/39437014), ORR 4%) reads as a negative basket precedent. CAPTUR Group 8 palbociclib arm is listed closed. The CDK4/6 axis appears as rank 11 (considered_with_caveats) on the combination-strategy rationale rather than as a standalone class.
+- **KRAS G12D-selective agents (INCB161734, ASP3082, MRTX1133)** — allele-excluded. These are built for G12D and do not bind the patient's G12R.
+- **G12C covalent inhibitors (sotorasib, adagrasib)** — allele-mismatched. Their PDAC ORRs (21%, 33%) are real but for G12C only; G12R is GTP-loaded and outside the covalent G12C window.
+- **MEK + autophagy combinations (trametinib + hydroxychloroquine, PaTcH/NTO-RAS)** — the PaTcH cohort closed for futility, which downweights this on-axis MEK+autophagy strategy until it generates its own positive data.
+- **avutometinib + defactinib (RAF/MEK clamp + FAK)** — on-axis via MAPK, but the PDAC evidence is a 6-patient dose-level-1 abstract signal (RAMP-205) and the LGSOC efficacy is cross-tumor; RAMP-205 is 1L and active-not-recruiting.
+- **Single-agent palbociclib** — the CDK4/6-amplified NCI-MATCH basket read negative at ORR 4%; monotherapy CDK4/6 inhibition does not deliver here, which is why the CDKN2A/CCND3 axis is only ranked in the ulixertinib combination.
+- **TP53-reactivating eprenetapopt (APR-246)** — built for missense hotspot p53; the patient's variant is described as inactivating without missense annotation, and the supporting trial is terminated. Axis closed pending variant classification.
+- **Tumor-agnostic pembrolizumab and dual-ICI-plus-chemo** — foreclosed by MSS and TMB 4.1 against the tumor-agnostic thresholds; the PA.7 dual-ICI RCT was negative (p=0.72).
 
 ## Ranked prioritization
 
-<div class="trial-table-wrap">
-  <div class="trial-scroll">
-    <table class="trial-table">
-      <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th></tr></thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td><strong>KRAS G12R orthogonal NGS + ctDNA confirmation</strong><br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span> <span class="persona persona-advocate">advocate</span></small></td>
-          <td>Diagnostic certainty — locks the G12R call for trial entry and anchors a baseline ctDNA VAF for monitoring on pan-RAS therapy.</td>
-          <td>Low (none — orthogonal NGS / ctDNA on blood draw plus optional archival FFPE)</td>
-          <td><strong>N/A</strong> <span class="cpm-desc">(diagnostic, not therapeutic — no mechanism-level risk to the therapeutic goal)</span></td>
-          <td><strong>Non-therapeutic workup that hardens the KRAS G12R call before pan-RAS trial entry and seeds the ctDNA baseline for on-treatment monitoring.</strong></td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td><strong>daraxonrasib (RMC-6236) 300 mg PO monotherapy on NCT05379985</strong><br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span> <span class="persona persona-advocate">advocate</span></small></td>
-          <td>High in 2L RAS G12 PDAC at 300 mg — ORR 35%, mPFS 8.5 mo, mOS 13.1 mo (Wolpin NEJM 2026, n=26). G12R is inside the pooled estimand.</td>
-          <td>Moderate (rash 91% any-grade / G3+ 8%; diarrhea 48% / G3+ 2%; stomatitis 31% / G3+ 3%; G3+ TRAE 30% overall)</td>
-          <td><strong>Low</strong> <span class="cpm-desc">(Residual wild-type-RAS pharmacology window is tight in some tissues; KPC-model relapse linked to MYC amplification)</span></td>
-          <td><strong>Only published meaningful effect size on KRAS G12R PDAC; recruiting trial with fully mapped AE distribution and matched mechanism. Phase 3 confirmation pending.</strong></td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td><strong>PF-07934040 pan-KRAS small-molecule on NCT06447662</strong><br><small><em>endorse:</em> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span> <span class="persona persona-advocate">advocate</span></small></td>
-          <td>Moderate — class extrapolation from daraxonrasib (PMID 42090791); no PF-07934040 efficacy readout yet. G12R explicit in eligibility.</td>
-          <td>Low (no published AE data yet; class-effect rash + GI expected from pan-KRAS chemistry; G2+ neuropathy is an enrollment exclusion)</td>
-          <td><strong>Low</strong> <span class="cpm-desc">(Same pan-KRAS class window as daraxonrasib; no persona dissent on mechanism for this row)</span></td>
-          <td><strong>Backup-class pan-KRAS lane with explicit G12R eligibility; useful if the daraxonrasib slot is unavailable, but no published efficacy yet anchors the rank.</strong></td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td><strong>anvumetostat (AMG 193) + daraxonrasib on NCT06360354</strong> (gated on MTAP co-deletion reflex)<br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-concensusite">concensusite</span> <span class="persona persona-advocate">advocate</span></small></td>
-          <td>Moderate if MTAP is co-deleted — preclinical foundation strong (>70-fold selectivity, Smith 2023). No PDAC clinical readout yet; combination arm covers two features on one trial.</td>
-          <td>Low (no published clinical AE data for the combination; MTA-cooperative class designed to spare the hematologic toxicity of first-generation PRMT5 inhibitors)</td>
-          <td><strong>Low</strong> <span class="cpm-desc">(Synthetic-lethal mechanism is clean; cooperative MTA chemistry limits exposure to MTAP-proficient tissue)</span></td>
-          <td><strong>Dual-feature trial covering KRAS G12R and CDKN2A / MTAP loss on a single regimen — gated on MTAP co-deletion reflex testing.</strong></td>
-        </tr>
-        <tr>
-          <td>5</td>
-          <td><strong>olaparib maintenance after platinum induction — POLO regimen</strong> (gated on germline BRCA1/2 / PALB2 + platinum induction)<br><small><em>endorse:</em> <span class="persona persona-critic">critic</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-concensusite">concensusite</span></small><br><small><em>dissent:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-advocate">advocate</span></small></td>
-          <td>High when both gates open — PFS HR 0.53 (Golan 2019 NEJM POLO). Interim OS HR 0.91 means OS benefit not yet demonstrated.</td>
-          <td>Moderate (G3+ AEs 40% olaparib vs 23% placebo; AE discontinuation 5%; MDS / AML class risk ~1.5% on prolonged exposure)</td>
-          <td><strong>Low</strong> <span class="cpm-desc">(Synthetic-lethal mechanism well-characterized; reversion mutations restoring BRCA function are the documented resistance route)</span></td>
-          <td><strong>Only RCT-grade option in the dossier — high-confidence when germline BRCA/PALB2 confirms and platinum induction succeeds, but two sequential gates remain locked.</strong></td>
-        </tr>
-        <tr>
-          <td>6</td>
-          <td><strong>daraxonrasib + mFOLFIRINOX or gem/nab on NCT06445062 (RMC-GI-102)</strong><br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-advocate">advocate</span></small><br><small><em>dissent:</em> <span class="persona persona-conservative">conservative</span> <span class="persona persona-concensusite">concensusite</span></small></td>
-          <td>Moderate-to-high if RAMP-205 dose-level-1 (5/6 PR, ORR 83%, n=6) survives N — exact 95% CI on 5/6 runs 36-100%. Daraxonrasib + chemo PDAC-cohort efficacy not yet public.</td>
-          <td>High (rash + GI from pan-RAS stacked with chemo cytopenias and neuropathy; no published dedicated combination-safety table)</td>
-          <td><strong>Moderate</strong> <span class="cpm-desc">(Cumulative on-target wild-type-RAS exposure plus chemo myelosuppression — conservative dissented on the missing combination-safety publication)</span></td>
-          <td><strong>Higher-ceiling combination lane that matches the treat-to-remission preference, but no published dedicated PDAC combination-safety data yet — contingent on sponsor cohort openness and an AE-distribution readout.</strong></td>
-        </tr>
-        <tr>
-          <td>7</td>
-          <td><strong>zoldonrasib (RMC-7977) + ivonescimab on NCT07397338</strong><br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-advocate">advocate</span></small><br><small><em>dissent:</em> <span class="persona persona-conservative">conservative</span> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span></small></td>
-          <td>Low for clinical effect at present — zero published PDAC clinical data; preclinical KPC ceiling is high (Wasko Nature 2024) but allele-mismatched (G12D not G12R).</td>
-          <td>Moderate (pan-RAS rash + GI stacked with PD-1xVEGF immune-mediated AEs; no published PDAC combination safety table)</td>
-          <td><strong>Moderate</strong> <span class="cpm-desc">(Diagnostic ambiguity between class rash and immune-rash complicates AE attribution; conservative dissented on this mechanism-level overlap)</span></td>
-          <td><strong>Highest-ceiling preclinical option the patient could touch, but zero published clinical PDAC data and three persona dissents on evidence, toxicity, and guideline-fit.</strong></td>
-        </tr>
-        <tr>
-          <td>8</td>
-          <td><strong>ELI-002 7P amphiphile mKRAS peptide vaccine on NCT05726864 (AMPLIFY-7P)</strong><br><small><em>endorse:</em> <span class="persona persona-conservative">conservative</span> <span class="persona persona-concensusite">concensusite</span></small><br><small><em>dissent:</em> <span class="persona persona-concensusite">concensusite</span></small></td>
-          <td>Low for this clinical state — designed for MRD-positive resected disease, not overt recurrence; AMPLIFY-201 read in the MRD window (Wainberg Nat Med 2025).</td>
-          <td>Low (zero DLTs; no G3+ vaccine-attributed events across AMPLIFY-201 n=25; injection-site reactions dominate)</td>
-          <td><strong>Low</strong> <span class="cpm-desc">(T-cell exhaustion / antigen-loss escape on overt-disease bulk are the theoretical concerns; mechanism designed for MRD setting)</span></td>
-          <td><strong>Cleanest safety in the dossier with G12R-explicit mechanism fit, but the MRD-positive enrollment window forecloses this patient's clinical state.</strong></td>
-        </tr>
-        <tr>
-          <td>9</td>
-          <td><strong>avutometinib + defactinib + gem/nab on NCT05669482 (RAMP-205)</strong><br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span></small><br><small><em>dissent:</em> <span class="persona persona-critic">critic</span></small></td>
-          <td>Moderate-to-high in cross-tumor KRAS-mutant disease (LGSOC ORR 44% Banerjee 2025); PDAC signal is abstract-only at n=6 with 95% CI 36-100%.</td>
-          <td>Moderate (four-agent stack: RAF/MEK class rash, edema, CK / FAKi GI / chemo cytopenias and neuropathy; no published dedicated PDAC combination AE table)</td>
-          <td><strong>Moderate</strong> <span class="cpm-desc">(Critic dissented on evidence-quality; cumulative MAPK + stromal + cytotoxic toxicity overlap is the mechanism-level risk to dose intensity)</span></td>
-          <td><strong>Striking n=6 PDAC abstract signal and KRAS-mutant LGSOC cross-tumor validation, but trial is active not recruiting and the evidence base is one unpeer-reviewed abstract.</strong></td>
-        </tr>
-        <tr>
-          <td>10</td>
-          <td><strong>rucaparib maintenance — gated on germline / somatic BRCA / PALB2</strong><br><small><em>endorse:</em> <span class="persona persona-conservative">conservative</span></small></td>
-          <td>Moderate when gates open — Reiss 2021 single-arm n=46 mPFS 13.1 / mOS 23.5 in platinum-sensitive BRCA / PALB2 PDAC; not RCT-grade.</td>
-          <td>Moderate (PARP class effects mirroring olaparib; MDS / AML class risk on prolonged exposure)</td>
-          <td><strong>Low</strong> <span class="cpm-desc">(Same synthetic-lethal mechanism as olaparib; reversion mutations restoring BRCA function are the documented resistance route)</span></td>
-          <td><strong>PARP-class backup that widens the biomarker net beyond germline BRCA to include somatic BRCA / PALB2; same two locked gates as olaparib, phase 2 single-arm evidence.</strong></td>
-        </tr>
-        <tr>
-          <td>11</td>
-          <td><strong>palbociclib + MEK/ERK or IGF1R via ADOPT or off-label</strong><br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span></small></td>
-          <td>Low for monotherapy (Z1C ORR 4%, O'Hara 2025); preclinical combination synergy in PDAC organoids (Knudsen 2023) has no PDAC clinical translation yet.</td>
-          <td>Moderate (G3+ neutropenia is the class-defining AE; cumulative cytopenia risk when combined with chemo or MEKi)</td>
-          <td><strong>Moderate</strong> <span class="cpm-desc">(Single-agent CDK4/6i triggers RB-bypass compensation via cyclin D, MYC, and mTOR — the documented monotherapy escape route that Z1C confirmed)</span></td>
-          <td><strong>Mechanism-fit on the CDKN2A / CCND3 axis but the closest published basket precedent (Z1C ORR 4%) is actively negative and PDAC combination data are preclinical-only.</strong></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
+| Rank | Intervention | Likelihood of effect | Toxicity burden | Counter-productive MoA | Overall |
+|---|---|---|---|---|---|
+| 1 | **daraxonrasib (RMC-6236) monotherapy**<br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span> <span class="persona persona-advocate">advocate</span></small> | Moderate-to-high in 2L G12 PDAC: ORR 35%, mOS 13.1 mo (n=26, PMID 42090791), but G12R-specific rate unpublished so allele-level confidence is lower. | Moderate (rash, diarrhea, stomatitis, fatigue) | **Low** (Pan-RAS blockade can select adaptive RTK/MAPK reactivation, but no persona dissented on mechanism grounds.) | **The only peer-reviewed, indication-matched efficacy on the KRAS axis and the board's unanimous lead; G12R sits inside a pooled G12 estimand rather than its own subgroup.** |
+| 2 | **JYP0015 / ERAS-0015 (pan-RAS molecular glue)**<br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span> <span class="persona persona-advocate">advocate</span></small><br><small><em>dissent:</em> <span class="persona persona-conservative">conservative</span></small> | Moderate but unconfirmed: PDAC uORR 40-42% and 14/14 with >=75% ctDNA drop (NCT06895031), from an April 2026 topline release, not peer-reviewed. | Not characterized (no DLTs reported; per-term G3+ rates undisclosed) | **Moderate** (Pan-RAS glue may drive adaptive RAS-pathway reactivation; ctDNA response has never been shown to translate to RECIST benefit in PDAC.) | **A second pan-RAS shot on the primary axis with a striking but press-release-only ORR; efficacy corroborates the class while the grade-resolved safety table is still missing.** |
+| 3 | **olaparib maintenance (POLO)** _(gated on germline BRCA1/2 + platinum)_<br><small><em>endorse:</em> <span class="persona persona-conservative">conservative</span> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span></small><br><small><em>dissent:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-advocate">advocate</span></small> | Contingent: strong PFS in gBRCA disease (HR 0.53, PMID 31157963) but flat interim OS (HR 0.91), and inapplicable unless germline-positive and platinum-induced. | Moderate (anemia, fatigue, nausea; MDS/AML long-tail) | **Low** (PARP maintenance carries no mechanism that blunts the therapeutic goal; the dissent was preference-fit, not mechanism.) | **The only guideline-listed drug for this patient, but double-gated on an unordered germline result and an absent platinum induction, so it cannot start today.** |
+| 4 | **daraxonrasib + mFOLFIRINOX or gem/nab (RMC-GI-102)**<br><small><em>endorse:</em> <span class="persona persona-advocate">advocate</span> <span class="persona persona-risktaker">risktaker</span></small> | Moderate-to-high on depth of response: chemo-plus-RAS(ON) backbone; RAMP-205 dose-1 5/6 PRs (n=6, abstract) previews deeper responses, unproven at scale. | Moderate (rash, diarrhea, cytopenia, neuropathy) | **Low** (Overlapping chemo/RAS toxicity may force dose compromises that erode the intended combination intensity; no mechanism dissent raised.) | **Combination intensification for a remission-seeking, oxaliplatin-naive patient; a deeper-response ceiling at the cost of stacked, uncharacterized combination toxicity.** |
+| 5 | **ulixertinib (ERK1/2i) + palbociclib (CDK4/6i)**<br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-advocate">advocate</span></small> | Low for objective response: best published PDAC readout is stable disease (2 SD, n=26); rationale is mechanistic, not efficacy-backed. | Moderate (cytopenias, fatigue, rash, nausea) | **Moderate** (G12R's lower ERK flux may blunt the ERK-inhibitor arm; overlapping toxicity can force dose reductions that undo the vertical blockade.) | **The only regimen covering KRAS, CDKN2A, and CCND3 together; clean mechanistic logic undercut by a stable-disease-only PDAC signal and G12R-specific uncertainty.** |
+| 6 | **KST-6051 / FALCON (pan-KRAS ON/OFF)**<br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-advocate">advocate</span></small><br><small><em>dissent:</em> <span class="persona persona-concensusite">concensusite</span></small> | Unknown: no clinical data (first patient dosed April 2026, NCT07458347); class-extrapolation only for the ON/OFF pan-KRAS mechanism. | Not characterized (pre-data; no AE table exists) | **Low** (Pan-KRAS inhibition risks adaptive pathway reactivation, but no data and no mechanism-grounded dissent were raised.) | **A pre-data pan-KRAS ON/OFF option as mechanistic optionality on the primary axis; G12R-eligible on the KRAS gate, but no efficacy or safety readout exists yet.** |
+| 7 | **PF-07934040 (pan-KRAS, G12R named)**<br><small><em>endorse:</em> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span></small> | Unknown: dose-finding with no responses reported (NCT06447662); ranked for explicit G12R eligibility, not demonstrated activity. | Not characterized (dose-finding; only protocol exclusions published) | **Low** (Pan-KRAS inhibition risks adaptive reactivation; no data and no mechanism dissent.) | **A first-in-human pan-KRAS program that names G12R in its eligibility criteria; a clean axis backup with no efficacy readout yet.** |
+| 8 | **JAB-23E73 (pan-KRAS ON/OFF)**<br><small><em>endorse:</em> <span class="persona persona-advocate">advocate</span></small> | Unknown: only a qualitative "early antitumor activity" mention, no response rate (NCT06959615); class-extrapolation on the primary axis. | Not characterized (pre-data; no AE table exists) | **Low** (Pan-KRAS inhibition risks adaptive reactivation; no data and no mechanism dissent.) | **A second pan-KRAS ON/OFF option as axis redundancy; G12R named preclinically, but the trial is an all-comer basket with only a qualitative activity mention.** |
+| 9 | **rucaparib maintenance** _(gated on BRCA/PALB2 + platinum)_<br><small><em>endorse:</em> <span class="persona persona-conservative">conservative</span></small> | Contingent: mPFS 13.1 mo, ORR 41.7% in HRD-positive PDAC (n=46, PMID 33970687), but inapplicable unless germline/somatic-positive and platinum-induced. | Moderate (anemia, fatigue, thrombocytopenia; MDS/AML long-tail) | **Low** (PARP maintenance carries no goal-blunting mechanism; contingency, not mechanism, limits it.) | **A PARP backup that broadens the biomarker net to somatic BRCA and PALB2; same germline-plus-platinum double-gate as olaparib, on phase 2 evidence.** |
+| 10 | **anvumetostat (AMG 193, PRMT5i)** _(gated on MTAP co-deletion)_<br><small><em>endorse:</em> <span class="persona persona-concensusite">concensusite</span></small> | Contingent and unproven: synthetic-lethal rationale (PMID 26912361, 26912360) is preclinical; no PDAC efficacy, and it collapses if MTAP is retained. | Not characterized (no clinical safety row; PRMT5-class myelosuppression/GI expected) | **Moderate** (Rationale collapses entirely if MTAP is retained rather than co-deleted; combination-arm toxicity uncharacterized.) | **A synthetic-lethal PRMT5 option for the CDKN2A-loss axis, potentially co-targeting KRAS in one trial; entirely gated on an unrun MTAP reflex test.** |
+| 11 | **ELI-002 (mKRAS peptide vaccine, G12R-encoded)**<br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-critic">critic</span></small><br><small><em>dissent:</em> <span class="persona persona-concensusite">concensusite</span> <span class="persona persona-advocate">advocate</span></small> | Low in this setting: strong immunogenicity (84% T-cell response, PMID 40790272) but only in MRD-positive resected disease; no RECIST translation in overt recurrence. | Low (injection-site reactions; no G3+ vaccine-attributed events) | **Moderate** (In an MSS immune-cold, bulky recurrent tumor, T-cell priming may not overcome the immunosuppressive stroma; setting mismatch is the core risk.) | **The cleanest allele-matched mechanism and safety on the board, foreclosed by an MRD/adjuvant enrollment window that excludes this overt-recurrent patient.** |
 
-!!! note "Reading the columns"
-    **Toxicity burden** is patient-level G3+ AE severity (Low / Moderate / High) summarized from the trial publications. **Counter-productive MoA** is the mechanism-level risk that the intervention's own pathway could blunt the therapeutic goal — distinct from patient AEs. The board's endorse / dissent / veto state appears as pills under each intervention; full per-persona rationale lives on the [board page](board.md).
+!!! note "How to read this table"
+    **Toxicity burden** is patient-level AE severity (the grade 3+ events a patient would feel). **Counter-productive MoA** is a different axis: the mechanism-level risk that a therapy could blunt its own goal — adaptive RAS-pathway reactivation, an immunosuppressive stroma defeating a vaccine, a rationale that collapses if a co-deletion is absent. The persona pills under each intervention are the at-a-glance board signal; the full per-persona rationale lives on the [board page](board.md).
+
+## Workup considerations
+
+Two workup steps open gated options and one hardens the lead recommendation, so they belong adjacent to the profile rather than buried in the ranking:
+
+- **Germline BRCA1/2/PALB2 panel** — order now. NCCN recommends it for every PDAC patient regardless of family history. A positive result opens the olaparib (rank 3) and rucaparib (rank 9) pathways, contingent on a subsequent platinum induction.
+- **MTAP IHC/NGS reflex** — MTAP is co-deleted with CDKN2A in most homozygous deletions. Confirming co-deletion opens the anvumetostat PRMT5 pathway (rank 10); if MTAP is retained, that rationale collapses.
+- **Orthogonal NGS/ctDNA G12R confirmation** — the G12R call is already confirmed on NGS, so this is screening-grade hardening rather than a gate. Pan-RAS and RAS(ON) sponsors re-test the variant on plasma at entry regardless of the local report, and a baseline ctDNA VAF becomes the on-treatment monitoring anchor. The full diagnostic workup detail is on the [target-validation report](pancreatic-recurrent-kras-g12r-m8f3-target-validation.pdf).
 
 ## Caveats
 
-- **Evidence-base caveats.** The load-bearing efficacy datum on the lead recommendation (Wolpin NEJM 2026 [PMID 42090791](https://pubmed.ncbi.nlm.nih.gov/42090791)) is ROBINS-I:Moderate, single-arm open-label, n=26 in the 2L RAS G12 PDAC 300-mg subgroup with no separately published G12R-allele-resolved ORR. RASolute-302 ([NCT06625320](https://clinicaltrials.gov/study/NCT06625320)) phase 3 confirmation has not landed. The combination ranks (6, 7, 9) rest variously on ASCO abstracts (RAMP-205 at n=6) or zero published PDAC clinical data (RMC-7977 + ivonescimab). The only RoB2:Low RCT in the dossier (POLO) is gated on a germline result and a platinum induction the patient has not had.
-- **Compartment / biomarker dependencies.** Rank 4 (PRMT5 + RAS) is contingent on MTAP co-deletion confirmation — order the reflex on the existing tumor block. Ranks 5 and 10 (olaparib, rucaparib) are contingent on germline BRCA1/2 / PALB2 status AND a platinum induction the patient has not had. MSS + TMB 4.1 forecloses biomarker-agnostic ICI cleanly (KEYNOTE-158 [PMID 31682550](https://pubmed.ncbi.nlm.nih.gov/31682550); CCTG PA.7 [PMID 36028483](https://pubmed.ncbi.nlm.nih.gov/36028483)); rank 7 is the only entry that touches the immune axis at all, under three persona dissents. The TP53 variant class (LOF vs dominant-negative vs GOF) is not yet annotated — closes the eprenetapopt door pending workup.
-- **What would change the ranking.**
-    - A G12R-resolved subgroup ORR within the Wolpin 2026 cohort, or the RASolute-302 OS readout landing, would tighten rank 2's confidence interval and possibly upgrade the chemo-combo lane (rank 6) on the strength of a chemo-arm signal.
-    - A positive MTAP co-deletion reflex would move rank 4 above ranks 5-6 on dual-feature mechanism grounds.
-    - A positive germline BRCA1/2 or PALB2 result plus a successful platinum induction would move rank 5 to the top of the gated lanes — but the induction is the treating team's decision and outside Libby's scope.
-    - A published RMC-GI-102 PDAC-cohort AE distribution that fits inside the user's consent envelope would move rank 6 above rank 2 on the risktaker / advocate's preferred reading of the preferences.
-    - A negative SMAD4 status on co-mutation reflex would weight aggressive multi-agent regimens; positive SMAD4 loss tilts toward enrollment-first framing because of the wider metastatic spread signal.
-- **Re-scoping caveat.** If the user's preferences shift toward toxicity vetoes (e.g. veto on rash-class AEs, veto on inpatient cycle-1 monitoring) or hard modality constraints (e.g. oral-only), the ranking changes — daraxonrasib monotherapy's any-grade rash at 91% and the combination lanes' chemo backbones become disqualifying rather than tradeable. The current ranking assumes the preference set as supplied (efficacy 0.80, no vetoes, accept high-risk-high-reward, prefers trials).
+- **Evidence-base caveats.** The rank-1 daraxonrasib efficacy is a single-arm phase 1/2 subgroup (n=26, ROBINS-I Moderate), not an RCT. The rank-2 ERAS-0015 numbers are an unconfirmed April 2026 press release with no per-term grade 3+ safety. Ranks 6-8 (pan-KRAS trials) have no efficacy or safety readout at all. Several supporting rows are abstract-only (RAMP-205, ulixertinib+palbociclib).
+- **Off-dossier disclosures.** The RASolute 302 phase-3 figures (mOS 13.2 vs 6.7 mo, HR 0.40) and the FDA Expanded Access Program are company/FDA-disclosed and not in the dossier evidence files. They are carried as enrollment context only, not as a citable result, and the rank-1 weight does not depend on them.
+- **Biomarker dependencies.** Olaparib and rucaparib are gated on a germline BRCA1/2/PALB2 result not on file plus a platinum induction the patient has never had. Anvumetostat is gated on an unconfirmed MTAP co-deletion. G12R is never read on its own — every ranked KRAS option covers it inside a pooled G12X or KRAS-mutation gate.
+- **What would change the ranking.** A peer-reviewed, G12R-resolved ORR for daraxonrasib or a confirmed ERAS-0015 dataset with a grade-3+ table would sharpen the top two and could reorder them. A positive germline BRCA1/2 result plus a platinum induction that holds would move olaparib above the uncategorized pan-KRAS trials. A confirmed MTAP co-deletion would firm up anvumetostat. A negative germline panel closes the PARP axis; a retained MTAP closes the PRMT5 axis.
+- **Re-scoping caveat.** If the patient's ECOG worsens, if a curative-intent salvage resection becomes feasible (which would reopen the ELI-002 MRD window), or if the preference set shifts away from high-risk-high-reward, the ranking should be re-run.
 
 ## Sources
 
-**PubMed (PMID):**
+**PMIDs**
 
-- [24986516](https://pubmed.ncbi.nlm.nih.gov/24986516) — Heilmann / Knudsen, palbociclib + IGF1R in p16-deficient PDAC, *Cancer Research* 2014
-- [25156567](https://pubmed.ncbi.nlm.nih.gov/25156567) — Franco / Knudsen, palbociclib in PDAC primary explants, *Oncotarget* 2014
-- [26912360](https://pubmed.ncbi.nlm.nih.gov/26912360) — Kryukov / Stegmeier, PRMT5 dependence in MTAP-deleted cancers, *Science* 2016
-- [26912361](https://pubmed.ncbi.nlm.nih.gov/26912361) — Mavrakis / Sellers, PRMT5 / MTA cooperative mechanism, *Science* 2016
-- [27376576](https://pubmed.ncbi.nlm.nih.gov/27376576) — Jiang / DeNardo, FAK inhibition + ICI in KPC, *Nature Medicine* 2016
-- [29773717](https://pubmed.ncbi.nlm.nih.gov/29773717) — KEAP1 / STK11 co-mutation in KRAS-mutant disease
-- [30019789](https://pubmed.ncbi.nlm.nih.gov/30019789) — SMAD4 prognostic signal in PDAC
-- [30100704](https://pubmed.ncbi.nlm.nih.gov/30100704) — KRAS co-mutation landscape
-- [30833748](https://pubmed.ncbi.nlm.nih.gov/30833748) — Kinsey / McMahon, MEK + autophagy in KRAS-mutant cancers, *Nature Medicine* 2019
-- [30833752](https://pubmed.ncbi.nlm.nih.gov/30833752) — Bryant / Der, ERK + autophagy in PDAC, *Nature Medicine* 2019
-- [31157963](https://pubmed.ncbi.nlm.nih.gov/31157963) — Golan / Kindler, POLO, olaparib maintenance in gBRCA PDAC, *NEJM* 2019
-- [31649109](https://pubmed.ncbi.nlm.nih.gov/31649109) — Hobbs / Der, KRAS G12R signaling biology, *Cancer Discovery* 2020
-- [31682550](https://pubmed.ncbi.nlm.nih.gov/31682550) — Marabelle / Diaz, KEYNOTE-158 MSI-H pembrolizumab, *JCO* 2020
-- [33970687](https://pubmed.ncbi.nlm.nih.gov/33970687) — Reiss / Domchek, rucaparib in BRCA / PALB2 PDAC, *JCO* 2021
-- [34376552](https://pubmed.ncbi.nlm.nih.gov/34376552) — Rakhra / Irvine, amphiphile mKRAS peptide vaccine preclinical platform, *JITC* 2021
-- [34471132](https://pubmed.ncbi.nlm.nih.gov/34471132) — KRAS copy-number resistance mechanism
-- [36028483](https://pubmed.ncbi.nlm.nih.gov/36028483) — Renouf / O'Callaghan, CCTG PA.7 dual ICI + chemo PDAC, *Nature Communications* 2022
-- [36346366](https://pubmed.ncbi.nlm.nih.gov/36346366) — Knudsen / Witkiewicz, CDK4/6 + MEK in PDAC organoids, *Cancer Research* 2023
-- [36546651](https://pubmed.ncbi.nlm.nih.gov/36546651) — Strickler / Hong, sotorasib in G12C PDAC (CodeBreaK 100), *NEJM* 2023
-- [36952657](https://pubmed.ncbi.nlm.nih.gov/36952657) — KRAS ctDNA dynamics on KRAS-directed therapy
-- [37099736](https://pubmed.ncbi.nlm.nih.gov/37099736) — Bekaii-Saab / Pant, adagrasib in G12C PDAC (KRYSTAL-1), *JCO* 2023
-- [37552839](https://pubmed.ncbi.nlm.nih.gov/37552839) — Smith / Christensen, MRTX1719 MTA-cooperative PRMT5 inhibitor, *Cancer Discovery* 2023
-- [38195752](https://pubmed.ncbi.nlm.nih.gov/38195752) — Pant / O'Reilly, ELI-002 2P AMPLIFY-201 first report, *Nature Medicine* 2024
-- [38588697](https://pubmed.ncbi.nlm.nih.gov/38588697) — Wasko / Olive, RMC-7977 RAS(ON) in PDAC translational suite, *Nature* 2024
-- [38589574](https://pubmed.ncbi.nlm.nih.gov/38589574) — Holderfield / Singh, RMC-6236 / RMC-7977 pan-RAS pharmacology, *Nature* 2024
-- [38593348](https://pubmed.ncbi.nlm.nih.gov/38593348) — Jiang / Singh, RMC-6236 translational PDAC across G12 alleles, *Cancer Discovery* 2024
-- [39437014](https://pubmed.ncbi.nlm.nih.gov/39437014) — O'Hara / Flaherty, NCI-MATCH Z1C palbociclib in CDK4/6-amplified solid tumors, *Clinical Cancer Research* 2025
-- [40644648](https://pubmed.ncbi.nlm.nih.gov/40644648) — Banerjee, avutometinib + defactinib RAMP-201 LGSOC, *JCO* 2025
-- [40790272](https://pubmed.ncbi.nlm.nih.gov/40790272) — Wainberg / O'Reilly, AMPLIFY-201 final report ELI-002 2P, *Nature Medicine* 2025
-- [42090791](https://pubmed.ncbi.nlm.nih.gov/42090791) — Wolpin / Hong, daraxonrasib (RMC-6236) in 2L RAS G12 PDAC, *NEJM* 2026
+- [26912360](https://pubmed.ncbi.nlm.nih.gov/26912360)
+- [26912361](https://pubmed.ncbi.nlm.nih.gov/26912361)
+- [31157963](https://pubmed.ncbi.nlm.nih.gov/31157963)
+- [31649109](https://pubmed.ncbi.nlm.nih.gov/31649109)
+- [37552839](https://pubmed.ncbi.nlm.nih.gov/37552839)
+- [38195752](https://pubmed.ncbi.nlm.nih.gov/38195752)
+- [38589574](https://pubmed.ncbi.nlm.nih.gov/38589574)
+- [38593348](https://pubmed.ncbi.nlm.nih.gov/38593348)
+- [39437014](https://pubmed.ncbi.nlm.nih.gov/39437014)
+- [40790272](https://pubmed.ncbi.nlm.nih.gov/40790272)
+- [42090791](https://pubmed.ncbi.nlm.nih.gov/42090791)
 
-**ClinicalTrials.gov (NCT):**
+**NCTs**
 
-- [NCT02184195](https://clinicaltrials.gov/study/NCT02184195) — POLO (olaparib maintenance in gBRCA metastatic PDAC)
-- [NCT05379985](https://clinicaltrials.gov/study/NCT05379985) — RMC-6236-001 (daraxonrasib FIH RAS G12X solid tumors)
-- [NCT05669482](https://clinicaltrials.gov/study/NCT05669482) — RAMP-205 (avutometinib + defactinib + gem/nab in 1L PDAC)
-- [NCT05726864](https://clinicaltrials.gov/study/NCT05726864) — AMPLIFY-7P (ELI-002 7P in resected KRAS-mutant solid tumors)
-- [NCT06360354](https://clinicaltrials.gov/study/NCT06360354) — MTAPESTRY-103 (anvumetostat ± daraxonrasib in MTAP-deleted GI tumors)
-- [NCT06445062](https://clinicaltrials.gov/study/NCT06445062) — RMC-GI-102 (daraxonrasib + chemo in RAS-mutant GI tumors)
-- [NCT06447662](https://clinicaltrials.gov/study/NCT06447662) — PF-07934040 pan-KRAS phase 1 with G12R explicit
-- [NCT06625320](https://clinicaltrials.gov/study/NCT06625320) — RASolute-302 (daraxonrasib phase 3 in 2L+ PDAC)
-- [NCT06813079](https://clinicaltrials.gov/study/NCT06813079) — ADOPT (PDO-guided PDAC platform)
-- [NCT07094204](https://clinicaltrials.gov/study/NCT07094204) — ASP5834 IV pan-KRAS phase 1 with G12R explicit
-- [NCT07397338](https://clinicaltrials.gov/study/NCT07397338) — zoldonrasib (RMC-7977) + ivonescimab combination
-- [NCT07492680](https://clinicaltrials.gov/study/NCT07492680) — MountainTAP-5 (BMS-986504 PRMT5i platform)
+- [NCT03454035](https://clinicaltrials.gov/study/NCT03454035)
+- [NCT05379985](https://clinicaltrials.gov/study/NCT05379985)
+- [NCT05726864](https://clinicaltrials.gov/study/NCT05726864)
+- [NCT06360354](https://clinicaltrials.gov/study/NCT06360354)
+- [NCT06411691](https://clinicaltrials.gov/study/NCT06411691)
+- [NCT06445062](https://clinicaltrials.gov/study/NCT06445062)
+- [NCT06447662](https://clinicaltrials.gov/study/NCT06447662)
+- [NCT06625320](https://clinicaltrials.gov/study/NCT06625320)
+- [NCT06895031](https://clinicaltrials.gov/study/NCT06895031)
+- [NCT06959615](https://clinicaltrials.gov/study/NCT06959615)
+- [NCT07458347](https://clinicaltrials.gov/study/NCT07458347)
 
 ## Transparency artifacts
 
-- [Trial table](trials.md) — 26 rows, all columns
-- [Evidence list](evidence.md) — 16 clinical-evidence rows (11 included, 5 considered_excluded SoC chemo) + 22 preclinical rows
-- [Manuscripts master table](manuscripts.md) — every paper considered with structured n, effect, variance, toxicity columns
-- [Tumor-board transcript](board.md) — 5 positions, 20 cross-critiques
-- [Recommendations table](recommendations.md) — full ranked detail
-- [Plain-language summary](plain_language.md) — patient/caregiver track
+- [Trial table](trials.md) — every screened trial, all columns.
+- [Evidence table](evidence.md) — included clinical and preclinical rows behind the ranked recs.
+- [Master manuscripts table](manuscripts.md) — every paper considered, with sample size, effect size, variance, and toxicity columns.
+- [Board proceedings](board.md) — the five positions, the full critique matrix, and the per-persona agreement detail.
+- [Recommendations table](recommendations.md) — the ranked rows in forwardable form.
+- [Plain-language summary](plain_language.md) — the same synthesis for patients and caregivers.
 
 ## Run log
 
-Authored May 2026. Inputs: 26 trials, 16 clinical-evidence rows, 22 preclinical rows, 12 target-validation rows, 5 board positions with 20 cross-critiques. The case slug carries six confirmed biomarkers — KRAS G12R, TP53 inactivating, CDKN2A loss, CCND3 alteration, MSS, TMB 4.1 — so this is a non-gated case with `scenario: null` on every recommendation row. The user's report of KRAS G12R as confirmed turned the orthogonal NGS / ctDNA target-validator row from a pre-enrollment gate into workup hardening; it ranks first because pan-RAS / RAS(ON) sponsors re-test at screening regardless. The germline panel, MSS + TMB foreclosure, and TP53 variant-class workup are surfaced in the cross-cutting caveat rather than as ranked rows because they reframe the option set rather than gate a single trial. Humanizer pass applied to all prose sections per `.claude/skills/humanizer/SKILL.md`.
+Authored 2026-07-09 by the PI agent, re-running the synthesis after the board re-deliberated over six new on-axis KRAS trials. Inputs: the five board positions and 36 critiques, the refreshed trials and clinical-evidence dossier, the confirmed-biomarker profile, and the permissive preference set. All biomarkers are confirmed, so this is a single unbranched ranking with no scenario gating; the germline, MTAP, and orthogonal-NGS steps are surfaced as workup considerations rather than ranked rows. Every promoted PMID and NCT was reference-checked against NCBI and ClinicalTrials.gov and resolved cleanly. The RASolute 302 phase-3 numbers and the FDA Expanded Access Program were deliberately not minted as a dossier identifier — the board's critic and risktaker flagged them as off-dossier, and they are carried as company/FDA-disclosed context only. Standard-of-care chemotherapy was held out of scope per the targetable-feature rule.
 
 <!-- libby:downloads:begin -->
 
@@ -870,19 +694,19 @@ Authored May 2026. Inputs: 26 trials, 16 clinical-evidence rows, 22 preclinical 
 ### HTML
 
 - [Target validation paths](target_validation.md?v=dc34379c) — per-feature biomarker-workup table with providers and references, sortable in-browser
-- [Recommendations table](pancreatic-recurrent-kras-g12r-m8f3-recommendations.html?v=463dd0b0) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
-- [Access guide](accessibility.md?v=2958eb74) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table
-- [Access guide (offline)](pancreatic-recurrent-kras-g12r-m8f3-accessibility.html?v=8b63d58a) — same access-guide content packaged as a self-contained HTML that opens offline
-- [Master manuscripts table](manuscripts.md?v=9ea36b70) — every paper considered — n, effect, variance, toxicities, in a sortable in-browser table
-- [Master manuscripts table (offline)](pancreatic-recurrent-kras-g12r-m8f3-manuscripts.html?v=5511f962) — same manuscripts inventory packaged as a self-contained HTML that opens offline
+- [Recommendations table](pancreatic-recurrent-kras-g12r-m8f3-recommendations.html?v=7e6a4247) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
+- [Access guide](accessibility.md?v=7f8302f2) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table
+- [Access guide (offline)](pancreatic-recurrent-kras-g12r-m8f3-accessibility.html?v=b706015f) — same access-guide content packaged as a self-contained HTML that opens offline
+- [Master manuscripts table](manuscripts.md?v=78268b5f) — every paper considered — n, effect, variance, toxicities, in a sortable in-browser table
+- [Master manuscripts table (offline)](pancreatic-recurrent-kras-g12r-m8f3-manuscripts.html?v=d1e36bcd) — same manuscripts inventory packaged as a self-contained HTML that opens offline
 
 ### PDF
 
-- [Target validation paths](pancreatic-recurrent-kras-g12r-m8f3-target-validation.pdf?v=777ae40e) — diagnostic + biomarker workup that hardens the targetable-feature call
-- [Recommendations table](pancreatic-recurrent-kras-g12r-m8f3-recommendations.pdf?v=dc946b85) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
-- [Access guide](pancreatic-recurrent-kras-g12r-m8f3-accessibility.pdf?v=dcb6e0e8) — trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF
-- [Master manuscripts table](pancreatic-recurrent-kras-g12r-m8f3-manuscripts.pdf?v=a79ad201) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
-- [Patient/caregiver PDF](pancreatic-recurrent-kras-g12r-m8f3-plain-language.pdf?v=63491fcd) — plain-language summary
+- [Target validation paths](pancreatic-recurrent-kras-g12r-m8f3-target-validation.pdf?v=78d5ccdb) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Recommendations table](pancreatic-recurrent-kras-g12r-m8f3-recommendations.pdf?v=69624649) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
+- [Access guide](pancreatic-recurrent-kras-g12r-m8f3-accessibility.pdf?v=935f8c09) — trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF
+- [Master manuscripts table](pancreatic-recurrent-kras-g12r-m8f3-manuscripts.pdf?v=df8a6b08) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
+- [Patient/caregiver PDF](pancreatic-recurrent-kras-g12r-m8f3-plain-language.pdf?v=713353f1) — plain-language summary
 
 <!-- libby:downloads:end -->
 

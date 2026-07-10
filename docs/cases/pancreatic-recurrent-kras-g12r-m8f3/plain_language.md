@@ -4,163 +4,116 @@
 
 ## What this page is
 
-You asked a narrow question. In pancreatic cancer that came back after standard adjuvant chemotherapy, and that carries a KRAS G12R mutation along with a couple of other findings, what targeted options are worth talking about? This page is the patient-facing answer to that question. It walks through one preparation step, then the therapeutic options in rough order of how strong the case for each one is. The clinician-facing version of this page covers the same material with the technical detail your oncologist will want.
+You asked a focused question: in pancreatic cancer that came back after standard adjuvant chemotherapy, and that carries a KRAS G12R mutation along with a few other findings, what targeted options are worth talking about? This page is the patient-facing answer. It walks through the therapeutic options in rough order of how strong the case for each one is, with the workup tests that unlock some of them called out where they belong. The clinician version of this page covers the same ground with the technical detail your oncologist will want.
 
-One framing thing up front. There has been a lot of news about "KRAS inhibitors" in lung cancer over the last few years, and you may have seen headlines suggesting an off-the-shelf pill now exists. That is true for one specific KRAS variant called G12C. The mutation in your cancer is a different variant called G12R, and the lung-cancer drugs (sotorasib and adagrasib) do not work on G12R. The newer drug class that *does* target G12R-bearing cancers is still in clinical trials. That is why most of the options below are trial enrollments rather than approved prescriptions.
+One thing to settle up front, because it comes up a lot. You may have seen headlines about "KRAS drugs" that now exist as a pill in lung cancer. Those apply to one specific KRAS variant called G12C. Your cancer has a different variant, G12R, and the lung-cancer drugs (sotorasib and adagrasib) do not bind it. The newer class that does reach G12R is still in trials. That is why most of what follows is trial enrollment rather than a prescription you fill at a pharmacy.
 
-The other framing thing. This page only covers drugs aimed at the specific features in your tumor profile. The standard chemotherapy regimens your oncologist already knows about (FOLFIRINOX, gemcitabine plus nab-paclitaxel, and the rest) are not on this page. That is not because they are wrong. It is because the question was about targeted options, and the chemo conversation is a separate one that lives with your treating team.
+And one boundary. This page only covers drugs aimed at the specific features in your tumor profile. The standard chemotherapy regimens your oncologist already uses for pancreatic cancer are not listed here, and that is not a judgment about them. The question was about targeted options; the chemo conversation is a separate one that stays with your treating team.
 
 ## What we know about your cancer
 
-You are in your fifties. The cancer started in your pancreas and is the most common pancreatic type (adenocarcinoma). It came back after surgery and adjuvant chemotherapy. The adjuvant regimen was FOLFIRI, an irinotecan-based combination, and the cancer progressed on it. That means you have not yet received a platinum-based chemo (oxaliplatin or cisplatin), which is relevant for one of the options below. You are functional day-to-day with somewhat reduced energy (clinicians score this as ECOG 1). You are not currently on any cancer treatment.
+You are in your fifties. The cancer started in your pancreas and is the most common type, adenocarcinoma. It came back after surgery and after adjuvant chemotherapy. That adjuvant regimen was FOLFIRI, which is built around a drug called irinotecan, and the cancer grew despite it. One consequence matters below: you have not yet had a platinum chemotherapy (oxaliplatin or cisplatin). You are up and about day to day with somewhat less energy than usual, which clinicians score as ECOG 1. You are not on any cancer treatment right now.
 
 The tumor's molecular profile shows several findings, all confirmed by sequencing:
 
-- A KRAS G12R mutation. KRAS is a gene that, when mutated, keeps cancer cells stuck in "grow" mode. G12R is one of several flavors of this mutation, and it shows up in roughly one in five pancreatic cancers.
-- An inactivating mutation in TP53, the most commonly damaged tumor-suppressor gene in human cancer. This is context, not a direct treatment target.
-- Loss of a gene called CDKN2A, which normally puts a brake on cell division. When CDKN2A is missing, a nearby gene called MTAP is usually missing too (they sit right next to each other on the chromosome, and they tend to fall out together). Whether MTAP is gone in your case has not been checked yet, and that is one of the questions worth answering up front.
-- An alteration in CCND3, a cell-cycle driver that pairs mechanistically with the CDKN2A loss.
-- Two immune-system markers that, taken together, make standard immunotherapy unlikely to help. The cancer is "microsatellite stable" (MSS) and has a low tumor mutation burden (4.1 mutations per million bases, which is below the threshold of 10 that the approved immunotherapy regimens require). Immune-checkpoint drugs like pembrolizumab are approved across cancer types only when those markers point the other way. They do not point the other way here, so the immunotherapy class is essentially closed for this cancer at this time. The one exception on this page is an experimental combination that tries to pry that door back open, and even that one comes with caveats.
+- A **KRAS G12R** mutation. KRAS is a gene that, once mutated, jams a cancer cell into "grow" mode. G12R is one particular flavor of that mutation, and it turns up in roughly one in five pancreatic cancers. It is the main driver here and the target most of the options aim at.
+- An inactivating mutation in **TP53**, the most commonly damaged tumor-suppressor gene in cancer. This is background context, not a direct treatment target.
+- Loss of **CDKN2A** and an alteration in **CCND3**. Both feed the same machinery that controls how fast cells divide, which is why one option below tries to block that machinery.
+- The tumor is **MSS** with a low mutation count (a marker called TMB, measured at 4.1). In plain terms, this cancer does not carry the signals that make immunotherapy drugs like pembrolizumab work on their own, so those are off the table here.
 
 ## What you told us matters most
 
-You said the goal is remission. You said you accept high-risk, high-reward options when the upside is real. You did not flag any specific toxicities you wanted to rule out in advance. You said you prefer clinical trials over off-trial experimental use. Those preferences shaped what got included and what got ranked highly.
-
-## The first step regardless of which option you pursue
-
-Before any of the trial-based options below can move forward, the lab work needs to be hardened. This is not optional, but it is also not toxic, and it does not delay treatment by much.
-
-The KRAS G12R call on file came from a local sequencing report. Every trial sponsor running a KRAS-targeting trial re-runs that test on their own central platform at screening, regardless of what the local report says. The same blood draw that confirms the mutation also reads a baseline level of tumor DNA circulating in your bloodstream (called ctDNA). That baseline is useful later. On treatment, a follow-up ctDNA draw at week 6 or 12 can flag whether the cancer is responding weeks before a scan would show it.
-
-Two other tests are worth bundling into this same workup because the same blood draw and the same archived tumor block cover all of them:
-
-- A germline panel. Pancreatic cancer carries a real chance of an inherited gene variant (BRCA1, BRCA2, PALB2, ATM, the Lynch syndrome genes, and a few others) regardless of whether anyone in your family has had cancer. National guidelines now recommend germline testing for every pancreatic-cancer patient. If you carry one of these variants, an entirely new class of drug (PARP inhibitors, discussed below) opens up. If you don't, it stays closed. The result takes three to six weeks. There are no side effects from running the test.
-- An MTAP test. This is a quick add-on to the existing tumor sequencing or a separate stain on the same tumor block. It takes one to two weeks. If MTAP is gone (which is likely given the CDKN2A loss), one of the trial options below becomes mechanistically much more interesting.
-
-None of this hurts and none of it commits you to anything. The blood draw plus the tumor-block requisition can be ordered in a single visit, and the answers come back in roughly the time it takes to schedule a trial-screening appointment anyway.
+You said the goal is remission, and you are willing to accept high-risk, high-reward options to chase it. You would rather keep side effects down where that is possible, but you set no hard limits. There is no treatment you ruled out in advance because of its side effects. You lean toward clinical trials. Put together, that points toward the options with the deepest possible upside, accepting more uncertainty and more toxicity than a more cautious patient might. The ordering below reflects that.
 
 ## The options
 
-### Option 1 — daraxonrasib (RMC-6236), a KRAS-targeted oral drug, in a clinical trial
+A note before the list. Almost everything here is investigational, meaning drugs being tested in trials rather than approved treatments for your situation. The single drug on this page that guidelines actually name (olaparib) is one you cannot start today, for reasons explained under its heading. So the ranking is less "proven versus unproven" and more "which promising-but-early option has the most behind it." Where a number can be given honestly, it is; where it cannot, that is said plainly rather than dressed up.
 
-This is the lead option. It is the one option on this page where there is published clinical data on people with pancreatic cancer carrying a KRAS G12 mutation, taking this specific drug.
+### Option 1 — daraxonrasib (RMC-6236)
 
-What it is: a once-daily pill that targets the KRAS protein in its active state. Unlike the lung-cancer KRAS drugs, this one works across several KRAS variants, including G12R. The trial that has the published readout enrolled 168 people with pancreatic cancer who had received one prior line of treatment. In the subgroup of 26 people dosed at the 300 mg level (the dose this trial is now using), about a third of the cancers shrank measurably, and the median time before the cancer started growing again was around 8.5 months. Median overall survival in that small subgroup was about 13 months. Those numbers are early — the full registration trial (the kind that the FDA usually wants before approval) is still running, and 26 people is a small group to draw firm conclusions from. The G12R version of the mutation was included in the group but has not been reported separately. So the honest answer is: this looks like the best published targeted option for this exact cancer right now, with the caveat that the data are still maturing.
+This is the option to discuss first, and it is the one every part of the review agreed on. Daraxonrasib is an oral once-daily pill designed to shut down mutant KRAS across several variants, including G12R. It is the furthest along of anything that targets your main driver.
 
-Main side effects: a rash that nearly everyone gets but that is usually manageable with a topical steroid plus a low-dose antibiotic (the same playbook that lung-cancer EGFR-drug patients use), diarrhea in about half of patients, and mouth sores in about a third. About three in ten patients had a serious side effect at some point. No deaths were attributed to the drug.
+Here is the honest shape of the evidence. In a published early trial, second-line pancreatic cancer patients with a KRAS G12 mutation who took the 300 mg dose (26 patients) had their tumors shrink about 35% of the time, and lived a median of roughly 13 months. For this setting, a 35% response rate is about double what standard second-line chemo tends to deliver, so the chance of a meaningful response is the best on this page. Two honest discounts, though. First, that 35% pools together several KRAS G12 variants. Your specific G12R was not reported on its own, so the exact number for G12R is genuinely uncertain. Second, G12R behaves a little differently from its cousins in the lab, and no one yet knows whether that helps, hurts, or makes no difference.
 
-What fits your preferences: this is a recruiting trial, the side-effect profile is manageable, and the efficacy signal is the strongest in the dossier. The gap against your stated goal of remission is honest — this drug controls the cancer for a meaningful stretch, but the published data do not show people being cured.
+You may also come across news that a larger phase-3 trial (RASolute 302) reported a survival benefit, and that the FDA has opened an expanded-access route. Those figures come from the company and the FDA, not from a published, peer-reviewed study, so they are worth knowing as context but should not be treated as settled proof. The strength of this option rests on the published trial described above, not on the press figures.
 
-### Option 2 — PF-07934040, a different KRAS-targeted oral drug, in a clinical trial
+The side effects are real but mapped out. Nearly everyone gets some treatment-related effect; about 3 in 10 get a serious (grade 3 or higher) one. The most common is an acne-like rash (very common, occasionally severe), along with diarrhea, nausea, mouth soreness, and fatigue. None of this crosses a line you drew, and importantly, each of these has a written management plan: creams and a low-dose antibiotic for the rash, anti-diarrhea medication, a medicated mouthwash for the sores. There were no treatment-related deaths in the trial.
 
-This is a backup version of the same general idea. PF-07934040 is a different drug from a different company, with a different chemistry, that also targets KRAS. It is in an earlier phase of testing, which means no efficacy results have been published yet. What makes it worth listing is that the trial specifically names G12R as an eligible variant, which is unusual — most KRAS trials lump all the variants together in the inclusion paperwork, and that can become a screening headache.
+This fits what you told us well: an active trial you can enroll in, an oral pill, the deepest published upside on your main target, and no side effect that trips a limit you set. What is contested is narrow and specific: the exact benefit for G12R on its own is not yet published, and the phase-3 survival figures are not yet peer-reviewed. Practically, enrollment may run through the monotherapy trial, a combination-platform trial, or the expanded-access route; your team would confirm which door is open.
 
-The case for this option is essentially: if the first drug above is not accessible (the trial slot is filled, the site is too far, the screening labs disqualify you), this is the next-best version of the same idea.
+### Option 2 — ERAS-0015 (a pan-RAS "molecular glue")
 
-The risk is that there is no published efficacy data yet. The drug class works in principle, but this specific drug has not yet been shown to work in pancreatic cancer. You would be in an early-phase trial where the goal is partly to figure out how well it works.
+**This option carries caveats.** Here is the tradeoff to weigh. ERAS-0015 is another oral once-daily drug that goes after mutant KRAS, using a different mechanism (it acts like a "glue" that traps the KRAS protein). Early results look striking: in a small group of pancreatic cancer patients, tumors shrank around 40% of the time, and every one of 14 patients with a KRAS G12 mutation showed a large drop in tumor DNA circulating in the blood, with five clearing it entirely.
 
-The trial does exclude people with significant residual numbness or tingling from prior chemotherapy. Your prior regimen (FOLFIRI) is generally less likely to cause that than a platinum-based regimen would be, but it is worth checking.
+The caveat is about how ripe that evidence is. Those numbers come from a single company announcement in April 2026, not a published paper or even a conference abstract. The responses were measured early (at 14 weeks) and are not yet confirmed. And a critical piece is simply missing: the company has not released how often serious side effects happened, broken down by type. Without that table, there is no way to hand your care team a plan for managing what might go wrong, which is the main reason this sits below Option 1 rather than beside it. One more honest note: the blood-DNA drops are encouraging, but in pancreatic cancer that particular signal has never been shown to reliably translate into tumors actually shrinking. So treat the promise here as real but unproven.
 
-### Option 3 — daraxonrasib plus a PRMT5 inhibitor (anvumetostat), only if your tumor has lost MTAP
+Why it is on the page at all: it is a second, independent shot at your main target with an upside in the same range as Option 1, and your stated appetite for high-risk, high-reward trials is exactly what it fits. The open question is maturity. One option is a published study, the other is a headline. If a full dataset with a safety breakdown comes out, this could move up quickly.
 
-This option targets two of the findings in your tumor at once: the KRAS mutation and the CDKN2A loss. It is gated on the MTAP test mentioned above. Here is why.
+### Option 3 — olaparib (a maintenance pill, only after specific conditions are met)
 
-MTAP sits next to CDKN2A on the chromosome, and when CDKN2A is lost, MTAP is usually lost too — but not always. If MTAP is lost, then a drug called anvumetostat (which blocks an enzyme called PRMT5 in a way that is selective for MTAP-deleted cells) is mechanistically a very clean fit. The lab data on this drug class are some of the cleanest in cancer biology: MTAP-deleted cancer cells are roughly 70 times more sensitive to the drug than normal cells. The trial in question pairs this drug with daraxonrasib (the same drug as Option 1) on a combination arm, so you get the KRAS coverage and the MTAP-axis coverage in one regimen.
+**This option carries caveats**, and the biggest one is timing: it cannot start today. Olaparib is the one drug on this page that treatment guidelines actually name for pancreatic cancer, but it only applies to a specific situation, and two things have to line up first.
 
-The catches are real. The combination has not yet been shown to work clinically in pancreatic cancer (the bulk of the data so far is in lung cancer and mesothelioma). The side-effect profile of the combination at full dose is still being characterized. And the whole option hinges on MTAP being gone in your tumor — if MTAP is intact, this option is off the table.
+First, olaparib only works in people whose cancer carries an inherited BRCA1 or BRCA2 mutation (a related gene, PALB2, counts too). That requires a germline (inherited) genetic test that has not been done yet. Second, olaparib is a *maintenance* drug: it is meant to hold the line after a course of platinum chemotherapy has already controlled the disease, and you have never had platinum chemo. So even in the best case, this is months away, not now.
 
-### Option 4 — olaparib (a PARP inhibitor), only if you carry an inherited BRCA or PALB2 variant *and* a future platinum-chemo response holds up
+If both conditions are met, the benefit is real: in the trial that established it, patients on olaparib went about twice as long before their cancer grew again (roughly 7 versus 4 months) compared with placebo. Two honest tempering points. That delay-in-growth benefit did not translate into people clearly living longer in the trial; the survival curves stayed close together. And until the genetic test comes back positive and a platinum course holds the disease, you should assume no benefit here, because the drug simply does not apply yet. Side effects include anemia, fatigue, and nausea (serious in about 4 in 10 patients), plus a small long-term risk (around 1.5%) of a serious blood disorder with prolonged use.
 
-This option is the only one on the page backed by a randomized phase 3 trial with high-quality evidence. It is also the most heavily gated.
+What is contested is not the drug's mechanism but its deliverability for you right now. An option double-gated on a test you have not had and a chemotherapy you have not received is hard to rank as an immediate move for someone whose goal is remission now. The concrete action it points to is worth taking regardless: **ask about ordering the germline BRCA1/2/PALB2 panel now.** Guidelines recommend it for every pancreatic cancer patient regardless of family history, and a positive result would open this pathway (and Option 9).
 
-What it is: an oral pill, twice daily, that blocks a DNA-repair enzyme called PARP. In cancers that already have a broken DNA-repair gene (specifically inherited BRCA1, BRCA2, or PALB2 mutations), blocking PARP is a one-two punch that the cancer cells cannot recover from. The pivotal trial enrolled people with metastatic pancreatic cancer who had a germline BRCA mutation and whose cancer was stable after at least four months of platinum-based chemo. Olaparib roughly doubled the time before the cancer started growing again, compared to placebo. The point worth being honest about: the improvement in time-without-progression did not translate (in the published interim analysis) into a measurable improvement in overall survival. Patients lived longer without disease growth, but the data on whether they lived longer overall is so far inconclusive.
+### Option 4 — daraxonrasib plus chemotherapy
 
-Two things have to happen before this option is on the table. First, the germline panel mentioned above has to come back showing one of the relevant variants. The base rate in pancreatic cancer is real but is not the majority — the test is worth running, and the result will be definitive one way or the other. Second, you would need to receive a platinum-containing chemo regimen first (which you have not yet) and have the cancer respond to it for at least four months. That platinum-induction step is a separate conversation with your medical oncologist.
+**This option carries caveats.** This is Option 1's drug combined with a standard chemo backbone (either mFOLFIRINOX or gemcitabine plus nab-paclitaxel), taken in a trial. The logic fits a remission-first goal: because your adjuvant chemo was irinotecan-based, you have never had oxaliplatin, which keeps the intensive mFOLFIRINOX combination biologically on the table. In a very small early cohort on a related combination, 5 of 6 patients had confirmed tumor shrinkage. That is a striking signal, but from just six people, so it cannot carry much weight yet.
 
-What is contested about this option: it is an approved drug with strong randomized evidence, which is rare on this page, but two structural concerns weigh against ranking it higher. The two gates above are independent and either one can close it. And the survival benefit, as opposed to the time-to-progression benefit, has not been clearly demonstrated. The class also carries a small but real risk of secondary blood cancers (leukemia or myelodysplastic syndrome) with prolonged use, on the order of 1 to 2 percent.
+The tradeoff is toxicity stacked on toxicity. You would be layering the rash and gut side effects of the KRAS drug on top of chemo's blood-count drops and nerve effects, and there is no dedicated safety readout for this specific combination in pancreatic cancer. If lingering nerve symptoms from your earlier FOLFIRI are a factor, the gentler gemcitabine backbone may be the better choice. This sits below the single-drug version of daraxonrasib precisely because the combination's safety is less charted, and the practical question is whether the pancreatic arm is open at your referral site.
 
-This option carries caveats.
+### Option 5 — ulixertinib plus palbociclib
 
-### Option 5 — daraxonrasib combined with chemotherapy (FOLFIRINOX or gem/nab) in a clinical trial
+**This option carries caveats.** This pairing is the only one on the page that goes after three of your tumor's features at once: it blocks a signal (ERK) downstream of KRAS, and it targets the cell-division machinery tied to your CDKN2A loss and CCND3 alteration. On paper the logic is clean.
 
-This is the same KRAS-targeted drug as Option 1, but added to a standard chemo backbone in a different trial. The case for it: combinations tend to push response rates higher than monotherapy, you have not yet received the kind of chemo most commonly used for metastatic pancreatic cancer (your prior adjuvant regimen was FOLFIRI, which is irinotecan-based but does not include oxaliplatin or platinum), and combining the targeted drug with chemo is consistent with your stated treat-to-remission goal.
+The honest limit is the clinical track record. The best published result in pancreatic cancer was stable disease (tumors held steady rather than shrank), not actual shrinkage. And one of the two drugs (palbociclib) has already been tested on its own in cancers with a related cell-division marker and largely failed there. The lab work behind the combination was mostly done on other KRAS variants, not G12R, so whether it applies cleanly to your cancer is untested. Side effects include overlapping drops in blood counts, fatigue (common), rash, and nausea. It is on the page as a deliberate "covers the most features" option, not because the response numbers are strong. The mechanistic case is the appeal, and the response expectation is modest.
 
-The case against ranking it above the monotherapy option: there is a small early-phase abstract (n=6 patients) showing 5 of 6 responding on a different chemo-plus-targeted combination, which is encouraging but is six people in a conference abstract, not a published full paper. There is no published safety table yet for the daraxonrasib-plus-chemo regimen in pancreatic cancer. The side effects of the targeted drug (rash, diarrhea, mouth sores) layer on top of the chemo side effects (low blood counts, fatigue, nerve toxicity), and what that stacked profile looks like at full dose has not yet been reported publicly.
+### Option 6 — KST-6051 (FALCON trial)
 
-This option carries caveats. It is genuinely an option to discuss, especially given your preferences, but the supporting data are thinner than for Option 1.
+**This option carries caveats.** This is another oral drug against mutant KRAS, built to work on the protein in more than one of its states, with pancreatic cancer named as a target. The plain truth is that there is no data yet. The first patient was dosed in April 2026, so no one can tell you how well it works or what its side effects are. It is on the page as a forward-looking backup: if the more-established KRAS drugs stop working or the rash proves intolerable, this is a mechanistically distinct shot at the same target. Being this early, trial slots will be scarce, and Option 8 is a near-identical alternative.
 
-### Option 6 — zoldonrasib (RMC-7977) plus an immune-system bispecific antibody (ivonescimab)
+### Option 7 — PF-07934040
 
-This is the highest-ceiling, lowest-evidence option on the page. It pairs a related KRAS-targeted drug with a newer immunotherapy that targets two things at once (PD-1, which most immune-checkpoint drugs already hit, plus VEGF, which is involved in tumor blood supply). The reason it is on the page at all is that your tumor's immune profile (MSS, low mutation burden) closes the door on every standard immunotherapy option, and this combination is the only thing on the horizon that tries to reopen that door for pancreatic cancer.
+**This option carries caveats.** Another oral pan-KRAS drug in its first human trial. What sets it slightly apart is that it names G12R explicitly in its written eligibility criteria, and it has a second-line pancreatic cohort that matches your setting. But like Option 6, it is early enough that no results on how well it works have been reported, and its side-effect picture is limited to what the protocol excludes. It is a clean backup on your main target with no efficacy readout yet. One practical note: the trial excludes people with significant nerve damage, which is worth checking against any lingering effects from your earlier chemo, though irinotecan-based regimens usually spare the nerves.
 
-The reason it is not ranked higher: there are zero published clinical results for this combination in pancreatic cancer. The strongest data are from a mouse model of pancreatic cancer that responded dramatically to one of these drugs alone, but that model carried a different KRAS variant (G12D, not G12R), so the extrapolation is two steps removed. The combination's side-effect profile in pancreatic cancer specifically has not been characterized — the rash from the targeted drug and the immune-system inflammation from the bispecific antibody can look similar on the skin, which makes it hard to tell what is causing what. And the trial's listed indications are lung and colorectal cancer; whether the trial has an open pancreatic-cancer slot is something a sponsor inquiry has to confirm.
+### Option 8 — JAB-23E73
 
-If you are oriented toward the highest possible ceiling on response and willing to take an option with thin clinical data to get there, this is the lane. If not, it should sit below the better-supported options.
+**This option carries caveats.** A second early pan-KRAS drug held on the list for redundancy: if one early trial has no open slot, another might. Its lab profile covers G12R, and it is open to patients like you who have not had a prior KRAS-targeting drug. Two honest limits: the only public hint of activity so far is a vague "early antitumor activity" statement with no numbers, and the trial enrolls any advanced solid tumor rather than naming pancreatic cancer, so a pancreatic slot is not guaranteed and would need confirming.
 
-This option carries caveats.
+### Option 9 — rucaparib (the maintenance backup to olaparib)
 
-### Option 7 — ELI-002, a KRAS-peptide vaccine
+**This option carries caveats.** Rucaparib is in the same family as olaparib (Option 3) and comes with the same two gates: it needs a BRCA1/2 or PALB2 mutation (inherited or in the tumor) and a prior platinum chemotherapy course. Its one advantage is that it covers a slightly wider set of genetic results than olaparib does. In its trial, patients with the right genetic makeup did well (tumors shrank about 42% of the time, with a median of roughly 13 months before growth). But the evidence is from a smaller, single-group study rather than a rigorous head-to-head trial, and the same "cannot start today" gate applies. The same germline panel that unlocks olaparib unlocks this. It sits lower on the list because it depends on a marker outside the main targetable features this page is scoped to.
 
-This is the cleanest-tolerability option on the page (essentially no serious side effects in the trial data), and the vaccine is built around a panel of seven KRAS variants that explicitly includes G12R. So mechanistically it is a clean fit.
+### Option 10 — anvumetostat (needs an extra test first)
 
-The reason it does not rise higher is that the trial enrolls people in a specific clinical state: pancreatic cancer that was surgically removed and is in remission but with traces of tumor DNA still detectable in the blood (a setting clinicians call "minimal residual disease"). The vaccine is designed to mop up that microscopic residual disease before it grows into something visible. Your cancer is past that window — it has already grown back to a visible recurrence. Future trials may open the indication wider, but the current one does not enroll your clinical state.
+**This option carries caveats.** This drug targets a vulnerability that can come with your CDKN2A loss. A neighboring gene called MTAP is often deleted alongside CDKN2A, and when it is, this class of drug can exploit that. There is a version of the trial that pairs it with daraxonrasib, which would cover both your KRAS and cell-cycle features at once. Two big caveats. First, no pancreatic cancer results have been published, and there is no safety data on file. Second, and this is the gate: the whole rationale depends on MTAP actually being deleted, which has not been tested. **Ask about running the MTAP reflex test** (a straightforward add-on to existing tissue analysis). If MTAP turns out to be intact, this option falls away entirely.
 
-This option carries caveats. It is on the page because the mechanism-fit is real and worth knowing about; it is not currently actionable for your specific situation.
+### Option 11 — ELI-002 (a KRAS vaccine)
 
-### Option 8 — avutometinib plus defactinib plus chemotherapy
+**This option was considered but not recommended** for your situation, though it stays on the page because it is worth understanding why. ELI-002 is a vaccine that trains the immune system against the exact G12R mutation your cancer carries, and its safety record is the cleanest of anything here (essentially injection-site reactions, nothing serious attributed to it). In a trial, 84% of patients mounted the intended immune response.
 
-This is a four-drug combination being tested in pancreatic cancer. There is a small abstract from 2024 showing 5 of 6 patients responding at the lowest dose level, which is striking but is six people and an unpublished abstract. The combination has stronger published data in a different cancer type (low-grade serous ovarian cancer), where it has accelerated FDA approval for a related indication.
-
-The current pancreatic-cancer trial is "active not recruiting," meaning the slots are presently filled. Whether it reopens is the binding question. The combination is mechanistically reasonable but the data supporting it in pancreatic cancer specifically are thin (one conference abstract).
-
-This option carries caveats and is mostly informational at present.
-
-### Option 9 — rucaparib (a second PARP inhibitor), under similar gating to Option 4
-
-Rucaparib is in the same drug class as olaparib (Option 4). The reason to list it separately is that its trial enrolled a slightly broader group: instead of only inherited (germline) BRCA mutations, it included people whose BRCA or PALB2 mutation was in the tumor only (somatic), not inherited. So in principle it widens the gate.
-
-The data are weaker — a single-arm phase 2 trial with 46 patients, no comparison group. Median time-without-progression was about 13 months and median survival around 23 months in that small group, but those are secondary readouts in a single-arm study, not registration-grade evidence. The same prerequisite as Option 4 applies: a platinum-chemo induction first, then a response that holds up for at least four months, then maintenance with the drug.
-
-Useful as a backup if Option 4 turns out to be inaccessible.
-
-This option carries caveats.
-
-### Option 10 — palbociclib (a CDK4/6 inhibitor) combinations
-
-This option targets the CDKN2A and CCND3 findings in your tumor. Mechanistically, it is the textbook case for a CDK4/6 inhibitor (drugs like palbociclib that are well-established in breast cancer). The lab data combining palbociclib with other targeted drugs in pancreatic-cancer organoids look promising.
-
-The reason it is at the bottom of the list: the closest published clinical evidence is actively negative. A large basket trial that tested palbociclib alone in cancers with this kind of CDK-axis alteration found a response rate of about 4 percent — essentially no signal. Combination approaches that might rescue that signal are at the preclinical stage in pancreatic cancer, not the trial stage. The most relevant combination trial (called ADOPT) is not yet recruiting. Outside of a trial, this would be an off-label combination requiring institutional pharmacy support.
-
-This option carries caveats. It is on the page mostly for completeness — these findings in your tumor have a mechanistic story, but the clinical story to back that story up is not there yet.
+The problem is the setting. Every human result for this vaccine comes from patients who had their cancer surgically removed and had only tiny, invisible traces of disease left, not patients with visible, active recurrence like yours. There is no evidence a vaccine can control bulk recurrent pancreatic cancer, and the registered successor trial is not currently enrolling. So the mechanism is elegant and the safety is excellent, but the window it was studied in does not match where you are. That mismatch, not any safety worry, is why it lands at the bottom.
 
 ## Questions to ask your oncologist
 
-- Has the germline panel been ordered yet? When are results expected? If a BRCA or PALB2 result comes back, does it change the immediate plan?
-- Is MTAP testable on the existing tumor block, or does it need a new sample? How quickly can it return?
-- Among the daraxonrasib trials (Option 1 versus Option 5), which one is geographically accessible, and does prior adjuvant FOLFIRI count as "prior systemic therapy" under the protocol?
-- If Option 1 (daraxonrasib monotherapy) is the lead, what is the plan for managing the expected rash? Who is the dermatology contact?
-- For the ctDNA monitoring mentioned in the first step — at what intervals on treatment, and what change in the ctDNA level would prompt a change in the plan?
-- Has my MMR / microsatellite status been confirmed by IHC in addition to NGS, just to close out the immunotherapy question definitively?
-- For Option 4 (olaparib), if germline testing comes back negative, is there value in checking for somatic BRCA / PALB2 (the Option 9 gate) before closing that lane?
-- If none of the targeted-trial options is accessible at our center, who is the nearest referral site running these trials, and what does the screening timeline look like there?
+- Can we order the germline BRCA1/2/PALB2 panel now, and can we add the MTAP reflex test to the tumor analysis? Both are low-risk tests that decide whether some options on this list are even possible.
+- If the germline test comes back **negative**, what does that change? (It would close the olaparib and rucaparib pathways, so what would we focus on instead?)
+- For Option 1 (daraxonrasib): is there an open trial slot for me, or an expanded-access route, and what is the plan for monitoring and managing the rash and diarrhea if I start?
+- For Option 2 (ERAS-0015): given that the serious-side-effect data has not been released, how comfortable are you enrolling me, and would you want to wait for a fuller safety readout?
+- For Option 4 (daraxonrasib plus chemo): does my earlier FOLFIRI leave me with any lingering nerve symptoms that would steer us toward the gentler chemo backbone?
+- If I were to consider olaparib later, would you recommend a platinum-based chemo course now regardless, and what would tell us it is working well enough to move to maintenance?
+- Several of these are very early trials with no results yet. How do you weigh enrolling in something unproven against options with more data behind them, given that my goal is remission?
+- Is there a single trial that could cover more than one of my tumor's features at once, and would you prioritize that?
 
 ## Sources
 
-The evidence anchors cited above include:
+**Published studies (PubMed IDs):** 42090791, 38589574, 38593348, 31157963, 33970687, 39437014, 40790272, 38195752, 31649109, 37552839, 26912361, 26912360
 
-- Wolpin et al., New England Journal of Medicine 2026 (daraxonrasib in KRAS G12 PDAC) — PMID 42090791
-- Holderfield et al., Nature 2024 (preclinical pan-RAS class) — PMID 38589574
-- Jiang et al., Cancer Discovery 2024 (preclinical pan-RAS replication) — PMID 38593348
-- Wasko et al., Nature 2024 (zoldonrasib in mouse pancreatic cancer model) — PMID 38588697
-- Golan et al., New England Journal of Medicine 2019 (POLO trial, olaparib in germline BRCA pancreatic cancer) — PMID 31157963
-- Reiss et al., Journal of Clinical Oncology 2021 (rucaparib in BRCA/PALB2 pancreatic cancer) — PMID 33970687
-- Mavrakis et al., Science 2016 and Kryukov et al., Science 2016 (PRMT5 / MTAP synthetic lethality) — PMIDs 26912361, 26912360
-- Smith et al., Cancer Discovery 2023 (MTA-cooperative PRMT5 selectivity) — PMID 37552839
-- Pant et al., Nature Medicine 2024 and Wainberg et al., Nature Medicine 2025 (ELI-002 AMPLIFY-201) — PMIDs 38195752, 40790272
-- O'Hara et al., Clinical Cancer Research 2025 (NCI-MATCH Z1C palbociclib basket) — PMID 39437014
-- Knudsen et al., Cancer Research 2023 (CDK4/6 combination organoid data) — PMID 36346366
-
-Trial identifiers (for sponsor/registry lookup): NCT05379985, NCT06445062, NCT06447662, NCT06360354, NCT02184195, NCT07397338, NCT05726864, NCT05669482, NCT06813079, NCT06625320.
+**Trials (ClinicalTrials.gov IDs):** NCT05379985, NCT06445062, NCT06625320, NCT06895031, NCT07458347, NCT06959615, NCT06447662, NCT03454035, NCT06360354, NCT05726864
 
 !!! warning "Decision support, not medical advice"
-    This is decision-support information, not a treatment plan. Talk to your oncologist before making any decisions based on what's here.
+    This is decision-support information, not a treatment plan. Talk to
+    your oncologist before making any decisions based on what's here.

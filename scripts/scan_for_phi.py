@@ -144,6 +144,8 @@ ONCOLOGY_ACRONYM_ALLOWLIST = frozenset({
     "CAR", "ADC", "TKI", "DXD", "PROTAC", "IO", "IND", "BLA", "ORR",
     "PFS", "OS", "DCR", "DOR", "TTR", "PR", "CR", "SD", "PD", "NE",
     "BICR", "IRC", "AE", "TRAE", "SAE", "DLT", "MTD", "RP2D",
+    # Trial-stage / dose-finding shorthands + control-arm trial names in rendered tables
+    "FIH", "RDE", "RDD", "MABEL", "MPACT", "MABEL",
     # Toxicity / AE acronyms
     "CRS", "ILD", "ICANS", "VTE", "DVT", "PE", "AKI", "GI", "HFS",
     "HTN", "QTC", "LVEF", "LFT", "AST", "ALT", "ANC", "WBC", "BUN",

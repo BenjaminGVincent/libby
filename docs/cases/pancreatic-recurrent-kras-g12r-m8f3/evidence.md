@@ -2,9 +2,9 @@
 
 # Evidence — `pancreatic-recurrent-kras-g12r-m8f3`
 
-_This page shows 12 included clinical + 19 included pre-clinical rows, grouped by intervention. 4 clinical and 3 pre-clinical papers were reviewed and excluded — see the [master manuscripts table](manuscripts.md) for the full audit trail._
+_This page shows 19 included clinical + 19 included pre-clinical rows, grouped by intervention. 4 clinical and 3 pre-clinical papers were reviewed and excluded — see the [master manuscripts table](manuscripts.md) for the full audit trail._
 
-## Clinical evidence (12 rows)
+## Clinical evidence (19 rows)
 
 Per-manuscript detail grouped by intervention. Each row is one published clinical-evidence finding. Columns mirror the per-publication decision-support layout used in companion projects (`io-shieldbreak`'s Pharmacodynamic-Results table).
 
@@ -145,6 +145,91 @@ Per-manuscript detail grouped by intervention. Each row is one published clinica
       <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
       <tbody>
         <tr><td>Renouf/O&#x27;Callaghan (2022)<br><em>Nature Communications</em></td><td class="num">180</td><td>180 randomized to chemo + dual ICI vs chemo alone; unselected for biomarker. The patient is recurrent rather than 1L untreated, but the negative readout is decision-relevant for any ICI-combination discussion.</td><td>1L</td><td>Randomized open-label phase 2</td><td>gemcitabine + nab-paclitaxel</td><td>durvalumab 1500 mg + tremelimumab 75 mg + gem/nab per protocol</td><td>OS</td><td>Overall survival (primary)</td><td class="num">—</td><td class="num">—</td><td class="num">0.72</td><td>OS not improved (p=0.72); arm-level medians not separated cleanly in primary abstract.</td><td>Limited incremental toxicity beyond lymphocyte changes (p=0.02 for lymphocyte elevation); no fatal immune-related events reported.</td><td><span class="rob-badge rob-low">RoB2:Low</span></td><td>1b</td><td><span class="fit-badge fit-weak">weak</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/36028483">36028483</a></td><td><a href="https://doi.org/10.1038/s41467-022-32591-8">DOI</a></td><td>Negative RCT for dual ICI added to chemo in unselected metastatic PDAC. The subgroup signal in KRAS-wildtype patients is hypothesis-generating only. For an MSS / sub-10-TMB G12R patient, this is the load-bearing negative evidence for adding biomarker-agnostic ICI to chemo.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### JYP0015 / ERAS-0015 (pan-RAS molecular glue)  
+<small><code>intervention_id: eras-0015</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Erasca / Joyo Pharmatech/— (2026)</td><td class="num">20</td><td>KRAS G12X PDAC (2L) and NSCLC (2L+, including post-ICI/platinum); G12R covered under the G12X gate rather than named as a separate cohort</td><td>2L+</td><td>Phase 1 dose-escalation (AURORAS-1 US, JYP0015M101 China), open-label single-arm</td><td>—</td><td>24-32 mg PO once daily (RDE); 40 mg QD maximum administered</td><td>ORR</td><td>unconfirmed ORR (PDAC, RECIST 1.1)</td><td class="num">40.00 %</td><td class="num">—</td><td class="num">—</td><td>—</td><td>No dose-limiting toxicities through cutoff; AEs described as mostly low-grade with no treatment-related discontinuations. Per-term grade-3+ rates not disclosed in the press release.</td><td><span class="rob-badge rob-med">informal:med</span></td><td>4</td><td><span class="fit-badge fit-partial">partial</span></td><td>—</td><td>—</td><td>Data from Erasca 27 Apr 2026 topline release; no peer-reviewed publication or abstract yet, so per-term grade-3+ AE rates and confirmed responses are unavailable. G12R is not separately reported but falls within the G12X activity and ctDNA-clearance signal — predictive confidence for this specific allele is lower than for the pooled G12X estimate.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### JAB-23E73 (pan-KRAS ON/OFF inhibitor)  
+<small><code>intervention_id: jab-23e73</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Jacobio Pharmaceuticals/— (2025)</td><td class="num">—</td><td>KRAS-altered solid tumors including G12X (G12D/V/R/S/A), G13D, Q61H; spares HRAS/NRAS. RAS-inhibitor-naive</td><td>2L+</td><td>Phase 1/2a open-label dose-escalation (first-in-human, US and China)</td><td>—</td><td>oral, dose-escalation (dose levels not disclosed)</td><td>AE_rate</td><td>safety / RP2D (ongoing)</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td>—</td><td>No clinical safety data released. Preclinical models showed tumor regression without significant body-weight loss.</td><td><span class="rob-badge rob-med">informal:high</span></td><td>5</td><td><span class="fit-badge fit-partial">partial</span></td><td>—</td><td>—</td><td>AACR-NCI-EORTC 2025 disclosure is preclinical; the phase 1 is first-in-human with only a qualitative &#x27;early antitumor activity&#x27; mention (Citeline/Scrip), no numeric efficacy or per-term AE data. toxicities[] left empty because no clinical AE table exists — abstract/registry carry no safety tab yet. G12R named among covered G12X alleles.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### KST-6051 / FALCON (pan-KRAS ON/OFF inhibitor)  
+<small><code>intervention_id: kst-6051</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Kestrel Therapeutics/— (2026)</td><td class="num">—</td><td>Documented KRAS mutation without an allele-restricting list; G12R within scope. Prior KRAS/RAS inhibitor excluded</td><td>2L+</td><td>Phase 1 first-in-human dose-escalation (FALCON)</td><td>—</td><td>oral once daily, dose-escalation (dose levels not disclosed)</td><td>AE_rate</td><td>safety / RP2D (ongoing)</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td>—</td><td>No clinical safety data available; trial enrolling at dose-escalation.</td><td><span class="rob-badge rob-med">informal:high</span></td><td>5</td><td><span class="fit-badge fit-strong">strong</span></td><td>—</td><td>—</td><td>First patient dosed 22 Apr 2026 (Kestrel/GlobeNewswire); no efficacy or safety readout exists yet, so toxicities[] is empty because no source AE data has been generated. Switch-II-pocket ON/OFF pan-KRAS mechanism; PDAC is a named enrolling tumor type.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### ABO2102 (KRAS neoantigen mRNA vaccine) +/- toripalimab  
+<small><code>intervention_id: abo2102</code> · 2 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Ruijin Hospital / Abogen/— (2024)</td><td class="num">—</td><td>Tumor must carry one of five encoded KRAS-mutant neoantigens; whether G12R is among the five is not stated in the registry record. ECOG 0-2</td><td>2L+</td><td>Early phase 1 open-label, monotherapy and PD-1-combination arms (dose escalation + expansion)</td><td>—</td><td>ABO2102 per protocol; toripalimab IV in combination arms</td><td>AE_rate</td><td>safety / immunogenicity (ongoing)</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td>—</td><td>No clinical data released; preclinical only.</td><td><span class="rob-badge rob-med">informal:high</span></td><td>5</td><td><span class="fit-badge fit-partial">partial</span></td><td>—</td><td>—</td><td>FDA IND May 2025; no clinical efficacy or safety data yet, so toxicities[] is empty (no source AE table exists). Encodes five KRAS-mutant antigens with dual CD8/CD4 activation; G12R inclusion in the panel is unconfirmed in the registry. MSS/low-TMB context makes a KRAS-directed vaccine plus PD-1 more rational than checkpoint monotherapy.</td></tr>
+        <tr><td>Wang/Shen (2024)<br><em>Cell Research</em></td><td class="num">2</td><td>HLA-A*11:01-restricted, KRAS G12V-mutant; 2-patient case series (one PDAC, one NSCLC)</td><td>2L+</td><td>Case series / correspondence</td><td>—</td><td>KRAS G12V mRNA vaccine per protocol + pembrolizumab</td><td>ORR</td><td>objective response (RECIST 1.1)</td><td class="num">PR in 2/2 patients</td><td class="num">—</td><td class="num">—</td><td>—</td><td>Manageable post-vaccination fever in both patients and injection-site pain in one; no other adverse effects reported in this correspondence.</td><td><span class="rob-badge rob-med">informal:high</span></td><td>4</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/38914844">38914844</a></td><td><a href="https://doi.org/10.1038/s41422-024-00990-9">DOI</a></td><td>Class precedent for the mRNA-KRAS-vaccine + PD-1 axis, grouped with ABO2102. Covers G12V only — not the patient&#x27;s G12R allele — so it anchors mechanism, not allele-matched benefit; a 2-patient correspondence, not a trial.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### mutant-KRAS peptide vaccine + dual checkpoint (evidence anchor for NCT06411691)  
+<small><code>intervention_id: mkrasvax-dual-checkpoint</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Huff/Zaidi (2026)<br><em>Nature Communications</em></td><td class="num">12</td><td>Resected PDAC; six-mutation mKRAS panel including G12R. n=12. The metastatic NCT06411691 (mKRASvax + balstilimab/botensilimab) is trial-in-progress with no efficacy readout</td><td>adj</td><td>Phase 1 open-label single-arm (NCT04117087)</td><td>—</td><td>pooled synthetic long-peptide mKRAS vaccine + ipilimumab + nivolumab (resected-PDAC platform); metastatic trial substitutes balstilimab + botensilimab</td><td>biomarker</td><td>T-cell immunogenicity</td><td class="num">11/12 with increased mKRAS T-cell response</td><td class="num">—</td><td class="num">—</td><td>median DFS 6.35 mo</td><td>Four grade-3 immune-related events (pneumonitis, myalgias, arthralgias, adrenal insufficiency) in 2/12 patients (17%); most events low-grade injection-site and constitutional reactions.</td><td><span class="rob-badge rob-high">ROBINS-I:Serious</span></td><td>4</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/41667470">41667470</a></td><td><a href="https://doi.org/10.1038/s41467-026-68324-4">DOI</a></td><td>Enrollable trial NCT06411691 is a metastatic MMR-p PDAC/CRC TPS (ASCO 2025 TPS2698) with no efficacy readout; this resected-PDAC phase I from the same Hopkins vaccine platform is the closest published evidence and its 6-mutation panel includes G12R. Different line (adjuvant vs the patient&#x27;s recurrent disease) and dual checkpoint uses ipi/nivo rather than the trial&#x27;s balstilimab/botensilimab.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### ulixertinib (ERK1/2i) + palbociclib (CDK4/6i)  
+<small><code>intervention_id: ulixertinib-palbociclib</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Raybould/McRee (2021)<br><em>Journal of Clinical Oncology (ASCO abstract 3103)</em></td><td class="num">26</td><td>MAPK-pathway-altered advanced solid tumors; nine pancreatic patients in the escalation. 16 of 26 evaluable for response</td><td>2L+</td><td>Phase 1b dose-escalation, open-label single-arm</td><td>—</td><td>ulixertinib 450 mg PO BID + palbociclib 125 mg PO daily (MTD; escalation 300-600 mg / 75-125 mg)</td><td>DCR</td><td>disease control (stable disease)</td><td class="num">2 SD (PDAC, cholangiocarcinoma)</td><td class="num">—</td><td class="num">—</td><td>—</td><td>No grade 4/5 treatment-related AEs. Grade 3 TRAEs were decreased WBC, decreased lymphocytes, anemia and fatigue; common all-grade TRAEs fatigue 70%, rash 62%, nausea 54%, with laboratory cytopenias frequent.</td><td><span class="rob-badge rob-high">ROBINS-I:Serious</span></td><td>4</td><td><span class="fit-badge fit-partial">partial</span></td><td>—</td><td><a href="https://doi.org/10.1200/JCO.2021.39.15_suppl.3103">DOI</a></td><td>ASCO 2021 abstract-only (no full paper); per-term grade-3 rates not tabulated in the abstract, so those toxicity rows carry the term without a rate. Hits two patient features at once — ERK blockade downstream of KRAS G12R and CDK4/6 inhibition for CDKN2A loss / CCND3 — but the abstract enrolled by MAPK alteration and histology, not by G12R, and the pancreatic signal was stable disease, not response.</td></tr>
       </tbody>
     </table>
   </div>

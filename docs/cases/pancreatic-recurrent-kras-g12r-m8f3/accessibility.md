@@ -14,20 +14,20 @@ _Entries are ordered to match the Recommendations table: by therapeutic target g
 
 <tr><td class="col-num"><a href="#access-1"><strong>1</strong></a></td><td class="col-intervention"><strong>daraxonrasib (RMC-6236)</strong></td><td class="col-target">KRAS G12R-targeting</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">Investigational. FDA Breakthrough Therapy designation for previously treated metastatic KRAS G12X PDAC (2024). No FDA, EMA, or PMDA approval yet; RASolute-302 phase 3 (NCT06625320) is the registrational trial and is active not recruiting.</td><td class="col-first-action">Email medinfo@revmed.com or call 1-844-2-REVMED to ask which RMC-6236-001 (NCT05379985) or RMC-GI-102 (NCT06445062) site is closest and currently accepting screening slots.</td></tr>
 <tr><td class="col-num"><a href="#access-2"><strong>2</strong></a></td><td class="col-intervention"><strong>PF-07934040 (Pfizer pan-KRAS inhibitor)</strong></td><td class="col-target">KRAS G12R-targeting</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">Investigational. Phase 1 first-in-human; no regulatory approval. IND-cleared, no Breakthrough or Fast Track designation on the public record.</td><td class="col-first-action">Call the Pfizer CT.gov call center (1-800-718-1021) or email ClinicalTrials.gov_Inquiries@pfizer.com with the patient&#x27;s KRAS G12R status to ask which PDAC site has open slots in Part 2a Cohort A1 (2L+ monotherapy) and Part 2b Cohort A2 (1L gem/nab).</td></tr>
-<tr><td class="col-num"><a href="#access-3"><strong>3</strong></a></td><td class="col-intervention"><strong>daraxonrasib (RMC-6236) + mFOLFIRINOX or gemcitabine/nab-paclitaxel</strong></td><td class="col-target">KRAS G12R-targeting</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">Investigational combination. Daraxonrasib carries FDA Breakthrough Therapy designation in PDAC but is not approved. The chemotherapy backbones (mFOLFIRINOX, gem/nab) are FDA-approved standard-of-care components used per protocol.</td><td class="col-first-action">Call Revolution Medicines medical information (1-844-2-REVMED) or email medinfo@revmed.com asking specifically about the RMC-GI-102 PDAC chemo-combination subprotocol and the nearest open site.</td></tr>
-<tr><td class="col-num"><a href="#access-4"><strong>4</strong></a></td><td class="col-intervention"><strong>zoldonrasib (RMC-7977) + ivonescimab</strong></td><td class="col-target">KRAS G12R-targeting</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">Investigational. Zoldonrasib is pre-approval; ivonescimab (Akeso AK112) is approved in China for first-line PD-L1-positive NSCLC and EGFR-mutant NSCLC post-TKI but has no FDA or EMA approval. The combination has no regulatory filing.</td><td class="col-first-action">Email medinfo@revmed.com asking whether NCT07397338 has an open PDAC dose-expansion cohort and at which sites.</td></tr>
-<tr><td class="col-num"><a href="#access-5"><strong>5</strong></a></td><td class="col-intervention"><strong>ELI-002 7P amphiphile mKRAS peptide vaccine</strong></td><td class="col-target">KRAS G12R-targeting</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span> <span class="fit-badge fit-weak">Not yet accessible</span></td><td class="col-regulatory">Investigational. Phase 1/2 program with positive AMPLIFY-201 readout (Wainberg Nat Med 2025); no FDA, EMA, or PMDA approval.</td><td class="col-first-action">This pathway is not enrollable in the patient&#x27;s current clinical state. Listed for completeness.</td></tr>
-<tr><td class="col-num"><a href="#access-6"><strong>6</strong></a></td><td class="col-intervention"><strong>avutometinib (VS-6766) + defactinib (FAK inhibitor) + gemcitabine/nab-paclitaxel</strong></td><td class="col-target">KRAS G12R-targeting</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span> <span class="fit-badge fit-weak">Not yet accessible</span></td><td class="col-regulatory">Avutometinib + defactinib carries FDA accelerated approval (May 2025) for adult patients with recurrent KRAS-mutated low-grade serous ovarian cancer who have received prior systemic therapy, marketed as Avmapki Fakzynja Co-pack. No FDA or EMA approval in PDAC. Gem/nab is FDA-approved standard-of-care backbone.</td><td class="col-first-action">Email clinicaltrials@verastem.com or call 1-877-VSTM-ONC (1-877-878-6662) to ask whether RAMP-205 has reopened or whether a successor PDAC study is planned.</td></tr>
-<tr><td class="col-num"><a href="#access-7"><strong>7</strong></a></td><td class="col-intervention"><strong>anvumetostat (AMG 193) + daraxonrasib</strong></td><td class="col-target">CDKN2A-loss / MTAP-targeting</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">Investigational. Both agents are pre-approval. Anvumetostat is in phase 1b; daraxonrasib carries FDA Breakthrough Therapy designation in PDAC but no approval.</td><td class="col-first-action">Order MTAP IHC (or NGS copy-number) on the archival tumor block. CDKN2A and MTAP co-delete in roughly 80-90% of homozygous CDKN2A losses because the two genes sit adjacent on 9p21, so this is a high-yield test.</td></tr>
-<tr><td class="col-num"><a href="#access-8"><strong>8</strong></a></td><td class="col-intervention"><strong>palbociclib (Ibrance) + MEK/ERK or IGF1R combination</strong></td><td class="col-target">CDKN2A-loss / MTAP-targeting</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">Palbociclib is FDA-approved (2015) and EMA-approved (2016) for HR-positive HER2-negative advanced breast cancer in combination with endocrine therapy. Not approved for PDAC. The MEK/ERK or IGF1R combination partners would also be used off-label.</td><td class="col-first-action">Track ADOPT (NCT06813079) recruitment status through the listed central contact (Robert C. Grant, MD, robert.grant@uhn.ca, 416-946-4501 ext. 3308). The PDO-guided route is the most defensible structural fit.</td></tr>
-<tr><td class="col-num"><a href="#access-9"><strong>9</strong></a></td><td class="col-intervention"><strong>olaparib (Lynparza)</strong></td><td class="col-target">Germline BRCA / HRD-targeting</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span></td><td class="col-regulatory">FDA-approved (December 2019) for maintenance treatment of germline BRCA1/2-mutated metastatic PDAC after at least 16 weeks of first-line platinum-based chemotherapy without progression (POLO indication). The patient becomes on-label (standard_of_care) once a germline BRCA1/2 result is positive and a platinum induction with &gt;=16 weeks of disease control is documented; until both gates clear, this is off-label / pre-gate. Also FDA-approved across BRCA-mutated ovarian, HER2-negative breast, and HRR-mutated mCRPC indications. EMA-approved (2020) for the same PDAC maintenance indication.</td><td class="col-first-action">Order a germline panel covering BRCA1, BRCA2, PALB2, and the broader HBOC / Lynch / Li-Fraumeni axes. The result is the load-bearing biomarker for olaparib coverage under the POLO indication.</td></tr>
-<tr><td class="col-num"><a href="#access-10"><strong>10</strong></a></td><td class="col-intervention"><strong>rucaparib (Rubraca)</strong></td><td class="col-target">Germline BRCA / HRD-targeting</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span></td><td class="col-regulatory">FDA-approved for maintenance treatment of recurrent epithelial ovarian / fallopian tube / primary peritoneal cancer in response to platinum-based chemotherapy (2018) and for adults with deleterious germline / somatic BRCA-mutated metastatic castration-resistant prostate cancer previously treated with androgen receptor-directed therapy (regular approval December 2025). EMA-approved in ovarian cancer indications. Not FDA-approved for PDAC.</td><td class="col-first-action">Order the same germline / somatic HRR panel ordered for olaparib eligibility. A positive BRCA1/2 or PALB2 hit on either germline or somatic testing opens this lane via the rucaparib precedent.</td></tr>
+<tr><td class="col-num"><a href="#access-3"><strong>3</strong></a></td><td class="col-intervention"><strong>ELI-002 7P amphiphile mKRAS peptide vaccine</strong></td><td class="col-target">KRAS G12R-targeting</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span> <span class="fit-badge fit-weak">Not yet accessible</span></td><td class="col-regulatory">Investigational. Phase 1/2 program with positive AMPLIFY-201 readout (Wainberg Nat Med 2025); no FDA, EMA, or PMDA approval.</td><td class="col-first-action">This pathway is not enrollable in the patient&#x27;s current clinical state. Listed for completeness.</td></tr>
+<tr><td class="col-num"><a href="#access-4"><strong>4</strong></a></td><td class="col-intervention"><strong>olaparib (Lynparza)</strong></td><td class="col-target">Germline BRCA / HRD-targeting</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span></td><td class="col-regulatory">FDA-approved (December 2019) for maintenance treatment of germline BRCA1/2-mutated metastatic PDAC after at least 16 weeks of first-line platinum-based chemotherapy without progression (POLO indication). The patient becomes on-label (standard_of_care) once a germline BRCA1/2 result is positive and a platinum induction with &gt;=16 weeks of disease control is documented; until both gates clear, this is off-label / pre-gate. Also FDA-approved across BRCA-mutated ovarian, HER2-negative breast, and HRR-mutated mCRPC indications. EMA-approved (2020) for the same PDAC maintenance indication.</td><td class="col-first-action">Order a germline panel covering BRCA1, BRCA2, PALB2, and the broader HBOC / Lynch / Li-Fraumeni axes. The result is the load-bearing biomarker for olaparib coverage under the POLO indication.</td></tr>
+<tr><td class="col-num"><a href="#access-5"><strong>5</strong></a></td><td class="col-intervention"><strong>rucaparib (Rubraca)</strong></td><td class="col-target">Germline BRCA / HRD-targeting</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span></td><td class="col-regulatory">FDA-approved for maintenance treatment of recurrent epithelial ovarian / fallopian tube / primary peritoneal cancer in response to platinum-based chemotherapy (2018) and for adults with deleterious germline / somatic BRCA-mutated metastatic castration-resistant prostate cancer previously treated with androgen receptor-directed therapy (regular approval December 2025). EMA-approved in ovarian cancer indications. Not FDA-approved for PDAC.</td><td class="col-first-action">Order the same germline / somatic HRR panel ordered for olaparib eligibility. A positive BRCA1/2 or PALB2 hit on either germline or somatic testing opens this lane via the rucaparib precedent.</td></tr>
+<tr><td class="col-num"><a href="#access-6"><strong>6</strong></a></td><td class="col-intervention"><strong>anvumetostat (AMG 193) + daraxonrasib</strong></td><td class="col-target">CDKN2A-loss / MTAP-targeting</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">Investigational. Both agents are pre-approval. Anvumetostat is in phase 1b; daraxonrasib carries FDA Breakthrough Therapy designation in PDAC but no approval.</td><td class="col-first-action">Order MTAP IHC (or NGS copy-number) on the archival tumor block. CDKN2A and MTAP co-delete in roughly 80-90% of homozygous CDKN2A losses because the two genes sit adjacent on 9p21, so this is a high-yield test.</td></tr>
+<tr><td class="col-num"><a href="#access-7"><strong>7</strong></a></td><td class="col-intervention"><strong>avutometinib (VS-6766) + defactinib (FAK inhibitor) + gemcitabine/nab-paclitaxel</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span> <span class="fit-badge fit-weak">Not yet accessible</span></td><td class="col-regulatory">Avutometinib + defactinib carries FDA accelerated approval (May 2025) for adult patients with recurrent KRAS-mutated low-grade serous ovarian cancer who have received prior systemic therapy, marketed as Avmapki Fakzynja Co-pack. No FDA or EMA approval in PDAC. Gem/nab is FDA-approved standard-of-care backbone.</td><td class="col-first-action">Email clinicaltrials@verastem.com or call 1-877-VSTM-ONC (1-877-878-6662) to ask whether RAMP-205 has reopened or whether a successor PDAC study is planned.</td></tr>
+<tr><td class="col-num"><a href="#access-8"><strong>8</strong></a></td><td class="col-intervention"><strong>daraxonrasib (RMC-6236) + mFOLFIRINOX or gemcitabine/nab-paclitaxel</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">Investigational combination. Daraxonrasib carries FDA Breakthrough Therapy designation in PDAC but is not approved. The chemotherapy backbones (mFOLFIRINOX, gem/nab) are FDA-approved standard-of-care components used per protocol.</td><td class="col-first-action">Call Revolution Medicines medical information (1-844-2-REVMED) or email medinfo@revmed.com asking specifically about the RMC-GI-102 PDAC chemo-combination subprotocol and the nearest open site.</td></tr>
+<tr><td class="col-num"><a href="#access-9"><strong>9</strong></a></td><td class="col-intervention"><strong>palbociclib (Ibrance) + MEK/ERK or IGF1R combination</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">Palbociclib is FDA-approved (2015) and EMA-approved (2016) for HR-positive HER2-negative advanced breast cancer in combination with endocrine therapy. Not approved for PDAC. The MEK/ERK or IGF1R combination partners would also be used off-label.</td><td class="col-first-action">Track ADOPT (NCT06813079) recruitment status through the listed central contact (Robert C. Grant, MD, robert.grant@uhn.ca, 416-946-4501 ext. 3308). The PDO-guided route is the most defensible structural fit.</td></tr>
+<tr><td class="col-num"><a href="#access-10"><strong>10</strong></a></td><td class="col-intervention"><strong>zoldonrasib (RMC-7977) + ivonescimab</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">Investigational. Zoldonrasib is pre-approval; ivonescimab (Akeso AK112) is approved in China for first-line PD-L1-positive NSCLC and EGFR-mutant NSCLC post-TKI but has no FDA or EMA approval. The combination has no regulatory filing.</td><td class="col-first-action">Email medinfo@revmed.com asking whether NCT07397338 has an open PDAC dose-expansion cohort and at which sites.</td></tr>
 </tbody></table>
 
 </div></div>
 
 
-## KRAS G12R-targeting interventions (6)
+## KRAS G12R-targeting interventions (3)
 
 ### 1. daraxonrasib (RMC-6236) <small><code>daraxonrasib, RMC-6236, RMC6236</code></small> { #access-1 }
 
@@ -134,111 +134,7 @@ Trial-only. NCT06447662 is recruiting in PDAC and explicitly lists G12R in eligi
 
 ---
 
-### 3. daraxonrasib (RMC-6236) + mFOLFIRINOX or gemcitabine/nab-paclitaxel <small><code>daraxonrasib, RMC-6236, RMC-GI-102, RASmap</code></small> { #access-3 }
-
-**Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** small_molecule &nbsp; **Verified:** 2026-05-12
-
-
-Trial-only. RMC-GI-102 (NCT06445062) is recruiting and layers daraxonrasib on mFOLFIRINOX or gem/nab in RAS-mutant PDAC. The case for this lane over monotherapy rests on the patient&#x27;s oxaliplatin-naive status and the stated treat-to-remission goal; the RAMP-205 dose-level-1 abstract (5/6 PR at n=6) is the closest precedent but the dedicated combination-safety publication has not landed.
-
-
-<dl class="profile-grid">
-  <dt>Regulatory</dt><dd>Investigational combination. Daraxonrasib carries FDA Breakthrough Therapy designation in PDAC but is not approved. The chemotherapy backbones (mFOLFIRINOX, gem/nab) are FDA-approved standard-of-care components used per protocol.</dd>
-  <dt>Guidelines</dt><dd>The combination is not listed in NCCN Pancreatic Adenocarcinoma v2.2026. The chemo backbones are NCCN cat-1 components; the pan-RAS layering is the unlisted half.</dd>
-  <dt>Geographic scope</dt><dd>United States plus select EU sites. Operationally narrower than the monotherapy lane because subprotocol openness varies site to site.</dd>
-</dl>
-
-
-**Next steps**
-
-1. Call Revolution Medicines medical information (1-844-2-REVMED) or email medinfo@revmed.com asking specifically about the RMC-GI-102 PDAC chemo-combination subprotocol and the nearest open site.
-2. Clarify whether adjuvant FOLFIRI counts as prior systemic therapy. The answer routes the patient into the 1L or 2L+ subprotocol and affects backbone choice.
-3. If residual neuropathy from prior FOLFIRI is borderline, ask the site to consider the gem/nab backbone rather than mFOLFIRINOX.
-4. Run the same MTAP reflex test in parallel; if MTAP is co-deleted, the MTAPESTRY-103 combination arm becomes a competing trial-only lane that hits two features at once.
-
-
-**Trial pathways**
-
-<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
-<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
-<tbody>
-<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT06445062">NCT06445062</a></td><td class="col-phase">1/2</td><td class="col-indication">RAS-mutant GI tumors (PDAC, CRC); 1L and 2L+ subprotocols</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-partial">eligible: likely</span></td><td class="col-contact"><strong>Revolution Medicines</strong><br><a href="mailto:medinfo@revmed.com">medinfo@revmed.com</a><br><code>1-844-273-8633</code><br><a href="https://clinicaltrials.gov/study/NCT06445062">trial sites</a></td><td class="col-notes">The PDAC chemo-combination subprotocols layer daraxonrasib on mFOLFIRINOX or gem/nab. Patient is oxaliplatin-naive (adjuvant FOLFIRI only), so the mFOLFIRINOX arm is biologically available. Whether adjuvant FOLFIRI counts as prior systemic therapy is a protocol-language question worth raising at the screening call; the answer determines whether the patient slots into 1L or 2L+ arms.</td></tr>
-</tbody></table></div></div>
-
-
-**Manufacturer / sponsor contact**
-
-<dl class="profile-grid">
-  <dt>Company</dt><dd>Revolution Medicines</dd>
-  <dt>Country</dt><dd>United States (Redwood City, CA)</dd>
-  <dt>Medical info phone</dt><dd><code>1-844-273-8633</code></dd>
-  <dt>Medical info email</dt><dd><a href="mailto:medinfo@revmed.com">medinfo@revmed.com</a></dd>
-  <dt>Product information</dt><dd><a href="https://www.revolutionmedicines.com/">https://www.revolutionmedicines.com/</a></dd>
-  <dt>Notes</dt><dd>Same medical-information line as the monotherapy lane. The RMC-GI-102 platform is separately listed from the RMC-6236-001 phase 1/2; ask for the PDAC chemo subprotocol by name when calling.</dd>
-</dl>
-
-
-**Payer / coverage notes.** Investigational. Daraxonrasib is sponsor-supplied. The chemotherapy backbone is typically billed to insurance under the FDA-approved indication (FOLFIRINOX or gem/nab in metastatic PDAC); confirm trial-billing arrangements with the site CTO so backbone components are not double-billed.
-
-
-**Notes.** Higher response-rate ceiling than monotherapy in theory, but the load-bearing combination-safety publication is missing. Status in the dossier is considered_with_caveats with two persona dissents on missing safety data.
-
-
----
-
-### 4. zoldonrasib (RMC-7977) + ivonescimab <small><code>zoldonrasib, RMC-7977, ivonescimab, AK112</code></small> { #access-4 }
-
-**Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** small_molecule &nbsp; **Verified:** 2026-05-12
-
-
-Trial-only and contingent on PDAC cohort openness. NCT07397338 is recruiting but the primary listed indications are NSCLC and CRC; whether a PDAC dose-expansion arm is open at a given site is the gating question. The case for keeping this lane on the page is that the patient&#x27;s MSS plus TMB 4.1 closes every standard ICI door, and this is the only route to an immune-axis combination the patient could touch.
-
-
-<dl class="profile-grid">
-  <dt>Regulatory</dt><dd>Investigational. Zoldonrasib is pre-approval; ivonescimab (Akeso AK112) is approved in China for first-line PD-L1-positive NSCLC and EGFR-mutant NSCLC post-TKI but has no FDA or EMA approval. The combination has no regulatory filing.</dd>
-  <dt>Guidelines</dt><dd>Not listed in NCCN, ESMO, or ASCO PDAC guidelines. Neither agent has a PDAC indication.</dd>
-  <dt>Geographic scope</dt><dd>United States plus select EU and Australia sites for the RAS(ON) backbone; ivonescimab access is broader in mainland China than in the US.</dd>
-</dl>
-
-
-**Next steps**
-
-1. Email medinfo@revmed.com asking whether NCT07397338 has an open PDAC dose-expansion cohort and at which sites.
-2. If PDAC is not open, ask whether the sponsor is planning a PDAC-specific extension and on what timeline; the patient may be able to wait if disease tempo allows.
-3. Before screening labs, confirm the rash-versus-immune-rash AE attribution plan with the site; pan-RAS class rash and PD-1xVEGF immune-rash overlap diagnostically.
-4. Treat this lane as a fallback to the monotherapy and chemo-combo lanes given zero published clinical PDAC data on the combination.
-
-
-**Trial pathways**
-
-<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
-<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
-<tbody>
-<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT07397338">NCT07397338</a></td><td class="col-phase">1/2</td><td class="col-indication">RAS-mutant advanced / metastatic solid tumors (primarily NSCLC, CRC; PDAC eligibility per protocol)</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-weak">eligible: unconfirmed</span></td><td class="col-contact"><strong>Revolution Medicines Study Director</strong><br><a href="mailto:medinfo@revmed.com">medinfo@revmed.com</a><br><code>1-844-273-8633</code><br><a href="https://clinicaltrials.gov/study/NCT07397338">trial sites</a></td><td class="col-notes">Primary listed indications are NSCLC and CRC; whether a PDAC dose-expansion cohort is open varies site to site. Confirm PDAC cohort openness with the sponsor before screening labs. KPC GEMM data (Wasko Nature 2024) are G12D-allele, so G12R extrapolation is mechanism-class rather than allele-matched.</td></tr>
-</tbody></table></div></div>
-
-
-**Manufacturer / sponsor contact**
-
-<dl class="profile-grid">
-  <dt>Company</dt><dd>Revolution Medicines (zoldonrasib) + Akeso / Summit Therapeutics (ivonescimab US partner)</dd>
-  <dt>Country</dt><dd>United States / China</dd>
-  <dt>Medical info phone</dt><dd><code>1-844-273-8633</code></dd>
-  <dt>Medical info email</dt><dd><a href="mailto:medinfo@revmed.com">medinfo@revmed.com</a></dd>
-  <dt>Product information</dt><dd><a href="https://www.revolutionmedicines.com/">https://www.revolutionmedicines.com/</a></dd>
-  <dt>Notes</dt><dd>Revolution Medicines is the IND holder for the combination; route inquiries through medinfo@revmed.com. Summit Therapeutics holds North American development rights for ivonescimab via the Akeso partnership; medical-information questions specific to ivonescimab can route through Summit&#x27;s investor / medical-affairs channels.</dd>
-</dl>
-
-
-**Payer / coverage notes.** Investigational. Sponsor-supplied drugs; standard imaging and procedures bill insurance as usual under trial-billing arrangements.
-
-
-**Notes.** Highest-ceiling preclinical option the patient could touch (KPC GEMM complete responses, Wasko Nature 2024), but zero published clinical PDAC efficacy data and three persona dissents on evidence, toxicity, and guideline-fit. The G12R microenvironment biology (Singhi 2025: lower-ERK and immune-enriched relative to G12D) is the most plausible reason this lane might behave differently than the published G12D KPC data.
-
-
----
-
-### 5. ELI-002 7P amphiphile mKRAS peptide vaccine <small><code>ELI-002 7P, ELI-002, AMPLIFY-7P</code></small> { #access-5 }
+### 3. ELI-002 7P amphiphile mKRAS peptide vaccine <small><code>ELI-002 7P, ELI-002, AMPLIFY-7P</code></small> { #access-3 }
 
 **Access status:** <span class="fit-badge fit-partial">Clinical trial</span> <span class="fit-badge fit-weak">Not yet accessible</span> &nbsp; **Modality:** vaccine &nbsp; **Verified:** 2026-05-12
 
@@ -290,172 +186,10 @@ Not currently accessible for this patient. The peptide panel covers G12R cleanly
 
 ---
 
-### 6. avutometinib (VS-6766) + defactinib (FAK inhibitor) + gemcitabine/nab-paclitaxel <small><code>avutometinib, VS-6766, defactinib, VS-6063, RAMP-205</code></small> { #access-6 }
-
-**Access status:** <span class="fit-badge fit-partial">Clinical trial</span> <span class="fit-badge fit-weak">Not yet accessible</span> &nbsp; **Modality:** small_molecule &nbsp; **Verified:** 2026-05-12
-
-
-Trial enrollment is the binding constraint. RAMP-205 is active not recruiting, so the dose-level-1 5/6 PR signal is informational rather than directly actionable. Avutometinib + defactinib is FDA-approved for recurrent KRAS-mutant LGSOC, which means off-label prescription is a theoretical fallback but is unlikely to clear payer review and is not supported by the manufacturer&#x27;s expanded-access policy.
-
-
-<dl class="profile-grid">
-  <dt>Regulatory</dt><dd>Avutometinib + defactinib carries FDA accelerated approval (May 2025) for adult patients with recurrent KRAS-mutated low-grade serous ovarian cancer who have received prior systemic therapy, marketed as Avmapki Fakzynja Co-pack. No FDA or EMA approval in PDAC. Gem/nab is FDA-approved standard-of-care backbone.</dd>
-  <dt>Guidelines</dt><dd>Not listed in NCCN Pancreatic Adenocarcinoma v2.2026. The RAF/MEK clamp + FAK class is NCCN cat-2A for recurrent KRAS-mutant LGSOC after the 2025 accelerated approval, but the PDAC use is unlisted.</dd>
-  <dt>Geographic scope</dt><dd>United States, with select Asia-Pacific and EU sites historically. RAMP-205 specifically is active not recruiting.</dd>
-</dl>
-
-
-**Next steps**
-
-1. Email clinicaltrials@verastem.com or call 1-877-VSTM-ONC (1-877-878-6662) to ask whether RAMP-205 has reopened or whether a successor PDAC study is planned.
-2. If a successor trial opens, confirm whether adjuvant FOLFIRI counts as prior systemic therapy under the new protocol.
-3. Off-label use of the LGSOC-approved Avmapki Fakzynja Co-pack for PDAC is technically possible but is not supported by Verastem&#x27;s expanded-access policy and would face heavy payer review; the trial route is strongly preferred when available.
-4. Treat this lane as informational context for what RAF/MEK clamp + FAK can do in KRAS-mutant disease rather than an actionable patient option this week.
-
-
-**Trial pathways**
-
-<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
-<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
-<tbody>
-<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT05669482">NCT05669482</a></td><td class="col-phase">1/2</td><td class="col-indication">Previously untreated metastatic PDAC with KRAS activating mutation (any G12X including G12R; G13D; Q61)</td><td class="col-status">active not recruiting</td><td class="col-eligibility"><span class="fit-badge fit-weak">eligible: unconfirmed</span></td><td class="col-contact"><a href="https://clinicaltrials.gov/study/NCT05669482">trial sites</a></td><td class="col-notes">Listed as active not recruiting, so enrollment access is the gating issue rather than biology. The 5/6 PR dose-level-1 ASCO 2024 abstract is the headline efficacy datum; n=6 with 95% CI roughly 36-100%. Line is 1L untreated metastatic; whether prior adjuvant FOLFIRI counts as prior systemic therapy is the eligibility question that would matter if enrollment reopens.</td></tr>
-</tbody></table></div></div>
-
-
-**Manufacturer / sponsor contact**
-
-<dl class="profile-grid">
-  <dt>Company</dt><dd>Verastem Oncology</dd>
-  <dt>Country</dt><dd>United States (Needham, MA)</dd>
-  <dt>Medical info phone</dt><dd><code>1-877-878-6662</code></dd>
-  <dt>Medical info email</dt><dd><a href="mailto:medinfo@verastem.com">medinfo@verastem.com</a></dd>
-  <dt>Product information</dt><dd><a href="https://www.verastem.com/">https://www.verastem.com/</a></dd>
-  <dt>Compassionate use email</dt><dd><a href="mailto:clinicaltrials@verastem.com">clinicaltrials@verastem.com</a></dd>
-  <dt>Notes</dt><dd>Verastem states publicly that it does not operate an expanded-access program outside its clinical trials; participation in an active trial is the only investigational-route. Adverse-event reports route through drugsafety@verastem.com. Trial-enrollment questions route through clinicaltrials@verastem.com.</dd>
-</dl>
-
-
-**Payer / coverage notes.** The LGSOC indication is commercially available under the Avmapki Fakzynja Co-pack approval; payer coverage for an off-label PDAC use would require a biomarker-justified appeal and prior authorization, and most plans will not cover it without trial billing. Gem/nab is covered under its standard PDAC indication. Verastem patient-support resources for the LGSOC indication may not extend to off-label PDAC use.
-
-
-**Notes.** RAMP-205 dose-level-1 abstract (5/6 PR at n=6) is unpublished as a full peer-reviewed paper. The exact binomial 95% CI on 5/6 runs roughly 36-100%, so a single non-responder collapses the point estimate. The cross-tumor LGSOC validation (Banerjee JCO 2025, ORR 44% in KRAS-mutant LGSOC) is the more durable evidence point.
-
-
----
-
-
-## CDKN2A-loss / MTAP-targeting interventions (2)
-
-### 7. anvumetostat (AMG 193) + daraxonrasib <small><code>anvumetostat, AMG 193, AMG193, MTAPESTRY 103</code></small> { #access-7 }
-
-**Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** small_molecule &nbsp; **Verified:** 2026-05-12
-
-
-Trial-only and gated on a still-pending MTAP test. MTAPESTRY-103 (NCT06360354) is recruiting and hits both the KRAS axis and the CDKN2A / MTAP axis in one regimen, but enrollment requires a homozygous MTAP deletion confirmed on NGS copy-number or IHC. The MTAP reflex on the existing tumor block is the gating workup.
-
-
-<dl class="profile-grid">
-  <dt>Regulatory</dt><dd>Investigational. Both agents are pre-approval. Anvumetostat is in phase 1b; daraxonrasib carries FDA Breakthrough Therapy designation in PDAC but no approval.</dd>
-  <dt>Guidelines</dt><dd>Not listed in NCCN Pancreatic Adenocarcinoma v2.2026. The MTA-cooperative PRMT5 class has no NCCN evidence category in PDAC.</dd>
-  <dt>Geographic scope</dt><dd>United States and select EU sites; sponsor confirms by zip code.</dd>
-</dl>
-
-
-**Next steps**
-
-1. Order MTAP IHC (or NGS copy-number) on the archival tumor block. CDKN2A and MTAP co-delete in roughly 80-90% of homozygous CDKN2A losses because the two genes sit adjacent on 9p21, so this is a high-yield test.
-2. If MTAP is co-deleted, email medinfo@amgen.com or call 866-572-6436 to find the closest MTAPESTRY-103 site with the daraxonrasib combination arm open.
-3. If MTAP is intact, close this row and stay on the daraxonrasib monotherapy or chemo-combo lane.
-4. Run MTAP testing in parallel with the NGS / ctDNA re-test for the daraxonrasib screening so the patient does not lose time waiting on either result.
-
-
-**Trial pathways**
-
-<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
-<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
-<tbody>
-<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT06360354">NCT06360354</a></td><td class="col-phase">1</td><td class="col-indication">Advanced GI / biliary / pancreatic cancer with homozygous MTAP deletion</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-weak">eligible: unconfirmed</span></td><td class="col-contact"><strong>Amgen Call Center</strong><br><a href="mailto:medinfo@amgen.com">medinfo@amgen.com</a><br><code>866-572-6436</code><br><a href="https://clinicaltrials.gov/study/NCT06360354">trial sites</a></td><td class="col-notes">Eligibility gates on homozygous MTAP deletion confirmed by NGS copy-number or IHC. Patient&#x27;s CDKN2A loss is on file but MTAP status is not, so an MTAP reflex on the existing block is the gating workup. The daraxonrasib combination arm is the one that doubles up on KRAS and 9p21 in a single regimen.</td></tr>
-</tbody></table></div></div>
-
-
-**Manufacturer / sponsor contact**
-
-<dl class="profile-grid">
-  <dt>Company</dt><dd>Amgen (anvumetostat) + Revolution Medicines (daraxonrasib)</dd>
-  <dt>Country</dt><dd>United States</dd>
-  <dt>Medical info phone</dt><dd><code>1-800-772-6436</code></dd>
-  <dt>Medical info email</dt><dd><a href="mailto:medinfo@amgen.com">medinfo@amgen.com</a></dd>
-  <dt>Product information</dt><dd><a href="https://www.amgenmedinfo.com/">https://www.amgenmedinfo.com/</a></dd>
-  <dt>Compassionate / expanded access</dt><dd><a href="https://www.amgen.com/about/compassionate-use">https://www.amgen.com/about/compassionate-use</a></dd>
-  <dt>Notes</dt><dd>Amgen owns the IND on the combination via MTAPESTRY-103; medical-information and trial-screening inquiries route through medinfo@amgen.com or 1-800-772-6436. Daraxonrasib is supplied under collaboration; Revolution Medicines medical information at 1-844-2-REVMED can also field combination-specific questions.</dd>
-</dl>
-
-
-**Payer / coverage notes.** Investigational. Sponsor covers both study drugs and protocol-mandated procedures. MTAP testing may be billable to insurance if ordered as part of routine NGS panel review.
-
-
-**Notes.** The Bristol Myers Squibb successor program BMS-986504 / navlimetostat platform MountainTAP-5 (NCT07492680) opens later in 2026 and includes a daraxonrasib combination arm in PDAC; worth knowing about as a fallback if MTAPESTRY-103 fills before this patient screens.
-
-
----
-
-### 8. palbociclib (Ibrance) + MEK/ERK or IGF1R combination <small><code>palbociclib, PD-0332991, Ibrance</code></small> { #access-8 }
-
-**Access status:** <span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** small_molecule &nbsp; **Verified:** 2026-05-12
-
-
-Off-label prescription is technically available because palbociclib is FDA-approved (for HR-positive breast cancer); ADOPT (NCT06813079) is the PDO-guided trial route but is not yet recruiting. Neither path is well-supported: NCI-MATCH Z1C returned ORR 4% in CDK4/6-amplified solid tumors, and the combination rationale rests on preclinical organoid data (Knudsen 2023) without PDAC clinical validation.
-
-
-<dl class="profile-grid">
-  <dt>Regulatory</dt><dd>Palbociclib is FDA-approved (2015) and EMA-approved (2016) for HR-positive HER2-negative advanced breast cancer in combination with endocrine therapy. Not approved for PDAC. The MEK/ERK or IGF1R combination partners would also be used off-label.</dd>
-  <dt>Guidelines</dt><dd>Not listed in NCCN Pancreatic Adenocarcinoma v2.2026 for the CDKN2A-loss or CCND3 indication. The NCI-MATCH Z1C basket (CDK4/6-amplified solid tumors, O&#x27;Hara 2025 PMID 39437014) returned ORR 4%, which actively argues against single-agent CDK4/6i in this axis.</dd>
-  <dt>Geographic scope</dt><dd>United States and EU; palbociclib is commercially available wherever it has an HR-positive breast cancer indication.</dd>
-</dl>
-
-
-**Next steps**
-
-1. Track ADOPT (NCT06813079) recruitment status through the listed central contact (Robert C. Grant, MD, robert.grant@uhn.ca, 416-946-4501 ext. 3308). The PDO-guided route is the most defensible structural fit.
-2. Discuss with the treating team whether MTAP testing redirects toward the PRMT5 axis (MTAPESTRY-103, NCT06360354) before pursuing CDK4/6 inhibition off-label.
-3. If off-label palbociclib is still pursued (typically as part of a combination with a MEKi or ERKi), the institutional pharmacy and payer prior-authorization process is the load-bearing step. Pfizer Medical Information (1-800-438-1985) handles product-information queries.
-4. Treat this lane as the lowest-priority option in the dossier given the negative Z1C precedent; rank-1 through rank-4 lanes are operationally and biologically stronger paths.
-
-
-**Trial pathways**
-
-<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
-<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
-<tbody>
-<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT06813079">NCT06813079</a></td><td class="col-phase">2</td><td class="col-indication">Advanced PDAC selected by PDO drug-sensitivity screening; menu includes abemaciclib</td><td class="col-status">not yet recruiting</td><td class="col-eligibility"><span class="fit-badge fit-weak">eligible: unconfirmed</span></td><td class="col-contact"><strong>Robert C. Grant, MD</strong><br><a href="mailto:robert.grant@uhn.ca">robert.grant@uhn.ca</a><br><code>416-946-4501 ext. 3308</code><br><a href="https://clinicaltrials.gov/study/NCT06813079">trial sites</a></td><td class="col-notes">ADOPT is not yet recruiting per registry. The CDK4/6 menu option is abemaciclib rather than palbociclib, but the axis is the same. PDO-guided selection is the structural fit for a multi-feature case (CDKN2A loss plus CCND3); whether any single patient&#x27;s organoid screens into the CDK4/6 arm depends on the PDO assay readout.</td></tr>
-<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT03297606">NCT03297606</a></td><td class="col-phase">2</td><td class="col-indication">Advanced solid tumors with CDKN2A / CDK4 / CCND1 / SMARCA4 alteration</td><td class="col-status">active not recruiting</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><a href="https://clinicaltrials.gov/study/NCT03297606">trial sites</a></td><td class="col-notes">Group 8 palbociclib arm is closed. Listed as precedent for the off-label-prescribing case if the treating team pursues palbociclib outside a trial.</td></tr>
-</tbody></table></div></div>
-
-
-**Manufacturer / sponsor contact**
-
-<dl class="profile-grid">
-  <dt>Company</dt><dd>Pfizer</dd>
-  <dt>Country</dt><dd>United States (New York, NY)</dd>
-  <dt>Medical info phone</dt><dd><code>1-800-438-1985</code></dd>
-  <dt>Product information</dt><dd><a href="https://www.pfizermedical.com/">https://www.pfizermedical.com/</a></dd>
-  <dt>Compassionate / expanded access</dt><dd><a href="https://www.pfizer.com/science/clinical-trials/expanded-access">https://www.pfizer.com/science/clinical-trials/expanded-access</a></dd>
-  <dt>Notes</dt><dd>Palbociclib is commercially available for the HR-positive HER2-negative breast cancer indication and can be obtained for off-label use through standard specialty-distribution channels, subject to institutional pharmacy and payer review. Pfizer Medical Information at 1-800-438-1985 handles product-information queries; expanded-access for an approved drug is handled as off-label prescription rather than EAP.</dd>
-</dl>
-
-
-**Payer / coverage notes.** Off-label use for PDAC carries heavy payer review and is generally not reimbursed without prior authorization plus an appeal letter citing the CDKN2A-loss / CCND3 alteration rationale. The Z1C basket negative readout (O&#x27;Hara 2025, ORR 4%) weakens the payer-justification case for single-agent use; combination logic (palbociclib + MEKi or ERKi or IGF1Ri) is preclinical-only and unsupported by published clinical data in PDAC. Manufacturer patient-assistance through Pfizer Oncology Together may help with copay support if coverage is obtained.
-
-
-**Notes.** Useful as informational context for the CDKN2A / CCND3 axis rather than a recommended action. The mechanism-fit (CDKN2A loss derepresses CDK4/6; CCND3 amplification drives CDK4/6 dependency) is textbook, but the basket precedent is negative and the combination logic has not been translated to PDAC clinically.
-
-
----
-
 
 ## Germline BRCA / HRD-targeting interventions (2)
 
-### 9. olaparib (Lynparza) <small><code>olaparib, AZD2281, Lynparza</code></small> { #access-9 }
+### 4. olaparib (Lynparza) <small><code>olaparib, AZD2281, Lynparza</code></small> { #access-4 }
 
 **Access status:** <span class="fit-badge fit-partial">Off-label use</span> &nbsp; **Modality:** small_molecule &nbsp; **Verified:** 2026-05-12
 
@@ -508,7 +242,7 @@ Commercial prescription rather than trial. Olaparib is FDA / EMA approved on-lab
 
 ---
 
-### 10. rucaparib (Rubraca) <small><code>rucaparib, Rubraca</code></small> { #access-10 }
+### 5. rucaparib (Rubraca) <small><code>rucaparib, Rubraca</code></small> { #access-5 }
 
 **Access status:** <span class="fit-badge fit-partial">Off-label use</span> &nbsp; **Modality:** small_molecule &nbsp; **Verified:** 2026-05-12
 
@@ -555,6 +289,275 @@ Off-label PDAC use only. Rucaparib is FDA-approved for BRCA-mutated ovarian and 
 
 
 **Notes.** Reiss 2021 was a single-arm phase 2 with PFS-rate at 6 months as the registered primary endpoint; the mPFS and mOS figures are secondary readouts and do not carry RCT weight. Same PARP-class MDS / AML risk applies on prolonged exposure.
+
+
+---
+
+
+## CDKN2A-loss / MTAP-targeting interventions (1)
+
+### 6. anvumetostat (AMG 193) + daraxonrasib <small><code>anvumetostat, AMG 193, AMG193, MTAPESTRY 103</code></small> { #access-6 }
+
+**Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** small_molecule &nbsp; **Verified:** 2026-05-12
+
+
+Trial-only and gated on a still-pending MTAP test. MTAPESTRY-103 (NCT06360354) is recruiting and hits both the KRAS axis and the CDKN2A / MTAP axis in one regimen, but enrollment requires a homozygous MTAP deletion confirmed on NGS copy-number or IHC. The MTAP reflex on the existing tumor block is the gating workup.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Investigational. Both agents are pre-approval. Anvumetostat is in phase 1b; daraxonrasib carries FDA Breakthrough Therapy designation in PDAC but no approval.</dd>
+  <dt>Guidelines</dt><dd>Not listed in NCCN Pancreatic Adenocarcinoma v2.2026. The MTA-cooperative PRMT5 class has no NCCN evidence category in PDAC.</dd>
+  <dt>Geographic scope</dt><dd>United States and select EU sites; sponsor confirms by zip code.</dd>
+</dl>
+
+
+**Next steps**
+
+1. Order MTAP IHC (or NGS copy-number) on the archival tumor block. CDKN2A and MTAP co-delete in roughly 80-90% of homozygous CDKN2A losses because the two genes sit adjacent on 9p21, so this is a high-yield test.
+2. If MTAP is co-deleted, email medinfo@amgen.com or call 866-572-6436 to find the closest MTAPESTRY-103 site with the daraxonrasib combination arm open.
+3. If MTAP is intact, close this row and stay on the daraxonrasib monotherapy or chemo-combo lane.
+4. Run MTAP testing in parallel with the NGS / ctDNA re-test for the daraxonrasib screening so the patient does not lose time waiting on either result.
+
+
+**Trial pathways**
+
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT06360354">NCT06360354</a></td><td class="col-phase">1</td><td class="col-indication">Advanced GI / biliary / pancreatic cancer with homozygous MTAP deletion</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-weak">eligible: unconfirmed</span></td><td class="col-contact"><strong>Amgen Call Center</strong><br><a href="mailto:medinfo@amgen.com">medinfo@amgen.com</a><br><code>866-572-6436</code><br><a href="https://clinicaltrials.gov/study/NCT06360354">trial sites</a></td><td class="col-notes">Eligibility gates on homozygous MTAP deletion confirmed by NGS copy-number or IHC. Patient&#x27;s CDKN2A loss is on file but MTAP status is not, so an MTAP reflex on the existing block is the gating workup. The daraxonrasib combination arm is the one that doubles up on KRAS and 9p21 in a single regimen.</td></tr>
+</tbody></table></div></div>
+
+
+**Manufacturer / sponsor contact**
+
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Amgen (anvumetostat) + Revolution Medicines (daraxonrasib)</dd>
+  <dt>Country</dt><dd>United States</dd>
+  <dt>Medical info phone</dt><dd><code>1-800-772-6436</code></dd>
+  <dt>Medical info email</dt><dd><a href="mailto:medinfo@amgen.com">medinfo@amgen.com</a></dd>
+  <dt>Product information</dt><dd><a href="https://www.amgenmedinfo.com/">https://www.amgenmedinfo.com/</a></dd>
+  <dt>Compassionate / expanded access</dt><dd><a href="https://www.amgen.com/about/compassionate-use">https://www.amgen.com/about/compassionate-use</a></dd>
+  <dt>Notes</dt><dd>Amgen owns the IND on the combination via MTAPESTRY-103; medical-information and trial-screening inquiries route through medinfo@amgen.com or 1-800-772-6436. Daraxonrasib is supplied under collaboration; Revolution Medicines medical information at 1-844-2-REVMED can also field combination-specific questions.</dd>
+</dl>
+
+
+**Payer / coverage notes.** Investigational. Sponsor covers both study drugs and protocol-mandated procedures. MTAP testing may be billable to insurance if ordered as part of routine NGS panel review.
+
+
+**Notes.** The Bristol Myers Squibb successor program BMS-986504 / navlimetostat platform MountainTAP-5 (NCT07492680) opens later in 2026 and includes a daraxonrasib combination arm in PDAC; worth knowing about as a fallback if MTAPESTRY-103 fills before this patient screens.
+
+
+---
+
+
+## Unmatched interventions (4)
+
+### 7. avutometinib (VS-6766) + defactinib (FAK inhibitor) + gemcitabine/nab-paclitaxel <small><code>avutometinib, VS-6766, defactinib, VS-6063, RAMP-205</code></small> { #access-7 }
+
+**Access status:** <span class="fit-badge fit-partial">Clinical trial</span> <span class="fit-badge fit-weak">Not yet accessible</span> &nbsp; **Modality:** small_molecule &nbsp; **Verified:** 2026-05-12
+
+
+Trial enrollment is the binding constraint. RAMP-205 is active not recruiting, so the dose-level-1 5/6 PR signal is informational rather than directly actionable. Avutometinib + defactinib is FDA-approved for recurrent KRAS-mutant LGSOC, which means off-label prescription is a theoretical fallback but is unlikely to clear payer review and is not supported by the manufacturer&#x27;s expanded-access policy.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Avutometinib + defactinib carries FDA accelerated approval (May 2025) for adult patients with recurrent KRAS-mutated low-grade serous ovarian cancer who have received prior systemic therapy, marketed as Avmapki Fakzynja Co-pack. No FDA or EMA approval in PDAC. Gem/nab is FDA-approved standard-of-care backbone.</dd>
+  <dt>Guidelines</dt><dd>Not listed in NCCN Pancreatic Adenocarcinoma v2.2026. The RAF/MEK clamp + FAK class is NCCN cat-2A for recurrent KRAS-mutant LGSOC after the 2025 accelerated approval, but the PDAC use is unlisted.</dd>
+  <dt>Geographic scope</dt><dd>United States, with select Asia-Pacific and EU sites historically. RAMP-205 specifically is active not recruiting.</dd>
+</dl>
+
+
+**Next steps**
+
+1. Email clinicaltrials@verastem.com or call 1-877-VSTM-ONC (1-877-878-6662) to ask whether RAMP-205 has reopened or whether a successor PDAC study is planned.
+2. If a successor trial opens, confirm whether adjuvant FOLFIRI counts as prior systemic therapy under the new protocol.
+3. Off-label use of the LGSOC-approved Avmapki Fakzynja Co-pack for PDAC is technically possible but is not supported by Verastem&#x27;s expanded-access policy and would face heavy payer review; the trial route is strongly preferred when available.
+4. Treat this lane as informational context for what RAF/MEK clamp + FAK can do in KRAS-mutant disease rather than an actionable patient option this week.
+
+
+**Trial pathways**
+
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT05669482">NCT05669482</a></td><td class="col-phase">1/2</td><td class="col-indication">Previously untreated metastatic PDAC with KRAS activating mutation (any G12X including G12R; G13D; Q61)</td><td class="col-status">active not recruiting</td><td class="col-eligibility"><span class="fit-badge fit-weak">eligible: unconfirmed</span></td><td class="col-contact"><a href="https://clinicaltrials.gov/study/NCT05669482">trial sites</a></td><td class="col-notes">Listed as active not recruiting, so enrollment access is the gating issue rather than biology. The 5/6 PR dose-level-1 ASCO 2024 abstract is the headline efficacy datum; n=6 with 95% CI roughly 36-100%. Line is 1L untreated metastatic; whether prior adjuvant FOLFIRI counts as prior systemic therapy is the eligibility question that would matter if enrollment reopens.</td></tr>
+</tbody></table></div></div>
+
+
+**Manufacturer / sponsor contact**
+
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Verastem Oncology</dd>
+  <dt>Country</dt><dd>United States (Needham, MA)</dd>
+  <dt>Medical info phone</dt><dd><code>1-877-878-6662</code></dd>
+  <dt>Medical info email</dt><dd><a href="mailto:medinfo@verastem.com">medinfo@verastem.com</a></dd>
+  <dt>Product information</dt><dd><a href="https://www.verastem.com/">https://www.verastem.com/</a></dd>
+  <dt>Compassionate use email</dt><dd><a href="mailto:clinicaltrials@verastem.com">clinicaltrials@verastem.com</a></dd>
+  <dt>Notes</dt><dd>Verastem states publicly that it does not operate an expanded-access program outside its clinical trials; participation in an active trial is the only investigational-route. Adverse-event reports route through drugsafety@verastem.com. Trial-enrollment questions route through clinicaltrials@verastem.com.</dd>
+</dl>
+
+
+**Payer / coverage notes.** The LGSOC indication is commercially available under the Avmapki Fakzynja Co-pack approval; payer coverage for an off-label PDAC use would require a biomarker-justified appeal and prior authorization, and most plans will not cover it without trial billing. Gem/nab is covered under its standard PDAC indication. Verastem patient-support resources for the LGSOC indication may not extend to off-label PDAC use.
+
+
+**Notes.** RAMP-205 dose-level-1 abstract (5/6 PR at n=6) is unpublished as a full peer-reviewed paper. The exact binomial 95% CI on 5/6 runs roughly 36-100%, so a single non-responder collapses the point estimate. The cross-tumor LGSOC validation (Banerjee JCO 2025, ORR 44% in KRAS-mutant LGSOC) is the more durable evidence point.
+
+
+---
+
+### 8. daraxonrasib (RMC-6236) + mFOLFIRINOX or gemcitabine/nab-paclitaxel <small><code>daraxonrasib, RMC-6236, RMC-GI-102, RASmap</code></small> { #access-8 }
+
+**Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** small_molecule &nbsp; **Verified:** 2026-05-12
+
+
+Trial-only. RMC-GI-102 (NCT06445062) is recruiting and layers daraxonrasib on mFOLFIRINOX or gem/nab in RAS-mutant PDAC. The case for this lane over monotherapy rests on the patient&#x27;s oxaliplatin-naive status and the stated treat-to-remission goal; the RAMP-205 dose-level-1 abstract (5/6 PR at n=6) is the closest precedent but the dedicated combination-safety publication has not landed.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Investigational combination. Daraxonrasib carries FDA Breakthrough Therapy designation in PDAC but is not approved. The chemotherapy backbones (mFOLFIRINOX, gem/nab) are FDA-approved standard-of-care components used per protocol.</dd>
+  <dt>Guidelines</dt><dd>The combination is not listed in NCCN Pancreatic Adenocarcinoma v2.2026. The chemo backbones are NCCN cat-1 components; the pan-RAS layering is the unlisted half.</dd>
+  <dt>Geographic scope</dt><dd>United States plus select EU sites. Operationally narrower than the monotherapy lane because subprotocol openness varies site to site.</dd>
+</dl>
+
+
+**Next steps**
+
+1. Call Revolution Medicines medical information (1-844-2-REVMED) or email medinfo@revmed.com asking specifically about the RMC-GI-102 PDAC chemo-combination subprotocol and the nearest open site.
+2. Clarify whether adjuvant FOLFIRI counts as prior systemic therapy. The answer routes the patient into the 1L or 2L+ subprotocol and affects backbone choice.
+3. If residual neuropathy from prior FOLFIRI is borderline, ask the site to consider the gem/nab backbone rather than mFOLFIRINOX.
+4. Run the same MTAP reflex test in parallel; if MTAP is co-deleted, the MTAPESTRY-103 combination arm becomes a competing trial-only lane that hits two features at once.
+
+
+**Trial pathways**
+
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT06445062">NCT06445062</a></td><td class="col-phase">1/2</td><td class="col-indication">RAS-mutant GI tumors (PDAC, CRC); 1L and 2L+ subprotocols</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-partial">eligible: likely</span></td><td class="col-contact"><strong>Revolution Medicines</strong><br><a href="mailto:medinfo@revmed.com">medinfo@revmed.com</a><br><code>1-844-273-8633</code><br><a href="https://clinicaltrials.gov/study/NCT06445062">trial sites</a></td><td class="col-notes">The PDAC chemo-combination subprotocols layer daraxonrasib on mFOLFIRINOX or gem/nab. Patient is oxaliplatin-naive (adjuvant FOLFIRI only), so the mFOLFIRINOX arm is biologically available. Whether adjuvant FOLFIRI counts as prior systemic therapy is a protocol-language question worth raising at the screening call; the answer determines whether the patient slots into 1L or 2L+ arms.</td></tr>
+</tbody></table></div></div>
+
+
+**Manufacturer / sponsor contact**
+
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Revolution Medicines</dd>
+  <dt>Country</dt><dd>United States (Redwood City, CA)</dd>
+  <dt>Medical info phone</dt><dd><code>1-844-273-8633</code></dd>
+  <dt>Medical info email</dt><dd><a href="mailto:medinfo@revmed.com">medinfo@revmed.com</a></dd>
+  <dt>Product information</dt><dd><a href="https://www.revolutionmedicines.com/">https://www.revolutionmedicines.com/</a></dd>
+  <dt>Notes</dt><dd>Same medical-information line as the monotherapy lane. The RMC-GI-102 platform is separately listed from the RMC-6236-001 phase 1/2; ask for the PDAC chemo subprotocol by name when calling.</dd>
+</dl>
+
+
+**Payer / coverage notes.** Investigational. Daraxonrasib is sponsor-supplied. The chemotherapy backbone is typically billed to insurance under the FDA-approved indication (FOLFIRINOX or gem/nab in metastatic PDAC); confirm trial-billing arrangements with the site CTO so backbone components are not double-billed.
+
+
+**Notes.** Higher response-rate ceiling than monotherapy in theory, but the load-bearing combination-safety publication is missing. Status in the dossier is considered_with_caveats with two persona dissents on missing safety data.
+
+
+---
+
+### 9. palbociclib (Ibrance) + MEK/ERK or IGF1R combination <small><code>palbociclib, PD-0332991, Ibrance</code></small> { #access-9 }
+
+**Access status:** <span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** small_molecule &nbsp; **Verified:** 2026-05-12
+
+
+Off-label prescription is technically available because palbociclib is FDA-approved (for HR-positive breast cancer); ADOPT (NCT06813079) is the PDO-guided trial route but is not yet recruiting. Neither path is well-supported: NCI-MATCH Z1C returned ORR 4% in CDK4/6-amplified solid tumors, and the combination rationale rests on preclinical organoid data (Knudsen 2023) without PDAC clinical validation.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Palbociclib is FDA-approved (2015) and EMA-approved (2016) for HR-positive HER2-negative advanced breast cancer in combination with endocrine therapy. Not approved for PDAC. The MEK/ERK or IGF1R combination partners would also be used off-label.</dd>
+  <dt>Guidelines</dt><dd>Not listed in NCCN Pancreatic Adenocarcinoma v2.2026 for the CDKN2A-loss or CCND3 indication. The NCI-MATCH Z1C basket (CDK4/6-amplified solid tumors, O&#x27;Hara 2025 PMID 39437014) returned ORR 4%, which actively argues against single-agent CDK4/6i in this axis.</dd>
+  <dt>Geographic scope</dt><dd>United States and EU; palbociclib is commercially available wherever it has an HR-positive breast cancer indication.</dd>
+</dl>
+
+
+**Next steps**
+
+1. Track ADOPT (NCT06813079) recruitment status through the listed central contact (Robert C. Grant, MD, robert.grant@uhn.ca, 416-946-4501 ext. 3308). The PDO-guided route is the most defensible structural fit.
+2. Discuss with the treating team whether MTAP testing redirects toward the PRMT5 axis (MTAPESTRY-103, NCT06360354) before pursuing CDK4/6 inhibition off-label.
+3. If off-label palbociclib is still pursued (typically as part of a combination with a MEKi or ERKi), the institutional pharmacy and payer prior-authorization process is the load-bearing step. Pfizer Medical Information (1-800-438-1985) handles product-information queries.
+4. Treat this lane as the lowest-priority option in the dossier given the negative Z1C precedent; rank-1 through rank-4 lanes are operationally and biologically stronger paths.
+
+
+**Trial pathways**
+
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT06813079">NCT06813079</a></td><td class="col-phase">2</td><td class="col-indication">Advanced PDAC selected by PDO drug-sensitivity screening; menu includes abemaciclib</td><td class="col-status">not yet recruiting</td><td class="col-eligibility"><span class="fit-badge fit-weak">eligible: unconfirmed</span></td><td class="col-contact"><strong>Robert C. Grant, MD</strong><br><a href="mailto:robert.grant@uhn.ca">robert.grant@uhn.ca</a><br><code>416-946-4501 ext. 3308</code><br><a href="https://clinicaltrials.gov/study/NCT06813079">trial sites</a></td><td class="col-notes">ADOPT is not yet recruiting per registry. The CDK4/6 menu option is abemaciclib rather than palbociclib, but the axis is the same. PDO-guided selection is the structural fit for a multi-feature case (CDKN2A loss plus CCND3); whether any single patient&#x27;s organoid screens into the CDK4/6 arm depends on the PDO assay readout.</td></tr>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT03297606">NCT03297606</a></td><td class="col-phase">2</td><td class="col-indication">Advanced solid tumors with CDKN2A / CDK4 / CCND1 / SMARCA4 alteration</td><td class="col-status">active not recruiting</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><a href="https://clinicaltrials.gov/study/NCT03297606">trial sites</a></td><td class="col-notes">Group 8 palbociclib arm is closed. Listed as precedent for the off-label-prescribing case if the treating team pursues palbociclib outside a trial.</td></tr>
+</tbody></table></div></div>
+
+
+**Manufacturer / sponsor contact**
+
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Pfizer</dd>
+  <dt>Country</dt><dd>United States (New York, NY)</dd>
+  <dt>Medical info phone</dt><dd><code>1-800-438-1985</code></dd>
+  <dt>Product information</dt><dd><a href="https://www.pfizermedical.com/">https://www.pfizermedical.com/</a></dd>
+  <dt>Compassionate / expanded access</dt><dd><a href="https://www.pfizer.com/science/clinical-trials/expanded-access">https://www.pfizer.com/science/clinical-trials/expanded-access</a></dd>
+  <dt>Notes</dt><dd>Palbociclib is commercially available for the HR-positive HER2-negative breast cancer indication and can be obtained for off-label use through standard specialty-distribution channels, subject to institutional pharmacy and payer review. Pfizer Medical Information at 1-800-438-1985 handles product-information queries; expanded-access for an approved drug is handled as off-label prescription rather than EAP.</dd>
+</dl>
+
+
+**Payer / coverage notes.** Off-label use for PDAC carries heavy payer review and is generally not reimbursed without prior authorization plus an appeal letter citing the CDKN2A-loss / CCND3 alteration rationale. The Z1C basket negative readout (O&#x27;Hara 2025, ORR 4%) weakens the payer-justification case for single-agent use; combination logic (palbociclib + MEKi or ERKi or IGF1Ri) is preclinical-only and unsupported by published clinical data in PDAC. Manufacturer patient-assistance through Pfizer Oncology Together may help with copay support if coverage is obtained.
+
+
+**Notes.** Useful as informational context for the CDKN2A / CCND3 axis rather than a recommended action. The mechanism-fit (CDKN2A loss derepresses CDK4/6; CCND3 amplification drives CDK4/6 dependency) is textbook, but the basket precedent is negative and the combination logic has not been translated to PDAC clinically.
+
+
+---
+
+### 10. zoldonrasib (RMC-7977) + ivonescimab <small><code>zoldonrasib, RMC-7977, ivonescimab, AK112</code></small> { #access-10 }
+
+**Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** small_molecule &nbsp; **Verified:** 2026-05-12
+
+
+Trial-only and contingent on PDAC cohort openness. NCT07397338 is recruiting but the primary listed indications are NSCLC and CRC; whether a PDAC dose-expansion arm is open at a given site is the gating question. The case for keeping this lane on the page is that the patient&#x27;s MSS plus TMB 4.1 closes every standard ICI door, and this is the only route to an immune-axis combination the patient could touch.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Investigational. Zoldonrasib is pre-approval; ivonescimab (Akeso AK112) is approved in China for first-line PD-L1-positive NSCLC and EGFR-mutant NSCLC post-TKI but has no FDA or EMA approval. The combination has no regulatory filing.</dd>
+  <dt>Guidelines</dt><dd>Not listed in NCCN, ESMO, or ASCO PDAC guidelines. Neither agent has a PDAC indication.</dd>
+  <dt>Geographic scope</dt><dd>United States plus select EU and Australia sites for the RAS(ON) backbone; ivonescimab access is broader in mainland China than in the US.</dd>
+</dl>
+
+
+**Next steps**
+
+1. Email medinfo@revmed.com asking whether NCT07397338 has an open PDAC dose-expansion cohort and at which sites.
+2. If PDAC is not open, ask whether the sponsor is planning a PDAC-specific extension and on what timeline; the patient may be able to wait if disease tempo allows.
+3. Before screening labs, confirm the rash-versus-immune-rash AE attribution plan with the site; pan-RAS class rash and PD-1xVEGF immune-rash overlap diagnostically.
+4. Treat this lane as a fallback to the monotherapy and chemo-combo lanes given zero published clinical PDAC data on the combination.
+
+
+**Trial pathways**
+
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT07397338">NCT07397338</a></td><td class="col-phase">1/2</td><td class="col-indication">RAS-mutant advanced / metastatic solid tumors (primarily NSCLC, CRC; PDAC eligibility per protocol)</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-weak">eligible: unconfirmed</span></td><td class="col-contact"><strong>Revolution Medicines Study Director</strong><br><a href="mailto:medinfo@revmed.com">medinfo@revmed.com</a><br><code>1-844-273-8633</code><br><a href="https://clinicaltrials.gov/study/NCT07397338">trial sites</a></td><td class="col-notes">Primary listed indications are NSCLC and CRC; whether a PDAC dose-expansion cohort is open varies site to site. Confirm PDAC cohort openness with the sponsor before screening labs. KPC GEMM data (Wasko Nature 2024) are G12D-allele, so G12R extrapolation is mechanism-class rather than allele-matched.</td></tr>
+</tbody></table></div></div>
+
+
+**Manufacturer / sponsor contact**
+
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Revolution Medicines (zoldonrasib) + Akeso / Summit Therapeutics (ivonescimab US partner)</dd>
+  <dt>Country</dt><dd>United States / China</dd>
+  <dt>Medical info phone</dt><dd><code>1-844-273-8633</code></dd>
+  <dt>Medical info email</dt><dd><a href="mailto:medinfo@revmed.com">medinfo@revmed.com</a></dd>
+  <dt>Product information</dt><dd><a href="https://www.revolutionmedicines.com/">https://www.revolutionmedicines.com/</a></dd>
+  <dt>Notes</dt><dd>Revolution Medicines is the IND holder for the combination; route inquiries through medinfo@revmed.com. Summit Therapeutics holds North American development rights for ivonescimab via the Akeso partnership; medical-information questions specific to ivonescimab can route through Summit&#x27;s investor / medical-affairs channels.</dd>
+</dl>
+
+
+**Payer / coverage notes.** Investigational. Sponsor-supplied drugs; standard imaging and procedures bill insurance as usual under trial-billing arrangements.
+
+
+**Notes.** Highest-ceiling preclinical option the patient could touch (KPC GEMM complete responses, Wasko Nature 2024), but zero published clinical PDAC efficacy data and three persona dissents on evidence, toxicity, and guideline-fit. The G12R microenvironment biology (Singhi 2025: lower-ERK and immune-enriched relative to G12D) is the most plausible reason this lane might behave differently than the published G12D KPC data.
 
 
 ---
