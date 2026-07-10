@@ -18,10 +18,10 @@ _Entries are ordered to match the Recommendations table: by therapeutic target g
 <tr><td class="col-num"><a href="#access-4"><strong>4</strong></a></td><td class="col-intervention"><strong>Zanidatamab</strong></td><td class="col-target">Erbb2 Amp</td><td class="col-access-status"><span class="fit-badge fit-strong">Standard of care</span> <span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">FDA-approved (accelerated, November 2024) for previously treated, unresectable or metastatic HER2-positive (IHC 3+) biliary tract cancer</td><td class="col-first-action">Run HER2 IHC with reflex ISH (and NGS) and confirm IHC 3+ for the on-label path.</td></tr>
 <tr><td class="col-num"><a href="#access-5"><strong>5</strong></a></td><td class="col-intervention"><strong>Trastuzumab deruxtecan (T-DXd)</strong></td><td class="col-target">Erbb2 Amp</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">FDA-approved (accelerated, April 2024) tumor-agnostic for previously treated, unresectable or metastatic HER2-positive (IHC 3+) solid tumors; biliary tract cancer was part of the supporting DESTINY-PanTumor02 data</td><td class="col-first-action">Run HER2 IHC with reflex ISH and document the exact IHC score, since 3+ is the on-label threshold and drives expected benefit.</td></tr>
 <tr><td class="col-num"><a href="#access-6"><strong>6</strong></a></td><td class="col-intervention"><strong>Dabrafenib + trametinib</strong></td><td class="col-target">Braf V600E</td><td class="col-access-status"><span class="fit-badge fit-strong">Standard of care</span> <span class="fit-badge fit-partial">Off-label use</span></td><td class="col-regulatory">FDA-approved (June 2022) tumor-agnostic for unresectable or metastatic BRAF V600E solid tumors after prior therapy; also approved in melanoma, NSCLC, thyroid, and low-grade glioma</td><td class="col-first-action">Confirm BRAF V600E by NGS or PCR (VE1 IHC alone is not sufficient).</td></tr>
-<tr><td class="col-num"><a href="#access-7"><strong>7</strong></a></td><td class="col-intervention"><strong>Larotrectinib</strong></td><td class="col-target">Ntrk Fusion</td><td class="col-access-status"><span class="fit-badge fit-strong">Standard of care</span> <span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">FDA-approved (November 2018, full approval 2021) tumor-agnostic for NTRK fusion-positive solid tumors</td><td class="col-first-action">Confirm an NTRK1/2/3 fusion on an RNA-based fusion panel.</td></tr>
-<tr><td class="col-num"><a href="#access-8"><strong>8</strong></a></td><td class="col-intervention"><strong>Pembrolizumab</strong></td><td class="col-target">Msi Tmb</td><td class="col-access-status"><span class="fit-badge fit-strong">Standard of care</span> <span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">FDA-approved tumor-agnostic for MSI-H/dMMR solid tumors (full approval) and for TMB-high (&gt;=10 mut/Mb) solid tumors (accelerated); broadly approved across many indications</td><td class="col-first-action">Run MMR IHC plus reflex MSI assay and confirm TMB on the NGS panel.</td></tr>
-<tr><td class="col-num"><a href="#access-9"><strong>9</strong></a></td><td class="col-intervention"><strong>Adagrasib</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">FDA-approved (accelerated) for KRAS G12C-mutated NSCLC (monotherapy) and for KRAS G12C-mutated colorectal cancer (with cetuximab); no biliary-tract indication</td><td class="col-first-action">Confirm KRAS G12C specifically on tumor DNA NGS; other KRAS variants do not qualify for a G12C inhibitor.</td></tr>
-<tr><td class="col-num"><a href="#access-10"><strong>10</strong></a></td><td class="col-intervention"><strong>Entrectinib</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-strong">Standard of care</span> <span class="fit-badge fit-partial">Off-label use</span></td><td class="col-regulatory">FDA-approved (accelerated, August 2019) tumor-agnostic for NTRK fusion-positive solid tumors; also approved in ROS1-positive NSCLC</td><td class="col-first-action">Run an RNA-based fusion panel (or pan-TRK IHC as a screen) and confirm an NTRK1/2/3 fusion.</td></tr>
+<tr><td class="col-num"><a href="#access-7"><strong>7</strong></a></td><td class="col-intervention"><strong>Pembrolizumab</strong></td><td class="col-target">Msi Tmb</td><td class="col-access-status"><span class="fit-badge fit-strong">Standard of care</span> <span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">FDA-approved tumor-agnostic for MSI-H/dMMR solid tumors (full approval) and for TMB-high (&gt;=10 mut/Mb) solid tumors (accelerated); broadly approved across many indications</td><td class="col-first-action">Run MMR IHC plus reflex MSI assay and confirm TMB on the NGS panel.</td></tr>
+<tr><td class="col-num"><a href="#access-8"><strong>8</strong></a></td><td class="col-intervention"><strong>Adagrasib</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">FDA-approved (accelerated) for KRAS G12C-mutated NSCLC (monotherapy) and for KRAS G12C-mutated colorectal cancer (with cetuximab); no biliary-tract indication</td><td class="col-first-action">Confirm KRAS G12C specifically on tumor DNA NGS; other KRAS variants do not qualify for a G12C inhibitor.</td></tr>
+<tr><td class="col-num"><a href="#access-9"><strong>9</strong></a></td><td class="col-intervention"><strong>Entrectinib</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-strong">Standard of care</span> <span class="fit-badge fit-partial">Off-label use</span></td><td class="col-regulatory">FDA-approved (accelerated, August 2019) tumor-agnostic for NTRK fusion-positive solid tumors; also approved in ROS1-positive NSCLC</td><td class="col-first-action">Run an RNA-based fusion panel (or pan-TRK IHC as a screen) and confirm an NTRK1/2/3 fusion.</td></tr>
+<tr><td class="col-num"><a href="#access-10"><strong>10</strong></a></td><td class="col-intervention"><strong>Larotrectinib</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-strong">Standard of care</span> <span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">FDA-approved (November 2018, full approval 2021) tumor-agnostic for NTRK fusion-positive solid tumors</td><td class="col-first-action">Confirm an NTRK1/2/3 fusion on an RNA-based fusion panel.</td></tr>
 <tr><td class="col-num"><a href="#access-11"><strong>11</strong></a></td><td class="col-intervention"><strong>Selpercatinib</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-strong">Standard of care</span> <span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">FDA-approved (accelerated, September 2022) tumor-agnostic for RET fusion-positive solid tumors; also approved in RET fusion NSCLC and RET-mutant/fusion thyroid cancer</td><td class="col-first-action">Confirm a RET fusion on an RNA-based fusion panel.</td></tr>
 <tr><td class="col-num"><a href="#access-12"><strong>12</strong></a></td><td class="col-intervention"><strong>TYRA-200</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">Investigational; no regulatory approval anywhere</td><td class="col-first-action">Confirm an activating FGFR2 alteration first, since eligibility turns on it.</td></tr>
 </tbody></table>
@@ -332,59 +332,9 @@ A confirmed BRAF V600E opens this combination through two routes that land in th
 ---
 
 
-## Ntrk Fusion interventions (1)
-
-### 7. Larotrectinib <small><code>larotrectinib, LOXO-101, Vitrakvi</code></small> { #access-7 }
-
-**Access status:** <span class="fit-badge fit-strong">Standard of care</span> <span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** small_molecule &nbsp; **Verified:** 2026-06-01
-
-
-Same NTRK-fusion gate as entrectinib: confirm a fusion and larotrectinib is on-label tumor-agnostic therapy, prescribable without a trial. Larotrectinib is the more selective TRK inhibitor with the most durable responses in the pooled data, so it is a reasonable default when there is no CNS disease driving the choice.
-
-
-<dl class="profile-grid">
-  <dt>Regulatory</dt><dd>FDA-approved (November 2018, full approval 2021) tumor-agnostic for NTRK fusion-positive solid tumors</dd>
-  <dt>Guidelines</dt><dd>NCCN-listed for NTRK fusion-positive solid tumors under the tumor-agnostic indication</dd>
-  <dt>Geographic scope</dt><dd>US (and broadly available); approved</dd>
-</dl>
-
-
-**Next steps**
-
-1. Confirm an NTRK1/2/3 fusion on an RNA-based fusion panel.
-2. If positive, choose between larotrectinib (more durable responses) and entrectinib (CNS activity) based on disease distribution.
-3. Prescribe on-label and enroll in Access Services by Bayer at 1-800-288-8374; call 1-888-842-2937 for product questions.
-
-
-**Trial pathways**
-
-<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
-<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
-<tbody>
-<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT02576431">NCT02576431</a></td><td class="col-phase">2</td><td class="col-indication">NTRK fusion-positive solid tumors incl. biliary</td><td class="col-status">completed</td><td class="col-eligibility"><span class="fit-badge fit-weak">eligible: unconfirmed</span></td><td class="col-contact">—</td><td class="col-notes">Registry shows the trial completed; the registry record carried no central-contact block. Larotrectinib is on-label for NTRK fusion, so prescription, not enrollment, is the realistic path.</td></tr>
-</tbody></table></div></div>
-
-
-**Manufacturer / sponsor contact**
-
-<dl class="profile-grid">
-  <dt>Company</dt><dd>Bayer (with Loxo Oncology)</dd>
-  <dt>Country</dt><dd>Germany / US</dd>
-  <dt>Medical info phone</dt><dd><code>1-888-842-2937</code></dd>
-  <dt>Product information</dt><dd><a href="https://www.vitrakvi-us.com/">https://www.vitrakvi-us.com/</a></dd>
-  <dt>Notes</dt><dd>1-888-842-2937 is the Vitrakvi information line. Access Services by Bayer (1-800-288-8374, Mon-Fri 8am-8pm ET) provides a nurse/pharmacist line and benefits support. No public medical-info email found.</dd>
-</dl>
-
-
-**Payer / coverage notes.** On-label coverage requires a confirmed NTRK1/2/3 fusion. Access Services by Bayer handles benefits review and copay. Among the fusion inhibitors, larotrectinib reported the most durable responses (median DoR about 35 months).
-
-
----
-
-
 ## Msi Tmb interventions (1)
 
-### 8. Pembrolizumab <small><code>pembrolizumab, MK-3475, Keytruda, lambrolizumab</code></small> { #access-8 }
+### 7. Pembrolizumab <small><code>pembrolizumab, MK-3475, Keytruda, lambrolizumab</code></small> { #access-7 }
 
 **Access status:** <span class="fit-badge fit-strong">Standard of care</span> <span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** monoclonal_antibody &nbsp; **Verified:** 2026-06-01
 
@@ -433,9 +383,9 @@ If MMR IHC, an MSI assay, or NGS-derived TMB comes back MSI-H/dMMR or TMB-high, 
 ---
 
 
-## Unmatched interventions (4)
+## Unmatched interventions (5)
 
-### 9. Adagrasib <small><code>adagrasib, MRTX849, Krazati</code></small> { #access-9 }
+### 8. Adagrasib <small><code>adagrasib, MRTX849, Krazati</code></small> { #access-8 }
 
 **Access status:** <span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** small_molecule &nbsp; **Verified:** 2026-06-01
 
@@ -483,7 +433,7 @@ Adagrasib is approved for KRAS G12C NSCLC and colorectal cancer but not for bili
 
 ---
 
-### 10. Entrectinib <small><code>entrectinib, RXDX-101, Rozlytrek</code></small> { #access-10 }
+### 9. Entrectinib <small><code>entrectinib, RXDX-101, Rozlytrek</code></small> { #access-9 }
 
 **Access status:** <span class="fit-badge fit-strong">Standard of care</span> <span class="fit-badge fit-partial">Off-label use</span> &nbsp; **Modality:** small_molecule &nbsp; **Verified:** 2026-06-01
 
@@ -526,6 +476,53 @@ If RNA-based fusion NGS finds an NTRK1/2/3 fusion, entrectinib is on-label tumor
 
 
 **Payer / coverage notes.** On-label coverage requires a confirmed NTRK1/2/3 fusion. Genentech Access Solutions handles benefits verification and copay assistance. CNS-penetrant, which can matter if brain involvement is present.
+
+
+---
+
+### 10. Larotrectinib <small><code>larotrectinib, LOXO-101, Vitrakvi</code></small> { #access-10 }
+
+**Access status:** <span class="fit-badge fit-strong">Standard of care</span> <span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** small_molecule &nbsp; **Verified:** 2026-06-01
+
+
+Same NTRK-fusion gate as entrectinib: confirm a fusion and larotrectinib is on-label tumor-agnostic therapy, prescribable without a trial. Larotrectinib is the more selective TRK inhibitor with the most durable responses in the pooled data, so it is a reasonable default when there is no CNS disease driving the choice.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>FDA-approved (November 2018, full approval 2021) tumor-agnostic for NTRK fusion-positive solid tumors</dd>
+  <dt>Guidelines</dt><dd>NCCN-listed for NTRK fusion-positive solid tumors under the tumor-agnostic indication</dd>
+  <dt>Geographic scope</dt><dd>US (and broadly available); approved</dd>
+</dl>
+
+
+**Next steps**
+
+1. Confirm an NTRK1/2/3 fusion on an RNA-based fusion panel.
+2. If positive, choose between larotrectinib (more durable responses) and entrectinib (CNS activity) based on disease distribution.
+3. Prescribe on-label and enroll in Access Services by Bayer at 1-800-288-8374; call 1-888-842-2937 for product questions.
+
+
+**Trial pathways**
+
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT02576431">NCT02576431</a></td><td class="col-phase">2</td><td class="col-indication">NTRK fusion-positive solid tumors incl. biliary</td><td class="col-status">completed</td><td class="col-eligibility"><span class="fit-badge fit-weak">eligible: unconfirmed</span></td><td class="col-contact">—</td><td class="col-notes">Registry shows the trial completed; the registry record carried no central-contact block. Larotrectinib is on-label for NTRK fusion, so prescription, not enrollment, is the realistic path.</td></tr>
+</tbody></table></div></div>
+
+
+**Manufacturer / sponsor contact**
+
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Bayer (with Loxo Oncology)</dd>
+  <dt>Country</dt><dd>Germany / US</dd>
+  <dt>Medical info phone</dt><dd><code>1-888-842-2937</code></dd>
+  <dt>Product information</dt><dd><a href="https://www.vitrakvi-us.com/">https://www.vitrakvi-us.com/</a></dd>
+  <dt>Notes</dt><dd>1-888-842-2937 is the Vitrakvi information line. Access Services by Bayer (1-800-288-8374, Mon-Fri 8am-8pm ET) provides a nurse/pharmacist line and benefits support. No public medical-info email found.</dd>
+</dl>
+
+
+**Payer / coverage notes.** On-label coverage requires a confirmed NTRK1/2/3 fusion. Access Services by Bayer handles benefits review and copay. Among the fusion inhibitors, larotrectinib reported the most durable responses (median DoR about 35 months).
 
 
 ---

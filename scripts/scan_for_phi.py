@@ -123,6 +123,8 @@ ONCOLOGY_ACRONYM_ALLOWLIST = frozenset({
     "CROSSCHECK", "ALLOHA", "MOUNTAINTAP", "AUGMENT", "COMET", "PYNNACLE",
     # ClinicalTrials.gov recruitment-status tokens that appear in agent run-log notes
     "RECRUITING", "ENROLLING", "SUSPENDED", "WITHHELD", "AVAILABLE",
+    # ADC payloads / drug-modality + disease-subsite acronyms in rendered tables
+    "MMAE", "MMAF", "DM1", "DM4", "SN38", "ICC", "ECC", "BTC", "GEA",
     "SIERRA", "ALLOHA", "AUGMENT",
     # PRAME / TCR / ImmTAC platform / mechanism
     "PRAME", "TCR", "TCER", "HLA",

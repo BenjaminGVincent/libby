@@ -6,13 +6,13 @@
 
 ## Case output
 
-- [Target validation paths (PDF)](cca-mets-scope-unknown-z3p9-target-validation.pdf?v=cf15aafe) — diagnostic + biomarker workup that hardens the targetable-feature call
-- [Recommendations table (HTML)](cca-mets-scope-unknown-z3p9-recommendations.html?v=28c7c991) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
-- [Access guide (HTML)](accessibility.md?v=d1d25923) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, sortable in-browser
-- [Access guide (offline HTML)](cca-mets-scope-unknown-z3p9-accessibility.html?v=35d4abb7) — same access-guide content as the in-browser page, packaged as a self-contained HTML that opens offline
-- [Master manuscripts table (HTML)](manuscripts.md?v=6260b21b) — every paper considered — n, effect, variance, toxicities, sortable in-browser
-- [Master manuscripts table (offline HTML)](cca-mets-scope-unknown-z3p9-manuscripts.html?v=6214299d) — same manuscripts inventory as the in-browser page, packaged as a self-contained HTML that opens offline
-- [Patient/caregiver PDF](cca-mets-scope-unknown-z3p9-plain-language.pdf?v=3d839db4) — plain-language summary
+- [Target validation paths (PDF)](cca-mets-scope-unknown-z3p9-target-validation.pdf?v=e3fd75db) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Recommendations table (HTML)](cca-mets-scope-unknown-z3p9-recommendations.html?v=f0b69849) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
+- [Access guide (HTML)](accessibility.md?v=0f1ac5cf) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, sortable in-browser
+- [Access guide (offline HTML)](cca-mets-scope-unknown-z3p9-accessibility.html?v=719b462f) — same access-guide content as the in-browser page, packaged as a self-contained HTML that opens offline
+- [Master manuscripts table (HTML)](manuscripts.md?v=de7b9de7) — every paper considered — n, effect, variance, toxicities, sortable in-browser
+- [Master manuscripts table (offline HTML)](cca-mets-scope-unknown-z3p9-manuscripts.html?v=7fe9c969) — same manuscripts inventory as the in-browser page, packaged as a self-contained HTML that opens offline
+- [Patient/caregiver PDF](cca-mets-scope-unknown-z3p9-plain-language.pdf?v=11a205bb) — plain-language summary
 
 <!-- libby:case-output:end -->
 ## Research question
@@ -120,7 +120,7 @@ The RNA arm of the comprehensive panel also resolves the rare NTRK and RET fusio
 
 ## Scope summary
 
-15 trials surfaced across eight candidate axes. 12 clinical-evidence rows (the panel's approved and basket agents) plus 7 preclinical rows. Nine ranked rows: a rank-1 shared comprehensive-genomic-profiling gate, seven biomarker-conditional therapeutic recommendations (ranks 2-8), and one row held at not_recommended (rank 9, T-DXd) to keep the board's veto visible. Agreement scores run from 1.0 (CGP gate and ivosidenib) down to -0.4 (the vetoed T-DXd row). All five personas converged on the workup and on ivosidenib for the IDH1 lane; one within-lane toxicity dissent sits on futibatinib; two rank-order dissents sit on larotrectinib; one veto sits on T-DXd. The ranking is scoped to drugs that act on the candidate panel; chemotherapy backbones and other standard biliary care that do not target a panel feature are out of scope and are not enumerated here.
+30 trials surfaced across the eight candidate axes, including 16 new on-axis studies added by the July 2026 screen. 26 clinical-evidence rows cover the panel's approved and basket agents, backed by 12 preclinical rows. Nine ranked rows follow: a rank-1 shared comprehensive-genomic-profiling gate, then eight biomarker-conditional therapeutic recommendations (ranks 2-9), two of them held at considered_with_caveats (lirafugratinib and trastuzumab deruxtecan) so the reader sees what the board weighed and where it pulled back. Agreement scores run from 1.0 at the CGP gate and ivosidenib down to -0.6 on T-DXd. All five personas converged on the workup and on ivosidenib for the IDH1 lane. Three points of friction remain visible: a within-lane order dissent on futibatinib, a three-persona dissent on lirafugratinib over abstract-only maturity and guideline order, and a three-persona dissent that holds T-DXd below zanidatamab on its ILD signal. No persona issued a formal veto. The ranking is scoped to drugs that act on the candidate panel; chemotherapy backbones and other standard biliary care that do not target a panel feature are out of scope and are not named here.
 
 ## Cross-cutting caveat (read first)
 
@@ -133,13 +133,13 @@ The RNA arm of the comprehensive panel also resolves the rare NTRK and RET fusio
 
 ## Intervention grouping
 
-- **FGFR2-directed (FGFR inhibitors):** pemigatinib ([PMID 32203698](https://pubmed.ncbi.nlm.nih.gov/32203698), [NCT02924376](https://clinicaltrials.gov/study/NCT02924376)), futibatinib ([PMID 36652354](https://pubmed.ncbi.nlm.nih.gov/36652354), [NCT02052778](https://clinicaltrials.gov/study/NCT02052778)); next-generation resistance-directed TYRA-200 ([NCT06160752](https://clinicaltrials.gov/study/NCT06160752)).
-- **IDH1-directed:** ivosidenib ([PMID 32416072](https://pubmed.ncbi.nlm.nih.gov/32416072), [NCT02989857](https://clinicaltrials.gov/study/NCT02989857)).
-- **HER2-directed:** zanidatamab ([PMID 37423227](https://pubmed.ncbi.nlm.nih.gov/37423227), [NCT04466891](https://clinicaltrials.gov/study/NCT04466891)), trastuzumab deruxtecan ([PMID 37870536](https://pubmed.ncbi.nlm.nih.gov/37870536)); first-line successors [NCT06282575](https://clinicaltrials.gov/study/NCT06282575) and [NCT06467357](https://clinicaltrials.gov/study/NCT06467357).
+- **FGFR2-directed (FGFR inhibitors):** futibatinib ([PMID 36652354](https://pubmed.ncbi.nlm.nih.gov/36652354), [NCT02052778](https://clinicaltrials.gov/study/NCT02052778)) and pemigatinib ([PMID 32203698](https://pubmed.ncbi.nlm.nih.gov/32203698), [NCT02924376](https://clinicaltrials.gov/study/NCT02924376)) approved; FGFR2-selective lirafugratinib via the ReFocus cohort ([doi:10.1200/JCO.2026.44.2_suppl.476](https://doi.org/10.1200/JCO.2026.44.2_suppl.476), [NCT04526106](https://clinicaltrials.gov/study/NCT04526106)); resistance-directed TYRA-200 ([NCT06160752](https://clinicaltrials.gov/study/NCT06160752)).
+- **IDH1-directed:** ivosidenib ([PMID 32416072](https://pubmed.ncbi.nlm.nih.gov/32416072), [NCT02989857](https://clinicaltrials.gov/study/NCT02989857)), with a preclinical IFNγ-TET2 immunoevasion mechanism ([PMID 34848557](https://pubmed.ncbi.nlm.nih.gov/34848557)).
+- **HER2-directed:** zanidatamab ([PMID 37276871](https://pubmed.ncbi.nlm.nih.gov/37276871), [NCT04466891](https://clinicaltrials.gov/study/NCT04466891)), trastuzumab deruxtecan ([PMID 37870536](https://pubmed.ncbi.nlm.nih.gov/37870536), [NCT04482309](https://clinicaltrials.gov/study/NCT04482309)); first-line successors [NCT06282575](https://clinicaltrials.gov/study/NCT06282575) and [NCT06467357](https://clinicaltrials.gov/study/NCT06467357).
 - **BRAF V600E-directed:** dabrafenib + trametinib ([PMID 32818466](https://pubmed.ncbi.nlm.nih.gov/32818466), [NCT02034110](https://clinicaltrials.gov/study/NCT02034110)).
 - **Tumor-agnostic immunotherapy (MSI-H/dMMR, TMB-high):** pembrolizumab ([PMID 31682550](https://pubmed.ncbi.nlm.nih.gov/31682550), [PMID 32919526](https://pubmed.ncbi.nlm.nih.gov/32919526), [NCT02628067](https://clinicaltrials.gov/study/NCT02628067)).
-- **Tumor-agnostic fusion inhibitors:** larotrectinib ([PMID 32092306](https://pubmed.ncbi.nlm.nih.gov/32092306), [NCT02576431](https://clinicaltrials.gov/study/NCT02576431)) and entrectinib ([PMID 31838007](https://pubmed.ncbi.nlm.nih.gov/31838007)) for NTRK; selpercatinib ([PMID 36029780](https://pubmed.ncbi.nlm.nih.gov/36029780)) for RET.
-- **KRAS G12C-directed:** adagrasib-class covalent inhibitors via basket enrollment ([NCT05722327](https://clinicaltrials.gov/study/NCT05722327)).
+- **Tumor-agnostic fusion inhibitors:** larotrectinib ([PMID 32105622](https://pubmed.ncbi.nlm.nih.gov/32105622), [NCT02576431](https://clinicaltrials.gov/study/NCT02576431)) and entrectinib ([PMID 31838007](https://pubmed.ncbi.nlm.nih.gov/31838007)) for NTRK; selpercatinib ([PMID 36029780](https://pubmed.ncbi.nlm.nih.gov/36029780)) for RET.
+- **KRAS G12C-directed:** adagrasib-class covalent inhibitors via basket enrollment ([PMID 37099736](https://pubmed.ncbi.nlm.nih.gov/37099736), [NCT05722327](https://clinicaltrials.gov/study/NCT05722327)).
 
 ## Top interventions
 
@@ -187,7 +187,7 @@ It precedes everything. The board treated it as a gate, not a therapy, which is 
 
 #### Evidence base
 
-ClarIDHy ([PMID 32416072](https://pubmed.ncbi.nlm.nih.gov/32416072), [NCT02989857](https://clinicaltrials.gov/study/NCT02989857)) is the lone randomized, double-blind, placebo-controlled phase 3 here. It met its registered PFS endpoint, HR 0.37 (95% CI 0.25-0.54, p<0.0001), median PFS 2.7 versus 1.4 months. ORR was 2%. The critic was precise about the survival claim: the registered ITT OS missed at HR 0.69 (p=0.060), and the widely quoted 0.46 is an RPSFT crossover adjustment after 70% of placebo patients crossed over, so it is a sensitivity analysis rather than a clean result. IDH1 R132 runs 15-20% in intrahepatic CCA, which makes it one of the likelier positives the panel returns.
+ClarIDHy ([PMID 32416072](https://pubmed.ncbi.nlm.nih.gov/32416072), [NCT02989857](https://clinicaltrials.gov/study/NCT02989857)) is the lone randomized, double-blind, placebo-controlled phase 3 here. It met its registered PFS endpoint, HR 0.37 (95% CI 0.25-0.54, p<0.0001), median PFS 2.7 versus 1.4 months. ORR was 2%. The critic was precise about the survival claim: the registered ITT OS missed at HR 0.69 (p=0.060), and the widely quoted 0.46 is an RPSFT crossover adjustment after 70% of placebo patients crossed over, so it is a sensitivity analysis rather than a clean result. IDH1 R132 runs 15-20% in intrahepatic CCA, which makes it one of the likelier positives the panel returns. Preclinical work adds a mechanistic reason to test the combination question: mutant IDH1 blocks IFNγ-TET2 signaling to drive immunoevasion, which is the rationale behind an ivosidenib-plus-checkpoint trial ([PMID 34848557](https://pubmed.ncbi.nlm.nih.gov/34848557)).
 
 #### Likelihood of desired effect
 
@@ -255,7 +255,7 @@ Continuous oral dosing, 20 mg daily. The advocate would surface the FGFR2 trial 
 
 #### Why this rank
 
-Tied with pemigatinib on agreement (0.6) but seated above it. The board's center of gravity (critic, concensusite) put futibatinib first on cross-trial concordance, resistance coverage, and the MCBS edge; the conservative's dissent on hyperphosphatemia is the one voice for the reverse order. On a balanced preference weight the higher ORR and resistance activity carry it above the gentler pemigatinib.
+Futibatinib scores 0.6 against pemigatinib's 0.8, so this is a deliberate tie-break inversion: the efficacy-weighted preference fit seats it above the higher-agreement agent. The board's center of gravity (critic, concensusite, advocate) put futibatinib first in the FGFR2 lane on cross-trial concordance, resistance coverage, and the slightly higher response rate; the conservative's dissent on the 30% grade-3 hyperphosphatemia is the one voice for the reverse order. On a balanced preference weight the higher ORR and post-pemigatinib resistance activity carry it ahead, with pemigatinib the better-tolerated within-lane fallback directly below.
 
 #### Per-trial detail
 
@@ -290,7 +290,7 @@ The grade-3 burden is lighter than futibatinib's, which is the conservative's wh
 
 #### Counter-productive mechanisms / dissent
 
-No dissent against the drug. The only contested question is its position relative to futibatinib, covered above. The on-target phosphate effect is managed and does not work against the antitumor goal.
+Four personas endorsed it and none dissented. The only contested question is its position relative to futibatinib, covered above. The on-target phosphate effect is managed and does not work against the antitumor goal.
 
 #### Practical considerations
 
@@ -298,7 +298,7 @@ Oral, 13.5 mg daily on a 2-weeks-on / 1-week-off cycle. NCCN BTC v2.2025 categor
 
 #### Why this rank
 
-Identical agreement score to futibatinib (0.6). Seated below it because the board majority favored futibatinib's resistance coverage and MCBS edge; seated here rather than lower because the cross-trial concordance and the cleaner grade-3 profile make it the better-tolerated within-lane option whenever toxicity is the deciding factor.
+Pemigatinib carries the higher agreement score (0.8 against futibatinib's 0.6), yet sits one rank below it: the ranking rule tie-breaks on efficacy-weighted preference fit, and the board majority read futibatinib's resistance coverage and marginally higher response as the deciding edge in the FGFR2 lane. Pemigatinib holds rank 4 rather than lower because two independent trials converging on the same axis, plus the cleaner grade-3 profile, make it the better-tolerated within-lane option whenever toxicity is the deciding factor — the conservative's default.
 
 #### Per-trial detail
 
@@ -308,7 +308,49 @@ Identical agreement score to futibatinib (0.6). Seated below it because the boar
 
 ---
 
-### Rank 5. Zanidatamab (if HER2 IHC 3+ with reflex ISH confirmed)
+### Rank 5. Lirafugratinib (RLY-4008), FGFR2-selective, via the ReFocus cohort (if FGFR2 fusion/rearrangement confirmed)
+
+*Conditional on `fgfr2_fusion:positive`. Foreclosed if no fusion is detected. Status: considered with caveats.*
+
+*The highest-ORR FGFR2 option and the best hyperphosphatemia profile in the lane, but the data are abstract-only, the drug is pre-approval, and three personas dissented.*
+
+#### Evidence base
+
+The ReFocus FGFRi-naive cholangiocarcinoma cohort ([doi:10.1200/JCO.2026.44.2_suppl.476](https://doi.org/10.1200/JCO.2026.44.2_suppl.476), [NCT04526106](https://clinicaltrials.gov/study/NCT04526106)) reported ORR 46.5% (95% CI 37.1-56.1) in n=114, with a 96.5% disease-control rate, median DoR 11.8 months, and median PFS 11.3 months. The FGFR2-selective design largely spares the FGFR1-driven hyperphosphatemia that runs 30-55% on the pan-FGFR agents. The honest limit is maturity: this is an ASCO GI 2026 abstract with no PubMed record and no peer-reviewed full text, so response ascertainment and censoring cannot be audited, and the drug is not yet approved. One provenance point the board flagged and I carry forward: lirafugratinib's own basket study NCT07359820 **excludes** cholangiocarcinoma. The 46.5% comes from the separate ReFocus cohort (NCT04526106), and the two must not be conflated as one enrollment route.
+
+#### Likelihood of desired effect
+
+High-response but low-certainty. In the FGFR2-fusion subset the ORR beats or matches the approved agents, but a single-arm, abstract-only readout on an unapproved drug carries more uncertainty than the peer-reviewed pivotals directly above it. A negative or DNA-only-missed fusion forecloses this rec, same as the rest of the lane.
+
+#### Toxicity profile
+
+- Palmar-plantar erythrodysesthesia grade 3+ 32.8% — dose-limiting, function-limiting, felt daily
+- Stomatitis grade 3+ 12.1%
+- Largely spares FGFR1-driven hyperphosphatemia, the tolerability argument for the selective design
+
+No toxicity vetoes are on file. The conservative's point is that trading pan-FGFR hyperphosphatemia for a one-in-three grade-3 hand-foot rate is a lateral move, not a clean tolerability win.
+
+#### Counter-productive mechanisms / dissent
+
+This is the case's preference-conflict rec, and the split is real. The advocate and risktaker rank it at the head of the FGFR lane on the 46.5% ORR and the cleaner hyperphosphatemia profile, arguing that with `prefers_trials` set to true, an enrollable next-gen agent belongs in front of the patient rather than fenced off. Three personas dissented, which sets the status to considered_with_caveats: the critic discounts abstract-only data below the peer-reviewed FGFR pivotals; the conservative names the 32.8% grade-3 hand-foot rate the tolerability argument skips; the concensusite holds that seating a pre-approval, non-NCCN-listed agent above approved futibatinib and pemigatinib inverts the guideline order. No persona vetoed it — the objections are about evidence maturity and rank order, not a mechanism that would blunt the antitumor goal.
+
+#### Practical considerations
+
+Oral. Access runs through the ReFocus slot or expanded access pending the 27 September 2026 PDUFA; there is no on-label prescription yet, so enrollment logistics should be lined up alongside the genomic panel. Not FDA-approved and not NCCN-listed, so its place is the trial-enrollment lane rather than a standard rec.
+
+#### Why this rank
+
+Agreement drops to -0.2 here (two endorse, three dissent), the only negative-adjacent score above the T-DXd row. It sits below the two approved FGFR agents because the guideline-consonant use of pre-approval data is enrollment, not displacement of on-label therapy, and above the rarer-feature lanes because, if FGFR2 confirms, this is a live and higher-response door for a trials-seeking patient. The advocate and risktaker would seat it at rank 3; the board majority would not put an unaudited abstract above the NEJM and Lancet Oncology pivotals.
+
+#### Per-trial detail
+
+| Therapeutic agent | Efficacy | Toxicity | Reference |
+|---|---|---|---|
+| Lirafugratinib (RLY-4008) — ReFocus FGFRi-naive CCA cohort, n=114 | ORR 46.5% (95% CI 37.1-56.1); DCR 96.5%; mDoR 11.8 mo; mPFS 11.3 mo | PPE G3+ 32.8%; stomatitis G3+ 12.1%; spares FGFR1 hyperphosphatemia | [doi:10.1200/JCO.2026.44.2_suppl.476](https://doi.org/10.1200/JCO.2026.44.2_suppl.476), [NCT04526106](https://clinicaltrials.gov/study/NCT04526106) |
+
+---
+
+### Rank 6. Zanidatamab (if HER2 IHC 3+ with reflex ISH confirmed)
 
 *Conditional on `erbb2_amp:positive`. Foreclosed if HER2 IHC/ISH is negative.*
 
@@ -316,7 +358,7 @@ Identical agreement score to futibatinib (0.6). Seated below it because the boar
 
 #### Evidence base
 
-HERIZON-BTC-01 ([PMID 37423227](https://pubmed.ncbi.nlm.nih.gov/37423227), [NCT04466891](https://clinicaltrials.gov/study/NCT04466891)) returned a confirmed ORR 41.3% (95% CI 30.4-52.8) with median DoR 12.9 months in HER2-amplified, IHC 2+/3+ biliary tract cancer. Unlike the basket cohorts, this is a dedicated biliary trial, which is why it outranks the other HER2 options. The biparatopic design also beat trastuzumab plus pertuzumab in preclinical HER2 models, so the mechanistic case runs ahead of a me-too antibody. The evidence is single-arm phase 2b behind an accelerated approval.
+HERIZON-BTC-01 ([PMID 37276871](https://pubmed.ncbi.nlm.nih.gov/37276871), [NCT04466891](https://clinicaltrials.gov/study/NCT04466891)) returned a confirmed ORR 41.3% (95% CI 30.4-52.8) with median DoR 12.9 months in HER2-amplified, IHC 2+/3+ biliary tract cancer. Unlike the basket cohorts, this is a dedicated biliary trial, which is why it outranks the other HER2 options. The biparatopic antibody induces a distinctive HER2 clustering and internalization not seen with trastuzumab plus pertuzumab ([PMID 36914633](https://pubmed.ncbi.nlm.nih.gov/36914633)), so the mechanistic case runs ahead of a me-too antibody. The evidence is single-arm phase 2b behind an accelerated approval.
 
 #### Likelihood of desired effect
 
@@ -332,7 +374,7 @@ The cardiac signal has an established monitoring algorithm, but no baseline card
 
 #### Counter-productive mechanisms / dissent
 
-Endorsed by four personas with no dissent. The conservative preferred it over T-DXd on a direct safety argument: a 3% grade-3 ejection-fraction signal with a standard echo algorithm against T-DXd's 10.5% adjudicated ILD with three treatment-related deaths. HER2 blockade is direct and on-target, with no counter-productive vector at this depth.
+Endorsed by four personas with no dissent. Every persona who addressed the HER2 axis preferred it over T-DXd on a direct safety argument: a 3% grade-3 ejection-fraction signal with a standard echo algorithm against T-DXd's 10.5% adjudicated ILD with three treatment-related deaths. HER2 blockade is direct and on-target, with no counter-productive vector at this depth.
 
 #### Practical considerations
 
@@ -340,17 +382,17 @@ IV every two weeks. No modality veto is on file, so the IV route is not penalize
 
 #### Why this rank
 
-Highest agreement among the rarer-feature lanes (0.8). Seated above dabrafenib + trametinib, which ties it on score, because its grade-3 profile is lighter and the advocate flagged the BRAF doublet's heavier serious-AE load against the balanced weight.
+Agreement 0.8, the highest among the rarer-feature lanes, and seated above both the BRAF doublet and its own within-axis competitor T-DXd. It leads the HER2 lane because it rests on a dedicated biliary trial rather than a basket subgroup, and because four personas held T-DXd below it on the ILD signal — the safer HER2 antibody wins the lane when a comparably active option carries three treatment-related deaths and no pulmonary baseline on file.
 
 #### Per-trial detail
 
 | Therapeutic agent | Efficacy | Toxicity | Reference |
 |---|---|---|---|
-| Zanidatamab — HERIZON-BTC-01 cohort 1, HER2-amplified IHC 2+/3+ BTC, n=80 | Confirmed ORR 41.3% (95% CI 30.4-52.8); mDoR 12.9 mo | Decreased EF G3 ~3%; diarrhea G3 ~5%; IRR ~35% any-grade | [PMID 37423227](https://pubmed.ncbi.nlm.nih.gov/37423227), [NCT04466891](https://clinicaltrials.gov/study/NCT04466891) |
+| Zanidatamab — HERIZON-BTC-01 cohort 1, HER2-amplified IHC 2+/3+ BTC, n=80 | Confirmed ORR 41.3% (95% CI 30.4-52.8); mDoR 12.9 mo | Decreased EF G3 ~3%; diarrhea G3 ~5%; IRR ~35% any-grade | [PMID 37276871](https://pubmed.ncbi.nlm.nih.gov/37276871), [NCT04466891](https://clinicaltrials.gov/study/NCT04466891) |
 
 ---
 
-### Rank 6. Dabrafenib + trametinib (if BRAF V600E confirmed on NGS/PCR)
+### Rank 7. Dabrafenib + trametinib (if BRAF V600E confirmed on NGS/PCR)
 
 *Conditional on `braf_v600e:positive`. Foreclosed if no true V600E is confirmed.*
 
@@ -375,7 +417,7 @@ No fever or hospitalization veto is on file, but the serious-AE load is heavier 
 
 #### Counter-productive mechanisms / dissent
 
-No persona vetoed or dissented against the drug. The advocate ranked it below the gentler oral agents because the 40% serious-AE rate and frequent pyrexia sit heavier against a balanced weight; the conservative values the predictable pyrexia playbook from years of melanoma use. The pyrexia and serious-AE burden is a patient-AE load, not a mechanism that works against the therapeutic goal.
+No persona vetoed or dissented against the drug. The risktaker and concensusite carried it in their ranked picks; the rest kept it off their top five on prevalence and crowding, not on any safety objection. MEK co-inhibition mitigates the paradoxical RAF activation that single-agent BRAF inhibition can cause, so the pyrexia and serious-AE burden is a patient-AE load, not a mechanism that works against the therapeutic goal.
 
 #### Practical considerations
 
@@ -383,7 +425,7 @@ Oral, dabrafenib 150 mg BID plus trametinib 2 mg daily. NCCN BTC v2.2025 categor
 
 #### Why this rank
 
-Ties zanidatamab on agreement (0.8) but seated below it. With a balanced preference weight and no toxicity veto, the heavier serious-AE and pyrexia profile is the deciding factor between two equally endorsed options.
+Agreement 0.4 (two personas ranked it, none dissented). It sits below the HER2 lane because V600E turns up in only 1-5% of biliary cancer against HER2's 5-15% in extrahepatic disease, and the ROAR evidence is a small single-arm basket cohort of 43. A confirmed V600E makes it immediately actionable at a 47% response, so the rank reflects prevalence and cohort size, not any doubt about the drug.
 
 #### Per-trial detail
 
@@ -393,48 +435,49 @@ Ties zanidatamab on agreement (0.8) but seated below it. With a balanced prefere
 
 ---
 
-### Rank 7. Larotrectinib (if NTRK1/2/3 fusion confirmed on RNA-based CGP)
+### Rank 8. Trastuzumab deruxtecan (T-DXd) (if HER2 IHC 3+/expressing confirmed)
 
-*Conditional on `ntrk_fusion:positive`. Foreclosed if no fusion is detected. Status: considered with caveats.*
+*Conditional on `erbb2_amp:positive`. Foreclosed if HER2 IHC/ISH is negative. Status: considered with caveats.*
 
-*The largest response signal anywhere here if the rare fusion confirms, but the evidence is cross-tumor pooled with no biliary cohort, and prevalence is sub-1%.*
+*Competitive IHC 3+ activity, but held below zanidatamab on a 10.5% ILD signal with three treatment-related deaths and no pulmonary baseline on file.*
 
 #### Evidence base
 
-The pooled phase 1/2 analysis ([PMID 32092306](https://pubmed.ncbi.nlm.nih.gov/32092306), [NCT02576431](https://clinicaltrials.gov/study/NCT02576431)) reported ORR 79% (95% CI 72-85), median DoR 35.2 months, and median OS 44.4 months across tumor types. That is a magnitude nothing else in the dossier touches. It is also single-arm, pooled across many tumor types, with no biliary-specific cohort and no randomized comparator.
+The DESTINY-PanTumor02 biliary cohort ([PMID 37870536](https://pubmed.ncbi.nlm.nih.gov/37870536), [NCT04482309](https://clinicaltrials.gov/study/NCT04482309)) reported an investigator-assessed ORR of 22% (95% CI 10.6-37.6) across the full biliary cohort, rising to 56.3-61.3% in the IHC 3+ subgroup. That subgroup figure is competitive with zanidatamab, but it is a post-hoc subgroup, not the registered biliary-cohort endpoint. The tumor-agnostic approval covers IHC 3+ only.
 
 #### Likelihood of desired effect
 
-High in the NTRK-fusion subset, on the strength of the cross-tumor pool. But NTRK fusions run under 1% in CCA, so the prior probability of a positive read is low, and the biliary-specific magnitude is inferred rather than measured. A negative read, the likely outcome, forecloses this rec.
+High in the IHC 3+ subgroup and low-certainty across the whole biliary cohort, where the registered ORR is 22%. Frame the HER2-low predictive hedge plainly: a low-positive HER2 read is a weaker predictor of benefit than IHC 3+, and the label does not extend to HER2-low in this setting, so a HER2-low-driven use would be investigational rather than approved. A negative HER2 read forecloses this rec.
 
 #### Toxicity profile
 
-- Grade 3 AEs ~13%, grade 4 <1%, no treatment-related deaths (the gentlest profile in the dossier)
-- Increased ALT grade 3+ ~3%
-- Anemia and neutropenia grade 3+ ~2% each
-- Acquired NTRK kinase-domain resistance mutations emerge over time
+- **Adjudicated drug-related ILD/pneumonitis 10.5%, with three treatment-related deaths** — the load-bearing safety signal
+- Grade 3+ drug-related AE 40.8% study-wide
+- Nausea, a common GI class effect of the deruxtecan payload
+
+No pulmonary baseline, DLCO, or organ-function labs were supplied to gate the ILD risk, which is precisely why the board held this rec below zanidatamab.
 
 #### Counter-productive mechanisms / dissent
 
-The dissents are about rank, not the drug. The critic objected that the 79% is a pooled cross-tumor basket with no biliary cohort, the thinnest indication base on the board to seat first. The concensusite argued that seating a sub-1% NTRK read above the 15-20% IDH1 and 10-15% FGFR2 axes inverts the testing priority the guidelines set. The advocate, reading the preference file plainly, pulled the rank back because a sub-1% read is the one the patient is least likely to ever act on. The acquired NTRK resistance mutations are the one genuine mechanism-level risk to durability over time.
+Three personas dissented, so the status is considered_with_caveats, and the rec is kept on the list as considered-and-held-below rather than dropped, so the reader sees the HER2 option the board deliberately downgraded. The conservative, critic, and advocate all held T-DXd below zanidatamab on the 10.5% adjudicated ILD rate and three treatment-related ILD deaths, with no pulmonary baseline to gate against. Because no persona ranked it above zanidatamab, the board recorded this as a shared downgrade rather than a formal veto. The ILD is a genuine mechanism-level risk: on-mechanism pulmonary injury from the payload can be fatal, which is what moves the counter-productive severity to Moderate. If re-entered, it should be gated on a confirmed IHC 3+ tumor plus a baseline pulmonary assessment and a written ILD-monitoring plan; on that basis the conservative would not block it.
 
 #### Practical considerations
 
-Oral, 100 mg BID. Open basket trial (NCT02576431) satisfies prefers_trials. NCCN BTC v2.2025 lists it via the tumor-agnostic NTRK label. An RNA-based assay is the gate; DNA-only panels can miss the fusion.
+IV every three weeks. Tumor-agnostic HER2 (IHC 3+) accelerated approval via the basket route rather than a dedicated biliary listing. The first-line successor trial NCT06467357 pairs T-DXd with rilvegostomig for HER2-expressing disease, relevant only if the patient is HER2-positive and treatment-naive.
 
 #### Why this rank
 
-Agreement drops to 0.2 here (three endorse, two dissent), the gap from the rank-6 cluster reflecting the cross-tumor evidence base and the prevalence problem rather than any doubt about activity if a fusion confirms. The risktaker would seat it first on effect size; the rest of the board would not put the least CCA-anchored, least likely-to-be-positive row that high.
+Agreement -0.6, the lowest in the set, from three dissents and no endorsements. It sits below zanidatamab in its own HER2 lane and below every approved single-agent option on the safety downgrade. It stays visible at rank 8 rather than being cut so the reader can see what the board weighed and why it pulled back — the requirement that considered-and-rejected options remain on the table.
 
 #### Per-trial detail
 
 | Therapeutic agent | Efficacy | Toxicity | Reference |
 |---|---|---|---|
-| Larotrectinib — pooled TRK-fusion basket (NAVIGATE and others), n=159 | ORR 79% (95% CI 72-85); mDoR 35.2 mo; mOS 44.4 mo | Grade 3 ~13%, grade 4 <1%; ALT increase ~3% G3+; no TRAE deaths | [PMID 32092306](https://pubmed.ncbi.nlm.nih.gov/32092306), [NCT02576431](https://clinicaltrials.gov/study/NCT02576431) |
+| Trastuzumab deruxtecan — DESTINY-PanTumor02 biliary cohort | ORR 22% (95% CI 10.6-37.6); IHC 3+ subgroup 56.3-61.3% | ILD/pneumonitis 10.5% with 3 TRAE deaths; grade 3+ AE 40.8% | [PMID 37870536](https://pubmed.ncbi.nlm.nih.gov/37870536), [NCT04482309](https://clinicaltrials.gov/study/NCT04482309) |
 
 ---
 
-### Rank 8. Pembrolizumab (if MSI-H/dMMR or TMB-high confirmed)
+### Rank 9. Pembrolizumab (if MSI-H/dMMR or TMB-high confirmed)
 
 *Conditional on `msi_tmb:positive`. Foreclosed if MSI/MMR and TMB are not high.*
 
@@ -455,7 +498,7 @@ Moderate in the MSI-H/dMMR or TMB-high subset, with the long-tail durability che
 
 #### Counter-productive mechanisms / dissent
 
-The advocate surfaced it and declined to penalize the IV route since no modality veto exists. The conservative and critic qualified rather than dissented: the immune toxicity is well-characterized, but the missing CCA-specific subgroup ORR is the gap to name when offering this. A confirmed MSI-H or TMB-high read still admits the patient to the labeled indication. The dissent is preference and evidence-flavored, not mechanistic.
+The advocate surfaced it and declined to penalize the IV route since no modality veto exists. The critic and concensusite noted it as a legitimate conditional option but kept it off their ranked five on prevalence and the missing CCA-specific subgroup ORR, not on any mechanism objection. A confirmed MSI-H or TMB-high read still admits the patient to the labeled indication. The dissent is preference and evidence-flavored, not mechanistic; T-cell exhaustion is a theoretical checkpoint risk but was not raised for this biomarker-selected setting.
 
 #### Practical considerations
 
@@ -463,7 +506,7 @@ IV every three weeks. Open MSI-H/TMB-high basket (NCT02628067) covers prefers_tr
 
 #### Why this rank
 
-Agreement 0.2 (one explicit endorse, two qualified). Tied with larotrectinib on score and seated below it because larotrectinib's response magnitude, if its fusion confirms, is larger; both sit well below the rank-2-through-6 cluster on the thin, inferred biliary evidence.
+Agreement 0.2, with one explicit endorsement. It sits last because MSI-H/dMMR runs only 1-3% in biliary cancer, the lowest-prevalence positive on the panel, and KEYNOTE-158 publishes no CCA-specific subgroup ORR, so the biliary magnitude is inferred from a 27-tumor pool. When it does confirm, the durability is real, which is the advocate's reason for keeping it ranked rather than dropping it.
 
 #### Per-trial detail
 
@@ -474,10 +517,10 @@ Agreement 0.2 (one explicit endorse, two qualified). Tied with larotrectinib on 
 
 ## Classes examined but not ranked
 
-- **Trastuzumab deruxtecan (HER2 ADC):** ranked at not_recommended (rank 9) rather than dropped, so the board's veto stays visible. The conservative vetoed it on adjudicated drug-related ILD of 10.5% with three treatment-related deaths and no pulmonary baseline supplied to gate against; the veto lifts only on a documented HER2 IHC 3+ read plus a baseline pulmonary assessment and a written ILD-monitoring plan. The critic flagged that the headline 61.3% is a post-hoc IHC 3+ subgroup, not the registered biliary-cohort ORR of 22% (n=41). Zanidatamab covers the HER2 lane more safely, so T-DXd is held in reserve behind the veto conditions. See [PMID 37870536](https://pubmed.ncbi.nlm.nih.gov/37870536).
-- **Entrectinib (NTRK fusion):** an alternative to larotrectinib for the same rare fusion (ORR 57.4%, [PMID 31838007](https://pubmed.ncbi.nlm.nih.gov/31838007)). Defensible if NTRK confirms; not separately ranked because larotrectinib carries the larger response signal in the same lane and the same RNA gate resolves both.
+- **Larotrectinib and entrectinib (NTRK fusion):** both are tumor-agnostically active — larotrectinib ORR 79% in the pooled TRK basket ([PMID 32105622](https://pubmed.ncbi.nlm.nih.gov/32105622)), entrectinib ORR 57.4% ([PMID 31838007](https://pubmed.ncbi.nlm.nih.gov/31838007)) — but NTRK fusions run under 1% in CCA, the lowest-prevalence axis on the panel, and the evidence is cross-tumor pooled with no biliary cohort. The critic and concensusite kept them off the ranked set on that inversion of testing priority. Defensible if the RNA arm returns a fusion; the same panel resolves both.
 - **Selpercatinib (RET fusion):** tumor-agnostic, ORR 43.9% in the LIBRETTO-001 basket ([PMID 36029780](https://pubmed.ncbi.nlm.nih.gov/36029780)), but a 7% grade-5 TEAE rate and rare RET fusions in CCA kept it off the ranked set per the conservative and critic. Defensible if RET confirms; resolved by the same RNA arm.
-- **Adagrasib-class KRAS G12C inhibitors:** the biliary readout is a 12-patient cohort with a ROBINS-I Serious rating, the single weakest evidence row in the set, and no society lists a BTC-specific KRAS G12C recommendation. Trial enrollment (NCT05722327) is the route here, not a ranked recommendation.
+- **Adagrasib-class KRAS G12C inhibitors:** the biliary readout is a 12-patient cohort at ORR 41.7% with a ROBINS-I Serious rating ([PMID 37099736](https://pubmed.ncbi.nlm.nih.gov/37099736)), the single weakest evidence row in the set, and no society lists a BTC-specific KRAS G12C recommendation. Trial enrollment (NCT05722327) is the route here, not a ranked recommendation.
+- **Next-generation FGFR2 agents below lirafugratinib (gunagratinib, tinengotinib, fanregratinib, TYRA-200, 3D185):** mechanistically coherent for the FGFR2 lane, but each rests on an underpowered or non-Western-registered readout — gunagratinib on n=17 (ORR 52.9%, [doi:10.1200/JCO.2023.41.4_suppl.572](https://doi.org/10.1200/JCO.2023.41.4_suppl.572)), tinengotinib on an 11-patient FGFR2 subset (ORR 27.3%, [PMID 38297981](https://pubmed.ncbi.nlm.nih.gov/38297981)) — so the board held them in the trial-enrollment lane rather than ranking them above the approved agents.
 
 ## Ranked prioritization
 
@@ -497,66 +540,66 @@ Agreement 0.2 (one explicit endorse, two qualified). Tied with larotrectinib on 
         <tr>
           <td>2</td>
           <td><strong>Ivosidenib</strong> <span class="scenario-conditional">(conditional on idh1_r132 positive)</span><br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span> <span class="persona persona-advocate">advocate</span></small></td>
-          <td>Moderate — only RCT-grade evidence here (ClarIDHy PFS HR 0.37) but the absolute effect is small (mPFS 2.7 vs 1.4 mo, ORR 2%); benefit is disease control, not shrinkage.</td>
-          <td>Low (QT prolongation ~1% G3; ascites ~7% G3+; fatigue ~3% G3)</td>
-          <td><strong>Low</strong> <span class="cpm-desc">(no counter-productive vector; dissent is depth-of-response rank order, not mechanism)</span></td>
-          <td><strong>The cleanest evidence in the set on a randomized phase 3, but the single-agent payoff is disease stabilization rather than shrinkage; foreclosed if IDH1 R132 is wild-type.</strong></td>
+          <td>Moderate for control, low for shrinkage: randomized PFS HR 0.37 (pmid:32416072) but ORR only 2% and ITT OS non-significant (HR 0.69, p=0.060).</td>
+          <td>Low (ascites 7%, QT prolongation, fatigue — grade 3+ tracked placebo)</td>
+          <td><strong>Low</strong> <span class="cpm-desc">(no counter-productive vector; risktaker's dissent was magnitude-of-benefit, not mechanism)</span></td>
+          <td><strong>The only randomized and only category-1 option, but the survival claim rests on a PFS win and crossover modeling — buys control, not response.</strong></td>
         </tr>
         <tr>
           <td>3</td>
           <td><strong>Futibatinib</strong> <span class="scenario-conditional">(conditional on fgfr2_fusion positive)</span><br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span> <span class="persona persona-advocate">advocate</span></small><br><small><em>dissent:</em> <span class="persona persona-conservative">conservative</span></small></td>
-          <td>High in FGFR2-fusion subset — ORR 42% (FOENIX-CCA2) with cross-trial concordance to pemigatinib (FIGHT-202); the nearest thing to replication here.</td>
-          <td>Moderate (hyperphosphatemia G3 ~30%; AST increase ~7%; stomatitis/fatigue ~6%)</td>
-          <td><strong>Low</strong> <span class="cpm-desc">(on-target hyperphosphatemia is manageable, not goal-blunting; conservative dissent is toxicity-burden)</span></td>
-          <td><strong>Targets the highest-yield CCA axis with cross-trial-concordant 42% ORR; the on-target 30% grade-3 hyperphosphatemia is the tradeoff against the gentler pemigatinib.</strong></td>
+          <td>Moderate-to-high in FGFR2-fusion disease: ORR 42%, mOS 21.7 mo (pmid:36652354), concordant in direction with FIGHT-202 and the selective agents.</td>
+          <td>Moderate (hyperphosphatemia 30% G3+, AST rise, stomatitis, fatigue)</td>
+          <td><strong>Low</strong> <span class="cpm-desc">(on-target FGFR inhibition; acquired kinase-domain resistance blunts durability but covalent binding delays escape)</span></td>
+          <td><strong>The published, on-label FGFR2 anchor with a resistance-coverage edge for sequencing; response is a surrogate endpoint with no randomized comparator.</strong></td>
         </tr>
         <tr>
           <td>4</td>
-          <td><strong>Pemigatinib</strong> <span class="scenario-conditional">(conditional on fgfr2_fusion positive)</span><br><small><em>endorse:</em> <span class="persona persona-conservative">conservative</span> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span></small></td>
-          <td>High in FGFR2-fusion subset — ORR 35.5% (FIGHT-202), concordant with futibatinib; gentler grade-3 profile but immature OS.</td>
-          <td>Moderate (hypophosphatemia G3+ ~12%; serous retinal detachment ~4%; hyperphosphatemia 55% any-grade with no G3-4)</td>
-          <td><strong>Low</strong> <span class="cpm-desc">(on-target FGFR phosphate dysregulation is managed, not counter-productive to the antitumor goal)</span></td>
-          <td><strong>The same FGFR2-fusion gate as futibatinib with a gentler grade-3 profile and longer track record; the within-lane choice turns on the toxicity-versus-resistance-coverage tradeoff.</strong></td>
+          <td><strong>Pemigatinib</strong> <span class="scenario-conditional">(conditional on fgfr2_fusion positive)</span><br><small><em>endorse:</em> <span class="persona persona-conservative">conservative</span> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span> <span class="persona persona-advocate">advocate</span></small></td>
+          <td>Moderate in FGFR2-fusion disease: ORR 35.5% (pmid:32203698), concordant with futibatinib in direction; single-arm surrogate endpoint.</td>
+          <td>High (grade 3+ AE 64%; hyperphosphatemia 55%, retinal detachment, hypophosphatemia)</td>
+          <td><strong>Low</strong> <span class="cpm-desc">(on-target FGFR inhibition; FGFR1-driven hyperphosphatemia is on-mechanism; acquired resistance blunts durability)</span></td>
+          <td><strong>The longest-tenured FGFR2 option with the deepest safety record; edged below futibatinib on resistance-coverage sequencing, not on efficacy.</strong></td>
         </tr>
         <tr>
           <td>5</td>
-          <td><strong>Zanidatamab</strong> <span class="scenario-conditional">(conditional on erbb2_amp positive)</span><br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span></small></td>
-          <td>High in HER2-positive subset — confirmed ORR 41.3% with mDoR 12.9 mo in the only dedicated biliary HER2 trial (HERIZON-BTC-01).</td>
-          <td>Low (decreased ejection fraction G3 ~3%; diarrhea G3 ~5%; standard echo monitoring)</td>
-          <td><strong>Low</strong> <span class="cpm-desc">(HER2 blockade is direct and on-target with a managed cardiac signal)</span></td>
-          <td><strong>The guideline-endorsed HER2 lead on dedicated biliary-trial data; gated on HER2 IHC/ISH (not an NGS copy-number call) and on a subsite that drives HER2 prevalence.</strong></td>
+          <td><strong>Lirafugratinib (RLY-4008)</strong> <span class="scenario-conditional">(conditional on fgfr2_fusion positive)</span><br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-advocate">advocate</span></small><br><small><em>dissent:</em> <span class="persona persona-conservative">conservative</span> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span></small></td>
+          <td>Moderate-to-high in FGFR2-fusion disease but low-certainty: ORR 46.5% (doi:10.1200/JCO.2026.44.2_suppl.476) is single-arm, abstract-only, pre-approval.</td>
+          <td>Moderate (palmar-plantar erythrodysesthesia 32.8% G3+, stomatitis 12.1%)</td>
+          <td><strong>Moderate</strong> <span class="cpm-desc">(critic and conservative dissented on evidence maturity and the 32.8% hand-foot burden, not a counter-productive mechanism per se)</span></td>
+          <td><strong>The highest-ORR FGFR2 option and the best hyperphosphatemia profile, but abstract-only, pre-approval, and carrying a one-in-three grade-3 hand-foot rate.</strong></td>
         </tr>
         <tr>
           <td>6</td>
-          <td><strong>Dabrafenib + trametinib</strong> <span class="scenario-conditional">(conditional on braf_v600e positive)</span><br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-concensusite">concensusite</span> <span class="persona persona-advocate">advocate</span></small></td>
-          <td>High in BRAF V600E subset — ORR 47%, mPFS 9.0 mo (ROAR), but on a small single-arm basket cohort (n=43) at 1-5% prevalence.</td>
-          <td>Moderate (pyrexia ~19%; treatment-related serious AEs ~21%; GGT increase G3+ ~12%; any serious AE ~40%)</td>
-          <td><strong>Low</strong> <span class="cpm-desc">(the pyrexia/serious-AE load is a patient-AE burden, not a goal-blunting mechanism)</span></td>
-          <td><strong>Strong 47% ORR on a true V600E with dual guideline-plus-agnostic-label backing; the higher serious-AE and pyrexia load is what keeps it below the gentler oral options at equal agreement.</strong></td>
+          <td><strong>Zanidatamab</strong> <span class="scenario-conditional">(conditional on erbb2_amp positive)</span><br><small><em>endorse:</em> <span class="persona persona-conservative">conservative</span> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span> <span class="persona persona-advocate">advocate</span></small></td>
+          <td>Moderate in HER2-positive disease: confirmed ORR 41.3%, mDoR 12.9 mo (pmid:37276871), single-arm pivotal cohort with no randomized comparator.</td>
+          <td>Low (diarrhea 5% G3, decreased ejection fraction 3% G3, infusion reactions)</td>
+          <td><strong>Low</strong> <span class="cpm-desc">(on-target HER2 blockade; no mechanism-level dissent — the tension was T-DXd's ILD, resolved by ranking zanidatamab ahead)</span></td>
+          <td><strong>The dedicated-trial HER2 lead, ranked above T-DXd on a 10.5% ILD signal with no pulmonary baseline on file; gated on IHC 3+ with reflex ISH.</strong></td>
         </tr>
         <tr>
           <td>7</td>
-          <td><strong>Larotrectinib</strong> <span class="scenario-conditional">(conditional on ntrk_fusion positive)</span><br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-advocate">advocate</span></small><br><small><em>dissent:</em> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span></small></td>
-          <td>High in NTRK-fusion subset — ORR 79% pooled, mDoR 35.2 mo; but sub-1% prevalence and no CCA-specific cohort temper the prior.</td>
-          <td>Low (grade 3 AEs ~13%, grade 4 <1%; ALT increase ~3%; no treatment-related deaths)</td>
-          <td><strong>Moderate</strong> <span class="cpm-desc">(critic dissented on cross-tumor extrapolation; acquired NTRK kinase-domain resistance can blunt durability over time)</span></td>
-          <td><strong>The largest response signal anywhere here if the rare fusion confirms, but the evidence is cross-tumor pooled with no biliary cohort and prevalence is sub-1%.</strong></td>
+          <td><strong>Dabrafenib + trametinib</strong> <span class="scenario-conditional">(conditional on braf_v600e positive)</span><br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-concensusite">concensusite</span></small></td>
+          <td>Moderate-to-high in BRAF V600E disease: ORR 47%, mPFS 9.0 mo (pmid:32818466); small single-arm cohort, low prevalence caps expected yield.</td>
+          <td>Moderate (pyrexia 19%, GGT rise 12% G3+, serious AE 40%)</td>
+          <td><strong>Low</strong> <span class="cpm-desc">(on-target MAPK inhibition; MEK co-inhibition mitigates paradoxical RAF activation; no mechanism-level dissent)</span></td>
+          <td><strong>A high-response, dual-endorsed doublet if V600E confirms; ranked low on 1-5% prevalence and a small single-arm cohort, not on any objection.</strong></td>
         </tr>
         <tr>
           <td>8</td>
-          <td><strong>Pembrolizumab</strong> <span class="scenario-conditional">(conditional on msi_tmb positive)</span><br><small><em>endorse:</em> <span class="persona persona-advocate">advocate</span></small></td>
-          <td>Moderate in MSI-H/TMB-high subset — ORR ~29-34% (KEYNOTE-158) with durable responders, but no CCA-specific subgroup and ~1-3% prevalence.</td>
-          <td>Low (immune-mediated grade 3-5 TRAEs ~14.6%; one treatment-related death)</td>
-          <td><strong>Low</strong> <span class="cpm-desc">(no counter-productive vector at this depth; dissent was preference/evidence-flavored, not mechanistic)</span></td>
-          <td><strong>Offers a durable immunotherapy tail if MSI-H/dMMR or TMB-high confirms, but the biliary magnitude is inferred from a cross-tumor basket with no CCA-specific subgroup.</strong></td>
+          <td><strong>Trastuzumab deruxtecan</strong> <span class="scenario-conditional">(conditional on erbb2_amp positive)</span><br><small><em>dissent:</em> <span class="persona persona-conservative">conservative</span> <span class="persona persona-critic">critic</span> <span class="persona persona-advocate">advocate</span></small></td>
+          <td>High in IHC 3+ subgroup (ORR 56-61%) but low-certainty overall: full biliary-cohort ORR 22%, investigator-assessed (pmid:37870536), gated by ILD risk.</td>
+          <td>High (ILD/pneumonitis 10.5% with 3 treatment-related deaths; grade 3+ AE 40.8%)</td>
+          <td><strong>Moderate</strong> <span class="cpm-desc">(on-mechanism ILD/pneumonitis from the deruxtecan payload can cause fatal pulmonary injury, blunting the goal in an unmonitored patient)</span></td>
+          <td><strong>Competitive IHC 3+ activity held below zanidatamab on a 10.5% ILD signal with three deaths and no pulmonary baseline; re-entry needs an ILD-monitoring plan.</strong></td>
         </tr>
         <tr>
           <td>9</td>
-          <td><strong>Trastuzumab deruxtecan</strong> <span class="scenario-conditional">(not recommended — board veto; conditional on erbb2_amp positive)</span><br><small><em>veto:</em> <span class="persona persona-conservative">conservative</span></small></td>
-          <td>Low-to-moderate as registered (biliary-cohort ORR 22%); the 61.3% IHC 3+ figure is a post-hoc unadjusted subgroup, not the pre-specified endpoint.</td>
-          <td>High (adjudicated ILD/pneumonitis 10.5% with three treatment-related deaths; grade 3+ AEs ~40.8% study-wide)</td>
-          <td><strong>High</strong> <span class="cpm-desc">(conservative veto stands on the uncharacterized ILD long-tail; treatment-related deaths make the toxicity itself the goal-defeating mechanism)</span></td>
-          <td><strong>Not recommended as the HER2 lead: a documented ILD signal with three treatment-related deaths and no pulmonary baseline to gate against, where zanidatamab covers HER2 more safely.</strong></td>
+          <td><strong>Pembrolizumab</strong> <span class="scenario-conditional">(conditional on msi_tmb positive)</span><br><small><em>endorse:</em> <span class="persona persona-advocate">advocate</span></small></td>
+          <td>High and durable when MSI-H/dMMR positive (ORR 34.3%, mOS 23.5 mo, pmid:31682550) but low prevalence (1-3%); TMB-high a weaker predictor.</td>
+          <td>Low (immune-mediated AEs; grade 3-5 14.6%, one treatment-related death)</td>
+          <td><strong>Low</strong> <span class="cpm-desc">(T-cell exhaustion is a theoretical checkpoint risk but not raised by any persona for this biomarker-selected setting)</span></td>
+          <td><strong>Durable benefit when MSI-H/dMMR confirms, resolved free by the rank-1 workup; ranked last on 1-3% prevalence and no published CCA subgroup ORR.</strong></td>
         </tr>
       </tbody>
     </table>
@@ -568,12 +611,13 @@ Agreement 0.2 (one explicit endorse, two qualified). Tied with larotrectinib on 
 
 ## Caveats
 
-- **Evidence-base caveats.** Outside ClarIDHy (the one randomized phase 3), every ranked therapeutic rests on single-arm phase 2 data with a surrogate ORR endpoint and no comparator. The FGFR2 lane carries the nearest thing to replication, two independent trials converging on the same axis, but neither is randomized. The NTRK, RET, and immunotherapy rows are pooled cross-tumor baskets with no CCA-specific subgroup ORR, so the biliary magnitude is inferred. The KRAS G12C biliary readout is a 12-patient cohort, the weakest row in the set, and stays a trial-enrollment route rather than a ranked recommendation.
-- **Biomarker dependency.** Every rank below the workup is conditional on its own feature reading positive. The rankings assume that confirmation arrives; without it, none of ranks 2-8 applies. The protein gates are not interchangeable with the DNA panel: HER2 needs IHC with reflex ISH, BRAF needs a true V600E by NGS/PCR, and dMMR is fastest confirmed by MMR IHC with reflex MSI-PCR.
+- **Evidence-base caveats.** Outside ClarIDHy (the one randomized phase 3), every ranked therapeutic rests on single-arm phase 2 data with a surrogate ORR endpoint and no comparator. The FGFR2 lane carries the nearest thing to replication, two approved-agent trials converging on the same axis, but neither is randomized, and the FGFR2-selective option (lirafugratinib) sits on an abstract-only readout with no peer-reviewed full text, no PubMed record, and a pending September 2026 PDUFA. The immunotherapy rows are pooled cross-tumor baskets with no CCA-specific subgroup ORR, so the biliary magnitude is inferred. The KRAS G12C biliary readout is a 12-patient cohort, the weakest row in the set, and stays a trial-enrollment route rather than a ranked recommendation.
+- **Biomarker dependency.** Every rank below the workup is conditional on its own feature reading positive. The rankings assume confirmation arrives; without it, none of ranks 2-9 applies. The protein gates are not interchangeable with the DNA panel: HER2 needs IHC with reflex ISH, BRAF needs a true V600E by NGS/PCR, and dMMR is fastest confirmed by MMR IHC with reflex MSI-PCR. A low-positive HER2 read (below IHC 3+) is a weaker predictor than a 3+ result and would make T-DXd investigational rather than on-label in this setting.
 - **What would change the ranking.**
-    - A positive IDH1 R132 read keeps ivosidenib at rank 2 on evidence grade; a positive FGFR2 fusion alongside it would prompt the risktaker's reorder toward the higher-response FGFR lane, since depth of response, not the lowest grade-3 rate, is the tiebreaker the risktaker argued for in advanced disease.
-    - A documented HER2 IHC 3+ read plus a baseline pulmonary assessment and a written ILD-monitoring plan would lift the conservative's T-DXd veto and move it from not_recommended into the HER2 lane behind zanidatamab.
-    - Organ-function labs, performance status, prior-therapy history, or an actual patient preference would re-rank the whole set; a stated toxicity veto on hyperphosphatemia, pyrexia, or ILD would reorder the relevant lanes immediately.
+    - A positive IDH1 R132 read holds ivosidenib at rank 2 on evidence grade; a positive FGFR2 fusion alongside it would prompt the risktaker's and advocate's reorder toward the higher-response FGFR lane, since depth of response, not the lowest grade-3 rate, is the tie-break they argue for in advanced disease.
+    - Lirafugratinib's September 2026 PDUFA read plus a peer-reviewed ReFocus safety table would lift it from considered_with_caveats toward the approved FGFR agents; a negative full-paper audit of response ascertainment would push it further down.
+    - A documented HER2 IHC 3+ read plus a baseline pulmonary assessment and a written ILD-monitoring plan would move T-DXd up within the HER2 lane; the conservative stated they would not block it on those conditions.
+    - Organ-function labs, performance status, prior-therapy history, or an actual patient preference would re-rank the whole set; a stated toxicity veto on hyperphosphatemia, pyrexia, hand-foot syndrome, or ILD would reorder the relevant lanes immediately.
 - **Re-scoping caveat.** This ranking is a placeholder over a scope-unknown intake. If real molecular results, prior lines, performance status, or patient values arrive, re-run intake; the ranking narrows sharply to whichever feature reads positive, and if none does, the case has no within-scope recommendations.
 
 ## Sources
@@ -582,15 +626,24 @@ Agreement 0.2 (one explicit endorse, two qualified). Tied with larotrectinib on 
 
 - [31682550](https://pubmed.ncbi.nlm.nih.gov/31682550) — Marabelle et al., KEYNOTE-158 MSI-H/dMMR, *J Clin Oncol* 2020
 - [31838007](https://pubmed.ncbi.nlm.nih.gov/31838007) — Doebele et al., entrectinib NTRK basket, *Lancet Oncol* 2020
-- [32092306](https://pubmed.ncbi.nlm.nih.gov/32092306) — Hong et al., larotrectinib TRK-fusion basket, *Lancet Oncol* 2020
+- [32105622](https://pubmed.ncbi.nlm.nih.gov/32105622) — Hong et al., larotrectinib TRK-fusion pooled analysis, *Lancet Oncol* 2020
 - [32203698](https://pubmed.ncbi.nlm.nih.gov/32203698) — Abou-Alfa et al., FIGHT-202 pemigatinib, *Lancet Oncol* 2020
 - [32416072](https://pubmed.ncbi.nlm.nih.gov/32416072) — Abou-Alfa et al., ClarIDHy ivosidenib, *Lancet Oncol* 2020
 - [32818466](https://pubmed.ncbi.nlm.nih.gov/32818466) — Subbiah et al., ROAR dabrafenib + trametinib, *Lancet Oncol* 2020
 - [32919526](https://pubmed.ncbi.nlm.nih.gov/32919526) — Marabelle et al., KEYNOTE-158 TMB-high, *Lancet Oncol* 2020
+- [34848557](https://pubmed.ncbi.nlm.nih.gov/34848557) — Wu et al., mutant IDH IFNγ-TET2 immunoevasion (preclinical), *Cancer Discov* 2022
 - [36029780](https://pubmed.ncbi.nlm.nih.gov/36029780) — Subbiah et al., LIBRETTO-001 selpercatinib, *Lancet Oncol* 2022
 - [36652354](https://pubmed.ncbi.nlm.nih.gov/36652354) — Goyal et al., FOENIX-CCA2 futibatinib, *NEJM* 2023
-- [37423227](https://pubmed.ncbi.nlm.nih.gov/37423227) — Harding et al., HERIZON-BTC-01 zanidatamab, *Lancet Oncol* 2023
+- [36914633](https://pubmed.ncbi.nlm.nih.gov/36914633) — zanidatamab biparatopic HER2 clustering (preclinical), *Nat Commun* 2023
+- [37099736](https://pubmed.ncbi.nlm.nih.gov/37099736) — Bekaii-Saab et al., adagrasib KRAS G12C solid tumors, *J Clin Oncol* 2023
+- [37276871](https://pubmed.ncbi.nlm.nih.gov/37276871) — Harding et al., HERIZON-BTC-01 zanidatamab, *Lancet Oncol* 2023
 - [37870536](https://pubmed.ncbi.nlm.nih.gov/37870536) — Meric-Bernstam et al., DESTINY-PanTumor02 T-DXd, *J Clin Oncol* 2024
+- [38297981](https://pubmed.ncbi.nlm.nih.gov/38297981) — tinengotinib FGFR2 phase 1 subset, 2024
+
+**Conference abstract (DOI):**
+
+- [10.1200/JCO.2026.44.2_suppl.476](https://doi.org/10.1200/JCO.2026.44.2_suppl.476) — lirafugratinib ReFocus FGFRi-naive CCA cohort, ASCO GI 2026 (abstract-only)
+- [10.1200/JCO.2023.41.4_suppl.572](https://doi.org/10.1200/JCO.2023.41.4_suppl.572) — gunagratinib FGFR2 cohort, ASCO GI 2023 (abstract-only)
 
 **ClinicalTrials.gov (NCT):**
 
@@ -601,19 +654,21 @@ Agreement 0.2 (one explicit endorse, two qualified). Tied with larotrectinib on 
 - [NCT02924376](https://clinicaltrials.gov/study/NCT02924376) — FIGHT-202 (pemigatinib)
 - [NCT02989857](https://clinicaltrials.gov/study/NCT02989857) — ClarIDHy (ivosidenib)
 - [NCT04466891](https://clinicaltrials.gov/study/NCT04466891) — HERIZON-BTC-01 (zanidatamab)
+- [NCT04482309](https://clinicaltrials.gov/study/NCT04482309) — DESTINY-PanTumor02 (trastuzumab deruxtecan)
+- [NCT04526106](https://clinicaltrials.gov/study/NCT04526106) — ReFocus (lirafugratinib; the CCA cohort, distinct from the CCA-excluding basket NCT07359820)
 
 ## Transparency artifacts
 
-- [Trial table](trials.md) — 15 rows, all columns
-- [Evidence list](evidence.md) — 12 clinical-evidence rows + 7 preclinical rows
+- [Trial table](trials.md) — 30 rows, all columns
+- [Evidence list](evidence.md) — 26 clinical-evidence rows + 12 preclinical rows
 - [Master manuscripts table](manuscripts.md) — every paper considered, with n, effect, variance, and toxicity columns
-- [Tumor-board transcript](board.md) — 5 positions, 20 cross-critiques
+- [Tumor-board transcript](board.md) — 5 positions, 30 cross-critiques
 - [Recommendations table](recommendations.md) — full ranked detail with the biomarker-conditional flag
 - [Plain-language summary](plain_language.md) — patient/caregiver track
 
 ## Run log
 
-Authored June 2026 from a scope-unknown intake: the only input was "metastatic cholangiocarcinoma, no other information." With no molecular profiling supplied, the profile enumerated the recognized actionable biliary panel as candidate features, every one flagged `ngs_pending`, and comprehensive genomic profiling became the rank-1 gate. Age band, ECOG, stage detail, geography, and the balanced 0.5 efficacy/toxicity weight are placeholders, not user-supplied values, and are flagged as assumptions throughout. The nine ranked rows synthesize five board positions and twenty cross-critiques; agreement scores follow the (endorse − dissent − 2·veto)/5 rule, with ranking-order disputes distinguished from dissent against an intervention's use. The conservative's T-DXd veto is preserved at not_recommended rather than dropped. The cross-cutting caveat carries the negative-result foreclosure mapping. If real molecular results, prior lines, performance status, or patient values arrive, re-run intake. Humanizer pass applied June 2026.
+Re-run July 2026 after the board fully re-deliberated over a refreshed dossier: the trial screen added 16 new on-axis studies (30 trials total, 26 clinical-evidence rows, 12 preclinical). The intake remains scope-unknown — the only input was "metastatic cholangiocarcinoma, no other information" — so the profile enumerates the recognized actionable biliary panel as candidate features, every one flagged `ngs_pending`, with comprehensive genomic profiling as the rank-1 gate. Age band, ECOG, stage detail, geography, and the balanced 0.5 efficacy/toxicity weight are placeholders, not user-supplied values, and are flagged as assumptions throughout. The nine ranked rows synthesize five board positions and thirty cross-critiques; agreement scores follow the (endorse − dissent − 2·veto)/5 rule, with ranking-order disputes distinguished from dissent against an intervention's use. Two rows sit at considered_with_caveats — lirafugratinib (three-persona dissent on abstract-only maturity and guideline order) and T-DXd (three-persona shared downgrade on the ILD signal). No formal vetoes were issued this run; the prior run's T-DXd veto resolved to a shared downgrade below zanidatamab. Reference verification promoted corrected identifiers over three upstream drifts still present in the read-only dossier: zanidatamab HERIZON-BTC-01 (pmid 37423227 → 37276871), larotrectinib pooled analysis (pmid 32092306 → 32105622), and the ivosidenib IFNγ-TET2 preclinical anchor (pmid 34880079 → 34848557). Because those source files are upstream-owned, re-run the evidence/target-validator stages to correct them at source. The cross-cutting caveat carries the negative-result foreclosure mapping. If real molecular results, prior lines, performance status, or patient values arrive, re-run intake. Humanizer pass applied July 2026.
 
 <!-- libby:downloads:begin -->
 
@@ -622,19 +677,19 @@ Authored June 2026 from a scope-unknown intake: the only input was "metastatic c
 ### HTML
 
 - [Target validation paths](target_validation.md?v=0fb86497) — per-feature biomarker-workup table with providers and references, sortable in-browser
-- [Recommendations table](cca-mets-scope-unknown-z3p9-recommendations.html?v=28c7c991) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
-- [Access guide](accessibility.md?v=d1d25923) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table
-- [Access guide (offline)](cca-mets-scope-unknown-z3p9-accessibility.html?v=35d4abb7) — same access-guide content packaged as a self-contained HTML that opens offline
-- [Master manuscripts table](manuscripts.md?v=6260b21b) — every paper considered — n, effect, variance, toxicities, in a sortable in-browser table
-- [Master manuscripts table (offline)](cca-mets-scope-unknown-z3p9-manuscripts.html?v=6214299d) — same manuscripts inventory packaged as a self-contained HTML that opens offline
+- [Recommendations table](cca-mets-scope-unknown-z3p9-recommendations.html?v=f0b69849) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
+- [Access guide](accessibility.md?v=0f1ac5cf) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table
+- [Access guide (offline)](cca-mets-scope-unknown-z3p9-accessibility.html?v=719b462f) — same access-guide content packaged as a self-contained HTML that opens offline
+- [Master manuscripts table](manuscripts.md?v=de7b9de7) — every paper considered — n, effect, variance, toxicities, in a sortable in-browser table
+- [Master manuscripts table (offline)](cca-mets-scope-unknown-z3p9-manuscripts.html?v=7fe9c969) — same manuscripts inventory packaged as a self-contained HTML that opens offline
 
 ### PDF
 
-- [Target validation paths](cca-mets-scope-unknown-z3p9-target-validation.pdf?v=cf15aafe) — diagnostic + biomarker workup that hardens the targetable-feature call
-- [Recommendations table](cca-mets-scope-unknown-z3p9-recommendations.pdf?v=47617e80) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
-- [Access guide](cca-mets-scope-unknown-z3p9-accessibility.pdf?v=d2a22e37) — trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF
-- [Master manuscripts table](cca-mets-scope-unknown-z3p9-manuscripts.pdf?v=fab753c2) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
-- [Patient/caregiver PDF](cca-mets-scope-unknown-z3p9-plain-language.pdf?v=3d839db4) — plain-language summary
+- [Target validation paths](cca-mets-scope-unknown-z3p9-target-validation.pdf?v=e3fd75db) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Recommendations table](cca-mets-scope-unknown-z3p9-recommendations.pdf?v=8bee84fc) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
+- [Access guide](cca-mets-scope-unknown-z3p9-accessibility.pdf?v=dd92c88d) — trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF
+- [Master manuscripts table](cca-mets-scope-unknown-z3p9-manuscripts.pdf?v=c834ccef) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
+- [Patient/caregiver PDF](cca-mets-scope-unknown-z3p9-plain-language.pdf?v=11a205bb) — plain-language summary
 
 <!-- libby:downloads:end -->
 

@@ -2,9 +2,9 @@
 
 # Evidence — `cca-mets-scope-unknown-z3p9`
 
-_This page shows 12 included clinical + 10 included pre-clinical rows, grouped by intervention. 4 clinical and 2 pre-clinical papers were reviewed and excluded — see the [master manuscripts table](manuscripts.md) for the full audit trail._
+_This page shows 18 included clinical + 10 included pre-clinical rows, grouped by intervention. 8 clinical and 2 pre-clinical papers were reviewed and excluded — see the [master manuscripts table](manuscripts.md) for the full audit trail._
 
-## Clinical evidence (12 rows)
+## Clinical evidence (18 rows)
 
 Per-manuscript detail grouped by intervention. Each row is one published clinical-evidence finding. Columns mirror the per-publication decision-support layout used in companion projects (`io-shieldbreak`'s Pharmacodynamic-Results table).
 
@@ -58,7 +58,7 @@ Per-manuscript detail grouped by intervention. Each row is one published clinica
     <table class="trial-table">
       <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
       <tbody>
-        <tr><td>Harding/Bekaii-Saab (2023)<br><em>Lancet Oncology</em></td><td class="num">80</td><td>Cohort 1: HER2 amplified by ISH plus IHC 2+/3+ (4B5 companion antibody); prior gemcitabine-based therapy</td><td>2L+</td><td>Single-arm, open-label phase 2b (HERIZON-BTC-01)</td><td>—</td><td>20 mg/kg IV every 2 weeks</td><td>ORR</td><td>Confirmed ORR (independent central review)</td><td class="num">41.30 %</td><td class="num">30.40–52.80</td><td class="num">—</td><td>mDoR 12.9 mo; mPFS 5.5 mo</td><td>Most common grade 3 treatment-related events were diarrhea (5%) and decreased ejection fraction (3%); infusion-related reactions occurred in 35% (any grade) and diarrhea in 40%. Cardiac monitoring warranted given the ejection-fraction signal.</td><td><span class="rob-badge rob-med">ROBINS-I:Moderate</span></td><td>2b</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37423227">37423227</a></td><td><a href="https://doi.org/10.1016/S1470-2045(23)00242-5">DOI</a></td><td>Pivotal trial driving FDA accelerated approval of zanidatamab in HER2-positive (IHC 3+) BTC. Gating test is HER2 IHC with reflex ISH, not NGS alone, and is untested here. Efficacy/safety from Lancet Oncology abstract and conference follow-up.</td></tr>
+        <tr><td>Harding/Bekaii-Saab (2023)<br><em>Lancet Oncology</em></td><td class="num">80</td><td>Cohort 1: HER2 amplified by ISH plus IHC 2+/3+ (4B5 companion antibody); prior gemcitabine-based therapy</td><td>2L+</td><td>Single-arm, open-label phase 2b (HERIZON-BTC-01)</td><td>—</td><td>20 mg/kg IV every 2 weeks</td><td>ORR</td><td>Confirmed ORR (independent central review)</td><td class="num">41.30 %</td><td class="num">30.40–52.80</td><td class="num">—</td><td>mDoR 12.9 mo; mPFS 5.5 mo</td><td>Most common grade 3 treatment-related events were diarrhea (5%) and decreased ejection fraction (3%); infusion-related reactions occurred in 35% (any grade) and diarrhea in 40%. Cardiac monitoring warranted given the ejection-fraction signal.</td><td><span class="rob-badge rob-med">ROBINS-I:Moderate</span></td><td>2b</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37276871">37276871</a></td><td><a href="https://doi.org/10.1016/S1470-2045(23)00242-5">DOI</a></td><td>Pivotal trial driving FDA accelerated approval of zanidatamab in HER2-positive (IHC 3+) BTC. Gating test is HER2 IHC with reflex ISH, not NGS alone, and is untested here. Efficacy/safety from Lancet Oncology abstract and conference follow-up.</td></tr>
       </tbody>
     </table>
   </div>
@@ -129,7 +129,7 @@ Per-manuscript detail grouped by intervention. Each row is one published clinica
     <table class="trial-table">
       <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
       <tbody>
-        <tr><td>Hong/Hyman (2020)<br><em>Lancet Oncology</em></td><td class="num">159</td><td>NTRK1/2/3 fusion across tumor types and ages; biliary patients treated on the fusion irrespective of subsite</td><td>2L+</td><td>Pooled analysis of three phase 1/2 trials (incl. NAVIGATE)</td><td>—</td><td>100 mg PO twice daily</td><td>ORR</td><td>ORR (independent review)</td><td class="num">79.00 %</td><td class="num">72.00–85.00</td><td class="num">—</td><td>mDoR 35.2 mo; mPFS 28.3 mo; mOS 44.4 mo</td><td>Across the 260-patient safety population, grade 3 AEs in 13% and grade 4 in &lt;1%; most common grade 3+ events were increased ALT (3%), anemia (2%), and decreased neutrophils (2%). No treatment-related deaths.</td><td><span class="rob-badge rob-med">ROBINS-I:Moderate</span></td><td>2b</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/32092306">32092306</a></td><td><a href="https://doi.org/10.1016/S1470-2045(19)30856-3">DOI</a></td><td>Highly selective TRK inhibitor with a tumor-agnostic label and the most durable responses among the fusion inhibitors. Same rare-fusion gate as entrectinib. Safety from the 260-patient pooled safety population.</td></tr>
+        <tr><td>Hong/Hyman (2020)<br><em>Lancet Oncology</em></td><td class="num">159</td><td>NTRK1/2/3 fusion across tumor types and ages; biliary patients treated on the fusion irrespective of subsite</td><td>2L+</td><td>Pooled analysis of three phase 1/2 trials (incl. NAVIGATE)</td><td>—</td><td>100 mg PO twice daily</td><td>ORR</td><td>ORR (independent review)</td><td class="num">79.00 %</td><td class="num">72.00–85.00</td><td class="num">—</td><td>mDoR 35.2 mo; mPFS 28.3 mo; mOS 44.4 mo</td><td>Across the 260-patient safety population, grade 3 AEs in 13% and grade 4 in &lt;1%; most common grade 3+ events were increased ALT (3%), anemia (2%), and decreased neutrophils (2%). No treatment-related deaths.</td><td><span class="rob-badge rob-med">ROBINS-I:Moderate</span></td><td>2b</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/32105622">32105622</a></td><td><a href="https://doi.org/10.1016/S1470-2045(19)30856-3">DOI</a></td><td>Highly selective TRK inhibitor with a tumor-agnostic label and the most durable responses among the fusion inhibitors. Same rare-fusion gate as entrectinib. Safety from the 260-patient pooled safety population.</td></tr>
       </tbody>
     </table>
   </div>
@@ -158,6 +158,90 @@ Per-manuscript detail grouped by intervention. Each row is one published clinica
       <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
       <tbody>
         <tr><td>Bekaii-Saab/Pant (2023)<br><em>Journal of Clinical Oncology</em></td><td class="num">12</td><td>KRAS G12C-mutant pretreated GI tumors; biliary tract cancer cohort n=12 within a pan-tumor basket</td><td>2L+</td><td>Open-label phase 1/2 basket (KRYSTAL-1), pan-tumor cohort</td><td>—</td><td>600 mg PO twice daily</td><td>ORR</td><td>ORR, biliary tract cohort</td><td class="num">41.70 %</td><td class="num">—</td><td class="num">—</td><td>Pan-cohort mDoR 5.3 mo; mPFS 8.6 mo; mOS 15.1 mo</td><td>Grade 3-4 treatment-related AEs in 27% of the treated population (n=63); most common any-grade TRAEs were nausea (49%), diarrhea (48%), fatigue (41%), and vomiting (40%). GI toxicity is the characteristic class effect.</td><td><span class="rob-badge rob-high">ROBINS-I:Serious</span></td><td>2b</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37099736">37099736</a></td><td><a href="https://doi.org/10.1200/JCO.23.00434">DOI</a></td><td>Published KRYSTAL-1 biliary cohort (n=12) gives a small but on-indication KRAS G12C readout, supersedes the no-readout basket NCT05722327 on trials.jsonl. KRAS G12C is rare in CCA (~1%) and gated on tumor NGS.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### Tinengotinib (TT-00420)  
+<small><code>intervention_id: tinengotinib</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Piha-Paul/Javle (2024)<br><em>The Oncologist</em></td><td class="num">48</td><td>Dose-escalation/expansion; 14/48 had cholangiocarcinoma, 11 evaluable, all with disease control carried FGFR2 alterations including post-FGFR-inhibitor resistance</td><td>2L+</td><td>First-in-human, open-label phase 1 dose escalation/expansion (single agent)</td><td>—</td><td>12 mg PO once daily (recommended phase 2 dose)</td><td>ORR</td><td>ORR in FGFR2-altered cholangiocarcinoma subset</td><td class="num">27.30 %</td><td class="num">—</td><td class="num">—</td><td>—</td><td>Grade 3+ events in 43.8% with no grade 4-5; hypertension was the dominant on-target multikinase effect (50% any grade, 27.1% grade 3). PPE, stomatitis, diarrhea, and nausea were mostly low-grade.</td><td><span class="rob-badge rob-high">ROBINS-I:Serious</span></td><td>2b</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/38297981">38297981</a></td><td><a href="https://doi.org/10.1093/oncolo/oyad338">DOI</a></td><td>Phase 1 that seeded the tinengotinib phase 3 (NCT07328919) in FGFR2-altered CCA; the disease-control signal concentrated in FGFR2-altered patients, including some who had progressed on a prior FGFR inhibitor. Gated on an untested FGFR2 alteration. AE and subset data from the Oncologist full text.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### Lirafugratinib (RLY-4008)  
+<small><code>intervention_id: lirafugratinib</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Hollebecque/Kim (2026)<br><em>Journal of Clinical Oncology (ASCO GI 2026 abstract 476)</em></td><td class="num">114</td><td>FGFRi-naive CCA harboring FGFR2 fusions/rearrangements after prior chemotherapy; pivotal ReFocus cohort</td><td>2L+</td><td>Open-label phase 1/2 pivotal cohort (ReFocus, NCT04526106)</td><td>—</td><td>70 mg PO once daily (recommended phase 2 dose)</td><td>ORR</td><td>ORR (independent review)</td><td class="num">46.50 %</td><td class="num">37.10–56.10</td><td class="num">—</td><td>mDoR 11.8 mo; mPFS 11.3 mo</td><td>The FGFR2-selective design largely spares FGFR1-driven hyperphosphatemia; the leading grade 3+ treatment-related events were palmar-plantar erythrodysesthesia (32.8%) and stomatitis (12.1%).</td><td><span class="rob-badge rob-med">ROBINS-I:Moderate</span></td><td>2b</td><td><span class="fit-badge fit-partial">partial</span></td><td>—</td><td><a href="https://doi.org/10.1200/JCO.2026.44.2_suppl.476">DOI</a></td><td>FGFR2-selective inhibitor; the ReFocus CCA cohort supports an NDA under FDA priority review (PDUFA Sept 2026). Abstract-only; no PubMed record, so pmid is null. AE detail beyond the two headline grade 3+ terms not in the abstract.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### Gunagratinib (ICP-192)  
+<small><code>intervention_id: gunagratinib</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Guo/Li (2023)<br><em>Journal of Clinical Oncology (ASCO GI 2023 abstract 572)</em></td><td class="num">18</td><td>FGFR2 fusion/rearrangement CCA after prior chemotherapy; 18 enrolled, 17 with &gt;=1 tumor assessment</td><td>2L+</td><td>Open-label phase 2a dose-expansion (ICP-CL-00301, NCT03758664)</td><td>—</td><td>recommended phase 2 dose, oral daily (schedule not specified in abstract)</td><td>ORR</td><td>ORR in FGFR2 fusion/rearrangement cohort</td><td class="num">52.90 %</td><td class="num">—</td><td class="num">—</td><td>mPFS 6.93 mo</td><td>Grade 3+ treatment-emergent AEs in 35.3%, led by transaminase elevation, nail disorders, and anemia. One serious treatment-related event, no treatment-related deaths, and no AE-driven discontinuations.</td><td><span class="rob-badge rob-high">ROBINS-I:Serious</span></td><td>2b</td><td><span class="fit-badge fit-partial">partial</span></td><td>—</td><td><a href="https://doi.org/10.1200/JCO.2023.41.4_suppl.572">DOI</a></td><td>Covalent pan-FGFR inhibitor with FDA orphan designation in CCA; on-indication phase 2a signal in FGFR2-altered disease. Abstract-only, no PubMed record. Per-term grade 3+ rates not broken out in the abstract.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### Fanregratinib (HMPL-453)  
+<small><code>intervention_id: fanregratinib</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>—/— (2026)<br><em>ESMO Gastrointestinal Cancers Congress 2026 (abstract 343RO)</em></td><td class="num">—</td><td>FGFR2 fusion/rearrangement intrahepatic CCA after &gt;=1 prior systemic line; all had prior chemotherapy, 72% prior immunotherapy; registration cohort across 53 China sites</td><td>2L+</td><td>Single-arm, open-label, multicenter registrational phase 2</td><td>—</td><td>150 mg PO once daily, 21-day cycle</td><td>ORR</td><td>ORR (independent review)</td><td class="num">42.50 %</td><td class="num">—</td><td class="num">—</td><td>mDoR 6.9 mo; mPFS 6.9 mo</td><td>Sponsor describes a manageable profile led by elevated liver enzymes and palmar-plantar erythrodysesthesia; per-term grade 3+ rates not disclosed in the press materials.</td><td><span class="rob-badge rob-high">ROBINS-I:Serious</span></td><td>2b</td><td><span class="fit-badge fit-partial">partial</span></td><td>—</td><td>—</td><td>FGFR1-3 inhibitor; China NMPA priority review accepted Dec 2025 for FGFR2-altered ICC. Data from the ESMO GI 2026 presentation and HUTCHMED release; no indexed DOI/PMID yet, so both identifiers are null. Sources checked: ESMO abstract 343RO (not yet in Crossref), HUTCHMED/GlobeNewswire release; per-term toxicity table not public.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### Olutasidenib (FT-2102)  
+<small><code>intervention_id: olutasidenib</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Jones/Duffaud (2020)<br><em>Journal of Clinical Oncology (ASCO 2020 abstract e16643)</em></td><td class="num">44</td><td>44 IDH1-mutant solid-tumor patients: 26 intrahepatic cholangiocarcinoma, 13 chondrosarcoma, 5 other; olutasidenib is FDA-approved in IDH1-mutant AML, off-label in solid tumors</td><td>2L+</td><td>First-in-human phase 1b/2, single agent (NCT03684811)</td><td>—</td><td>150 mg PO twice daily</td><td>AE_rate</td><td>Safety and single-agent activity in IDH1-mutant solid tumors</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td>—</td><td>No dose-limiting toxicities. Any-grade TEAEs above 15%: nausea 43%, fatigue 25%, decreased appetite 22%, AST increase 18%, ALT increase 16%, constipation 16%. Grade-resolved rates not given in the abstract.</td><td><span class="rob-badge rob-high">ROBINS-I:Serious</span></td><td>2b</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td>—</td><td><a href="https://doi.org/10.1200/JCO.2020.38.15_suppl.e16643">DOI</a></td><td>Second mutant-IDH1 inhibitor beyond ivosidenib on the same actionable axis; approved in IDH1-mutant AML, investigational in solid tumors. The IHCC subset (n=26) response numbers sat in an abstract table (see-text) not reproduced in the retrievable text, so effect_size is null. Predictive value for CCA is weaker than the ivosidenib ClarIDHy evidence.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### Zurletrectinib (ICP-723)  
+<small><code>intervention_id: zurletrectinib</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Zhang/Xu (2025)<br><em>Journal of Clinical Oncology (ASCO 2025 abstract 10048)</em></td><td class="num">—</td><td>NTRK1/2/3 fusion-positive solid tumors; the citable abstract covers pediatric/adolescent patients, while adult registrational ORR (~89%) has been reported by the sponsor at conference/press level</td><td>2L+</td><td>Open-label phase 1/2 basket (NTRK fusion-positive)</td><td>—</td><td>oral once daily (dose per weight band in pediatric cohort)</td><td>ORR</td><td>ORR in NTRK fusion-positive solid tumors</td><td class="num">89.10 %</td><td class="num">—</td><td class="num">—</td><td>—</td><td>Next-generation TRK inhibitor; the pediatric abstract reports a tolerable profile without new safety signals, but per-term grade 3+ toxicity rates are not in the retrievable abstract text.</td><td><span class="rob-badge rob-high">ROBINS-I:Serious</span></td><td>2b</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td>—</td><td><a href="https://doi.org/10.1200/JCO.2025.43.16_suppl.10048">DOI</a></td><td>Next-gen pan-TRK inhibitor active against on-target resistance mutations after larotrectinib/entrectinib; approved in China Dec 2025. NTRK fusions are rare in CCA (&lt;1%). Citable DOI is the pediatric/adolescent abstract; the ~89% adult ORR is sponsor/conference-reported without a separate indexed identifier. toxicities[] empty: abstract has no per-term AE table, no PubMed/PMC record, and no CT.gov results tab located for the adult cohort.</td></tr>
       </tbody>
     </table>
   </div>
@@ -202,7 +286,7 @@ Per-manuscript detail grouped by intervention. Each row is one published clinica
     <table class="trial-table">
       <thead><tr><th>Report</th><th>Model</th><th>n</th><th>Control</th><th>Dose</th><th>Mechanism</th><th>Key finding</th><th>Effect (qual)</th><th>Translatability</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Caveats</th></tr></thead>
       <tbody>
-        <tr><td>Wu/Bardeesy (2022)<br><em>Cancer Discovery</em></td><td>Alb-Cre Kras-G12D IDH1-R132C/H genetically engineered mouse model of intrahepatic CCA; syngeneic allografts from IDH1-R132C tumor lines, with NSG immunodeficient controls</td><td>not reported per arm</td><td>vehicle; same cell lines in immunodeficient NSG mice</td><td>AG-120 (ivosidenib) oral dosing in syngeneic and NSG hosts</td><td>Mutant IDH1 generates R-2-hydroxyglutarate, which blocks TET2 and the cell&#x27;s interferon-gamma response, letting the tumor hide from immune attack. Inhibiting mutant IDH1 reactivates TET2, switches on viral-mimicry transposable elements and cGAS-STING, and restores IFN-gamma sensitivity.</td><td>AG-120 dropped R-2HG by more than 85%, slowed syngeneic tumors, and extended survival, but did nothing in immunodeficient NSG mice carrying the same cells, so the antitumor effect runs through the immune system. The drug also synergized with CTLA-4 blockade, clearing tumors in most treated animals.</td><td>strong</td><td>high</td><td><span class="fit-badge fit-strong">strong</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/34880079">34880079</a></td><td><a href="https://doi.org/10.1158/2159-8290.CD-21-1077">DOI</a></td><td>Mouse genetics pair IDH1-R132 with Kras-G12D, which is not the typical human IDH1-mutant CCA background; the immune-dependent mechanism may overstate single-agent benefit seen clinically in ClarIDHy.</td></tr>
+        <tr><td>Wu/Bardeesy (2022)<br><em>Cancer Discovery</em></td><td>Alb-Cre Kras-G12D IDH1-R132C/H genetically engineered mouse model of intrahepatic CCA; syngeneic allografts from IDH1-R132C tumor lines, with NSG immunodeficient controls</td><td>not reported per arm</td><td>vehicle; same cell lines in immunodeficient NSG mice</td><td>AG-120 (ivosidenib) oral dosing in syngeneic and NSG hosts</td><td>Mutant IDH1 generates R-2-hydroxyglutarate, which blocks TET2 and the cell&#x27;s interferon-gamma response, letting the tumor hide from immune attack. Inhibiting mutant IDH1 reactivates TET2, switches on viral-mimicry transposable elements and cGAS-STING, and restores IFN-gamma sensitivity.</td><td>AG-120 dropped R-2HG by more than 85%, slowed syngeneic tumors, and extended survival, but did nothing in immunodeficient NSG mice carrying the same cells, so the antitumor effect runs through the immune system. The drug also synergized with CTLA-4 blockade, clearing tumors in most treated animals.</td><td>strong</td><td>high</td><td><span class="fit-badge fit-strong">strong</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/34848557">34848557</a></td><td><a href="https://doi.org/10.1158/2159-8290.CD-21-1077">DOI</a></td><td>Mouse genetics pair IDH1-R132 with Kras-G12D, which is not the typical human IDH1-mutant CCA background; the immune-dependent mechanism may overstate single-agent benefit seen clinically in ClarIDHy.</td></tr>
       </tbody>
     </table>
   </div>
