@@ -89,6 +89,10 @@ IGNORE_TOKEN = "phi-scan: ignore"
 ONCOLOGY_ACRONYM_ALLOWLIST = frozenset({
     # Societies / regulators / guidelines
     "NCCN", "ESMO", "ASCO", "ASH", "IASLC", "AACR", "AUA", "EAU", "ASTRO",
+    # Societies whose guidelines the standard_of_care_screener cites by name;
+    # they appear in runs of society acronyms ("ASH, EHA, ASTRO, SITC") that
+    # otherwise read as a NAME, NAME pair.
+    "EHA", "SITC", "AASLD",
     "FDA", "EMA", "MHRA", "PMDA", "NMPA", "TGA", "CDC", "NIH", "NCI", "WHO",
     "OECD", "RECIST", "ECOG", "RECIST", "CTCAE", "MCBS",
     # Statistical / methodology
@@ -354,6 +358,24 @@ _BYDESIGN_NAMES = {
     "target_validation.md",
     "target_validation.jsonl",
     "target_validation_report.md",
+    # The standard-of-care track carries a mandatory `last_verified_utc` on every
+    # row, plus guideline versions and approval dates inside the endorsement
+    # entries. Those dates are the point of the artifact: a standard-of-care claim
+    # that cannot be re-checked against the version it came from is worthless, and
+    # guidelines move several times a year. Same rationale as `accessibility.jsonl`
+    # — patient-identifier patterns (MRN, SSN, ALL-CAPS NAME pairs) still scan here.
+    "standard_of_care.md",
+    "standard_of_care.jsonl",
+    "standard_of_care_report.md",
+    # The standard-of-care track carries a mandatory `last_verified_utc` on every
+    # row, plus guideline versions and approval dates inside the endorsement
+    # entries. Those dates are the point of the artifact: a standard-of-care claim
+    # that cannot be re-checked against the version it came from is worthless, and
+    # guidelines move several times a year. Same rationale as `accessibility.jsonl`
+    # — patient-identifier patterns (MRN, SSN, ALL-CAPS NAME pairs) still scan here.
+    "standard_of_care.md",
+    "standard_of_care.jsonl",
+    "standard_of_care_report.md",
     # The reporter's executive summary is a synthesis of `index.md` and may
     # surface the same sponsor-inquiry email / phone (e.g. `medinfo@revmed.com`
     # / `1-844-2-REVMED`) the PI inlined for the load-bearing single phone

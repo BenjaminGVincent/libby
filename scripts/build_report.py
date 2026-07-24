@@ -3251,6 +3251,16 @@ def _downloads_section(slug: str, case_docs: Path) -> str:
             "ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline",
         ),
         (
+            "standard_of_care.md",
+            "Standard of care options",
+            "approved and guideline-endorsed strategies for this patient's situation, assessed for eligibility and sequencing, in a sortable in-browser table",
+        ),
+        (
+            f"{slug}-standard-of-care.html",
+            "Standard of care options (offline)",
+            "same standard-of-care assessment packaged as a self-contained HTML that opens offline",
+        ),
+        (
             "preclinical_recommendations.md",
             "Preclinical recommendations",
             "forward-looking horizon scan of earlier-than-clinical candidate drugs, compounds, and strategies, in a sortable in-browser table",
@@ -3296,6 +3306,11 @@ def _downloads_section(slug: str, case_docs: Path) -> str:
             f"{slug}-recommendations.pdf",
             "Recommendations table",
             "ranked options + pipeline context + evidence in detail, in a print-friendly PDF",
+        ),
+        (
+            f"{slug}-standard-of-care.pdf",
+            "Standard of care options",
+            "approved and guideline-endorsed strategies, their eligibility fit, and how they sequence against the targeted options, in a print-friendly PDF",
         ),
         (
             f"{slug}-preclinical.pdf",
@@ -3369,6 +3384,7 @@ def _case_output_section(slug: str, case_docs: Path) -> str:
       - Target validation paths → PDF (prose narrative the reporter authors)
       - Selected general biomarker report → HTML (sortable in-browser table)
       - Recommendations table → HTML (self-contained, opens offline, links inline)
+      - Standard of care options → HTML (sortable in-browser table)
       - Access guide → HTML (sortable in-browser table)
       - Master manuscripts table → HTML (sortable in-browser table)
       - Patient/caregiver → PDF (plain-language summary)
@@ -3392,6 +3408,11 @@ def _case_output_section(slug: str, case_docs: Path) -> str:
             f"{slug}-recommendations.html",
             "Recommendations table (HTML)",
             "ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline",
+        ),
+        (
+            "standard_of_care.md",
+            "Standard of care options (HTML)",
+            "approved and guideline-endorsed strategies for this patient's situation, assessed for eligibility and for how they sequence against the targeted options, sortable in-browser",
         ),
         (
             "preclinical_recommendations.md",

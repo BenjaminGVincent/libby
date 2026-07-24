@@ -154,6 +154,29 @@ def check_pipeline(slug: str) -> tuple[list[str], list[str]]:
                 f"{slug}: {len(pending)} biomarker-survey row(s) awaiting /target_validator"
             )
 
+    # Informational: standalone standard-of-care track. Never gates. It is additive
+    # to the targetable-feature ranking rather than a stage of it, the committed
+    # corpus predates it, and a case can legitimately publish without it. The note
+    # reports what the screen found so a reviewer can see it ran.
+    soc = _rows(case / "standard_of_care.jsonl")
+    if soc:
+        now = sum(1 for r in soc if r.get("consideration_status") == "consider_now")
+        gated = sum(1 for r in soc if r.get("consideration_status") == "requires_further_workup")
+        notes.append(
+            f"{slug}: standard-of-care screen present ({len(soc)} assessed, "
+            f"{now} to consider now, {gated} behind an open gate)"
+        )
+        # The sequencing column is the one thing this track cannot fill before the
+        # PI has ranked. Flag it so a mid-pipeline run gets refreshed rather than
+        # publishing with the trade-offs silently absent.
+        if (case / "recommendations.jsonl").exists() and not any(
+            (r.get("relationship_to_targeted_options") or {}).get("relation") for r in soc
+        ):
+            notes.append(
+                f"{slug}: standard-of-care rows carry no sequencing link to the ranked "
+                f"options; re-run /standard_of_care_screener to fill it"
+            )
+
     return (failures, notes)
 
 

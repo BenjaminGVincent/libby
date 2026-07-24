@@ -2,21 +2,18 @@
 
 ## Targetable-feature scope (cross-cutting rule)
 
-Libby is a **targetable-feature ranker**, not a standard-of-care concierge.
-The case slug commits to a specific molecular feature (or features) named in
+Libby's **ranking** is a targetable-feature ranker. The case slug commits to a
+specific molecular feature (or features) named in
 `profile.json::targetable_features[]` — e.g. *DLL3 RNA expression*, *EGFR
-L858R*, *MET exon-14 skipping*. Every downstream surface — the trial table,
+L858R*, *MET exon-14 skipping*. The ranking surfaces — the trial table,
 the clinical-evidence dossier, the preclinical dossier, the board positions,
 the PI ranking, the executive summary, the plain-language page, and the PDF
-report — is scoped to drugs whose mechanism plausibly targets one of those
+report — are scoped to drugs whose mechanism plausibly targets one of those
 features.
 
-A drug is **in scope** if its mechanism binds, modulates, or acts via the
-named feature. A drug is **out of scope** if it does not, even when it has
-RCT-grade evidence in the patient's tumor type. Standard 2L+ care for the
-indication that doesn't act on the feature (e.g. multi-kinase TKIs in a
-DLL3-RNA case) is out of scope: the patient pursues those through their
-treating team, independent of Libby.
+A drug is **in scope for the ranking** if its mechanism binds, modulates, or
+acts via the named feature. It is **out of scope for the ranking** if it does
+not, even when it has RCT-grade evidence in the patient's tumor type.
 
 The contract is enforced at every agent boundary:
 
@@ -30,11 +27,35 @@ The contract is enforced at every agent boundary:
 - `translator` and `reporter` carry the same rule into the patient and PDF
   surfaces.
 
-When a biomarker confirmatory test is negative and the test was the gate on
-the feature, the case has no within-scope recommendations and the
-cross-cutting caveat says exactly that — *without* naming standard-care
-alternatives. The treating team's standard-care conversation is a separate
-artifact from Libby's case page.
+### Standard of care is a parallel surface, not an exception to the rule
+
+Standard-of-care options reach the case page through their own track
+(`standard_of_care_screener`, below) and their own page. The boundary is
+between *surfaces*, not between what the patient is allowed to learn:
+
+- The **ranking** stays mechanism-scoped. Nothing in the standard-of-care
+  track enters `recommendations.jsonl`, the board files, the plain-language
+  page, or the executive summary, and nothing in it removes, reranks, or
+  narrows a feature-targeted option. The track is **additive only**.
+- The **standard-of-care report** carries options that are FDA (or equivalent
+  regulator) approved for a population including this patient, or carried in a
+  major academic or clinical-society guideline. It is linked from the case
+  page's Case output section alongside the ranking.
+
+The one sanctioned bridge is `standard_of_care.jsonl::relationship_to_targeted_options`,
+and it runs one way: it names sequencing and conflicts (a regimen that would
+exhaust eligibility for a trial, a line the two tracks both want) without
+ranking either against the other.
+
+This supersedes the earlier rule that standard care never appeared in the case
+output at all. The reason for that rule was to stop the *ranking* from
+degenerating into a generic oncology recommender, and separating the surfaces
+preserves it. When a biomarker confirmatory test is negative and the test was
+the gate on the feature, the case has no within-scope **recommendations**, and
+the cross-cutting caveat still says exactly that in the ranking's own voice;
+the standard-of-care page is where the alternatives are enumerated, on the
+record and referenced, rather than left to a conversation the case page does
+not witness.
 
 ## Pipeline
 
@@ -142,6 +163,51 @@ Each agent reads only `data/cases/<slug>/{profile,preferences}.json`,
 `target_validation.jsonl` (when present), and the prior agent's output.
 They never read `case/<slug>/clinical/` directly.
 
+### 4a. Standard of care screen
+
+```
+/standard_of_care_screener <slug>   # data/cases/<slug>/standard_of_care.jsonl
+                                    # + standard_of_care_report.md
+                                    # + docs/cases/<slug>/standard_of_care.md + HTML + PDF
+```
+
+The research tier reasons forward from the case's stated targetable features.
+This track answers the question none of those agents will: what is the
+established treatment for someone in this situation, and does this patient
+still have it available? An option earns a row only if a regulator approved it
+for a population that includes this patient, or a major academic or
+clinical-society guideline (NCCN, ESMO, ASCO, ASH, EHA, ASTRO, SITC and peers)
+carries it. Standard of care is not only drugs: surgery, radiotherapy,
+locoregional therapy, transplant, and active surveillance get rows in the
+settings where guidelines carry them.
+
+The track is **additive only** and does not feed the board or the PI. It runs
+any time after `promote_profile.py`, but the useful slot is after `/PI`,
+because that is when `relationship_to_targeted_options` can name the ranked
+interventions a standard option would sequence against or foreclose.
+
+Three judgments carry the track, and the renderer's pre-flight enforces each:
+
+- **`endorsements[].population_match`** — whether the approval or guideline
+  entry was written for *this* patient's situation or for a different stage,
+  line, or biomarker subgroup. A `consider_now` row whose endorsements are all
+  `different_population` or `unclear` is an extrapolation, not standard of
+  care, and blocks the build.
+- **`eligibility_status`** — judged against `profile.json` alone. The gap
+  between a textbook option and a real one is usually `prior_therapies[]`. An
+  `already_received` row requires a `prior_exposure_note` recording what was
+  given, the best response, and why it stopped; re-offering a regimen the
+  patient already progressed on is the worst error this page can make.
+- **`consideration_status`** — an option behind an unmet, unmeasured, or
+  pending biomarker gate is `requires_further_workup`, never `consider_now`.
+  Same discipline the targeted track applies to biomarker-confirmation gating.
+  Where the gate is one the biomarker survey already logged, `linked_survey_id`
+  joins the two reports instead of duplicating the gap.
+
+`last_verified_utc` is required on every row and means what it says. NCCN
+versions several times a year; a row verified more than six months ago renders
+with a re-check marker.
+
 ### 5. Tumor board — round 1 (positions)
 
 ```
@@ -210,7 +276,8 @@ bash scripts/run_case.sh <slug>
 Fails fast on `validate_case.py` (schema-checks every committed artifact), then
 runs `build_table.py`, `build_evidence.py`, `build_manuscripts.py`,
 `build_board.py`, `build_recommendations.py`, `build_preclinical.py`,
-`build_target_validation.py`, `build_accessibility.py`, a PHI re-scan against
+`build_target_validation.py`, `build_biomarker_survey.py`,
+`build_standard_of_care.py`, `build_accessibility.py`, a PHI re-scan against
 rendered docs, and finally `build_report.py` (PDF/HTML downloads). It closes with
 a non-fatal `check_pipeline.py` completeness warning. Shared render helpers
 (`load_jsonl`, `FEATURE_LABELS`) live in `scripts/libbylib.py`.
@@ -252,6 +319,7 @@ not merely documented:
 - `preferences.schema.json` — user tradeoff weights and vetoes.
 - `target_validation.schema.json` — target-validator row.
 - `biomarker_survey.schema.json` — biomarker-surveyor row.
+- `standard_of_care.schema.json` — standard-of-care screener row.
 - `trials.schema.json` — trial-screener row.
 - `clinical_evidence.schema.json` — clinical-evidence row.
 - `preclinical_evidence.schema.json` — pre-clinical evidence row.
@@ -317,13 +385,16 @@ The mechanism is on the schema and PI-prompt side:
   and is non-confirmed, emit a focused ranking with the workup at rank 1
   (`scenario: "shared"`) plus only the therapeutic rec(s) that target the
   gating feature, tagged `:positive`. Drugs that don't target the feature
-  (standard care for the indication) are out of scope and **do not appear
-  in the case output at all** — not in the ranking, not in "Classes examined
-  but not ranked", not by name in any narrative. The cross-cutting caveat in
-  `index.md` carries the "if test negative, no within-scope recommendations"
-  mapping without enumerating standard-care alternatives. The trial screener,
-  clinician, and researcher contracts enforce mechanism-scope upstream so
-  out-of-scope drugs do not enter the dossier in the first place.
+  (standard care for the indication) are out of scope for the ranking and
+  **do not appear anywhere in it** — not in the ranked table, not in "Classes
+  examined but not ranked", not by name in any of the PI's narrative. The
+  cross-cutting caveat in `index.md` carries the "if test negative, no
+  within-scope recommendations" mapping in the ranking's own voice, without
+  enumerating standard-care alternatives. Those alternatives are enumerated on
+  the standard-of-care page instead, which the Case output section links; the
+  `PI` neither writes nor reads that page. The trial screener, clinician, and
+  researcher contracts enforce mechanism-scope upstream so out-of-scope drugs
+  do not enter the dossier in the first place.
 - **`translator.md`** prompt rule: surface the workup as "the first step
   everyone agreed on"; flag biomarker-conditional options inline with an
   "if negative" note; do NOT render a parallel negative-branch ranking.

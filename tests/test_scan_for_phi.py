@@ -85,6 +85,14 @@ def test_allowlisted_acronym_pair_not_flagged(tmp_path):
     assert "all_caps_name" not in _labels(hits)
 
 
+def test_society_acronym_run_not_flagged(tmp_path):
+    """The standard-of-care screener names its endorsing bodies in runs, which
+    read as NAME, NAME pairs unless every society is allowlisted."""
+    text = "carried by NCCN, ESMO, ASCO, ASH, EHA, ASTRO, SITC, AUA, AASLD"
+    hits = phi.scan_file(_write(tmp_path, "note.md", text))
+    assert "all_caps_name" not in _labels(hits)
+
+
 def test_mixed_acronym_and_name_pair_is_flagged(tmp_path):
     # One token allowlisted, the other a plausible surname -> still PHI.
     hits = phi.scan_file(_write(tmp_path, "note.md", "reviewed by NCCN, KOWALSKI"))
@@ -119,6 +127,20 @@ def test_bydesign_file_suppresses_business_contact(tmp_path):
 def test_bydesign_file_still_catches_patient_identifiers(tmp_path):
     # By-design files still scan for MRN/SSN/name — only business shapes relax.
     hits = phi.scan_file(_write(tmp_path, "accessibility.jsonl", "MRN: A1234567"))
+    assert "mrn_label" in _labels(hits)
+
+
+def test_standard_of_care_artifacts_allow_verification_dates(tmp_path):
+    """Every standard-of-care row carries a mandatory `last_verified_utc`, and the
+    endorsements carry guideline versions and approval dates. Without the by-design
+    suppression the whole track would be unpublishable."""
+    text = '{"last_verified_utc": "2026-07-24", "version_or_date": "FDA approval 2018-11"}'
+    for name in ("standard_of_care.jsonl", "standard_of_care.md", "standard_of_care_report.md"):
+        assert "iso_date_full" not in _labels(phi.scan_file(_write(tmp_path, name, text))), name
+
+
+def test_standard_of_care_artifacts_still_catch_patient_identifiers(tmp_path):
+    hits = phi.scan_file(_write(tmp_path, "standard_of_care.jsonl", "MRN: A1234567"))
     assert "mrn_label" in _labels(hits)
 
 

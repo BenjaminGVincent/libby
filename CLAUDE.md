@@ -25,6 +25,34 @@ Biomarker-survey track: preclinical_biomarker_surveyor → biomarker_reporter fo
 the published page, and its `handoff_to_target_validator` rows into
 target_validator (linked by `source_survey_id`, so a dropped handoff shows on the
 page rather than vanishing).
+Standard-of-care track: standalone standard_of_care_screener (owns both its JSONL
+and its narrative, then renders its own page). Runs any time after
+`promote_profile.py`; best after PI, when `relationship_to_targeted_options` can
+name the ranked interventions it sequences against.
+
+## Standard of care is additive, never subtractive
+The ranking (board → PI → translator → reporter) stays scoped to
+`profile.json::targetable_features[]`. The standard-of-care track is a parallel
+surface, not an exception: it never writes to `recommendations.jsonl` or any
+board file, and it must never remove, rerank, narrow, or argue against a
+feature-targeted option. Adding standard care must not cost the case a single
+non-standard option. The one sanctioned bridge is
+`relationship_to_targeted_options`, which names sequencing and conflicts in one
+direction only. See the cross-cutting rule in `docs/methods.md`.
+Standard-of-care track: standalone standard_of_care_screener (owns both its JSONL
+and its narrative, then renders its own page). Runs any time after
+`promote_profile.py`; best after PI, when `relationship_to_targeted_options` can
+name the ranked interventions it sequences against.
+
+## Standard of care is additive, never subtractive
+The ranking (board → PI → translator → reporter) stays scoped to
+`profile.json::targetable_features[]`. The standard-of-care track is a parallel
+surface, not an exception: it never writes to `recommendations.jsonl` or any
+board file, and it must never remove, rerank, narrow, or argue against a
+feature-targeted option. Adding standard care must not cost the case a single
+non-standard option. The one sanctioned bridge is
+`relationship_to_targeted_options`, which names sequencing and conflicts in one
+direction only. See the cross-cutting rule in `docs/methods.md`.
 
 ## Data model & gates
 - `data/cases/<slug>/` holds committed JSONL/JSON; board output lives only in
