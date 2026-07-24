@@ -45,8 +45,16 @@ def _rows(path: Path) -> list[dict]:
     out = []
     for line in path.read_text("utf-8").splitlines():
         line = line.strip()
-        if line:
+        if not line:
+            continue
+        try:
             out.append(json.loads(line))
+        except json.JSONDecodeError:
+            # A malformed line is a real defect, but validate_case.py is the
+            # authority on JSON validity — here we just skip it so the checker
+            # reports a clean stage failure (e.g. "personas missing") instead of
+            # crashing with a traceback.
+            continue
     return out
 
 
@@ -70,13 +78,29 @@ def check_pipeline(slug: str) -> tuple[list[str], list[str]]:
         "target_validator": case / "target_validation.jsonl",
         "PI (recommendations)": case / "recommendations.jsonl",
     }
+    # accessibility_screener is a required published stage for real cases (10/11
+    # of the committed corpus carries it). `demo-` slugs are minimal fixtures that
+    # predate the stage — exempt them rather than fabricate published access-path
+    # classifications and manufacturer/trial contacts just to satisfy the gate.
+    if not slug.startswith("demo-"):
+        required_nonempty["accessibility_screener"] = case / "accessibility.jsonl"
+
     for stage, path in required_nonempty.items():
         if not path.exists():
             failures.append(f"{stage}: missing {path.relative_to(REPO)}")
-        elif path.suffix == ".jsonl" and not _rows(path):
-            failures.append(f"{stage}: empty {path.relative_to(REPO)}")
-        elif path.stat().st_size == 0:
-            failures.append(f"{stage}: empty {path.relative_to(REPO)}")
+        elif path.suffix == ".jsonl":
+            if not _rows(path):
+                failures.append(f"{stage}: empty {path.relative_to(REPO)}")
+        else:
+            # JSON document: catch both a 0-byte file and a structurally-empty one
+            # (e.g. "{}" or whitespace) that a size check alone would pass.
+            try:
+                payload = json.loads(path.read_text("utf-8"))
+            except json.JSONDecodeError:
+                failures.append(f"{stage}: malformed JSON {path.relative_to(REPO)}")
+            else:
+                if not payload:
+                    failures.append(f"{stage}: empty {path.relative_to(REPO)}")
 
     # Rendered PI + translator surfaces.
     for stage, path in {"PI (index.md)": docs / "index.md",

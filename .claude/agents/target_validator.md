@@ -137,11 +137,20 @@ Order matters for the rendered page. After writing all rows, sort the JSONL by:
 
 The renderer surfaces them in this order and the PI reads them top-down.
 
+### Step 4.5 — verify references
+
+After validating and before logging the run, run the shared reference-verification
+protocol in `.claude/snippets/reference_check.md` over every `pmid:`/`nct:`/`guideline:`
+entry in the `references[]` arrays you just wrote to `target_validation.jsonl`. It catches
+hallucinated identifiers, wrong-identifier bugs, and citation drift. Fail-closed: correct a
+wrong identifier or drop it to free-text prose in `notes`. Record the `reference_check`
+outcome in the step-5 `runs.jsonl` row.
+
 ### Step 5 — log the run
 
 Append to `data/cases/<slug>/runs.jsonl`:
 ```
-{"agent": "target_validator", "ts": "<utc>", "rows_appended": <n>, "essential_rows": <n>}
+{"agent": "target_validator", "ts": "<utc>", "rows_appended": <n>, "essential_rows": <n>, "reference_check": {"checked": <n>, "corrected": <n>, "nulled": <n>, "clean": true}}
 ```
 
 ### Step 6 — hand off

@@ -52,8 +52,9 @@
     "mechanism": { "type": "string" },
     "key_finding": { "type": "string" },
     "effect_size_qual": {
-      "type": "string",
-      "enum": ["strong", "moderate", "weak", "null", "negative"]
+      "type": ["string", "null"],
+      "enum": ["strong", "moderate", "weak", "negative", null],
+      "description": "Qualitative effect size; JSON null when no effect size is reported (do not use the string \"null\")."
     },
     "pmid": { "type": ["string", "null"], "pattern": "^[1-9][0-9]{0,8}$" },
     "doi": { "type": ["string", "null"], "pattern": "^10\\.[0-9]{4,9}/\\S+$" },

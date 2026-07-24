@@ -9,9 +9,10 @@ After you have written your artifact (the JSONL rows or the rendered doc) and
 **before** the humanizer/voice pass and the `runs.jsonl` write.
 
 ## How
-1. Read the `reference_checking` skill once per run:
-   `~/.claude/skills/reference_checking/SKILL.md`
-   (vendored fallback: `.claude/skills/reference_checking/SKILL.md` if present).
+1. Read the `reference_checking` skill once per run. Prefer the project-vendored
+   copy at `.claude/skills/reference_checking/SKILL.md` (MIT, vendored into this
+   repo so a fresh clone always has it); if the project copy is missing, fall back
+   to `~/.claude/skills/reference_checking/SKILL.md`.
 2. Run it over every reference you just wrote. It checks both **existence** and
    **contextual correctness**:
    - the `pmid` resolves and points to the paper you actually cite (not a

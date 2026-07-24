@@ -157,3 +157,46 @@ def test_main_phi_file_exit_one(tmp_path, monkeypatch, capsys):
     dirty = _write(tmp_path, "note.md", "SSN 123-45-6789")
     monkeypatch.setattr("sys.argv", ["scan_for_phi.py", "--mode=files", str(dirty)])
     assert phi.main() == 1
+
+
+# --- committed .html report downloads are scanned -----------------------------
+
+def test_html_extension_scanned_for_patient_identifiers(tmp_path):
+    # Self-contained .html downloads inline case data; a scrub miss must be caught.
+    hits = phi.scan_file(_write(tmp_path, "case-report.html", "<p>MRN: A1234567</p>"))
+    assert "mrn_label" in _labels(hits)
+
+
+def test_html_suppresses_business_contacts(tmp_path):
+    # HTML renders of accessibility/report pages carry manufacturer/trial contacts
+    # and authoring dates by design — those relax, patient identifiers do not.
+    text = "<td>call 415-555-1234</td><td>lab@foundationmedicine.com</td>"
+    hits = phi.scan_file(_write(tmp_path, "case-accessibility.html", text))
+    assert _labels(hits) & {"us_phone", "email"} == set()
+
+
+# --- --include-case: promote_profile can scan case/-side files ----------------
+
+def _case_file(tmp_path, text):
+    p = tmp_path / "case" / "slug" / "derived" / "profile.json"
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_text(text, encoding="utf-8")
+    return p
+
+
+def test_files_mode_skips_case_paths_by_default(tmp_path, monkeypatch):
+    dirty = _case_file(tmp_path, '{"note": "SSN 123-45-6789"}')
+    monkeypatch.setattr(
+        "sys.argv",
+        ["scan_for_phi.py", "--mode=files", "--root", str(tmp_path), str(dirty)],
+    )
+    assert phi.main() == 0  # case/ paths skipped in plain files mode (tree/staged safety)
+
+
+def test_include_case_scans_case_paths(tmp_path, monkeypatch):
+    dirty = _case_file(tmp_path, '{"note": "SSN 123-45-6789"}')
+    monkeypatch.setattr(
+        "sys.argv",
+        ["scan_for_phi.py", "--mode=files", "--include-case", "--root", str(tmp_path), str(dirty)],
+    )
+    assert phi.main() == 1  # promote_profile.py passes --include-case so the scan runs

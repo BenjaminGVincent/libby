@@ -78,7 +78,7 @@ PATTERNS: list[tuple[str, re.Pattern[str], str]] = [
 ]
 
 # Text-bearing extensions we scan. Binary / generated formats are skipped.
-SCAN_EXTS = {".md", ".markdown", ".json", ".jsonl", ".yaml", ".yml", ".txt", ".csv", ".tsv"}
+SCAN_EXTS = {".md", ".markdown", ".json", ".jsonl", ".yaml", ".yml", ".txt", ".csv", ".tsv", ".html"}
 
 IGNORE_TOKEN = "phi-scan: ignore"
 
@@ -389,6 +389,13 @@ _BYDESIGN_NAMES = {
     # (us_phone, email, iso_date_full) are suppressed.
     "positions.jsonl",
     "critiques.jsonl",
+    # Vendored agent-skill docs (`.claude/skills/*/SKILL.md`) are developer
+    # material, never patient data. They carry API-etiquette contact params by
+    # design — the reference_checking skill embeds a `&email=` NCBI eutils /
+    # CrossRef mailto so PubMed identifies the caller. Patient identifiers (MRN,
+    # SSN, DOB, ALL-CAPS NAME pairs) still scan; only `_BYDESIGN_LABELS`
+    # (us_phone, email, iso_date_full) are suppressed.
+    "SKILL.md",
 }
 _BYDESIGN_LABELS = {"email", "us_phone", "iso_date_full"}
 
@@ -421,6 +428,13 @@ def scan_file(path: Path) -> list[tuple[int, str, str, str]]:
     except (FileNotFoundError, IsADirectoryError, PermissionError):
         return []
     file_level_suppress = _BYDESIGN_LABELS if _is_bydesign_artifact(path) else set()
+    # Self-contained .html/.pdf report downloads (e.g. <slug>-accessibility.html)
+    # are deterministic renders of pages that surface business contacts and
+    # authoring dates by design — the same labels the markdown by-design regions
+    # suppress. Suppress those labels file-wide for HTML; hard patient identifiers
+    # (ssn / mrn_label / dob_label / patient_label / all_caps_name) still scan.
+    if path.suffix.lower() == ".html":
+        file_level_suppress = file_level_suppress | _BYDESIGN_LABELS
     # runs.jsonl is agent-authored process telemetry written AFTER the intake
     # scrub — it never carries patient identifiers, but its free-text notes are
     # dense with ALL-CAPS oncology acronym lists (e.g. "AML PDX, CBX", "GBM,
@@ -487,9 +501,19 @@ def main() -> int:
         default=".",
         help="Repo root (default: cwd).",
     )
+    parser.add_argument(
+        "--include-case",
+        action="store_true",
+        help=(
+            "Scan explicitly-named paths under case/ (mode=files only). Used by "
+            "promote_profile.py to actually scan the scrubbed profile before it is "
+            "promoted. tree/staged modes always skip case/ regardless of this flag."
+        ),
+    )
     args = parser.parse_args()
 
     root = Path(args.root).resolve()
+    scan_case_paths = args.include_case and args.mode == "files"
 
     if args.mode == "staged":
         # Always block staged paths under case/ outright.
@@ -514,9 +538,11 @@ def main() -> int:
     for path in files:
         if not path.exists() or not path.is_file():
             continue
-        if is_under_case_dir(path, root):
+        if is_under_case_dir(path, root) and not scan_case_paths:
             # case/ files are gitignored; if they're staged that's caught above.
-            # Don't bother scanning local-only PHI here.
+            # In tree/staged mode there's no reason to scan local-only PHI here.
+            # promote_profile.py passes --include-case so the scrubbed profile IS
+            # scanned before it crosses into committed territory.
             continue
         hits = scan_file(path)
         if hits:

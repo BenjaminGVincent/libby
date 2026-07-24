@@ -57,14 +57,26 @@ JSONL_ARTIFACTS = {
     "board/critiques.jsonl": "critiques",
 }
 
-# Known-but-non-canonical files we tolerate without a schema mapping. Anything else
-# ending in .jsonl that isn't mapped above is reported as drift.
+# Canonical board personas (note the deliberate `concensusite` misspelling). Used by
+# the cross-file referential-integrity pass to catch a critique or recommendation that
+# names a persona that never posted — including a "corrected" consensusite spelling.
+PERSONAS = frozenset({"risktaker", "conservative", "critic", "concensusite", "advocate"})
+
 _SCHEMA_CACHE: dict[str, jsonschema.Draft202012Validator] = {}
+
+
+class SchemaError(Exception):
+    """A mapped schema file is missing or malformed — a repo-integrity problem,
+    surfaced as a clean per-artifact error rather than an uncaught traceback."""
 
 
 def validator_for(schema_name: str) -> jsonschema.Draft202012Validator:
     if schema_name not in _SCHEMA_CACHE:
-        schema = json.loads((SCHEMA_DIR / f"{schema_name}.schema.json").read_text("utf-8"))
+        schema_path = SCHEMA_DIR / f"{schema_name}.schema.json"
+        try:
+            schema = json.loads(schema_path.read_text("utf-8"))
+        except (FileNotFoundError, json.JSONDecodeError) as e:
+            raise SchemaError(f"cannot load schema {schema_path.name}: {e}") from e
         _SCHEMA_CACHE[schema_name] = jsonschema.Draft202012Validator(schema)
     return _SCHEMA_CACHE[schema_name]
 
@@ -83,11 +95,18 @@ def validate_json_doc(path: Path, schema_name: str) -> list[str]:
         payload = json.loads(path.read_text("utf-8"))
     except json.JSONDecodeError as e:
         return [f"  {path.name}: JSON parse error: {e}"]
-    return _format_errors(validator_for(schema_name), payload, path.name)
+    try:
+        validator = validator_for(schema_name)
+    except SchemaError as e:
+        return [f"  {path.name}: {e}"]
+    return _format_errors(validator, payload, path.name)
 
 
 def validate_jsonl(path: Path, schema_name: str) -> list[str]:
-    validator = validator_for(schema_name)
+    try:
+        validator = validator_for(schema_name)
+    except SchemaError as e:
+        return [f"  {path.name}: {e}"]
     errors: list[str] = []
     for lineno, raw in enumerate(path.read_text("utf-8").splitlines(), start=1):
         raw = raw.strip()
@@ -102,7 +121,73 @@ def validate_jsonl(path: Path, schema_name: str) -> list[str]:
     return errors
 
 
-def validate_case(slug: str) -> tuple[list[str], list[str]]:
+def _load_rows(path: Path) -> list[dict]:
+    """Parse a JSONL file into rows, skipping blank/malformed lines (schema
+    validation is the authority on malformed JSON; here we only need the shape)."""
+    if not path.exists():
+        return []
+    rows: list[dict] = []
+    for raw in path.read_text("utf-8").splitlines():
+        raw = raw.strip()
+        if not raw:
+            continue
+        try:
+            rows.append(json.loads(raw))
+        except json.JSONDecodeError:
+            continue
+    return rows
+
+
+def referential_warnings(case_dir: Path, slug: str, check_refs: bool) -> list[str]:
+    """Cross-file referential-integrity warnings for one case.
+
+    Two tiers, by false-positive risk (measured against the committed corpus):
+
+    - Always on (0 corpus hits): every persona named in a critique or in a
+      recommendation's endorse/dissent/veto list must be one of the five canonical
+      personas. Catches a hallucinated or "corrected" (consensusite) persona id.
+    - Opt-in via --check-refs: every critique's `target_intervention_id` must resolve
+      to an intervention that actually appears in the case's board picks or ranked
+      recommendations. This is a genuine drift signal but the corpus is not yet clean
+      (personas sometimes target a synonym id), so it stays out of the default --strict
+      stream until the data is reconciled. Citation membership is deliberately NOT
+      checked here — the `reference_checking` skill owns citation correctness, and
+      board personas legitimately cite beyond the exact dossier rows.
+    """
+    warnings: list[str] = []
+    critiques = _load_rows(case_dir / "board" / "critiques.jsonl")
+    recs = _load_rows(case_dir / "recommendations.jsonl")
+
+    for i, r in enumerate(critiques, start=1):
+        for key in ("critic_persona", "target_persona"):
+            val = r.get(key)
+            if val is not None and val not in PERSONAS:
+                warnings.append(f"{slug}: critiques.jsonl:{i}: {key} {val!r} is not a known persona")
+    for i, r in enumerate(recs, start=1):
+        for key in ("endorsed_by", "dissent_by", "veto_by"):
+            for val in (r.get(key) or []):
+                if val not in PERSONAS:
+                    warnings.append(f"{slug}: recommendations.jsonl:{i}: {key} lists unknown persona {val!r}")
+
+    if check_refs:
+        known_iids = {
+            p.get("intervention_id")
+            for row in _load_rows(case_dir / "board" / "positions.jsonl")
+            for p in (row.get("picks") or [])
+        }
+        known_iids |= {r.get("intervention_id") for r in recs}
+        known_iids.discard(None)
+        for i, r in enumerate(critiques, start=1):
+            tid = r.get("target_intervention_id")
+            if tid and tid not in known_iids:
+                warnings.append(
+                    f"{slug}: critiques.jsonl:{i}: target_intervention_id {tid!r} "
+                    f"resolves to no board pick or ranked recommendation"
+                )
+    return warnings
+
+
+def validate_case(slug: str, check_refs: bool = False) -> tuple[list[str], list[str]]:
     """Return (errors, warnings) for one case."""
     case_dir = CASES_DIR / slug
     errors: list[str] = []
@@ -134,6 +219,8 @@ def validate_case(slug: str) -> tuple[list[str], list[str]]:
         if (case_dir / stray).exists():
             warnings.append(f"{slug}: stray top-level {stray} (canonical location is board/{stray})")
 
+    warnings.extend(referential_warnings(case_dir, slug, check_refs))
+
     return (errors, warnings)
 
 
@@ -148,6 +235,15 @@ def main() -> int:
     parser.add_argument("slugs", nargs="*", help="Case slug(s) to validate")
     parser.add_argument("--all", action="store_true", help="Validate every case under data/cases/")
     parser.add_argument("--strict", action="store_true", help="Treat warnings as errors")
+    parser.add_argument(
+        "--check-refs",
+        action="store_true",
+        help=(
+            "Additionally audit cross-file references that are not yet corpus-clean "
+            "(critique target_intervention_id resolution). Emitted as warnings; not run "
+            "by default so --strict CI stays green until the data is reconciled."
+        ),
+    )
     args = parser.parse_args()
 
     slugs = iter_slugs(args)
@@ -157,7 +253,7 @@ def main() -> int:
     total_errors = 0
     total_warnings = 0
     for slug in slugs:
-        errors, warnings = validate_case(slug)
+        errors, warnings = validate_case(slug, check_refs=args.check_refs)
         for w in warnings:
             print(f"WARN  {w}", file=sys.stderr)
         if errors:

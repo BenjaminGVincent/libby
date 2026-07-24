@@ -14,13 +14,16 @@ PERSONAS = ["risktaker", "conservative", "critic", "concensusite", "advocate"]
 
 
 def _build_case(root, docs, slug, *, positions_personas, critics_personas,
-                include_translator=True):
+                include_translator=True, include_accessibility=True):
     case = root / slug
     (case / "board").mkdir(parents=True)
     (case / "profile.json").write_text('{"case_slug": "%s"}' % slug)
     (case / "preferences.json").write_text('{"case_slug": "%s"}' % slug)
-    for name in ("trials", "clinical_evidence", "preclinical_evidence",
-                 "target_validation", "recommendations"):
+    names = ["trials", "clinical_evidence", "preclinical_evidence",
+             "target_validation", "recommendations"]
+    if include_accessibility:
+        names.append("accessibility")
+    for name in names:
         (case / f"{name}.jsonl").write_text('{"case_slug": "%s"}\n' % slug)
     (case / "board" / "positions.jsonl").write_text(
         "\n".join(json.dumps({"persona": p}) for p in positions_personas) + "\n"
@@ -81,6 +84,40 @@ def test_self_critique_flagged(monkeypatch, tmp_path):
     cri.write_text(cri.read_text() + json.dumps({"critic_persona": "critic", "target_persona": "critic"}) + "\n")
     failures, _notes = cp.check_pipeline("selfcrit")
     assert any("self-critique" in f for f in failures)
+
+
+def test_missing_accessibility_fails_for_real_case(monkeypatch, tmp_path):
+    root, docs = _patch(monkeypatch, tmp_path)
+    _build_case(root, docs, "noaccess", positions_personas=PERSONAS,
+                critics_personas=PERSONAS, include_accessibility=False)
+    failures, _notes = cp.check_pipeline("noaccess")
+    assert any("accessibility" in f for f in failures)
+
+
+def test_demo_slug_exempt_from_accessibility(monkeypatch, tmp_path):
+    root, docs = _patch(monkeypatch, tmp_path)
+    _build_case(root, docs, "demo-thing", positions_personas=PERSONAS,
+                critics_personas=PERSONAS, include_accessibility=False)
+    failures, _notes = cp.check_pipeline("demo-thing")
+    assert failures == [], failures
+
+
+def test_malformed_jsonl_does_not_crash(monkeypatch, tmp_path):
+    root, docs = _patch(monkeypatch, tmp_path)
+    _build_case(root, docs, "bad", positions_personas=PERSONAS, critics_personas=PERSONAS)
+    # a malformed board line must yield a clean failure, not a JSONDecodeError traceback
+    pos = root / "bad" / "board" / "positions.jsonl"
+    pos.write_text(pos.read_text() + "{not valid json\n")
+    failures, _notes = cp.check_pipeline("bad")  # must not raise
+    assert isinstance(failures, list)
+
+
+def test_structurally_empty_profile_fails(monkeypatch, tmp_path):
+    root, docs = _patch(monkeypatch, tmp_path)
+    _build_case(root, docs, "emptyjson", positions_personas=PERSONAS, critics_personas=PERSONAS)
+    (root / "emptyjson" / "profile.json").write_text("{}")  # non-zero bytes, no content
+    failures, _notes = cp.check_pipeline("emptyjson")
+    assert any("profile.json" in f for f in failures)
 
 
 def test_all_committed_cases_complete():

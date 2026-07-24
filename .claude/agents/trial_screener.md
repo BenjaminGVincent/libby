@@ -239,11 +239,21 @@ python3 -c "import json, jsonschema; \
   r=json.loads(<row>); jsonschema.Draft202012Validator(s).validate(r)"
 ```
 
+### Step 4.5 — verify references
+
+After validating and before logging the run, run the shared reference-verification
+protocol in `.claude/snippets/reference_check.md` over every `pmid`/`doi`/`nct_id` you
+just wrote to `trials.jsonl`. Trials are the highest-volume identifier surface in the
+pipeline — a hallucinated NCT ID or a PMID that names a different trial is exactly what
+this catches. Fail-closed: correct a wrong identifier to the right one, or set the field
+to `null` and move the detail into free text. Record the `reference_check` outcome in the
+step-5 `runs.jsonl` row.
+
 ### Step 5 — log the run
 
 Append a line to `data/cases/<slug>/runs.jsonl`:
 ```
-{"agent": "trial_screener", "ts": "<utc>", "kept": <n>, "dropped": <n>, "spec_hash": "<sha1 of search.md>"}
+{"agent": "trial_screener", "ts": "<utc>", "kept": <n>, "dropped": <n>, "spec_hash": "<sha1 of search.md>", "reference_check": {"checked": <n>, "corrected": <n>, "nulled": <n>, "clean": true}}
 ```
 
 ### Step 6 — hand off

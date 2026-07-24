@@ -40,7 +40,7 @@ def load_schema(name: str) -> dict:
 def validate_json(payload: dict, schema_name: str, label: str) -> list[str]:
     schema = load_schema(schema_name)
     validator = jsonschema.Draft202012Validator(schema)
-    errors = sorted(validator.iter_errors(payload), key=lambda e: e.path)
+    errors = sorted(validator.iter_errors(payload), key=lambda e: list(e.path))
     if not errors:
         return []
     out = [f"{label} failed schema validation:"]
@@ -55,6 +55,7 @@ def run_phi_scan(paths: list[Path]) -> int:
         sys.executable,
         str(REPO / "scripts" / "scan_for_phi.py"),
         "--mode=files",
+        "--include-case",  # the profile lives under case/; without this the scan skips it
         "--root",
         str(REPO),
         *[str(p) for p in paths],

@@ -122,6 +122,69 @@ def test_malformed_doi_fails(tmp_path):
     assert errors and any("doi" in e for e in errors)
 
 
+# --- effect_size_qual: JSON null, not the string "null" -----------------------
+
+def _esq_errors(tmp_path, value):
+    row = {"effect_size_qual": value}
+    errors = vc.validate_jsonl(_write_jsonl(tmp_path, [row]), "preclinical_evidence")
+    return [e for e in errors if "effect_size_qual" in e]
+
+
+def test_effect_size_qual_accepts_json_null(tmp_path):
+    assert _esq_errors(tmp_path, None) == []
+
+
+def test_effect_size_qual_rejects_string_null(tmp_path):
+    # The former enum member "null" (a string) is now a schema error — use JSON null.
+    assert _esq_errors(tmp_path, "null")
+
+
+# --- cross-file referential integrity -----------------------------------------
+
+def _case_with_board(tmp_path, *, critiques=None, recs=None, positions=None):
+    case = tmp_path / "case"
+    (case / "board").mkdir(parents=True)
+    if positions is not None:
+        (case / "board" / "positions.jsonl").write_text(
+            "\n".join(json.dumps(r) for r in positions) + "\n", encoding="utf-8")
+    if critiques is not None:
+        (case / "board" / "critiques.jsonl").write_text(
+            "\n".join(json.dumps(r) for r in critiques) + "\n", encoding="utf-8")
+    if recs is not None:
+        (case / "recommendations.jsonl").write_text(
+            "\n".join(json.dumps(r) for r in recs) + "\n", encoding="utf-8")
+    return case
+
+
+def test_referential_flags_unknown_persona(tmp_path):
+    case = _case_with_board(tmp_path, critiques=[
+        {"critic_persona": "consensusite", "target_persona": "advocate"},  # misspelled
+    ])
+    warns = vc.referential_warnings(case, "demo", check_refs=False)
+    assert any("consensusite" in w and "persona" in w for w in warns)
+
+
+def test_referential_clean_for_known_personas(tmp_path):
+    case = _case_with_board(
+        tmp_path,
+        critiques=[{"critic_persona": "critic", "target_persona": "advocate"}],
+        recs=[{"veto_by": ["conservative"], "dissent_by": ["risktaker"], "endorsed_by": []}],
+    )
+    assert vc.referential_warnings(case, "demo", check_refs=False) == []
+
+
+def test_check_refs_flags_dangling_target_only_when_enabled(tmp_path):
+    case = _case_with_board(
+        tmp_path,
+        positions=[{"persona": "advocate", "picks": [{"intervention_id": "drug-a"}]}],
+        critiques=[{"critic_persona": "critic", "target_persona": "advocate",
+                    "target_intervention_id": "ghost-drug"}],
+    )
+    assert vc.referential_warnings(case, "demo", check_refs=False) == []
+    warns = vc.referential_warnings(case, "demo", check_refs=True)
+    assert any("ghost-drug" in w for w in warns)
+
+
 # --- integration: every committed case validates clean ------------------------
 
 def _all_slugs():
