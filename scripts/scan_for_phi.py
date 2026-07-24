@@ -93,6 +93,14 @@ ONCOLOGY_ACRONYM_ALLOWLIST = frozenset({
     # they appear in runs of society acronyms ("ASH, EHA, ASTRO, SITC") that
     # otherwise read as a NAME, NAME pair.
     "EHA", "SITC", "AASLD",
+    # European LeukemiaNet — the AML guideline body the concensusite cites in
+    # runs like "NCCN, ELN, and ASH converge", which read as a NAME, NAME pair.
+    "ELN",
+    # All-caps clinician credential that trails a ClinicalTrials.gov central-contact
+    # name (e.g. "Fahmida Hoq, MBBS, MS") and reads as a NAME, NAME pair with the
+    # adjacent "MS". Added minimally; extend with other all-caps postnominals only
+    # as real contact rows surface them.
+    "MBBS",
     "FDA", "EMA", "MHRA", "PMDA", "NMPA", "TGA", "CDC", "NIH", "NCI", "WHO",
     "OECD", "RECIST", "ECOG", "RECIST", "CTCAE", "MCBS",
     # Statistical / methodology

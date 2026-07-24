@@ -13,6 +13,7 @@
 - [newly diagnosed metastatic basal-like PDAC with KRAS G12D + ARID1A loss, somatic MLH1 in an MSS background, 79yo](pancreatic-mets-kras-g12d-basal-arid1a-k9r3/index.md)
 - [newly diagnosed R0 Stage IIIc high-grade serous tubo-ovarian carcinoma, germline-BRCA-wild-type, tumor HRD / somatic-BRCA pending](hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq/index.md)
 - [relapsed/refractory MDS-related AML after matched-sibling allo-HCT, TP53-aberrant-pending and HLA-A*02:01 / HA-1/HA-2 typing pending](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2/index.md)
+- [relapsed/refractory MDS-related AML — HLA/HA typing pending (Fable-5 full-pipeline re-run of the case above)](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun/index.md)
 
 ## Conventions
 

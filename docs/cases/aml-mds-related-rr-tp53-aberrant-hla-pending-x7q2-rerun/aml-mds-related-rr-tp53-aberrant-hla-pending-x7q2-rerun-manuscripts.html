@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>Libby manuscripts inventory — aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun</title>
+<style>
+
+      :root { color-scheme: light; }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        max-width: 1200px;
+        margin: 2em auto;
+        padding: 0 1.5em 3em;
+        color: #1A202C;
+        background: #FFFFFF;
+        line-height: 1.55;
+      }
+      h1 { border-bottom: 2px solid #5B3A87; padding-bottom: 0.3em; margin-top: 0; }
+      h2 { color: #5B3A87; margin-top: 1.8em; }
+      h3 { color: #1A202C; margin-top: 1.4em; }
+      a { color: #5B3A87; text-decoration: underline; }
+      code { background: #F4F6F8; padding: 0.1em 0.4em; border-radius: 2px; font-size: 0.92em; }
+      .disclaimer {
+        background: #FFF4E5; border-left: 4px solid #B45309;
+        padding: 0.8em 1em; margin: 1em 0 2em; font-size: 0.95em;
+      }
+      .libby-footer {
+        margin-top: 3em; padding-top: 1em; border-top: 1px solid #E2E8F0;
+        color: #6B6B7F; font-size: 0.85em;
+      }
+    
+/* Trial-table style — vendored from /Users/benjaminvincent/turtle/pfo/conductor/styles/trial-table/
+   Scoped via .trial-table-wrap so it does not leak into surrounding MkDocs page.
+
+   Uses explicit [data-md-color-scheme] selectors to bypass any CSS-variable
+   inheritance issues — the table reads correctly in both default (light) and
+   slate (dark) Material color schemes regardless of cascade quirks. */
+
+.trial-table-wrap caption {
+  caption-side: top;
+  text-align: left;
+  font-weight: 600;
+  padding: 0.4em 0;
+  font-size: 1em;
+}
+.trial-scroll { overflow-x: auto; }
+.trial-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.88em;
+}
+.trial-table thead th {
+  font-weight: 600;
+  text-align: left;
+  padding: 0.5em 0.6em;
+  white-space: nowrap;
+}
+.trial-table tbody td {
+  padding: 0.5em 0.6em;
+  font-variant-numeric: tabular-nums;
+  vertical-align: top;
+}
+.trial-table .num { text-align: right; }
+
+/* Narrow ID-style columns — the entry number in the access-guide summary
+   table and the NCT id in the access-guide trial-pathways table. Keep
+   numbers / NCTs on a single line so "10" doesn't wrap to "1\n0" and
+   "NCT05379985" doesn't break across four lines. min-width is large
+   enough to comfortably fit the widest expected value (3-digit entry
+   number, NCT + 8 digits = 11 chars in a monospace fallback). */
+.trial-table th.col-num,
+.trial-table td.col-num,
+.trial-table th.col-nct,
+.trial-table td.col-nct {
+  white-space: nowrap;
+}
+.trial-table th.col-num,
+.trial-table td.col-num { min-width: 2.4em; }
+.trial-table th.col-nct,
+.trial-table td.col-nct { min-width: 6.5em; }
+
+/* Access-guide column widths — kept generous so the wrapping `.trial-scroll`
+   div engages horizontal scroll before the cell text squeezes into a tall
+   narrow stack. Tuned for the access-guide tables specifically; other
+   trial-tables on the site keep their default auto layout. */
+.trial-table th.col-intervention,
+.trial-table td.col-intervention { min-width: 14em; }
+.trial-table th.col-target,
+.trial-table td.col-target { min-width: 12em; }
+.trial-table th.col-access-status,
+.trial-table td.col-access-status { min-width: 10em; }
+.trial-table th.col-regulatory,
+.trial-table td.col-regulatory { min-width: 22em; }
+.trial-table th.col-first-action,
+.trial-table td.col-first-action { min-width: 22em; }
+
+.trial-table th.col-phase,
+.trial-table td.col-phase { min-width: 3.5em; white-space: nowrap; }
+.trial-table th.col-indication,
+.trial-table td.col-indication { min-width: 18em; }
+.trial-table th.col-status,
+.trial-table td.col-status { min-width: 7em; white-space: nowrap; }
+.trial-table th.col-eligibility,
+.trial-table td.col-eligibility { min-width: 8em; white-space: nowrap; }
+.trial-table th.col-contact,
+.trial-table td.col-contact { min-width: 14em; }
+.trial-table th.col-notes,
+.trial-table td.col-notes { min-width: 24em; }
+.trial-table a {
+  text-decoration: underline;
+  font-weight: 700;
+}
+.trial-table .mark {
+  font-size: 0.75em;
+  vertical-align: super;
+}
+
+/* ---------- Default (light) scheme ---------- */
+[data-md-color-scheme="default"] .trial-table-wrap { color: #1A202C; }
+[data-md-color-scheme="default"] .trial-table thead th {
+  background: #F4F6F8;
+  color: #1A202C;
+  border-top: 2px solid #1A202C;
+  border-bottom: 1px solid #1A202C;
+}
+[data-md-color-scheme="default"] .trial-table tbody td {
+  color: #1A202C;
+  border-bottom: 1px solid #E2E8F0;
+}
+[data-md-color-scheme="default"] .trial-table tbody tr:last-child td {
+  border-bottom: 2px solid #1A202C;
+}
+[data-md-color-scheme="default"] .trial-table a { color: #1A202C; }
+[data-md-color-scheme="default"] .trial-table-wrap .notes {
+  font-size: 0.85em;
+  color: #4A5568;
+  margin-top: 0.6em;
+}
+
+/* ---------- Slate (dark) scheme ---------- */
+[data-md-color-scheme="slate"] .trial-table-wrap { color: #E2E8F0; }
+[data-md-color-scheme="slate"] .trial-table thead th {
+  background: #2D3344;
+  color: #F1F5F9;
+  border-top: 2px solid #94A3B8;
+  border-bottom: 1px solid #94A3B8;
+}
+[data-md-color-scheme="slate"] .trial-table tbody td {
+  color: #E2E8F0;
+  border-bottom: 1px solid #3A4159;
+}
+[data-md-color-scheme="slate"] .trial-table tbody tr:last-child td {
+  border-bottom: 2px solid #94A3B8;
+}
+[data-md-color-scheme="slate"] .trial-table a {
+  color: #93C5FD;
+}
+[data-md-color-scheme="slate"] .trial-table-wrap .notes {
+  font-size: 0.85em;
+  color: #94A3B8;
+  margin-top: 0.6em;
+}
+
+/* Libby-specific styling: case-fit / toxicity badges, agreement matrix, persona pills. */
+
+/* Bold links across all rendered content. */
+.md-typeset a {
+  font-weight: 700;
+}
+
+/* Case-fit badges (in trials.md). */
+.fit-badge {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.4em;
+  font-size: 0.78em;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+.fit-strong  { background: #E6F5EA; color: #14532D; border-color: #BBE2C7; }
+.fit-partial { background: #FFF7E0; color: #5A4500; border-color: #F1DD9A; }
+.fit-weak    { background: #FBE9E7; color: #6F2E1A; border-color: #ECC4BB; }
+.fit-none    { background: #F1F3F5; color: #4A5568; border-color: #E2E8F0; }
+
+/* Tumor-type-relation badges (trial table). */
+.rel-badge {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.4em;
+  font-size: 0.78em;
+  font-weight: 600;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.rel-indication  { background: #DDF1EE; color: #134E48; border-color: #B0DBD3; }
+.rel-basket      { background: #FFE9D6; color: #6F3A0F; border-color: #F0CFAE; }
+.rel-same-drug   { background: #DFEBFB; color: #1B3A6B; border-color: #B5CDEE; }
+.rel-cross-tumor { background: #F1E5FF; color: #441E72; border-color: #D4BBF2; }
+.rel-other       { background: #F1F3F5; color: #4A5568; border-color: #E2E8F0; }
+
+/* Risk-of-bias badges (evidence table). */
+.rob-badge {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.4em;
+  font-size: 0.78em;
+  font-weight: 600;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.rob-low  { background: #E6F5EA; color: #14532D; border-color: #BBE2C7; }
+.rob-med  { background: #FFF7E0; color: #5A4500; border-color: #F1DD9A; }
+.rob-high { background: #FBE9E7; color: #6F2E1A; border-color: #ECC4BB; }
+
+/* Toxicity flag pills. */
+.tox-flag {
+  display: inline-block;
+  padding: 0.05em 0.45em;
+  border-radius: 999px;
+  font-size: 0.75em;
+  background: #FBE9E7;
+  color: #6F2E1A;
+  border: 1px solid #ECC4BB;
+  margin-right: 0.25em;
+}
+
+/* Persona badges (board.md, recommendations.md). */
+.persona {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.35em;
+  font-size: 0.78em;
+  font-weight: 600;
+  margin-right: 0.25em;
+  border: 1px solid transparent;
+}
+.persona-risktaker    { background: #FFE9D6; color: #6F3A0F; border-color: #F0CFAE; }
+.persona-conservative { background: #DFEBFB; color: #1B3A6B; border-color: #B5CDEE; }
+.persona-critic       { background: #F1E5FF; color: #441E72; border-color: #D4BBF2; }
+.persona-concensusite { background: #DDF1EE; color: #134E48; border-color: #B0DBD3; }
+.persona-advocate     { background: #FFE5EE; color: #6E1638; border-color: #F0BBCB; }
+
+/* Agreement-level decorations. */
+.agree-endorse   { color: #14532D; font-weight: 600; }
+.agree-qualified { color: #5A4500; font-weight: 600; }
+.agree-dissent   { color: #6F2E1A; font-weight: 600; }
+.agree-veto      { color: #6F2E1A; font-weight: 700; text-decoration: underline; }
+
+/* Biomarker-conditional flag (inline in Intervention cell when scenario ends with :positive). */
+.scenario-conditional {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5A4500;
+  background: #FFF7E0;
+  border: 1px solid #F1DD9A;
+  border-radius: 0.35em;
+  padding: 0.05em 0.45em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+
+/* Counter-productive MoA descriptor (parenthetical text after the bold severity). */
+.cpm-desc {
+  font-size: 0.92em;
+  color: #4A5568;
+}
+
+/* Persona pill row inside the Intervention cell on the ranked-prioritization table. */
+.persona-line {
+  display: inline-block;
+  margin-top: 0.15em;
+  font-size: 0.78em;
+  color: #4A5568;
+}
+.persona-line + .persona-line {
+  margin-left: 0.6em;
+}
+
+/* Recommendation table marks. */
+.split-glyph { font-weight: 700; color: #5A4500; }
+.not-recommended {
+  color: #4A5568;
+  text-decoration: line-through;
+}
+
+/* Disclaimer banner — applied to every case page via admonition. */
+.md-typeset .admonition.disclaimer {
+  border-color: #B71C1C;
+}
+.md-typeset .admonition.disclaimer > .admonition-title {
+  background-color: rgba(183, 28, 28, 0.08);
+  color: #B71C1C;
+}
+
+/* Agreement matrix heatmap (board.md). Pastel cells carry explicit
+   foreground+background that remain legible regardless of scheme; matrix
+   chrome (header, borders, no-opinion cells) uses scheme-aware selectors. */
+.agreement-matrix {
+  border-collapse: collapse;
+  font-size: 0.85em;
+}
+.agreement-matrix th, .agreement-matrix td {
+  padding: 0.35em 0.5em;
+  text-align: center;
+}
+.agreement-matrix th { font-weight: 600; }
+
+/* Pastel cell colors — same in both schemes (high contrast on their own bg). */
+.agreement-matrix td.cell-endorse   { background: #C8E6D0; color: #14532D; }
+.agreement-matrix td.cell-qualified { background: #FCEEC2; color: #5A4500; }
+.agreement-matrix td.cell-dissent   { background: #F4C7BE; color: #6F2E1A; }
+.agreement-matrix td.cell-veto      { background: #E8A399; color: #4A1408; font-weight: 700; }
+
+/* Default (light) scheme chrome. */
+[data-md-color-scheme="default"] .agreement-matrix th,
+[data-md-color-scheme="default"] .agreement-matrix td {
+  border: 1px solid #E2E8F0;
+  color: #1A202C;
+}
+[data-md-color-scheme="default"] .agreement-matrix th {
+  background: #F4F6F8;
+  color: #1A202C;
+}
+[data-md-color-scheme="default"] .agreement-matrix td.cell-absent {
+  background: #F1F3F5;
+  color: #94A3B8;
+}
+
+/* Slate (dark) scheme chrome. */
+[data-md-color-scheme="slate"] .agreement-matrix th,
+[data-md-color-scheme="slate"] .agreement-matrix td {
+  border: 1px solid #3A4159;
+  color: #E2E8F0;
+}
+[data-md-color-scheme="slate"] .agreement-matrix th {
+  background: #2D3344;
+  color: #F1F5F9;
+}
+[data-md-color-scheme="slate"] .agreement-matrix td.cell-absent {
+  background: #232838;
+  color: #64748B;
+}
+
+</style>
+</head>
+<body data-md-color-scheme="default">
+<div class="disclaimer">
+<strong>Decision support, not medical advice.</strong> Libby is an experimental 
+multi-agent decision-support tool. The information on this page has not been 
+reviewed by a clinician treating this patient. Information ages — confirm details 
+directly with the relevant sources before relying on them.
+</div>
+<h1 id="manuscripts-considered-aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun">Manuscripts considered — <code>aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun</code></h1>
+<p>Master inventory: 15 clinical (13 included, 2 considered &amp; excluded) + 16 pre-clinical (13 included, 3 considered &amp; excluded) + 20 additional trial publications/registrations. One row per paper, sorted by year (newest first). Excluded rows are papers a Libby agent reviewed and chose NOT to feed to the board, with the exclusion reason captured. Toxicities use CTCAE-style term · grade · n/N · rate. Pre-clinical rows leave the toxicity cell blank by design. A printable PDF version is linked from the case <strong>Downloads</strong> section.</p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>Reference</th><th>Type</th><th>Inclusion</th><th>Intervention</th><th>Indication / model</th><th>Design</th><th>n</th><th>Effect size</th><th>Variance</th><th>Toxicities (type · n/N · rate)</th><th>Case fit</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Gyurkocza/Giralt (2025)<br><em>J Clin Oncol</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/39298738">PMID&nbsp;39298738</a></td><td><span class="rel-badge rel-indication">clinical</span></td><td><span class="fit-badge fit-strong">included</span></td><td>Iomab-B (131I-apamistamab) anti-CD45 radioimmunotherapy conditioning</td><td>Active relapsed/refractory AML, age &gt;=55, planned allo-HCT <em>(2L+)</em><br><small>Active R/R AML age &gt;=55 fit for allo-HCT; ITT included crossover (52% of conventional-care arm received 131I-apamistamab). Enrolled patients heading to a first allo-HCT.</small></td><td>Randomized open-label phase 3 (SIERRA)</td><td class="num">153</td><td class="num"><strong>CR rate</strong>: 17.10 % (durable CR &gt;=180d) <small>(131I-apamistamab arm)</small> <small><em>vs 0% (0-4.7) conventional care; p&lt;0.0001</em></small><br><strong>OS HR</strong>: 0.99 <small><em>ITT; OS not improved, diluted by 52% crossover to RIT</em></small><br><strong>EFS HR</strong>: 0.23 <small><em>favors 131I-apamistamab</em></small><br><small>Durable complete remission (&gt;=180 days)</small></td><td class="num">95% CI 9.40–27.50<br>95% CI 0.70–1.41 · p=0.96<br>95% CI 0.15–0.34</td><td><strong>Any treatment-related AE</strong> G&gt;=3 — n=76 · 59.7%</td><td><span class="fit-badge fit-partial">partial</span></td><td>Randomized evidence that CD45-targeted radioimmunotherapy can carry active R/R AML into allo-HCT, speaking to conditioning a second transplant with an 85%-blast marrow. SIERRA enrolled patients going to a first transplant, so prior-HCT eligibility is the axis to check. OS was flat because most control patients crossed over.</td></tr>
+        <tr><td>—/— (2025)</td><td>—</td><td><span class="rel-badge rel-indication">clinical</span></td><td><span class="rel-badge rel-other">excluded</span><br><small>No peer-reviewed clinical efficacy data to extract yet: the solid-tumor PYNNACLE study (NCT04585750) and the myeloid rezatapopt + azacitidine trial (NCT06616636) are ongoing with results limited to conference abstracts. Also Y220C-contingent, and the patient&#x27;s TP53 status and specific variant are unresolved.</small></td><td>Rezatapopt (PC14586, Y220C-selective p53 reactivator)</td><td>—</td><td>—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td>—</td><td>—</td><td><strong>Excluded:</strong> No peer-reviewed clinical efficacy data to extract yet: the solid-tumor PYNNACLE study (NCT04585750) and the myeloid rezatapopt + azacitidine trial (NCT06616636) are ongoing with results limited to conference abstracts. Also Y220C-contingent, and the patient&#x27;s TP53 status and specific variant are unresolved.<br>The Y220C-selective reactivator is the actionable TP53 handle if a Y220C variant is confirmed; retained for the audit trail with no manuscript to source effect sizes or toxicities from.</td></tr>
+        <tr><td>Carter/Andreeff (2025)<br><em>Blood</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40608889">PMID&nbsp;40608889</a></td><td><span class="rel-badge rel-cross-tumor">preclinical</span></td><td><span class="fit-badge fit-strong">included</span></td><td>Rezatapopt (PC14586) in TP53-Y220C AML</td><td>TP53-Y220C AML cell lines and stem/progenitor cells; TP53-Y220C AML xenograft mice</td><td>PC14586 (rezatapopt) binds the pocket created by the Y220C substitution and refolds p53 toward a wild-type conformation that reactivates transcriptional targets; in AML, MDM2/XPO1 feedback plus loss of a p53-BCL-2/BAX interaction blunt apoptosis, so BCL-2 inhibition is needed to turn reactivation into cell death.</td><td class="num">—</td><td>strong — Rezatapopt restored wild-type p53 conformation and target-gene activity in TP53-Y220C AML but induced little apoptosis alone. Adding venetoclax produced heavy killing of AML cells and stem/progenitors in vitro and prolonged survival of TP53-Y220C AML xenografts.</td><td>vs rezatapopt alone; venetoclax alone; MDM2/XPO1-inhibitor arms<br>translatability: high</td><td><em>n/a (preclinical)</em></td><td><span class="fit-badge fit-strong">strong</span></td><td>Single-agent rezatapopt was largely cytostatic in AML; the survival benefit needed venetoclax, which this patient&#x27;s disease has already progressed through in FLAG-IDA/venetoclax reinduction. PMV-affiliated co-authors; contingent on confirming a Y220C variant. Underpins NCT06616636.</td></tr>
+        <tr><td>Puzio-Kuter/Poyurovsky (2025)<br><em>Cancer Discov</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/39945593">PMID&nbsp;39945593</a></td><td><span class="rel-badge rel-cross-tumor">preclinical</span></td><td><span class="fit-badge fit-strong">included</span></td><td>Rezatapopt (PC14586) Y220C reactivation POC</td><td>TP53-Y220C human tumor cell lines and xenografts (solid tumors); biochemical, structural, and transcriptomic assays</td><td>Rezatapopt corrects the Y220C-mutant p53 conformation so it binds DNA and drives its target-gene program, restoring antiproliferative p53 activity, characterized biochemically, structurally, and by in-vitro and in-vivo transcriptomics.</td><td class="num">—</td><td>strong — Rezatapopt recovered multiple arms of the wild-type p53 program in Y220C models and gave potent antitumor activity in preclinical xenografts as a single agent and with immunotherapy. This is the foundational proof-of-concept dataset for the clinical compound.</td><td>vs vehicle; TP53-WT and non-Y220C mutant lines<br>translatability: med</td><td><em>n/a (preclinical)</em></td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td>Solid-tumor models, so read-across to this patient&#x27;s myeloid disease rests on the shared Y220C mechanism rather than tumor match. PMV Pharmaceuticals study.</td></tr>
+        <tr><td>Vu/Dumble (2025)<br><em>ACS Med Chem Lett</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/39811143">PMID&nbsp;39811143</a></td><td><span class="rel-badge rel-cross-tumor">preclinical</span></td><td><span class="rel-badge rel-other">excluded</span><br><small>Medicinal-chemistry discovery and structure report for rezatapopt with Y220C xenograft regression; the fuller preclinical efficacy characterization is captured by Puzio-Kuter 2025 and the AML-specific biology by Carter 2025.</small></td><td>Rezatapopt (PC14586) discovery / medicinal-chemistry report</td><td>—</td><td>—</td><td class="num">—</td><td>—</td><td>—</td><td><em>n/a (preclinical)</em></td><td>—</td><td><strong>Excluded:</strong> Medicinal-chemistry discovery and structure report for rezatapopt with Y220C xenograft regression; the fuller preclinical efficacy characterization is captured by Puzio-Kuter 2025 and the AML-specific biology by Carter 2025.</td></tr>
+        <tr><td>—/— (2025)<br><em>—</em></td><td><a href="https://clinicaltrials.gov/study/NCT06994676">NCT06994676</a></td><td><span class="rel-badge rel-basket">trial publication</span></td><td><span class="fit-badge fit-strong">included</span></td><td>CBX-250 (TCR-mimetic bispecific T-cell engager targeting CG1/HLA-A*02:01)</td><td>R/R AML / high-risk MDS / CMML / CML (CROSSCHECK-001, first-in-human) <em>(2L+)</em><br><small>HLA-A*02:01 required; target is CG1 (Cathepsin-G-derived peptide) presented on HLA-A*02:01</small></td><td>Open-label phase 1 first-in-human dose-escalation, single-agent, subcutaneous</td><td class="num">—</td><td class="num">—<br><small>Safety, tolerability, MTD/RP2D, preliminary clinical activity</small></td><td class="num">—</td><td>—</td><td><span class="fit-badge fit-partial">partial</span></td><td>On the patient&#x27;s primary axis: CBX-250 is gated on HLA-A*02:01, the same restriction that gates the HA-1/HA-2 and WT1 options, so it belongs in the same discussion. Unlike the autologous or donor TCR-T products it is an off-the-shelf T-cell engager, so there is no cell-manufacturing lead time. CG1, a Cathepsin-G-derived peptide, sits on AML blasts and spares most normal myeloid cells per the preclinical work, and prior allo-HCT is allowed once at least 60 days have passed. Fit is partial: phase 1 with no efficacy readout, the usual T-cell-engager CRS risk, and the still-pending HLA-A*02:01 typing. · Trial registration only — no peer-reviewed publication yet<br><em>registration only — no peer-reviewed publication yet; toxicity table not extracted; primary endpoint not extracted</em></td></tr>
+        <tr><td>—/— (2025)<br><em>—</em></td><td><a href="https://clinicaltrials.gov/study/NCT07566585">NCT07566585</a></td><td><span class="rel-badge rel-basket">trial publication</span></td><td><span class="fit-badge fit-strong">included</span></td><td>BSB-2002 (mutant-NPM1-directed TCR-T)</td><td>NPM1-mutated AML, MRD-positive after treatment <em>(2L+)</em><br><small>HLA-A*02:01 required + NPM1 mutation type A/D/G/H, MRD-positive</small></td><td>Phase 1 dose-finding, HLA-A*02:01-restricted mutant-NPM1 TCR-T added to standard of care</td><td class="num">—</td><td class="num">—<br><small>Safety, dose</small></td><td class="num">—</td><td>—</td><td><span class="fit-badge fit-weak">weak</span></td><td>A second HLA-A*02:01-gated mutant-NPM1 TCR-T caught by the gate sweep, from BlueSphere Bio&#x27;s TCR platform. It carries the same two barriers as the Miltenyi program plus a third: it enrolls the MRD-positive setting, whereas this patient is in overt high-burden relapse and is NPM1-wild-type. Weak and mainly informational for the HLA-A*02:01 TCR-T landscape. · Trial registration only — no peer-reviewed publication yet<br><em>registration only — no peer-reviewed publication yet; toxicity table not extracted; primary endpoint not extracted</em></td></tr>
+        <tr><td>—/— (2025)<br><em>—</em></td><td><a href="https://clinicaltrials.gov/study/NCT07645469">NCT07645469</a></td><td><span class="rel-badge rel-basket">trial publication</span></td><td><span class="fit-badge fit-strong">included</span></td><td>FH-WT1-E50 (anti-WT1 TCR/CD8ab T-cells) + azacitidine</td><td>AML with measurable residual disease (post-therapy) <em>(2L+)</em><br><small>HLA-A*02:01, WT1-expressing</small></td><td>Phase 1, autologous HLA-A*02:01-restricted anti-WT1 TCR-T plus azacitidine</td><td class="num">—</td><td class="num">—<br><small>Safety, WT1-directed activity</small></td><td class="num">—</td><td>—</td><td><span class="fit-badge fit-weak">weak</span></td><td>WT1 is a second A*02:01-restricted handle, but this trial targets the MRD setting and the patient is in florid relapse at ~85% marrow blasts, so the enrolling population does not match the current disease state. It also gates on HLA-A*02:01, which is unresolved. More relevant as a post-cytoreduction or post-HCT2 consolidation concept than as a current-state fit. · Trial registration only — no peer-reviewed publication yet<br><em>registration only — no peer-reviewed publication yet; toxicity table not extracted; primary endpoint not extracted</em></td></tr>
+        <tr><td>—/— (2025)<br><em>—</em></td><td><a href="https://clinicaltrials.gov/study/NCT07157514">NCT07157514</a></td><td><span class="rel-badge rel-basket">trial publication</span></td><td><span class="fit-badge fit-strong">included</span></td><td>131I-apamistamab RIT conditioning + allo-HCT</td><td>Acute leukemia, radioimmunotherapy conditioning for allo-HCT <em>(2L+)</em><br><small>CD45 (targeted conditioning)</small></td><td>Phase 2/3, 131I-apamistamab conditioning + fludarabine/cyclophosphamide/TBI</td><td class="num">—</td><td class="num">—<br><small>Engraftment, remission, survival</small></td><td class="num">—</td><td>—</td><td><span class="fit-badge fit-partial">partial</span></td><td>The go-forward apamistamab conditioning study, and unlike the closed SIERRA it may still open a slot for targeted conditioning ahead of the planned second transplant. Prior allo-HCT eligibility needs checking against the protocol. Partial on the platform match. · Trial registration only — no peer-reviewed publication yet<br><em>registration only — no peer-reviewed publication yet; toxicity table not extracted; primary endpoint not extracted</em></td></tr>
+        <tr><td>Issa GC/Stein EM (2025)<br><em>J Clin Oncol</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/39121437">PMID&nbsp;39121437</a></td><td><span class="rel-badge rel-basket">trial publication</span></td><td><span class="fit-badge fit-strong">included</span></td><td>Revumenib (menin inhibitor)</td><td>KMT2A-rearranged relapsed/refractory acute leukemia <em>(2L+)</em><br><small>KMT2A rearrangement</small></td><td>Phase 2 single-arm (AUGMENT-101), revumenib monotherapy</td><td class="num">—</td><td class="num">—<br><small>CR / CRh</small></td><td class="num">—</td><td>—</td><td><span class="fit-badge fit-weak">weak</span></td><td>Menin inhibition works through the menin-KMT2A interaction, and revumenib&#x27;s approval and AUGMENT-101 data are in KMT2A-rearranged disease. This patient has KMT2A amplification, a distinct lesion, not a rearrangement, and menin-inhibitor benefit for amplification is unproven, so the match is biomarker-adjacent at best. Weak, and enrollment would require the KMT2A-rearrangement (or NPM1) eligibility the patient does not meet.<br><em>toxicity table not extracted; primary endpoint not extracted</em></td></tr>
+        <tr><td>Krakow/Bleakley (2024)<br><em>Blood</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/38683966">PMID&nbsp;38683966</a></td><td><span class="rel-badge rel-indication">clinical</span></td><td><span class="fit-badge fit-strong">included</span></td><td>HA-1-specific CD8+/CD4+ TCR-T (Bleakley/Fred Hutch platform)</td><td>Recurrent leukemia/myeloid neoplasm after allo-HCT <em>(2L+)</em><br><small>Recurrent AML/ALL/MDS/JMML after allo-HCT; HLA-A*02:01-positive with recipient HA-1(H)-positive / donor HA-1-negative mismatch. n=9 treated.</small></td><td>Single-arm phase 1 (feasibility/safety)</td><td class="num">9</td><td class="num"><strong>CR rate</strong>: 4/9 patients <small><em>achieved or maintained CR after lymphodepletion + HA-1 TCR-T; trial not powered for efficacy; 1 patient in remission &gt;2y</em></small><br><strong>AE rate</strong>: 0.00 DLTs <small><em>no dose-limiting toxicities</em></small><br><small>CR achieved or maintained (4 of 9)</small></td><td class="num">—<br>—</td><td><strong>CRS</strong> — 0/9 · 0%<br><strong>ICANS</strong> — 0/9 · 0%<br><strong>GVHD (acute)</strong> G1-2 — 2/9<br><strong>Neutropenia</strong> G&gt;=3 — n=9<br><strong>Infection</strong> G&gt;=3 — n=9</td><td><span class="fit-badge fit-partial">partial</span></td><td>Per-term AE detail pulled from PMC full text (PMC11406181); the Blood abstract reported only &#x27;no DLTs&#x27;. Closest published precedent for the patient&#x27;s primary HA-1 handle (NCT03326921); commercial HA-1/HA-2 programs TSC-100/101 and BSB-1001 have no published clinical results yet.</td></tr>
+        <tr><td>Daver/Kantarjian (2024)<br><em>Lancet Oncol</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/38423051">PMID&nbsp;38423051</a></td><td><span class="rel-badge rel-indication">clinical</span></td><td><span class="fit-badge fit-strong">included</span></td><td>Pivekimab sunirine (IMGN632, CD123 ADC)</td><td>Relapsed/refractory AML, CD123+ <em>(2L+)</em><br><small>CD123+ R/R AML, ECOG 0-1; first-in-human dose-escalation/expansion, RP2D expansion cohort n=29 (whole study n=91).</small></td><td>Phase 1/2 dose-escalation and expansion</td><td class="num">91</td><td class="num"><strong>ORR</strong>: 21.00 % <small>(RP2D 0.045 mg/kg q3w)</small> <small><em>6 of 29</em></small><br><strong>CR rate</strong>: 17.00 % (composite CR) <small>(RP2D)</small> <small><em>composite complete remission, 5 of 29</em></small><br><small>ORR at RP2D</small></td><td class="num">95% CI 8.00–40.00<br>95% CI 6.00–36.00</td><td><strong>Febrile neutropenia</strong> G&gt;=3 — 3/29 · 10%<br><strong>Infusion-related reaction</strong> G&gt;=3 — 2/29 · 7%<br><strong>Anaemia</strong> G&gt;=3 — 2/29 · 7%<br><strong>Veno-occlusive disease</strong> G&gt;=3 — 2/68<br><strong>Treatment-related death</strong> G5 — 1/68</td><td><span class="fit-badge fit-partial">partial</span></td><td>Single-agent CD123 ADC activity in R/R AML matching the patient&#x27;s CD123 positivity; quantitative antigen density (advisory) is still pending. VOD signal is notable given the planned second transplant.</td></tr>
+        <tr><td>—/— (2024)<br><em>—</em></td><td><a href="https://clinicaltrials.gov/study/NCT06704152">NCT06704152</a></td><td><span class="rel-badge rel-basket">trial publication</span></td><td><span class="fit-badge fit-strong">included</span></td><td>BSB-1001 (HA-1-directed TCR-T)</td><td>Recurrent AML / ALL / MDS undergoing HLA-matched allo-HCT <em>(2L+)</em><br><small>HLA-A*02:01 + HA-1 recipient-positive / donor-negative</small></td><td>Phase 1/2 dose-escalation and expansion of a donor-derived HA-1 TCR-T after allo-HCT</td><td class="num">—</td><td class="num">—<br><small>Safety, dose, anti-leukemic activity</small></td><td class="num">—</td><td>—</td><td><span class="fit-badge fit-partial">partial</span></td><td>A newer HA-1 TCR-T program covering the same A*02:01-restricted mHAg mismatch, so it broadens the options if TScan or the Fred Hutch slot is unavailable. The eligibility gate is identical: HLA-A*02:01 plus recipient HA-1(H)-positive / donor HA-1-negative, still to be genotyped. Partial pending typing. · Trial registration only — no peer-reviewed publication yet<br><em>registration only — no peer-reviewed publication yet; toxicity table not extracted; primary endpoint not extracted</em></td></tr>
+        <tr><td>—/— (2024)<br><em>—</em></td><td><a href="https://clinicaltrials.gov/study/NCT06424340">NCT06424340</a></td><td><span class="rel-badge rel-basket">trial publication</span></td><td><span class="fit-badge fit-strong">included</span></td><td>MB-dNPM1-TCR.1 (mutant-NPM1-directed TCR-T)</td><td>Relapsed/refractory NPM1-mutated AML <em>(2L+)</em><br><small>HLA-A*02:01 required + NPM1 mutation recognized by the TCR</small></td><td>Phase 1/2, autologous HLA-A*02:01-restricted TCR-T targeting the mutant-NPM1 neoantigen</td><td class="num">—</td><td class="num">—<br><small>Safety, dose, response</small></td><td class="num">—</td><td>—</td><td><span class="fit-badge fit-weak">weak</span></td><td>The Step 1.75 gate sweep surfaced this because it requires HLA-A*02:01, the same restriction as the patient&#x27;s primary axis, so it is kept for landscape completeness. The catch is the second gate: the TCR reads a mutant-NPM1 neoantigen, and this patient is NPM1-wild-type on the available panels, so the target antigen is absent and enrollment is not open unless relapse NGS turns up an NPM1 mutation. Weak on that target-absence basis, with the HLA typing also unresolved. · Trial registration only — no peer-reviewed publication yet<br><em>registration only — no peer-reviewed publication yet; toxicity table not extracted; primary endpoint not extracted</em></td></tr>
+        <tr><td>—/— (2024)<br><em>—</em></td><td><a href="https://clinicaltrials.gov/study/NCT06561152">NCT06561152</a></td><td><span class="rel-badge rel-basket">trial publication</span></td><td><span class="fit-badge fit-strong">included</span></td><td>Tagraxofusp + cladribine + cytarabine</td><td>CD123-positive relapsed/refractory AML <em>(2L+)</em><br><small>CD123+</small></td><td>Phase 1/2, tagraxofusp plus low-intensity cladribine/cytarabine</td><td class="num">—</td><td class="num">—<br><small>Safety, response</small></td><td class="num">—</td><td>—</td><td><span class="fit-badge fit-partial">partial</span></td><td>Directly a CD123-positive R/R AML trial, matching the patient&#x27;s confirmed CD123 flow positivity, though the quantitative antigen-density readout that predicts benefit is still pending. Tagraxofusp adds capillary-leak and hepatic risk that would need organ-function data the intake does not yet have. Partial: the biomarker and disease state fit, the density and fitness workup are open. · Trial registration only — no peer-reviewed publication yet<br><em>registration only — no peer-reviewed publication yet; toxicity table not extracted; primary endpoint not extracted</em></td></tr>
+        <tr><td>—/— (2024)<br><em>—</em></td><td><a href="https://clinicaltrials.gov/study/NCT06616636">NCT06616636</a></td><td><span class="rel-badge rel-basket">trial publication</span></td><td><span class="fit-badge fit-strong">included</span></td><td>Rezatapopt (PC14586) + azacitidine</td><td>TP53 Y220C-mutant MDS / AML <em>(2L+)</em><br><small>TP53 Y220C</small></td><td>Phase 1b, rezatapopt plus azacitidine</td><td class="num">—</td><td class="num">—<br><small>Safety, response</small></td><td class="num">—</td><td>—</td><td><span class="fit-badge fit-weak">weak</span></td><td>This is the myeloid trial of the Y220C-selective p53 reactivator, so it is the actionable landing spot in the patient&#x27;s own disease if the TP53 aberration is confirmed as Y220C. Both prerequisites are open: TP53 status itself is unresolved (2019 mutant vs 2026 negative on a limited assay) and the specific variant is unknown. Weak until Y220C is established; a non-Y220C aberration would exclude it. · Trial registration only — no peer-reviewed publication yet<br><em>registration only — no peer-reviewed publication yet; toxicity table not extracted; primary endpoint not extracted</em></td></tr>
+        <tr><td>Garcia-Manero/Sallman (2023)<br><em>Lancet Haematol</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/36990622">PMID&nbsp;36990622</a></td><td><span class="rel-badge rel-indication">clinical</span></td><td><span class="fit-badge fit-strong">included</span></td><td>Eprenetapopt (APR-246) + venetoclax + azacitidine</td><td>TP53-mutant AML, treatment-naive <em>(1L)</em><br><small>Treatment-naive TP53-mutant AML with &gt;=1 pathogenic TP53 mutation, ECOG 0-2; triplet expansion evaluable n=39 (whole study n=49). Pan-p53 reactivator, not Y220C-selective.</small></td><td>Phase 1 dose-finding and expansion</td><td class="num">49</td><td class="num"><strong>ORR</strong>: 64.00 % <small>(epren+ven+azacitidine)</small> <small><em>25 of 39</em></small><br><strong>CR rate</strong>: 38.00 % <small>(epren+ven+azacitidine)</small> <small><em>15 of 39</em></small><br><small>Overall response (epren + ven + aza)</small></td><td class="num">95% CI 47.00–79.00<br>95% CI 23.00–55.00</td><td><strong>Febrile neutropenia</strong> G&gt;=3 — 23/49 · 47%<br><strong>Thrombocytopenia</strong> G&gt;=3 — 18/49 · 37%<br><strong>Leukopenia</strong> G&gt;=3 — 12/49 · 25%<br><strong>Anaemia</strong> G&gt;=3 — 11/49 · 22%<br><strong>Treatment-related death</strong> G5 — 1/49 · 2%</td><td><span class="fit-badge fit-weak">weak</span></td><td>Eprenetapopt is a pan-p53 reactivator, not Y220C-selective, and the profile flags it low-yield; the front-line treatment-naive setting also differs from this R/R patient. Kept so the board can weigh the pan-reactivator track against the Y220C-selective rezatapopt option.</td></tr>
+        <tr><td>—/— (2023)<br><em>Blood Adv</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37647601">PMID&nbsp;37647601</a></td><td><span class="rel-badge rel-indication">clinical</span></td><td><span class="rel-badge rel-other">excluded</span><br><small>Program discontinued, and the phase 1 optimized-dose study enrolled MRD-positive AML, which does not match the patient&#x27;s overt high-burden relapse (~85% marrow blasts).</small></td><td>Vibecotamab (XmAb14045, CD123xCD3 bispecific)</td><td>—</td><td>—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td>—</td><td>—</td><td><strong>Excluded:</strong> Program discontinued, and the phase 1 optimized-dose study enrolled MRD-positive AML, which does not match the patient&#x27;s overt high-burden relapse (~85% marrow blasts).<br>CD123xCD3 bispecific in the same sub-pipeline as flotetuzumab; kept for landscape completeness but not an enrollment route.</td></tr>
+        <tr><td>—/— (2023)<br><em>—</em></td><td><a href="https://clinicaltrials.gov/study/NCT06034470">NCT06034470</a></td><td><span class="rel-badge rel-basket">trial publication</span></td><td><span class="fit-badge fit-strong">included</span></td><td>Pivekimab sunirine + FLAG-Ida (fludarabine, cytarabine, idarubicin, G-CSF)</td><td>AML / MPAL / MDS (incl. R/R) <em>(2L+)</em><br><small>CD123+</small></td><td>Phase 1, pivekimab sunirine added to FLAG-Ida</td><td class="num">—</td><td class="num">—<br><small>Safety, response</small></td><td class="num">—</td><td>—</td><td><span class="fit-badge fit-weak">weak</span></td><td>The chemo backbone here is FLAG-Ida, which this patient has already failed as reinduction with venetoclax, so re-exposing the same scaffold is of doubtful value even with a CD123 ADC bolted on. The CD123 mechanism is on target but the regimen match is poor. Weak, mainly because the backbone already failed. · Trial registration only — no peer-reviewed publication yet<br><em>registration only — no peer-reviewed publication yet; toxicity table not extracted; primary endpoint not extracted</em></td></tr>
+        <tr><td>Barwe/Gopalakrishnapillai (2022)<br><em>J Clin Med</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/35268423">PMID&nbsp;35268423</a></td><td><span class="rel-badge rel-cross-tumor">preclinical</span></td><td><span class="fit-badge fit-strong">included</span></td><td>Flotetuzumab (MGD006) plus cytarabine</td><td>Two pediatric AML patient-derived xenograft (PDX) models, CD123+, with infused allogeneic human T-cell effectors</td><td>Same CD123xCD3 DART redirection, tested with concurrent cytarabine to see whether chemotherapy blunts the T-cell-dependent effect.</td><td class="num">—</td><td>moderate — MGD006 with infused allogeneic T cells drove durable responses in both CD123+ pediatric PDX models and cut peripheral blast burden; adding cytarabine left T-cell proliferation and MGD006 activity intact.</td><td>vs effector T cells without MGD006; MGD006 without cytarabine<br>translatability: med</td><td><em>n/a (preclinical)</em></td><td><span class="fit-badge fit-partial">partial</span></td><td>Pediatric AML models needing exogenous human T-cell effectors, so it speaks to mechanism more than to autologous T-cell fitness in a heavily pretreated post-transplant adult.</td></tr>
+        <tr><td>—/— (2022)<br><em>—</em></td><td><a href="https://clinicaltrials.gov/study/NCT05473910">NCT05473910</a></td><td><span class="rel-badge rel-basket">trial publication</span></td><td><span class="fit-badge fit-strong">included</span></td><td>TSC-100 (donor-derived HA-1-specific TCR-T)</td><td>R/R AML / MDS undergoing HLA-matched allo-HCT (ALLOHA) <em>(2L+)</em><br><small>HLA-A*02:01 + HA-1(H) recipient-positive / donor-negative</small></td><td>Open-label phase 1/3, donor-derived HA-1 TCR-T given after HLA-matched allo-HCT, vs standard-of-care control arm</td><td class="num">—</td><td class="num">—<br><small>Safety, donor chimerism, relapse</small></td><td class="num">—</td><td>—</td><td><span class="fit-badge fit-partial">partial</span></td><td>Eligibility turns on HLA-A*02:01 plus a recipient HA-1(H)-positive / donor HA-1-negative mismatch, and neither the patient nor the sibling donor has been genotyped yet, so the fit is provisional. The design gives the TCR-T on the back of a fresh HLA-matched allo-HCT, which lines up with the curative second-transplant plan, and it needs recipient-derived relapse confirmed by STR chimerism first. Rated partial until the HLA typing and HA-1 genotypes come back. · Trial registration only — no peer-reviewed publication yet<br><em>registration only — no peer-reviewed publication yet; toxicity table not extracted; primary endpoint not extracted</em></td></tr>
+        <tr><td>—/— (2022)<br><em>—</em></td><td><a href="https://clinicaltrials.gov/study/NCT05473910">NCT05473910</a></td><td><span class="rel-badge rel-basket">trial publication</span></td><td><span class="fit-badge fit-strong">included</span></td><td>TSC-101 (donor-derived HA-2-specific TCR-T)</td><td>R/R AML / MDS undergoing HLA-matched allo-HCT (ALLOHA) <em>(2L+)</em><br><small>HLA-A*02:01 + HA-2 recipient-positive / donor-negative</small></td><td>Open-label phase 1/3, donor-derived HA-2 TCR-T given after HLA-matched allo-HCT, vs standard-of-care control arm</td><td class="num">—</td><td class="num">—<br><small>Safety, donor chimerism, relapse</small></td><td class="num">—</td><td>—</td><td><span class="fit-badge fit-partial">partial</span></td><td>Same ALLOHA protocol as TSC-100 but keyed to HA-2 rather than HA-1, so it becomes the lever if the patient/donor pair mismatches at HA-2 instead. It stays gated on HLA-A*02:01 and on genotyping both the recipient and the sibling donor. Partial until those results are in hand. · Trial registration only — no peer-reviewed publication yet<br><em>registration only — no peer-reviewed publication yet; toxicity table not extracted; primary endpoint not extracted</em></td></tr>
+        <tr><td>—/— (2022)<br><em>—</em></td><td><a href="https://clinicaltrials.gov/study/NCT05285813">NCT05285813</a></td><td><span class="rel-badge rel-basket">trial publication</span></td><td><span class="fit-badge fit-strong">included</span></td><td>Vibecotamab (XmAb14045, CD123xCD3 bispecific)</td><td>MRD-positive AML / MDS <em>(2L+)</em><br><small>CD123xCD3 (no biomarker selection)</small></td><td>Phase 2, vibecotamab in MRD-positive disease (terminated)</td><td class="num">—</td><td class="num">—<br><small>MRD conversion</small></td><td class="num">—</td><td>—</td><td><span class="fit-badge fit-weak">weak</span></td><td>A second CD123xCD3 bispecific, studied in the MRD-positive setting and terminated, so it rounds out the CD123 bispecific sub-pipeline for the board. The MRD population does not match this patient&#x27;s overt high-burden relapse. Weak and informational. · Trial registration only — no peer-reviewed publication yet<br><em>registration only — no peer-reviewed publication yet; toxicity table not extracted; primary endpoint not extracted</em></td></tr>
+        <tr><td>Lulla/Leen (2021)<br><em>Blood</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/33270816">PMID&nbsp;33270816</a></td><td><span class="rel-badge rel-indication">clinical</span></td><td><span class="fit-badge fit-strong">included</span></td><td>Multiantigen leukemia-specific donor T cells (mLST; PRAME/WT1/Survivin/NY-ESO-1)</td><td>AML/MDS after allo-HCT (prophylaxis and treatment) <em>(2L+)</em><br><small>Post-HCT AML/MDS; 17 at high risk of relapse (prophylaxis) and 8 with active disease; products generated from 29 donors, 25 patients infused.</small></td><td>Single-arm phase 1 dose-escalation</td><td class="num">25</td><td class="num"><strong>ORR</strong>: 2/8 patients <small>(active disease)</small> <small><em>1 complete response, 1 partial response</em></small><br><strong>mOS</strong>: NR months <small><em>median OS not reached at 1.9y follow-up</em></small><br><strong>mPFS</strong>: NR months (leukemia-free survival) <small><em>median LFS not reached at 1.9y</em></small><br><small>Objective response (active-disease cohort: 1 CR, 1 PR)</small></td><td class="num">—<br>—<br>—</td><td><strong>GVHD (acute)</strong> G&gt;=3 — 0/25 · 0%<br><strong>GVHD (chronic, extensive)</strong> — 0/25 · 0%</td><td><span class="fit-badge fit-partial">partial</span></td><td>Published precedent for the multiantigen PRAME/WT1/Survivin donor T-cell approach in AML/MDS (NCT02494167), the same mechanism as the trials.jsonl TAA-T row; WT1 and PRAME expression on the patient&#x27;s blasts should be confirmed.</td></tr>
+        <tr><td>Uy/DiPersio (2021)<br><em>Blood</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/32929488">PMID&nbsp;32929488</a></td><td><span class="rel-badge rel-indication">clinical</span></td><td><span class="fit-badge fit-strong">included</span></td><td>Flotetuzumab (MGD006, CD123xCD3 DART)</td><td>Primary induction failure / early-relapse R/R AML <em>(2L+)</em><br><small>Primary induction failure or early relapse (&lt;6 mo) R/R AML; benefit enriched in an immune-infiltrated tumor microenvironment. RP2D PIF/ER subset n=30 (whole study n=88).</small></td><td>Multicenter open-label phase 1/2</td><td class="num">88</td><td class="num"><strong>CR rate</strong>: 26.70 % (CR/CRh) <small>(PIF/ER at RP2D)</small><br><strong>ORR</strong>: 30.00 % <small>(PIF/ER at RP2D)</small> <small><em>CR/CRh/CRi</em></small><br><strong>mOS</strong>: 10.20 months <small>(CR/CRh responders)</small> <small><em>range 1.87-27.27</em></small><br><strong>OS rate</strong>: 75.00 % at 6 mo <small>(CR/CRh responders)</small><br><strong>OS rate</strong>: 50.00 % at 12 mo <small>(CR/CRh responders)</small><br><small>CR/CRh (PIF/ER at RP2D)</small></td><td class="num">—<br>—<br>—<br>95% CI 0.450-1.05<br>95% CI 0.154-0.846</td><td><strong>CRS / infusion-related reaction</strong> — n=88<br><strong>CRS / infusion-related reaction</strong> G&gt;=3 — n=88</td><td><span class="fit-badge fit-partial">partial</span></td><td>Efficacy precedent for CD123xCD3 bispecific salvage in chemo-refractory AML close to the patient&#x27;s state; MacroGenics has since deprioritized the program, so it is mechanism evidence rather than an open route. Abstract gives no per-term grade-3 CRS rate; CT.gov NCT02152956 AE tab holds the breakdown.</td></tr>
+        <tr><td>Sallman/Komrokji (2021)<br><em>J Clin Oncol</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/33449813">PMID&nbsp;33449813</a></td><td><span class="rel-badge rel-indication">clinical</span></td><td><span class="fit-badge fit-strong">included</span></td><td>Eprenetapopt (APR-246) + azacitidine</td><td>TP53-mutant MDS or oligoblastic AML <em>(1L)</em><br><small>TP53-mutant MDS (n=40), oligoblastic AML with 20-30% blasts (n=11), and MDS/MPN (n=4); frontline. 35% went on to allo-HCT.</small></td><td>Phase 1b/2 single-arm</td><td class="num">55</td><td class="num"><strong>ORR</strong>: 71.00 %<br><strong>CR rate</strong>: 44.00 %<br><strong>CR rate</strong>: 50.00 % <small>(MDS)</small> <small><em>20 of 40</em></small><br><strong>mOS</strong>: 10.80 months <small><em>median OS; responders 14.6 vs 7.5 mo by landmark, p=0.0005</em></small><br><small>Overall response (epren + aza)</small></td><td class="num">—<br>—<br>—<br>—</td><td><strong>Febrile neutropenia</strong> G&gt;=3 — n=55 · 33%<br><strong>Leukopenia</strong> G&gt;=3 — n=55 · 29%<br><strong>Neutropenia</strong> G&gt;=3 — n=55 · 29%</td><td><span class="fit-badge fit-weak">weak</span></td><td>The doublet phase 1b/2 in TP53-mutant MDS/oligoblastic AML; the subsequent randomized phase 3 in TP53-mutant MDS did not meet its primary endpoint, and eprenetapopt is not Y220C-selective, reinforcing the low-yield framing for this patient.</td></tr>
+        <tr><td>—/— (2021)<br><em>—</em></td><td><a href="https://clinicaltrials.gov/study/NCT05066165">NCT05066165</a></td><td><span class="rel-badge rel-basket">trial publication</span></td><td><span class="fit-badge fit-strong">included</span></td><td>NTLA-5001 (WT1-directed TCR-T)</td><td>Acute myeloid leukemia <em>(2L+)</em><br><small>HLA-A*02:01, WT1+</small></td><td>Phase 1/2 CRISPR-engineered WT1 TCR-T (terminated)</td><td class="num">—</td><td class="num">—<br><small>Safety, dose (program halted)</small></td><td class="num">—</td><td>—</td><td><span class="fit-badge fit-weak">weak</span></td><td>Included so the board sees the full WT1 TCR-T pipeline, including its attrition: Intellia terminated NTLA-5001 in AML. It shared the A*02:01 / WT1 gate. Weak and informational, not an enrollment route. · Trial registration only — no peer-reviewed publication yet<br><em>registration only — no peer-reviewed publication yet; toxicity table not extracted; primary endpoint not extracted</em></td></tr>
+        <tr><td>Vadakekolathu/Rutella (2020)<br><em>Blood Adv</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/33057635">PMID&nbsp;33057635</a></td><td><span class="rel-badge rel-cross-tumor">preclinical</span></td><td><span class="fit-badge fit-strong">included</span></td><td>Flotetuzumab (MGD006) in TP53-abnormal AML</td><td>Primary AML bone-marrow samples profiled by NanoString immune panel plus BM from flotetuzumab-treated R/R AML</td><td>TP53-mutated or 17p-deleted AML carries an inflamed marrow immune landscape (higher IFNG, FOXP3, immune-checkpoint and senescence markers), which the authors reasoned would sensitize to CD123xCD3 redirection.</td><td class="num">n=64 primary BM (42 TP53-mut, 22 TP53-WT); 45 flotetuzumab-treated, 15 with TP53 abnormalities</td><td>TP53-abnormal AML showed a more inflamed, IFN-gamma-high microenvironment than TP53-WT. Among R/R AML with TP53 abnormalities on the flotetuzumab trial, 7 of 15 reached under 5% marrow blasts, and responders had higher baseline tumor-inflammation, CD8 and PD1 scores.</td><td>vs TP53-wild-type AML samples<br>translatability: med</td><td><em>n/a (preclinical)</em></td><td><span class="fit-badge fit-partial">partial</span></td><td>Correlative biomarker study whose response numbers come from the flotetuzumab trial cohort, so it is predictive rationale rather than a preclinical efficacy model. Bears directly on this patient&#x27;s TP53-aberrant status if confirmed.</td></tr>
+        <tr><td>Orozco/Pagel (2020)<br><em>Mol Cancer Ther</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/33082277">PMID&nbsp;33082277</a></td><td><span class="rel-badge rel-cross-tumor">preclinical</span></td><td><span class="fit-badge fit-strong">included</span></td><td>Anti-CD45 (BC8) radioimmunotherapy, bispecific 90Y-DOTA construct</td><td>HEL human leukemia xenografts (anti-human CD45 BC8 construct); syngeneic disseminated SJL murine leukemia (anti-mouse 30F11)</td><td>A bispecific anti-CD45 x anti-Y-DOTA construct (BC8 for human CD45, the apamistamab parent antibody) pretargets leukemic and marrow cells, then captures a separately injected 90Y-DOTA radioligand to concentrate beta-radiation at CD45+ hematolymphoid sites.</td><td class="num">—</td><td>strong — 70% of mice bearing HEL human leukemia xenografts survived past 170 days after BC8-Fc-C825 plus 90Y-DOTA-biotin, while untreated controls needed euthanasia by day 32. The syngeneic SJL model showed high spleen/marrow uptake and a survival gain (median 43 vs 30 days).</td><td>vs untreated leukemic mice<br>translatability: med</td><td><em>n/a (preclinical)</em></td><td><span class="fit-badge fit-partial">partial</span></td><td>Pretargeted bispecific format with 90Y, not the directly-131I-labeled apamistamab (Iomab-B) used clinically; it shares the BC8 anti-CD45 targeting and the marrow-directed-radiation rationale for transplant conditioning.</td></tr>
+        <tr><td>—/— (2020)<br><em>—</em></td><td><a href="https://clinicaltrials.gov/study/NCT04585750">NCT04585750</a></td><td><span class="rel-badge rel-basket">trial publication</span></td><td><span class="fit-badge fit-strong">included</span></td><td>Rezatapopt (PC14586) +/- pembrolizumab</td><td>Advanced solid tumors, TP53 Y220C <em>(2L+)</em><br><small>TP53 Y220C</small></td><td>Phase 1/2 (PYNNACLE), rezatapopt monotherapy and with pembrolizumab</td><td class="num">—</td><td class="num">—<br><small>Objective response, safety</small></td><td class="num">—</td><td>—</td><td><span class="fit-badge fit-weak">weak</span></td><td>PYNNACLE is the pivotal Y220C reactivator program, but it enrolls solid tumors only, so the patient cannot join; the row carries the off-label mechanism precedent for the myeloid rezatapopt trial. It still hinges on a Y220C call. Weak by tumor type, kept for the Y220C evidence base. · Trial registration only — no peer-reviewed publication yet<br><em>registration only — no peer-reviewed publication yet; toxicity table not extracted; primary endpoint not extracted</em></td></tr>
+        <tr><td>Chapuis/Greenberg (2019)<br><em>Nat Med</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/31235963">PMID&nbsp;31235963</a></td><td><span class="rel-badge rel-indication">clinical</span></td><td><span class="fit-badge fit-strong">included</span></td><td>WT1-TCRC4 EBV-specific CD8+ Tcm (Chapuis/Greenberg)</td><td>High-risk AML, post-HCT relapse prophylaxis <em>(maintenance)</em><br><small>HLA-A*02:01-positive, WT1-positive high-risk AML given as post-HCT relapse prophylaxis; compared with a concurrent 88-patient similar-risk cohort.</small></td><td>Phase 1/2 single-arm with concurrent comparator cohort</td><td class="num">12</td><td class="num"><strong>mRFS</strong>: 100.00 % at median 44 mo <small><em>TTCR-C4 recipients; vs 54% in comparator</em></small><br><strong>mRFS</strong>: 54.00 % <small>(concurrent comparator cohort)</small> <small><em>similar-risk AML, no TCR-T</em></small><br><small>Relapse-free survival (prophylaxis)</small></td><td class="num">p=0.002<br>—</td><td><strong>GVHD</strong> — n=12</td><td><span class="fit-badge fit-weak">weak</span></td><td>Anchors the WT1 A*02:01 TCR-T arm; a prophylaxis product since succeeded by FH-WT1-E50, so precedent rather than an open slot. Abstract carries no AE table; full text (PMC6982533) would be needed for per-term safety.</td></tr>
+        <tr><td>Pemmaraju/Konopleva (2019)<br><em>N Engl J Med</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/31018069">PMID&nbsp;31018069</a></td><td><span class="rel-badge rel-indication">clinical</span></td><td><span class="fit-badge fit-strong">included</span></td><td>Tagraxofusp (SL-401, IL-3/diphtheria-toxin fusion)</td><td>Blastic plasmacytoid dendritic-cell neoplasm (BPDCN), CD123+ <em>(any)</em><br><small>CD123+ BPDCN; 29 previously untreated at 12 µg/kg (primary-outcome cohort) plus 15 previously treated. Not the patient&#x27;s disease.</small></td><td>Open-label single-arm phase 2 (multicohort)</td><td class="num">47</td><td class="num"><strong>CR rate</strong>: 72.00 % <small>(first-line 12 µg/kg)</small> <small><em>CR/clinical CR, primary outcome (21/29)</em></small><br><strong>ORR</strong>: 90.00 % <small>(first-line 12 µg/kg)</small><br><strong>OS rate</strong>: 59.00 % at 18 mo <small>(first-line)</small><br><strong>OS rate</strong>: 52.00 % at 24 mo <small>(first-line)</small><br><strong>ORR</strong>: 67.00 % <small>(previously treated)</small><br><strong>mOS</strong>: 8.50 months <small>(previously treated)</small> <small><em>median OS</em></small><br><small>CR/clinical CR (first-line 12 µg/kg)</small></td><td class="num">—<br>—<br>—<br>—<br>—<br>—</td><td><strong>Capillary leak syndrome</strong> — n=47 · 19%<br><strong>ALT increased</strong> — n=47 · 64%<br><strong>AST increased</strong> — n=47 · 60%<br><strong>Hypoalbuminemia</strong> — n=47 · 55%<br><strong>Peripheral edema</strong> — n=47 · 51%<br><strong>Thrombocytopenia</strong> — n=47 · 49%</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td>Registration study behind the CD123-directed BPDCN approval; carries the mechanism and off-label precedent for the patient&#x27;s CD123 handle, but BPDCN is not AML so this is cross-tumor read-across. Capillary-leak and hepatic risk are relevant given the undocumented organ function.</td></tr>
+        <tr><td>—/— (2019)<br><em>—</em></td><td><a href="https://clinicaltrials.gov/study/NCT04156256">NCT04156256</a></td><td><span class="rel-badge rel-basket">trial publication</span></td><td><span class="fit-badge fit-strong">included</span></td><td>CD123-CD33 cCAR T cells</td><td>Relapsed/refractory high-risk AML / MDS <em>(2L+)</em><br><small>CD123+ and/or CD33+</small></td><td>Early phase 1 compound CAR-T co-targeting CD123 and CD33</td><td class="num">—</td><td class="num">—<br><small>Safety, dose</small></td><td class="num">—</td><td>—</td><td><span class="fit-badge fit-partial">partial</span></td><td>Co-targets both antigens the patient carries, CD123 and CD33, which is the dual strategy the profile calls for and which limits single-antigen escape, relevant given the documented clonal evolution at relapse. Lymphodepletion and cytokine-release risk apply, and the registry status is unclear. Partial on the dual-antigen match. · Trial registration only — no peer-reviewed publication yet<br><em>registration only — no peer-reviewed publication yet; toxicity table not extracted; primary endpoint not extracted</em></td></tr>
+        <tr><td>—/— (2019)<br><em>—</em></td><td><a href="https://clinicaltrials.gov/study/NCT04010877">NCT04010877</a></td><td><span class="rel-badge rel-basket">trial publication</span></td><td><span class="fit-badge fit-strong">included</span></td><td>CLL-1/CD33/CD123-directed CAR-T</td><td>Relapsed/refractory AML <em>(2L+)</em><br><small>CLL-1 and/or CD33 and/or CD123</small></td><td>Phase 1/2 multi-target CAR-T against CLL-1, CD33, CD123</td><td class="num">—</td><td class="num">—<br><small>Safety, response</small></td><td class="num">—</td><td>—</td><td><span class="fit-badge fit-partial">partial</span></td><td>A recruiting multi-antigen CAR-T that includes both CD33 and CD123, giving another dual/triple-target route to hedge antigen escape. It fits on the biomarkers; CRS and prior-HCT eligibility are the open axes. Partial. · Trial registration only — no peer-reviewed publication yet<br><em>registration only — no peer-reviewed publication yet; toxicity table not extracted; primary endpoint not extracted</em></td></tr>
+        <tr><td>—/— (2019)<br><em>—</em></td><td><a href="https://clinicaltrials.gov/study/NCT04067336">NCT04067336</a></td><td><span class="rel-badge rel-basket">trial publication</span></td><td><span class="fit-badge fit-strong">included</span></td><td>Ziftomenib (menin inhibitor)</td><td>Relapsed/refractory AML (NPM1-mutant or KMT2A-rearranged) <em>(2L+)</em><br><small>NPM1-mutant / KMT2A rearrangement</small></td><td>Phase 1/2 first-in-human (COMET-001), ziftomenib monotherapy</td><td class="num">—</td><td class="num">—<br><small>Response, safety</small></td><td class="num">—</td><td>—</td><td><span class="fit-badge fit-weak">weak</span></td><td>A second menin inhibitor, approved in NPM1-mutant AML, carrying the same limitation for this patient: no documented NPM1 mutation and KMT2A amplification rather than a rearrangement, so neither proven biomarker applies. Kept to complete the menin-inhibitor picture the profile asked about. Weak on biomarker grounds. · Trial registration only — no peer-reviewed publication yet<br><em>registration only — no peer-reviewed publication yet; toxicity table not extracted; primary endpoint not extracted</em></td></tr>
+        <tr><td>Kovtun/Chittenden (2018)<br><em>Blood Adv</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/29661755">PMID&nbsp;29661755</a></td><td><span class="rel-badge rel-cross-tumor">preclinical</span></td><td><span class="fit-badge fit-strong">included</span></td><td>Pivekimab sunirine (IMGN632, CD123 ADC)</td><td>AML cell lines, patient-derived AML samples, and multiple AML xenograft models (mouse)</td><td>IMGN632 links a humanized anti-CD123 antibody to a DNA mono-alkylating indolinobenzodiazepine (IGN) payload; CD123 sits at higher density on leukemic blasts and stem cells than on normal hematopoietic progenitors, which opens the therapeutic window.</td><td class="num">—</td><td>strong — Low-picomolar killing across AML lines and patient samples irrespective of multidrug resistance or disease status, at doses below those affecting normal myeloid progenitors, with the mono-alkylator payload over 40-fold less toxic to normal progenitors than the crosslinker version. Single-agent activity carried through several AML xenograft models.</td><td>vs X-ADC (crosslinking-IGN version of the same G4723A antibody); non-binding controls<br>translatability: high</td><td><em>n/a (preclinical)</em></td><td><span class="fit-badge fit-partial">partial</span></td><td>ImmunoGen sponsor study. Potency tracks antigen density, so the patient&#x27;s pending quantitative CD123 read bears directly on read-across.</td></tr>
+        <tr><td>Mani/Muthusamy (2018)<br><em>Haematologica</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/29773600">PMID&nbsp;29773600</a></td><td><span class="rel-badge rel-cross-tumor">preclinical</span></td><td><span class="fit-badge fit-strong">included</span></td><td>Tagraxofusp (SL-401) against CD34+CD123+ AML/MDS cells</td><td>Primary CD34+CD123+ cells from AML and MDS patients; AML patient-derived xenograft mice; normal cord-blood/marrow progenitors</td><td>SL-401 (tagraxofusp) directs the diphtheria-toxin catalytic domain to CD123 on leukemic and MDS stem/progenitor cells, where the internalized toxin blocks protein synthesis, reaching even low-CD123 cells.</td><td class="num">—</td><td>moderate — SL-401 killed CD123+ AML and MDS primary blasts and CD34+CD123+ cells, including those with low CD123 density, while sparing CD123-negative lymphoid cells, and prolonged survival in AML PDX mice. Normal cord-blood and marrow progenitors were also hit, an on-target off-leukemia effect.</td><td>vs CD123-negative lymphoid cells; healthy-donor progenitors<br>translatability: high</td><td><em>n/a (preclinical)</em></td><td><span class="fit-badge fit-strong">strong</span></td><td>Killing of normal CD34+CD123+ progenitors flags myelosuppression; the authors frame SL-401 as a bridge-to-transplant, matching this patient&#x27;s second-transplant intent. Stemline-affiliated co-author.</td></tr>
+        <tr><td>Dossa/Bleakley (2018)<br><em>Blood</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/29051183">PMID&nbsp;29051183</a></td><td><span class="rel-badge rel-cross-tumor">preclinical</span></td><td><span class="fit-badge fit-strong">included</span></td><td>HA-1-specific CD8+/CD4+ TCR-T (Bleakley/Fred Hutch platform)</td><td>Primary human leukemia lysis by lentivirally transduced CD4+ and CD8+ T cells (in-vitro functional characterization)</td><td>A four-part transgene carries the HA-1 minor-histocompatibility-antigen TCR, a CD8 coreceptor so the class-I-restricted TCR works in CD4+ cells, an inducible caspase-9 safety switch, and a CD34-CD20 selection/tracking epitope; HA-1&#x27;s hematopoietic-restricted expression confines the graft-versus-leukemia effect to the blood compartment.</td><td class="num">—</td><td>moderate — CD4+ and CD8+ T cells engineered with the HA-1 TCR transgene lysed primary leukemia and mounted antigen-specific functional responses. The memory-only, CD8-coreceptor design was built to hold down alloreactivity from the co-expressed native TCR.</td><td>vs untransduced / non-HA-1-specific T cells<br>translatability: med</td><td><em>n/a (preclinical)</em></td><td><span class="fit-badge fit-strong">strong</span></td><td>Functional in-vitro characterization of the construct with no in-vivo tumor-control arm in this report. Requires HLA-A*02:01 plus recipient HA-1(H)-positive / donor HA-1-negative mismatch, both pending here.</td></tr>
+        <tr><td>Campagne/Mager (2018)<br><em>Clin Cancer Res</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/29463552">PMID&nbsp;29463552</a></td><td><span class="rel-badge rel-cross-tumor">preclinical</span></td><td><span class="rel-badge rel-other">excluded</span><br><small>PK/PD and immunogenicity modeling of the CD3xCD123 DART in nonhuman primates; the efficacy and safety proof-of-concept for this mechanism is already carried by Chichili 2015, so it adds pharmacometric detail rather than new target-directed evidence.</small></td><td>CD3xCD123 DART PK/PD model (nonhuman primates)</td><td>—</td><td>—</td><td class="num">—</td><td>—</td><td>—</td><td><em>n/a (preclinical)</em></td><td>—</td><td><strong>Excluded:</strong> PK/PD and immunogenicity modeling of the CD3xCD123 DART in nonhuman primates; the efficacy and safety proof-of-concept for this mechanism is already carried by Chichili 2015, so it adds pharmacometric detail rather than new target-directed evidence.</td></tr>
+        <tr><td>Tawara/Shiku (2017)<br><em>Blood</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/28860210">PMID&nbsp;28860210</a></td><td><span class="rel-badge rel-indication">clinical</span></td><td><span class="fit-badge fit-strong">included</span></td><td>WT1-siTCR gene-transduced lymphocytes (TBI-1301)</td><td>Refractory AML and high-risk MDS <em>(2L+)</em><br><small>HLA-A*24:02-positive, WT1-positive refractory AML and high-risk MDS; two dose cohorts, n=8.</small></td><td>First-in-human phase 1 (safety, cell kinetics)</td><td class="num">8</td><td class="num"><strong>Other</strong>: 2/8 patients <small><em>transient decrease in marrow blasts, associated with hematopoietic recovery</em></small><br><strong>OS rate</strong>: 4/5 patients &gt;12 mo <small><em>4 of 5 patients with persistent T cells at study end survived &gt;12 months</em></small><br><small>Transient marrow blast reduction; T-cell persistence</small></td><td class="num">—<br>—</td><td><strong>On-target off-tumor (normal tissue) toxicity</strong> — 0/8 · 0%</td><td><span class="fit-badge fit-weak">weak</span></td><td>The A*24:02-restricted WT1-siTCR fallback lever if the patient types HLA-A*02:01-negative. Small early-phase Japanese cohort; abstract reports no per-term AE table beyond the absence of normal-tissue toxicity.</td></tr>
+        <tr><td>—/— (2016)<br><em>—</em></td><td><a href="https://clinicaltrials.gov/study/NCT02743611">NCT02743611</a></td><td><span class="rel-badge rel-basket">trial publication</span></td><td><span class="fit-badge fit-strong">included</span></td><td>BPX-701 (PRAME TCR-T with iCasp9 safety switch) + rimiducid</td><td>Acute myeloid leukemia / MDS <em>(2L+)</em><br><small>HLA-A*02:01, PRAME+</small></td><td>Phase 1/2 rimiducid-controllable PRAME TCR-T (terminated)</td><td class="num">—</td><td class="num">—<br><small>Safety, dose (program halted)</small></td><td class="num">—</td><td>—</td><td><span class="fit-badge fit-weak">weak</span></td><td>The PRAME-directed TCR-T the profile lists as a third A*02:01 handle; Bellicum&#x27;s BPX-701 was terminated, so it stands as informational pipeline context rather than an open option. It gated on A*02:01 and PRAME expression. Weak. · Trial registration only — no peer-reviewed publication yet<br><em>registration only — no peer-reviewed publication yet; toxicity table not extracted; primary endpoint not extracted</em></td></tr>
+        <tr><td>Chichili/Bonvini (2015)<br><em>Sci Transl Med</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/26019218">PMID&nbsp;26019218</a></td><td><span class="rel-badge rel-cross-tumor">preclinical</span></td><td><span class="fit-badge fit-strong">included</span></td><td>Flotetuzumab (MGD006, CD123xCD3 DART)</td><td>KG-1a AML xenograft in PBMC-reconstituted NSG/beta2m-/- mice; cynomolgus macaques</td><td>MGD006 co-engages CD3 on T cells and CD123 on blasts through a dual-affinity re-targeting format, redirecting host T cells to lyse CD123+ cells alongside T-cell activation and expansion; a short half-life dictates continuous infusion.</td><td class="num">—</td><td>strong — Continuous low-dose MGD006 cleared engrafted KG-1a cells in humanized mice at 0.5 ug/kg/day. In macaques it depleted circulating CD123+ cells within 72 h and held that depletion across 4 weeks, with cytokine release easing after the first dose and no neutropenia or thrombocytopenia.</td><td>vs untreated / pre-infusion baseline<br>translatability: med</td><td><em>n/a (preclinical)</em></td><td><span class="fit-badge fit-partial">partial</span></td><td>MacroGenics study; the clinical program was later deprioritized. KG-1a is CD123+ but not MDS-related or TP53-defined.</td></tr>
+        <tr><td>Hills/Burnett (2014)<br><em>Lancet Oncol</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/25008258">PMID&nbsp;25008258</a></td><td><span class="rel-badge rel-indication">clinical</span></td><td><span class="fit-badge fit-strong">included</span></td><td>Gemtuzumab ozogamicin added to induction (IPD meta-analysis)</td><td>Adult AML (non-APL), front-line induction <em>(1L)</em><br><small>3325 adults with AML (excluding APL) in five randomized induction trials; cytogenetic risk subgroups analyzed, including an adverse-cytogenetics stratum.</small></td><td>Individual-patient-data meta-analysis of RCTs</td><td class="num">3325</td><td class="num"><strong>OS HR</strong>: 0.90 OR (5y OS) <small><em>all patients</em></small><br><strong>Other</strong>: 0.81 OR (relapse) <small><em>reduced relapse risk</em></small><br><strong>OS HR</strong>: 0.99 OR <small>(adverse cytogenetics)</small> <small><em>no survival benefit (2.2% absolute) in the adverse-cytogenetics stratum</em></small><br><strong>OS HR</strong>: 0.47 OR <small>(favourable cytogenetics)</small> <small><em>20.7% absolute 6y benefit</em></small><br><small>5-year overall survival (addition of GO)</small></td><td class="num">95% CI 0.82–0.98 · p=0.01<br>95% CI 0.73–0.90 · p=0.0001<br>95% CI 0.83–1.18 · p=0.9<br>95% CI 0.31–0.73 · p=0.0006</td><td><strong>Early death</strong> G5 — n=3325</td><td><span class="fit-badge fit-weak">weak</span></td><td>Highest-tier CD33 evidence, and the decision-relevant point for this patient is the null adverse-cytogenetics subgroup (OR 0.99): patients with adverse karyotype derived no survival benefit, which directly tempers the CD33 handle here given the complex/TP53-aberrant karyotype.</td></tr>
+        <tr><td>—/— (2014)<br><em>—</em></td><td><a href="https://clinicaltrials.gov/study/NCT02203903">NCT02203903</a></td><td><span class="rel-badge rel-basket">trial publication</span></td><td><span class="fit-badge fit-strong">included</span></td><td>Tumor-associated-antigen-specific T cells (TAA-T; PRAME/WT1/Survivin)</td><td>Very-high-risk hematologic malignancies (AML/ALL/MDS), largely post-allo-HCT <em>(2L+)</em><br><small>WT1 / PRAME / Survivin expression (multi-tumor-associated-antigen)</small></td><td>Phase 1, donor- or patient-derived multi-antigen-specific cytotoxic T lymphocytes (TAA-T) primed against PRAME, WT1 and Survivin</td><td class="num">—</td><td class="num">—<br><small>Feasibility, safety, anti-leukemic activity</small></td><td class="num">—</td><td>—</td><td><span class="fit-badge fit-partial">partial</span></td><td>This TAA-T product primes T cells against PRAME, WT1 and Survivin, so it hits two of the antigens the profile names as HLA-restricted handles without depending on a single HLA-A*02:01 gate. It is delivered in the very-high-risk post-transplant setting the patient is heading toward, which matches the second-transplant consolidation plan. Partial: WT1 and PRAME expression should be confirmed on the blasts, and eligibility is framed around the allo-HCT platform rather than florid high-burden relapse. · Trial registration only — no peer-reviewed publication yet<br><em>registration only — no peer-reviewed publication yet; toxicity table not extracted; primary endpoint not extracted</em></td></tr>
+        <tr><td>Castaigne/Dombret (2012)<br><em>Lancet</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/22482940">PMID&nbsp;22482940</a></td><td><span class="rel-badge rel-indication">clinical</span></td><td><span class="fit-badge fit-strong">included</span></td><td>Gemtuzumab ozogamicin added to induction chemotherapy (ALFA-0701)</td><td>De novo AML, front-line <em>(1L)</em><br><small>Previously untreated de novo AML age 50-70 (excludes APL); CD33 expression not required for entry. 280 randomized.</small></td><td>Randomized open-label phase 3</td><td class="num">280</td><td class="num"><strong>EFS HR</strong>: 0.58 <small><em>2y EFS 40.8% vs 17.1%</em></small><br><strong>OS HR</strong>: 0.69 <small><em>2y OS 53.2% vs 41.9%</em></small><br><strong>RFS HR</strong>: 0.52 <small><em>2y RFS 50.3% vs 22.7%</em></small><br><strong>CR rate</strong>: 81.00 % vs 75% <small><em>CR/CRp to induction; OR 1.46</em></small><br><small>Event-free survival (GO + chemo vs chemo)</small></td><td class="num">95% CI 0.43–0.78 · p=0.0003<br>95% CI 0.49–0.98 · p=0.0368<br>95% CI 0.36–0.75 · p=0.0003<br>p=0.25</td><td><strong>Persistent thrombocytopenia</strong> — 22/139 · 16%<br><strong>Death from toxicity</strong> G5 — n=139</td><td><span class="fit-badge fit-weak">weak</span></td><td>Pivotal RCT behind the fractionated-dose gemtuzumab schedule; front-line de novo add-on, so line and setting differ from this R/R patient. Benefit was concentrated in favourable/intermediate cytogenetics.</td></tr>
+        <tr><td>Ochi/Yasukawa (2011)<br><em>Blood</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/21673345">PMID&nbsp;21673345</a></td><td><span class="rel-badge rel-cross-tumor">preclinical</span></td><td><span class="fit-badge fit-strong">included</span></td><td>WT1-siTCR gene-transduced lymphocytes (TBI-1301)</td><td>WT1-siTCR-transduced patient T cells lysing autologous leukemia; mouse leukemia xenograft (adoptive transfer)</td><td>The siTCR vector encodes the WT1-specific TCR plus siRNAs that silence endogenous TCR chains, cutting mispairing and raising surface expression of the introduced TCR.</td><td class="num">—</td><td>moderate — WT1-siTCR T cells outperformed conventional WT1-TCR cells on antileukemia reactivity, expanded well on repeat WT1-peptide stimulation, and lysed autologous leukemia while sparing normal hematopoietic progenitors. Transferred cells controlled leukemia in a xenograft model without suppressing human hematopoiesis.</td><td>vs conventional codon-optimized WT1-TCR (no siRNA) T cells; normal hematopoietic progenitors<br>translatability: med</td><td><em>n/a (preclinical)</em></td><td><span class="fit-badge fit-partial">partial</span></td><td>Relevant only on the HLA-A*24:02 branch (the fallback if the patient is A*02:01-negative); WT1 expression on the patient&#x27;s blasts is not yet quantified.</td></tr>
+        <tr><td>Pagel/Press (2011)<br><em>Blood</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/21613259">PMID&nbsp;21613259</a></td><td><span class="rel-badge rel-cross-tumor">preclinical</span></td><td><span class="rel-badge rel-other">excluded</span><br><small>Anti-CD45 streptavidin-pretargeting predecessor using 213Bi in a human myeloid-leukemia xenograft; a strong POC, but the endogenous-biotin and immunogenicity limits of the streptavidin approach were later addressed by the BC8 bispecific construct (Orozco 2020), which better represents the apamistamab targeting used clinically.</small></td><td>Anti-CD45 pretargeted radioimmunotherapy, 213Bi (streptavidin platform)</td><td>—</td><td>—</td><td class="num">—</td><td>—</td><td>—</td><td><em>n/a (preclinical)</em></td><td>—</td><td><strong>Excluded:</strong> Anti-CD45 streptavidin-pretargeting predecessor using 213Bi in a human myeloid-leukemia xenograft; a strong POC, but the endogenous-biotin and immunogenicity limits of the streptavidin approach were later addressed by the BC8 bispecific construct (Orozco 2020), which better represents the apamistamab targeting used clinically.</td></tr>
+        <tr><td>Lambert/Bykov (2009)<br><em>Cancer Cell</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/19411067">PMID&nbsp;19411067</a></td><td><span class="rel-badge rel-cross-tumor">preclinical</span></td><td><span class="fit-badge fit-strong">included</span></td><td>Eprenetapopt (APR-246) p53 reactivation mechanism</td><td>Mutant-p53 human tumor cell lines; biochemical thiol-adduct binding assays</td><td>PRIMA-1, the parent of APR-246/eprenetapopt, is converted to a reactive methylene-quinuclidinone that forms covalent adducts with thiol groups in the mutant p53 core domain; that covalent modification alone can restore a pro-apoptotic conformation.</td><td class="num">—</td><td>PRIMA-1-derived compounds bound covalently to cysteine thiols in mutant p53, and covalent modification by itself triggered apoptosis in mutant-p53 tumor cells. The work pinned down the covalent-adduct mechanism that APR-246 shares.</td><td>translatability: low</td><td><em>n/a (preclinical)</em></td><td><span class="fit-badge fit-weak">weak</span></td><td>A pan-mutant mechanism, not Y220C-selective; the profile flags eprenetapopt as low-yield and the randomized TP53-mutant MDS phase 3 missed its endpoint. The assays used PRIMA-1, the parent of clinical APR-246.</td></tr>
+        <tr><td>Black/Frankel (2003)<br><em>Leukemia</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/12529673">PMID&nbsp;12529673</a></td><td><span class="rel-badge rel-cross-tumor">preclinical</span></td><td><span class="fit-badge fit-strong">included</span></td><td>Tagraxofusp (DT388IL3, IL-3/diphtheria-toxin fusion)</td><td>SCID mice inoculated i.v./i.p./s.c. with TF1 (v-SRC-transfected) human AML cells</td><td>DT388IL3 fuses the diphtheria-toxin catalytic and translocation domains to IL-3, delivering the toxin to CD123 (IL-3Ralpha)-expressing blasts where it halts protein synthesis.</td><td class="num">n=20-49 mice per inoculation route</td><td>strong — Only 5 of 49 i.v.-inoculated animals died with leukemia after DT388IL3, and median disease-free survival stretched beyond 120 days versus 37 days for controls. The gain held across i.p. and s.c. models, while the IL-2 fusion DAB389IL2 gave none.</td><td>vs saline; comparators DT388GMCSF, DAB389IL2, cytarabine, anti-CD33-calicheamicin<br>translatability: med</td><td><em>n/a (preclinical)</em></td><td><span class="fit-badge fit-partial">partial</span></td><td>TF1/v-SRC is an engineered differentiated-AML model, not MDS-related AML; tagraxofusp&#x27;s registration is in BPDCN, so AML use is off-label read-across.</td></tr>
+        <tr><td>Hamann/Bernstein (2002)<br><em>Bioconjug Chem</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/11792178">PMID&nbsp;11792178</a></td><td><span class="rel-badge rel-cross-tumor">preclinical</span></td><td><span class="fit-badge fit-strong">included</span></td><td>Gemtuzumab ozogamicin (CD33 ADC)</td><td>HL-60 CD33+ leukemia cells in culture and HL-60 xenografts in mice; AML patient marrow colony-forming assays</td><td>Gemtuzumab ozogamicin joins the humanized anti-CD33 antibody to a calicheamicin derivative through an acid-labile hydrazone; CD33 internalization frees the DNA-cleaving payload inside the blast while sparing CD33-negative stem cells.</td><td class="num">—</td><td>strong — Sub-picogram IC50 against HL-60 in culture, and doses as low as 50 ug cal/kg given three times produced long-term tumor-free survival in HL-60 xenografts while a non-binding conjugate stayed largely inactive. Low-nanogram concentrations selectively inhibited AML colony formation from a subset of patient marrows.</td><td>vs non-binding calicheamicin conjugate<br>translatability: med</td><td><em>n/a (preclinical)</em></td><td><span class="fit-badge fit-partial">partial</span></td><td>HL-60 is a CD33+ AML line without the patient&#x27;s adverse-karyotype, TP53, or MDS-related biology; the Hills 2014 IPD meta-analysis found no survival benefit in the adverse-cytogenetics subgroup, tempering read-across.</td></tr>
+        <tr><td>Sievers/Mylotarg Study Group (2001)<br><em>J Clin Oncol</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/11432892">PMID&nbsp;11432892</a></td><td><span class="rel-badge rel-indication">clinical</span></td><td><span class="fit-badge fit-strong">included</span></td><td>Gemtuzumab ozogamicin (CD33 ADC)</td><td>CD33+ AML in untreated first relapse <em>(2L+)</em><br><small>CD33+ AML in untreated first relapse, no antecedent hematologic disorder; median age 61. Pooled across three open-label trials.</small></td><td>Single-arm phase 2 (three pooled open-label trials)</td><td class="num">142</td><td class="num"><strong>CR rate</strong>: 30.00 % (CR+CRp) <small><em>overall remission with monotherapy in first relapse</em></small><br><small>Overall remission (CR + CRp)</small></td><td class="num">—</td><td><strong>Hyperbilirubinemia</strong> G&gt;=3 — n=142 · 23%<br><strong>Transaminase elevation</strong> G&gt;=3 — n=142 · 17%<br><strong>Infection</strong> — n=142 · 28%<br><strong>Mucositis</strong> G&gt;=3 — n=142 · 4%<br><strong>Nausea/vomiting (severe)</strong> G&gt;=3 — n=142 · 11%</td><td><span class="fit-badge fit-partial">partial</span></td><td>On-label CD33 ADC monotherapy in first relapse; single-agent depth is modest (30%) and the patient is further along with FLAG-IDA/venetoclax failure and extramedullary disease. Hepatic/VOD risk matters ahead of a second transplant.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<footer class="libby-footer">Generated 2026-07-24 &middot; Libby &middot; <code>aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun</code> &middot; Master manuscripts table</footer>
+</body></html>
