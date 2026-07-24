@@ -32,6 +32,7 @@ Finally, run `bash scripts/run_case.sh <slug>` to re-render `recommendations.md`
 
 - **PI owns `recommendations.jsonl` and `index.md`.** Read; do not write.
 - **Translator owns `plain_language.md`.** Read; do not write.
+- **`preclinical_biomarker_surveyor` owns `biomarker_survey.jsonl`, `biomarker_reporter` owns its published page.** You read the survey for one purpose only: the "Biomarkers measured, but not to decision resolution" section of `target_validation_report.md` (Step 1.5). Do not write either, and do not restate the survey's gap list here; the unmeasured biomarkers belong to the Selected general biomarker report, and only the not-decision-grade ones belong to yours.
 - **Researcher / clinician / trial-screener own their JSONLs.** You don't read them directly — the PI's narrative and the recommendations table already incorporate everything you need.
 - **Reporter owns `executive_summary.md` (data side) and the published artifacts (`*-plain-language.pdf`, `*-target-validation.pdf`, `*-recommendations.html`, `*-recommendations.pdf`, `*-accessibility.pdf`, `*-manuscripts.pdf`) on the docs side.** No other agent edits these. The legacy clinician PDF (`*-libby-report.pdf`) has been retired from the Downloads section; `build_report.py` now strips any stale copies it finds.
 - You do not re-rank, re-group, or re-appraise. The PI's editorial judgment is authoritative; your job is to package it for an external audience.
@@ -145,6 +146,16 @@ Structure (per-feature narrative → assay-providers table → biomarker-plan su
 ### <next target, if any>
 
 <same shape>
+
+### Biomarkers measured, but not to decision resolution
+
+<Include this section only when `data/cases/<slug>/biomarker_survey.jsonl` has rows with `handoff_to_target_validator: true`. One paragraph, or a short bulleted list when there are more than three.
+
+These are biomarkers the `preclinical_biomarker_surveyor` found a result for that cannot carry a treatment decision as it stands: RNA expression standing in for membrane protein, TMB reported off a panel not sized to call it, an IHC read at an unvalidated cutoff, a single small biopsy driving a heterogeneous marker. For each, name what is on file, what is short about it (the survey row's `hardening_gap`), and the assay that would close the gap. The corresponding `target_validation.jsonl` rows carry `source_survey_id` pointing back at the survey row; the assay names come from there.
+
+Keep the distinction sharp: for the per-target sections above, the question is whether the target call is right. Here the target call is not in question, the resolution of the existing result is. A reader who conflates the two will think a biomarker is unproven when it is merely under-measured.
+
+Where a handoff has no matching validation row, say so plainly and say why, rather than omitting it. Same self-contained-narrative rule as the rest of this report: no rank numbers, no cross-references to the biomarker survey page, because the PDF reader has only this document.>
 
 ### Where to order these assays
 

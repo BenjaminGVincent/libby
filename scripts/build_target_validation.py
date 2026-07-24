@@ -227,6 +227,84 @@ def render_table(rows: list[dict]) -> str:
     )
 
 
+def render_survey_handoffs(rows: list[dict], survey: list[dict]) -> str:
+    """Biomarkers the survey measured but could not call decision-grade.
+
+    The preclinical_biomarker_surveyor finds these; hardening them is this
+    report's job. Rendering them here (rather than only in the biomarker survey)
+    keeps the handoff visible: a gap that was found and then dropped shows up as
+    an unaddressed row instead of disappearing between two pages.
+    """
+    handoffs = [r for r in survey if r.get("handoff_to_target_validator")]
+    if not handoffs:
+        return ""
+
+    answered = {r.get("source_survey_id") for r in rows if r.get("source_survey_id")}
+    n_open = sum(1 for h in handoffs if h.get("survey_id") not in answered)
+
+    head = (
+        "<th>Biomarker</th><th>What is on file</th><th>Why it is not decision-grade</th>"
+        "<th>Hardening step</th><th>Status</th>"
+    )
+    body: list[str] = []
+    for h in sorted(handoffs, key=lambda r: (PRIORITY_ORDER.get(r.get("priority"), 99),
+                                             r.get("biomarker_label") or "")):
+        sid = h.get("survey_id")
+        matched = [r for r in rows if r.get("source_survey_id") == sid]
+        if matched:
+            step = "<br>".join(f"<strong>{fmt(m.get('test_name'))}</strong>" for m in matched)
+            status = '<span class="fit-badge fit-strong">addressed above</span>'
+        else:
+            step = "—"
+            status = '<span class="fit-badge fit-weak">not yet addressed</span>'
+        body.append(
+            "    <tr>"
+            f"<td><strong>{fmt(h.get('biomarker_label'))}</strong><br>"
+            f"<small class=\"persona-line\">{priority_badge(h.get('priority'))}</small></td>"
+            f"<td>{fmt(h.get('status_evidence'))}</td>"
+            f"<td>{fmt(h.get('hardening_gap'))}</td>"
+            f"<td>{step}</td>"
+            f"<td>{status}</td>"
+            "</tr>"
+        )
+
+    n = len(handoffs)
+    noun = "biomarker" if n == 1 else "biomarkers"
+    verb = "has" if n == 1 else "have"
+    if n_open:
+        open_clause = (
+            f", and {'it' if n_open == n == 1 else f'{n_open} of them'} "
+            f"{'has' if n_open == 1 else 'have'} no hardening step on this page yet."
+        )
+    else:
+        open_clause = "."
+
+    parts = [
+        "## Measured, but not to decision resolution\n",
+        f"_{n} {noun} from the "
+        "[Selected general biomarker report](biomarker_survey.md) "
+        f"{verb} a result on file that cannot carry a treatment decision as it stands"
+        + open_clause
+        + " These are distinct from the per-feature workup below: the target call is not "
+        "in question, the resolution of the existing result is._\n",
+        _table_wrap(head, body),
+    ]
+    return "\n".join(parts)
+
+
+def _table_wrap(head: str, body: list[str]) -> str:
+    return (
+        '<div class="trial-table-wrap">\n'
+        '  <div class="trial-scroll">\n'
+        '    <table class="trial-table">\n'
+        f'      <thead><tr>{head}</tr></thead>\n'
+        '      <tbody>\n' + "\n".join(body) + "\n      </tbody>\n"
+        "    </table>\n"
+        "  </div>\n"
+        "</div>\n"
+    )
+
+
 def group_rows_by_feature(rows: list[dict], features: list[dict]) -> "OrderedDict[str, list[dict]]":
     grouped: "OrderedDict[str, list[dict]]" = OrderedDict()
     for f in features:
@@ -249,6 +327,7 @@ def main() -> int:
 
     case_dir = REPO / "data" / "cases" / slug
     rows = load_jsonl(case_dir / "target_validation.jsonl")
+    survey = load_jsonl(case_dir / "biomarker_survey.jsonl")
     profile = load_json(case_dir / "profile.json")
     features = profile.get("targetable_features") or []
 
@@ -282,11 +361,20 @@ def main() -> int:
         parts.append(f"## {html.escape(feature)}\n")
         parts.append(render_table(frows))
 
-    parts.append(
-        f"[Back to case](index.md) · [Trials](trials.md) · "
-        f"[Evidence](evidence.md) · [Manuscripts](manuscripts.md) · "
-        f"[Board](board.md) · [Recommendations](recommendations.md)\n"
-    )
+    handoffs = render_survey_handoffs(rows, survey)
+    if handoffs:
+        parts.append(handoffs)
+
+    nav = [
+        "[Back to case](index.md)", "[Trials](trials.md)", "[Evidence](evidence.md)",
+        "[Manuscripts](manuscripts.md)", "[Board](board.md)",
+        "[Recommendations](recommendations.md)",
+    ]
+    # Conditional: linking a page that was never rendered would break `mkdocs
+    # build --strict` for every case that has not run the survey.
+    if survey:
+        nav.append("[Biomarker survey](biomarker_survey.md)")
+    parts.append(" · ".join(nav) + "\n")
     parts.append(
         '!!! danger disclaimer "Decision support, not medical advice"\n'
         "    Libby is experimental. The validation tests on this page are decision-support;\n"

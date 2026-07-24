@@ -133,6 +133,27 @@ def check_pipeline(slug: str) -> tuple[list[str], list[str]]:
     if (case / "preclinical_recommendations.jsonl").exists():
         notes.append(f"{slug}: preclinical horizon-scan track present")
 
+    # Informational: standalone biomarker-survey track. Reported rather than
+    # gated because the committed corpus predates it, and because a case whose
+    # workup genuinely covers the panel is a legitimate state. The note names
+    # the gap counts so a reviewer can see the survey ran and what it found.
+    survey = _rows(case / "biomarker_survey.jsonl")
+    if survey:
+        gaps = sum(1 for r in survey if r.get("measurement_status") == "not_measured")
+        soft = sum(1 for r in survey if r.get("measurement_status") == "measured_not_hardened")
+        notes.append(
+            f"{slug}: biomarker survey present ({len(survey)} surveyed, "
+            f"{gaps} not measured, {soft} not decision-grade)"
+        )
+        # A handoff row that never reached the target_validator is a real break in
+        # the chain: the gap was found and then dropped. Informational for now,
+        # since the survey can legitimately run after the validator has finished.
+        pending = [r for r in survey if r.get("handoff_to_target_validator")]
+        if pending and not (case / "target_validation.jsonl").exists():
+            notes.append(
+                f"{slug}: {len(pending)} biomarker-survey row(s) awaiting /target_validator"
+            )
+
     return (failures, notes)
 
 

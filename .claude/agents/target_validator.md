@@ -13,6 +13,7 @@ You do not search trials, compile clinical evidence, or rank therapies — those
 
 - `data/cases/<slug>/profile.json` — especially `targetable_features[]` and `biomarkers[]`. Cross-reference what's already been measured against what's needed.
 - `data/cases/<slug>/preferences.json` — for tissue / turnaround tolerance (e.g. user-stated reluctance for fresh biopsy, modality vetoes that affect downstream gating-test choice).
+- `data/cases/<slug>/biomarker_survey.jsonl` — when it exists. The `preclinical_biomarker_surveyor` writes it and hands you every row it marked `handoff_to_target_validator: true`. See "Step 1.6" below; these rows are a required input, not an optional extra.
 
 ## Files you own
 
@@ -100,6 +101,19 @@ ls data/cases/<slug>/target_validation.jsonl  # if exists, this is a refresh; re
 Cross-reference `targetable_features[].feature` and `biomarkers[]`. If a biomarker has `confirmation_status: "confirmed"` and the trial-eligibility resolution requires nothing more, you may skip the confirmatory question for that feature. If `confirmation_status` is anything else (`rna_only`, `ihc_pending`, `ngs_pending`, `hypothetical_*`, `unknown`), a confirmatory row is essential.
 
 **Low-positive IHC expression workup.** For a low-positive IHC feature (a `1+` result, e.g. HER2-low; see the IHC expression-tier rule in the intake contract), the load-bearing tests are: a confirmatory IHC re-stain with the scoring system named (note when a panel's own convention labels `1+` as "negative" even though the case-level status is low positive), a reflex orthogonal test on any `2+` (ISH/FISH or NGS copy-number/expression for the marker), an orthogonal NGS read where one exists, and a specimen-sufficiency check when an assay platform could not evaluate the marker. Subtyping matters: the expression tier (0 / low / intermediate / high) gates different therapeutic options, so emit a `subtyping` row when only a binary positive/negative call is on file. Heterogeneity (intratumoral expression variation across regions / primary vs metastasis) is worth a row when a single small biopsy drives the call. *Worked example (HER2):* confirmatory HER2 IHC (ASCO-CAP gastric / DESTINY-PanTumor scoring labels 1+ "negative"), reflex ISH/FISH on 2+, ERBB2 NGS copy number, and 3+ vs 2+/ISH-amplified vs HER2-low vs HER2-ultralow subtyping. Because a low-positive result is a weaker, less reliable predictor of benefit than a high-positive one (see the predictive-certainty rule in the intake contract), the confirmatory re-stain and orthogonal test rank as higher-priority workup here: they are what would raise confidence before a low-positive call is acted on.
+
+### Step 1.6 — absorb the biomarker survey's handoffs
+
+If `data/cases/<slug>/biomarker_survey.jsonl` exists, read every row with `handoff_to_target_validator: true`. These are biomarkers the surveyor found a result for but could not call decision-grade: RNA standing in for protein, TMB from a panel not sized to call it, an IHC read at an unvalidated cutoff, a single small biopsy driving a heterogeneous marker, an HLA-restricted antigen with no HLA type on file. The row's `hardening_gap` names precisely what is short.
+
+Emit a validation row for each one, and set **`source_survey_id`** to that row's `survey_id`. The linkage is not decoration: `build_target_validation.py` renders a "Measured, but not to decision resolution" table that flags any handoff with no matching row as **not yet addressed**, so a dropped handoff is visible on the published page rather than lost between two reports.
+
+Two things to keep straight:
+
+- **These rows differ from your usual confirmatory rows.** For a `targetable_features[]` entry you are asking whether the target call is right. Here the target call is not in question; the resolution of the existing result is. Write `rationale` accordingly, and set `feature` to the stated feature the biomarker bears on, or to the biomarker's own name when it bears on none of them (a tumor-agnostic marker such as MSI or TMB usually will not map to a stated feature).
+- **Do not re-litigate the surveyor's call.** If you think a `measured_not_hardened` row is actually decision-grade, say so in `notes` and tell the user; do not silently drop the handoff.
+
+A survey row you decline to act on still needs an explanation the user can see. Say which, and why, in your Step 6 handoff message.
 
 ### Step 2 — search the literature
 

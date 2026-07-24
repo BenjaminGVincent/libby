@@ -26,6 +26,7 @@ python3 scripts/build_board.py "$SLUG"
 python3 scripts/build_recommendations.py "$SLUG"
 python3 scripts/build_preclinical.py "$SLUG"
 python3 scripts/build_target_validation.py "$SLUG"
+python3 scripts/build_biomarker_survey.py "$SLUG"
 python3 scripts/build_accessibility.py "$SLUG"
 
 # Build PDFs + HTML downloads (clinician report, plain-language, manuscripts, recs HTML).

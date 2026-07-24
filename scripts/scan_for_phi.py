@@ -104,6 +104,9 @@ ONCOLOGY_ACRONYM_ALLOWLIST = frozenset({
     "SCLC", "NSCLC", "NEC", "LCNEC", "NEPC", "GEP", "MTC", "EP",
     # Hematologic + non-solid (PRAME pipeline overlap)
     "AML", "MDS", "ALL", "CLL", "CML", "DLBCL", "FL", "HL", "MM",
+    # Tumor-type acronyms in the selected-biomarker panel's cancer_relevance prose
+    # (data/reference/selected_biomarker_panel.json)
+    "ESCC", "MCL",
     # AML / MDS regimens, transplant conditioning, and drug shorthands
     # (relapsed/refractory AML + allo-HCT vocabulary)
     "FLAG", "IDA", "FLAGIDA", "GO", "CMA", "TBI", "ATG", "RIC", "MAC",

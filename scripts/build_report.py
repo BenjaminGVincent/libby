@@ -3236,6 +3236,16 @@ def _downloads_section(slug: str, case_docs: Path) -> str:
             "per-feature biomarker-workup table with providers and references, sortable in-browser",
         ),
         (
+            "biomarker_survey.md",
+            "Selected general biomarker report",
+            "which panel biomarkers this patient has and has not been tested for, including the tumor-agnostic ones, in a sortable in-browser table",
+        ),
+        (
+            f"{slug}-biomarker-survey.html",
+            "Selected general biomarker report (offline)",
+            "same biomarker survey packaged as a self-contained HTML that opens offline",
+        ),
+        (
             f"{slug}-recommendations.html",
             "Recommendations table",
             "ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline",
@@ -3276,6 +3286,11 @@ def _downloads_section(slug: str, case_docs: Path) -> str:
             f"{slug}-target-validation.pdf",
             "Target validation paths",
             "diagnostic + biomarker workup that hardens the targetable-feature call",
+        ),
+        (
+            f"{slug}-biomarker-survey.pdf",
+            "Selected general biomarker report",
+            "biomarker screening coverage and the gaps it leaves, in a print-friendly PDF",
         ),
         (
             f"{slug}-recommendations.pdf",
@@ -3352,6 +3367,7 @@ def _case_output_section(slug: str, case_docs: Path) -> str:
 
     Picks the form (HTML or PDF) each artifact reads best in:
       - Target validation paths → PDF (prose narrative the reporter authors)
+      - Selected general biomarker report → HTML (sortable in-browser table)
       - Recommendations table → HTML (self-contained, opens offline, links inline)
       - Access guide → HTML (sortable in-browser table)
       - Master manuscripts table → HTML (sortable in-browser table)
@@ -3366,6 +3382,11 @@ def _case_output_section(slug: str, case_docs: Path) -> str:
             f"{slug}-target-validation.pdf",
             "Target validation paths (PDF)",
             "diagnostic + biomarker workup that hardens the targetable-feature call",
+        ),
+        (
+            "biomarker_survey.md",
+            "Selected general biomarker report (HTML)",
+            "which panel biomarkers this patient has and has not been tested for, including the tumor-agnostic ones, sortable in-browser",
         ),
         (
             f"{slug}-recommendations.html",

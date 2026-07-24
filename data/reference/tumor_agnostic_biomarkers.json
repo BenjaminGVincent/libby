@@ -1,0 +1,264 @@
+{
+  "panel_id": "tumor-agnostic-biomarkers",
+  "panel_title": "Tumor-agnostic and subset-relevant predictive biomarkers",
+  "description": "Predictive biomarkers whose therapeutic implication does not depend on the tumor's site of origin (tumor_agnostic), or that apply across a defined subset of tumor types (tumor_subset). This panel is the complement to selected_biomarker_panel.json: that file enumerates protein targets with a binder program, this one enumerates the pan-cancer predictive biomarkers a patient may never have been tested for, of which MSI-H/dMMR and TMB-H gating PD-1 blockade are the canonical examples.",
+  "maintenance": "Hand-curated. Unlike selected_biomarker_panel.json this file is NOT machine-generated, so it is safe to edit. Add an entry when a new tumor-agnostic indication is approved; do not delete an entry when an approval is withdrawn, mark it in `notes` instead so historical case reports stay interpretable.",
+  "provenance": {
+    "curated": "2026-07",
+    "trial_ids_verified": "Every nct_id below was resolved against the ClinicalTrials.gov v2 API at curation and matched to the named trial.",
+    "approval_caveat": "Approval scope and year are recorded as of curation. Regulatory status changes; the surveyor re-confirms against the current FDA label or regional equivalent before asserting an approval in a case report, and corrects this file when it finds drift."
+  },
+  "biomarker_count": 9,
+  "biomarkers": [
+    {
+      "panel_key": "msi-dmmr",
+      "biomarker_label": "Microsatellite instability / mismatch-repair deficiency (MSI-H / dMMR)",
+      "gene_symbols": ["MLH1", "MSH2", "MSH6", "PMS2", "EPCAM"],
+      "relevance_class": "tumor_agnostic",
+      "biomarker_type": "genomic_instability",
+      "description": "Loss of DNA mismatch repair generates a hypermutated, neoantigen-rich tumor that responds to PD-1 blockade regardless of primary site. The first tumor-agnostic biomarker approval.",
+      "default_assay": "MMR protein IHC (MLH1, PMS2, MSH2, MSH6) on tumor tissue",
+      "assay_alternatives": [
+        "PCR microsatellite panel (mononucleotide markers)",
+        "MSI called from a validated comprehensive NGS panel"
+      ],
+      "threshold": "MSI-high by PCR/NGS, or loss of one or more MMR proteins by IHC",
+      "therapeutic_implication": [
+        {
+          "intervention": "pembrolizumab",
+          "modality": "PD-1 inhibitor",
+          "approval_status": "FDA approved, tumor-agnostic",
+          "approval_year": 2017,
+          "scope": "Unresectable or metastatic MSI-H / dMMR solid tumors progressing after prior treatment",
+          "nct_id": "NCT02628067",
+          "trial_name": "KEYNOTE-158"
+        },
+        {
+          "intervention": "dostarlimab",
+          "modality": "PD-1 inhibitor",
+          "approval_status": "FDA approved, tumor-agnostic",
+          "approval_year": 2021,
+          "scope": "Recurrent or advanced dMMR solid tumors progressing after prior treatment",
+          "nct_id": "NCT02715284",
+          "trial_name": "GARNET"
+        }
+      ],
+      "reflex_actions": [
+        "Loss of MLH1 by IHC reflexes to MLH1 promoter hypermethylation / BRAF V600E to separate sporadic from Lynch syndrome",
+        "A dMMR result carries germline Lynch implications for the patient and their relatives"
+      ],
+      "notes": "IHC and PCR/NGS disagree in a minority of cases, so a negative result on one method with a strong clinical suspicion is a reason to run the other rather than to close the question."
+    },
+    {
+      "panel_key": "tmb-high",
+      "biomarker_label": "Tumor mutational burden, high (TMB-H)",
+      "gene_symbols": [],
+      "relevance_class": "tumor_agnostic",
+      "biomarker_type": "genomic_instability",
+      "description": "A high somatic mutation rate correlates with neoantigen load and with response to PD-1 blockade across primary sites.",
+      "default_assay": "Validated comprehensive genomic profiling panel reporting TMB in mutations per megabase",
+      "assay_alternatives": ["Whole-exome sequencing with a validated TMB caller"],
+      "threshold": "10 or more mutations per megabase on a validated assay",
+      "therapeutic_implication": [
+        {
+          "intervention": "pembrolizumab",
+          "modality": "PD-1 inhibitor",
+          "approval_status": "FDA approved, tumor-agnostic",
+          "approval_year": 2020,
+          "scope": "Unresectable or metastatic TMB-H solid tumors progressing after prior treatment with no satisfactory alternative",
+          "nct_id": "NCT02628067",
+          "trial_name": "KEYNOTE-158"
+        }
+      ],
+      "reflex_actions": [],
+      "notes": "TMB is assay-dependent: panel size, whether synonymous variants are counted, and germline-subtraction method all shift the number, so a value near the cutoff is not interchangeable between platforms. A TMB result from a small hotspot panel does not satisfy this biomarker."
+    },
+    {
+      "panel_key": "ntrk-fusion",
+      "biomarker_label": "NTRK1 / NTRK2 / NTRK3 gene fusion",
+      "gene_symbols": ["NTRK1", "NTRK2", "NTRK3"],
+      "relevance_class": "tumor_agnostic",
+      "biomarker_type": "fusion",
+      "description": "A TRK fusion is a rare but strongly actionable oncogenic driver with high response rates to TRK inhibition irrespective of primary site.",
+      "default_assay": "RNA-based fusion NGS panel covering NTRK1/2/3",
+      "assay_alternatives": [
+        "Pan-TRK IHC as a screen, confirmed by a fusion-capable NGS or FISH assay",
+        "DNA-based NGS with intronic tiling across NTRK breakpoints"
+      ],
+      "threshold": "An in-frame fusion retaining the TRK kinase domain",
+      "therapeutic_implication": [
+        {
+          "intervention": "larotrectinib",
+          "modality": "TRK inhibitor",
+          "approval_status": "FDA approved, tumor-agnostic",
+          "approval_year": 2018,
+          "scope": "Solid tumors with an NTRK gene fusion without a known acquired resistance mutation",
+          "nct_id": "NCT02576431",
+          "trial_name": "NAVIGATE"
+        },
+        {
+          "intervention": "entrectinib",
+          "modality": "TRK / ROS1 / ALK inhibitor",
+          "approval_status": "FDA approved, tumor-agnostic",
+          "approval_year": 2019,
+          "scope": "Solid tumors with an NTRK gene fusion; CNS-penetrant",
+          "nct_id": "NCT02568267",
+          "trial_name": "STARTRK-2"
+        }
+      ],
+      "reflex_actions": [],
+      "notes": "DNA-only panels miss fusions with breakpoints in large or poorly-covered introns, so a negative DNA panel is not equivalent to a negative RNA fusion assay. Pan-TRK IHC is a screen, not a confirmation, and stains physiologic TRK in some tissues."
+    },
+    {
+      "panel_key": "ret-fusion",
+      "biomarker_label": "RET gene fusion",
+      "gene_symbols": ["RET"],
+      "relevance_class": "tumor_agnostic",
+      "biomarker_type": "fusion",
+      "description": "RET fusions drive a subset of thyroid, lung, and rarer solid tumors and respond to selective RET inhibition across primary sites.",
+      "default_assay": "RNA-based fusion NGS panel covering RET",
+      "assay_alternatives": ["DNA NGS with RET intronic coverage", "RET break-apart FISH"],
+      "threshold": "An in-frame fusion retaining the RET kinase domain",
+      "therapeutic_implication": [
+        {
+          "intervention": "selpercatinib",
+          "modality": "selective RET inhibitor",
+          "approval_status": "FDA approved, tumor-agnostic",
+          "approval_year": 2022,
+          "scope": "Locally advanced or metastatic RET fusion-positive solid tumors progressing on or after prior systemic treatment",
+          "nct_id": "NCT03157128",
+          "trial_name": "LIBRETTO-001"
+        }
+      ],
+      "reflex_actions": [],
+      "notes": "Distinguish a RET fusion from an activating RET point mutation: the fusion is the tumor-agnostic indication, and the medullary-thyroid point-mutation indication is separate."
+    },
+    {
+      "panel_key": "braf-v600e",
+      "biomarker_label": "BRAF V600E mutation",
+      "gene_symbols": ["BRAF"],
+      "relevance_class": "tumor_agnostic",
+      "biomarker_type": "point_mutation",
+      "description": "BRAF V600E is actionable across most primary sites with combined BRAF and MEK inhibition.",
+      "default_assay": "Tumor NGS panel covering BRAF codon 600",
+      "assay_alternatives": ["Validated allele-specific PCR", "VE1 IHC as a screen, confirmed molecularly"],
+      "threshold": "BRAF p.V600E (and, per the approval, V600E specifically rather than any V600 variant)",
+      "therapeutic_implication": [
+        {
+          "intervention": "dabrafenib plus trametinib",
+          "modality": "BRAF inhibitor plus MEK inhibitor",
+          "approval_status": "FDA approved, tumor-agnostic",
+          "approval_year": 2022,
+          "scope": "Unresectable or metastatic BRAF V600E solid tumors progressing after prior treatment, excluding colorectal cancer",
+          "nct_id": "NCT02034110",
+          "trial_name": "ROAR"
+        }
+      ],
+      "reflex_actions": [],
+      "notes": "Colorectal cancer is carved out of the tumor-agnostic indication because of EGFR-mediated feedback reactivation; it has its own BRAF-directed regimen. Non-V600E class II and III BRAF alterations are not covered by this indication."
+    },
+    {
+      "panel_key": "her2-ihc-overexpression",
+      "biomarker_label": "HER2 protein overexpression (IHC 3+)",
+      "gene_symbols": ["ERBB2"],
+      "relevance_class": "tumor_agnostic",
+      "biomarker_type": "protein_expression",
+      "description": "HER2 IHC 3+ predicts benefit from trastuzumab deruxtecan across primary sites, extending a biomarker that was historically read only in breast and gastric cancer.",
+      "default_assay": "HER2 IHC on tumor tissue, scored with the tumor-type-appropriate criteria",
+      "assay_alternatives": ["Reflex ISH/FISH on IHC 2+", "ERBB2 copy number from a comprehensive NGS panel"],
+      "threshold": "IHC 3+ for the tumor-agnostic indication; IHC 1+ and 2+ define HER2-low, which carries separate, tumor-type-specific options",
+      "therapeutic_implication": [
+        {
+          "intervention": "trastuzumab deruxtecan",
+          "modality": "HER2-directed ADC",
+          "approval_status": "FDA accelerated approval, tumor-agnostic",
+          "approval_year": 2024,
+          "scope": "Unresectable or metastatic HER2 IHC 3+ solid tumors after prior systemic treatment with no satisfactory alternative",
+          "nct_id": "NCT04482309",
+          "trial_name": "DESTINY-PanTumor02"
+        }
+      ],
+      "reflex_actions": [
+        "An IHC 2+ result reflexes to ISH/FISH",
+        "A low-positive (1+) result is a weaker predictor than a high-positive one and should be reported with that hedge"
+      ],
+      "notes": "Scoring criteria differ by tumor type; the gastric and pan-tumor conventions label 1+ as negative even where a case-level HER2-low call is clinically meaningful. This biomarker overlaps ERBB2 in selected_biomarker_panel.json; the surveyor emits one row and cross-references rather than duplicating."
+    },
+    {
+      "panel_key": "pd-l1-expression",
+      "biomarker_label": "PD-L1 protein expression",
+      "gene_symbols": ["CD274"],
+      "relevance_class": "tumor_subset",
+      "biomarker_type": "protein_expression",
+      "description": "PD-L1 expression gates or enriches for checkpoint-inhibitor benefit in several tumor types, with a different antibody clone, scoring system, and cutoff in each.",
+      "default_assay": "PD-L1 IHC using the clone and scoring system validated for this tumor type",
+      "assay_alternatives": [],
+      "threshold": "Tumor-type-specific: CPS, TPS, or IC scoring against the cutoff in the relevant indication",
+      "therapeutic_implication": [
+        {
+          "intervention": "PD-1 / PD-L1 inhibitors",
+          "modality": "checkpoint inhibitor",
+          "approval_status": "Approved in specific tumor types, not tumor-agnostic",
+          "approval_year": null,
+          "scope": "Cutoff, clone, and scoring differ by indication; confirm against the label for this patient's tumor type",
+          "nct_id": null,
+          "trial_name": null
+        }
+      ],
+      "reflex_actions": [],
+      "notes": "Not a tumor-agnostic biomarker. A PD-L1 result generated for one tumor type's companion diagnostic does not automatically satisfy another indication's requirement, because the clone and scoring differ."
+    },
+    {
+      "panel_key": "hrd-brca",
+      "biomarker_label": "Homologous recombination deficiency / BRCA1 / BRCA2 pathogenic variant",
+      "gene_symbols": ["BRCA1", "BRCA2", "PALB2", "RAD51C", "RAD51D", "ATM"],
+      "relevance_class": "tumor_subset",
+      "biomarker_type": "genomic_instability",
+      "description": "HR deficiency predicts PARP-inhibitor and platinum sensitivity in ovarian, breast, pancreatic, and prostate cancer.",
+      "default_assay": "Tumor NGS covering HR genes plus a genomic-instability / HRD score",
+      "assay_alternatives": ["Germline multigene panel on whole blood", "Somatic BRCA1/2 from a comprehensive tumor panel"],
+      "threshold": "Pathogenic or likely-pathogenic HR gene variant, or an HRD score above the assay's validated cutoff",
+      "therapeutic_implication": [
+        {
+          "intervention": "PARP inhibitors",
+          "modality": "PARP inhibitor",
+          "approval_status": "Approved in specific tumor types, not tumor-agnostic",
+          "approval_year": null,
+          "scope": "Indication and line of therapy differ by tumor type and by germline versus somatic status",
+          "nct_id": null,
+          "trial_name": null
+        }
+      ],
+      "reflex_actions": [
+        "A somatic BRCA1/2 finding reflexes to germline confirmation, which changes family screening as well as therapy"
+      ],
+      "notes": "Somatic-only testing misses a germline finding that would change both treatment and relatives' screening. Reversion mutations under PARP-inhibitor pressure are a separate, later question."
+    },
+    {
+      "panel_key": "hla-class-i-genotype",
+      "biomarker_label": "HLA class I genotype",
+      "gene_symbols": ["HLA-A", "HLA-B", "HLA-C"],
+      "relevance_class": "tumor_subset",
+      "biomarker_type": "host_genotype",
+      "description": "TCR-T and ImmTAC therapies against intracellular cancer/testis antigens are restricted to a specific HLA allele, most often HLA-A*02:01. Without a genotype on file, every HLA-presented target in the selected biomarker panel is unassessable rather than negative.",
+      "default_assay": "HLA class I genotyping at 4-digit resolution on whole blood or buccal swab",
+      "assay_alternatives": ["HLA type inferred from sequencing data by a validated caller"],
+      "threshold": "Allele-level (4-digit) type; the restricting allele depends on the product",
+      "therapeutic_implication": [
+        {
+          "intervention": "HLA-restricted TCR-T and ImmTAC agents",
+          "modality": "TCR-T / bispecific TCR",
+          "approval_status": "Product-specific; each names its restricting allele",
+          "approval_year": null,
+          "scope": "Gates eligibility for MAGE-A4, NY-ESO-1, PRAME and related intracellular-antigen programs",
+          "nct_id": null,
+          "trial_name": null
+        }
+      ],
+      "reflex_actions": [
+        "A positive HLA type reflexes to antigen-expression testing for the intracellular targets in the selected biomarker panel"
+      ],
+      "notes": "Cheap, fast, and drawn from blood rather than tumor tissue, so it is usually the least costly way to open or close a whole class of options. Cross-references every target in selected_biomarker_panel.json with localization intracellular_HLA_presented."
+    }
+  ]
+}

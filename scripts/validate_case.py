@@ -51,6 +51,7 @@ JSONL_ARTIFACTS = {
     "preclinical_recommendations.jsonl": "preclinical_recommendations",
     "recommendations.jsonl": "recommendations",
     "target_validation.jsonl": "target_validation",
+    "biomarker_survey.jsonl": "biomarker_survey",
     "accessibility.jsonl": "accessibility",
     "runs.jsonl": "runs",
     "board/positions.jsonl": "positions",

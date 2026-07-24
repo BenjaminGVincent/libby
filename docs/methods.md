@@ -68,6 +68,43 @@ against the JSON schemas in `scripts/schema/`, runs the PHI scanner against
 both files, and (only if both pass) copies them to `data/cases/<slug>/`. This is
 the **only path** PHI-derived data takes into the committable tree.
 
+### 2a. Biomarker survey
+
+```
+/preclinical_biomarker_surveyor <slug>   # data/cases/<slug>/biomarker_survey.jsonl
+/biomarker_reporter             <slug>   # docs/cases/<slug>/biomarker_survey.md + HTML + PDF
+```
+
+Every other research-tier agent reasons forward from the features the case
+already claims are targetable. The surveyor runs the opposite direction: it
+screens the case record against two fixed panels and reports what was never
+measured.
+
+- `data/reference/selected_biomarker_panel.json` — 72 cell-surface and
+  HLA-presented protein targets with their binder programs, machine-generated
+  from `selected_biomarker_target_list.xlsx` by
+  `scripts/import_biomarker_panel.py`.
+- `data/reference/tumor_agnostic_biomarkers.json` — 9 hand-curated predictive
+  biomarkers that are tumor-agnostic (MSI-H/dMMR, TMB-H, NTRK fusion, RET
+  fusion, BRAF V600E, HER2 IHC 3+) or relevant across a tumor subset (PD-L1,
+  HRD/BRCA, HLA class I genotype).
+
+Each in-scope biomarker gets a `measurement_status`: `measured_hardened`,
+`measured_not_hardened`, `not_measured`, `not_assessable`, or `indeterminate`.
+The distinction that carries the whole track is between *tested and negative*
+and *never tested*: a biomarker absent from `profile.json::biomarkers[]` is
+`not_measured`, never negative.
+
+All 9 tumor-agnostic entries are surveyed in every case regardless of tumor
+type — that is the point of the track, and `build_biomarker_survey.py` refuses
+to render a page that is missing one. Protein targets with no plausible
+connection to the tumor get no row, and the renderer derives the out-of-scope
+list by subtracting the emitted rows from the panel, so the audit trail stays
+complete without padding the report.
+
+`measured_not_hardened` rows carry `handoff_to_target_validator: true` and are
+worked into the Target validation paths report (below) rather than this one.
+
 ### 3. Target validation
 
 ```
@@ -85,6 +122,13 @@ informs_germline_implications). The PI uses `priority: "essential"` +
 shared workup row in `recommendations.jsonl` — the canonical example is
 *DLL3 RNA → DLL3 IHC SP347* in the osteosarcoma case, where the IHC gates
 every DLL3-directed therapy regardless of which specific drug is chosen.
+
+The validator also absorbs the biomarker survey's handoffs. Each row it writes
+to close one carries `source_survey_id` pointing back at the survey row, and
+`build_target_validation.py` renders a "Measured, but not to decision
+resolution" table that flags any handoff with no matching row as **not yet
+addressed** — so a gap that was found and then dropped is visible on the
+published page instead of lost between two reports.
 
 ### 4. Research tier
 
@@ -207,6 +251,7 @@ not merely documented:
 - `profile.schema.json` — scrubbed patient profile.
 - `preferences.schema.json` — user tradeoff weights and vetoes.
 - `target_validation.schema.json` — target-validator row.
+- `biomarker_survey.schema.json` — biomarker-surveyor row.
 - `trials.schema.json` — trial-screener row.
 - `clinical_evidence.schema.json` — clinical-evidence row.
 - `preclinical_evidence.schema.json` — pre-clinical evidence row.

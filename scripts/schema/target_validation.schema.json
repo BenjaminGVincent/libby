@@ -135,6 +135,10 @@
       }
     },
     "notes": { "type": ["string", "null"] },
+    "source_survey_id": {
+      "type": ["string", "null"],
+      "description": "When this row exists to close a gap the preclinical_biomarker_surveyor found, the `survey_id` of the biomarker_survey.jsonl row it answers (a `measured_not_hardened` or `not_assessable` row with `handoff_to_target_validator: true`). Makes the handoff auditable: build_target_validation.py reports any survey handoff with no matching validation row."
+    },
     "supersedes": {
       "type": ["string", "null"],
       "description": "validation_id of a prior row this one corrects or replaces."
