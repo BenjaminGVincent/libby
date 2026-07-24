@@ -322,6 +322,20 @@ h4 { margin-top: 1.25rem; margin-bottom: 0.25rem; font-size: 1rem; }
   margin-left: 0.35em;
   white-space: nowrap;
 }
+/* surfaced_reason flag pills (Experimental "Also considered" table). */
+.flag-badge {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 0.02em 0.5em;
+  white-space: nowrap;
+}
+.flag-unavailable    { background: #ECEFF1; color: #37474F; border-color: #CFD8DC; }
+.flag-consolidated   { background: #E8EAF6; color: #303F9F; border-color: #C5CAE9; }
+.flag-thin           { background: #FFF8E1; color: #7A5B00; border-color: #F0E1B0; }
+.flag-not-enrollable { background: #F3E5F5; color: #6A1B7A; border-color: #E1BEE7; }
 footer.libby-footer {
   margin-top: 3rem;
   padding-top: 1rem;
@@ -357,8 +371,37 @@ def _status_class(status: str) -> str:
     }.get(status, "")
 
 
+# surfaced_reason → (badge label, CSS pill class). Mirrors build_recommendations.py.
+_SURFACED_META = {
+    "unavailable": ("Unavailable", "flag-unavailable"),
+    "consolidated": ("Consolidated", "flag-consolidated"),
+    "thin_evidence": ("Thin evidence", "flag-thin"),
+    "not_enrollable": ("Not enrollable", "flag-not-enrollable"),
+}
+
+
+def _is_surfaced_only(r: dict) -> bool:
+    """True for a feature-targeting investigational row surfaced but not ranked."""
+    return (r.get("surfaced_reason") or "none") != "none"
+
+
+def _surfaced_badge_html(reason: str | None) -> str:
+    meta = _SURFACED_META.get(reason or "none")
+    if not meta:
+        return "&mdash;"
+    label, cls = meta
+    return f'<span class="flag-badge {cls}">{_html.escape(label)}</span>'
+
+
 _RECS_HEAD_HTML = (
     "<th>Rank</th><th>Intervention</th>"
+    "<th>Likelihood of effect</th><th>Toxicity burden</th>"
+    "<th>Counter-productive MoA</th><th>Overall</th>"
+    "<th>Key references</th>"
+)
+
+_RECS_HEAD_HTML_FLAGGED = (
+    "<th>Flag</th><th>Intervention</th>"
     "<th>Likelihood of effect</th><th>Toxicity burden</th>"
     "<th>Counter-productive MoA</th><th>Overall</th>"
     "<th>Key references</th>"
@@ -451,6 +494,7 @@ def _render_recs_table_html(
     show_personas: bool = True,
     renumber: bool = False,
     anchored_ids: set[str] | None = None,
+    flagged: bool = False,
 ) -> str:
     """Render rows as the recs HTML table.
 
@@ -471,17 +515,20 @@ def _render_recs_table_html(
         return "<p><em>No rows.</em></p>"
     body: list[str] = []
     for i, r in enumerate(rows, start=1):
-        rank_cell = i if renumber else r.get("rank")
-        iid = r.get("intervention_id") or ""
-        if anchored_ids and iid in anchored_ids:
-            rank_html = (
-                f'<a href="#{_evidence_anchor_id(r)}">{_fmt_html(rank_cell)}</a>'
-            )
+        cls = _status_class(r.get("status") or "recommended")
+        tr_open = f'    <tr class="{cls}">' if cls else "    <tr>"
+        if flagged:
+            lead_html = _surfaced_badge_html(r.get("surfaced_reason"))
         else:
-            rank_html = _fmt_html(rank_cell)
+            rank_cell = i if renumber else r.get("rank")
+            iid = r.get("intervention_id") or ""
+            if anchored_ids and iid in anchored_ids:
+                lead_html = f'<a href="#{_evidence_anchor_id(r)}">{_fmt_html(rank_cell)}</a>'
+            else:
+                lead_html = _fmt_html(rank_cell)
         body.append(
-            "    <tr>"
-            f"<td>{rank_html}</td>"
+            tr_open
+            + f"<td>{lead_html}</td>"
             f"{_intervention_cell_html(r, show_personas=show_personas)}"
             f"<td>{_fmt_html(r.get('likelihood_of_effect'))}</td>"
             f"<td>{_fmt_html(r.get('toxicity_burden'))}</td>"
@@ -490,11 +537,12 @@ def _render_recs_table_html(
             f"{_key_references_cell_html(r)}"
             "</tr>"
         )
+    head = _RECS_HEAD_HTML_FLAGGED if flagged else _RECS_HEAD_HTML
     return (
         '<div class="trial-table-wrap">\n'
         '  <div class="trial-scroll">\n'
         '    <table class="trial-table">\n'
-        f'      <thead><tr>{_RECS_HEAD_HTML}</tr></thead>\n'
+        f'      <thead><tr>{head}</tr></thead>\n'
         '      <tbody>\n' + "\n".join(body) + "\n      </tbody>\n"
         "    </table>\n  </div>\n</div>\n"
     )
@@ -1234,14 +1282,29 @@ def _render_recommendations_html(
             anchored_ids = {
                 str(r.get("intervention_id")) for r in group_rows if r.get("intervention_id")
             }
+        ranked_group = [r for r in group_rows if not _is_surfaced_only(r)]
+        also_group = [r for r in group_rows if _is_surfaced_only(r)]
         parts.append(
             _render_recs_table_html(
-                group_rows,
+                ranked_group,
                 show_personas=False,
                 renumber=True,
                 anchored_ids=anchored_ids,
             )
         )
+        if also_group:
+            parts.append("<h3>Also considered &mdash; not ranked</h3>")
+            parts.append(
+                '<p class="pipeline-note">Feature-targeting investigational options the '
+                "board considered but did not rank as live top-tier choices. The "
+                "<strong>Flag</strong> column says why: <em>Unavailable</em> (program "
+                "discontinued/terminated), <em>Consolidated</em> (one product of an approach "
+                "ranked above), <em>Thin evidence</em> (no peer-reviewed clinical efficacy yet), "
+                "<em>Not enrollable</em> (cross-tumor evidence or geographically inaccessible).</p>"
+            )
+            parts.append(
+                _render_recs_table_html(also_group, show_personas=False, flagged=True)
+            )
         if scenario_short != "__unscoped" and trials:
             pipeline_rows = _pipeline_context_rows(scenario_short, trials, ranked_aliases)
             if pipeline_rows:
@@ -2818,30 +2881,55 @@ def _recommendations_md_for_pdf(
             lines.append(f"- **Efficacy:** {eff_cell}")
             lines.append("")
 
+    def _emit_rec_detail(rec: dict, heading_line: str) -> None:
+        lines.append(heading_line)
+        lines.append("")
+        if rec.get("likelihood_of_effect"):
+            lines.append(f"**Likelihood of effect:** {rec['likelihood_of_effect']}")
+            lines.append("")
+        if rec.get("toxicity_burden"):
+            lines.append(f"**Toxicity burden:** {rec['toxicity_burden']}")
+            lines.append("")
+        cpm_str = _cpm_inline(rec)
+        if cpm_str != "—":
+            lines.append(f"**Counter-productive MoA:** {cpm_str}")
+            lines.append("")
+        if rec.get("overall"):
+            lines.append(f"**Overall:** **{rec['overall']}**")
+            lines.append("")
+        refs = _refs_inline(rec)
+        if refs != "—":
+            lines.append(f"**Key references:** {refs}")
+            lines.append("")
+
     def _emit_feature_block(scenario_short: str, group_rows: list[dict], heading: str | None) -> None:
         if heading:
             lines.append(f"## {heading}")
             lines.append("")
-        for i, rec in enumerate(group_rows, start=1):
-            lines.append(_intervention_heading(rec, i))
+        ranked_group = [r for r in group_rows if not _is_surfaced_only(r)]
+        also_group = [r for r in group_rows if _is_surfaced_only(r)]
+        for i, rec in enumerate(ranked_group, start=1):
+            _emit_rec_detail(rec, _intervention_heading(rec, i))
+
+        if also_group:
+            lines.append("### Also considered — not ranked")
             lines.append("")
-            if rec.get("likelihood_of_effect"):
-                lines.append(f"**Likelihood of effect:** {rec['likelihood_of_effect']}")
-                lines.append("")
-            if rec.get("toxicity_burden"):
-                lines.append(f"**Toxicity burden:** {rec['toxicity_burden']}")
-                lines.append("")
-            cpm_str = _cpm_inline(rec)
-            if cpm_str != "—":
-                lines.append(f"**Counter-productive MoA:** {cpm_str}")
-                lines.append("")
-            if rec.get("overall"):
-                lines.append(f"**Overall:** **{rec['overall']}**")
-                lines.append("")
-            refs = _refs_inline(rec)
-            if refs != "—":
-                lines.append(f"**Key references:** {refs}")
-                lines.append("")
+            lines.append(
+                "_Feature-targeting investigational options the board considered but did "
+                "not rank as live top-tier choices: Unavailable (program discontinued), "
+                "Consolidated (one product of an approach ranked above), Thin evidence (no "
+                "peer-reviewed clinical efficacy yet), or Not enrollable (cross-tumor or "
+                "geographically inaccessible)._"
+            )
+            lines.append("")
+            _reason_label = {
+                "unavailable": "Unavailable", "consolidated": "Consolidated",
+                "thin_evidence": "Thin evidence", "not_enrollable": "Not enrollable",
+            }
+            for rec in also_group:
+                flag = _reason_label.get(rec.get("surfaced_reason"), "Not ranked")
+                label = rec.get("intervention_label") or rec.get("intervention_id") or "—"
+                _emit_rec_detail(rec, f"#### {label} — _{flag}_")
 
         # Pipeline context — leaner table, biomarker-class agents the patient
         # cannot currently enroll in.

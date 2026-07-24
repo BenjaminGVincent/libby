@@ -41,8 +41,40 @@ def status_class(status: str) -> str:
     }.get(status, "")
 
 
+# surfaced_reason → (badge label, CSS pill class). `none` renders no badge; the
+# other reasons flag a feature-targeting investigational option that is surfaced in
+# the Experimental table but not ranked as a live top-tier choice.
+SURFACED_META = {
+    "unavailable": ("Unavailable", "flag-unavailable"),
+    "consolidated": ("Consolidated", "flag-consolidated"),
+    "thin_evidence": ("Thin evidence", "flag-thin"),
+    "not_enrollable": ("Not enrollable", "flag-not-enrollable"),
+}
+
+
+def _is_surfaced_only(r: dict) -> bool:
+    """True for a row surfaced-but-not-ranked (a non-`none` surfaced_reason)."""
+    return (r.get("surfaced_reason") or "none") != "none"
+
+
+def surfaced_badge(reason: str | None) -> str:
+    meta = SURFACED_META.get(reason or "none")
+    if not meta:
+        return "—"
+    label, cls = meta
+    return f'<span class="flag-badge {cls}">{html.escape(label)}</span>'
+
+
 RECS_HEAD = (
     "<th>Rank</th><th>Intervention</th>"
+    "<th>Likelihood of effect</th><th>Toxicity burden</th>"
+    "<th>Counter-productive MoA</th><th>Overall</th>"
+    "<th>Key references</th>"
+)
+
+# Header for the "Also considered" table: swaps the Rank column for a Flag column.
+RECS_HEAD_FLAGGED = (
+    "<th>Flag</th><th>Intervention</th>"
     "<th>Likelihood of effect</th><th>Toxicity burden</th>"
     "<th>Counter-productive MoA</th><th>Overall</th>"
     "<th>Key references</th>"
@@ -130,14 +162,21 @@ def _overall_cell(r: dict) -> str:
     return f"<td><strong>{html.escape(str(overall))}</strong></td>"
 
 
-def render_recs_table(rows: list[dict]) -> str:
+def render_recs_table(rows: list[dict], *, flagged: bool = False) -> str:
+    """Render a recs table. When `flagged`, the leading column shows the
+    `surfaced_reason` badge instead of the numeric rank (used for the
+    "Also considered" group). Each row carries its `status`-derived CSS class so
+    `not_recommended` / `considered_with_caveats` rows are visually distinct."""
     if not rows:
-        return "_No rows in this scenario._\n"
+        return "_No rows in this group._\n"
     body = []
     for r in rows:
+        cls = status_class(r.get("status") or "recommended")
+        tr_open = f'    <tr class="{cls}">' if cls else "    <tr>"
+        lead = surfaced_badge(r.get("surfaced_reason")) if flagged else fmt(r.get("rank"))
         body.append(
-            "    <tr>"
-            f"<td>{fmt(r.get('rank'))}</td>"
+            tr_open
+            + f"<td>{lead}</td>"
             f"{_intervention_cell(r)}"
             f"<td>{fmt(r.get('likelihood_of_effect'))}</td>"
             f"<td>{fmt(r.get('toxicity_burden'))}</td>"
@@ -146,11 +185,12 @@ def render_recs_table(rows: list[dict]) -> str:
             f"{_key_references_cell(r)}"
             "</tr>"
         )
+    head = RECS_HEAD_FLAGGED if flagged else RECS_HEAD
     return (
         '<div class="trial-table-wrap">\n'
         '  <div class="trial-scroll">\n'
         '    <table class="trial-table">\n'
-        f'      <thead><tr>{RECS_HEAD}</tr></thead>\n'
+        f'      <thead><tr>{head}</tr></thead>\n'
         '      <tbody>\n' + "\n".join(body) + "\n      </tbody>\n"
         "    </table>\n"
         "  </div>\n"
@@ -169,30 +209,38 @@ _TABLE_LEGEND = (
 )
 
 
-def group_by_scenario(rows: list[dict]) -> tuple[list[dict], list[dict]]:
-    """Split rows into (workup_rows, unified_rows).
+def group_by_scenario(rows: list[dict]) -> tuple[list[dict], list[dict], list[dict]]:
+    """Split rows into (workup_rows, ranked_rows, also_considered_rows).
 
-    `workup_rows` are rows with `scenario == "shared"` — the rank-1 confirmatory
-    test that gates whether biomarker-conditional therapeutic recs apply.
-    `unified_rows` is everything else (biomarker-conditional recs tagged
-    `scenario: "<biomarker_short>:positive"` in gated cases, or untagged
-    `scenario: null` recs in non-gated cases), rank-ordered for a single
-    ranked table.
+    - `workup_rows`: `scenario == "shared"` — the rank-1 confirmatory test that
+      gates whether biomarker-conditional therapeutic recs apply.
+    - `ranked_rows`: live, ranked options (`surfaced_reason` is `none`/absent) —
+      the top-tier + caveated + not-recommended options, rank-ordered.
+    - `also_considered_rows`: feature-targeting investigational options surfaced
+      but not ranked (`surfaced_reason` ∈ unavailable/consolidated/thin_evidence/
+      not_enrollable) — rendered in a flagged "Also considered" table.
 
-    Conditional recs surface the (conditional on …) flag at render time via
-    `_intervention_cell` — they don't get split into a separate table.
+    Backward-compatible: when no row carries a `surfaced_reason`, `also_considered`
+    is empty and the page renders exactly as the pre-two-table single ranked view.
     """
     workup: list[dict] = []
-    unified: list[dict] = []
+    ranked: list[dict] = []
+    also: list[dict] = []
     for r in rows:
-        scen = r.get("scenario")
-        if scen == "shared":
+        if r.get("scenario") == "shared":
             workup.append(r)
+        elif _is_surfaced_only(r):
+            also.append(r)
         else:
-            unified.append(r)
+            ranked.append(r)
     workup.sort(key=lambda r: r.get("rank") or 999)
-    unified.sort(key=lambda r: r.get("rank") or 999)
-    return workup, unified
+    ranked.sort(key=lambda r: r.get("rank") or 999)
+    # Group also-considered by reason (stable), then by rank within a reason.
+    reason_order = list(SURFACED_META)
+    also.sort(key=lambda r: (reason_order.index(r.get("surfaced_reason"))
+                             if r.get("surfaced_reason") in reason_order else 99,
+                             r.get("rank") or 999))
+    return workup, ranked, also
 
 
 def downloads_block(case_docs: Path, slug: str) -> str:
@@ -303,40 +351,60 @@ def main() -> int:
     case_dir = REPO / "data" / "cases" / slug
     rows = load_jsonl(case_dir / "recommendations.jsonl")
 
-    workup, unified = group_by_scenario(rows)
-
-    parts = [
-        '<meta name="robots" content="noindex">\n',
-        f"# Recommendations — `{slug}`\n",
-    ]
+    workup, ranked, also = group_by_scenario(rows)
 
     case_docs = REPO / "docs" / "cases" / slug
+    # Only cross-link the Standard-of-care page when the SoC screener has run for
+    # this case — a dangling link aborts `mkdocs build --strict` (and CI).
+    soc_ref = (
+        "Approved and guideline-carried options for this patient's disease live on the "
+        "[Standard-of-care page](standard_of_care.md) instead."
+        if (case_docs / "standard_of_care.md").exists()
+        else "Approved and guideline-carried standard-of-care options are reported separately."
+    )
+    parts = [
+        '<meta name="robots" content="noindex">\n',
+        f"# Experimental options — `{slug}`\n",
+        "_Investigational / trial-only interventions that target the patient's stated "
+        f"features, ranked by the board's synthesis. {soc_ref}_\n",
+    ]
     dl = downloads_block(case_docs, slug)
     if dl:
         parts.append(dl)
 
+    counts = f"{len(rows)} rows: {len(workup)} workup + {len(ranked)} ranked"
+    if also:
+        counts += f" + {len(also)} also considered"
+    parts.append(f"_{counts}._\n")
+
     if workup:
-        parts.append(
-            f"_{len(rows)} rows: {len(workup)} workup + {len(unified)} ranked options._\n"
-        )
         parts.append("## Shared first step\n")
         parts.append(
             "_The confirmatory test gates whether biomarker-conditional recs below apply. "
             "Run regardless of which therapy is ultimately chosen._\n"
         )
         parts.append(render_recs_table(workup))
-        if unified:
-            parts.append("## Ranked options\n")
-            parts.append(
-                "_Biomarker-conditional recs are flagged inline. The ranking is "
-                "scoped to drugs that target the user's stated targetable feature; "
-                "if the workup test is negative the within-scope options are exhausted, "
-                "and standard care for the indication lies outside Libby's targetable-feature scope._\n"
-            )
-            parts.append(render_recs_table(unified))
+        parts.append("## Ranked options\n")
+        parts.append(
+            "_Biomarker-conditional recs are flagged inline. The ranking is scoped to "
+            "drugs that target the user's stated targetable feature._\n"
+        )
+        parts.append(render_recs_table(ranked))
     else:
-        parts.append(f"_{len(rows)} ranked options._\n")
-        parts.append(render_recs_table(unified))
+        parts.append("## Ranked options\n")
+        parts.append(render_recs_table(ranked))
+
+    if also:
+        parts.append("## Also considered — not ranked\n")
+        parts.append(
+            "_Feature-targeting investigational options the board considered but did not "
+            "rank as live top-tier choices. The **Flag** column says why: "
+            "**Unavailable** (program discontinued/terminated), **Consolidated** (one product "
+            "of an approach ranked above), **Thin evidence** (no peer-reviewed clinical "
+            "efficacy yet), **Not enrollable** (cross-tumor evidence or geographically "
+            "inaccessible). See the [Access guide](accessibility.md) for how each would be obtained._\n"
+        )
+        parts.append(render_recs_table(also, flagged=True))
 
     parts.append(_TABLE_LEGEND)
 

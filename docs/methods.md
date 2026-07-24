@@ -17,30 +17,40 @@ not, even when it has RCT-grade evidence in the patient's tumor type.
 
 The contract is enforced at every agent boundary:
 
-- `trial_screener` only logs trials whose drug targets the feature.
+- `trial_screener` only logs trials whose drug targets the feature (including a
+  drug approved for the tumor type whose eligibility hinges on an alteration the
+  patient lacks — that is the `standard_of_care_screener`'s, not the dossier's).
 - `clinician` only compiles clinical evidence for feature-targeting drugs.
 - `researcher` only logs preclinical evidence for feature-targeting drugs.
 - The 5 board personas only reason over the in-scope dossier.
-- `PI` only ranks feature-targeting interventions; out-of-scope drugs are
-  not named in the ranking, in "Classes examined but not ranked", or in any
-  narrative.
-- `translator` and `reporter` carry the same rule into the patient and PDF
+- `PI` produces the **Experimental table** (`recommendations.jsonl`): every
+  feature-targeting *investigational* option, tiered (top-tier ranked + non-top-tier
+  flagged via `surfaced_reason`). It routes approved/guideline-carried options to the
+  Standard-of-care table and never surfaces genuinely non-targeting drugs.
+- `translator` and `reporter` carry the two-table model into the patient and PDF
   surfaces.
 
-### Standard of care is a parallel surface, not an exception to the rule
+### Two therapeutic tables, split by regulatory maturity
 
-Standard-of-care options reach the case page through their own track
-(`standard_of_care_screener`, below) and their own page. The boundary is
-between *surfaces*, not between what the patient is allowed to learn:
+The therapeutic landscape is reported as **two co-equal tables**, so every
+considered option is surfaced (flagged with its tier and rationale) rather than
+silently absent. An option lands in exactly one table by *regulatory maturity*:
 
-- The **ranking** stays mechanism-scoped. Nothing in the standard-of-care
-  track enters `recommendations.jsonl`, the board files, the plain-language
-  page, or the executive summary, and nothing in it removes, reranks, or
-  narrows a feature-targeted option. The track is **additive only**.
-- The **standard-of-care report** carries options that are FDA (or equivalent
-  regulator) approved for a population including this patient, or carried in a
-  major academic or clinical-society guideline. It is linked from the case
-  page's Case output section alongside the ranking.
+- **Standard-of-care table** (`standard_of_care_screener` → `standard_of_care.jsonl`):
+  options approved for a population including this patient, or carried in a major
+  guideline. This includes a drug that *also* targets a stated feature (e.g.
+  gemtuzumab, approved for R/R CD33+ AML), and an approved drug whose target the
+  patient lacks (flagged "target absent" via `eligibility_status`/`population_match`).
+- **Experimental table** (`PI` → `recommendations.jsonl`): feature-targeting
+  *investigational* options (trial-only, off-label-experimental, compassionate-use,
+  not-yet-accessible, unavailable), tiered — top-tier ranked plus non-top-tier
+  flagged via `surfaced_reason` (`unavailable` / `consolidated` / `thin_evidence` /
+  `not_enrollable`).
+
+The split is mechanism-agnostic: an approved feature-targeting drug lives in
+Standard of care (by maturity), not the ranking. Both tables render in the Case
+output section. The board still reasons over the full feature-targeting dossier;
+the PI routes its approved members to the Standard-of-care table.
 
 The one sanctioned bridge is `standard_of_care.jsonl::relationship_to_targeted_options`,
 and it runs one way: it names sequencing and conflicts (a regimen that would

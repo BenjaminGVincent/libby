@@ -68,6 +68,12 @@
       "enum": ["recommended", "considered_with_caveats", "not_recommended"],
       "default": "recommended"
     },
+    "surfaced_reason": {
+      "type": "string",
+      "enum": ["none", "unavailable", "consolidated", "thin_evidence", "not_enrollable"],
+      "default": "none",
+      "description": "Why a feature-targeting investigational intervention is surfaced in the Experimental table but not ranked as a live top-tier option. `none` (default) is a normally-ranked/assessed row (its recommend-strength lives in `status`). `unavailable` = the program is discontinued/terminated with no successor. `consolidated` = one of several products of an approach that is ranked once at the approach level (this row points to the approach). `thin_evidence` = no peer-reviewed clinical efficacy yet (e.g. tool-compound / gated). `not_enrollable` = cross-tumor mechanism evidence or geographically-inaccessible, informational only. The renderer groups and flags rows by this field; `status` remains the recommend-strength axis. Approved feature-targeting drugs are NOT surfaced here — they live in the Standard-of-care table."
+    },
     "scenario": {
       "oneOf": [
         { "type": "null" },
