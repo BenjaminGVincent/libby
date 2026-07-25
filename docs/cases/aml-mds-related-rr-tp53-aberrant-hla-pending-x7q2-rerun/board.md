@@ -2,7 +2,7 @@
 
 # Tumor-board transcript — `aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun`
 
-_5 positions, 18 cross-critiques._
+_5 positions, 16 cross-critiques._
 
 ## Agreement matrix
 
@@ -16,8 +16,8 @@ Cells show round-1 picks (rank N) where the persona endorsed at round 1, or the 
     <tr><td><strong>Iomab-B (131I-apamistamab) anti-CD45 radioimmunotherapy conditioning + allo-HCT</strong></td><td class="cell-qualified">rank 2</td><td class="cell-qualified">rank 1</td><td class="cell-endorse">rank 1</td><td class="cell-endorse">rank 1</td><td class="cell-endorse">rank 2</td></tr>
     <tr><td><strong>Pivekimab sunirine (IMGN632, CD123 ADC)</strong></td><td class="cell-endorse">rank 3</td><td class="cell-veto">veto</td><td class="cell-absent"></td><td class="cell-absent"></td><td class="cell-endorse">rank 3</td></tr>
     <tr><td><strong>Flotetuzumab (MGD006, CD123xCD3 DART)</strong></td><td class="cell-endorse">rank 4</td><td class="cell-absent"></td><td class="cell-dissent">dissent</td><td class="cell-dissent">dissent</td><td class="cell-absent"></td></tr>
-    <tr><td><strong>Gemtuzumab ozogamicin (CD33 ADC)</strong></td><td class="cell-dissent">dissent</td><td class="cell-qualified">rank 2</td><td class="cell-qualified">qualified</td><td class="cell-endorse">rank 2</td><td class="cell-dissent">dissent</td></tr>
     <tr><td><strong>Tagraxofusp (SL-401, CD123-directed IL-3/diphtheria-toxin fusion)</strong></td><td class="cell-absent"></td><td class="cell-endorse">rank 3</td><td class="cell-qualified">qualified</td><td class="cell-qualified">qualified</td><td class="cell-absent"></td></tr>
+    <tr><td><strong>WT1-siTCR gene-transduced lymphocytes (TBI-1301; HLA-A*24:02-restricted)</strong></td><td class="cell-absent"></td><td class="cell-absent"></td><td class="cell-qualified">qualified</td><td class="cell-qualified">qualified</td><td class="cell-endorse">rank 4</td></tr>
     </tbody>
   </table>
 </div>
@@ -112,29 +112,6 @@ Cells show round-1 picks (rank N) where the persona endorsed at round 1, or the 
 </tbody></table></div>
 
 
-### Gemtuzumab ozogamicin (CD33 ADC) (`gemtuzumab-ozogamicin`)
-
-**Persona stances**
-
-<div class="trial-table-wrap"><table class="trial-table"><thead><tr><th>Persona</th><th>Rank</th><th>Confidence</th><th>Rationale</th><th>Concerns</th></tr></thead><tbody>
-<tr><td><span class="persona persona-risktaker">risktaker</span></td><td>—</td><td>—</td><td><em>did not pick</em></td><td>—</td></tr>
-<tr><td><span class="persona persona-conservative">conservative</span></td><td>2</td><td>low</td><td>This is the CD33 handle with the longest safety record I have to work with: an FDA-approved ADC with roughly 25 years of post-marketing data and a worked-out hepatic and veno-occlusive-disease monitoring algorithm, and the fractionated 3 mg/m2 schedule cut early deaths at equal efficacy in the Hills IPD meta-analysis. What stops me ranking it higher is that same tier-1a meta-analysis: across 3325 patients the adverse-cytogenetics subgroup got OR 0.99 for 5-year OS (95% CI 0.83-1.18), meaning no benefit, and this patient&#x27;s complex TP53-aberrant karyotype sits squarely in that subgroup. The single-agent relapse data are modest too, 30% CR/CRp (Sievers 2001), and that was a cleaner first-relapse population than this FLAG-IDA/venetoclax-refractory one with extramedullary disease. The grade 3+ hyperbilirubinemia rate of 23% is also exactly the wrong toxicity to invite ahead of a second transplant.</td><td>Tier-1a Hills meta shows no OS benefit in adverse cytogenetics (OR 0.99, 95% CI 0.83-1.18), the patient&#x27;s exact subgroup; Hepatic and VOD risk (grade 3+ hyperbilirubinemia 23%) compounds with a planned HCT2; Single-agent CR/CRp 30% came from first relapse, not this refractory extramedullary state</td></tr>
-<tr><td><span class="persona persona-critic">critic</span></td><td>—</td><td>—</td><td><em>did not pick</em></td><td>—</td></tr>
-<tr><td><span class="persona persona-concensusite">concensusite</span></td><td>2</td><td>low</td><td>This is the one agent in the dossier that is both FDA-approved and guideline-listed against a target the patient actually carries: NCCN AML v3.2026 keeps gemtuzumab ozogamicin as a category-2A option for relapsed/refractory CD33-positive AML, and the blasts are CD33-positive by flow. What holds it at rank 2 rather than 1 is that the patient sits in the wrong subgroup, since the tier-1a Hills IPD meta-analysis found no survival signal in adverse cytogenetics (OR 0.99, 95% CI 0.83-1.18), which is exactly this complex, TP53-aberrant karyotype. Single-agent depth in relapse was modest to begin with (30% CR/CRp, Sievers 2001) and came from a cleaner first-relapse population than this FLAG-IDA/venetoclax-refractory state with extramedullary disease. The hepatic and veno-occlusive-disease risk is also the wrong toxicity to invite right before a planned second transplant.</td><td>Guideline benefit does not reach this patient&#x27;s stratum: Hills tier-1a meta null in adverse cytogenetics (OR 0.99, 95% CI 0.83-1.18), the exact complex/TP53-aberrant subgroup; NCCN category 2A covers R/R CD33+ AML broadly; the on-label monotherapy data (30% CR/CRp) came from first relapse, not this refractory extramedullary presentation; Hepatic / VOD risk compounds with the planned HCT2</td></tr>
-<tr><td><span class="persona persona-advocate">advocate</span></td><td>—</td><td>—</td><td><em>did not pick</em></td><td>—</td></tr>
-</tbody></table></div>
-
-
-**Cross-critiques**
-
-<div class="trial-table-wrap"><table class="trial-table"><thead><tr><th>Critic</th><th>Target</th><th>Agreement</th><th>Dimension</th><th>Comment</th></tr></thead><tbody>
-<tr><td><span class="persona persona-risktaker">risktaker</span></td><td>conservative</td><td><span class="agree-dissent">dissent</span></td><td>evidence_quality</td><td>We land together on the Iomab-B lead, so my quarrel is your rank-2 gemtuzumab: the Hills tier-1a meta (pmid:25008258) puts OS in adverse cytogenetics at OR 0.99 (95% CI 0.83-1.18), which is zero signal in this patient&#x27;s exact complex/TP53 stratum. That is a slot spent on a familiar safety algorithm rather than expected benefit, with hepatic and VOD load stacked ahead of HCT2. I would rather chase a CD123 lever that carries real R/R AML upside than a CD33 ADC whose best data say it does nothing here.</td></tr>
-<tr><td><span class="persona persona-conservative">conservative</span></td><td>concensusite</td><td><span class="agree-qualified">qualified</span></td><td>guideline_fit</td><td>NCCN category 2A for R/R CD33+ AML is real, but it covers the population broadly and does not reach this patient&#x27;s stratum: the Hills tier-1a meta is null in adverse cytogenetics at OR 0.99 (95% CI 0.83-1.18, pmid:25008258), the exact complex, TP53-aberrant karyotype here. Ranking on the guideline listing spends a slot on an agent whose best data show no survival benefit in this subgroup, with hepatic and VOD load stacked ahead of HCT2. The guideline label and the expected benefit part ways in this subpopulation.</td></tr>
-<tr><td><span class="persona persona-critic">critic</span></td><td>concensusite</td><td><span class="agree-qualified">qualified</span></td><td>guideline_fit</td><td>NCCN category 2A is expert consensus, not RCT-grade evidence, and the pivotal trial under that listing, ALFA-0701 (pmid:22482940, RoB2:Low), is front-line de novo AML with the benefit concentrated in favourable and intermediate cytogenetics. Neither the line nor the karyotype reaches this R/R, complex, TP53-aberrant patient, so the 2A label is doing work the underlying trial population does not support. I would not let a guideline listing carry a rank that the RCT itself excludes.</td></tr>
-<tr><td><span class="persona persona-advocate">advocate</span></td><td>conservative</td><td><span class="agree-dissent">dissent</span></td><td>preference_fit</td><td>You ranked gemtuzumab at 2 and left the entire HLA-restricted immunotherapy class out of your picks, which inverts the user&#x27;s stated order: the free_text calls that immunotherapy pathway the explicit reason for the run. With efficacy_toxicity_weight at 0.75, spending a ranked slot on a CD33 ADC that shows no survival signal in this adverse-cytogenetics stratum (OR 0.99, 95% CI 0.83-1.18, pmid:25008258) is the trade the user&#x27;s own weighting argues against. I hear the safety-tier caution, but it should not park the referral&#x27;s own priority below the ranked line.</td></tr>
-</tbody></table></div>
-
-
 ### Tagraxofusp (SL-401, CD123-directed IL-3/diphtheria-toxin fusion) (`tagraxofusp`)
 
 **Persona stances**
@@ -153,6 +130,27 @@ Cells show round-1 picks (rank N) where the persona endorsed at round 1, or the 
 <div class="trial-table-wrap"><table class="trial-table"><thead><tr><th>Critic</th><th>Target</th><th>Agreement</th><th>Dimension</th><th>Comment</th></tr></thead><tbody>
 <tr><td><span class="persona persona-critic">critic</span></td><td>conservative</td><td><span class="agree-qualified">qualified</span></td><td>evidence_quality</td><td>We agree the worked-out capillary-leak algorithm is the reason to reach for tagraxofusp over the other CD123 options, but the 72% CR you cite (Pemmaraju 2019, pmid:31018069) is a first-line BPDCN result from an open-label single-arm phase 2, not AML. That is cross-tumor read-across standing in for indication data, and an 85%-blast AML marrow is not the disease that number was earned in. Rank it on the safety record if you must, but not on a response rate that does not transfer.</td></tr>
 <tr><td><span class="persona persona-concensusite">concensusite</span></td><td>conservative</td><td><span class="agree-qualified">qualified</span></td><td>guideline_fit</td><td>Agreed that tagraxofusp brings the worked-out capillary-leak algorithm the other CD123 options lack, but its FDA approval and every guideline entry sit in BPDCN, not AML, so calling it the FDA-approved CD123 choice overstates its standing for this marrow. The 72% CR (pmid:31018069) is a first-line BPDCN number, and for AML the agent is off-label read-across with no NCCN AML v3.2026 or ELN 2022 listing to rank on. I would frame it as off-guideline for the indication rather than the approved option among the CD123 handles.</td></tr>
+</tbody></table></div>
+
+
+### WT1-siTCR gene-transduced lymphocytes (TBI-1301; HLA-A*24:02-restricted) (`wt1-sitcr-tbi1301`)
+
+**Persona stances**
+
+<div class="trial-table-wrap"><table class="trial-table"><thead><tr><th>Persona</th><th>Rank</th><th>Confidence</th><th>Rationale</th><th>Concerns</th></tr></thead><tbody>
+<tr><td><span class="persona persona-risktaker">risktaker</span></td><td>—</td><td>—</td><td><em>did not pick</em></td><td>—</td></tr>
+<tr><td><span class="persona persona-conservative">conservative</span></td><td>—</td><td>—</td><td><em>did not pick</em></td><td>—</td></tr>
+<tr><td><span class="persona persona-critic">critic</span></td><td>—</td><td>—</td><td><em>did not pick</em></td><td>—</td></tr>
+<tr><td><span class="persona persona-concensusite">concensusite</span></td><td>—</td><td>—</td><td><em>did not pick</em></td><td>—</td></tr>
+<tr><td><span class="persona persona-advocate">advocate</span></td><td>4</td><td>low</td><td>This is here for one job: keep the HLA immunotherapy door open if A*02:01 types negative. The preferences call de-risking the HLA-restricted pathway the priority, and that means holding a fallback ready, not just the A*02:01 lever. WT1-siTCR is A*24:02-restricted, so an A*02:01-negative but A*24:02-positive patient still has an immunotherapy route rather than a dead end. The Tawara 2017 cohort is small (n=8) and early, with transient blast reductions and no normal-tissue toxicity, so I treat this as a bridge concept, not a proven salvage. It is the reason both HLA alleles should be pulled in parallel instead of A*02:01 alone.</td><td>Satisfied: directly serves the stated priority of de-risking the HLA-restricted immunotherapy pathway by keeping a route open if A*02:01 is negative.; In tension: gated on A*24:02 typing, also unresolved, and only relevant if the A*02:01 axis is foreclosed.; Evidence is n=8 early-phase with transient responses; a fallback lever, not a primary efficacy bet.</td></tr>
+</tbody></table></div>
+
+
+**Cross-critiques**
+
+<div class="trial-table-wrap"><table class="trial-table"><thead><tr><th>Critic</th><th>Target</th><th>Agreement</th><th>Dimension</th><th>Comment</th></tr></thead><tbody>
+<tr><td><span class="persona persona-critic">critic</span></td><td>advocate</td><td><span class="agree-qualified">qualified</span></td><td>evidence_quality</td><td>Holding an A*24:02 fallback open is reasonable, so this is a qualified note rather than a dissent. But the evidence under it is Tawara 2017 (pmid:28860210), a first-in-human phase 1, n=8, with only 2 of 8 showing transient marrow blast decreases and no CR or durable endpoint reported. That is a route-preservation rationale, not an efficacy signal, and the ranking should read it that way instead of sitting it alongside response-bearing options.</td></tr>
+<tr><td><span class="persona persona-concensusite">concensusite</span></td><td>advocate</td><td><span class="agree-qualified">qualified</span></td><td>guideline_fit</td><td>Keeping an A*24:02 fallback open is reasonable, so this is a qualified note, but WT1-siTCR sits fully outside the guideline framework, with no NCCN AML v3.2026 or ELN 2022 listing and standing only through the category-2A trial-enrollment route. Tawara 2017 (pmid:28860210) is an n=8 first-in-human cohort with transient responses, so on the guideline axis this is trial-only and doubly gated on A*24:02 typing. I would rank it as an explicit route-preservation placeholder rather than beside picks that carry guideline footing.</td></tr>
 </tbody></table></div>
 
 

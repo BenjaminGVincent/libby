@@ -6,14 +6,14 @@
 
 ## Case output
 
-- [Target validation paths (PDF)](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-target-validation.pdf?v=746e9bae) — diagnostic + biomarker workup that hardens the targetable-feature call
-- [Recommendations table (HTML)](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-recommendations.html?v=7ec2b737) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
+- [Target validation paths (PDF)](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-target-validation.pdf?v=32392d1e) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Recommendations table (HTML)](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-recommendations.html?v=ed0282af) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
 - [Standard of care options (HTML)](standard_of_care.md?v=96179190) — approved and guideline-endorsed strategies for this patient's situation, assessed for eligibility and for how they sequence against the targeted options, sortable in-browser
-- [Access guide (HTML)](accessibility.md?v=a2f3bd2d) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, sortable in-browser
-- [Access guide (offline HTML)](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-accessibility.html?v=23fb3dee) — same access-guide content as the in-browser page, packaged as a self-contained HTML that opens offline
+- [Access guide (HTML)](accessibility.md?v=7f6153c3) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, sortable in-browser
+- [Access guide (offline HTML)](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-accessibility.html?v=1af82b86) — same access-guide content as the in-browser page, packaged as a self-contained HTML that opens offline
 - [Master manuscripts table (HTML)](manuscripts.md?v=9f990a30) — every paper considered — n, effect, variance, toxicities, sortable in-browser
 - [Master manuscripts table (offline HTML)](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-manuscripts.html?v=fce12ad2) — same manuscripts inventory as the in-browser page, packaged as a self-contained HTML that opens offline
-- [Patient/caregiver PDF](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-plain-language.pdf?v=39a7e04f) — plain-language summary
+- [Patient/caregiver PDF](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-plain-language.pdf?v=982b3928) — plain-language summary
 
 <!-- libby:case-output:end -->
 ## Research question
@@ -133,13 +133,13 @@ Two high-priority confirmatory reads underpin the transplant plan. STR chimerism
 
 ## Scope summary
 
-29 trial rows, 15 clinical-evidence rows, 16 preclinical rows, and 13 target-validation rows feed this synthesis. The board ranked seven interventions across five personas and two rounds; agreement scores span 1.0 (the diagnostic workup and the Iomab-B backbone, both unanimous) down to -0.2 (flotetuzumab, twice dissented). All five personas converged on the Iomab-B second-transplant platform; four ranked the HA-1 TCR-T that motivated the referral; one veto landed, on pivekimab, from the conservative on veno-occlusive-disease grounds ahead of transplant.
+29 trial rows, 15 clinical-evidence rows, 16 preclinical rows, and 13 target-validation rows feed this synthesis. This is the Experimental table — the feature-targeting investigational options only. It carries 21 rows: a rank-1 shared HLA/HA workup, five ranked therapeutic options (the Iomab-B backbone, the HA-1 TCR-T that motivated the referral, tagraxofusp, the multiantigen TAA-T hedge, and the vetoed pivekimab), and fifteen surfaced-but-not-ranked options flagged by reason (three HA-1/HA-2 products consolidated under the ranked approach, two thin-evidence handles, three not-enrollable options, seven discontinued programs). Agreement scores span 1.0 (the workup and the Iomab-B backbone, both unanimous) down to -0.2 (flotetuzumab, twice dissented). All five personas converged on the Iomab-B second-transplant platform; four ranked the HA-1 TCR-T; one veto landed, on pivekimab, from the conservative on veno-occlusive-disease grounds ahead of transplant. Gemtuzumab ozogamicin — FDA-approved for R/R CD33+ AML — is routed out of this table to the co-equal Standard-of-care table; the menin inhibitors an upstream sweep surfaced against KMT2A *amplification* are target-absent and appear there too, not here.
 
 ## Cross-cutting caveat (read first)
 
 **The pending HLA-A*02:01 typing is the master switch, and the ranking is scoped to the targetable features — not to standard AML care.** The primary reason this case was submitted is HLA-restricted immunotherapy, and every lever inside it (HA-1/HA-2 TCR-T, WT1-C4, PRAME-directed cells) is presented on HLA-A*02:01, whose allele-level status is not in the records on hand. An RNA- or EHR-placeholder-level "typed in 2020" is not enough: the therapy gate is the allele call plus a recipient HA-1(H)-positive / donor HA-1-negative mismatch, and HLA-identical siblings can still differ at that minor locus. That is why the rank-1 action here is the typing itself, not a drug.
 
-- The ranking is targetable-feature-scoped. Only the workup, the HLA-conditional HA-1 TCR-T rec, and the interventions that target the patient's other stated handles (CD123, CD33, the HCT2 platform) appear. Standard 2L+ AML care that does not act on a stated feature — including the menin inhibitors an upstream gate sweep surfaced against her KMT2A *amplification* — is out of scope and is not named or ranked here; that is the treating team's separate conversation.
+- The ranking is targetable-feature-scoped, and it is one of two co-equal tables. This Experimental table carries only feature-targeting *investigational* options: the workup, the HLA-conditional HA-1 TCR-T rec, and interventions that target the patient's other stated handles (CD123, WT1/PRAME, the HCT2 platform). Approved feature-targeting drugs are routed to the Standard-of-care table — gemtuzumab ozogamicin (approved for R/R CD33+ AML, a population that includes this patient) lives there, not in this ranking. Genuinely non-targeting standard care — including the menin inhibitors an upstream sweep surfaced against her KMT2A *amplification* (a copy-number gain, not the rearrangement menin inhibitors need) — is out of scope for the feature ranking entirely and is the treating team's separate conversation.
 - If HLA-A*02:01 is negative, this case has no within-scope HLA-restricted recommendation; standard-of-care for relapsed/refractory AML lies outside Libby's targetable-feature ranking and should be pursued through the treating team's normal care channel. One door stays ajar: if A*02:01 is negative but A*24:02 positive, the A*24:02-restricted WT1-siTCR (TBI-1301) becomes the fallback lever — which is exactly why both alleles must be pulled in parallel.
 - Practical workup logistics: pull the ~2020 donor-registry / transplant typing report first (HLA typing 3-7 days, STAT available); HA-1/HA-2 genotyping is a specialized send-out (1-3 weeks) that needs a fresh sample from the sibling donor and may route through the ALLOHA (NCT05473910) trial screening pathway. The whole HLA-restricted plan also assumes transplant-grade fitness that no organ-function labs have yet established.
 
@@ -148,7 +148,9 @@ Two high-priority confirmatory reads underpin the transplant plan. STR chimerism
 - HLA-A*02:01-restricted cellular consolidation (gated): HA-1/HA-2 TCR-T ([NCT05473910](https://clinicaltrials.gov/study/NCT05473910), [PMID 38683966](https://pubmed.ncbi.nlm.nih.gov/38683966), [NCT03326921](https://clinicaltrials.gov/study/NCT03326921), [NCT06704152](https://clinicaltrials.gov/study/NCT06704152)); WT1 and PRAME approaches on the same allele gate.
 - CD45-targeted radioimmunotherapy conditioning + second allo-HCT: Iomab-B / 131I-apamistamab ([PMID 39298738](https://pubmed.ncbi.nlm.nih.gov/39298738), [NCT02665065](https://clinicaltrials.gov/study/NCT02665065), [NCT07157514](https://clinicaltrials.gov/study/NCT07157514)).
 - CD123-directed cytoreduction: tagraxofusp ([PMID 31018069](https://pubmed.ncbi.nlm.nih.gov/31018069), [NCT06561152](https://clinicaltrials.gov/study/NCT06561152)); pivekimab sunirine ([PMID 38423051](https://pubmed.ncbi.nlm.nih.gov/38423051), [NCT03386513](https://clinicaltrials.gov/study/NCT03386513)); flotetuzumab CD123xCD3 ([PMID 32929488](https://pubmed.ncbi.nlm.nih.gov/32929488), [PMID 33057635](https://pubmed.ncbi.nlm.nih.gov/33057635)).
-- CD33-directed ADC: gemtuzumab ozogamicin ([PMID 11432892](https://pubmed.ncbi.nlm.nih.gov/11432892), [PMID 25008258](https://pubmed.ncbi.nlm.nih.gov/25008258), [PMID 22482940](https://pubmed.ncbi.nlm.nih.gov/22482940)).
+- HLA-independent multiantigen and dual-antigen cellular therapy: TAA-T PRAME/WT1/Survivin ([PMID 33270816](https://pubmed.ncbi.nlm.nih.gov/33270816), [NCT02203903](https://clinicaltrials.gov/study/NCT02203903)); dual CD33/CD123 CAR-T ([NCT04010877](https://clinicaltrials.gov/study/NCT04010877), [NCT04156256](https://clinicaltrials.gov/study/NCT04156256)).
+- TP53-directed p53 reactivators: rezatapopt (Y220C-selective, [PMID 40608889](https://pubmed.ncbi.nlm.nih.gov/40608889), [NCT06616636](https://clinicaltrials.gov/study/NCT06616636)); eprenetapopt (pan-reactivator, [PMID 36990622](https://pubmed.ncbi.nlm.nih.gov/36990622)).
+- CD33-directed ADC (routed to the Standard-of-care table, not ranked here): gemtuzumab ozogamicin, FDA-approved for R/R CD33+ AML ([PMID 11432892](https://pubmed.ncbi.nlm.nih.gov/11432892), [PMID 25008258](https://pubmed.ncbi.nlm.nih.gov/25008258)).
 
 ## Top interventions
 
@@ -302,86 +304,53 @@ Agreement score 0.2 places it above the two dissented CD-ADCs below it. It clear
 | Tagraxofusp monotherapy (BPDCN registration) | CR 72% (first-line BPDCN — cross-tumor) | Capillary leak 19% with deaths; ALT 64% | [PMID 31018069](https://pubmed.ncbi.nlm.nih.gov/31018069) |
 | Tagraxofusp + cladribine/cytarabine (R/R AML) | Safety / response (pending) | Capillary-leak / hepatic risk | [NCT06561152](https://clinicaltrials.gov/study/NCT06561152) |
 
-## Rank 5. Gemtuzumab ozogamicin (CD33 ADC)
+## Rank 5. Multiantigen leukemia-specific donor T cells (PRAME/WT1/Survivin/NY-ESO-1)
 
-*The on-label, guideline-listed CD33 handle whose own tier-1a evidence shows no survival benefit in this complex/TP53-aberrant karyotype — familiar, but pointed the wrong way.*
+*The A*02:01-independent immunotherapy hedge — targets WT1 and PRAME without the master-switch gate, enrollable now, but modest published activity.*
 
 ### Evidence base
 
-Single-agent activity in first relapse was modest to begin with: Sievers 2001 reported CR/CRp 30% ([PMID 11432892](https://pubmed.ncbi.nlm.nih.gov/11432892), n=142), in a cleaner population than this FLAG-IDA/venetoclax-refractory state with extramedullary disease. The decision-relevant evidence is the Hills IPD meta-analysis ([PMID 25008258](https://pubmed.ncbi.nlm.nih.gov/25008258), n=3325, tier 1a): across the adverse-cytogenetics stratum, OR for 5-year OS was 0.99 (95% CI 0.83-1.18) — no benefit, in exactly this patient's complex, TP53-aberrant subgroup. The pivotal RCT behind the fractionated schedule, ALFA-0701 ([PMID 22482940](https://pubmed.ncbi.nlm.nih.gov/22482940), RoB2:Low), is front-line de novo AML with benefit concentrated in favourable/intermediate cytogenetics.
+Lulla 2021 is the published precedent for this donor T-cell product ([PMID 33270816](https://pubmed.ncbi.nlm.nih.gov/33270816), single-arm phase 1, n=25; [NCT02203903](https://clinicaltrials.gov/study/NCT02203903)). In the active-disease cohort, 1 of 8 reached CR and 1 a PR; across the whole cohort median leukemia-free and overall survival were not reached at 1.9 years. The product primes T cells against PRAME, WT1 and Survivin, so it hits two of the patient's named handles without depending on a single HLA-A*02:01 gate — which is the whole point of carrying it. It is a small early-phase cohort, and the responses in overt disease are modest.
 
 ### Likelihood of desired effect
 
-Low for this stratum. The tier-1a number is the one that matters: patients with adverse karyotype derived no survival benefit from adding gemtuzumab. The CD33 target is confirmed present, but a present target and an absent benefit are not the same thing, and here the strongest evidence in the file argues against use.
+Low-to-modest, but with a strategic value the number alone misses. The 2-of-8 objective-response rate in active disease is not a strong salvage signal, so this is a hedge rather than a lead: it is the one immunotherapy route that stays open if HLA-A*02:01 types negative and forecloses the HA-1 axis. WT1 and PRAME expression on the blasts is not yet confirmed, and that read gates eligibility.
 
 ### Toxicity profile
 
-- Grade 3+ hyperbilirubinemia 23% and transaminase elevation 17%.
-- Veno-occlusive disease is the characteristic class risk — the wrong toxicity to invite right before a planned second transplant.
+- No grade >2 acute GVHD and no extensive chronic GVHD across 25 recipients — a clean donor-T-cell safety profile.
+- Delivered in the post-transplant setting, so lymphodepletion and infection risks track the transplant rather than the product.
 
 ### Counter-productive mechanisms / dissent
 
-The conservative and concensusite ranked it as the one agent both FDA-approved and guideline-listed against a target the patient carries. The risktaker and advocate dissented: spending a slot on a CD33 ADC that is null in this stratum inverts the user's stated immunotherapy priority, and the 0.75 efficacy weight argues against it. The critic, who ranked neither, reached the same conclusion independently. The mechanism-level risk is moderate and concrete: P-glycoprotein efflux of the calicheamicin payload in adverse-karyotype blasts blunts delivery, which is likely why its own data show no benefit in this subgroup.
+No persona ranked it, so it carries no agreement score; the advocate flagged it as a live fallback that sidesteps the A*02:01 gate. That is why it is carried with caveats rather than as a lead — the board weighed it as a hedge, not a top-tier choice. The mechanism-level risk is low and cuts the right way: multi-antigen targeting limits the single-antigen escape that a documented clonally-evolving relapse invites.
 
 ### Practical considerations
 
-NCCN AML v3.2026 lists it category 2A for R/R CD33+ AML, but the listing covers the population broadly and the underlying RCT excludes this line and karyotype. Quantitative CD33 density (ABC/MESF) and the rs12459419 splicing genotype (CC predicts better response; CT/TT blunts it) would refine the call and are both pending. If pursued at all, the fractionated 3 mg/m2 schedule cut early deaths at equal efficacy.
+Recruiting at two US sites (Children's National, Johns Hopkins) in the post-HCT setting the patient is heading toward, which matches prefers-trials. Confirm adult enrollment and post-HCT timing, and confirm WT1/PRAME expression first. The product can potentially be generated from the existing sibling donor. Keep it live even if HLA typing forecloses the A*02:01-restricted TCR options.
 
 ### Why this rank
 
-Agreement score 0.0 (two endorsements, two dissents) places it below tagraxofusp and above pivekimab. It ranks above pivekimab despite the same score because pivekimab carries a live veto; it ranks below tagraxofusp because it drew active dissent on futility-in-stratum where tagraxofusp drew only qualified cautions.
+Agreement score 0.0, tied with pivekimab, but it ranks above the vetoed pivekimab because it carries no veto and its clean safety profile fits the efficacy-leaning-but-fitness-constrained picture. It ranks below tagraxofusp (0.2) because a board persona actually ranked tagraxofusp, whereas TAA-T was surfaced as an unranked fallback. It is the A*02:01-independent immunotherapy option, which no other ranked row provides.
 
 ### Per-trial detail
 
 | Therapeutic agent | Efficacy | Toxicity | Reference |
 | --- | --- | --- | --- |
-| Gemtuzumab monotherapy (first relapse) | CR/CRp 30% | G3+ hyperbilirubinemia 23%, transaminitis 17% | [PMID 11432892](https://pubmed.ncbi.nlm.nih.gov/11432892) |
-| GO added to induction (Hills IPD meta) | Adverse-cytogenetics OR 0.99 (0.83-1.18) — null | Early death dose-dependent | [PMID 25008258](https://pubmed.ncbi.nlm.nih.gov/25008258) |
-| GO + induction (ALFA-0701) | EFS HR 0.58 (0.43-0.78), front-line | Persistent thrombocytopenia 16% vs 3% | [PMID 22482940](https://pubmed.ncbi.nlm.nih.gov/22482940) |
+| TAA-T PRAME/WT1/Survivin (active disease) | 1 CR + 1 PR of 8; LFS/OS not reached at 1.9y | No grade >2 acute GVHD across n=25 | [PMID 33270816](https://pubmed.ncbi.nlm.nih.gov/33270816), [NCT02203903](https://clinicaltrials.gov/study/NCT02203903) |
 
-## Rank 7. Flotetuzumab (MGD006, CD123xCD3 DART)
+Pivekimab sunirine (rank 6, CD123 ADC, *not recommended*) is a ranked row held under the conservative's veto rather than a full narrative — its evidence and dissent are in the ranked-prioritization table below and its rationale in `recommendations.jsonl`. Two personas ranked it as a debulking bridge on its own R/R AML data (ORR 21%, 95% CI 8-40), but the conservative vetoed it on a documented veno-occlusive-disease signal ahead of HCT2 in a patient with no hepatic labs on file. The veto is conditional and liftable — it reinstates the moment baseline bilirubin, transaminases and a hepatic read clear it — but the condition is unmet, so the veto stands and the row stays visible.
 
-*A discontinued drug carrying a live mechanism signal — its TP53-inflamed-marrow rationale is post-hoc, and the reason to chase an open CD123xCD3 construct rather than this one.*
+## Also considered — not ranked (feature-targeting investigational)
 
-### Evidence base
+Fifteen feature-targeting investigational options were surfaced but not ranked as live top-tier choices. Each carries a flag for *why*.
 
-Uy 2021 reported CR/CRh 26.7% and ORR 30% in the primary-refractory/early-relapse RP2D subset ([PMID 32929488](https://pubmed.ncbi.nlm.nih.gov/32929488), n=30 of 88; [NCT02152956](https://clinicaltrials.gov/study/NCT02152956)), close to this patient's chemo-refractory state. The TP53 hook comes from Vadakekolathu 2020 ([PMID 33057635](https://pubmed.ncbi.nlm.nih.gov/33057635)): TP53-abnormal AML runs an inflamed, IFN-gamma-high marrow, and 7 of 15 TP53-abnormal R/R patients on the trial reached under 5% blasts. That figure is a correlative substudy, not a pre-specified stratum — an unadjusted post-hoc subgroup in which responders were the high-inflammation patients, so it is a hypothesis rather than an effect estimate.
+- **Consolidated into the ranked HA-1 approach (rank 3):** **TSC-100** and **BSB-1001** (commercial and newer HA-1 TCR-T products, [NCT05473910](https://clinicaltrials.gov/study/NCT05473910), [NCT06704152](https://clinicaltrials.gov/study/NCT06704152)) and **TSC-101** (the HA-2 arm, opens if the mismatch is at HA-2). These are individual products of the one HA-1/HA-2 TCR-T approach ranked at rank 3; they share its gate and board signal and point back to it rather than being scored separately.
+- **Thin evidence (no peer-reviewed clinical efficacy yet):** **CBX-250**, the off-the-shelf CG1/A*02:01 T-cell engager ([NCT06994676](https://clinicaltrials.gov/study/NCT06994676)) — a genuinely enrollable A*02:01 option with a no-manufacturing-lead-time advantage at 11 US sites, but a first-in-human phase 1 with zero efficacy readout, so it cannot carry a live rank. **Rezatapopt**, the Y220C-selective p53 reactivator ([NCT06616636](https://clinicaltrials.gov/study/NCT06616636), Carter 2025 AML preclinical [PMID 40608889](https://pubmed.ncbi.nlm.nih.gov/40608889)) — double-gated on confirming TP53 aberrant *and* specifically Y220C, with no peer-reviewed clinical efficacy; it jumps into contention the moment a Y220C variant confirms.
+- **Not enrollable now (disease-state or geographic barrier):** **FH-WT1-E50**, the open WT1 A*02:01 TCR-T ([NCT07645469](https://clinicaltrials.gov/study/NCT07645469)) — enrolls MRD-positive disease, so it is a consolidation-phase option for after cytoreduction, not a fit for an 85%-blast marrow. The **dual CD33/CD123 CAR-T** constructs ([NCT04010877](https://clinicaltrials.gov/study/NCT04010877), [NCT04156256](https://clinicaltrials.gov/study/NCT04156256)) — they match the profile's escape-hedging logic but are China-only single sites (one with a stale registry status), impractical against the recruiting US options even though the patient accepts travel.
+- **Unavailable (discontinued / completed, no successor):** **Flotetuzumab** (CD123xCD3 DART, [NCT02152956](https://clinicaltrials.gov/study/NCT02152956), [PMID 32929488](https://pubmed.ncbi.nlm.nih.gov/32929488)) carries the most relevant CD123 salvage data and a TP53-abnormal-marrow signal, but MacroGenics deprioritized it — the critic dissented that the TP53 signal is post-hoc correlative ([PMID 33057635](https://pubmed.ncbi.nlm.nih.gov/33057635)) and the concensusite on guideline grounds; the CD123xCD3 mechanism is otherwise covered by CBX-250. **Vibecotamab** (Xencor, terminated, MRD-setting). **NTLA-5001** (Intellia WT1 TCR-T, terminated). **BPX-701** (Bellicum PRAME TCR-T, terminated; the open PRAME route is the rank-5 TAA-T). **WT1-TCRc4** (Chapuis prophylaxis precedent, [PMID 31235963](https://pubmed.ncbi.nlm.nih.gov/31235963); succeeded by FH-WT1-E50). **WT1-siTCR TBI-1301** (A*24:02-restricted, [PMID 28860210](https://pubmed.ncbi.nlm.nih.gov/28860210)) — the A*24:02 negative-branch fallback the advocate flagged to keep an immunotherapy route open if A*02:01 is negative; no open successor trial exists today, which is exactly why both alleles must be typed in parallel. **Eprenetapopt** (pan-p53 reactivator, [PMID 36990622](https://pubmed.ncbi.nlm.nih.gov/36990622)) — the replication-failure exhibit: strong single-arm ORR, then a negative randomized TP53-mutant MDS phase 3.
 
-### Likelihood of desired effect
-
-Uncertain, and not enrollable as the named drug. MacroGenics deprioritized the program and NCT02152956 is closed, so the honest value here is mechanistic: it validates CD123xCD3 redirection as a salvage lever and gives a reason to weigh the TP53-inflamed-marrow rationale — but only if the patient's TP53 status confirms aberrant, and only through an open construct.
-
-### Toxicity profile
-
-- Cytokine release syndrome / infusion reactions are the class risk, largely grade 1-2 with week-1 step-up dosing, pretreatment dexamethasone and tocilizumab as needed.
-- Autologous T-cell fitness in a heavily pretreated post-transplant, FLAG-IDA/venetoclax-refractory marrow is unknown and could blunt the effect.
-
-### Counter-productive mechanisms / dissent
-
-Only the risktaker ranked it, openly as mechanism evidence rather than an enrollable slot. The critic dissented that the TP53 signal is post-hoc correlative, not an effect estimate. The concensusite dissented on guideline grounds: no listing, program shelved, closed trial. Both objections stand regardless of biomarker status. The mechanism-level risk is moderate — redirection needs fit autologous T cells, and exhaustion after transplant plus FLAG-IDA may blunt it.
-
-### Practical considerations
-
-No open route for flotetuzumab itself. If the CD123xCD3 mechanism is the draw, the guideline-aligned move is an open construct on a trial — a recruiting CD123xCD3 bispecific or a dual CD33/CD123 CAR-T — chased only if TP53 confirms aberrant and T-cell fitness is adequate.
-
-### Why this rank
-
-Agreement score -0.2, the lowest of any ranked option, from one endorsement against two dissents. It stays in the ranked list rather than being cut because it targets a stated feature (CD123) and carries a genuine mechanism signal worth naming, but it is last because it is neither enrollable nor supported by anything better than a post-hoc subgroup.
-
-### Per-trial detail
-
-| Therapeutic agent | Efficacy | Toxicity | Reference |
-| --- | --- | --- | --- |
-| Flotetuzumab (PIF/ER R/R AML) | CR/CRh 26.7%, ORR 30% | CRS/IRR largely grade 1-2 | [PMID 32929488](https://pubmed.ncbi.nlm.nih.gov/32929488), [NCT02152956](https://clinicaltrials.gov/study/NCT02152956) |
-| Flotetuzumab in TP53-abnormal AML (correlative) | 7/15 to <5% blasts (post-hoc) | Not separately reported | [PMID 33057635](https://pubmed.ncbi.nlm.nih.gov/33057635) |
-
-## Classes examined but not ranked
-
-- **Pivekimab sunirine (CD123 ADC) — rank 6, not_recommended.** Two personas ranked it as a debulking bridge (own R/R AML data: ORR 21%, 95% CI 8-40), but the conservative vetoed it on a documented veno-occlusive-disease signal ahead of HCT2 in a patient with no hepatic labs on file. The veto is conditional and liftable — it reinstates the moment baseline bilirubin, transaminases and a hepatic read clear it — but the condition is unmet, so the veto stands and the row is kept visible rather than dropped.
-- **WT1-siTCR (TBI-1301, HLA-A*24:02-restricted) — A*24:02 negative-branch fallback.** The advocate ranked it to hold the immunotherapy door open if A*02:01 types negative. It is not ranked in this single scenario because it is a negative-branch lever (contingent on A*02:01-negative but A*24:02-positive), and the contract does not emit a parallel negative-branch ranking; it is documented in the cross-cutting caveat and the HA-1 rec's open questions. Evidence is Tawara 2017, n=8, transient marrow blast reductions ([PMID 28860210](https://pubmed.ncbi.nlm.nih.gov/28860210)).
-- **WT1-C4 / TAA-T multiantigen / CBX-250 (A*02:01-restricted immunotherapy) — same gate, thinner or off-the-shelf.** WT1-C4 (Chapuis prophylaxis precedent), the PRAME/WT1/Survivin TAA-T product ([NCT02203903](https://clinicaltrials.gov/study/NCT02203903)), and the off-the-shelf CG1/A*02:01 engager CBX-250 ([NCT06994676](https://clinicaltrials.gov/study/NCT06994676)) all sit on the same HLA-A*02:01 gate as HA-1 TCR-T and would surface only in the positive branch; none carries efficacy-powered data, and the board did not rank them above the HA-1 lead.
-- **TP53-directed p53 reactivators (rezatapopt, eprenetapopt) — double-gated, no usable clinical efficacy.** Rezatapopt is the Y220C-selective handle if a Y220C variant confirms ([NCT06616636](https://clinicaltrials.gov/study/NCT06616636)) but has no peer-reviewed clinical efficacy yet and is double-gated on confirming TP53 aberrant *and* specifically Y220C. Eprenetapopt is a pan-p53 reactivator, not Y220C-selective, whose randomized phase 3 in TP53-mutant MDS missed its primary endpoint — the profile flags it low-yield. Neither could carry a rank.
-- **CD123xCD3 / vibecotamab, NPM1-directed TCR-T, dual-antigen CAR-T constructs.** Vibecotamab is discontinued and enrolled MRD-positive disease; the NPM1-directed TCR-T trials require an NPM1 mutation this NPM1-wild-type patient does not have; the dual CD33/CD123 CAR-T constructs are recruiting and hedge antigen escape but were not board-ranked. Surfaced for landscape completeness, not ranked.
+Two things are *not* in this section by design. Gemtuzumab ozogamicin is FDA-approved for R/R CD33+ AML including this patient, so it is routed to the Standard-of-care table, not surfaced here. The NPM1-directed TCR-T trials (MB-dNPM1-TCR.1, BSB-2002) target a mutant-NPM1 neoantigen this NPM1-wild-type patient does not carry — target-absent, like the menin inhibitors, so they are excluded rather than surfaced.
 
 ## Ranked prioritization
 
@@ -396,11 +365,23 @@ Agreement score -0.2, the lowest of any ranked option, from one endorsement agai
 | Rank | Intervention | Likelihood of effect | Toxicity burden | Counter-productive MoA | Overall |
 | --- | --- | --- | --- | --- | --- |
 | 2 | **Iomab-B conditioning + second allo-HCT**<br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span> <span class="persona persona-advocate">advocate</span></small> | Moderate: the only randomized signal in the dossier (SIERRA dCR 17.1% vs 0%, p<0.0001), but read indirectly onto a prior-HCT relapse it did not enroll. | High (grade 3+ TRAEs 59.7%, at parity with conventional care — conditioning cytopenias, infection, mucositis; second-transplant TRM uncharacterized) | **Low** (radioconjugate marrow injury could compromise engraftment if the HCT2 platform is not secured; no mechanism objection raised) | **The curative backbone all five personas endorsed — the randomized way to carry active disease into HCT2, gated on a fitness workup that has not yet been done.** |
-| 3 | **HA-1 TCR-T** (conditional on hla_a0201 positive)<br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span> <span class="persona persona-advocate">advocate</span></small> | Assuming A*02:01 + HA-1 mismatch confirm: uncertain but curative-intent — 4/9 CR in Krakow 2024 (n=9 feasibility, no comparator). Negative typing forecloses it. | Moderate (lymphodepletion neutropenia, grade 3-5 infection; mild grade 1-2 GVHD; no CRS, no ICANS across 9 patients) | **Low** (TCR-T kinetics may lag an 85%-blast marrow, antigen-loss escape possible; lineage-restricted killing limits collateral) | **The only lever that answers the referral's own question — a clean-safety, curative-intent graft-versus-leukemia consolidation, live only if the pending typing confirms and delivered after HCT2.** |
+| 3 | **HA-1 TCR-T** (conditional on hla_a0201 positive)<br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span> <span class="persona persona-advocate">advocate</span></small> | Assuming A*02:01 + HA-1 mismatch confirm: uncertain but curative-intent — 4/9 CR in Krakow 2024 (n=9 feasibility, no comparator). Negative typing forecloses it. | Low (no CRS, no ICANS, no DLTs across n=9; lymphodepletion neutropenia and grade 3-5 infection; mild grade 1-2 GVHD) | **Low** (TCR-T kinetics may lag an 85%-blast marrow, antigen-loss escape possible; lineage-restricted killing limits collateral) | **The only lever that answers the referral's own question — a clean-safety, curative-intent graft-versus-leukemia consolidation, live only if the pending typing confirms and delivered after HCT2.** |
 | 4 | **Tagraxofusp** (CD123)<br><small><em>endorse:</em> <span class="persona persona-conservative">conservative</span></small> | Low-to-uncertain for AML: headline 72% CR is first-line BPDCN cross-tumor (Pemmaraju 2019); no AML efficacy data and CD123 density still pending. | High (capillary leak syndrome with treatment-related deaths, transaminitis ALT 64% / AST 60%, hypoalbuminemia 55%) | **Low** (no mechanistic antagonism; efficacy risk is cross-tumor non-transfer from BPDCN) | **The only labeled CD123 agent with a real safety algorithm, but its headline efficacy is BPDCN cross-tumor and its capillary-leak deaths demand organ-function labs first.** |
-| 5 | **Gemtuzumab ozogamicin** (CD33)<br><small><em>endorse:</em> <span class="persona persona-conservative">conservative</span> <span class="persona persona-concensusite">concensusite</span></small><br><small><em>dissent:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-advocate">advocate</span></small> | Low for this stratum: tier-1a Hills meta shows OR 0.99 (95% CI 0.83-1.18) — no survival benefit in adverse cytogenetics, the patient's exact subgroup. | Moderate (grade 3+ hyperbilirubinemia 23%, transaminitis 17%, veno-occlusive-disease class risk ahead of HCT2) | **Moderate** (P-glycoprotein efflux of the calicheamicin payload in adverse-karyotype blasts blunts CD33-ADC delivery) | **The on-label, guideline-listed CD33 handle whose own tier-1a evidence shows no survival benefit in this complex/TP53-aberrant karyotype — familiar, but pointed the wrong way.** |
+| 5 | **TAA-T multiantigen** (WT1 / PRAME)<br><small><em>(surfaced fallback — no persona ranked it)</em></small> | Low-to-modest: 2/8 objective responses in active disease (Lulla 2021); hits WT1/PRAME without a single-HLA gate, but WT1/PRAME expression unconfirmed. | Low (no grade >2 acute GVHD, no extensive chronic GVHD across n=25) | **Low** (multi-antigen targeting limits single-antigen escape; no mechanism that blunts the goal) | **A multi-antigen donor T-cell hedge that sidesteps the A*02:01 gate and is enrollable post-transplant — but published activity is modest and WT1/PRAME expression is still to confirm.** |
 | 6 | **Pivekimab sunirine** (CD123) — *not recommended*<br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-advocate">advocate</span></small><br><small><em>veto:</em> <span class="persona persona-conservative">conservative</span></small> | Moderate as debulking: own R/R AML data (ORR 21%, 95% CI 8-40; cCR 17%), but single-agent depth is modest against an 85%-blast marrow. | High (veno-occlusive disease at higher doses, one treatment-related death; RP2D: febrile neutropenia 10%, infusion reactions 7%) | **High** (veno-occlusive disease from the ADC ahead of HCT2 could sink the very transplant the debulking is meant to enable) | **The CD123 ADC with the best own-disease data, held under a live, conditional VOD veto — it reinstates as a debulking bridge the moment hepatic and albumin baselines clear it.** |
-| 7 | **Flotetuzumab** (CD123xCD3)<br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span></small><br><small><em>dissent:</em> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span></small> | Uncertain and not enrollable: 30% ORR in refractory AML (Uy 2021), TP53 signal from a post-hoc correlative subgroup (Vadakekolathu 2020); program discontinued. | Moderate (cytokine release syndrome / infusion reactions, largely grade 1-2 with step-up dosing, dexamethasone, tocilizumab) | **Moderate** (CD123xCD3 redirection needs fit autologous T cells; exhaustion after transplant + FLAG-IDA may blunt it; TP53 rationale is post-hoc) | **A discontinued drug carrying a live mechanism signal — its TP53-inflamed-marrow rationale is post-hoc, and the reason to chase an open CD123xCD3 construct rather than this one.** |
+
+**Also considered — not ranked (feature-targeting investigational):**
+
+| Flag | Intervention | Likelihood of effect | Toxicity burden | Counter-productive MoA | Overall |
+| --- | --- | --- | --- | --- | --- |
+| thin evidence | **CBX-250** (CG1/A*02:01 engager) | Unknown: first-in-human phase 1, no efficacy readout; the argument is the off-the-shelf no-lead-time timeline. | Moderate (T-cell-engager CRS risk at high blast burden; no grade profile yet) | **Low** (antigen escape / T-cell exhaustion possible; no data to weigh either way) | **An off-the-shelf A*02:01 engager with a real no-lead-time advantage and 11 recruiting US sites, but zero efficacy data — enrollable yet unproven.** |
+| thin evidence | **Rezatapopt** (Y220C p53 reactivator) | Unknown clinically: strong Y220C AML preclinical signal (Carter 2025), no peer-reviewed clinical efficacy; killing required venetoclax the disease progressed through. | Low (none extractable — no published clinical toxicity) | **Low** (single-agent reactivation cytostatic without BCL-2 inhibition; prior venetoclax progression may blunt it) | **The Y220C-selective TP53 handle that enters contention only if the variant confirms — double-gated, no clinical efficacy data yet.** |
+| consolidated | **TSC-100 / TSC-101 / BSB-1001** (HA-1/HA-2 TCR-T) | Consolidated into rank 3 — the ranked HA-1 approach's likelihood applies. | Low (no clinical data yet; class safety carried by the Bleakley platform) | **Low** (antigen-loss escape possible; lineage-restricted killing limits collateral) | **Commercial and newer HA-1/HA-2 arms of the ranked approach — same gate, same board signal, consolidated under rank 3.** |
+| not enrollable | **FH-WT1-E50** (WT1 A*02:01 TCR-T) | Not currently enrollable (MRD-setting mismatch); precedent is prophylactic (Chapuis 2019). | Low (WT1 TCR-T class; no active-disease data) | **Low** (WT1 broadly expressed on normal progenitors; on-target myelosuppression possible) | **The open WT1 A*02:01 TCR-T, but it enrolls MRD-positive disease — a consolidation-phase option for after cytoreduction.** |
+| not enrollable | **Dual CD33/CD123 CAR-T** (two constructs) | Not practically enrollable (China single-sites, one stale registry); dual-antigen match but no accessible route. | Moderate (CAR-T CRS and lymphodepletion; no grade profile) | **Low** (multi-antigen design limits escape; on-target myelosuppression possible) | **The dual CD33/CD123 CAR-T the escape-hedging logic calls for, but China-only — informational, not a reachable route against US options.** |
+| unavailable | **Flotetuzumab** (CD123xCD3 DART)<br><small><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span></small><br><small><em>dissent:</em> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span></small> | Not enrollable (discontinued): 30% ORR in refractory AML (Uy 2021), TP53 signal from a post-hoc correlative subgroup. | Moderate (CRS / infusion reactions, largely grade 1-2 with step-up dosing, dexamethasone, tocilizumab) | **Moderate** (CD123xCD3 redirection needs fit T cells; exhaustion after transplant + FLAG-IDA may blunt it; TP53 rationale post-hoc) | **A discontinued drug carrying a live mechanism signal — its TP53-inflamed-marrow rationale is post-hoc, and the reason to chase an open CD123xCD3 construct instead.** |
+| unavailable | **WT1-siTCR TBI-1301** (A*24:02)<br><small><em>endorse:</em> <span class="persona persona-advocate">advocate</span></small> | Not enrollable today (no open A*24:02 successor); route-preservation only — transient blast reductions (2/8, Tawara 2017). | Low (no normal-tissue toxicity across n=8) | **Low** (siTCR silences endogenous TCR; spares normal progenitors preclinically) | **The A*24:02 WT1 fallback that keeps an immunotherapy route alive if A*02:01 is negative — no open trial today, so a reason to type both alleles.** |
+| unavailable | **Vibecotamab / NTLA-5001 / BPX-701 / WT1-TCRc4 / Eprenetapopt** | Not enrollable (discontinued or completed programs across the CD123xCD3, WT1, PRAME and pan-p53 pipelines). | Varies (Eprenetapopt High: febrile neutropenia 47%, one treatment-related death; others no case-relevant data) | **Low** (no goal-specific antagonism; Eprenetapopt's concern is efficacy failure, not antagonism) | **Discontinued or superseded feature-targeting programs — carried so their absence is not mistaken for an oversight; no open route.** |
 
 !!! note "How to read this table"
     **Toxicity burden** is patient-level adverse-event severity (Low/Moderate/High by grade-3+ rates and any treatment-related death). **Counter-productive MoA** is a different axis: the mechanism-level risk that the intervention could work against the therapeutic goal — engraftment failure, antigen-loss escape, a transplant-sinking toxicity — not a patient side effect. The persona pills under each intervention are the at-a-glance board signal; the full per-persona rationale lives on the [board page](board.md).
@@ -416,33 +397,47 @@ Agreement score -0.2, the lowest of any ranked option, from one endorsement agai
 
 **PMIDs**
 
-- [11432892](https://pubmed.ncbi.nlm.nih.gov/11432892)
-- [22482940](https://pubmed.ncbi.nlm.nih.gov/22482940)
-- [25008258](https://pubmed.ncbi.nlm.nih.gov/25008258)
+- [9820596](https://pubmed.ncbi.nlm.nih.gov/9820596)
+- [21673345](https://pubmed.ncbi.nlm.nih.gov/21673345)
 - [28860210](https://pubmed.ncbi.nlm.nih.gov/28860210)
+- [29051183](https://pubmed.ncbi.nlm.nih.gov/29051183)
 - [29661755](https://pubmed.ncbi.nlm.nih.gov/29661755)
+- [29773600](https://pubmed.ncbi.nlm.nih.gov/29773600)
 - [31018069](https://pubmed.ncbi.nlm.nih.gov/31018069)
+- [31235963](https://pubmed.ncbi.nlm.nih.gov/31235963)
 - [31275297](https://pubmed.ncbi.nlm.nih.gov/31275297)
 - [32929488](https://pubmed.ncbi.nlm.nih.gov/32929488)
 - [33057635](https://pubmed.ncbi.nlm.nih.gov/33057635)
+- [33270816](https://pubmed.ncbi.nlm.nih.gov/33270816)
+- [33449813](https://pubmed.ncbi.nlm.nih.gov/33449813)
+- [36990622](https://pubmed.ncbi.nlm.nih.gov/36990622)
+- [37647601](https://pubmed.ncbi.nlm.nih.gov/37647601)
 - [38423051](https://pubmed.ncbi.nlm.nih.gov/38423051)
 - [38683966](https://pubmed.ncbi.nlm.nih.gov/38683966)
 - [39298738](https://pubmed.ncbi.nlm.nih.gov/39298738)
+- [39945593](https://pubmed.ncbi.nlm.nih.gov/39945593)
+- [40608889](https://pubmed.ncbi.nlm.nih.gov/40608889)
 
 **NCTs**
 
-- [NCT02113982](https://clinicaltrials.gov/study/NCT02113982)
+- [NCT01640301](https://clinicaltrials.gov/study/NCT01640301)
 - [NCT02152956](https://clinicaltrials.gov/study/NCT02152956)
 - [NCT02203903](https://clinicaltrials.gov/study/NCT02203903)
 - [NCT02665065](https://clinicaltrials.gov/study/NCT02665065)
+- [NCT02743611](https://clinicaltrials.gov/study/NCT02743611)
 - [NCT03326921](https://clinicaltrials.gov/study/NCT03326921)
 - [NCT03386513](https://clinicaltrials.gov/study/NCT03386513)
+- [NCT04010877](https://clinicaltrials.gov/study/NCT04010877)
+- [NCT04156256](https://clinicaltrials.gov/study/NCT04156256)
+- [NCT05066165](https://clinicaltrials.gov/study/NCT05066165)
+- [NCT05285813](https://clinicaltrials.gov/study/NCT05285813)
 - [NCT05473910](https://clinicaltrials.gov/study/NCT05473910)
 - [NCT06561152](https://clinicaltrials.gov/study/NCT06561152)
 - [NCT06616636](https://clinicaltrials.gov/study/NCT06616636)
 - [NCT06704152](https://clinicaltrials.gov/study/NCT06704152)
 - [NCT06994676](https://clinicaltrials.gov/study/NCT06994676)
 - [NCT07157514](https://clinicaltrials.gov/study/NCT07157514)
+- [NCT07645469](https://clinicaltrials.gov/study/NCT07645469)
 
 ## Transparency artifacts
 
@@ -450,12 +445,13 @@ Agreement score -0.2, the lowest of any ranked option, from one endorsement agai
 - [Clinical evidence](evidence.md) — 15 clinical rows with effect sizes and toxicities.
 - [Manuscripts](manuscripts.md) — master flat inventory of every paper considered (clinical + preclinical), with sample size, effect size, variance and toxicity columns.
 - [Board proceedings](board.md) — 5 persona positions, 20 critiques, full agreement matrix.
-- [Recommendations table](recommendations.md) — the ranked rows behind this page.
+- [Recommendations table](recommendations.md) — the ranked rows behind this page (the Experimental table).
+- [Standard of care options](standard_of_care.md) — the co-equal Standard-of-care table, including gemtuzumab ozogamicin and the set-aside menin inhibitors.
 - [Plain-language track](plain_language.md) — the translator's patient-facing version.
 
 ## Run log
 
-Authored 2026-07-24 by the PI agent from a complete, schema-valid dossier: profile.json, preferences.json, 13 target-validation rows, 29 trials, 15 clinical-evidence rows, 16 preclinical rows, 25 accessibility rows, and the board's 5 positions plus 20 critiques. Endorsed/dissent/veto sets and agreement scores were computed from the round-1 picks and round-2 critiques; the single conditional veto (conservative, pivekimab) was preserved as a not_recommended row rather than overridden, because its stated lifting condition — documented hepatic/albumin baselines — is unmet, the organ-function workup being the case's own flagged open item. Biomarker gating: multiple non-confirmed biomarkers exist (TP53 ngs_pending, TP53 Y220C, HLA-A*02:01, HLA-A*24:02, HA-1/HA-2), and per the one-dimension cap the single most-decision-relevant gate — HLA-A*02:01, the master switch for the referral's stated priority — was chosen for the shared workup row (rank 1) and the hla_a0201:positive tagging (HA-1 TCR-T); TP53/Y220C, A*24:02 and HA-1/HA-2 were carried as open questions and caveats rather than a parallel branch. The interventions targeting confirmed features (CD123, CD33) and the HCT2 platform were ranked with scenario null. Out-of-scope drugs the upstream gate sweep surfaced — menin inhibitors against KMT2A *amplification* (not a rearrangement) and NPM1-directed TCR-T in an NPM1-wild-type patient — were treated as non-targeting and are not ranked or named in the ranked output; re-run the screener if the treating team wants standard-care options enumerated. Reference verification ran over every promoted PMID/NCT against the upstream dossier: all resolved with matching claims, none corrected, none nulled.
+Re-run 2026-07-25 by the PI agent under the two-table contract, from a complete, schema-valid dossier: profile.json, preferences.json, 13 target-validation rows, 29 trials, 15 clinical-evidence rows, 16 preclinical rows, 25 accessibility rows, the 12-row standard_of_care.jsonl, and the board's 5 positions plus 20 critiques. This is now the Experimental table — feature-targeting *investigational* options only. Every feature-targeting investigational option in the dossier is surfaced (21 rows): six ranked live (workup, Iomab-B, HA-1 TCR-T, tagraxofusp, TAA-T, and the vetoed pivekimab) and fifteen flagged by `surfaced_reason` — three HA-1/HA-2 products consolidated under the rank-3 approach (TSC-100/TSC-101/BSB-1001), two thin-evidence handles (CBX-250 first-in-human, rezatapopt double-gated on Y220C), three not-enrollable (FH-WT1-E50 MRD-mismatch, two China-only dual CAR-Ts), and seven unavailable/discontinued (flotetuzumab, vibecotamab, NTLA-5001, BPX-701, WT1-TCRc4, the A*24:02 WT1-siTCR fallback, eprenetapopt). Gemtuzumab ozogamicin was routed OUT of this table to the Standard-of-care table because it is FDA-approved for R/R CD33+ AML including this patient; tagraxofusp and pivekimab stay here because their approvals are BPDCN-only (off-label/investigational for this AML patient). Genuinely non-targeting or target-absent drugs the upstream sweep surfaced — the menin inhibitors against KMT2A *amplification* (a copy-number gain, not the rearrangement menin inhibitors need) and the NPM1-directed TCR-T trials in an NPM1-wild-type patient — were excluded rather than surfaced; the menin inhibitors are logged on the Standard-of-care table as approved-but-target-absent. Endorsed/dissent/veto sets and agreement scores were computed from the round-1 picks and round-2 critiques; the single conditional veto (conservative, pivekimab) was preserved as a not_recommended row rather than overridden, because its stated lifting condition — documented hepatic/albumin baselines — is unmet. Biomarker gating: of several non-confirmed biomarkers (TP53 ngs_pending, TP53 Y220C, HLA-A*02:01, HLA-A*24:02, HA-1/HA-2), the one-dimension cap selected the master switch HLA-A*02:01 for the shared workup row (rank 1) and the hla_a0201:positive tagging (HA-1 TCR-T and its consolidated products, CBX-250); TP53/Y220C, A*24:02 and HA-1/HA-2 were carried as open questions and caveats rather than a parallel branch, and no negative-branch ranking was emitted. Reference verification ran over every promoted PMID/NCT: key anchors were re-resolved live against PubMed (SIERRA 39298738, HA-1 TCR-T 38683966, pivekimab 38423051, TAA-T 33270816, HA-1 locus 9820596, MiHA genotyping 31275297), and the remainder were carried verbatim from the already-verified upstream dossier; all matched claims, none corrected, none nulled.
 
 <!-- libby:downloads:begin -->
 
@@ -464,22 +460,22 @@ Authored 2026-07-24 by the PI agent from a complete, schema-valid dossier: profi
 ### HTML
 
 - [Target validation paths](target_validation.md?v=be6593c4) — per-feature biomarker-workup table with providers and references, sortable in-browser
-- [Recommendations table](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-recommendations.html?v=7ec2b737) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
+- [Recommendations table](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-recommendations.html?v=ed0282af) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
 - [Standard of care options](standard_of_care.md?v=96179190) — approved and guideline-endorsed strategies for this patient's situation, assessed for eligibility and sequencing, in a sortable in-browser table
 - [Standard of care options (offline)](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-standard-of-care.html?v=b3184dda) — same standard-of-care assessment packaged as a self-contained HTML that opens offline
-- [Access guide](accessibility.md?v=a2f3bd2d) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table
-- [Access guide (offline)](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-accessibility.html?v=23fb3dee) — same access-guide content packaged as a self-contained HTML that opens offline
+- [Access guide](accessibility.md?v=7f6153c3) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table
+- [Access guide (offline)](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-accessibility.html?v=1af82b86) — same access-guide content packaged as a self-contained HTML that opens offline
 - [Master manuscripts table](manuscripts.md?v=9f990a30) — every paper considered — n, effect, variance, toxicities, in a sortable in-browser table
 - [Master manuscripts table (offline)](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-manuscripts.html?v=fce12ad2) — same manuscripts inventory packaged as a self-contained HTML that opens offline
 
 ### PDF
 
-- [Target validation paths](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-target-validation.pdf?v=746e9bae) — diagnostic + biomarker workup that hardens the targetable-feature call
-- [Recommendations table](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-recommendations.pdf?v=387017ed) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
-- [Standard of care options](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-standard-of-care.pdf?v=d7603177) — approved and guideline-endorsed strategies, their eligibility fit, and how they sequence against the targeted options, in a print-friendly PDF
-- [Access guide](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-accessibility.pdf?v=9037cb15) — trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF
-- [Master manuscripts table](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-manuscripts.pdf?v=fab53cc6) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
-- [Patient/caregiver PDF](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-plain-language.pdf?v=39a7e04f) — plain-language summary
+- [Target validation paths](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-target-validation.pdf?v=32392d1e) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Recommendations table](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-recommendations.pdf?v=1e65a38a) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
+- [Standard of care options](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-standard-of-care.pdf?v=e3daa332) — approved and guideline-endorsed strategies, their eligibility fit, and how they sequence against the targeted options, in a print-friendly PDF
+- [Access guide](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-accessibility.pdf?v=9b6cb144) — trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF
+- [Master manuscripts table](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-manuscripts.pdf?v=743d486b) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
+- [Patient/caregiver PDF](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-plain-language.pdf?v=982b3928) — plain-language summary
 
 <!-- libby:downloads:end -->
 

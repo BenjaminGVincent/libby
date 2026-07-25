@@ -12,37 +12,37 @@ _Entries are ordered to match the Recommendations table: by therapeutic target g
 
 <table class="trial-table"><thead><tr><th class="col-num">#</th><th class="col-intervention">Intervention</th><th class="col-target">Target</th><th class="col-access-status">Access status</th><th class="col-regulatory">Regulatory</th><th class="col-first-action">Recommended first action</th></tr></thead><tbody>
 
-<tr><td class="col-num"><a href="#access-1"><strong>1</strong></a></td><td class="col-intervention"><strong>Iomab-B (131I-apamistamab) anti-CD45 radioimmunotherapy conditioning</strong></td><td class="col-target">Allograft Hct2</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">investigational, no approval (SIERRA phase 3 completed; not FDA-approved)</td><td class="col-first-action">Email the Actinium go-forward-trial contact mvusirikala@actiniumpharma.com (347-814-2268) to ask when NCT07157514 opens and whether a prior sibling allo-HCT is allowed</td></tr>
+<tr><td class="col-num"><a href="#access-1"><strong>1</strong></a></td><td class="col-intervention"><strong>Iomab-B (131I-apamistamab) anti-CD45 radioimmunotherapy conditioning</strong></td><td class="col-target">Hct2 Platform</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">investigational, no approval (SIERRA phase 3 completed; not FDA-approved)</td><td class="col-first-action">Email the Actinium go-forward-trial contact mvusirikala@actiniumpharma.com (347-814-2268) to ask when NCT07157514 opens and whether a prior sibling allo-HCT is allowed</td></tr>
 <tr><td class="col-num"><a href="#access-2"><strong>2</strong></a></td><td class="col-intervention"><strong>HA-1-specific CD8+/CD4+ TCR-T (Bleakley/Fred Hutch platform)</strong></td><td class="col-target">Hla A0201</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">investigational, no approval</td><td class="col-first-action">Retrieve the patient&#x27;s HLA-A*02:01 allele status and genotype HA-1 in both the patient and the sibling donor before any outreach</td></tr>
-<tr><td class="col-num"><a href="#access-3"><strong>3</strong></a></td><td class="col-intervention"><strong>Tagraxofusp (SL-401, IL-3/diphtheria-toxin fusion)</strong></td><td class="col-target">Cd123</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">FDA-approved (Elzonris, BPDCN, 2018); off-label for AML</td><td class="col-first-action">Obtain the quantitative CD123 antigen-density flow result, which predicts benefit and is still pending</td></tr>
-<tr><td class="col-num"><a href="#access-4"><strong>4</strong></a></td><td class="col-intervention"><strong>Pivekimab sunirine (IMGN632, CD123 ADC)</strong></td><td class="col-target">Cd123</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">FDA-approved (Decnupaz, BPDCN, May 2026); off-label for AML</td><td class="col-first-action">Call AbbVie medical information at 844-663-3742 to discuss off-label AML use and whether any expanded-access mechanism exists</td></tr>
-<tr><td class="col-num"><a href="#access-5"><strong>5</strong></a></td><td class="col-intervention"><strong>Flotetuzumab (MGD006, CD123xCD3 DART)</strong></td><td class="col-target">Cd123</td><td class="col-access-status"><span class="fit-badge fit-none">Unavailable</span></td><td class="col-regulatory">investigational; program deprioritized</td><td class="col-first-action">No action; the program is deprioritized with no open route</td></tr>
-<tr><td class="col-num"><a href="#access-6"><strong>6</strong></a></td><td class="col-intervention"><strong>Gemtuzumab ozogamicin (CD33 ADC)</strong></td><td class="col-target">Cd33</td><td class="col-access-status"><span class="fit-badge fit-strong">Standard of care</span></td><td class="col-regulatory">FDA-approved (Mylotarg); includes CD33-positive relapsed AML monotherapy</td><td class="col-first-action">Request quantitative CD33 antigen-density flow to support the targeting decision, since qualitative positivity does not establish ADC benefit</td></tr>
-<tr><td class="col-num"><a href="#access-7"><strong>7</strong></a></td><td class="col-intervention"><strong>BPX-701 (PRAME TCR-T with iCasp9 safety switch) + rimiducid</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-none">Unavailable</span></td><td class="col-regulatory">investigational; program discontinued</td><td class="col-first-action">No action; the program is discontinued</td></tr>
-<tr><td class="col-num"><a href="#access-8"><strong>8</strong></a></td><td class="col-intervention"><strong>BSB-1001 (HA-1-directed TCR-T)</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">investigational, no approval</td><td class="col-first-action">Resolve the HLA-A*02:01 and HA-1 typing before contacting sites</td></tr>
-<tr><td class="col-num"><a href="#access-9"><strong>9</strong></a></td><td class="col-intervention"><strong>BSB-2002 (mutant-NPM1-directed TCR-T)</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">investigational, no approval</td><td class="col-first-action">Do not pursue: the patient is NPM1-wild-type and not in the MRD-positive population this trial enrolls</td></tr>
-<tr><td class="col-num"><a href="#access-10"><strong>10</strong></a></td><td class="col-intervention"><strong>CBX-250 (CG1/HLA-A*02:01 TCR-mimetic T-cell engager)</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">investigational, first-in-human</td><td class="col-first-action">Confirm HLA-A*02:01 status, the single gating biomarker for this engager</td></tr>
-<tr><td class="col-num"><a href="#access-11"><strong>11</strong></a></td><td class="col-intervention"><strong>CD123-CD33 compound CAR-T (cCAR)</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span> <span class="fit-badge fit-weak">Not yet accessible</span></td><td class="col-regulatory">investigational, no approval</td><td class="col-first-action">Email the sponsor at kevin.pinz@icellgene.com (631-538-6218) to confirm whether the trial is still enrolling and whether any US site exists</td></tr>
-<tr><td class="col-num"><a href="#access-12"><strong>12</strong></a></td><td class="col-intervention"><strong>CLL-1/CD33/CD123-directed CAR-T</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span> <span class="fit-badge fit-weak">Not yet accessible</span></td><td class="col-regulatory">investigational, no approval</td><td class="col-first-action">Confirm the Shenzhen site is accepting international patients and understand the travel and manufacturing logistics before workup</td></tr>
-<tr><td class="col-num"><a href="#access-13"><strong>13</strong></a></td><td class="col-intervention"><strong>Eprenetapopt (APR-246, pan-p53 reactivator)</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-none">Unavailable</span></td><td class="col-regulatory">investigational; myeloid development largely halted after negative phase 3</td><td class="col-first-action">No action recommended; the pan-reactivator track is low-yield and myeloid development has stalled</td></tr>
-<tr><td class="col-num"><a href="#access-14"><strong>14</strong></a></td><td class="col-intervention"><strong>FH-WT1-E50 (anti-WT1 TCR/CD8ab T cells) + azacitidine</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">investigational, no approval</td><td class="col-first-action">Hold as a consolidation option rather than a current-state fit given the 85%-blast burden</td></tr>
-<tr><td class="col-num"><a href="#access-15"><strong>15</strong></a></td><td class="col-intervention"><strong>MB-dNPM1-TCR.1 (mutant-NPM1-directed TCR-T)</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span> <span class="fit-badge fit-weak">Not yet accessible</span></td><td class="col-regulatory">investigational, no approval</td><td class="col-first-action">Do not pursue unless relapse NGS documents a susceptible NPM1 mutation, which the current panels do not show</td></tr>
-<tr><td class="col-num"><a href="#access-16"><strong>16</strong></a></td><td class="col-intervention"><strong>Multiantigen leukemia-specific donor T cells (PRAME/WT1/Survivin/NY-ESO-1)</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">investigational, no approval</td><td class="col-first-action">Confirm WT1 and PRAME expression on the patient&#x27;s blasts, which drives eligibility here</td></tr>
-<tr><td class="col-num"><a href="#access-17"><strong>17</strong></a></td><td class="col-intervention"><strong>NTLA-5001 (CRISPR-engineered WT1-directed TCR-T)</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-none">Unavailable</span></td><td class="col-regulatory">investigational; program discontinued</td><td class="col-first-action">No action; the program is discontinued</td></tr>
-<tr><td class="col-num"><a href="#access-18"><strong>18</strong></a></td><td class="col-intervention"><strong>Revumenib (menin inhibitor)</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">FDA-approved (Revuforj, KMT2A-translocation acute leukemia and NPM1-mutated AML); off-label for this patient</td><td class="col-first-action">Recognize the biomarker mismatch first: KMT2A amplification is not the KMT2A rearrangement menin inhibitors target, and the patient is NPM1-wild-type</td></tr>
-<tr><td class="col-num"><a href="#access-19"><strong>19</strong></a></td><td class="col-intervention"><strong>Rezatapopt (PC14586, Y220C-selective p53 reactivator)</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">investigational, no approval</td><td class="col-first-action">Resolve TP53 status without collapsing the discrepancy: retrieve the 2019 variant identity and VAF, add p53 IHC and 17p FISH, and get variant-level NGS to establish whether it is Y220C</td></tr>
-<tr><td class="col-num"><a href="#access-20"><strong>20</strong></a></td><td class="col-intervention"><strong>TSC-100 (donor-derived HA-1-specific TCR-T)</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">investigational, no approval</td><td class="col-first-action">Resolve HLA-A*02:01 and HA-1 genotypes for patient and sibling donor first, since the whole arm hinges on the mismatch direction</td></tr>
-<tr><td class="col-num"><a href="#access-21"><strong>21</strong></a></td><td class="col-intervention"><strong>TSC-101 (donor-derived HA-2-specific TCR-T)</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">investigational, no approval</td><td class="col-first-action">Genotype both HA-1 and HA-2 in the patient and sibling donor, since the result selects between TSC-100 and TSC-101</td></tr>
-<tr><td class="col-num"><a href="#access-22"><strong>22</strong></a></td><td class="col-intervention"><strong>Vibecotamab (XmAb14045, CD123xCD3 bispecific)</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-none">Unavailable</span></td><td class="col-regulatory">investigational; program discontinued</td><td class="col-first-action">No action; the program is discontinued</td></tr>
-<tr><td class="col-num"><a href="#access-23"><strong>23</strong></a></td><td class="col-intervention"><strong>WT1-TCRC4 EBV-specific CD8+ Tcm (Chapuis/Greenberg)</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-none">Unavailable</span></td><td class="col-regulatory">investigational; study completed</td><td class="col-first-action">Treat as precedent only; the open WT1 TCR-T route is FH-WT1-E50 (NCT07645469)</td></tr>
-<tr><td class="col-num"><a href="#access-24"><strong>24</strong></a></td><td class="col-intervention"><strong>WT1-siTCR gene-transduced lymphocytes (TBI-1301)</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-none">Unavailable</span></td><td class="col-regulatory">investigational; early-phase study completed</td><td class="col-first-action">Prioritise resolving HLA-A*02:01 first; this branch only matters if that types negative</td></tr>
+<tr><td class="col-num"><a href="#access-3"><strong>3</strong></a></td><td class="col-intervention"><strong>CBX-250 (CG1/HLA-A*02:01 TCR-mimetic T-cell engager)</strong></td><td class="col-target">Hla A0201</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">investigational, first-in-human</td><td class="col-first-action">Confirm HLA-A*02:01 status, the single gating biomarker for this engager</td></tr>
+<tr><td class="col-num"><a href="#access-4"><strong>4</strong></a></td><td class="col-intervention"><strong>TSC-100 (donor-derived HA-1-specific TCR-T)</strong></td><td class="col-target">Hla A0201</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">investigational, no approval</td><td class="col-first-action">Resolve HLA-A*02:01 and HA-1 genotypes for patient and sibling donor first, since the whole arm hinges on the mismatch direction</td></tr>
+<tr><td class="col-num"><a href="#access-5"><strong>5</strong></a></td><td class="col-intervention"><strong>TSC-101 (donor-derived HA-2-specific TCR-T)</strong></td><td class="col-target">Hla A0201</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">investigational, no approval</td><td class="col-first-action">Genotype both HA-1 and HA-2 in the patient and sibling donor, since the result selects between TSC-100 and TSC-101</td></tr>
+<tr><td class="col-num"><a href="#access-6"><strong>6</strong></a></td><td class="col-intervention"><strong>BSB-1001 (HA-1-directed TCR-T)</strong></td><td class="col-target">Hla A0201</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">investigational, no approval</td><td class="col-first-action">Resolve the HLA-A*02:01 and HA-1 typing before contacting sites</td></tr>
+<tr><td class="col-num"><a href="#access-7"><strong>7</strong></a></td><td class="col-intervention"><strong>Tagraxofusp (SL-401, IL-3/diphtheria-toxin fusion)</strong></td><td class="col-target">Cd123</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">FDA-approved (Elzonris, BPDCN, 2018); off-label for AML</td><td class="col-first-action">Obtain the quantitative CD123 antigen-density flow result, which predicts benefit and is still pending</td></tr>
+<tr><td class="col-num"><a href="#access-8"><strong>8</strong></a></td><td class="col-intervention"><strong>Pivekimab sunirine (IMGN632, CD123 ADC)</strong></td><td class="col-target">Cd123</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">FDA-approved (Decnupaz, BPDCN, May 2026); off-label for AML</td><td class="col-first-action">Call AbbVie medical information at 844-663-3742 to discuss off-label AML use and whether any expanded-access mechanism exists</td></tr>
+<tr><td class="col-num"><a href="#access-9"><strong>9</strong></a></td><td class="col-intervention"><strong>CLL-1/CD33/CD123-directed CAR-T</strong></td><td class="col-target">Cd123</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span> <span class="fit-badge fit-weak">Not yet accessible</span></td><td class="col-regulatory">investigational, no approval</td><td class="col-first-action">Confirm the Shenzhen site is accepting international patients and understand the travel and manufacturing logistics before workup</td></tr>
+<tr><td class="col-num"><a href="#access-10"><strong>10</strong></a></td><td class="col-intervention"><strong>CD123-CD33 compound CAR-T (cCAR)</strong></td><td class="col-target">Cd123</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span> <span class="fit-badge fit-weak">Not yet accessible</span></td><td class="col-regulatory">investigational, no approval</td><td class="col-first-action">Email the sponsor at kevin.pinz@icellgene.com (631-538-6218) to confirm whether the trial is still enrolling and whether any US site exists</td></tr>
+<tr><td class="col-num"><a href="#access-11"><strong>11</strong></a></td><td class="col-intervention"><strong>Flotetuzumab (MGD006, CD123xCD3 DART)</strong></td><td class="col-target">Cd123</td><td class="col-access-status"><span class="fit-badge fit-none">Unavailable</span></td><td class="col-regulatory">investigational; program deprioritized</td><td class="col-first-action">No action; the program is deprioritized with no open route</td></tr>
+<tr><td class="col-num"><a href="#access-12"><strong>12</strong></a></td><td class="col-intervention"><strong>Vibecotamab (XmAb14045, CD123xCD3 bispecific)</strong></td><td class="col-target">Cd123</td><td class="col-access-status"><span class="fit-badge fit-none">Unavailable</span></td><td class="col-regulatory">investigational; program discontinued</td><td class="col-first-action">No action; the program is discontinued</td></tr>
+<tr><td class="col-num"><a href="#access-13"><strong>13</strong></a></td><td class="col-intervention"><strong>Multiantigen leukemia-specific donor T cells (PRAME/WT1/Survivin/NY-ESO-1)</strong></td><td class="col-target">Wt1</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">investigational, no approval</td><td class="col-first-action">Confirm WT1 and PRAME expression on the patient&#x27;s blasts, which drives eligibility here</td></tr>
+<tr><td class="col-num"><a href="#access-14"><strong>14</strong></a></td><td class="col-intervention"><strong>FH-WT1-E50 (anti-WT1 TCR/CD8ab T cells) + azacitidine</strong></td><td class="col-target">Wt1</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">investigational, no approval</td><td class="col-first-action">Hold as a consolidation option rather than a current-state fit given the 85%-blast burden</td></tr>
+<tr><td class="col-num"><a href="#access-15"><strong>15</strong></a></td><td class="col-intervention"><strong>NTLA-5001 (CRISPR-engineered WT1-directed TCR-T)</strong></td><td class="col-target">Wt1</td><td class="col-access-status"><span class="fit-badge fit-none">Unavailable</span></td><td class="col-regulatory">investigational; program discontinued</td><td class="col-first-action">No action; the program is discontinued</td></tr>
+<tr><td class="col-num"><a href="#access-16"><strong>16</strong></a></td><td class="col-intervention"><strong>WT1-TCRC4 EBV-specific CD8+ Tcm (Chapuis/Greenberg)</strong></td><td class="col-target">Wt1</td><td class="col-access-status"><span class="fit-badge fit-none">Unavailable</span></td><td class="col-regulatory">investigational; study completed</td><td class="col-first-action">Treat as precedent only; the open WT1 TCR-T route is FH-WT1-E50 (NCT07645469)</td></tr>
+<tr><td class="col-num"><a href="#access-17"><strong>17</strong></a></td><td class="col-intervention"><strong>WT1-siTCR gene-transduced lymphocytes (TBI-1301)</strong></td><td class="col-target">Wt1</td><td class="col-access-status"><span class="fit-badge fit-none">Unavailable</span></td><td class="col-regulatory">investigational; early-phase study completed</td><td class="col-first-action">Prioritise resolving HLA-A*02:01 first; this branch only matters if that types negative</td></tr>
+<tr><td class="col-num"><a href="#access-18"><strong>18</strong></a></td><td class="col-intervention"><strong>Rezatapopt (PC14586, Y220C-selective p53 reactivator)</strong></td><td class="col-target">Tp53 Y220C</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">investigational, no approval</td><td class="col-first-action">Resolve TP53 status without collapsing the discrepancy: retrieve the 2019 variant identity and VAF, add p53 IHC and 17p FISH, and get variant-level NGS to establish whether it is Y220C</td></tr>
+<tr><td class="col-num"><a href="#access-19"><strong>19</strong></a></td><td class="col-intervention"><strong>BPX-701 (PRAME TCR-T with iCasp9 safety switch) + rimiducid</strong></td><td class="col-target">Prame</td><td class="col-access-status"><span class="fit-badge fit-none">Unavailable</span></td><td class="col-regulatory">investigational; program discontinued</td><td class="col-first-action">No action; the program is discontinued</td></tr>
+<tr><td class="col-num"><a href="#access-20"><strong>20</strong></a></td><td class="col-intervention"><strong>Eprenetapopt (APR-246, pan-p53 reactivator)</strong></td><td class="col-target">Tp53</td><td class="col-access-status"><span class="fit-badge fit-none">Unavailable</span></td><td class="col-regulatory">investigational; myeloid development largely halted after negative phase 3</td><td class="col-first-action">No action recommended; the pan-reactivator track is low-yield and myeloid development has stalled</td></tr>
+<tr><td class="col-num"><a href="#access-21"><strong>21</strong></a></td><td class="col-intervention"><strong>BSB-2002 (mutant-NPM1-directed TCR-T)</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">investigational, no approval</td><td class="col-first-action">Do not pursue: the patient is NPM1-wild-type and not in the MRD-positive population this trial enrolls</td></tr>
+<tr><td class="col-num"><a href="#access-22"><strong>22</strong></a></td><td class="col-intervention"><strong>Gemtuzumab ozogamicin (CD33 ADC)</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-strong">Standard of care</span></td><td class="col-regulatory">FDA-approved (Mylotarg); includes CD33-positive relapsed AML monotherapy</td><td class="col-first-action">Request quantitative CD33 antigen-density flow to support the targeting decision, since qualitative positivity does not establish ADC benefit</td></tr>
+<tr><td class="col-num"><a href="#access-23"><strong>23</strong></a></td><td class="col-intervention"><strong>MB-dNPM1-TCR.1 (mutant-NPM1-directed TCR-T)</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span> <span class="fit-badge fit-weak">Not yet accessible</span></td><td class="col-regulatory">investigational, no approval</td><td class="col-first-action">Do not pursue unless relapse NGS documents a susceptible NPM1 mutation, which the current panels do not show</td></tr>
+<tr><td class="col-num"><a href="#access-24"><strong>24</strong></a></td><td class="col-intervention"><strong>Revumenib (menin inhibitor)</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">FDA-approved (Revuforj, KMT2A-translocation acute leukemia and NPM1-mutated AML); off-label for this patient</td><td class="col-first-action">Recognize the biomarker mismatch first: KMT2A amplification is not the KMT2A rearrangement menin inhibitors target, and the patient is NPM1-wild-type</td></tr>
 <tr><td class="col-num"><a href="#access-25"><strong>25</strong></a></td><td class="col-intervention"><strong>Ziftomenib (menin inhibitor)</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span></td><td class="col-regulatory">FDA-approved (Komzifti, R/R NPM1-mutated AML, Nov 2025); off-label for this patient</td><td class="col-first-action">Note the biomarker mismatch: neither an NPM1 mutation nor a KMT2A rearrangement is documented, so menin inhibition lacks a target</td></tr>
 </tbody></table>
 
 </div></div>
 
 
-## Allograft Hct2 interventions (1)
+## Hct2 Platform interventions (1)
 
 ### 1. Iomab-B (131I-apamistamab) anti-CD45 radioimmunotherapy conditioning <small><code>Iomab-B, 131I-apamistamab, iodine-131 apamistamab, BC8, anti-CD45 RIT, apamistamab</code></small> { #access-1 }
 
@@ -93,7 +93,7 @@ CD45-targeted radioimmunotherapy is the most directly relevant way to carry an 8
 ---
 
 
-## Hla A0201 interventions (1)
+## Hla A0201 interventions (5)
 
 ### 2. HA-1-specific CD8+/CD4+ TCR-T (Bleakley/Fred Hutch platform) <small><code>HA-1 TCR-T, HA-1 T TCR</code></small> { #access-2 }
 
@@ -139,10 +139,181 @@ This is the closest published precedent for the patient&#x27;s primary HA-1 hand
 
 ---
 
+### 3. CBX-250 (CG1/HLA-A*02:01 TCR-mimetic T-cell engager) <small><code>CBX-250, CBX250, CROSSCHECK-001</code></small> { #access-3 }
 
-## Cd123 interventions (3)
+**Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** bispecific_other &nbsp; **Verified:** 2026-07-24
 
-### 3. Tagraxofusp (SL-401, IL-3/diphtheria-toxin fusion) <small><code>tagraxofusp, tagraxofusp-erzs, SL-401, Elzonris</code></small> { #access-3 }
+
+CBX-250 sits on the same HLA-A*02:01 axis as the HA-1/HA-2 and WT1 options, but as an off-the-shelf T-cell engager it skips the cell-manufacturing wait, which matters in a fast-moving 85%-blast relapse. It is recruiting at 11 US sites and allows prior transplant after 60 days. It stays a first-in-human phase 1 with no efficacy data and the usual cytokine-release risk, and the A*02:01 typing is still pending.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>investigational, first-in-human</dd>
+  <dt>Geographic scope</dt><dd>US only, 11 sites</dd>
+</dl>
+
+
+**Next steps**
+
+1. Confirm HLA-A*02:01 status, the single gating biomarker for this engager
+2. Email rachel.ghiraldi@crossbowtx.com (857-301-6432) to identify the nearest active site and confirm the 60-day post-transplant window is met
+3. Weigh the faster off-the-shelf timeline against the lack of efficacy data when sequencing against the HA-1 cell products
+4. Plan CRS monitoring given the T-cell-engager mechanism and high blast burden
+
+
+**Trial pathways**
+
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT06994676">NCT06994676</a></td><td class="col-phase">1</td><td class="col-indication">R/R AML / high-risk MDS / CMML / CML</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-weak">eligible: unconfirmed</span></td><td class="col-contact"><strong>Rachel Ghiraldi</strong><br><a href="mailto:rachel.ghiraldi@crossbowtx.com">rachel.ghiraldi@crossbowtx.com</a><br><code>857-301-6432</code><br><a href="https://clinicaltrials.gov/study/NCT06994676">trial sites</a></td><td class="col-notes">11 US sites recruiting (City of Hope, Stanford, Moffitt, others). Off-the-shelf subcutaneous T-cell engager against CG1 on HLA-A*02:01, so no cell-manufacturing lead time. Prior allo-HCT allowed after 60 days. Gated on A*02:01; phase 1 with no efficacy readout and T-cell-engager CRS risk.</td></tr>
+</tbody></table></div></div>
+
+
+**Manufacturer / sponsor contact**
+
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Crossbow Therapeutics</dd>
+  <dt>Country</dt><dd>United States</dd>
+  <dt>Medical info phone</dt><dd><code>857-301-6432</code></dd>
+  <dt>Medical info email</dt><dd><a href="mailto:rachel.ghiraldi@crossbowtx.com">rachel.ghiraldi@crossbowtx.com</a></dd>
+</dl>
+
+
+---
+
+### 4. TSC-100 (donor-derived HA-1-specific TCR-T) <small><code>TSC-100, HA-1 TCR-T</code></small> { #access-4 }
+
+**Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** other &nbsp; **Verified:** 2026-07-24
+
+
+TSC-100 is the commercial HA-1 TCR-T given after a fresh HLA-matched allo-HCT, and the ALLOHA trial is recruiting across 21 US sites, so geography is far less of a barrier than the single-site Fred Hutch program. Enrollment turns on HLA-A*02:01 plus a recipient HA-1(H)-positive / donor HA-1-negative mismatch, both untyped. The design lines up with the curative second-transplant plan.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>investigational, no approval</dd>
+  <dt>Geographic scope</dt><dd>US only, 21 sites</dd>
+</dl>
+
+
+**Next steps**
+
+1. Resolve HLA-A*02:01 and HA-1 genotypes for patient and sibling donor first, since the whole arm hinges on the mismatch direction
+2. Call TScan medical affairs at (857) 399-9500 or email medicalaffairs@tscan.com to find the nearest of the 21 sites and confirm slot availability
+3. Confirm the protocol accepts a second transplant in a patient with a prior sibling allo-HCT
+4. Line up the HCT2 timeline with the site so the TCR-T can follow conditioning
+
+
+**Trial pathways**
+
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT05473910">NCT05473910</a></td><td class="col-phase">1</td><td class="col-indication">R/R AML/MDS undergoing HLA-matched allo-HCT</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-weak">eligible: unconfirmed</span></td><td class="col-contact"><strong>Tim White</strong><br><a href="mailto:medicalaffairs@tscan.com">medicalaffairs@tscan.com</a><br><code>(857) 399-9500</code><br><a href="https://clinicaltrials.gov/study/NCT05473910">trial sites</a></td><td class="col-notes">21 US sites recruiting (City of Hope, Colorado, others). TSC-100 is the HA-1 arm; the product is given on the back of a fresh HLA-matched transplant with an SOC control arm. Gated on A*02:01 plus recipient HA-1(H)+/donor HA-1- mismatch.</td></tr>
+</tbody></table></div></div>
+
+
+**Manufacturer / sponsor contact**
+
+<dl class="profile-grid">
+  <dt>Company</dt><dd>TScan Therapeutics</dd>
+  <dt>Country</dt><dd>United States</dd>
+  <dt>Medical info phone</dt><dd><code>(857) 399-9500</code></dd>
+  <dt>Medical info email</dt><dd><a href="mailto:medicalaffairs@tscan.com">medicalaffairs@tscan.com</a></dd>
+  <dt>Notes</dt><dd>Central-contact line is TScan medical affairs; use the same address for compassionate-access questions.</dd>
+</dl>
+
+
+---
+
+### 5. TSC-101 (donor-derived HA-2-specific TCR-T) <small><code>TSC-101, HA-2 TCR-T</code></small> { #access-5 }
+
+**Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** other &nbsp; **Verified:** 2026-07-24
+
+
+TSC-101 is the HA-2 counterpart within the same ALLOHA trial, so it opens if the patient/donor pair turns out to mismatch at HA-2 instead of HA-1. It shares the HLA-A*02:01 gate and the fresh-transplant delivery, and it is recruiting at the same US sites. Which arm applies is decided by the HA-1/HA-2 genotyping that is still pending.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>investigational, no approval</dd>
+  <dt>Geographic scope</dt><dd>US only, 21 sites</dd>
+</dl>
+
+
+**Next steps**
+
+1. Genotype both HA-1 and HA-2 in the patient and sibling donor, since the result selects between TSC-100 and TSC-101
+2. Use the same TScan contact (857) 399-9500 / medicalaffairs@tscan.com to discuss whichever mismatch is found
+3. Confirm prior-transplant eligibility and align with the HCT2 schedule
+
+
+**Trial pathways**
+
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT05473910">NCT05473910</a></td><td class="col-phase">1</td><td class="col-indication">R/R AML/MDS undergoing HLA-matched allo-HCT</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-weak">eligible: unconfirmed</span></td><td class="col-contact"><strong>Tim White</strong><br><a href="mailto:medicalaffairs@tscan.com">medicalaffairs@tscan.com</a><br><code>(857) 399-9500</code><br><a href="https://clinicaltrials.gov/study/NCT05473910">trial sites</a></td><td class="col-notes">Same ALLOHA protocol as TSC-100 but keyed to HA-2. Becomes the lever if the pair mismatches at HA-2 rather than HA-1. Gated on A*02:01 plus HA-2 recipient-positive / donor-negative.</td></tr>
+</tbody></table></div></div>
+
+
+**Manufacturer / sponsor contact**
+
+<dl class="profile-grid">
+  <dt>Company</dt><dd>TScan Therapeutics</dd>
+  <dt>Country</dt><dd>United States</dd>
+  <dt>Medical info phone</dt><dd><code>(857) 399-9500</code></dd>
+  <dt>Medical info email</dt><dd><a href="mailto:medicalaffairs@tscan.com">medicalaffairs@tscan.com</a></dd>
+</dl>
+
+
+---
+
+### 6. BSB-1001 (HA-1-directed TCR-T) <small><code>BSB-1001</code></small> { #access-6 }
+
+**Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** other &nbsp; **Verified:** 2026-07-24
+
+
+BSB-1001 is a newer HA-1 TCR-T covering the same A*02:01-restricted mismatch, so it broadens the options if a TScan or Fred Hutch slot is unavailable. It is recruiting at six US sites. The eligibility gate is identical and still unresolved: HLA-A*02:01 plus recipient HA-1(H)-positive / donor HA-1-negative.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>investigational, no approval</dd>
+  <dt>Geographic scope</dt><dd>US only, 6 sites</dd>
+</dl>
+
+
+**Next steps**
+
+1. Resolve the HLA-A*02:01 and HA-1 typing before contacting sites
+2. Email BlueSphere&#x27;s medical director at nkhan@bluespherebio.com (252-347-4938) to check slot availability at the nearest of the six sites
+3. Treat this as a parallel option to TSC-100 and the Fred Hutch program so a slot can be found across whichever site opens first
+
+
+**Trial pathways**
+
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT06704152">NCT06704152</a></td><td class="col-phase">1/2</td><td class="col-indication">Recurrent AML/ALL/MDS undergoing HLA-matched allo-HCT</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-weak">eligible: unconfirmed</span></td><td class="col-contact"><strong>Nawazish Khan, MD (Medical Director, BlueSphere Bio)</strong><br><a href="mailto:nkhan@bluespherebio.com">nkhan@bluespherebio.com</a><br><code>252-347-4938</code><br><a href="https://clinicaltrials.gov/study/NCT06704152">trial sites</a></td><td class="col-notes">6 US sites recruiting (City of Hope, Moffitt, Michigan, others). Same A*02:01 + recipient HA-1(H)+/donor HA-1- gate as TScan and Fred Hutch.</td></tr>
+</tbody></table></div></div>
+
+
+**Manufacturer / sponsor contact**
+
+<dl class="profile-grid">
+  <dt>Company</dt><dd>BlueSphere Bio</dd>
+  <dt>Country</dt><dd>United States</dd>
+  <dt>Medical info phone</dt><dd><code>252-347-4938</code></dd>
+  <dt>Medical info email</dt><dd><a href="mailto:nkhan@bluespherebio.com">nkhan@bluespherebio.com</a></dd>
+</dl>
+
+
+---
+
+
+## Cd123 interventions (6)
+
+### 7. Tagraxofusp (SL-401, IL-3/diphtheria-toxin fusion) <small><code>tagraxofusp, tagraxofusp-erzs, SL-401, Elzonris</code></small> { #access-7 }
 
 **Access status:** <span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** other &nbsp; **Verified:** 2026-07-24
 
@@ -190,7 +361,7 @@ Tagraxofusp is FDA-approved for BPDCN, so a clinician could prescribe it off-lab
 
 ---
 
-### 4. Pivekimab sunirine (IMGN632, CD123 ADC) <small><code>pivekimab sunirine, IMGN632, pivekimab, PVEK, Decnupaz</code></small> { #access-4 }
+### 8. Pivekimab sunirine (IMGN632, CD123 ADC) <small><code>pivekimab sunirine, IMGN632, pivekimab, PVEK, Decnupaz</code></small> { #access-8 }
 
 **Access status:** <span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** ADC &nbsp; **Verified:** 2026-07-24
 
@@ -237,310 +408,7 @@ Pivekimab was FDA-approved for BPDCN as Decnupaz in May 2026, which opens an off
 
 ---
 
-### 5. Flotetuzumab (MGD006, CD123xCD3 DART) <small><code>flotetuzumab, MGD006, S80880</code></small> { #access-5 }
-
-**Access status:** <span class="fit-badge fit-none">Unavailable</span> &nbsp; **Modality:** bispecific_other &nbsp; **Verified:** 2026-07-24
-
-
-Flotetuzumab has some of the most relevant salvage data in the CD123 space, including a response signal specifically in TP53-abnormal AML, but MacroGenics deprioritized the program and the trial is terminated. There is no enrollment or expanded-access route. It remains useful as mechanism support for the CD123 bispecific idea, which is otherwise covered by CBX-250.
-
-
-<dl class="profile-grid">
-  <dt>Regulatory</dt><dd>investigational; program deprioritized</dd>
-  <dt>Geographic scope</dt><dd>No open access (terminated)</dd>
-</dl>
-
-
-**Next steps**
-
-1. No action; the program is deprioritized with no open route
-2. For a CD123-directed T-cell-engager approach, pursue CBX-250 (NCT06994676) instead
-
-
-**Trial pathways**
-
-<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
-<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
-<tbody>
-<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT02152956">NCT02152956</a></td><td class="col-phase">1/2</td><td class="col-indication">Primary induction failure / early-relapse R/R AML</td><td class="col-status">terminated</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><a href="https://clinicaltrials.gov/study/NCT02152956">trial sites</a></td><td class="col-notes">Terminated. Documented salvage responses (CR/CRh 26.7% in PIF/ER) and a signal in TP53-abnormal AML, but MacroGenics deprioritized the program. Mechanism evidence, not an open route.</td></tr>
-</tbody></table></div></div>
-
-
-**Manufacturer / sponsor contact**
-
-<dl class="profile-grid">
-  <dt>Company</dt><dd>MacroGenics</dd>
-  <dt>Country</dt><dd>United States</dd>
-  <dt>Notes</dt><dd>CD123xCD3 DART program deprioritized; no open trial or expanded-access route identified.</dd>
-</dl>
-
-
----
-
-
-## Cd33 interventions (1)
-
-### 6. Gemtuzumab ozogamicin (CD33 ADC) <small><code>gemtuzumab ozogamicin, Mylotarg, GO, CMA-676</code></small> { #access-6 }
-
-**Access status:** <span class="fit-badge fit-strong">Standard of care</span> &nbsp; **Modality:** ADC &nbsp; **Verified:** 2026-07-24
-
-
-Gemtuzumab is the one CD33-directed option the patient can get by routine prescription: it is FDA-approved for CD33-positive AML including relapse, matching the confirmed CD33 positivity, so no trial or off-label appeal is needed. The load-bearing caveats are efficacy and safety, not access. Single-agent depth in relapse is modest (about 30%), the adverse-cytogenetics subgroup saw no survival benefit in the Hills meta-analysis, and the VOD/hepatic risk matters before a second transplant.
-
-
-<dl class="profile-grid">
-  <dt>Regulatory</dt><dd>FDA-approved (Mylotarg); includes CD33-positive relapsed AML monotherapy</dd>
-  <dt>Guidelines</dt><dd>NCCN-listed for CD33-positive AML</dd>
-  <dt>Geographic scope</dt><dd>US; approved and available nationally</dd>
-</dl>
-
-
-**Next steps**
-
-1. Request quantitative CD33 antigen-density flow to support the targeting decision, since qualitative positivity does not establish ADC benefit
-2. Weigh the null adverse-cytogenetics subgroup finding against this patient&#x27;s complex/TP53-aberrant karyotype before committing
-3. Assess baseline LFTs and VOD risk given the planned HCT2
-4. For dosing or drug questions, call Pfizer medical information at 1-800-505-4426
-
-
-**Trial pathways**
-
-<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
-<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
-<tbody>
-<tr><td class="col-nct">—</td><td class="col-phase">—</td><td class="col-indication">CD33-positive relapsed AML</td><td class="col-status">available</td><td class="col-eligibility"><span class="fit-badge fit-strong">eligible: yes</span></td><td class="col-contact">—</td><td class="col-notes">Pivotal monotherapy data: 30% overall remission in first relapse (Sievers 2001). Key caveat: the Hills 2014 IPD meta-analysis found no survival benefit in the adverse-cytogenetics subgroup (OR 0.99), which directly tempers benefit given this patient&#x27;s complex/TP53-aberrant karyotype.</td></tr>
-</tbody></table></div></div>
-
-
-**Manufacturer / sponsor contact**
-
-<dl class="profile-grid">
-  <dt>Company</dt><dd>Pfizer (Wyeth)</dd>
-  <dt>Country</dt><dd>United States</dd>
-  <dt>Medical info phone</dt><dd><code>1-800-505-4426</code></dd>
-  <dt>Product information</dt><dd><a href="https://www.pfizermedical.com/mylotarg">https://www.pfizermedical.com/mylotarg</a></dd>
-  <dt>Notes</dt><dd>Pfizer US medical information 1-800-505-4426 (Mon-Fri 9:00-17:00 ET).</dd>
-</dl>
-
-
-**Payer / coverage notes.** Approved and routinely reimbursed for CD33-positive AML, so this is on-label prescription rather than an access hurdle. Hepatic/veno-occlusive-disease risk is the clinical constraint, particularly ahead of a second transplant.
-
-
----
-
-
-## Unmatched interventions (19)
-
-### 7. BPX-701 (PRAME TCR-T with iCasp9 safety switch) + rimiducid <small><code>BPX-701</code></small> { #access-7 }
-
-**Access status:** <span class="fit-badge fit-none">Unavailable</span> &nbsp; **Modality:** other &nbsp; **Verified:** 2026-07-24
-
-
-Bellicum&#x27;s BPX-701 was the PRAME-directed TCR-T the profile lists as a third A*02:01 handle, but the trial is terminated and the company has wound down, so there is no route. For a PRAME approach, the multiantigen TAA-T program (NCT02203903) is the open alternative.
-
-
-<dl class="profile-grid">
-  <dt>Regulatory</dt><dd>investigational; program discontinued</dd>
-  <dt>Geographic scope</dt><dd>No open access (terminated)</dd>
-</dl>
-
-
-**Next steps**
-
-1. No action; the program is discontinued
-2. Pursue PRAME targeting through the TAA-T multiantigen product (NCT02203903) instead
-
-
-**Trial pathways**
-
-<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
-<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
-<tbody>
-<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT02743611">NCT02743611</a></td><td class="col-phase">1/2</td><td class="col-indication">Acute myeloid leukemia / MDS</td><td class="col-status">terminated</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><a href="https://clinicaltrials.gov/study/NCT02743611">trial sites</a></td><td class="col-notes">Terminated. Bellicum&#x27;s PRAME TCR-T; the company has since wound down. Gated on A*02:01 and PRAME expression.</td></tr>
-</tbody></table></div></div>
-
-
-**Manufacturer / sponsor contact**
-
-<dl class="profile-grid">
-  <dt>Company</dt><dd>Bellicum Pharmaceuticals</dd>
-  <dt>Country</dt><dd>United States</dd>
-  <dt>Notes</dt><dd>PRAME TCR-T discontinued; sponsor wound down operations. No successor protocol.</dd>
-</dl>
-
-
----
-
-### 8. BSB-1001 (HA-1-directed TCR-T) <small><code>BSB-1001</code></small> { #access-8 }
-
-**Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** other &nbsp; **Verified:** 2026-07-24
-
-
-BSB-1001 is a newer HA-1 TCR-T covering the same A*02:01-restricted mismatch, so it broadens the options if a TScan or Fred Hutch slot is unavailable. It is recruiting at six US sites. The eligibility gate is identical and still unresolved: HLA-A*02:01 plus recipient HA-1(H)-positive / donor HA-1-negative.
-
-
-<dl class="profile-grid">
-  <dt>Regulatory</dt><dd>investigational, no approval</dd>
-  <dt>Geographic scope</dt><dd>US only, 6 sites</dd>
-</dl>
-
-
-**Next steps**
-
-1. Resolve the HLA-A*02:01 and HA-1 typing before contacting sites
-2. Email BlueSphere&#x27;s medical director at nkhan@bluespherebio.com (252-347-4938) to check slot availability at the nearest of the six sites
-3. Treat this as a parallel option to TSC-100 and the Fred Hutch program so a slot can be found across whichever site opens first
-
-
-**Trial pathways**
-
-<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
-<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
-<tbody>
-<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT06704152">NCT06704152</a></td><td class="col-phase">1/2</td><td class="col-indication">Recurrent AML/ALL/MDS undergoing HLA-matched allo-HCT</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-weak">eligible: unconfirmed</span></td><td class="col-contact"><strong>Nawazish Khan, MD (Medical Director, BlueSphere Bio)</strong><br><a href="mailto:nkhan@bluespherebio.com">nkhan@bluespherebio.com</a><br><code>252-347-4938</code><br><a href="https://clinicaltrials.gov/study/NCT06704152">trial sites</a></td><td class="col-notes">6 US sites recruiting (City of Hope, Moffitt, Michigan, others). Same A*02:01 + recipient HA-1(H)+/donor HA-1- gate as TScan and Fred Hutch.</td></tr>
-</tbody></table></div></div>
-
-
-**Manufacturer / sponsor contact**
-
-<dl class="profile-grid">
-  <dt>Company</dt><dd>BlueSphere Bio</dd>
-  <dt>Country</dt><dd>United States</dd>
-  <dt>Medical info phone</dt><dd><code>252-347-4938</code></dd>
-  <dt>Medical info email</dt><dd><a href="mailto:nkhan@bluespherebio.com">nkhan@bluespherebio.com</a></dd>
-</dl>
-
-
----
-
-### 9. BSB-2002 (mutant-NPM1-directed TCR-T) <small><code>BSB-2002</code></small> { #access-9 }
-
-**Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** other &nbsp; **Verified:** 2026-07-24
-
-
-BSB-2002 carries the same NPM1 target-absence problem as the Miltenyi program plus a disease-state mismatch, since it enrolls MRD-positive patients and this patient is in florid 85%-blast relapse and NPM1-wild-type. It is informational for the A*02:01 NPM1 TCR-T landscape, not an enrollment route here.
-
-
-<dl class="profile-grid">
-  <dt>Regulatory</dt><dd>investigational, no approval</dd>
-  <dt>Geographic scope</dt><dd>US only, single site (St Louis)</dd>
-</dl>
-
-
-**Next steps**
-
-1. Do not pursue: the patient is NPM1-wild-type and not in the MRD-positive population this trial enrolls
-2. Revisit only if relapse NGS shows a susceptible NPM1 mutation type A/D/G/H and disease is brought to MRD
-
-
-**Trial pathways**
-
-<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
-<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
-<tbody>
-<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT07566585">NCT07566585</a></td><td class="col-phase">1</td><td class="col-indication">NPM1-mutated AML, MRD-positive after treatment</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><strong>Nawazish Khan, MD (Medical Director, BlueSphere Bio)</strong><br><a href="mailto:nkhan@bluespherebio.com">nkhan@bluespherebio.com</a><br><code>252-347-4938</code><br><a href="https://clinicaltrials.gov/study/NCT07566585">trial sites</a></td><td class="col-notes">Single site, Washington University, St Louis. Enrolls the MRD-positive setting; this patient is in overt high-burden relapse and NPM1-wild-type. Three mismatches: NPM1 target absent, disease-state mismatch, and pending A*02:01.</td></tr>
-</tbody></table></div></div>
-
-
-**Manufacturer / sponsor contact**
-
-<dl class="profile-grid">
-  <dt>Company</dt><dd>BlueSphere Bio</dd>
-  <dt>Country</dt><dd>United States</dd>
-  <dt>Medical info phone</dt><dd><code>252-347-4938</code></dd>
-  <dt>Medical info email</dt><dd><a href="mailto:nkhan@bluespherebio.com">nkhan@bluespherebio.com</a></dd>
-</dl>
-
-
----
-
-### 10. CBX-250 (CG1/HLA-A*02:01 TCR-mimetic T-cell engager) <small><code>CBX-250, CBX250, CROSSCHECK-001</code></small> { #access-10 }
-
-**Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** bispecific_other &nbsp; **Verified:** 2026-07-24
-
-
-CBX-250 sits on the same HLA-A*02:01 axis as the HA-1/HA-2 and WT1 options, but as an off-the-shelf T-cell engager it skips the cell-manufacturing wait, which matters in a fast-moving 85%-blast relapse. It is recruiting at 11 US sites and allows prior transplant after 60 days. It stays a first-in-human phase 1 with no efficacy data and the usual cytokine-release risk, and the A*02:01 typing is still pending.
-
-
-<dl class="profile-grid">
-  <dt>Regulatory</dt><dd>investigational, first-in-human</dd>
-  <dt>Geographic scope</dt><dd>US only, 11 sites</dd>
-</dl>
-
-
-**Next steps**
-
-1. Confirm HLA-A*02:01 status, the single gating biomarker for this engager
-2. Email rachel.ghiraldi@crossbowtx.com (857-301-6432) to identify the nearest active site and confirm the 60-day post-transplant window is met
-3. Weigh the faster off-the-shelf timeline against the lack of efficacy data when sequencing against the HA-1 cell products
-4. Plan CRS monitoring given the T-cell-engager mechanism and high blast burden
-
-
-**Trial pathways**
-
-<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
-<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
-<tbody>
-<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT06994676">NCT06994676</a></td><td class="col-phase">1</td><td class="col-indication">R/R AML / high-risk MDS / CMML / CML</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-weak">eligible: unconfirmed</span></td><td class="col-contact"><strong>Rachel Ghiraldi</strong><br><a href="mailto:rachel.ghiraldi@crossbowtx.com">rachel.ghiraldi@crossbowtx.com</a><br><code>857-301-6432</code><br><a href="https://clinicaltrials.gov/study/NCT06994676">trial sites</a></td><td class="col-notes">11 US sites recruiting (City of Hope, Stanford, Moffitt, others). Off-the-shelf subcutaneous T-cell engager against CG1 on HLA-A*02:01, so no cell-manufacturing lead time. Prior allo-HCT allowed after 60 days. Gated on A*02:01; phase 1 with no efficacy readout and T-cell-engager CRS risk.</td></tr>
-</tbody></table></div></div>
-
-
-**Manufacturer / sponsor contact**
-
-<dl class="profile-grid">
-  <dt>Company</dt><dd>Crossbow Therapeutics</dd>
-  <dt>Country</dt><dd>United States</dd>
-  <dt>Medical info phone</dt><dd><code>857-301-6432</code></dd>
-  <dt>Medical info email</dt><dd><a href="mailto:rachel.ghiraldi@crossbowtx.com">rachel.ghiraldi@crossbowtx.com</a></dd>
-</dl>
-
-
----
-
-### 11. CD123-CD33 compound CAR-T (cCAR) <small><code>CD123-CD33 cCAR</code></small> { #access-11 }
-
-**Access status:** <span class="fit-badge fit-partial">Clinical trial</span> <span class="fit-badge fit-weak">Not yet accessible</span> &nbsp; **Modality:** CAR-T &nbsp; **Verified:** 2026-07-24
-
-
-The dual CD123/CD33 compound CAR-T matches the patient&#x27;s antigen profile and the escape-hedging logic the profile calls for, but the ClinicalTrials.gov record carries an unknown (stale) recruitment status and the listed sites are in China. Whether the trial is still open is unverified, and there is no US site. Confirm status with the sponsor before treating this as reachable.
-
-
-<dl class="profile-grid">
-  <dt>Regulatory</dt><dd>investigational, no approval</dd>
-  <dt>Geographic scope</dt><dd>Listed sites in China; US-based sponsor; status unverified</dd>
-</dl>
-
-
-**Next steps**
-
-1. Email the sponsor at kevin.pinz@icellgene.com (631-538-6218) to confirm whether the trial is still enrolling and whether any US site exists
-2. Confirm a US/travel-accessible site is accepting the patient&#x27;s geography before further workup
-3. Quantify CD33 and CD123 antigen density to support dual-targeting rationale
-
-
-**Trial pathways**
-
-<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
-<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
-<tbody>
-<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT04156256">NCT04156256</a></td><td class="col-phase">early phase 1</td><td class="col-indication">R/R high-risk AML / MDS</td><td class="col-status">unknown</td><td class="col-eligibility"><span class="fit-badge fit-weak">eligible: unconfirmed</span></td><td class="col-contact"><strong>Kevin Pinz</strong><br><a href="mailto:kevin.pinz@icellgene.com">kevin.pinz@icellgene.com</a><br><code>6315386218</code><br><a href="https://clinicaltrials.gov/study/NCT04156256">trial sites</a></td><td class="col-notes">Registry status is UNKNOWN (record not recently updated); sites listed in China (Chengdu, Shenzhen). Co-targets both CD123 and CD33, the dual strategy the profile calls for.</td></tr>
-</tbody></table></div></div>
-
-
-**Manufacturer / sponsor contact**
-
-<dl class="profile-grid">
-  <dt>Company</dt><dd>iCell Gene Therapeutics</dd>
-  <dt>Country</dt><dd>United States</dd>
-  <dt>Medical info phone</dt><dd><code>6315386218</code></dd>
-  <dt>Medical info email</dt><dd><a href="mailto:kevin.pinz@icellgene.com">kevin.pinz@icellgene.com</a></dd>
-  <dt>Notes</dt><dd>US-based sponsor with listed trial sites in China; confirm whether any US site or an updated protocol is active.</dd>
-</dl>
-
-
----
-
-### 12. CLL-1/CD33/CD123-directed CAR-T <small><code>CLL-1/CD33/CD123 CAR-T</code></small> { #access-12 }
+### 9. CLL-1/CD33/CD123-directed CAR-T <small><code>CLL-1/CD33/CD123 CAR-T</code></small> { #access-9 }
 
 **Access status:** <span class="fit-badge fit-partial">Clinical trial</span> <span class="fit-badge fit-weak">Not yet accessible</span> &nbsp; **Modality:** CAR-T &nbsp; **Verified:** 2026-07-24
 
@@ -583,24 +451,25 @@ This multi-antigen CAR-T covers CD33 and CD123 and is recruiting, but only at a 
 
 ---
 
-### 13. Eprenetapopt (APR-246, pan-p53 reactivator) <small><code>eprenetapopt, APR-246, PRIMA-1MET</code></small> { #access-13 }
+### 10. CD123-CD33 compound CAR-T (cCAR) <small><code>CD123-CD33 cCAR</code></small> { #access-10 }
 
-**Access status:** <span class="fit-badge fit-none">Unavailable</span> &nbsp; **Modality:** small_molecule &nbsp; **Verified:** 2026-07-24
+**Access status:** <span class="fit-badge fit-partial">Clinical trial</span> <span class="fit-badge fit-weak">Not yet accessible</span> &nbsp; **Modality:** CAR-T &nbsp; **Verified:** 2026-07-24
 
 
-Eprenetapopt is a pan-p53 reactivator, not Y220C-selective, and the profile already flags it as low-yield. Its pivotal TP53-mutant MDS phase 3 missed its endpoint and myeloid development has largely stopped, so there is no meaningful open trial route for this patient. If a p53-reactivation strategy is pursued, the Y220C-selective rezatapopt is the better-supported track, contingent on confirming a Y220C variant.
+The dual CD123/CD33 compound CAR-T matches the patient&#x27;s antigen profile and the escape-hedging logic the profile calls for, but the ClinicalTrials.gov record carries an unknown (stale) recruitment status and the listed sites are in China. Whether the trial is still open is unverified, and there is no US site. Confirm status with the sponsor before treating this as reachable.
 
 
 <dl class="profile-grid">
-  <dt>Regulatory</dt><dd>investigational; myeloid development largely halted after negative phase 3</dd>
-  <dt>Geographic scope</dt><dd>No meaningful open AML route</dd>
+  <dt>Regulatory</dt><dd>investigational, no approval</dd>
+  <dt>Geographic scope</dt><dd>Listed sites in China; US-based sponsor; status unverified</dd>
 </dl>
 
 
 **Next steps**
 
-1. No action recommended; the pan-reactivator track is low-yield and myeloid development has stalled
-2. If TP53 Y220C is confirmed, pursue rezatapopt (NCT06616636) rather than eprenetapopt
+1. Email the sponsor at kevin.pinz@icellgene.com (631-538-6218) to confirm whether the trial is still enrolling and whether any US site exists
+2. Confirm a US/travel-accessible site is accepting the patient&#x27;s geography before further workup
+3. Quantify CD33 and CD123 antigen density to support dual-targeting rationale
 
 
 **Trial pathways**
@@ -608,16 +477,143 @@ Eprenetapopt is a pan-p53 reactivator, not Y220C-selective, and the profile alre
 <div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
 <thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
 <tbody>
-<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT04214860">NCT04214860</a></td><td class="col-phase">1</td><td class="col-indication">TP53-mutant AML</td><td class="col-status">completed</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><a href="https://clinicaltrials.gov/study/NCT04214860">trial sites</a></td><td class="col-notes">Completed. The randomized phase 3 in TP53-mutant MDS missed its primary endpoint and myeloid development largely stopped. Eprenetapopt is a pan-p53 reactivator, not Y220C-selective, which the profile flags as low-yield.</td></tr>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT04156256">NCT04156256</a></td><td class="col-phase">early phase 1</td><td class="col-indication">R/R high-risk AML / MDS</td><td class="col-status">unknown</td><td class="col-eligibility"><span class="fit-badge fit-weak">eligible: unconfirmed</span></td><td class="col-contact"><strong>Kevin Pinz</strong><br><a href="mailto:kevin.pinz@icellgene.com">kevin.pinz@icellgene.com</a><br><code>6315386218</code><br><a href="https://clinicaltrials.gov/study/NCT04156256">trial sites</a></td><td class="col-notes">Registry status is UNKNOWN (record not recently updated); sites listed in China (Chengdu, Shenzhen). Co-targets both CD123 and CD33, the dual strategy the profile calls for.</td></tr>
 </tbody></table></div></div>
 
 
 **Manufacturer / sponsor contact**
 
 <dl class="profile-grid">
-  <dt>Company</dt><dd>Aprea Therapeutics</dd>
+  <dt>Company</dt><dd>iCell Gene Therapeutics</dd>
   <dt>Country</dt><dd>United States</dd>
-  <dt>Notes</dt><dd>Myeloid development largely discontinued after the negative TP53-mutant MDS phase 3; no open enrolling AML route identified.</dd>
+  <dt>Medical info phone</dt><dd><code>6315386218</code></dd>
+  <dt>Medical info email</dt><dd><a href="mailto:kevin.pinz@icellgene.com">kevin.pinz@icellgene.com</a></dd>
+  <dt>Notes</dt><dd>US-based sponsor with listed trial sites in China; confirm whether any US site or an updated protocol is active.</dd>
+</dl>
+
+
+---
+
+### 11. Flotetuzumab (MGD006, CD123xCD3 DART) <small><code>flotetuzumab, MGD006, S80880</code></small> { #access-11 }
+
+**Access status:** <span class="fit-badge fit-none">Unavailable</span> &nbsp; **Modality:** bispecific_other &nbsp; **Verified:** 2026-07-24
+
+
+Flotetuzumab has some of the most relevant salvage data in the CD123 space, including a response signal specifically in TP53-abnormal AML, but MacroGenics deprioritized the program and the trial is terminated. There is no enrollment or expanded-access route. It remains useful as mechanism support for the CD123 bispecific idea, which is otherwise covered by CBX-250.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>investigational; program deprioritized</dd>
+  <dt>Geographic scope</dt><dd>No open access (terminated)</dd>
+</dl>
+
+
+**Next steps**
+
+1. No action; the program is deprioritized with no open route
+2. For a CD123-directed T-cell-engager approach, pursue CBX-250 (NCT06994676) instead
+
+
+**Trial pathways**
+
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT02152956">NCT02152956</a></td><td class="col-phase">1/2</td><td class="col-indication">Primary induction failure / early-relapse R/R AML</td><td class="col-status">terminated</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><a href="https://clinicaltrials.gov/study/NCT02152956">trial sites</a></td><td class="col-notes">Terminated. Documented salvage responses (CR/CRh 26.7% in PIF/ER) and a signal in TP53-abnormal AML, but MacroGenics deprioritized the program. Mechanism evidence, not an open route.</td></tr>
+</tbody></table></div></div>
+
+
+**Manufacturer / sponsor contact**
+
+<dl class="profile-grid">
+  <dt>Company</dt><dd>MacroGenics</dd>
+  <dt>Country</dt><dd>United States</dd>
+  <dt>Notes</dt><dd>CD123xCD3 DART program deprioritized; no open trial or expanded-access route identified.</dd>
+</dl>
+
+
+---
+
+### 12. Vibecotamab (XmAb14045, CD123xCD3 bispecific) <small><code>vibecotamab, XmAb14045</code></small> { #access-12 }
+
+**Access status:** <span class="fit-badge fit-none">Unavailable</span> &nbsp; **Modality:** bispecific_other &nbsp; **Verified:** 2026-07-24
+
+
+Vibecotamab was a second CD123xCD3 bispecific, studied in MRD-positive disease and now discontinued by Xencor. The disease-state mismatch and the program&#x27;s closure both rule it out. It rounds out the CD123 bispecific sub-pipeline for completeness.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>investigational; program discontinued</dd>
+  <dt>Geographic scope</dt><dd>No open access (terminated)</dd>
+</dl>
+
+
+**Next steps**
+
+1. No action; the program is discontinued
+
+
+**Trial pathways**
+
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT05285813">NCT05285813</a></td><td class="col-phase">2</td><td class="col-indication">MRD-positive AML / MDS</td><td class="col-status">terminated</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><a href="https://clinicaltrials.gov/study/NCT05285813">trial sites</a></td><td class="col-notes">Terminated. Studied in MRD-positive disease, which does not match the patient&#x27;s overt high-burden relapse. Xencor discontinued the program.</td></tr>
+</tbody></table></div></div>
+
+
+**Manufacturer / sponsor contact**
+
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Xencor</dd>
+  <dt>Country</dt><dd>United States</dd>
+  <dt>Notes</dt><dd>CD123xCD3 bispecific discontinued; no open route.</dd>
+</dl>
+
+
+---
+
+
+## Wt1 interventions (5)
+
+### 13. Multiantigen leukemia-specific donor T cells (PRAME/WT1/Survivin/NY-ESO-1) <small><code>TAA-T, tumor-associated antigen lymphocytes, TAA-specific CTL, mLST</code></small> { #access-13 }
+
+**Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** other &nbsp; **Verified:** 2026-07-24
+
+
+The multiantigen TAA-T product hits WT1 and PRAME without leaning on a single HLA-A*02:01 restriction, which makes it useful cover if the patient types A*02:01-negative. It is recruiting in the post-transplant setting the patient is heading toward, at Children&#x27;s National and Johns Hopkins. The near-term to-do is confirming WT1 and PRAME expression on the blasts, since eligibility is built around antigen presence and the allo-HCT platform.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>investigational, no approval</dd>
+  <dt>Geographic scope</dt><dd>US only, 2 sites (Washington DC, Baltimore)</dd>
+</dl>
+
+
+**Next steps**
+
+1. Confirm WT1 and PRAME expression on the patient&#x27;s blasts, which drives eligibility here
+2. Email fhoq@childrensnational.org (202-476-3634) to confirm adult enrollment and the post-HCT timing the protocol expects
+3. Note this avoids the A*02:01 gate, so keep it live even if HLA typing forecloses the restricted TCR options
+4. Discuss whether the donor-derived product can be generated from the existing sibling donor
+
+
+**Trial pathways**
+
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT02203903">NCT02203903</a></td><td class="col-phase">1</td><td class="col-indication">Very-high-risk AML/ALL/MDS, largely post-allo-HCT</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-weak">eligible: unconfirmed</span></td><td class="col-contact"><strong>Fahmida Hoq, MBBS, MS</strong><br><a href="mailto:fhoq@childrensnational.org">fhoq@childrensnational.org</a><br><code>202-476-3634</code><br><a href="https://clinicaltrials.gov/study/NCT02203903">trial sites</a></td><td class="col-notes">Two US sites (Children&#x27;s National, Washington DC; Johns Hopkins, Baltimore). Primes donor T cells against PRAME, WT1 and Survivin, so it does not depend on a single HLA-A*02:01 gate. Published precedent (Lulla 2021) showed responses in the active-disease cohort. Confirm WT1/PRAME expression on the blasts.</td></tr>
+</tbody></table></div></div>
+
+
+**Manufacturer / sponsor contact**
+
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Children&#x27;s National Hospital / Catherine Bollard (academic sponsor)</dd>
+  <dt>Country</dt><dd>United States</dd>
+  <dt>Medical info phone</dt><dd><code>202-476-3634</code></dd>
+  <dt>Medical info email</dt><dd><a href="mailto:fhoq@childrensnational.org">fhoq@childrensnational.org</a></dd>
 </dl>
 
 
@@ -665,91 +661,7 @@ FH-WT1-E50 is the current WT1 A*02:01 TCR-T, but it enrolls MRD-positive AML and
 
 ---
 
-### 15. MB-dNPM1-TCR.1 (mutant-NPM1-directed TCR-T) <small><code>MB-dNPM1-TCR.1, dNPM1-TCR.1</code></small> { #access-15 }
-
-**Access status:** <span class="fit-badge fit-partial">Clinical trial</span> <span class="fit-badge fit-weak">Not yet accessible</span> &nbsp; **Modality:** other &nbsp; **Verified:** 2026-07-24
-
-
-This option is off the table on biology: the TCR targets a mutant-NPM1 neoantigen and the patient is NPM1-wild-type, so the target is absent unless relapse NGS turns up an NPM1 mutation. It is also single-site in the Netherlands with a pending A*02:01 gate. Kept in the guide for landscape completeness rather than as a route.
-
-
-<dl class="profile-grid">
-  <dt>Regulatory</dt><dd>investigational, no approval</dd>
-  <dt>Geographic scope</dt><dd>EU only, single site (Leiden, Netherlands)</dd>
-</dl>
-
-
-**Next steps**
-
-1. Do not pursue unless relapse NGS documents a susceptible NPM1 mutation, which the current panels do not show
-2. If an NPM1 mutation ever appears, contact clinicaltrials.gov@miltenyi.com to check A*02:01 eligibility and whether a US site opens
-
-
-**Trial pathways**
-
-<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
-<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
-<tbody>
-<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT06424340">NCT06424340</a></td><td class="col-phase">1/2</td><td class="col-indication">Relapsed/refractory NPM1-mutated AML</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><strong>Jorg Liebmann</strong><br><a href="mailto:clinicaltrials.gov@miltenyi.com">clinicaltrials.gov@miltenyi.com</a><br><code>+49151-2034-4392</code><br><a href="https://clinicaltrials.gov/study/NCT06424340">trial sites</a></td><td class="col-notes">Single site, Leiden University Medical Center (Netherlands). TCR reads a mutant-NPM1 neoantigen and this patient is NPM1-wild-type, so the target antigen is absent. Also gated on A*02:01.</td></tr>
-</tbody></table></div></div>
-
-
-**Manufacturer / sponsor contact**
-
-<dl class="profile-grid">
-  <dt>Company</dt><dd>Miltenyi Biomedicine</dd>
-  <dt>Country</dt><dd>Germany</dd>
-  <dt>Medical info phone</dt><dd><code>+49151-2034-4392</code></dd>
-  <dt>Medical info email</dt><dd><a href="mailto:clinicaltrials.gov@miltenyi.com">clinicaltrials.gov@miltenyi.com</a></dd>
-</dl>
-
-
----
-
-### 16. Multiantigen leukemia-specific donor T cells (PRAME/WT1/Survivin/NY-ESO-1) <small><code>TAA-T, tumor-associated antigen lymphocytes, TAA-specific CTL, mLST</code></small> { #access-16 }
-
-**Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** other &nbsp; **Verified:** 2026-07-24
-
-
-The multiantigen TAA-T product hits WT1 and PRAME without leaning on a single HLA-A*02:01 restriction, which makes it useful cover if the patient types A*02:01-negative. It is recruiting in the post-transplant setting the patient is heading toward, at Children&#x27;s National and Johns Hopkins. The near-term to-do is confirming WT1 and PRAME expression on the blasts, since eligibility is built around antigen presence and the allo-HCT platform.
-
-
-<dl class="profile-grid">
-  <dt>Regulatory</dt><dd>investigational, no approval</dd>
-  <dt>Geographic scope</dt><dd>US only, 2 sites (Washington DC, Baltimore)</dd>
-</dl>
-
-
-**Next steps**
-
-1. Confirm WT1 and PRAME expression on the patient&#x27;s blasts, which drives eligibility here
-2. Email fhoq@childrensnational.org (202-476-3634) to confirm adult enrollment and the post-HCT timing the protocol expects
-3. Note this avoids the A*02:01 gate, so keep it live even if HLA typing forecloses the restricted TCR options
-4. Discuss whether the donor-derived product can be generated from the existing sibling donor
-
-
-**Trial pathways**
-
-<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
-<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
-<tbody>
-<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT02203903">NCT02203903</a></td><td class="col-phase">1</td><td class="col-indication">Very-high-risk AML/ALL/MDS, largely post-allo-HCT</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-weak">eligible: unconfirmed</span></td><td class="col-contact"><strong>Fahmida Hoq, MBBS, MS</strong><br><a href="mailto:fhoq@childrensnational.org">fhoq@childrensnational.org</a><br><code>202-476-3634</code><br><a href="https://clinicaltrials.gov/study/NCT02203903">trial sites</a></td><td class="col-notes">Two US sites (Children&#x27;s National, Washington DC; Johns Hopkins, Baltimore). Primes donor T cells against PRAME, WT1 and Survivin, so it does not depend on a single HLA-A*02:01 gate. Published precedent (Lulla 2021) showed responses in the active-disease cohort. Confirm WT1/PRAME expression on the blasts.</td></tr>
-</tbody></table></div></div>
-
-
-**Manufacturer / sponsor contact**
-
-<dl class="profile-grid">
-  <dt>Company</dt><dd>Children&#x27;s National Hospital / Catherine Bollard (academic sponsor)</dd>
-  <dt>Country</dt><dd>United States</dd>
-  <dt>Medical info phone</dt><dd><code>202-476-3634</code></dd>
-  <dt>Medical info email</dt><dd><a href="mailto:fhoq@childrensnational.org">fhoq@childrensnational.org</a></dd>
-</dl>
-
-
----
-
-### 17. NTLA-5001 (CRISPR-engineered WT1-directed TCR-T) <small><code>NTLA-5001</code></small> { #access-17 }
+### 15. NTLA-5001 (CRISPR-engineered WT1-directed TCR-T) <small><code>NTLA-5001</code></small> { #access-15 }
 
 **Access status:** <span class="fit-badge fit-none">Unavailable</span> &nbsp; **Modality:** other &nbsp; **Verified:** 2026-07-24
 
@@ -789,26 +701,24 @@ Intellia terminated the NTLA-5001 WT1 TCR-T program in AML, so there is no enrol
 
 ---
 
-### 18. Revumenib (menin inhibitor) <small><code>revumenib, SNDX-5613, Revuforj</code></small> { #access-18 }
+### 16. WT1-TCRC4 EBV-specific CD8+ Tcm (Chapuis/Greenberg) <small><code>WT1-TCRc4, WT1 TCR Tcm</code></small> { #access-16 }
 
-**Access status:** <span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** small_molecule &nbsp; **Verified:** 2026-07-24
+**Access status:** <span class="fit-badge fit-none">Unavailable</span> &nbsp; **Modality:** other &nbsp; **Verified:** 2026-07-24
 
 
-Revumenib is FDA-approved, so off-label prescription is technically a path, but the target is effectively absent: the patient has KMT2A amplification rather than the KMT2A rearrangement (or NPM1 mutation) that menin inhibition depends on, so benefit is unproven and off-label coverage would be hard to secure. The AUGMENT-101 trial is recruiting but gates on the rearrangement the patient does not have. This is landscape completeness more than an actionable route.
+The Chapuis WT1-TCRc4 work anchors the evidence that an A*02:01 WT1 TCR-T can prevent post-transplant AML relapse, but the trial is completed and the product has given way to FH-WT1-E50. There is no enrollment route to this specific construct. Follow the successor program instead.
 
 
 <dl class="profile-grid">
-  <dt>Regulatory</dt><dd>FDA-approved (Revuforj, KMT2A-translocation acute leukemia and NPM1-mutated AML); off-label for this patient</dd>
-  <dt>Guidelines</dt><dd>NCCN-listed for KMT2A-rearranged and NPM1-mutated R/R AML; off-guideline for KMT2A amplification</dd>
-  <dt>Geographic scope</dt><dd>US; approved drug, trial recruiting but biomarker-mismatched</dd>
+  <dt>Regulatory</dt><dd>investigational; study completed</dd>
+  <dt>Geographic scope</dt><dd>No open access (study completed)</dd>
 </dl>
 
 
 **Next steps**
 
-1. Recognize the biomarker mismatch first: KMT2A amplification is not the KMT2A rearrangement menin inhibitors target, and the patient is NPM1-wild-type
-2. Only if relapse NGS documents a KMT2A rearrangement or NPM1 mutation, contact Syndax at clinicaltrials@syndax.com (781-419-1400) for AUGMENT-101 or medinfo@syndax.com for off-label discussion
-3. The &lt;40 kg expanded-access program does not apply to this adult patient
+1. Treat as precedent only; the open WT1 TCR-T route is FH-WT1-E50 (NCT07645469)
+2. Direct any WT1 TCR-T interest to the Fred Hutch immunotherapy intake line for the current protocol
 
 
 **Trial pathways**
@@ -816,27 +726,67 @@ Revumenib is FDA-approved, so off-label prescription is technically a path, but 
 <div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
 <thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
 <tbody>
-<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT04065399">NCT04065399</a></td><td class="col-phase">1/2</td><td class="col-indication">KMT2A-rearranged relapsed/refractory acute leukemia</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><strong>Syndax Pharmaceuticals</strong><br><a href="mailto:clinicaltrials@syndax.com">clinicaltrials@syndax.com</a><br><code>781-419-1400</code><br><a href="https://clinicaltrials.gov/study/NCT04065399">trial sites</a></td><td class="col-notes">Recruiting at 57 sites, but enrolls KMT2A rearrangement (or NPM1 mutation). This patient has KMT2A amplification, a distinct lesion, and is NPM1-wild-type, so does not meet the biomarker gate.</td></tr>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT01640301">NCT01640301</a></td><td class="col-phase">1/2</td><td class="col-indication">High-risk AML, post-HCT relapse prophylaxis</td><td class="col-status">completed</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><a href="https://clinicaltrials.gov/study/NCT01640301">trial sites</a></td><td class="col-notes">Completed. This was a relapse-prophylaxis product (RFS 100% at median 44 mo in 12 patients) since succeeded by FH-WT1-E50. No open slot.</td></tr>
 </tbody></table></div></div>
 
 
 **Manufacturer / sponsor contact**
 
 <dl class="profile-grid">
-  <dt>Company</dt><dd>Syndax Pharmaceuticals</dd>
+  <dt>Company</dt><dd>Fred Hutchinson Cancer Center (academic)</dd>
   <dt>Country</dt><dd>United States</dd>
-  <dt>Medical info phone</dt><dd><code>781-419-1400</code></dd>
-  <dt>Medical info email</dt><dd><a href="mailto:medinfo@syndax.com">medinfo@syndax.com</a></dd>
-  <dt>Notes</dt><dd>Expanded access NCT05918913 exists but only for patients under 40 kg, so it does not apply here. Ex-US managed-access program via World Orphan Drug Alliance for territories where Revuforj is not approved.</dd>
+  <dt>Medical info phone</dt><dd><code>206-606-4668</code></dd>
+  <dt>Medical info email</dt><dd><a href="mailto:immunotherapy@fredhutch.org">immunotherapy@fredhutch.org</a></dd>
+  <dt>Notes</dt><dd>Legacy program; successor is FH-WT1-E50 (NCT07645469).</dd>
 </dl>
-
-
-**Payer / coverage notes.** Approved on-label for KMT2A-translocation acute leukemia and NPM1-mutated AML. This patient has neither lesion (KMT2A amplification, NPM1-wild-type), so use would be off-label with the target essentially absent, making both payer coverage and clinical rationale weak.
 
 
 ---
 
-### 19. Rezatapopt (PC14586, Y220C-selective p53 reactivator) <small><code>rezatapopt, PC14586</code></small> { #access-19 }
+### 17. WT1-siTCR gene-transduced lymphocytes (TBI-1301) <small><code>WT1-siTCR, TBI-1301</code></small> { #access-17 }
+
+**Access status:** <span class="fit-badge fit-none">Unavailable</span> &nbsp; **Modality:** other &nbsp; **Verified:** 2026-07-24
+
+
+This A*24:02-restricted WT1-siTCR is the fallback lever the profile flags if the patient types A*02:01-negative, but the published work is a small completed Japanese academic cohort with no open successor trial in AML or MDS. It is not an accessible route today. It stays in the guide so its absence is not mistaken for an oversight on the A*24:02 branch.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>investigational; early-phase study completed</dd>
+  <dt>Geographic scope</dt><dd>Japan academic only; no current open route</dd>
+</dl>
+
+
+**Next steps**
+
+1. Prioritise resolving HLA-A*02:01 first; this branch only matters if that types negative
+2. If A*02:01-negative and A*24:02-positive, ask academic transplant centers whether any current A*24:02 WT1 cellular program is open, since this specific TBI-1301 AML protocol is not
+
+
+**Trial pathways**
+
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct">—</td><td class="col-phase">1</td><td class="col-indication">Refractory AML / high-risk MDS, HLA-A*24:02</td><td class="col-status">completed</td><td class="col-eligibility"><span class="fit-badge fit-weak">eligible: unconfirmed</span></td><td class="col-contact">—</td><td class="col-notes">Small first-in-human Japanese academic cohort (n=8, PMID 28860210). No current open successor trial identified for the A*24:02 WT1-siTCR in AML/MDS. Takara Bio&#x27;s active siTCR development has shifted to NY-ESO-1 (TBI-1301) in solid tumors.</td></tr>
+</tbody></table></div></div>
+
+
+**Manufacturer / sponsor contact**
+
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Mie University / Takara Bio</dd>
+  <dt>Country</dt><dd>Japan</dd>
+  <dt>Notes</dt><dd>Academic first-in-human work; no published open AML/MDS enrollment route. Would be relevant only on the A*24:02 branch if the patient types A*02:01-negative.</dd>
+</dl>
+
+
+---
+
+
+## Tp53 Y220C interventions (1)
+
+### 18. Rezatapopt (PC14586, Y220C-selective p53 reactivator) <small><code>rezatapopt, PC14586</code></small> { #access-18 }
 
 **Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** small_molecule &nbsp; **Verified:** 2026-07-24
 
@@ -884,98 +834,15 @@ Rezatapopt is the actionable TP53 handle only if the aberration is confirmed as 
 
 ---
 
-### 20. TSC-100 (donor-derived HA-1-specific TCR-T) <small><code>TSC-100, HA-1 TCR-T</code></small> { #access-20 }
 
-**Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** other &nbsp; **Verified:** 2026-07-24
+## Prame interventions (1)
 
+### 19. BPX-701 (PRAME TCR-T with iCasp9 safety switch) + rimiducid <small><code>BPX-701</code></small> { #access-19 }
 
-TSC-100 is the commercial HA-1 TCR-T given after a fresh HLA-matched allo-HCT, and the ALLOHA trial is recruiting across 21 US sites, so geography is far less of a barrier than the single-site Fred Hutch program. Enrollment turns on HLA-A*02:01 plus a recipient HA-1(H)-positive / donor HA-1-negative mismatch, both untyped. The design lines up with the curative second-transplant plan.
-
-
-<dl class="profile-grid">
-  <dt>Regulatory</dt><dd>investigational, no approval</dd>
-  <dt>Geographic scope</dt><dd>US only, 21 sites</dd>
-</dl>
+**Access status:** <span class="fit-badge fit-none">Unavailable</span> &nbsp; **Modality:** other &nbsp; **Verified:** 2026-07-24
 
 
-**Next steps**
-
-1. Resolve HLA-A*02:01 and HA-1 genotypes for patient and sibling donor first, since the whole arm hinges on the mismatch direction
-2. Call TScan medical affairs at (857) 399-9500 or email medicalaffairs@tscan.com to find the nearest of the 21 sites and confirm slot availability
-3. Confirm the protocol accepts a second transplant in a patient with a prior sibling allo-HCT
-4. Line up the HCT2 timeline with the site so the TCR-T can follow conditioning
-
-
-**Trial pathways**
-
-<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
-<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
-<tbody>
-<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT05473910">NCT05473910</a></td><td class="col-phase">1</td><td class="col-indication">R/R AML/MDS undergoing HLA-matched allo-HCT</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-weak">eligible: unconfirmed</span></td><td class="col-contact"><strong>Tim White</strong><br><a href="mailto:medicalaffairs@tscan.com">medicalaffairs@tscan.com</a><br><code>(857) 399-9500</code><br><a href="https://clinicaltrials.gov/study/NCT05473910">trial sites</a></td><td class="col-notes">21 US sites recruiting (City of Hope, Colorado, others). TSC-100 is the HA-1 arm; the product is given on the back of a fresh HLA-matched transplant with an SOC control arm. Gated on A*02:01 plus recipient HA-1(H)+/donor HA-1- mismatch.</td></tr>
-</tbody></table></div></div>
-
-
-**Manufacturer / sponsor contact**
-
-<dl class="profile-grid">
-  <dt>Company</dt><dd>TScan Therapeutics</dd>
-  <dt>Country</dt><dd>United States</dd>
-  <dt>Medical info phone</dt><dd><code>(857) 399-9500</code></dd>
-  <dt>Medical info email</dt><dd><a href="mailto:medicalaffairs@tscan.com">medicalaffairs@tscan.com</a></dd>
-  <dt>Notes</dt><dd>Central-contact line is TScan medical affairs; use the same address for compassionate-access questions.</dd>
-</dl>
-
-
----
-
-### 21. TSC-101 (donor-derived HA-2-specific TCR-T) <small><code>TSC-101, HA-2 TCR-T</code></small> { #access-21 }
-
-**Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** other &nbsp; **Verified:** 2026-07-24
-
-
-TSC-101 is the HA-2 counterpart within the same ALLOHA trial, so it opens if the patient/donor pair turns out to mismatch at HA-2 instead of HA-1. It shares the HLA-A*02:01 gate and the fresh-transplant delivery, and it is recruiting at the same US sites. Which arm applies is decided by the HA-1/HA-2 genotyping that is still pending.
-
-
-<dl class="profile-grid">
-  <dt>Regulatory</dt><dd>investigational, no approval</dd>
-  <dt>Geographic scope</dt><dd>US only, 21 sites</dd>
-</dl>
-
-
-**Next steps**
-
-1. Genotype both HA-1 and HA-2 in the patient and sibling donor, since the result selects between TSC-100 and TSC-101
-2. Use the same TScan contact (857) 399-9500 / medicalaffairs@tscan.com to discuss whichever mismatch is found
-3. Confirm prior-transplant eligibility and align with the HCT2 schedule
-
-
-**Trial pathways**
-
-<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
-<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
-<tbody>
-<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT05473910">NCT05473910</a></td><td class="col-phase">1</td><td class="col-indication">R/R AML/MDS undergoing HLA-matched allo-HCT</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-weak">eligible: unconfirmed</span></td><td class="col-contact"><strong>Tim White</strong><br><a href="mailto:medicalaffairs@tscan.com">medicalaffairs@tscan.com</a><br><code>(857) 399-9500</code><br><a href="https://clinicaltrials.gov/study/NCT05473910">trial sites</a></td><td class="col-notes">Same ALLOHA protocol as TSC-100 but keyed to HA-2. Becomes the lever if the pair mismatches at HA-2 rather than HA-1. Gated on A*02:01 plus HA-2 recipient-positive / donor-negative.</td></tr>
-</tbody></table></div></div>
-
-
-**Manufacturer / sponsor contact**
-
-<dl class="profile-grid">
-  <dt>Company</dt><dd>TScan Therapeutics</dd>
-  <dt>Country</dt><dd>United States</dd>
-  <dt>Medical info phone</dt><dd><code>(857) 399-9500</code></dd>
-  <dt>Medical info email</dt><dd><a href="mailto:medicalaffairs@tscan.com">medicalaffairs@tscan.com</a></dd>
-</dl>
-
-
----
-
-### 22. Vibecotamab (XmAb14045, CD123xCD3 bispecific) <small><code>vibecotamab, XmAb14045</code></small> { #access-22 }
-
-**Access status:** <span class="fit-badge fit-none">Unavailable</span> &nbsp; **Modality:** bispecific_other &nbsp; **Verified:** 2026-07-24
-
-
-Vibecotamab was a second CD123xCD3 bispecific, studied in MRD-positive disease and now discontinued by Xencor. The disease-state mismatch and the program&#x27;s closure both rule it out. It rounds out the CD123 bispecific sub-pipeline for completeness.
+Bellicum&#x27;s BPX-701 was the PRAME-directed TCR-T the profile lists as a third A*02:01 handle, but the trial is terminated and the company has wound down, so there is no route. For a PRAME approach, the multiantigen TAA-T program (NCT02203903) is the open alternative.
 
 
 <dl class="profile-grid">
@@ -987,6 +854,7 @@ Vibecotamab was a second CD123xCD3 bispecific, studied in MRD-positive disease a
 **Next steps**
 
 1. No action; the program is discontinued
+2. Pursue PRAME targeting through the TAA-T multiantigen product (NCT02203903) instead
 
 
 **Trial pathways**
@@ -994,39 +862,42 @@ Vibecotamab was a second CD123xCD3 bispecific, studied in MRD-positive disease a
 <div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
 <thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
 <tbody>
-<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT05285813">NCT05285813</a></td><td class="col-phase">2</td><td class="col-indication">MRD-positive AML / MDS</td><td class="col-status">terminated</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><a href="https://clinicaltrials.gov/study/NCT05285813">trial sites</a></td><td class="col-notes">Terminated. Studied in MRD-positive disease, which does not match the patient&#x27;s overt high-burden relapse. Xencor discontinued the program.</td></tr>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT02743611">NCT02743611</a></td><td class="col-phase">1/2</td><td class="col-indication">Acute myeloid leukemia / MDS</td><td class="col-status">terminated</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><a href="https://clinicaltrials.gov/study/NCT02743611">trial sites</a></td><td class="col-notes">Terminated. Bellicum&#x27;s PRAME TCR-T; the company has since wound down. Gated on A*02:01 and PRAME expression.</td></tr>
 </tbody></table></div></div>
 
 
 **Manufacturer / sponsor contact**
 
 <dl class="profile-grid">
-  <dt>Company</dt><dd>Xencor</dd>
+  <dt>Company</dt><dd>Bellicum Pharmaceuticals</dd>
   <dt>Country</dt><dd>United States</dd>
-  <dt>Notes</dt><dd>CD123xCD3 bispecific discontinued; no open route.</dd>
+  <dt>Notes</dt><dd>PRAME TCR-T discontinued; sponsor wound down operations. No successor protocol.</dd>
 </dl>
 
 
 ---
 
-### 23. WT1-TCRC4 EBV-specific CD8+ Tcm (Chapuis/Greenberg) <small><code>WT1-TCRc4, WT1 TCR Tcm</code></small> { #access-23 }
 
-**Access status:** <span class="fit-badge fit-none">Unavailable</span> &nbsp; **Modality:** other &nbsp; **Verified:** 2026-07-24
+## Tp53 interventions (1)
+
+### 20. Eprenetapopt (APR-246, pan-p53 reactivator) <small><code>eprenetapopt, APR-246, PRIMA-1MET</code></small> { #access-20 }
+
+**Access status:** <span class="fit-badge fit-none">Unavailable</span> &nbsp; **Modality:** small_molecule &nbsp; **Verified:** 2026-07-24
 
 
-The Chapuis WT1-TCRc4 work anchors the evidence that an A*02:01 WT1 TCR-T can prevent post-transplant AML relapse, but the trial is completed and the product has given way to FH-WT1-E50. There is no enrollment route to this specific construct. Follow the successor program instead.
+Eprenetapopt is a pan-p53 reactivator, not Y220C-selective, and the profile already flags it as low-yield. Its pivotal TP53-mutant MDS phase 3 missed its endpoint and myeloid development has largely stopped, so there is no meaningful open trial route for this patient. If a p53-reactivation strategy is pursued, the Y220C-selective rezatapopt is the better-supported track, contingent on confirming a Y220C variant.
 
 
 <dl class="profile-grid">
-  <dt>Regulatory</dt><dd>investigational; study completed</dd>
-  <dt>Geographic scope</dt><dd>No open access (study completed)</dd>
+  <dt>Regulatory</dt><dd>investigational; myeloid development largely halted after negative phase 3</dd>
+  <dt>Geographic scope</dt><dd>No meaningful open AML route</dd>
 </dl>
 
 
 **Next steps**
 
-1. Treat as precedent only; the open WT1 TCR-T route is FH-WT1-E50 (NCT07645469)
-2. Direct any WT1 TCR-T interest to the Fred Hutch immunotherapy intake line for the current protocol
+1. No action recommended; the pan-reactivator track is low-yield and myeloid development has stalled
+2. If TP53 Y220C is confirmed, pursue rezatapopt (NCT06616636) rather than eprenetapopt
 
 
 **Trial pathways**
@@ -1034,41 +905,42 @@ The Chapuis WT1-TCRc4 work anchors the evidence that an A*02:01 WT1 TCR-T can pr
 <div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
 <thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
 <tbody>
-<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT01640301">NCT01640301</a></td><td class="col-phase">1/2</td><td class="col-indication">High-risk AML, post-HCT relapse prophylaxis</td><td class="col-status">completed</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><a href="https://clinicaltrials.gov/study/NCT01640301">trial sites</a></td><td class="col-notes">Completed. This was a relapse-prophylaxis product (RFS 100% at median 44 mo in 12 patients) since succeeded by FH-WT1-E50. No open slot.</td></tr>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT04214860">NCT04214860</a></td><td class="col-phase">1</td><td class="col-indication">TP53-mutant AML</td><td class="col-status">completed</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><a href="https://clinicaltrials.gov/study/NCT04214860">trial sites</a></td><td class="col-notes">Completed. The randomized phase 3 in TP53-mutant MDS missed its primary endpoint and myeloid development largely stopped. Eprenetapopt is a pan-p53 reactivator, not Y220C-selective, which the profile flags as low-yield.</td></tr>
 </tbody></table></div></div>
 
 
 **Manufacturer / sponsor contact**
 
 <dl class="profile-grid">
-  <dt>Company</dt><dd>Fred Hutchinson Cancer Center (academic)</dd>
+  <dt>Company</dt><dd>Aprea Therapeutics</dd>
   <dt>Country</dt><dd>United States</dd>
-  <dt>Medical info phone</dt><dd><code>206-606-4668</code></dd>
-  <dt>Medical info email</dt><dd><a href="mailto:immunotherapy@fredhutch.org">immunotherapy@fredhutch.org</a></dd>
-  <dt>Notes</dt><dd>Legacy program; successor is FH-WT1-E50 (NCT07645469).</dd>
+  <dt>Notes</dt><dd>Myeloid development largely discontinued after the negative TP53-mutant MDS phase 3; no open enrolling AML route identified.</dd>
 </dl>
 
 
 ---
 
-### 24. WT1-siTCR gene-transduced lymphocytes (TBI-1301) <small><code>WT1-siTCR, TBI-1301</code></small> { #access-24 }
 
-**Access status:** <span class="fit-badge fit-none">Unavailable</span> &nbsp; **Modality:** other &nbsp; **Verified:** 2026-07-24
+## Unmatched interventions (5)
+
+### 21. BSB-2002 (mutant-NPM1-directed TCR-T) <small><code>BSB-2002</code></small> { #access-21 }
+
+**Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** other &nbsp; **Verified:** 2026-07-24
 
 
-This A*24:02-restricted WT1-siTCR is the fallback lever the profile flags if the patient types A*02:01-negative, but the published work is a small completed Japanese academic cohort with no open successor trial in AML or MDS. It is not an accessible route today. It stays in the guide so its absence is not mistaken for an oversight on the A*24:02 branch.
+BSB-2002 carries the same NPM1 target-absence problem as the Miltenyi program plus a disease-state mismatch, since it enrolls MRD-positive patients and this patient is in florid 85%-blast relapse and NPM1-wild-type. It is informational for the A*02:01 NPM1 TCR-T landscape, not an enrollment route here.
 
 
 <dl class="profile-grid">
-  <dt>Regulatory</dt><dd>investigational; early-phase study completed</dd>
-  <dt>Geographic scope</dt><dd>Japan academic only; no current open route</dd>
+  <dt>Regulatory</dt><dd>investigational, no approval</dd>
+  <dt>Geographic scope</dt><dd>US only, single site (St Louis)</dd>
 </dl>
 
 
 **Next steps**
 
-1. Prioritise resolving HLA-A*02:01 first; this branch only matters if that types negative
-2. If A*02:01-negative and A*24:02-positive, ask academic transplant centers whether any current A*24:02 WT1 cellular program is open, since this specific TBI-1301 AML protocol is not
+1. Do not pursue: the patient is NPM1-wild-type and not in the MRD-positive population this trial enrolls
+2. Revisit only if relapse NGS shows a susceptible NPM1 mutation type A/D/G/H and disease is brought to MRD
 
 
 **Trial pathways**
@@ -1076,17 +948,154 @@ This A*24:02-restricted WT1-siTCR is the fallback lever the profile flags if the
 <div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
 <thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
 <tbody>
-<tr><td class="col-nct">—</td><td class="col-phase">1</td><td class="col-indication">Refractory AML / high-risk MDS, HLA-A*24:02</td><td class="col-status">completed</td><td class="col-eligibility"><span class="fit-badge fit-weak">eligible: unconfirmed</span></td><td class="col-contact">—</td><td class="col-notes">Small first-in-human Japanese academic cohort (n=8, PMID 28860210). No current open successor trial identified for the A*24:02 WT1-siTCR in AML/MDS. Takara Bio&#x27;s active siTCR development has shifted to NY-ESO-1 (TBI-1301) in solid tumors.</td></tr>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT07566585">NCT07566585</a></td><td class="col-phase">1</td><td class="col-indication">NPM1-mutated AML, MRD-positive after treatment</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><strong>Nawazish Khan, MD (Medical Director, BlueSphere Bio)</strong><br><a href="mailto:nkhan@bluespherebio.com">nkhan@bluespherebio.com</a><br><code>252-347-4938</code><br><a href="https://clinicaltrials.gov/study/NCT07566585">trial sites</a></td><td class="col-notes">Single site, Washington University, St Louis. Enrolls the MRD-positive setting; this patient is in overt high-burden relapse and NPM1-wild-type. Three mismatches: NPM1 target absent, disease-state mismatch, and pending A*02:01.</td></tr>
 </tbody></table></div></div>
 
 
 **Manufacturer / sponsor contact**
 
 <dl class="profile-grid">
-  <dt>Company</dt><dd>Mie University / Takara Bio</dd>
-  <dt>Country</dt><dd>Japan</dd>
-  <dt>Notes</dt><dd>Academic first-in-human work; no published open AML/MDS enrollment route. Would be relevant only on the A*24:02 branch if the patient types A*02:01-negative.</dd>
+  <dt>Company</dt><dd>BlueSphere Bio</dd>
+  <dt>Country</dt><dd>United States</dd>
+  <dt>Medical info phone</dt><dd><code>252-347-4938</code></dd>
+  <dt>Medical info email</dt><dd><a href="mailto:nkhan@bluespherebio.com">nkhan@bluespherebio.com</a></dd>
 </dl>
+
+
+---
+
+### 22. Gemtuzumab ozogamicin (CD33 ADC) <small><code>gemtuzumab ozogamicin, Mylotarg, GO, CMA-676</code></small> { #access-22 }
+
+**Access status:** <span class="fit-badge fit-strong">Standard of care</span> &nbsp; **Modality:** ADC &nbsp; **Verified:** 2026-07-24
+
+
+Gemtuzumab is the one CD33-directed option the patient can get by routine prescription: it is FDA-approved for CD33-positive AML including relapse, matching the confirmed CD33 positivity, so no trial or off-label appeal is needed. The load-bearing caveats are efficacy and safety, not access. Single-agent depth in relapse is modest (about 30%), the adverse-cytogenetics subgroup saw no survival benefit in the Hills meta-analysis, and the VOD/hepatic risk matters before a second transplant.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>FDA-approved (Mylotarg); includes CD33-positive relapsed AML monotherapy</dd>
+  <dt>Guidelines</dt><dd>NCCN-listed for CD33-positive AML</dd>
+  <dt>Geographic scope</dt><dd>US; approved and available nationally</dd>
+</dl>
+
+
+**Next steps**
+
+1. Request quantitative CD33 antigen-density flow to support the targeting decision, since qualitative positivity does not establish ADC benefit
+2. Weigh the null adverse-cytogenetics subgroup finding against this patient&#x27;s complex/TP53-aberrant karyotype before committing
+3. Assess baseline LFTs and VOD risk given the planned HCT2
+4. For dosing or drug questions, call Pfizer medical information at 1-800-505-4426
+
+
+**Trial pathways**
+
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct">—</td><td class="col-phase">—</td><td class="col-indication">CD33-positive relapsed AML</td><td class="col-status">available</td><td class="col-eligibility"><span class="fit-badge fit-strong">eligible: yes</span></td><td class="col-contact">—</td><td class="col-notes">Pivotal monotherapy data: 30% overall remission in first relapse (Sievers 2001). Key caveat: the Hills 2014 IPD meta-analysis found no survival benefit in the adverse-cytogenetics subgroup (OR 0.99), which directly tempers benefit given this patient&#x27;s complex/TP53-aberrant karyotype.</td></tr>
+</tbody></table></div></div>
+
+
+**Manufacturer / sponsor contact**
+
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Pfizer (Wyeth)</dd>
+  <dt>Country</dt><dd>United States</dd>
+  <dt>Medical info phone</dt><dd><code>1-800-505-4426</code></dd>
+  <dt>Product information</dt><dd><a href="https://www.pfizermedical.com/mylotarg">https://www.pfizermedical.com/mylotarg</a></dd>
+  <dt>Notes</dt><dd>Pfizer US medical information 1-800-505-4426 (Mon-Fri 9:00-17:00 ET).</dd>
+</dl>
+
+
+**Payer / coverage notes.** Approved and routinely reimbursed for CD33-positive AML, so this is on-label prescription rather than an access hurdle. Hepatic/veno-occlusive-disease risk is the clinical constraint, particularly ahead of a second transplant.
+
+
+---
+
+### 23. MB-dNPM1-TCR.1 (mutant-NPM1-directed TCR-T) <small><code>MB-dNPM1-TCR.1, dNPM1-TCR.1</code></small> { #access-23 }
+
+**Access status:** <span class="fit-badge fit-partial">Clinical trial</span> <span class="fit-badge fit-weak">Not yet accessible</span> &nbsp; **Modality:** other &nbsp; **Verified:** 2026-07-24
+
+
+This option is off the table on biology: the TCR targets a mutant-NPM1 neoantigen and the patient is NPM1-wild-type, so the target is absent unless relapse NGS turns up an NPM1 mutation. It is also single-site in the Netherlands with a pending A*02:01 gate. Kept in the guide for landscape completeness rather than as a route.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>investigational, no approval</dd>
+  <dt>Geographic scope</dt><dd>EU only, single site (Leiden, Netherlands)</dd>
+</dl>
+
+
+**Next steps**
+
+1. Do not pursue unless relapse NGS documents a susceptible NPM1 mutation, which the current panels do not show
+2. If an NPM1 mutation ever appears, contact clinicaltrials.gov@miltenyi.com to check A*02:01 eligibility and whether a US site opens
+
+
+**Trial pathways**
+
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT06424340">NCT06424340</a></td><td class="col-phase">1/2</td><td class="col-indication">Relapsed/refractory NPM1-mutated AML</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><strong>Jorg Liebmann</strong><br><a href="mailto:clinicaltrials.gov@miltenyi.com">clinicaltrials.gov@miltenyi.com</a><br><code>+49151-2034-4392</code><br><a href="https://clinicaltrials.gov/study/NCT06424340">trial sites</a></td><td class="col-notes">Single site, Leiden University Medical Center (Netherlands). TCR reads a mutant-NPM1 neoantigen and this patient is NPM1-wild-type, so the target antigen is absent. Also gated on A*02:01.</td></tr>
+</tbody></table></div></div>
+
+
+**Manufacturer / sponsor contact**
+
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Miltenyi Biomedicine</dd>
+  <dt>Country</dt><dd>Germany</dd>
+  <dt>Medical info phone</dt><dd><code>+49151-2034-4392</code></dd>
+  <dt>Medical info email</dt><dd><a href="mailto:clinicaltrials.gov@miltenyi.com">clinicaltrials.gov@miltenyi.com</a></dd>
+</dl>
+
+
+---
+
+### 24. Revumenib (menin inhibitor) <small><code>revumenib, SNDX-5613, Revuforj</code></small> { #access-24 }
+
+**Access status:** <span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** small_molecule &nbsp; **Verified:** 2026-07-24
+
+
+Revumenib is FDA-approved, so off-label prescription is technically a path, but the target is effectively absent: the patient has KMT2A amplification rather than the KMT2A rearrangement (or NPM1 mutation) that menin inhibition depends on, so benefit is unproven and off-label coverage would be hard to secure. The AUGMENT-101 trial is recruiting but gates on the rearrangement the patient does not have. This is landscape completeness more than an actionable route.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>FDA-approved (Revuforj, KMT2A-translocation acute leukemia and NPM1-mutated AML); off-label for this patient</dd>
+  <dt>Guidelines</dt><dd>NCCN-listed for KMT2A-rearranged and NPM1-mutated R/R AML; off-guideline for KMT2A amplification</dd>
+  <dt>Geographic scope</dt><dd>US; approved drug, trial recruiting but biomarker-mismatched</dd>
+</dl>
+
+
+**Next steps**
+
+1. Recognize the biomarker mismatch first: KMT2A amplification is not the KMT2A rearrangement menin inhibitors target, and the patient is NPM1-wild-type
+2. Only if relapse NGS documents a KMT2A rearrangement or NPM1 mutation, contact Syndax at clinicaltrials@syndax.com (781-419-1400) for AUGMENT-101 or medinfo@syndax.com for off-label discussion
+3. The &lt;40 kg expanded-access program does not apply to this adult patient
+
+
+**Trial pathways**
+
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT04065399">NCT04065399</a></td><td class="col-phase">1/2</td><td class="col-indication">KMT2A-rearranged relapsed/refractory acute leukemia</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><strong>Syndax Pharmaceuticals</strong><br><a href="mailto:clinicaltrials@syndax.com">clinicaltrials@syndax.com</a><br><code>781-419-1400</code><br><a href="https://clinicaltrials.gov/study/NCT04065399">trial sites</a></td><td class="col-notes">Recruiting at 57 sites, but enrolls KMT2A rearrangement (or NPM1 mutation). This patient has KMT2A amplification, a distinct lesion, and is NPM1-wild-type, so does not meet the biomarker gate.</td></tr>
+</tbody></table></div></div>
+
+
+**Manufacturer / sponsor contact**
+
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Syndax Pharmaceuticals</dd>
+  <dt>Country</dt><dd>United States</dd>
+  <dt>Medical info phone</dt><dd><code>781-419-1400</code></dd>
+  <dt>Medical info email</dt><dd><a href="mailto:medinfo@syndax.com">medinfo@syndax.com</a></dd>
+  <dt>Notes</dt><dd>Expanded access NCT05918913 exists but only for patients under 40 kg, so it does not apply here. Ex-US managed-access program via World Orphan Drug Alliance for territories where Revuforj is not approved.</dd>
+</dl>
+
+
+**Payer / coverage notes.** Approved on-label for KMT2A-translocation acute leukemia and NPM1-mutated AML. This patient has neither lesion (KMT2A amplification, NPM1-wild-type), so use would be off-label with the target essentially absent, making both payer coverage and clinical rationale weak.
 
 
 ---

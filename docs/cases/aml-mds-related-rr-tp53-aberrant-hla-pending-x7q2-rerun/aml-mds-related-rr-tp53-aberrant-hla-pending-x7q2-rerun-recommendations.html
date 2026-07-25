@@ -182,6 +182,20 @@ h4 { margin-top: 1.25rem; margin-bottom: 0.25rem; font-size: 1rem; }
   margin-left: 0.35em;
   white-space: nowrap;
 }
+/* surfaced_reason flag pills (Experimental "Also considered" table). */
+.flag-badge {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 0.02em 0.5em;
+  white-space: nowrap;
+}
+.flag-unavailable    { background: #ECEFF1; color: #37474F; border-color: #CFD8DC; }
+.flag-consolidated   { background: #E8EAF6; color: #303F9F; border-color: #C5CAE9; }
+.flag-thin           { background: #FFF8E1; color: #7A5B00; border-color: #F0E1B0; }
+.flag-not-enrollable { background: #F3E5F5; color: #6A1B7A; border-color: #E1BEE7; }
 footer.libby-footer {
   margin-top: 3rem;
   padding-top: 1rem;
@@ -212,14 +226,14 @@ consulting a qualified oncologist.
   <dt>Efficacy/toxicity weight</dt><dd>0.75</dd>
 </dl>
 
-<p><em>6 ranked therapeutic options across 4 targetable features. Biomarker workup steps live in the standalone Target validation paths report.</em></p>
-<h2>Allograft Hct2 interventions</h2>
+<p><em>20 ranked therapeutic options across 7 targetable features. Biomarker workup steps live in the standalone Target validation paths report.</em></p>
+<h2>Hct2 Platform interventions</h2>
 <div class="trial-table-wrap">
   <div class="trial-scroll">
     <table class="trial-table">
       <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
       <tbody>
-    <tr><td><a href="#evidence-iomab-b-apamistamab">1</a></td><td><strong>Iomab-B (131I-apamistamab) anti-CD45 radioimmunotherapy conditioning + second allo-HCT (HCT2 platform)</strong></td><td>Moderate: the only randomized signal in the dossier (SIERRA dCR 17.1% vs 0%, p&lt;0.0001), but read indirectly onto a prior-HCT relapse it did not enroll.</td><td>High (grade 3+ TRAEs 59.7%, at parity with conventional care — conditioning cytopenias, infection, mucositis; second-transplant TRM uncharacterized)</td><td><strong>Low</strong> <span class="cpm-desc">(Radioconjugate marrow injury could compromise engraftment if the HCT2 platform is not secured; no persona raised a mechanism objection.)</span></td><td><strong>The curative backbone all five personas endorsed — the randomized way to carry active disease into HCT2, gated on a fitness workup that has not yet been done.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/39298738">PMID&nbsp;39298738</a><br><a href="https://clinicaltrials.gov/study/NCT02665065">NCT02665065</a><br><a href="https://clinicaltrials.gov/study/NCT07157514">NCT07157514</a></td></tr>
+    <tr><td><a href="#evidence-iomab-b-apamistamab">1</a></td><td><strong>Iomab-B (131I-apamistamab) anti-CD45 radioimmunotherapy conditioning + second allo-HCT</strong></td><td>Moderate: the only randomized signal in the dossier (SIERRA dCR 17.1% vs 0%, p&lt;0.0001), read indirectly onto a prior-HCT relapse it did not enroll.</td><td>High (grade 3+ TRAEs 59.7%, at parity with conventional care — conditioning cytopenias, infection, mucositis; second-transplant TRM uncharacterized)</td><td><strong>Low</strong> <span class="cpm-desc">(Radioconjugate marrow injury could compromise engraftment if the HCT2 platform is not secured; no mechanism objection raised.)</span></td><td><strong>The curative backbone all five personas endorsed — the randomized way to carry active disease into a second transplant, gated on a fitness workup that has not yet been done.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/39298738">PMID&nbsp;39298738</a><br><a href="https://clinicaltrials.gov/study/NCT02665065">NCT02665065</a><br><a href="https://clinicaltrials.gov/study/NCT07157514">NCT07157514</a></td></tr>
       </tbody>
     </table>
   </div>
@@ -227,7 +241,7 @@ consulting a qualified oncologist.
 
 <h3>Evidence in detail</h3>
 <p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
-<h4 id="evidence-iomab-b-apamistamab">Iomab-B (131I-apamistamab) anti-CD45 radioimmunotherapy conditioning + second allo-HCT (HCT2 platform)</h4>
+<h4 id="evidence-iomab-b-apamistamab">Iomab-B (131I-apamistamab) anti-CD45 radioimmunotherapy conditioning + second allo-HCT</h4>
 <div class="trial-table-wrap">
   <div class="trial-scroll">
     <table class="trial-table evidence-detail-table">
@@ -245,7 +259,23 @@ consulting a qualified oncologist.
     <table class="trial-table">
       <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
       <tbody>
-    <tr><td><a href="#evidence-ha1-tcr-t">1</a></td><td><strong>HA-1-specific CD8+/CD4+ TCR-T (Bleakley platform; TSC-100 / BSB-1001)</strong> <span class="scenario-conditional">(conditional on hla_a0201 positive)</span></td><td>Assuming A*02:01 + HA-1 mismatch confirm: uncertain but curative-intent — 4/9 CR in Krakow 2024 (n=9 feasibility, no comparator). Negative typing forecloses it entirely.</td><td>Moderate (lymphodepletion neutropenia, grade 3-5 infection; mild grade 1-2 GVHD; no CRS, no ICANS across 9 patients)</td><td><strong>Low</strong> <span class="cpm-desc">(TCR-T kinetics may lag an 85%-blast marrow and antigen-loss escape is possible, but lineage-restricted killing limits off-target collateral.)</span></td><td><strong>The only lever that answers the referral&#x27;s own question — a clean-safety, curative-intent graft-versus-leukemia consolidation, live only if the pending typing confirms and delivered after HCT2.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/38683966">PMID&nbsp;38683966</a><br><a href="https://clinicaltrials.gov/study/NCT05473910">NCT05473910</a><br><a href="https://clinicaltrials.gov/study/NCT03326921">NCT03326921</a></td></tr>
+    <tr><td><a href="#evidence-ha1-tcr-t">1</a></td><td><strong>HA-1-specific CD8+/CD4+ TCR-T (Bleakley platform; TSC-100 / BSB-1001)</strong> <span class="scenario-conditional">(conditional on hla_a0201 positive)</span></td><td>Assuming A*02:01 + HA-1 mismatch confirm: uncertain but curative-intent — 4/9 CR in Krakow 2024 (n=9 feasibility, no comparator). Negative typing forecloses it.</td><td>Low (no CRS, no ICANS, no DLTs across n=9; lymphodepletion neutropenia and grade 3-5 infection; mild grade 1-2 GVHD)</td><td><strong>Low</strong> <span class="cpm-desc">(TCR-T kinetics may lag an 85%-blast marrow and antigen-loss escape is possible; lineage-restricted killing limits off-target collateral.)</span></td><td><strong>The only lever that answers the referral&#x27;s own question — a clean-safety, curative-intent graft-versus-leukemia consolidation, live only if the pending typing confirms and delivered after HCT2.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/38683966">PMID&nbsp;38683966</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/29051183">PMID&nbsp;29051183</a><br><a href="https://clinicaltrials.gov/study/NCT03326921">NCT03326921</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Also considered &mdash; not ranked</h3>
+<p class="pipeline-note">Feature-targeting investigational options the board considered but did not rank as live top-tier choices. The <strong>Flag</strong> column says why: <em>Unavailable</em> (program discontinued/terminated), <em>Consolidated</em> (one product of an approach ranked above), <em>Thin evidence</em> (no peer-reviewed clinical efficacy yet), <em>Not enrollable</em> (cross-tumor evidence or geographically inaccessible).</p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Flag</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr class="split-glyph"><td><span class="flag-badge flag-thin">Thin evidence</span></td><td><strong>CBX-250 (CG1/HLA-A*02:01 TCR-mimetic T-cell engager)</strong> <span class="scenario-conditional">(conditional on hla_a0201 positive)</span></td><td>Unknown: first-in-human phase 1, no efficacy readout; the argument is the off-the-shelf no-lead-time timeline, not a proven number.</td><td>Moderate (T-cell-engager cytokine-release risk against high blast burden; no reported grade profile yet)</td><td><strong>Low</strong> <span class="cpm-desc">(Antigen escape or T-cell exhaustion possible; no board mechanism objection, and no efficacy data to weigh either way.)</span></td><td><strong>An off-the-shelf A*02:01 engager with a real no-lead-time advantage and 11 recruiting US sites, but zero efficacy data — enrollable yet unproven, gated on the same allele call.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT06994676">NCT06994676</a></td></tr>
+    <tr><td><span class="flag-badge flag-consolidated">Consolidated</span></td><td><strong>TSC-100 (donor-derived HA-1-specific TCR-T)</strong> <span class="scenario-conditional">(conditional on hla_a0201 positive)</span></td><td>Consolidated into rank 3 (ha1-tcr-t): the ranked HA-1 approach&#x27;s likelihood applies; no separate efficacy data for the commercial product.</td><td>Low (no clinical data yet; class safety read carried by the Bleakley HA-1 platform — 0 CRS, 0 ICANS)</td><td><strong>Low</strong> <span class="cpm-desc">(As for the ranked HA-1 approach: antigen-loss escape possible, lineage-restricted killing limits collateral.)</span></td><td><strong>The commercial HA-1 arm of the ranked approach, recruiting at 21 US sites — same gate, same board signal, consolidated under rank 3.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT05473910">NCT05473910</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/38683966">PMID&nbsp;38683966</a></td></tr>
+    <tr><td><span class="flag-badge flag-consolidated">Consolidated</span></td><td><strong>TSC-101 (donor-derived HA-2-specific TCR-T)</strong> <span class="scenario-conditional">(conditional on hla_a0201 positive)</span></td><td>Consolidated into rank 3 (ha1-tcr-t): applies if the mismatch is at HA-2; no separate efficacy data.</td><td>Low (no clinical data yet; class safety read carried by the HA-1 platform)</td><td><strong>Low</strong> <span class="cpm-desc">(As for the ranked HA approach: antigen-loss escape possible, lineage-restricted killing limits collateral.)</span></td><td><strong>The HA-2 arm of the ranked approach, opening if the pair mismatches at HA-2 instead of HA-1 — consolidated under rank 3.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT05473910">NCT05473910</a></td></tr>
+    <tr><td><span class="flag-badge flag-consolidated">Consolidated</span></td><td><strong>BSB-1001 (HA-1-directed TCR-T)</strong> <span class="scenario-conditional">(conditional on hla_a0201 positive)</span></td><td>Consolidated into rank 3 (ha1-tcr-t): the ranked HA-1 approach&#x27;s likelihood applies; no separate efficacy data.</td><td>Low (no clinical data yet; class safety read carried by the HA-1 platform)</td><td><strong>Low</strong> <span class="cpm-desc">(As for the ranked HA-1 approach: antigen-loss escape possible, lineage-restricted killing limits collateral.)</span></td><td><strong>A newer HA-1 TCR-T that widens site access for the ranked approach — same gate, same board signal, consolidated under rank 3.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT06704152">NCT06704152</a></td></tr>
       </tbody>
     </table>
   </div>
@@ -265,15 +295,48 @@ consulting a qualified oncologist.
   </div>
 </div>
 
+<h4 id="evidence-cbx-250">CBX-250 (CG1/HLA-A*02:01 TCR-mimetic T-cell engager)</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-tsc-100">TSC-100 (donor-derived HA-1-specific TCR-T)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>Recurrent leukemia/myeloid neoplasm after allo-HCT</strong> (2L+)<br><small>Recurrent AML/ALL/MDS/JMML after allo-HCT; HLA-A*02:01-positive with recipient HA-1(H)-positive / donor HA-1-negative mismatch. n=9 treated.</small></td><td>9</td><td><strong>CRS</strong> <span class="tox-grade">grade any</span>: 0% (0/9) <small>(no cytokine release syndrome observed)</small><br><strong>ICANS</strong> <span class="tox-grade">grade any</span>: 0% (0/9)<br><strong>GVHD (acute)</strong> <span class="tox-grade">grade 1-2</span>: (2/9) <small>(grade 2 GI and grade 1 skin; attributed to immunosuppression withdrawal, not TCR-T)</small><br><strong>Neutropenia</strong> <span class="tox-grade">grade &gt;=3</span>: (n=9) <small>(attributed to lymphodepletion)</small><br><strong>Infection</strong> <span class="tox-grade">grade &gt;=3</span>: (n=9) <small>(included Legionella and S. aureus pneumonia)</small></td><td><strong>CR achieved or maintained (4 of 9)</strong>: 4/9 patients<br><small>1 patient in remission &gt;2 years</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/38683966">Krakow et al. <em>Blood</em> 2024</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-tsc-101">TSC-101 (donor-derived HA-2-specific TCR-T)</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-bsb-1001">BSB-1001 (HA-1-directed TCR-T)</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
 <h2>Cd123 interventions</h2>
 <div class="trial-table-wrap">
   <div class="trial-scroll">
     <table class="trial-table">
       <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
       <tbody>
-    <tr><td><a href="#evidence-tagraxofusp">1</a></td><td><strong>Tagraxofusp (SL-401, CD123-directed IL-3/diphtheria-toxin fusion)</strong></td><td>Low-to-uncertain for AML: headline 72% CR is first-line BPDCN cross-tumor (Pemmaraju 2019); no AML efficacy data and CD123 density still pending.</td><td>High (capillary leak syndrome with treatment-related deaths, transaminitis ALT 64% / AST 60%, hypoalbuminemia 55%)</td><td><strong>Low</strong> <span class="cpm-desc">(No clear mechanistic antagonism; the efficacy risk is cross-tumor non-transfer from BPDCN, not a counter-productive vector against the goal.)</span></td><td><strong>The only labeled CD123 agent with a real safety algorithm, but its headline efficacy is BPDCN cross-tumor and its capillary-leak deaths demand organ-function labs first.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/31018069">PMID&nbsp;31018069</a><br><a href="https://clinicaltrials.gov/study/NCT06561152">NCT06561152</a></td></tr>
-    <tr><td><a href="#evidence-pivekimab-sunirine">2</a></td><td><strong>Pivekimab sunirine (IMGN632, CD123 ADC)</strong></td><td>Moderate as debulking: own R/R AML data (ORR 21%, 95% CI 8-40; cCR 17%), but single-agent depth is modest against an 85%-blast marrow.</td><td>High (veno-occlusive disease at higher doses, one treatment-related death; RP2D: febrile neutropenia 10%, infusion reactions 7%)</td><td><strong>High</strong> <span class="cpm-desc">(Veno-occlusive disease from the ADC ahead of HCT2 could sink the very transplant the debulking is meant to enable.)</span></td><td><strong>The CD123 ADC with the best own-disease data, held under a live, conditional VOD veto — it reinstates as a debulking bridge the moment hepatic and albumin baselines clear it.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/38423051">PMID&nbsp;38423051</a><br><a href="https://clinicaltrials.gov/study/NCT03386513">NCT03386513</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/29661755">PMID&nbsp;29661755</a></td></tr>
-    <tr><td><a href="#evidence-flotetuzumab">3</a></td><td><strong>Flotetuzumab (MGD006, CD123xCD3 DART)</strong></td><td>Uncertain and not enrollable: 30% ORR in refractory AML (Uy 2021), TP53 signal from a post-hoc correlative subgroup (Vadakekolathu 2020); program discontinued.</td><td>Moderate (cytokine release syndrome / infusion reactions, largely grade 1-2 with step-up dosing, dexamethasone, tocilizumab)</td><td><strong>Moderate</strong> <span class="cpm-desc">(CD123xCD3 redirection needs fit autologous T cells; exhaustion after transplant and FLAG-IDA may blunt it, and the TP53 rationale is post-hoc.)</span></td><td><strong>A discontinued drug carrying a live mechanism signal — its TP53-inflamed-marrow rationale is post-hoc, and the reason to chase an open CD123xCD3 construct rather than this one.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/32929488">PMID&nbsp;32929488</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/33057635">PMID&nbsp;33057635</a><br><a href="https://clinicaltrials.gov/study/NCT02152956">NCT02152956</a></td></tr>
+    <tr class="split-glyph"><td><a href="#evidence-tagraxofusp">1</a></td><td><strong>Tagraxofusp (SL-401, CD123-directed IL-3/diphtheria-toxin fusion)</strong></td><td>Low-to-uncertain for AML: headline 72% CR is first-line BPDCN cross-tumor (Pemmaraju 2019); no AML efficacy data and CD123 density still pending.</td><td>High (capillary leak syndrome with treatment-related deaths, transaminitis ALT 64% / AST 60%, hypoalbuminemia 55%)</td><td><strong>Low</strong> <span class="cpm-desc">(No mechanistic antagonism; the efficacy risk is cross-tumor non-transfer from BPDCN, and on-target killing of normal CD34+CD123+ progenitors adds myelosuppression.)</span></td><td><strong>The only labeled CD123 agent with a real safety algorithm, but its headline efficacy is BPDCN cross-tumor and its capillary-leak deaths demand organ-function labs first.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/31018069">PMID&nbsp;31018069</a><br><a href="https://clinicaltrials.gov/study/NCT06561152">NCT06561152</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/29773600">PMID&nbsp;29773600</a></td></tr>
+    <tr class="not-recommended"><td><a href="#evidence-pivekimab-sunirine">2</a></td><td><strong>Pivekimab sunirine (IMGN632, CD123 ADC)</strong></td><td>Moderate as debulking: own R/R AML data (ORR 21%, 95% CI 8-40; cCR 17%), but single-agent depth is modest against an 85%-blast marrow.</td><td>High (veno-occlusive disease at higher doses, one treatment-related death; RP2D febrile neutropenia 10%, infusion reactions 7%)</td><td><strong>High</strong> <span class="cpm-desc">(Veno-occlusive disease from the ADC ahead of HCT2 could sink the very transplant the debulking is meant to enable.)</span></td><td><strong>The CD123 ADC with the best own-disease data, held under a live, conditional VOD veto — it reinstates as a debulking bridge the moment hepatic and albumin baselines clear it.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/38423051">PMID&nbsp;38423051</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/29661755">PMID&nbsp;29661755</a><br><a href="https://clinicaltrials.gov/study/NCT03386513">NCT03386513</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Also considered &mdash; not ranked</h3>
+<p class="pipeline-note">Feature-targeting investigational options the board considered but did not rank as live top-tier choices. The <strong>Flag</strong> column says why: <em>Unavailable</em> (program discontinued/terminated), <em>Consolidated</em> (one product of an approach ranked above), <em>Thin evidence</em> (no peer-reviewed clinical efficacy yet), <em>Not enrollable</em> (cross-tumor evidence or geographically inaccessible).</p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Flag</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr class="split-glyph"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>CLL-1/CD33/CD123-directed CAR-T</strong></td><td>Not practically enrollable (China single-site); dual CD33/CD123 targeting hedges escape but no accessible route.</td><td>Moderate (CAR-T cytokine-release and lymphodepletion risk; no reported grade profile)</td><td><strong>Low</strong> <span class="cpm-desc">(Multi-antigen design limits single-antigen escape; on-target myelosuppression from CD33/CD123 CAR-T possible.)</span></td><td><strong>The dual CD33/CD123 CAR-T the profile&#x27;s escape-hedging logic calls for, but China-only single-site — informational, not a reachable route against US options.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT04010877">NCT04010877</a></td></tr>
+    <tr class="split-glyph"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>CD123-CD33 compound CAR-T (cCAR)</strong></td><td>Not practically enrollable (China sites, stale/unknown status); dual-antigen match but no verified accessible route.</td><td>Moderate (CAR-T cytokine-release and lymphodepletion risk; no reported grade profile)</td><td><strong>Low</strong> <span class="cpm-desc">(Compound design limits single-antigen escape; on-target myelosuppression possible.)</span></td><td><strong>A dual CD123/CD33 compound CAR-T matching the antigen profile, but the registry status is stale and sites are China-only — status must be confirmed before it counts as reachable.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT04156256">NCT04156256</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-unavailable">Unavailable</span></td><td><strong>Flotetuzumab (MGD006, CD123xCD3 DART)</strong></td><td>Not enrollable (program discontinued): 30% ORR in refractory AML (Uy 2021), TP53 signal from a post-hoc correlative subgroup (Vadakekolathu 2020).</td><td>Moderate (cytokine release / infusion reactions, largely grade 1-2 with step-up dosing, dexamethasone, tocilizumab)</td><td><strong>Moderate</strong> <span class="cpm-desc">(CD123xCD3 redirection needs fit autologous T cells; exhaustion after transplant and FLAG-IDA may blunt it; TP53 rationale is post-hoc.)</span></td><td><strong>A discontinued drug carrying a live mechanism signal — its TP53-inflamed-marrow rationale is post-hoc, and the reason to chase an open CD123xCD3 construct rather than this one.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/32929488">PMID&nbsp;32929488</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/33057635">PMID&nbsp;33057635</a><br><a href="https://clinicaltrials.gov/study/NCT02152956">NCT02152956</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-unavailable">Unavailable</span></td><td><strong>Vibecotamab (XmAb14045, CD123xCD3 bispecific)</strong></td><td>Not enrollable (discontinued, MRD-setting mismatch).</td><td>Moderate (CD123xCD3 cytokine-release class risk; no case-relevant data)</td><td><strong>Low</strong> <span class="cpm-desc">(Same T-cell-engager class; no goal-specific antagonism, no board mechanism objection.)</span></td><td><strong>A discontinued CD123xCD3 bispecific studied in the wrong disease state — informational pipeline context only.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT05285813">NCT05285813</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/37647601">PMID&nbsp;37647601</a></td></tr>
       </tbody>
     </table>
   </div>
@@ -305,6 +368,10 @@ consulting a qualified oncologist.
   </div>
 </div>
 
+<h4 id="evidence-cll1-cd33-cd123-car">CLL-1/CD33/CD123-directed CAR-T</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-cd123-cd33-ccar">CD123-CD33 compound CAR-T (cCAR)</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
 <h4 id="evidence-flotetuzumab">Flotetuzumab (MGD006, CD123xCD3 DART)</h4>
 <div class="trial-table-wrap">
   <div class="trial-scroll">
@@ -317,13 +384,41 @@ consulting a qualified oncologist.
   </div>
 </div>
 
-<h2>Cd33 interventions</h2>
+<h4 id="evidence-vibecotamab">Vibecotamab (XmAb14045, CD123xCD3 bispecific)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37647601"><em>Blood Adv</em> 2023</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2>Wt1 interventions</h2>
 <div class="trial-table-wrap">
   <div class="trial-scroll">
     <table class="trial-table">
       <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
       <tbody>
-    <tr><td><a href="#evidence-gemtuzumab-ozogamicin">1</a></td><td><strong>Gemtuzumab ozogamicin (CD33 ADC)</strong></td><td>Low for this stratum: tier-1a Hills meta shows OR 0.99 (95% CI 0.83-1.18) — no survival benefit in adverse cytogenetics, the patient&#x27;s exact subgroup.</td><td>Moderate (grade 3+ hyperbilirubinemia 23%, transaminitis 17%, veno-occlusive-disease class risk ahead of HCT2)</td><td><strong>Moderate</strong> <span class="cpm-desc">(P-glycoprotein efflux of the calicheamicin payload in adverse-karyotype blasts blunts CD33-ADC delivery — the subgroup where its own data show no benefit.)</span></td><td><strong>The on-label, guideline-listed CD33 handle whose own tier-1a evidence shows no survival benefit in this complex/TP53-aberrant karyotype — familiar, but pointed the wrong way.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/11432892">PMID&nbsp;11432892</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/25008258">PMID&nbsp;25008258</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/22482940">PMID&nbsp;22482940</a></td></tr>
+    <tr class="split-glyph"><td><a href="#evidence-taa-t-multiantigen">1</a></td><td><strong>Multiantigen leukemia-specific donor T cells (PRAME/WT1/Survivin/NY-ESO-1)</strong></td><td>Low-to-modest: 2/8 objective responses in active disease (Lulla 2021); hits WT1/PRAME without a single-HLA gate, but WT1/PRAME expression unconfirmed.</td><td>Low (no grade &gt;2 acute GVHD, no extensive chronic GVHD across n=25)</td><td><strong>Low</strong> <span class="cpm-desc">(Multi-antigen targeting limits single-antigen escape; no mechanism that blunts the goal.)</span></td><td><strong>A multi-antigen donor T-cell hedge that sidesteps the A*02:01 gate and is enrollable post-transplant — but published activity is modest and WT1/PRAME expression is still to confirm.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/33270816">PMID&nbsp;33270816</a><br><a href="https://clinicaltrials.gov/study/NCT02203903">NCT02203903</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Also considered &mdash; not ranked</h3>
+<p class="pipeline-note">Feature-targeting investigational options the board considered but did not rank as live top-tier choices. The <strong>Flag</strong> column says why: <em>Unavailable</em> (program discontinued/terminated), <em>Consolidated</em> (one product of an approach ranked above), <em>Thin evidence</em> (no peer-reviewed clinical efficacy yet), <em>Not enrollable</em> (cross-tumor evidence or geographically inaccessible).</p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Flag</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr class="split-glyph"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>FH-WT1-E50 (anti-WT1 TCR/CD8ab T cells) + azacitidine</strong></td><td>Not currently enrollable (MRD-setting mismatch); WT1 A*02:01 TCR-T precedent is prophylactic (Chapuis 2019), not active-disease salvage.</td><td>Low (WT1 TCR-T class; no active-disease safety data for this construct)</td><td><strong>Low</strong> <span class="cpm-desc">(WT1 is broadly expressed on normal progenitors; on-target myelosuppression possible, no goal-blunting vector.)</span></td><td><strong>The open WT1 A*02:01 TCR-T, but it enrolls MRD-positive disease — a consolidation-phase option for after cytoreduction, not a current-state fit.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT07645469">NCT07645469</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/31235963">PMID&nbsp;31235963</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-unavailable">Unavailable</span></td><td><strong>NTLA-5001 (CRISPR-engineered WT1-directed TCR-T)</strong></td><td>Not enrollable (terminated program).</td><td>Low (no case-relevant data; program halted)</td><td><strong>Low</strong> <span class="cpm-desc">(WT1 TCR-T class; no goal-specific antagonism.)</span></td><td><strong>A terminated WT1 TCR-T program — closes the loop on the WT1 pipeline, no route.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT05066165">NCT05066165</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-unavailable">Unavailable</span></td><td><strong>WT1-TCRC4 EBV-specific CD8+ Tcm (Chapuis/Greenberg)</strong></td><td>Not enrollable (completed); precedent value only — prophylactic RFS 100% at 44 mo (Chapuis 2019).</td><td>Low (EBV-specific CD8 Tcm design to minimize GVHD; no treatment-limiting signal reported)</td><td><strong>Low</strong> <span class="cpm-desc">(WT1 TCR-T class; no goal-specific antagonism.)</span></td><td><strong>The WT1 A*02:01 TCR-T precedent (prophylaxis, RFS 100% at 44 mo) — completed and succeeded by FH-WT1-E50, no open route to this construct.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/31235963">PMID&nbsp;31235963</a><br><a href="https://clinicaltrials.gov/study/NCT01640301">NCT01640301</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-unavailable">Unavailable</span></td><td><strong>WT1-siTCR gene-transduced lymphocytes (TBI-1301; HLA-A*24:02-restricted)</strong></td><td>Not enrollable today (no open A*24:02 WT1-siTCR successor); route-preservation only — transient blast reductions (2/8, Tawara 2017).</td><td>Low (no normal-tissue toxicity reported across n=8)</td><td><strong>Low</strong> <span class="cpm-desc">(WT1 siTCR silences endogenous TCR to limit mispairing; no goal-blunting vector, spares normal progenitors preclinically.)</span></td><td><strong>The A*24:02 WT1 fallback that keeps an immunotherapy route alive if A*02:01 is negative — but no open trial today, so it is a reason to type both alleles, not a current route.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/28860210">PMID&nbsp;28860210</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/21673345">PMID&nbsp;21673345</a></td></tr>
       </tbody>
     </table>
   </div>
@@ -331,19 +426,115 @@ consulting a qualified oncologist.
 
 <h3>Evidence in detail</h3>
 <p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
-<h4 id="evidence-gemtuzumab-ozogamicin">Gemtuzumab ozogamicin (CD33 ADC)</h4>
+<h4 id="evidence-taa-t-multiantigen">Multiantigen leukemia-specific donor T cells (PRAME/WT1/Survivin/NY-ESO-1)</h4>
 <div class="trial-table-wrap">
   <div class="trial-scroll">
     <table class="trial-table evidence-detail-table">
       <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
       <tbody>
-    <tr><td><strong>CD33+ AML in untreated first relapse</strong> (2L+)<br><small>CD33+ AML in untreated first relapse, no antecedent hematologic disorder; median age 61. Pooled across three open-label trials.</small></td><td>142</td><td><strong>Hyperbilirubinemia</strong> <span class="tox-grade">grade &gt;=3</span>: 23% (n=142)<br><strong>Transaminase elevation</strong> <span class="tox-grade">grade &gt;=3</span>: 17% (n=142)<br><strong>Infection</strong> <span class="tox-grade">grade any</span>: 28% (n=142)<br><strong>Mucositis</strong> <span class="tox-grade">grade &gt;=3</span>: 4% (n=142)<br><strong>Nausea/vomiting (severe)</strong> <span class="tox-grade">grade &gt;=3</span>: 11% (n=142)</td><td><strong>Overall remission (CR + CRp)</strong>: 30%</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/11432892">Sievers et al. <em>J Clin Oncol</em> 2001</a></td></tr>
-    <tr><td><strong>Adult AML (non-APL), front-line induction</strong> (1L)<br><small>3325 adults with AML (excluding APL) in five randomized induction trials; cytogenetic risk subgroups analyzed, including an adverse-cytogenetics stratum.</small></td><td>3325</td><td><strong>Early death</strong> <span class="tox-grade">grade 5</span>: (n=3325) <small>(higher with 6 mg/m2 than 3 mg/m2 at equal efficacy; per-term AE breakdown not reported in this IPD meta-analysis)</small></td><td><strong>5-year overall survival (addition of GO)</strong>: 0.9 OR (95% CI 0.82–0.98); p 0.01</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/25008258">Hills et al. <em>Lancet Oncol</em> 2014</a></td></tr>
-    <tr><td><strong>De novo AML, front-line</strong> (1L)<br><small>Previously untreated de novo AML age 50-70 (excludes APL); CD33 expression not required for entry. 280 randomized.</small></td><td>280</td><td><strong>Persistent thrombocytopenia</strong> <span class="tox-grade">grade any</span>: 16% (22/139) <small>(vs 4/139 (3%) in control; p&lt;0.0001)</small><br><strong>Death from toxicity</strong> <span class="tox-grade">grade 5</span>: (n=139) <small>(no increase vs control)</small></td><td><strong>Event-free survival (GO + chemo vs chemo)</strong>: 0.58 HR (95% CI 0.43–0.78); p 0.0003<br><small>2y EFS 40.8% vs 17.1%</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/22482940">Castaigne et al. <em>Lancet</em> 2012</a></td></tr>
+    <tr><td><strong>AML/MDS after allo-HCT (prophylaxis and treatment)</strong> (2L+)<br><small>Post-HCT AML/MDS; 17 at high risk of relapse (prophylaxis) and 8 with active disease; products generated from 29 donors, 25 patients infused.</small></td><td>25</td><td><strong>GVHD (acute)</strong> <span class="tox-grade">grade &gt;=3</span>: 0% (0/25) <small>(no grade &gt;2 acute GVHD)</small><br><strong>GVHD (chronic, extensive)</strong> <span class="tox-grade">grade any</span>: 0% (0/25) <small>(no extensive chronic GVHD)</small></td><td><strong>Objective response (active-disease cohort: 1 CR, 1 PR)</strong>: 2/8 patients (active disease)<br><small>median leukemia-free and overall survival not reached at 1.9 y</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/33270816">Lulla et al. <em>Blood</em> 2021</a></td></tr>
       </tbody>
     </table>
   </div>
 </div>
 
-<footer class="libby-footer">Generated 2026-07-24 &middot; Libby &middot; <code>aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun</code></footer>
+<h4 id="evidence-fh-wt1-e50">FH-WT1-E50 (anti-WT1 TCR/CD8ab T cells) + azacitidine</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>High-risk AML, post-HCT relapse prophylaxis</strong> (maintenance)<br><small>HLA-A*02:01-positive, WT1-positive high-risk AML given as post-HCT relapse prophylaxis; compared with a concurrent 88-patient similar-risk cohort.</small></td><td>12</td><td><strong>GVHD</strong> <span class="tox-grade">grade any</span>: (n=12) <small>(TCRC4 delivered on EBV-specific CD8+ Tcm to minimize GVHD; no treatment-limiting GVHD signal reported in abstract)</small></td><td><strong>Relapse-free survival (prophylaxis)</strong>: 100% at median 44 mo; p 0.002<br><small>RFS 100% at median 44 mo follow-up</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/31235963">Chapuis et al. <em>Nat Med</em> 2019</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-ntla-5001">NTLA-5001 (CRISPR-engineered WT1-directed TCR-T)</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-wt1-tcr-t-c4">WT1-TCRC4 EBV-specific CD8+ Tcm (Chapuis/Greenberg)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>High-risk AML, post-HCT relapse prophylaxis</strong> (maintenance)<br><small>HLA-A*02:01-positive, WT1-positive high-risk AML given as post-HCT relapse prophylaxis; compared with a concurrent 88-patient similar-risk cohort.</small></td><td>12</td><td><strong>GVHD</strong> <span class="tox-grade">grade any</span>: (n=12) <small>(TCRC4 delivered on EBV-specific CD8+ Tcm to minimize GVHD; no treatment-limiting GVHD signal reported in abstract)</small></td><td><strong>Relapse-free survival (prophylaxis)</strong>: 100% at median 44 mo; p 0.002<br><small>RFS 100% at median 44 mo follow-up</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/31235963">Chapuis et al. <em>Nat Med</em> 2019</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-wt1-sitcr-tbi1301">WT1-siTCR gene-transduced lymphocytes (TBI-1301; HLA-A*24:02-restricted)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>Refractory AML and high-risk MDS</strong> (2L+)<br><small>HLA-A*24:02-positive, WT1-positive refractory AML and high-risk MDS; two dose cohorts, n=8.</small></td><td>8</td><td><strong>On-target off-tumor (normal tissue) toxicity</strong> <span class="tox-grade">grade any</span>: 0% (0/8) <small>(no adverse events of normal tissue reported)</small></td><td><strong>Transient marrow blast reduction; T-cell persistence</strong>: 2/8 patients with transient blast decrease</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/28860210">Tawara et al. <em>Blood</em> 2017</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2>Tp53 Y220C interventions</h2>
+<p><em>No rows.</em></p>
+<h3>Also considered &mdash; not ranked</h3>
+<p class="pipeline-note">Feature-targeting investigational options the board considered but did not rank as live top-tier choices. The <strong>Flag</strong> column says why: <em>Unavailable</em> (program discontinued/terminated), <em>Consolidated</em> (one product of an approach ranked above), <em>Thin evidence</em> (no peer-reviewed clinical efficacy yet), <em>Not enrollable</em> (cross-tumor evidence or geographically inaccessible).</p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Flag</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr class="split-glyph"><td><span class="flag-badge flag-thin">Thin evidence</span></td><td><strong>Rezatapopt (PC14586, Y220C-selective p53 reactivator) + azacitidine</strong></td><td>Unknown clinically: strong Y220C AML preclinical signal (Carter 2025) but no peer-reviewed clinical efficacy, and killing required venetoclax the disease has progressed through.</td><td>Low (none extractable — no published clinical toxicity yet)</td><td><strong>Low</strong> <span class="cpm-desc">(Single-agent reactivation is largely cytostatic without BCL-2 inhibition; prior venetoclax progression may blunt the combination that makes it work.)</span></td><td><strong>The Y220C-selective TP53 handle that enters contention only if the variant confirms — double-gated on TP53 status and Y220C, with no clinical efficacy data yet to rank on.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40608889">PMID&nbsp;40608889</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/39945593">PMID&nbsp;39945593</a><br><a href="https://clinicaltrials.gov/study/NCT06616636">NCT06616636</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2>Prame interventions</h2>
+<p><em>No rows.</em></p>
+<h3>Also considered &mdash; not ranked</h3>
+<p class="pipeline-note">Feature-targeting investigational options the board considered but did not rank as live top-tier choices. The <strong>Flag</strong> column says why: <em>Unavailable</em> (program discontinued/terminated), <em>Consolidated</em> (one product of an approach ranked above), <em>Thin evidence</em> (no peer-reviewed clinical efficacy yet), <em>Not enrollable</em> (cross-tumor evidence or geographically inaccessible).</p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Flag</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr class="not-recommended"><td><span class="flag-badge flag-unavailable">Unavailable</span></td><td><strong>BPX-701 (PRAME TCR-T with iCasp9 safety switch) + rimiducid</strong></td><td>Not enrollable (terminated program, sponsor wound down).</td><td>Low (no case-relevant data; program halted)</td><td><strong>Low</strong> <span class="cpm-desc">(PRAME TCR-T class; no goal-specific antagonism.)</span></td><td><strong>A terminated PRAME TCR-T — the open PRAME route is the multiantigen TAA-T product at rank 5.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT02743611">NCT02743611</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2>Tp53 interventions</h2>
+<p><em>No rows.</em></p>
+<h3>Also considered &mdash; not ranked</h3>
+<p class="pipeline-note">Feature-targeting investigational options the board considered but did not rank as live top-tier choices. The <strong>Flag</strong> column says why: <em>Unavailable</em> (program discontinued/terminated), <em>Consolidated</em> (one product of an approach ranked above), <em>Thin evidence</em> (no peer-reviewed clinical efficacy yet), <em>Not enrollable</em> (cross-tumor evidence or geographically inaccessible).</p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Flag</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr class="not-recommended"><td><span class="flag-badge flag-unavailable">Unavailable</span></td><td><strong>Eprenetapopt (APR-246, pan-p53 reactivator) + venetoclax + azacitidine</strong></td><td>Low: pan-reactivator ORR 64-71% single-arm, but the randomized TP53-mutant MDS phase 3 missed its endpoint; not Y220C-selective.</td><td>High (febrile neutropenia 47%, thrombocytopenia 37%, leukopenia 25%, one treatment-related death)</td><td><strong>Low</strong> <span class="cpm-desc">(Pan-reactivation is non-selective; the low-yield concern is efficacy failure, not active antagonism.)</span></td><td><strong>The pan-p53 reactivator the board flags as low-yield — a negative randomized phase 3 and no Y220C selectivity; rezatapopt is the better TP53 track if Y220C confirms.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/36990622">PMID&nbsp;36990622</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/33449813">PMID&nbsp;33449813</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-eprenetapopt">Eprenetapopt (APR-246, pan-p53 reactivator) + venetoclax + azacitidine</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>TP53-mutant AML, treatment-naive</strong> (1L)<br><small>Treatment-naive TP53-mutant AML with &gt;=1 pathogenic TP53 mutation, ECOG 0-2; triplet expansion evaluable n=39 (whole study n=49). Pan-p53 reactivator, not Y220C-selective.</small></td><td>49</td><td><strong>Febrile neutropenia</strong> <span class="tox-grade">grade &gt;=3</span>: 47% (23/49)<br><strong>Thrombocytopenia</strong> <span class="tox-grade">grade &gt;=3</span>: 37% (18/49)<br><strong>Leukopenia</strong> <span class="tox-grade">grade &gt;=3</span>: 25% (12/49)<br><strong>Anaemia</strong> <span class="tox-grade">grade &gt;=3</span>: 22% (11/49)<br><strong>Treatment-related death</strong> <span class="tox-grade">grade 5</span>: 2% (1/49) <small>(sepsis)</small></td><td><strong>Overall response (epren + ven + aza)</strong>: 64% (95% CI 47–79)</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/36990622">Garcia-Manero et al. <em>Lancet Haematol</em> 2023</a></td></tr>
+    <tr><td><strong>TP53-mutant MDS or oligoblastic AML</strong> (1L)<br><small>TP53-mutant MDS (n=40), oligoblastic AML with 20-30% blasts (n=11), and MDS/MPN (n=4); frontline. 35% went on to allo-HCT.</small></td><td>55</td><td><strong>Febrile neutropenia</strong> <span class="tox-grade">grade &gt;=3</span>: 33% (n=55)<br><strong>Leukopenia</strong> <span class="tox-grade">grade &gt;=3</span>: 29% (n=55)<br><strong>Neutropenia</strong> <span class="tox-grade">grade &gt;=3</span>: 29% (n=55)</td><td><strong>Overall response (epren + aza)</strong>: 71%<br><small>median OS 10.8 mo</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/33449813">Sallman et al. <em>J Clin Oncol</em> 2021</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<footer class="libby-footer">Generated 2026-07-25 &middot; Libby &middot; <code>aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun</code></footer>
 </body></html>
