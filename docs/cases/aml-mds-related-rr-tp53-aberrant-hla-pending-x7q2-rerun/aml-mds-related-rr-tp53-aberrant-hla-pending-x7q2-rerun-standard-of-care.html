@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>Libby standard of care options — aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun</title>
+<style>
+
+      :root { color-scheme: light; }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        max-width: 1200px;
+        margin: 2em auto;
+        padding: 0 1.5em 3em;
+        color: #1A202C;
+        background: #FFFFFF;
+        line-height: 1.55;
+      }
+      h1 { border-bottom: 2px solid #5B3A87; padding-bottom: 0.3em; margin-top: 0; }
+      h2 { color: #5B3A87; margin-top: 1.8em; }
+      h3 { color: #1A202C; margin-top: 1.4em; }
+      a { color: #5B3A87; text-decoration: underline; }
+      code { background: #F4F6F8; padding: 0.1em 0.4em; border-radius: 2px; font-size: 0.92em; }
+      .disclaimer {
+        background: #FFF4E5; border-left: 4px solid #B45309;
+        padding: 0.8em 1em; margin: 1em 0 2em; font-size: 0.95em;
+      }
+      .libby-footer {
+        margin-top: 3em; padding-top: 1em; border-top: 1px solid #E2E8F0;
+        color: #6B6B7F; font-size: 0.85em;
+      }
+    
+/* Trial-table style — vendored from /Users/benjaminvincent/turtle/pfo/conductor/styles/trial-table/
+   Scoped via .trial-table-wrap so it does not leak into surrounding MkDocs page.
+
+   Uses explicit [data-md-color-scheme] selectors to bypass any CSS-variable
+   inheritance issues — the table reads correctly in both default (light) and
+   slate (dark) Material color schemes regardless of cascade quirks. */
+
+.trial-table-wrap caption {
+  caption-side: top;
+  text-align: left;
+  font-weight: 600;
+  padding: 0.4em 0;
+  font-size: 1em;
+}
+.trial-scroll { overflow-x: auto; }
+.trial-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.88em;
+}
+.trial-table thead th {
+  font-weight: 600;
+  text-align: left;
+  padding: 0.5em 0.6em;
+  white-space: nowrap;
+}
+.trial-table tbody td {
+  padding: 0.5em 0.6em;
+  font-variant-numeric: tabular-nums;
+  vertical-align: top;
+}
+.trial-table .num { text-align: right; }
+
+/* Narrow ID-style columns — the entry number in the access-guide summary
+   table and the NCT id in the access-guide trial-pathways table. Keep
+   numbers / NCTs on a single line so "10" doesn't wrap to "1\n0" and
+   "NCT05379985" doesn't break across four lines. min-width is large
+   enough to comfortably fit the widest expected value (3-digit entry
+   number, NCT + 8 digits = 11 chars in a monospace fallback). */
+.trial-table th.col-num,
+.trial-table td.col-num,
+.trial-table th.col-nct,
+.trial-table td.col-nct {
+  white-space: nowrap;
+}
+.trial-table th.col-num,
+.trial-table td.col-num { min-width: 2.4em; }
+.trial-table th.col-nct,
+.trial-table td.col-nct { min-width: 6.5em; }
+
+/* Access-guide column widths — kept generous so the wrapping `.trial-scroll`
+   div engages horizontal scroll before the cell text squeezes into a tall
+   narrow stack. Tuned for the access-guide tables specifically; other
+   trial-tables on the site keep their default auto layout. */
+.trial-table th.col-intervention,
+.trial-table td.col-intervention { min-width: 14em; }
+.trial-table th.col-target,
+.trial-table td.col-target { min-width: 12em; }
+.trial-table th.col-access-status,
+.trial-table td.col-access-status { min-width: 10em; }
+.trial-table th.col-regulatory,
+.trial-table td.col-regulatory { min-width: 22em; }
+.trial-table th.col-first-action,
+.trial-table td.col-first-action { min-width: 22em; }
+
+.trial-table th.col-phase,
+.trial-table td.col-phase { min-width: 3.5em; white-space: nowrap; }
+.trial-table th.col-indication,
+.trial-table td.col-indication { min-width: 18em; }
+.trial-table th.col-status,
+.trial-table td.col-status { min-width: 7em; white-space: nowrap; }
+.trial-table th.col-eligibility,
+.trial-table td.col-eligibility { min-width: 8em; white-space: nowrap; }
+.trial-table th.col-contact,
+.trial-table td.col-contact { min-width: 14em; }
+.trial-table th.col-notes,
+.trial-table td.col-notes { min-width: 24em; }
+.trial-table a {
+  text-decoration: underline;
+  font-weight: 700;
+}
+.trial-table .mark {
+  font-size: 0.75em;
+  vertical-align: super;
+}
+
+/* ---------- Default (light) scheme ---------- */
+[data-md-color-scheme="default"] .trial-table-wrap { color: #1A202C; }
+[data-md-color-scheme="default"] .trial-table thead th {
+  background: #F4F6F8;
+  color: #1A202C;
+  border-top: 2px solid #1A202C;
+  border-bottom: 1px solid #1A202C;
+}
+[data-md-color-scheme="default"] .trial-table tbody td {
+  color: #1A202C;
+  border-bottom: 1px solid #E2E8F0;
+}
+[data-md-color-scheme="default"] .trial-table tbody tr:last-child td {
+  border-bottom: 2px solid #1A202C;
+}
+[data-md-color-scheme="default"] .trial-table a { color: #1A202C; }
+[data-md-color-scheme="default"] .trial-table-wrap .notes {
+  font-size: 0.85em;
+  color: #4A5568;
+  margin-top: 0.6em;
+}
+
+/* ---------- Slate (dark) scheme ---------- */
+[data-md-color-scheme="slate"] .trial-table-wrap { color: #E2E8F0; }
+[data-md-color-scheme="slate"] .trial-table thead th {
+  background: #2D3344;
+  color: #F1F5F9;
+  border-top: 2px solid #94A3B8;
+  border-bottom: 1px solid #94A3B8;
+}
+[data-md-color-scheme="slate"] .trial-table tbody td {
+  color: #E2E8F0;
+  border-bottom: 1px solid #3A4159;
+}
+[data-md-color-scheme="slate"] .trial-table tbody tr:last-child td {
+  border-bottom: 2px solid #94A3B8;
+}
+[data-md-color-scheme="slate"] .trial-table a {
+  color: #93C5FD;
+}
+[data-md-color-scheme="slate"] .trial-table-wrap .notes {
+  font-size: 0.85em;
+  color: #94A3B8;
+  margin-top: 0.6em;
+}
+
+/* Libby-specific styling: case-fit / toxicity badges, agreement matrix, persona pills. */
+
+/* Bold links across all rendered content. */
+.md-typeset a {
+  font-weight: 700;
+}
+
+/* Case-fit badges (in trials.md). */
+.fit-badge {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.4em;
+  font-size: 0.78em;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+.fit-strong  { background: #E6F5EA; color: #14532D; border-color: #BBE2C7; }
+.fit-partial { background: #FFF7E0; color: #5A4500; border-color: #F1DD9A; }
+.fit-weak    { background: #FBE9E7; color: #6F2E1A; border-color: #ECC4BB; }
+.fit-none    { background: #F1F3F5; color: #4A5568; border-color: #E2E8F0; }
+
+/* Tumor-type-relation badges (trial table). */
+.rel-badge {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.4em;
+  font-size: 0.78em;
+  font-weight: 600;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.rel-indication  { background: #DDF1EE; color: #134E48; border-color: #B0DBD3; }
+.rel-basket      { background: #FFE9D6; color: #6F3A0F; border-color: #F0CFAE; }
+.rel-same-drug   { background: #DFEBFB; color: #1B3A6B; border-color: #B5CDEE; }
+.rel-cross-tumor { background: #F1E5FF; color: #441E72; border-color: #D4BBF2; }
+.rel-other       { background: #F1F3F5; color: #4A5568; border-color: #E2E8F0; }
+
+/* Risk-of-bias badges (evidence table). */
+.rob-badge {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.4em;
+  font-size: 0.78em;
+  font-weight: 600;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.rob-low  { background: #E6F5EA; color: #14532D; border-color: #BBE2C7; }
+.rob-med  { background: #FFF7E0; color: #5A4500; border-color: #F1DD9A; }
+.rob-high { background: #FBE9E7; color: #6F2E1A; border-color: #ECC4BB; }
+
+/* Toxicity flag pills. */
+.tox-flag {
+  display: inline-block;
+  padding: 0.05em 0.45em;
+  border-radius: 999px;
+  font-size: 0.75em;
+  background: #FBE9E7;
+  color: #6F2E1A;
+  border: 1px solid #ECC4BB;
+  margin-right: 0.25em;
+}
+
+/* Persona badges (board.md, recommendations.md). */
+.persona {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.35em;
+  font-size: 0.78em;
+  font-weight: 600;
+  margin-right: 0.25em;
+  border: 1px solid transparent;
+}
+.persona-risktaker    { background: #FFE9D6; color: #6F3A0F; border-color: #F0CFAE; }
+.persona-conservative { background: #DFEBFB; color: #1B3A6B; border-color: #B5CDEE; }
+.persona-critic       { background: #F1E5FF; color: #441E72; border-color: #D4BBF2; }
+.persona-concensusite { background: #DDF1EE; color: #134E48; border-color: #B0DBD3; }
+.persona-advocate     { background: #FFE5EE; color: #6E1638; border-color: #F0BBCB; }
+
+/* Agreement-level decorations. */
+.agree-endorse   { color: #14532D; font-weight: 600; }
+.agree-qualified { color: #5A4500; font-weight: 600; }
+.agree-dissent   { color: #6F2E1A; font-weight: 600; }
+.agree-veto      { color: #6F2E1A; font-weight: 700; text-decoration: underline; }
+
+/* Biomarker-conditional flag (inline in Intervention cell when scenario ends with :positive). */
+.scenario-conditional {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5A4500;
+  background: #FFF7E0;
+  border: 1px solid #F1DD9A;
+  border-radius: 0.35em;
+  padding: 0.05em 0.45em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+
+/* Counter-productive MoA descriptor (parenthetical text after the bold severity). */
+.cpm-desc {
+  font-size: 0.92em;
+  color: #4A5568;
+}
+
+/* Persona pill row inside the Intervention cell on the ranked-prioritization table. */
+.persona-line {
+  display: inline-block;
+  margin-top: 0.15em;
+  font-size: 0.78em;
+  color: #4A5568;
+}
+.persona-line + .persona-line {
+  margin-left: 0.6em;
+}
+
+/* Recommendation table marks. */
+.split-glyph { font-weight: 700; color: #5A4500; }
+.not-recommended {
+  color: #4A5568;
+  text-decoration: line-through;
+}
+
+/* surfaced_reason flag pills (Experimental "Also considered" table). Neutral,
+   muted pills — these rows are informational, not scored. */
+.flag-badge {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 999px;
+  font-size: 0.75em;
+  font-weight: 600;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.flag-unavailable    { background: #ECEFF1; color: #37474F; border-color: #CFD8DC; }
+.flag-consolidated   { background: #E8EAF6; color: #303F9F; border-color: #C5CAE9; }
+.flag-thin           { background: #FFF8E1; color: #7A5B00; border-color: #F0E1B0; }
+.flag-not-enrollable { background: #F3E5F5; color: #6A1B7A; border-color: #E1BEE7; }
+
+/* Disclaimer banner — applied to every case page via admonition. */
+.md-typeset .admonition.disclaimer {
+  border-color: #B71C1C;
+}
+.md-typeset .admonition.disclaimer > .admonition-title {
+  background-color: rgba(183, 28, 28, 0.08);
+  color: #B71C1C;
+}
+
+/* Agreement matrix heatmap (board.md). Pastel cells carry explicit
+   foreground+background that remain legible regardless of scheme; matrix
+   chrome (header, borders, no-opinion cells) uses scheme-aware selectors. */
+.agreement-matrix {
+  border-collapse: collapse;
+  font-size: 0.85em;
+}
+.agreement-matrix th, .agreement-matrix td {
+  padding: 0.35em 0.5em;
+  text-align: center;
+}
+.agreement-matrix th { font-weight: 600; }
+
+/* Pastel cell colors — same in both schemes (high contrast on their own bg). */
+.agreement-matrix td.cell-endorse   { background: #C8E6D0; color: #14532D; }
+.agreement-matrix td.cell-qualified { background: #FCEEC2; color: #5A4500; }
+.agreement-matrix td.cell-dissent   { background: #F4C7BE; color: #6F2E1A; }
+.agreement-matrix td.cell-veto      { background: #E8A399; color: #4A1408; font-weight: 700; }
+
+/* Default (light) scheme chrome. */
+[data-md-color-scheme="default"] .agreement-matrix th,
+[data-md-color-scheme="default"] .agreement-matrix td {
+  border: 1px solid #E2E8F0;
+  color: #1A202C;
+}
+[data-md-color-scheme="default"] .agreement-matrix th {
+  background: #F4F6F8;
+  color: #1A202C;
+}
+[data-md-color-scheme="default"] .agreement-matrix td.cell-absent {
+  background: #F1F3F5;
+  color: #94A3B8;
+}
+
+/* Slate (dark) scheme chrome. */
+[data-md-color-scheme="slate"] .agreement-matrix th,
+[data-md-color-scheme="slate"] .agreement-matrix td {
+  border: 1px solid #3A4159;
+  color: #E2E8F0;
+}
+[data-md-color-scheme="slate"] .agreement-matrix th {
+  background: #2D3344;
+  color: #F1F5F9;
+}
+[data-md-color-scheme="slate"] .agreement-matrix td.cell-absent {
+  background: #232838;
+  color: #64748B;
+}
+
+</style>
+</head>
+<body data-md-color-scheme="default">
+<div class="disclaimer">
+<strong>Decision support, not medical advice.</strong> Libby is an experimental 
+multi-agent decision-support tool. The information on this page has not been 
+reviewed by a clinician treating this patient. Information ages — confirm details 
+directly with the relevant sources before relying on them.
+</div>
+<h1 id="standard-of-care-options-aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun">Standard of care options — <code>aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun</code></h1>
+<p><em>The treatment strategies that are standard for this patient's situation, meaning a regulator approved them for a population that includes this patient or a major academic or clinical-society guideline carries them. This report runs alongside the targetable-feature ranking rather than in place of it, and it does not narrow what that ranking surfaces.</em></p>
+<h2 id="downloads">Downloads</h2>
+<ul>
+<li><a href="aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-standard-of-care.html">Standard of care options (offline HTML)</a> — the same standard-of-care assessment, self-contained HTML that opens offline</li>
+<li><a href="aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-standard-of-care.pdf">Standard of care options (PDF)</a> — print-friendly, grouped by next step</li>
+</ul>
+<p><em>12 standard options assessed: 6 to consider now, 0 behind an open gate, 2 already received.</em></p>
+<p>Twelve standard options were screened for this relapsed/refractory AML-MR, and six are worth weighing now. The curative-intent backbone the guidelines carry for AML that has relapsed after an allograft is a second allogeneic transplant, with donor lymphocyte infusion from the same HLA-identical sibling as the other cellular route at that fork. NCCN and the ELN 2022 panel keep both in play for fit patients, and NCCN makes clinical trial enrollment the preferred strategy in this setting. Gemtuzumab ozogamicin earns a row on its own footing: it is FDA-approved for relapsed/refractory CD33-positive AML and these blasts are CD33-positive, so it is standard here by regulatory maturity, though its own tier-1a evidence shows no survival benefit in the adverse-risk cytogenetics this patient carries. High-dose cytarabine salvage and radiotherapy to the thigh myeloid sarcoma fill out the near-term list as a cytoreductive bridge and local control.</p>
+<p>Two standard options are already spent: the first sibling allograft, which held remission for about six years, and the FLAG-IDA plus venetoclax reinduction the disease progressed through.</p>
+<p>No standard option sits behind an open biomarker gate, but the transplant backbone is conditioned on a fitness and organ-function workup that has not been done. The two approved menin inhibitors, revumenib and ziftomenib, are set aside on target: this disease carries KMT2A amplification, not the KMT2A translocation the revumenib label requires, and is NPM1 wild-type.</p>
+<p>This page is additive. It lists the standard options and does not narrow, reorder, or filter the targeted options ranked elsewhere on the case page.</p>
+<h2 id="options-to-consider-now">Options to consider now</h2>
+<p><em>Standard options this patient is eligible for, with an endorsement that covers their situation, and no unresolved gate in front of them.</em></p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Priority</th><th>Option</th><th>What makes it standard</th><th>Fit to this patient</th><th>Key evidence</th><th>Toxicities that would change the decision</th><th>Rationale</th><th>References</th></tr></thead>
+      <tbody>
+    <tr><td><span class="fit-badge fit-partial">high</span></td><td><strong>Clinical trial enrollment</strong><br><small class="persona-line">Other · Salvage · curative intent</small></td><td><div><strong>NCCN</strong> Preferred approach for relapsed/refractory AML <small class="persona-line">(covers this patient · NCCN AML v3.2026)</small><br><small>Relapsed/refractory AML: clinical trial enrollment is preferred whenever available, given the limited proven options in this setting.</small><br><small><em>NCCN AML v3.2026</em></small></div><div><strong>other_society</strong> ELN 2022: Expert-panel recommendation <small class="persona-line">(covers this patient · ELN 2022)</small><br><small>Relapsed/refractory AML with active disease or early relapse: patients should be considered for clinical trials.</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/35797463">PMID&nbsp;35797463</a></small></div><div><small>verified 2026-07-24</small></div></td><td><strong>Likely eligible</strong><br><small>Performance status is ECOG 1, curative intent and a preference for trials are on file, and travel is acceptable; eligibility for any specific protocol still depends on that protocol&#x27;s criteria and on the pending HLA and TP53 workup.</small></td><td>—</td><td>Protocol-specific; varies by the individual study</td><td>NCCN and the ELN 2022 panel both make clinical trial enrollment the preferred strategy for relapsed/refractory AML, because the proven off-trial options in this setting are limited. For this patient it is also the delivery route for the case&#x27;s motivating HLA-restricted cellular options. Specific eligibility hinges on the pending HLA typing and TP53 resolution, which is why the diagnostic workup is the ranked first step.</td><td><em>NCCN AML v3.2026</em><br><a href="https://pubmed.ncbi.nlm.nih.gov/35797463">PMID&nbsp;35797463</a></td></tr>
+    <tr><td><span class="fit-badge fit-partial">high</span></td><td><strong>Second allogeneic hematopoietic cell transplant (HCT2)</strong><br><small class="persona-line">Transplant · Salvage · curative intent</small><br><small><em>also called:</em> Second allo-HCT; HCT2</small></td><td><div><strong>NCCN</strong> Category 2A (transplant / clinical-trial route) <small class="persona-line">(covers this patient · NCCN AML v3.2026)</small><br><small>AML relapse after prior allogeneic HCT: a second allo-HCT or donor lymphocyte infusion is an option for fit patients, best pursued after remission or maximal cytoreduction; active disease and early relapse favour a trial.</small><br><small><em>NCCN AML v3.2026</em></small></div><div><strong>other_society</strong> ELN 2022: Expert-panel recommendation <small class="persona-line">(covers this patient · ELN 2022)</small><br><small>Post-transplant AML relapse: DLI and second allo-HCT are treatment options for eligible patients; shorter time to relapse and disease not in remission predict worse outcomes.</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/35797463">PMID&nbsp;35797463</a></small></div><div><small>verified 2026-07-24</small></div></td><td><strong>Conditionally eligible</strong><br><small>The late relapse roughly six years out is a favourable selection factor, but the profile records no cardiac, renal, or hepatic function, and the marrow is around 85% blasts with extramedullary disease, so remission or cytoreduction is needed before conditioning.</small><br><small class="persona-line">blocker: No cardiac, renal, or hepatic function on file; transplant fitness is undetermined and flagged as an open item</small><br><small class="persona-line">blocker: Active high-burden disease (~85% marrow blasts) not in remission; cytoreduction is needed before conditioning</small><br><small class="persona-line">blocker: Donor availability and consent for a second graft from the sibling not yet confirmed in the record</small></td><td><div><strong>How I treat AML relapse after allo-HCT (Blood 2025)</strong> <small class="persona-line">(expert review of second-HCT and DLI outcomes)</small><br><small>Second allo-HCT and DLI both offer curative potential in selected fit patients; reported long-term survival after post-transplant relapse remains on the order of 20-30% and is worse with active disease or early relapse.</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/39719042">PMID&nbsp;39719042</a></small></div></td><td>Non-relapse mortality from a second conditioning and from graft-versus-host disease; Regimen-related organ toxicity, infection, and second-transplant mortality that is not well characterized after a prior allo-HCT</td><td>A second allogeneic transplant is the standard curative-intent route for AML that has relapsed after a first allo-HCT, and both NCCN and the ELN 2022 panel keep it in play for fit patients. It is the platform the case&#x27;s curative plan is built around, including the ranked HA-1 TCR-T consolidation. The load-bearing caveats are that transplant fitness is undocumented and the marrow is not in remission, so cytoreduction and an organ-function workup have to come first.</td><td><em>NCCN AML v3.2026</em><br><a href="https://pubmed.ncbi.nlm.nih.gov/35797463">PMID&nbsp;35797463</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/39719042">PMID&nbsp;39719042</a></td></tr>
+    <tr><td><span class="fit-badge fit-weak">medium</span></td><td><strong>Donor lymphocyte infusion (DLI) from the HLA-identical sibling donor</strong><br><small class="persona-line">Cellular therapy · Salvage · disease-control intent</small><br><small><em>also called:</em> DLI</small></td><td><div><strong>NCCN</strong> Category 2A <small class="persona-line">(covers this patient · NCCN AML v3.2026)</small><br><small>AML relapse after allogeneic HCT: donor lymphocyte infusion is an option in fit patients, generally after cytoreduction, to re-establish a graft-versus-leukemia effect.</small><br><small><em>NCCN AML v3.2026</em></small></div><div><strong>other_society</strong> ELN 2022: Expert-panel recommendation <small class="persona-line">(covers this patient · ELN 2022)</small><br><small>Post-transplant AML relapse: DLI is a treatment option for eligible patients, with response tied to lower disease burden.</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/35797463">PMID&nbsp;35797463</a></small></div><div><small>verified 2026-07-24</small></div></td><td><strong>Conditionally eligible</strong><br><small>The sibling donor is available in principle, but DLI against an ~85% blast marrow rarely responds without prior cytoreduction, and the relapse pattern reads as graft-versus-leukemia escape, which tempers the expected benefit of re-stimulating the same graft.</small><br><small class="persona-line">blocker: Active high-burden disease (~85% blasts); DLI response is poor without prior cytoreduction</small><br><small class="persona-line">blocker: Graft-versus-host disease risk</small><br><small class="persona-line">blocker: Relapse pattern consistent with graft-versus-leukemia escape, which predicts limited benefit from DLI given as monotherapy</small></td><td><div><strong>How I treat AML relapse after allo-HCT (Blood 2025)</strong> <small class="persona-line">(expert review of DLI outcomes)</small><br><small>DLI alone produces a subsequent remission in roughly a quarter to a third of post-transplant AML relapses, with 2-year survival near 25%; results are better at low disease burden.</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/39719042">PMID&nbsp;39719042</a></small></div></td><td>Acute and chronic graft-versus-host disease; Marrow aplasia if given without a supporting graft</td><td>Donor lymphocyte infusion from the HLA-identical sibling is a standard, guideline-carried option for AML relapse after transplant, aimed at re-establishing a graft-versus-leukemia effect. It sits at the same fork as a second transplant and shares a mechanism with the ranked HA-1 TCR-T. The caveats are the high blast burden, which blunts DLI given alone, and the graft-versus-leukemia escape pattern that produced this relapse.</td><td><em>NCCN AML v3.2026</em><br><a href="https://pubmed.ncbi.nlm.nih.gov/35797463">PMID&nbsp;35797463</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/39719042">PMID&nbsp;39719042</a></td></tr>
+    <tr><td><span class="fit-badge fit-weak">medium</span></td><td><strong>Gemtuzumab ozogamicin (CD33 antibody-drug conjugate)</strong><br><small class="persona-line">Targeted therapy · Salvage · disease-control intent</small><br><small><em>also called:</em> Mylotarg</small></td><td><div><strong>FDA</strong> On-label approval (single agent) <small class="persona-line">(covers this patient · FDA approval 2017-09)</small><br><small>Relapsed or refractory CD33-positive acute myeloid leukemia in adults and in pediatric patients 2 years and older; single-agent dosing 3 mg/m2 on days 1, 4, and 7.</small><br><small><em>Mylotarg</em></small></div><div><strong>NCCN</strong> Category 2A <small class="persona-line">(covers this patient · NCCN AML v3.2026)</small><br><small>Relapsed/refractory CD33-positive AML: single-agent gemtuzumab ozogamicin.</small><br><small><em>NCCN AML v3.2026</em></small></div><div><small>verified 2026-07-24</small></div></td><td><strong>Conditionally eligible</strong><br><small>The blasts are CD33-positive by flow, so the label is met on target, but baseline bilirubin and transaminases are not on file and the veno-occlusive-disease risk compounds a planned second transplant, so hepatic clearance is a prerequisite.</small><br><small class="persona-line">blocker: Boxed warning for hepatotoxicity and veno-occlusive disease; no baseline liver function on file, and VOD risk stacks with a planned second transplant</small><br><small class="persona-line">blocker: Tier-1a individual-patient-data meta-analysis shows no survival benefit in adverse-risk cytogenetics, the patient&#x27;s exact complex, TP53-aberrant subgroup</small><br><small class="persona-line">gate: CD33 expression CD33-positive by flow cytometry (threshold met)</small></td><td><div><strong>Sievers 2001 (MyloFrance lineage)</strong> <small class="persona-line">(single-arm phase 2, first-relapse CD33+ AML · n=142)</small><br><small>CR/CRp 30%</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/11432892">PMID&nbsp;11432892</a></small></div><div><strong>Hills 2014 IPD meta-analysis</strong> <small class="persona-line">(individual-patient-data meta-analysis of gemtuzumab added to induction · n=3325)</small><br><small>No survival benefit in adverse cytogenetics: OR 0.99 (95% CI 0.83-1.18); read across from the induction setting, not single-agent salvage</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/25008258">PMID&nbsp;25008258</a></small></div></td><td>Grade 3+ hyperbilirubinemia (~23%) and transaminase elevation (~17%); Veno-occlusive disease / sinusoidal obstruction syndrome, a class risk ahead of a second transplant</td><td>Gemtuzumab ozogamicin is on-label for relapsed/refractory CD33-positive AML and NCCN-listed at category 2A, and the patient&#x27;s blasts are CD33-positive, so this is a genuine standard option rather than an extrapolation. It is a dual-nature agent that the feature-targeted ranking also carries. The caveat that governs its use here is that its own tier-1a evidence shows no survival benefit in adverse-risk cytogenetics, the patient&#x27;s exact subgroup, and its hepatic and VOD toxicity is the wrong risk to invite right before a second transplant.</td><td><em>Mylotarg</em><br><a href="https://pubmed.ncbi.nlm.nih.gov/29650683">PMID&nbsp;29650683</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/11432892">PMID&nbsp;11432892</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/25008258">PMID&nbsp;25008258</a><br><em>NCCN AML v3.2026</em></td></tr>
+    <tr><td><span class="fit-badge fit-weak">medium</span></td><td><strong>Intensive salvage chemotherapy (high-dose cytarabine-based, e.g. MEC or CLAG-M)</strong><br><small class="persona-line">Systemic chemotherapy · Salvage · disease-control intent</small><br><small><em>also called:</em> MEC (mitoxantrone/etoposide/cytarabine); CLAG-M; HiDAC-based salvage</small></td><td><div><strong>NCCN</strong> Category 2A <small class="persona-line">(partial population match · NCCN AML v3.2026)</small><br><small>Relapsed/refractory AML in fit patients: aggressive salvage regimens incorporating high-dose cytarabine (e.g. MEC, CLAG-M) as a route toward remission or transplant.</small><br><small><em>NCCN AML v3.2026</em></small></div><div><strong>other_society</strong> ELN 2022: Expert-panel recommendation <small class="persona-line">(partial population match · ELN 2022)</small><br><small>Relapsed/refractory AML: intensive salvage chemotherapy for fit patients aiming at remission and transplant; patients with active disease or early relapse should be considered for trials.</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/35797463">PMID&nbsp;35797463</a></small></div><div><small>verified 2026-07-24</small></div></td><td><strong>Conditionally eligible</strong><br><small>The disease state fits the guideline, but the patient is refractory to FLAG-IDA, itself a high-dose cytarabine and fludarabine salvage, so cross-resistance limits what another intensive regimen is likely to achieve beyond cytoreduction.</small><br><small class="persona-line">blocker: Refractory to prior FLAG-IDA (a high-dose cytarabine / fludarabine salvage), so cross-resistance limits expected response</small><br><small class="persona-line">blocker: Cumulative marrow and organ toxicity; fitness and organ function are undocumented</small></td><td><div><strong>NCCN-listed intensive salvage regimens</strong> <small class="persona-line">(guideline-referenced practice, retrospective salvage series)</small><br><small>Second-line intensive salvage CR rates are generally 20-40% and lower after prior high-dose cytarabine failure; used here mainly as a cytoreductive bridge</small></div></td><td>Prolonged cytopenias, febrile neutropenia, and infection; Mucositis and cumulative anthracycline / cardiac exposure</td><td>High-dose cytarabine-based salvage regimens such as MEC or CLAG-M are the standard intensive option for fit relapsed/refractory AML and are the usual way to cytoreduce toward a transplant. The reason it is a bridge rather than a destination here is that the patient is already refractory to FLAG-IDA, a related high-dose cytarabine salvage, so cross-resistance caps the expected depth of response. Its value in this case is debulking the marrow ahead of the curative transplant and cellular plan.</td><td><em>NCCN AML v3.2026</em><br><a href="https://pubmed.ncbi.nlm.nih.gov/35797463">PMID&nbsp;35797463</a></td></tr>
+    <tr><td><span class="fit-badge fit-none">low</span></td><td><strong>Radiotherapy to the extramedullary (right-thigh) myeloid sarcoma</strong><br><small class="persona-line">Radiotherapy · Any line · symptom palliation</small><br><small><em>also called:</em> Local radiotherapy for chloroma</small></td><td><div><strong>NCCN</strong> Category 2A (myeloid sarcoma management) <small class="persona-line">(partial population match · NCCN AML v3.2026)</small><br><small>Myeloid sarcoma (extramedullary AML): local radiotherapy for symptomatic or bulky disease or where systemic therapy gives inadequate local control.</small><br><small><em>NCCN AML v3.2026</em></small></div><div><small>verified 2026-07-24</small></div></td><td><strong>Likely eligible</strong><br><small>Radiotherapy to a defined soft-tissue site is deliverable regardless of the systemic marrow burden; it addresses only the right-thigh lesion and does not touch the dominant marrow disease.</small></td><td><div><strong>Radiotherapy for myeloid sarcoma (retrospective series)</strong> <small class="persona-line">(retrospective, single-modality local control)</small><br><small>Durable local control at modest doses (commonly 20-30 Gy); no effect on systemic marrow disease or survival</small></div></td><td>Local skin and soft-tissue reaction and fatigue; No effect on the dominant systemic marrow disease</td><td>Local radiotherapy is the standard option for a symptomatic or bulky myeloid sarcoma and would give local control at the right-thigh site. It is palliative and local by nature, so it does nothing for the ~85% blast marrow that drives the prognosis. It is worth considering now only if the thigh lesion becomes symptomatic, and it can run alongside systemic and cellular therapy.</td><td><em>NCCN AML v3.2026</em></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2 id="options-at-the-next-decision-point">Options at the next decision point</h2>
+<p><em>Standard for a line this patient has not reached yet, or for a disease state that has not arrived. Listed now so the sequence is visible in advance.</em></p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Priority</th><th>Option</th><th>What makes it standard</th><th>Fit to this patient</th><th>Key evidence</th><th>Toxicities that would change the decision</th><th>Rationale</th><th>References</th></tr></thead>
+      <tbody>
+    <tr><td><span class="fit-badge fit-none">low</span></td><td><strong>Best supportive care and hospice referral</strong><br><small class="persona-line">Supportive care · Not line-indexed · symptom palliation</small><br><small><em>also called:</em> BSC; Palliative care</small></td><td><div><strong>NCCN</strong> Named management strategy <small class="persona-line">(covers this patient · NCCN AML v3.2026)</small><br><small>Relapsed/refractory AML: best supportive care, including transfusions, infection management, and hospice, is an option where curative therapy is not deliverable or not wanted.</small><br><small><em>NCCN AML v3.2026</em></small></div><div><strong>other_society</strong> ELN 2022: Expert-panel recommendation <small class="persona-line">(covers this patient · ELN 2022)</small><br><small>Best supportive care is appropriate for patients not proceeding to intensive or trial therapy.</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/35797463">PMID&nbsp;35797463</a></small></div><div><small>verified 2026-07-24</small></div></td><td><strong>Eligible</strong><br><small>Supportive care is available to any patient; it is offered here as the standard alternative if the curative pathway proves undeliverable or is declined once fitness and goals are clarified.</small></td><td>—</td><td>None from the strategy itself; the trade-off is forgoing disease-directed therapy</td><td>Best supportive care with hospice is a guideline-named management strategy for relapsed/refractory AML, and it belongs on the page as a real option rather than a footnote. Curative intent is currently on file, and fitness and goals-of-care assessment is an explicit open item, so this sits at the next decision point rather than now. It becomes the primary path if the transplant and cellular plan proves undeliverable or is declined.</td><td><em>NCCN AML v3.2026</em><br><a href="https://pubmed.ncbi.nlm.nih.gov/35797463">PMID&nbsp;35797463</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2 id="already-received">Already received</h2>
+<p><em>Carried so the report reads as a complete account of the standard options rather than a list that quietly omits what has been tried.</em></p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Option</th><th>What was given</th><th>What makes it standard</th><th>Note</th></tr></thead>
+      <tbody>
+    <tr><td><strong>FLAG-IDA + venetoclax reinduction</strong><br><small class="persona-line">Systemic chemotherapy · Salvage · curative intent</small><br><small><em>also called:</em> FLAG-IDA + VEN</small></td><td>Given as reinduction for relapsed/refractory AML. Best response was progressive disease; the marrow rose to ~85% blasts with extramedullary spread. This refractoriness to a high-dose cytarabine and venetoclax regimen is why re-treating with another venetoclax- or FLAG-based intensive regimen is not expected to add benefit.</td><td><div><strong>NCCN</strong> Category 2A <small class="persona-line">(covers this patient · NCCN AML v3.2026)</small><br><small>Relapsed/refractory AML in fit patients: high-intensity salvage (FLAG-IDA) with or without venetoclax.</small><br><small><em>NCCN AML v3.2026</em></small></div><div><small>verified 2026-07-24</small></div></td><td>FLAG-IDA with venetoclax is a standard high-intensity salvage regimen for fit relapsed/refractory AML, and it was the reinduction this patient received. It failed, with progression to an ~85% blast marrow. It is recorded here so the report reads honestly about why another venetoclax-containing or high-dose cytarabine salvage is not offered back as a fresh option.</td></tr>
+    <tr><td><strong>First matched-sibling allogeneic transplant (HCT1)</strong><br><small class="persona-line">Transplant · Not line-indexed · curative intent</small><br><small><em>also called:</em> Allo-HCT #1</small></td><td>HLA-identical sibling PBSC allograft around 2020 for RCMD, IPSS-R high/very-high MDS. Best response was complete remission, sustained about 72 months. The late relapse roughly six years out shows a graft-versus-leukemia escape pattern rather than graft failure, which is part of why a second transplant and post-transplant cellular consolidation are being weighed.</td><td><div><strong>NCCN</strong> Category 1 (curative modality for high-risk MDS) <small class="persona-line">(covers this patient · NCCN MDS / AML v3.2026)</small><br><small>High-risk MDS (IPSS-R high / very-high): allogeneic HCT is the only potentially curative therapy in eligible patients.</small><br><small><em>NCCN</em></small></div><div><strong>other_society</strong> ELN 2022: Expert-panel recommendation <small class="persona-line">(covers this patient · ELN 2022)</small><br><small>Allogeneic HCT is curative-intent standard for eligible patients with high-risk myeloid disease.</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/35797463">PMID&nbsp;35797463</a></small></div><div><small>verified 2026-07-24</small></div></td><td>The first matched-sibling allograft was the curative-intent standard for the high-risk MDS that preceded this AML, and it held a complete remission for about six years. It is logged here so the record reads as a complete account rather than one that omits the transplant the current plan builds on. Its durable graft-versus-leukemia effect and eventual escape shape the rationale for a second transplant.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2 id="assessed-and-set-aside">Assessed and set aside</h2>
+<p>??? note "3 option(s) screened against this patient and set aside"
+    Screened against this patient and found not to apply. Listed for the audit trail.</p>
+<pre><code>- **Revumenib (menin inhibitor)**: Revumenib is an approved menin inhibitor for R/R acute leukemia with a KMT2A translocation and for R/R NPM1-mutant AML, and it is worth naming precisely because this patient&amp;#x27;s KMT2A finding is easy to misread. The karyotype shows KMT2A amplification, a copy-number gain, not the KMT2A translocation the label and its companion diagnostic require, and the disease is NPM1 wild-type. Neither indication covers this patient, so revumenib is assessed and set aside.
+- **Ziftomenib (menin inhibitor)**: Ziftomenib is an approved menin inhibitor, but its label is confined to relapsed/refractory AML with a susceptible NPM1 mutation, and this disease is NPM1 wild-type. As with revumenib, the KMT2A amplification here is a copy-number gain rather than the fusion that would create menin-inhibitor sensitivity. The drug is approved but the target is absent, so it is assessed and set aside.
+- **CPX-351 (liposomal daunorubicin/cytarabine)**: CPX-351 is the standard first-line intensive choice for the AML-MR histology this patient carries, which is why a reader would look for it. Its approval is confined to newly diagnosed disease, and this patient is relapsed and refractory after a transplant, so the histology match does not open the drug here. It is assessed and set aside on line, not on target.
+</code></pre>
+<h2 id="how-these-sit-alongside-the-targeted-options">How these sit alongside the targeted options</h2>
+<p><em>The ranked recommendations stay scoped to this case's targetable features, and nothing on this page changes that ranking. What this section adds is the sequencing: where a standard option and a targeted option compete for the same line, and where taking one would close the door on the other.</em></p>
+<p><strong>Competes for the same line of therapy</strong></p>
+<ul>
+<li><strong>Donor lymphocyte infusion (DLI) from the HLA-identical sibling donor</strong>: DLI and a second allo-HCT are the two standard cellular routes at this fork, and DLI shares the graft-versus-leukemia mechanism with the ranked HA-1 TCR-T but without the HLA-restricted antigen targeting. Choosing DLI now uses the same donor and the same window the transplant-plus-TCR-T plan depends on. (interacts with: ha1-tcr-t)</li>
+<li><strong>Gemtuzumab ozogamicin (CD33 antibody-drug conjugate)</strong>: This is the same CD33 agent the feature-targeted ranking carries at rank 5. It appears in both tables because it is FDA-approved for R/R CD33+ AML and it also targets a feature the patient has, so the standard-of-care table logs it by regulatory maturity while the targeted ranking weighs it by mechanism. Spending the salvage slot on it is the trade-off the board flagged against the immunotherapy pathway. (interacts with: gemtuzumab-ozogamicin)</li>
+</ul>
+<p><strong>Comes before the targeted options</strong></p>
+<ul>
+<li><strong>Second allogeneic hematopoietic cell transplant (HCT2)</strong>: The HCT2 platform is the base on which the ranked HA-1 TCR-T consolidation would be delivered, and the ranked Iomab-B option is a radioimmunotherapy way to condition for this same transplant. The standard transplant comes first; the targeted cellular consolidation follows on it. (interacts with: iomab-b-apamistamab, ha1-tcr-t)</li>
+<li><strong>Intensive salvage chemotherapy (high-dose cytarabine-based, e.g. MEC or CLAG-M)</strong>: Intensive salvage functions here as cytoreduction to bring the ~85% blast marrow down toward a state where the ranked transplant and cellular-immunotherapy options become deliverable. It occupies the same debulking role the ranked CD123 agents are also being weighed for. (interacts with: iomab-b-apamistamab, ha1-tcr-t)</li>
+</ul>
+<p><strong>Can run alongside the targeted options</strong></p>
+<ul>
+<li><strong>Clinical trial enrollment</strong>: Every ranked targeted option in this case, from the HLA and HA-1 workup through the HA-1 TCR-T and the CD123 agents, is delivered through a trial or expanded-access route, so this standard recommendation is the mechanism by which those options reach the patient rather than a competitor to them. (interacts with: hla-ha-workup, ha1-tcr-t, iomab-b-apamistamab, pivekimab-sunirine)</li>
+</ul>
+<p><strong>Independent of the targeted options</strong></p>
+<ul>
+<li><strong>Revumenib (menin inhibitor)</strong>: Named to close the loop on the KMT2A-amplification versus KMT2A-rearrangement distinction, a common point of confusion, since this genotype does not confer menin-inhibitor sensitivity. It does not interact with the ranked options.</li>
+<li><strong>Ziftomenib (menin inhibitor)</strong>: The second approved menin inhibitor, listed alongside revumenib so the report is explicit that the menin-inhibitor class does not apply to an NPM1-wild-type, KMT2A-amplified genotype. It does not interact with the ranked options.</li>
+<li><strong>Radiotherapy to the extramedullary (right-thigh) myeloid sarcoma</strong>: Radiotherapy treats the local myeloid sarcoma only and does not interact with the systemic marrow-directed targeted options; it can proceed in parallel for local control or symptom relief.</li>
+<li><strong>Best supportive care and hospice referral</strong>: Best supportive care is the alternative if the curative transplant and cellular plan cannot be delivered or is not wanted. It does not compete with any single ranked option; it is the path taken if that pathway closes.</li>
+</ul>
+<p>!!! note "Reading this report"
+    An option earns a row here only if a regulator approved it for a population that includes this patient, or a major society's guideline carries it. <strong>What makes it standard</strong> names the endorsing body and, next to it, whether that endorsement was written for this patient's situation or for a different population. <strong>Fit to this patient</strong> is judged against the case profile alone, so an option the patient has already had and progressed on is marked rather than re-offered. This page is additive: it runs alongside the <a href="recommendations.md">ranked recommendations</a> and does not narrow, rerank, or filter the targeted options that ranking surfaces.</p>
+<footer class="libby-footer">Generated 2026-07-25 &middot; Libby &middot; <code>aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun</code> &middot; Standard of care options</footer>
+</body></html>
