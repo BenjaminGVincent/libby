@@ -104,10 +104,19 @@
           "scope": "Solid tumors with an NTRK gene fusion; CNS-penetrant",
           "nct_id": "NCT02568267",
           "trial_name": "STARTRK-2"
+        },
+        {
+          "intervention": "repotrectinib",
+          "modality": "next-generation TRK / ROS1 / ALK inhibitor",
+          "approval_status": "FDA accelerated approval, tumor-agnostic",
+          "approval_year": 2024,
+          "scope": "Adult and pediatric patients 12 years and older with locally advanced or metastatic NTRK fusion-positive solid tumors that have progressed after treatment or have no satisfactory alternative; retains activity against TRK resistance mutations",
+          "nct_id": "NCT03093116",
+          "trial_name": "TRIDENT-1"
         }
       ],
       "reflex_actions": [],
-      "notes": "DNA-only panels miss fusions with breakpoints in large or poorly-covered introns, so a negative DNA panel is not equivalent to a negative RNA fusion assay. Pan-TRK IHC is a screen, not a confirmation, and stains physiologic TRK in some tissues."
+      "notes": "DNA-only panels miss fusions with breakpoints in large or poorly-covered introns, so a negative DNA panel is not equivalent to a negative RNA fusion assay. Pan-TRK IHC is a screen, not a confirmation, and stains physiologic TRK in some tissues. Repotrectinib added 2026-08 by the surveyor after confirming the 13 June 2024 tumor-agnostic accelerated approval; it was missing from the 2026-07 curation. All three TRK approvals are written for solid tumors, so use in a hematologic malignancy is off-label."
     },
     {
       "panel_key": "ret-fusion",
