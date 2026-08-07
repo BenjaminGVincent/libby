@@ -115,13 +115,16 @@ ONCOLOGY_ACRONYM_ALLOWLIST = frozenset({
     # Tumor / pathology acronyms (DLL3 + PRAME pipelines)
     "SCLC", "NSCLC", "NEC", "LCNEC", "NEPC", "GEP", "MTC", "EP",
     # Hematologic + non-solid (PRAME pipeline overlap)
-    "AML", "MDS", "ALL", "CLL", "CML", "DLBCL", "FL", "HL", "MM",
+    "AML", "MDS", "ALL", "CLL", "CML", "CMML", "DLBCL", "FL", "HL", "MM",
     # Tumor-type acronyms in the selected-biomarker panel's cancer_relevance prose
     # (data/reference/selected_biomarker_panel.json)
     "ESCC", "MCL",
     # AML / MDS regimens, transplant conditioning, and drug shorthands
     # (relapsed/refractory AML + allo-HCT vocabulary)
     "FLAG", "IDA", "FLAGIDA", "GO", "CMA", "TBI", "ATG", "RIC", "MAC",
+    # All-caps trade names / product codes in accessibility alias lists
+    # (e.g. "MYLOTARG, CMA-676", "DECNUPAZ, PVEK", "ADSPAM, MT-401-OTS")
+    "MYLOTARG", "DECNUPAZ", "PVEK", "ADSPAM",
     "FLAMSA", "DLI", "GVHD", "GVL", "HCT", "HSCT", "NRM", "VOD", "SOS",
     "MRD", "LSC", "HMA", "AZA", "DEC", "CPX", "MEC", "HIDAC", "CLAG",
     "NPM", "CEBPA", "DNMT", "TET", "ASXL", "RUNX", "MECOM", "EVI",
@@ -339,6 +342,28 @@ def is_under_case_dir(path: Path, root: Path) -> bool:
     return rel.parts and rel.parts[0] == "case"
 
 
+# Guideline releases are cited with day precision by design ("NCCN AML
+# v3.2026 (11/24/2025)", "Version 3.2026 (11/24/2025)") — a publication date
+# of a versioned guideline text, not a patient date. Suppress a us_date hit
+# only when EVERY day-precision date on the line sits inside such a
+# version-parenthetical; a real clinical date elsewhere on the line still flags.
+_GUIDELINE_VERSION_PREFIX_RE = re.compile(
+    r"(?:[Vv]ersion\s+|\bv)\d+\.\d{4}\s*\(\s*(?:the\s+)?$"
+)
+_US_DATE_RE = re.compile(r"\b\d{1,2}/\d{1,2}/(?:19|20)\d{2}\b")
+
+
+def us_dates_are_guideline_versions(line: str) -> bool:
+    """Return True if every day-precision US date on the line is the
+    publication date inside a guideline-version parenthetical."""
+    matches = list(_US_DATE_RE.finditer(line))
+    if not matches:
+        return False
+    return all(
+        _GUIDELINE_VERSION_PREFIX_RE.search(line[: m.start()]) for m in matches
+    )
+
+
 def all_caps_pair_is_phi(line: str) -> bool:
     """Return True if any ALL-CAPS, ALL-CAPS pair on the line has at least one
     token outside the oncology-acronym allowlist (i.e. plausibly a name)."""
@@ -512,6 +537,8 @@ def scan_file(path: Path) -> list[tuple[int, str, str, str]]:
             if not pattern.search(line):
                 continue
             if label == "all_caps_name" and not all_caps_pair_is_phi(line):
+                continue
+            if label == "us_date" and us_dates_are_guideline_versions(line):
                 continue
             hits.append((lineno, label, description, line.rstrip()))
         if in_bydesign_region and region_end_marker and region_end_marker in line:

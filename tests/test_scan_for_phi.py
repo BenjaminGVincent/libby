@@ -107,6 +107,31 @@ def test_all_caps_pair_helper():
     assert phi.all_caps_pair_is_phi("no pair here") is False
 
 
+# --- guideline-version dates are cited with day precision by design -----------
+
+def test_guideline_version_date_not_flagged(tmp_path):
+    # "NCCN AML v3.2026 (11/24/2025)" is a guideline publication date, not a
+    # patient date; both the "v" and "Version" spellings appear in board rows.
+    for text in (
+        "verified against NCCN AML v3.2026 (11/24/2025) for this run",
+        "I verified NCCN AML content against Version 3.2026 (11/24/2025), read the text",
+        "NCCN AML v3.2026 (the 11/24/2025 text, the floor I could verify)",
+    ):
+        hits = phi.scan_file(_write(tmp_path, "note.md", text))
+        assert "us_date" not in _labels(hits)
+
+
+def test_plain_us_date_still_flagged(tmp_path):
+    hits = phi.scan_file(_write(tmp_path, "note.md", "seen 03/15/2024 in clinic"))
+    assert "us_date" in _labels(hits)
+
+
+def test_mixed_version_and_clinical_date_still_flagged(tmp_path):
+    text = "per NCCN v3.2026 (11/24/2025); marrow drawn 06/12/2026"
+    hits = phi.scan_file(_write(tmp_path, "note.md", text))
+    assert "us_date" in _labels(hits)
+
+
 # --- ignore token -------------------------------------------------------------
 
 def test_ignore_token_suppresses_line(tmp_path):
