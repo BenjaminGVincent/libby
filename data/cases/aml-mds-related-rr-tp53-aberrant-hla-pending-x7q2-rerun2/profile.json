@@ -1,0 +1,150 @@
+{
+  "case_slug": "aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2",
+  "age_band": "50-59",
+  "sex": "female",
+  "primary_site": "bone marrow (hematologic)",
+  "histology": "Acute myeloid leukemia, myelodysplasia-related (AML-MR), relapsed/refractory; transformed from prior MDS (RCMD, IPSS-R high/very-high, diagnosed ~2019); with extramedullary myeloid sarcoma",
+  "stage": "Relapsed/refractory AML-MR. Marrow ~85% blasts (June 2026); peripheral-blood blasts 58->82% (late June 2026); extramedullary right-thigh myeloid sarcoma on MRI (May 2026, adverse feature). Refractory to FLAG-IDA + venetoclax reinduction. Late relapse ~6 years after matched-sibling PBSC allo-HCT (~2020); pattern consistent with graft-versus-leukemia escape rather than graft failure.",
+  "ecog": 1,
+  "biomarkers": [
+    {
+      "name": "TP53",
+      "value": "aberrant, pending confirmation (NOT resolved in either direction). Pathogenic TP53 mutation reported on 2019 diagnostic NGS; 2026 relapse NGS reported NEGATIVE, but on a limited assay (LOD ~2% VAF, no copy-number/CNV detection, not MRD-grade). Discrepancy most plausibly subclonal loss, copy-loss, or a re-review artifact rather than true reversion. Working call: TP53-aberrant pending confirmation.",
+      "method": "NGS (2019 diagnostic panel: pathogenic; 2026 Oncomine GX v2 relapse panel: negative, limited LOD/no CNV/not MRD)",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "Resolve the 2019-vs-2026 discrepancy WITHOUT collapsing it: retrieve the original 2019 variant identity + VAF, add p53 IHC and 17p (TP53) FISH, and determine the specific amino-acid change. A confirmed Y220C would open rezatapopt (variant-contingent); eprenetapopt is low-yield. Do not down-call to wild-type on the basis of a 2%-LOD/no-CNV panel alone."
+    },
+    {
+      "name": "TP53 Y220C (specific variant)",
+      "value": "unknown / to be determined — Y220C status not established; therapy handle (rezatapopt) is contingent on it",
+      "method": "NGS variant-level readout pending (contingent on TP53 confirmation above)",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "Variant-specific NGS to establish whether the TP53 aberration is Y220C. Y220C-positive would be actionable for the Y220C-selective reactivator rezatapopt; non-Y220C TP53 aberration would not."
+    },
+    {
+      "name": "HLA-A*02:01",
+      "value": "unknown / pending retrieval. High-resolution HLA typing was performed ~2020 but the allele-level result is not in the records on hand (placeholder in the EHR).",
+      "method": "HLA high-resolution typing (result to be pulled from the first-transplant / donor-registry chart)",
+      "confirmation_status": "unknown",
+      "decision_resolution": "Retrieve A*02:01 allele status. This is the master switch for HLA-A*02:01-restricted immunotherapy: HA-1/HA-2 TCR-T (e.g. TSC-100/101), WT1-C4, and PRAME approaches are gated on it. Eligibility for the primary reason this case was submitted hinges on this value."
+    },
+    {
+      "name": "HLA-A*24:02",
+      "value": "unknown / pending",
+      "method": "HLA high-resolution typing (to be retrieved in parallel with A*02:01)",
+      "confirmation_status": "unknown",
+      "decision_resolution": "Check in parallel with A*02:01. If A*02:01-negative, A*24:02 opens an alternative WT1-siTCR lever; therefore both alleles must be resolved before foreclosing HLA-restricted immunotherapy."
+    },
+    {
+      "name": "HA-1 / HA-2 minor histocompatibility antigens (recipient and sibling donor)",
+      "value": "unknown / pending for BOTH patient and sibling donor. HLA-identical siblings can still differ at HA-1/HA-2.",
+      "method": "HA-1/HA-2 genotyping of recipient and donor (not yet performed)",
+      "confirmation_status": "unknown",
+      "decision_resolution": "Genotype HA-1/HA-2 in both the patient and the HLA-identical sibling donor. HA-directed TCR-T (TSC-100/101) requires the specific mismatch of recipient HA-1(H)-positive / donor HA-1-negative (and is further gated on HLA-A*02:01). Do not assume eligibility or ineligibility until both are genotyped."
+    },
+    {
+      "name": "CD33",
+      "value": "positive (blasts CD33+ by flow cytometry)",
+      "method": "flow cytometry (qualitative)",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "Positivity confirmed qualitatively. REQUEST QUANTITATIVE (antigen-density) CD33 flow to support ADC/immunotoxin targeting decisions (gemtuzumab ozogamicin; dual CD33/CD123 strategies) — qualitative positivity does not establish the density that predicts ADC benefit."
+    },
+    {
+      "name": "CD123",
+      "value": "positive (blasts CD123+ by flow cytometry)",
+      "method": "flow cytometry (qualitative)",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "Positivity confirmed qualitatively. REQUEST QUANTITATIVE (antigen-density) CD123 flow to support CD123-directed therapy selection (tagraxofusp, pivekimab; dual CD33/CD123)."
+    },
+    {
+      "name": "AML immunophenotype (supporting)",
+      "value": "CD34+ (increased), CD13+, CD15+ (subset), CD117+ (variably increased), HLA-DR (variably decreased), CD38 decreased; negative CD4/CD5/CD7/CD14/CD16/CD19/CD56/CD64",
+      "method": "flow cytometry",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "Documented myeloid immunophenotype supporting AML lineage; no aberrant lymphoid antigens flagged for alternative targeting."
+    },
+    {
+      "name": "FLT3",
+      "value": "negative / no mutation (2019 diagnostic NGS)",
+      "method": "NGS (2019)",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "Excludes FLT3 inhibitor labels (midostaurin, gilteritinib, quizartinib). Consider re-testing at relapse given clonal evolution, though 2026 panel did not report FLT3."
+    },
+    {
+      "name": "IDH1",
+      "value": "negative / no mutation (2019 diagnostic NGS)",
+      "method": "NGS (2019)",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "Excludes ivosidenib/olutasidenib label. Reasonable to re-confirm at relapse."
+    },
+    {
+      "name": "IDH2",
+      "value": "negative / no mutation (2019 diagnostic NGS)",
+      "method": "NGS (2019)",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "Excludes enasidenib label. Reasonable to re-confirm at relapse."
+    },
+    {
+      "name": "JAK3",
+      "value": "variant of uncertain significance (VUS) — 2019",
+      "method": "NGS (2019)",
+      "confirmation_status": "unknown",
+      "decision_resolution": "VUS; not currently actionable. Re-classification would require variant-level review; no decision impact unless upgraded."
+    },
+    {
+      "name": "SMC3",
+      "value": "variant of uncertain significance (VUS) — 2019 (cohesin-complex gene)",
+      "method": "NGS (2019)",
+      "confirmation_status": "unknown",
+      "decision_resolution": "VUS in a cohesin-complex gene; not currently actionable."
+    },
+    {
+      "name": "Cytogenetics / karyotype",
+      "value": "Complex, adverse-risk. 2019: complex karyotype with del(5q), del(7q), del(20q12), der(17)t(13;17) [17p], monosomy 13, others. 2026 relapse: gain of 5' MECOM, del(5q), del(7q), KMT2A amplification (4 copies), del(8cen), del(16q22). Shared del(5q)/del(7q) + TP53 founder across timepoints indicates evolution of the ORIGINAL clone transformed to AML (not a new/secondary or donor-derived leukemia).",
+      "method": "karyotype / FISH (2019 and 2026); clonal-origin inference from shared lesions",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "Confirm clonal origin with side-by-side 2019-vs-2026 comparison plus STR chimerism on SORTED CD34+ blasts (sex-matched sibling donor precludes XY-FISH). Obtain a full metaphase karyotype at relapse. MECOM rearrangement and KMT2A amplification are adverse and shape prognosis/trial eligibility."
+    }
+  ],
+  "prior_therapies": [
+    {
+      "regimen": "Matched-sibling PBSC allogeneic hematopoietic cell transplant (allo-HCT #1), HLA-identical sibling donor (CMV-negative, blood group A+), ~2020, for MDS (RCMD, IPSS-R high/very-high)",
+      "line": "allo-HCT (HCT1)",
+      "best_response": "CR",
+      "duration_months": 72
+    },
+    {
+      "regimen": "FLAG-IDA + venetoclax reinduction",
+      "line": "reinduction for relapsed/refractory AML",
+      "best_response": "PD"
+    }
+  ],
+  "current_therapy": null,
+  "organ_function": {
+    "note": "No numeric organ-function labs (CrCl, LFTs, cardiac) provided in the source intake. Fitness/cardiac assessment is an explicit open item."
+  },
+  "targetable_features": [
+    {
+      "feature": "CD123-positive blasts (CD123+ by flow)",
+      "rationale": "User-stated therapy handle. CD123-directed cytoreduction: tagraxofusp (CD123 immunotoxin) and pivekimab sunirine (CD123 ADC; trial/EAP), potentially in combination for cytoreduction ahead of a cellular/transplant consolidation. Actionability depends on QUANTITATIVE CD123 antigen density (requested)."
+    },
+    {
+      "feature": "CD33-positive blasts (CD33+ by flow)",
+      "rationale": "User-stated therapy handle. CD33-directed: gemtuzumab ozogamicin (CD33 ADC); dual CD33+CD123 targeting is of interest. Actionability depends on QUANTITATIVE CD33 antigen density (requested)."
+    },
+    {
+      "feature": "TP53 aberration (Y220C-contingent)",
+      "rationale": "User-stated therapy handle, HELD as pending confirmation (do not collapse the 2019-mutant vs 2026-negative discrepancy in either direction). If confirmed and the variant is Y220C, rezatapopt (Y220C-selective p53 reactivator) is in play; eprenetapopt is low-yield. Gated on resolving TP53 status (original variant + VAF, p53 IHC, 17p FISH) and establishing the specific variant."
+    },
+    {
+      "feature": "HLA-restricted immunotherapy handles (HA-1/HA-2 TCR-T, WT1, PRAME) - the primary reason for this Libby run",
+      "rationale": "User-stated and the explicit motivation for submission. Post-HCT2 consolidation options: HA-1/HA-2-directed TCR-T (e.g. TSC-100/101, Bleakley platform), WT1-C4, and PRAME-directed approaches. ALL are gated on HLA-A*02:01 status (currently unknown/pending); HA-directed TCR-T additionally requires recipient HA-1(H)-positive / donor HA-1-negative genotyping of both patient and sibling. If A*02:01-negative, A*24:02 may open a WT1-siTCR alternative. Eligibility cannot be established until HLA typing and HA-1/HA-2 genotyping are retrieved/performed."
+    },
+    {
+      "feature": "Allograft / second-transplant platform (HCT2)",
+      "rationale": "User-stated therapy handle. Second allo-HCT +/- FLAMSA-RIC sequencing or Iomab-B (targeted radioimmunotherapy conditioning); sibling donor lymphocyte infusion (DLI). Provides the platform on which post-transplant HLA-restricted cellular consolidation would be delivered, consistent with the stated curative intent."
+    }
+  ],
+  "geography_band": null,
+  "private": false
+}
