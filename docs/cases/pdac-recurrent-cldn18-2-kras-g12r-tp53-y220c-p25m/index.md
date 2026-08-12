@@ -6,16 +6,16 @@
 
 ## Case output
 
-- [Target validation paths (PDF)](pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m-target-validation.pdf?v=2f9d7380) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Target validation paths (PDF)](pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m-target-validation.pdf?v=242e0eec) — diagnostic + biomarker workup that hardens the targetable-feature call
 - [Selected general biomarker report (HTML)](biomarker_survey.md?v=dab629ef) — which panel biomarkers this patient has and has not been tested for, including the tumor-agnostic ones, sortable in-browser
-- [Recommendations table (HTML)](pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m-recommendations.html?v=2feeff21) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
+- [Recommendations table (HTML)](pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m-recommendations.html?v=adf25bf5) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
 - [Standard of care options (HTML)](standard_of_care.md?v=b014102d) — approved and guideline-endorsed strategies for this patient's situation, assessed for eligibility and for how they sequence against the targeted options, sortable in-browser
 - [Preclinical recommendations (HTML)](preclinical_recommendations.md?v=7cf67438) — forward-looking horizon scan of earlier-than-clinical candidate drugs, compounds, and strategies, sortable in-browser
 - [Access guide (HTML)](accessibility.md?v=bcbb9719) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, sortable in-browser
-- [Access guide (offline HTML)](pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m-accessibility.html?v=16cf74e8) — same access-guide content as the in-browser page, packaged as a self-contained HTML that opens offline
+- [Access guide (offline HTML)](pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m-accessibility.html?v=8cfd5f67) — same access-guide content as the in-browser page, packaged as a self-contained HTML that opens offline
 - [Master manuscripts table (HTML)](manuscripts.md?v=2300450f) — every paper considered — n, effect, variance, toxicities, sortable in-browser
-- [Master manuscripts table (offline HTML)](pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m-manuscripts.html?v=ce8bedc8) — same manuscripts inventory as the in-browser page, packaged as a self-contained HTML that opens offline
-- [Patient/caregiver PDF](pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m-plain-language.pdf?v=d023a3cd) — plain-language summary
+- [Master manuscripts table (offline HTML)](pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m-manuscripts.html?v=d741ad30) — same manuscripts inventory as the in-browser page, packaged as a self-contained HTML that opens offline
+- [Patient/caregiver PDF](pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m-plain-language.pdf?v=48572492) — plain-language summary
 
 <!-- libby:case-output:end -->
 ## Research question
@@ -604,27 +604,27 @@ Authored 12 August 2026 from the full dossier: profile, preferences, 20 biomarke
 
 - [Target validation paths](target_validation.md?v=8d5030c5) — per-feature biomarker-workup table with providers and references, sortable in-browser
 - [Selected general biomarker report](biomarker_survey.md?v=dab629ef) — which panel biomarkers this patient has and has not been tested for, including the tumor-agnostic ones, in a sortable in-browser table
-- [Selected general biomarker report (offline)](pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m-biomarker-survey.html?v=4e235cac) — same biomarker survey packaged as a self-contained HTML that opens offline
-- [Recommendations table](pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m-recommendations.html?v=2feeff21) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
+- [Selected general biomarker report (offline)](pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m-biomarker-survey.html?v=d303b999) — same biomarker survey packaged as a self-contained HTML that opens offline
+- [Recommendations table](pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m-recommendations.html?v=adf25bf5) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
 - [Standard of care options](standard_of_care.md?v=b014102d) — approved and guideline-endorsed strategies for this patient's situation, assessed for eligibility and sequencing, in a sortable in-browser table
-- [Standard of care options (offline)](pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m-standard-of-care.html?v=0c1db626) — same standard-of-care assessment packaged as a self-contained HTML that opens offline
+- [Standard of care options (offline)](pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m-standard-of-care.html?v=86a1f27a) — same standard-of-care assessment packaged as a self-contained HTML that opens offline
 - [Preclinical recommendations](preclinical_recommendations.md?v=7cf67438) — forward-looking horizon scan of earlier-than-clinical candidate drugs, compounds, and strategies, in a sortable in-browser table
-- [Preclinical recommendations (offline)](pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m-preclinical.html?v=914f9cf5) — same preclinical horizon scan packaged as a self-contained HTML that opens offline
+- [Preclinical recommendations (offline)](pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m-preclinical.html?v=78d3a6a9) — same preclinical horizon scan packaged as a self-contained HTML that opens offline
 - [Access guide](accessibility.md?v=bcbb9719) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table
-- [Access guide (offline)](pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m-accessibility.html?v=16cf74e8) — same access-guide content packaged as a self-contained HTML that opens offline
+- [Access guide (offline)](pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m-accessibility.html?v=8cfd5f67) — same access-guide content packaged as a self-contained HTML that opens offline
 - [Master manuscripts table](manuscripts.md?v=2300450f) — every paper considered — n, effect, variance, toxicities, in a sortable in-browser table
-- [Master manuscripts table (offline)](pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m-manuscripts.html?v=ce8bedc8) — same manuscripts inventory packaged as a self-contained HTML that opens offline
+- [Master manuscripts table (offline)](pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m-manuscripts.html?v=d741ad30) — same manuscripts inventory packaged as a self-contained HTML that opens offline
 
 ### PDF
 
-- [Target validation paths](pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m-target-validation.pdf?v=2f9d7380) — diagnostic + biomarker workup that hardens the targetable-feature call
-- [Selected general biomarker report](pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m-biomarker-survey.pdf?v=71aadc67) — biomarker screening coverage and the gaps it leaves, in a print-friendly PDF
-- [Recommendations table](pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m-recommendations.pdf?v=2c234bd7) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
-- [Standard of care options](pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m-standard-of-care.pdf?v=0f454366) — approved and guideline-endorsed strategies, their eligibility fit, and how they sequence against the targeted options, in a print-friendly PDF
-- [Preclinical recommendations](pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m-preclinical.pdf?v=1aaff286) — forward-looking horizon scan of earlier-than-clinical candidates, one deep section per candidate, in a print-friendly PDF
-- [Access guide](pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m-accessibility.pdf?v=0d0eb764) — trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF
-- [Master manuscripts table](pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m-manuscripts.pdf?v=ec82ac98) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
-- [Patient/caregiver PDF](pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m-plain-language.pdf?v=d023a3cd) — plain-language summary
+- [Target validation paths](pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m-target-validation.pdf?v=242e0eec) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Selected general biomarker report](pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m-biomarker-survey.pdf?v=54d191e4) — biomarker screening coverage and the gaps it leaves, in a print-friendly PDF
+- [Recommendations table](pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m-recommendations.pdf?v=b5c1668e) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
+- [Standard of care options](pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m-standard-of-care.pdf?v=5b3a2f36) — approved and guideline-endorsed strategies, their eligibility fit, and how they sequence against the targeted options, in a print-friendly PDF
+- [Preclinical recommendations](pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m-preclinical.pdf?v=80a1aec5) — forward-looking horizon scan of earlier-than-clinical candidates, one deep section per candidate, in a print-friendly PDF
+- [Access guide](pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m-accessibility.pdf?v=678335b2) — trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF
+- [Master manuscripts table](pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m-manuscripts.pdf?v=c285b2ba) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
+- [Patient/caregiver PDF](pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m-plain-language.pdf?v=48572492) — plain-language summary
 
 <!-- libby:downloads:end -->
 

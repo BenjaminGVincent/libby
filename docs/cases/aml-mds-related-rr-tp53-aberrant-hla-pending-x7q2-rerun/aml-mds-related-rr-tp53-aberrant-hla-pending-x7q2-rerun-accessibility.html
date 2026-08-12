@@ -280,9 +280,19 @@
 
 /* Recommendation table marks. */
 .split-glyph { font-weight: 700; color: #5A4500; }
+/* not_recommended rows: mute, never strike through. The strikethrough used to
+   sit on the whole <tr>, so it struck the rationale columns too — and on a
+   rejected option the rationale is the most useful text in the row, since it
+   is what lets a reader stop considering it. Muting carries the de-emphasis;
+   the badge states the verdict in words, so the signal survives monochrome
+   printing and screen readers rather than resting on typography alone. */
 .not-recommended {
   color: #4A5568;
-  text-decoration: line-through;
+}
+.badge-not-recommended {
+  background: #FDECEA;
+  color: #8C2F22;
+  border-color: #F5C6C0;
 }
 
 /* surfaced_reason flag pills (Experimental "Also considered" table). Neutral,
@@ -1181,5 +1191,5 @@ directly with the relevant sources before relying on them.
 
 <p><strong>Payer / coverage notes.</strong> Approved on-label only for NPM1-mutated R/R AML. This patient is NPM1-wild-type with KMT2A amplification rather than a rearrangement, so off-label use has an absent target and weak coverage prospects.</p>
 <hr>
-<footer class="libby-footer">Generated 2026-07-25 &middot; Libby &middot; <code>aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun</code> &middot; Access guide</footer>
+<footer class="libby-footer">Generated 2026-08-12 &middot; Libby &middot; <code>aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun</code> &middot; Access guide</footer>
 </body></html>

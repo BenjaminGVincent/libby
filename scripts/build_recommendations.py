@@ -137,6 +137,11 @@ def _intervention_cell(r: dict) -> str:
         )
     else:
         head = f"<strong>{label}</strong>"
+    # State the verdict in words on rows the board argued against. Previously the
+    # only signal was a line-through on the whole row, which also struck the
+    # rationale. A badge survives monochrome printing and screen readers.
+    if (r.get("status") or "") == "not_recommended":
+        head += ' <span class="flag-badge badge-not-recommended">Not recommended</span>'
     persona = _persona_line(r)
     body = f"{head}<br>{persona}" if persona else head
     return f"<td>{body}</td>"

@@ -280,10 +280,36 @@
 
 /* Recommendation table marks. */
 .split-glyph { font-weight: 700; color: #5A4500; }
+/* not_recommended rows: mute, never strike through. The strikethrough used to
+   sit on the whole <tr>, so it struck the rationale columns too — and on a
+   rejected option the rationale is the most useful text in the row, since it
+   is what lets a reader stop considering it. Muting carries the de-emphasis;
+   the badge states the verdict in words, so the signal survives monochrome
+   printing and screen readers rather than resting on typography alone. */
 .not-recommended {
   color: #4A5568;
-  text-decoration: line-through;
 }
+.badge-not-recommended {
+  background: #FDECEA;
+  color: #8C2F22;
+  border-color: #F5C6C0;
+}
+
+/* surfaced_reason flag pills (Experimental "Also considered" table). Neutral,
+   muted pills — these rows are informational, not scored. */
+.flag-badge {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 999px;
+  font-size: 0.75em;
+  font-weight: 600;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.flag-unavailable    { background: #ECEFF1; color: #37474F; border-color: #CFD8DC; }
+.flag-consolidated   { background: #E8EAF6; color: #303F9F; border-color: #C5CAE9; }
+.flag-thin           { background: #FFF8E1; color: #7A5B00; border-color: #F0E1B0; }
+.flag-not-enrollable { background: #F3E5F5; color: #6A1B7A; border-color: #E1BEE7; }
 
 /* Disclaimer banner — applied to every case page via admonition. */
 .md-typeset .admonition.disclaimer {
@@ -417,5 +443,5 @@ directly with the relevant sources before relying on them.
     </table>
   </div>
 </div>
-<footer class="libby-footer">Generated 2026-07-10 &middot; Libby &middot; <code>hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq</code> &middot; Master manuscripts table</footer>
+<footer class="libby-footer">Generated 2026-08-12 &middot; Libby &middot; <code>hgsoc-tuboovarian-stage3c-r0-hrd-pending-idyq</code> &middot; Master manuscripts table</footer>
 </body></html>

@@ -280,9 +280,19 @@
 
 /* Recommendation table marks. */
 .split-glyph { font-weight: 700; color: #5A4500; }
+/* not_recommended rows: mute, never strike through. The strikethrough used to
+   sit on the whole <tr>, so it struck the rationale columns too — and on a
+   rejected option the rationale is the most useful text in the row, since it
+   is what lets a reader stop considering it. Muting carries the de-emphasis;
+   the badge states the verdict in words, so the signal survives monochrome
+   printing and screen readers rather than resting on typography alone. */
 .not-recommended {
   color: #4A5568;
-  text-decoration: line-through;
+}
+.badge-not-recommended {
+  background: #FDECEA;
+  color: #8C2F22;
+  border-color: #F5C6C0;
 }
 
 /* surfaced_reason flag pills (Experimental "Also considered" table). Neutral,
@@ -486,5 +496,5 @@ directly with the relevant sources before relying on them.
     </table>
   </div>
 </div>
-<footer class="libby-footer">Generated 2026-08-07 &middot; Libby &middot; <code>aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2</code> &middot; Master manuscripts table</footer>
+<footer class="libby-footer">Generated 2026-08-12 &middot; Libby &middot; <code>aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2</code> &middot; Master manuscripts table</footer>
 </body></html>

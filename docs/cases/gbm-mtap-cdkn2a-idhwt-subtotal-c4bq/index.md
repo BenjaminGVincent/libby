@@ -6,13 +6,13 @@
 
 ## Case output
 
-- [Target validation paths (PDF)](gbm-mtap-cdkn2a-idhwt-subtotal-c4bq-target-validation.pdf?v=4fa3f84c) — diagnostic + biomarker workup that hardens the targetable-feature call
-- [Recommendations table (HTML)](gbm-mtap-cdkn2a-idhwt-subtotal-c4bq-recommendations.html?v=0f5d2b35) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
+- [Target validation paths (PDF)](gbm-mtap-cdkn2a-idhwt-subtotal-c4bq-target-validation.pdf?v=1b63884f) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Recommendations table (HTML)](gbm-mtap-cdkn2a-idhwt-subtotal-c4bq-recommendations.html?v=ab31aab6) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
 - [Access guide (HTML)](accessibility.md?v=ec279f23) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, sortable in-browser
-- [Access guide (offline HTML)](gbm-mtap-cdkn2a-idhwt-subtotal-c4bq-accessibility.html?v=0c76b73e) — same access-guide content as the in-browser page, packaged as a self-contained HTML that opens offline
+- [Access guide (offline HTML)](gbm-mtap-cdkn2a-idhwt-subtotal-c4bq-accessibility.html?v=074bce82) — same access-guide content as the in-browser page, packaged as a self-contained HTML that opens offline
 - [Master manuscripts table (HTML)](manuscripts.md?v=a8810fac) — every paper considered — n, effect, variance, toxicities, sortable in-browser
-- [Master manuscripts table (offline HTML)](gbm-mtap-cdkn2a-idhwt-subtotal-c4bq-manuscripts.html?v=5a6f7465) — same manuscripts inventory as the in-browser page, packaged as a self-contained HTML that opens offline
-- [Patient/caregiver PDF](gbm-mtap-cdkn2a-idhwt-subtotal-c4bq-plain-language.pdf?v=c08aae34) — plain-language summary
+- [Master manuscripts table (offline HTML)](gbm-mtap-cdkn2a-idhwt-subtotal-c4bq-manuscripts.html?v=0965a2c4) — same manuscripts inventory as the in-browser page, packaged as a self-contained HTML that opens offline
+- [Patient/caregiver PDF](gbm-mtap-cdkn2a-idhwt-subtotal-c4bq-plain-language.pdf?v=1051a9be) — plain-language summary
 
 <!-- libby:case-output:end -->
 ## Research question
@@ -782,19 +782,19 @@ PI-refresh on 2026-07-09 (lighter re-run, no board re-vote): the trial screen ad
 ### HTML
 
 - [Target validation paths](target_validation.md?v=82caf1a9) — per-feature biomarker-workup table with providers and references, sortable in-browser
-- [Recommendations table](gbm-mtap-cdkn2a-idhwt-subtotal-c4bq-recommendations.html?v=0f5d2b35) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
+- [Recommendations table](gbm-mtap-cdkn2a-idhwt-subtotal-c4bq-recommendations.html?v=ab31aab6) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
 - [Access guide](accessibility.md?v=ec279f23) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table
-- [Access guide (offline)](gbm-mtap-cdkn2a-idhwt-subtotal-c4bq-accessibility.html?v=0c76b73e) — same access-guide content packaged as a self-contained HTML that opens offline
+- [Access guide (offline)](gbm-mtap-cdkn2a-idhwt-subtotal-c4bq-accessibility.html?v=074bce82) — same access-guide content packaged as a self-contained HTML that opens offline
 - [Master manuscripts table](manuscripts.md?v=a8810fac) — every paper considered — n, effect, variance, toxicities, in a sortable in-browser table
-- [Master manuscripts table (offline)](gbm-mtap-cdkn2a-idhwt-subtotal-c4bq-manuscripts.html?v=5a6f7465) — same manuscripts inventory packaged as a self-contained HTML that opens offline
+- [Master manuscripts table (offline)](gbm-mtap-cdkn2a-idhwt-subtotal-c4bq-manuscripts.html?v=0965a2c4) — same manuscripts inventory packaged as a self-contained HTML that opens offline
 
 ### PDF
 
-- [Target validation paths](gbm-mtap-cdkn2a-idhwt-subtotal-c4bq-target-validation.pdf?v=4fa3f84c) — diagnostic + biomarker workup that hardens the targetable-feature call
-- [Recommendations table](gbm-mtap-cdkn2a-idhwt-subtotal-c4bq-recommendations.pdf?v=9706e240) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
-- [Access guide](gbm-mtap-cdkn2a-idhwt-subtotal-c4bq-accessibility.pdf?v=3f212863) — trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF
-- [Master manuscripts table](gbm-mtap-cdkn2a-idhwt-subtotal-c4bq-manuscripts.pdf?v=ee4dcd39) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
-- [Patient/caregiver PDF](gbm-mtap-cdkn2a-idhwt-subtotal-c4bq-plain-language.pdf?v=c08aae34) — plain-language summary
+- [Target validation paths](gbm-mtap-cdkn2a-idhwt-subtotal-c4bq-target-validation.pdf?v=1b63884f) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Recommendations table](gbm-mtap-cdkn2a-idhwt-subtotal-c4bq-recommendations.pdf?v=0c146358) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
+- [Access guide](gbm-mtap-cdkn2a-idhwt-subtotal-c4bq-accessibility.pdf?v=269939ab) — trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF
+- [Master manuscripts table](gbm-mtap-cdkn2a-idhwt-subtotal-c4bq-manuscripts.pdf?v=12cb0fac) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
+- [Patient/caregiver PDF](gbm-mtap-cdkn2a-idhwt-subtotal-c4bq-plain-language.pdf?v=1051a9be) — plain-language summary
 
 <!-- libby:downloads:end -->
 

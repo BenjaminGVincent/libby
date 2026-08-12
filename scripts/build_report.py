@@ -230,9 +230,20 @@ small.scenario-key { color: var(--ink-muted); }
 .persona-concensusite { background: #DDF1EE; color: #134E48; border-color: #B0DBD3; }
 .persona-advocate     { background: #FFE5EE; color: #6E1638; border-color: #F0BBCB; }
 .split-glyph { font-weight: 700; color: #5A4500; }
+/* not_recommended rows: mute, never strike through.
+   Strikethrough was applied to the whole <tr>, which struck the rationale
+   columns too — and on a rejected option the rationale is the most useful
+   text in the row, since it is what lets a reader stop considering it.
+   Muting carries the de-emphasis on its own; the badge below states the
+   verdict in words, so the signal does not rest on typography or colour
+   alone (both are invisible to a screen reader and to a monochrome print). */
 .not-recommended {
   color: var(--ink-muted);
-  text-decoration: line-through;
+}
+.badge-not-recommended {
+  background: #FDECEA;
+  color: #8C2F22;
+  border-color: #F5C6C0;
 }
 .scenario-conditional {
   display: inline-block;
@@ -461,6 +472,11 @@ def _intervention_cell_html(r: dict, *, show_personas: bool = True) -> str:
         )
     else:
         head = f"<strong>{label}</strong>"
+    # State the verdict in words on rows the board argued against. Previously the
+    # only signal was a line-through on the whole row, which also struck the
+    # rationale. A badge survives monochrome printing and screen readers.
+    if (r.get("status") or "") == "not_recommended":
+        head += ' <span class="flag-badge badge-not-recommended">Not recommended</span>'
     if show_personas:
         persona = _persona_line_html(r)
         body = f"{head}<br>{persona}" if persona else head

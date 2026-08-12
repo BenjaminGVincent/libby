@@ -6,16 +6,16 @@
 
 ## Case output
 
-- [Target validation paths (PDF)](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2-target-validation.pdf?v=2d19247c) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Target validation paths (PDF)](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2-target-validation.pdf?v=f12ed494) — diagnostic + biomarker workup that hardens the targetable-feature call
 - [Selected general biomarker report (HTML)](biomarker_survey.md?v=f54a59b8) — which panel biomarkers this patient has and has not been tested for, including the tumor-agnostic ones, sortable in-browser
-- [Recommendations table (HTML)](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2-recommendations.html?v=e13e9751) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
+- [Recommendations table (HTML)](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2-recommendations.html?v=07dc0a26) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
 - [Standard of care options (HTML)](standard_of_care.md?v=09e2dd32) — approved and guideline-endorsed strategies for this patient's situation, assessed for eligibility and for how they sequence against the targeted options, sortable in-browser
 - [Preclinical recommendations (HTML)](preclinical_recommendations.md?v=65146c14) — forward-looking horizon scan of earlier-than-clinical candidate drugs, compounds, and strategies, sortable in-browser
 - [Access guide (HTML)](accessibility.md?v=39da2165) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, sortable in-browser
-- [Access guide (offline HTML)](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2-accessibility.html?v=e00309bc) — same access-guide content as the in-browser page, packaged as a self-contained HTML that opens offline
+- [Access guide (offline HTML)](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2-accessibility.html?v=37e51ab5) — same access-guide content as the in-browser page, packaged as a self-contained HTML that opens offline
 - [Master manuscripts table (HTML)](manuscripts.md?v=eea1aec6) — every paper considered — n, effect, variance, toxicities, sortable in-browser
-- [Master manuscripts table (offline HTML)](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2-manuscripts.html?v=cca3d807) — same manuscripts inventory as the in-browser page, packaged as a self-contained HTML that opens offline
-- [Patient/caregiver PDF](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2-plain-language.pdf?v=dfab5e17) — plain-language summary
+- [Master manuscripts table (offline HTML)](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2-manuscripts.html?v=75043568) — same manuscripts inventory as the in-browser page, packaged as a self-contained HTML that opens offline
+- [Patient/caregiver PDF](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2-plain-language.pdf?v=4739442f) — plain-language summary
 
 <!-- libby:case-output:end -->
 ## Research question
@@ -763,27 +763,27 @@ Authored 2026-08-07 by the PI agent under the two-table contract, from a complet
 
 - [Target validation paths](target_validation.md?v=dd10a610) — per-feature biomarker-workup table with providers and references, sortable in-browser
 - [Selected general biomarker report](biomarker_survey.md?v=f54a59b8) — which panel biomarkers this patient has and has not been tested for, including the tumor-agnostic ones, in a sortable in-browser table
-- [Selected general biomarker report (offline)](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2-biomarker-survey.html?v=93d7c33b) — same biomarker survey packaged as a self-contained HTML that opens offline
-- [Recommendations table](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2-recommendations.html?v=e13e9751) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
+- [Selected general biomarker report (offline)](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2-biomarker-survey.html?v=5d3c67ef) — same biomarker survey packaged as a self-contained HTML that opens offline
+- [Recommendations table](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2-recommendations.html?v=07dc0a26) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
 - [Standard of care options](standard_of_care.md?v=09e2dd32) — approved and guideline-endorsed strategies for this patient's situation, assessed for eligibility and sequencing, in a sortable in-browser table
-- [Standard of care options (offline)](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2-standard-of-care.html?v=8562a438) — same standard-of-care assessment packaged as a self-contained HTML that opens offline
+- [Standard of care options (offline)](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2-standard-of-care.html?v=a2269986) — same standard-of-care assessment packaged as a self-contained HTML that opens offline
 - [Preclinical recommendations](preclinical_recommendations.md?v=65146c14) — forward-looking horizon scan of earlier-than-clinical candidate drugs, compounds, and strategies, in a sortable in-browser table
-- [Preclinical recommendations (offline)](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2-preclinical.html?v=6e3c74bd) — same preclinical horizon scan packaged as a self-contained HTML that opens offline
+- [Preclinical recommendations (offline)](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2-preclinical.html?v=bd19ddbf) — same preclinical horizon scan packaged as a self-contained HTML that opens offline
 - [Access guide](accessibility.md?v=39da2165) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table
-- [Access guide (offline)](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2-accessibility.html?v=e00309bc) — same access-guide content packaged as a self-contained HTML that opens offline
+- [Access guide (offline)](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2-accessibility.html?v=37e51ab5) — same access-guide content packaged as a self-contained HTML that opens offline
 - [Master manuscripts table](manuscripts.md?v=eea1aec6) — every paper considered — n, effect, variance, toxicities, in a sortable in-browser table
-- [Master manuscripts table (offline)](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2-manuscripts.html?v=cca3d807) — same manuscripts inventory packaged as a self-contained HTML that opens offline
+- [Master manuscripts table (offline)](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2-manuscripts.html?v=75043568) — same manuscripts inventory packaged as a self-contained HTML that opens offline
 
 ### PDF
 
-- [Target validation paths](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2-target-validation.pdf?v=2d19247c) — diagnostic + biomarker workup that hardens the targetable-feature call
-- [Selected general biomarker report](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2-biomarker-survey.pdf?v=1f22e61d) — biomarker screening coverage and the gaps it leaves, in a print-friendly PDF
-- [Recommendations table](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2-recommendations.pdf?v=fe7ff62a) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
-- [Standard of care options](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2-standard-of-care.pdf?v=4641eb70) — approved and guideline-endorsed strategies, their eligibility fit, and how they sequence against the targeted options, in a print-friendly PDF
-- [Preclinical recommendations](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2-preclinical.pdf?v=d11b386a) — forward-looking horizon scan of earlier-than-clinical candidates, one deep section per candidate, in a print-friendly PDF
-- [Access guide](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2-accessibility.pdf?v=4b0b7fc4) — trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF
-- [Master manuscripts table](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2-manuscripts.pdf?v=c0d35016) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
-- [Patient/caregiver PDF](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2-plain-language.pdf?v=dfab5e17) — plain-language summary
+- [Target validation paths](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2-target-validation.pdf?v=f12ed494) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Selected general biomarker report](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2-biomarker-survey.pdf?v=f24edad9) — biomarker screening coverage and the gaps it leaves, in a print-friendly PDF
+- [Recommendations table](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2-recommendations.pdf?v=a4e288a1) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
+- [Standard of care options](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2-standard-of-care.pdf?v=30695ae0) — approved and guideline-endorsed strategies, their eligibility fit, and how they sequence against the targeted options, in a print-friendly PDF
+- [Preclinical recommendations](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2-preclinical.pdf?v=99469922) — forward-looking horizon scan of earlier-than-clinical candidates, one deep section per candidate, in a print-friendly PDF
+- [Access guide](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2-accessibility.pdf?v=5251acf9) — trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF
+- [Master manuscripts table](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2-manuscripts.pdf?v=6d02e2b2) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
+- [Patient/caregiver PDF](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2-plain-language.pdf?v=4739442f) — plain-language summary
 
 <!-- libby:downloads:end -->
 

@@ -280,9 +280,19 @@
 
 /* Recommendation table marks. */
 .split-glyph { font-weight: 700; color: #5A4500; }
+/* not_recommended rows: mute, never strike through. The strikethrough used to
+   sit on the whole <tr>, so it struck the rationale columns too — and on a
+   rejected option the rationale is the most useful text in the row, since it
+   is what lets a reader stop considering it. Muting carries the de-emphasis;
+   the badge states the verdict in words, so the signal survives monochrome
+   printing and screen readers rather than resting on typography alone. */
 .not-recommended {
   color: #4A5568;
-  text-decoration: line-through;
+}
+.badge-not-recommended {
+  background: #FDECEA;
+  color: #8C2F22;
+  border-color: #F5C6C0;
 }
 
 /* surfaced_reason flag pills (Experimental "Also considered" table). Neutral,
@@ -457,5 +467,5 @@ directly with the relevant sources before relying on them.
 </ul>
 <p>!!! note "Reading this report"
     An option earns a row here only if a regulator approved it for a population that includes this patient, or a major society's guideline carries it. <strong>What makes it standard</strong> names the endorsing body and, next to it, whether that endorsement was written for this patient's situation or for a different population. <strong>Fit to this patient</strong> is judged against the case profile alone, so an option the patient has already had and progressed on is marked rather than re-offered. This page is additive: it runs alongside the <a href="recommendations.md">ranked recommendations</a> and does not narrow, rerank, or filter the targeted options that ranking surfaces.</p>
-<footer class="libby-footer">Generated 2026-07-25 &middot; Libby &middot; <code>aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun</code> &middot; Standard of care options</footer>
+<footer class="libby-footer">Generated 2026-08-12 &middot; Libby &middot; <code>aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun</code> &middot; Standard of care options</footer>
 </body></html>
