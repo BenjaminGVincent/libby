@@ -1,0 +1,8 @@
+{
+  "case_slug": "pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m",
+  "efficacy_toxicity_weight": 0.7,
+  "toxicity_vetoes": [],
+  "modality_constraints": [],
+  "prefers_trials": true,
+  "free_text_constraints": "Trials are welcome, including ones that require travel; no geographic limit was given (geography_band is null on purpose). The 0.7 efficacy/toxicity weight is an assumed default, not a number the user stated; revisit it once goals of care and organ function are documented. No toxicity vetoes or modality constraints were stated, but the residual oxaliplatin neuropathy after 10 FOLFIRINOX cycles has not been graded and could change the calculus for neurotoxic regimens."
+}

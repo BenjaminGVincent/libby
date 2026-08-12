@@ -1,0 +1,125 @@
+{
+  "case_slug": "pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m",
+  "age_band": "50-59",
+  "sex": "unknown",
+  "primary_site": "pancreas",
+  "histology": "ductal adenocarcinoma (PDAC; per user framing, consistent with the supplied pathology narrative; the histology line of the path report was not quoted at intake)",
+  "stage": "Recurrent PDAC. New pancreatic body mass (July 2026) with likely vascular invasion, roughly 4 months after completing adjuvant FOLFIRINOX (March 2026). Prior course: neoadjuvant mFOLFIRINOX x6 (2025), then R0 resection (December 2025) with 0/34 nodes and CAP tumor regression grade 2 (partial response: evident regression, but more than single cells or rare small groups of residual cancer). The recurrence is radiographic only so far; it has not been biopsied or re-sequenced.",
+  "ecog": 0,
+  "biomarkers": [
+    {
+      "name": "CLDN18.2",
+      "value": "positive, moderate-to-strong: 2+/3+ membranous staining in 60% of tumor cells (resected primary, December 2025 specimen)",
+      "method": "IHC on the resection specimen; clone/assay not stated in the supplied report (the zolbetuximab companion diagnostic is the VENTANA CLAUDIN 18 (43-14A) assay)",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "The expression call on the primary is at usable resolution. Two hardening steps remain: (1) the zolbetuximab registrational cutoff (SPOTLIGHT/GLOW, gastric/GEJ) is >=75% of tumor cells at 2+/3+ by the 43-14A CDx assay, so at 60% this case is CLDN18.2-positive but below that cutoff; if zolbetuximab or a threshold-gated trial is pursued, re-stain with the CDx assay. (2) CLDN18.2 has not been assessed on the recurrent lesion; CAR-T and ADC programs use their own, often lower, cutoffs and may require fresh tissue."
+    },
+    {
+      "name": "CLDN18.2 (recurrent lesion)",
+      "value": "not assessed; the recurrence has not been biopsied. The 60% 2+/3+ result is from the resected primary only.",
+      "method": "none yet; would be IHC on a biopsy of the new pancreatic body mass",
+      "confirmation_status": "ihc_pending",
+      "decision_resolution": "IHC on recurrent-lesion tissue, ideally with the VENTANA CLAUDIN 18 (43-14A) CDx assay, or with the sponsor assay of whichever CLDN18.2 trial is under consideration. Needed wherever a therapy or trial gates on current tissue rather than archival primary."
+    },
+    {
+      "name": "KRAS G12R",
+      "value": "KRAS p.G12R, pathogenic driver",
+      "method": "tumor NGS on the resection specimen (December 2025)",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "Tissue NGS, done. Re-sequencing the recurrence (biopsy or ctDNA) would confirm the driver persists and catch acquired alterations; the current call is from the pre-adjuvant resection specimen."
+    },
+    {
+      "name": "TP53 Y220C",
+      "value": "TP53 p.Y220C",
+      "method": "tumor NGS on the resection specimen (December 2025)",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "Tissue NGS, done, and Y220C is the exact variant a Y220C-selective reactivator requires. If a rezatapopt/PYNNACLE-type trial is pursued, confirm the variant persists in the recurrence (ctDNA would do this without a biopsy) and check the sponsor's tissue requirements."
+    },
+    {
+      "name": "KMT2C S2816fs",
+      "value": "KMT2C p.S2816fs, frameshift",
+      "method": "tumor NGS on the resection specimen (December 2025)",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "Tissue NGS, done. No further test needed; actionability, not the call itself, is the open question."
+    },
+    {
+      "name": "Microsatellite instability (MSI)",
+      "value": "negative (MSS)",
+      "method": "reported with tumor NGS panel (assay not specified)",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "MSS at decision resolution; closes the MSI-high checkpoint-blockade route. No further testing needed unless the recurrence is re-profiled anyway."
+    },
+    {
+      "name": "Tumor mutational burden (TMB)",
+      "value": "0.83 mutations/Mb (low)",
+      "method": "tumor NGS panel (assay not specified)",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "Low at decision resolution; together with MSS status this closes the TMB-high pembrolizumab route."
+    },
+    {
+      "name": "Germline findings (incidental)",
+      "value": "none detected, per incidental germline reporting on the tumor NGS report",
+      "method": "incidental germline reporting alongside tumor NGS; not a dedicated germline panel",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "Dedicated germline multigene panel (BRCA1/2, PALB2, ATM and related genes). Guidelines recommend germline testing for every PDAC patient, and incidental tumor-NGS reporting does not rule these genes out. The result gates PARP-inhibitor and platinum-emphasis strategies."
+    },
+    {
+      "name": "Somatic profile (recurrent lesion)",
+      "value": "not assessed; the mutation list (KRAS G12R, TP53 Y220C, KMT2C S2816fs) is from the December 2025 resection specimen",
+      "method": "none yet; would be biopsy NGS or ctDNA of the new pancreatic body mass",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "Biopsy with NGS, or ctDNA if a biopsy is not feasible, to confirm the recurrence is histologically PDAC, that the drivers persist, and to catch anything acquired under 10 cycles of FOLFIRINOX. Also the natural moment to stain the recurrence for CLDN18.2."
+    }
+  ],
+  "prior_therapies": [
+    {
+      "regimen": "mFOLFIRINOX, neoadjuvant, 6 cycles (2025)",
+      "line": "neoadjuvant",
+      "best_response": "PR",
+      "duration_months": 3
+    },
+    {
+      "regimen": "R0 resection (December 2025): 0/34 nodes, CAP tumor regression grade 2 on the specimen",
+      "line": "surgery",
+      "best_response": "NE"
+    },
+    {
+      "regimen": "FOLFIRINOX, adjuvant, 4 cycles, completed per plan (March 2026)",
+      "line": "adjuvant",
+      "best_response": "NE",
+      "duration_months": 2
+    }
+  ],
+  "current_therapy": null,
+  "organ_function": {
+    "note": "No labs supplied at intake. Specific open items: post-Whipple hepatobiliary and pancreatic function (resection type per the user; the operative report was not supplied), the current grade of residual oxaliplatin neuropathy after 10 total FOLFIRINOX cycles (6 neoadjuvant + 4 adjuvant), and baseline renal, hepatic, and marrow panels before any trial screening."
+  },
+  "targetable_features": [
+    {
+      "feature": "CLDN18.2 expression, moderate-to-strong (2+/3+) in 60% of tumor cells",
+      "rationale": "The strongest handle in this case. The tumor is CLDN18.2-positive, but 60% sits below the >=75% (2+/3+) cutoff used in SPOTLIGHT/GLOW for zolbetuximab, and that approval covers gastric/GEJ, not PDAC, so zolbetuximab here would be off-label or trial-based on two counts. CLDN18.2 CAR-T (satri-cel and others), ADCs, and bispecifics use different, often lower, eligibility cutoffs, and several programs enroll PDAC. Hedges that must carry through: the stain is from the resected primary, not the recurrence; the assay and clone were not named; and a 60% result below the registrational cutoff is a weaker predictor of benefit than a >=75% result would be. A re-stain with the CDx assay, ideally on recurrent tissue, would raise confidence."
+    },
+    {
+      "feature": "TP53 p.Y220C",
+      "rationale": "Y220C creates a druggable crevice in p53, and rezatapopt (PC14586) is a Y220C-selective reactivator with a solid-tumor registrational program (PYNNACLE), so the population fits this case. This is a trial-eligibility route, not an approved therapy. Confirming the variant persists in the recurrence, by ctDNA or biopsy, would firm it up."
+    },
+    {
+      "feature": "KRAS p.G12R",
+      "rationale": "The PDAC driver here. G12R is not addressed by G12C agents (sotorasib, adagrasib) or by G12D-selective agents; the live routes are pan-RAS(ON) inhibitors such as daraxonrasib (RMC-6236), which has PDAC-focused registrational work, plus mutant-KRAS vaccines that include G12R in their peptide pools (e.g. ELI-002) and cellular or TCR approaches. Investigational across the board in PDAC."
+    },
+    {
+      "feature": "KMT2C p.S2816fs",
+      "rationale": "A frameshift in a COMPASS-complex histone methyltransferase. The weakest handle on the list: no approved or late-stage KMT2C-directed therapy exists, and the actionability hypotheses (epigenetic agents, synthetic-lethal pairings) are preclinical. Included because the user asked for every variant to stay on the table."
+    },
+    {
+      "feature": "MSS, TMB-low (0.83 mut/Mb)",
+      "rationale": "A decision-relevant negative, carried as a feature so downstream agents address it instead of silently dropping it. MSS plus TMB 0.83 mut/Mb closes the MSI-high and TMB-high checkpoint-blockade routes; any immunotherapy interest has to come from other mechanisms (vaccines, cellular therapy, combinations), not single-agent PD-1 blockade."
+    },
+    {
+      "feature": "Clinical course: node-negative R0 resection with early recurrence",
+      "rationale": "R0 with 0/34 nodes and CAP tumor regression grade 2 after neoadjuvant mFOLFIRINOX, yet a new pancreatic body mass with likely vascular invasion appeared about 4 months after finishing adjuvant FOLFIRINOX. Recurrence this early despite favorable surgical pathology signals aggressive biology and functional FOLFIRINOX resistance. That argues for treating the recurrence as systemic disease, weighs against re-challenge with the same regimen, and is the prognostic context the ranking should sit in. Biopsy confirmation of the recurrence is still pending."
+    }
+  ],
+  "geography_band": null,
+  "private": false
+}
