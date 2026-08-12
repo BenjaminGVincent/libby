@@ -125,6 +125,22 @@ ONCOLOGY_ACRONYM_ALLOWLIST = frozenset({
     # All-caps trade names / product codes in accessibility alias lists
     # (e.g. "MYLOTARG, CMA-676", "DECNUPAZ, PVEK", "ADSPAM, MT-401-OTS")
     "MYLOTARG", "DECNUPAZ", "PVEK", "ADSPAM",
+    # Pancreatic adenocarcinoma vocabulary: tumor type, trial families, drug
+    # codes, effector mechanisms, ADC payloads, and cell lines that appear as
+    # comma-separated all-caps pairs in PDAC case prose (e.g. "PDAC, NAPOLI-3",
+    # "SPOTLIGHT, GLOW", "ADCC, CDC", "ADC, MMAE", "KEYTRUDA, MK-3475",
+    # "PDAC, ELI-002", "PDAC, FG-M108", "HPAF-II, HPAC").
+    #
+    # Entries are the tokens ALL_CAPS_PAIR_RE actually yields: its character
+    # class is [A-Z][A-Z]+, so hyphens and digits terminate the match and a
+    # product code like "ELI-002" must be allowlisted as "ELI", not in full.
+    #
+    # Allowlisting affects only the ALL-CAPS name heuristic. Date, email, and
+    # phone detection are untouched, and a genuine surname pair still flags,
+    # because every token in a pair must be allowlisted for it to be cleared.
+    "PDAC", "NAPOLI", "SPOTLIGHT", "GLOW", "GLEAM", "PYNNACLE",
+    "ADCC", "CDC", "ADC", "MMAE", "KEYTRUDA", "MK",
+    "ELI", "FG", "HPAF", "HPAC", "CLDN", "VYLOY", "VENTANA",
     "FLAMSA", "DLI", "GVHD", "GVL", "HCT", "HSCT", "NRM", "VOD", "SOS",
     "MRD", "LSC", "HMA", "AZA", "DEC", "CPX", "MEC", "HIDAC", "CLAG",
     "NPM", "CEBPA", "DNMT", "TET", "ASXL", "RUNX", "MECOM", "EVI",
