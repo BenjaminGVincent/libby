@@ -132,15 +132,15 @@
         {
           "intervention": "selpercatinib",
           "modality": "selective RET inhibitor",
-          "approval_status": "FDA approved, tumor-agnostic",
-          "approval_year": 2022,
-          "scope": "Locally advanced or metastatic RET fusion-positive solid tumors progressing on or after prior systemic treatment",
+          "approval_status": "FDA traditional (full) approval, tumor-agnostic",
+          "approval_year": 2026,
+          "scope": "Adult and pediatric patients 2 years and older with locally advanced or metastatic solid tumors carrying a RET gene fusion, detected by an FDA-approved test, that have progressed on or after prior systemic treatment or have no satisfactory alternative",
           "nct_id": "NCT03157128",
           "trial_name": "LIBRETTO-001"
         }
       ],
       "reflex_actions": [],
-      "notes": "Distinguish a RET fusion from an activating RET point mutation: the fusion is the tumor-agnostic indication, and the medullary-thyroid point-mutation indication is separate."
+      "notes": "Distinguish a RET fusion from an activating RET point mutation: the fusion is the tumor-agnostic indication, and the medullary-thyroid point-mutation indication is separate. Approval status updated 2026-08 by the surveyor: the tumor-agnostic indication was granted accelerated approval in 2022 (adults) and 2024 (children 2 years and older), and converted to traditional approval on 14 July 2026 with the pediatric population folded in. The 2026-07 curation still carried the 2022 accelerated-approval snapshot."
     },
     {
       "panel_key": "braf-v600e",
