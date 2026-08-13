@@ -195,6 +195,17 @@ ONCOLOGY_ACRONYM_ALLOWLIST = frozenset({
     # Tumor-type acronyms / histology
     "PDAC", "GBM", "TNBC", "HCC", "RCC", "CRC", "HNSCC", "LGSOC", "HGSOC",
     "UM", "DIPG",
+    # Sarcoma (uLMS) case vocabulary that surfaces in ALL-CAPS pairs across the
+    # rendered pages: histology shorthands ("LMS, ECOG"; "MRCLS, HLA"), the
+    # ESTRO society in the ESC cardio-oncology byline ("EHA, ESTRO"), the
+    # cancer/testis antigen family ("PRAME, MAGE"), lab panels ("CK, CBC"),
+    # imaging and sponsor tokens ("CT, LLC"), HRR/HRD panel prose ("HRR, TMB"),
+    # skin-histology pairs in access guides ("CSCC, BCC"), and the nucleotide
+    # excision repair gene family in the trabectedin mechanism rows
+    # ("CSB, XPA"; "XPC, XPD"; "XPF, XPG"). Both tokens of a pair must be
+    # allowlisted, so genuine surname pairs still flag.
+    "LMS", "ULMS", "MRCLS", "ASPS", "ESTRO", "MAGE", "CK", "CBC", "CT", "LLC",
+    "HRR", "CSCC", "BCC", "CSB", "XPA", "XPC", "XPD", "XPF", "XPG",
     # Drug class / mechanism extensions
     "HCQ", "PARP", "PARPi", "TKI", "ICI", "ICB", "FAP", "CAF", "MDSC", "TIL",
     "MRD",
