@@ -1,0 +1,128 @@
+{
+  "case_slug": "ulms-highgrade-pulm-mets-er-pr-neg-qqvt",
+  "age_band": "30-39",
+  "sex": "female",
+  "primary_site": "uterus (myometrium)",
+  "histology": "high-grade uterine leiomyosarcoma (uLMS), spindle-cell morphology; diagnosis confirmed on both the pulmonary biopsy and the re-reviewed uterine specimen by a reference pathology laboratory (August 2026)",
+  "stage": "metastatic (stage IV): bilateral pulmonary metastases. Radiologic read by the consulting sarcoma oncologist: lesions unusually infiltrative and possibly inflammatory in appearance. Primary resected September 2024 (signed out benign at the time); metastatic diagnosis July-August 2026",
+  "ecog": 1,
+  "biomarkers": [
+    {
+      "name": "ER (estrogen receptor)",
+      "value": "<1% positive (decision-relevant negative)",
+      "method": "IHC on tumor tissue",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "IHC; already at decision-relevant resolution. This negative forecloses endocrine strategies: aromatase inhibition has activity in ER-positive uLMS specifically."
+    },
+    {
+      "name": "PR (progesterone receptor)",
+      "value": "<1% positive (decision-relevant negative)",
+      "method": "IHC on tumor tissue",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "IHC; already at decision-relevant resolution. Together with ER <1%, closes the endocrine-therapy door."
+    },
+    {
+      "name": "TP53",
+      "value": "not tested (no comprehensive genomic profiling reported)",
+      "method": "none performed",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "Tissue NGS (comprehensive genomic profiling). Commonly altered in uLMS; informs biology and trial matching."
+    },
+    {
+      "name": "RB1",
+      "value": "not tested (no comprehensive genomic profiling reported)",
+      "method": "none performed",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "Tissue NGS. Commonly altered in uLMS; informs biology and trial matching."
+    },
+    {
+      "name": "ATRX",
+      "value": "not tested (no comprehensive genomic profiling reported)",
+      "method": "none performed",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "Tissue NGS (with or without IHC for loss of expression)."
+    },
+    {
+      "name": "MED12",
+      "value": "not tested (no comprehensive genomic profiling reported)",
+      "method": "none performed",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "Tissue NGS."
+    },
+    {
+      "name": "Homologous recombination status incl. BRCA2",
+      "value": "not tested (no comprehensive genomic profiling reported)",
+      "method": "none performed",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "Tissue NGS with HRD signature or germline plus somatic BRCA1/2 testing. uLMS carries a recognised HRD subset relevant to PARP inhibition; this gates a real therapeutic branch."
+    },
+    {
+      "name": "NTRK fusion",
+      "value": "not tested (no comprehensive genomic profiling reported)",
+      "method": "none performed",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "RNA-based fusion panel or DNA NGS with fusion calling. Gates tumor-agnostic TRK inhibition."
+    },
+    {
+      "name": "TMB (tumor mutational burden)",
+      "value": "not tested (no comprehensive genomic profiling reported)",
+      "method": "none performed",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "Tissue NGS with validated TMB reporting. Gates tumor-agnostic checkpoint-blockade eligibility at TMB-high."
+    },
+    {
+      "name": "MSI / MMR",
+      "value": "not tested",
+      "method": "none performed",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "MMR IHC or NGS/PCR MSI testing. Gates tumor-agnostic checkpoint blockade; rarely positive in uLMS but cheap to close."
+    },
+    {
+      "name": "PD-L1",
+      "value": "not tested",
+      "method": "none performed",
+      "confirmation_status": "ihc_pending",
+      "decision_resolution": "PD-L1 IHC on tumor tissue (assay per intended agent). Informs, though does not by itself gate, checkpoint-blockade consideration in sarcoma."
+    }
+  ],
+  "prior_therapies": [
+    {
+      "regimen": "Hysterectomy with resection of a 6.0 cm myometrial mass (surgery, not systemic therapy) - performed September 2024 for presumed benign leiomyoma, signed out benign; malignancy not recognised at the time. The uterine case was amended after re-review in July 2026.",
+      "line": "surgical (initial resection of primary)",
+      "best_response": "NE"
+    }
+  ],
+  "current_therapy": "None yet. NO systemic therapy has been given to date. Planned (not started) first-line systemic therapy per the consulting sarcoma oncologist: doxorubicin + trabectedin with a maintenance phase (LMS-04 regimen) - aggressive induction, then maintenance. Systemic therapy first because multifocal disease must be treated systemically; local therapy (metastasectomy, SBRT) explicitly on the table after control is gained.",
+  "organ_function": {
+    "note_labs": "GAP: no laboratory values were supplied at intake. Nothing here is measured.",
+    "note_open_items": "Named open items before the planned regimen: baseline LVEF/echocardiogram (mandatory before doxorubicin); pulmonary function tests and resting/exertional oxygen saturation, interpreted against high-altitude residence; renal and hepatic panels (trabectedin carries hepatotoxicity); baseline haemoglobin (polycythaemia is expected at altitude and will confound anaemia assessment on chemotherapy).",
+    "residence_altitude_ft": 8500,
+    "note_altitude": "Resides at roughly 8,500 ft (~2,600 m). Retained because chronic hypoxic adaptation shifts the baseline for dyspnea, pulse oximetry, and haemoglobin, and bears on pulmonary reserve before an anthracycline. State of residence deliberately omitted.",
+    "note_ecog": "ASSUMPTION: ECOG 1 was NOT stated and is an intake assumption (symptomatic with cough and dyspnea, yet travelling for specialist consultation). The schema requires an integer with no unknown value. Must be confirmed before trial-eligibility calls.",
+    "note_smoking": "Lifetime never-smoker (relevant to interpreting the pulmonary findings and pulmonary reserve)."
+  },
+  "targetable_features": [
+    {
+      "feature": "High-grade uterine leiomyosarcoma histology",
+      "rationale": "The disease-defining feature, and it drives the whole systemic option set: trabectedin, doxorubicin, gemcitabine/docetaxel, pazopanib, eribulin. First-line doxorubicin + trabectedin with maintenance (LMS-04) is planned but not started, so the full first-line landscape is still open at intake."
+    },
+    {
+      "feature": "ER and PR <1% by IHC (decision-relevant negative)",
+      "rationale": "A confirmed negative that closes the endocrine door: aromatase inhibition has activity in ER-positive uLMS specifically, and this tumor is hormone-receptor negative at the <1% cutoff. Recorded as a foreclosure, not merely as 'tested'."
+    },
+    {
+      "feature": "Unmeasured molecular landscape (the actionable gap)",
+      "rationale": "No comprehensive genomic or immunohistochemical profiling has been reported. This is the single largest gap in the case. Untested markers gate real therapeutic branches: HRD/BRCA2 status gates PARP inhibition (uLMS carries a recognised HRD subset), NTRK fusion gates TRK inhibition, and TMB/MSI/PD-L1 gate or inform checkpoint blockade. Also unmeasured: TP53, RB1, ATRX, MED12. Closing this gap is itself the first actionable step."
+    },
+    {
+      "feature": "Bilateral pulmonary metastases with an infiltrative, possibly inflammatory radiologic pattern",
+      "rationale": "Bears on whether local therapy (metastasectomy, SBRT) becomes feasible after systemic control, which the consulting sarcoma oncologist explicitly kept on the table. The unusual radiologic read (infiltrative, possibly inflammatory) is itself a flag worth carrying: it may affect response assessment and local-therapy planning. High-altitude residence (~8,500 ft) shifts the baseline for dyspnea and oximetry when judging pulmonary compromise."
+    },
+    {
+      "feature": "~23-month interval between resection of the primary (September 2024, signed out benign) and correct diagnosis (July-August 2026)",
+      "rationale": "Clinically load-bearing for disease-tempo assessment: the primary was resected without recognised malignancy and the metastatic diagnosis came roughly 23 months later, which bounds the growth kinetics of the pulmonary disease. No systemic therapy was given in the interval, so the disease is systemic-therapy naive."
+    }
+  ],
+  "geography_band": "US",
+  "private": false
+}

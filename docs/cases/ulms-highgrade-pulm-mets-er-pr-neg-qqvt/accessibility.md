@@ -1,0 +1,1409 @@
+<meta name="robots" content="noindex">
+
+# Access guide — `ulms-highgrade-pulm-mets-er-pr-neg-qqvt`
+
+How a patient or treating team could practically access each intervention in this case's dossier. One section per unique drug; trial recruitment contacts and manufacturer medical-information lines are captured for direct outreach. **Information ages — each row carries a `Verified` date; re-screen before relying on a specific contact or trial slot.**
+
+## Summary
+
+_Entries are ordered to match the Recommendations table: by therapeutic target group, then by rank within each group. The number in the first column links to the per-intervention section further down the page._
+
+<div class="trial-table-wrap"><div class="trial-scroll">
+
+<table class="trial-table"><thead><tr><th class="col-num">#</th><th class="col-intervention">Intervention</th><th class="col-target">Target</th><th class="col-access-status">Access status</th><th class="col-regulatory">Regulatory</th><th class="col-first-action">Recommended first action</th></tr></thead><tbody>
+
+<tr><td class="col-num"><a href="#access-1"><strong>1</strong></a></td><td class="col-intervention"><strong>Doxorubicin + trabectedin, then trabectedin maintenance (LMS-04)</strong></td><td class="col-target">Ulms Histology</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span></td><td class="col-regulatory">Both components FDA-approved: doxorubicin (generic, long-approved); trabectedin (Yondelis, FDA 2015) for unresectable or metastatic liposarcoma or leiomyosarcoma after a prior anthracycline-containing regimen. The first-line combination is off-label relative to that label.</td><td class="col-first-action">Complete the gating diagnostics before cycle 1, all routine and orderable locally: echocardiogram with LVEF, hepatic and renal panels with CK, CBC with reticulocytes and ferritin read against altitude-adjusted references, PFTs with DLCO and oximetry performed at her residence altitude, a documented ECOG score, and RECIST baseline imaging.</td></tr>
+<tr><td class="col-num"><a href="#access-2"><strong>2</strong></a></td><td class="col-intervention"><strong>Abemaciclib + gemcitabine</strong></td><td class="col-target">Ulms Histology</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">Abemaciclib (Verzenio, Lilly) FDA-approved in breast cancer; gemcitabine generic. The sarcoma combination is investigational.</td><td class="col-first-action">Order RB1 IHC on the archival block now; it costs one slide and decides between this trial and REC-617.</td></tr>
+<tr><td class="col-num"><a href="#access-3"><strong>3</strong></a></td><td class="col-intervention"><strong>Ivonescimab (PD-1 x VEGF bispecific)</strong></td><td class="col-target">Ulms Histology</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">Investigational in the US; no FDA approval.</td><td class="col-first-action">Hold until the LMS-04 outcome declares itself; she remains eligible with 1-3 prior lines.</td></tr>
+<tr><td class="col-num"><a href="#access-4"><strong>4</strong></a></td><td class="col-intervention"><strong>All-trans retinoic acid + cemiplimab</strong></td><td class="col-target">Ulms Histology</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">Tretinoin FDA-approved (APL) and generic; cemiplimab (Libtayo, Regeneron) FDA-approved in CSCC, BCC, NSCLC. The combination in sarcoma is investigational.</td><td class="col-first-action">File as a post-LMS-04 option requiring no biomarker work; nothing to do now except know it exists.</td></tr>
+<tr><td class="col-num"><a href="#access-5"><strong>5</strong></a></td><td class="col-intervention"><strong>Zanzalintinib (XL092)</strong></td><td class="col-target">Ulms Histology</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">Investigational (Exelixis); no approval in any indication.</td><td class="col-first-action">Park until the third-line decision point.</td></tr>
+<tr><td class="col-num"><a href="#access-6"><strong>6</strong></a></td><td class="col-intervention"><strong>Lurbinectedin + doxorubicin</strong></td><td class="col-target">Ulms Histology</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span></td><td class="col-regulatory">Lurbinectedin (Zepzelca, Jazz/PharmaMar) FDA-approved for metastatic SCLC; doxorubicin generic. The LMS combination is investigational.</td><td class="col-first-action">Log SaLuDo (NCT06088290) as a watch item alongside the olaparib randomized trial; its result could reshape her first-line class at relapse or inform re-treatment decisions.</td></tr>
+<tr><td class="col-num"><a href="#access-7"><strong>7</strong></a></td><td class="col-intervention"><strong>Anlotinib (catequentinib)</strong></td><td class="col-target">Ulms Histology</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span> <span class="fit-badge fit-weak">Not yet accessible</span></td><td class="col-regulatory">Approved in China (NMPA) for advanced soft tissue sarcoma settings; investigational in the US, no FDA filing approved.</td><td class="col-first-action">Treat as low priority; if the TKI class is wanted, pazopanib is on label and zanzalintinib has an open LMS cohort.</td></tr>
+<tr><td class="col-num"><a href="#access-8"><strong>8</strong></a></td><td class="col-intervention"><strong>Pegylated liposomal doxorubicin (maintenance)</strong></td><td class="col-target">Ulms Histology</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span></td><td class="col-regulatory">FDA-approved (ovarian cancer, Kaposi sarcoma, multiple myeloma) and generic; STS maintenance use is off-label and investigational.</td><td class="col-first-action">No action; the LMS-04 design already assigns her maintenance drug. Revisit only if trabectedin maintenance proves intolerable.</td></tr>
+<tr><td class="col-num"><a href="#access-9"><strong>9</strong></a></td><td class="col-intervention"><strong>Olaparib + temozolomide</strong></td><td class="col-target">Hrd</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span></td><td class="col-regulatory">Olaparib FDA-approved in BRCA/HRR-defined indications (ovarian, breast, pancreatic, prostate); temozolomide FDA-approved (glioma) and generic. The uLMS combination is off-label for both.</td><td class="col-first-action">Send the somatic HRR panel and the germline hereditary-cancer panel now, off the 2024 archival block and a blood draw; results gate how hard this branch gets pushed.</td></tr>
+<tr><td class="col-num"><a href="#access-10"><strong>10</strong></a></td><td class="col-intervention"><strong>Trabectedin + olaparib (preclinical combination)</strong></td><td class="col-target">Hrd</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span></td><td class="col-regulatory">Each component FDA-approved separately; the combination has no clinical development program in LMS.</td><td class="col-first-action">Treat as a research idea, not an access pathway. If a protocol testing PARP-plus-trabectedin ever opens in sarcoma, the trial screener should catch it on a re-run.</td></tr>
+<tr><td class="col-num"><a href="#access-11"><strong>11</strong></a></td><td class="col-intervention"><strong>B7-H3 ADCs (MGC026; GSK5764227/HS-20093)</strong></td><td class="col-target">B7H3</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">Both agents investigational; no approvals. The class&#x27;s prior entrant vobramitamab duocarmazine was halted after safety findings.</td><td class="col-first-action">Add B7-H3/CD276 IHC to the planned stain bundle; a strong positive is the single most likely surface-target finding in this histology.</td></tr>
+<tr><td class="col-num"><a href="#access-12"><strong>12</strong></a></td><td class="col-intervention"><strong>FAP-targeted radioligands ([225Ac]RTX-2358; [177Lu]Lu-FAP-2286)</strong></td><td class="col-target">Fap</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">Both investigational; no approvals. RTX-2358 is a Ratio Therapeutics alpha-therapy program, FAP-2286 a Novartis beta-emitter theranostic.</td><td class="col-first-action">No FAP testing needed in advance; the screening PET is the gate and the trial provides it.</td></tr>
+<tr><td class="col-num"><a href="#access-13"><strong>13</strong></a></td><td class="col-intervention"><strong>REC-617 (selective CDK7 inhibitor)</strong></td><td class="col-target">Rb1 Loss</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">Investigational; no regulatory approval or filing. Phase 1 dose finding.</td><td class="col-first-action">Same first move as the abemaciclib row: RB1 IHC on the archival block.</td></tr>
+<tr><td class="col-num"><a href="#access-14"><strong>14</strong></a></td><td class="col-intervention"><strong>IMA203 / IMA203CD8 (PRAME TCR-T)</strong></td><td class="col-target">Prame Hla</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">Investigational (Immatics); phase 3 development in melanoma, no approval.</td><td class="col-first-action">Draw HLA class I allele-level typing now, on the same visit as the germline panel; it is a one-time result that gates this entire class.</td></tr>
+<tr><td class="col-num"><a href="#access-15"><strong>15</strong></a></td><td class="col-intervention"><strong>Brenetafusp (PRAME x CD3 ImmTAC)</strong></td><td class="col-target">Prame Hla</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">Investigational (Immunocore); phase 3 in melanoma, no approval.</td><td class="col-first-action">The HLA typing drawn for the IMA203 row covers this class too; no additional test needed.</td></tr>
+<tr><td class="col-num"><a href="#access-16"><strong>16</strong></a></td><td class="col-intervention"><strong>Trastuzumab deruxtecan (T-DXd)</strong></td><td class="col-target">Her2</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span></td><td class="col-regulatory">FDA-approved (Enhertu, Daiichi Sankyo/AstraZeneca), including tumor-agnostic accelerated approval for HER2 IHC 3+ solid tumors after prior systemic therapy.</td><td class="col-first-action">Add HER2 IHC to the planned stain bundle on the archival block; a 3+ result changes the option set, anything less closes the row.</td></tr>
+<tr><td class="col-num"><a href="#access-17"><strong>17</strong></a></td><td class="col-intervention"><strong>ATR inhibition (ATRX/ALT-directed hypothesis)</strong></td><td class="col-target">Atrx Alt</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">No ATR inhibitor holds regulatory approval; class-wide investigational.</td><td class="col-first-action">Run the ATRX IHC in the planned stain bundle anyway; it is cheap, ALT-concordant in uLMS, and informs biology beyond this one hypothesis.</td></tr>
+<tr><td class="col-num"><a href="#access-18"><strong>18</strong></a></td><td class="col-intervention"><strong>Afamitresgene autoleucel (MAGE-A4 TCR-T)</strong></td><td class="col-target">Magea4 Hla</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span></td><td class="col-regulatory">FDA accelerated approval (August 2024) for advanced synovial sarcoma, HLA-A*02-positive and MAGE-A4-expressing, after prior chemotherapy. Current US label holder per DailyMed: USWM CT, LLC.</td><td class="col-first-action">Do not pursue; route the cell-therapy interest through the IMA203 PRAME basket instead.</td></tr>
+<tr><td class="col-num"><a href="#access-19"><strong>19</strong></a></td><td class="col-intervention"><strong>Pulmonary suffusion + metastasectomy</strong></td><td class="col-target">Pulmonary Metastases Pattern</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">Investigational surgical-regional technique under a single-center IND protocol.</td><td class="col-first-action">Park until a post-induction scan shows metastasectomy-appropriate anatomy.</td></tr>
+<tr><td class="col-num"><a href="#access-20"><strong>20</strong></a></td><td class="col-intervention"><strong>2024 operative report retrieval (morcellation question)</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-strong">Standard of care</span></td><td class="col-regulatory">Medical-records request; no regulatory gate.</td><td class="col-first-action">Submit a records request to the 2024 surgical facility for the full operative report and original pathology report.</td></tr>
+<tr><td class="col-num"><a href="#access-21"><strong>21</strong></a></td><td class="col-intervention"><strong>Altitude-adjusted baseline diagnostics</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-strong">Standard of care</span></td><td class="col-regulatory">Routine clinical diagnostics; no regulatory gate.</td><td class="col-first-action">Book the echocardiogram first; LVEF is mandatory before any doxorubicin dose and is the likeliest scheduling bottleneck.</td></tr>
+<tr><td class="col-num"><a href="#access-22"><strong>22</strong></a></td><td class="col-intervention"><strong>Doxorubicin + ifosfamide (intensified)</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span></td><td class="col-regulatory">Both components FDA-approved and generic; combination use in soft tissue sarcoma is off-label.</td><td class="col-first-action">No access action needed; the clinical question (whether it ever beats the planned LMS-04 backbone for her) belongs to the board, not to an access pathway.</td></tr>
+<tr><td class="col-num"><a href="#access-23"><strong>23</strong></a></td><td class="col-intervention"><strong>Doxorubicin + olaratumab</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-none">Unavailable</span></td><td class="col-regulatory">Approval withdrawn; olaratumab is no longer marketed following the negative ANNOUNCE confirmatory trial.</td><td class="col-first-action">None; recorded so the answer to &#x27;could we add olaratumab&#x27; is visibly no rather than silently missing.</td></tr>
+<tr><td class="col-num"><a href="#access-24"><strong>24</strong></a></td><td class="col-intervention"><strong>Eribulin</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span></td><td class="col-regulatory">FDA-approved (Halaven) for unresectable or metastatic liposarcoma after an anthracycline-containing regimen; LMS use is off-label.</td><td class="col-first-action">Revisit at the third-line decision point; no earlier action is available or useful.</td></tr>
+<tr><td class="col-num"><a href="#access-25"><strong>25</strong></a></td><td class="col-intervention"><strong>Gemcitabine + docetaxel</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span></td><td class="col-regulatory">Both components FDA-approved for other indications and available as generics; no sarcoma indication on either label.</td><td class="col-first-action">Hold in reserve pending the baseline LVEF and PFT results that gate doxorubicin.</td></tr>
+<tr><td class="col-num"><a href="#access-26"><strong>26</strong></a></td><td class="col-intervention"><strong>Larotrectinib (TRK inhibition, NTRK fusion-gated)</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">Larotrectinib (Vitrakvi, Bayer): FDA tumor-agnostic approval for NTRK fusion-positive solid tumors. Repotrectinib (Augtyro, Bristol Myers Squibb): FDA accelerated approval June 13, 2024 for NTRK fusion-positive solid tumors, adult and pediatric &gt;=12. Fusion-negative or untested use has no basis.</td><td class="col-first-action">Confirm the comprehensive panel order is RNA-capable for fusion detection (the Caris exome-plus-transcriptome order already queued covers this; FoundationOne CDx alone would not).</td></tr>
+<tr><td class="col-num"><a href="#access-27"><strong>27</strong></a></td><td class="col-intervention"><strong>Letrozole</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span></td><td class="col-regulatory">FDA-approved (breast cancer indications); generic. uLMS use is off-label.</td><td class="col-first-action">Only revisit if the pending specimen-provenance check overturns the ER/PR result, which would trigger re-screening of the whole endocrine class.</td></tr>
+<tr><td class="col-num"><a href="#access-28"><strong>28</strong></a></td><td class="col-intervention"><strong>Pazopanib</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-strong">Standard of care</span></td><td class="col-regulatory">FDA-approved (Votrient) for advanced soft tissue sarcoma after prior chemotherapy; not indicated first-line.</td><td class="col-first-action">Nothing to do now; note it as the default approved second-line comparator when weighing trial enrollment later.</td></tr>
+<tr><td class="col-num"><a href="#access-29"><strong>29</strong></a></td><td class="col-intervention"><strong>Pembrolizumab</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span></td><td class="col-regulatory">FDA-approved, including tumor-agnostic indications for TMB-H (&gt;=10 mut/Mb) and MSI-H/dMMR solid tumors after prior therapy. uLMS use without one of those biomarkers is off-label.</td><td class="col-first-action">Close the cheap gates: MMR four-stain IHC plus TMB and MSI from the comprehensive genomic panel already queued; specify a platform with validated TMB reporting.</td></tr>
+<tr><td class="col-num"><a href="#access-30"><strong>30</strong></a></td><td class="col-intervention"><strong>Pulmonary metastasectomy</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-strong">Standard of care</span></td><td class="col-regulatory">Surgical procedure; no regulatory gate.</td><td class="col-first-action">Complete PFTs with DLCO and oximetry at residence altitude now; they serve both the chemotherapy baseline and any future operability assessment.</td></tr>
+<tr><td class="col-num"><a href="#access-31"><strong>31</strong></a></td><td class="col-intervention"><strong>SBRT to pulmonary metastases</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-strong">Standard of care</span></td><td class="col-regulatory">Standard radiotherapy technique; no regulatory gate.</td><td class="col-first-action">Nothing until response assessment; then have radiation oncology review lesion count and geometry against SBRT criteria.</td></tr>
+<tr><td class="col-num"><a href="#access-32"><strong>32</strong></a></td><td class="col-intervention"><strong>Trabectedin monotherapy</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-strong">Standard of care</span></td><td class="col-regulatory">FDA-approved (2015) for unresectable or metastatic liposarcoma or leiomyosarcoma after a prior anthracycline-containing regimen.</td><td class="col-first-action">No separate access work; this arrives bundled inside the LMS-04 plan as the maintenance drug.</td></tr>
+</tbody></table>
+
+</div></div>
+
+
+## Ulms Histology interventions (8)
+
+### 1. Doxorubicin + trabectedin, then trabectedin maintenance (LMS-04) <small><code>doxorubicin, Adriamycin, trabectedin, ET-743, Yondelis</code></small> { #access-1 }
+
+**Access status:** <span class="fit-badge fit-partial">Off-label use</span> &nbsp; **Modality:** small_molecule &nbsp; **Verified:** 2026-08-12
+
+
+Both drugs are FDA approved and any sarcoma infusion center can give them, but the combination she is about to start sits outside the trabectedin label: Yondelis is approved for liposarcoma or leiomyosarcoma after a prior anthracycline-containing regimen (verified against the current label, revised 12/2025), and she is anthracycline-naive. First-line use with doxorubicin is therefore off-label prescribing carried by the LMS-04 phase 3 data, not by the label. The realistic obstacle is trabectedin prior authorization, and the time-critical items before cycle 1 are diagnostic, not access.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Both components FDA-approved: doxorubicin (generic, long-approved); trabectedin (Yondelis, FDA 2015) for unresectable or metastatic liposarcoma or leiomyosarcoma after a prior anthracycline-containing regimen. The first-line combination is off-label relative to that label.</dd>
+  <dt>Guidelines</dt><dd>Secondary summaries report NCCN lists doxorubicin + trabectedin among first-line options for LMS post-LMS-04; category not independently verified this run</dd>
+  <dt>Geographic scope</dt><dd>US-wide; any sarcoma-capable infusion center</dd>
+</dl>
+
+
+**Next steps**
+
+1. Complete the gating diagnostics before cycle 1, all routine and orderable locally: echocardiogram with LVEF, hepatic and renal panels with CK, CBC with reticulocytes and ferritin read against altitude-adjusted references, PFTs with DLCO and oximetry performed at her residence altitude, a documented ECOG score, and RECIST baseline imaging.
+2. Request the September 2024 operative report to settle whether morcellation occurred; it changes surveillance imaging, and it costs nothing but a records request.
+3. Submit the trabectedin prior authorization as an off-label first-line request citing LMS-04 (PMID 35835135 and PMID 39231341) rather than waiting for a denial.
+4. Arrange central venous access; trabectedin runs as a 24-hour infusion through a central line.
+5. For label or access questions, call Janssen medical information at 1-800-526-7736.
+
+
+**Trial pathways**
+
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT02997358">NCT02997358</a></td><td class="col-phase">3</td><td class="col-indication">first-line metastatic or unresectable leiomyosarcoma</td><td class="col-status">completed</td><td class="col-eligibility"><span class="fit-badge fit-strong">eligible: yes</span></td><td class="col-contact"><a href="https://clinicaltrials.gov/study/NCT02997358#contacts-and-locations">trial sites</a></td><td class="col-notes">The pivotal trial for the planned regimen (mPFS 12.2 vs 6.2 months, final mOS 33 vs 24 months). Completed; listed as the evidence anchor for the payer request, not as an enrollment option.</td></tr>
+</tbody></table></div></div>
+
+
+**Manufacturer / sponsor contact**
+
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Janssen Products, LP (Johnson &amp; Johnson); trabectedin originator PharmaMar</dd>
+  <dt>Country</dt><dd>US marketer; originator Spain</dd>
+  <dt>Medical info phone</dt><dd><code>1-800-526-7736</code></dd>
+  <dt>Product information</dt><dd><a href="https://www.yondelis.com">https://www.yondelis.com</a></dd>
+  <dt>Notes</dt><dd>Phone taken verbatim from the current FDA label (&#x27;For more information, call 1-800-526-7736 or go to www.YONDELIS.com&#x27;). The label also directs patients to J&amp;J withMe support resources.</dd>
+</dl>
+
+
+**Payer / coverage notes.** Doxorubicin is generic and uncontroversial. Trabectedin is the expensive component and its label requires prior anthracycline, so the prior authorization should be built as an off-label first-line request from the start: cite the LMS-04 primary report (Lancet Oncol 2022, PMID 35835135), the final overall survival analysis (NEJM 2024, PMID 39231341), and whatever NCCN compendium listing the treating center&#x27;s pharmacy can pull. Centers that treat sarcoma routinely win this appeal; the case should not be filed as if it were on-label.
+
+
+**Notes.** The single most decision-relevant access finding in this case: the planned regimen is deliverable everywhere, but it is off-label at this line and the payer file should be assembled that way from day one.
+
+
+---
+
+### 2. Abemaciclib + gemcitabine <small><code>abemaciclib, LY2835219, Verzenio, gemcitabine</code></small> { #access-2 }
+
+**Access status:** <span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** small_molecule &nbsp; **Verified:** 2026-08-12
+
+
+The live trial is the point: the NCI-sponsored phase 1/2 at MD Anderson is recruiting now, its phase 2 LMS cohort accepts systemic-treatment-naive patients, and prior doxorubicin or trabectedin would not exclude her later, so this door stands open both before and after LMS-04. Entry is gated on a single Rb-intact IHC stain she has not had. Both drugs are separately marketed, so off-label use is possible in principle, but the preclinical antagonism data for concurrent dosing in Rb-intact tumors argues for doing this inside the protocol or not at all.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Abemaciclib (Verzenio, Lilly) FDA-approved in breast cancer; gemcitabine generic. The sarcoma combination is investigational.</dd>
+  <dt>Geographic scope</dt><dd>US: single site (Houston, TX)</dd>
+</dl>
+
+
+**Next steps**
+
+1. Order RB1 IHC on the archival block now; it costs one slide and decides between this trial and REC-617.
+2. If Rb-intact, call the MD Anderson site line (866-632-6789) to ask about phase 2 LMS cohort slots and whether treatment-naive entry or post-LMS-04 entry fits the current cohort.
+3. Confirm her actual ECOG before any screening call; the assumed 1 has never been documented.
+4. Weigh the Houston travel burden explicitly with her; prefers_trials is an assumed default, not a stated preference.
+
+
+**Trial pathways**
+
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT06498648">NCT06498648</a></td><td class="col-phase">1/2</td><td class="col-indication">advanced LMS/DDLS; phase 2 may be systemic-treatment naive; Rb-intact IHC required; prior gemcitabine barred</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-weak">eligible: unconfirmed</span></td><td class="col-contact"><a href="https://clinicaltrials.gov/study/NCT06498648#contacts-and-locations">trial sites</a></td><td class="col-notes">No central contact posted. The single listed site is UT MD Anderson (Houston, TX); site public contact verbatim from the registry: 866-632-6789, askmdanderson@mdanderson.org, investigator Elise F. Nassif. Eligibility hinges on the Rb IHC result; the same stain read the other way gates the REC-617 trial, so one assay settles which of the two doors exists. Houston is a real trip from a mountain residence, and her travel tolerance was never stated.</td></tr>
+</tbody></table></div></div>
+
+
+**Manufacturer / sponsor contact**
+
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Eli Lilly and Company (abemaciclib)</dd>
+  <dt>Medical info phone</dt><dd><code>1-800-545-5979</code></dd>
+  <dt>Notes</dt><dd>Label lists 1-800-LillyRx (1-800-545-5979), verbatim from the current Verzenio FDA label.</dd>
+</dl>
+
+
+**Payer / coverage notes.** Off-label combination coverage outside the trial would be a hard sell with no published sarcoma efficacy; the trial supplies abemaciclib free. If ever pursued off-trial, expect specialty-pharmacy prior authorization for abemaciclib and an uphill appeal.
+
+
+---
+
+### 3. Ivonescimab (PD-1 x VEGF bispecific) <small><code>ivonescimab, AK112, SMT112</code></small> { #access-3 }
+
+**Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** bispecific_other &nbsp; **Verified:** 2026-08-12
+
+
+No FDA approval, so the MSK single-arm phase 2 is the only US route. The protocol enrolls LMS after one to three prior lines and carries an unusual clause admitting patients who decline first-line standard care, so it is technically open to her today; the sounder sequence is LMS-04 first, which keeps her eligible here afterward. All seven sites are MSK locations in New York and New Jersey, a long way from a mountain-state residence, and her travel tolerance was never actually stated.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Investigational in the US; no FDA approval.</dd>
+  <dt>Geographic scope</dt><dd>US: MSK network only (New York, NY and NJ regional sites)</dd>
+</dl>
+
+
+**Next steps**
+
+1. Hold until the LMS-04 outcome declares itself; she remains eligible with 1-3 prior lines.
+2. At that point email the MSK sarcoma trials inbox (zzPDL_MED_Sarcoma_Clinical_Trials@mskcc.org) referencing NCT07516925.
+3. Raise the travel question directly with her before any New York screening visit is booked.
+
+
+**Trial pathways**
+
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT07516925">NCT07516925</a></td><td class="col-phase">2</td><td class="col-indication">unresectable/metastatic LMS, 1-3 prior lines or declined first-line standard care</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-strong">eligible: yes</span></td><td class="col-contact"><strong>Sandra D&#x27;Angelo, MD</strong><br><a href="mailto:zzPDL_MED_Sarcoma_Clinical_Trials@mskcc.org">zzPDL_MED_Sarcoma_Clinical_Trials@mskcc.org</a><br><code>646-888-4159</code><br><a href="https://clinicaltrials.gov/study/NCT07516925#contacts-and-locations">trial sites</a></td><td class="col-notes">Second listed contact: Sujana Movva, MD, 646-888-6787. All sites are Memorial Sloan Kettering campuses (Manhattan plus regional NY/NJ sites). Requires measurable disease and archival tissue; ECOG 0-2. The decline-first-line clause exists but does not make skipping LMS-04 advisable.</td></tr>
+</tbody></table></div></div>
+
+
+**Manufacturer / sponsor contact**
+
+_No manufacturer information captured._
+
+
+**Payer / coverage notes.** Trial-supplied drug at an investigator-sponsored MSK study; routine-care costs bill to insurance as usual.
+
+
+---
+
+### 4. All-trans retinoic acid + cemiplimab <small><code>all-trans retinoic acid, ATRA, tretinoin, cemiplimab, REGN2810, Libtayo</code></small> { #access-4 }
+
+**Access status:** <span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** other &nbsp; **Verified:** 2026-08-12
+
+
+The Ohio State single-site phase 2 is recruiting and takes LMS after standard chemotherapy with no biomarker gate, which makes it one of the few immunotherapy routes here that does not wait on her missing profiling; it opens once LMS-04 fails. Both components are marketed (tretinoin generic, cemiplimab approved in skin and lung cancers), so off-label use is possible on paper, but there is no published sarcoma efficacy to justify it outside the protocol.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Tretinoin FDA-approved (APL) and generic; cemiplimab (Libtayo, Regeneron) FDA-approved in CSCC, BCC, NSCLC. The combination in sarcoma is investigational.</dd>
+  <dt>Geographic scope</dt><dd>US: single site (Columbus, OH)</dd>
+</dl>
+
+
+**Next steps**
+
+1. File as a post-LMS-04 option requiring no biomarker work; nothing to do now except know it exists.
+2. At progression, email OSUCCCClinicaltrials@osumc.edu or call 800-293-5066 to confirm slot availability and screening timelines.
+3. Check RECIST-measurable disease on the baseline imaging with this trial&#x27;s requirement in mind.
+
+
+**Trial pathways**
+
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT06528769">NCT06528769</a></td><td class="col-phase">2</td><td class="col-indication">advanced/metastatic LMS after standard-of-care chemotherapy</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-strong">eligible: yes</span></td><td class="col-contact"><strong>The Ohio State University Comprehensive Cancer Center</strong><br><a href="mailto:OSUCCCClinicaltrials@osumc.edu">OSUCCCClinicaltrials@osumc.edu</a><br><code>800-293-5066</code><br><a href="https://clinicaltrials.gov/study/NCT06528769#contacts-and-locations">trial sites</a></td><td class="col-notes">Single site, Columbus, Ohio; site investigator listed as Gabriel Tinoco, MD (Gabriel.Tinoco@osumc.edu). Requires prior standard chemotherapy, RECIST-measurable disease (her infiltrative pulmonary pattern may complicate target selection), ECOG 0-2. No cap on prior lines, so it keeps indefinitely.</td></tr>
+</tbody></table></div></div>
+
+
+**Manufacturer / sponsor contact**
+
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Regeneron Pharmaceuticals (cemiplimab); tretinoin multi-source generic</dd>
+  <dt>Medical info phone</dt><dd><code>1-877-542-8296</code></dd>
+  <dt>Notes</dt><dd>Phone verbatim from the current Libtayo FDA label (&#x27;contact Regeneron at 1-877-542-8296&#x27;).</dd>
+</dl>
+
+
+**Payer / coverage notes.** Off-trial, cemiplimab in sarcoma would be an unsupported off-label request; inside the trial, drug is supplied. No biomarker prerequisite means no testing spend to keep this option alive.
+
+
+---
+
+### 5. Zanzalintinib (XL092) <small><code>zanzalintinib, XL092</code></small> { #access-5 }
+
+**Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** small_molecule &nbsp; **Verified:** 2026-08-12
+
+
+Investigational successor-generation TKI with no approval; the Northwestern phase 2 has a dedicated LMS cohort requiring at least two prior lines, so it sits third-line or later for her, after LMS-04 and one further regimen. Pathology review at an NCCN center is required, which her completed reference-laboratory re-review should satisfy. Single site in Chicago.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Investigational (Exelixis); no approval in any indication.</dd>
+  <dt>Geographic scope</dt><dd>US: single site (Chicago, IL)</dd>
+</dl>
+
+
+**Next steps**
+
+1. Park until the third-line decision point.
+2. If reached, email cancer@northwestern.edu referencing NCT06571734 and cohort 1, with the reference-pathology report attached.
+
+
+**Trial pathways**
+
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT06571734">NCT06571734</a></td><td class="col-phase">2</td><td class="col-indication">LMS after &gt;=2 prior lines (cohort 1)</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-strong">eligible: yes</span></td><td class="col-contact"><strong>Coordinator</strong><br><a href="mailto:cancer@northwestern.edu">cancer@northwestern.edu</a><br><code>3126951301</code><br><a href="https://clinicaltrials.gov/study/NCT06571734#contacts-and-locations">trial sites</a></td><td class="col-notes">Single site, Northwestern University, Chicago. Site contact listed as Pedro Hermida de Viveiros, (312) 926-9636, same email. A third-line-or-later door; nothing to act on until then.</td></tr>
+</tbody></table></div></div>
+
+
+**Manufacturer / sponsor contact**
+
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Exelixis, Inc.</dd>
+  <dt>Notes</dt><dd>No medical-information line applicable pre-approval; the trial coordinator address is the working contact.</dd>
+</dl>
+
+
+**Payer / coverage notes.** Trial-supplied drug. The approved comparator at the same decision point is label-covered pazopanib, which is the practical alternative if travel to Chicago does not suit.
+
+
+---
+
+### 6. Lurbinectedin + doxorubicin <small><code>lurbinectedin, PM01183, Zepzelca, doxorubicin</code></small> { #access-6 }
+
+**Access status:** <span class="fit-badge fit-partial">Off-label use</span> &nbsp; **Modality:** small_molecule &nbsp; **Verified:** 2026-08-12
+
+
+Lurbinectedin is FDA-approved for small cell lung cancer, so off-label prescribing is technically possible, but the sarcoma combination is trial-defined and its first-line LMS trial (SaLuDo) closed to accrual before her diagnosis was corrected. There is no enrollment path and no published efficacy result yet to anchor an off-label payer request in LMS. The realistic posture is to watch the SaLuDo readout, which will bear directly on how the LMS-04 backbone evolves.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Lurbinectedin (Zepzelca, Jazz/PharmaMar) FDA-approved for metastatic SCLC; doxorubicin generic. The LMS combination is investigational.</dd>
+  <dt>Geographic scope</dt><dd>US + EU trial footprint; closed to accrual</dd>
+</dl>
+
+
+**Next steps**
+
+1. Log SaLuDo (NCT06088290) as a watch item alongside the olaparib randomized trial; its result could reshape her first-line class at relapse or inform re-treatment decisions.
+
+
+**Trial pathways**
+
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT06088290">NCT06088290</a></td><td class="col-phase">3</td><td class="col-indication">anthracycline-naive metastatic leiomyosarcoma</td><td class="col-status">active not recruiting</td><td class="col-eligibility"><span class="fit-badge fit-strong">eligible: yes</span></td><td class="col-contact"><a href="https://clinicaltrials.gov/study/NCT06088290#contacts-and-locations">trial sites</a></td><td class="col-notes">She matches the population almost exactly (anthracycline-naive, ECOG &lt;=1, LVEF-documented), but accrual closed first. 24 US sites among 97 total. Watch for readout; no central contact posted while closed.</td></tr>
+</tbody></table></div></div>
+
+
+**Manufacturer / sponsor contact**
+
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Jazz Pharmaceuticals (US marketer); originator PharmaMar</dd>
+  <dt>Medical info phone</dt><dd><code>1-800-520-5568</code></dd>
+  <dt>Notes</dt><dd>Phone verbatim from the current Zepzelca FDA label.</dd>
+</dl>
+
+
+**Payer / coverage notes.** No LMS publication exists yet, so an off-label combination request would have nothing to stand on; revisit after SaLuDo reads out.
+
+
+---
+
+### 7. Anlotinib (catequentinib) <small><code>anlotinib, catequentinib, AL3818</code></small> { #access-7 }
+
+**Access status:** <span class="fit-badge fit-partial">Clinical trial</span> <span class="fit-badge fit-weak">Not yet accessible</span> &nbsp; **Modality:** small_molecule &nbsp; **Verified:** 2026-08-12
+
+
+Approved and marketed only in China, where it holds NMPA soft tissue sarcoma indications; there is no US or EU approval, so no off-label path exists for a US patient. The US-inclusive APROMISS phase 3 shows as recruiting on the registry, but both LMS-specific indications are closed or suspended to new accrual and only the loosely defined any-sarcoma indication E remains open. The honest read: this class need is already served by label-available pazopanib and the zanzalintinib trial.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Approved in China (NMPA) for advanced soft tissue sarcoma settings; investigational in the US, no FDA filing approved.</dd>
+  <dt>Geographic scope</dt><dd>Marketed in mainland China only; US access via APROMISS indication E at best</dd>
+</dl>
+
+
+**Next steps**
+
+1. Treat as low priority; if the TKI class is wanted, pazopanib is on label and zanzalintinib has an open LMS cohort.
+2. If still curious, email Shiyings@advenchen.com to ask whether indication E is accepting LMS patients at a US site.
+
+
+**Trial pathways**
+
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT03016819">NCT03016819</a></td><td class="col-phase">3</td><td class="col-indication">advanced sarcoma; LMS arms closed, indication E (any sarcoma) open</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-weak">eligible: unconfirmed</span></td><td class="col-contact"><strong>Shiying Clinical Trial Manager</strong><br><a href="mailto:Shiyings@advenchen.com">Shiyings@advenchen.com</a><br><code>8055301550</code><br><a href="https://clinicaltrials.gov/study/NCT03016819#contacts-and-locations">trial sites</a></td><td class="col-notes">Second contact: Judy Clinical Trial Manager, judyc@advenchen.com, same phone. 17 US sites listed, but the LMS indications are closed; any inquiry should ask specifically whether indication E is enrolling LMS and at which site. Prior-line requirements applied to the LMS arms, so she would not have qualified pre-LMS-04 anyway.</td></tr>
+</tbody></table></div></div>
+
+
+**Manufacturer / sponsor contact**
+
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Advenchen Laboratories (US development); Chia Tai Tianqing (China marketer)</dd>
+  <dt>Notes</dt><dd>No US medical-information line; the Advenchen trial managers above are the published contacts.</dd>
+</dl>
+
+
+**Payer / coverage notes.** Not obtainable through any US payer; the China marketing authorization does not travel.
+
+
+---
+
+### 8. Pegylated liposomal doxorubicin (maintenance) <small><code>pegylated liposomal doxorubicin, PLD, Doxil, Caelyx</code></small> { #access-8 }
+
+**Access status:** <span class="fit-badge fit-partial">Off-label use</span> &nbsp; **Modality:** small_molecule &nbsp; **Verified:** 2026-08-12
+
+
+PLD is a marketed generic any US center can give, so access is trivial; the actual question it represents, whether to maintain after anthracycline induction, is already answered inside her planned regimen by trabectedin maintenance. The randomized test of PLD maintenance (MELODY) is Taiwan-only, so it is evidence context rather than a destination. Worth knowing: that space runs on an 8-week post-anthracycline randomization window, the kind of deadline maintenance decisions attract.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>FDA-approved (ovarian cancer, Kaposi sarcoma, multiple myeloma) and generic; STS maintenance use is off-label and investigational.</dd>
+  <dt>Geographic scope</dt><dd>Drug US-wide; the maintenance trial is Taiwan-only</dd>
+</dl>
+
+
+**Next steps**
+
+1. No action; the LMS-04 design already assigns her maintenance drug. Revisit only if trabectedin maintenance proves intolerable.
+
+
+**Trial pathways**
+
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT06981637">NCT06981637</a></td><td class="col-phase">2</td><td class="col-indication">advanced STS with disease control after 4-8 first-line anthracycline cycles</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-partial">eligible: likely</span></td><td class="col-contact"><strong>Hui-Jen Tsai, MD</strong><br><a href="mailto:hjtsai@nhri.edu.tw">hjtsai@nhri.edu.tw</a><br><code>+886-6-7000123</code><br><a href="https://clinicaltrials.gov/study/NCT06981637#contacts-and-locations">trial sites</a></td><td class="col-notes">Second contact: Tom Wei-Wu Chen, MD, PhD, +886-2-23123456, tomweiwuchen@ntu.edu.tw. All 7 sites in Taiwan; informational for a US patient. Her window would arrive mid-2027 if induction goes well.</td></tr>
+</tbody></table></div></div>
+
+
+**Manufacturer / sponsor contact**
+
+_No manufacturer information captured._
+
+
+**Payer / coverage notes.** Generic PLD raises no coverage issues if her team ever wanted it; the clinical justification off-trial is the weak point, not the payment.
+
+
+---
+
+
+## Hrd interventions (2)
+
+### 9. Olaparib + temozolomide <small><code>olaparib, AZD2281, Lynparza, temozolomide, Temodar</code></small> { #access-9 }
+
+**Access status:** <span class="fit-badge fit-partial">Off-label use</span> &nbsp; **Modality:** small_molecule &nbsp; **Verified:** 2026-08-12
+
+
+Both drugs are marketed (olaparib branded, temozolomide generic), so this combination is reachable off-trial by ordinary prescribing even though both dedicated uLMS trials are closed to new patients: NCI 10250 and the randomized successor NCT05432791 are each active-not-recruiting as of this check. The practical path at progression is an off-label prescription with a payer appeal built on the published phase 2 (ORR 27%, mPFS 6.9 months in pretreated uLMS), while watching the randomized trial for readout or reopening. The HRR and RAD51 story decides how hard to push for it.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Olaparib FDA-approved in BRCA/HRR-defined indications (ovarian, breast, pancreatic, prostate); temozolomide FDA-approved (glioma) and generic. The uLMS combination is off-label for both.</dd>
+  <dt>Geographic scope</dt><dd>US-wide for off-label prescribing; both dedicated trials US-based but closed to accrual</dd>
+</dl>
+
+
+**Next steps**
+
+1. Send the somatic HRR panel and the germline hereditary-cancer panel now, off the 2024 archival block and a blood draw; results gate how hard this branch gets pushed.
+2. On the RAD51 functional assay: re-verified this run, and there is still no CLIA laboratory offering it as an orderable catalogue test. Treat it as trial-linked or academic-collaboration only, and do not hold up the HRR panel waiting for it.
+3. Set a recurring check on NCT05432791 for reopening or readout.
+4. If progression arrives before trial access exists, file the off-label olaparib prior authorization with the JCO phase 2 attached, via AstraZeneca medical information (1-800-236-9933) for label support documents.
+5. Ask whichever sarcoma center she lands at whether they run RAD51 foci in-house alongside a PARP trial.
+
+
+**Trial pathways**
+
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT03880019">NCT03880019</a></td><td class="col-phase">2</td><td class="col-indication">advanced uLMS after at least one prior line</td><td class="col-status">active not recruiting</td><td class="col-eligibility"><span class="fit-badge fit-strong">eligible: yes</span></td><td class="col-contact"><a href="https://clinicaltrials.gov/study/NCT03880019#contacts-and-locations">trial sites</a></td><td class="col-notes">Closed to accrual; this is the trial that produced the 27% ORR and the RAD51-defined PFS split (11.2 vs 5.4 months). Its publication (J Clin Oncol 2023, PMID 37467452) is the backbone of any off-label coverage appeal. No central contact posted.</td></tr>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT05432791">NCT05432791</a></td><td class="col-phase">2/3</td><td class="col-indication">advanced uLMS after at least two prior lines including an anthracycline</td><td class="col-status">active not recruiting</td><td class="col-eligibility"><span class="fit-badge fit-strong">eligible: yes</span></td><td class="col-contact"><a href="https://clinicaltrials.gov/study/NCT05432791#contacts-and-locations">trial sites</a></td><td class="col-notes">The confirmatory randomized trial, 144 US sites, currently closed to new accrual. The action is to watch for reopening or readout, not to plan enrollment; if it reopens she would arrive eligible after LMS-04 plus one further line. No central contact posted while accrual is closed.</td></tr>
+</tbody></table></div></div>
+
+
+**Manufacturer / sponsor contact**
+
+<dl class="profile-grid">
+  <dt>Company</dt><dd>AstraZeneca Pharmaceuticals LP (olaparib); temozolomide multi-source generic</dd>
+  <dt>Medical info phone</dt><dd><code>1-800-236-9933</code></dd>
+  <dt>Notes</dt><dd>Phone verbatim from the current Lynparza FDA label (&#x27;contact AstraZeneca at 1-800-236-9933&#x27;).</dd>
+</dl>
+
+
+**Payer / coverage notes.** Temozolomide is generic and cheap; olaparib is the coverage question. An off-label olaparib request in uLMS should lead with PMID 37467452, note the ongoing NCI-sponsored randomized phase 2/3 (NCT05432791), and attach the tumor HRR panel result if it shows BRCA2 or another HRR alteration, because a documented HRD state moves the request from speculative to biomarker-anchored. Expect an initial denial and plan the appeal.
+
+
+**Notes.** Strongest non-cytotoxic signal in uLMS, and the one place where the access answer is genuinely nuanced: reachable off-trial today, but the smart sequence is biomarkers first, payer file second, trial watch throughout.
+
+
+---
+
+### 10. Trabectedin + olaparib (preclinical combination) <small><code>trabectedin, Yondelis, olaparib, Lynparza</code></small> { #access-10 }
+
+**Access status:** <span class="fit-badge fit-partial">Off-label use</span> &nbsp; **Modality:** small_molecule &nbsp; **Verified:** 2026-08-12
+
+
+Both drugs are marketed, so nothing physically prevents a prescriber from combining them, but no clinical trial has tested the pairing in LMS and the supporting evidence is one preclinical synergy study. Off-label access exists on paper; using it would mean treating outside any human safety experience with two myelosuppressive agents. This row exists to say the door is technically open and should not be walked through outside a protocol.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Each component FDA-approved separately; the combination has no clinical development program in LMS.</dd>
+  <dt>Geographic scope</dt><dd>US-wide in theory; no protocol exists</dd>
+</dl>
+
+
+**Next steps**
+
+1. Treat as a research idea, not an access pathway. If a protocol testing PARP-plus-trabectedin ever opens in sarcoma, the trial screener should catch it on a re-run.
+
+
+**Trial pathways**
+
+_No registered trials in the dossier._
+
+
+**Manufacturer / sponsor contact**
+
+_No manufacturer information captured._
+
+
+**Payer / coverage notes.** No payer will cover the pairing as such, and there is no publication to anchor an appeal; coverage would ride on each drug&#x27;s separate justification.
+
+
+**Notes.** PARP1 expression, the proposed synergy predictor, has never been measured in this patient.
+
+
+---
+
+
+## B7H3 interventions (1)
+
+### 11. B7-H3 ADCs (MGC026; GSK5764227/HS-20093) <small><code>MGC026, GSK5764227, HS-20093, GSK&#x27;227, B7-H3, CD276</code></small> { #access-11 }
+
+**Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** ADC &nbsp; **Verified:** 2026-08-12
+
+
+No B7-H3 ADC is approved anywhere, so trials are the only route, and two US-recruiting phase 1 programs are open: MacroGenics&#x27; MGC026, which names sarcoma on its tumor list, and GSK&#x27;s EMBOLD study of GSK5764227, an all-comers escalation whose sarcoma rationale comes from Chinese sister studies. Both expect exhausted standard options, placing them after LMS-04 and probably one further line. Neither gates on B7-H3 IHC, but the planned local stain still earns its cost by telling the board whether a referral is worth the trip; 97% of soft tissue sarcomas stain positive.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Both agents investigational; no approvals. The class&#x27;s prior entrant vobramitamab duocarmazine was halted after safety findings.</dd>
+  <dt>Geographic scope</dt><dd>US sites for MGC026 and EMBOLD; ARTEMIS-002 mainland China only</dd>
+</dl>
+
+
+**Next steps**
+
+1. Add B7-H3/CD276 IHC to the planned stain bundle; a strong positive is the single most likely surface-target finding in this histology.
+2. After standard options are exhausted, contact MacroGenics (info@macrogenics.com, 301-251-5172) about the MGC026 sarcoma cohort and GSK (877-379-3718) about EMBOLD slots, comparing which open site is actually reachable for her.
+3. Get her ECOG documented; EMBOLD&#x27;s 0-1 ceiling is strict.
+4. Skip ARTEMIS-002 unless circumstances put her in China.
+
+
+**Trial pathways**
+
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT06242470">NCT06242470</a></td><td class="col-phase">1</td><td class="col-indication">advanced solid tumors including a named sarcoma cohort</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-strong">eligible: yes</span></td><td class="col-contact"><strong>Global Trial Manager</strong><br><a href="mailto:info@macrogenics.com">info@macrogenics.com</a><br><code>301-251-5172</code><br><a href="https://clinicaltrials.gov/study/NCT06242470#contacts-and-locations">trial sites</a></td><td class="col-notes">7 US sites (Los Angeles, Grand Rapids, Long Island, Portland OR, two in Houston, West Valley City UT) plus Australia and UK. Archival tissue required and available from the 2024 resection.</td></tr>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT06551142">NCT06551142</a></td><td class="col-phase">1</td><td class="col-indication">advanced solid tumors after progression on available standard therapy</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-partial">eligible: likely</span></td><td class="col-contact"><strong>US GSK Clinical Trials Call Center</strong><br><a href="mailto:GSKClinicalSupportHD@gsk.com">GSKClinicalSupportHD@gsk.com</a><br><code>877-379-3718</code><br><a href="https://clinicaltrials.gov/study/NCT06551142#contacts-and-locations">trial sites</a></td><td class="col-notes">15 US sites across 12 states. ECOG 0-1 required with no recent deterioration, stricter than most sarcoma rows here, and her score is an undocumented assumption. EU call center also listed: +44 (0) 20 89904466.</td></tr>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT05830123">NCT05830123</a></td><td class="col-phase">2</td><td class="col-indication">sarcomas after first-line systemic treatment</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-partial">eligible: likely</span></td><td class="col-contact"><strong>Wei Guo, MD</strong><br><a href="mailto:bonetumor@163.com">bonetumor@163.com</a><br><code>010-88326656</code><br><a href="https://clinicaltrials.gov/study/NCT05830123#contacts-and-locations">trial sites</a></td><td class="col-notes">All 11 sites are in mainland China, which makes this impractical for a US patient; kept because its sarcoma cohorts supply the disease-specific rationale for the GSK program.</td></tr>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT05551117">NCT05551117</a></td><td class="col-phase">2</td><td class="col-indication">mCRPC and other solid tumors</td><td class="col-status">terminated</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><a href="https://clinicaltrials.gov/study/NCT05551117#contacts-and-locations">trial sites</a></td><td class="col-notes">Terminated after safety findings in the prostate studies; recorded so the class is read with its failure in view. Payload choice, not the B7-H3 target, is where these ADCs have differed.</td></tr>
+</tbody></table></div></div>
+
+
+**Manufacturer / sponsor contact**
+
+<dl class="profile-grid">
+  <dt>Company</dt><dd>MacroGenics, Inc. (MGC026); GlaxoSmithKline / Hansoh (GSK5764227)</dd>
+  <dt>Medical info phone</dt><dd><code>301-251-5172</code></dd>
+  <dt>Medical info email</dt><dd><a href="mailto:info@macrogenics.com">info@macrogenics.com</a></dd>
+  <dt>Compassionate / expanded access</dt><dd><a href="https://www.macrogenics.com/expanded-access/">https://www.macrogenics.com/expanded-access/</a></dd>
+  <dt>Notes</dt><dd>MacroGenics&#x27; posted policy considers expanded access case by case only for products in phase 2 or 3; MGC026 is phase 1, so trial enrollment is the only route today and the policy page lists no dedicated contact.</dd>
+</dl>
+
+
+**Payer / coverage notes.** Trial-supplied agents. The B7-H3 IHC stain itself is a routine pathology order on the archival block.
+
+
+---
+
+
+## Fap interventions (1)
+
+### 12. FAP-targeted radioligands ([225Ac]RTX-2358; [177Lu]Lu-FAP-2286) <small><code>[225Ac]RTX-2358, RTX-2358, [64Cu]LNTH-1363S, [177Lu]Lu-FAP-2286, FAP-2286</code></small> { #access-12 }
+
+**Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** radioligand &nbsp; **Verified:** 2026-08-12
+
+
+Neither agent is approved, so both run through trials, and both pass the door-openness test for a US patient: the alpha-emitter RTX-2358 phase 1 is recruiting sarcoma specifically at five US sites plus Toronto, and Novartis&#x27; LuMIERE beta-emitter study is recruiting at 20 US sites with sarcoma not excluded. Selection in each is a FAP PET scan done at screening, so no local FAP testing is needed to knock on the door. One prior regimen suffices for RTX-2358, so she could screen directly after LMS-04; both trials also require ECOG 0-1, which is undocumented for her.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Both investigational; no approvals. RTX-2358 is a Ratio Therapeutics alpha-therapy program, FAP-2286 a Novartis beta-emitter theranostic.</dd>
+  <dt>Geographic scope</dt><dd>US + Canada; RTX-2358 at 5 US sites, LuMIERE at 20 US sites</dd>
+</dl>
+
+
+**Next steps**
+
+1. No FAP testing needed in advance; the screening PET is the gate and the trial provides it.
+2. After LMS-04 progression, call the nearest RTX-2358 site from the list above (five US options spanning both coasts, Texas, Minnesota and Ohio) and ask about screening-slot timing.
+3. Keep LuMIERE (Novartis, 1-888-689-6682) as the beta-emitter fallback a line later.
+4. Document ECOG and review the radiation-adjacent exclusions (prior RT fields) against her record before screening.
+
+
+**Trial pathways**
+
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT07156565">NCT07156565</a></td><td class="col-phase">1</td><td class="col-indication">relapsed/refractory soft tissue sarcoma, FAP-positive on [64Cu]LNTH-1363S PET</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-partial">eligible: likely</span></td><td class="col-contact"><a href="https://clinicaltrials.gov/study/NCT07156565#contacts-and-locations">trial sites</a></td><td class="col-notes">No central contact posted; site contacts verbatim from the registry: UCLA, Jacqueline Banuelos, 310-869-7014, jbanuelosmurillo@mednet.ucla.edu; Mayo Clinic Rochester, Clinical Trials Referral Office, 855-776-0015, CANCERCTR@mayo.edu; MSK, Sandra D&#x27;Angelo, MD, 646-392-1037, dangelos@mskcc.org; Case Western/UH Cleveland, Ankit Mangla, MD, 216-844-3951, ankit.mangla@uhhospitals.org; MD Anderson, Fiona Ouyang, 713-470-8008, fouyang@mdanerson.org (email as published; the domain spelling looks like a registry typo, so prefer the phone); Princess Margaret Toronto, David Shultz, MD, 416-946-4501. One prior regimen suffices; prior radioligand therapy and whole-pelvic RT are exclusions.</td></tr>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT04939610">NCT04939610</a></td><td class="col-phase">1/2</td><td class="col-indication">advanced solid tumors with [68Ga]Ga-FAP-2286 PET uptake</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-weak">eligible: unconfirmed</span></td><td class="col-contact"><strong>Novartis Pharmaceuticals</strong><br><a href="mailto:novartis.email@novartis.com">novartis.email@novartis.com</a><br><code>1-888-689-6682</code><br><a href="https://clinicaltrials.gov/study/NCT04939610#contacts-and-locations">trial sites</a></td><td class="col-notes">20 US sites in 15 states plus Australia, Canada and EU. Expects exhaustion of standard options first, so it sits a line later than RTX-2358 for her. Eligibility is unknowable until the gallium FAP PET is done at screening.</td></tr>
+</tbody></table></div></div>
+
+
+**Manufacturer / sponsor contact**
+
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Ratio Therapeutics (RTX-2358); Novartis (FAP-2286)</dd>
+  <dt>Medical info phone</dt><dd><code>1-888-689-6682</code></dd>
+  <dt>Medical info email</dt><dd><a href="mailto:novartis.email@novartis.com">novartis.email@novartis.com</a></dd>
+  <dt>Notes</dt><dd>Novartis contact verbatim from the LuMIERE registry record; Ratio Therapeutics publishes no medical-information line, so the trial site contacts are the channel.</dd>
+</dl>
+
+
+**Payer / coverage notes.** Trial-supplied isotopes and screening PETs. Radioligand programs run at nuclear-medicine-capable centers only, which compounds the travel question for a patient whose tolerance for travel was never stated.
+
+
+**Notes.** Crossfire physics makes this class attractive in a histology where surface-antigen heterogeneity undermines ADC cutoffs, and the marrow-stroma FAP toxicity signal from CAR-T work is the caution the preclinical file carries against it.
+
+
+---
+
+
+## Rb1 Loss interventions (1)
+
+### 13. REC-617 (selective CDK7 inhibitor) <small><code>REC-617</code></small> { #access-13 }
+
+**Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** small_molecule &nbsp; **Verified:** 2026-08-12
+
+
+Investigational with no approval anywhere, so the MD Anderson phase 1b is the only route. It wants the mirror image of the abemaciclib trial: RB1-null LMS by IHC (0% expression), at least one prior line, a biopsy-amenable lesion, and measurable disease, which slots it after LMS-04 if her RB1 stain comes back null. Given near-universal RB1 loss in LMS genomics, this is statistically the likelier of the two CDK doors, though the CDK7 mechanistic case in LMS itself is thin.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Investigational; no regulatory approval or filing. Phase 1 dose finding.</dd>
+  <dt>Geographic scope</dt><dd>US: single site (Houston, TX)</dd>
+</dl>
+
+
+**Next steps**
+
+1. Same first move as the abemaciclib row: RB1 IHC on the archival block.
+2. If RB1-null, email Elise Nassif (efnassif@mdanderson.org, 281-460-0607) with the diagnosis, line of therapy, and stain result to ask about slot timing.
+3. Confirm a biopsy-amenable lesion exists; the protocol requires one.
+4. Document her real ECOG before screening.
+
+
+**Trial pathways**
+
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT07633756">NCT07633756</a></td><td class="col-phase">1</td><td class="col-indication">RB1-negative LMS after &gt;=1 prior systemic line</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-weak">eligible: unconfirmed</span></td><td class="col-contact"><strong>Elise Nassif, MD</strong><br><a href="mailto:efnassif@mdanderson.org">efnassif@mdanderson.org</a><br><code>281-460-0607</code><br><a href="https://clinicaltrials.gov/study/NCT07633756#contacts-and-locations">trial sites</a></td><td class="col-notes">Single site, MD Anderson (Houston, TX). Same investigator as the abemaciclib study, which simplifies the referral conversation: one center, one stain, two mutually exclusive doors. ECOG ceiling 2; hers is an undocumented assumption. Phase 1 slots move fast, so email before assuming availability.</td></tr>
+</tbody></table></div></div>
+
+
+**Manufacturer / sponsor contact**
+
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Recursion Pharmaceuticals (agent); trial run at MD Anderson</dd>
+  <dt>Notes</dt><dd>No published medical-information line for this investigational agent; the trial contact is the working channel.</dd>
+</dl>
+
+
+**Payer / coverage notes.** Trial-supplied drug; standard-of-care costs (imaging, biopsies) bill as usual, worth confirming with the site&#x27;s financial counselor.
+
+
+---
+
+
+## Prame Hla interventions (2)
+
+### 14. IMA203 / IMA203CD8 (PRAME TCR-T) <small><code>IMA203, IMA203CD8, ACTengine IMA203</code></small> { #access-14 }
+
+**Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** other &nbsp; **Verified:** 2026-08-12
+
+
+Investigational cell therapy; the ACTengine basket is the access route and it runs on biology rather than histology: HLA-A*02:01 genotype plus PRAME expression by the sponsor&#x27;s assay, with sarcomas treated in earlier cohorts, so uLMS is not categorically excluded the way the MAGE-A4 programs exclude it. Both gates are unmeasured in her; an HLA typing blood draw settles half the question for the whole engineered-T-cell class in one step. Thirteen US sites, including one in Colorado.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Investigational (Immatics); phase 3 development in melanoma, no approval.</dd>
+  <dt>Geographic scope</dt><dd>US: 13 sites in 10 states; also Germany</dd>
+</dl>
+
+
+**Next steps**
+
+1. Draw HLA class I allele-level typing now, on the same visit as the germline panel; it is a one-time result that gates this entire class.
+2. If HLA-A*02:01-positive, email ctgovinquiries@immatics.com after LMS-04 progression to ask about PRAME screening of her tissue and current sarcoma slot policy.
+3. Confirm documented ECOG 0-1 before screening.
+
+
+**Trial pathways**
+
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT03686124">NCT03686124</a></td><td class="col-phase">1/2</td><td class="col-indication">recurrent/refractory PRAME-positive, HLA-A*02:01-positive solid tumors</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-weak">eligible: unconfirmed</span></td><td class="col-contact"><strong>Immatics US, Inc.</strong><br><a href="mailto:ctgovinquiries@immatics.com">ctgovinquiries@immatics.com</a><br><code>+1 346 204-5400</code><br><a href="https://clinicaltrials.gov/study/NCT03686124#contacts-and-locations">trial sites</a></td><td class="col-notes">13 US sites across 10 states plus German sites, so geography is workable without knowing her exact state. Requires progression after available standard therapy (post-LMS-04 timing) and ECOG 0-1; her score is an undocumented assumption. Reported PRAME levels in LMS run below synovial sarcoma, so the sponsor&#x27;s expression screen is a real filter, not a formality.</td></tr>
+</tbody></table></div></div>
+
+
+**Manufacturer / sponsor contact**
+
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Immatics Biotechnologies / Immatics US, Inc.</dd>
+  <dt>Medical info email</dt><dd><a href="mailto:ctgovinquiries@immatics.com">ctgovinquiries@immatics.com</a></dd>
+  <dt>Notes</dt><dd>Contact verbatim from the registry central-contact block; no separate medical-information line pre-approval.</dd>
+</dl>
+
+
+**Payer / coverage notes.** Trial-supplied therapy; cell-therapy trials concentrate at large centers and involve an apheresis-to-infusion timeline the family should understand before committing.
+
+
+---
+
+### 15. Brenetafusp (PRAME x CD3 ImmTAC) <small><code>brenetafusp, IMC-F106C</code></small> { #access-15 }
+
+**Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** bispecific_other &nbsp; **Verified:** 2026-08-12
+
+
+Investigational and, for her histology, not yet reachable: the NCI rare-cancers phase 2 that brings this drug into sarcoma names synovial sarcoma and myxoid round cell liposarcoma only, and it has not opened recruitment. The row matters as a watch item because it is the off-the-shelf alternative to PRAME TCR-T on the identical HLA-A*02:01 eligibility platform, and histology expansion is plausible as the program matures.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Investigational (Immunocore); phase 3 in melanoma, no approval.</dd>
+  <dt>Geographic scope</dt><dd>US (NCI network); not yet open, histology-excluded for now</dd>
+</dl>
+
+
+**Next steps**
+
+1. The HLA typing drawn for the IMA203 row covers this class too; no additional test needed.
+2. Re-screen this program at each pipeline re-run for LMS-admissible cohorts.
+
+
+**Trial pathways**
+
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT07686367">NCT07686367</a></td><td class="col-phase">2</td><td class="col-indication">metastatic/unresectable synovial sarcoma or MRCLS, HLA-A*02:01-positive</td><td class="col-status">not yet recruiting</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><a href="https://clinicaltrials.gov/study/NCT07686367#contacts-and-locations">trial sites</a></td><td class="col-notes">No contacts or sites posted yet. Named histologies exclude LMS; logged so the exclusion is visible rather than silent.</td></tr>
+</tbody></table></div></div>
+
+
+**Manufacturer / sponsor contact**
+
+_No manufacturer information captured._
+
+
+**Payer / coverage notes.** Not applicable while no admissible protocol exists.
+
+
+---
+
+
+## Her2 interventions (1)
+
+### 16. Trastuzumab deruxtecan (T-DXd) <small><code>trastuzumab deruxtecan, T-DXd, DS-8201, Enhertu</code></small> { #access-16 }
+
+**Access status:** <span class="fit-badge fit-partial">Off-label use</span> &nbsp; **Modality:** ADC &nbsp; **Verified:** 2026-08-12
+
+
+Marketed, and the tumor-agnostic accelerated approval for HER2 IHC 3+ solid tumors after prior therapy means one slide could make this label-available; HER2 has simply never been stained on her tumor and meaningful expression in uLMS is uncommon. The already-planned IHC bundle closes the question for the cost of one stain. Two case-specific cautions if it ever came into play: the drug&#x27;s ILD risk against her bilateral infiltrative lung disease, and an 8,500 ft oximetry baseline that would make pneumonitis surveillance genuinely hard to read.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>FDA-approved (Enhertu, Daiichi Sankyo/AstraZeneca), including tumor-agnostic accelerated approval for HER2 IHC 3+ solid tumors after prior systemic therapy.</dd>
+  <dt>Geographic scope</dt><dd>US-wide</dd>
+</dl>
+
+
+**Next steps**
+
+1. Add HER2 IHC to the planned stain bundle on the archival block; a 3+ result changes the option set, anything less closes the row.
+2. If ever used, build pneumonitis surveillance around her altitude-adjusted baseline oximetry, documented before cycle 1.
+
+
+**Trial pathways**
+
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT04482309">NCT04482309</a></td><td class="col-phase">2</td><td class="col-indication">HER2 IHC 3+/2+ advanced solid tumors</td><td class="col-status">active not recruiting</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><a href="https://clinicaltrials.gov/study/NCT04482309#contacts-and-locations">trial sites</a></td><td class="col-notes">Closed basket that generated the tumor-agnostic label; sarcoma was not a named cohort.</td></tr>
+</tbody></table></div></div>
+
+
+**Manufacturer / sponsor contact**
+
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Daiichi Sankyo, Inc. (with AstraZeneca)</dd>
+  <dt>Medical info phone</dt><dd><code>1-877-437-7763</code></dd>
+  <dt>Notes</dt><dd>Phone verbatim from the current Enhertu FDA label.</dd>
+</dl>
+
+
+**Payer / coverage notes.** With a documented IHC 3+ result and prior therapy, tumor-agnostic coverage applies. IHC 2+ or lower leaves only an unsupported off-label request in sarcoma.
+
+
+---
+
+
+## Atrx Alt interventions (1)
+
+### 17. ATR inhibition (ATRX/ALT-directed hypothesis) <small><code>ATR inhibitor, ceralasertib, berzosertib, elimusertib</code></small> { #access-17 }
+
+**Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** small_molecule &nbsp; **Verified:** 2026-08-12
+
+
+No ATR inhibitor is approved anywhere, so trial enrollment would be the only route, and no ALT- or ATRX-selected ATR trial in sarcoma was surfaced by this dossier; there is nothing to enroll in today. The scientific case is also contested: the founding claim that ALT status predicts ATR-inhibitor sensitivity failed replication, and the sarcoma cell-line data point to telomere length instead. This stays a watch item pending the ATRX IHC result, not an access pathway.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>No ATR inhibitor holds regulatory approval; class-wide investigational.</dd>
+  <dt>Geographic scope</dt><dd>Nothing currently open that fits</dd>
+</dl>
+
+
+**Next steps**
+
+1. Run the ATRX IHC in the planned stain bundle anyway; it is cheap, ALT-concordant in uLMS, and informs biology beyond this one hypothesis.
+2. Flag ATR-inhibitor sarcoma protocols for the trial screener at future re-runs rather than tracking manually.
+
+
+**Trial pathways**
+
+_No registered trials in the dossier._
+
+
+**Manufacturer / sponsor contact**
+
+_No manufacturer information captured._
+
+
+**Payer / coverage notes.** Not applicable; no product and no protocol.
+
+
+---
+
+
+## Magea4 Hla interventions (1)
+
+### 18. Afamitresgene autoleucel (MAGE-A4 TCR-T) <small><code>afamitresgene autoleucel, afami-cel, ADP-A2M4, Tecelra</code></small> { #access-18 }
+
+**Access status:** <span class="fit-badge fit-partial">Off-label use</span> &nbsp; **Modality:** other &nbsp; **Verified:** 2026-08-12
+
+
+FDA-approved, which technically puts an off-label path on the books, but the honest answer is that she cannot get it: the accelerated approval covers advanced synovial sarcoma in HLA-A*02-positive, MAGE-A4-positive patients, the product is manufactured per patient at authorized treatment centers under that label, and no manufacturer builds an autologous TCR-T for an off-label histology. No MAGE-A4 program currently enrolls LMS either. The row anchors what the engineered-T-cell class can do in sarcoma; her reachable version of it is the PRAME row.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>FDA accelerated approval (August 2024) for advanced synovial sarcoma, HLA-A*02-positive and MAGE-A4-expressing, after prior chemotherapy. Current US label holder per DailyMed: USWM CT, LLC.</dd>
+  <dt>Geographic scope</dt><dd>US authorized treatment centers; label-restricted to synovial sarcoma</dd>
+</dl>
+
+
+**Next steps**
+
+1. Do not pursue; route the cell-therapy interest through the IMA203 PRAME basket instead.
+2. The HLA typing already recommended would also be the first gate if a MAGE-A4 program ever opens to LMS.
+
+
+**Trial pathways**
+
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT04044768">NCT04044768</a></td><td class="col-phase">2</td><td class="col-indication">synovial sarcoma and MRCLS only</td><td class="col-status">active not recruiting</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><a href="https://clinicaltrials.gov/study/NCT04044768#contacts-and-locations">trial sites</a></td><td class="col-notes">The registrational trial; listed to document that its histology restriction is what closes this door, not supply.</td></tr>
+</tbody></table></div></div>
+
+
+**Manufacturer / sponsor contact**
+
+<dl class="profile-grid">
+  <dt>Company</dt><dd>USWM CT, LLC (US WorldMeds); developed by Adaptimmune</dd>
+  <dt>Medical info phone</dt><dd><code>1-855-246-9232</code></dd>
+  <dt>Notes</dt><dd>Phone verbatim from the current Tecelra FDA label (&#x27;contact USWM CT, LLC at 1-855-246-9232&#x27;).</dd>
+</dl>
+
+
+**Payer / coverage notes.** Coverage exists only inside the label; no payer or treatment center will support off-label manufacture for uLMS.
+
+
+---
+
+
+## Pulmonary Metastases Pattern interventions (1)
+
+### 19. Pulmonary suffusion + metastasectomy <small><code>pulmonary suffusion</code></small> { #access-19 }
+
+**Access status:** <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** other &nbsp; **Verified:** 2026-08-12
+
+
+An experimental regional-chemotherapy technique delivered only inside the Roswell Park phase 1/2, so trial enrollment in Buffalo is the sole route. It sits at the same decision point as standard metastasectomy, after induction produces operable anatomy, and shares all the same fitness caveats plus a single-site travel commitment. A live US protocol at exactly the consolidation branch her oncologist left open, but one that only matters if surgery becomes plausible at all.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Investigational surgical-regional technique under a single-center IND protocol.</dd>
+  <dt>Geographic scope</dt><dd>US: single site (Buffalo, NY)</dd>
+</dl>
+
+
+**Next steps**
+
+1. Park until a post-induction scan shows metastasectomy-appropriate anatomy.
+2. If it does, email Kenneth.Seastedt@Roswellpark.org to compare suffusion-plus-resection against standard resection closer to home before committing to Buffalo.
+
+
+**Trial pathways**
+
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT03965234">NCT03965234</a></td><td class="col-phase">1/2</td><td class="col-indication">sarcoma or colorectal lung metastases undergoing metastasectomy</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-weak">eligible: unconfirmed</span></td><td class="col-contact"><strong>Kenneth Seastedt</strong><br><a href="mailto:Kenneth.Seastedt@Roswellpark.org">Kenneth.Seastedt@Roswellpark.org</a><br><code>716-845-2300</code><br><a href="https://clinicaltrials.gov/study/NCT03965234#contacts-and-locations">trial sites</a></td><td class="col-notes">Single site, Roswell Park, Buffalo NY; site listing repeats Dr. Seastedt at 716-845-8675. Requires pulmonary function sufficient for planned metastasectomy, judged against her altitude-shifted baseline, and ECOG &lt;=2 (undocumented).</td></tr>
+</tbody></table></div></div>
+
+
+**Manufacturer / sponsor contact**
+
+_No manufacturer information captured._
+
+
+**Payer / coverage notes.** Trial covers the investigational component; the metastasectomy itself bills as standard surgery.
+
+
+---
+
+
+## Unmatched interventions (13)
+
+### 20. 2024 operative report retrieval (morcellation question) <small><code>operative report, morcellation</code></small> { #access-20 }
+
+**Access status:** <span class="fit-badge fit-strong">Standard of care</span> &nbsp; **Modality:** other &nbsp; **Verified:** 2026-08-12
+
+
+Not a treatment; this is the cheapest decisive document in the case. Whether the September 2024 hysterectomy used morcellation roughly triples recurrence risk in the published cohorts and shifts failures toward abdominopelvic dissemination, which changes surveillance imaging rather than just history-taking. Retrieval is a routine medical-records request to the 2024 surgical facility, free and requiring no one&#x27;s permission but hers.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Medical-records request; no regulatory gate.</dd>
+  <dt>Geographic scope</dt><dd>Wherever the 2024 surgery took place</dd>
+</dl>
+
+
+**Next steps**
+
+1. Submit a records request to the 2024 surgical facility for the full operative report and original pathology report.
+2. If morcellation is documented, ask the sarcoma team to add dedicated abdominopelvic surveillance to the imaging plan.
+3. File the report with the reference-pathology review so the whole diagnostic timeline sits in one place.
+
+
+**Trial pathways**
+
+_No registered trials in the dossier._
+
+
+**Manufacturer / sponsor contact**
+
+_No manufacturer information captured._
+
+
+**Payer / coverage notes.** No cost beyond possible nominal copying fees; HIPAA right of access applies.
+
+
+---
+
+### 21. Altitude-adjusted baseline diagnostics <small><code>LVEF, echocardiogram, PFTs, DLCO, oximetry, CBC, ECOG documentation, RECIST baseline</code></small> { #access-21 }
+
+**Access status:** <span class="fit-badge fit-strong">Standard of care</span> &nbsp; **Modality:** other &nbsp; **Verified:** 2026-08-12
+
+
+Every gating test here is routine and orderable close to home: echocardiogram with LVEF before doxorubicin, PFTs with DLCO plus resting and exertional oximetry, CBC with reticulocytes and ferritin, hepatic and renal panels with CK before trabectedin, a formally documented ECOG, and RECIST baseline imaging before cycle 1. The one trap is geographic: her oximetry, hemoglobin and dyspnea baselines only mean something if measured at her 8,500 ft residence altitude, so these tests should be done locally rather than at a distant referral center at low elevation.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Routine clinical diagnostics; no regulatory gate.</dd>
+  <dt>Geographic scope</dt><dd>Local to her residence; deliberately not referral-center work</dd>
+</dl>
+
+
+**Next steps**
+
+1. Book the echocardiogram first; LVEF is mandatory before any doxorubicin dose and is the likeliest scheduling bottleneck.
+2. Do PFTs with DLCO and pulse oximetry at a facility at her residence altitude, and record the altitude on the report.
+3. Draw CBC with reticulocytes and ferritin now so chemotherapy-era anemia calls have an altitude-adjusted reference point.
+4. Have the oncologist document an examined ECOG score; the 1 on file is an intake assumption that several trial ceilings depend on.
+5. Complete RECIST baseline imaging before cycle 1, with target-lesion selection mindful of the infiltrative pattern.
+
+
+**Trial pathways**
+
+_No registered trials in the dossier._
+
+
+**Manufacturer / sponsor contact**
+
+_No manufacturer information captured._
+
+
+**Payer / coverage notes.** All standard pre-chemotherapy workup, covered without dispute; no prior authorization issues expected for any item.
+
+
+**Notes.** The molecular workup runs in parallel and is covered in the rows it gates: comprehensive DNA+RNA panel (Caris-style exome plus transcriptome, closing NTRK), MMR IHC and TMB (pembrolizumab row), HRR somatic and germline plus the RAD51 caveat (olaparib row), HLA typing (IMA203 row), RB1 IHC (abemaciclib and REC-617 rows), B7-H3 and HER2 IHC (ADC rows), ATRX IHC (ATR row), PD-L1 with CD3/CD8 on the lung core.
+
+
+---
+
+### 22. Doxorubicin + ifosfamide (intensified) <small><code>doxorubicin, Adriamycin, ifosfamide, Ifex, mesna</code></small> { #access-22 }
+
+**Access status:** <span class="fit-badge fit-partial">Off-label use</span> &nbsp; **Modality:** small_molecule &nbsp; **Verified:** 2026-08-12
+
+
+Both agents are generic and universally available; ifosfamide has no sarcoma-specific US indication, so the pairing is off-label but routine at sarcoma centers. EORTC 62012 showed more response and toxicity without an overall survival win, and LMS-04 has largely displaced it for this histology. It stays on the list as an available combination, not a recommended one for her.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Both components FDA-approved and generic; combination use in soft tissue sarcoma is off-label.</dd>
+  <dt>Geographic scope</dt><dd>US-wide</dd>
+</dl>
+
+
+**Next steps**
+
+1. No access action needed; the clinical question (whether it ever beats the planned LMS-04 backbone for her) belongs to the board, not to an access pathway.
+
+
+**Trial pathways**
+
+_No registered trials in the dossier._
+
+
+**Manufacturer / sponsor contact**
+
+_No manufacturer information captured._
+
+
+**Payer / coverage notes.** Generic; requires mesna co-administration and growth-factor support, none of which raises coverage problems.
+
+
+---
+
+### 23. Doxorubicin + olaratumab <small><code>olaratumab, LY3012207, Lartruvo, doxorubicin</code></small> { #access-23 }
+
+**Access status:** <span class="fit-badge fit-none">Unavailable</span> &nbsp; **Modality:** monoclonal_antibody &nbsp; **Verified:** 2026-08-12
+
+
+Not obtainable, and that is the point of the row: olaratumab&#x27;s accelerated approval in soft tissue sarcoma was withdrawn after the confirmatory ANNOUNCE trial showed no survival benefit, and Lilly took the drug off the market. No successor program exists. The dossier kept ANNOUNCE only for its doxorubicin control-arm benchmark (median OS 21.9 months in the LMS stratum with modern supportive care).
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Approval withdrawn; olaratumab is no longer marketed following the negative ANNOUNCE confirmatory trial.</dd>
+  <dt>Geographic scope</dt><dd>Withdrawn worldwide</dd>
+</dl>
+
+
+**Next steps**
+
+1. None; recorded so the answer to &#x27;could we add olaratumab&#x27; is visibly no rather than silently missing.
+
+
+**Trial pathways**
+
+_No registered trials in the dossier._
+
+
+**Manufacturer / sponsor contact**
+
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Eli Lilly and Company</dd>
+  <dt>Notes</dt><dd>Product discontinued; no access program exists.</dd>
+</dl>
+
+
+---
+
+### 24. Eribulin <small><code>eribulin, E7389, Halaven</code></small> { #access-24 }
+
+**Access status:** <span class="fit-badge fit-partial">Off-label use</span> &nbsp; **Modality:** small_molecule &nbsp; **Verified:** 2026-08-12
+
+
+Marketed and easy to obtain, but the FDA sarcoma indication is liposarcoma only; in her leiomyosarcoma it is off-label with a neutral LMS subgroup result behind it (OS HR 0.93 vs dacarbazine). The label also requires two prior regimens including an anthracycline, so this door is two lines away regardless. Payers sometimes push back on LMS use; compendium listings usually settle it.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>FDA-approved (Halaven) for unresectable or metastatic liposarcoma after an anthracycline-containing regimen; LMS use is off-label.</dd>
+  <dt>Guidelines</dt><dd>NCCN-listed later-line option for STS</dd>
+  <dt>Geographic scope</dt><dd>US-wide</dd>
+</dl>
+
+
+**Next steps**
+
+1. Revisit at the third-line decision point; no earlier action is available or useful.
+
+
+**Trial pathways**
+
+_No registered trials in the dossier._
+
+
+**Manufacturer / sponsor contact**
+
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Eisai Inc.</dd>
+  <dt>Medical info phone</dt><dd><code>1-877-873-4724</code></dd>
+  <dt>Product information</dt><dd><a href="https://www.halaven.com">https://www.halaven.com</a></dd>
+  <dt>Notes</dt><dd>Phone verbatim from the current FDA label (&#x27;contact Eisai Inc. at (1-877-873-4724)&#x27;).</dd>
+</dl>
+
+
+**Payer / coverage notes.** Off-label for LMS; if a payer denies, the appeal rests on compendium listing plus the Study 309 whole-trial OS benefit, while acknowledging the LMS subgroup was neutral.
+
+
+---
+
+### 25. Gemcitabine + docetaxel <small><code>gemcitabine, Gemzar, docetaxel, Taxotere</code></small> { #access-25 }
+
+**Access status:** <span class="fit-badge fit-partial">Off-label use</span> &nbsp; **Modality:** small_molecule &nbsp; **Verified:** 2026-08-12
+
+
+Both drugs are generic, cheap, and stocked at every infusion center; neither carries a sarcoma indication, so use in uLMS is long-standing off-label practice that payers do not fight. Its role here is the first-line fallback if the baseline echocardiogram or her pulmonary reserve at 8,500 ft rules out full-dose doxorubicin. No access work is needed beyond a routine order.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Both components FDA-approved for other indications and available as generics; no sarcoma indication on either label.</dd>
+  <dt>Guidelines</dt><dd>Listed in NCCN soft tissue sarcoma guidelines as an option for LMS (long-established)</dd>
+  <dt>Geographic scope</dt><dd>US-wide</dd>
+</dl>
+
+
+**Next steps**
+
+1. Hold in reserve pending the baseline LVEF and PFT results that gate doxorubicin.
+2. If used, plan G-CSF support per the GOG dosing experience.
+
+
+**Trial pathways**
+
+_No registered trials in the dossier._
+
+
+**Manufacturer / sponsor contact**
+
+_No manufacturer information captured._
+
+
+**Payer / coverage notes.** Generic pricing keeps prior authorization friction minimal; compendium support for sarcoma use is long established.
+
+
+---
+
+### 26. Larotrectinib (TRK inhibition, NTRK fusion-gated) <small><code>larotrectinib, LOXO-101, Vitrakvi, repotrectinib, Augtyro, entrectinib, Rozlytrek</code></small> { #access-26 }
+
+**Access status:** <span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; **Modality:** small_molecule &nbsp; **Verified:** 2026-08-12
+
+
+This branch is gated on a test, not on supply: larotrectinib and repotrectinib both hold tumor-agnostic FDA approvals for NTRK fusion-positive solid tumors, so a positive fusion result makes an oral TRK inhibitor label-available rather than off-label. No fusion assay of any kind has been run on her tumor, and a DNA-only panel like FoundationOne CDx can miss NTRK fusions; the ordered panel must be RNA-capable. The repotrectinib basket TRIDENT-1 is also still recruiting across 49 US sites if trial access ever suits better.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Larotrectinib (Vitrakvi, Bayer): FDA tumor-agnostic approval for NTRK fusion-positive solid tumors. Repotrectinib (Augtyro, Bristol Myers Squibb): FDA accelerated approval June 13, 2024 for NTRK fusion-positive solid tumors, adult and pediatric &gt;=12. Fusion-negative or untested use has no basis.</dd>
+  <dt>Geographic scope</dt><dd>US-wide</dd>
+</dl>
+
+
+**Next steps**
+
+1. Confirm the comprehensive panel order is RNA-capable for fusion detection (the Caris exome-plus-transcriptome order already queued covers this; FoundationOne CDx alone would not).
+2. If a fusion returns, choose between label-available larotrectinib or repotrectinib and TRIDENT-1 enrollment; call the BMS contact center at 855-907-3286 if the trial route is preferred.
+3. Treat as a cheap-to-close long shot: prevalence in true uLMS is very low, but her spindle-cell morphology with an earlier benign sign-out is exactly where a fusion-driven mimic hides.
+
+
+**Trial pathways**
+
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT03093116">NCT03093116</a></td><td class="col-phase">1/2</td><td class="col-indication">fusion-positive advanced solid tumors, any histology</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-weak">eligible: unconfirmed</span></td><td class="col-contact"><strong>BMS Clinical Trials Contact Center www.BMSClinicalTrials.com</strong><br><a href="mailto:Clinical.Trials@bms.com">Clinical.Trials@bms.com</a><br><code>855-907-3286</code><br><a href="https://clinicaltrials.gov/study/NCT03093116#contacts-and-locations">trial sites</a></td><td class="col-notes">Eligibility turns entirely on a fusion result she does not have. Registry instructs that the first line of any email must contain the NCT number and site number. 49 US sites across 22 states, so a reachable site likely exists wherever she is.</td></tr>
+</tbody></table></div></div>
+
+
+**Manufacturer / sponsor contact**
+
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Bayer HealthCare Pharmaceuticals (larotrectinib)</dd>
+  <dt>Medical info phone</dt><dd><code>1-888-842-2937</code></dd>
+  <dt>Notes</dt><dd>Phone verbatim from the current Vitrakvi FDA label. For repotrectinib, the Augtyro label lists Bristol-Myers Squibb at 1-800-721-5072.</dd>
+</dl>
+
+
+**Payer / coverage notes.** With a documented NTRK fusion, tumor-agnostic coverage is routine. The entire payer risk sits upstream, in ordering a fusion-capable assay: an RNA-based or fusion-calling panel, not a DNA-only test that would return a silent false negative.
+
+
+---
+
+### 27. Letrozole <small><code>letrozole, Femara</code></small> { #access-27 }
+
+**Access status:** <span class="fit-badge fit-partial">Off-label use</span> &nbsp; **Modality:** small_molecule &nbsp; **Verified:** 2026-08-12
+
+
+Generic, pennies a day, and available at any pharmacy; access was never the issue. Her tumor is ER and PR under 1%, and the durable letrozole benefit in uLMS was confined to tumors expressing both receptors in more than 90% of cells, so the biology closes this door regardless of how easy the prescription is. The one recruiting letrozole trial in uLMS excludes her twice over, on receptor status and on stage.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>FDA-approved (breast cancer indications); generic. uLMS use is off-label.</dd>
+  <dt>Geographic scope</dt><dd>US-wide</dd>
+</dl>
+
+
+**Next steps**
+
+1. Only revisit if the pending specimen-provenance check overturns the ER/PR result, which would trigger re-screening of the whole endocrine class.
+
+
+**Trial pathways**
+
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT05649956">NCT05649956</a></td><td class="col-phase">2</td><td class="col-indication">stage I uLMS with ER &gt;10% by IHC</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><strong>Sarin Chhab</strong><br><a href="mailto:schhab@gog.org">schhab@gog.org</a><br><code>2158540770</code><br><a href="https://clinicaltrials.gov/study/NCT05649956#contacts-and-locations">trial sites</a></td><td class="col-notes">Recorded to document the exclusion, not as an option: she is ER &lt;1% against a &gt;10% requirement and metastatic against a stage I requirement. Second contact listed: Shanon Matkin, smatkin@gog.org.</td></tr>
+</tbody></table></div></div>
+
+
+**Manufacturer / sponsor contact**
+
+_No manufacturer information captured._
+
+
+**Payer / coverage notes.** Not applicable in practice; the receptor result forecloses use before coverage ever comes up.
+
+
+---
+
+### 28. Pazopanib <small><code>pazopanib, GW786034, Votrient</code></small> { #access-28 }
+
+**Access status:** <span class="fit-badge fit-strong">Standard of care</span> &nbsp; **Modality:** small_molecule &nbsp; **Verified:** 2026-08-12
+
+
+FDA-approved for advanced soft tissue sarcoma after prior chemotherapy, so it becomes label-eligible for her the day LMS-04 stops working, and coverage at that point is routine. PALETTE required prior anthracycline, which she will have. It is the approved later-line backbone the investigational options in this dossier have to beat.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>FDA-approved (Votrient) for advanced soft tissue sarcoma after prior chemotherapy; not indicated first-line.</dd>
+  <dt>Guidelines</dt><dd>NCCN-listed subsequent-line option for non-adipocytic STS</dd>
+  <dt>Geographic scope</dt><dd>US-wide</dd>
+</dl>
+
+
+**Next steps**
+
+1. Nothing to do now; note it as the default approved second-line comparator when weighing trial enrollment later.
+2. Blood pressure monitoring plan at initiation, given the class hypertension signal.
+
+
+**Trial pathways**
+
+_No registered trials in the dossier._
+
+
+**Manufacturer / sponsor contact**
+
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Novartis Pharmaceuticals Corporation</dd>
+  <dt>Medical info phone</dt><dd><code>1-888-669-6682</code></dd>
+  <dt>Notes</dt><dd>Phone verbatim from the current FDA label (&#x27;contact Novartis Pharmaceuticals Corporation at 1-888-669-6682&#x27;).</dd>
+</dl>
+
+
+**Payer / coverage notes.** On-label once she is post-chemotherapy; oral TKI, so it runs through pharmacy benefit with the usual specialty-pharmacy prior authorization rather than medical benefit.
+
+
+---
+
+### 29. Pembrolizumab <small><code>pembrolizumab, MK-3475, Keytruda</code></small> { #access-29 }
+
+**Access status:** <span class="fit-badge fit-partial">Off-label use</span> &nbsp; **Modality:** monoclonal_antibody &nbsp; **Verified:** 2026-08-12
+
+
+Marketed everywhere; the question is not whether she can get pembrolizumab but under what banner. If the queued TMB and MMR testing comes back TMB-high (on a validated CGP platform; KEYNOTE-158 eligibility ran on the Foundation Medicine readout) or dMMR/MSI-high, the tumor-agnostic approvals make it label-available after progression on prior therapy, and coverage follows. Without one of those results, sarcoma use is off-label with weak histology-level evidence, since LMS sits in the immune-low microenvironment classes.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>FDA-approved, including tumor-agnostic indications for TMB-H (&gt;=10 mut/Mb) and MSI-H/dMMR solid tumors after prior therapy. uLMS use without one of those biomarkers is off-label.</dd>
+  <dt>Geographic scope</dt><dd>US-wide</dd>
+</dl>
+
+
+**Next steps**
+
+1. Close the cheap gates: MMR four-stain IHC plus TMB and MSI from the comprehensive genomic panel already queued; specify a platform with validated TMB reporting.
+2. Add PD-L1 with CD3/CD8 on the 2026 lung core for context; informative in sarcoma, not gating.
+3. If TMB-H or dMMR returns, revisit at first progression, where the tumor-agnostic label applies.
+
+
+**Trial pathways**
+
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT02628067">NCT02628067</a></td><td class="col-phase">2</td><td class="col-indication">advanced solid tumors, biomarker-defined cohorts</td><td class="col-status">active not recruiting</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><a href="https://clinicaltrials.gov/study/NCT02628067#contacts-and-locations">trial sites</a></td><td class="col-notes">Closed basket; listed because its TMB-H cohort is the evidence base for the tumor-agnostic label she could qualify under.</td></tr>
+</tbody></table></div></div>
+
+
+**Manufacturer / sponsor contact**
+
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Merck Sharp &amp; Dohme LLC</dd>
+  <dt>Medical info phone</dt><dd><code>1-877-888-4231</code></dd>
+  <dt>Product information</dt><dd><a href="https://www.keytruda.com">https://www.keytruda.com</a></dd>
+  <dt>Notes</dt><dd>Phone verbatim from the current FDA label (&#x27;contact Merck Sharp &amp; Dohme LLC at 1-877-888-4231&#x27;).</dd>
+</dl>
+
+
+**Payer / coverage notes.** With a documented TMB-H or dMMR/MSI-H result on a validated platform, coverage is on-label and routine after progression on prior therapy. Without it, expect denial and a thin appeal; the biomarker is the whole access story here. A dMMR result would also open dostarlimab under the same tumor-agnostic logic.
+
+
+---
+
+### 30. Pulmonary metastasectomy <small><code>pulmonary metastasectomy, lung metastasectomy</code></small> { #access-30 }
+
+**Access status:** <span class="fit-badge fit-strong">Standard of care</span> &nbsp; **Modality:** other &nbsp; **Verified:** 2026-08-12
+
+
+A standard surgical service at any sarcoma-capable thoracic program, requiring a referral rather than any special access machinery; her oncologist has explicitly kept it on the table for after systemic control. The obstacles are anatomical and physiological, not logistical: bilateral infiltrative disease may never become resectable anatomy, and surgical fitness will be judged on pulmonary reserve that must be measured against her 8,500 ft baseline, with PFTs still undone.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Surgical procedure; no regulatory gate.</dd>
+  <dt>Guidelines</dt><dd>Guideline-recognized for resectable oligometastatic sarcoma at experienced centers</dd>
+  <dt>Geographic scope</dt><dd>US-wide at sarcoma-capable thoracic surgery programs</dd>
+</dl>
+
+
+**Next steps**
+
+1. Complete PFTs with DLCO and oximetry at residence altitude now; they serve both the chemotherapy baseline and any future operability assessment.
+2. Revisit resectability at the first post-induction response scan with a high-volume sarcoma thoracic surgeon.
+3. Keep the infiltrative-pattern caveat explicit in that conversation; the favorable metastasectomy literature describes discrete, countable lesions.
+
+
+**Trial pathways**
+
+_No registered trials in the dossier._
+
+
+**Manufacturer / sponsor contact**
+
+_No manufacturer information captured._
+
+
+**Payer / coverage notes.** Covered as standard surgical care when a thoracic surgeon documents resectability and fitness.
+
+
+---
+
+### 31. SBRT to pulmonary metastases <small><code>SBRT, stereotactic body radiotherapy</code></small> { #access-31 }
+
+**Access status:** <span class="fit-badge fit-strong">Standard of care</span> &nbsp; **Modality:** other &nbsp; **Verified:** 2026-08-12
+
+
+Routinely available at any radiation oncology department with stereotactic capability; no access barrier exists beyond a referral. Whether her lesions ever become SBRT-appropriate targets is the real question, since the published series treat up to about four discrete lesions and her current pattern is bilateral and infiltrative. If induction converts the disease to oligometastatic anatomy, this is the non-surgical local option, with local control above 90% in sarcoma series.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Standard radiotherapy technique; no regulatory gate.</dd>
+  <dt>Guidelines</dt><dd>Guideline-recognized local-therapy option for oligometastatic disease</dd>
+  <dt>Geographic scope</dt><dd>US-wide</dd>
+</dl>
+
+
+**Next steps**
+
+1. Nothing until response assessment; then have radiation oncology review lesion count and geometry against SBRT criteria.
+2. Baseline PFTs matter here too; pulmonary reserve at altitude bounds how much lung can be treated.
+
+
+**Trial pathways**
+
+_No registered trials in the dossier._
+
+
+**Manufacturer / sponsor contact**
+
+_No manufacturer information captured._
+
+
+**Payer / coverage notes.** Covered as standard radiotherapy with documentation of lesion number and intent; prior authorization is routine paperwork at any center that does this weekly.
+
+
+---
+
+### 32. Trabectedin monotherapy <small><code>trabectedin, ET-743, Yondelis</code></small> { #access-32 }
+
+**Access status:** <span class="fit-badge fit-strong">Standard of care</span> &nbsp; **Modality:** small_molecule &nbsp; **Verified:** 2026-08-12
+
+
+On-label and routinely covered once she has anthracycline exposure, which the planned LMS-04 induction provides; the maintenance phase of that regimen is effectively this drug continued. Today, before any anthracycline, standalone trabectedin would be off-label, but that sequencing question resolves itself the day induction starts. Access is a prescription plus central line, not a fight.
+
+
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>FDA-approved (2015) for unresectable or metastatic liposarcoma or leiomyosarcoma after a prior anthracycline-containing regimen.</dd>
+  <dt>Guidelines</dt><dd>Secondary summaries report NCCN treats single-agent trabectedin as a preferred later-line regimen for LMS</dd>
+  <dt>Geographic scope</dt><dd>US-wide</dd>
+</dl>
+
+
+**Next steps**
+
+1. No separate access work; this arrives bundled inside the LMS-04 plan as the maintenance drug.
+2. Keep hepatic panels and CK on the recurring lab schedule through maintenance.
+
+
+**Trial pathways**
+
+_No registered trials in the dossier._
+
+
+**Manufacturer / sponsor contact**
+
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Janssen Products, LP (Johnson &amp; Johnson)</dd>
+  <dt>Medical info phone</dt><dd><code>1-800-526-7736</code></dd>
+  <dt>Product information</dt><dd><a href="https://www.yondelis.com">https://www.yondelis.com</a></dd>
+</dl>
+
+
+**Payer / coverage notes.** On-label after anthracycline, so coverage is standard. The safety dossier her team will monitor against (transaminitis, cytopenias, rare rhabdomyolysis) comes from SAR-3007.
+
+
+---
+
+
+[Back to case](index.md) · [Trials](trials.md) · [Evidence](evidence.md) · [Manuscripts](manuscripts.md) · [Board](board.md) · [Recommendations](recommendations.md)
+
+!!! danger disclaimer "Decision support, not medical advice"
+    Contacts and trial-slot information age quickly. Confirm directly with the trial site and manufacturer before relying on details on this page. See [PHI policy](../../phi_policy.md).
+

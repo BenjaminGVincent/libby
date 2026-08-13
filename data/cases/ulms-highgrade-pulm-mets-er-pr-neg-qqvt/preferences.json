@@ -1,0 +1,8 @@
+{
+  "case_slug": "ulms-highgrade-pulm-mets-er-pr-neg-qqvt",
+  "efficacy_toxicity_weight": 0.7,
+  "toxicity_vetoes": [],
+  "modality_constraints": [],
+  "prefers_trials": true,
+  "free_text_constraints": "IMPORTANT: no preferences were stated by the user. Every value in this file is an assumed default with no user statement behind it: efficacy_toxicity_weight 0.7, empty toxicity_vetoes, empty modality_constraints, prefers_trials true. Goals of care were not discussed at intake. The ECOG of 1 in profile.json is likewise an unverified intake assumption (she is symptomatic with cough and dyspnea yet travelling for specialist consultation) and must be confirmed; downstream trial-eligibility calls depend on it. A 39-year-old with a planned aggressive induction (doxorubicin + trabectedin, LMS-04) plausibly implies curative or maximal-disease-control intent, but that is inference, not a stated preference. All of these need direct confirmation with the patient before they carry weight."
+}
