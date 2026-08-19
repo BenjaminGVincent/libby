@@ -39,6 +39,13 @@ CASES_DIR = REPO / "data" / "cases"
 JSON_ARTIFACTS = {
     "profile.json": "profile",
     "preferences.json": "preferences",
+    # Question-scoped runs. `question.json` replaces profile.json::targetable_features[]
+    # as the scope spine, and its presence is what marks a case as question-scoped for
+    # check_pipeline.py. `question_answer.json` is the terminal artifact, standing in
+    # for recommendations.jsonl (which a question run writes only when the question is
+    # genuinely option-shaped).
+    "question.json": "question",
+    "question_answer.json": "question_answer",
 }
 
 # JSONL artifacts (one object per line) → schema name. Paths are relative to the

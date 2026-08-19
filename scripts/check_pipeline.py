@@ -58,6 +58,109 @@ def _rows(path: Path) -> list[dict]:
     return out
 
 
+def check_question_case(slug: str, case: Path, docs: Path) -> tuple[list[str], list[str]]:
+    """Completeness rules for a question-scoped run.
+
+    A question run does the same research and tumor-board work as a full case but
+    is scoped to one question instead of a target set, so the feature-ranking
+    artifacts do not all apply:
+
+      - `question.json` replaces profile.json::targetable_features[] as the scope
+        spine, and `question_answer.json` replaces recommendations.jsonl as the
+        terminal artifact.
+      - `recommendations.jsonl` is required ONLY when the answer is option-shaped.
+        Requiring it unconditionally would push every question into a ranking,
+        which is the failure mode the track exists to avoid.
+      - `target_validation.jsonl` and `accessibility.jsonl` are informational: a
+        prognostic or mechanistic question may have no assay to harden and no
+        intervention to price.
+      - `profile.json` is required only for a linked question. A standalone
+        question has no patient and no PHI surface.
+
+    The board is NOT relaxed. The full five personas over two rounds is what the
+    question track buys, and a question answered without it is a literature
+    search wearing a case report's clothes.
+    """
+    failures: list[str] = []
+    notes: list[str] = []
+
+    try:
+        question = json.loads((case / "question.json").read_text("utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return ([f"{slug}: question.json unreadable or malformed"], [])
+
+    required_nonempty = {
+        "question_framer": case / "question.json",
+        "trial_screener": case / "trials.jsonl",
+        "clinician": case / "clinical_evidence.jsonl",
+        "researcher": case / "preclinical_evidence.jsonl",
+        "question_synthesist": case / "question_answer.json",
+    }
+
+    linked = question.get("source_case_slug")
+    if linked:
+        required_nonempty["inherited profile"] = case / "profile.json"
+
+    try:
+        answer = json.loads((case / "question_answer.json").read_text("utf-8"))
+    except (OSError, json.JSONDecodeError):
+        answer = {}
+
+    shape = answer.get("answer_shape_used") or question.get("answer_shape")
+    if shape == "verdict_plus_ranked_options":
+        required_nonempty["synthesist (ranked options)"] = case / "recommendations.jsonl"
+
+    for stage, path in required_nonempty.items():
+        if not path.exists():
+            failures.append(f"{stage}: missing {path.relative_to(REPO)}")
+        elif path.suffix == ".jsonl":
+            if not _rows(path):
+                failures.append(f"{stage}: empty {path.relative_to(REPO)}")
+        else:
+            try:
+                payload = json.loads(path.read_text("utf-8"))
+            except json.JSONDecodeError:
+                failures.append(f"{stage}: malformed JSON {path.relative_to(REPO)}")
+            else:
+                if not payload:
+                    failures.append(f"{stage}: empty {path.relative_to(REPO)}")
+
+    if not (docs / "question.md").exists():
+        failures.append(f"question_reporter: missing {(docs / 'question.md').relative_to(REPO)}")
+
+    # Board: unrelaxed, same rule as a full case.
+    positions = _rows(case / "board" / "positions.jsonl")
+    pos_personas = {r.get("persona") for r in positions}
+    if not positions:
+        failures.append("board round 1: missing or empty board/positions.jsonl")
+    elif PERSONAS - pos_personas:
+        failures.append(
+            "board round 1: missing personas " + ", ".join(sorted(PERSONAS - pos_personas))
+        )
+
+    critiques = _rows(case / "board" / "critiques.jsonl")
+    crit_personas = {r.get("critic_persona") for r in critiques}
+    if not critiques:
+        failures.append("board round 2: missing or empty board/critiques.jsonl")
+    else:
+        if PERSONAS - crit_personas:
+            failures.append(
+                "board round 2: missing critics " + ", ".join(sorted(PERSONAS - crit_personas))
+            )
+        selfcrit = [r for r in critiques if r.get("critic_persona") == r.get("target_persona")]
+        if selfcrit:
+            failures.append(f"board round 2: {len(selfcrit)} self-critique row(s)")
+
+    kind = "linked to " + linked if linked else "standalone"
+    notes.append(f"{slug}: question-scoped run ({kind}), answer shape {shape}")
+    if not (case / "target_validation.jsonl").exists():
+        notes.append(f"{slug}: no target_validation (not required for a question run)")
+    if not (case / "accessibility.jsonl").exists():
+        notes.append(f"{slug}: no accessibility screen (not required for a question run)")
+
+    return (failures, notes)
+
+
 def check_pipeline(slug: str) -> tuple[list[str], list[str]]:
     """Return (failures, notes) for one case."""
     case = CASES_DIR / slug
@@ -67,6 +170,12 @@ def check_pipeline(slug: str) -> tuple[list[str], list[str]]:
 
     if not case.is_dir():
         return ([f"{slug}: no such case directory {case}"], [])
+
+    # A question-scoped run is gated differently. `question.json` is the marker:
+    # it is the scope spine that replaces targetable_features[], so its presence
+    # is what says "judge this as a question, not as a feature ranking".
+    if (case / "question.json").exists():
+        return check_question_case(slug, case, docs)
 
     # Non-empty required JSONL / JSON tiers.
     required_nonempty = {

@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://libby.local/schema/question.schema.json",
+  "title": "Libby question scope",
+  "description": "The scope spine for a question-scoped Libby run, authored by the question_framer agent. In a standard case the scope spine is profile.json::targetable_features[] and the ranking answers 'which feature-targeting options exist'. In a question run this file replaces that array: the research tier, the board and the synthesist are all scoped to one question instead of a target set. Exactly one question.json exists per question case. Its presence is what tells check_pipeline.py to apply the question-case completeness rules rather than the feature-ranking ones.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "question_id",
+    "case_slug",
+    "question",
+    "question_type",
+    "decision_context",
+    "in_scope",
+    "out_of_scope",
+    "acceptance_criteria",
+    "answer_shape",
+    "framed_at_utc"
+  ],
+  "properties": {
+    "question_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "description": "Stable kebab-case id for the question, conventionally a short slug of the question itself (e.g. 'add-olaparib-maintenance', 'does-chemo-close-trial-window')."
+    },
+    "case_slug": {
+      "type": "string",
+      "description": "Slug of THIS question case. A question run always gets its own slug and its own page, even when linked to a source case, so a published case is never mutated by a later question."
+    },
+    "source_case_slug": {
+      "type": ["string", "null"],
+      "description": "Slug of an existing published case this question is about, or null for a standalone question. When set, the question inherits that case's profile.json as clinical context and may cite its existing dossier rather than re-researching settled ground; the rendered page carries a backlink. When null there is no profile.json, no patient, and no PHI surface — the question stands on its own."
+    },
+    "question": {
+      "type": "string",
+      "minLength": 12,
+      "description": "The question as it will be answered, stated as a single answerable sentence. Not the user's raw phrasing if that phrasing is ambiguous — the framer's job is to make it answerable, and any narrowing must be recorded in interpretation_notes."
+    },
+    "asked_as": {
+      "type": ["string", "null"],
+      "description": "The user's original phrasing, preserved verbatim when the framer had to reinterpret it. Null when `question` is already the user's own words."
+    },
+    "interpretation_notes": {
+      "type": ["string", "null"],
+      "description": "How the framer narrowed, disambiguated or split the original ask, and what was deliberately excluded. Required in substance whenever asked_as differs from question, so a reader can see the question was reshaped and judge whether the reshaping was fair."
+    },
+    "question_type": {
+      "type": "string",
+      "enum": ["intervention", "sequencing", "diagnostic", "prognostic", "mechanistic", "other"],
+      "description": "Drives search strategy, not eligibility. 'intervention' = is there a case for agent/class X. 'sequencing' = should X precede Y, or does X foreclose Y. 'diagnostic' = is test X worth ordering and what would it change. 'prognostic' = what does finding X mean for outlook. 'mechanistic' = why did X fail, or how does X work here. Every type is in scope; the label tells downstream agents where to search, not whether to."
+    },
+    "decision_context": {
+      "type": "string",
+      "description": "What decision hangs on the answer and who is about to make it. A question with no decision behind it produces a literature review rather than decision support, and the framer should say so here rather than manufacture stakes."
+    },
+    "in_scope": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string" },
+      "description": "Explicit boundaries of what the research tier should search and the board should reason over. These are the question run's equivalent of targetable_features[]: an agent asking 'is this in scope' checks here."
+    },
+    "out_of_scope": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "What is deliberately NOT being assessed, and why. A question run is narrow by design, so the exclusions are load-bearing: they are what stops a reader assuming the absence of an option means it was considered and rejected."
+    },
+    "acceptance_criteria": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["criterion", "would_support"],
+        "properties": {
+          "criterion": {
+            "type": "string",
+            "description": "A specific finding that would move the answer, stated before the search runs."
+          },
+          "would_support": {
+            "type": "string",
+            "enum": ["yes", "no", "either", "depends"],
+            "description": "Which way this criterion points the verdict if met."
+          },
+          "found": {
+            "type": ["boolean", "null"],
+            "description": "Filled by the question_synthesist after the research tier reports. Null until then. Pre-registering criteria and then recording which were met is what keeps the answer from being assembled backwards from a conclusion."
+          }
+        }
+      },
+      "description": "What evidence would answer the question, each way, written BEFORE the search. This is the question track's guard against motivated reasoning and the synthesist is required to report against it."
+    },
+    "answer_shape": {
+      "type": "string",
+      "enum": ["verdict", "verdict_plus_ranked_options"],
+      "description": "The framer's initial read of whether the question is option-shaped. 'verdict' produces an answer with confidence and dissent only. 'verdict_plus_ranked_options' additionally produces recommendations.jsonl, and is appropriate only when the question genuinely resolves to choosing among interventions. The synthesist may downgrade this if the evidence does not support a ranking, and must say so."
+    },
+    "inherited_context": {
+      "type": ["string", "null"],
+      "description": "For a linked question, the clinical facts from the source case that bear on this question, summarized so downstream agents do not have to re-read the whole source dossier. Null for standalone questions."
+    },
+    "framed_at_utc": {
+      "type": "string",
+      "description": "ISO-8601 UTC timestamp, month-year precision or finer per the PHI rule."
+    },
+    "notes": { "type": ["string", "null"] }
+  }
+}

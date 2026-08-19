@@ -28,6 +28,8 @@ python3 scripts/build_preclinical.py "$SLUG"
 python3 scripts/build_target_validation.py "$SLUG"
 python3 scripts/build_biomarker_survey.py "$SLUG"
 python3 scripts/build_standard_of_care.py "$SLUG"
+# Question-scoped runs only; no-ops when the case has no question.json.
+python3 scripts/build_question.py "$SLUG"
 python3 scripts/build_accessibility.py "$SLUG"
 
 # Build PDFs + HTML downloads (clinician report, plain-language, manuscripts, recs HTML).

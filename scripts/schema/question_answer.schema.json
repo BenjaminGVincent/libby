@@ -1,0 +1,227 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://libby.local/schema/question_answer.schema.json",
+  "title": "Libby question answer",
+  "description": "The terminal artifact of a question-scoped run, authored by the question_synthesist agent. It is the question track's analogue of recommendations.jsonl, but shaped as an answer rather than a ranking: a verdict with a calibrated confidence, the evidence each way, the board's preserved disagreement, and what would change the answer. When the question is genuinely option-shaped the synthesist ALSO writes recommendations.jsonl under the normal two-table contract; this file still leads, because the ranking answers a narrower question than the one that was asked.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "question_id",
+    "case_slug",
+    "question",
+    "verdict",
+    "confidence",
+    "answer",
+    "evidence_for",
+    "evidence_against",
+    "acceptance_criteria_result",
+    "what_would_change_it",
+    "board_dissent",
+    "scope_caveat",
+    "answered_at_utc"
+  ],
+  "properties": {
+    "question_id": {
+      "type": "string"
+    },
+    "case_slug": {
+      "type": "string"
+    },
+    "question": {
+      "type": "string",
+      "description": "Restated verbatim from question.json so the answer artifact is self-contained and a drifted question is visible."
+    },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "yes",
+        "qualified_yes",
+        "no",
+        "qualified_no",
+        "insufficient_evidence",
+        "not_answerable_as_asked"
+      ],
+      "description": "The direct answer. 'insufficient_evidence' means the question is answerable in principle but the evidence does not reach it \u2014 a legitimate and common result that must not be dressed up as a qualified yes. 'not_answerable_as_asked' means the question needs reframing, and the synthesist must say what it should be reframed to."
+    },
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "high",
+        "moderate",
+        "low"
+      ],
+      "description": "Calibrated to the evidence actually found, not to how strongly the board argued. A unanimous board reasoning from one retrospective series is low confidence."
+    },
+    "answer": {
+      "type": "string",
+      "minLength": 40,
+      "description": "The answer in prose, leading with the verdict and its single most important qualifier. Written for a clinician reading only this paragraph."
+    },
+    "evidence_for": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "claim",
+          "strength"
+        ],
+        "properties": {
+          "claim": {
+            "type": "string"
+          },
+          "strength": {
+            "type": "string",
+            "enum": [
+              "strong",
+              "moderate",
+              "weak"
+            ],
+            "description": "Graded on design, n and population match \u2014 not on how convenient the finding is."
+          },
+          "population_match": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Whether the cited evidence comes from the population the question is about. The commonest failure in this track is a strong result imported from an adjacent population; naming the mismatch here is how it stays visible."
+          },
+          "references": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "description": "Evidence supporting the verdict. May be empty when the verdict is 'no' or 'insufficient_evidence'."
+    },
+    "evidence_against": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "claim",
+          "strength"
+        ],
+        "properties": {
+          "claim": {
+            "type": "string"
+          },
+          "strength": {
+            "type": "string",
+            "enum": [
+              "strong",
+              "moderate",
+              "weak"
+            ]
+          },
+          "population_match": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "references": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "description": "Evidence cutting against the verdict. An empty array on a non-trivial question is a red flag and the synthesist should treat it as a prompt to look harder rather than a sign of a clean answer."
+    },
+    "acceptance_criteria_result": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "criterion",
+          "met",
+          "finding"
+        ],
+        "properties": {
+          "criterion": {
+            "type": "string"
+          },
+          "met": {
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "description": "Null when the search could not determine it either way."
+          },
+          "finding": {
+            "type": "string",
+            "description": "What was actually found against this pre-registered criterion."
+          }
+        }
+      },
+      "description": "Report against every criterion the framer pre-registered, in the same order. This is the audit trail that the answer was not assembled backwards from a conclusion."
+    },
+    "what_would_change_it": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      },
+      "description": "Concrete findings, results or events that would move the verdict. For a low-confidence answer this is often the most useful content on the page."
+    },
+    "board_dissent": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "persona",
+          "position"
+        ],
+        "properties": {
+          "persona": {
+            "type": "string"
+          },
+          "position": {
+            "type": "string"
+          },
+          "carried_into_answer": {
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "description": "Whether the dissent changed the verdict, its confidence, or its qualifiers. A dissent recorded as not carried needs a reason in the position text."
+          }
+        }
+      },
+      "description": "Board disagreement preserved rather than averaged. A question run with a unanimous board should say so explicitly here rather than leaving the array empty and ambiguous."
+    },
+    "answer_shape_used": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "verdict",
+        "verdict_plus_ranked_options",
+        null
+      ],
+      "description": "What the synthesist actually produced. When it differs from question.json::answer_shape the synthesist must explain the downgrade in `notes` \u2014 most often because the evidence did not support ranking."
+    },
+    "scope_caveat": {
+      "type": "string",
+      "description": "What this run did NOT assess. A question run is narrow by construction, and this line is what stops a reader treating a narrow answer as a broad clearance. Required."
+    },
+    "answered_at_utc": {
+      "type": "string"
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

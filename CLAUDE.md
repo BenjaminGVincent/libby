@@ -30,6 +30,25 @@ and its narrative, then renders its own page). Runs any time after
 `promote_profile.py`; best after PI, when `relationship_to_targeted_options` can
 name the ranked interventions it sequences against.
 
+## Question-scoped runs
+A parallel entry point for a single question, using the same research tier and
+the same board (5 personas x 2 rounds, not relaxed) but scoped to a question
+instead of a target set:
+`question_framer` -> research tier -> board -> `question_synthesist` -> `question_reporter`.
+
+- `question.json` replaces `profile.json::targetable_features[]` as the scope
+  spine, and its presence is what routes `check_pipeline.py` to the question
+  rules. `question_answer.json` is the terminal artifact, not a ranking.
+- Linked (`source_case_slug` set) inherits a published case's profile and gets
+  its own slug; the source case is never mutated. Standalone has no patient and
+  no PHI surface.
+- `acceptance_criteria` are written before the search and every one must be
+  reported against afterwards. That audit trail is the point; both the gate and
+  the renderer enforce it.
+- The synthesist may downgrade the answer shape, never upgrade it.
+  `insufficient_evidence` is a first-class verdict and must not be softened.
+Full method: `docs/methods.md`.
+
 ## Standard of care is additive, never subtractive
 The ranking (board → PI → translator → reporter) stays scoped to
 `profile.json::targetable_features[]`. The standard-of-care track is a parallel

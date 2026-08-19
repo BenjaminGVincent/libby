@@ -67,6 +67,70 @@ the standard-of-care page is where the alternatives are enumerated, on the
 record and referenced, rather than left to a conversation the case page does
 not witness.
 
+## Question-scoped runs (parallel entry point)
+
+The pipeline above answers one question: *which feature-targeting options exist
+for this patient?* A **question run** answers a different one, using the same
+research tier and the same tumor board, scoped to a single question instead of a
+target set.
+
+The scope spine changes. In a standard case it is
+`profile.json::targetable_features[]`, and the cross-cutting rule above binds
+every agent to it. In a question run it is **`question.json`**, authored by
+`question_framer`: the question, its decision context, explicit `in_scope` and
+`out_of_scope` boundaries, and `acceptance_criteria` — what evidence would
+answer it, each way, **written before the search runs**. Downstream agents that
+ask "is this in scope" check there instead.
+
+A question run may be **linked** (`source_case_slug` set) or **standalone**
+(null). A linked question inherits the source case's `profile.json` as clinical
+context and may cite its dossier rather than re-researching settled ground; it
+still gets its own slug and its own page, so a published case is never mutated
+by a later question. A standalone question has no patient, no `profile.json`,
+and no PHI surface.
+
+### What is and is not relaxed
+
+**Not relaxed: the board.** Five personas, two rounds, same as a full case. That
+rigour is what a question run buys; a question answered without it is a
+literature search wearing a case report's clothes.
+
+**Relaxed: the artifacts that presuppose a target set.** `target_validation.jsonl`
+and `accessibility.jsonl` become informational — a prognostic or mechanistic
+question may have no assay to harden and no intervention to price.
+`recommendations.jsonl` is required only when the answer is option-shaped.
+
+### The terminal artifact is an answer, not a ranking
+
+`question_synthesist` writes **`question_answer.json`**: a verdict from a fixed
+set, a confidence calibrated to the evidence rather than to how strongly the
+board argued, the evidence each way with its `population_match` stated, the
+board's preserved dissent, what would change the answer, and a required
+`scope_caveat`.
+
+Two guards matter more than the rest:
+
+- **`acceptance_criteria_result` must report every pre-registered criterion, in
+  order.** This is the audit trail proving the answer was not assembled backwards
+  from a conclusion. `check_pipeline` and `build_question.py` both enforce it.
+- **`insufficient_evidence` is a first-class verdict.** Dressing it up as a
+  qualified yes misleads by the shape of the answer rather than its content, so
+  the renderer deliberately gives it no positive badge colour.
+
+The synthesist may **downgrade** the framer's `answer_shape` and may never
+upgrade it. An unnecessary ranked table is worse than an absent one: a ranking
+implies a completeness the run does not have, because a question run screened
+one question and not the therapeutic landscape.
+
+### Order
+
+```
+question_framer → [trial_screener, clinician, researcher] → 5 personas × 2 rounds
+  → question_synthesist → question_reporter
+```
+
+`check_pipeline.py` branches on the presence of `question.json`.
+
 ## Pipeline
 
 Libby is invoked one case at a time. A "case" is one patient (or one
