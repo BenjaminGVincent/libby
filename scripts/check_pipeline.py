@@ -74,8 +74,9 @@ def check_question_case(slug: str, case: Path, docs: Path) -> tuple[list[str], l
       - `target_validation.jsonl` and `accessibility.jsonl` are informational: a
         prognostic or mechanistic question may have no assay to harden and no
         intervention to price.
-      - `profile.json` is required only for a linked question. A standalone
-        question has no patient and no PHI surface.
+      - A linked question inherits the source case's profile.json in place; no
+        copy is made into the question tree. A standalone question has no
+        patient and no PHI surface at all.
 
     The board is NOT relaxed. The full five personas over two rounds is what the
     question track buys, and a question answered without it is a literature
@@ -97,9 +98,18 @@ def check_question_case(slug: str, case: Path, docs: Path) -> tuple[list[str], l
         "question_synthesist": case / "question_answer.json",
     }
 
+    # A linked question inherits the source case's profile rather than copying it.
+    # Requiring a local copy would duplicate PHI-derived data into a second tree
+    # and, worse, would be a required file no agent owns — the framer's contract
+    # says it does not write profile.json. So the check points at the source.
     linked = question.get("source_case_slug")
     if linked:
-        required_nonempty["inherited profile"] = case / "profile.json"
+        src_profile = CASES_DIR / linked / "profile.json"
+        if not src_profile.exists():
+            failures.append(
+                f"linked source: {linked} has no profile.json "
+                f"(question.json::source_case_slug points at a case that cannot be inherited from)"
+            )
 
     try:
         answer = json.loads((case / "question_answer.json").read_text("utf-8"))

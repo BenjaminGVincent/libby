@@ -39,9 +39,9 @@ instead of a target set:
 - `question.json` replaces `profile.json::targetable_features[]` as the scope
   spine, and its presence is what routes `check_pipeline.py` to the question
   rules. `question_answer.json` is the terminal artifact, not a ranking.
-- Linked (`source_case_slug` set) inherits a published case's profile and gets
-  its own slug; the source case is never mutated. Standalone has no patient and
-  no PHI surface.
+- Linked (`source_case_slug` set) inherits the source case's profile in place
+  (no copy into the question tree) and gets its own slug; the source case is
+  never mutated. Standalone has no patient and no PHI surface.
 - `acceptance_criteria` are written before the search and every one must be
   reported against afterwards. That audit trail is the point; both the gate and
   the renderer enforce it.

@@ -173,14 +173,45 @@ def test_option_shaped_answer_requires_recommendations(monkeypatch, tmp_path):
     assert failures2 == [], failures2
 
 
-def test_linked_question_requires_profile(monkeypatch, tmp_path):
+def test_linked_question_requires_a_resolvable_source(monkeypatch, tmp_path):
+    """A linked question inherits the source case's profile in place. Pointing at
+    a case that does not exist is the failure, not the absence of a local copy —
+    a required local file would be one no agent owns."""
     root, docs = _patch(monkeypatch, tmp_path)
     _build_question_case(
         root, docs, "q-demo",
-        question=_question(source_case_slug="some-published-case"),
+        question=_question(source_case_slug="no-such-case"),
     )
     failures, _ = cp.check_pipeline("q-demo")
-    assert any("profile" in f for f in failures), failures
+    assert any("linked source" in f for f in failures), failures
+
+
+def test_linked_question_passes_when_source_resolves(monkeypatch, tmp_path):
+    root, docs = _patch(monkeypatch, tmp_path)
+    src = root / "published-case"
+    src.mkdir(parents=True)
+    (src / "profile.json").write_text('{"case_slug": "published-case"}')
+    _build_question_case(
+        root, docs, "q-demo",
+        question=_question(source_case_slug="published-case"),
+    )
+    failures, _ = cp.check_pipeline("q-demo")
+    assert failures == [], failures
+
+
+def test_linked_question_needs_no_local_profile_copy(monkeypatch, tmp_path):
+    """No PHI-derived data is duplicated into the question tree."""
+    root, docs = _patch(monkeypatch, tmp_path)
+    src = root / "published-case"
+    src.mkdir(parents=True)
+    (src / "profile.json").write_text('{"case_slug": "published-case"}')
+    _build_question_case(
+        root, docs, "q-demo",
+        question=_question(source_case_slug="published-case"),
+    )
+    assert not (root / "q-demo" / "profile.json").exists()
+    failures, _ = cp.check_pipeline("q-demo")
+    assert failures == [], failures
 
 
 def test_standalone_question_needs_no_profile(monkeypatch, tmp_path):

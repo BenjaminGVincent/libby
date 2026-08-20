@@ -28,7 +28,10 @@
         "advocate",
         "PI",
         "translator",
-        "reporter"
+        "reporter",
+        "question_framer",
+        "question_synthesist",
+        "question_reporter"
       ]
     },
     "round": {

@@ -83,10 +83,11 @@ answer it, each way, **written before the search runs**. Downstream agents that
 ask "is this in scope" check there instead.
 
 A question run may be **linked** (`source_case_slug` set) or **standalone**
-(null). A linked question inherits the source case's `profile.json` as clinical
-context and may cite its dossier rather than re-researching settled ground; it
-still gets its own slug and its own page, so a published case is never mutated
-by a later question. A standalone question has no patient, no `profile.json`,
+(null). A linked question inherits the source case's `profile.json` **in place** — no
+copy is made into the question tree, so no PHI-derived data is duplicated — and
+may cite that case's dossier rather than re-researching settled ground. It still
+gets its own slug and its own page, so a published case is never mutated by a
+later question. A standalone question has no patient, no `profile.json`,
 and no PHI surface.
 
 ### What is and is not relaxed
