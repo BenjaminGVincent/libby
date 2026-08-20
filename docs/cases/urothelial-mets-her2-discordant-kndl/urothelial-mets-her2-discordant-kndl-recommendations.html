@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>Libby recommendations &mdash; urothelial-mets-her2-discordant-kndl</title>
+<style>
+
+:root {
+  --ink: #1A202C;
+  --ink-muted: #4A5568;
+  --rule: #E2E8F0;
+  --header-bg: #F4F6F8;
+  --accent: #5B3A87;
+  --bg: #FFFFFF;
+  --warn-fg: #6F2E1A;
+  --warn-bg: #FBE9E7;
+  --warn-border: #ECC4BB;
+}
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  max-width: 80rem;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  line-height: 1.5;
+}
+h1, h2, h3 { color: var(--ink); }
+h1 { font-size: 1.6rem; }
+h2 { font-size: 1.2rem; margin-top: 2rem; }
+h3 { font-size: 1.05rem; margin-top: 1.5rem; }
+small.scenario-key { color: var(--ink-muted); }
+.disclaimer {
+  border: 1px solid var(--warn-border);
+  background: var(--warn-bg);
+  color: var(--warn-fg);
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  margin: 1rem 0 2rem;
+  font-size: 0.95rem;
+}
+.disclaimer strong { color: #B71C1C; }
+.profile-grid {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.25rem 1rem;
+  margin: 1rem 0 2rem;
+  font-size: 0.95rem;
+}
+.profile-grid dt { font-weight: 600; color: var(--ink-muted); }
+.profile-grid dd { margin: 0; }
+.trial-table-wrap { color: var(--ink); }
+.trial-scroll { overflow-x: auto; }
+.trial-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.88em;
+}
+.trial-table thead th {
+  background: var(--header-bg);
+  font-weight: 600;
+  text-align: left;
+  padding: 0.5em 0.6em;
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  white-space: nowrap;
+}
+.trial-table tbody td {
+  padding: 0.5em 0.6em;
+  border-bottom: 1px solid var(--rule);
+  font-variant-numeric: tabular-nums;
+  vertical-align: top;
+}
+.trial-table tbody tr:last-child td {
+  border-bottom: 2px solid var(--ink);
+}
+.persona {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.35em;
+  font-size: 0.78em;
+  font-weight: 600;
+  margin-right: 0.25em;
+  border: 1px solid transparent;
+}
+.persona-risktaker    { background: #FFE9D6; color: #6F3A0F; border-color: #F0CFAE; }
+.persona-conservative { background: #DFEBFB; color: #1B3A6B; border-color: #B5CDEE; }
+.persona-critic       { background: #F1E5FF; color: #441E72; border-color: #D4BBF2; }
+.persona-concensusite { background: #DDF1EE; color: #134E48; border-color: #B0DBD3; }
+.persona-advocate     { background: #FFE5EE; color: #6E1638; border-color: #F0BBCB; }
+.split-glyph { font-weight: 700; color: #5A4500; }
+/* not_recommended rows: mute, never strike through.
+   Strikethrough was applied to the whole <tr>, which struck the rationale
+   columns too — and on a rejected option the rationale is the most useful
+   text in the row, since it is what lets a reader stop considering it.
+   Muting carries the de-emphasis on its own; the badge below states the
+   verdict in words, so the signal does not rest on typography or colour
+   alone (both are invisible to a screen reader and to a monochrome print). */
+.not-recommended {
+  color: var(--ink-muted);
+}
+.badge-not-recommended {
+  background: #FDECEA;
+  color: #8C2F22;
+  border-color: #F5C6C0;
+}
+.scenario-conditional {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5A4500;
+  background: #FFF7E0;
+  border: 1px solid #F1DD9A;
+  border-radius: 0.35em;
+  padding: 0.05em 0.45em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+.pipeline-note,
+.evidence-detail-note {
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+  margin: 0.25rem 0 0.75rem;
+}
+.evidence-detail-empty {
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+  margin: 0.25rem 0 0.75rem;
+  padding-left: 0.5rem;
+  border-left: 2px solid #E5E5E5;
+}
+.evidence-detail-table { font-size: 0.86em; }
+.evidence-detail-table thead th {
+  background: #FAFAFA;
+}
+.evidence-detail-table .tox-grade {
+  font-size: 0.85em;
+  color: var(--ink-muted);
+  font-weight: 500;
+}
+.evidence-detail-table .safety-summary-fallback {
+  font-style: italic;
+  color: var(--ink-muted);
+}
+h4 + .trial-table-wrap,
+h4 + .evidence-detail-empty {
+  margin-top: 0.25rem;
+}
+h4 { margin-top: 1.25rem; margin-bottom: 0.25rem; font-size: 1rem; }
+.pipeline-context-table { font-size: 0.82em; color: var(--ink-muted); }
+.pipeline-context-table thead th {
+  background: #FAFAFA;
+  border-top: 1px solid var(--ink-muted);
+  border-bottom: 1px solid var(--ink-muted);
+}
+.pipeline-context-table tbody tr:last-child td { border-bottom: 1px solid var(--ink-muted); }
+.pipeline-context-table .intervention-name { color: var(--ink); font-weight: 600; }
+.pipeline-context-table .alias-list { color: var(--ink-muted); font-size: 0.9em; }
+.pipeline-context-table .basket-flag {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #134E48;
+  background: #DDF1EE;
+  border: 1px solid #B0DBD3;
+  border-radius: 0.35em;
+  padding: 0.02em 0.4em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+.pipeline-context-table .discontinued-flag {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5A2A2A;
+  background: #F2E1E1;
+  border: 1px solid #DDB7B7;
+  border-radius: 0.35em;
+  padding: 0.02em 0.4em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+.pipeline-context-table .offlabel-flag {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5F4310;
+  background: #FBEFD3;
+  border: 1px solid #E8C977;
+  border-radius: 0.35em;
+  padding: 0.02em 0.4em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+/* surfaced_reason flag pills (Experimental "Also considered" table). */
+.flag-badge {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 0.02em 0.5em;
+  white-space: nowrap;
+}
+.flag-unavailable    { background: #ECEFF1; color: #37474F; border-color: #CFD8DC; }
+.flag-consolidated   { background: #E8EAF6; color: #303F9F; border-color: #C5CAE9; }
+.flag-thin           { background: #FFF8E1; color: #7A5B00; border-color: #F0E1B0; }
+.flag-not-enrollable { background: #F3E5F5; color: #6A1B7A; border-color: #E1BEE7; }
+footer.libby-footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  color: var(--ink-muted);
+  font-size: 0.85rem;
+}
+
+</style>
+</head>
+<body>
+<h1>Libby recommendations &mdash; <code>urothelial-mets-her2-discordant-kndl</code></h1>
+<div class="disclaimer">
+<strong>Decision support, not medical advice.</strong> Libby is an experimental 
+multi-agent decision-support tool. The recommendations below have not been 
+reviewed by a clinician treating this patient. Do not act on this page without 
+consulting a qualified oncologist.
+</div>
+<h2>Profile snapshot</h2>
+<dl class="profile-grid">
+  <dt>Primary site</dt><dd>bladder (urothelial); separate second primary: prostate, treated 2020, on surveillance with no evidence of disease</dd>
+  <dt>Histology</dt><dd>high-grade muscle-invasive urothelial carcinoma, NOS, poorly differentiated (focal areas suggestive of plasmacytoid morphology at diagnosis; pleomorphic giant cells in 2025 recurrence; trophoblastic differentiation excluded by HCG IHC; no definitive micropapillary features on expert re-read)</dd>
+  <dt>Stage</dt><dd>IVB (cT3 cN0 pM1b at diagnosis 2023-11 with liver metastases; CR on 1L therapy 2024-08; current disease is oligometastatic nodal — biopsy-proven left para-aortic node plus probable perivesical node, treated with SBRT 2026-06)</dd>
+  <dt>ECOG</dt><dd>1</dd>
+  <dt>Age band</dt><dd>50-59</dd>
+  <dt>Sex</dt><dd>male</dd>
+  <dt>Biomarkers</dt><dd>HER2 positive (IHC 3+) — three concordant validated results: primary bladder tumor 2023-11, liver metastasis 2023-11, bladder recurrence 2025-03; DISCORDANT weak HER2 signal on research-grade multiplex immunofluorescence (MXIF) of recent lymph-node tissue 2026-08; repeat validated IHC performed 2026-08, tier not yet in available record (ihc_pending); PD-L1 (CPS) CPS 5 / tumor cells 5% (primary bladder 2023-11); CPS 0 (liver metastasis 2023-11) — discordant primary vs metastasis; Nectin-4 highly positive: 95% membranous tumor expression (primary, 2023-11); 100% membranous in in-situ component (2025-03 recurrence). Current expression after ~25 months of enfortumab vedotin is unknown; Nectin-4-directed imaging performed 2026-06 (result not in available record); TROP2 low positive (weak) on research-grade MXIF 2026-08 — recorded as low expression, NOT negative; validated TROP2 IHC performed 2026-08, tier not yet in available record (ihc_pending); Mesothelin strong expression on research-grade MXIF (2026-08) (ihc_pending); MUC1 strong expression on research-grade MXIF (2026-08) (ihc_pending); FAP (stromal) FAP-positive stroma on research-grade MXIF (2026-08); prior FAPi PET (2025-09) showed intense FAP avidity in prostate/seminal vesicle only — confounded by biopsy-proven BCG granulomatous inflammation; no FAP-avid urothelial carcinoma on that scan; repeat FAP imaging 2026-06 (result not in available record) (unknown); PRAME PRAME-directed imaging completed 2026-08; result not in available record (unknown); MAGE-A4 tumor expression negative (2024-06); patient was HLA-matched for a MAGE-A4 TCR trial but expression testing forecloses it; TMB 12.4 mut/Mb in both primary bladder tumor and liver metastasis (institutional median 3.9; bladder-cancer median 8.8); MSI microsatellite stable (MSS), both specimens; Somatic mutations (named in available record) ARID1A, TERT promoter, TP53 (incl. TP53 R175H seen in plasma ctDNA at 0.09% VAF, 2025-06) — recurrently detected in urine ctDNA (UroAmp) and concordant with tumor tissue; tissue NGS summary: 16 mutations + 12 copy-number alterations (primary), 15 mutations + 13 CNAs (liver met), no structural variants, exactly 1 alteration with an OncoKB treatment interpretation — the identity of that actionable alteration is NOT in the available record; HLA class I HLA-A*02:01 positive (high-resolution class I and II typing on file in local record; full typing withheld from this derived profile as quasi-identifying); Personalized neoantigens / vaccine immunogenicity 24 predicted neoepitopes selected from tumor WES (2023-11; class I 8-12mer and class II ~17mer peptides); EliSpot at 4 months post-vaccination: CD4+ T-cell responses to 2 of 14 evaluable peptide pools, no responses at day 1, several pools not evaluable; serial pre/post-vaccine PBMCs banked for ongoing EliSpot monitoring; ctDNA (tumor-informed MRD) Signatera: chronically positive 0.04-1.76 MTM/mL from 2024-05, rising to 3.29-3.45 MTM/mL 2026-06, then 0 MTM/mL on two draws 2026-06/2026-07 (per ops summary; the two zero-draws are also listed as pending in one table — minor internal conflict). NeXT Personal: 813 PPM (2026-06), peak 848 PPM (2026-05), with a reported decrease after an initial transient post-therapy increase (2026-08 report)</dd>
+  <dt>Efficacy/toxicity weight</dt><dd>0.7</dd>
+  <dt>Toxicity vetoes</dt><dd>severe peripheral neuropathy (INFERRED: established CIPN from enfortumab vedotin with repeated dose reductions and an active CIPN-management project — avoid or de-prioritize high-neuropathy agents, especially MMAE-payload ADCs and platinum/taxane backbones, where an alternative exists), severe GI toxicity / highly emetogenic regimens (INFERRED: severe nausea and bloating after trastuzumab deruxtecan dose 2 is an active, dose-limiting problem), interstitial lung disease / pneumonitis-high-risk agents without tight monitoring (INFERRED: 2026-03 outside CT read suggestive of early pulmonary fibrosis/ILD; directly interacts with T-DXd ILD risk), pancreatitis-risk agents (INFERRED: recovered asymptomatic pancreatitis 2025 with lipase to ~3x ULN on EV/pembro; amylase/lipase now monitored q3-4wk)</dd>
+  <dt>Modality constraints</dt><dd>no geographic or logistical constraints evident (INFERRED: patient has traveled internationally for imaging, vaccination, and consults, and maintains care at a US-Northeast tertiary academic center), intensive/experimental modalities acceptable, including cell therapy requiring apheresis (INFERRED: apheresis already banked; adoptive cell therapy (TIL), NK-cell plus N-803 single-patient IND, and vaccine programs actively pursued)</dd>
+</dl>
+
+<p><em>53 ranked therapeutic options across 12 targetable features. Biomarker workup steps live in the standalone Target validation paths report.</em></p>
+<h2>Her2 Ihc interventions</h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr class="split-glyph"><td><a href="#evidence-zanidatamab">1</a></td><td><strong>zanidatamab (HER2 biparatopic bispecific, payload-free) — off-label or NCT06695845 fallback if 3+ holds but T-DXd stops</strong> <span class="scenario-conditional">(conditional on her2_ihc positive)</span></td><td>Moderate if 3+ holds: ORR 37.0% (95% CI 27.0-48.7) in phase 1 (pmid:36400106), biliary-weighted; untested after T-DXd.</td><td>Low (grade-3 TRAEs in 4/132, no treatment-related deaths; LVEF monitoring)</td><td><strong>Low</strong> <span class="cpm-desc">(ADC-selected HER2 downregulation would blunt a payload-free bispecific; untested after T-DXd.)</span></td><td><strong>The payload-free way to stay on a confirmed HER2 3+ axis when T-DXd stops for tolerability — clean safety file, thin urothelial evidence, trial door closed by prior T-DXd.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/36400106">PMID&nbsp;36400106</a><br><a href="https://clinicaltrials.gov/study/NCT06695845">NCT06695845</a><br><a href="https://clinicaltrials.gov/study/NCT02892123">NCT02892123</a></td></tr>
+    <tr class="split-glyph"><td><a href="#evidence-trastuzumab-pertuzumab">2</a></td><td><strong>pertuzumab + trastuzumab (payload-free HER2 doublet) — TAPUR HER2 arm NCT02693535 or off-label, pending the ERBB2 report</strong> <span class="scenario-conditional">(conditional on her2_ihc positive)</span></td><td>Moderate at amplified 3+ (ORR 41.0%, MyPathway pmid:37793085); collapses to 8.3% at 1+; untested after a HER2 ADC.</td><td>Low (diarrhea 36.1% mostly low-grade; no serious term above 1.7%; LVEF monitoring)</td><td><strong>Low</strong> <span class="cpm-desc">(ADC-selected HER2 loss would gut a naked-antibody doublet; the tier gradient is steep.)</span></td><td><strong>The one HER2 route that touches none of the four vetoes, with a protocolized TAPUR path — its floor set by the pending tier and the unread ERBB2 copy number.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37793085">PMID&nbsp;37793085</a><br><a href="https://clinicaltrials.gov/study/NCT02693535">NCT02693535</a></td></tr>
+    <tr class="split-glyph"><td><a href="#evidence-ft825">3</a></td><td><strong>FT825 / ONO-8250 (off-the-shelf iPSC-derived HER2 CAR-T) — NCT06241456</strong> <span class="scenario-conditional">(conditional on her2_ihc positive)</span></td><td>Unknown — phase 1 with no urothelial signal; benefit is expected to track the pending HER2 tier (pmid:37870536).</td><td>High (lymphodepletion cytopenias and CRS; no mature safety table)</td><td><strong>Low</strong> <span class="cpm-desc">(Lymphodepletion could blunt the concurrently primed vaccine T-cell axis.)</span></td><td><strong>The HER2 cell-therapy route that survives the file&#x27;s constraints — no apheresis, no deruxtecan payload — and nothing measured in urothelial cancer yet.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT06241456">NCT06241456</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/37870536">PMID&nbsp;37870536</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/37793085">PMID&nbsp;37793085</a></td></tr>
+    <tr class="not-recommended"><td><a href="#evidence-trastuzumab-paclitaxel">4</a></td><td><strong>trastuzumab + paclitaxel (HER2 doublet with taxane backbone) — off-label</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td>Moderate response plausible at 3+ but irrelevant: the taxane backbone lands on the stated neuropathy veto (pmid:37385153).</td><td>Moderate (any-grade neuropathy 88.9% from the taxane backbone — the vetoed toxicity class)</td><td><strong>Low</strong> <span class="cpm-desc">(None mechanism-level; the disqualifier is the taxane-neuropathy collision.)</span></td><td><strong>An accessible HER2 doublet disqualified by its backbone: 88.9% any-grade neuropathy against established CIPN.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37385153">PMID&nbsp;37385153</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Also considered &mdash; not ranked</h3>
+<p class="pipeline-note">Feature-targeting investigational options the board considered but did not rank as live top-tier choices. The <strong>Flag</strong> column says why: <em>Unavailable</em> (program discontinued/terminated), <em>Consolidated</em> (one product of an approach ranked above), <em>Thin evidence</em> (no peer-reviewed clinical efficacy yet), <em>Not enrollable</em> (cross-tumor evidence or geographically inaccessible).</p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Flag</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr class="not-recommended"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>disitamab vedotin (RC48, HER2 ADC, MMAE payload) — NCT04879329 and US cohorts</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td>Moderate on the published record (ORR 50.5%, pmid:37988648) but unreachable: every US cohort excludes this history.</td><td>High (sensory neuropathy 68.2% any-grade, 18.7% grade &gt;=3 on an MMAE payload)</td><td><strong>Low</strong> <span class="cpm-desc">(None assessed; exclusion criteria and the MMAE-CIPN collision are the block.)</span></td><td><strong>The strongest HER2 number in the disease, foreclosed twice over: MMAE against established CIPN, and US exclusions for prior HER2 and MMAE therapy.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37988648">PMID&nbsp;37988648</a><br><a href="https://clinicaltrials.gov/study/NCT04879329">NCT04879329</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-thin">Thin evidence</span></td><td><strong>CAdVEC oncolytic adenovirus + HER2 CAR virus-specific T cells (intratumoral) — NCT03740256</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td>Unknown: no published efficacy data; injectable-lesion and single-site constraints on top.</td><td>Moderate (oncolytic + CAR-T combination; CRS and local injection risks, unquantified)</td><td><strong>Low</strong> <span class="cpm-desc">(None assessed beyond class uncertainty.)</span></td><td><strong>The one HER2 row that tolerates a 2+ tier — behind an injectable-lesion gate and a single Texas site.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT03740256">NCT03740256</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-zanidatamab">zanidatamab (HER2 biparatopic bispecific, payload-free) — off-label or NCT06695845 fallback if 3+ holds but T-DXd stops</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>Locally advanced or metastatic HER2-expressing or HER2-amplified solid tumors of any type after all approved therapies</strong> (2L+)<br><small>Part 2 enrolled biliary tract (n=22), colorectal (n=28) and other HER2-expressing/amplified cancers excluding breast and gastroesophageal (n=36).</small></td><td>132</td><td><strong>diarrhoea</strong> <span class="tox-grade">grade any</span>: 43.0% (37/86) <small>(part 2; all grade 1-2 except one patient)</small><br><strong>infusion-related reaction</strong> <span class="tox-grade">grade any</span>: 34.0% (29/86) <small>(part 2; all grade 1-2)</small><br><strong>any treatment-related AE</strong> <span class="tox-grade">grade 3</span>: 3.0% (4/132) <small>(six events in four patients)</small><br><strong>treatment-related death</strong> <span class="tox-grade">grade 5</span>: 0.0% (0/132)</td><td><strong>confirmed ORR (part 2)</strong>: 37.0% (95% CI 27.0–48.7)</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/36400106">Meric-Bernstam et al. <em>Lancet Oncol</em> 2022</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-trastuzumab-pertuzumab">pertuzumab + trastuzumab (payload-free HER2 doublet) — TAPUR HER2 arm NCT02693535 or off-label, pending the ERBB2 report</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>HER2-amplified and/or overexpressed and/or mutated solid tumors, tissue-agnostic cohort</strong> (2L+)<br><small>263 patients with HER2 amplification and/or overexpression; 83 with HER2 mutation alone. Activity was stratified by KRAS status and by HER2 IHC tier.</small></td><td>346</td><td><strong>diarrhoea</strong> <span class="tox-grade">grade any</span>: 36.1% (129/357) <small>(non-serious AE tab, trastuzumab plus pertuzumab arm)</small><br><strong>fatigue</strong> <span class="tox-grade">grade any</span>: 29.4% (105/357)<br><strong>nausea</strong> <span class="tox-grade">grade any</span>: 22.4% (80/357)<br><strong>anaemia</strong> <span class="tox-grade">grade any</span>: 17.6% (63/357)<br><strong>infusion-related reaction</strong> <span class="tox-grade">grade any</span>: 14.3% (51/357)<br><strong>any serious adverse event</strong> <span class="tox-grade">grade any</span>: 26.6% (95/357)<br><strong>small intestinal obstruction</strong> <span class="tox-grade">grade any</span>: 1.7% (6/357) <small>(most frequent serious event on this arm)</small></td><td><strong>ORR in HER2-amplified/overexpressed patients</strong>: 25.9% (95% CI 20.7–31.6)</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37793085">Sweeney et al. <em>J Clin Oncol</em> 2024</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-ft825">FT825 / ONO-8250 (off-the-shelf iPSC-derived HER2 CAR-T) — NCT06241456</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>HER2-expressing locally advanced or metastatic solid tumors (seven cohorts; bladder cohort n=41), excluding breast, gastric, colorectal and NSCLC</strong> (2L+)<br><small>HER2 IHC 3+ or 2+ by local or central testing, progression after &gt;=1 systemic therapy or no satisfactory alternative; ECOG 0-1. Bladder cohort was metastatic or advanced urothelial carcinoma of renal pelvis, ureter, bladder or urethra. Prior HER2-directed therapy was permitted.</small></td><td>267</td><td><strong>any drug-related AE</strong> <span class="tox-grade">grade any</span>: 84.6% (226/267)<br><strong>any drug-related AE</strong> <span class="tox-grade">grade &gt;=3</span>: 40.8% (109/267) <small>(most common neutropenia 10.9% and anemia 10.9%)</small><br><strong>nausea</strong> <span class="tox-grade">grade any</span>: 55.1% (n=267)<br><strong>vomiting</strong> <span class="tox-grade">grade any</span>: 24.7% (n=267)<br><strong>diarrhea</strong> <span class="tox-grade">grade any</span>: 25.8% (n=267)<br><strong>anemia</strong> <span class="tox-grade">grade any</span>: 27.7% (n=267)<br><strong>fatigue</strong> <span class="tox-grade">grade any</span>: 24.7% (n=267)<br><strong>ILD/pneumonitis (adjudicated drug-related)</strong> <span class="tox-grade">grade any</span>: 10.5% (28/267) <small>(grade 1 n=7 (2.6%), grade 2 n=17 (6.4%))</small><br><strong>ILD/pneumonitis (adjudicated drug-related)</strong> <span class="tox-grade">grade &gt;=3</span>: 1.5% (4/267) <small>(one grade 3 (0.4%), three fatal (1.1%))</small><br><strong>serious drug-related AE</strong> <span class="tox-grade">grade any</span>: 13.5% (36/267)</td><td><strong>investigator-assessed confirmed ORR, bladder cohort</strong>: 39.0% (95% CI 24.2–55.5)<br><small>all-cohort mDOR 11.3 mo, mPFS 6.9 mo; central IHC 3+ mDOR 22.1 mo, mPFS 11.9 mo</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37870536">Meric-Bernstam et al. <em>J Clin Oncol</em> 2024</a></td></tr>
+    <tr><td><strong>HER2-amplified and/or overexpressed and/or mutated solid tumors, tissue-agnostic cohort</strong> (2L+)<br><small>263 patients with HER2 amplification and/or overexpression; 83 with HER2 mutation alone. Activity was stratified by KRAS status and by HER2 IHC tier.</small></td><td>346</td><td><strong>diarrhoea</strong> <span class="tox-grade">grade any</span>: 36.1% (129/357) <small>(non-serious AE tab, trastuzumab plus pertuzumab arm)</small><br><strong>fatigue</strong> <span class="tox-grade">grade any</span>: 29.4% (105/357)<br><strong>nausea</strong> <span class="tox-grade">grade any</span>: 22.4% (80/357)<br><strong>anaemia</strong> <span class="tox-grade">grade any</span>: 17.6% (63/357)<br><strong>infusion-related reaction</strong> <span class="tox-grade">grade any</span>: 14.3% (51/357)<br><strong>any serious adverse event</strong> <span class="tox-grade">grade any</span>: 26.6% (95/357)<br><strong>small intestinal obstruction</strong> <span class="tox-grade">grade any</span>: 1.7% (6/357) <small>(most frequent serious event on this arm)</small></td><td><strong>ORR in HER2-amplified/overexpressed patients</strong>: 25.9% (95% CI 20.7–31.6)</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37793085">Sweeney et al. <em>J Clin Oncol</em> 2024</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-trastuzumab-paclitaxel">trastuzumab + paclitaxel (HER2 doublet with taxane backbone) — off-label</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>HER2-positive recurrent or metastatic urothelial carcinoma</strong> (2L+)<br><small>HER2 positivity by IHC per 2013 ASCO/CAP breast criteria; 26 of 27 enrolled patients were evaluable.</small></td><td>27</td><td><strong>peripheral neuropathy</strong> <span class="tox-grade">grade any</span>: 88.9% (n=27)<br><strong>neutropenia</strong> <span class="tox-grade">grade &gt;=3</span>: 25.9% (n=27)<br><strong>thrombocytopenia</strong> <span class="tox-grade">grade &gt;=3</span>: 7.4% (n=27)<br><strong>anemia</strong> <span class="tox-grade">grade &gt;=3</span>: 7.4% (n=27)</td><td><strong>ORR</strong>: 48.1%<br><small>mDOR 6.9 mo (95% CI 4.4-9.3); mPFS 8.4 mo</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37385153">Kim et al. <em>ESMO Open</em> 2023</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-disitamab-vedotin">disitamab vedotin (RC48, HER2 ADC, MMAE payload) — NCT04879329 and US cohorts</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>HER2-positive (IHC 3+ or 2+) locally advanced or metastatic urothelial carcinoma</strong> (2L+)<br><small>Pooled RC48-C005 and RC48-C009; all patients had progressed on &gt;=1 prior systemic chemotherapy line. Subgroups included liver metastases and prior anti-PD-1/L1 exposure.</small></td><td>107</td><td><strong>peripheral sensory neuropathy</strong> <span class="tox-grade">grade any</span>: 68.2% (n=107)<br><strong>peripheral sensory neuropathy</strong> <span class="tox-grade">grade &gt;=3</span>: 18.7% (n=107)<br><strong>leukopenia</strong> <span class="tox-grade">grade any</span>: 50.5% (n=107)<br><strong>neutropenia</strong> <span class="tox-grade">grade any</span>: 42.1% (n=107)<br><strong>neutropenia</strong> <span class="tox-grade">grade &gt;=3</span>: 12.1% (n=107)<br><strong>AST increased</strong> <span class="tox-grade">grade any</span>: 42.1% (n=107)<br><strong>any treatment-related AE</strong> <span class="tox-grade">grade &gt;=3</span>: 54.2% (58/107)</td><td><strong>confirmed ORR by blinded independent review</strong>: 50.5% (95% CI 40.6–60.3)<br><small>mDOR 7.3 mo (95% CI 5.7-10.8); mPFS 5.9 mo</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37988648">Sheng et al. <em>J Clin Oncol</em> 2024</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-cadvec-her2-carvst">CAdVEC oncolytic adenovirus + HER2 CAR virus-specific T cells (intratumoral) — NCT03740256</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h2>Nectin4 interventions</h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr class="split-glyph"><td><a href="#evidence-ac225-aky-1189">1</a></td><td><strong>[225Ac]Ac-AKY-1189 (Nectin-4 actinium-225 radioligand) with [64Cu]Cu-AKY-1189 imaging — NCT07020117</strong></td><td>Unknown — first-in-human with zero efficacy data; a mechanism bet that alpha crossfire survives partial Nectin-4 loss after 25 months of EV (pmid:41173324).</td><td>Moderate (no human safety table; alpha-radioligand class marrow suppression and renal exposure, with eGFR unmeasured)</td><td><strong>Low</strong> <span class="cpm-desc">(Subtherapeutic dose-escalation assignment could spend the post-T-DXd window without benefit.)</span></td><td><strong>The one Nectin-4 route insulated from both MMAE neuropathy and antigen heterogeneity, with an imaging step that answers the expression question tissue-free — and no efficacy data at all.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT07020117">NCT07020117</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/41173324">PMID&nbsp;41173324</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/40931013">PMID&nbsp;40931013</a></td></tr>
+    <tr class="split-glyph"><td><a href="#evidence-ly4052031">2</a></td><td><strong>LY4052031 (Nectin-4 ADC, camptothecin topoisomerase-I payload) — NEXUS-01 cohort B2, NCT06465069</strong></td><td>Moderate but unstable: 47% post-EV ORR is unpublished dose-escalation data (NCT06465069); target validation is RCT-grade, the agent estimate is not.</td><td>Moderate (camptothecin-class diarrhea, nausea, neutropenia; no published safety table yet)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Sequential topoisomerase-I payloads after T-DXd risk cross-resistance; current Nectin-4 expression unverified.)</span></td><td><strong>The trial written for his exact post-EV history with a payload that clears the neuropathy veto — carried by RCT-grade target validation, not by published data on this drug.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT06465069">NCT06465069</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/42167230">PMID&nbsp;42167230</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/38446675">PMID&nbsp;38446675</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Also considered &mdash; not ranked</h3>
+<p class="pipeline-note">Feature-targeting investigational options the board considered but did not rank as live top-tier choices. The <strong>Flag</strong> column says why: <em>Unavailable</em> (program discontinued/terminated), <em>Consolidated</em> (one product of an approach ranked above), <em>Thin evidence</em> (no peer-reviewed clinical efficacy yet), <em>Not enrollable</em> (cross-tumor evidence or geographically inaccessible).</p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Flag</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr class="not-recommended"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>AVZO-103 (Nectin-4 x TROP2 bispecific ADC, exatecan payload) — NCT07193511</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td>Unassessable until the chest CT discrepancy is adjudicated; preclinical bispecific design suits heterogeneous antigen (pmid:41101697).</td><td>Moderate (exatecan-payload class GI and marrow toxicity; no clinical safety table)</td><td><strong>Low</strong> <span class="cpm-desc">(None assessed; enrollability, not mechanism, is the block.)</span></td><td><strong>The dual-target ADC two personas wanted to rank — blocked solely by an ILD exclusion against an unresolved CT read.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT07193511">NCT07193511</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/41101697">PMID&nbsp;41101697</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-consolidated">Consolidated</span></td><td><strong>CRB-701 / SYS6002 (site-specific Nectin-4 ADC, MMAE payload) — NCT06265727</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td>See rank 5: the approach is ranked once; this product keeps the vetoed payload class.</td><td>High (MMAE-class neuropathy risk against established CIPN)</td><td><strong>Low</strong> <span class="cpm-desc">(Same antigen-dependency as the ranked approach, plus the MMAE liability.)</span></td><td><strong>A tidier linker on the payload the file vetoes; the ranked Nectin-4 ADC changed the payload instead.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT06265727">NCT06265727</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-consolidated">Consolidated</span></td><td><strong>E303 / SBE303 (Nectin-4 ADC) — NCT07524348</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td>See rank 5: the approach is ranked once; no data distinguish this product.</td><td>Moderate (ADC class profile; payload details thin in the record)</td><td><strong>Low</strong> <span class="cpm-desc">(Same antigen-dependency as the ranked approach.)</span></td><td><strong>The backup sponsor for the rank-5 approach if NEXUS-01 screening fails.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT07524348">NCT07524348</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-thin">Thin evidence</span></td><td><strong>CT-202 (Nectin-4-directed bispecific antibody, payload-free) — NCT07545122</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td>Unknown: no clinical data; same current-expression question as every Nectin-4 row.</td><td>Low (no payload; bispecific-class infusion and immune events, unquantified)</td><td><strong>Low</strong> <span class="cpm-desc">(Payload-free killing depends more, not less, on retained antigen density.)</span></td><td><strong>The gentlest Nectin-4 concept on paper, with nothing measured behind it yet.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT07545122">NCT07545122</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>EB-DT-NK-UC101 (cord-blood Nectin-4/HER2 dual-target CAR-NK) — NCT07492628</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td>Not applicable: not accessible from the US today.</td><td>High (lymphodepletion plus CAR-NK class toxicity, unquantified)</td><td><strong>Low</strong> <span class="cpm-desc">(None assessed; access is the block.)</span></td><td><strong>The most permissive eligibility on the list, attached to a program he cannot reach.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT07492628">NCT07492628</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-unavailable">Unavailable</span></td><td><strong>Nectin-4-directed CAR T cells (preclinical) — unavailable</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td>Not applicable: no accessible program.</td><td>High (CAR-T class, hypothetically)</td><td><strong>Low</strong> <span class="cpm-desc">(None assessed; the program is not available.)</span></td><td><strong>Not reachable by any enrollment or access route on record.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40931013">PMID&nbsp;40931013</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-unavailable">Unavailable</span></td><td><strong>ETx-22 (Nectin-4 ADC, exatecan payload, preclinical) — unavailable</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td>Not applicable: no accessible program.</td><td>Moderate (exatecan class, hypothetically)</td><td><strong>Low</strong> <span class="cpm-desc">(None assessed; the program is not available.)</span></td><td><strong>Not reachable by any enrollment or access route on record.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/39440991">PMID&nbsp;39440991</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-unavailable">Unavailable</span></td><td><strong>Nectin-4-targeted near-infrared photoimmunotherapy (preclinical) — unavailable</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td>Not applicable: no accessible program.</td><td>Moderate (local phototoxicity, hypothetically)</td><td><strong>Low</strong> <span class="cpm-desc">(None assessed; the program is not available.)</span></td><td><strong>Not reachable by any enrollment or access route on record.</strong></td><td>&mdash;</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-ac225-aky-1189">[225Ac]Ac-AKY-1189 (Nectin-4 actinium-225 radioligand) with [64Cu]Cu-AKY-1189 imaging — NCT07020117</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-ly4052031">LY4052031 (Nectin-4 ADC, camptothecin topoisomerase-I payload) — NEXUS-01 cohort B2, NCT06465069</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>Previously untreated locally advanced or metastatic urothelial carcinoma</strong> (1L)<br><small>Cisplatin-eligible and cisplatin-ineligible patients both enrolled; co-primary endpoints PFS by BICR and OS.</small></td><td>886</td><td><strong>any treatment-related AE</strong> <span class="tox-grade">grade &gt;=3</span>: 55.9% (n=440) <small>(vs 69.5% in the chemotherapy arm)</small></td><td><strong>median overall survival</strong>: 31.5 months; p &lt;0.001<br><small>mPFS 12.5 mo vs 6.3 mo</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/38446675">Powles et al. <em>N Engl J Med</em> 2024</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-avzo-103">AVZO-103 (Nectin-4 x TROP2 bispecific ADC, exatecan payload) — NCT07193511</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-crb-701">CRB-701 / SYS6002 (site-specific Nectin-4 ADC, MMAE payload) — NCT06265727</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-e303">E303 / SBE303 (Nectin-4 ADC) — NCT07524348</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-ct-202">CT-202 (Nectin-4-directed bispecific antibody, payload-free) — NCT07545122</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-eb-dt-nk-uc101">EB-DT-NK-UC101 (cord-blood Nectin-4/HER2 dual-target CAR-NK) — NCT07492628</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-nectin4-car-t">Nectin-4-directed CAR T cells (preclinical) — unavailable</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-nectin4-topo1-adc">ETx-22 (Nectin-4 ADC, exatecan payload, preclinical) — unavailable</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-nectin4-nir-pit">Nectin-4-targeted near-infrared photoimmunotherapy (preclinical) — unavailable</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h2>Tp53 R175H interventions</h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr class="split-glyph"><td>1</td><td><strong>CLSP-1025 (TP53 R175H x HLA-A*02:01 T-cell engager) — GUARDIAN-101, NCT06778863</strong></td><td>Unknown, and gated twice: no clinical data for the class, and the R175H call is one 0.09% VAF plasma read pending tissue confirmation.</td><td>Moderate (expected CRS with inpatient step-up dosing; no human safety table yet)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Very low peptide-HLA density and unmeasured HLA-A*02 LOH could cap engager potency.)</span></td><td><strong>A truncal-driver bet with both eligibility gates already on file — but the R175H call is a single 0.09% VAF plasma read and the class has no clinical results yet.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT06778863">NCT06778863</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/33649166">PMID&nbsp;33649166</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/41542775">PMID&nbsp;41542775</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Also considered &mdash; not ranked</h3>
+<p class="pipeline-note">Feature-targeting investigational options the board considered but did not rank as live top-tier choices. The <strong>Flag</strong> column says why: <em>Unavailable</em> (program discontinued/terminated), <em>Consolidated</em> (one product of an approach ranked above), <em>Thin evidence</em> (no peer-reviewed clinical efficacy yet), <em>Not enrollable</em> (cross-tumor evidence or geographically inaccessible).</p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Flag</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr class="not-recommended"><td><span class="flag-badge flag-consolidated">Consolidated</span></td><td><strong>NT-175 (autologous TCR-T targeting TP53 R175H) — NCT05877599</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td>See rank 4: same axis and same 0.09% VAF hedge; adds lymphodepletion and a manufacturing wait.</td><td>High (fludarabine/cyclophosphamide lymphodepletion plus TCR-T class CRS)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Same low peptide-HLA density obstacle as the ranked engager.)</span></td><td><strong>The autologous fallback for the rank-4 axis — same gates, more toxicity, longer runway.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT05877599">NCT05877599</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/35749374">PMID&nbsp;35749374</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/31996390">PMID&nbsp;31996390</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2>Fgfr3 interventions</h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr class="split-glyph"><td>1</td><td><strong>FGFR3 axis, conditional on the sequencing retrieval: vepugratinib (LOXO-435) FORAGER-1 NCT05614739 as the investigational arm (erdafitinib, if an alteration is found, is the approved default and belongs to the standard-of-care table)</strong></td><td>Conditional: ~15-20% chance a qualifying FGFR3 alteration exists; if found, both guideline bodies endorse the axis in exactly this line (NCT05614739).</td><td>Moderate (FGFR-class hyperphosphatemia, stomatitis, nail and eye toxicity; no agent-specific table in the dossier)</td><td><strong>Low</strong> <span class="cpm-desc">(None plausible before the gate; expected yield is the limiter.)</span></td><td><strong>A records request away from being real: FGFR3 status is simply unread, and the FGFR axis is the only non-HER2 route both major guidelines endorse in this line.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT05614739">NCT05614739</a><br><a href="https://clinicaltrials.gov/study/NCT03390504">NCT03390504</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2>Trop2 interventions</h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr class="split-glyph"><td><a href="#evidence-asp2998">1</a></td><td><strong>ASP2998 (TROP2-directed STING agonist conjugate) — NCT07287995, monotherapy or pembrolizumab arm; EV combination arms declined in writing</strong></td><td>Low-to-unknown: no clinical data, and low-positive TROP2 is a weaker predictor even where entry is expression-agnostic (pmid:39086310).</td><td>Moderate (no human data; immune-agonist class inflammatory events with a pancreatitis-history watch)</td><td><strong>Low</strong> <span class="cpm-desc">(Weak TROP2 may limit conjugate delivery regardless of payload class.)</span></td><td><strong>The TROP2 door that stays open after T-DXd — expression-agnostic entry, with the low-positive hedge stated and the MMAE combination arms declined in writing.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT07287995">NCT07287995</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/39086310">PMID&nbsp;39086310</a></td></tr>
+    <tr class="not-recommended"><td><a href="#evidence-sacituzumab-tirumotecan">2</a></td><td><strong>sacituzumab tirumotecan (sac-TMT) phase 3 randomized trial — NCT07419295 (TROP2 axis via randomization)</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td>Not applicable as ranked: ineligible (no prior platinum) and the randomization veto stands; class OS evidence is negative (pmid:39934055).</td><td>High (potential taxane-arm CIPN on randomization; class grade-5 TEAEs 7% in TROPiCS-04)</td><td><strong>High</strong> <span class="cpm-desc">(Taxane-arm assignment would inflict the vetoed neuropathy and could end all ADC options after.)</span></td><td><strong>Randomized entry is the guideline-clean route to TROP2, but this trial can assign a taxane he cannot take and requires platinum he never had.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT07419295">NCT07419295</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/39934055">PMID&nbsp;39934055</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/39086310">PMID&nbsp;39086310</a></td></tr>
+    <tr class="not-recommended"><td><a href="#evidence-sacituzumab-govitecan">3</a></td><td><strong>sacituzumab govitecan (TROP2 ADC) — trial-only after the 2024 urothelial withdrawal (NCT03547973 cohort 2 is the platinum-ineligible route)</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td>Low: the confirmatory phase 3 missed OS (HR 0.86, p=0.087) and the urothelial approval was withdrawn (pmid:39934055).</td><td>High (grade-5 TEAEs 7% in TROPiCS-04, mostly neutropenic infection; diarrhea, neutropenia)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Response without survival — the surrogate trap; low TROP2 weakens the predictor further.)</span></td><td><strong>The TROP2 class&#x27;s own confirmatory test came back negative in this disease; a slot spent here competes with better-fitted doors.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/39934055">PMID&nbsp;39934055</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/33929895">PMID&nbsp;33929895</a><br><a href="https://clinicaltrials.gov/study/NCT03547973">NCT03547973</a></td></tr>
+    <tr class="not-recommended"><td><a href="#evidence-datopotamab-deruxtecan">4</a></td><td><strong>datopotamab deruxtecan (Dato-DXd, TROP2 ADC, deruxtecan payload) — urothelial substudy of NCT05489211</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td>Unknown in urothelial carcinoma; low-positive TROP2 and back-to-back deruxtecan payloads argue against prioritizing it.</td><td>Moderate (deruxtecan-class nausea, stomatitis and ILD risk — the toxicities already limiting T-DXd)</td><td><strong>Low</strong> <span class="cpm-desc">(Sequential deruxtecan payloads invite cross-resistance and cumulative ILD exposure.)</span></td><td><strong>Reaches the TROP2 axis only by re-running the exact payload toxicities that are already dose-limiting on the current drug.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT05489211">NCT05489211</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/40862536">PMID&nbsp;40862536</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Also considered &mdash; not ranked</h3>
+<p class="pipeline-note">Feature-targeting investigational options the board considered but did not rank as live top-tier choices. The <strong>Flag</strong> column says why: <em>Unavailable</em> (program discontinued/terminated), <em>Consolidated</em> (one product of an approach ranked above), <em>Thin evidence</em> (no peer-reviewed clinical efficacy yet), <em>Not enrollable</em> (cross-tumor evidence or geographically inaccessible).</p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Flag</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr class="not-recommended"><td><span class="flag-badge flag-thin">Thin evidence</span></td><td><strong>LCB84 (TROP2-directed ADC) — NCT05941507</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td>Unknown: no clinical data; low-positive TROP2 is a weak predictor for the class.</td><td>Moderate (ADC class GI and marrow toxicity; no safety table)</td><td><strong>Low</strong> <span class="cpm-desc">(Weak antigen may limit delivery, as across the TROP2 axis.)</span></td><td><strong>A backup TROP2 door with permissive entry and no data.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT05941507">NCT05941507</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-unavailable">Unavailable</span></td><td><strong>R7059-DXd (epitope-distinct TROP2 ADC, preclinical) — unavailable</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td>Not applicable: no accessible program.</td><td>Moderate (DXd class, hypothetically)</td><td><strong>Low</strong> <span class="cpm-desc">(None assessed; the program is not available.)</span></td><td><strong>Not reachable by any enrollment or access route on record.</strong></td><td>&mdash;</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-asp2998">ASP2998 (TROP2-directed STING agonist conjugate) — NCT07287995, monotherapy or pembrolizumab arm; EV combination arms declined in writing</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>Unresectable locally advanced or metastatic urothelial carcinoma</strong> (2L+)<br><small>Archival tumor from TROPHY-U-01 cohorts 1-3; 146 of 192 treated patients had evaluable TROP2 data scored by H-score (0-300) and percentage membrane-positive tumor cells.</small></td><td>146</td><td><span class="safety-summary-fallback">Biomarker analysis; safety is reported in the parent cohort publications.</span></td><td><strong>association of TROP2 expression with ORR, PFS and OS</strong>: no association: benefit observed across all expression levels H-score</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/39086310">Loriot et al. <em>Clin Cancer Res</em> 2024</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-sacituzumab-tirumotecan">sacituzumab tirumotecan (sac-TMT) phase 3 randomized trial — NCT07419295 (TROP2 axis</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>Advanced urothelial carcinoma after platinum-based chemotherapy and checkpoint inhibitor therapy</strong> (2L+)<br><small>Confirmatory trial for the accelerated approval; median follow-up 9.2 months.</small></td><td>711</td><td><strong>neutropenia</strong> <span class="tox-grade">grade &gt;=3</span>: 35.0% <small>(includes 12% febrile neutropenia)</small><br><strong>febrile neutropenia</strong> <span class="tox-grade">grade &gt;=3</span>: 12.0%<br><strong>any treatment-related AE</strong> <span class="tox-grade">grade &gt;=3</span>: 67.0% <small>(vs 35% with physician&#x27;s choice)</small><br><strong>any treatment-emergent AE</strong> <span class="tox-grade">grade 5</span>: 7.0% (n=25) <small>(16 of 25 were infections with neutropenia; 2% in the comparator arm)</small></td><td><strong>median overall survival</strong>: 10.3 months; p 0.087<br><small>mPFS 4.2 mo vs 3.6 mo</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/39934055">Powles et al. <em>Ann Oncol</em> 2025</a></td></tr>
+    <tr><td><strong>Unresectable locally advanced or metastatic urothelial carcinoma</strong> (2L+)<br><small>Archival tumor from TROPHY-U-01 cohorts 1-3; 146 of 192 treated patients had evaluable TROP2 data scored by H-score (0-300) and percentage membrane-positive tumor cells.</small></td><td>146</td><td><span class="safety-summary-fallback">Biomarker analysis; safety is reported in the parent cohort publications.</span></td><td><strong>association of TROP2 expression with ORR, PFS and OS</strong>: no association: benefit observed across all expression levels H-score</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/39086310">Loriot et al. <em>Clin Cancer Res</em> 2024</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-sacituzumab-govitecan">sacituzumab govitecan (TROP2 ADC) — trial-only after the 2024 urothelial withdrawal (NCT03547973 cohort 2 is the platinum-ineligible route)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>Advanced urothelial carcinoma after platinum-based chemotherapy and checkpoint inhibitor therapy</strong> (2L+)<br><small>Confirmatory trial for the accelerated approval; median follow-up 9.2 months.</small></td><td>711</td><td><strong>neutropenia</strong> <span class="tox-grade">grade &gt;=3</span>: 35.0% <small>(includes 12% febrile neutropenia)</small><br><strong>febrile neutropenia</strong> <span class="tox-grade">grade &gt;=3</span>: 12.0%<br><strong>any treatment-related AE</strong> <span class="tox-grade">grade &gt;=3</span>: 67.0% <small>(vs 35% with physician&#x27;s choice)</small><br><strong>any treatment-emergent AE</strong> <span class="tox-grade">grade 5</span>: 7.0% (n=25) <small>(16 of 25 were infections with neutropenia; 2% in the comparator arm)</small></td><td><strong>median overall survival</strong>: 10.3 months; p 0.087<br><small>mPFS 4.2 mo vs 3.6 mo</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/39934055">Powles et al. <em>Ann Oncol</em> 2025</a></td></tr>
+    <tr><td><strong>Locally advanced or metastatic urothelial carcinoma after platinum-based chemotherapy and a checkpoint inhibitor</strong> (2L+)<br><small>Median three prior therapies; 66.4% visceral metastases. Entry required prior platinum, which this patient has not had.</small></td><td>113</td><td><strong>neutropenia</strong> <span class="tox-grade">grade &gt;=3</span>: 35.0% (n=113)<br><strong>febrile neutropenia</strong> <span class="tox-grade">grade &gt;=3</span>: 10.0% (n=113)<br><strong>leukopenia</strong> <span class="tox-grade">grade &gt;=3</span>: 18.0% (n=113)<br><strong>anemia</strong> <span class="tox-grade">grade &gt;=3</span>: 14.0% (n=113)<br><strong>diarrhea</strong> <span class="tox-grade">grade &gt;=3</span>: 10.0% (n=113)<br><strong>treatment-related AE leading to discontinuation</strong> <span class="tox-grade">grade any</span>: 6.0% (n=113)</td><td><strong>ORR by central review</strong>: 27.0% (95% CI 19.5–36.6)<br><small>mDOR 7.2 mo (95% CI 4.7-8.6); mPFS 5.4 mo</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/33929895">Tagawa et al. <em>J Clin Oncol</em> 2021</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-datopotamab-deruxtecan">datopotamab deruxtecan (Dato-DXd, TROP2 ADC, deruxtecan payload) — urothelial substudy of NCT05489211</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-lcb84">LCB84 (TROP2-directed ADC) — NCT05941507</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-trop2-adc-epitope">R7059-DXd (epitope-distinct TROP2 ADC, preclinical) — unavailable</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h2>Tmb High interventions</h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr class="split-glyph"><td><a href="#evidence-nivolumab-ipilimumab">1</a></td><td><strong>nivolumab + ipilimumab checkpoint re-intensification — lower-ipilimumab schedule with protocolized amylase/lipase surveillance and written stopping rules; the nivo1/ipi3 boost is vetoed and stays off the table</strong></td><td>Uncertain: the 33% ORR (pmid:36868252) belongs to the vetoed ipi-3 boost in post-platinum, post-nivolumab patients; the tolerable schedule never beat monotherapy.</td><td>High (immune enterocolitis 11% grade 3-4 with 2/83 treatment-related deaths at ipi-3; pancreatitis rechallenge risk)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Dose-reducing ipilimumab may delete the CTLA-4 contribution that ever beat PD-1 monotherapy.)</span></td><td><strong>Prescribable now with no screening gate, but the efficacy evidence and both vetoes attach to the same high-dose schedule; the tolerable version is the unproven one.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/36868252">PMID&nbsp;36868252</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/31100038">PMID&nbsp;31100038</a><br><a href="https://clinicaltrials.gov/study/NCT03866382">NCT03866382</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Also considered &mdash; not ranked</h3>
+<p class="pipeline-note">Feature-targeting investigational options the board considered but did not rank as live top-tier choices. The <strong>Flag</strong> column says why: <em>Unavailable</em> (program discontinued/terminated), <em>Consolidated</em> (one product of an approach ranked above), <em>Thin evidence</em> (no peer-reviewed clinical efficacy yet), <em>Not enrollable</em> (cross-tumor evidence or geographically inaccessible).</p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Flag</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr class="not-recommended"><td><span class="flag-badge flag-thin">Thin evidence</span></td><td><strong>N-803 / nogapendekin alfa inbakicept (IL-15 superagonist) +/- NK cells — NCT03228667 cohorts / single-patient IND route</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td>Unknown in mUC: no efficacy rows in the dossier; the rationale is mechanism plus the patient&#x27;s prior deep IO response.</td><td>Moderate (cytokine-class constitutional and inflammatory events; pancreatitis-history watch)</td><td><strong>Low</strong> <span class="cpm-desc">(IL-15-driven expansion may re-stimulate an already-exhausted response only transiently.)</span></td><td><strong>The immune-intensification adjunct the team is already exploring — no metastatic evidence base to rank it on.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT03228667">NCT03228667</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-nivolumab-ipilimumab">nivolumab + ipilimumab checkpoint re-intensification — lower-ipilimumab schedule with protocolized amylase/lipase surveillance and written stopping rules; the nivo1/ipi3 boost is vetoed and stays off the table</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>Metastatic or unresectable urothelial cancer of the bladder, urethra, ureter or renal pelvis after platinum-based chemotherapy</strong> (2L+)<br><small>83 patients, Karnofsky &gt;=70, measurable disease; 50 (60%) received at least one ipilimumab boost, given either for early non-response or for later progression on nivolumab maintenance.</small></td><td>83</td><td><strong>immune-mediated enterocolitis</strong> <span class="tox-grade">grade 3-4</span>: 11.0% (9/83)<br><strong>diarrhea</strong> <span class="tox-grade">grade 3-4</span>: 6.0% (5/83)<br><strong>treatment-related death</strong> <span class="tox-grade">grade 5</span>: 2.0% (2/83) <small>(both immune-mediated enterocolitis)</small></td><td><strong>confirmed investigator-assessed ORR, intention-to-treat</strong>: 33.0% (95% CI 24.0–42.0); p 0.0049</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/36868252">Grimm et al. <em>Lancet Oncol</em> 2023</a></td></tr>
+    <tr><td><strong>Platinum-pretreated locally advanced or metastatic urothelial carcinoma</strong> (2L+)<br><small>Three cohorts compared: nivolumab 3 mg/kg alone (n=78), nivolumab 3 plus ipilimumab 1 (n=104), nivolumab 1 plus ipilimumab 3 (n=92). Patients were checkpoint-naive at entry.</small></td><td>274</td><td><strong>any treatment-related AE</strong> <span class="tox-grade">grade 3-4</span>: 39.1% (36/92) <small>(nivolumab 1 plus ipilimumab 3 cohort)</small><br><strong>any treatment-related AE</strong> <span class="tox-grade">grade 3-4</span>: 30.8% (32/104) <small>(nivolumab 3 plus ipilimumab 1 cohort)</small><br><strong>any treatment-related AE</strong> <span class="tox-grade">grade 3-4</span>: 26.9% (21/78) <small>(nivolumab monotherapy cohort)</small><br><strong>pneumonitis</strong> <span class="tox-grade">grade 5</span>: 1.1% (2/182) <small>(one each in the nivolumab and nivolumab 3 plus ipilimumab 1 arms)</small></td><td><strong>investigator-assessed ORR, nivolumab 1 plus ipilimumab 3 cohort</strong>: 38.0%<br><small>median DOR exceeded 22 months in all three arms</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/31100038">Sharma et al. <em>J Clin Oncol</em> 2019</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-n-803">N-803 / nogapendekin alfa inbakicept (IL-15 superagonist) +/- NK cells — NCT03228667 cohorts / single-patient IND route</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h2>Personalized Neoantigens interventions</h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr class="split-glyph"><td><a href="#evidence-personalized-neoantigen-vaccine">1</a></td><td><strong>personalized neoantigen vaccine programs (peptide 2025 + mRNA 2026 series) — continuation of the already-running investigational adjunct, with the post-mRNA EliSpot as the branch point</strong></td><td>Low for objective response: no response evidence attributable to vaccination; the patient&#x27;s own EliSpot sits at the weak end of the published distribution (pmid:37165196).</td><td>Low (injection-site and constitutional reactions in the trials on record)</td><td><strong>Low</strong> <span class="cpm-desc">(CD4-skewed responses without CD8 expansion may not translate to tumor killing.)</span></td><td><strong>Already underway and preference-aligned; honest framing is hypothesis-stage, with the post-mRNA EliSpot as the branch point for any TIL/ACT escalation.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40346292">PMID&nbsp;40346292</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/37165196">PMID&nbsp;37165196</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/42223134">PMID&nbsp;42223134</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Also considered &mdash; not ranked</h3>
+<p class="pipeline-note">Feature-targeting investigational options the board considered but did not rank as live top-tier choices. The <strong>Flag</strong> column says why: <em>Unavailable</em> (program discontinued/terminated), <em>Consolidated</em> (one product of an approach ranked above), <em>Thin evidence</em> (no peer-reviewed clinical efficacy yet), <em>Not enrollable</em> (cross-tumor evidence or geographically inaccessible).</p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Flag</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr class="not-recommended"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>neoantigen-selected TIL + aldesleukin (NCI Surgery Branch) — NCT01174121</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td>Unassessable now: no resectable lesion for TIL generation after SBRT.</td><td>High (lymphodepletion plus aldesleukin class toxicity)</td><td><strong>Low</strong> <span class="cpm-desc">(None assessed; the surgical gate is the block.)</span></td><td><strong>The ACT route the banked material points at, waiting on a lesion that no longer exists to resect.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT01174121">NCT01174121</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/40169866">PMID&nbsp;40169866</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-personalized-neoantigen-vaccine">personalized neoantigen vaccine programs (peptide 2025 + mRNA 2026 series) — continuation of the already-running investigational adjunct, with the post-mRNA EliSpot as the branch point</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>Urothelial cancer, adjuvant and metastatic settings</strong> (any)<br><small>12 enrolled; vaccine successfully manufactured for 10 (median 20.3 weeks). Four treated in the adjuvant setting, five in the metastatic setting with measurable disease.</small></td><td>12</td><td><strong>injection-site reaction</strong> <span class="tox-grade">grade 1-2</span>: (n=10) <small>(most common treatment-related AE; grade 1)</small><br><strong>fatigue</strong> <span class="tox-grade">grade 1-2</span>: (n=10) <small>(grade 1)</small><br><strong>fever</strong> <span class="tox-grade">grade 1-2</span>: (n=10) <small>(grade 1)</small></td><td><strong>feasibility, safety and vaccine-induced neoantigen-specific T-cell immunity</strong>: on-treatment neoantigen-specific T-cell responses in all treated participants—<br><small>median follow-up 39 months</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40346292">Saxena et al. <em>Nat Cancer</em> 2025</a></td></tr>
+    <tr><td><strong>Resected pancreatic ductal adenocarcinoma, adjuvant setting</strong> (adj)<br><small>16 patients received atezolizumab and vaccine; 15 went on to mFOLFIRINOX. Vaccines were manufactured in real time from the surgical specimen.</small></td><td>16</td><td><strong>any AE attributable to the vaccine</strong> <span class="tox-grade">grade &gt;=3</span>: 6.0% (1/16) <small>(fever and hypertension in one patient; study safety threshold was 25%)</small><br><strong>any AE attributable to the vaccine</strong> <span class="tox-grade">grade 1-2</span>: 100.0% (16/16)<br><strong>any AE attributable to atezolizumab</strong> <span class="tox-grade">grade &gt;=3</span>: 0.0% (0/19)</td><td><strong>vaccine-induced neoantigen-specific T-cell responses and recurrence-free survival by immune response</strong>: 50.0%; p 0.003<br><small>mRFS not reached in immune responders vs 13.4 mo in non-responders</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37165196">Rojas et al. <em>Nature</em> 2023</a></td></tr>
+    <tr><td><strong>Resected stage IIIB-IV cutaneous melanoma</strong> (adj)<br><small>157 randomized 2:1 to combination versus pembrolizumab alone; median planned follow-up 60.3 months at the December 2025 cutoff.</small></td><td>157</td><td><span class="safety-summary-fallback">No new safety signals at five years; per-term rates are not reported in this descriptive update.</span></td><td><strong>recurrence-free survival hazard ratio at 5 years</strong>: 0.51 HR (95% CI 0.294–0.887)<br><small>descriptive 5-year analysis; medians not reported in the abstract</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/42223134">Khattak et al. <em>J Clin Oncol</em> 2026</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-neoantigen-selected-til">neoantigen-selected TIL + aldesleukin (NCI Surgery Branch) — NCT01174121</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>Treatment-refractory mismatch-repair-proficient metastatic gastrointestinal cancers</strong> (2L+)<br><small>Three sequential cohorts: 18 patients received bulk unselected TIL, 39 received neoantigen-selected TIL, 34 received neoantigen-selected TIL plus pembrolizumab.</small></td><td>91</td><td><strong>severe hematologic toxicity from lymphodepletion</strong> <span class="tox-grade">grade &gt;=3</span>: 100.0% (91/91) <small>(transient, in all patients)</small><br><strong>critical care support required</strong> <span class="tox-grade">grade &gt;=3</span>: 10.0% (n=7) <small>(seven patients, reported as 10%)</small></td><td><strong>objective response rate with neoantigen-selected TIL plus pembrolizumab</strong>: 23.5% (95% CI 12.4–40.0)</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40169866">Lowery et al. <em>Nat Med</em> 2025</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2>Prame Hla interventions</h2>
+<p><em>No rows.</em></p>
+<h3>Also considered &mdash; not ranked</h3>
+<p class="pipeline-note">Feature-targeting investigational options the board considered but did not rank as live top-tier choices. The <strong>Flag</strong> column says why: <em>Unavailable</em> (program discontinued/terminated), <em>Consolidated</em> (one product of an approach ranked above), <em>Thin evidence</em> (no peer-reviewed clinical efficacy yet), <em>Not enrollable</em> (cross-tumor evidence or geographically inaccessible).</p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Flag</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr class="not-recommended"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>brenetafusp (IMC-F106C, PRAME ImmTAC) — NCT04262466 / NCT07686367</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td>Unassessable: no enrollable cohort and the PRAME expression gate is unread.</td><td>Moderate (ImmTAC-class CRS and skin toxicity)</td><td><strong>Low</strong> <span class="cpm-desc">(None assessed; access is the block.)</span></td><td><strong>The PRAME ImmTAC the field is actually developing — with no door open to a urothelial patient today.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT04262466">NCT04262466</a><br><a href="https://clinicaltrials.gov/study/NCT07686367">NCT07686367</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-thin">Thin evidence</span></td><td><strong>IMA203 / IMA203CD8 (PRAME-directed TCR-T) — NCT03686124</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td>Unknown until PRAME reads positive; published ORR 28.9% with mDOR 4.4 months is melanoma/sarcoma only (pmid:40205198).</td><td>High (lymphodepletion cytopenias, CRS ~universal in class, one septic death in the published series)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Short response durability in the published cohorts; antigen-loss escape documented in class.)</span></td><td><strong>A real PRAME door once expression reads positive — today it is double-gated with cross-tumor-only evidence.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40205198">PMID&nbsp;40205198</a><br><a href="https://clinicaltrials.gov/study/NCT03686124">NCT03686124</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-thin">Thin evidence</span></td><td><strong>IMC-P115C (half-life-extended PRAME ImmTAC) — NCT07156136</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td>Unknown: no clinical data; gated on the unread PRAME expression result.</td><td>Moderate (ImmTAC-class CRS and skin toxicity; no agent data)</td><td><strong>Low</strong> <span class="cpm-desc">(Same expression-gate uncertainty as the rest of the PRAME axis.)</span></td><td><strong>The open-door PRAME option if expression ever confirms — nothing measured yet.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT07156136">NCT07156136</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-brenetafusp">brenetafusp (IMC-F106C, PRAME ImmTAC) — NCT04262466 / NCT07686367</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-ima203-prame-tcr-t">IMA203 / IMA203CD8 (PRAME-directed TCR-T) — NCT03686124</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>PRAME-positive recurrent or refractory solid tumors in HLA-A*02-positive patients, including melanoma and sarcoma</strong> (2L+)<br><small>27 patients in phase 1a escalation and 13 in phase 1b extension; 41 started lymphodepletion, 40 received IMA203. PRAME expression was measured by the sponsor&#x27;s own RT-qPCR assay.</small></td><td>40</td><td><strong>CRS</strong> <span class="tox-grade">grade &gt;=3</span>: 4.9% (2/41)<br><strong>neurotoxicity</strong> <span class="tox-grade">grade &gt;=3</span>: 0.0% (0/41)</td><td><strong>confirmed objective response rate</strong>: 28.9%<br><small>mDOR 4.4 mo (range 2.4-23.0; 95% CI 2.6-NR)</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40205198">Wermke et al. <em>Nat Med</em> 2025</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-imc-p115c">IMC-P115C (half-life-extended PRAME ImmTAC) — NCT07156136</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h2>Mesothelin interventions</h2>
+<p><em>No rows.</em></p>
+<h3>Also considered &mdash; not ranked</h3>
+<p class="pipeline-note">Feature-targeting investigational options the board considered but did not rank as live top-tier choices. The <strong>Flag</strong> column says why: <em>Unavailable</em> (program discontinued/terminated), <em>Consolidated</em> (one product of an approach ranked above), <em>Thin evidence</em> (no peer-reviewed clinical efficacy yet), <em>Not enrollable</em> (cross-tumor evidence or geographically inaccessible).</p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Flag</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr class="not-recommended"><td><span class="flag-badge flag-thin">Thin evidence</span></td><td><strong>CT-95 (mesothelin x CD3 bispecific) — NCT06756035</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td>Unknown: no clinical data for the agent, a research-grade-only target call, and negative class precedents (pmid:35358455 class context).</td><td>Moderate (CD3-engager class CRS; no agent safety table)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Soluble mesothelin sink and negative class precedent both argue the axis may not deliver.)</span></td><td><strong>A mesothelin door that opens only after a validated stain — and the class record so far is negative.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT06756035">NCT06756035</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/40081946">PMID&nbsp;40081946</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-thin">Thin evidence</span></td><td><strong>TNhYP218 (anti-mesothelin TNaive/SCM CAR-T) — NCT06885697</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td>Unknown: no clinical data; the validated-stain gate and the class 0/20 precedent both stand.</td><td>High (lymphodepletion plus CAR-T class toxicity)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Class CAR-T experience at this target has not produced responses.)</span></td><td><strong>A next-generation construct aimed at a target whose urothelial case is still a research-grade stain.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT06885697">NCT06885697</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-thin">Thin evidence</span></td><td><strong>A2B694 (logic-gated Tmod mesothelin CAR-T) — NCT06051695</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td>Unknown: no clinical data; double-gated on a validated stain and the sponsor&#x27;s screening genetics.</td><td>High (lymphodepletion plus CAR-T class toxicity)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Same class negative precedent; logic-gate adds a genetics prerequisite.)</span></td><td><strong>The most conditional mesothelin row: stain, screening protocol, and tumor genetics all unverified.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT06051695">NCT06051695</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>SynKIR-110 (mesothelin KIR-CAR T cells) — NCT05568680</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td>Not applicable: histology-excluded.</td><td>High (lymphodepletion plus CAR-T class toxicity)</td><td><strong>Low</strong> <span class="cpm-desc">(None assessed; enrollment is closed to this histology.)</span></td><td><strong>A closed door regardless of the stain.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT05568680">NCT05568680</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-unavailable">Unavailable</span></td><td><strong>gavocabtagene autoleucel (gavo-cel, mesothelin TCR-fusion T cells) — unavailable</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td>Not applicable: no accessible program.</td><td>High (published class toxicity incl. severe CRS)</td><td><strong>Low</strong> <span class="cpm-desc">(None assessed; the program is not available.)</span></td><td><strong>Not reachable by any enrollment or access route on record.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37501016">PMID&nbsp;37501016</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-unavailable">Unavailable</span></td><td><strong>huCART-meso (fully human anti-mesothelin CAR T cells) — unavailable</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td>Not applicable: no accessible program.</td><td>High (lymphodepletion plus CAR-T class toxicity)</td><td><strong>Low</strong> <span class="cpm-desc">(None assessed; the program is not available.)</span></td><td><strong>Not reachable by any enrollment or access route on record.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/41566776">PMID&nbsp;41566776</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-unavailable">Unavailable</span></td><td><strong>anetumab ravtansine (mesothelin ADC) — unavailable</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td>Not applicable: no accessible program.</td><td>Moderate (maytansinoid class: corneal, hepatic, GI)</td><td><strong>Low</strong> <span class="cpm-desc">(None assessed; the program is not available.)</span></td><td><strong>Not reachable by any enrollment or access route on record.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/35358455">PMID&nbsp;35358455</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-unavailable">Unavailable</span></td><td><strong>M7A-DC / M7GA-DC (mesothelin DARPin-MMAE conjugates, preclinical) — unavailable</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td>Not applicable: no accessible program.</td><td>High (MMAE class neuropathy, hypothetically)</td><td><strong>Low</strong> <span class="cpm-desc">(None assessed; the program is not available.)</span></td><td><strong>Not reachable by any enrollment or access route on record.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40849430">PMID&nbsp;40849430</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-ct-95">CT-95 (mesothelin x CD3 bispecific) — NCT06756035</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-tnhyp218">TNhYP218 (anti-mesothelin TNaive/SCM CAR-T) — NCT06885697</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-a2b694">A2B694 (logic-gated Tmod mesothelin CAR-T) — NCT06051695</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-synkir-110">SynKIR-110 (mesothelin KIR-CAR T cells) — NCT05568680</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-gavo-cel">gavocabtagene autoleucel (gavo-cel, mesothelin TCR-fusion T cells) — unavailable</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>Treatment-refractory mesothelin-expressing solid tumors (mesothelioma, ovarian, cholangiocarcinoma)</strong> (2L+)<br><small>32 patients dosed, 29 after lymphodepletion; 30 evaluable for response. Urothelial carcinoma was not among the enrolled histologies.</small></td><td>32</td><td><strong>pneumonitis</strong> <span class="tox-grade">grade &gt;=3</span>: 16.0% (n=32) <small>(none at the recommended phase 2 dose)</small><br><strong>CRS</strong> <span class="tox-grade">grade &gt;=3</span>: 25.0% (n=32) <small>(15% at the recommended phase 2 dose)</small><br><strong>bronchioalveolar hemorrhage</strong> <span class="tox-grade">grade 5</span>: (1/32) <small>(dose-limiting toxicity during escalation; reported as a single event, not as a rate)</small></td><td><strong>overall response rate</strong>: 20.0%</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37501016">Hassan et al. <em>Nat Med</em> 2023</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-mesothelin-car-t">huCART-meso (fully human anti-mesothelin CAR T cells) — unavailable</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>Mesothelin-expressing lung adenocarcinoma, ovarian cancer and mesothelioma</strong> (2L+)<br><small>14 ovarian, 5 mesothelioma, 1 lung adenocarcinoma. No urothelial patients.</small></td><td>20</td><td><strong>CRS</strong> <span class="tox-grade">grade any</span>: 35.0% (7/20) <small>(most common serious adverse event)</small></td><td><strong>best overall response</strong>: 60.0%<br><small>mPFS 12.3 weeks</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/41566776">Barber-Rotenberg et al. <em>Mol Ther</em> 2026</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-anetumab-ravtansine">anetumab ravtansine (mesothelin ADC) — unavailable</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>Unresectable locally advanced or metastatic malignant pleural mesothelioma overexpressing mesothelin, after first-line platinum-pemetrexed</strong> (2L+)<br><small>Prospective screening for mesothelin overexpression, defined as 2+ or 3+ membrane staining in &gt;=30% of viable tumor cells; 248 of 589 screened patients were randomized.</small></td><td>248</td><td><strong>neutropenia</strong> <span class="tox-grade">grade &gt;=3</span>: 1.0% (1/163) <small>(vs 28 of 72 (39%) with vinorelbine)</small><br><strong>pneumonia</strong> <span class="tox-grade">grade &gt;=3</span>: 4.0% (7/163)<br><strong>dyspnoea</strong> <span class="tox-grade">grade &gt;=3</span>: 6.0% (9/163)<br><strong>any treatment-emergent death</strong> <span class="tox-grade">grade 5</span>: 6.0% (10/163) <small>(pneumonia n=3, dyspnoea n=2, sepsis n=2, other n=3)</small></td><td><strong>median progression-free survival by blinded central review</strong>: 4.3 months (95% CI 4.1–5.2); p 0.86<br><small>mPFS 4.3 mo vs 4.5 mo</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/35358455">Kindler et al. <em>Lancet Oncol</em> 2022</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-msln-drug-conjugate">M7A-DC / M7GA-DC (mesothelin DARPin-MMAE conjugates, preclinical) — unavailable</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h2>Muc1 interventions</h2>
+<p><em>No rows.</em></p>
+<h3>Also considered &mdash; not ranked</h3>
+<p class="pipeline-note">Feature-targeting investigational options the board considered but did not rank as live top-tier choices. The <strong>Flag</strong> column says why: <em>Unavailable</em> (program discontinued/terminated), <em>Consolidated</em> (one product of an approach ranked above), <em>Thin evidence</em> (no peer-reviewed clinical efficacy yet), <em>Not enrollable</em> (cross-tumor evidence or geographically inaccessible).</p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Flag</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr class="not-recommended"><td><span class="flag-badge flag-thin">Thin evidence</span></td><td><strong>DS-3939a (TA-MUC1-directed ADC, DXd-class payload) — NCT05875168</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td>Unknown: no clinical data; MUC1 call is research-grade only, and MUC1&#x27;s ubiquitous normal-tissue expression makes the clone decisive.</td><td>Moderate (DXd-class payload: nausea, ILD risk — the active T-DXd liabilities)</td><td><strong>Low</strong> <span class="cpm-desc">(Ubiquitous low-level normal-tissue MUC1 could sink specificity.)</span></td><td><strong>The only active MUC1 ADC — confirmation-first, and its payload re-runs the current drug&#x27;s problems.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT05875168">NCT05875168</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/40635151">PMID&nbsp;40635151</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>NEOK002 (EGFR x MUC1 bispecific ADC) — NCT07612189</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td>Not applicable while T-DXd is the most recent systemic therapy.</td><td>Moderate (bispecific ADC class profile; no safety table)</td><td><strong>Low</strong> <span class="cpm-desc">(None assessed; sequencing exclusion is the block.)</span></td><td><strong>Closed by the current drug&#x27;s payload class, not by the target.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT07612189">NCT07612189</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>XYA02 (MUC1-directed agent) — NCT07670312</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td>Not applicable: study not open, ex-US.</td><td>Moderate (unknown; no data)</td><td><strong>Low</strong> <span class="cpm-desc">(None assessed.)</span></td><td><strong>A door that has not opened, on another continent.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT07670312">NCT07670312</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-unavailable">Unavailable</span></td><td><strong>gatipotuzumab (anti-TA-MUC1 antibody) — unavailable</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td>Not applicable: no accessible program.</td><td>Low (naked-antibody profile)</td><td><strong>Low</strong> <span class="cpm-desc">(None assessed; the program is not available.)</span></td><td><strong>Not reachable by any enrollment or access route on record.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/35397434">PMID&nbsp;35397434</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-unavailable">Unavailable</span></td><td><strong>Ad-sig-hMUC1/ecdCD40L adenoviral vaccine — unavailable</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td>Not applicable: no accessible program.</td><td>Low (vaccine-class reactions)</td><td><strong>Low</strong> <span class="cpm-desc">(None assessed; the program is not available.)</span></td><td><strong>Not reachable by any enrollment or access route on record.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/36307410">PMID&nbsp;36307410</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-unavailable">Unavailable</span></td><td><strong>MUC1-C inhibition (GO-203 class) — unavailable</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td>Not applicable: no accessible program.</td><td>Moderate (unknown; no current clinical program)</td><td><strong>Low</strong> <span class="cpm-desc">(None assessed; the program is not available.)</span></td><td><strong>Not reachable by any enrollment or access route on record.</strong></td><td>&mdash;</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-ta-muc1-adc">DS-3939a (TA-MUC1-directed ADC, DXd-class payload) — NCT05875168</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-neok002">NEOK002 (EGFR x MUC1 bispecific ADC) — NCT07612189</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-xya02">XYA02 (MUC1-directed agent) — NCT07670312</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-gatipotuzumab">gatipotuzumab (anti-TA-MUC1 antibody) — unavailable</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>Refractory EGFR-positive metastatic solid tumors, then an expansion in colorectal, non-small-cell lung, head and neck and breast cancer</strong> (2L+)<br><small>20 patients in the primary phase and 32 in the expansion phase. Soluble TA-MUC1 was tracked in serum as a candidate companion biomarker.</small></td><td>52</td><td><strong>dose-limiting toxicity</strong> <span class="tox-grade">grade any</span>: 0.0% (0/52)<br><strong>related serious adverse event</strong> <span class="tox-grade">grade any</span>: 0.0% (0/52)<br><strong>related death</strong> <span class="tox-grade">grade 5</span>: 0.0% (0/52)</td><td><strong>objective response</strong>: 9.6%</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/35397434">Ochsenreither et al. <em>ESMO Open</em> 2022</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-muc1-cd40l-vaccine">Ad-sig-hMUC1/ecdCD40L adenoviral vaccine — unavailable</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>Advanced adenocarcinoma (breast, lung, ovary)</strong> (2L+)<br><small>21 patients with advanced adenocarcinomas; the trial was not designed to determine clinical efficacy.</small></td><td>21</td><td><strong>injection-site reaction</strong> <span class="tox-grade">grade any</span>: 71.0% (15/21)<br><strong>dose-limiting toxicity</strong> <span class="tox-grade">grade any</span>: 0.0% (0/21)</td><td><strong>safety and tolerability</strong>: 71.0%</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/36307410">Tan et al. <em>Nat Commun</em> 2022</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-muc1-c-inhibitor">MUC1-C inhibition (GO-203 class) — unavailable</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h2>Fap Stroma interventions</h2>
+<p><em>No rows.</em></p>
+<h3>Also considered &mdash; not ranked</h3>
+<p class="pipeline-note">Feature-targeting investigational options the board considered but did not rank as live top-tier choices. The <strong>Flag</strong> column says why: <em>Unavailable</em> (program discontinued/terminated), <em>Consolidated</em> (one product of an approach ranked above), <em>Thin evidence</em> (no peer-reviewed clinical efficacy yet), <em>Not enrollable</em> (cross-tumor evidence or geographically inaccessible).</p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Flag</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr class="not-recommended"><td><span class="flag-badge flag-thin">Thin evidence</span></td><td><strong>FAP-targeted radioligand therapy (FAP-2286 / FAPI class) — NCT04939610, gated by FAP PET</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td>Unknown: case-series evidence only (pmid:34385340), and the one FAPi PET on record showed no FAP-avid tumor.</td><td>Moderate (radioligand class marrow and off-target stromal exposure)</td><td><strong>Low</strong> <span class="cpm-desc">(Stromal targeting without tumor avidity would treat inflammation, not cancer.)</span></td><td><strong>An imaging question wearing a therapy costume: no FAP-avid urothelial disease has ever been shown in this patient.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/34385340">PMID&nbsp;34385340</a><br><a href="https://clinicaltrials.gov/study/NCT04939610">NCT04939610</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-fap-radioligand-therapy">FAP-targeted radioligand therapy (FAP-2286 / FAPI class) — NCT04939610, gated by FAP PET</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>Metastatic soft-tissue or bone sarcoma (n=6) and pancreatic cancer (n=3) after exhaustion of approved therapy</strong> (2L+)<br><small>Selection required high FAP expression, defined as 68Ga-FAPI-46 PET SUVmax &gt;=10 in more than 50% of all lesions.</small></td><td>9</td><td><strong>thrombocytopenia</strong> <span class="tox-grade">grade &gt;=3</span>: 44.0% (4/9) <small>(two patients had thrombocytopenia alone, two with new anemia)</small><br><strong>anemia</strong> <span class="tox-grade">grade &gt;=3</span>: (2/9) <small>(two patients with new-onset anemia alongside thrombocytopenia; no separate percentage published)</small></td><td><strong>radiographic disease control</strong>: 50.0%</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/34385340">Ferdinandus et al. <em>J Nucl Med</em> 2022</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2>Arid1A interventions</h2>
+<p><em>No rows.</em></p>
+<h3>Also considered &mdash; not ranked</h3>
+<p class="pipeline-note">Feature-targeting investigational options the board considered but did not rank as live top-tier choices. The <strong>Flag</strong> column says why: <em>Unavailable</em> (program discontinued/terminated), <em>Consolidated</em> (one product of an approach ranked above), <em>Thin evidence</em> (no peer-reviewed clinical efficacy yet), <em>Not enrollable</em> (cross-tumor evidence or geographically inaccessible).</p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Flag</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr class="not-recommended"><td><span class="flag-badge flag-thin">Thin evidence</span></td><td><strong>ART0380 (ATR inhibitor) — NCT04657068 (ARID1A rationale)</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td>Unknown: hypothesis-grade rationale; class clinical responses have clustered outside this histology.</td><td>Moderate (ATR-class cytopenias)</td><td><strong>Low</strong> <span class="cpm-desc">(Monotherapy ATR inhibition in a tumor without measured replication stress may do nothing.)</span></td><td><strong>A hypothesis-grade door that does not require its own hypothesis to enter.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT04657068">NCT04657068</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/27958275">PMID&nbsp;27958275</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>tuvusertib (M1774, ATR inhibitor) + avelumab — NCT06518564 (ARID1A-selected, endometrial-restricted)</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td>Not applicable: endometrial-restricted; informational for the ARID1A axis only.</td><td>Moderate (ATR-class cytopenias plus checkpoint combination irAE risk)</td><td><strong>Low</strong> <span class="cpm-desc">(None assessed; enrollment is closed to this histology.)</span></td><td><strong>The ARID1A trial that actually selects for ARID1A — closed to this histology.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT06518564">NCT06518564</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-thin">Thin evidence</span></td><td><strong>PARP inhibition (+/- temozolomide) for ARID1A-mutant disease — off-label, hypothesis-grade</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td>Unknown: hypothesis-grade preclinical rationale with no supporting biomarker in this record.</td><td>Moderate (PARP-class cytopenias and fatigue)</td><td><strong>Low</strong> <span class="cpm-desc">(Without HR deficiency the mechanism has no lesion to exploit.)</span></td><td><strong>A borrowed synthetic-lethality argument waiting on a somatic HR readout that already exists in an unretrieved report.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37306706">PMID&nbsp;37306706</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-thin">Thin evidence</span></td><td><strong>EZH2 inhibition (tazemetostat) for ARID1A-mutant disease — off-label, hypothesis-grade</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td>Unknown: preclinical-only rationale in this context.</td><td>Low (tazemetostat class profile is mild: fatigue, cytopenias under 20% grade 3)</td><td><strong>Low</strong> <span class="cpm-desc">(Epigenetic reprogramming without a measured dependency may select resistant states.)</span></td><td><strong>The mildest drug on the weakest rationale in the case.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/32506298">PMID&nbsp;32506298</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>ceralasertib (AZD6738, ATR inhibitor) — ARID1A rationale</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td>Low: responses confined to gynecologic histologies (pmid:41686845); nothing supports carryover.</td><td>Moderate (ATR-class cytopenias)</td><td><strong>Low</strong> <span class="cpm-desc">(Same unmeasured-dependency problem as the rest of the ARID1A axis.)</span></td><td><strong>Cross-tumor evidence for someone else&#x27;s tumor type.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/41686845">PMID&nbsp;41686845</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-unavailable">Unavailable</span></td><td><strong>berzosertib (M6620, ATR inhibitor) — unavailable</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td>Not applicable: no accessible program.</td><td>Moderate (ATR-class cytopenias)</td><td><strong>Low</strong> <span class="cpm-desc">(None assessed; the program is not available.)</span></td><td><strong>Not reachable by any enrollment or access route on record.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/32568634">PMID&nbsp;32568634</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-art0380">ART0380 (ATR inhibitor) — NCT04657068 (ARID1A rationale)</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-tuvusertib">tuvusertib (M1774, ATR inhibitor) + avelumab — NCT06518564 (ARID1A-selected, endometrial-restricted)</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-parp-inhibitor-arid1a">PARP inhibition (+/- temozolomide) for ARID1A-mutant disease — off-label, hypothesis-grade</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-ezh2-inhibitor-arid1a">EZH2 inhibition (tazemetostat) for ARID1A-mutant disease — off-label, hypothesis-grade</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-ceralasertib">ceralasertib (AZD6738, ATR inhibitor) — ARID1A rationale</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>Locally advanced or metastatic solid tumors with ARID1A loss by immunohistochemistry</strong> (2L+)<br><small>29 efficacy-evaluable patients, all with radiographic progression at entry and ARID1A loss confirmed by IHC rather than by sequencing alone. 13 had gynecologic malignancies.</small></td><td>29</td><td><span class="safety-summary-fallback">Safety detail is in the full text rather than the abstract; ceralasertib monotherapy toxicity is dominated by reversible myelosuppression at this schedule.</span></td><td><strong>confirmed objective response rate</strong>: 14.0%<br><small>mDOR 33.7 mo in the responding gynecologic subset</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/41686845">Zhu et al. <em>Clin Cancer Res</em> 2026</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-berzosertib">berzosertib (M6620, ATR inhibitor) — unavailable</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>Advanced solid tumors, unselected for ARID1A</strong> (2L+)<br><small>17 patients received monotherapy and 23 the carboplatin combination. Molecular annotation was retrospective rather than an entry criterion.</small></td><td>40</td><td><strong>hematologic toxicity (combination with carboplatin)</strong> <span class="tox-grade">grade &gt;=3</span>: (n=23) <small>(described as mechanism-based and dose-limiting at higher doses; per-term rates in the full text, not the abstract)</small></td><td><strong>antitumor activity and recommended phase 2 dose</strong>: one durable complete response (ATM loss plus ARID1A mutation), one partial response, 15 with stable disease—<br><small>PFS 29 months in the complete responder at last assessment</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/32568634">Yap et al. <em>J Clin Oncol</em> 2020</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<footer class="libby-footer">Generated 2026-08-20 &middot; Libby &middot; <code>urothelial-mets-her2-discordant-kndl</code></footer>
+</body></html>

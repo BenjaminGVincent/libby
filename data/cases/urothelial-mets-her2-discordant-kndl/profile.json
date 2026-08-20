@@ -1,0 +1,224 @@
+{
+  "case_slug": "urothelial-mets-her2-discordant-kndl",
+  "age_band": "50-59",
+  "sex": "male",
+  "primary_site": "bladder (urothelial); separate second primary: prostate, treated 2020, on surveillance with no evidence of disease",
+  "histology": "high-grade muscle-invasive urothelial carcinoma, NOS, poorly differentiated (focal areas suggestive of plasmacytoid morphology at diagnosis; pleomorphic giant cells in 2025 recurrence; trophoblastic differentiation excluded by HCG IHC; no definitive micropapillary features on expert re-read)",
+  "stage": "IVB (cT3 cN0 pM1b at diagnosis 2023-11 with liver metastases; CR on 1L therapy 2024-08; current disease is oligometastatic nodal — biopsy-proven left para-aortic node plus probable perivesical node, treated with SBRT 2026-06)",
+  "ecog": 1,
+  "biomarkers": [
+    {
+      "name": "HER2",
+      "value": "positive (IHC 3+) — three concordant validated results: primary bladder tumor 2023-11, liver metastasis 2023-11, bladder recurrence 2025-03; DISCORDANT weak HER2 signal on research-grade multiplex immunofluorescence (MXIF) of recent lymph-node tissue 2026-08; repeat validated IHC performed 2026-08, tier not yet in available record",
+      "method": "IHC clone 4B5 (tertiary academic center, x2 specimens); IHC (national reference lab, 2025); MXIF (research-grade advanced tissue imaging vendor, 2026-08) — MXIF is not a validated clinical HER2 assay",
+      "confirmation_status": "ihc_pending",
+      "decision_resolution": "Repeat validated HER2 IHC (4B5 or equivalent) with reflex ISH if 2+ on contemporary tumor tissue (recent nodal biopsy has only 5-10% tumor content — specimen-sufficiency caveat). This is the active decision gate for continuing vs stopping trastuzumab deruxtecan. Historical 3+ is decision-grade for the tumor-agnostic T-DXd label; the open question is whether the CURRENT tumor retains 3+ expression."
+    },
+    {
+      "name": "PD-L1 (CPS)",
+      "value": "CPS 5 / tumor cells 5% (primary bladder 2023-11); CPS 0 (liver metastasis 2023-11) — discordant primary vs metastasis",
+      "method": "IHC E1L3N clone, validated comparable to 22C3 pharmDx",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "CPS 5 on primary is at decision resolution for CPS>=10-gated options only if re-tested; heterogeneity (CPS 0 in met) weakens PD-L1 as a predictor here"
+    },
+    {
+      "name": "Nectin-4",
+      "value": "highly positive: 95% membranous tumor expression (primary, 2023-11); 100% membranous in in-situ component (2025-03 recurrence). Current expression after ~25 months of enfortumab vedotin is unknown; Nectin-4-directed imaging performed 2026-06 (result not in available record)",
+      "method": "IHC (research pathology vendor); Nectin-4 PET-type imaging 2026-06 (international research center)",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "Historical IHC is decision-grade, but for Nectin-4 re-targeting after EV exposure a contemporary re-stain (or the pending 2026-06 imaging read) is the decision-relevant test — antigen downregulation is a recognized EV-resistance mechanism"
+    },
+    {
+      "name": "TROP2",
+      "value": "low positive (weak) on research-grade MXIF 2026-08 — recorded as low expression, NOT negative; validated TROP2 IHC performed 2026-08, tier not yet in available record",
+      "method": "MXIF (research-grade, 2026-08); validated IHC at tertiary academic center 2026-08 (result pending in record)",
+      "confirmation_status": "ihc_pending",
+      "decision_resolution": "Validated TROP2 IHC tier (percent x intensity, e.g. H-score). Low-positive hedge: weak expression is a weaker, less reliable predictor of TROP2-ADC benefit than strong expression; TROP2-ADC activity in urothelial cancer is not strictly expression-gated, so low expression does not foreclose trial options"
+    },
+    {
+      "name": "Mesothelin",
+      "value": "strong expression on research-grade MXIF (2026-08)",
+      "method": "MXIF (research-grade advanced tissue imaging, 2026-08) — not a validated clinical mesothelin IHC",
+      "confirmation_status": "ihc_pending",
+      "decision_resolution": "Validated mesothelin IHC on tumor tissue (tissue-scarcity caveat: 5-10% tumor content in nodal biopsies) before mesothelin-directed CAR-T/ADC/TCE trial screening"
+    },
+    {
+      "name": "MUC1",
+      "value": "strong expression on research-grade MXIF (2026-08)",
+      "method": "MXIF (research-grade advanced tissue imaging, 2026-08) — not a validated clinical assay",
+      "confirmation_status": "ihc_pending",
+      "decision_resolution": "Validated MUC1 IHC (clone/threshold per candidate trial) before MUC1-directed therapy consideration"
+    },
+    {
+      "name": "FAP (stromal)",
+      "value": "FAP-positive stroma on research-grade MXIF (2026-08); prior FAPi PET (2025-09) showed intense FAP avidity in prostate/seminal vesicle only — confounded by biopsy-proven BCG granulomatous inflammation; no FAP-avid urothelial carcinoma on that scan; repeat FAP imaging 2026-06 (result not in available record)",
+      "method": "MXIF (research-grade); FAPi PET/CT (international research centers)",
+      "confirmation_status": "unknown",
+      "decision_resolution": "Quantitative FAPi PET uptake in known metastatic nodes (post-SBRT caveat) to establish whether FAP-targeted radioligand approaches are plausible; granulomatous inflammation is a known false-positive source"
+    },
+    {
+      "name": "PRAME",
+      "value": "PRAME-directed imaging completed 2026-08; result not in available record",
+      "method": "PRAME imaging (research)",
+      "confirmation_status": "unknown",
+      "decision_resolution": "PRAME expression (validated IHC or RNA) — relevant because patient is HLA-A*02:01-positive, the allele required for current PRAME-directed ImmTAC/TCR agents"
+    },
+    {
+      "name": "MAGE-A4",
+      "value": "tumor expression negative (2024-06); patient was HLA-matched for a MAGE-A4 TCR trial but expression testing forecloses it",
+      "method": "tumor expression assay per trial screening (modality not specified in record)",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "none needed — negative at decision resolution"
+    },
+    {
+      "name": "TMB",
+      "value": "12.4 mut/Mb in both primary bladder tumor and liver metastasis (institutional median 3.9; bladder-cancer median 8.8)",
+      "method": "institutional hybrid-capture tumor/normal NGS panel (468-gene class), 2023-11",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "Above the >=10 mut/Mb TMB-H threshold used for tumor-agnostic pembrolizumab, but that cutoff is validated on a different assay (FoundationOne CDx) — cross-assay calibration hedge applies; patient has already had prolonged pembrolizumab"
+    },
+    {
+      "name": "MSI",
+      "value": "microsatellite stable (MSS), both specimens",
+      "method": "institutional NGS panel (2023-11)",
+      "confirmation_status": "confirmed"
+    },
+    {
+      "name": "Somatic mutations (named in available record)",
+      "value": "ARID1A, TERT promoter, TP53 (incl. TP53 R175H seen in plasma ctDNA at 0.09% VAF, 2025-06) — recurrently detected in urine ctDNA (UroAmp) and concordant with tumor tissue; tissue NGS summary: 16 mutations + 12 copy-number alterations (primary), 15 mutations + 13 CNAs (liver met), no structural variants, exactly 1 alteration with an OncoKB treatment interpretation — the identity of that actionable alteration is NOT in the available record",
+      "method": "institutional tumor/normal NGS panel (2023-11); urine ctDNA (UroAmp, serial); plasma ctDNA (Guardant360, 2025-06); germline panel negative (2023-12); WES/WTS (two commercial platforms) and WGS (2025-03) performed but reports not in available record",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "Retrieve the full tissue NGS report: the single OncoKB-actionable alteration is unidentified here, and FGFR2/3 status (erdafitinib gate, ~15-20% of mUC) is unknown in the available record — a high-priority data-retrieval item, not a new test"
+    },
+    {
+      "name": "HLA class I",
+      "value": "HLA-A*02:01 positive (high-resolution class I and II typing on file in local record; full typing withheld from this derived profile as quasi-identifying)",
+      "method": "high-resolution HLA typing (2025-01)",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "A*02:01 positivity is the decision-relevant gate for current PRAME/MAGE ImmTAC-TCR-class agents"
+    },
+    {
+      "name": "Personalized neoantigens / vaccine immunogenicity",
+      "value": "24 predicted neoepitopes selected from tumor WES (2023-11; class I 8-12mer and class II ~17mer peptides); EliSpot at 4 months post-vaccination: CD4+ T-cell responses to 2 of 14 evaluable peptide pools, no responses at day 1, several pools not evaluable; serial pre/post-vaccine PBMCs banked for ongoing EliSpot monitoring",
+      "method": "WES-based neoepitope prediction (commercial vaccine program); IFN-gamma EliSpot",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "Immunogenicity is modest and CD4-skewed so far; updated EliSpot after the 2026 mRNA vaccine series will drive the vaccine/ACT branch"
+    },
+    {
+      "name": "ctDNA (tumor-informed MRD)",
+      "value": "Signatera: chronically positive 0.04-1.76 MTM/mL from 2024-05, rising to 3.29-3.45 MTM/mL 2026-06, then 0 MTM/mL on two draws 2026-06/2026-07 (per ops summary; the two zero-draws are also listed as pending in one table — minor internal conflict). NeXT Personal: 813 PPM (2026-06), peak 848 PPM (2026-05), with a reported decrease after an initial transient post-therapy increase (2026-08 report)",
+      "method": "tumor-informed ctDNA MRD assays (two platforms, serial); second primary (prostate) ctDNA assay consistently not detected",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "Next serial draws distinguish true molecular response (SBRT +/- T-DXd effect) from assay noise; ctDNA kinetics are an explicit open decision input for stopping vs continuing T-DXd"
+    }
+  ],
+  "prior_therapies": [
+    {
+      "regimen": "Enfortumab vedotin + pembrolizumab (1L metastatic; EV dose-reduced repeatedly for peripheral neuropathy, discontinued 2025-12 after ~25 months; combination achieved resolution of liver metastases)",
+      "line": "1L",
+      "best_response": "CR",
+      "duration_months": 25
+    },
+    {
+      "regimen": "Pembrolizumab continuation/maintenance after EV discontinuation (2025-12 to 2026-07, then held; nodal progression and ctDNA rise occurred on maintenance)",
+      "line": "1L maintenance",
+      "best_response": "PD",
+      "duration_months": 7
+    },
+    {
+      "regimen": "Intravesical BCG for high-grade T1 intravesical recurrence (induction x6 2025-04/05, maintenance x3 2025-11; subsequent 2026 maintenance course not given); bladder has remained endoscopically clear since",
+      "line": "local (intravesical)",
+      "best_response": "CR",
+      "duration_months": 7
+    },
+    {
+      "regimen": "TURBT x3 (2023-11 diagnostic; 2025-01 negative; 2025-03 resection of T1 recurrence with re-TUR confirmation)",
+      "line": "local (surgical)",
+      "best_response": "NE"
+    },
+    {
+      "regimen": "Personalized neoantigen peptide vaccines, two programs: program A (24-peptide, prime 2025-04 + ~8 boosts through 2025-10) and program B (V1 2025-05 to 2025-08, V2 2026-01 to 2026-04, plus a combined 'super vaccine' dose 2026-04); investigational, given alongside standard therapy",
+      "line": "investigational adjunct",
+      "best_response": "NE"
+    },
+    {
+      "regimen": "SBRT (stereotactic radiotherapy) to oligometastatic nodal disease, 2026-06",
+      "line": "local (radiation)",
+      "best_response": "NE"
+    },
+    {
+      "regimen": "HIFU ablation (2020-08) for the separate localized prostate cancer primary (T1c, Gleason 4+4 per note — note internally labels this 'Gleason 7 (4+4)', a source contradiction); on active surveillance, prostate biopsy 2025-10 negative, prostate ctDNA not detected",
+      "line": "other primary (prostate)",
+      "best_response": "CR"
+    }
+  ],
+  "current_therapy": "Trastuzumab deruxtecan (T-DXd), started 2026-07, 2 doses given as of 2026-08 with severe nausea/bloating after dose 2; continuation is under active review pending HER2 reconciliation and ctDNA kinetics. Personalized neoantigen mRNA vaccine series ongoing (doses from 2026-06; next 2026-09) with EliSpot monitoring. Pembrolizumab on hold since 2026-07. Metformin 1000 mg daily (prediabetes). Amylase/lipase surveillance q3-4wk.",
+  "organ_function": {
+    "labs_as_of": "2026-06 unless noted",
+    "AST_U_L": 30,
+    "ALT_U_L": 23,
+    "ALP_U_L": 51,
+    "BUN_mg_dL": 23,
+    "glucose_mg_dL": 106,
+    "Hgb_g_dL": 13.8,
+    "WBC_10e3_uL": 8.81,
+    "PLT_10e3_uL": 170,
+    "lipase_U_L": 49,
+    "lipase_peak_U_L_2025_06": 384,
+    "amylase_peak_U_L_2025_06": 306,
+    "TSH_mIU_L": 2.34,
+    "PT_sec": 13.2,
+    "PTT_sec": 23,
+    "CRP_mg_L_2025_08": 0.5,
+    "creatinine_or_eGFR": "not in available record — gap; history of obstructive hydroureteronephrosis (stented 2023-11, stent removed 2024-05, resolved)",
+    "bilirubin": "not in available record — gap",
+    "pancreas": "recovered asymptomatic pancreatitis (2025-06, lipase peak 384 U/L, ~3x ULN); prediabetes on metformin; lipase re-bump to 123 U/L 2025-12 then normalized (20-49 U/L, 2026); monitored q3-4wk before each pembrolizumab cycle",
+    "pulmonary": "CT chest 2026-03 (outside read): parenchymal scarring, reticular nodules, septal thickening and ground-glass opacities 'suggestive of pulmonary fibrosis/interstitial lung disease'; CT 2026-06 (academic center): no pneumonia or pneumonitis — unresolved discrepancy, directly relevant to T-DXd ILD risk",
+    "hematologic": "iron-deficiency anemia 2025-10 (Hgb 10.8, ferritin 11) corrected with IV iron x3; Hgb 13.8-14.0 in 2026",
+    "neuro": "chronic chemotherapy-induced peripheral neuropathy from enfortumab vedotin (dose-reduced repeatedly; hand spasms attributed to it); dedicated CIPN-management project active"
+  },
+  "targetable_features": [
+    {
+      "feature": "HER2 (IHC 3+, discordant with weak research-grade MXIF) — ADC axis",
+      "rationale": "Three validated IHC 3+ results (primary 2023, liver met 2023, recurrence 2025) meet the tumor-agnostic T-DXd bar, and T-DXd is already the current therapy. The weak HER2 on 2026-08 research-grade MXIF is DISCORDANT and unresolved; because MXIF is not a validated HER2 assay, it does not overturn the 3+ calls, but it raises real concern for antigen loss in the current tumor. Resolving this (validated IHC +/- ISH on contemporary tissue) is the single most important near-term decision gate: it governs continuing T-DXd (currently poorly tolerated) vs pivoting, and eligibility for other HER2 agents (e.g. disitamab vedotin-class ADCs, HER2 bispecifics — investigational in UC). If the current tumor proves HER2-low rather than 3+, T-DXd retains bystander-payload rationale but with weaker, cross-tumor-extrapolated evidence (tumor-agnostic approval requires 3+) — that lower-certainty framing must carry through."
+    },
+    {
+      "feature": "Nectin-4 (historically highly positive) — re-targeting after EV",
+      "rationale": "95-100% membranous expression on two specimens is a strong historical signal, but ~25 months of enfortumab vedotin exposure with subsequent progression means acquired resistance — including Nectin-4 downregulation — is plausible and CURRENT expression is unverified (2026-06 Nectin-4 imaging result not in record). Any Nectin-4 re-treatment or next-generation Nectin-4 agent (novel-payload ADCs, radioligands — investigational) should be gated on contemporary expression, and prior-EV exposure is an exclusion in some trials. Severe CIPN from EV argues against re-exposure to MMAE-payload agents specifically."
+    },
+    {
+      "feature": "TROP2 (low positive on research assay) — bystander-payload ADC axis, hedged",
+      "rationale": "Weak TROP2 on 2026-08 MXIF is a low-positive signal, not a negative. TROP2-directed ADCs with membrane-permeable bystander payloads (sacituzumab govitecan-class, datopotamab deruxtecan-class) can act on antigen-low/heterogeneous tumors, and their urothelial development has not been strictly expression-gated — so this remains a real option, mostly via trials (the sacituzumab govitecan mUC accelerated approval was withdrawn after its confirmatory trial). Predictive-certainty hedge: low expression is a weaker, less reliable predictor of benefit than strong expression; the pending validated 2026-08 IHC tier should be retrieved before weighting this option."
+    },
+    {
+      "feature": "Mesothelin (strong on research-grade MXIF) — CAR-T/TCE/ADC trial axis, hedged",
+      "rationale": "Strong mesothelin on MXIF is a genuine lead for mesothelin-directed trials (CAR-T, T-cell engagers, ADCs), and the patient's banked apheresis product/PBMCs lower the barrier to cell-therapy manufacture. Hedge: the assay is research-grade multiplex immunofluorescence, not a validated clinical mesothelin IHC, and mesothelin is atypical in urothelial carcinoma — confirm with a validated stain (tissue-scarcity caveat: nodal biopsies carry 5-10% tumor content) before treating this as an actionable target."
+    },
+    {
+      "feature": "MUC1 (strong on research-grade MXIF) — hedged, confirmation-first",
+      "rationale": "Strong MUC1 on MXIF supports screening for MUC1-directed vaccines/CAR/TCE trials. Same hedge as mesothelin: research-grade assay, no validated IHC tier yet, and MUC1's ubiquitous low-level normal-tissue expression makes clone/threshold selection decisive — treat as a confirmation-first, lower-certainty lead."
+    },
+    {
+      "feature": "PRAME + HLA-A*02:01 — ImmTAC/TCR axis, pending expression",
+      "rationale": "The patient is HLA-A*02:01-positive, satisfying the HLA gate for current PRAME-directed ImmTAC/TCR-bispecific agents (brenetafusp-class, investigational in solid tumors), and PRAME-directed imaging was completed 2026-08. The expression result is not yet in the record: this feature is conditional — actionable only if PRAME expression confirms positive at each trial's required threshold. The prior MAGE-A4 lesson (HLA match, expression negative) is the template: expression testing first."
+    },
+    {
+      "feature": "Personalized neoantigens — vaccine + adoptive cell therapy axis",
+      "rationale": "Active personalized vaccine program (peptide programs 2025, mRNA series 2026) against 24 predicted neoepitopes, with EliSpot showing modest, CD4-skewed immunogenicity so far (2/14 pools at 4 months). Extensive banked material (serial PBMCs, CD8 T cells, apheresis x2, dendritic cells, EBV-LCLs, fresh-frozen tumor) plus engaged academic partners make vaccine-primed TIL/ACT expansion and EV-based immunopeptidomics feasible next steps. Hedge: no objective-response evidence yet attributable to vaccination; ctDNA rose through most of the vaccine period; this is a hypothesis-stage axis whose next readout is post-mRNA EliSpot."
+    },
+    {
+      "feature": "TMB 12.4 mut/Mb + ongoing immune sensitivity — checkpoint re-intensification (ipilimumab addition)",
+      "rationale": "TMB above the >=10 mut/Mb TMB-H bar (cross-assay hedge: measured on an institutional panel, threshold validated on a different assay) and a deep prior response to PD-1-based therapy support checkpoint re-intensification, e.g. adding CTLA-4 blockade (ipilimumab) — a strategy the care team is already exploring. Hedge: progression occurred ON pembrolizumab maintenance, so single-axis re-challenge is weakly supported; PD-L1 heterogeneity (CPS 5 primary / CPS 0 met) further weakens PD-L1-gated predictions. NK-cell + IL-15 superagonist (N-803) single-patient-IND discussions are part of this immune-intensification axis (investigational, non-standard)."
+    },
+    {
+      "feature": "FAP-positive stroma — imaging/theranostic axis, heavily hedged",
+      "rationale": "FAP+ stroma on MXIF suggests FAPi radioligand imaging/therapy concepts (investigational). Hedge: the only FAPi PET on record (2025-09) showed avidity in BCG-granulomatous prostate tissue and NO FAP-avid urothelial carcinoma, and granulomatous inflammation is a classic FAPi false positive — this is currently an imaging-research lead, not a treatment lead, pending the 2026-06 repeat FAP imaging read."
+    },
+    {
+      "feature": "ARID1A / TERT promoter / TP53 mutations — hypothesis-grade synthetic-lethality axis",
+      "rationale": "ARID1A loss-of-function supports ATR-inhibitor and related DNA-damage-response trial rationale (hypothesis-grade; no approved agent); TERT promoter and TP53 are prognostic/monitoring markers with no direct drug. Load-bearing gap: the record states exactly one alteration carries an OncoKB treatment interpretation but never names it, and FGFR3 (erdafitinib-actionable in mUC) status is unknown — retrieving the full NGS report may reveal a stronger genomic option than anything listed here."
+    }
+  ],
+  "geography_band": "US-Northeast",
+  "private": false
+}

@@ -1,0 +1,16 @@
+{
+  "case_slug": "urothelial-mets-her2-discordant-kndl",
+  "efficacy_toxicity_weight": 0.7,
+  "toxicity_vetoes": [
+    "severe peripheral neuropathy (INFERRED: established CIPN from enfortumab vedotin with repeated dose reductions and an active CIPN-management project — avoid or de-prioritize high-neuropathy agents, especially MMAE-payload ADCs and platinum/taxane backbones, where an alternative exists)",
+    "severe GI toxicity / highly emetogenic regimens (INFERRED: severe nausea and bloating after trastuzumab deruxtecan dose 2 is an active, dose-limiting problem)",
+    "interstitial lung disease / pneumonitis-high-risk agents without tight monitoring (INFERRED: 2026-03 outside CT read suggestive of early pulmonary fibrosis/ILD; directly interacts with T-DXd ILD risk)",
+    "pancreatitis-risk agents (INFERRED: recovered asymptomatic pancreatitis 2025 with lipase to ~3x ULN on EV/pembro; amylase/lipase now monitored q3-4wk)"
+  ],
+  "modality_constraints": [
+    "no geographic or logistical constraints evident (INFERRED: patient has traveled internationally for imaging, vaccination, and consults, and maintains care at a US-Northeast tertiary academic center)",
+    "intensive/experimental modalities acceptable, including cell therapy requiring apheresis (INFERRED: apheresis already banked; adoptive cell therapy (TIL), NK-cell plus N-803 single-patient IND, and vaccine programs actively pursued)"
+  ],
+  "free_text_constraints": "All preferences in this file are INFERRED from the clinical record and ops notes, not stated by the user; treat as defaults to confirm. Posture: strongly experimental-leaning — the patient is simultaneously pursuing personalized mRNA/peptide vaccines, TIL/ACT with two academic groups, NK cells + N-803 via single-patient IND discussions, and ipilimumab addition; surface trials prominently and rank novel-mechanism options seriously rather than as fallbacks. Efficacy-leaning weight (~0.7) inferred from willingness to continue therapy through chronic CIPN and to stack investigational programs; but the two active tolerability problems above (GI intolerance on T-DXd, CIPN) are real constraints on specific agent classes, not on aggressiveness overall. Practical constraint for trial screening: tumor tissue is scarce (one fresh-frozen vial, few slides, nodal biopsies 5-10% tumor content) — prefer options whose screening needs blood/imaging over fresh-biopsy-hungry protocols, or plan biopsy strategically; plasma/PBMC/apheresis banking is extensive. Near-term decision gates the pipeline should respect: (1) reconcile discordant HER2 (validated IHC 3+ vs weak research MXIF) before any HER2-branch commitment; (2) T-DXd stop/continue decision driven by ctDNA kinetics and tolerability; (3) retrieve full NGS report to identify the unnamed OncoKB-actionable alteration and FGFR3 status.",
+  "prefers_trials": true
+}

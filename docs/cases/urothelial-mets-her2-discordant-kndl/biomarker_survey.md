@@ -102,7 +102,7 @@ _On file at decision resolution. No further action from this survey._
 !!! note "Reading this report"
     This page answers one question per biomarker: has this patient been tested for it, and was the test at a resolution that can carry a treatment decision. **Not measured** means nothing is on file, which is not the same as a negative result. **Measured, not decision-grade** means a result exists but cannot be acted on as it stands; those gaps are worked into the [Target validation paths](target_validation.md) report. **Priority** weighs what is going unassessed against how routine the assay is. Most of these biomarkers will be negative if tested; the case for testing rests on the size of the option that opens if positive, not on how likely a positive is.
 
-[Target validation](target_validation.md) · [Recommendations](recommendations.md) · [Trials](trials.md) · [Evidence](evidence.md) · [Board](board.md)
+[Back to case](index.md) · [Target validation](target_validation.md) · [Recommendations](recommendations.md) · [Trials](trials.md) · [Evidence](evidence.md) · [Board](board.md)
 
 !!! danger disclaimer "Decision support, not medical advice"
     Libby is experimental. An unmeasured biomarker on this page is a gap in the
