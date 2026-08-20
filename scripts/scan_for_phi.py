@@ -209,6 +209,24 @@ ONCOLOGY_ACRONYM_ALLOWLIST = frozenset({
     # allowlisted, so genuine surname pairs still flag.
     "LMS", "ULMS", "MRCLS", "ASPS", "ESTRO", "MAGE", "CK", "CBC", "CT", "LLC",
     "HRR", "CSCC", "BCC", "CSB", "XPA", "XPC", "XPD", "XPF", "XPG",
+    # Urothelial carcinoma case vocabulary that surfaces in ALL-CAPS pairs:
+    # intravesical therapy and the resection it follows ("BCG, TURBT"), the
+    # disitamab-vedotin alias run in access tables ("RC48-ADC, DV, Aidixi"),
+    # and the NEXUS-01 trial family ("Nectin-4 ADC, NEXUS-01").
+    "BCG", "TURBT", "DV", "NEXUS",
+    # Drug shorthands, product-code prefixes, and the NK modality token that
+    # appear in the trial screener's alias tables ("EV, ASG-22ME"; "SG,
+    # IMMU-132"; "PRAME TCR-NK, NW-101C"; "CAR-T, CAR-NK"). ALL_CAPS_PAIR_RE
+    # stops at a hyphen or digit, so a code like "ASG-22ME" is allowlisted as
+    # its leading token only.
+    "EV", "ASG", "SG", "IMMU", "NK", "NW",
+    # US academic cancer centers named in trial-site and care-orbit prose
+    # ("NYU, MSK, Hackensack"). MSK is already allowlisted above.
+    "NYU",
+    # All-caps nursing credentials trailing a ClinicalTrials.gov central-contact
+    # name ("Beth Lepping, RN, BSN, MS"), same case as MBBS above. A genuine
+    # surname pair still flags, because both tokens must be allowlisted.
+    "RN", "BSN",
     # Drug class / mechanism extensions
     "HCQ", "PARP", "PARPi", "TKI", "ICI", "ICB", "FAP", "CAF", "MDSC", "TIL",
     "MRD",
