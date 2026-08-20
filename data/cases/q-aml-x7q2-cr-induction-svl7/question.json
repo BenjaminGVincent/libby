@@ -1,0 +1,68 @@
+{
+  "question_id": "cr-induction-next-line",
+  "case_slug": "q-aml-x7q2-cr-induction-svl7",
+  "source_case_slug": "aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2",
+  "question": "Which remission-directed therapy, deliverable now as her next line, has the best evidence for inducing a complete remission (ELN 2022 CR; CRi, CRh, MLFS and composite rates reportable only when labelled as what they are) in relapsed/refractory AML-MR matched to her situation: relapse six years after a matched-sibling allograft, refractory to FLAG-IDA plus venetoclax, roughly 85% marrow blasts, complex adverse karyotype, and a right-thigh myeloid sarcoma whose response counts toward the remission?",
+  "asked_as": "What therapy at this point would be most likely to induce a complete remission?",
+  "interpretation_notes": "Four narrowings, each recorded so the reshaping can be judged. (1) 'Therapy' is read as any remission-directed systemic regimen or transplant-integrated platform deliverable to her now, not only the feature-targeted options the source case ranked; an endpoint question is not bound to targetable_features[], so standard salvage regimens compete here on equal terms. (2) 'At this point' is pinned to the next line of treatment, before any consolidation, with the source case's rank-1 gating workup running concurrently rather than first. (3) 'Complete remission' is pinned to ELN 2022 definitions: CR with count recovery is the target; CRi, CRh, MLFS and composite rates are usable evidence only when labelled, and a composite or ORR figure may never be presented as a CR rate. Because she has a right-thigh myeloid sarcoma, remission for this question means marrow CR plus extramedullary response; marrow CR with a persistent sarcoma must be reported as exactly that, since most published CR figures come from marrow assessment alone. (4) 'Most likely' is read as best-evidenced likelihood in populations matched to hers, with cross-trial comparison limits stated rather than laundered into false precision.",
+  "question_type": "intervention",
+  "decision_context": "Her leukaemia and transplant team must choose the next systemic therapy within weeks: peripheral blasts rose from 58 to 82 percent across late June 2026 and nothing has been given since FLAG-IDA plus venetoclax failed. That choice gates everything else, because the second allograft, the HLA-restricted cellular options and most open trials in the source dossier require cytoreduction or remission first, and DLI guidance is written for MRD-level disease. The source case already answered 'what is the best overall curative path'; this run answers the narrower question the team has to act on first, asked from the patient's side against the published case.",
+  "in_scope": [
+    "Systemic therapies deliverable now as her next line with reported complete-remission data in relapsed/refractory AML, whether or not they target a feature in the source profile: intensive salvage combinations (CLAG-M, CLAG-GO, MEC, high-dose cytarabine backbones), gemtuzumab-containing regimens, hypomethylating-agent combinations, CD33- and CD123-directed agents including radioconjugate combinations such as lintuzumab-Ac225 plus CLAG-M, and any open trial regimen that accepts post-allo-HCT relapse at her blast burden.",
+    "Transplant-integrated remission platforms in which the remission is produced by the procedure itself: sequential FLAMSA-type conditioning into a second allograft (US analogue DEC-FLAG-Ida/RIC, NCT06928662) and targeted radioimmunotherapy conditioning. These compete with standalone reinduction on this question's endpoint and must be assessed on it, including whether their remission data survive her post-allo status.",
+    "CR-rate evidence graded by population match on the axes that bear on her: post-allogeneic-HCT relapse, refractoriness to intensive chemotherapy plus venetoclax, complex or adverse karyotype including del(5q), del(7q), MECOM and KMT2A amplification, TP53-aberrant subgroups, marrow blast burden near 85 percent, and AML transformed from MDS.",
+    "The response definition behind every figure: CR versus CRi versus CRh versus MLFS versus composite CR versus ORR. The synthesist reports which each cited number is and never pools them into a bare CR rate.",
+    "Extramedullary response: whether each source assessed extramedullary disease at response, and any evidence on myeloid sarcoma response to the candidate systemic regimens. Local radiotherapy to the thigh lesion is in scope only as an adjunct to systemic remission induction, not as an answer on its own.",
+    "Deliverability within weeks: an open protocol with a site that accepts post-allo relapse, her blast burden and ECOG 1, or marketed or off-label supply. A discontinued or inaccessible agent can contextualise the answer but cannot be it.",
+    "Biomarker-gated candidates (TP53-Y220C-contingent, HLA-restricted, antigen-density-dependent) only with their gate stated; none of the pending gates from the source case (TP53 variant call, HLA class I typing, quantitative CD33/CD123 density, organ-function documentation) may be assumed resolved in either direction."
+  ],
+  "out_of_scope": [
+    "The source case's ranking. Its endpoint was overall curative-intent benefit and it stands as published; nothing here re-opens, re-ranks or amends it. A therapy ranked high there may rank low here and the reverse, because CR likelihood and curative benefit are different questions.",
+    "Durability of remission, relapse-free survival, overall survival, and everything after CR: choice of consolidation, second-transplant platform, DLI timing, and the HLA-restricted cellular products. Those were the source case's territory. The one carve-out is that where a transplant-integrated platform induces remission as part of the procedure, its remission data are in scope; its survival data are not this question's endpoint.",
+    "Whether a candidate forecloses later options. Sequencing consequences were weighed in the source ranking and are not re-litigated here; a reader who wants them should read the source dossier alongside this answer.",
+    "The gating workup itself (HLA typing, HA-1/HA-2 genotyping, TP53 variant resolution, antigen density, organ-function labs). It stays rank 1 of the source case, assumed to proceed concurrently; it is not a therapy and is not re-adjudicated.",
+    "Supportive and bridging measures that control counts without remission intent, such as hydroxyurea or leukapheresis.",
+    "Best therapy overall. The answer here is 'most likely to produce a CR', and a reader must not convert that into 'best next move' without the durability and sequencing analysis this run deliberately excludes."
+  ],
+  "acceptance_criteria": [
+    {
+      "criterion": "A prospective trial or multicentre cohort (n of 20 or more) reports a true CR rate (ELN CR, not composite) for a deliverable candidate in a population that includes post-allo-HCT relapse or prior intensive-chemotherapy-plus-venetoclax failure, and that rate is clearly higher than the alternatives' rates in comparably matched populations.",
+      "would_support": "yes",
+      "found": null
+    },
+    {
+      "criterion": "A transplant-integrated platform (sequential FLAMSA-type conditioning into a second allograft, or targeted radioimmunotherapy conditioning) reports remission rates in active-disease relapse, applicable after a prior allograft, that meet or beat the best standalone reinduction. If met, the answer moves away from any standalone regimen toward proceeding directly to conditioning, which also renders 'induce CR first' partly moot.",
+      "would_support": "depends",
+      "found": null
+    },
+    {
+      "criterion": "The leading candidate's CR figures come from populations that exclude her on a load-bearing axis (post-allo relapse excluded, blast cap below her burden, venetoclax-naive, first-relapse rather than refractory, or TP53-wild-type-enriched) with no matched data to fall back on.",
+      "would_support": "no",
+      "found": null
+    },
+    {
+      "criterion": "Across the deliverable candidates, CR rates in matched populations are indistinguishable: overlapping confidence intervals, no comparative data, no candidate separating from the rest. If met, the honest verdict is that the evidence does not discriminate and the question has no single winner.",
+      "would_support": "no",
+      "found": null
+    },
+    {
+      "criterion": "At least one source for a leading candidate assessed extramedullary disease at response, or reports responses in myeloid sarcoma. If met, a full-remission claim covering marrow and thigh is supportable; if unmet, every CR claim in the answer carries a marrow-only caveat.",
+      "would_support": "either",
+      "found": null
+    },
+    {
+      "criterion": "The agent with the best matched-population CR signal is not deliverable: discontinued, no open site, or excluded by her post-allo status, blast burden, ECOG or undocumented organ function. If met, the verdict names the best deliverable option instead and says what was passed over and why.",
+      "would_support": "depends",
+      "found": null
+    },
+    {
+      "criterion": "Direct comparative evidence, randomised or matched-cohort, on remission induction between two or more deliverable candidates in relapsed/refractory AML. If met, the ranking can rest on a comparison rather than on cross-trial arithmetic.",
+      "would_support": "either",
+      "found": null
+    }
+  ],
+  "answer_shape": "verdict_plus_ranked_options",
+  "inherited_context": "From the published source case (aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2). Patient: 50-59, female, ECOG 1. Relapsed/refractory AML, myelodysplasia-related, transformed from MDS diagnosed around 2019 (RCMD, IPSS-R high/very-high). Late relapse about six years after a matched-sibling PBSC allograft; pattern read as graft-versus-leukaemia escape, not graft failure. Refractory to FLAG-IDA plus venetoclax reinduction. Marrow around 85 percent blasts (June 2026); peripheral blasts 58 to 82 percent across late June 2026; right-thigh myeloid sarcoma on MRI (May 2026). Relapse karyotype: del(5q), del(7q), gain of 5-prime MECOM, KMT2A amplification (4 copies), del(8cen), del(16q22); shared founder lesions with 2019 mean evolution of the original clone. TP53 aberrant pending confirmation and held unresolved in both directions (2019 panel pathogenic, 2026 panel negative on a limited assay). FLT3, IDH1 and IDH2 negative on the 2019 panel, retesting advised. CD33 and CD123 positive by qualitative flow only; antigen density not quantified, which bears on ADC selection. Organ function undocumented, which bears directly on intensive-salvage candidacy. HLA class I alleles and recipient/donor HA-1/HA-2 unknown. HLA-identical sibling donor available, CMV-negative. Curative intent; trials acceptable including travel. The source ranking, whose endpoint was overall curative-intent benefit: rank 1 the gating workup run concurrently with induction; rank 2 CLAG-GO (NCT04050280, phase 2, recruiting, no published results in refractory AML, chosen mainly as the cytoreduction gate); rank 3 second allograft on a cytoreduce-first or sequential-conditioning platform (NCT06928662); rank 4 HA-1 TCR-T conditional on A*02:01 and an HA-1 mismatch; zero board vetoes across two rounds. Evidence rows already reference-checked there and load-bearing here: the often-quoted 56.6 percent composite CR (CR/CRi) belongs to CLAG-M plus lintuzumab-Ac225 (n=26, with 50 percent in the TP53-mutated and 38.5 percent in the prior-venetoclax subgroups), not to CLAG-GO alone; fractionated gemtuzumab monotherapy gave 26 percent CR in first relapse (MyloFrance-1, n=57), an upper bound for refractory post-allo disease; flotetuzumab's 47 percent CR in TP53-abnormal R/R AML (n=15, post-hoc) is stranded because the drug was discontinued; SIERRA read durable CR 17.1 versus 0 percent for radioimmunoconditioning in active-disease relapse (n=153) but excluded prior HCT, so it informs mechanism rather than her eligibility; FLAMSA sequential conditioning reported 88 percent CR (n=75) in mostly first transplants with refractory disease, predating venetoclax-era salvage. CR is the gate to nearly everything the source case ranked: the cellular options want remission or low burden, DLI guidance is written for MRD-level disease, and several trials carry blast or WBC caps.",
+  "framed_at_utc": "2026-08-20T13:58:37Z",
+  "notes": "question_type is 'intervention' rather than 'sequencing': the ask is which agent or platform maximises one endpoint, and the sequencing stakes (CR as the gate to consolidation) are context, not the question. answer_shape is 'verdict_plus_ranked_options' because the question genuinely resolves to choosing among a real set of deliverable remission-induction candidates; the synthesist may downgrade to a bare verdict if the evidence will not carry a ranking, for instance if acceptance criterion 4 lands. The deliberate contrast with the source case: its ranking optimised overall curative-intent benefit, this run optimises probability of CR, and an agent with a high CR rate and no durability is a legitimate answer here that was correctly not the answer there."
+}

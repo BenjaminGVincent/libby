@@ -17,6 +17,7 @@
 - [relapsed/refractory MDS-related AML — HLA/HA typing pending, TP53 held unresolved (second full-pipeline re-run)](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2/index.md)
 - [recurrent PDAC four months after adjuvant FOLFIRINOX, CLDN18.2 2+/3+ in 60% with KRAS G12R, TP53 Y220C and KMT2C S2816fs, recurrence unbiopsied](pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m/index.md)
 - [metastatic high-grade uterine leiomyosarcoma, systemic-therapy naive, bilateral pulmonary metastases, ER/PR <1%, molecular landscape unmeasured, LMS-04 planned, 23-month diagnostic interval](ulms-highgrade-pulm-mets-er-pr-neg-qqvt/index.md)
+- [AML x7q2 question: what therapy is most likely to induce a complete remission? (question-scoped run, linked)](q-aml-x7q2-cr-induction-svl7/question.md)
 
 ## Conventions
 
