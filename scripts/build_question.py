@@ -93,6 +93,25 @@ DELIVERABLE_LABEL = {
 }
 
 
+def _wrap_table(head: str, body: str) -> str:
+    """Wrap a table in the scroll container the other renderers use.
+
+    Without it the table is pinned to 100% width, so every column squeezes and
+    the prose cells wrap into very tall rows. With it, the per-column min-widths
+    below let the table exceed the container and scroll sideways instead.
+    """
+    return (
+        '<div class="trial-table-wrap">\n'
+        '  <div class="trial-scroll">\n'
+        '    <table class="trial-table">\n'
+        f'      <thead>{head}</thead>\n'
+        f'      <tbody>{body}</tbody>\n'
+        "    </table>\n"
+        "  </div>\n"
+        "</div>\n"
+    )
+
+
 def render_candidates_table(ans: dict) -> str:
     """The evidence behind the verdict, one row per candidate assessed.
 
@@ -131,31 +150,28 @@ def render_candidates_table(ans: dict) -> str:
         dlabel, dcls = DELIVERABLE_LABEL.get(c.get("deliverable", ""), ("&mdash;", "fit-weak"))
         out.append(
             "<tr>"
-            f"<td>{c.get('rank', '&mdash;')}</td>"
-            f"<td><strong>{fmt(c.get('label'))}</strong>"
+            + f'<td class="col-q-rank">{c.get("rank", "&mdash;")}</td>'
+            + f'<td class="col-q-candidate"><strong>{fmt(c.get("label"))}</strong>'
             + (f'<br><small class="persona-line">{fmt(c["notes"])}</small>' if c.get("notes") else "")
             + "</td>"
-            f"<td>{rate_cell}</td>"
-            f"<td>{tox_cell}</td>"
-            f'<td><span class="fit-badge {dcls}">{dlabel}</span></td>'
-            f"<td>{references_cell(c.get('references'))}</td>"
-            "</tr>"
+            + f'<td class="col-q-rate">{rate_cell}</td>'
+            + f'<td class="col-q-tox">{tox_cell}</td>'
+            + f'<td class="col-q-avail"><span class="fit-badge {dcls}">{dlabel}</span></td>'
+            + f'<td class="col-q-refs">{references_cell(c.get("references"))}</td>'
+            + "</tr>"
         )
 
     head = (
-        "<tr><th>Rank</th><th>Candidate</th><th>Response rate</th>"
-        "<th>Toxicity</th><th>Available to her</th><th>Key references</th></tr>"
+        '<tr><th class="col-q-rank">Rank</th><th class="col-q-candidate">Candidate</th>'
+        '<th class="col-q-rate">Response rate</th><th class="col-q-tox">Toxicity</th>'
+        '<th class="col-q-avail">Available to her</th>'
+        '<th class="col-q-refs">Key references</th></tr>'
     )
     basis_line = (
         f'\n!!! note "What this ranking orders by"\n    {basis}\n\n'
         if basis else "\n"
     )
-    return (
-        "## Candidates assessed\n"
-        + basis_line
-        + '<table class="trial-table"><thead>' + head + "</thead><tbody>"
-        + "".join(out) + "</tbody></table>\n"
-    )
+    return "## Candidates assessed\n" + basis_line + _wrap_table(head, "".join(out))
 
 
 def references_cell(refs) -> str:
@@ -197,20 +213,20 @@ def render_criteria_table(q: dict, ans: dict) -> str:
         points = direction.get(r.get("criterion")) or "—"
         rows.append(
             "<tr>"
-            f"<td>{fmt(r.get('criterion'))}</td>"
-            f"<td><span class=\"fit-badge {cls}\">{mark}</span></td>"
-            f"<td>{fmt(points)}</td>"
-            f"<td>{fmt(r.get('finding'))}</td>"
-            "</tr>"
+            + f'<td class="col-q-criterion">{fmt(r.get("criterion"))}</td>'
+            + f'<td class="col-q-result"><span class="fit-badge {cls}">{mark}</span></td>'
+            + f'<td class="col-q-points">{fmt(points)}</td>'
+            + f'<td class="col-q-finding">{fmt(r.get("finding"))}</td>'
+            + "</tr>"
         )
     head = (
-        "<tr><th>Pre-registered criterion</th><th>Result</th>"
-        "<th>Points toward</th><th>What was found</th></tr>"
+        '<tr><th class="col-q-criterion">Pre-registered criterion</th>'
+        '<th class="col-q-result">Result</th><th class="col-q-points">Points toward</th>'
+        '<th class="col-q-finding">What was found</th></tr>'
     )
     return (
         "## What would have answered this, decided before the search\n\n"
-        '<table class="trial-table"><thead>' + head + "</thead><tbody>"
-        + "".join(rows) + "</tbody></table>\n"
+        + _wrap_table(head, "".join(rows))
     )
 
 
@@ -224,21 +240,21 @@ def render_evidence_table(ans: dict) -> str:
         for e in items:
             out.append(
                 "<tr>"
-                f"<td>{html.escape(heading)}</td>"
-                f"<td>{fmt(e.get('claim'))}</td>"
-                f"<td>{fmt(e.get('strength'))}</td>"
-                f"<td>{fmt(e.get('population_match'))}</td>"
-                "</tr>"
+                + f'<td class="col-q-dir">{html.escape(heading)}</td>'
+                + f'<td class="col-q-claim">{fmt(e.get("claim"))}</td>'
+                + f'<td class="col-q-strength">{fmt(e.get("strength"))}</td>'
+                + f'<td class="col-q-popmatch">{fmt(e.get("population_match"))}</td>'
+                + "</tr>"
             )
         return "".join(out)
 
-    head = "<tr><th>Direction</th><th>Finding</th><th>Strength</th><th>Population match</th></tr>"
-    body = block("evidence_for", "For") + block("evidence_against", "Against")
-    return (
-        "## Evidence both ways\n\n"
-        '<table class="trial-table"><thead>' + head + "</thead><tbody>"
-        + body + "</tbody></table>\n"
+    head = (
+        '<tr><th class="col-q-dir">Direction</th><th class="col-q-claim">Finding</th>'
+        '<th class="col-q-strength">Strength</th>'
+        '<th class="col-q-popmatch">Population match</th></tr>'
     )
+    body = block("evidence_for", "For") + block("evidence_against", "Against")
+    return "## Evidence both ways\n\n" + _wrap_table(head, body)
 
 
 def render_dissent(ans: dict) -> str:
@@ -251,17 +267,16 @@ def render_dissent(ans: dict) -> str:
         mark = "carried" if carried is True else ("noted" if carried is False else "—")
         out.append(
             "<tr>"
-            f"<td>{fmt(d.get('persona'))}</td>"
-            f"<td>{fmt(d.get('position'))}</td>"
-            f"<td>{html.escape(mark)}</td>"
-            "</tr>"
+            + f'<td class="col-q-seat">{fmt(d.get("persona"))}</td>'
+            + f'<td class="col-q-position">{fmt(d.get("position"))}</td>'
+            + f'<td class="col-q-carried">{html.escape(mark)}</td>'
+            + "</tr>"
         )
-    head = "<tr><th>Board seat</th><th>Position</th><th>Into the answer</th></tr>"
-    return (
-        "## Where the board disagreed\n\n"
-        '<table class="trial-table"><thead>' + head + "</thead><tbody>"
-        + "".join(out) + "</tbody></table>\n"
+    head = (
+        '<tr><th class="col-q-seat">Board seat</th><th class="col-q-position">Position</th>'
+        '<th class="col-q-carried">Into the answer</th></tr>'
     )
+    return "## Where the board disagreed\n\n" + _wrap_table(head, "".join(out))
 
 
 def render_scope(q: dict, ans: dict) -> str:
