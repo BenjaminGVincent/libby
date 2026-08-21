@@ -75,46 +75,6 @@ small.scenario-key { color: var(--ink-muted); }
 .trial-table tbody tr:last-child td {
   border-bottom: 2px solid var(--ink);
 }
-/* Question-report column widths. These tables carry prose in most cells, so
-   without min-widths every column squeezes to fit 100% of the container and the
-   rows grow very tall with a few words per cell. The min-widths let the table
-   exceed the container so .trial-scroll scrolls it sideways instead, which reads
-   far better for a candidate comparison. */
-.trial-table th.col-q-rank,
-.trial-table td.col-q-rank { min-width: 3em; white-space: nowrap; }
-.trial-table th.col-q-candidate,
-.trial-table td.col-q-candidate { min-width: 24em; }
-.trial-table th.col-q-rate,
-.trial-table td.col-q-rate { min-width: 15em; }
-.trial-table th.col-q-tox,
-.trial-table td.col-q-tox { min-width: 20em; }
-.trial-table th.col-q-avail,
-.trial-table td.col-q-avail { min-width: 9em; white-space: nowrap; }
-.trial-table th.col-q-refs,
-.trial-table td.col-q-refs { min-width: 11em; }
-.trial-table th.col-q-criterion,
-.trial-table td.col-q-criterion { min-width: 22em; }
-.trial-table th.col-q-result,
-.trial-table td.col-q-result { min-width: 8em; white-space: nowrap; }
-.trial-table th.col-q-points,
-.trial-table td.col-q-points { min-width: 7em; white-space: nowrap; }
-.trial-table th.col-q-finding,
-.trial-table td.col-q-finding { min-width: 30em; }
-.trial-table th.col-q-dir,
-.trial-table td.col-q-dir { min-width: 6em; white-space: nowrap; }
-.trial-table th.col-q-claim,
-.trial-table td.col-q-claim { min-width: 32em; }
-.trial-table th.col-q-strength,
-.trial-table td.col-q-strength { min-width: 7em; white-space: nowrap; }
-.trial-table th.col-q-popmatch,
-.trial-table td.col-q-popmatch { min-width: 22em; }
-.trial-table th.col-q-seat,
-.trial-table td.col-q-seat { min-width: 9em; white-space: nowrap; }
-.trial-table th.col-q-position,
-.trial-table td.col-q-position { min-width: 34em; }
-.trial-table th.col-q-carried,
-.trial-table td.col-q-carried { min-width: 8em; white-space: nowrap; }
-
 .persona {
   display: inline-block;
   padding: 0.05em 0.5em;
@@ -130,20 +90,9 @@ small.scenario-key { color: var(--ink-muted); }
 .persona-concensusite { background: #DDF1EE; color: #134E48; border-color: #B0DBD3; }
 .persona-advocate     { background: #FFE5EE; color: #6E1638; border-color: #F0BBCB; }
 .split-glyph { font-weight: 700; color: #5A4500; }
-/* not_recommended rows: mute, never strike through.
-   Strikethrough was applied to the whole <tr>, which struck the rationale
-   columns too — and on a rejected option the rationale is the most useful
-   text in the row, since it is what lets a reader stop considering it.
-   Muting carries the de-emphasis on its own; the badge below states the
-   verdict in words, so the signal does not rest on typography or colour
-   alone (both are invisible to a screen reader and to a monochrome print). */
 .not-recommended {
   color: var(--ink-muted);
-}
-.badge-not-recommended {
-  background: #FDECEA;
-  color: #8C2F22;
-  border-color: #F5C6C0;
+  text-decoration: line-through;
 }
 .scenario-conditional {
   display: inline-block;
@@ -233,20 +182,6 @@ h4 { margin-top: 1.25rem; margin-bottom: 0.25rem; font-size: 1rem; }
   margin-left: 0.35em;
   white-space: nowrap;
 }
-/* surfaced_reason flag pills (Experimental "Also considered" table). */
-.flag-badge {
-  display: inline-block;
-  font-size: 0.78em;
-  font-weight: 600;
-  border: 1px solid transparent;
-  border-radius: 999px;
-  padding: 0.02em 0.5em;
-  white-space: nowrap;
-}
-.flag-unavailable    { background: #ECEFF1; color: #37474F; border-color: #CFD8DC; }
-.flag-consolidated   { background: #E8EAF6; color: #303F9F; border-color: #C5CAE9; }
-.flag-thin           { background: #FFF8E1; color: #7A5B00; border-color: #F0E1B0; }
-.flag-not-enrollable { background: #F3E5F5; color: #6A1B7A; border-color: #E1BEE7; }
 footer.libby-footer {
   margin-top: 3rem;
   padding-top: 1rem;
@@ -312,7 +247,7 @@ consulting a qualified oncologist.
       <tbody>
     <tr><td><a href="#evidence-futibatinib">1</a></td><td><strong>Futibatinib (if FGFR2 fusion/rearrangement confirmed)</strong> <span class="scenario-conditional">(conditional on fgfr2_fusion positive)</span></td><td>Moderate-to-high in FGFR2-fusion disease: ORR 42%, mOS 21.7 mo (pmid:36652354), concordant in direction with FIGHT-202 and the selective agents.</td><td>Moderate (hyperphosphatemia 30% G3+, AST rise, stomatitis, fatigue)</td><td><strong>Low</strong> <span class="cpm-desc">(On-target FGFR inhibition; acquired kinase-domain resistance blunts durability but covalent binding delays escape.)</span></td><td><strong>The published, on-label FGFR2 anchor with a resistance-coverage edge for sequencing; response is a surrogate endpoint with no randomized comparator.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/36652354">PMID&nbsp;36652354</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/31109923">PMID&nbsp;31109923</a><br><a href="https://clinicaltrials.gov/study/NCT02052778">NCT02052778</a></td></tr>
     <tr><td><a href="#evidence-pemigatinib">2</a></td><td><strong>Pemigatinib (if FGFR2 fusion/rearrangement confirmed)</strong> <span class="scenario-conditional">(conditional on fgfr2_fusion positive)</span></td><td>Moderate in FGFR2-fusion disease: ORR 35.5% (pmid:32203698), concordant with futibatinib in direction; single-arm surrogate endpoint.</td><td>High (grade 3+ AE 64%; hyperphosphatemia 55%, retinal detachment, hypophosphatemia)</td><td><strong>Low</strong> <span class="cpm-desc">(On-target FGFR inhibition; FGFR1-driven hyperphosphatemia is on-mechanism; acquired resistance mutations blunt durability.)</span></td><td><strong>The longest-tenured FGFR2 option with the deepest safety record; edged below futibatinib on resistance-coverage sequencing, not on efficacy.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/32203698">PMID&nbsp;32203698</a><br><a href="https://clinicaltrials.gov/study/NCT02924376">NCT02924376</a></td></tr>
-    <tr class="split-glyph"><td><a href="#evidence-lirafugratinib">3</a></td><td><strong>Lirafugratinib (RLY-4008), FGFR2-selective, via the ReFocus cohort (if FGFR2 fusion/rearrangement confirmed)</strong> <span class="scenario-conditional">(conditional on fgfr2_fusion positive)</span></td><td>Moderate-to-high in FGFR2-fusion disease but low-certainty: ORR 46.5% (doi:10.1200/JCO.2026.44.2_suppl.476) is single-arm, abstract-only, pre-approval.</td><td>Moderate (palmar-plantar erythrodysesthesia 32.8% G3+, stomatitis 12.1%)</td><td><strong>Moderate</strong> <span class="cpm-desc">(FGFR2-selective on-target inhibition; critic and conservative dissented on evidence maturity and the 32.8% hand-foot burden, not a counter-productive mechanism per se.)</span></td><td><strong>The highest-ORR FGFR2 option and the best hyperphosphatemia profile, but abstract-only, pre-approval, and carrying a one-in-three grade-3 hand-foot rate.</strong></td><td>doi:10.1200/JCO.2026.44.2_suppl.476<br><a href="https://clinicaltrials.gov/study/NCT04526106">NCT04526106</a></td></tr>
+    <tr><td><a href="#evidence-lirafugratinib">3</a></td><td><strong>Lirafugratinib (RLY-4008), FGFR2-selective, via the ReFocus cohort (if FGFR2 fusion/rearrangement confirmed)</strong> <span class="scenario-conditional">(conditional on fgfr2_fusion positive)</span></td><td>Moderate-to-high in FGFR2-fusion disease but low-certainty: ORR 46.5% (doi:10.1200/JCO.2026.44.2_suppl.476) is single-arm, abstract-only, pre-approval.</td><td>Moderate (palmar-plantar erythrodysesthesia 32.8% G3+, stomatitis 12.1%)</td><td><strong>Moderate</strong> <span class="cpm-desc">(FGFR2-selective on-target inhibition; critic and conservative dissented on evidence maturity and the 32.8% hand-foot burden, not a counter-productive mechanism per se.)</span></td><td><strong>The highest-ORR FGFR2 option and the best hyperphosphatemia profile, but abstract-only, pre-approval, and carrying a one-in-three grade-3 hand-foot rate.</strong></td><td>doi:10.1200/JCO.2026.44.2_suppl.476<br><a href="https://clinicaltrials.gov/study/NCT04526106">NCT04526106</a></td></tr>
       </tbody>
     </table>
   </div>
@@ -353,7 +288,7 @@ consulting a qualified oncologist.
       <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
       <tbody>
     <tr><td><a href="#evidence-zanidatamab">1</a></td><td><strong>Zanidatamab (if HER2 IHC 3+ with reflex ISH confirmed)</strong> <span class="scenario-conditional">(conditional on erbb2_amp positive)</span></td><td>Moderate in HER2-positive disease: confirmed ORR 41.3%, mDoR 12.9 mo (pmid:37276871), single-arm pivotal cohort with no randomized comparator.</td><td>Low (diarrhea 5% G3, decreased ejection fraction 3% G3, infusion reactions)</td><td><strong>Low</strong> <span class="cpm-desc">(On-target HER2 blockade; no mechanism-level dissent — board tension was T-DXd&#x27;s ILD, resolved by ranking zanidatamab ahead.)</span></td><td><strong>The dedicated-trial HER2 lead, ranked above T-DXd on a 10.5% ILD signal with no pulmonary baseline on file; gated on IHC 3+ with reflex ISH.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37276871">PMID&nbsp;37276871</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/36914633">PMID&nbsp;36914633</a><br><a href="https://clinicaltrials.gov/study/NCT04466891">NCT04466891</a></td></tr>
-    <tr class="split-glyph"><td><a href="#evidence-trastuzumab-deruxtecan">2</a></td><td><strong>Trastuzumab deruxtecan (T-DXd) (if HER2 IHC 3+/expressing confirmed)</strong> <span class="scenario-conditional">(conditional on erbb2_amp positive)</span></td><td>High in IHC 3+ subgroup (ORR 56-61%) but low-certainty overall: full biliary-cohort ORR 22%, investigator-assessed (pmid:37870536), gated by ILD risk.</td><td>High (ILD/pneumonitis 10.5% with 3 treatment-related deaths; grade 3+ AE 40.8%)</td><td><strong>Moderate</strong> <span class="cpm-desc">(On-mechanism ILD/pneumonitis from the deruxtecan payload can cause fatal pulmonary injury, blunting the therapeutic goal in an unmonitored patient.)</span></td><td><strong>Competitive IHC 3+ activity held below zanidatamab on a 10.5% ILD signal with three deaths and no pulmonary baseline; re-entry needs an ILD-monitoring plan.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37870536">PMID&nbsp;37870536</a><br><a href="https://clinicaltrials.gov/study/NCT04482309">NCT04482309</a></td></tr>
+    <tr><td><a href="#evidence-trastuzumab-deruxtecan">2</a></td><td><strong>Trastuzumab deruxtecan (T-DXd) (if HER2 IHC 3+/expressing confirmed)</strong> <span class="scenario-conditional">(conditional on erbb2_amp positive)</span></td><td>High in IHC 3+ subgroup (ORR 56-61%) but low-certainty overall: full biliary-cohort ORR 22%, investigator-assessed (pmid:37870536), gated by ILD risk.</td><td>High (ILD/pneumonitis 10.5% with 3 treatment-related deaths; grade 3+ AE 40.8%)</td><td><strong>Moderate</strong> <span class="cpm-desc">(On-mechanism ILD/pneumonitis from the deruxtecan payload can cause fatal pulmonary injury, blunting the therapeutic goal in an unmonitored patient.)</span></td><td><strong>Competitive IHC 3+ activity held below zanidatamab on a 10.5% ILD signal with three deaths and no pulmonary baseline; re-entry needs an ILD-monitoring plan.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37870536">PMID&nbsp;37870536</a><br><a href="https://clinicaltrials.gov/study/NCT04482309">NCT04482309</a></td></tr>
       </tbody>
     </table>
   </div>
@@ -438,5 +373,5 @@ consulting a qualified oncologist.
   </div>
 </div>
 
-<footer class="libby-footer">Generated 2026-08-21 &middot; Libby &middot; <code>cca-mets-scope-unknown-z3p9</code></footer>
+<footer class="libby-footer">Generated 2026-07-10 &middot; Libby &middot; <code>cca-mets-scope-unknown-z3p9</code></footer>
 </body></html>

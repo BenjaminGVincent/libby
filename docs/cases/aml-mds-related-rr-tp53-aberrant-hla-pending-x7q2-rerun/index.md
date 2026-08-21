@@ -2,40 +2,18 @@
 
 # aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun
 
-<!-- libby:recs-summary:begin -->
-## Ranked options
-
-<div class="trial-table-wrap">
-  <div class="trial-scroll">
-    <table class="trial-table">
-      <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
-      <tbody>
-    <tr><td>1</td><td><strong>High-resolution HLA typing (A*02:01 / A*24:02) + HA-1/HA-2 genotyping of patient and sibling donor</strong><br><small class="persona-line"><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span> <span class="persona persona-advocate">advocate</span></small></td><td>Diagnostic gate, not a therapy: opens or closes the entire HLA-restricted axis; a negative allele call forecloses the rank-3 rec outright rather than downgrading it.</td><td>Low (none — diagnostic test on blood / archival record)</td><td><strong>N/A</strong></td><td><strong>The master switch for this run: every HLA-restricted option is stranded until allele-level typing and HA-1/HA-2 genotyping of patient and donor return.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT05473910">NCT05473910</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/31275297">PMID&nbsp;31275297</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/9820596">PMID&nbsp;9820596</a></td></tr>
-    <tr><td>2</td><td><strong>Iomab-B (131I-apamistamab) anti-CD45 radioimmunotherapy conditioning + second allo-HCT</strong><br><small class="persona-line"><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span> <span class="persona persona-advocate">advocate</span></small></td><td>Moderate: the only randomized signal in the dossier (SIERRA dCR 17.1% vs 0%, p&lt;0.0001), read indirectly onto a prior-HCT relapse it did not enroll.</td><td>High (grade 3+ TRAEs 59.7%, at parity with conventional care — conditioning cytopenias, infection, mucositis; second-transplant TRM uncharacterized)</td><td><strong>Low</strong> <span class="cpm-desc">(Radioconjugate marrow injury could compromise engraftment if the HCT2 platform is not secured; no mechanism objection raised.)</span></td><td><strong>The curative backbone all five personas endorsed — the randomized way to carry active disease into a second transplant, gated on a fitness workup that has not yet been done.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/39298738">PMID&nbsp;39298738</a><br><a href="https://clinicaltrials.gov/study/NCT02665065">NCT02665065</a><br><a href="https://clinicaltrials.gov/study/NCT07157514">NCT07157514</a></td></tr>
-    <tr><td>3</td><td><strong>HA-1-specific CD8+/CD4+ TCR-T (Bleakley platform; TSC-100 / BSB-1001)</strong> <span class="scenario-conditional">(conditional on hla_a0201 positive)</span><br><small class="persona-line"><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-critic">critic</span> <span class="persona persona-concensusite">concensusite</span> <span class="persona persona-advocate">advocate</span></small></td><td>Assuming A*02:01 + HA-1 mismatch confirm: uncertain but curative-intent — 4/9 CR in Krakow 2024 (n=9 feasibility, no comparator). Negative typing forecloses it.</td><td>Low (no CRS, no ICANS, no DLTs across n=9; lymphodepletion neutropenia and grade 3-5 infection; mild grade 1-2 GVHD)</td><td><strong>Low</strong> <span class="cpm-desc">(TCR-T kinetics may lag an 85%-blast marrow and antigen-loss escape is possible; lineage-restricted killing limits off-target collateral.)</span></td><td><strong>The only lever that answers the referral&#x27;s own question — a clean-safety, curative-intent graft-versus-leukemia consolidation, live only if the pending typing confirms and delivered after HCT2.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/38683966">PMID&nbsp;38683966</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/29051183">PMID&nbsp;29051183</a><br><a href="https://clinicaltrials.gov/study/NCT03326921">NCT03326921</a></td></tr>
-    <tr class="split-glyph"><td>4</td><td><strong>Tagraxofusp (SL-401, CD123-directed IL-3/diphtheria-toxin fusion)</strong><br><small class="persona-line"><em>endorse:</em> <span class="persona persona-conservative">conservative</span></small></td><td>Low-to-uncertain for AML: headline 72% CR is first-line BPDCN cross-tumor (Pemmaraju 2019); no AML efficacy data and CD123 density still pending.</td><td>High (capillary leak syndrome with treatment-related deaths, transaminitis ALT 64% / AST 60%, hypoalbuminemia 55%)</td><td><strong>Low</strong> <span class="cpm-desc">(No mechanistic antagonism; the efficacy risk is cross-tumor non-transfer from BPDCN, and on-target killing of normal CD34+CD123+ progenitors adds myelosuppression.)</span></td><td><strong>The only labeled CD123 agent with a real safety algorithm, but its headline efficacy is BPDCN cross-tumor and its capillary-leak deaths demand organ-function labs first.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/31018069">PMID&nbsp;31018069</a><br><a href="https://clinicaltrials.gov/study/NCT06561152">NCT06561152</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/29773600">PMID&nbsp;29773600</a></td></tr>
-    <tr class="split-glyph"><td>5</td><td><strong>Multiantigen leukemia-specific donor T cells (PRAME/WT1/Survivin/NY-ESO-1)</strong></td><td>Low-to-modest: 2/8 objective responses in active disease (Lulla 2021); hits WT1/PRAME without a single-HLA gate, but WT1/PRAME expression unconfirmed.</td><td>Low (no grade &gt;2 acute GVHD, no extensive chronic GVHD across n=25)</td><td><strong>Low</strong> <span class="cpm-desc">(Multi-antigen targeting limits single-antigen escape; no mechanism that blunts the goal.)</span></td><td><strong>A multi-antigen donor T-cell hedge that sidesteps the A*02:01 gate and is enrollable post-transplant — but published activity is modest and WT1/PRAME expression is still to confirm.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/33270816">PMID&nbsp;33270816</a><br><a href="https://clinicaltrials.gov/study/NCT02203903">NCT02203903</a></td></tr>
-    <tr class="not-recommended"><td>6</td><td><strong>Pivekimab sunirine (IMGN632, CD123 ADC)</strong> <span class="flag-badge badge-not-recommended">Not recommended</span><br><small class="persona-line"><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-advocate">advocate</span></small><br><small class="persona-line"><em>veto:</em> <span class="persona persona-conservative">conservative</span></small></td><td>Moderate as debulking: own R/R AML data (ORR 21%, 95% CI 8-40; cCR 17%), but single-agent depth is modest against an 85%-blast marrow.</td><td>High (veno-occlusive disease at higher doses, one treatment-related death; RP2D febrile neutropenia 10%, infusion reactions 7%)</td><td><strong>High</strong> <span class="cpm-desc">(Veno-occlusive disease from the ADC ahead of HCT2 could sink the very transplant the debulking is meant to enable.)</span></td><td><strong>The CD123 ADC with the best own-disease data, held under a live, conditional VOD veto — it reinstates as a debulking bridge the moment hepatic and albumin baselines clear it.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/38423051">PMID&nbsp;38423051</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/29661755">PMID&nbsp;29661755</a><br><a href="https://clinicaltrials.gov/study/NCT03386513">NCT03386513</a></td></tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-
-Full table, including options surfaced but not ranked: [Recommendations](recommendations.md). Per-rank reasoning is below.
-<!-- libby:recs-summary:end -->
-
 <!-- libby:case-output:begin -->
 
 ## Case output
 
-- [Target validation paths (PDF)](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-target-validation.pdf?v=35903bc5) — diagnostic + biomarker workup that hardens the targetable-feature call
-- [Recommendations table (HTML)](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-recommendations.html?v=137e05ce) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
+- [Target validation paths (PDF)](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-target-validation.pdf?v=f0c4a07a) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Recommendations table (HTML)](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-recommendations.html?v=51adfe7c) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
 - [Standard of care options (HTML)](standard_of_care.md?v=96179190) — approved and guideline-endorsed strategies for this patient's situation, assessed for eligibility and for how they sequence against the targeted options, sortable in-browser
 - [Access guide (HTML)](accessibility.md?v=7f6153c3) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, sortable in-browser
-- [Access guide (offline HTML)](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-accessibility.html?v=d78ce3bd) — same access-guide content as the in-browser page, packaged as a self-contained HTML that opens offline
+- [Access guide (offline HTML)](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-accessibility.html?v=225206a4) — same access-guide content as the in-browser page, packaged as a self-contained HTML that opens offline
 - [Master manuscripts table (HTML)](manuscripts.md?v=9f990a30) — every paper considered — n, effect, variance, toxicities, sortable in-browser
-- [Master manuscripts table (offline HTML)](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-manuscripts.html?v=1d3a607e) — same manuscripts inventory as the in-browser page, packaged as a self-contained HTML that opens offline
-- [Patient/caregiver PDF](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-plain-language.pdf?v=0251e031) — plain-language summary
+- [Master manuscripts table (offline HTML)](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-manuscripts.html?v=50140229) — same manuscripts inventory as the in-browser page, packaged as a self-contained HTML that opens offline
+- [Patient/caregiver PDF](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-plain-language.pdf?v=71f503e9) — plain-language summary
 
 <!-- libby:case-output:end -->
 ## Research question
@@ -482,22 +460,22 @@ Re-run 2026-07-25 by the PI agent under the two-table contract, from a complete,
 ### HTML
 
 - [Target validation paths](target_validation.md?v=be6593c4) — per-feature biomarker-workup table with providers and references, sortable in-browser
-- [Recommendations table](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-recommendations.html?v=137e05ce) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
+- [Recommendations table](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-recommendations.html?v=51adfe7c) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
 - [Standard of care options](standard_of_care.md?v=96179190) — approved and guideline-endorsed strategies for this patient's situation, assessed for eligibility and sequencing, in a sortable in-browser table
 - [Standard of care options (offline)](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-standard-of-care.html?v=6e506108) — same standard-of-care assessment packaged as a self-contained HTML that opens offline
 - [Access guide](accessibility.md?v=7f6153c3) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table
-- [Access guide (offline)](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-accessibility.html?v=d78ce3bd) — same access-guide content packaged as a self-contained HTML that opens offline
+- [Access guide (offline)](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-accessibility.html?v=225206a4) — same access-guide content packaged as a self-contained HTML that opens offline
 - [Master manuscripts table](manuscripts.md?v=9f990a30) — every paper considered — n, effect, variance, toxicities, in a sortable in-browser table
-- [Master manuscripts table (offline)](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-manuscripts.html?v=1d3a607e) — same manuscripts inventory packaged as a self-contained HTML that opens offline
+- [Master manuscripts table (offline)](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-manuscripts.html?v=50140229) — same manuscripts inventory packaged as a self-contained HTML that opens offline
 
 ### PDF
 
-- [Target validation paths](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-target-validation.pdf?v=35903bc5) — diagnostic + biomarker workup that hardens the targetable-feature call
-- [Recommendations table](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-recommendations.pdf?v=5a71de0a) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
+- [Target validation paths](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-target-validation.pdf?v=f0c4a07a) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Recommendations table](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-recommendations.pdf?v=b38fb10d) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
 - [Standard of care options](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-standard-of-care.pdf?v=c1ce9c17) — approved and guideline-endorsed strategies, their eligibility fit, and how they sequence against the targeted options, in a print-friendly PDF
-- [Access guide](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-accessibility.pdf?v=9b591c49) — trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF
-- [Master manuscripts table](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-manuscripts.pdf?v=b44c6b68) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
-- [Patient/caregiver PDF](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-plain-language.pdf?v=0251e031) — plain-language summary
+- [Access guide](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-accessibility.pdf?v=fb8ff672) — trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF
+- [Master manuscripts table](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-manuscripts.pdf?v=6b9854a6) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
+- [Patient/caregiver PDF](aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun-plain-language.pdf?v=71f503e9) — plain-language summary
 
 <!-- libby:downloads:end -->
 

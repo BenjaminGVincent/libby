@@ -3604,89 +3604,6 @@ def _case_output_section(slug: str, case_docs: Path) -> str:
     return "\n".join(lines)
 
 
-_RX_RECS_SUMMARY_BLOCK = re.compile(
-    r"<!-- libby:recs-summary:begin -->.*?<!-- libby:recs-summary:end -->\n?",
-    re.DOTALL,
-)
-
-
-def _recs_summary_section(slug: str) -> str:
-    """The ranked options table, rendered for the top of the case page.
-
-    The PI authors index.md as prose: profile, preferences, target validation,
-    then per-rank sections. On a real case that puts the ranking roughly two
-    hundred lines down, so a reader lands on the page and sees everything except
-    the recommendations. This block lifts the ranked table to the top.
-
-    Reuses build_recommendations.render_recs_table so the table is the same one
-    the dedicated page shows rather than a second implementation that can drift.
-    """
-    rows_path = REPO_ROOT / "data" / "cases" / slug / "recommendations.jsonl"
-    if not rows_path.exists():
-        return ""
-    try:
-        import build_recommendations as brecs
-    except ImportError:  # pragma: no cover
-        return ""
-
-    rows = []
-    for line in rows_path.read_text("utf-8").splitlines():
-        line = line.strip()
-        if line:
-            try:
-                rows.append(json.loads(line))
-            except json.JSONDecodeError:
-                continue
-    ranked = [r for r in rows if r.get("rank") is not None and not brecs._is_surfaced_only(r)]
-    if not ranked:
-        return ""
-    ranked.sort(key=lambda r: r.get("rank", 999))
-
-    table = brecs.render_recs_table(ranked)
-    return (
-        "<!-- libby:recs-summary:begin -->\n"
-        "## Ranked options\n\n"
-        f"{table}\n"
-        f"Full table, including options surfaced but not ranked: "
-        f"[Recommendations](recommendations.md). "
-        f"Per-rank reasoning is below.\n"
-        "<!-- libby:recs-summary:end -->\n\n"
-    )
-
-
-def _inject_recs_summary(index_path: Path, slug: str) -> bool:
-    """Put the ranked table at the very top of the case page, above Case output.
-
-    Idempotent and marker-delimited, same contract as the other injectors: a
-    re-run replaces the block in place, and if the case has no ranked rows any
-    pre-existing block is stripped rather than left stale.
-    """
-    text = index_path.read_text(encoding="utf-8")
-    block = _recs_summary_section(slug)
-
-    if _RX_RECS_SUMMARY_BLOCK.search(text):
-        if not block:
-            new_text = _RX_RECS_SUMMARY_BLOCK.sub("", text)
-            new_text = re.sub(r"\n{3,}", "\n\n", new_text)
-        else:
-            new_text = _RX_RECS_SUMMARY_BLOCK.sub(block.rstrip("\n"), text)
-    elif block:
-        # Above the case-output block when present, else above the first H2, so
-        # the ranking is the first thing under the page title either way.
-        m = _RX_CASE_OUTPUT_BLOCK.search(text) or _RX_FIRST_H2.search(text)
-        if m:
-            new_text = text[: m.start()] + block + text[m.start() :]
-        else:
-            new_text = text.rstrip() + "\n\n" + block + "\n"
-    else:
-        return False
-
-    if new_text == text:
-        return False
-    index_path.write_text(new_text, encoding="utf-8")
-    return True
-
-
 def _inject_case_output(index_path: Path, slug: str, case_docs: Path) -> bool:
     """Idempotently insert/refresh the Case Output section at the top of index.md.
 
@@ -4161,12 +4078,6 @@ def main(argv: list[str]) -> int:
 
     if _inject_downloads(index_path, slug, case_docs):
         print(f"patched {index_path.relative_to(REPO_ROOT)} — downloads section")
-
-    # Last, so it lands above the case-output block this run may have just
-    # inserted. The ranking is what a reader came for; it should be the first
-    # thing under the page title rather than two hundred lines down.
-    if _inject_recs_summary(index_path, slug):
-        print(f"patched {index_path.relative_to(REPO_ROOT)} — ranked options at top")
 
     return 0
 
