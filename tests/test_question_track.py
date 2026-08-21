@@ -302,3 +302,70 @@ def test_schema_requires_at_least_one_acceptance_criterion():
     reasoning, so an empty list must not validate."""
     with pytest.raises(jsonschema.ValidationError):
         jsonschema.validate(_question(acceptance_criteria=[]), _schema("question"))
+
+
+# ------------------------------------------------------------ candidates table
+
+
+def _candidate(**over):
+    c = {
+        "rank": 1,
+        "label": "CLAG-GO (NCT04050280)",
+        "response_rate": {"value": "58%", "endpoint": "CR (true)", "n": "66/114",
+                          "ci": None, "population_match": "pre-venetoclax, no post-allo subgroup"},
+        "toxicity": {"summary": "High (45% severe infection, 7% early death)",
+                     "key_rates": [], "population_match": None},
+        "deliverable": "trial_only",
+        "references": ["pmid:18076637", "NCT04050280"],
+        "notes": None,
+    }
+    c.update(over)
+    return c
+
+
+def test_candidates_table_renders_on_a_negative_verdict():
+    """The evidence behind a 'no' is what the reader needs most. Dropping the
+    table because the answer was unfavourable hides the reasoning."""
+    ans = _answer(verdict="no", candidates=[_candidate()],
+                  ranking_basis="eligibility and population match, not demonstrated CR probability")
+    html = bq.render_candidates_table(ans)
+    assert "CLAG-GO" in html
+    assert "58%" in html and "CR (true)" in html
+    assert "45% severe infection" in html
+    assert "18076637" in html
+    page = bq.render_page("q-demo", _question(), ans, "")
+    assert "Candidates assessed" in page
+
+
+def test_candidate_rate_must_carry_its_endpoint():
+    """A composite rate is not a CR rate."""
+    bad = _candidate(response_rate={"value": "75%", "endpoint": None, "n": "41/55",
+                                    "ci": None, "population_match": None})
+    with pytest.raises(SystemExit):
+        bq.preflight(_question(), _answer(candidates=[bad], ranking_basis="magnitude"), "")
+
+
+def test_ranked_candidates_require_a_stated_basis():
+    with pytest.raises(SystemExit):
+        bq.preflight(_question(), _answer(candidates=[_candidate()], ranking_basis=""), "")
+
+
+def test_ranking_basis_required_by_schema_when_candidates_exist():
+    with pytest.raises(jsonschema.ValidationError):
+        jsonschema.validate(_answer(candidates=[_candidate()]), _schema("question_answer"))
+    jsonschema.validate(
+        _answer(candidates=[_candidate()], ranking_basis="eligibility and population match"),
+        _schema("question_answer"),
+    )
+
+
+def test_deliverability_is_visible_in_the_table():
+    """The best-evidenced candidate is often the one with no route."""
+    ans = _answer(candidates=[_candidate(deliverable="no", label="Lintuzumab-Ac225 + CLAG-M")],
+                  ranking_basis="mechanism fit")
+    html = bq.render_candidates_table(ans)
+    assert "Not deliverable" in html
+
+
+def test_no_candidates_means_no_table():
+    assert bq.render_candidates_table(_answer()) == ""

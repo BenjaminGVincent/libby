@@ -84,6 +84,96 @@ def verdict_badge(ans: dict) -> str:
     return f'<span class="flag-badge {cls}">{html.escape(label)}</span>{conf_txt}'
 
 
+DELIVERABLE_LABEL = {
+    "yes": ("Available", "fit-strong"),
+    "trial_only": ("Trial only", "fit-partial"),
+    "off_label": ("Off-label", "fit-partial"),
+    "expanded_access": ("Expanded access", "fit-partial"),
+    "no": ("Not deliverable", "fit-none"),
+}
+
+
+def render_candidates_table(ans: dict) -> str:
+    """The evidence behind the verdict, one row per candidate assessed.
+
+    Rendered even when the verdict is negative. A reader who is told "no" needs
+    the response rates, toxicity and references that produced it, and dropping
+    the table because the answer was unfavourable hides the reasoning.
+
+    The response-rate column always prints the endpoint next to the number,
+    because a composite rate is not a CR rate and a table that blurs them
+    invites comparison of different endpoints as if they were one.
+    """
+    rows = ans.get("candidates") or []
+    if not rows:
+        return ""
+    basis = (ans.get("ranking_basis") or "").strip()
+
+    out = []
+    for c in sorted(rows, key=lambda r: r.get("rank", 999)):
+        rr = c.get("response_rate") or {}
+        bits = [f"<strong>{fmt(rr.get('value'))}</strong>"]
+        if rr.get("endpoint"):
+            bits.append(f'<br><small class="persona-line">{fmt(rr["endpoint"])}</small>')
+        if rr.get("n"):
+            bits.append(f'<br><small>{fmt(rr["n"])}</small>')
+        if rr.get("ci"):
+            bits.append(f'<br><small>95% CI {fmt(rr["ci"])}</small>')
+        if rr.get("population_match"):
+            bits.append(f'<br><small class="persona-line"><em>{fmt(rr["population_match"])}</em></small>')
+        rate_cell = "".join(bits)
+
+        tox = c.get("toxicity") or {}
+        tox_cell = fmt(tox.get("summary"))
+        if tox.get("population_match"):
+            tox_cell += f'<br><small class="persona-line"><em>{fmt(tox["population_match"])}</em></small>'
+
+        dlabel, dcls = DELIVERABLE_LABEL.get(c.get("deliverable", ""), ("&mdash;", "fit-weak"))
+        out.append(
+            "<tr>"
+            f"<td>{c.get('rank', '&mdash;')}</td>"
+            f"<td><strong>{fmt(c.get('label'))}</strong>"
+            + (f'<br><small class="persona-line">{fmt(c["notes"])}</small>' if c.get("notes") else "")
+            + "</td>"
+            f"<td>{rate_cell}</td>"
+            f"<td>{tox_cell}</td>"
+            f'<td><span class="fit-badge {dcls}">{dlabel}</span></td>'
+            f"<td>{references_cell(c.get('references'))}</td>"
+            "</tr>"
+        )
+
+    head = (
+        "<tr><th>Rank</th><th>Candidate</th><th>Response rate</th>"
+        "<th>Toxicity</th><th>Available to her</th><th>Key references</th></tr>"
+    )
+    basis_line = (
+        f'\n!!! note "What this ranking orders by"\n    {basis}\n\n'
+        if basis else "\n"
+    )
+    return (
+        "## Candidates assessed\n"
+        + basis_line
+        + '<table class="trial-table"><thead>' + head + "</thead><tbody>"
+        + "".join(out) + "</tbody></table>\n"
+    )
+
+
+def references_cell(refs) -> str:
+    if not refs:
+        return "&mdash;"
+    links = []
+    for r in refs:
+        r = str(r)
+        if r.lower().startswith("pmid:"):
+            pid = r.split(":", 1)[1]
+            links.append(f'<a href="https://pubmed.ncbi.nlm.nih.gov/{html.escape(pid)}">PMID&nbsp;{html.escape(pid)}</a>')
+        elif r.upper().startswith("NCT"):
+            links.append(f'<a href="https://clinicaltrials.gov/study/{html.escape(r)}">{html.escape(r)}</a>')
+        else:
+            links.append(html.escape(r))
+    return "<br>".join(links)
+
+
 def render_criteria_table(q: dict, ans: dict) -> str:
     """Pre-registered criteria against what was found.
 
@@ -242,6 +332,7 @@ def render_page(slug: str, q: dict, ans: dict, narrative: str = "",
 
     parts.append("\n" + (ans.get("answer") or "") + "\n")
 
+    parts.append("\n" + render_candidates_table(ans))
     parts.append("\n" + render_criteria_table(q, ans))
     parts.append("\n" + render_evidence_table(ans))
 
@@ -280,6 +371,23 @@ def preflight(q: dict, ans: dict, narrative: str = "") -> None:
 
     if not (ans.get("scope_caveat") or "").strip():
         problems.append("scope_caveat is empty — a narrow answer will read as a broad clearance")
+
+    # A ranked candidate table whose ordering axis is unstated will be read as
+    # ordering by the endpoint in the page heading, which is the failure this
+    # column exists to prevent.
+    cands = ans.get("candidates") or []
+    if cands and not (ans.get("ranking_basis") or "").strip():
+        problems.append(
+            "candidates are ranked but ranking_basis is empty — the table will be read as "
+            "ordering by the question's endpoint whether or not it does"
+        )
+    for c in cands:
+        rr = c.get("response_rate") or {}
+        if rr.get("value") and not rr.get("endpoint"):
+            problems.append(
+                f"candidate '{c.get('label')}' reports a rate with no endpoint — "
+                "a composite rate is not a CR rate and the table must say which it is"
+            )
 
     shape = ans.get("answer_shape_used") or q.get("answer_shape")
     if shape == "verdict_plus_ranked_options" and not ans.get("notes"):

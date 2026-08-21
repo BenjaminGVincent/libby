@@ -38,11 +38,41 @@ The five personas argued. Record what they said in `board_dissent`, and set `car
 
 If the board was genuinely unanimous, say so explicitly in the array rather than leaving it empty — an empty array reads as "not checked."
 
+## The candidates table is not optional
+
+Whenever the run surfaced therapies or strategies, you write `candidates[]` — one row per
+candidate assessed, ranked, each carrying its **response rate, toxicity, deliverability and
+references**. You write it **even when the verdict is `no` or `insufficient_evidence`.**
+
+That is the point most easily got wrong. A reader told "no" needs to see the rates and the
+toxicity that produced the "no"; dropping the table because the answer was unfavourable hides
+the reasoning and leaves an assertion in its place. The table is evidence display, not a
+prescription — which is what distinguishes it from `recommendations.jsonl`.
+
+Three rules govern it:
+
+- **Every rate carries its endpoint.** `response_rate.endpoint` states exactly what the number
+  measures: CR, CRi, CRh, MLFS, CRc/composite, ORR. A composite rate is not a CR rate, and a
+  table that blurs them invites a reader to compare different endpoints as if they were one.
+  The renderer refuses a rate with no endpoint.
+- **`population_match` is where an imported number is exposed as imported.** A strong rate from
+  a population the patient is excluded from belongs in the table with that fact next to it, not
+  omitted and not silently promoted.
+- **`deliverable` is its own column** because the best-evidenced candidate is often the one with
+  no route. That is a finding, and the column makes it visible at a glance rather than buried in
+  prose.
+
+`ranking_basis` is required whenever candidates exist, and it says what the order means:
+"demonstrated CR probability", "eligibility and population match", "deliverability". **When the
+evidence cannot order by the endpoint the question asks, say so there — do not drop the table.**
+The fix for a ranking that cannot mean what its heading implies is to label the axis honestly,
+not to withhold the evidence. The renderer refuses ranked candidates with no stated basis.
+
 ## Answer shape
 
 `question.json::answer_shape` is the framer's initial read. You may **downgrade** it and you may not upgrade it.
 
-Downgrade `verdict_plus_ranked_options` to `verdict` whenever the evidence does not support a ranking, and explain why in `notes`. An unnecessary ranked table is worse than an absent one, because a ranking implies a completeness the run does not have — a question run screened one question, not the therapeutic landscape.
+Downgrade `verdict_plus_ranked_options` to `verdict` whenever the evidence does not support *prescribing* among options, and explain why in `notes`. Note what this does and does not affect: it governs whether you write `recommendations.jsonl`, the prescriptive two-table artifact. It does **not** remove the `candidates[]` evidence table, which you write either way. Downgrading means "the evidence does not support a recommendation", never "the reader does not get to see the numbers".
 
 When you do produce `recommendations.jsonl`, it follows the normal two-table contract exactly: the Experimental table only, standard-of-care routed out, `surfaced_reason` on non-top-tier rows. But `question_answer.json` still leads the page, because the ranking answers a narrower question than the one that was asked.
 

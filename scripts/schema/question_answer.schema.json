@@ -222,6 +222,150 @@
         "string",
         "null"
       ]
+    },
+    "candidates": {
+      "type": "array",
+      "description": "The therapies or strategies the run actually assessed, ranked, with the evidence that decided the verdict shown per row. This table is written whenever the run surfaced candidates, INCLUDING when the verdict is 'no' or 'insufficient_evidence' \u2014 the evidence is what a reader needs in order to see why, and omitting it because the answer was negative hides the reasoning. It is distinct from recommendations.jsonl, which is written only when the run is prescribing among options under the two-table contract; this array is evidence display, not a prescription.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "rank",
+          "label",
+          "response_rate",
+          "toxicity",
+          "deliverable"
+        ],
+        "properties": {
+          "rank": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "label": {
+            "type": "string"
+          },
+          "response_rate": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "value",
+              "endpoint"
+            ],
+            "properties": {
+              "value": {
+                "type": "string",
+                "description": "The rate as reported, e.g. '58%' or '5/33 (15%)'. Use the source's own figure; do not recompute silently."
+              },
+              "endpoint": {
+                "type": "string",
+                "description": "EXACTLY what the rate measures \u2014 CR, CRi, CRh, MLFS, CRc/composite, ORR. Required because a composite rate is not a CR rate, and a table that blurs them invites a reader to compare different endpoints as if they were one."
+              },
+              "n": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Denominator, e.g. '66/118' or 'n=26'."
+              },
+              "ci": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Confidence interval where reported or computable."
+              },
+              "population_match": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "How the source population differs from this patient on the axes that matter. This is where an imported rate is exposed as imported."
+              }
+            }
+          },
+          "toxicity": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "summary"
+            ],
+            "properties": {
+              "summary": {
+                "type": "string",
+                "description": "Tier plus the 2-4 rates that matter, e.g. 'High (21% 60-day mortality, 76% G3+ febrile neutropenia)'."
+              },
+              "key_rates": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "population_match": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          },
+          "deliverable": {
+            "type": "string",
+            "enum": [
+              "yes",
+              "trial_only",
+              "off_label",
+              "expanded_access",
+              "no"
+            ],
+            "description": "Whether she can actually receive it now. A candidate with the best evidence and no route is a finding, not a recommendation, and this column is what makes that visible at a glance."
+          },
+          "references": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "notes": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "ranking_basis": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "What the candidate ranking orders by, stated plainly \u2014 'demonstrated CR probability', 'eligibility and population match', 'deliverability', and so on. REQUIRED whenever candidates are present. When the evidence cannot order by the endpoint the question asks, say so here rather than dropping the table: the fix for a ranking that cannot mean what its heading implies is to label the axis, not to hide the evidence."
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "candidates": {
+            "type": "array",
+            "minItems": 1
+          }
+        },
+        "required": [
+          "candidates"
+        ]
+      },
+      "then": {
+        "required": [
+          "ranking_basis"
+        ],
+        "properties": {
+          "ranking_basis": {
+            "type": "string",
+            "minLength": 8
+          }
+        }
+      }
+    }
+  ]
 }

@@ -140,7 +140,7 @@ ONCOLOGY_ACRONYM_ALLOWLIST = frozenset({
     # because every token in a pair must be allowlisted for it to be cleared.
     # AML salvage vocabulary surfaced by the first question-scoped run: trial
     # families ("ASAP, RELAX") and regimen shorthands ("FLAI, HDAC").
-    "ASAP", "RELAX", "FLAI", "HDAC", "MIRROS", "SIERRA", "FLAMSA",
+    "ASAP", "RELAX", "FLAI", "HDAC", "MIRROS", "SIERRA", "FLAMSA", "HAM", "MEC",
     "PDAC", "NAPOLI", "SPOTLIGHT", "GLOW", "GLEAM", "PYNNACLE",
     "ADCC", "CDC", "ADC", "MMAE", "KEYTRUDA", "MK",
     "ELI", "FG", "HPAF", "HPAC", "CLDN", "VYLOY", "VENTANA",
