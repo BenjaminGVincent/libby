@@ -275,6 +275,18 @@ def test_page_leads_with_verdict_and_carries_scope():
     assert "Only PARP maintenance was assessed." in page
 
 
+def test_candidates_table_precedes_the_prose():
+    """A reader comes to a question report for the options and their numbers.
+    The verdict is one line at the top; the table follows it, and the narrative
+    explains the table rather than delaying it."""
+    ans = _answer(candidates=[_candidate()], ranking_basis="eligibility and population match")
+    page = bq.render_page("q-demo", _question(), ans, "Narrative here.")
+    assert page.index("Candidates assessed") < page.index("Narrative here.")
+    assert page.index("Insufficient evidence") < page.index("Candidates assessed")
+    # The basis caveat travels with the table, so the table is never stranded.
+    assert page.index("What this ranking orders by") < page.index("Narrative here.")
+
+
 # --------------------------------------------------------------------- schemas
 
 

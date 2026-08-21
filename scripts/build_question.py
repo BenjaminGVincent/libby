@@ -342,12 +342,18 @@ def render_page(slug: str, q: dict, ans: dict, narrative: str = "",
     else:
         parts.append("\nThis is a standalone question: it is not anchored to a patient case.\n")
 
+    # The ranked table leads. A reader arrives at a question report wanting the
+    # options and their numbers, and burying that under several paragraphs of
+    # prose makes them scroll for the thing they came for. The narrative and the
+    # answer follow it and explain it; the ranking_basis callout travels with the
+    # table itself, so the table is not stranded without its caveat.
+    parts.append("\n" + render_candidates_table(ans))
+
     if narrative:
         parts.append("\n" + narrative + "\n")
 
     parts.append("\n" + (ans.get("answer") or "") + "\n")
 
-    parts.append("\n" + render_candidates_table(ans))
     parts.append("\n" + render_criteria_table(q, ans))
     parts.append("\n" + render_evidence_table(ans))
 
