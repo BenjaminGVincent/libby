@@ -2,17 +2,36 @@
 
 # `demo-nsclc-egfr-l858r-post-osi-d3m0`
 
+<!-- libby:recs-summary:begin -->
+## Ranked options
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr><td>1</td><td><strong>savolitinib + osimertinib (preferably on SAFFRON / SACHI)</strong><br><small class="persona-line"><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-critic">critic</span> <span class="persona persona-advocate">advocate</span></small></td><td>—</td><td>—</td><td>—</td><td>—</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/32679432">PMID&nbsp;32679432</a><br><a href="https://clinicaltrials.gov/study/NCT05261399">NCT05261399</a></td></tr>
+    <tr class="split-glyph"><td>2</td><td><strong>amivantamab + lazertinib</strong><br><small class="persona-line"><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span> <span class="persona persona-concensusite">concensusite</span></small><br><small class="persona-line"><em>dissent:</em> <span class="persona persona-critic">critic</span> <span class="persona persona-advocate">advocate</span></small><br><small class="persona-line"><em>veto:</em> <span class="persona persona-conservative">conservative</span></small></td><td>—</td><td>—</td><td>—</td><td>—</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/36720074">PMID&nbsp;36720074</a></td></tr>
+    <tr class="split-glyph"><td>3</td><td><strong>patritumab deruxtecan (HER3-DXd)</strong><br><small class="persona-line"><em>endorse:</em> <span class="persona persona-risktaker">risktaker</span></small></td><td>—</td><td>—</td><td>—</td><td>—</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37563559">PMID&nbsp;37563559</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+Full table, including options surfaced but not ranked: [Recommendations](recommendations.md). Per-rank reasoning is below.
+<!-- libby:recs-summary:end -->
+
 <!-- libby:case-output:begin -->
 
 ## Case output
 
-- [Target validation paths (PDF)](demo-nsclc-egfr-l858r-post-osi-d3m0-target-validation.pdf?v=e5ac38b3) — diagnostic + biomarker workup that hardens the targetable-feature call
-- [Recommendations table (HTML)](demo-nsclc-egfr-l858r-post-osi-d3m0-recommendations.html?v=60a21ba9) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
+- [Target validation paths (PDF)](demo-nsclc-egfr-l858r-post-osi-d3m0-target-validation.pdf?v=86ef0e9d) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Recommendations table (HTML)](demo-nsclc-egfr-l858r-post-osi-d3m0-recommendations.html?v=b23d1d9b) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
 - [Access guide (HTML)](accessibility.md?v=a9b23b43) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, sortable in-browser
-- [Access guide (offline HTML)](demo-nsclc-egfr-l858r-post-osi-d3m0-accessibility.html?v=878fa5c7) — same access-guide content as the in-browser page, packaged as a self-contained HTML that opens offline
-- [Master manuscripts table (HTML)](manuscripts.md?v=46cdbd66) — every paper considered — n, effect, variance, toxicities, sortable in-browser
-- [Master manuscripts table (offline HTML)](demo-nsclc-egfr-l858r-post-osi-d3m0-manuscripts.html?v=1fc936ef) — same manuscripts inventory as the in-browser page, packaged as a self-contained HTML that opens offline
-- [Patient/caregiver PDF](demo-nsclc-egfr-l858r-post-osi-d3m0-plain-language.pdf?v=16c32a0a) — plain-language summary
+- [Access guide (offline HTML)](demo-nsclc-egfr-l858r-post-osi-d3m0-accessibility.html?v=3b819e3b) — same access-guide content as the in-browser page, packaged as a self-contained HTML that opens offline
+- [Master manuscripts table (HTML)](manuscripts.md?v=07f9c519) — every paper considered — n, effect, variance, toxicities, sortable in-browser
+- [Master manuscripts table (offline HTML)](demo-nsclc-egfr-l858r-post-osi-d3m0-manuscripts.html?v=0b0b7a35) — same manuscripts inventory as the in-browser page, packaged as a self-contained HTML that opens offline
+- [Patient/caregiver PDF](demo-nsclc-egfr-l858r-post-osi-d3m0-plain-language.pdf?v=82386852) — plain-language summary
 
 <!-- libby:case-output:end -->
 ## Research question
@@ -316,18 +335,18 @@ This is a demo case authored in May 2026 with synthetic data so the pipeline can
 ### HTML
 
 - [Target validation paths](target_validation.md?v=c8af7f62) — per-feature biomarker-workup table with providers and references, sortable in-browser
-- [Recommendations table](demo-nsclc-egfr-l858r-post-osi-d3m0-recommendations.html?v=60a21ba9) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
+- [Recommendations table](demo-nsclc-egfr-l858r-post-osi-d3m0-recommendations.html?v=b23d1d9b) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
 - [Access guide](accessibility.md?v=a9b23b43) — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table
-- [Access guide (offline)](demo-nsclc-egfr-l858r-post-osi-d3m0-accessibility.html?v=878fa5c7) — same access-guide content packaged as a self-contained HTML that opens offline
-- [Master manuscripts table](manuscripts.md?v=46cdbd66) — every paper considered — n, effect, variance, toxicities, in a sortable in-browser table
-- [Master manuscripts table (offline)](demo-nsclc-egfr-l858r-post-osi-d3m0-manuscripts.html?v=1fc936ef) — same manuscripts inventory packaged as a self-contained HTML that opens offline
+- [Access guide (offline)](demo-nsclc-egfr-l858r-post-osi-d3m0-accessibility.html?v=3b819e3b) — same access-guide content packaged as a self-contained HTML that opens offline
+- [Master manuscripts table](manuscripts.md?v=07f9c519) — every paper considered — n, effect, variance, toxicities, in a sortable in-browser table
+- [Master manuscripts table (offline)](demo-nsclc-egfr-l858r-post-osi-d3m0-manuscripts.html?v=0b0b7a35) — same manuscripts inventory packaged as a self-contained HTML that opens offline
 
 ### PDF
 
-- [Target validation paths](demo-nsclc-egfr-l858r-post-osi-d3m0-target-validation.pdf?v=e5ac38b3) — diagnostic + biomarker workup that hardens the targetable-feature call
-- [Recommendations table](demo-nsclc-egfr-l858r-post-osi-d3m0-recommendations.pdf?v=0a1fb112) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
-- [Master manuscripts table](demo-nsclc-egfr-l858r-post-osi-d3m0-manuscripts.pdf?v=45f714c6) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
-- [Patient/caregiver PDF](demo-nsclc-egfr-l858r-post-osi-d3m0-plain-language.pdf?v=16c32a0a) — plain-language summary
+- [Target validation paths](demo-nsclc-egfr-l858r-post-osi-d3m0-target-validation.pdf?v=86ef0e9d) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Recommendations table](demo-nsclc-egfr-l858r-post-osi-d3m0-recommendations.pdf?v=98192b5c) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
+- [Master manuscripts table](demo-nsclc-egfr-l858r-post-osi-d3m0-manuscripts.pdf?v=ddf0b00f) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
+- [Patient/caregiver PDF](demo-nsclc-egfr-l858r-post-osi-d3m0-plain-language.pdf?v=82386852) — plain-language summary
 
 <!-- libby:downloads:end -->
 

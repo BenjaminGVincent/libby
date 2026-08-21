@@ -75,6 +75,46 @@ small.scenario-key { color: var(--ink-muted); }
 .trial-table tbody tr:last-child td {
   border-bottom: 2px solid var(--ink);
 }
+/* Question-report column widths. These tables carry prose in most cells, so
+   without min-widths every column squeezes to fit 100% of the container and the
+   rows grow very tall with a few words per cell. The min-widths let the table
+   exceed the container so .trial-scroll scrolls it sideways instead, which reads
+   far better for a candidate comparison. */
+.trial-table th.col-q-rank,
+.trial-table td.col-q-rank { min-width: 3em; white-space: nowrap; }
+.trial-table th.col-q-candidate,
+.trial-table td.col-q-candidate { min-width: 24em; }
+.trial-table th.col-q-rate,
+.trial-table td.col-q-rate { min-width: 15em; }
+.trial-table th.col-q-tox,
+.trial-table td.col-q-tox { min-width: 20em; }
+.trial-table th.col-q-avail,
+.trial-table td.col-q-avail { min-width: 9em; white-space: nowrap; }
+.trial-table th.col-q-refs,
+.trial-table td.col-q-refs { min-width: 11em; }
+.trial-table th.col-q-criterion,
+.trial-table td.col-q-criterion { min-width: 22em; }
+.trial-table th.col-q-result,
+.trial-table td.col-q-result { min-width: 8em; white-space: nowrap; }
+.trial-table th.col-q-points,
+.trial-table td.col-q-points { min-width: 7em; white-space: nowrap; }
+.trial-table th.col-q-finding,
+.trial-table td.col-q-finding { min-width: 30em; }
+.trial-table th.col-q-dir,
+.trial-table td.col-q-dir { min-width: 6em; white-space: nowrap; }
+.trial-table th.col-q-claim,
+.trial-table td.col-q-claim { min-width: 32em; }
+.trial-table th.col-q-strength,
+.trial-table td.col-q-strength { min-width: 7em; white-space: nowrap; }
+.trial-table th.col-q-popmatch,
+.trial-table td.col-q-popmatch { min-width: 22em; }
+.trial-table th.col-q-seat,
+.trial-table td.col-q-seat { min-width: 9em; white-space: nowrap; }
+.trial-table th.col-q-position,
+.trial-table td.col-q-position { min-width: 34em; }
+.trial-table th.col-q-carried,
+.trial-table td.col-q-carried { min-width: 8em; white-space: nowrap; }
+
 .persona {
   display: inline-block;
   padding: 0.05em 0.5em;
@@ -90,9 +130,20 @@ small.scenario-key { color: var(--ink-muted); }
 .persona-concensusite { background: #DDF1EE; color: #134E48; border-color: #B0DBD3; }
 .persona-advocate     { background: #FFE5EE; color: #6E1638; border-color: #F0BBCB; }
 .split-glyph { font-weight: 700; color: #5A4500; }
+/* not_recommended rows: mute, never strike through.
+   Strikethrough was applied to the whole <tr>, which struck the rationale
+   columns too — and on a rejected option the rationale is the most useful
+   text in the row, since it is what lets a reader stop considering it.
+   Muting carries the de-emphasis on its own; the badge below states the
+   verdict in words, so the signal does not rest on typography or colour
+   alone (both are invisible to a screen reader and to a monochrome print). */
 .not-recommended {
   color: var(--ink-muted);
-  text-decoration: line-through;
+}
+.badge-not-recommended {
+  background: #FDECEA;
+  color: #8C2F22;
+  border-color: #F5C6C0;
 }
 .scenario-conditional {
   display: inline-block;
@@ -182,6 +233,20 @@ h4 { margin-top: 1.25rem; margin-bottom: 0.25rem; font-size: 1rem; }
   margin-left: 0.35em;
   white-space: nowrap;
 }
+/* surfaced_reason flag pills (Experimental "Also considered" table). */
+.flag-badge {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 0.02em 0.5em;
+  white-space: nowrap;
+}
+.flag-unavailable    { background: #ECEFF1; color: #37474F; border-color: #CFD8DC; }
+.flag-consolidated   { background: #E8EAF6; color: #303F9F; border-color: #C5CAE9; }
+.flag-thin           { background: #FFF8E1; color: #7A5B00; border-color: #F0E1B0; }
+.flag-not-enrollable { background: #F3E5F5; color: #6A1B7A; border-color: #E1BEE7; }
 footer.libby-footer {
   margin-top: 3rem;
   padding-top: 1rem;
@@ -288,7 +353,7 @@ consulting a qualified oncologist.
       <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
       <tbody>
     <tr><td><a href="#evidence-gemtuzumab-ozogamicin">1</a></td><td><strong>Gemtuzumab ozogamicin (Mylotarg, CD33 ADC) as cytoreductive bridge</strong></td><td>Low-to-moderate - ~30% CR+CRp in less-pretreated first relapse (Sievers 2001); likely lower post-FLAG-IDA/venetoclax; density-dependent, quantitative CD33 pending.</td><td>Moderate (grade &gt;=3 hyperbilirubinemia 23%, transaminitis 17%, infection 28%; veno-occlusive disease class risk peri-transplant)</td><td><strong>Low</strong> <span class="cpm-desc">(Calicheamicin hepatotoxicity / VOD could compromise the very HCT2 it is meant to bridge to; time the interval accordingly)</span></td><td><strong>The only agent a treating team can simply write; a modest on-label CD33 debulk whose VOD signal has to be timed around the planned second transplant.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/11432892">PMID&nbsp;11432892</a></td></tr>
-    <tr><td><a href="#evidence-cd33-cd123-ccar">2</a></td><td><strong>Dual CD33/CD123 compound CAR-T (CD123-CD33 cCAR; CLL-1/CD33/CD123 CAR-T)</strong></td><td>Speculative - dual-antigen CAR-T outperformed single-antigen across four AML xenografts (Petrov 2018); zero human efficacy data, no post-allo-HCT experience.</td><td>Unknown - no clinical data (expected CRS and on-target myeloablation of normal CD33/CD123 progenitors)</td><td><strong>Moderate</strong> <span class="cpm-desc">(On-target myeloablation of normal CD33/CD123 progenitors compounds marrow aplasia in a re-transplant candidate; CRS; no post-HCT data)</span></td><td><strong>The dual-antigen escape hedge for a clonally evolving relapse, held back by xenograft-only evidence and China-only trial access; gemtuzumab is the available CD33 fallback.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT04156256">NCT04156256</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/29515236">PMID&nbsp;29515236</a></td></tr>
+    <tr class="split-glyph"><td><a href="#evidence-cd33-cd123-ccar">2</a></td><td><strong>Dual CD33/CD123 compound CAR-T (CD123-CD33 cCAR; CLL-1/CD33/CD123 CAR-T)</strong></td><td>Speculative - dual-antigen CAR-T outperformed single-antigen across four AML xenografts (Petrov 2018); zero human efficacy data, no post-allo-HCT experience.</td><td>Unknown - no clinical data (expected CRS and on-target myeloablation of normal CD33/CD123 progenitors)</td><td><strong>Moderate</strong> <span class="cpm-desc">(On-target myeloablation of normal CD33/CD123 progenitors compounds marrow aplasia in a re-transplant candidate; CRS; no post-HCT data)</span></td><td><strong>The dual-antigen escape hedge for a clonally evolving relapse, held back by xenograft-only evidence and China-only trial access; gemtuzumab is the available CD33 fallback.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT04156256">NCT04156256</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/29515236">PMID&nbsp;29515236</a></td></tr>
       </tbody>
     </table>
   </div>
@@ -342,7 +407,7 @@ consulting a qualified oncologist.
     <table class="trial-table">
       <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
       <tbody>
-    <tr><td><a href="#evidence-ha1-tcr-t">1</a></td><td><strong>HA-1 / HA-2-directed donor TCR-T after HCT2 (Bleakley platform; TSC-100 / TSC-101, ALLOHA; BSB-1001)</strong> <span class="scenario-conditional">(conditional on hla_a0201_ha positive)</span></td><td>Signal-level, positive branch - 4/9 CR with one remission &gt;2 years and no DLTs (Bleakley n=9); feasibility, not efficacy-powered. Foreclosed if typing is negative.</td><td>Low (no DLTs across n=9; lymphodepletion cytopenias and GVHD are the setting risks; per-grade AE table not retrievable from the full text)</td><td><strong>Low</strong> <span class="cpm-desc">(Potential HA-antigen-loss escape; the graft-versus-leukemia-without-GVHD benefit depends on the mismatched mHAg staying hematopoietic-restricted)</span></td><td><strong>The donor TCR-T aimed at the antigen axis the run was built around - highest ceiling, thinnest evidence, and hostage to a HA-1/HA-2 mismatch that genotyping the sibling pair will settle.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/38683966">PMID&nbsp;38683966</a><br><a href="https://clinicaltrials.gov/study/NCT05473910">NCT05473910</a><br><a href="https://clinicaltrials.gov/study/NCT06704152">NCT06704152</a></td></tr>
+    <tr class="split-glyph"><td><a href="#evidence-ha1-tcr-t">1</a></td><td><strong>HA-1 / HA-2-directed donor TCR-T after HCT2 (Bleakley platform; TSC-100 / TSC-101, ALLOHA; BSB-1001)</strong> <span class="scenario-conditional">(conditional on hla_a0201_ha positive)</span></td><td>Signal-level, positive branch - 4/9 CR with one remission &gt;2 years and no DLTs (Bleakley n=9); feasibility, not efficacy-powered. Foreclosed if typing is negative.</td><td>Low (no DLTs across n=9; lymphodepletion cytopenias and GVHD are the setting risks; per-grade AE table not retrievable from the full text)</td><td><strong>Low</strong> <span class="cpm-desc">(Potential HA-antigen-loss escape; the graft-versus-leukemia-without-GVHD benefit depends on the mismatched mHAg staying hematopoietic-restricted)</span></td><td><strong>The donor TCR-T aimed at the antigen axis the run was built around - highest ceiling, thinnest evidence, and hostage to a HA-1/HA-2 mismatch that genotyping the sibling pair will settle.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/38683966">PMID&nbsp;38683966</a><br><a href="https://clinicaltrials.gov/study/NCT05473910">NCT05473910</a><br><a href="https://clinicaltrials.gov/study/NCT06704152">NCT06704152</a></td></tr>
       </tbody>
     </table>
   </div>
@@ -368,8 +433,8 @@ consulting a qualified oncologist.
     <table class="trial-table">
       <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
       <tbody>
-    <tr><td><a href="#evidence-wt1-tcrc4">1</a></td><td><strong>WT1 HLA-A*02:01 TCR-T (FH-WT1-E50 / Greenberg WT1-TCRc4); A*24:02 WT1-siTCR fallback</strong> <span class="scenario-conditional">(conditional on hla_a0201 positive)</span></td><td>Setting-mismatched, positive branch - 100% RFS at 44 months as post-HCT prophylaxis (Chapuis 2019, n=12, confounded comparator); unproven for florid relapse.</td><td>Low (engineered into EBV-specific cells to minimize GVHD; no per-term AE breakdown; on-target hematopoietic risk theoretical)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Validated as relapse prophylaxis, not salvage; unproven against florid marrow disease; WT1 is a shared self-antigen)</span></td><td><strong>The second HLA-restricted lever that keeps the immunotherapy axis open if HA-1/HA-2 does not mismatch, but its evidence is prophylaxis in MRD, not salvage of an 85%-blast marrow.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/31235963">PMID&nbsp;31235963</a><br><a href="https://clinicaltrials.gov/study/NCT07645469">NCT07645469</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/28860210">PMID&nbsp;28860210</a></td></tr>
-    <tr><td><a href="#evidence-cbx-250">2</a></td><td><strong>CBX-250 (TCR-mimetic CG1/HLA-A*02:01 bispecific T-cell engager; CROSSCHECK-001)</strong> <span class="scenario-conditional">(conditional on hla_a0201 positive)</span></td><td>Preclinical only, positive branch - sub-nanomolar killing and PDX survival benefit (ASH 2024 abstract); zero human efficacy readout. Foreclosed if A*02:01 is negative.</td><td>Unknown - first-in-human, no characterized AE profile (expected CD3-engager cytokine release syndrome, scaling with the 85%-blast burden)</td><td><strong>High</strong> <span class="cpm-desc">(Uncharacterized CRS scaling with 85%-blast burden could harm before it debulks; the standing conditional veto rests on this mechanism)</span></td><td><strong>The only off-the-shelf option on the exact A*02:01 axis - fastest to move once typing confirms, but first-in-human with no efficacy and gated behind a cytoreduction-first CRS-mitigation plan.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT06994676">NCT06994676</a><br>doi:10.1182/blood-2024-201699</td></tr>
+    <tr class="split-glyph"><td><a href="#evidence-wt1-tcrc4">1</a></td><td><strong>WT1 HLA-A*02:01 TCR-T (FH-WT1-E50 / Greenberg WT1-TCRc4); A*24:02 WT1-siTCR fallback</strong> <span class="scenario-conditional">(conditional on hla_a0201 positive)</span></td><td>Setting-mismatched, positive branch - 100% RFS at 44 months as post-HCT prophylaxis (Chapuis 2019, n=12, confounded comparator); unproven for florid relapse.</td><td>Low (engineered into EBV-specific cells to minimize GVHD; no per-term AE breakdown; on-target hematopoietic risk theoretical)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Validated as relapse prophylaxis, not salvage; unproven against florid marrow disease; WT1 is a shared self-antigen)</span></td><td><strong>The second HLA-restricted lever that keeps the immunotherapy axis open if HA-1/HA-2 does not mismatch, but its evidence is prophylaxis in MRD, not salvage of an 85%-blast marrow.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/31235963">PMID&nbsp;31235963</a><br><a href="https://clinicaltrials.gov/study/NCT07645469">NCT07645469</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/28860210">PMID&nbsp;28860210</a></td></tr>
+    <tr class="split-glyph"><td><a href="#evidence-cbx-250">2</a></td><td><strong>CBX-250 (TCR-mimetic CG1/HLA-A*02:01 bispecific T-cell engager; CROSSCHECK-001)</strong> <span class="scenario-conditional">(conditional on hla_a0201 positive)</span></td><td>Preclinical only, positive branch - sub-nanomolar killing and PDX survival benefit (ASH 2024 abstract); zero human efficacy readout. Foreclosed if A*02:01 is negative.</td><td>Unknown - first-in-human, no characterized AE profile (expected CD3-engager cytokine release syndrome, scaling with the 85%-blast burden)</td><td><strong>High</strong> <span class="cpm-desc">(Uncharacterized CRS scaling with 85%-blast burden could harm before it debulks; the standing conditional veto rests on this mechanism)</span></td><td><strong>The only off-the-shelf option on the exact A*02:01 axis - fastest to move once typing confirms, but first-in-human with no efficacy and gated behind a cytoreduction-first CRS-mitigation plan.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT06994676">NCT06994676</a><br>doi:10.1182/blood-2024-201699</td></tr>
       </tbody>
     </table>
   </div>
@@ -398,7 +463,7 @@ consulting a qualified oncologist.
     <table class="trial-table">
       <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
       <tbody>
-    <tr><td><a href="#evidence-rezatapopt">1</a></td><td><strong>Rezatapopt (PC14586, Y220C-selective p53 reactivator) + azacitidine</strong> <span class="scenario-conditional">(conditional on tp53_y220c positive)</span></td><td>Cross-tumor only, positive branch - solid-tumor ORR 20% (30% KRAS-WT, PYNNACLE); no myeloid clinical data; preclinically needs a venetoclax partner.</td><td>Low (grade &gt;=3 anaemia 16%; predominant low-grade nausea 58% and vomiting 44%, less frequent with food)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Reactivated p53 barely triggers apoptosis alone - it needs a venetoclax / MDM2 partner the patient is already refractory to)</span></td><td><strong>A mechanistically elegant Y220C longshot off the stated axis, double-gated on confirming TP53 then Y220C, with no myeloid data and a venetoclax dependency she has already failed.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40608889">PMID&nbsp;40608889</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/41740031">PMID&nbsp;41740031</a><br><a href="https://clinicaltrials.gov/study/NCT06616636">NCT06616636</a></td></tr>
+    <tr class="split-glyph"><td><a href="#evidence-rezatapopt">1</a></td><td><strong>Rezatapopt (PC14586, Y220C-selective p53 reactivator) + azacitidine</strong> <span class="scenario-conditional">(conditional on tp53_y220c positive)</span></td><td>Cross-tumor only, positive branch - solid-tumor ORR 20% (30% KRAS-WT, PYNNACLE); no myeloid clinical data; preclinically needs a venetoclax partner.</td><td>Low (grade &gt;=3 anaemia 16%; predominant low-grade nausea 58% and vomiting 44%, less frequent with food)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Reactivated p53 barely triggers apoptosis alone - it needs a venetoclax / MDM2 partner the patient is already refractory to)</span></td><td><strong>A mechanistically elegant Y220C longshot off the stated axis, double-gated on confirming TP53 then Y220C, with no myeloid data and a venetoclax dependency she has already failed.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40608889">PMID&nbsp;40608889</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/41740031">PMID&nbsp;41740031</a><br><a href="https://clinicaltrials.gov/study/NCT06616636">NCT06616636</a></td></tr>
       </tbody>
     </table>
   </div>
@@ -418,5 +483,5 @@ consulting a qualified oncologist.
   </div>
 </div>
 
-<footer class="libby-footer">Generated 2026-07-10 &middot; Libby &middot; <code>aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2</code></footer>
+<footer class="libby-footer">Generated 2026-08-21 &middot; Libby &middot; <code>aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2</code></footer>
 </body></html>

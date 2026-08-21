@@ -75,6 +75,46 @@ small.scenario-key { color: var(--ink-muted); }
 .trial-table tbody tr:last-child td {
   border-bottom: 2px solid var(--ink);
 }
+/* Question-report column widths. These tables carry prose in most cells, so
+   without min-widths every column squeezes to fit 100% of the container and the
+   rows grow very tall with a few words per cell. The min-widths let the table
+   exceed the container so .trial-scroll scrolls it sideways instead, which reads
+   far better for a candidate comparison. */
+.trial-table th.col-q-rank,
+.trial-table td.col-q-rank { min-width: 3em; white-space: nowrap; }
+.trial-table th.col-q-candidate,
+.trial-table td.col-q-candidate { min-width: 24em; }
+.trial-table th.col-q-rate,
+.trial-table td.col-q-rate { min-width: 15em; }
+.trial-table th.col-q-tox,
+.trial-table td.col-q-tox { min-width: 20em; }
+.trial-table th.col-q-avail,
+.trial-table td.col-q-avail { min-width: 9em; white-space: nowrap; }
+.trial-table th.col-q-refs,
+.trial-table td.col-q-refs { min-width: 11em; }
+.trial-table th.col-q-criterion,
+.trial-table td.col-q-criterion { min-width: 22em; }
+.trial-table th.col-q-result,
+.trial-table td.col-q-result { min-width: 8em; white-space: nowrap; }
+.trial-table th.col-q-points,
+.trial-table td.col-q-points { min-width: 7em; white-space: nowrap; }
+.trial-table th.col-q-finding,
+.trial-table td.col-q-finding { min-width: 30em; }
+.trial-table th.col-q-dir,
+.trial-table td.col-q-dir { min-width: 6em; white-space: nowrap; }
+.trial-table th.col-q-claim,
+.trial-table td.col-q-claim { min-width: 32em; }
+.trial-table th.col-q-strength,
+.trial-table td.col-q-strength { min-width: 7em; white-space: nowrap; }
+.trial-table th.col-q-popmatch,
+.trial-table td.col-q-popmatch { min-width: 22em; }
+.trial-table th.col-q-seat,
+.trial-table td.col-q-seat { min-width: 9em; white-space: nowrap; }
+.trial-table th.col-q-position,
+.trial-table td.col-q-position { min-width: 34em; }
+.trial-table th.col-q-carried,
+.trial-table td.col-q-carried { min-width: 8em; white-space: nowrap; }
+
 .persona {
   display: inline-block;
   padding: 0.05em 0.5em;
@@ -90,9 +130,20 @@ small.scenario-key { color: var(--ink-muted); }
 .persona-concensusite { background: #DDF1EE; color: #134E48; border-color: #B0DBD3; }
 .persona-advocate     { background: #FFE5EE; color: #6E1638; border-color: #F0BBCB; }
 .split-glyph { font-weight: 700; color: #5A4500; }
+/* not_recommended rows: mute, never strike through.
+   Strikethrough was applied to the whole <tr>, which struck the rationale
+   columns too — and on a rejected option the rationale is the most useful
+   text in the row, since it is what lets a reader stop considering it.
+   Muting carries the de-emphasis on its own; the badge below states the
+   verdict in words, so the signal does not rest on typography or colour
+   alone (both are invisible to a screen reader and to a monochrome print). */
 .not-recommended {
   color: var(--ink-muted);
-  text-decoration: line-through;
+}
+.badge-not-recommended {
+  background: #FDECEA;
+  color: #8C2F22;
+  border-color: #F5C6C0;
 }
 .scenario-conditional {
   display: inline-block;
@@ -182,6 +233,20 @@ h4 { margin-top: 1.25rem; margin-bottom: 0.25rem; font-size: 1rem; }
   margin-left: 0.35em;
   white-space: nowrap;
 }
+/* surfaced_reason flag pills (Experimental "Also considered" table). */
+.flag-badge {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 0.02em 0.5em;
+  white-space: nowrap;
+}
+.flag-unavailable    { background: #ECEFF1; color: #37474F; border-color: #CFD8DC; }
+.flag-consolidated   { background: #E8EAF6; color: #303F9F; border-color: #C5CAE9; }
+.flag-thin           { background: #FFF8E1; color: #7A5B00; border-color: #F0E1B0; }
+.flag-not-enrollable { background: #F3E5F5; color: #6A1B7A; border-color: #E1BEE7; }
 footer.libby-footer {
   margin-top: 3rem;
   padding-top: 1rem;
@@ -219,8 +284,8 @@ consulting a qualified oncologist.
     <table class="trial-table">
       <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
       <tbody>
-    <tr><td><a href="#evidence-tarlatamab">1</a></td><td><strong>tarlatamab (DLL3 x CD3 BiTE) via NCT06788938 (DLL3-IHC-gated basket)</strong> <span class="scenario-conditional">(conditional on dll3_ihc positive)</span></td><td>Moderate if DLL3 IHC confirms — best-validated mechanism (DeLLphi-304 OS HR 0.60) but efficacy is entirely SCLC-derived; no osteosarcoma data.</td><td>Moderate (CRS ~56% mostly G1-2, ICANS-like ~12%, G3+ TRAE 24%)</td><td><strong>Moderate</strong> <span class="cpm-desc">(On-mechanism CNS/neuro bystander activation and antigen-density-dependent escape if DLL3 membrane expression is low or heterogeneous)</span></td><td><strong>The best-validated mechanism on the board and the lighter-toxicity DLL3 route — but every efficacy row is SCLC; osteosarcoma activity is a hypothesis until the IHC confirms surface target.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40454646">PMID&nbsp;40454646</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/37861218">PMID&nbsp;37861218</a><br><a href="https://clinicaltrials.gov/study/NCT06788938">NCT06788938</a></td></tr>
-    <tr><td><a href="#evidence-tarlatamab-radiation">2</a></td><td><strong>tarlatamab + radiation therapy via NCT06814496 (pan-tumor DLL3-IHC basket with RT)</strong> <span class="scenario-conditional">(conditional on dll3_ihc positive)</span></td><td>Unknown — no combination data; abscopal benefit over tarlatamab monotherapy is a hypothesis the phase-1 is still measuring.</td><td>Moderate (uncharacterized combination; BiTE CRS ~50% mostly G1-2, ICANS-like ~10%, plus site-specific RT toxicity)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Uncharacterized RT-on-BiTE synergistic toxicity; potential on-mechanism CNS/neuro bystander activation compounded by radiation)</span></td><td><strong>A parallel DLL3 slot with an abscopal rationale — but zero combination data, and the monotherapy basket delivers the same backbone with a written safety algorithm.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT06814496">NCT06814496</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/40454646">PMID&nbsp;40454646</a></td></tr>
+    <tr class="split-glyph"><td><a href="#evidence-tarlatamab">1</a></td><td><strong>tarlatamab (DLL3 x CD3 BiTE) via NCT06788938 (DLL3-IHC-gated basket)</strong> <span class="scenario-conditional">(conditional on dll3_ihc positive)</span></td><td>Moderate if DLL3 IHC confirms — best-validated mechanism (DeLLphi-304 OS HR 0.60) but efficacy is entirely SCLC-derived; no osteosarcoma data.</td><td>Moderate (CRS ~56% mostly G1-2, ICANS-like ~12%, G3+ TRAE 24%)</td><td><strong>Moderate</strong> <span class="cpm-desc">(On-mechanism CNS/neuro bystander activation and antigen-density-dependent escape if DLL3 membrane expression is low or heterogeneous)</span></td><td><strong>The best-validated mechanism on the board and the lighter-toxicity DLL3 route — but every efficacy row is SCLC; osteosarcoma activity is a hypothesis until the IHC confirms surface target.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40454646">PMID&nbsp;40454646</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/37861218">PMID&nbsp;37861218</a><br><a href="https://clinicaltrials.gov/study/NCT06788938">NCT06788938</a></td></tr>
+    <tr class="split-glyph"><td><a href="#evidence-tarlatamab-radiation">2</a></td><td><strong>tarlatamab + radiation therapy via NCT06814496 (pan-tumor DLL3-IHC basket with RT)</strong> <span class="scenario-conditional">(conditional on dll3_ihc positive)</span></td><td>Unknown — no combination data; abscopal benefit over tarlatamab monotherapy is a hypothesis the phase-1 is still measuring.</td><td>Moderate (uncharacterized combination; BiTE CRS ~50% mostly G1-2, ICANS-like ~10%, plus site-specific RT toxicity)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Uncharacterized RT-on-BiTE synergistic toxicity; potential on-mechanism CNS/neuro bystander activation compounded by radiation)</span></td><td><strong>A parallel DLL3 slot with an abscopal rationale — but zero combination data, and the monotherapy basket delivers the same backbone with a written safety algorithm.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT06814496">NCT06814496</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/40454646">PMID&nbsp;40454646</a></td></tr>
       </tbody>
     </table>
   </div>
@@ -295,10 +360,10 @@ consulting a qualified oncologist.
     <table class="trial-table">
       <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
       <tbody>
-    <tr><td><a href="#evidence-ima203">1</a></td><td><strong>IMA203 (PRAME TCR-T) via NCT03686124 (ACTengine pan-solid basket, sarcoma cohort named)</strong> <span class="scenario-conditional">(conditional on prame_hla positive)</span></td><td>High ceiling if both biomarkers confirm (ORR 54%, Nat Med 2025) but from n=28 with a wide CI and no osteosarcoma-specific responder; unstable point estimate.</td><td>High (1 treatment-related septic death; CRS ~100%/G3+ 11%, ICANS ~25%, universal G3+ cytopenias post-Cy/Flu)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Antigen-loss / HLA-LOH escape and post-lymphodepletion immunosuppression window; durability unproven, responders melanoma-skewed)</span></td><td><strong>The highest-response on-axis option with a named sarcoma cohort, and the one with a fatality on the board — efficacy-first personas lead it, three dissent on the safety tail and n=28 imprecision.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40205198">PMID&nbsp;40205198</a><br><a href="https://clinicaltrials.gov/study/NCT03686124">NCT03686124</a></td></tr>
-    <tr><td><a href="#evidence-brenetafusp">2</a></td><td><strong>brenetafusp (IMC-F106C, PRAME x CD3 ImmTAC) via NCT04262466 / successor IMC-P115C</strong> <span class="scenario-conditional">(conditional on prame_hla positive)</span></td><td>Low-to-moderate: overall ORR 9-11%, benefit concentrated in a PRAME-positive subset (mPFS 4.5 vs 2.1 mo); melanoma-derived, cross-tumor.</td><td>Low (CRS predominantly G1-2, no G3+ CRS in cohort; rash ~70%, G3+ TRAE ~30%)</td><td><strong>Low</strong> <span class="cpm-desc">(On-target/off-tumor rash and antigen-density dependence; dissent is enrollability-flavored, no mechanism-level counter-productive vector)</span></td><td><strong>The best-tolerated PRAME route with an off-the-shelf, no-lymphodepletion trade — but modest single-agent efficacy and a sarcoma enrollment slot that is currently closed.</strong></td><td>doi:10.1200/JCO.2024.42.16_suppl.9507<br><a href="https://clinicaltrials.gov/study/NCT04262466">NCT04262466</a></td></tr>
-    <tr><td><a href="#evidence-imc-p115c">3</a></td><td><strong>IMC-P115C (next-gen PRAME x CD3 ImmTAC) via NCT07156136</strong> <span class="scenario-conditional">(conditional on prame_hla positive)</span></td><td>Unknown — first-in-human, no efficacy data; class bet on the ImmTAC platform and PRAME target, inferred from brenetafusp.</td><td>Low (no drug-specific data; class expectation predominantly G1-2 CRS and rash)</td><td><strong>Low</strong> <span class="cpm-desc">(Same on-target/off-tumor and antigen-density dependence as the ImmTAC class; no drug-specific counter-productive signal yet)</span></td><td><strong>The recruiting-today PRAME ImmTAC when brenetafusp&#x27;s sarcoma slot is closed — a platform-and-target bet with no efficacy readout of its own yet.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT07156136">NCT07156136</a><br>doi:10.1200/JCO.2024.42.16_suppl.9507</td></tr>
-    <tr><td><a href="#evidence-nw-101c">4</a></td><td><strong>NW-101C (PRAME TCR-T) via NCT07266298 (pan-solid PRAME/HLA-A*02:01 basket)</strong> <span class="scenario-conditional">(conditional on prame_hla positive)</span></td><td>Unknown — no NW-101C data exist; efficacy inferred entirely from the IMA203 PRAME TCR-T class precedent.</td><td>High (no drug-specific data; class expectation is the IMA203 TCR-T profile — CRS, ICANS, post-lymphodepletion cytopenias)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Same antigen-loss / HLA-LOH escape and lymphodepletion immunosuppression risk as the PRAME TCR-T class; no drug-specific data)</span></td><td><strong>A redundant PRAME TCR-T fallback if the IMA203 slot is inaccessible — but zero data under this name; the efficacy expectation is entirely borrowed.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT07266298">NCT07266298</a></td></tr>
+    <tr class="split-glyph"><td><a href="#evidence-ima203">1</a></td><td><strong>IMA203 (PRAME TCR-T) via NCT03686124 (ACTengine pan-solid basket, sarcoma cohort named)</strong> <span class="scenario-conditional">(conditional on prame_hla positive)</span></td><td>High ceiling if both biomarkers confirm (ORR 54%, Nat Med 2025) but from n=28 with a wide CI and no osteosarcoma-specific responder; unstable point estimate.</td><td>High (1 treatment-related septic death; CRS ~100%/G3+ 11%, ICANS ~25%, universal G3+ cytopenias post-Cy/Flu)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Antigen-loss / HLA-LOH escape and post-lymphodepletion immunosuppression window; durability unproven, responders melanoma-skewed)</span></td><td><strong>The highest-response on-axis option with a named sarcoma cohort, and the one with a fatality on the board — efficacy-first personas lead it, three dissent on the safety tail and n=28 imprecision.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40205198">PMID&nbsp;40205198</a><br><a href="https://clinicaltrials.gov/study/NCT03686124">NCT03686124</a></td></tr>
+    <tr class="split-glyph"><td><a href="#evidence-brenetafusp">2</a></td><td><strong>brenetafusp (IMC-F106C, PRAME x CD3 ImmTAC) via NCT04262466 / successor IMC-P115C</strong> <span class="scenario-conditional">(conditional on prame_hla positive)</span></td><td>Low-to-moderate: overall ORR 9-11%, benefit concentrated in a PRAME-positive subset (mPFS 4.5 vs 2.1 mo); melanoma-derived, cross-tumor.</td><td>Low (CRS predominantly G1-2, no G3+ CRS in cohort; rash ~70%, G3+ TRAE ~30%)</td><td><strong>Low</strong> <span class="cpm-desc">(On-target/off-tumor rash and antigen-density dependence; dissent is enrollability-flavored, no mechanism-level counter-productive vector)</span></td><td><strong>The best-tolerated PRAME route with an off-the-shelf, no-lymphodepletion trade — but modest single-agent efficacy and a sarcoma enrollment slot that is currently closed.</strong></td><td>doi:10.1200/JCO.2024.42.16_suppl.9507<br><a href="https://clinicaltrials.gov/study/NCT04262466">NCT04262466</a></td></tr>
+    <tr class="split-glyph"><td><a href="#evidence-imc-p115c">3</a></td><td><strong>IMC-P115C (next-gen PRAME x CD3 ImmTAC) via NCT07156136</strong> <span class="scenario-conditional">(conditional on prame_hla positive)</span></td><td>Unknown — first-in-human, no efficacy data; class bet on the ImmTAC platform and PRAME target, inferred from brenetafusp.</td><td>Low (no drug-specific data; class expectation predominantly G1-2 CRS and rash)</td><td><strong>Low</strong> <span class="cpm-desc">(Same on-target/off-tumor and antigen-density dependence as the ImmTAC class; no drug-specific counter-productive signal yet)</span></td><td><strong>The recruiting-today PRAME ImmTAC when brenetafusp&#x27;s sarcoma slot is closed — a platform-and-target bet with no efficacy readout of its own yet.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT07156136">NCT07156136</a><br>doi:10.1200/JCO.2024.42.16_suppl.9507</td></tr>
+    <tr class="split-glyph"><td><a href="#evidence-nw-101c">4</a></td><td><strong>NW-101C (PRAME TCR-T) via NCT07266298 (pan-solid PRAME/HLA-A*02:01 basket)</strong> <span class="scenario-conditional">(conditional on prame_hla positive)</span></td><td>Unknown — no NW-101C data exist; efficacy inferred entirely from the IMA203 PRAME TCR-T class precedent.</td><td>High (no drug-specific data; class expectation is the IMA203 TCR-T profile — CRS, ICANS, post-lymphodepletion cytopenias)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Same antigen-loss / HLA-LOH escape and lymphodepletion immunosuppression risk as the PRAME TCR-T class; no drug-specific data)</span></td><td><strong>A redundant PRAME TCR-T fallback if the IMA203 slot is inaccessible — but zero data under this name; the efficacy expectation is entirely borrowed.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT07266298">NCT07266298</a></td></tr>
       </tbody>
     </table>
   </div>
@@ -324,5 +389,5 @@ consulting a qualified oncologist.
 <p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
 <h4 id="evidence-nw-101c">NW-101C (PRAME TCR-T)</h4>
 <p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
-<footer class="libby-footer">Generated 2026-07-10 &middot; Libby &middot; <code>osteosarcoma-mets-dll3-h7r2</code></footer>
+<footer class="libby-footer">Generated 2026-08-21 &middot; Libby &middot; <code>osteosarcoma-mets-dll3-h7r2</code></footer>
 </body></html>
