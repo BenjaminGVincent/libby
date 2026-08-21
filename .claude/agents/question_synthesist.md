@@ -49,7 +49,25 @@ toxicity that produced the "no"; dropping the table because the answer was unfav
 the reasoning and leaves an assertion in its place. The table is evidence display, not a
 prescription — which is what distinguishes it from `recommendations.jsonl`.
 
-Three rules govern it:
+**Completeness is the fourth rule and the easiest to fail.** Carry **every therapy the
+research tier assessed**, not a shortlist and not only the ones that survived. If
+`clinical_evidence.jsonl` or `trials.jsonl` assessed an intervention, it earns a row.
+
+Rank the non-viable ones at the bottom with `deliverable` set honestly and the reason in
+`notes` — trial terminated, excluded on a prior allograft, endpoint not ELN CR, program
+discontinued. Those are findings. A reader cannot tell an option that was assessed and ruled
+out from one that was never considered, and an absent row implies the second. The reason a
+candidate failed is often more useful than the reasons the survivors passed.
+
+Exclude only rows that are **not therapies**: prognostic indices, benchmark cohorts, response
+-depth analyses, disease-biology context. Those belong in `evidence_for` / `evidence_against`
+or in prose, not as candidate rows pretending to be options. Say in `scope_caveat` what you
+excluded on that basis, so the omission is visible rather than assumed.
+
+If a caller's brief lists candidates, treat it as a floor and never as the set. The dossier is
+the authority on what was assessed.
+
+Three further rules govern the columns:
 
 - **Every rate carries its endpoint.** `response_rate.endpoint` states exactly what the number
   measures: CR, CRi, CRh, MLFS, CRc/composite, ORR. A composite rate is not a CR rate, and a

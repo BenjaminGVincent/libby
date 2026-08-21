@@ -158,9 +158,9 @@
     }
   ],
   "answer_shape_used": "verdict",
-  "scope_caveat": "This run assessed one thing: the published evidence for inducing a complete remission with her next line of therapy. It did not assess durability of remission, relapse-free or overall survival, choice of consolidation, second-transplant platform, DLI timing, or the HLA-restricted cellular options; those belong to the source case (aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2), whose ranking was not revisited here and remains as published, including its rank-1 gating workup, which proceeds concurrently with whatever is chosen. Sequencing consequences, whether a candidate forecloses later options, were weighed in the source ranking and not re-litigated. Supportive and bridging measures without remission intent were out of scope. 'No single best-evidenced option' is a statement about the evidence, not about her odds on any given regimen, and it must not be read as 'nothing worth giving': every deliverable candidate retains a real, if undifferentiated, chance of remission, and the trial route the board converged on is a positive recommendation, not a shrug. A reader who wants 'best next move' rather than 'most likely to produce a CR' needs the source dossier open beside this answer.",
+  "scope_caveat": "This run assessed one thing: the published evidence for inducing a complete remission with her next line of therapy. It did not assess durability of remission, relapse-free or overall survival, choice of consolidation, second-transplant platform, DLI timing, or the HLA-restricted cellular options; those belong to the source case (aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2), whose ranking was not revisited here and remains as published, including its rank-1 gating workup, which proceeds concurrently with whatever is chosen. Sequencing consequences, whether a candidate forecloses later options, were weighed in the source ranking and not re-litigated. Supportive and bridging measures without remission intent were out of scope. 'No single best-evidenced option' is a statement about the evidence, not about her odds on any given regimen, and it must not be read as 'nothing worth giving': every deliverable candidate retains a real, if undifferentiated, chance of remission, and the trial route the board converged on is a positive recommendation, not a shrug. A reader who wants 'best next move' rather than 'most likely to produce a CR' needs the source dossier open beside this answer. The candidates table carries every therapy the research tier assessed, including those with no route to her; it excludes only non-therapy context rows, and says which: the Giles pooled second-salvage benchmark (quoted as the floor in the rank-13 row's notes), the TP53-aberrant and TP53-frontline salvage benchmarks, the first-relapse prognostic index, and the pre-transplant remission-depth series, all of which describe her odds rather than anything she could receive. ASAP, the randomised watchful-waiting comparison, is a strategy rather than a therapy and its figures live inside the rank-2 row rather than in a row of their own.",
   "answered_at_utc": "2026-08-20T15:20:41Z",
-  "notes": "Answer shape downgraded from verdict_plus_ranked_options to verdict, so no recommendations.jsonl is written. The downgrade follows the framer's own escape clause ('the synthesist may downgrade to a bare verdict if the evidence will not carry a ranking, for instance if acceptance criterion 4 lands') and criterion 4 landed exactly as pre-registered: on demonstrated true CR in populations containing her, every interval overlaps every other, and the critic showed that each persona's list orders by a different substitute axis (magnitude, deliverability plus toxicity, eligibility, transferability, indication fit), none of them the endpoint in the heading. A ranked table under a page titled 'most likely to induce a complete remission' would order by something the title does not say and would be read as 'what to do', the exact misreading the framer's out_of_scope list forbids; the board's practical convergence (the trial route, CLAG-GO on NCT04050280 first on eligibility) is stated in the answer prose with its basis labelled instead. On the verdict choice: this is 'no' rather than 'insufficient_evidence' because the framer pre-registered criterion 4 with would_support 'no', and because the matched populations are not unstudied; they are studied (a 594-patient benchmark, a randomised control arm, a matched prospective cohort) with concordant results, and the evidence reaches the question and answers it negatively: no candidate has the best evidence, both because nothing separates and because no source measured the endpoint as defined. Confidence is moderate, not high, because the non-discrimination rests partly on cross-trial arithmetic over heterogeneous response criteria, and one deliverable candidate (HAM plus venetoclax) has an unpublished CR split that could separate. Two arithmetic corrections carried for quotation hygiene: Wierzbowska's 58% is 66/114 evaluable, not 66/118 (55.9%); RELAX's serious-adverse-event line (15 SAEs in 14 patients printed as 13%, where 14/55 is 25%) does not reconcile and supports the selective-reporting concern. Open action logged rather than footnoted: the lintuzumab-Ac225 expanded-access inquiry to the sponsor has never been made. Board round 2 ran without vetoes or self-critiques: 10 qualified, 7 dissent, 3 endorse across 20 rows. Amended 2026-08 under the updated schema: the candidates[] evidence table (10 rows) and ranking_basis were added. The downgrade to a bare verdict stands and governs only recommendations.jsonl, which remains unwritten; the table is evidence display, not a prescription, and its ranking_basis states that the order is not CR probability. Table work surfaced one arithmetic fix, carried into the criterion-4 finding: the CLAG-M Wilson interval had been computed on the uncorrected 66/118 denominator (46.9 to 64.6); on the 66/114 evaluable the run itself quotes, it is 48.7 to 66.6, which still clears the matched pack, so no other figure, criterion or the verdict moves.",
+  "notes": "Answer shape downgraded from verdict_plus_ranked_options to verdict, so no recommendations.jsonl is written. The downgrade follows the framer's own escape clause ('the synthesist may downgrade to a bare verdict if the evidence will not carry a ranking, for instance if acceptance criterion 4 lands') and criterion 4 landed exactly as pre-registered: on demonstrated true CR in populations containing her, every interval overlaps every other, and the critic showed that each persona's list orders by a different substitute axis (magnitude, deliverability plus toxicity, eligibility, transferability, indication fit), none of them the endpoint in the heading. A ranked table under a page titled 'most likely to induce a complete remission' would order by something the title does not say and would be read as 'what to do', the exact misreading the framer's out_of_scope list forbids; the board's practical convergence (the trial route, CLAG-GO on NCT04050280 first on eligibility) is stated in the answer prose with its basis labelled instead. On the verdict choice: this is 'no' rather than 'insufficient_evidence' because the framer pre-registered criterion 4 with would_support 'no', and because the matched populations are not unstudied; they are studied (a 594-patient benchmark, a randomised control arm, a matched prospective cohort) with concordant results, and the evidence reaches the question and answers it negatively: no candidate has the best evidence, both because nothing separates and because no source measured the endpoint as defined. Confidence is moderate, not high, because the non-discrimination rests partly on cross-trial arithmetic over heterogeneous response criteria, and one deliverable candidate (HAM plus venetoclax) has an unpublished CR split that could separate. Two arithmetic corrections carried for quotation hygiene: Wierzbowska's 58% is 66/114 evaluable, not 66/118 (55.9%); RELAX's serious-adverse-event line (15 SAEs in 14 patients printed as 13%, where 14/55 is 25%) does not reconcile and supports the selective-reporting concern. Open action logged rather than footnoted: the lintuzumab-Ac225 expanded-access inquiry to the sponsor has never been made. Board round 2 ran without vetoes or self-critiques: 10 qualified, 7 dissent, 3 endorse across 20 rows. Amended 2026-08 under the updated schema: the candidates[] evidence table (10 rows) and ranking_basis were added. The downgrade to a bare verdict stands and governs only recommendations.jsonl, which remains unwritten; the table is evidence display, not a prescription, and its ranking_basis states that the order is not CR probability. Table work surfaced one arithmetic fix, carried into the criterion-4 finding: the CLAG-M Wilson interval had been computed on the uncorrected 66/118 denominator (46.9 to 64.6); on the 66/114 evaluable the run itself quotes, it is 48.7 to 66.6, which still clears the matched pack, so no other figure, criterion or the verdict moves. Completeness amendment 2026-08: the candidates table was enlarged from 10 to 24 rows so that every therapy the research tier assessed appears, including the assessed-and-ruled-out tail (flotetuzumab, uproleselan-MEC, Iomab-B, pivekimab sunirine, idasanutlin plus cytarabine, the registry-only venetoclax combinations) and four further deliverable rows (CLAG, post-venetoclax-failure salvage, and the two myeloid-sarcoma rows, whose weight comes from the thigh lesion rather than their evidence tier). Verdict, confidence, answer shape and the head of the ranking are unchanged; ranking_basis now states how the tail is ordered. Non-therapy benchmark rows stay out and are named in scope_caveat; ASAP is folded into rank 2 as that row's strategy evidence. The rank-6 label was rephrased to 'RELAX; HAM-VEN' to clear the all-caps name-pair false positive the PHI scanner raised on the rendered page, flagged by the reporter run of 2026-08. All tail-row registry statuses re-verified 2026-08; the uproleselan phase 3 (NCT03616470) reads terminated for missing its primary endpoint, which is what strands its phase 2 CR figure.",
   "candidates": [
     {
       "rank": 1,
@@ -215,7 +215,7 @@
         "pmid:16110027",
         "pmid:38583455"
       ],
-      "notes": "The live alternative no guideline forecloses: nothing writes a CR precondition into a second transplant, so proceeding to conditioning without buying a remission first should be put to her rather than assumed away. NCT04375631 admits refractoriness defined by failed venetoclax combinations and offers a cladribine debulk instead of re-exposing her to the failed FLAG-Ida."
+      "notes": "The live alternative no guideline forecloses: nothing writes a CR precondition into a second transplant, so proceeding to conditioning without buying a remission first should be put to her rather than assumed away. NCT04375631 admits refractoriness defined by failed venetoclax combinations and offers a cladribine debulk instead of re-exposing her to the failed FLAG-Ida. ASAP is this row's strategy evidence rather than a separate candidate: its randomisation tested exactly this route's premise, that the conditioning can produce the remission."
     },
     {
       "rank": 3,
@@ -298,7 +298,7 @@
     },
     {
       "rank": 6,
-      "label": "Venetoclax plus high-dose cytarabine and mitoxantrone (RELAX, HAM-VEN), off protocol",
+      "label": "Venetoclax plus high-dose cytarabine and mitoxantrone (RELAX; HAM-VEN), off protocol",
       "response_rate": {
         "value": "75% (41/55)",
         "endpoint": "CRc (composite CR/CRi by intention to treat; no CR-only split published)",
@@ -374,6 +374,120 @@
     },
     {
       "rank": 9,
+      "label": "CLAG (cladribine, cytarabine, G-CSF) off protocol",
+      "response_rate": {
+        "value": "37.9%",
+        "endpoint": "CR (true CR, retrospective head-to-head against MEC)",
+        "n": "97 CLAG patients of 162 in the comparison",
+        "ci": null,
+        "population_match": "Single-centre retrospective with physician-assigned treatment, split by primary refractory versus first relapse; neither prior allograft nor prior venetoclax is analysed, and her second-salvage state fits neither stratum cleanly."
+      },
+      "toxicity": {
+        "summary": "Unpublished: the four-page report carries no adverse-event table and no early-mortality figure. Expect the profile of a cladribine and high-dose cytarabine backbone, in the region of the CLAG-M rates above.",
+        "key_rates": [],
+        "population_match": null
+      },
+      "deliverable": "off_label",
+      "references": [
+        "pmid:21109304"
+      ],
+      "notes": "The winning arm of the file's only head-to-head (MEC 23.8% true CR, p=0.048; primary refractory subgroup 45.5% versus 22.2%, p=0.09). One retrospective is the whole case for it; the CLAG-M row above carries the larger prospective cohort for the same backbone plus mitoxantrone."
+    },
+    {
+      "rank": 10,
+      "label": "Physician's-choice salvage after venetoclax failure, including venetoclax plus actinomycin D",
+      "response_rate": {
+        "value": "23% (5/22)",
+        "endpoint": "ORR pooling CR with MLFS; no CR-only rate is published for the whole salvaged group. The venetoclax plus actinomycin D subset reached true CR in 3 of 6.",
+        "n": "22 treated of 28; six were too unwell for any salvage attempt",
+        "ci": null,
+        "population_match": "The closest published population to her exact axis: venetoclax-based treatment had failed in all 28, 57% had a prior allograft, and the median was three prior lines. It is also sicker than she is, with 71% at ECOG 2-4 against her ECOG 1."
+      },
+      "toxicity": {
+        "summary": "No adverse-event table is published; the tolerability signal is that six of 28 patients were too unwell for any salvage attempt. Median survival was 3.9 months overall.",
+        "key_rates": [],
+        "population_match": null
+      },
+      "deliverable": "off_label",
+      "references": [
+        "pmid:32997830",
+        "pmid:33217852"
+      ],
+      "notes": "The pessimistic anchor for the axis she is actually on: after venetoclax-based salvage fails, response of any kind ran 23% and that figure pools CR with MLFS. The actinomycin D signal sits on six patients. Two further case reports of venetoclax-HMA with dose-adjusted HAG were read and set aside for having no denominator."
+    },
+    {
+      "rank": 11,
+      "label": "Myeloid-sarcoma-directed intensive chemotherapy (FLAI, HDAC-IDA, HyperCVAD or MEC)",
+      "response_rate": {
+        "value": "45%",
+        "endpoint": "CR across intensively treated patients; the paper does not state whether extramedullary sites were separately assessed at response, so the figure cannot be read as marrow-plus-tissue CR",
+        "n": "43 intensively treated of 48",
+        "ci": null,
+        "population_match": "Nine-centre Italian registry, median age 46, mixed presentations; the 15 secondary-AML-related cases, her category, had the worst survival of the three groups. Not selected for post-allograft relapse or venetoclax failure."
+      },
+      "toxicity": {
+        "summary": "Death during induction 5% among the 43 intensively treated; no other adverse-event data are published.",
+        "key_rates": [
+          "Death during induction 5% (43 intensively treated)"
+        ],
+        "population_match": null
+      },
+      "deliverable": "off_label",
+      "references": [
+        "pmid:28056398",
+        "pmid:39622998"
+      ],
+      "notes": "Here because the thigh lesion is the reason every marrow-only figure in this table fails her endpoint, and this is the largest adult myeloid sarcoma series with a remission figure attached; even it cannot say whether the sarcoma responded. The larger comparison of transplant against chemotherapy in myeloid sarcoma (162 patients, 12 centres) publishes survival only, so it cannot carry the extramedullary CR axis either."
+    },
+    {
+      "rank": 12,
+      "label": "Venetoclax plus hypomethylating agent directed at myeloid sarcoma",
+      "response_rate": {
+        "value": "44%",
+        "endpoint": "pooled response rate, not resolved to CR, for venetoclax plus HMA, mainly in secondary myeloid sarcoma",
+        "n": "pooled within a 7241-patient systematic review; subset denominators not resolved",
+        "ci": null,
+        "population_match": "Pooled across 85 heterogeneous reports with mixed response definitions. Secondary myeloid sarcoma dominates the venetoclax arm, which is her category, but nothing is stratified by post-allograft relapse or venetoclax failure, and her own venetoclax refractoriness argues directly against re-exposure."
+      },
+      "toxicity": {
+        "summary": "Not extracted by the review; regimen toxicity sits with the post-allograft HMA-venetoclax row above (30-day mortality 3.6%, grade 3-4 cytopenias 99%).",
+        "key_rates": [],
+        "population_match": null
+      },
+      "deliverable": "off_label",
+      "references": [
+        "pmid:41463221",
+        "pmid:33933047"
+      ],
+      "notes": "The extramedullary face of the rank-3 strategy, and the same review supplies the two numbers behind this table's endpoint discipline: 56% of paired sarcoma and marrow samples carry discordant mutation profiles, and 46% of post-transplant relapses in the pooled literature were isolated extramedullary. One case report documents the response standard this question wants, a PET-negative and MRD-negative remission covering marrow and an extramedullary site on venetoclax-HMA before transplant; one patient supplies no rate."
+    },
+    {
+      "rank": 13,
+      "label": "Intermediate-dose cytarabine alone (MIRROS randomised control arm; context row)",
+      "response_rate": {
+        "value": "17.1% (21/123)",
+        "endpoint": "CR (true CR, TP53 wild-type intention-to-treat control arm of a randomised phase 3)",
+        "n": "21/123",
+        "ci": "95% CI 11.4 to 24.7 (Wilson, computed)",
+        "population_match": "R/R AML after up to two prior induction regimens, not selected for post-allograft relapse or venetoclax failure. Carried as the largest randomised true-CR benchmark in R/R AML, not as a proposal; the idasanutlin arm did not beat it."
+      },
+      "toxicity": {
+        "summary": "Control-arm profile: grade 3+ febrile neutropenia 49.3%, 30-day mortality 5.5%.",
+        "key_rates": [
+          "Grade 3+ febrile neutropenia 49.3% (control arm)",
+          "30-day mortality 5.5% (control arm)"
+        ],
+        "population_match": null
+      },
+      "deliverable": "yes",
+      "references": [
+        "pmid:35413116",
+        "pmid:15973664"
+      ],
+      "notes": "Context row, read together with the Giles second-salvage benchmark: true CR 13% (76/594, Wilson 10.3 to 15.7) across pooled second-salvage regimens, stratifying from 54% down to 0% in the highest-risk group. These two are the floor every candidate above must be read against."
+    },
+    {
+      "rank": 14,
       "label": "Lintuzumab-Ac225 plus CLAG-M",
       "response_rate": {
         "value": "56.6%",
@@ -399,30 +513,242 @@
       "notes": "Not obtainable: the phase 1 completed and the follow-on venetoclax combination is suspended (both re-verified against the registry, 2026-08). The expanded-access call to the sponsor has never been made; one board member said outright that its ranking changes on a yes. This row is why the deliverable column exists: the best-evidenced candidate has no route, and that is a finding, not a recommendation."
     },
     {
-      "rank": 10,
-      "label": "Intermediate-dose cytarabine alone (MIRROS randomised control arm; context row)",
+      "rank": 15,
+      "label": "Flotetuzumab (CD123 x CD3 bispecific DART)",
       "response_rate": {
-        "value": "17.1% (21/123)",
-        "endpoint": "CR (true CR, TP53 wild-type intention-to-treat control arm of a randomised phase 3)",
-        "n": "21/123",
-        "ci": "95% CI 11.4 to 24.7 (Wilson, computed)",
-        "population_match": "R/R AML after up to two prior induction regimens, not selected for post-allograft relapse or venetoclax failure. Carried as the largest randomised true-CR benchmark in R/R AML, not as a proposal; the idasanutlin arm did not beat it."
+        "value": "47% (7/15)",
+        "endpoint": "response defined as under 5% marrow blasts without required count recovery, in a post-hoc TP53-abnormal subgroup; not ELN CR. The parent trial's figure at the recommended dose is CR/CRh 26.7% in primary induction failure or early relapse",
+        "n": "7/15 (subgroup); 30 patients at the recommended dose for the parent figure",
+        "ci": null,
+        "population_match": "TP53-abnormal R/R AML touches one of her pending axes, but enrolment was primary induction failure and early relapse, not late post-allograft relapse, and the subgroup is 15 patients read post hoc."
       },
       "toxicity": {
-        "summary": "Control-arm profile: grade 3+ febrile neutropenia 49.3%, 30-day mortality 5.5%.",
+        "summary": "Infusion-related reactions and cytokine release syndrome in nearly all patients on the parent trial, largely grade 1-2, managed with stepwise dosing, dexamethasone pretreatment and prompt tocilizumab.",
         "key_rates": [
-          "Grade 3+ febrile neutropenia 49.3% (control arm)",
-          "30-day mortality 5.5% (control arm)"
+          "Infusion-related reactions/CRS: the most frequent adverse events, largely grade 1-2 (parent trial, n=88)"
         ],
         "population_match": null
       },
-      "deliverable": "yes",
+      "deliverable": "no",
+      "references": [
+        "pmid:33057635",
+        "pmid:32929488",
+        "NCT02152956"
+      ],
+      "notes": "The strongest TP53-specific remission signal in the dossier and the most stranded: MacroGenics stopped development and NCT02152956 is terminated as a business decision (re-verified against the registry, 2026-08). It cannot be the answer however her TP53 workup resolves, and its headline number would not meet this question's endpoint even if it could."
+    },
+    {
+      "rank": 16,
+      "label": "Uproleselan (GMI-1271) plus MEC",
+      "response_rate": {
+        "value": "35% (19/54)",
+        "endpoint": "CR (true CR at the recommended phase 2 dose, reported apart from the composite; CR/CRi 41%)",
+        "n": "19/54 at the recommended phase 2 dose",
+        "ci": null,
+        "population_match": "R/R cohort in which 18% had a prior transplant, with no venetoclax-failure stratum reported; the confirmatory phase 3 excluded secondary refractory AML, the category she now occupies after failing reinduction."
+      },
+      "toxicity": {
+        "summary": "Moderate for an intensive backbone: grade 3+ febrile neutropenia 59%, sepsis 12%, mucositis 2% (the regimen's selling point against MEC alone), 30-day mortality 2%, 60-day 9%.",
+        "key_rates": [
+          "Grade 3+ febrile neutropenia 59%",
+          "Grade 3+ sepsis 12%; mucositis 2%",
+          "30-day mortality 2% (1/66); 60-day 9% (5/66)"
+        ],
+        "population_match": null
+      },
+      "deliverable": "no",
+      "references": [
+        "pmid:34543383",
+        "NCT02306291",
+        "NCT03616470"
+      ],
+      "notes": "One of the few true-CR splits in the file with a prior-transplant fraction attached, and no route to it: the confirmatory phase 3 (NCT03616470) was terminated after missing its primary endpoint (re-verified against the registry, 2026-08), the phase 2 signal never converted, and there is no supply."
+    },
+    {
+      "rank": 17,
+      "label": "Iomab-B (131I-apamistamab) radioimmunoconditioning into allogeneic HCT (SIERRA)",
+      "response_rate": {
+        "value": "17.1% versus 0%",
+        "endpoint": "durable CR lasting at least 180 days (randomised, intention to treat), a stricter bar than every single-timepoint CR in this table; it reads lower than it plays",
+        "n": "76 versus 77 randomised",
+        "ci": "95% CI 9.4 to 27.5 versus 0.0 to 4.7",
+        "population_match": "Active R/R AML at 55 and over, close to her disease state on burden and refractoriness, except that SIERRA excluded prior allogeneic or autologous HCT, so she could not have enrolled."
+      },
+      "toxicity": {
+        "summary": "No worse than conventional care within the trial: grade 3+ treatment-related events 59.7% versus 59.2%, 100-day non-relapse mortality 12.2% versus 14.3%.",
+        "key_rates": [
+          "Grade 3+ treatment-related AEs 59.7% (conventional care 59.2%)",
+          "100-day non-relapse mortality 12.2% (conventional care 14.3%)",
+          "Grade 3+ sepsis 6.1% of transplanted patients (conventional care 28.6%)"
+        ],
+        "population_match": null
+      },
+      "deliverable": "no",
+      "references": [
+        "pmid:39298738",
+        "NCT02665065",
+        "NCT07157514"
+      ],
+      "notes": "Randomised proof that antigen-targeted conditioning can carry active leukaemia into a graft and a durable CR where conventional salvage produced none; mechanism support for the rank-2 route rather than an option for her. The successor protocol (NCT07157514) carries the prior-HCT exclusion forward and has not opened (re-verified against the registry, 2026-08)."
+    },
+    {
+      "rank": 18,
+      "label": "Pivekimab sunirine (IMGN632), CD123-directed antibody-drug conjugate",
+      "response_rate": {
+        "value": "17% (5/29)",
+        "endpoint": "composite CR (CRc) at the recommended phase 2 dose; no CR-only split. ORR 21%",
+        "n": "5/29",
+        "ci": "95% CI 6 to 36",
+        "population_match": "CD123-positive R/R AML with ECOG 0-1 required, which she meets, and no antigen-density threshold, which suits her qualitative-only flow; no post-allograft or venetoclax-failure subset is reported."
+      },
+      "toxicity": {
+        "summary": "Light at the recommended dose: grade 3+ febrile neutropenia 10%, infusion reactions 7%, anaemia 7%; two reversible dose-limiting veno-occlusive disease events in escalation, which matters ahead of a possible second graft.",
+        "key_rates": [
+          "Grade 3+ febrile neutropenia 10% at the recommended dose",
+          "Grade 3+ infusion-related reactions 7%",
+          "Veno-occlusive disease 2/68 in escalation, both reversible"
+        ],
+        "population_match": null
+      },
+      "deliverable": "no",
+      "references": [
+        "pmid:38423051",
+        "NCT03386513"
+      ],
+      "notes": "A confidence interval running from 6 to 36 covers everything from negligible to moderate, too wide and too low to compete on this question's endpoint even before the route closed: NCT03386513 is active but no longer recruiting (re-verified against the registry, 2026-08) and there is no marketed supply."
+    },
+    {
+      "rank": 19,
+      "label": "Idasanutlin plus cytarabine (MIRROS experimental arm)",
+      "response_rate": {
+        "value": "20.3% (47/232)",
+        "endpoint": "CR (true CR, TP53 wild-type intention to treat, randomised); it did not beat cytarabine alone (17.1%; odds ratio 1.23, 95% CI 0.70 to 2.18), and overall survival did not move (HR 1.08)",
+        "n": "47/232",
+        "ci": null,
+        "population_match": "R/R AML after up to two prior inductions, not selected for post-allograft relapse or venetoclax failure; the efficacy population is TP53 wild-type by design, which is exactly the axis her pending TP53 workup leaves unresolved."
+      },
+      "toxicity": {
+        "summary": "Heavier than its own control arm: grade 3+ diarrhoea 16.9% versus 6.2%, sepsis 11.3% versus 4.8% (fatal sepsis 5.3% versus 1.4%), 30-day mortality 7.9% versus 5.5%.",
+        "key_rates": [
+          "Grade 3+ diarrhoea 16.9% (control 6.2%)",
+          "Grade 3+ sepsis 11.3%, fatal 5.3% (control 4.8% and 1.4%)",
+          "30-day mortality 7.9% (control 5.5%)"
+        ],
+        "population_match": null
+      },
+      "deliverable": "no",
       "references": [
         "pmid:35413116",
-        "pmid:15973664"
+        "NCT02545283"
       ],
-      "notes": "Context row, read together with the Giles second-salvage benchmark: true CR 13% (76/594, Wilson 10.3 to 15.7) across pooled second-salvage regimens, stratifying from 54% down to 0% in the highest-risk group. These two are the floor every candidate above must be read against."
+      "notes": "Assessed as a therapy and kept in this file mainly for its control arm, which sits at rank 13 as the randomised benchmark. An MDM2 antagonist needs TP53 wild-type disease, and idasanutlin's AML development stopped after MIRROS missed its primary endpoint; NCT02545283 reads terminated (re-verified against the registry, 2026-08)."
+    },
+    {
+      "rank": 20,
+      "label": "Tagraxofusp plus cladribine and cytarabine (NCT06561152)",
+      "response_rate": {
+        "value": "No results posted",
+        "endpoint": "CR and composite CR (CR/CRi/CRh) are named secondary endpoints, separated the way this question requires; nothing has reported",
+        "n": null,
+        "ci": null,
+        "population_match": "CD123 positivity needs no minimum threshold, which suits her qualitative-only flow. Enrolment admits only patients whose sole prior therapy was venetoclax plus a hypomethylating agent, so FLAG-IDA plus venetoclax and a prior allograft exclude her outright."
+      },
+      "toxicity": {
+        "summary": "Unpublished for this combination; tagraxofusp's label carries a boxed warning for capillary leak syndrome.",
+        "key_rates": [],
+        "population_match": null
+      },
+      "deliverable": "no",
+      "references": [
+        "NCT06561152"
+      ],
+      "notes": "Recruiting at a single US centre and closed to her at the door (re-verified against the registry, 2026-08). Logged so the record shows the CD123 combinations were checked rather than assumed open."
+    },
+    {
+      "rank": 21,
+      "label": "Venetoclax plus CLAG-M (NCT06660368; NCT04797767)",
+      "response_rate": {
+        "value": "No results posted on either protocol",
+        "endpoint": "MRD-negative remission is the primary endpoint of the recruiting R/R protocol; no CR figure exists for the combination",
+        "n": null,
+        "ci": null,
+        "population_match": "The recruiting R/R protocol trips four of her features: venetoclax-refractory disease, prior high-dose cytarabine with FLAG named, any known TP53 mutation, and a WBC ceiling of 25,000; extramedullary AML with marrow involvement is the one axis she clears. The other protocol admitted R/R patients to its phase 1 only, and the phase 2 that continues to recruit takes newly diagnosed adverse-risk disease."
+      },
+      "toxicity": {
+        "summary": "Unpublished; expect at least the CLAG-M backbone rates (severe infection 45%, early death 7%) plus venetoclax-driven cytopenias.",
+        "key_rates": [],
+        "population_match": null
+      },
+      "deliverable": "no",
+      "references": [
+        "NCT06660368",
+        "NCT04797767"
+      ],
+      "notes": "NCT04797767 names extramedullary myeloid sarcoma as a qualifying disease manifestation for relapsed patients, which almost no other protocol does, and that door is the one that has closed. Her venetoclax refractoriness also argues against a venetoclax-containing reinduction on any protocol. Both statuses re-verified against the registry, 2026-08."
+    },
+    {
+      "rank": 22,
+      "label": "Venetoclax added to FLAMSA-treosulfan sequential conditioning (NCT05807932)",
+      "response_rate": {
+        "value": "No results posted",
+        "endpoint": "the primary endpoint is 30-day organ toxicity, not remission; even a matched patient would get no CR rate from this protocol",
+        "n": null,
+        "ci": null,
+        "population_match": "Enrolment requires disease untreated beyond hydroxyurea or at most two hypomethylating-agent courses with or without venetoclax; FLAG-IDA plus venetoclax and her prior allograft exclude her at the front door."
+      },
+      "toxicity": {
+        "summary": "Unpublished; safety within 30 days of transplant is the question the trial itself is asking.",
+        "key_rates": [],
+        "population_match": null
+      },
+      "deliverable": "no",
+      "references": [
+        "NCT05807932"
+      ],
+      "notes": "The venetoclax-era descendant of the FLAMSA figure behind rank 2, logged so the record shows the modern sequential-conditioning platform was checked rather than assumed open to her. Recruiting at a single German centre (re-verified against the registry, 2026-08)."
+    },
+    {
+      "rank": 23,
+      "label": "VAM (venetoclax-containing combination) in extramedullary and secondary AML (NCT07028086)",
+      "response_rate": {
+        "value": "No results posted",
+        "endpoint": "composite CR is the primary endpoint; nothing has reported",
+        "n": null,
+        "ci": null,
+        "population_match": "The only protocol found in this search that treats extramedullary disease and myeloid sarcoma as an enrolment category rather than an afterthought, and it is restricted to previously untreated AML with an age ceiling of 65, at a single centre in Shanghai."
+      },
+      "toxicity": {
+        "summary": "Unpublished; the registry record does not specify dosing.",
+        "key_rates": [],
+        "population_match": null
+      },
+      "deliverable": "no",
+      "references": [
+        "NCT07028086"
+      ],
+      "notes": "Its existence answers a question this table keeps running into: is anyone measuring remission in myeloid sarcoma prospectively? One recruiting single-centre front-line study, and she cannot enter it (re-verified against the registry, 2026-08)."
+    },
+    {
+      "rank": 24,
+      "label": "IMPACT-AML randomised platform, high- against low-intensity physician's-choice salvage (NCT06713837)",
+      "response_rate": {
+        "value": "No results posted",
+        "endpoint": "event-free survival is the primary endpoint; remission rates are collected as secondary",
+        "n": "339 planned",
+        "ci": null,
+        "population_match": "First or second relapse or refractory AML, which contains her line; entry requires the treating physician to consider both arms reasonable, a judgement hard to defend at 85% marrow blasts after an allograft, and the sites are Italian."
+      },
+      "toxicity": {
+        "summary": "Not applicable at the platform level; each arm carries the toxicity of the physician's-choice regimen given, most of which appear in the rows above.",
+        "key_rates": [],
+        "population_match": null
+      },
+      "deliverable": "trial_only",
+      "references": [
+        "NCT06713837"
+      ],
+      "notes": "Last because it adds no distinct therapy: its arms are regimens already in this table. It is the one randomised comparison recruiting on exactly the discrimination gap this verdict names, so if it reports, criterion 7 gains the direct evidence this file lacks. Recruiting (re-verified against the registry, 2026-08)."
     }
   ],
-  "ranking_basis": "Eligibility, deliverability and population match of the evidence, in that order, following the board's practical convergence. This order is explicitly not demonstrated CR probability: on true CR in every population that contains her, the candidates' confidence intervals all overlap (acceptance criterion 4), so no ordering by the endpoint the question asks is supportable, and the verdict above is 'no' for exactly that reason. Rows 1 and 2 are the two protocol routes open to her; rows 3 to 8 are deliverable off-protocol options ordered by how directly their evidence reaches her; row 9 carries the best matched signal and no route; row 10 is a randomised benchmark kept for context. The table shows the numbers that produced the negative verdict; it does not prescribe among them."
+  "ranking_basis": "Eligibility, deliverability and population match of the evidence, in that order, following the board's practical convergence. This order is explicitly not demonstrated CR probability: on true CR in every population that contains her, the candidates' confidence intervals all overlap (acceptance criterion 4), so no ordering by the endpoint the question asks is supportable, and the verdict above is 'no' for exactly that reason. Rows 1 and 2 are the two protocol routes open to her; rows 3 to 12 are deliverable off-protocol options ordered by how directly their evidence reaches her, with the two myeloid-sarcoma rows (11 and 12) carried above their evidence tier because the thigh lesion is why every marrow-only figure fails her endpoint; row 13 is the randomised benchmark kept for context and carries the second-salvage floor in its notes. Rows 14 to 24 were assessed and are not answers: the tail is ordered by non-viability, first the stranded agents with real signals and no route (14 to 19, strongest matched signal first), then registry-only protocols whose doors are closed to her or unopened (20 to 23), and last a randomised platform that adds no distinct therapy (24). An absent row would read as never-considered, which is why the ruled-out candidates appear at all. The table shows the numbers that produced the negative verdict; it does not prescribe among them."
 }
