@@ -49,29 +49,34 @@ instead of a target set:
   `insufficient_evidence` is a first-class verdict and must not be softened.
 Full method: `docs/methods.md`.
 
-## Standard of care is additive, never subtractive
-The ranking (board → PI → translator → reporter) stays scoped to
-`profile.json::targetable_features[]`. The standard-of-care track is a parallel
-surface, not an exception: it never writes to `recommendations.jsonl` or any
-board file, and it must never remove, rerank, narrow, or argue against a
-feature-targeted option. Adding standard care must not cost the case a single
-non-standard option. The one sanctioned bridge is
-`relationship_to_targeted_options`, which names sequencing and conflicts in one
-direction only. See the cross-cutting rule in `docs/methods.md`.
-Standard-of-care track: standalone standard_of_care_screener (owns both its JSONL
-and its narrative, then renders its own page). Runs any time after
-`promote_profile.py`; best after PI, when `relationship_to_targeted_options` can
-name the ranked interventions it sequences against.
+## One ranked table: every therapy with any evidence
+`recommendations.jsonl` is the case's most important output — more important
+than any prose — and a therapy that is not in it is effectively invisible. The
+PI ranks **every therapy with any evidence behind it**: approved and
+investigational, feature-targeting and not. Chemotherapy, surgery, radiotherapy
+and palliative care get ranked rows alongside trial drugs. `access_route`
+(copied from `accessibility.jsonl::access_status`) is what marks a row as
+standard care, trial-only or off-label — the therapy's *absence* never carries
+that meaning. `surfaced_reason` demotes a row within the table; it never removes
+it. When in doubt, include and let `status` carry the reservation.
+
+This reverses the earlier routing rule, under which approved options were moved
+out of the ranking onto the standard-of-care page. `check_pipeline.py` now fails
+a case when a `standard_of_care.jsonl` option has no ranked row. The gate is
+opt-in via `access_route`, so cases ranked before the change stay valid under
+the contract they were built under.
 
 ## Standard of care is additive, never subtractive
-The ranking (board → PI → translator → reporter) stays scoped to
-`profile.json::targetable_features[]`. The standard-of-care track is a parallel
-surface, not an exception: it never writes to `recommendations.jsonl` or any
-board file, and it must never remove, rerank, narrow, or argue against a
-feature-targeted option. Adding standard care must not cost the case a single
-non-standard option. The one sanctioned bridge is
-`relationship_to_targeted_options`, which names sequencing and conflicts in one
-direction only. See the cross-cutting rule in `docs/methods.md`.
+The standard-of-care track is a **detail surface, not a destination**. It never
+writes to `recommendations.jsonl` or any board file, and it must never remove,
+rerank, narrow, or argue against a ranked option. Adding standard care must not
+cost the case a single option. What it adds is the depth a ranked row cannot
+hold: regulatory and label language, guideline carriage with versions,
+eligibility and blocking factors, and sequencing trade-offs via
+`relationship_to_targeted_options`, which names conflicts in one direction only
+and does not rank. A standard option it surfaces that the PI has not ranked is a
+gap to flag for a PI re-run, not something its page can absorb. See the
+cross-cutting rule in `docs/methods.md`.
 
 ## Data model & gates
 - `data/cases/<slug>/` holds committed JSONL/JSON; board output lives only in

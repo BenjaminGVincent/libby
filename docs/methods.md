@@ -23,49 +23,57 @@ The contract is enforced at every agent boundary:
 - `clinician` only compiles clinical evidence for feature-targeting drugs.
 - `researcher` only logs preclinical evidence for feature-targeting drugs.
 - The 5 board personas only reason over the in-scope dossier.
-- `PI` produces the **Experimental table** (`recommendations.jsonl`): every
-  feature-targeting *investigational* option, tiered (top-tier ranked + non-top-tier
-  flagged via `surfaced_reason`). It routes approved/guideline-carried options to the
-  Standard-of-care table and never surfaces genuinely non-targeting drugs.
-- `translator` and `reporter` carry the two-table model into the patient and PDF
+- `PI` produces **the ranked table** (`recommendations.jsonl`): every therapy with
+  any evidence behind it, tiered (top-tier ranked + non-top-tier flagged via
+  `surfaced_reason`), with `access_route` marking standard care vs trial-only vs
+  off-label. Nothing is routed out of it.
+- `translator` and `reporter` carry the ranked table into the patient and PDF
   surfaces.
 
-### Two therapeutic tables, split by regulatory maturity
+### One ranked table, with a detail surface beside it
 
-The therapeutic landscape is reported as **two co-equal tables**, so every
-considered option is surfaced (flagged with its tier and rationale) rather than
-silently absent. An option lands in exactly one table by *regulatory maturity*:
+The ranked table is the case's most important output, and a therapy that is not
+in it is effectively invisible to a reader. So **every therapy with any evidence
+gets a ranked row** — approved and investigational, feature-targeting and not.
+Chemotherapy, surgery, radiotherapy and palliative care are ranked alongside
+trial drugs.
 
-- **Standard-of-care table** (`standard_of_care_screener` → `standard_of_care.jsonl`):
-  options approved for a population including this patient, or carried in a major
-  guideline. This includes a drug that *also* targets a stated feature (e.g.
-  gemtuzumab, approved for R/R CD33+ AML), and an approved drug whose target the
-  patient lacks (flagged "target absent" via `eligibility_status`/`population_match`).
-- **Experimental table** (`PI` → `recommendations.jsonl`): feature-targeting
-  *investigational* options (trial-only, off-label-experimental, compassionate-use,
-  not-yet-accessible, unavailable), tiered — top-tier ranked plus non-top-tier
-  flagged via `surfaced_reason` (`unavailable` / `consolidated` / `thin_evidence` /
-  `not_enrollable`).
+- **The ranked table** (`PI` → `recommendations.jsonl`): all of it. `access_route`
+  (from `accessibility.jsonl::access_status`) carries standard care /
+  off-label / trial-only / compassionate / expanded-access / not-yet-accessible /
+  unavailable. `surfaced_reason` (`unavailable` / `consolidated` / `thin_evidence` /
+  `not_enrollable`) demotes a row *within* the table; it never removes it.
+- **The Standard-of-care page** (`standard_of_care_screener` →
+  `standard_of_care.jsonl`): a **detail surface**, not a destination. It holds what
+  a ranked row cannot — regulatory and label language, guideline carriage with
+  versions, eligibility and blocking factors, prior exposure, and sequencing
+  trade-offs. Every option on it must also have a ranked row.
 
-The split is mechanism-agnostic: an approved feature-targeting drug lives in
-Standard of care (by maturity), not the ranking. Both tables render in the Case
-output section. The board still reasons over the full feature-targeting dossier;
-the PI routes its approved members to the Standard-of-care table.
+`check_pipeline.py` fails a case when a standard-of-care option has no ranked
+row. The check is opt-in via the presence of `access_route`, so cases ranked
+before this change remain valid under the contract they were built under.
+
+**This supersedes the earlier two-table split by regulatory maturity**, under
+which an approved option — including one the board ranked first — was routed out
+of the ranking onto the standard-of-care page. That rule met its stated goal of
+keeping the ranking from becoming a generic oncology recommender, but it cost
+more than it saved: in a treatment-naive case the board's strongest agreement
+could have no row in the main table, and its absence read as a judgement rather
+than a filing decision. Scope is now carried by `access_route` and
+`surfaced_reason` on a row, rather than by whether the row exists.
 
 The one sanctioned bridge is `standard_of_care.jsonl::relationship_to_targeted_options`,
 and it runs one way: it names sequencing and conflicts (a regimen that would
 exhaust eligibility for a trial, a line the two tracks both want) without
 ranking either against the other.
 
-This supersedes the earlier rule that standard care never appeared in the case
-output at all. The reason for that rule was to stop the *ranking* from
-degenerating into a generic oncology recommender, and separating the surfaces
-preserves it. When a biomarker confirmatory test is negative and the test was
-the gate on the feature, the case has no within-scope **recommendations**, and
-the cross-cutting caveat still says exactly that in the ranking's own voice;
-the standard-of-care page is where the alternatives are enumerated, on the
-record and referenced, rather than left to a conversation the case page does
-not witness.
+A negative biomarker test no longer empties the table. Under the earlier
+feature-scoped contract, a negative result on the gating test left the case with
+no within-scope recommendations, and the caveat said so. Now the conditional
+rows are foreclosed but the rest of the ranking stands — the standard-of-care
+rows and anything not gated on that biomarker — so the cross-cutting caveat
+names what survives rather than sending the reader elsewhere. Saying "nothing
+is left" should be rare, and true when said.
 
 ## Question-scoped runs (parallel entry point)
 

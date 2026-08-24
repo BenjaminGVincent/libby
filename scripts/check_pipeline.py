@@ -296,6 +296,41 @@ def check_pipeline(slug: str) -> tuple[list[str], list[str]]:
                 f"options; re-run /standard_of_care_screener to fill it"
             )
 
+    # Unified-table coverage. Under the unified-table contract the ranked table
+    # carries EVERY therapy with any evidence, standard-of-care ones included,
+    # so a standard-of-care option with no ranked row is a real omission rather
+    # than a filing decision. Before that change the PI deliberately routed
+    # approved options out of the ranking, so applying this to the whole corpus
+    # would fail cases that were correct under the contract they were built
+    # under. `access_route` on any ranked row is the opt-in marker: it exists
+    # only on tables produced under the unified contract.
+    recs = _rows(case / "recommendations.jsonl")
+    if recs and soc and any(r.get("access_route") for r in recs):
+        ranked_ids = {r.get("intervention_id") for r in recs}
+        ranked_labels = " || ".join(
+            str(r.get("intervention_label") or "").lower() for r in recs
+        )
+        uncovered = []
+        for r in soc:
+            sid = r.get("soc_id")
+            label = str(r.get("option_label") or "").strip()
+            if sid and sid in ranked_ids:
+                continue
+            # Fall back to a label-stem match, since the two tracks assign their
+            # own IDs and the screener may name an option differently.
+            stem = label.split("(")[0].split(",")[0].strip().lower()
+            if stem and len(stem) > 3 and stem in ranked_labels:
+                continue
+            uncovered.append(label or sid or "<unlabelled>")
+        if uncovered:
+            shown = "; ".join(u[:60] for u in uncovered[:5])
+            more = f" (+{len(uncovered) - 5} more)" if len(uncovered) > 5 else ""
+            failures.append(
+                f"unified table: {len(uncovered)} standard-of-care option(s) have no row in "
+                f"recommendations.jsonl -- every therapy with any evidence needs a ranked "
+                f"row, with access_route marking it as standard care: {shown}{more}"
+            )
+
     return (failures, notes)
 
 

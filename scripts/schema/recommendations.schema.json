@@ -17,30 +17,106 @@
     "rationale_summary"
   ],
   "properties": {
-    "rank": { "type": "integer", "minimum": 1 },
-    "case_slug": { "type": "string" },
-    "intervention_id": { "type": "string" },
-    "intervention_label": { "type": "string" },
+    "rank": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "case_slug": {
+      "type": "string"
+    },
+    "intervention_id": {
+      "type": "string"
+    },
+    "intervention_label": {
+      "type": "string"
+    },
+    "access_route": {
+      "type": "string",
+      "enum": [
+        "standard_of_care",
+        "off_label_use",
+        "clinical_trial_only",
+        "compassionate_use",
+        "expanded_access_program",
+        "not_yet_accessible",
+        "unavailable"
+      ],
+      "description": "How this patient could practically reach the therapy today, copied from `accessibility.jsonl::access_status` (first/primary path when a row carries several). Under the unified-table contract EVERY therapy with any evidence gets a ranked row, including standard-of-care ones, so this field -- not the therapy's absence -- is what tells a reader an option is already approved care rather than experimental. Optional for backwards compatibility: cases ranked before the unified-table change omit it, and its presence on any row is what opts a case into the standard-of-care coverage gate in check_pipeline.py."
+    },
     "endorsed_by": {
       "type": "array",
-      "items": { "type": "string", "enum": ["risktaker", "conservative", "critic", "concensusite", "advocate"] }
+      "items": {
+        "type": "string",
+        "enum": [
+          "risktaker",
+          "conservative",
+          "critic",
+          "concensusite",
+          "advocate"
+        ]
+      }
     },
     "dissent_by": {
       "type": "array",
-      "items": { "type": "string", "enum": ["risktaker", "conservative", "critic", "concensusite", "advocate"] }
+      "items": {
+        "type": "string",
+        "enum": [
+          "risktaker",
+          "conservative",
+          "critic",
+          "concensusite",
+          "advocate"
+        ]
+      }
     },
     "veto_by": {
       "type": "array",
-      "items": { "type": "string", "enum": ["risktaker", "conservative", "critic", "concensusite", "advocate"] }
+      "items": {
+        "type": "string",
+        "enum": [
+          "risktaker",
+          "conservative",
+          "critic",
+          "concensusite",
+          "advocate"
+        ]
+      }
     },
-    "agreement_score": { "type": "number", "minimum": -2, "maximum": 1 },
-    "evidence_anchor": { "type": "array", "items": { "type": "string" } },
-    "expected_benefit": { "type": "string" },
-    "key_risks": { "type": "array", "items": { "type": "string" } },
-    "preference_alignment": { "type": "string" },
-    "guideline_status": { "type": "string" },
-    "rationale_summary": { "type": "string" },
-    "open_questions": { "type": "array", "items": { "type": "string" } },
+    "agreement_score": {
+      "type": "number",
+      "minimum": -2,
+      "maximum": 1
+    },
+    "evidence_anchor": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "expected_benefit": {
+      "type": "string"
+    },
+    "key_risks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "preference_alignment": {
+      "type": "string"
+    },
+    "guideline_status": {
+      "type": "string"
+    },
+    "rationale_summary": {
+      "type": "string"
+    },
+    "open_questions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
     "likelihood_of_effect": {
       "type": "string",
       "description": "≤ 25-word qualitative narrative for the at-a-glance ranked-prioritization table. Lead with a tier descriptor ('High in <subset>', 'Moderate', 'Low for <endpoint>') + the load-bearing evidence anchor (effect size, concordance across replicate trials, or trial reference). Distilled from the per-rank 'Likelihood of desired effect' prose."
@@ -52,10 +128,23 @@
     "counter_productive_moa": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["severity"],
+      "required": [
+        "severity"
+      ],
       "properties": {
-        "severity": { "type": "string", "enum": ["Low", "Moderate", "High", "N/A"] },
-        "description": { "type": "string", "description": "≤ 20 words. Names the mechanism-level risk that could blunt the therapeutic goal — T-cell exhaustion, antigen-loss escape, anti-angiogenic wound-healing impairment, etc. Distinct from patient AEs (those go in `toxicity_burden`)." }
+        "severity": {
+          "type": "string",
+          "enum": [
+            "Low",
+            "Moderate",
+            "High",
+            "N/A"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "description": "≤ 20 words. Names the mechanism-level risk that could blunt the therapeutic goal — T-cell exhaustion, antigen-loss escape, anti-angiogenic wound-healing impairment, etc. Distinct from patient AEs (those go in `toxicity_burden`)."
+        }
       },
       "description": "Mechanism-level counter-productive risk. Severity rule: Low if dissent is preference-flavored only, Moderate if a board persona dissented on mechanism grounds, High if a veto stood on mechanism grounds. Workup / diagnostic rows always `N/A`."
     },
@@ -65,31 +154,55 @@
     },
     "status": {
       "type": "string",
-      "enum": ["recommended", "considered_with_caveats", "not_recommended"],
+      "enum": [
+        "recommended",
+        "considered_with_caveats",
+        "not_recommended"
+      ],
       "default": "recommended"
     },
     "surfaced_reason": {
       "type": "string",
-      "enum": ["none", "unavailable", "consolidated", "thin_evidence", "not_enrollable"],
+      "enum": [
+        "none",
+        "unavailable",
+        "consolidated",
+        "thin_evidence",
+        "not_enrollable"
+      ],
       "default": "none",
       "description": "Why a feature-targeting investigational intervention is surfaced in the Experimental table but not ranked as a live top-tier option. `none` (default) is a normally-ranked/assessed row (its recommend-strength lives in `status`). `unavailable` = the program is discontinued/terminated with no successor. `consolidated` = one of several products of an approach that is ranked once at the approach level (this row points to the approach). `thin_evidence` = no peer-reviewed clinical efficacy yet (e.g. tool-compound / gated). `not_enrollable` = cross-tumor mechanism evidence or geographically-inaccessible, informational only. The renderer groups and flags rows by this field; `status` remains the recommend-strength axis. Approved feature-targeting drugs are NOT surfaced here — they live in the Standard-of-care table."
     },
     "scenario": {
       "oneOf": [
-        { "type": "null" },
-        { "type": "string", "const": "shared" },
-        { "type": "string", "pattern": "^[a-z0-9_]+:positive$" }
+        {
+          "type": "null"
+        },
+        {
+          "type": "string",
+          "const": "shared"
+        },
+        {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+:positive$"
+        }
       ],
       "description": "Three values: `null` for biomarker-independent recs (default), the literal `\"shared\"` for the rank-1 workup row that gates whether biomarker-conditional recs apply, or `\"<biomarker_short>:positive\"` for recs that are valid only if the named biomarker confirms positive (e.g. `dll3_ihc:positive`). The negative branch is no longer emitted: if the confirmatory test is negative, biomarker-conditional recs are foreclosed and the cross-cutting caveat in `index.md` documents the foreclosure mapping.",
       "default": null
     },
     "scenario_label": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "description": "Human-readable label for a `:positive` scenario, used inline in rendered docs (e.g. 'If DLL3 IHC ≥1% (preferably ≥25%)'). Null for `shared` workup rows and `null`-scenario rows."
     },
     "targets": {
       "type": "array",
-      "items": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9_]+$"
+      },
       "description": "Snake-case identifiers for the targetable features this intervention acts on. Drives per-target grouping in the Recommendations table HTML. First entry is the primary target. Keys mirror the user-stated `profile.json::targetable_features[].feature` (snake-cased), e.g. `[\"kras_g12r\"]`, `[\"cdkn2a_loss\"]`, `[\"kras_g12r\", \"cdkn2a_loss\"]` for a dual-target combination. For biomarker-gated cases the `scenario` field carries the same grouping signal; `targets[]` is the canonical source for non-gated cases."
     }
   }

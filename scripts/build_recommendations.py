@@ -66,7 +66,7 @@ def surfaced_badge(reason: str | None) -> str:
 
 
 RECS_HEAD = (
-    "<th>Rank</th><th>Intervention</th>"
+    "<th>Rank</th><th>Intervention</th><th>Access</th>"
     "<th>Likelihood of effect</th><th>Toxicity burden</th>"
     "<th>Counter-productive MoA</th><th>Overall</th>"
     "<th>Key references</th>"
@@ -74,11 +74,34 @@ RECS_HEAD = (
 
 # Header for the "Also considered" table: swaps the Rank column for a Flag column.
 RECS_HEAD_FLAGGED = (
-    "<th>Flag</th><th>Intervention</th>"
+    "<th>Flag</th><th>Intervention</th><th>Access</th>"
     "<th>Likelihood of effect</th><th>Toxicity burden</th>"
     "<th>Counter-productive MoA</th><th>Overall</th>"
     "<th>Key references</th>"
 )
+
+# Access-route badges. Under the unified-table contract the ranked table carries
+# every therapy with any evidence, standard-of-care ones included, so a reader
+# can no longer infer "this is experimental" from the therapy simply being
+# present. This column is what carries that distinction instead.
+ACCESS_META: dict[str, tuple[str, str]] = {
+    "standard_of_care": ("Standard care", "rel-indication"),
+    "off_label_use": ("Off-label", "rel-cross-tumor"),
+    "clinical_trial_only": ("Trial only", "rel-basket"),
+    "compassionate_use": ("Compassionate use", "rel-same-drug"),
+    "expanded_access_program": ("Expanded access", "rel-same-drug"),
+    "not_yet_accessible": ("Not yet accessible", "rel-other"),
+    "unavailable": ("Unavailable", "rel-other"),
+}
+
+
+def access_badge(route: str | None) -> str:
+    """Access-route cell. Renders `—` when absent, which is the expected state
+    for cases ranked before the unified-table change rather than an error."""
+    if not route:
+        return "<td>—</td>"
+    label, cls = ACCESS_META.get(route, (route.replace("_", " "), "rel-other"))
+    return f'<td><span class="rel-badge {cls}">{html.escape(label)}</span></td>'
 
 
 def _key_references_cell(r: dict) -> str:
@@ -183,6 +206,7 @@ def render_recs_table(rows: list[dict], *, flagged: bool = False) -> str:
             tr_open
             + f"<td>{lead}</td>"
             f"{_intervention_cell(r)}"
+            f"{access_badge(r.get('access_route'))}"
             f"<td>{fmt(r.get('likelihood_of_effect'))}</td>"
             f"<td>{fmt(r.get('toxicity_burden'))}</td>"
             f"{_cpm_cell(r)}"
@@ -205,7 +229,12 @@ def render_recs_table(rows: list[dict], *, flagged: bool = False) -> str:
 
 _TABLE_LEGEND = (
     '!!! note "Reading the columns"\n'
-    "    **Toxicity burden** is patient-level G3+ AE severity (Low / Moderate / High) "
+    "    **Access** is how this patient could reach the therapy today — standard "
+    "care, off-label, trial-only, compassionate/expanded access, or unavailable. "
+    "This table ranks every therapy with any evidence behind it, standard care "
+    "included, so a therapy being listed here says nothing about whether it is "
+    "already approved; the Access column is what tells you that. "
+    "**Toxicity burden** is patient-level G3+ AE severity (Low / Moderate / High) "
     "summarized from trial publications. **Counter-productive MoA** is the "
     "mechanism-level risk that the intervention's own pathway could blunt the "
     "therapeutic goal — distinct from patient AEs. The board's endorse / dissent / "

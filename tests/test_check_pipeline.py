@@ -126,3 +126,76 @@ def test_all_committed_cases_complete():
     incomplete = {s: cp.check_pipeline(s)[0] for s in slugs}
     incomplete = {s: f for s, f in incomplete.items() if f}
     assert not incomplete, incomplete
+
+
+# --- Unified-table coverage ------------------------------------------------
+#
+# The ranked table must carry every therapy with any evidence, standard-of-care
+# ones included. Before that contract the PI deliberately routed approved
+# options out of the ranking, so the gate is opt-in via `access_route`: it fires
+# only on tables produced under the unified contract, leaving older cases valid
+# under the contract they were built under.
+
+
+def _write_soc(case, options):
+    (case / "standard_of_care.jsonl").write_text(
+        "\n".join(json.dumps({"soc_id": sid, "option_label": lab})
+                  for sid, lab in options) + "\n"
+    )
+
+
+def _write_recs(case, rows):
+    (case / "recommendations.jsonl").write_text(
+        "\n".join(json.dumps(r) for r in rows) + "\n"
+    )
+
+
+def test_soc_option_missing_from_ranked_table_fails(monkeypatch, tmp_path):
+    root, docs = _patch(monkeypatch, tmp_path)
+    _build_case(root, docs, "c", positions_personas=PERSONAS, critics_personas=PERSONAS)
+    case = root / "c"
+    _write_soc(case, [("soc-chemo", "Doxorubicin-based chemotherapy")])
+    _write_recs(case, [{"intervention_id": "glutaminase",
+                        "intervention_label": "IACS-6274",
+                        "access_route": "clinical_trial_only"}])
+    failures, _ = cp.check_pipeline("c")
+    assert any("unified table" in f for f in failures), failures
+    assert any("Doxorubicin" in f for f in failures), failures
+
+
+def test_soc_option_covered_by_id_passes(monkeypatch, tmp_path):
+    root, docs = _patch(monkeypatch, tmp_path)
+    _build_case(root, docs, "c", positions_personas=PERSONAS, critics_personas=PERSONAS)
+    case = root / "c"
+    _write_soc(case, [("soc-chemo", "Doxorubicin-based chemotherapy")])
+    _write_recs(case, [{"intervention_id": "soc-chemo",
+                        "intervention_label": "Doxorubicin-based chemotherapy",
+                        "access_route": "standard_of_care"}])
+    failures, _ = cp.check_pipeline("c")
+    assert not any("unified table" in f for f in failures), failures
+
+
+def test_soc_option_covered_by_label_stem_passes(monkeypatch, tmp_path):
+    """The two tracks assign their own IDs, so a label-stem match also counts."""
+    root, docs = _patch(monkeypatch, tmp_path)
+    _build_case(root, docs, "c", positions_personas=PERSONAS, critics_personas=PERSONAS)
+    case = root / "c"
+    _write_soc(case, [("soc-1", "Orthopaedic stabilisation (fixation) of the fracture")])
+    _write_recs(case, [{"intervention_id": "surgery-primary-site",
+                        "intervention_label": "Orthopaedic stabilisation of the acetabulum",
+                        "access_route": "standard_of_care"}])
+    failures, _ = cp.check_pipeline("c")
+    assert not any("unified table" in f for f in failures), failures
+
+
+def test_legacy_case_without_access_route_is_not_gated(monkeypatch, tmp_path):
+    """Cases ranked before the unified contract keep passing: no access_route
+    anywhere means the coverage rule does not apply."""
+    root, docs = _patch(monkeypatch, tmp_path)
+    _build_case(root, docs, "c", positions_personas=PERSONAS, critics_personas=PERSONAS)
+    case = root / "c"
+    _write_soc(case, [("soc-chemo", "Doxorubicin-based chemotherapy")])
+    _write_recs(case, [{"intervention_id": "glutaminase",
+                        "intervention_label": "IACS-6274"}])
+    failures, _ = cp.check_pipeline("c")
+    assert not any("unified table" in f for f in failures), failures

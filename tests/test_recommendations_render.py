@@ -80,3 +80,43 @@ def test_surfaced_only_predicate():
     assert br._is_surfaced_only({"surfaced_reason": "none"}) is False
     assert br._is_surfaced_only({}) is False
     assert rp._is_surfaced_only({"surfaced_reason": "consolidated"}) is True
+
+
+# --- Access column ---------------------------------------------------------
+#
+# Under the unified-table contract the ranked table carries standard-of-care
+# therapies alongside investigational ones, so a reader can no longer infer
+# "experimental" from a therapy merely being present. The Access column is what
+# carries that distinction, which makes its presence load-bearing rather than
+# decorative.
+
+
+def test_access_column_in_both_headers():
+    assert "<th>Access</th>" in br.RECS_HEAD
+    assert "<th>Access</th>" in br.RECS_HEAD_FLAGGED
+
+
+def test_access_badge_renders_standard_care_distinctly():
+    soc = br.access_badge("standard_of_care")
+    trial = br.access_badge("clinical_trial_only")
+    assert "Standard care" in soc
+    assert "Trial only" in trial
+    assert soc != trial
+
+
+def test_access_badge_absent_renders_placeholder_not_error():
+    """Cases ranked before the unified change carry no access_route; that is an
+    expected state, not a failure."""
+    assert br.access_badge(None) == "<td>—</td>"
+
+
+def test_access_cell_present_for_every_rendered_row():
+    rows = [
+        {"rank": 1, "intervention_label": "Doxorubicin", "access_route": "standard_of_care"},
+        {"rank": 2, "intervention_label": "IACS-6274", "access_route": "clinical_trial_only"},
+    ]
+    html_out = br.render_recs_table(rows)
+    assert html_out.count("rel-badge") == 2
+    assert "Standard care" in html_out and "Trial only" in html_out
+    # header column count must match the body cell count
+    assert br.RECS_HEAD.count("<th>") == html_out.split("<tbody>")[1].split("</tr>")[0].count("<td>")
