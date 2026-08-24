@@ -141,6 +141,20 @@ ONCOLOGY_ACRONYM_ALLOWLIST = frozenset({
     # AML salvage vocabulary surfaced by the first question-scoped run: trial
     # families ("ASAP, RELAX") and regimen shorthands ("FLAI, HDAC").
     "ASAP", "RELAX", "FLAI", "HDAC", "MIRROS", "SIERRA", "FLAMSA", "HAM", "MEC",
+    # Mismatch-repair gene panel, written as a comma-separated antibody list
+    # ("MLH1, PMS2, MSH2, MSH6") in every MMR IHC recommendation.
+    "MLH1", "PMS2", "MSH2", "MSH6", "IDH", "HEY", "NCOA", "DDCS",
+    "PCR", "FISH", "IHC", "NGS", "RNA", "DNA", "WHO",
+    # Chondrosarcoma run. Drug trade names beside their development codes
+    # ("TIBSOVO, AG-120"; "IDHIFA, CC-90007"; "OPDIVO, BMS-936558"), the
+    # sarcoma-subtype pair "DDLPS, UPS", radiotherapy modality shorthand
+    # ("RT, CIRT"), and workup/response acronyms that travel as comma lists
+    # ("LVEF, MUGA"; "ECG, CMP"; "CBC, RECIST"). Both halves of a pair must be
+    # listed for it to clear, so a real surname beside any of these still
+    # flags — which is how "Pascal POMMIER, MD" was caught in this same run.
+    "TIBSOVO", "IDHIFA", "OPDIVO", "WELIREG", "AG", "CC", "BMS",
+    "DDLPS", "UPS", "RT", "CIRT", "PKR", "MTAP", "MTA",
+    "LVEF", "MUGA", "ECG", "CMP", "CBC", "RECIST",
     "PDAC", "NAPOLI", "SPOTLIGHT", "GLOW", "GLEAM", "PYNNACLE",
     "ADCC", "CDC", "ADC", "MMAE", "KEYTRUDA", "MK",
     "ELI", "FG", "HPAF", "HPAC", "CLDN", "VYLOY", "VENTANA",
