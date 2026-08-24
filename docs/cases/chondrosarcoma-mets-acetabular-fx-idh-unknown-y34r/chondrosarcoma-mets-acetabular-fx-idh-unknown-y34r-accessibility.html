@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>Libby access guide — chondrosarcoma-mets-acetabular-fx-idh-unknown-y34r</title>
+<style>
+
+      :root { color-scheme: light; }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        max-width: 1200px;
+        margin: 2em auto;
+        padding: 0 1.5em 3em;
+        color: #1A202C;
+        background: #FFFFFF;
+        line-height: 1.55;
+      }
+      h1 { border-bottom: 2px solid #5B3A87; padding-bottom: 0.3em; margin-top: 0; }
+      h2 { color: #5B3A87; margin-top: 1.8em; }
+      h3 { color: #1A202C; margin-top: 1.4em; }
+      a { color: #5B3A87; text-decoration: underline; }
+      code { background: #F4F6F8; padding: 0.1em 0.4em; border-radius: 2px; font-size: 0.92em; }
+      .disclaimer {
+        background: #FFF4E5; border-left: 4px solid #B45309;
+        padding: 0.8em 1em; margin: 1em 0 2em; font-size: 0.95em;
+      }
+      .libby-footer {
+        margin-top: 3em; padding-top: 1em; border-top: 1px solid #E2E8F0;
+        color: #6B6B7F; font-size: 0.85em;
+      }
+    
+/* Trial-table style — vendored from /Users/benjaminvincent/turtle/pfo/conductor/styles/trial-table/
+   Scoped via .trial-table-wrap so it does not leak into surrounding MkDocs page.
+
+   Uses explicit [data-md-color-scheme] selectors to bypass any CSS-variable
+   inheritance issues — the table reads correctly in both default (light) and
+   slate (dark) Material color schemes regardless of cascade quirks. */
+
+.trial-table-wrap caption {
+  caption-side: top;
+  text-align: left;
+  font-weight: 600;
+  padding: 0.4em 0;
+  font-size: 1em;
+}
+.trial-scroll { overflow-x: auto; }
+.trial-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.88em;
+}
+.trial-table thead th {
+  font-weight: 600;
+  text-align: left;
+  padding: 0.5em 0.6em;
+  white-space: nowrap;
+}
+.trial-table tbody td {
+  padding: 0.5em 0.6em;
+  font-variant-numeric: tabular-nums;
+  vertical-align: top;
+}
+.trial-table .num { text-align: right; }
+
+/* Narrow ID-style columns — the entry number in the access-guide summary
+   table and the NCT id in the access-guide trial-pathways table. Keep
+   numbers / NCTs on a single line so "10" doesn't wrap to "1\n0" and
+   "NCT05379985" doesn't break across four lines. min-width is large
+   enough to comfortably fit the widest expected value (3-digit entry
+   number, NCT + 8 digits = 11 chars in a monospace fallback). */
+.trial-table th.col-num,
+.trial-table td.col-num,
+.trial-table th.col-nct,
+.trial-table td.col-nct {
+  white-space: nowrap;
+}
+.trial-table th.col-num,
+.trial-table td.col-num { min-width: 2.4em; }
+.trial-table th.col-nct,
+.trial-table td.col-nct { min-width: 6.5em; }
+
+/* Access-guide column widths — kept generous so the wrapping `.trial-scroll`
+   div engages horizontal scroll before the cell text squeezes into a tall
+   narrow stack. Tuned for the access-guide tables specifically; other
+   trial-tables on the site keep their default auto layout. */
+.trial-table th.col-intervention,
+.trial-table td.col-intervention { min-width: 14em; }
+.trial-table th.col-target,
+.trial-table td.col-target { min-width: 12em; }
+.trial-table th.col-access-status,
+.trial-table td.col-access-status { min-width: 10em; }
+.trial-table th.col-regulatory,
+.trial-table td.col-regulatory { min-width: 22em; }
+.trial-table th.col-first-action,
+.trial-table td.col-first-action { min-width: 22em; }
+
+.trial-table th.col-phase,
+.trial-table td.col-phase { min-width: 3.5em; white-space: nowrap; }
+.trial-table th.col-indication,
+.trial-table td.col-indication { min-width: 18em; }
+.trial-table th.col-status,
+.trial-table td.col-status { min-width: 7em; white-space: nowrap; }
+.trial-table th.col-eligibility,
+.trial-table td.col-eligibility { min-width: 8em; white-space: nowrap; }
+.trial-table th.col-contact,
+.trial-table td.col-contact { min-width: 14em; }
+.trial-table th.col-notes,
+.trial-table td.col-notes { min-width: 24em; }
+.trial-table a {
+  text-decoration: underline;
+  font-weight: 700;
+}
+.trial-table .mark {
+  font-size: 0.75em;
+  vertical-align: super;
+}
+
+/* ---------- Default (light) scheme ---------- */
+[data-md-color-scheme="default"] .trial-table-wrap { color: #1A202C; }
+[data-md-color-scheme="default"] .trial-table thead th {
+  background: #F4F6F8;
+  color: #1A202C;
+  border-top: 2px solid #1A202C;
+  border-bottom: 1px solid #1A202C;
+}
+[data-md-color-scheme="default"] .trial-table tbody td {
+  color: #1A202C;
+  border-bottom: 1px solid #E2E8F0;
+}
+[data-md-color-scheme="default"] .trial-table tbody tr:last-child td {
+  border-bottom: 2px solid #1A202C;
+}
+[data-md-color-scheme="default"] .trial-table a { color: #1A202C; }
+[data-md-color-scheme="default"] .trial-table-wrap .notes {
+  font-size: 0.85em;
+  color: #4A5568;
+  margin-top: 0.6em;
+}
+
+/* ---------- Slate (dark) scheme ---------- */
+[data-md-color-scheme="slate"] .trial-table-wrap { color: #E2E8F0; }
+[data-md-color-scheme="slate"] .trial-table thead th {
+  background: #2D3344;
+  color: #F1F5F9;
+  border-top: 2px solid #94A3B8;
+  border-bottom: 1px solid #94A3B8;
+}
+[data-md-color-scheme="slate"] .trial-table tbody td {
+  color: #E2E8F0;
+  border-bottom: 1px solid #3A4159;
+}
+[data-md-color-scheme="slate"] .trial-table tbody tr:last-child td {
+  border-bottom: 2px solid #94A3B8;
+}
+[data-md-color-scheme="slate"] .trial-table a {
+  color: #93C5FD;
+}
+[data-md-color-scheme="slate"] .trial-table-wrap .notes {
+  font-size: 0.85em;
+  color: #94A3B8;
+  margin-top: 0.6em;
+}
+/* Question-report column widths. These tables carry prose in most cells, so
+   without min-widths every column squeezes to fit 100% of the container and the
+   rows grow very tall with a few words per cell. The min-widths let the table
+   exceed the container so .trial-scroll scrolls it sideways instead, which reads
+   far better for a candidate comparison. */
+.trial-table th.col-q-rank,
+.trial-table td.col-q-rank { min-width: 3em; white-space: nowrap; }
+.trial-table th.col-q-candidate,
+.trial-table td.col-q-candidate { min-width: 24em; }
+.trial-table th.col-q-rate,
+.trial-table td.col-q-rate { min-width: 15em; }
+.trial-table th.col-q-tox,
+.trial-table td.col-q-tox { min-width: 20em; }
+.trial-table th.col-q-avail,
+.trial-table td.col-q-avail { min-width: 9em; white-space: nowrap; }
+.trial-table th.col-q-refs,
+.trial-table td.col-q-refs { min-width: 11em; }
+.trial-table th.col-q-criterion,
+.trial-table td.col-q-criterion { min-width: 22em; }
+.trial-table th.col-q-result,
+.trial-table td.col-q-result { min-width: 8em; white-space: nowrap; }
+.trial-table th.col-q-points,
+.trial-table td.col-q-points { min-width: 7em; white-space: nowrap; }
+.trial-table th.col-q-finding,
+.trial-table td.col-q-finding { min-width: 30em; }
+.trial-table th.col-q-dir,
+.trial-table td.col-q-dir { min-width: 6em; white-space: nowrap; }
+.trial-table th.col-q-claim,
+.trial-table td.col-q-claim { min-width: 32em; }
+.trial-table th.col-q-strength,
+.trial-table td.col-q-strength { min-width: 7em; white-space: nowrap; }
+.trial-table th.col-q-popmatch,
+.trial-table td.col-q-popmatch { min-width: 22em; }
+.trial-table th.col-q-seat,
+.trial-table td.col-q-seat { min-width: 9em; white-space: nowrap; }
+.trial-table th.col-q-position,
+.trial-table td.col-q-position { min-width: 34em; }
+.trial-table th.col-q-carried,
+.trial-table td.col-q-carried { min-width: 8em; white-space: nowrap; }
+
+/* Libby-specific styling: case-fit / toxicity badges, agreement matrix, persona pills. */
+
+/* Bold links across all rendered content. */
+.md-typeset a {
+  font-weight: 700;
+}
+
+/* Case-fit badges (in trials.md). */
+.fit-badge {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.4em;
+  font-size: 0.78em;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+.fit-strong  { background: #E6F5EA; color: #14532D; border-color: #BBE2C7; }
+.fit-partial { background: #FFF7E0; color: #5A4500; border-color: #F1DD9A; }
+.fit-weak    { background: #FBE9E7; color: #6F2E1A; border-color: #ECC4BB; }
+.fit-none    { background: #F1F3F5; color: #4A5568; border-color: #E2E8F0; }
+
+/* Tumor-type-relation badges (trial table). */
+.rel-badge {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.4em;
+  font-size: 0.78em;
+  font-weight: 600;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.rel-indication  { background: #DDF1EE; color: #134E48; border-color: #B0DBD3; }
+.rel-basket      { background: #FFE9D6; color: #6F3A0F; border-color: #F0CFAE; }
+.rel-same-drug   { background: #DFEBFB; color: #1B3A6B; border-color: #B5CDEE; }
+.rel-cross-tumor { background: #F1E5FF; color: #441E72; border-color: #D4BBF2; }
+.rel-other       { background: #F1F3F5; color: #4A5568; border-color: #E2E8F0; }
+
+/* Risk-of-bias badges (evidence table). */
+.rob-badge {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.4em;
+  font-size: 0.78em;
+  font-weight: 600;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.rob-low  { background: #E6F5EA; color: #14532D; border-color: #BBE2C7; }
+.rob-med  { background: #FFF7E0; color: #5A4500; border-color: #F1DD9A; }
+.rob-high { background: #FBE9E7; color: #6F2E1A; border-color: #ECC4BB; }
+
+/* Toxicity flag pills. */
+.tox-flag {
+  display: inline-block;
+  padding: 0.05em 0.45em;
+  border-radius: 999px;
+  font-size: 0.75em;
+  background: #FBE9E7;
+  color: #6F2E1A;
+  border: 1px solid #ECC4BB;
+  margin-right: 0.25em;
+}
+
+/* Persona badges (board.md, recommendations.md). */
+.persona {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.35em;
+  font-size: 0.78em;
+  font-weight: 600;
+  margin-right: 0.25em;
+  border: 1px solid transparent;
+}
+.persona-risktaker    { background: #FFE9D6; color: #6F3A0F; border-color: #F0CFAE; }
+.persona-conservative { background: #DFEBFB; color: #1B3A6B; border-color: #B5CDEE; }
+.persona-critic       { background: #F1E5FF; color: #441E72; border-color: #D4BBF2; }
+.persona-concensusite { background: #DDF1EE; color: #134E48; border-color: #B0DBD3; }
+.persona-advocate     { background: #FFE5EE; color: #6E1638; border-color: #F0BBCB; }
+
+/* Agreement-level decorations. */
+.agree-endorse   { color: #14532D; font-weight: 600; }
+.agree-qualified { color: #5A4500; font-weight: 600; }
+.agree-dissent   { color: #6F2E1A; font-weight: 600; }
+.agree-veto      { color: #6F2E1A; font-weight: 700; text-decoration: underline; }
+
+/* Biomarker-conditional flag (inline in Intervention cell when scenario ends with :positive). */
+.scenario-conditional {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5A4500;
+  background: #FFF7E0;
+  border: 1px solid #F1DD9A;
+  border-radius: 0.35em;
+  padding: 0.05em 0.45em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+
+/* Counter-productive MoA descriptor (parenthetical text after the bold severity). */
+.cpm-desc {
+  font-size: 0.92em;
+  color: #4A5568;
+}
+
+/* Persona pill row inside the Intervention cell on the ranked-prioritization table. */
+.persona-line {
+  display: inline-block;
+  margin-top: 0.15em;
+  font-size: 0.78em;
+  color: #4A5568;
+}
+.persona-line + .persona-line {
+  margin-left: 0.6em;
+}
+
+/* Recommendation table marks. */
+.split-glyph { font-weight: 700; color: #5A4500; }
+/* not_recommended rows: mute, never strike through. The strikethrough used to
+   sit on the whole <tr>, so it struck the rationale columns too — and on a
+   rejected option the rationale is the most useful text in the row, since it
+   is what lets a reader stop considering it. Muting carries the de-emphasis;
+   the badge states the verdict in words, so the signal survives monochrome
+   printing and screen readers rather than resting on typography alone. */
+.not-recommended {
+  color: #4A5568;
+}
+.badge-not-recommended {
+  background: #FDECEA;
+  color: #8C2F22;
+  border-color: #F5C6C0;
+}
+
+/* surfaced_reason flag pills (Experimental "Also considered" table). Neutral,
+   muted pills — these rows are informational, not scored. */
+.flag-badge {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 999px;
+  font-size: 0.75em;
+  font-weight: 600;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.flag-unavailable    { background: #ECEFF1; color: #37474F; border-color: #CFD8DC; }
+.flag-consolidated   { background: #E8EAF6; color: #303F9F; border-color: #C5CAE9; }
+.flag-thin           { background: #FFF8E1; color: #7A5B00; border-color: #F0E1B0; }
+.flag-not-enrollable { background: #F3E5F5; color: #6A1B7A; border-color: #E1BEE7; }
+
+/* Disclaimer banner — applied to every case page via admonition. */
+.md-typeset .admonition.disclaimer {
+  border-color: #B71C1C;
+}
+.md-typeset .admonition.disclaimer > .admonition-title {
+  background-color: rgba(183, 28, 28, 0.08);
+  color: #B71C1C;
+}
+
+/* Agreement matrix heatmap (board.md). Pastel cells carry explicit
+   foreground+background that remain legible regardless of scheme; matrix
+   chrome (header, borders, no-opinion cells) uses scheme-aware selectors. */
+.agreement-matrix {
+  border-collapse: collapse;
+  font-size: 0.85em;
+}
+.agreement-matrix th, .agreement-matrix td {
+  padding: 0.35em 0.5em;
+  text-align: center;
+}
+.agreement-matrix th { font-weight: 600; }
+
+/* Pastel cell colors — same in both schemes (high contrast on their own bg). */
+.agreement-matrix td.cell-endorse   { background: #C8E6D0; color: #14532D; }
+.agreement-matrix td.cell-qualified { background: #FCEEC2; color: #5A4500; }
+.agreement-matrix td.cell-dissent   { background: #F4C7BE; color: #6F2E1A; }
+.agreement-matrix td.cell-veto      { background: #E8A399; color: #4A1408; font-weight: 700; }
+
+/* Default (light) scheme chrome. */
+[data-md-color-scheme="default"] .agreement-matrix th,
+[data-md-color-scheme="default"] .agreement-matrix td {
+  border: 1px solid #E2E8F0;
+  color: #1A202C;
+}
+[data-md-color-scheme="default"] .agreement-matrix th {
+  background: #F4F6F8;
+  color: #1A202C;
+}
+[data-md-color-scheme="default"] .agreement-matrix td.cell-absent {
+  background: #F1F3F5;
+  color: #94A3B8;
+}
+
+/* Slate (dark) scheme chrome. */
+[data-md-color-scheme="slate"] .agreement-matrix th,
+[data-md-color-scheme="slate"] .agreement-matrix td {
+  border: 1px solid #3A4159;
+  color: #E2E8F0;
+}
+[data-md-color-scheme="slate"] .agreement-matrix th {
+  background: #2D3344;
+  color: #F1F5F9;
+}
+[data-md-color-scheme="slate"] .agreement-matrix td.cell-absent {
+  background: #232838;
+  color: #64748B;
+}
+
+</style>
+</head>
+<body data-md-color-scheme="default">
+<div class="disclaimer">
+<strong>Decision support, not medical advice.</strong> Libby is an experimental 
+multi-agent decision-support tool. The information on this page has not been 
+reviewed by a clinician treating this patient. Information ages — confirm details 
+directly with the relevant sources before relying on them.
+</div>
+<h1 id="access-guide-chondrosarcoma-mets-acetabular-fx-idh-unknown-y34r">Access guide — <code>chondrosarcoma-mets-acetabular-fx-idh-unknown-y34r</code></h1>
+<p>How a patient or treating team could practically access each intervention in this case's dossier. One section per unique drug; trial recruitment contacts and manufacturer medical-information lines are captured for direct outreach. <strong>Information ages — each row carries a <code>Verified</code> date; re-screen before relying on a specific contact or trial slot.</strong></p>
+<h2 id="summary">Summary</h2>
+<p><em>Entries are ordered to match the Recommendations table: by therapeutic target group, then by rank within each group. The number in the first column links to the per-intervention section further down the page.</em></p>
+<div class="trial-table-wrap"><div class="trial-scroll">
+
+<table class="trial-table"><thead><tr><th class="col-num">#</th><th class="col-intervention">Intervention</th><th class="col-target">Target</th><th class="col-access-status">Access status</th><th class="col-regulatory">Regulatory</th><th class="col-first-action">Recommended first action</th></tr></thead><tbody>
+
+<tr><td class="col-num"><a href="#access-1"><strong>1</strong></a></td><td class="col-intervention"><strong>IACS-6274 (IPN60090), glutaminase-1 inhibitor</strong></td><td class="col-target">Dedifferentiated Histology</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">Investigational; no approval in any jurisdiction</td><td class="col-first-action">Measure and document ECOG in clinic before contacting the site; an unmeasured assumption of 2 will stop the conversation.</td></tr>
+<tr><td class="col-num"><a href="#access-2"><strong>2</strong></a></td><td class="col-intervention"><strong>Sunitinib plus nivolumab</strong></td><td class="col-target">Dedifferentiated Histology</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span></td><td class="col-regulatory">Sunitinib is FDA- and EMA-approved (renal cell carcinoma, GIST, pancreatic neuroendocrine tumours). Nivolumab is approved across many indications. The combination is not approved anywhere.</td><td class="col-first-action">Ask a sarcoma medical oncologist whether they consider the IMMUNOSARC signal strong enough to reconstruct off-protocol in a patient who has not yet had chemotherapy; the usual answer is no.</td></tr>
+<tr><td class="col-num"><a href="#access-3"><strong>3</strong></a></td><td class="col-intervention"><strong>B7-H3 (CD276) CAR-T cells</strong></td><td class="col-target">Dedifferentiated Histology</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span> <span class="fit-badge fit-weak">Not yet accessible</span></td><td class="col-regulatory">Investigational; no B7-H3-directed cell therapy is approved in any jurisdiction</td><td class="col-first-action">Confirm a US or European B7-H3 cell-therapy protocol has not opened before taking this seriously, since geography is the dominant cost here.</td></tr>
+<tr><td class="col-num"><a href="#access-4"><strong>4</strong></a></td><td class="col-intervention"><strong>B7-H3-directed antibody-drug conjugates (ifinatamab deruxtecan, MGC026, risvutatug rezetecan / HS-20093)</strong></td><td class="col-target">Dedifferentiated Histology</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span> <span class="fit-badge fit-weak">Not yet accessible</span></td><td class="col-regulatory">All investigational; no B7-H3-directed ADC is approved in any jurisdiction</td><td class="col-first-action">Measure ECOG, because every Western B7-H3 protocol requires 0-1 and this is the axis most likely to be modifiable if acetabular pain is fixed.</td></tr>
+<tr><td class="col-num"><a href="#access-5"><strong>5</strong></a></td><td class="col-intervention"><strong>PD-1 / PD-L1 checkpoint blockade as a class (nivolumab, envafolimab and others)</strong></td><td class="col-target">Dedifferentiated Histology</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span></td><td class="col-regulatory">Nivolumab is FDA- and EMA-approved across many indications. Envafolimab is approved in China only. No PD-1 or PD-L1 agent carries a chondrosarcoma indication anywhere.</td><td class="col-first-action">Order PD-L1 immunohistochemistry on the dedifferentiated component and record clone and cutoff, since that is the only enrichment signal this histology offers.</td></tr>
+<tr><td class="col-num"><a href="#access-6"><strong>6</strong></a></td><td class="col-intervention"><strong>Nivolumab plus ipilimumab</strong></td><td class="col-target">Dedifferentiated Histology</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span></td><td class="col-regulatory">Both FDA- and EMA-approved in multiple indications; the combination is approved in melanoma, renal cell carcinoma, mesothelioma and others. No sarcoma indication.</td><td class="col-first-action">Treat this as a later-line conversation, not a first-line one.</td></tr>
+<tr><td class="col-num"><a href="#access-7"><strong>7</strong></a></td><td class="col-intervention"><strong>Macrophage-directed therapy (mifamurtide, MEPACT)</strong></td><td class="col-target">Dedifferentiated Histology</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-weak">Not yet accessible</span></td><td class="col-regulatory">EMA-approved (high-grade resectable non-metastatic osteosarcoma, in combination with post-operative chemotherapy). No FDA approval; not marketed in the US.</td><td class="col-first-action">Treat this as a mechanism to watch rather than a drug to chase, given no US availability and no clinical data in chondrosarcoma.</td></tr>
+<tr><td class="col-num"><a href="#access-8"><strong>8</strong></a></td><td class="col-intervention"><strong>HIF-2alpha inhibition (belzutifan)</strong></td><td class="col-target">Dedifferentiated Histology</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span></td><td class="col-regulatory">FDA-approved (VHL disease-associated renal cell carcinoma, CNS haemangioblastoma and pancreatic neuroendocrine tumours 2021; advanced renal cell carcinoma after PD-1 and VEGF-directed therapy 2023; advanced pheochromocytoma and paraganglioma 2025). EMA-approved for VHL-associated disease.</td><td class="col-first-action">Ask a sarcoma centre&#x27;s trial office whether any HIF-2alpha protocol is open to non-renal solid tumours, since that is the only credible route.</td></tr>
+<tr><td class="col-num"><a href="#access-9"><strong>9</strong></a></td><td class="col-intervention"><strong>CDK4/6 inhibition (abemaciclib; palbociclib in the preclinical work)</strong></td><td class="col-target">Unmeasured Molecular Landscape</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">Abemaciclib is FDA- and EMA-approved for HR-positive HER2-negative breast cancer in defined settings. No sarcoma indication.</td><td class="col-first-action">Make sure the comprehensive panel reports CDKN2A/B, CDK4, CDK6 and CCND1/2/3 explicitly, since those calls are what qualify her.</td></tr>
+<tr><td class="col-num"><a href="#access-10"><strong>10</strong></a></td><td class="col-intervention"><strong>Pembrolizumab (KEYTRUDA)</strong></td><td class="col-target">Unmeasured Molecular Landscape</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span></td><td class="col-regulatory">FDA- and EMA-approved across many indications, including the tumour-agnostic MSI-H/dMMR indication and the US tumour-agnostic TMB-high (&gt;=10 mut/Mb) indication for previously treated unresectable or metastatic solid tumours.</td><td class="col-first-action">Order TMB and an MSI call on the comprehensive panel, and four-antibody MMR immunohistochemistry alongside it as a faster orthogonal read.</td></tr>
+<tr><td class="col-num"><a href="#access-11"><strong>11</strong></a></td><td class="col-intervention"><strong>Genomically matched marketed agents through TAPUR</strong></td><td class="col-target">Unmeasured Molecular Landscape</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span></td><td class="col-regulatory">Study of marketed FDA-approved agents used outside their labelled indications under a research protocol</td><td class="col-first-action">Get the comprehensive DNA plus RNA panel run; nothing here is actionable until an alteration is on paper.</td></tr>
+<tr><td class="col-num"><a href="#access-12"><strong>12</strong></a></td><td class="col-intervention"><strong>NY-ESO-1 (CTAG1B)-directed TCR-engineered T cells</strong></td><td class="col-target">Unmeasured Molecular Landscape</td><td class="col-access-status"><span class="fit-badge fit-partial">Clinical trial</span> <span class="fit-badge fit-weak">Not yet accessible</span></td><td class="col-regulatory">Investigational; no NY-ESO-1-directed cell therapy is approved in any jurisdiction</td><td class="col-first-action">Order 4-digit HLA class I typing; without HLA-A*02:01 this whole class of agents closes and the reflex antigen stains can be cancelled.</td></tr>
+<tr><td class="col-num"><a href="#access-13"><strong>13</strong></a></td><td class="col-intervention"><strong>Tebentafusp (KIMMTRAK)</strong></td><td class="col-target">Unmeasured Molecular Landscape</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span></td><td class="col-regulatory">FDA-approved 2022 and EMA-approved for HLA-A*02:01-positive unresectable or metastatic uveal melanoma. No other indication.</td><td class="col-first-action">Draw 4-digit HLA class I typing regardless, since it is a blood test that gates the whole peptide-HLA class of agents.</td></tr>
+<tr><td class="col-num"><a href="#access-14"><strong>14</strong></a></td><td class="col-intervention"><strong>Ivosidenib (TIBSOVO, AG-120)</strong></td><td class="col-target">Idh Mutation</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span></td><td class="col-regulatory">FDA-approved (IDH1-mutant relapsed/refractory AML 2018; newly diagnosed AML 2019; previously treated locally advanced or metastatic IDH1-mutant cholangiocarcinoma 2021; myelodysplastic syndromes 2023). EMA-approved for IDH1-mutant AML and cholangiocarcinoma. No chondrosarcoma indication anywhere.</td><td class="col-first-action">Order IDH1 codon 132 and IDH2 codon 140/172 sequencing first; without a variant call on the report, nothing in this row is actionable.</td></tr>
+<tr><td class="col-num"><a href="#access-15"><strong>15</strong></a></td><td class="col-intervention"><strong>Enasidenib (IDHIFA, AG-221)</strong></td><td class="col-target">Idh Mutation</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span></td><td class="col-regulatory">FDA-approved (relapsed or refractory IDH2-mutant acute myeloid leukemia, 2017). No solid-tumour indication; EMA marketing authorisation was not granted.</td><td class="col-first-action">Confirm IDH2 codon 140/172 status on the same sequencing report that answers the IDH1 question; do not order it separately.</td></tr>
+<tr><td class="col-num"><a href="#access-16"><strong>16</strong></a></td><td class="col-intervention"><strong>LY3410738 (covalent mutant IDH1/IDH2 inhibitor)</strong></td><td class="col-target">Idh Mutation</td><td class="col-access-status"><span class="fit-badge fit-weak">Compassionate use</span> <span class="fit-badge fit-weak">Not yet accessible</span></td><td class="col-regulatory">Investigational; no approval in any jurisdiction</td><td class="col-first-action">Establish the IDH1 or IDH2 genotype first; a compassionate-use request without a documented mutation goes nowhere.</td></tr>
+<tr><td class="col-num"><a href="#access-17"><strong>17</strong></a></td><td class="col-intervention"><strong>PARP inhibition (olaparib), alone or with the ATR inhibitor ceralasertib</strong></td><td class="col-target">Idh Mutation</td><td class="col-access-status"><span class="fit-badge fit-partial">Off-label use</span></td><td class="col-regulatory">Olaparib is FDA- and EMA-approved (ovarian, breast, pancreatic and prostate cancers in defined biomarker settings). Ceralasertib is investigational with no approval anywhere.</td><td class="col-first-action">Ask that the comprehensive panel report BRCA1/2 and any HRD or homologous-recombination gene findings explicitly, since that is what would move this from speculative to arguable.</td></tr>
+<tr><td class="col-num"><a href="#access-18"><strong>18</strong></a></td><td class="col-intervention"><strong>Proton beam therapy and carbon-ion radiotherapy for the acetabular lesion</strong></td><td class="col-target">Acetabular Lesion Pathologic Fracture</td><td class="col-access-status"><span class="fit-badge fit-strong">Standard of care</span> <span class="fit-badge fit-weak">Not yet accessible</span></td><td class="col-regulatory">Proton therapy is an established, FDA-cleared radiotherapy modality delivered under standard radiation-oncology practice; carbon-ion therapy is in clinical use in Europe and Asia and has no operating US facility verified in this pass</td><td class="col-first-action">Ask the radiation oncologist whether local therapy to the acetabulum is being framed as durable local control or as pain and structural palliation, because the answer decides whether the proton argument is worth the appeal.</td></tr>
+<tr><td class="col-num"><a href="#access-19"><strong>19</strong></a></td><td class="col-intervention"><strong>B7-H3 (CD276) immunohistochemistry</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-strong">Standard of care</span> <span class="fit-badge fit-weak">Not yet accessible</span></td><td class="col-regulatory">No FDA-approved B7-H3 companion diagnostic; laboratory-developed and research-use assays only</td><td class="col-first-action">Ask the sarcoma centre&#x27;s pathology service whether they run a validated B7-H3 stain before sending tissue anywhere.</td></tr>
+<tr><td class="col-num"><a href="#access-20"><strong>20</strong></a></td><td class="col-intervention"><strong>Comprehensive tumour DNA plus RNA profiling with TMB and MSI reporting</strong></td><td class="col-target">Idh1 Idh2 Mutation Status</td><td class="col-access-status"><span class="fit-badge fit-strong">Standard of care</span></td><td class="col-regulatory">FDA-approved companion diagnostic panels (FoundationOne CDx, MI Cancer Seek) and CLIA laboratory-developed tests</td><td class="col-first-action">Confirm with pathology which block holds the dedifferentiated component, and send that one.</td></tr>
+<tr><td class="col-num"><a href="#access-21"><strong>21</strong></a></td><td class="col-intervention"><strong>Doxorubicin-based chemotherapy, with or without ifosfamide or cisplatin</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-strong">Standard of care</span></td><td class="col-regulatory">FDA-approved generics; doxorubicin carries a broad soft-tissue and bone sarcoma indication</td><td class="col-first-action">Score and document ECOG in clinic, since the assumed 2 is what will decide between doxorubicin alone and a doxorubicin-plus-ifosfamide combination.</td></tr>
+<tr><td class="col-num"><a href="#access-22"><strong>22</strong></a></td><td class="col-intervention"><strong>Expert bone-sarcoma pathology review</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-strong">Standard of care</span></td><td class="col-regulatory">Not applicable</td><td class="col-first-action">Ask the diagnosing hospital to release the block and slides now, since shipping is often the slowest step.</td></tr>
+<tr><td class="col-num"><a href="#access-23"><strong>23</strong></a></td><td class="col-intervention"><strong>Four-antibody mismatch-repair immunohistochemistry, with MSI testing if equivocal</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-strong">Standard of care</span></td><td class="col-regulatory">Standard CLIA immunohistochemistry; MSI testing available by PCR or NGS</td><td class="col-first-action">Order the four-antibody panel on the same block cut as the other stains, so the block is opened once.</td></tr>
+<tr><td class="col-num"><a href="#access-24"><strong>24</strong></a></td><td class="col-intervention"><strong>HLA class I genotyping at 4-digit (allele-level) resolution</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-strong">Standard of care</span></td><td class="col-regulatory">Standard CLIA and ASHI-accredited immunogenetics testing</td><td class="col-first-action">Order 4-digit class I typing on blood; no tumour tissue is consumed.</td></tr>
+<tr><td class="col-num"><a href="#access-25"><strong>25</strong></a></td><td class="col-intervention"><strong>IDH1 codon 132 and IDH2 codon 140/172 sequencing (not R132H immunohistochemistry)</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-strong">Standard of care</span></td><td class="col-regulatory">Laboratory-developed and FDA-approved companion diagnostic panels both available under CLIA</td><td class="col-first-action">Order this on the same requisition as the comprehensive panel rather than as a separate test.</td></tr>
+<tr><td class="col-num"><a href="#access-26"><strong>26</strong></a></td><td class="col-intervention"><strong>Measured ECOG, baseline echocardiogram and ECG, organ-function labs, RECIST baseline imaging</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-strong">Standard of care</span></td><td class="col-regulatory">Not applicable</td><td class="col-first-action">Have ECOG scored and written in the notes at the next visit, alongside pain and weight-bearing status, and repeat it after any orthopaedic intervention that improves mobility.</td></tr>
+<tr><td class="col-num"><a href="#access-27"><strong>27</strong></a></td><td class="col-intervention"><strong>PD-L1 immunohistochemistry on the dedifferentiated component</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-strong">Standard of care</span></td><td class="col-regulatory">FDA-approved companion diagnostic assays (22C3, SP263, 28-8) and laboratory-developed tests</td><td class="col-first-action">Confirm with pathology that the section contains dedifferentiated tumour before the stain is run.</td></tr>
+<tr><td class="col-num"><a href="#access-28"><strong>28</strong></a></td><td class="col-intervention"><strong>Palliative radiotherapy and local measures at the acetabular fracture site</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-strong">Standard of care</span></td><td class="col-regulatory">Established radiotherapy and interventional procedures; no drug approval applies</td><td class="col-first-action">Ask for a joint orthopaedic oncology and radiation-oncology discussion before any radiation is delivered to the acetabulum, so an operation is not foreclosed by irradiated bone.</td></tr>
+<tr><td class="col-num"><a href="#access-29"><strong>29</strong></a></td><td class="col-intervention"><strong>Periacetabular resection and reconstruction / orthopaedic stabilisation of the acetabular fracture</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-strong">Standard of care</span></td><td class="col-regulatory">Surgical procedure; no regulatory approval pathway applies</td><td class="col-first-action">Ask for an orthopaedic oncology assessment at a high-volume bone-sarcoma unit within days, not weeks, with thin-slice CT and MRI of the pelvis in hand.</td></tr>
+<tr><td class="col-num"><a href="#access-30"><strong>30</strong></a></td><td class="col-intervention"><strong>Referral to a high-volume bone-sarcoma centre</strong></td><td class="col-target">—</td><td class="col-access-status"><span class="fit-badge fit-strong">Standard of care</span></td><td class="col-regulatory">Not applicable</td><td class="col-first-action">Call one high-volume centre this week rather than surveying several: Memorial Sloan Kettering care advisors at 800-525-2225 (clinician access line 833-315-2722), MD Anderson at 1-877-632-6789, or Mayo Clinic cancer studies at 855-776-0015.</td></tr>
+</tbody></table>
+
+</div></div>
+
+<h2 id="dedifferentiated-histology-interventions-8">Dedifferentiated Histology interventions (8)</h2>
+<h3 id="access-1">1. IACS-6274 (IPN60090), glutaminase-1 inhibitor <small><code>IACS-6274, IPN60090</code></small></h3>
+<p><strong>Access status:</strong> <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; <strong>Modality:</strong> small_molecule &nbsp; <strong>Verified:</strong> 2026-08-23</p>
+<p>This is the one open protocol in the whole screen that writes chondrosarcoma in as its own dose-escalation population with no subtype restriction and no prior-therapy requirement. It runs at a single site, MD Anderson in Houston, and the registry lists Timothy Yap as central contact. The binding constraint is fitness: ECOG must be 0 or 1 with no deterioration in the prior two weeks, so the assumed ECOG 2 has to become a measured number before this call is worth making.</p>
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Investigational; no approval in any jurisdiction</dd>
+  <dt>Geographic scope</dt><dd>US, single site (Houston, Texas)</dd>
+</dl>
+
+<p><strong>Next steps</strong></p>
+<ol>
+<li>Measure and document ECOG in clinic before contacting the site; an unmeasured assumption of 2 will stop the conversation.</li>
+<li>Email tyap@mdanderson.org or call 713-563-1930 to ask whether the chondrosarcoma dose-escalation population is still open and whether dedifferentiated histology is accepted in it.</li>
+<li>Ask the same call how the site handles a pending acetabular operation against the major-surgery washout.</li>
+<li>Ask whether IDH status affects the cohort assignment; the metabolic rationale travels with IDH mutation, though the dossier&#x27;s preclinical row found glutaminase sensitivity did not sort by IDH status.</li>
+<li>If an operation and chemotherapy are going ahead first, ask the site to note her for a later slot rather than closing the file.</li>
+</ol>
+<p><strong>Trial pathways</strong></p>
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT05039801">NCT05039801</a></td><td class="col-phase">1</td><td class="col-indication">Advanced solid tumours; chondrosarcoma is a named dose-escalation population</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-weak">eligible: unconfirmed</span></td><td class="col-contact"><strong>Timothy A Yap, MD</strong><br><a href="mailto:tyap@mdanderson.org">tyap@mdanderson.org</a><br><code>713-563-1930</code><br><a href="https://clinicaltrials.gov/study/NCT05039801">trial sites</a></td><td class="col-notes">Single site, M D Anderson Cancer Center, Houston. Recruiting, with primary completion projected March 2028. Requires measurable disease assessable by CT or MRI, ECOG 0-1 with no deterioration in the previous 2 weeks, and imposes a major-surgery washout. Eligibility on histology is unusually open; performance status and travel are the real questions.</td></tr>
+</tbody></table></div></div>
+
+<p><strong>Manufacturer / sponsor contact</strong></p>
+<dl class="profile-grid">
+  <dt>Company</dt><dd>M.D. Anderson Cancer Center (sponsor); IACS-6274 originated at MD Anderson&#x27;s Institute for Applied Cancer Science and was licensed to Ipsen as IPN60090</dd>
+  <dt>Notes</dt><dd>No manufacturer medical-information line was located for this compound in this pass; the trial&#x27;s central contact is the working route.</dd>
+</dl>
+
+<p><strong>Payer / coverage notes.</strong> Investigational agent is supplied by the study. Routine care costs during a trial are generally billable to insurance, but travel to Houston and lodging are out of pocket, and single-site phase 1 participation usually means repeated visits during the dose-escalation period.</p>
+<p><strong>Notes.</strong> Chondrosarcoma appearing by name in a phase 1 escalation population is rare enough to be worth a phone call even if the fitness bar ultimately closes it.</p>
+<hr>
+<h3 id="access-2">2. Sunitinib plus nivolumab <small><code>sunitinib, SU11248, SUTENT, nivolumab, OPDIVO, BMS-936558, IMMUNOSARC</code></small></h3>
+<p><strong>Access status:</strong> <span class="fit-badge fit-partial">Off-label use</span> &nbsp; <strong>Modality:</strong> monoclonal_antibody &nbsp; <strong>Verified:</strong> 2026-08-23</p>
+<p>IMMUNOSARC is one of the very few checkpoint protocols whose eligibility named chondrosarcoma and dedifferentiated chondrosarcoma outright, and 4 of its 40 patients had dedifferentiated disease, with 42% six-month progression-free survival across bone sarcomas. The trial is closed. Both drugs are approved elsewhere, so the regimen can be reconstructed off-label, which is what a sarcoma centre would be weighing after chemotherapy fails.</p>
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Sunitinib is FDA- and EMA-approved (renal cell carcinoma, GIST, pancreatic neuroendocrine tumours). Nivolumab is approved across many indications. The combination is not approved anywhere.</dd>
+  <dt>Geographic scope</dt><dd>US and EU</dd>
+</dl>
+
+<p><strong>Next steps</strong></p>
+<ol>
+<li>Ask a sarcoma medical oncologist whether they consider the IMMUNOSARC signal strong enough to reconstruct off-protocol in a patient who has not yet had chemotherapy; the usual answer is no.</li>
+<li>Revisit after first-line chemotherapy, with the PD-L1 and T-cell infiltrate results available.</li>
+<li>If pursued, run the payer conversations for sunitinib and nivolumab separately, since the generic and the biologic go through different pathways.</li>
+<li>Check whether GEIS or SARC has a successor protocol open before assuming off-label is the only route.</li>
+</ol>
+<p><strong>Trial pathways</strong></p>
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT03277924">NCT03277924</a></td><td class="col-phase">2</td><td class="col-indication">Advanced bone sarcomas including chondrosarcoma and dedifferentiated chondrosarcoma</td><td class="col-status">completed</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><a href="https://clinicaltrials.gov/study/NCT03277924">trial sites</a></td><td class="col-notes">Spanish sarcoma group (GEIS) study, closed. Required ECOG 0-1, progression within the preceding 6 months and paired biopsies. It informs the argument rather than offering a seat.</td></tr>
+</tbody></table></div></div>
+
+<p><strong>Manufacturer / sponsor contact</strong></p>
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Pfizer Inc. (sunitinib); Bristol Myers Squibb (nivolumab)</dd>
+  <dt>Country</dt><dd>United States</dd>
+  <dt>Medical info phone</dt><dd><code>1-800-505-4426</code></dd>
+  <dt>Product information</dt><dd><a href="https://www.pfizermedical.com/">https://www.pfizermedical.com/</a></dd>
+  <dt>Notes</dt><dd>1-800-505-4426 is the PfizerPro customer service line published on sutent.com, weekdays 8am-9pm ET; 1-800-438-1985 is the Pfizer adverse-event reporting number on the same page. BMS medical information for nivolumab is 1-800-321-1335.</dd>
+</dl>
+
+<p><strong>Payer / coverage notes.</strong> Two off-label agents at once doubles the appeal burden, and sunitinib is now generic in the US which helps the cost side of the argument while doing nothing for the indication side. A payer will ask why not a trial, and the honest answer is that the trial that took this histology has closed.</p>
+<p><strong>Notes.</strong> Six-month PFS was 42% (95% CI 27-58) across the bone sarcoma cohort; subgroup numbers are too small to say what the four dedifferentiated patients contributed (pmid 39540661).</p>
+<hr>
+<h3 id="access-3">3. B7-H3 (CD276) CAR-T cells <small><code>4SCAR, CD276 CAR-T, B7-H3 CAR-T</code></small></h3>
+<p><strong>Access status:</strong> <span class="fit-badge fit-partial">Clinical trial</span> <span class="fit-badge fit-weak">Not yet accessible</span> &nbsp; <strong>Modality:</strong> CAR-T &nbsp; <strong>Verified:</strong> 2026-08-23</p>
+<p>One protocol takes this platform and it runs at a single institute in Shenzhen. NCT04433221 is unusually permissive on paper, gating on antigen expression by immunohistochemistry or flow rather than histology, accepting Karnofsky 50% or better, and requiring no prior systemic therapy. Against that: 20 patients, one Chinese site, safety as the primary endpoint, an exclusion for rapidly progressing disease, and lymphodepletion fitness that an unmeasured performance status cannot be assumed to clear. For a US patient this is a travel-and-regulatory question before it is a clinical one.</p>
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Investigational; no B7-H3-directed cell therapy is approved in any jurisdiction</dd>
+  <dt>Geographic scope</dt><dd>Mainland China only (Shenzhen); no US, EU or Australian site</dd>
+</dl>
+
+<p><strong>Next steps</strong></p>
+<ol>
+<li>Confirm a US or European B7-H3 cell-therapy protocol has not opened before taking this seriously, since geography is the dominant cost here.</li>
+<li>Order B7-H3 (CD276) immunohistochemistry on the dedifferentiated component; without a positive antigen result this protocol cannot enrol her regardless of geography.</li>
+<li>If it is still being considered, email c@szgimi.org with the pathology and imaging and ask directly whether international patients are accepted and what the total time on site would be.</li>
+<li>Ask the treating sarcoma team whether lymphodepleting chemotherapy is safe at her measured performance status before any of the above.</li>
+<li>Weigh the antigen-density finding: chondrosarcoma carries the lowest B7-H3 expression of any sarcoma subtype, and CAR-T efficacy fell sharply against low-expressing targets in the preclinical work.</li>
+</ol>
+<p><strong>Trial pathways</strong></p>
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT04433221">NCT04433221</a></td><td class="col-phase">1/2</td><td class="col-indication">Stage III-IV or recurrent sarcoma with confirmed CAR-T target antigen expression (GD2, PSMA, HER2, CD276 or other)</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-weak">eligible: unconfirmed</span></td><td class="col-contact"><strong>Lung-Ji Chang, Ph.D</strong><br><a href="mailto:c@szgimi.org">c@szgimi.org</a><br><code>+86 0755-86573763</code><br><a href="https://clinicaltrials.gov/study/NCT04433221">trial sites</a></td><td class="col-notes">Single site, Shenzhen Geno-Immune Medical Institute, Guangdong, China; the registry record lists a July 2026 start with completion projected 2029. Entry turns on IHC or flow confirmation of target antigen, Karnofsky 50% or greater rather than an ECOG bar, expected survival over 8 weeks, and specified blood counts. The protocol also pairs CAR-T with low-dose chemotherapy and an irradiated tumour-cell vaccine.</td></tr>
+</tbody></table></div></div>
+
+<p><strong>Manufacturer / sponsor contact</strong></p>
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Shenzhen Geno-Immune Medical Institute</dd>
+  <dt>Country</dt><dd>China</dd>
+  <dt>Notes</dt><dd>Academic sponsor; the registry central contact is the only published route. No medical-information line or expanded-access programme exists.</dd>
+</dl>
+
+<p><strong>Payer / coverage notes.</strong> A US insurer will not fund treatment on an investigational cell-therapy protocol abroad, and travel, lodging and a prolonged stay for lymphodepletion and monitoring would be self-funded. Manufacturing and apheresis logistics also assume the patient is physically present.</p>
+<p><strong>Notes.</strong> Preclinical B7-H3 CAR-T activity was density-dependent, with efficacy greatly diminished against low-expressing targets (pmid 30655315), which is the specific reason this histology is a poor fit for the platform.</p>
+<hr>
+<h3 id="access-4">4. B7-H3-directed antibody-drug conjugates (ifinatamab deruxtecan, MGC026, risvutatug rezetecan / HS-20093) <small><code>ifinatamab deruxtecan, I-DXd, DS-7300, DS-7300a, MK-2400, MGC026, risvutatug rezetecan, ris-rez, GSK5764227, HS-20093</code></small></h3>
+<p><strong>Access status:</strong> <span class="fit-badge fit-partial">Clinical trial</span> <span class="fit-badge fit-weak">Not yet accessible</span> &nbsp; <strong>Modality:</strong> ADC &nbsp; <strong>Verified:</strong> 2026-08-23</p>
+<p>Three sponsors are running B7-H3 ADCs and none of them can take her today. The Western studies (NCT04145622, NCT06242470, NCT06551142) all sit behind prior standard therapy and an ECOG 0-1 bar, so a treatment-naive patient with an assumed 2 fails on both axes; the sarcoma-specific Hansoh studies are recruiting in mainland China only. Temper the antigen argument as well: B7-H3 is expressed in 97% of sarcomas but chondrosarcoma had the lowest median H-score of any subtype at 60, against 175 for osteosarcoma, and ADC and CAR-T activity both track antigen density.</p>
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>All investigational; no B7-H3-directed ADC is approved in any jurisdiction</dd>
+  <dt>Geographic scope</dt><dd>US, UK, Australia, Japan and Europe for the Daiichi Sankyo, MacroGenics and GSK studies; the Hansoh sarcoma-specific studies are mainland-China only</dd>
+</dl>
+
+<p><strong>Next steps</strong></p>
+<ol>
+<li>Measure ECOG, because every Western B7-H3 protocol requires 0-1 and this is the axis most likely to be modifiable if acetabular pain is fixed.</li>
+<li>Order B7-H3 (CD276) immunohistochemistry on the dedifferentiated component when tissue is being cut for the other stains, so the antigen question is answered before any of these become relevant.</li>
+<li>Call the MacroGenics trial manager at 301-251-5172 to ask what performance-status threshold NCT06242470 applies in practice, since the registry record does not state one.</li>
+<li>Revisit ifinatamab deruxtecan (NCT04145622) and EMBOLD (NCT06551142) after first-line chemotherapy, when the refractory criterion is satisfied, and confirm which US sites are screening.</li>
+<li>If a US route stays closed, a physician-initiated request through https://daiichisankyo-map.com/submit-a-request is the only pre-approval access channel any of these three sponsors publishes.</li>
+</ol>
+<p><strong>Trial pathways</strong></p>
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT04145622">NCT04145622</a></td><td class="col-phase">1/2</td><td class="col-indication">Advanced treatment-refractory solid tumours including sarcoma</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><strong>(US sites) Daiichi Sankyo Contact for Clinical Trial Information</strong><br><a href="mailto:CTRinfo_us@daiichisankyo.com">CTRinfo_us@daiichisankyo.com</a><br><code>908-992-6400</code><br><a href="https://clinicaltrials.gov/study/NCT04145622">trial sites</a></td><td class="col-notes">28 sites in the US and Japan, several US sites listed as withdrawn, so confirm which are actually screening. Requires refractoriness to standard therapy and ECOG 0-1. A B7-H3 immunohistochemistry result is not an entry criterion, so a low or absent stain would not itself exclude her later. A Japan-site contact is also posted: +81-3-6225-1111, dsclinicaltrial@daiichisankyo.co.jp.</td></tr>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT06242470">NCT06242470</a></td><td class="col-phase">1</td><td class="col-indication">Advanced solid tumours including sarcoma</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-weak">eligible: unconfirmed</span></td><td class="col-contact"><strong>Global Trial Manager</strong><br><a href="mailto:info@macrogenics.com">info@macrogenics.com</a><br><code>301-251-5172</code><br><a href="https://clinicaltrials.gov/study/NCT06242470">trial sites</a></td><td class="col-notes">12 sites across the US, UK and Australia. The registered criteria say only adequate performance and laboratory parameters without a numeric ECOG threshold, which is unusual and means the fitness bar has to be asked of the site. Tissue is mandatory and major surgery within 4 weeks is exclusionary, which interacts with a pending acetabular operation that would supply the largest specimen available.</td></tr>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT06551142">NCT06551142</a></td><td class="col-phase">1</td><td class="col-indication">Advanced solid tumours</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><strong>US GSK Clinical Trials Call Center</strong><br><a href="mailto:GSKClinicalSupportHD@gsk.com">GSKClinicalSupportHD@gsk.com</a><br><code>877-379-3718</code><br><a href="https://clinicaltrials.gov/study/NCT06551142">trial sites</a></td><td class="col-notes">67 sites across 13 countries; the Western development arm of the same molecule Hansoh runs as HS-20093. No histology carve-out but no sarcoma-specific cohort either, and entry requires progression on or intolerance to all available standard therapy plus ECOG 0-1. An EU call centre is also posted: +44 (0) 20 89904466.</td></tr>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT05830123">NCT05830123</a></td><td class="col-phase">2</td><td class="col-indication">Relapsed or refractory osteosarcoma and other sarcomas</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><strong>Wei Guo, MD</strong><br><a href="mailto:bonetumor@163.com">bonetumor@163.com</a><br><code>010-88326656</code><br><a href="https://clinicaltrials.gov/study/NCT05830123">trial sites</a></td><td class="col-notes">11 sites, all in mainland China. The most sarcoma-specific B7-H3 protocol running, with other sarcomas as enrolling language and no cartilage carve-out, but it requires progression on first-line systemic treatment and ECOG 0-1. A second contact is posted: Cuicui Cong, 01088324516, rmyyllwyh@163.com.</td></tr>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT06699576">NCT06699576</a></td><td class="col-phase">1</td><td class="col-indication">Locally advanced or metastatic osteosarcoma and soft-tissue sarcoma</td><td class="col-status">not yet recruiting</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><strong>Xiaodong Tang, PhD</strong><br><a href="mailto:tang15877@126.com">tang15877@126.com</a><br><code>010-88324561</code><br><a href="https://clinicaltrials.gov/study/NCT06699576">trial sites</a></td><td class="col-notes">Not yet open and no sites posted; the registry record has not been updated since November 2024. Worth tracking only because one dose-expansion cohort enrolls patients with no prior treatment for advanced disease and another arm pairs the ADC with an anthracycline. Cohort 1 is soft-tissue sarcoma and cohort 2 osteosarcoma; chondrosarcoma is named in neither.</td></tr>
+</tbody></table></div></div>
+
+<p><strong>Manufacturer / sponsor contact</strong></p>
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Daiichi Sankyo with Merck (ifinatamab deruxtecan); MacroGenics (MGC026); Hansoh BioMedical with GSK (HS-20093 / risvutatug rezetecan)</dd>
+  <dt>Country</dt><dd>Japan; United States; China</dd>
+  <dt>Medical info email</dt><dd><a href="mailto:medicalaccess@daiichisankyo.com">medicalaccess@daiichisankyo.com</a></dd>
+  <dt>Compassionate / expanded access</dt><dd><a href="https://daiichisankyo-map.com/">https://daiichisankyo-map.com/</a></dd>
+  <dt>Notes</dt><dd>Daiichi Sankyo runs a Medical Access Program portal that takes requests from treating physicians and acknowledges them within five business days; the submission form is at https://daiichisankyo-map.com/submit-a-request. MacroGenics publishes an expanded-access policy at https://macrogenics.com/patients/expanded-access/ which states plainly that it is currently unable to make investigational products available outside a clinical trial, and lists no expanded-access contact. No GSK or Hansoh expanded-access route was located in this pass.</dd>
+</dl>
+
+<p><strong>Payer / coverage notes.</strong> Investigational agents are supplied by the sponsor, so payer coverage is not the constraint here. The constraints are line of therapy, performance status and geography.</p>
+<p><strong>Notes.</strong> The antigen-density problem is the honest caveat: chondrosarcoma had the lowest B7-H3 H-score of any sarcoma subtype in the survey in this dossier (pmid 42251292), and DXd-class ADCs partially compensate through bystander killing (pmid 27166974) but do not erase it.</p>
+<hr>
+<h3 id="access-5">5. PD-1 / PD-L1 checkpoint blockade as a class (nivolumab, envafolimab and others) <small><code>nivolumab, OPDIVO, BMS-936558, envafolimab, KN035, atezolizumab, durvalumab</code></small></h3>
+<p><strong>Access status:</strong> <span class="fit-badge fit-partial">Off-label use</span> &nbsp; <strong>Modality:</strong> monoclonal_antibody &nbsp; <strong>Verified:</strong> 2026-08-23</p>
+<p>Nivolumab and the other PD-1 and PD-L1 antibodies are approved in many cancers, so an off-label prescription is legally available and practically hard to fund in a sarcoma with no biomarker. The sarcoma-specific trials in the dossier are either closed or exclude cartilage histology outright: NCT07243626 names chondrosarcoma in its exclusion criteria, and that carve-out repeats across the first-line sarcoma chemo-immunotherapy studies screened. The one real hook is subtype-specific, since PD-L1 positivity and T-cell infiltrate cluster in dedifferentiated chondrosarcoma rather than conventional.</p>
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Nivolumab is FDA- and EMA-approved across many indications. Envafolimab is approved in China only. No PD-1 or PD-L1 agent carries a chondrosarcoma indication anywhere.</dd>
+  <dt>Geographic scope</dt><dd>US and EU for nivolumab; envafolimab is China-only</dd>
+</dl>
+
+<p><strong>Next steps</strong></p>
+<ol>
+<li>Order PD-L1 immunohistochemistry on the dedifferentiated component and record clone and cutoff, since that is the only enrichment signal this histology offers.</li>
+<li>Order MMR immunohistochemistry and a TMB call, which are what would convert a checkpoint conversation from off-label to on-label.</li>
+<li>Ask a sarcoma centre&#x27;s trial office to watch for bone-sarcoma checkpoint protocols opening, given how consistently cartilage histology is carved out of the soft-tissue studies.</li>
+<li>Do not pursue an off-label single-agent PD-1 antibody as a substitute for anthracycline-based chemotherapy in a chemo-responsive histology.</li>
+</ol>
+<p><strong>Trial pathways</strong></p>
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT07243626">NCT07243626</a></td><td class="col-phase">2</td><td class="col-indication">Advanced soft-tissue sarcoma, first line</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><strong>Ying Dong</strong><br><a href="mailto:dongying74@zju.edu.cn">dongying74@zju.edu.cn</a><br><code>+8113666669105</code><br><a href="https://clinicaltrials.gov/study/NCT07243626">trial sites</a></td><td class="col-notes">Single site in Hangzhou, China. Recorded as a documented exclusion rather than an option: exclusion criterion 1 names chondrosarcoma alongside osteosarcoma and Ewing sarcoma. Logged so the same protocol is not rediscovered and re-proposed downstream.</td></tr>
+</tbody></table></div></div>
+
+<p><strong>Manufacturer / sponsor contact</strong></p>
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Bristol Myers Squibb (nivolumab); Alphamab Oncology and 3D Medicines (envafolimab, China)</dd>
+  <dt>Country</dt><dd>United States (nivolumab); China (envafolimab)</dd>
+  <dt>Medical info phone</dt><dd><code>1-800-321-1335</code></dd>
+  <dt>Product information</dt><dd><a href="https://www.bmsmedinfo.com/">https://www.bmsmedinfo.com/</a></dd>
+  <dt>Notes</dt><dd>1-800-321-1335 is the BMS medical information contact center published on bms.com. No US contact exists for envafolimab, which has no US filing.</dd>
+</dl>
+
+<p><strong>Payer / coverage notes.</strong> Single-agent checkpoint blockade in sarcoma without MSI-H, dMMR or TMB-high is an off-label request most plans deny, and the published response rates do not support a strong appeal. If a checkpoint inhibitor is going to be used here, the better argument attaches to pembrolizumab under a tumour-agnostic biomarker or to a trial.</p>
+<p><strong>Notes.</strong> PD-L1 was positive in 9 of 22 dedifferentiated chondrosarcomas and in none of 119 conventional tumours (pmid 27312065), with staining confined to the dedifferentiated component.</p>
+<hr>
+<h3 id="access-6">6. Nivolumab plus ipilimumab <small><code>nivolumab, OPDIVO, ipilimumab, YERVOY, nivo-ipi</code></small></h3>
+<p><strong>Access status:</strong> <span class="fit-badge fit-partial">Off-label use</span> &nbsp; <strong>Modality:</strong> monoclonal_antibody &nbsp; <strong>Verified:</strong> 2026-08-23</p>
+<p>Both drugs are approved in other cancers and the combination has been given to sarcoma patients on trial, so a treating oncologist could write for it, but the sarcoma evidence in this dossier was logged as considered-and-excluded and the combination carries substantially more immune toxicity than single-agent PD-1 blockade. There is no open protocol offering it to a chondrosarcoma patient. Practically, this is an option to raise only after chemotherapy and only at a sarcoma centre willing to own the toxicity.</p>
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Both FDA- and EMA-approved in multiple indications; the combination is approved in melanoma, renal cell carcinoma, mesothelioma and others. No sarcoma indication.</dd>
+  <dt>Geographic scope</dt><dd>US and EU</dd>
+</dl>
+
+<p><strong>Next steps</strong></p>
+<ol>
+<li>Treat this as a later-line conversation, not a first-line one.</li>
+<li>If it is raised, ask the sarcoma centre for their own experience in bone sarcoma rather than extrapolating from soft-tissue subtypes.</li>
+<li>Have PD-L1, TMB and MMR results in hand first, since they are what any appeal would rest on.</li>
+<li>Call BMS medical information at 1-800-321-1335 for a benefit investigation before starting an appeal.</li>
+</ol>
+<p><strong>Trial pathways</strong></p>
+<p><em>No registered trials in the dossier.</em></p>
+<p><strong>Manufacturer / sponsor contact</strong></p>
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Bristol Myers Squibb</dd>
+  <dt>Country</dt><dd>United States</dd>
+  <dt>Medical info phone</dt><dd><code>1-800-321-1335</code></dd>
+  <dt>Product information</dt><dd><a href="https://www.bmsmedinfo.com/">https://www.bmsmedinfo.com/</a></dd>
+  <dt>Notes</dt><dd>1-800-321-1335 is the BMS medical information contact center published on bms.com; 1-800-721-5072 is the side-effect and product-quality line.</dd>
+</dl>
+
+<p><strong>Payer / coverage notes.</strong> A dual-checkpoint off-label request in sarcoma is a high-cost, high-toxicity ask with weak supporting data, and denial is the expected first response. BMS Access Support, reachable through the medical-information line, can run a benefit investigation before anyone commits to the appeal.</p>
+<p><strong>Notes.</strong> The Alliance A091401 experience (pmid 29370992) was logged upstream as considered and excluded for this case.</p>
+<hr>
+<h3 id="access-7">7. Macrophage-directed therapy (mifamurtide, MEPACT) <small><code>mifamurtide, MEPACT, L-MTP-PE, muramyl tripeptide phosphatidylethanolamine</code></small></h3>
+<p><strong>Access status:</strong> <span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-weak">Not yet accessible</span> &nbsp; <strong>Modality:</strong> other &nbsp; <strong>Verified:</strong> 2026-08-23</p>
+<p>Mifamurtide has a European marketing authorisation for high-grade resectable non-metastatic osteosarcoma and has never been approved in the US, where an FDA advisory committee did not support approval. For a US patient that makes this not reachable through normal channels; in the EU or UK it is an approved product that a clinician could in principle use off-label. The chondrosarcoma evidence is preclinical, where mifamurtide increased chemosensitivity in spheroids and improved doxorubicin efficacy in a xenograft while shifting the macrophage population.</p>
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>EMA-approved (high-grade resectable non-metastatic osteosarcoma, in combination with post-operative chemotherapy). No FDA approval; not marketed in the US.</dd>
+  <dt>Geographic scope</dt><dd>EU and UK only; not marketed or approved in the US</dd>
+</dl>
+
+<p><strong>Next steps</strong></p>
+<ol>
+<li>Treat this as a mechanism to watch rather than a drug to chase, given no US availability and no clinical data in chondrosarcoma.</li>
+<li>If the family is exploring EU treatment for other reasons, a European sarcoma centre can say whether mifamurtide is obtainable there and on what basis.</li>
+<li>Ask whether any macrophage-directed or CSF1R-directed protocol is open at a US sarcoma centre, which would be the domestic version of this idea.</li>
+</ol>
+<p><strong>Trial pathways</strong></p>
+<p><em>No registered trials in the dossier.</em></p>
+<p><strong>Manufacturer / sponsor contact</strong></p>
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Takeda Pharmaceuticals (EU marketing authorisation holder for MEPACT)</dd>
+  <dt>Country</dt><dd>Japan / EU marketing</dd>
+  <dt>Notes</dt><dd>No US medical-information or expanded-access contact for mifamurtide was verified in this pass, and the product is not marketed in the US. Any enquiry would go through Takeda&#x27;s EU medical information channels, which were not confirmed here.</dd>
+</dl>
+
+<p><strong>Payer / coverage notes.</strong> Not available for US purchase, so payer coverage does not arise. In EU jurisdictions the approved indication is non-metastatic resectable osteosarcoma, and use outside that indication would be an off-label reimbursement question for the national payer.</p>
+<p><strong>Notes.</strong> The supporting preclinical row (pmid 40960554) combined mifamurtide with doxorubicin in a chondrosarcoma xenograft and reported improved antitumour efficacy with fewer intermediate-stage tumour-associated macrophages.</p>
+<hr>
+<h3 id="access-8">8. HIF-2alpha inhibition (belzutifan) <small><code>belzutifan, WELIREG, MK-6482, PT2977, HIF-2alpha inhibitor</code></small></h3>
+<p><strong>Access status:</strong> <span class="fit-badge fit-partial">Off-label use</span> &nbsp; <strong>Modality:</strong> small_molecule &nbsp; <strong>Verified:</strong> 2026-08-23</p>
+<p>Belzutifan is approved for VHL-associated tumours and advanced renal cell carcinoma, so an off-label prescription is technically writable, but the chondrosarcoma case for it is preclinical only: HIF-2alpha was elevated in high-grade biopsies, knockdown cut growth and metastasis in xenografts, and pharmacological inhibition was synergistic with chemotherapy in mice. No clinical data exist in this disease and no trial in the dossier offers it. Realistically this is a row the board should read as a hypothesis with an approved drug attached, not an access route in current use.</p>
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>FDA-approved (VHL disease-associated renal cell carcinoma, CNS haemangioblastoma and pancreatic neuroendocrine tumours 2021; advanced renal cell carcinoma after PD-1 and VEGF-directed therapy 2023; advanced pheochromocytoma and paraganglioma 2025). EMA-approved for VHL-associated disease.</dd>
+  <dt>Geographic scope</dt><dd>US and EU (renal and VHL indications only)</dd>
+</dl>
+
+<p><strong>Next steps</strong></p>
+<ol>
+<li>Ask a sarcoma centre&#x27;s trial office whether any HIF-2alpha protocol is open to non-renal solid tumours, since that is the only credible route.</li>
+<li>Call Merck medical information at 1-800-444-2080 to ask whether a sarcoma or bone-tumour cohort exists in any belzutifan study.</li>
+<li>Do not spend appeal effort on an off-label prescription here while chemotherapy and the CDK4/6 trial route are unexhausted.</li>
+</ol>
+<p><strong>Trial pathways</strong></p>
+<p><em>No registered trials in the dossier.</em></p>
+<p><strong>Manufacturer / sponsor contact</strong></p>
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Merck Sharp &amp; Dohme LLC</dd>
+  <dt>Country</dt><dd>United States</dd>
+  <dt>Medical info phone</dt><dd><code>1-800-444-2080</code></dd>
+  <dt>Product information</dt><dd><a href="https://www.welireg.com/">https://www.welireg.com/</a></dd>
+  <dt>Notes</dt><dd>1-800-444-2080 is the Merck National Service Center line published on merck.com for product and medical information.</dd>
+</dl>
+
+<p><strong>Payer / coverage notes.</strong> An off-label request supported only by mouse data will be denied, and there is no compendium listing to lean on in sarcoma. If the mechanism is to be pursued at all, a trial is the only realistic vehicle.</p>
+<p><strong>Notes.</strong> The supporting work is pmid 33024108: HIF-2alpha knockdown reduced growth, local invasion and metastasis in chondrosarcoma xenografts, with synergy when inhibition was combined with chemotherapy.</p>
+<hr>
+<h2 id="unmeasured-molecular-landscape-interventions-5">Unmeasured Molecular Landscape interventions (5)</h2>
+<h3 id="access-9">9. CDK4/6 inhibition (abemaciclib; palbociclib in the preclinical work) <small><code>abemaciclib, LY2835219, VERZENIO, palbociclib, IBRANCE</code></small></h3>
+<p><strong>Access status:</strong> <span class="fit-badge fit-partial">Off-label use</span> <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; <strong>Modality:</strong> small_molecule &nbsp; <strong>Verified:</strong> 2026-08-23</p>
+<p>NCT04040205 names dedifferentiated chondrosarcoma in its eligible histologies and counts CDKN2A/B loss as a qualifying alteration, which makes it the clearest landing spot in the dossier for the line after first-line chemotherapy. It is recruiting at four US sites through the Medical College of Wisconsin trials office. Three gates stand in front of it: at least one prior anthracycline for the dedifferentiated group, a documented CDK-pathway alteration plus central Rb immunohistochemistry, and ECOG 0 or 1. Abemaciclib is also FDA-approved in breast cancer, so an off-label prescription exists as a fallback if the trial cannot take her.</p>
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Abemaciclib is FDA- and EMA-approved for HR-positive HER2-negative breast cancer in defined settings. No sarcoma indication.</dd>
+  <dt>Geographic scope</dt><dd>US, four sites (Wisconsin, Florida, Iowa, Missouri)</dd>
+</dl>
+
+<p><strong>Next steps</strong></p>
+<ol>
+<li>Make sure the comprehensive panel reports CDKN2A/B, CDK4, CDK6 and CCND1/2/3 explicitly, since those calls are what qualify her.</li>
+<li>Ask the pathologist to hold tissue for Rb immunohistochemistry, which this protocol requires centrally.</li>
+<li>Email cccto@mcw.edu or call 866-680-0505 now rather than later, to ask what the screening timeline looks like and whether a slot is likely to exist after first-line chemotherapy.</li>
+<li>Confirm the 14-day post-surgical window with the site if acetabular surgery is planned.</li>
+<li>Get ECOG measured, since 0-1 is the bar and an assumed 2 fails it.</li>
+</ol>
+<p><strong>Trial pathways</strong></p>
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT04040205">NCT04040205</a></td><td class="col-phase">2</td><td class="col-indication">Advanced bone and soft-tissue sarcoma with a CDK-pathway alteration; dedifferentiated chondrosarcoma named</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-partial">eligible: likely</span></td><td class="col-contact"><strong>Medical College of Wisconsin Cancer Center Clinical Trials Office</strong><br><a href="mailto:cccto@mcw.edu">cccto@mcw.edu</a><br><code>866-680-0505</code><br><a href="https://clinicaltrials.gov/study/NCT04040205">trial sites</a></td><td class="col-notes">Four recruiting sites: Froedtert and the Medical College of Wisconsin (Milwaukee), Mayo Clinic Jacksonville, University of Iowa, and Washington University in St. Louis. Primary completion projected June 2027. For dedifferentiated chondrosarcoma at least one prior anthracycline is required, which first-line treatment would satisfy. ECOG must be 0 or 1. The surgical washout is 14 days plus absence of significant wound-healing problems, more forgiving than the usual 4 weeks.</td></tr>
+</tbody></table></div></div>
+
+<p><strong>Manufacturer / sponsor contact</strong></p>
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Eli Lilly and Company</dd>
+  <dt>Country</dt><dd>United States</dd>
+  <dt>Medical info phone</dt><dd><code>1-800-545-5979</code></dd>
+  <dt>Product information</dt><dd><a href="https://medical.lilly.com/us/products/">https://medical.lilly.com/us/products/</a></dd>
+  <dt>Notes</dt><dd>1-800-LillyRx (1-800-545-5979) is the contact published in the VERZENIO prescribing information and on Lilly&#x27;s US medical portal.</dd>
+</dl>
+
+<p><strong>Payer / coverage notes.</strong> Off-label abemaciclib in sarcoma would need a documented CDKN2A/B loss or CDK4/CCND amplification on the panel plus retained Rb, and even then approval is uncertain; the trial is the better route because it supplies the drug. Lilly runs patient assistance for Verzenio, which the 1-800-545-5979 line can direct.</p>
+<p><strong>Notes.</strong> The preclinical support is direct: CDK4 expression tracked with metastasis in human chondrosarcoma samples and palbociclib reduced tumour burden within bone (pmid 30808351).</p>
+<hr>
+<h3 id="access-10">10. Pembrolizumab (KEYTRUDA) <small><code>pembrolizumab, MK-3475, KEYTRUDA</code></small></h3>
+<p><strong>Access status:</strong> <span class="fit-badge fit-partial">Off-label use</span> &nbsp; <strong>Modality:</strong> monoclonal_antibody &nbsp; <strong>Verified:</strong> 2026-08-23</p>
+<p>Which path this drug sits on depends entirely on a test that has not been run. If the comprehensive panel returns TMB of 10 or more per megabase, or MMR immunohistochemistry shows loss, pembrolizumab becomes an on-label tumour-agnostic option after a prior line of therapy and the coverage argument is straightforward. Without that, it is an off-label prescription resting on a single responder among five chondrosarcoma patients in SARC028 and on the observation that PD-L1 positivity in this disease clusters in the dedifferentiated component. Chondrosarcoma is typically TMB-low, so treat the biomarker as a cheap lottery ticket riding on a panel already being ordered.</p>
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>FDA- and EMA-approved across many indications, including the tumour-agnostic MSI-H/dMMR indication and the US tumour-agnostic TMB-high (&gt;=10 mut/Mb) indication for previously treated unresectable or metastatic solid tumours.</dd>
+  <dt>Geographic scope</dt><dd>US and EU. The tumour-agnostic TMB-high indication is a US label; the EU label does not carry it.</dd>
+</dl>
+
+<p><strong>Next steps</strong></p>
+<ol>
+<li>Order TMB and an MSI call on the comprehensive panel, and four-antibody MMR immunohistochemistry alongside it as a faster orthogonal read.</li>
+<li>Ask for PD-L1 immunohistochemistry on a section that actually contains dedifferentiated tissue, with clone and scoring system stated on the report.</li>
+<li>If TMB is 10 or more per megabase, or a mismatch-repair protein is lost, the treating team can pursue the tumour-agnostic label directly after first-line chemotherapy.</li>
+<li>If the biomarkers are negative, park this rather than fighting an off-label appeal; the SARC028 signal is one responder in five patients.</li>
+<li>Merck medical information at 1-800-444-2080 can confirm coverage documentation requirements for the tumour-agnostic indication.</li>
+</ol>
+<p><strong>Trial pathways</strong></p>
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT02628067">NCT02628067</a></td><td class="col-phase">2</td><td class="col-indication">Advanced solid tumours, including MSI-H/dMMR and TMB-high cohorts</td><td class="col-status">active not recruiting</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><a href="https://clinicaltrials.gov/study/NCT02628067">trial sites</a></td><td class="col-notes">Closed to accrual and no central contact posted; the record is the evidence base for the tumour-agnostic TMB-high label rather than a route to treatment. Its criteria required ECOG 0-1, at least one prior failed line, and TMB-H called on the FoundationOne CDx assay, which is a useful detail when choosing which panel to order.</td></tr>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT06422806">NCT06422806</a></td><td class="col-phase">3</td><td class="col-indication">Metastatic or unresectable dedifferentiated liposarcoma, UPS and related poorly differentiated soft-tissue sarcomas</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><a href="https://clinicaltrials.gov/study/NCT06422806">trial sites</a></td><td class="col-notes">First-line, treatment-naive, 257 North American sites, and mechanistically the pairing her tumour biology invites, but the histology list is soft-tissue with no bone-sarcoma entry and the ECOG bar is 0-1. No central contact posted; site research offices are the route if a pathology review ever reclassifies the tumour.</td></tr>
+</tbody></table></div></div>
+
+<p><strong>Manufacturer / sponsor contact</strong></p>
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Merck Sharp &amp; Dohme LLC</dd>
+  <dt>Country</dt><dd>United States</dd>
+  <dt>Medical info phone</dt><dd><code>1-800-444-2080</code></dd>
+  <dt>Product information</dt><dd><a href="https://www.keytruda.com/">https://www.keytruda.com/</a></dd>
+  <dt>Notes</dt><dd>1-800-444-2080 is the Merck National Service Center line published on merck.com for product and medical information, Monday to Friday 8am-7pm ET. 1-877-888-4231 is the separate adverse-reaction reporting number named in the KEYTRUDA prescribing information.</dd>
+</dl>
+
+<p><strong>Payer / coverage notes.</strong> With a TMB-high or dMMR result the indication is on-label after a prior line and coverage generally follows, though plans will require the biomarker report and evidence of the prior line. Without the biomarker, an off-label sarcoma request is usually denied; the Merck Access Program, reachable through the medical-information line, handles benefit investigation and patient assistance.</p>
+<p><strong>Notes.</strong> KEYNOTE-158&#x27;s TMB-high cohort reported a 29% response rate (95% CI 21-39) across ten tumour types, none of them sarcoma (pmid 32919526).</p>
+<hr>
+<h3 id="access-11">11. Genomically matched marketed agents through TAPUR <small><code>TAPUR, Targeted Agent and Profiling Utilization Registry</code></small></h3>
+<p><strong>Access status:</strong> <span class="fit-badge fit-partial">Clinical trial</span> &nbsp; <strong>Modality:</strong> other &nbsp; <strong>Verified:</strong> 2026-08-23</p>
+<p>TAPUR is the pragmatic version of off-label targeted therapy: ASCO&#x27;s basket study supplies marketed drugs matched to a genomic alteration, runs at 181 US and Puerto Rico sites, and sets its performance-status bar at ECOG 0-2, which is one of the very few in this screen that an assumed 2 clears as written. Everything turns on the panel. Entry requires an actionable alteration matched to a marketed agent from any CLIA laboratory, and no comprehensive profiling has been done yet.</p>
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Study of marketed FDA-approved agents used outside their labelled indications under a research protocol</dd>
+  <dt>Geographic scope</dt><dd>US and Puerto Rico</dd>
+</dl>
+
+<p><strong>Next steps</strong></p>
+<ol>
+<li>Get the comprehensive DNA plus RNA panel run; nothing here is actionable until an alteration is on paper.</li>
+<li>Email tapur@asco.org with the tumour type and, once available, the panel report, and ask which participating site is closest.</li>
+<li>Ask whether any alteration found in her tumour currently has an open TAPUR cohort, since cohorts close when they fill.</li>
+<li>Note the line criterion: TAPUR expects standard treatment to be exhausted or unavailable, which for a chemo-responsive dedifferentiated tumour realistically places it after first-line anthracycline.</li>
+<li>Confirm ECOG at screening, as 0-2 is the bar and her score is currently an assumption.</li>
+</ol>
+<p><strong>Trial pathways</strong></p>
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT02693535">NCT02693535</a></td><td class="col-phase">2</td><td class="col-indication">Advanced solid tumours, lymphoma or myeloma with an actionable genomic alteration</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-weak">eligible: unconfirmed</span></td><td class="col-contact"><strong>Pam Mangat, MS</strong><br><a href="mailto:tapur@asco.org">tapur@asco.org</a><br><code>www.tapur.org</code><br><a href="https://clinicaltrials.gov/study/NCT02693535">trial sites</a></td><td class="col-notes">181 sites across the US and Puerto Rico, so proximity is rarely the obstacle. ECOG 0-2 and a soft line criterion phrased as no longer benefiting from, or having no available, standard treatment. Drug-specific inclusion and exclusion criteria apply on top of the master protocol. The registry publishes a web address rather than a number in the phone field; email is the working route.</td></tr>
+</tbody></table></div></div>
+
+<p><strong>Manufacturer / sponsor contact</strong></p>
+<dl class="profile-grid">
+  <dt>Company</dt><dd>American Society of Clinical Oncology (sponsor); participating pharmaceutical companies supply the agents</dd>
+  <dt>Country</dt><dd>United States</dd>
+  <dt>Product information</dt><dd><a href="https://www.tapur.org/">https://www.tapur.org/</a></dd>
+  <dt>Notes</dt><dd>Study drugs are provided at no charge by the collaborating companies; the treating site handles enrolment.</dd>
+</dl>
+
+<p><strong>Payer / coverage notes.</strong> Study drug is supplied free, which is the point of the design: it converts an unfundable off-label prescription into a supplied one. Routine care costs remain billable to insurance in the usual way.</p>
+<p><strong>Notes.</strong> Included because the fitness bar and the site density make this one of the more realistic protocol routes in the case, conditional entirely on the molecular result.</p>
+<hr>
+<h3 id="access-12">12. NY-ESO-1 (CTAG1B)-directed TCR-engineered T cells <small><code>NY-ESO-1 TCR-T, CTAG1B TCR-T, letetresgene autoleucel</code></small></h3>
+<p><strong>Access status:</strong> <span class="fit-badge fit-partial">Clinical trial</span> <span class="fit-badge fit-weak">Not yet accessible</span> &nbsp; <strong>Modality:</strong> other &nbsp; <strong>Verified:</strong> 2026-08-23</p>
+<p>The single open protocol is an investigator-initiated study at one hospital in Shenzhen, and its enrolling condition is soft-tissue sarcoma while a pelvic chondrosarcoma is a bone primary. Two tests would have to come back favourably before the geography question even arose: HLA-A*02:01 typing and NY-ESO-1 expression on the dedifferentiated component, neither ordered. The prior is unpromising, since NY-ESO-1 expression was low across every sarcoma subtype in the largest cancer-testis antigen survey.</p>
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Investigational; no NY-ESO-1-directed cell therapy is approved in any jurisdiction</dd>
+  <dt>Geographic scope</dt><dd>Mainland China only (Shenzhen); no US, EU or Australian site</dd>
+</dl>
+
+<p><strong>Next steps</strong></p>
+<ol>
+<li>Order 4-digit HLA class I typing; without HLA-A*02:01 this whole class of agents closes and the reflex antigen stains can be cancelled.</li>
+<li>Reflex NY-ESO-1 expression only if the typing is favourable, ideally off a whole-transcriptome panel already being run rather than a separate slide.</li>
+<li>Ask a US sarcoma centre whether any domestic TCR-T protocol accepts bone-sarcoma primaries before pursuing an overseas single-site study.</li>
+<li>If contact is made, ask whether the registry record is current, since it has not been updated in nearly four years.</li>
+</ol>
+<p><strong>Trial pathways</strong></p>
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT05620693">NCT05620693</a></td><td class="col-phase">n/a</td><td class="col-indication">Advanced soft-tissue sarcoma, NY-ESO-1 positive</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><strong>Li Yu, Dr</strong><br><a href="mailto:liyu@vip.163.com">liyu@vip.163.com</a><br><code>+8675521839178</code><br><a href="https://clinicaltrials.gov/study/NCT05620693">trial sites</a></td><td class="col-notes">Single site in Shenzhen, Guangdong, China; the registry record has not been updated since November 2022, so recruiting status should be confirmed before acting. It allows ECOG 0-2, which almost no cell-therapy protocol does, and gates on antigen expression rather than a named histology, but the enrolling condition is soft-tissue sarcoma.</td></tr>
+</tbody></table></div></div>
+
+<p><strong>Manufacturer / sponsor contact</strong></p>
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Shenzhen University General Hospital</dd>
+  <dt>Country</dt><dd>China</dd>
+  <dt>Notes</dt><dd>Academic sponsor with no medical-information line or expanded-access programme; the registry contact is the only published route.</dd>
+</dl>
+
+<p><strong>Payer / coverage notes.</strong> Not a payer question. Investigational cell therapy abroad is self-funded for travel and lodging, and a US plan will not cover care on a foreign investigational protocol.</p>
+<p><strong>Notes.</strong> Also note the lymphodepletion fitness bar, which an unmeasured performance status cannot be assumed to clear.</p>
+<hr>
+<h3 id="access-13">13. Tebentafusp (KIMMTRAK) <small><code>tebentafusp, tebentafusp-tebn, IMCgp100, KIMMTRAK</code></small></h3>
+<p><strong>Access status:</strong> <span class="fit-badge fit-partial">Off-label use</span> &nbsp; <strong>Modality:</strong> bispecific_other &nbsp; <strong>Verified:</strong> 2026-08-23</p>
+<p>Approved, and biologically beside the point for this tumour. Tebentafusp is an ImmTAC directed at a gp100 peptide presented on HLA-A*02:01, and gp100 is a melanocytic antigen with no expected expression in a cartilage tumour, so the off-label path that its uveal-melanoma approval technically opens has nothing to act on. The active sarcoma protocol, SARC045, enrols clear cell sarcoma only. What is worth taking from this row is the HLA typing: her class I genotype is what determines whether any peptide-HLA-directed agent, now or later, is even discussable.</p>
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>FDA-approved 2022 and EMA-approved for HLA-A*02:01-positive unresectable or metastatic uveal melanoma. No other indication.</dd>
+  <dt>Geographic scope</dt><dd>US and EU (uveal melanoma indication only)</dd>
+</dl>
+
+<p><strong>Next steps</strong></p>
+<ol>
+<li>Draw 4-digit HLA class I typing regardless, since it is a blood test that gates the whole peptide-HLA class of agents.</li>
+<li>Do not pursue tebentafusp itself unless gp100 expression is somehow documented, which is not expected in a cartilage tumour.</li>
+<li>If she types HLA-A*02:01, ask a sarcoma centre which peptide-HLA-directed protocols are open for her antigen profile.</li>
+<li>Keep the SARC office number (734) 930-7600 for other sarcoma protocol enquiries.</li>
+</ol>
+<p><strong>Trial pathways</strong></p>
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT06942442">NCT06942442</a></td><td class="col-phase">2</td><td class="col-indication">Advanced clear cell sarcoma, HLA-A*02:01 positive</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><strong>SARC Office</strong><br><a href="mailto:SARC045@sarctrials.org">SARC045@sarctrials.org</a><br><code>(734) 930-7600</code><br><a href="https://clinicaltrials.gov/study/NCT06942442">trial sites</a></td><td class="col-notes">Two US sites, USC Norris and Memorial Sloan Kettering. The ECOG bar is 2 or better, the most permissive fitness criterion in the whole screen, and the histology is the wall. The SARC office is a useful contact for other sarcoma protocols even though this one cannot take her.</td></tr>
+</tbody></table></div></div>
+
+<p><strong>Manufacturer / sponsor contact</strong></p>
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Immunocore Limited</dd>
+  <dt>Country</dt><dd>United Kingdom</dd>
+  <dt>Medical info phone</dt><dd><code>844-775-2273</code></dd>
+  <dt>Medical info email</dt><dd><a href="mailto:medical.information@immunocore.com">medical.information@immunocore.com</a></dd>
+  <dt>Product information</dt><dd><a href="https://www.kimmtrak.com/">https://www.kimmtrak.com/</a></dd>
+  <dt>Notes</dt><dd>844-775-CARE (844-775-2273) is the KIMMTRAK CONNECT support line published on kimmtrak.com. medical.information@immunocore.com and medinfo.eu@immunocore.com are the medical-information addresses published on immunocore.com.</dd>
+</dl>
+
+<p><strong>Payer / coverage notes.</strong> No payer would fund off-label tebentafusp in a tumour with no gp100 expression, and no clinician should ask them to. Recording the row prevents the approval status being mistaken for a route.</p>
+<p><strong>Notes.</strong> Classified as approved-and-prescribable to be accurate about the regulatory position, not because the off-label path is worth using.</p>
+<hr>
+<h2 id="idh-mutation-interventions-4">Idh Mutation interventions (4)</h2>
+<h3 id="access-14">14. Ivosidenib (TIBSOVO, AG-120) <small><code>ivosidenib, AG-120, TIBSOVO, S095032</code></small></h3>
+<p><strong>Access status:</strong> <span class="fit-badge fit-partial">Off-label use</span> &nbsp; <strong>Modality:</strong> small_molecule &nbsp; <strong>Verified:</strong> 2026-08-23</p>
+<p>The flagship trials are closed to her on histology, so the IDH route here is an off-label prescription, not enrollment. Ivosidenib is FDA-approved for IDH1-mutant AML and for previously treated IDH1-mutant cholangiocarcinoma, which means a treating oncologist can write for it in chondrosarcoma once a sequencing report documents an IDH1 codon 132 mutation, and a payer appeal has to carry the compendia and the phase 1 chondrosarcoma data rather than a label. Price it honestly: the 23% response rate and 53.5-month duration of response come from 13 conventional-histology patients, and the preclinical layer in this dossier argues IDH inhibition is unlikely to control a dedifferentiated component.</p>
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>FDA-approved (IDH1-mutant relapsed/refractory AML 2018; newly diagnosed AML 2019; previously treated locally advanced or metastatic IDH1-mutant cholangiocarcinoma 2021; myelodysplastic syndromes 2023). EMA-approved for IDH1-mutant AML and cholangiocarcinoma. No chondrosarcoma indication anywhere.</dd>
+  <dt>Geographic scope</dt><dd>US and EU: approved and prescribable off-label in both; no chondrosarcoma indication anywhere</dd>
+</dl>
+
+<p><strong>Next steps</strong></p>
+<ol>
+<li>Order IDH1 codon 132 and IDH2 codon 140/172 sequencing first; without a variant call on the report, nothing in this row is actionable.</li>
+<li>Ask the laboratory to macrodissect and report the dedifferentiated component, and note that mutant IDH1 can be lost during metastatic evolution, so a mutation on the acetabular primary does not guarantee the lung nodules carry it.</li>
+<li>Have the treating team call Servier medical information at 1-800-807-6124 for the off-label enquiry and to ask what documentation their medical-affairs team can supply for an appeal.</li>
+<li>Prepare the letter of medical necessity before submitting, and expect a denial and peer-to-peer review; register with Servier ONE at 1-800-813-5905 in parallel.</li>
+<li>Treat this as a post-chemotherapy option rather than a first move, and read it against the preclinical argument that IDH inhibition does not control the dedifferentiated component.</li>
+</ol>
+<p><strong>Trial pathways</strong></p>
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT06127407">NCT06127407</a></td><td class="col-phase">3</td><td class="col-indication">IDH1-mutant conventional chondrosarcoma, grades 1-3</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><strong>Institut de Recherches Internationales Servier (I.R.I.S.), Clinical Studies Department</strong><br><a href="mailto:scientificinformation@servier.com">scientificinformation@servier.com</a><br><code>+33 1 55 72 60 00</code><br><a href="https://clinicaltrials.gov/study/NCT06127407">trial sites</a></td><td class="col-notes">114 sites across 17 countries and actively recruiting, but eligibility reads conventional chondrosarcoma grades 1, 2 or 3, so dedifferentiated histology sits outside the enrolling population. Two further gates would bite anyway: documented radiographic progression across two imaging assessments, which a treatment-naive patient has not accrued, and a 4-week major-surgery washout. No ECOG threshold is stated. The Servier scientific-information address is still the right one for an off-label enquiry.</td></tr>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT04278781">NCT04278781</a></td><td class="col-phase">2</td><td class="col-indication">IDH1-mutant conventional chondrosarcoma, grade 2 or 3</td><td class="col-status">active not recruiting</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><a href="https://clinicaltrials.gov/study/NCT04278781">trial sites</a></td><td class="col-notes">Memorial Sloan Kettering protocol, closed to accrual at 6 patients, and the criteria name dedifferentiated chondrosarcoma as ineligible outright. It allowed ECOG 0-2, which is the useful detail: performance status was never what closed the IDH axis for her. No central contact is posted.</td></tr>
+</tbody></table></div></div>
+
+<p><strong>Manufacturer / sponsor contact</strong></p>
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Servier Pharmaceuticals LLC (US); Institut de Recherches Internationales Servier (global)</dd>
+  <dt>Country</dt><dd>France (US operations, Boston MA)</dd>
+  <dt>Medical info phone</dt><dd><code>1-800-807-6124</code></dd>
+  <dt>Medical info email</dt><dd><a href="mailto:scientificinformation@servier.com">scientificinformation@servier.com</a></dd>
+  <dt>Product information</dt><dd><a href="https://www.tibsovo.com/">https://www.tibsovo.com/</a></dd>
+  <dt>Compassionate / expanded access</dt><dd><a href="https://servier.us/expanded-access/">https://servier.us/expanded-access/</a></dd>
+  <dt>Compassionate use email</dt><dd><a href="mailto:ExpandedAccess@servier.com">ExpandedAccess@servier.com</a></dd>
+  <dt>Notes</dt><dd>1-800-807-6124 is the Servier customer service line published in the TIBSOVO prescribing information and on tibsovo.com; scientificinformation@servier.com is the clinical studies address on the NCT06127407 registry record. Servier&#x27;s US expanded-access policy covers investigational products only and states requests are acknowledged within three business days with a decision in 5-10 business days, so it is not the route for a marketed drug like ivosidenib. Patient support runs through Servier ONE at 1-800-813-5905.</dd>
+</dl>
+
+<p><strong>Payer / coverage notes.</strong> An off-label chondrosarcoma prescription will be denied on first pass at most plans and has to be won on appeal. The package that works is: a CLIA sequencing report naming the specific IDH1 codon 132 variant, the phase 1 chondrosarcoma data (pmid 32208957 and pmid 40100120), a compendium citation if one applies, and a letter of medical necessity explaining that no approved therapy exists for this histology after chemotherapy. Servier ONE at 1-800-813-5905 handles patient assistance and free-drug qualification, which is the fallback when the appeal fails.</p>
+<p><strong>Notes.</strong> Olutasidenib (REZLIDHIA, Rigel), the other approved mutant-IDH1 inhibitor, sits in the same off-label position; the dedifferentiated chondrosarcoma experience with it reported a median PFS of 1.5 months (pmid 41895355), which is the honest ceiling to quote alongside the ivosidenib figures.</p>
+<hr>
+<h3 id="access-15">15. Enasidenib (IDHIFA, AG-221) <small><code>enasidenib, AG-221, IDHIFA, CC-90007</code></small></h3>
+<p><strong>Access status:</strong> <span class="fit-badge fit-partial">Off-label use</span> &nbsp; <strong>Modality:</strong> small_molecule &nbsp; <strong>Verified:</strong> 2026-08-23</p>
+<p>Only relevant if IDH2 sequencing comes back mutant, which is the less common finding of the two. Enasidenib is FDA-approved for IDH2-mutant relapsed or refractory AML, so an off-label prescription is technically open, but there is no chondrosarcoma efficacy data behind it at all. The one active protocol that takes chondrosarcoma with an IDH2 mutation, NCT06176989 at the NIH Clinical Center, restricts primaries to the sinonasal cavity and skull base and requires prior systemic therapy.</p>
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>FDA-approved (relapsed or refractory IDH2-mutant acute myeloid leukemia, 2017). No solid-tumour indication; EMA marketing authorisation was not granted.</dd>
+  <dt>Geographic scope</dt><dd>US only; no EMA authorisation</dd>
+</dl>
+
+<p><strong>Next steps</strong></p>
+<ol>
+<li>Confirm IDH2 codon 140/172 status on the same sequencing report that answers the IDH1 question; do not order it separately.</li>
+<li>If IDH2-mutant, email ncimo_referrals@nih.gov to ask whether the NCT06176989 site restriction admits any exception for a non-sinonasal primary, rather than assuming it does not.</li>
+<li>Ask BMS medical information at 1-800-321-1335 whether any solid-tumour data exist that a payer appeal could lean on.</li>
+<li>Weigh this against IDH1-directed options and the chemotherapy backbone before committing to an appeal that is likely to fail.</li>
+</ol>
+<p><strong>Trial pathways</strong></p>
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT06176989">NCT06176989</a></td><td class="col-phase">2</td><td class="col-indication">IDH2 R140 or R172 mutated sinonasal and skull base tumours, chondrosarcoma named among eligible histologies</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><strong>NCI Medical Oncology Referral Office</strong><br><a href="mailto:ncimo_referrals@nih.gov">ncimo_referrals@nih.gov</a><br><code>(240) 760-6050</code><br><a href="https://clinicaltrials.gov/study/NCT06176989">trial sites</a></td><td class="col-notes">Single site, the NIH Clinical Center in Bethesda. ECOG 0-2 is allowed, which would suit her, but the primary must arise in the sinonasal cavity or skull base and prior systemic therapy in the recurrent or metastatic setting is required. A second registry contact is listed: Charalampos Floudas, M.D., (240) 474-1575, charalampos.floudas@nih.gov.</td></tr>
+</tbody></table></div></div>
+
+<p><strong>Manufacturer / sponsor contact</strong></p>
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Celgene Corporation, a Bristol Myers Squibb company</dd>
+  <dt>Country</dt><dd>United States</dd>
+  <dt>Medical info phone</dt><dd><code>1-800-321-1335</code></dd>
+  <dt>Product information</dt><dd><a href="https://www.bmsmedinfo.com/">https://www.bmsmedinfo.com/</a></dd>
+  <dt>Notes</dt><dd>1-800-321-1335 is the BMS medical information contact center published on bms.com (Mon-Fri 8am-5pm ET); 1-800-721-5072 is the separate adverse-event and product-quality line named in the IDHIFA prescribing information.</dd>
+</dl>
+
+<p><strong>Payer / coverage notes.</strong> An off-label solid-tumour prescription with no published efficacy data in this histology is a difficult appeal, and a payer will reasonably ask why not a trial. If an IDH2 mutation is found, the stronger conversation is with a sarcoma centre about a basket protocol rather than with the insurer about enasidenib.</p>
+<p><strong>Notes.</strong> IDH2 mutations are less frequent than IDH1 in cartilage tumours, so this row is a contingency rather than an expected path.</p>
+<hr>
+<h3 id="access-16">16. LY3410738 (covalent mutant IDH1/IDH2 inhibitor) <small><code>LY3410738</code></small></h3>
+<p><strong>Access status:</strong> <span class="fit-badge fit-weak">Compassionate use</span> <span class="fit-badge fit-weak">Not yet accessible</span> &nbsp; <strong>Modality:</strong> small_molecule &nbsp; <strong>Verified:</strong> 2026-08-23</p>
+<p>The only trial of this drug, NCT04521686, is active but no longer recruiting and its primary completion passed in 2023, so there is no open seat. It would also have required ECOG 0-1. If an IDH1 mutation is found and the treating team wants this specific compound, the remaining route is a single-patient request to Lilly, which means a treating physician contacting Lilly medical information and being prepared to file an expanded-access IND. No published Lilly expanded-access portal could be verified in this pass.</p>
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Investigational; no approval in any jurisdiction</dd>
+  <dt>Geographic scope</dt><dd>No open access anywhere; sponsor-dependent single-patient route only</dd>
+</dl>
+
+<p><strong>Next steps</strong></p>
+<ol>
+<li>Establish the IDH1 or IDH2 genotype first; a compassionate-use request without a documented mutation goes nowhere.</li>
+<li>Have the treating physician call Lilly medical information at 1-800-545-5979 and ask directly whether LY3410738 is available under expanded access and what the submission route is.</li>
+<li>Ask the same call whether any successor protocol has opened, since a closed phase 1 sometimes precedes a new study.</li>
+<li>Only pursue this after the approved IDH1 inhibitors have been considered, since ivosidenib is prescribable today and this is not.</li>
+</ol>
+<p><strong>Trial pathways</strong></p>
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT04521686">NCT04521686</a></td><td class="col-phase">1</td><td class="col-indication">IDH1 or IDH2 mutant advanced solid tumours; cholangiocarcinoma, chondrosarcoma and glioma named</td><td class="col-status">active not recruiting</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><a href="https://clinicaltrials.gov/study/NCT04521686">trial sites</a></td><td class="col-notes">33 sites across the US, Australia, Europe and Asia, all closed to new accrual, and no central contact is posted. One detail worth keeping: for chondrosarcoma the protocol accepted ctDNA as well as tissue for the IDH1 call, which is a useful precedent when archival pelvic tissue may not describe the lung metastases.</td></tr>
+</tbody></table></div></div>
+
+<p><strong>Manufacturer / sponsor contact</strong></p>
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Eli Lilly and Company</dd>
+  <dt>Country</dt><dd>United States</dd>
+  <dt>Medical info phone</dt><dd><code>1-800-545-5979</code></dd>
+  <dt>Product information</dt><dd><a href="https://medical.lilly.com/us/products/">https://medical.lilly.com/us/products/</a></dd>
+  <dt>Notes</dt><dd>1-800-LillyRx (1-800-545-5979) is the Lilly contact published in FDA labelling and on Lilly&#x27;s US medical portal. No Lilly expanded-access or compassionate-use page could be located without web search in this run, so the compassionate route is described as the medical-information line rather than a named programme.</dd>
+</dl>
+
+<p><strong>Payer / coverage notes.</strong> Investigational drug supplied under expanded access is provided by the sponsor; payers do not cover the agent itself, and the institution absorbs or bills the associated care. Expect an IRB submission and an FDA single-patient IND if Lilly agrees.</p>
+<p><strong>Notes.</strong> Included so the dossier records that this arm of the IDH pipeline has closed rather than leaving its absence unexplained.</p>
+<hr>
+<h3 id="access-17">17. PARP inhibition (olaparib), alone or with the ATR inhibitor ceralasertib <small><code>olaparib, AZD2281, Lynparza, ceralasertib, AZD6738</code></small></h3>
+<p><strong>Access status:</strong> <span class="fit-badge fit-partial">Off-label use</span> &nbsp; <strong>Modality:</strong> small_molecule &nbsp; <strong>Verified:</strong> 2026-08-23</p>
+<p>Olaparib is approved in several cancers and could be prescribed off-label, but the mechanistic case here is thin and the trial that tested it has closed. NCT03878095 paired olaparib with ceralasertib in IDH-mutant solid tumours on the theory that 2-HG accumulation creates a homologous-recombination defect; it is active but not recruiting, required ECOG 0-1 and progression on standard therapy. The dossier&#x27;s own preclinical row cuts against the premise, with talazoparib sensitivity in chondrosarcoma lines not sorting by IDH status.</p>
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Olaparib is FDA- and EMA-approved (ovarian, breast, pancreatic and prostate cancers in defined biomarker settings). Ceralasertib is investigational with no approval anywhere.</dd>
+  <dt>Geographic scope</dt><dd>Olaparib: US and EU. Ceralasertib: no access route outside a trial.</dd>
+</dl>
+
+<p><strong>Next steps</strong></p>
+<ol>
+<li>Ask that the comprehensive panel report BRCA1/2 and any HRD or homologous-recombination gene findings explicitly, since that is what would move this from speculative to arguable.</li>
+<li>Do not pursue an off-label olaparib prescription on the strength of an IDH mutation alone.</li>
+<li>If a successor to NCT03878095 opens, a sarcoma centre&#x27;s trial office will see it before a registry search does; ask them to flag it.</li>
+<li>AstraZeneca medical information at 1-800-236-9933 can confirm whether any expanded-access route exists for ceralasertib, which has no approval anywhere.</li>
+</ol>
+<p><strong>Trial pathways</strong></p>
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT03878095">NCT03878095</a></td><td class="col-phase">2</td><td class="col-indication">IDH1 or IDH2 mutant solid tumours, excluding cholangiocarcinoma and CNS tumours</td><td class="col-status">active not recruiting</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><a href="https://clinicaltrials.gov/study/NCT03878095">trial sites</a></td><td class="col-notes">13 US sites, NCI-sponsored, closed to accrual and no central contact posted. Eligibility was tumour-agnostic, which is what made it interesting, but it required ECOG 0-1, progression despite standard therapy, and serial biopsies unless waived.</td></tr>
+</tbody></table></div></div>
+
+<p><strong>Manufacturer / sponsor contact</strong></p>
+<dl class="profile-grid">
+  <dt>Company</dt><dd>AstraZeneca Pharmaceuticals LP</dd>
+  <dt>Country</dt><dd>United Kingdom / Sweden (US operations, Wilmington DE)</dd>
+  <dt>Medical info phone</dt><dd><code>1-800-236-9933</code></dd>
+  <dt>Notes</dt><dd>1-800-236-9933 is the AstraZeneca contact published in the LYNPARZA prescribing information. AstraZeneca&#x27;s US medical-information web portal redirected to a parked page during this check, so no URL is recorded.</dd>
+</dl>
+
+<p><strong>Payer / coverage notes.</strong> Off-label olaparib in a sarcoma with no BRCA or HRD finding is close to unappealable; a documented homologous-recombination deficiency or a pathogenic BRCA1/2 variant on the comprehensive panel would change that conversation materially.</p>
+<p><strong>Notes.</strong> Kept in the dossier because an IDH-mutant result would revive the mechanistic argument, not because the current evidence supports prescribing.</p>
+<hr>
+<h2 id="acetabular-lesion-pathologic-fracture-interventions-1">Acetabular Lesion Pathologic Fracture interventions (1)</h2>
+<h3 id="access-18">18. Proton beam therapy and carbon-ion radiotherapy for the acetabular lesion <small><code>proton beam therapy, PBT, carbon ion radiotherapy, C-ion RT, CIRT, hadrontherapy</code></small></h3>
+<p><strong>Access status:</strong> <span class="fit-badge fit-strong">Standard of care</span> <span class="fit-badge fit-weak">Not yet accessible</span> &nbsp; <strong>Modality:</strong> other &nbsp; <strong>Verified:</strong> 2026-08-23</p>
+<p>Two different answers sit inside this row. Proton therapy is reachable: 56 US proton centres are listed as operating by the National Association for Proton Therapy, several with dedicated sarcoma programmes, and the obstacle is the insurer rather than the machine, because proton coverage for sarcoma is a prior-authorisation and appeal fight at most plans. Carbon ion is a different matter, with no operating US carbon-ion facility that could be verified in this pass, so carbon ion means travelling to Europe or Japan and paying out of network. Both trials that would have supplied a protocol route, NCT05033288 and NCT02838602, exclude metastatic disease.</p>
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Proton therapy is an established, FDA-cleared radiotherapy modality delivered under standard radiation-oncology practice; carbon-ion therapy is in clinical use in Europe and Asia and has no operating US facility verified in this pass</dd>
+  <dt>Geographic scope</dt><dd>Proton therapy: 56 operating US centres. Carbon ion: no operating US facility verified this pass; Italy (CNAO Pavia), Germany, Austria, Japan and China are the treating jurisdictions.</dd>
+</dl>
+
+<p><strong>Next steps</strong></p>
+<ol>
+<li>Ask the radiation oncologist whether local therapy to the acetabulum is being framed as durable local control or as pain and structural palliation, because the answer decides whether the proton argument is worth the appeal.</li>
+<li>Request a proton consultation at a centre with a sarcoma programme; MD Anderson, Massachusetts General, Mayo (Arizona, Minnesota), University of Florida Jacksonville and Penn all run pelvic and bone sarcoma proton practice, and the full operating list is at http://proton-therapy.org/findacenter/.</li>
+<li>Have the proton centre&#x27;s authorisation team open the prior-authorisation request early, with a dosimetric comparison plan attached, and expect to schedule a peer-to-peer review.</li>
+<li>If carbon ion is being pursued seriously, send imaging and pathology to CNAO in Pavia for a preliminary opinion at info@cnao.it or (+39) 0382.0781, and ask about cost and timing up front. Carbon-ion centres also operate in Germany, Austria and Japan; their intake contacts were not verified in this pass.</li>
+<li>Call the Mayo referral office at 855-776-0015 for a combined surgery-versus-particle opinion even though NCT05033288 itself excludes metastatic disease.</li>
+</ol>
+<p><strong>Trial pathways</strong></p>
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT05033288">NCT05033288</a></td><td class="col-phase">n/a</td><td class="col-indication">Newly diagnosed pelvic bone sarcoma including chondrosarcoma</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><strong>Clinical Trials Referral Office</strong><br><a href="mailto:mayocliniccancerstudies@mayo.edu">mayocliniccancerstudies@mayo.edu</a><br><code>855-776-0015</code><br><a href="https://clinicaltrials.gov/study/NCT05033288">trial sites</a></td><td class="col-notes">Mayo Clinic sites in Arizona, Florida and Minnesota. Registered as observational: questionnaires and record review across patients treated with surgery, protons or carbon ions worldwide. ECOG 2 or better is allowed and treatment-naive status is required, but distant metastases are excluded. Still the most direct line to a three-way opinion on the acetabular decision.</td></tr>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT02838602">NCT02838602</a></td><td class="col-phase">n/a</td><td class="col-indication">Unresectable or R2-resected radioresistant tumours including chondrosarcoma WHO grade 2 or above outside the skull base</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><strong>Pascal Pommier, MD</strong><br><a href="mailto:pascal.pommier@lyon.unicancer.fr">pascal.pommier@lyon.unicancer.fr</a><br><code>(0)4 78 78 51 66</code><br><a href="https://clinicaltrials.gov/study/NCT02838602">trial sites</a></td><td class="col-notes">21 French sites; the registry record was last updated in 2021, so status should be confirmed before anyone acts on it. Metastatic disease and disease outside a curative approach are both exclusions, which is what closes it for her.</td></tr>
+</tbody></table></div></div>
+
+<p><strong>Manufacturer / sponsor contact</strong></p>
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Not applicable (radiotherapy delivered by treating centres)</dd>
+  <dt>Product information</dt><dd><a href="http://proton-therapy.org/findacenter/">http://proton-therapy.org/findacenter/</a></dd>
+  <dt>Notes</dt><dd>The National Association for Proton Therapy centre finder is the current public list of operating US proton centres, 56 at the time of this check. PTCOG&#x27;s facilities-in-operation page, the usual source for carbon-ion facilities worldwide, returned HTTP 503 during this pass and could not be quoted.</dd>
+</dl>
+
+<p><strong>Payer / coverage notes.</strong> Proton therapy for sarcoma is the recognised hard case in radiation-oncology coverage. Most commercial plans handle it under a proton-specific medical policy that requires prior authorisation, and denials followed by peer-to-peer review and appeal are common; the argument that carries weight is dose-sparing of bowel, bladder and neurovascular structures next to an acetabular target rather than a claim of survival advantage. The CMS Medicare Coverage Database returned HTTP 403 during this run, so no NCD or LCD identifier is quoted here and the treating radiation oncologist should pull the current local policy. Carbon-ion treatment abroad is generally self-pay for a US patient, and the centre quotes a price after reviewing the imaging.</p>
+<p><strong>Notes.</strong> The retrospective pelvic series in the dossier (pmid 26150259) compared carbon ions with surgery in non-metastatic pelvic chondrosarcoma and found no survival difference with better musculoskeletal function after carbon ions. Her metastatic disease is what puts that comparison out of reach; the local-control and function reasoning still applies to the acetabulum.</p>
+<hr>
+<h2 id="unmatched-interventions-11">Unmatched interventions (11)</h2>
+<h3 id="access-19">19. B7-H3 (CD276) immunohistochemistry <small><code>B7-H3 IHC, CD276 IHC, B7-H3 H-score</code></small></h3>
+<p><strong>Access status:</strong> <span class="fit-badge fit-strong">Standard of care</span> <span class="fit-badge fit-weak">Not yet accessible</span> &nbsp; <strong>Modality:</strong> other &nbsp; <strong>Verified:</strong> 2026-08-23</p>
+<p>This one is honestly harder to order than the other stains. B7-H3 is not a routine catalogue test at the big reference laboratories, and the trial-grade version is generally run by a sponsor&#x27;s central laboratory with its own antibody and cutoff, so a local stain triages a referral rather than qualifying anyone for anything. It is worth doing anyway if a B7-H3 protocol comes into view, because the dossier&#x27;s own data say chondrosarcoma carries the lowest B7-H3 expression of any sarcoma subtype and a low H-score would deflate that whole branch cheaply.</p>
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>No FDA-approved B7-H3 companion diagnostic; laboratory-developed and research-use assays only</dd>
+  <dt>Geographic scope</dt><dd>Limited to academic and sponsor central laboratories; not a routine US reference-laboratory order</dd>
+</dl>
+
+<p><strong>Next steps</strong></p>
+<ol>
+<li>Ask the sarcoma centre&#x27;s pathology service whether they run a validated B7-H3 stain before sending tissue anywhere.</li>
+<li>Only order it once a B7-H3 protocol is genuinely in view, since none of the current trials require the result for entry.</li>
+<li>If a stain is done, ask for an H-score rather than a positive or negative call, so it can be read against the published subtype distribution.</li>
+<li>Expect a sponsor to re-test centrally regardless of the local result.</li>
+</ol>
+<p><strong>Trial pathways</strong></p>
+<p><em>No registered trials in the dossier.</em></p>
+<p><strong>Manufacturer / sponsor contact</strong></p>
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Academic pathology laboratories and sponsor central laboratories; no routine reference-laboratory catalogue offering confirmed</dd>
+  <dt>Country</dt><dd>United States</dd>
+  <dt>Notes</dt><dd>No commercial provider for a clinical-grade B7-H3 stain was verified in this pass. NeoGenomics, ARUP and the academic sarcoma pathology services are the places to ask; the sponsors running B7-H3 protocols (Daiichi Sankyo, MacroGenics, GSK) test centrally and their trial contacts are recorded in the b7h3-adc row.</dd>
+</dl>
+
+<p><strong>Payer / coverage notes.</strong> A research-use stain with no approved therapy attached is often not reimbursed and may be billed to the patient or absorbed by the institution. Ask about cost before ordering.</p>
+<p><strong>Notes.</strong> No target_validator row exists for this stain, which is itself the finding: it is not a standard clinical order.</p>
+<hr>
+<h3 id="access-21">21. Doxorubicin-based chemotherapy, with or without ifosfamide or cisplatin <small><code>doxorubicin, adriamycin, ifosfamide, cisplatin, AI regimen, MAP</code></small></h3>
+<p><strong>Access status:</strong> <span class="fit-badge fit-strong">Standard of care</span> &nbsp; <strong>Modality:</strong> small_molecule &nbsp; <strong>Verified:</strong> 2026-08-23</p>
+<p>Nothing blocks this one. Doxorubicin, ifosfamide and cisplatin are old generic drugs stocked by every infusion centre in the country, and a high-grade bone sarcoma with a dedifferentiated component is exactly the setting where a medical oncologist writes for them without prior authorisation trouble. The gating steps are clinical rather than administrative: a measured performance status, a baseline echocardiogram before an anthracycline, and organ-function labs.</p>
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>FDA-approved generics; doxorubicin carries a broad soft-tissue and bone sarcoma indication</dd>
+  <dt>Geographic scope</dt><dd>Available anywhere with an oncology infusion service; no geographic constraint</dd>
+</dl>
+
+<p><strong>Next steps</strong></p>
+<ol>
+<li>Score and document ECOG in clinic, since the assumed 2 is what will decide between doxorubicin alone and a doxorubicin-plus-ifosfamide combination.</li>
+<li>Order a baseline echocardiogram with LVEF (or MUGA) and a 12-lead ECG before the first anthracycline dose.</li>
+<li>Draw the baseline organ-function panel, CBC with differential and comprehensive metabolic panel, and confirm renal function is adequate if ifosfamide or cisplatin is being considered.</li>
+<li>Get baseline CT chest, abdomen and pelvis with measurable lesions marked, so response can be judged at the first reassessment.</li>
+<li>Ask the treating oncologist to confirm this can start without waiting for the molecular panel, which it can.</li>
+</ol>
+<p><strong>Trial pathways</strong></p>
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT06422806">NCT06422806</a></td><td class="col-phase">3</td><td class="col-indication">Metastatic or unresectable dedifferentiated liposarcoma, UPS and related poorly differentiated soft-tissue sarcomas</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><a href="https://clinicaltrials.gov/study/NCT06422806">trial sites</a></td><td class="col-notes">257 sites across the US, Canada and Puerto Rico, so a site is likely close to wherever she is treated, but the enrolling histology list is soft-tissue and does not include bone primaries. No central contact is posted on the registry record; the route in is the local site&#x27;s research office. Worth a call only if an expert pathology review reclassifies the tumour.</td></tr>
+</tbody></table></div></div>
+
+<p><strong>Manufacturer / sponsor contact</strong></p>
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Multiple generic manufacturers (no single sponsor)</dd>
+  <dt>Notes</dt><dd>Doxorubicin, ifosfamide and cisplatin have no brand sponsor to call for off-label guidance. Dosing questions go to the treating sarcoma medical oncologist or the institution&#x27;s pharmacy, and drug supply is a hospital procurement matter rather than an access question.</dd>
+</dl>
+
+<p><strong>Payer / coverage notes.</strong> Generic cytotoxics for a metastatic high-grade sarcoma are routinely covered by Medicare Part B and by commercial plans; the usual friction is infusion-centre scheduling, not coverage. Ifosfamide adds mesna and inpatient or extended-outpatient time at some centres, which can shape where treatment happens more than whether it is approved.</p>
+<p><strong>Notes.</strong> The evidence supporting this row is the French Sarcoma Group cohort (pmid 24099780), where 20.5% of dedifferentiated tumours responded against 11.5% of conventional, and performance status of 2 or worse independently predicted shorter PFS.</p>
+<hr>
+<h3 id="access-22">22. Expert bone-sarcoma pathology review <small><code>second opinion pathology, slide review, WHO subtype confirmation, central pathology review</code></small></h3>
+<p><strong>Access status:</strong> <span class="fit-badge fit-strong">Standard of care</span> &nbsp; <strong>Modality:</strong> other &nbsp; <strong>Verified:</strong> 2026-08-23</p>
+<p>Slide review by a bone and soft-tissue pathologist is a routine, inexpensive second opinion that any of the major sarcoma centres accept directly from a patient or an outside hospital. It matters more than usual here because the diagnosis is user-stated and no formal report has been reviewed, and because the differential (chondroblastic osteosarcoma, mesenchymal chondrosarcoma, grade 3 conventional chondrosarcoma) changes the chemotherapy backbone. Ask for the dedifferentiated percentage and the block that holds it to be stated explicitly, since the molecular and immunohistochemistry orders both depend on that block.</p>
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Not applicable</dd>
+  <dt>Geographic scope</dt><dd>US sarcoma centres; slides ship nationally</dd>
+</dl>
+
+<p><strong>Next steps</strong></p>
+<ol>
+<li>Ask the diagnosing hospital to release the block and slides now, since shipping is often the slowest step.</li>
+<li>Send them to the sarcoma centre where treatment is likely to happen, so the review and the treatment plan come from the same team.</li>
+<li>Ask the report to state the WHO diagnosis, the grade, and the percentage of dedifferentiated component, and to name the block containing it.</li>
+<li>Ask for the ancillary work that separates the mimics: HEY1-NCOA2 fusion testing and IDH genotype, both of which come off the panel already being ordered.</li>
+<li>Do not let the review delay the start of chemotherapy if the treating team is confident in the diagnosis.</li>
+</ol>
+<p><strong>Trial pathways</strong></p>
+<p><em>No registered trials in the dossier.</em></p>
+<p><strong>Manufacturer / sponsor contact</strong></p>
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Mayo Clinic Laboratories (preferred by the target_validator); Memorial Sloan Kettering Department of Pathology; MD Anderson Division of Pathology; Johns Hopkins Department of Pathology</dd>
+  <dt>Country</dt><dd>United States</dd>
+  <dt>Product information</dt><dd><a href="https://www.mskcc.org/experience/become-patient/appointment">https://www.mskcc.org/experience/become-patient/appointment</a></dd>
+  <dt>Notes</dt><dd>Institutional pathology consultation is usually arranged through the centre&#x27;s referral or new-patient line rather than a laboratory client-services number: Memorial Sloan Kettering care advisors 800-525-2225 (clinician access 833-315-2722), MD Anderson 1-877-632-6789, Mayo Clinic cancer studies referral 855-776-0015. Mayo&#x27;s laboratory site returned HTTP 403 during this pass.</dd>
+</dl>
+
+<p><strong>Payer / coverage notes.</strong> Pathology second opinions are inexpensive relative to everything else in this case and are generally covered; when they are not, the self-pay cost is modest. Some centres require the review as a condition of treating, which makes it part of the consultation rather than a separate charge.</p>
+<p><strong>Notes.</strong> Recorded as a hardening item rather than an open fork: the stated histology already answers the chemotherapy question in the affirmative.</p>
+<hr>
+<h3 id="access-23">23. Four-antibody mismatch-repair immunohistochemistry, with MSI testing if equivocal <small><code>MMR IHC, MLH1, PMS2, MSH2, MSH6, MSI-PCR, dMMR</code></small></h3>
+<p><strong>Access status:</strong> <span class="fit-badge fit-strong">Standard of care</span> &nbsp; <strong>Modality:</strong> other &nbsp; <strong>Verified:</strong> 2026-08-23</p>
+<p>Days rather than weeks, cheap, and orderable from a hospital histology laboratory or any reference laboratory. The expected result is proficient, since MSI-high appeared in 0.7% of sarcomas in the largest clinically sequenced cohort, but a loss of staining would put approved tumour-agnostic checkpoint blockade in front of a patient who otherwise has no approved targeted option. Loss of a mismatch-repair protein also raises a Lynch syndrome question for her and her relatives.</p>
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Standard CLIA immunohistochemistry; MSI testing available by PCR or NGS</dd>
+  <dt>Geographic scope</dt><dd>US reference and hospital laboratories</dd>
+</dl>
+
+<p><strong>Next steps</strong></p>
+<ol>
+<li>Order the four-antibody panel on the same block cut as the other stains, so the block is opened once.</li>
+<li>Ask for MSI by PCR or NGS only if a stain is equivocal.</li>
+<li>If a protein is lost, reflex MLH1 promoter methylation testing and refer for germline counselling.</li>
+<li>Read the result alongside the TMB call from the comprehensive panel; either one opens tumour-agnostic pembrolizumab after a prior line.</li>
+</ol>
+<p><strong>Trial pathways</strong></p>
+<p><em>No registered trials in the dossier.</em></p>
+<p><strong>Manufacturer / sponsor contact</strong></p>
+<dl class="profile-grid">
+  <dt>Company</dt><dd>NeoGenomics Laboratories (preferred by the target_validator); ARUP Laboratories; Labcorp Oncology; Quest Diagnostics; Mayo Clinic Laboratories</dd>
+  <dt>Country</dt><dd>United States</dd>
+  <dt>Medical info phone</dt><dd><code>1-800-522-2787</code></dd>
+  <dt>Medical info email</dt><dd><a href="mailto:clientservices@aruplab.com">clientservices@aruplab.com</a></dd>
+  <dt>Product information</dt><dd><a href="https://www.neogenomics.com/contact-us">https://www.neogenomics.com/contact-us</a></dd>
+  <dt>Notes</dt><dd>ARUP client services 1-800-522-2787 and clientservices@aruplab.com were confirmed live during this pass and are available 24 hours. NeoGenomics 239-768-0600 option 3 is carried from the target_validator&#x27;s block. A treating hospital&#x27;s own histology laboratory is usually faster and equally validated if it offers the four-antibody panel.</dd>
+</dl>
+
+<p><strong>Payer / coverage notes.</strong> MMR immunohistochemistry is a low-cost, widely covered test and is standard practice in many tumour types; denials are uncommon. If it is done in-house it usually appears as part of the pathology charge.</p>
+<p><strong>Notes.</strong> Turnaround is 2-5 days and it needs about four unstained slides from the immunohistochemistry-set block.</p>
+<hr>
+<h3 id="access-24">24. HLA class I genotyping at 4-digit (allele-level) resolution <small><code>HLA typing, HLA-A*02:01, allele-level HLA class I, sequence-based typing</code></small></h3>
+<p><strong>Access status:</strong> <span class="fit-badge fit-strong">Standard of care</span> &nbsp; <strong>Modality:</strong> other &nbsp; <strong>Verified:</strong> 2026-08-23</p>
+<p>A blood draw, widely available through transplant and immunogenetics laboratories, and the gate on an entire class of agents. It decides whether any peptide-HLA-directed therapy, tebentafusp-like ImmTACs or MAGE-A4, NY-ESO-1 and PRAME TCR-T products, is discussable at all, and it stops money being spent on antigen stains that cannot be interpreted without it. Order it before the reflex expression assays, not alongside them.</p>
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Standard CLIA and ASHI-accredited immunogenetics testing</dd>
+  <dt>Geographic scope</dt><dd>US clinical immunogenetics laboratories; widely available</dd>
+</dl>
+
+<p><strong>Next steps</strong></p>
+<ol>
+<li>Order 4-digit class I typing on blood; no tumour tissue is consumed.</li>
+<li>State allele-level resolution on the requisition explicitly.</li>
+<li>Hold the MAGE-A4, NY-ESO-1 and PRAME expression reflexes until the type is back, and drop them if she is not HLA-A*02:01.</li>
+<li>If she is HLA-A*02:01, ask a sarcoma centre which peptide-HLA-directed protocols accept bone-sarcoma primaries.</li>
+</ol>
+<p><strong>Trial pathways</strong></p>
+<p><em>No registered trials in the dossier.</em></p>
+<p><strong>Manufacturer / sponsor contact</strong></p>
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Mayo Clinic Laboratories (preferred by the target_validator); HistoGenetics; Versiti Diagnostic Laboratories; Labcorp; Quest Diagnostics</dd>
+  <dt>Country</dt><dd>United States</dd>
+  <dt>Notes</dt><dd>No phone number for these providers was verified live in this pass; Mayo Clinic Laboratories returned HTTP 403. Most transplant centres and large hospitals have an in-house or contracted HLA laboratory, which is usually the fastest route. Ask specifically for 4-digit allele-level typing, since 2-digit resolution will not answer the A*02:01 question.</dd>
+</dl>
+
+<p><strong>Payer / coverage notes.</strong> HLA typing ordered outside a transplant context is sometimes questioned by payers. Framing the order as eligibility screening for HLA-restricted cell therapy usually resolves it; the test is inexpensive if paid privately.</p>
+<p><strong>Notes.</strong> Distinct from tumour HLA class I expression by immunohistochemistry, which asks a different question and is not a standard clinical order.</p>
+<hr>
+<h3 id="access-25">25. IDH1 codon 132 and IDH2 codon 140/172 sequencing (not R132H immunohistochemistry) <small><code>IDH1 sequencing, IDH2 sequencing, IDH hotspot panel, NGS IDH1 R132</code></small></h3>
+<p><strong>Access status:</strong> <span class="fit-badge fit-strong">Standard of care</span> &nbsp; <strong>Modality:</strong> other &nbsp; <strong>Verified:</strong> 2026-08-23</p>
+<p>A routine send-out that any oncology practice can order on archival tissue, with no prior authorisation drama at the major reference laboratories. The one thing that can go wrong is ordering the wrong test: the R132H antibody was raised for glioma, and roughly 40% of mutant cartilage tumours carry R132C, so an immunohistochemistry stain reads negative in the commonest scenario here. Ask for sequencing, on the dedifferentiated component, with the sampled site stated on the report.</p>
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Laboratory-developed and FDA-approved companion diagnostic panels both available under CLIA</dd>
+  <dt>Geographic scope</dt><dd>US reference laboratories; equivalent services exist in the EU and Australia</dd>
+</dl>
+
+<p><strong>Next steps</strong></p>
+<ol>
+<li>Order this on the same requisition as the comprehensive panel rather than as a separate test.</li>
+<li>Write on the requisition that sequencing is required, not R132H immunohistochemistry, and that IDH2 codons 140 and 172 must be covered.</li>
+<li>Ask for macrodissection of the dedifferentiated component and for the sampled lesion to be named on the report.</li>
+<li>If the block is exhausted or holds too little tumour, ask about a plasma ctDNA panel as a fallback, remembering a negative plasma result does not exclude the mutation.</li>
+<li>Call Foundation Medicine at (888) 988-3639 or the chosen laboratory&#x27;s client services before shipping, to confirm block requirements and turnaround.</li>
+</ol>
+<p><strong>Trial pathways</strong></p>
+<p><em>No registered trials in the dossier.</em></p>
+<p><strong>Manufacturer / sponsor contact</strong></p>
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Foundation Medicine (preferred by the target_validator); Caris Life Sciences; NeoGenomics Laboratories; Mayo Clinic Laboratories; ARUP Laboratories</dd>
+  <dt>Country</dt><dd>United States</dd>
+  <dt>Medical info phone</dt><dd><code>(888) 988-3639</code></dd>
+  <dt>Product information</dt><dd><a href="https://www.foundationmedicine.com/contact-us">https://www.foundationmedicine.com/contact-us</a></dd>
+  <dt>Notes</dt><dd>Foundation Medicine (888) 988-3639 and ARUP client services 1-800-522-2787 / clientservices@aruplab.com were confirmed live during this pass. Caris 888-979-8669 and NeoGenomics 239-768-0600 option 3 are carried from the target_validator&#x27;s provider block, verified by that agent the same day. Mayo Clinic Laboratories returned HTTP 403 to this agent, so its number is carried rather than re-verified.</dd>
+</dl>
+
+<p><strong>Payer / coverage notes.</strong> Comprehensive genomic profiling in metastatic solid tumours is covered by Medicare under the FDA-approved companion diagnostic pathway, and the major laboratories run their own financial-assistance programmes for commercially insured and uninsured patients. Ordering the IDH question as part of one comprehensive panel rather than as a standalone hotspot assay usually costs the patient less and answers more.</p>
+<p><strong>Notes.</strong> Turnaround is 3-10 days for a targeted hotspot assay and 2-3 weeks if it rides on the comprehensive panel. This is the highest-yield single test in the case.</p>
+<hr>
+<h3 id="access-26">26. Measured ECOG, baseline echocardiogram and ECG, organ-function labs, RECIST baseline imaging <small><code>ECOG performance status, echocardiogram, LVEF, MUGA, 12-lead ECG, CMP, CBC, RECIST 1.1 baseline CT</code></small></h3>
+<p><strong>Access status:</strong> <span class="fit-badge fit-strong">Standard of care</span> &nbsp; <strong>Modality:</strong> other &nbsp; <strong>Verified:</strong> 2026-08-23</p>
+<p>All four are ordinary clinic items with no access barrier at all, and together they are what open or close most of the rest of this guide. The ECOG in the file is an assumption, not a measurement, and it is the single criterion that most often decides trial eligibility: NCT05039801 and NCT04040205 require 0-1, TAPUR and NCT06176989 allow 0-2, NCT04433221 uses Karnofsky 50% or better. The echocardiogram gates the anthracycline, the labs gate ifosfamide and cisplatin, and the CT gates every response assessment downstream.</p>
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Not applicable</dd>
+  <dt>Geographic scope</dt><dd>Available at any treating institution</dd>
+</dl>
+
+<p><strong>Next steps</strong></p>
+<ol>
+<li>Have ECOG scored and written in the notes at the next visit, alongside pain and weight-bearing status, and repeat it after any orthopaedic intervention that improves mobility.</li>
+<li>Order the echocardiogram with LVEF (or MUGA) and a 12-lead ECG before the first anthracycline dose.</li>
+<li>Draw CBC with differential and a comprehensive metabolic panel, with renal function documented if ifosfamide or cisplatin is planned.</li>
+<li>Get contrast-enhanced CT of chest, abdomen and pelvis with thin-section lung imaging, and have measurable lesions identified for RECIST.</li>
+<li>Ask explicitly whether orthopaedic stabilisation would improve the performance status, since a better measured ECOG reopens the protocols that require 0-1.</li>
+</ol>
+<p><strong>Trial pathways</strong></p>
+<p><em>No registered trials in the dossier.</em></p>
+<p><strong>Manufacturer / sponsor contact</strong></p>
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Not applicable</dd>
+  <dt>Notes</dt><dd>All performed by the treating institution.</dd>
+</dl>
+
+<p><strong>Payer / coverage notes.</strong> Standard pre-treatment assessments in a newly diagnosed metastatic cancer; covered without argument. The only real cost is time, and in an aggressive tumour that cost is not trivial.</p>
+<p><strong>Notes.</strong> Worth stating plainly: performance status of 2 or worse was independently associated with shorter PFS in the French Sarcoma Group cohort, so measuring it is prognostic information and not only an eligibility formality.</p>
+<hr>
+<h3 id="access-27">27. PD-L1 immunohistochemistry on the dedifferentiated component <small><code>PD-L1 IHC, 22C3 pharmDx, SP263, 28-8, CPS, TPS</code></small></h3>
+<p><strong>Access status:</strong> <span class="fit-badge fit-strong">Standard of care</span> &nbsp; <strong>Modality:</strong> other &nbsp; <strong>Verified:</strong> 2026-08-23</p>
+<p>Routinely orderable and quick, with one trap: the stain has to be read on a section that actually contains dedifferentiated tissue, or it will read negative for the wrong reason. PD-L1 was positive in 9 of 22 dedifferentiated chondrosarcomas and in none of 119 conventional tumours, with staining confined to the dedifferentiated component. No sarcoma indication is keyed to PD-L1, so the result is trial-enrichment information rather than a prescription.</p>
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>FDA-approved companion diagnostic assays (22C3, SP263, 28-8) and laboratory-developed tests</dd>
+  <dt>Geographic scope</dt><dd>US reference and hospital laboratories</dd>
+</dl>
+
+<p><strong>Next steps</strong></p>
+<ol>
+<li>Confirm with pathology that the section contains dedifferentiated tumour before the stain is run.</li>
+<li>Record the clone and the scoring system on the report; a bare positive or negative is not usable for trial screening.</li>
+<li>Order it on the same block cut as MMR, CD3/CD8 and any B7-H3 stain, so tissue is spent once.</li>
+<li>Treat a positive result as an argument for a checkpoint trial rather than for an off-label prescription.</li>
+</ol>
+<p><strong>Trial pathways</strong></p>
+<p><em>No registered trials in the dossier.</em></p>
+<p><strong>Manufacturer / sponsor contact</strong></p>
+<dl class="profile-grid">
+  <dt>Company</dt><dd>NeoGenomics Laboratories (preferred by the target_validator); ARUP Laboratories; Labcorp Oncology; Quest Diagnostics; Mayo Clinic Laboratories</dd>
+  <dt>Country</dt><dd>United States</dd>
+  <dt>Medical info phone</dt><dd><code>1-800-522-2787</code></dd>
+  <dt>Medical info email</dt><dd><a href="mailto:clientservices@aruplab.com">clientservices@aruplab.com</a></dd>
+  <dt>Product information</dt><dd><a href="https://www.neogenomics.com/contact-us">https://www.neogenomics.com/contact-us</a></dd>
+  <dt>Notes</dt><dd>NeoGenomics carries all the major PD-L1 clones under one order, which matters because a result generated with one companion diagnostic does not transfer to another protocol&#x27;s cutoff. ARUP client services was verified live in this pass; the NeoGenomics number is carried from the target_validator.</dd>
+</dl>
+
+<p><strong>Payer / coverage notes.</strong> PD-L1 immunohistochemistry outside an approved indication may not be separately reimbursed in sarcoma, though the cost is small. If a specific checkpoint protocol is in view, check which clone it names before ordering, since re-staining later costs another slide from a block already carrying several questions.</p>
+<p><strong>Notes.</strong> Turnaround 3-7 days; one or two unstained slides.</p>
+<hr>
+<h3 id="access-28">28. Palliative radiotherapy and local measures at the acetabular fracture site <small><code>palliative radiotherapy, EBRT, cementoplasty, percutaneous screw fixation, SBRT</code></small></h3>
+<p><strong>Access status:</strong> <span class="fit-badge fit-strong">Standard of care</span> &nbsp; <strong>Modality:</strong> other &nbsp; <strong>Verified:</strong> 2026-08-23</p>
+<p>Palliative external-beam radiotherapy, cementoplasty and percutaneous fixation are available at essentially any radiation-oncology or interventional-radiology service, and no authorisation fight attaches to palliative treatment of a painful pathologic fracture. The reason this row carries a caution rather than a green light is bone healing: irradiated bone in the dossier&#x27;s animal model formed atrophic non-unions, so radiation before or instead of fixation can foreclose the surgical option.</p>
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Established radiotherapy and interventional procedures; no drug approval applies</dd>
+  <dt>Geographic scope</dt><dd>Available at any radiation-oncology service; no geographic constraint</dd>
+</dl>
+
+<p><strong>Next steps</strong></p>
+<ol>
+<li>Ask for a joint orthopaedic oncology and radiation-oncology discussion before any radiation is delivered to the acetabulum, so an operation is not foreclosed by irradiated bone.</li>
+<li>Have pain and weight-bearing status documented in the notes, since both feed the ECOG score that gates trial eligibility.</li>
+<li>If radiation goes ahead, ask for the dose and field to be recorded in a form a later trial screener can read, because prior radiotherapy to a target lesion excludes some protocols.</li>
+<li>Keep at least one measurable lesion outside any radiation field for RECIST assessment.</li>
+</ol>
+<p><strong>Trial pathways</strong></p>
+<p><em>No registered trials in the dossier.</em></p>
+<p><strong>Manufacturer / sponsor contact</strong></p>
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Not applicable</dd>
+  <dt>Notes</dt><dd>Delivered by the treating radiation-oncology or interventional-radiology service.</dd>
+</dl>
+
+<p><strong>Payer / coverage notes.</strong> Palliative radiotherapy for a painful pathologic fracture is routinely covered and rarely denied. Cementoplasty and percutaneous fixation for periacetabular lesions are covered as interventional oncology procedures at most plans, though availability depends on whether the centre performs them.</p>
+<p><strong>Notes.</strong> Radiation to the fracture site interacts with the 14-day to 4-week washout windows in several trials, and with the RECIST baseline. Sequence it deliberately rather than by default.</p>
+<hr>
+<h3 id="access-29">29. Periacetabular resection and reconstruction / orthopaedic stabilisation of the acetabular fracture <small><code>internal hemipelvectomy, periacetabular resection, Type II pelvic resection, acetabular reconstruction, surgical stabilisation</code></small></h3>
+<p><strong>Access status:</strong> <span class="fit-badge fit-strong">Standard of care</span> &nbsp; <strong>Modality:</strong> other &nbsp; <strong>Verified:</strong> 2026-08-23</p>
+<p>Periacetabular sarcoma surgery is available but concentrated: internal hemipelvectomy and acetabular reconstruction are done well at a small number of orthopaedic oncology units, and outcomes in pelvic bone sarcoma track with centre volume. The access problem is getting to one of those units quickly rather than getting the operation authorised. The item to hold in view is the collision with trials, because most protocols impose a 4-week major-surgery washout, and NCT04040205 is the exception at 14 days plus no wound-healing problems.</p>
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Surgical procedure; no regulatory approval pathway applies</dd>
+  <dt>Geographic scope</dt><dd>US high-volume orthopaedic oncology units; concentrated in NCI-designated and academic sarcoma centres</dd>
+</dl>
+
+<p><strong>Next steps</strong></p>
+<ol>
+<li>Ask for an orthopaedic oncology assessment at a high-volume bone-sarcoma unit within days, not weeks, with thin-slice CT and MRI of the pelvis in hand.</li>
+<li>Have that team state plainly whether the aim is oncological resection, stabilisation for pain and weight-bearing, or neither given the metastatic burden.</li>
+<li>Ask the surgeon to bank tumour tissue from any procedure, since a surgical specimen would be the largest sample available for the molecular panel and immunohistochemistry.</li>
+<li>Before scheduling, check the washout window of any trial under consideration: most require 4 weeks from major surgery, NCT04040205 requires 14 days.</li>
+<li>If the local hospital does not do periacetabular sarcoma reconstruction, ask the insurer for a single-case agreement rather than accepting a lower-volume operator.</li>
+</ol>
+<p><strong>Trial pathways</strong></p>
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT05033288">NCT05033288</a></td><td class="col-phase">n/a</td><td class="col-indication">Newly diagnosed pelvic chordoma, chondrosarcoma, osteosarcoma and other bone-involving sarcoma</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-none">eligible: no</span></td><td class="col-contact"><strong>Clinical Trials Referral Office</strong><br><a href="mailto:mayocliniccancerstudies@mayo.edu">mayocliniccancerstudies@mayo.edu</a><br><code>855-776-0015</code><br><a href="https://clinicaltrials.gov/study/NCT05033288">trial sites</a></td><td class="col-notes">Observational quality-of-life and local-control registry, not a treatment assignment. Distant metastases are an explicit exclusion, which is what rules her out. The contact is still worth using for a surgical or particle-therapy opinion at the three Mayo sites.</td></tr>
+</tbody></table></div></div>
+
+<p><strong>Manufacturer / sponsor contact</strong></p>
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Not applicable</dd>
+  <dt>Notes</dt><dd>Access here is a referral to an orthopaedic oncology service, not a product request.</dd>
+</dl>
+
+<p><strong>Payer / coverage notes.</strong> Sarcoma resection and reconstruction are covered procedures; the practical hurdles are out-of-network status when the nearest high-volume unit sits outside the plan&#x27;s network, and the prior-authorisation lead time on custom or 3D-printed pelvic implants. A single-case network-gap agreement is the usual instrument when the in-network hospital does not do periacetabular sarcoma work.</p>
+<p><strong>Notes.</strong> Preclinical work in the dossier (pmid 23606416) shows irradiated bone forms atrophic non-unions, which matters if radiation to the acetabulum is being considered alongside or instead of fixation.</p>
+<hr>
+<h3 id="access-30">30. Referral to a high-volume bone-sarcoma centre <small><code>sarcoma centre referral, multidisciplinary sarcoma team, second opinion</code></small></h3>
+<p><strong>Access status:</strong> <span class="fit-badge fit-strong">Standard of care</span> &nbsp; <strong>Modality:</strong> other &nbsp; <strong>Verified:</strong> 2026-08-23</p>
+<p>This is the access step that unlocks most of the others. Dedifferentiated chondrosarcoma is rare enough that pathology review, periacetabular surgery, particle-therapy opinion and trial screening all live at the same small set of institutions, and every route in this guide runs faster from inside one. Self-referral is accepted at the major centres and no physician referral is required to book, though records and imaging have to travel with the request.</p>
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>Not applicable</dd>
+  <dt>Geographic scope</dt><dd>US; equivalent national sarcoma networks exist in the EU, UK and Australia but were not screened in this pass</dd>
+</dl>
+
+<p><strong>Next steps</strong></p>
+<ol>
+<li>Call one high-volume centre this week rather than surveying several: Memorial Sloan Kettering care advisors at 800-525-2225 (clinician access line 833-315-2722), MD Anderson at 1-877-632-6789, or Mayo Clinic cancer studies at 855-776-0015.</li>
+<li>Ask for the sarcoma medical oncology and orthopaedic oncology clinics jointly, and say the words dedifferentiated chondrosarcoma with pathologic acetabular fracture when booking, because that phrase routes the appointment correctly.</li>
+<li>Send the diagnostic block or slides ahead of the visit so expert pathology review is already under way when she arrives.</li>
+<li>Call NCI&#x27;s Cancer Information Service at 1-800-4-CANCER (1-800-422-6237) if no centre is within reach, and ask for bone-sarcoma programmes by region.</li>
+<li>Ask the centre&#x27;s clinical-trial office to screen her against open protocols at the same visit, since trial slots and first-line chemotherapy have to be sequenced together.</li>
+</ol>
+<p><strong>Trial pathways</strong></p>
+<div class="trial-table-wrap"><div class="trial-scroll"><table class="trial-table">
+<thead><tr><th class="col-nct">NCT</th><th class="col-phase">Phase</th><th class="col-indication">Indication</th><th class="col-status">Status</th><th class="col-eligibility">Patient eligible</th><th class="col-contact">Central contact</th><th class="col-notes">Notes</th></tr></thead>
+<tbody>
+<tr><td class="col-nct"><a href="https://clinicaltrials.gov/study/NCT02693535">NCT02693535</a></td><td class="col-phase">2</td><td class="col-indication">Advanced solid tumours with an actionable genomic alteration</td><td class="col-status">recruiting</td><td class="col-eligibility"><span class="fit-badge fit-weak">eligible: unconfirmed</span></td><td class="col-contact"><strong>Pam Mangat, MS</strong><br><a href="mailto:tapur@asco.org">tapur@asco.org</a><br><code>www.tapur.org</code><br><a href="https://clinicaltrials.gov/study/NCT02693535">trial sites</a></td><td class="col-notes">Listed here because its 181 US and Puerto Rico sites are a practical map of which centres run genomically matched treatment, and its ECOG 0-2 bar is one of the few this patient clears as written. The registry publishes a web address in the phone field; the email is the reliable route.</td></tr>
+</tbody></table></div></div>
+
+<p><strong>Manufacturer / sponsor contact</strong></p>
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Not applicable</dd>
+  <dt>Product information</dt><dd><a href="https://www.cancer.gov/research/infrastructure/cancer-centers/find">https://www.cancer.gov/research/infrastructure/cancer-centers/find</a></dd>
+  <dt>Notes</dt><dd>NCI&#x27;s centre finder lists the designated comprehensive cancer centres by state. Sarcoma-specific programmes are a subset of that list.</dd>
+</dl>
+
+<p><strong>Payer / coverage notes.</strong> Out-of-network consultation is the recurring cost problem. Most plans will authorise a single specialty consultation for a rare tumour, and a written argument that the plan&#x27;s network holds no bone-sarcoma pathology or periacetabular surgical service supports a network-gap exception. Travel and lodging are usually out of pocket, and several sarcoma charities run travel-grant programmes.</p>
+<p><strong>Notes.</strong> SARC (Sarcoma Alliance for Research through Collaboration) runs multi-centre sarcoma protocols and its office can be reached at (734) 930-7600; its member sites are a second map of where sarcoma trials open.</p>
+<hr>
+<h2 id="idh1-idh2-mutation-status-interventions-1">Idh1 Idh2 Mutation Status interventions (1)</h2>
+<h3 id="access-20">20. Comprehensive tumour DNA plus RNA profiling with TMB and MSI reporting <small><code>comprehensive genomic profiling, CGP, FoundationOne CDx, MI Cancer Seek, NGS panel</code></small></h3>
+<p><strong>Access status:</strong> <span class="fit-badge fit-strong">Standard of care</span> &nbsp; <strong>Modality:</strong> other &nbsp; <strong>Verified:</strong> 2026-08-23</p>
+<p>One order answers the IDH question, the fusion question, the TMB and MSI question and every genotype-matched trial question at once, which is what a patient with no molecular testing needs. All the major reference laboratories run it on archival FFPE and none of them require anything unusual to accept the case. Specify DNA plus RNA: a DNA-only panel can miss a fusion whose breakpoint sits in a large intron, and a small hotspot panel prints a TMB figure it is not sized to call.</p>
+<dl class="profile-grid">
+  <dt>Regulatory</dt><dd>FDA-approved companion diagnostic panels (FoundationOne CDx, MI Cancer Seek) and CLIA laboratory-developed tests</dd>
+  <dt>Geographic scope</dt><dd>US reference laboratories, with specimen shipping from anywhere in the country</dd>
+</dl>
+
+<p><strong>Next steps</strong></p>
+<ol>
+<li>Confirm with pathology which block holds the dedifferentiated component, and send that one.</li>
+<li>Order DNA plus RNA with fusion coverage, TMB in mutations per megabase and an MSI call on the same requisition.</li>
+<li>Name the genes that matter on the requisition: IDH1, IDH2, TP53, CDKN2A/B, TERT promoter, NTRK1-3, RET, BRAF, and HEY1-NCOA2 by RNA fusion.</li>
+<li>Ask for the report to state tumour fraction and whether macrodissection was performed.</li>
+<li>Start first-line chemotherapy without waiting for the result; a 2-3 week turnaround should not delay treatment in an aggressive tumour.</li>
+</ol>
+<p><strong>Trial pathways</strong></p>
+<p><em>No registered trials in the dossier.</em></p>
+<p><strong>Manufacturer / sponsor contact</strong></p>
+<dl class="profile-grid">
+  <dt>Company</dt><dd>Foundation Medicine; Caris Life Sciences; Tempus AI; NeoGenomics Laboratories; Mayo Clinic Laboratories</dd>
+  <dt>Country</dt><dd>United States</dd>
+  <dt>Medical info phone</dt><dd><code>(888) 988-3639</code></dd>
+  <dt>Product information</dt><dd><a href="https://www.foundationmedicine.com/contact-us">https://www.foundationmedicine.com/contact-us</a></dd>
+  <dt>Notes</dt><dd>Foundation Medicine (888) 988-3639 and ARUP client services 1-800-522-2787 / clientservices@aruplab.com were confirmed live during this pass. Caris 888-979-8669 and NeoGenomics 239-768-0600 option 3 are carried from the target_validator&#x27;s provider block, verified by that agent the same day. Mayo Clinic Laboratories returned HTTP 403 to this agent, so its number is carried rather than re-verified. Tempus publishes a contact form at https://www.tempus.com/contact/ but returned HTTP 429 to the target_validator and no phone number was verified.</dd>
+</dl>
+
+<p><strong>Payer / coverage notes.</strong> Medicare covers FDA-approved comprehensive genomic profiling once per cancer in a metastatic solid tumour; commercial coverage varies and the laboratories run patient-assistance programmes that cap out-of-pocket cost. Repeat testing is the part payers resist, which is an argument for getting the order right the first time.</p>
+<p><strong>Notes.</strong> This single order is what gates the CDK4/6 trial, TAPUR entry, the tumour-agnostic pembrolizumab question and the whole IDH axis.</p>
+<hr>
+<footer class="libby-footer">Generated 2026-08-24 &middot; Libby &middot; <code>chondrosarcoma-mets-acetabular-fx-idh-unknown-y34r</code> &middot; Access guide</footer>
+</body></html>

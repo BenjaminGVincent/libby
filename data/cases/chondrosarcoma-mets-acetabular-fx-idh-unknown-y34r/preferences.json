@@ -1,0 +1,8 @@
+{
+  "case_slug": "chondrosarcoma-mets-acetabular-fx-idh-unknown-y34r",
+  "efficacy_toxicity_weight": 0.8,
+  "toxicity_vetoes": [],
+  "modality_constraints": [],
+  "prefers_trials": true,
+  "free_text_constraints": "The one preference actually stated by the patient is that she wants to pursue all possible therapeutic options. That maximal-options stance is her own position; every other value in this file (the 0.8 efficacy weight, the empty veto and constraint lists, the trials-forward setting) is an inferred default consistent with it, not something she was asked. Goals of care, travel tolerance, and fitness were never discussed. Separately: the ECOG of 2 in the profile is an intake assumption based on the pathologic acetabular fracture, not a measured performance status. It may be better or worse than 2, and it gates trial eligibility broadly, since most protocols require ECOG 0-1 or 0-2. That assumption now matters more than it did at first intake: the histology is stated as high-grade with dedifferentiated features, a chemo-responsive variant, so fitness gates a treatment with a genuine expected role rather than one unlikely to help. If the true ECOG is 2 or worse, performance status itself may be what closes doors. Measuring it, and asking whether orthopaedic stabilisation would improve it, is a priority, and the aggressive tempo of metastatic dedifferentiated chondrosarcoma means these questions cannot wait."
+}

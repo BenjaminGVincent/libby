@@ -1,0 +1,100 @@
+{
+  "case_slug": "chondrosarcoma-mets-acetabular-fx-idh-unknown-y34r",
+  "age_band": "40-49",
+  "sex": "female",
+  "primary_site": "bone - left acetabulum (pelvis)",
+  "histology": "chondrosarcoma, high-grade with dedifferentiated features (user-stated; consistent with dedifferentiated chondrosarcoma, though a formal pathology report has not been reviewed). Expert bone-sarcoma pathology review to confirm the WHO diagnosis and quantify the dedifferentiated component remains a hardening item, not an open fork.",
+  "stage": "IV (metastatic at diagnosis: large left acetabular mass with pathologic acetabular fracture; multiple small pulmonary nodules dispersed through both lungs, consistent with metastases; multiple and dispersed, not oligometastatic). Clinical context: dedifferentiated chondrosarcoma presenting with metastatic disease is aggressive, and the pace of workup and decision-making matters.",
+  "ecog": 2,
+  "biomarkers": [
+    {
+      "name": "IDH1 mutation",
+      "value": "untested",
+      "method": "not performed",
+      "confirmation_status": "unknown",
+      "decision_resolution": "Tumor tissue NGS or targeted IDH1 hotspot sequencing (codon 132). Still the highest-yield single test: IDH1/IDH2 mutations are common in dedifferentiated chondrosarcoma as well as conventional, so the stated histology leaves this unchanged or more valuable. Gates ivosidenib and IDH-directed trials. Untested means unassessable, not negative."
+    },
+    {
+      "name": "IDH2 mutation",
+      "value": "untested",
+      "method": "not performed",
+      "confirmation_status": "unknown",
+      "decision_resolution": "Tumor tissue NGS or targeted IDH2 hotspot sequencing (codons 140/172). Paired with IDH1 above; gates IDH2-directed agents and trials. Common in dedifferentiated chondrosarcoma as well as conventional."
+    },
+    {
+      "name": "Histologic subtype and grade",
+      "value": "high-grade with dedifferentiated features (user-stated)",
+      "method": "user report; formal pathology report not reviewed",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "The stated result is already at decision-relevant resolution: high grade plus dedifferentiated features answers the chemotherapy fork in the affirmative. Hardening item, not an open question: expert bone-sarcoma pathology review of adequate tissue to confirm the formal WHO diagnosis of dedifferentiated chondrosarcoma and quantify the dedifferentiated component."
+    },
+    {
+      "name": "HEY1-NCOA2 fusion",
+      "value": "untested",
+      "method": "not performed",
+      "confirmation_status": "unknown",
+      "decision_resolution": "RNA-based fusion panel or FISH. Low-yield given the stated histology: this fusion defines mesenchymal chondrosarcoma, which a high-grade lesion with dedifferentiated features is not. No longer a live alternative; kept for completeness and covered incidentally by any comprehensive RNA fusion panel."
+    },
+    {
+      "name": "Comprehensive genomic profile (incl. COL2A1, TERT promoter, CDKN2A/B, TP53)",
+      "value": "untested",
+      "method": "not performed",
+      "confirmation_status": "unknown",
+      "decision_resolution": "Comprehensive tumor DNA NGS panel with RNA fusion coverage, preferably on the dedifferentiated component. Gates the IDH question, TRK and other basket options, and any genotype-matched trial."
+    },
+    {
+      "name": "MSI / dMMR",
+      "value": "untested",
+      "method": "not performed",
+      "confirmation_status": "unknown",
+      "decision_resolution": "MMR IHC or NGS/PCR-based MSI call; gates tumor-agnostic checkpoint-inhibitor eligibility."
+    },
+    {
+      "name": "TMB",
+      "value": "untested",
+      "method": "not performed",
+      "confirmation_status": "unknown",
+      "decision_resolution": "TMB estimate from a comprehensive NGS panel; gates tumor-agnostic pembrolizumab eligibility at >=10 mut/Mb."
+    },
+    {
+      "name": "PD-L1",
+      "value": "untested",
+      "method": "not performed",
+      "confirmation_status": "unknown",
+      "decision_resolution": "PD-L1 IHC, assay chosen per drug context; informs (weakly, in sarcoma) checkpoint-inhibitor consideration. Of note, checkpoint activity signals in chondrosarcoma trials have clustered in the dedifferentiated subtype."
+    }
+  ],
+  "prior_therapies": [],
+  "current_therapy": null,
+  "organ_function": {
+    "renal_panel": "not obtained - baseline needed before systemic therapy",
+    "hepatic_panel": "not obtained - baseline needed before systemic therapy",
+    "cardiac_assessment": "not obtained - now squarely relevant rather than contingent: dedifferentiated features put anthracycline-based therapy on the table, so a baseline echo/LVEF is needed",
+    "pain_and_weight_bearing_status": "not documented - bears on fitness scoring and on whether orthopaedic stabilisation precedes systemic therapy",
+    "ECOG_provenance": "ASSUMPTION, not a measurement. ECOG 2 was recorded because a pathologic fracture of a weight-bearing joint plausibly limits ambulation and self-care. Unverified; the true value may be better or worse, and it gates trial eligibility broadly (most protocols require ECOG 0-1 or 0-2). The stated chemo-responsive histology raises the stakes on measuring it: fitness now gates a treatment with a genuine expected role, not one unlikely to help."
+  },
+  "targetable_features": [
+    {
+      "feature": "IDH1/IDH2 mutation status (untested)",
+      "rationale": "The one established targeted handle in chondrosarcoma, and IDH mutations are common in the dedifferentiated variant as well as conventional, so the stated histology leaves this test as valuable as before or more so. Gates ivosidenib and IDH-directed trials. Untested means unassessable, not negative; still the highest-yield single molecular test in the case."
+    },
+    {
+      "feature": "High-grade chondrosarcoma with dedifferentiated features (user-stated)",
+      "rationale": "This answers the central therapeutic fork in the affirmative: cytotoxic chemotherapy has a genuine expected role. Conventional chondrosarcoma is characteristically chemotherapy- and radiotherapy-resistant; the dedifferentiated variant is the exception, where anthracycline-based and osteosarcoma-type regimens carry real expected benefit. Downstream agents should search a chemo-responsive disease, not a chemo-futile one. Dedifferentiated chondrosarcoma presenting metastatic is aggressive, so decisions need to move quickly. Hardening item: expert bone-sarcoma pathology review to confirm the formal WHO diagnosis and quantify the dedifferentiated component."
+    },
+    {
+      "feature": "Unmeasured molecular landscape",
+      "rationale": "No comprehensive genomic or fusion profiling has been done: no NGS, no MSI/dMMR, TMB, or PD-L1. This single gap gates the IDH question, checkpoint and TRK options, and every basket-trial pathway. One adequate tissue sample, ideally including the dedifferentiated component, sent for combined DNA/RNA profiling opens or closes most of the targeted map at once."
+    },
+    {
+      "feature": "Large acetabular lesion with pathologic fracture",
+      "rationale": "A structural and local-control problem in a weight-bearing joint. Bears on surgical stabilisation, on radiotherapy including particle therapy (proton or carbon ion), and on whether local therapy precedes or accompanies systemic treatment, a sequencing question sharpened now that effective systemic therapy is plausible and the disease tempo is fast. Also the basis for the assumed ECOG of 2, so fixing it may change fitness and trial eligibility."
+    },
+    {
+      "feature": "Multiple dispersed pulmonary metastases",
+      "rationale": "Bilateral, multiple, and dispersed rather than oligometastatic, which limits any local pulmonary approach (metastasectomy, SBRT) and makes systemic control the operative question for the lungs."
+    }
+  ],
+  "geography_band": null,
+  "private": false
+}

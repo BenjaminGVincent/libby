@@ -93,7 +93,7 @@ _The ranked recommendations stay scoped to this case's targetable features, and 
 !!! note "Reading this report"
     An option earns a row here only if a regulator approved it for a population that includes this patient, or a major society's guideline carries it. **What makes it standard** names the endorsing body and, next to it, whether that endorsement was written for this patient's situation or for a different population. **Fit to this patient** is judged against the case profile alone, so an option the patient has already had and progressed on is marked rather than re-offered. This page is additive: it runs alongside the [ranked recommendations](recommendations.md) and does not narrow, rerank, or filter the targeted options that ranking surfaces.
 
-[Back to case](index.md) · [Recommendations](recommendations.md) · [Target validation](target_validation.md) · [Biomarker survey](biomarker_survey.md) · [Trials](trials.md) · [Evidence](evidence.md) · [Board](board.md)
+[Back to case](index.md) · [Recommendations](recommendations.md) · [Target validation](target_validation.md) · [Biomarker survey](biomarker_survey.md) · [Trials](trials.md) · [Evidence](evidence.md) · [Access guide](accessibility.md) · [Board](board.md)
 
 !!! danger disclaimer "Decision support, not medical advice"
     Libby is experimental. Standard of care is set by a treating team using the
