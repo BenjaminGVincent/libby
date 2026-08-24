@@ -49,34 +49,43 @@ instead of a target set:
   `insufficient_evidence` is a first-class verdict and must not be softened.
 Full method: `docs/methods.md`.
 
-## One ranked table: every therapy with any evidence
-`recommendations.jsonl` is the case's most important output — more important
-than any prose — and a therapy that is not in it is effectively invisible. The
-PI ranks **every therapy with any evidence behind it**: approved and
-investigational, feature-targeting and not. Chemotherapy, surgery, radiotherapy
-and palliative care get ranked rows alongside trial drugs. `access_route`
-(copied from `accessibility.jsonl::access_status`) is what marks a row as
-standard care, trial-only or off-label — the therapy's *absence* never carries
-that meaning. `surfaced_reason` demotes a row within the table; it never removes
-it. When in doubt, include and let `status` carry the reservation.
+## Two therapeutic tables, split by regulatory maturity
+The landscape is reported as **two separate co-equal tables**, both on the case
+page: the **Experimental table** (`PI` → `recommendations.jsonl`) and the
+**Standard-of-care table** (`standard_of_care_screener` →
+`standard_of_care.jsonl`). An option lands in exactly one, by maturity — an
+approved or guideline-carried option is standard-of-care's *even when it targets
+a stated feature*, and so are surgery, radiotherapy, chemotherapy and palliative
+care when a guideline carries them.
 
-This reverses the earlier routing rule, under which approved options were moved
-out of the ranking onto the standard-of-care page. `check_pipeline.py` now fails
-a case when a `standard_of_care.jsonl` option has no ranked row. The gate is
-opt-in via `access_route`, so cases ranked before the change stay valid under
-the contract they were built under.
+Tables are the case's most important output, more important than prose. So the
+rule that matters is about the **union**: a therapy may be routed between tables,
+but it may never end up in neither. `check_pipeline.py` fails a case when a
+therapy with dossier evidence appears in neither table (opt-in via
+`access_route`; diagnostics are out of scope, being consolidated into the rank-1
+workup row). Routing is a filing decision; dropping is a defect. The PI must also
+name the routed therapies in the `index.md` scope note, so a reader looking for
+chemotherapy learns in one line where it is and that the board ranked it, rather
+than concluding it was rejected.
+
+**Each table ranks itself 1..n, independently.** The Experimental table runs 1..n
+and the Standard-of-care table runs its own 1..m; neither is a continuation of
+the other, so both starting at 1 is correct. `check_pipeline.py` fails a gap, a
+duplicate, a table starting above 1, or a partially-ranked table.
+
+`access_route` on an experimental row distinguishes trial-only from off-label and
+compassionate-use — within that table these are not interchangeable.
+`surfaced_reason` demotes a row within its table; it never removes it.
 
 ## Standard of care is additive, never subtractive
-The standard-of-care track is a **detail surface, not a destination**. It never
-writes to `recommendations.jsonl` or any board file, and it must never remove,
-rerank, narrow, or argue against a ranked option. Adding standard care must not
-cost the case a single option. What it adds is the depth a ranked row cannot
-hold: regulatory and label language, guideline carriage with versions,
-eligibility and blocking factors, and sequencing trade-offs via
-`relationship_to_targeted_options`, which names conflicts in one direction only
-and does not rank. A standard option it surfaces that the PI has not ranked is a
-gap to flag for a PI re-run, not something its page can absorb. See the
-cross-cutting rule in `docs/methods.md`.
+The standard-of-care track never writes to `recommendations.jsonl` or any board
+file, and it must never remove, rerank, narrow, or argue against an experimental
+option. Adding standard care must not cost the case a single non-standard
+option. The one sanctioned bridge is `relationship_to_targeted_options`, which
+names sequencing and conflicts in one direction only and does not rank. If it
+surfaces an *investigational* therapy the dossier missed, that is a gap to flag
+for a `/trial_screener` or `/clinician` re-run, not something it absorbs into a
+standard-of-care row. See the cross-cutting rule in `docs/methods.md`.
 
 ## Data model & gates
 - `data/cases/<slug>/` holds committed JSONL/JSON; board output lives only in

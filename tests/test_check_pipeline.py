@@ -128,13 +128,11 @@ def test_all_committed_cases_complete():
     assert not incomplete, incomplete
 
 
-# --- Unified-table coverage ------------------------------------------------
+# --- Two-table coverage ----------------------------------------------------
 #
-# The ranked table must carry every therapy with any evidence, standard-of-care
-# ones included. Before that contract the PI deliberately routed approved
-# options out of the ranking, so the gate is opt-in via `access_route`: it fires
-# only on tables produced under the unified contract, leaving older cases valid
-# under the contract they were built under.
+# The landscape splits across the Experimental ranking and the standard-of-care
+# screen. Which table a therapy lands in is the PI's call; vanishing from both
+# is not. These exercise the union check, not either table alone.
 
 
 def _write_soc(case, options):
@@ -150,52 +148,176 @@ def _write_recs(case, rows):
     )
 
 
-def test_soc_option_missing_from_ranked_table_fails(monkeypatch, tmp_path):
+def _write_evidence(case, items, fname="clinical_evidence.jsonl"):
+    (case / fname).write_text(
+        "\n".join(json.dumps({"intervention_id": i, "intervention_label": lab})
+                  for i, lab in items) + "\n"
+    )
+
+
+def test_therapy_in_neither_table_fails(monkeypatch, tmp_path):
     root, docs = _patch(monkeypatch, tmp_path)
     _build_case(root, docs, "c", positions_personas=PERSONAS, critics_personas=PERSONAS)
     case = root / "c"
-    _write_soc(case, [("soc-chemo", "Doxorubicin-based chemotherapy")])
+    _write_evidence(case, [("chemo", "Doxorubicin-based chemotherapy")])
+    _write_soc(case, [("soc-rt", "Palliative radiotherapy")])
     _write_recs(case, [{"intervention_id": "glutaminase",
                         "intervention_label": "IACS-6274",
                         "access_route": "clinical_trial_only"}])
     failures, _ = cp.check_pipeline("c")
-    assert any("unified table" in f for f in failures), failures
-    assert any("Doxorubicin" in f for f in failures), failures
+    assert any("table coverage" in f for f in failures), failures
+    assert any("chemo" in f for f in failures), failures
 
 
-def test_soc_option_covered_by_id_passes(monkeypatch, tmp_path):
+def test_therapy_routed_to_standard_of_care_passes(monkeypatch, tmp_path):
+    """Routing is a filing decision, not an omission: a therapy that lives only
+    on the standard-of-care table is covered."""
     root, docs = _patch(monkeypatch, tmp_path)
     _build_case(root, docs, "c", positions_personas=PERSONAS, critics_personas=PERSONAS)
     case = root / "c"
-    _write_soc(case, [("soc-chemo", "Doxorubicin-based chemotherapy")])
-    _write_recs(case, [{"intervention_id": "soc-chemo",
-                        "intervention_label": "Doxorubicin-based chemotherapy",
-                        "access_route": "standard_of_care"}])
+    _write_evidence(case, [("chemo", "Doxorubicin-based chemotherapy")])
+    _write_soc(case, [("chemo", "Doxorubicin-based chemotherapy")])
+    _write_recs(case, [{"intervention_id": "glutaminase",
+                        "intervention_label": "IACS-6274",
+                        "access_route": "clinical_trial_only"}])
     failures, _ = cp.check_pipeline("c")
-    assert not any("unified table" in f for f in failures), failures
+    assert not any("table coverage" in f for f in failures), failures
 
 
-def test_soc_option_covered_by_label_stem_passes(monkeypatch, tmp_path):
-    """The two tracks assign their own IDs, so a label-stem match also counts."""
+def test_therapy_in_experimental_table_passes(monkeypatch, tmp_path):
     root, docs = _patch(monkeypatch, tmp_path)
     _build_case(root, docs, "c", positions_personas=PERSONAS, critics_personas=PERSONAS)
     case = root / "c"
-    _write_soc(case, [("soc-1", "Orthopaedic stabilisation (fixation) of the fracture")])
-    _write_recs(case, [{"intervention_id": "surgery-primary-site",
-                        "intervention_label": "Orthopaedic stabilisation of the acetabulum",
-                        "access_route": "standard_of_care"}])
+    _write_evidence(case, [("glutaminase", "IACS-6274")])
+    _write_recs(case, [{"intervention_id": "glutaminase",
+                        "intervention_label": "IACS-6274",
+                        "access_route": "clinical_trial_only"}])
     failures, _ = cp.check_pipeline("c")
-    assert not any("unified table" in f for f in failures), failures
+    assert not any("table coverage" in f for f in failures), failures
+
+
+def test_coverage_matches_on_label_stem_across_tracks(monkeypatch, tmp_path):
+    """The two tracks assign their own IDs, so a label-stem match counts."""
+    root, docs = _patch(monkeypatch, tmp_path)
+    _build_case(root, docs, "c", positions_personas=PERSONAS, critics_personas=PERSONAS)
+    case = root / "c"
+    _write_evidence(case, [("surgery-primary-site", "Orthopaedic stabilisation of the acetabulum")])
+    _write_soc(case, [("soc-fix", "Orthopaedic stabilisation (fixation) of the fracture")])
+    _write_recs(case, [{"intervention_id": "x", "intervention_label": "Other",
+                        "access_route": "off_label_use"}])
+    failures, _ = cp.check_pipeline("c")
+    assert not any("table coverage" in f for f in failures), failures
+
+
+def test_coverage_matches_any_evidence_label_for_an_intervention(monkeypatch, tmp_path):
+    """An evidence tier files several rows under one intervention_id with
+    different labels. If ANY of them stem-matches a table row, the therapy is
+    covered — matching only the first label falsely flagged a routed therapy
+    whose lead evidence row was phrased differently ("Anthracycline-based
+    chemotherapy" vs the SoC table's "Doxorubicin-based chemotherapy")."""
+    root, docs = _patch(monkeypatch, tmp_path)
+    _build_case(root, docs, "c", positions_personas=PERSONAS, critics_personas=PERSONAS)
+    case = root / "c"
+    _write_evidence(case, [
+        ("cytotoxic-chemotherapy", "Anthracycline-based chemotherapy (advanced chondrosarcoma)"),
+        ("cytotoxic-chemotherapy", "Doxorubicin / cisplatin with BH3 mimetic ABT-737"),
+    ])
+    _write_soc(case, [("doxorubicin-1l", "Doxorubicin-based chemotherapy (doxorubicin alone or with ifosfamide or cisplatin)")])
+    _write_recs(case, [{"intervention_id": "glutaminase", "intervention_label": "IACS-6274",
+                        "access_route": "clinical_trial_only"}])
+    failures, _ = cp.check_pipeline("c")
+    assert not any("table coverage" in f for f in failures), failures
 
 
 def test_legacy_case_without_access_route_is_not_gated(monkeypatch, tmp_path):
-    """Cases ranked before the unified contract keep passing: no access_route
-    anywhere means the coverage rule does not apply."""
+    """Cases ranked before this check keep passing."""
     root, docs = _patch(monkeypatch, tmp_path)
     _build_case(root, docs, "c", positions_personas=PERSONAS, critics_personas=PERSONAS)
     case = root / "c"
-    _write_soc(case, [("soc-chemo", "Doxorubicin-based chemotherapy")])
-    _write_recs(case, [{"intervention_id": "glutaminase",
-                        "intervention_label": "IACS-6274"}])
+    _write_evidence(case, [("chemo", "Doxorubicin-based chemotherapy")])
+    _write_recs(case, [{"intervention_id": "glutaminase", "intervention_label": "IACS-6274"}])
     failures, _ = cp.check_pipeline("c")
-    assert not any("unified table" in f for f in failures), failures
+    assert not any("table coverage" in f for f in failures), failures
+
+
+# --- Per-table rank sequences ---------------------------------------------
+#
+# Each table numbers itself 1..n independently of the other: they are co-equal
+# tables, not one list split in two. A gap or duplicate makes the sequence
+# unreadable as a ranking, and a table starting at 2 implies a missing top row.
+
+
+def _ranked_recs(case, ranks):
+    _write_recs(case, [{"intervention_id": f"i{n}", "intervention_label": f"Drug {n}",
+                        "access_route": "clinical_trial_only", "rank": n} for n in ranks])
+
+
+def test_contiguous_ranks_pass(monkeypatch, tmp_path):
+    root, docs = _patch(monkeypatch, tmp_path)
+    _build_case(root, docs, "c", positions_personas=PERSONAS, critics_personas=PERSONAS)
+    _ranked_recs(root / "c", [1, 2, 3])
+    failures, _ = cp.check_pipeline("c")
+    assert not any("ranks are not" in f for f in failures), failures
+
+
+def test_rank_gap_fails(monkeypatch, tmp_path):
+    root, docs = _patch(monkeypatch, tmp_path)
+    _build_case(root, docs, "c", positions_personas=PERSONAS, critics_personas=PERSONAS)
+    _ranked_recs(root / "c", [1, 2, 4])
+    failures, _ = cp.check_pipeline("c")
+    assert any("ranks are not" in f and "missing rank" in f for f in failures), failures
+
+
+def test_duplicate_rank_fails(monkeypatch, tmp_path):
+    root, docs = _patch(monkeypatch, tmp_path)
+    _build_case(root, docs, "c", positions_personas=PERSONAS, critics_personas=PERSONAS)
+    _ranked_recs(root / "c", [1, 2, 2])
+    failures, _ = cp.check_pipeline("c")
+    assert any("duplicate rank" in f for f in failures), failures
+
+
+def test_ranking_must_not_start_above_one(monkeypatch, tmp_path):
+    """A table beginning at 2 reads as though its top row was lost."""
+    root, docs = _patch(monkeypatch, tmp_path)
+    _build_case(root, docs, "c", positions_personas=PERSONAS, critics_personas=PERSONAS)
+    _ranked_recs(root / "c", [2, 3, 4])
+    failures, _ = cp.check_pipeline("c")
+    assert any("ranks are not" in f for f in failures), failures
+
+
+def test_two_tables_rank_independently(monkeypatch, tmp_path):
+    """Both tables starting at 1 is correct, not a collision: the standard-of-care
+    ranking is not a continuation of the experimental one."""
+    root, docs = _patch(monkeypatch, tmp_path)
+    _build_case(root, docs, "c", positions_personas=PERSONAS, critics_personas=PERSONAS)
+    case = root / "c"
+    _ranked_recs(case, [1, 2, 3])
+    (case / "standard_of_care.jsonl").write_text(
+        "\n".join(json.dumps({"soc_id": f"s{n}", "option_label": f"Standard {n}", "rank": n})
+                  for n in (1, 2)) + "\n"
+    )
+    failures, _ = cp.check_pipeline("c")
+    assert not any("ranks are not" in f for f in failures), failures
+
+
+def test_partially_ranked_table_fails(monkeypatch, tmp_path):
+    root, docs = _patch(monkeypatch, tmp_path)
+    _build_case(root, docs, "c", positions_personas=PERSONAS, critics_personas=PERSONAS)
+    case = root / "c"
+    _write_recs(case, [
+        {"intervention_id": "a", "intervention_label": "A", "access_route": "off_label_use", "rank": 1},
+        {"intervention_id": "b", "intervention_label": "B", "access_route": "off_label_use"},
+    ])
+    failures, _ = cp.check_pipeline("c")
+    assert any("rank the whole table or none of it" in f for f in failures), failures
+
+
+def test_unranked_legacy_screen_is_not_gated(monkeypatch, tmp_path):
+    root, docs = _patch(monkeypatch, tmp_path)
+    _build_case(root, docs, "c", positions_personas=PERSONAS, critics_personas=PERSONAS)
+    case = root / "c"
+    _write_recs(case, [{"intervention_id": "a", "intervention_label": "A",
+                        "access_route": "off_label_use"}])
+    _write_soc(case, [("s1", "Standard one"), ("s2", "Standard two")])
+    failures, _ = cp.check_pipeline("c")
+    assert not any("ranks are not" in f for f in failures), failures

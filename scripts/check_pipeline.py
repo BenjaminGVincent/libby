@@ -171,6 +171,36 @@ def check_question_case(slug: str, case: Path, docs: Path) -> tuple[list[str], l
     return (failures, notes)
 
 
+# Words too common across oncology labels to distinguish one therapy from
+# another, so they are ignored when matching a dossier entry to a table row.
+_STOPWORDS = frozenset({
+    "the", "and", "or", "of", "for", "with", "plus", "in", "on", "at", "to", "a", "an",
+    "therapy", "treatment", "based", "inhibitor", "inhibition", "agent", "agents",
+    "directed", "combination", "site", "primary", "patient", "disease", "care",
+})
+
+# Markers of a diagnostic / assay rather than a therapy. These are consolidated
+# into the rank-1 workup row and reported by the target-validation track, so a
+# therapy table is not required to carry them.
+_DIAGNOSTIC_HINTS = (
+    "testing", "sequencing", "genotyp", "ihc", "immunohistochem", "assay",
+    "profiling", "panel", "biopsy", "pathology review", "workup", "staging",
+    "msi", "tmb",
+)
+
+
+def _sig_tokens(label) -> set:
+    """Significant lowercase word-stems of a label, for cross-track matching."""
+    import re as _re
+    words = _re.findall(r"[a-z0-9]+", str(label or "").lower())
+    return {w for w in words if len(w) > 3 and w not in _STOPWORDS}
+
+
+def _is_diagnostic(iid, label) -> bool:
+    blob = f"{iid} {label}".lower()
+    return any(h in blob for h in _DIAGNOSTIC_HINTS)
+
+
 def check_pipeline(slug: str) -> tuple[list[str], list[str]]:
     """Return (failures, notes) for one case."""
     case = CASES_DIR / slug
@@ -296,39 +326,98 @@ def check_pipeline(slug: str) -> tuple[list[str], list[str]]:
                 f"options; re-run /standard_of_care_screener to fill it"
             )
 
-    # Unified-table coverage. Under the unified-table contract the ranked table
-    # carries EVERY therapy with any evidence, standard-of-care ones included,
-    # so a standard-of-care option with no ranked row is a real omission rather
-    # than a filing decision. Before that change the PI deliberately routed
-    # approved options out of the ranking, so applying this to the whole corpus
-    # would fail cases that were correct under the contract they were built
-    # under. `access_route` on any ranked row is the opt-in marker: it exists
-    # only on tables produced under the unified contract.
+    # Two-table coverage. The therapeutic landscape splits across two tables --
+    # the PI's Experimental ranking and the standard-of-care screen -- and which
+    # one a therapy lands in is a filing decision the PI is entitled to make.
+    # What it may not do is drop a therapy from BOTH, which is how a board's
+    # unanimous first choice once ended up on no table at all. So this checks
+    # the union, not either table alone: anything the dossier gathered evidence
+    # for must be reachable somewhere.
+    #
+    # Scoped to the evidence files rather than accessibility.jsonl, which also
+    # carries assays and referral pathways that no therapy table should be
+    # required to hold. Opt-in via `access_route`, so cases ranked before this
+    # check stay valid under the contract they were built under.
     recs = _rows(case / "recommendations.jsonl")
-    if recs and soc and any(r.get("access_route") for r in recs):
-        ranked_ids = {r.get("intervention_id") for r in recs}
-        ranked_labels = " || ".join(
-            str(r.get("intervention_label") or "").lower() for r in recs
-        )
-        uncovered = []
+    if recs and any(r.get("access_route") for r in recs):
+        # An evidence tier files several rows under one intervention_id, each
+        # with its own label ("Anthracycline-based chemotherapy (advanced
+        # chondrosarcoma)", "Doxorubicin / cisplatin with BH3 mimetic ...").
+        # Keep every label per id: a table row phrased like ANY of them is
+        # enough to prove the therapy landed somewhere, and matching only the
+        # first label falsely flagged correctly-routed therapies.
+        assessed: dict[str, list[str]] = {}
+        for fname in ("clinical_evidence.jsonl", "preclinical_evidence.jsonl", "trials.jsonl"):
+            for r in _rows(case / fname):
+                iid = r.get("intervention_id")
+                if iid:
+                    assessed.setdefault(iid, []).append(str(r.get("intervention_label") or iid))
+
+        covered_sets = []
+        covered_ids = {r.get("intervention_id") for r in recs}
+        covered_ids |= {r.get("soc_id") for r in soc}
+        for r in recs:
+            covered_sets.append(_sig_tokens(r.get("intervention_label")))
         for r in soc:
-            sid = r.get("soc_id")
-            label = str(r.get("option_label") or "").strip()
-            if sid and sid in ranked_ids:
+            covered_sets.append(_sig_tokens(r.get("option_label")))
+
+        missing = []
+        for iid, labels in sorted(assessed.items()):
+            if iid in covered_ids:
                 continue
-            # Fall back to a label-stem match, since the two tracks assign their
-            # own IDs and the screener may name an option differently.
-            stem = label.split("(")[0].split(",")[0].strip().lower()
-            if stem and len(stem) > 3 and stem in ranked_labels:
+            # Diagnostics and assays are consolidated into the rank-1 workup row
+            # and reported by the target-validation track. Requiring a therapy
+            # table to hold "IDH1 sequencing" would flag a case that handled it
+            # correctly, so they are out of scope for this check.
+            if all(_is_diagnostic(iid, label) for label in labels):
                 continue
-            uncovered.append(label or sid or "<unlabelled>")
-        if uncovered:
-            shown = "; ".join(u[:60] for u in uncovered[:5])
-            more = f" (+{len(uncovered) - 5} more)" if len(uncovered) > 5 else ""
+            # The two tracks assign their own IDs and phrase labels differently
+            # ("Orthopaedic stabilisation of the acetabulum" vs "Orthopaedic
+            # stabilisation (fixation) of the fracture"), so match on shared
+            # significant words rather than substring containment.
+            token_sets = [_sig_tokens(label) for label in labels]
+            if any(t and any(len(t & c) >= 2 for c in covered_sets) for t in token_sets):
+                continue
+            missing.append(f"{iid} ({labels[0][:40]})")
+        if missing:
+            shown = "; ".join(missing[:5])
+            more = f" (+{len(missing) - 5} more)" if len(missing) > 5 else ""
             failures.append(
-                f"unified table: {len(uncovered)} standard-of-care option(s) have no row in "
-                f"recommendations.jsonl -- every therapy with any evidence needs a ranked "
-                f"row, with access_route marking it as standard care: {shown}{more}"
+                f"table coverage: {len(missing)} therapy/therapies with dossier evidence appear "
+                f"in NEITHER recommendations.jsonl nor standard_of_care.jsonl -- routing one to "
+                f"standard of care is fine, dropping it from both is not: {shown}{more}"
+            )
+
+    # Each table ranks itself 1..n, independently of the other. They are co-equal
+    # tables, not one list split in two, so "rank 1" on the standard-of-care table
+    # means the first standard option and carries no claim about the experimental
+    # ranking. A gap or a duplicate makes the sequence unreadable as a ranking, and
+    # a table starting at 2 silently implies a missing top row.
+    for fname, rank_key in (("recommendations.jsonl", "rank"), ("standard_of_care.jsonl", "rank")):
+        table = recs if fname == "recommendations.jsonl" else soc
+        ranks = [r.get(rank_key) for r in table if isinstance(r.get(rank_key), int)]
+        if not ranks:
+            continue  # unranked legacy screen; the renderer falls back to priority order
+        if len(ranks) != len(table):
+            failures.append(
+                f"{fname}: {len(table) - len(ranks)} row(s) carry no integer rank while "
+                f"{len(ranks)} do -- rank the whole table or none of it"
+            )
+            continue
+        expected = list(range(1, len(ranks) + 1))
+        if sorted(ranks) != expected:
+            dupes = sorted({r for r in ranks if ranks.count(r) > 1})
+            gaps = [n for n in expected if n not in ranks]
+            detail = []
+            if dupes:
+                detail.append(f"duplicate rank(s) {dupes}")
+            if gaps:
+                detail.append(f"missing rank(s) {gaps[:6]}")
+            if not detail:
+                detail.append(f"ranks run {min(ranks)}..{max(ranks)} for {len(ranks)} rows")
+            failures.append(
+                f"{fname}: ranks are not a contiguous 1..{len(ranks)} sequence -- "
+                + "; ".join(detail)
             )
 
     return (failures, notes)

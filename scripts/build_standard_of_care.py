@@ -242,11 +242,28 @@ def references_cell(refs: list[str] | None) -> str:
 
 
 def sort_key(r: dict) -> tuple:
+    """Order rows by the table's own ranking when it has one.
+
+    The Standard-of-care table numbers itself 1..n independently of the
+    Experimental table's 1..m — they are co-equal tables, not one list split in
+    two. Screens written before ranks existed fall back to the priority ordering
+    they were built with, which is why `rank` sorts ahead of it rather than
+    replacing it.
+    """
+    rank = r.get("rank")
     return (
+        0 if isinstance(rank, int) else 1,
+        rank if isinstance(rank, int) else 99,
         PRIORITY_ORDER.get(r.get("priority"), 99),
         LINE_ORDER.get(r.get("line_of_therapy"), 99),
         r.get("option_label") or "",
     )
+
+
+def rank_cell(r: dict) -> str:
+    """Lead cell: the row's rank within this table, or `—` on a legacy screen."""
+    rank = r.get("rank")
+    return f"<td>{rank}</td>" if isinstance(rank, int) else "<td>—</td>"
 
 
 def _is_stale(row: dict, today: date | None = None) -> bool:
@@ -378,7 +395,7 @@ def render_option_table(rows: list[dict]) -> str:
     if not rows:
         return ""
     head = (
-        "<th>Priority</th><th>Option</th><th>What makes it standard</th>"
+        "<th>Rank</th><th>Priority</th><th>Option</th><th>What makes it standard</th>"
         "<th>Fit to this patient</th><th>Key evidence</th>"
         "<th>Toxicities that would change the decision</th>"
         "<th>Rationale</th><th>References</th>"
@@ -387,6 +404,7 @@ def render_option_table(rows: list[dict]) -> str:
     for r in rows:
         body.append(
             "    <tr>"
+            f"{rank_cell(r)}"
             f"<td>{priority_badge(r.get('priority'))}</td>"
             f"{option_cell(r)}"
             f"{endorsement_cell(r)}"
@@ -431,11 +449,11 @@ def render_sequencing(rows: list[dict]) -> str:
         grouped.setdefault(r["relationship_to_targeted_options"]["relation"], []).append(r)
 
     lines = [
-        "## How these sit alongside the other options\n",
-        "_Every option on this page also has a row in the case's ranked table, and nothing "
-        "here changes that ranking. What this section adds is the sequencing: where two "
-        "options compete for the same line, and where taking one would close the door on "
-        "the other._\n",
+        "## How these sit alongside the experimental options\n",
+        "_These options and the experimental ranking are two co-equal tables, and nothing "
+        "here changes that ranking. What this section adds is the sequencing: where a standard "
+        "option and an experimental one compete for the same line, and where taking one would "
+        "close the door on the other._\n",
     ]
     for relation in sorted(grouped, key=lambda k: RELATION_ORDER.get(k, 99)):
         lines.append(f"**{RELATION_LABELS.get(relation, relation)}**\n")
@@ -622,9 +640,9 @@ def render_page(slug: str, rows: list[dict], narrative: str = "",
         f"# {PAGE_TITLE} — `{slug}`\n",
         "_The treatment strategies that are standard for this patient's situation, meaning "
         "a regulator approved them for a population that includes this patient or a major "
-        "academic or clinical-society guideline carries them. Each one also has a row in the "
-        "case's ranked table; this page is the depth behind those rows: regulatory footing, "
-        "guideline carriage, eligibility and sequencing._\n",
+        "academic or clinical-society guideline carries them. This is one of the case's two "
+        "therapeutic tables and frequently carries its primary recommendation; the experimental "
+        "ranking is the other, and neither narrows the other._\n",
         _downloads_block(slug),
         f"_{summary['total']} standard options assessed: {summary['actionable']} to consider "
         f"now, {summary['gated']} behind an open gate, {summary['received']} already "
@@ -689,9 +707,9 @@ def _deep_markdown(slug: str, rows: list[dict], narrative: str = "") -> str:
     lines.append(
         "The treatment strategies that are standard for this patient's situation, meaning "
         "a regulator approved them for a population that includes this patient or a major "
-        "academic or clinical-society guideline carries them. Each one also has a row in the "
-        "case's ranked table; this page is the depth behind those rows: regulatory footing, "
-        "guideline carriage, eligibility and sequencing.\n"
+        "academic or clinical-society guideline carries them. This is one of the case's two "
+        "therapeutic tables and frequently carries its primary recommendation; the experimental "
+        "ranking is the other, and neither narrows the other.\n"
     )
     lines.append(
         f"**Assessed:** {summary['total']} standard options. "
@@ -710,7 +728,11 @@ def _deep_markdown(slug: str, rows: list[dict], narrative: str = "") -> str:
         lines.append(f"## {heading}\n")
         lines.append(blurb + "\n")
         for r in section_rows:
-            lines.append(f"### {r.get('option_label')}\n")
+            # Lead the heading with this table's own rank when the screen carries
+            # one, so the print surface reads in the same order as the web table.
+            _rk = r.get("rank")
+            _prefix = f"{_rk}. " if isinstance(_rk, int) else ""
+            lines.append(f"### {_prefix}{r.get('option_label')}\n")
             meta = [
                 f"**Priority:** {r.get('priority') or '-'}",
                 f"**Modality:** {CATEGORY_LABELS.get(r.get('category'), r.get('category') or '-')}",

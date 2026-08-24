@@ -1,51 +1,44 @@
 # Executive summary
 
 **Case:** `chondrosarcoma-mets-acetabular-fx-idh-unknown-y34r`
-**Question:** In treatment-naive metastatic high-grade chondrosarcoma with dedifferentiated features, presenting with a pathologic left acetabular fracture and dispersed bilateral pulmonary metastases, what interventions, approved care and investigational alike, could treat the dedifferentiated histology, the fractured acetabulum, and the untested IDH1/IDH2 and wider molecular landscape?
-**Evidence base:** 27 trial rows, 30 clinical-evidence rows, 30 preclinical rows, 20 target-validation rows and 9 standard-of-care rows; a 5-persona board with 39 critiques; agreement scores from 1.0 (chemotherapy) down to -1.0 (particle therapy).
+**Question:** In treatment-naive metastatic high-grade chondrosarcoma with dedifferentiated features, presenting with a pathologic left acetabular fracture and dispersed bilateral pulmonary metastases, what could treat her: approved and guideline-carried care on one table, and trial-only, off-label or not-yet-accessible options aimed at the dedifferentiated histology and the untested IDH1/IDH2 and wider molecular landscape on the other?
+**Evidence base:** 27 trial rows, 30 clinical-evidence rows, 30 preclinical rows, 20 target-validation rows, 30 accessibility rows and a 9-option standard-of-care screen; a 5-persona board with 39 critiques; agreement from 1.0 (chemotherapy) down to -1.0 (particle therapy).
 
 ## What this report covers
 
-One ranked table of 31 rows: every therapy with any evidence behind it, approved and investigational side by side, ordered on the board's assessment of benefit, toxicity and fit. Ten rows hold live ranks and twenty-one carry a flag instead; an access column marks each row as standard care, trial-only, off-label or not yet accessible. The previous edition split this case across two tables and filed the approved options elsewhere. That split is gone.
+Two co-equal tables, split by regulatory maturity, each ranked from 1 within itself. The Standard-of-care table holds nine approved or guideline-carried options and is where the first-line decision lives. The Experimental table holds 22 trial-only, off-label and not-yet-accessible rows and opens with a test rather than a drug. The two number 1s are not rivals: the plan asks for the top of both in the same week, one a treatment and one a test that runs beside it. Wherever a rank is quoted below, its table is named with it.
 
 ## Top-line findings
 
-- Doxorubicin-based chemotherapy at standard STS-type dosing is the treatment headline: rank 2, agreement 1.0, the only unanimous choice in the case and the only therapy with measured responses in her histology. Nothing starts until an echocardiogram, organ-function labs and a measured ECOG exist.
-- Rank 1 is a diagnostic, not a drug: a comprehensive tumour DNA plus RNA panel (IDH1/2, TMB, MSI, fusions) on macrodissected dedifferentiated tissue. It outranks every drug because 11 of the 14 surveyed biomarkers were never measured, and it runs on archival tissue alongside first-line treatment rather than delaying it. It opens or closes the IDH axis, the abemaciclib seat, TAPUR matching and the checkpoint route.
-- Early specialist palliative care at rank 4 rests, on the critic's assessment, on the best evidence anyone put before this board: randomised quality-of-life and survival data where the rest of the case rests on retrospective cohorts. It is delivered alongside active treatment, costs no line of therapy and closes no trial door.
-- Her recorded ECOG of 2 was assumed at intake from the broken hip and has never been scored in clinic. Several rows gate on it: IACS-6274 and abemaciclib require a measured 0-1, TAPUR's 0-2 bar she may clear as written. A measured score is the single highest-leverage number in the case.
-- Particle therapy at rank 31 is the only unanimous rejection: all five personas declined it independently, agreement -1.0. It is deliberately recorded as not yet accessible rather than standard care, because both particle protocols exclude distant metastases and neither accepts her.
-- A negative IDH1/IDH2 result forecloses ranks 19-22 only (ivosidenib, enasidenib, LY3410738, olaparib plus ceralasertib). The rest of the table stands, chemotherapy and fixation included. Even a positive call buys less than the word "mutation" suggests: both chondrosarcoma IDH trials exclude her histology by name, and the only published figure in her subtype is a median PFS of 1.5 months.
+- Doxorubicin-based chemotherapy leads the Standard-of-care table at agreement 1.0, all five personas, the strongest agreement anywhere in the case, and it is the only therapy with measured responses in her histology. It sits on that table because a label and a guideline carry it, not because the board demoted it; routing between tables is a filing decision. It is the option to discuss first.
+- The Experimental table's own rank 1 is a diagnostic, not a therapy: a comprehensive tumour DNA plus RNA panel (IDH1/2, TMB, MSI, fusions) on macrodissected dedifferentiated tissue. It leads that table because 11 of the 14 surveyed biomarkers were never measured, and it rides archival tissue alongside first-line treatment rather than delaying it.
+- Fixation of the acetabular fracture, second on the Standard-of-care table, is the sequencing keystone: radiotherapy to that bone waits on it, and trial calendars key off the operative date. Fixation only, never resection.
+- Early specialist palliative care, third on the Standard-of-care table, rests, on the critic's assessment, on the best evidence put before the board: a current ASCO guideline built on randomised data, delivered alongside active treatment, closing no trial door.
+- Her recorded ECOG of 2 was assumed at intake from the broken hip and has never been scored in clinic. Several Experimental rows gate on it: IACS-6274 and abemaciclib need a measured 0-1; TAPUR's 0-2 bar she may clear as written.
+- Particle therapy, last on the Experimental table at rank 22, is the only unanimous rejection in the case: all five personas in dissent, agreement -1.0. It is filed as not yet accessible rather than as standard care because both particle protocols exclude distant metastases; neither accepts her.
+- A negative IDH1/IDH2 result closes exactly four rows across both tables: the three IDH-gated Experimental rows at ranks 13 through 15 (enasidenib, LY3410738, olaparib plus ceralasertib) and the gated ivosidenib row on the Standard-of-care table. Chemotherapy, fixation, palliative care, radiotherapy and every other trial seat stand exactly as assessed. A negative test closes one axis; it does not empty the plan.
 
 Three disagreements stayed live, preserved rather than resolved:
 
-- Which first-line response figure she should hear: roughly 9% in the modern five-centre cohort, against 20.5% from a 44-patient series treated 1988-2011 with local response assessment, whose p=0.04 compares dedifferentiated against conventional histology rather than testing whether chemotherapy helped anybody. The board quotes the range and the reason the ends disagree, not a settled number.
-- Whether fixation of the fractured acetabulum raises her measured performance status or spends it on weeks of recovery. Nothing in the dossier measures it, and no published cohort scores ECOG before and after the operation.
+- Which first-line response figure she should hear: roughly 9% in the modern multi-centre cohort against 20.5% from a 44-patient series treated 1988-2011 with local response reads, whose p=0.04 compares dedifferentiated against conventional histology rather than testing whether chemotherapy helped anyone. The board quotes the bracket and why its ends disagree, not a settled number.
+- Whether fixation raises her measured performance status or spends it on weeks of recovery. Nothing in the dossier measures it, and no published cohort scores ECOG before and after the operation.
 - Whether "pursue all possible therapeutic options," her one stated preference, licenses agents with no disease-specific evidence. The risktaker and concensusite built opposite slates from the same sentence, and asking her costs a conversation.
 
 ## Recommendation summary
 
-**Shared first step:** comprehensive tumour DNA plus RNA panel on macrodissected dedifferentiated tissue (rank 1, standard care, agreement 0.8; four of five personas at their highest confidence).
+**Shared first step:** the comprehensive tumour DNA plus RNA panel (Experimental table rank 1, agreement 0.8; four of five personas at their highest confidence). Ordered alongside, not instead of, first-line treatment.
 
-- **Rank 2. Doxorubicin-based chemotherapy, first line** (standard care, 1.0): the only therapy with measured responses in her histology; the response figure is contested and the intensity question unsettled.
-- **Rank 3. Orthopaedic stabilisation (fixation) of the acetabular fracture** (standard care, 0.8): fixation only, never resection, and always before any radiotherapy to that bone.
-- **Rank 4. Early specialist palliative care, alongside active treatment** (standard care, 0.6): the best-evidenced item on the board.
-- **Rank 5. IACS-6274, phase 1 NCT05039801** (trial-only, 0.4): the screening call, not the drug; entry needs a measured ECOG of 0-1. The critic dissents: no glutaminase inhibitor has a published response in this disease.
-- **Rank 6. Abemaciclib on NCT04040205** (trial-only, 0.4): the cleanest trial design in the screen, pre-positioned for the post-anthracycline line behind three untested gates.
-- **Rank 7. Pembrolizumab, second line, conditional on a TMB-high or MSI-high call** (off-label, 0.4): a qualifying call would move it onto the tumour-agnostic label.
-- **Rank 8. TAPUR, NCT02693535** (trial-only, 0.4): access without any efficacy estimate; the one fitness bar she may clear as written.
-- **Rank 9. Palliative radiotherapy to the acetabular lesion** (standard care, 0.0): sequenced strictly after the fixation decision.
-- **Rank 10. Sunitinib plus nivolumab at first progression** (off-label, -0.2): the sharpest split on the board; the only checkpoint dataset with a dedifferentiated responder, bought with a treatment-related grade 5 pneumonitis.
+**Standard-of-care table, ranked 1 to 9:** doxorubicin-based chemotherapy, first line (1); orthopaedic fixation of the acetabular fracture (2); early specialist palliative care alongside active treatment (3); referral to a high-volume sarcoma centre before first treatment (4); palliative radiotherapy to the acetabulum, strictly after the fixation decision (5); trial enrollment as a management strategy (6); ivosidenib, waiting on an IDH1 mutation call (7); pazopanib, set aside as carried for a histology she is stated not to have (8); pulmonary metastasectomy, set aside because the guideline population is oligometastatic and this presentation is not (9).
 
-Rows 11 through 31 carry flags rather than live ranks: the care-delivery pathways (sarcoma-centre referral, trial enrollment as a strategy), the B7-H3 CAR-T and ADC programmes behind an unordered H-score, the IDH-gated agents at 19-22, the HLA-gated cell-therapy platforms, two off-population rows carried for completeness, and particle therapy at 31.
+**Experimental table, ranked 1 to 22:** after the panel at rank 1 come IACS-6274, the phase 1 screening call on NCT05039801, entry needing a measured ECOG 0-1, with the critic dissenting that no glutaminase inhibitor has a published response in this disease (2); abemaciclib on NCT04040205, pre-positioned for the post-anthracycline line (3); pembrolizumab, second line, conditional on a TMB-high or MSI-high call (4); TAPUR, NCT02693535, access without an efficacy estimate (5); and sunitinib plus nivolumab at first progression, the sharpest split on the board at -0.2 (6). Rows 7 through 22 carry flags rather than live ranks: the B7-H3 CAR-T and ADC programmes behind an unordered H-score, the IDH-gated agents at 13 through 15, the HLA-gated cell-therapy platforms, two off-population rows carried for completeness, and particle therapy last at 22.
 
 ## What this report does *not* cover
 
-Dose adjustments, monitoring schedules, sequencing across treatment lines, and payer or access mechanics beyond the access label each row carries. This is decision support for a conversation with her treating team, not a treatment plan.
+Dose adjustments, monitoring schedules, sequencing across treatment lines, and payer or access mechanics beyond the access label each Experimental row carries. This is decision support for a conversation with her treating team, not a treatment plan.
 
 ## How to use this report
 
-Each ranked row carries the board's agreement state (endorsements, dissents, score), its access route and one to three anchor citations; the full per-trial extraction and per-persona rationale live on the case page. Sixty seconds here should leave you holding three things: chemotherapy is the treatment the whole board backs, a test outranks it because nothing molecular is measured yet, and an ECOG nobody has scored is quietly deciding which trial doors exist.
+Read the Standard-of-care table first; her next decision sits there, chemotherapy at its head. The Experimental table ranks what a trial seat, an off-label prescription or a future programme could add, and its access column keeps those routes apart. Sixty seconds here should leave you holding three things: the whole board backs chemotherapy, a test leads the experimental list because almost nothing molecular is measured yet, and an ECOG nobody has scored is quietly deciding which trial doors exist.
 
 ---
 

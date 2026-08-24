@@ -25,14 +25,23 @@
       "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
       "description": "Stable kebab-case row id, conventionally <regimen shorthand>-<line> (e.g. 'carboplatin-etoposide-atezolizumab-1l', 'hypomethylating-venetoclax-1l')."
     },
-    "case_slug": { "type": "string" },
+    "case_slug": {
+      "type": "string"
+    },
+    "rank": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "This option's position in the Standard-of-care table's own ranking, numbered 1..n contiguously and independently of the Experimental table, which runs its own 1..m. The two tables are co-equal and neither ranking is a continuation of the other, so 'rank 1' here means the first standard option, not the first option overall. Optional for backwards compatibility: screens run before ranked standard-of-care tables omit it and fall back to priority ordering."
+    },
     "option_label": {
       "type": "string",
       "description": "The option as a treating oncologist would name it, including the full regimen where it is a combination (e.g. 'Azacitidine + venetoclax', 'Concurrent chemoradiation, cisplatin-based'). Rendered verbatim as the row heading."
     },
     "option_aliases": {
       "type": "array",
-      "items": { "type": "string" },
+      "items": {
+        "type": "string"
+      },
       "description": "Other names the same regimen travels under (protocol acronyms, trade names, guideline shorthand). Helps a reader match this row against their own notes."
     },
     "category": {
@@ -81,7 +90,10 @@
       "description": "Where this option sits in the treatment sequence for this patient given prior_therapies[]. 'not_applicable' fits surgery, surveillance, and supportive care that are not indexed by line."
     },
     "regulatory_status": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "enum": [
         "fda_approved_this_indication",
         "fda_approved_other_indication",
@@ -101,11 +113,30 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["source", "designation", "indication_text", "population_match"],
+        "required": [
+          "source",
+          "designation",
+          "indication_text",
+          "population_match"
+        ],
         "properties": {
           "source": {
             "type": "string",
-            "enum": ["FDA", "EMA", "NCCN", "ESMO", "ASCO", "ASH", "EHA", "ASTRO", "SITC", "NCI", "AUA", "AASLD", "other_society"],
+            "enum": [
+              "FDA",
+              "EMA",
+              "NCCN",
+              "ESMO",
+              "ASCO",
+              "ASH",
+              "EHA",
+              "ASTRO",
+              "SITC",
+              "NCI",
+              "AUA",
+              "AASLD",
+              "other_society"
+            ],
             "description": "The body that carries the endorsement. Use 'other_society' for an indication-specific society not enumerated here and name it in `designation`."
           },
           "designation": {
@@ -119,15 +150,26 @@
           },
           "population_match": {
             "type": "string",
-            "enum": ["matches_this_patient", "partial_match", "different_population", "unclear"],
+            "enum": [
+              "matches_this_patient",
+              "partial_match",
+              "different_population",
+              "unclear"
+            ],
             "description": "How the endorsed population lines up with THIS patient. The load-bearing honesty field: an approval or guideline entry written for a different stage, line, or biomarker subgroup is an extrapolation, and calling it a match is the failure mode that makes this whole report unsafe. 'partial_match' needs the discrepancy named in `rationale`."
           },
           "version_or_date": {
-            "type": ["string", "null"],
+            "type": [
+              "string",
+              "null"
+            ],
             "description": "Guideline version or approval date (e.g. 'NCCN v2.2026', 'FDA approval 2018-11'). Guidelines move; a claim without a version cannot be re-checked."
           },
           "citation": {
-            "type": ["string", "null"],
+            "type": [
+              "string",
+              "null"
+            ],
             "description": "Citation for this endorsement in the shared prefix form: 'guideline:*', 'fda:*', 'pmid:*', 'doi:*', 'nct:*', or a URL."
           }
         }
@@ -147,39 +189,75 @@
       "description": "Whether THIS patient can actually take this option, judged against profile.json only (prior_therapies[], stage, performance status, organ function, comorbidities, biomarkers). 'already_received' is the one that most often distinguishes a textbook option from a real one, and it is not inferable from the tumor type: read prior_therapies[]. 'unknown' is the correct answer when the profile is silent on the gating fact, and is never a synonym for eligible."
     },
     "eligibility_rationale": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "maxLength": 800,
       "description": "1-2 sentences citing the profile fields the eligibility call rests on. An 'unknown' row says which fact is missing."
     },
     "blocking_factors": {
       "type": "array",
-      "items": { "type": "string" },
+      "items": {
+        "type": "string"
+      },
       "description": "Specific facts that block or condition this option (prior exposure with progression, organ dysfunction, a comorbidity, an unmet biomarker gate). Required non-empty for conditionally_eligible, likely_ineligible, and contraindicated rows."
     },
     "prior_exposure_note": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "maxLength": 800,
       "description": "Required (non-null) when eligibility_status is already_received: what the patient had, the best response, and why it stopped. Re-offering a regimen the patient already progressed on is the most damaging error this report can make, so the record has to be explicit rather than implied."
     },
     "biomarker_requirement": {
-      "type": ["object", "null"],
+      "type": [
+        "object",
+        "null"
+      ],
       "additionalProperties": false,
-      "required": ["required"],
+      "required": [
+        "required"
+      ],
       "description": "Whether this option is gated on a biomarker result, and where that result stands in this case. Mirrors the biomarker-confirmation gating rule used by the targeted track.",
       "properties": {
-        "required": { "type": "boolean" },
-        "biomarker": { "type": ["string", "null"] },
+        "required": {
+          "type": "boolean"
+        },
+        "biomarker": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
         "threshold": {
-          "type": ["string", "null"],
+          "type": [
+            "string",
+            "null"
+          ],
           "description": "The decision threshold the guideline or label names (e.g. 'PD-L1 CPS >= 1', 'HER2 IHC 3+ or ISH-amplified')."
         },
         "status_in_case": {
-          "type": ["string", "null"],
-          "enum": ["met", "not_met", "not_measured", "pending", "unknown", null],
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "met",
+            "not_met",
+            "not_measured",
+            "pending",
+            "unknown",
+            null
+          ],
           "description": "Required when `required` is true. 'not_measured' means nothing is on file, which is not the same as not_met; the distinction is the same one the biomarker survey turns on."
         },
         "linked_survey_id": {
-          "type": ["string", "null"],
+          "type": [
+            "string",
+            "null"
+          ],
           "description": "survey_id of the matching biomarker_survey.jsonl row when the gate is one the surveyor already logged, so the two reports point at each other instead of duplicating the gap."
         }
       }
@@ -190,39 +268,90 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["source_label"],
+        "required": [
+          "source_label"
+        ],
         "properties": {
           "source_label": {
             "type": "string",
             "description": "Trial name or citation shorthand (e.g. 'VIALE-A', 'CASPIAN', 'Cheson 2021')."
           },
           "design": {
-            "type": ["string", "null"],
+            "type": [
+              "string",
+              "null"
+            ],
             "description": "Study design in a phrase (e.g. 'randomized phase 3, open-label', 'single-arm phase 2')."
           },
-          "n": { "type": ["integer", "null"], "minimum": 1 },
-          "population": { "type": ["string", "null"] },
-          "primary_endpoint": { "type": ["string", "null"] },
+          "n": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1
+          },
+          "population": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "primary_endpoint": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
           "effect_size": {
-            "type": ["string", "null"],
+            "type": [
+              "string",
+              "null"
+            ],
             "maxLength": 400,
             "description": "The result with its variance, as reported: 'median OS 14.7 vs 9.6 mo, HR 0.66 (95% CI 0.52-0.85)'. A point estimate with no interval is half a result; carry the interval when the paper gives one."
           },
-          "nct_id": { "type": ["string", "null"], "pattern": "^NCT[0-9]{8}$" },
-          "pmid": { "type": ["string", "null"], "pattern": "^[1-9][0-9]{0,8}$", "description": "PubMed ID as a bare numeric string (no 'PMID:' prefix); null when the source has no PubMed record. Existence and contextual correctness are verified by the reference_checking skill, not this format gate." },
-          "doi": { "type": ["string", "null"], "pattern": "^10\\.[0-9]{4,9}/\\S+$", "description": "DOI in bare 10.xxxx/... form (no https:// or doi.org prefix); null when none." }
+          "nct_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^NCT[0-9]{8}$"
+          },
+          "pmid": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^[1-9][0-9]{0,8}$",
+            "description": "PubMed ID as a bare numeric string (no 'PMID:' prefix); null when the source has no PubMed record. Existence and contextual correctness are verified by the reference_checking skill, not this format gate."
+          },
+          "doi": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^10\\.[0-9]{4,9}/\\S+$",
+            "description": "DOI in bare 10.xxxx/... form (no https:// or doi.org prefix); null when none."
+          }
         }
       }
     },
     "toxicity_highlights": {
       "type": "array",
-      "items": { "type": "string" },
+      "items": {
+        "type": "string"
+      },
       "description": "The toxicities that would actually change this patient's decision, weighted by preferences.json vetoes and by the comorbidities in profile.json. Not a label's full adverse-event table."
     },
     "relationship_to_targeted_options": {
-      "type": ["object", "null"],
+      "type": [
+        "object",
+        "null"
+      ],
       "additionalProperties": false,
-      "required": ["relation"],
+      "required": [
+        "relation"
+      ],
       "description": "How this standard option sits alongside the feature-targeted options the board and PI ranked. This is the only sanctioned bridge between the two tracks, and it runs one way: it describes sequencing and conflicts, and never reranks or removes a targeted option.",
       "properties": {
         "relation": {
@@ -239,13 +368,18 @@
           "description": "'competes_for_same_line' and the two 'foreclose' values are the ones a treating team most needs to see: they mark a decision where taking one path costs the other (a regimen that would exhaust eligibility for a trial, or prior therapy that closes an enrollment window)."
         },
         "note": {
-          "type": ["string", "null"],
+          "type": [
+            "string",
+            "null"
+          ],
           "maxLength": 800,
           "description": "1-2 sentences on the sequencing consequence. Names the interaction; does not advise which to choose."
         },
         "related_intervention_ids": {
           "type": "array",
-          "items": { "type": "string" },
+          "items": {
+            "type": "string"
+          },
           "description": "intervention_id values from recommendations.jsonl or the dossier that this option interacts with. Read-only pointers; this row never edits them."
         }
       }
@@ -263,7 +397,12 @@
     },
     "priority": {
       "type": "string",
-      "enum": ["essential", "high", "medium", "low"],
+      "enum": [
+        "essential",
+        "high",
+        "medium",
+        "low"
+      ],
       "description": "How strongly a treating team should weigh this option for this patient now. essential: a guideline-preferred or on-label option for this exact population that the patient is eligible for and has not received. high: an endorsed alternative, or the preferred option behind one resolvable gate. medium: a later-line or partial-match option. low: carried for completeness (an option the patient is unlikely to be eligible for, or one whose endorsement covers a different population)."
     },
     "rationale": {
@@ -273,7 +412,9 @@
     },
     "references": {
       "type": "array",
-      "items": { "type": "string" },
+      "items": {
+        "type": "string"
+      },
       "description": "pmid:* / doi:* / nct:* / guideline:* / fda:* citations supporting this row. Verified per .claude/snippets/reference_check.md before the row is written."
     },
     "last_verified_utc": {
@@ -281,35 +422,69 @@
       "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
       "description": "UTC date (YYYY-MM-DD) the endorsements on this row were last checked against the source. Required: guideline versions and approvals move, and a standard-of-care claim with no verification date cannot be trusted or re-checked."
     },
-    "notes": { "type": ["string", "null"] },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
     "supersedes": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "description": "soc_id of a prior row this one corrects or replaces."
     }
   },
   "allOf": [
     {
       "if": {
-        "properties": { "eligibility_status": { "const": "already_received" } },
-        "required": ["eligibility_status"]
+        "properties": {
+          "eligibility_status": {
+            "const": "already_received"
+          }
+        },
+        "required": [
+          "eligibility_status"
+        ]
       },
       "then": {
-        "properties": { "prior_exposure_note": { "type": "string", "minLength": 1 } },
-        "required": ["prior_exposure_note"]
+        "properties": {
+          "prior_exposure_note": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "prior_exposure_note"
+        ]
       }
     },
     {
       "if": {
         "properties": {
           "eligibility_status": {
-            "enum": ["conditionally_eligible", "likely_ineligible", "contraindicated"]
+            "enum": [
+              "conditionally_eligible",
+              "likely_ineligible",
+              "contraindicated"
+            ]
           }
         },
-        "required": ["eligibility_status"]
+        "required": [
+          "eligibility_status"
+        ]
       },
       "then": {
-        "properties": { "blocking_factors": { "type": "array", "minItems": 1 } },
-        "required": ["blocking_factors"]
+        "properties": {
+          "blocking_factors": {
+            "type": "array",
+            "minItems": 1
+          }
+        },
+        "required": [
+          "blocking_factors"
+        ]
       }
     },
     {
@@ -317,23 +492,43 @@
         "properties": {
           "biomarker_requirement": {
             "type": "object",
-            "properties": { "required": { "const": true } },
-            "required": ["required"]
+            "properties": {
+              "required": {
+                "const": true
+              }
+            },
+            "required": [
+              "required"
+            ]
           }
         },
-        "required": ["biomarker_requirement"]
+        "required": [
+          "biomarker_requirement"
+        ]
       },
       "then": {
         "properties": {
           "biomarker_requirement": {
             "properties": {
-              "biomarker": { "type": "string", "minLength": 1 },
+              "biomarker": {
+                "type": "string",
+                "minLength": 1
+              },
               "status_in_case": {
                 "type": "string",
-                "enum": ["met", "not_met", "not_measured", "pending", "unknown"]
+                "enum": [
+                  "met",
+                  "not_met",
+                  "not_measured",
+                  "pending",
+                  "unknown"
+                ]
               }
             },
-            "required": ["biomarker", "status_in_case"]
+            "required": [
+              "biomarker",
+              "status_in_case"
+            ]
           }
         }
       }
