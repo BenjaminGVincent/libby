@@ -2,7 +2,7 @@
 
 # Standard of care options — `chondrosarcoma-mets-acetabular-fx-idh-unknown-y34r`
 
-_The treatment strategies that are standard for this patient's situation, meaning a regulator approved them for a population that includes this patient or a major academic or clinical-society guideline carries them. This report runs alongside the targetable-feature ranking rather than in place of it, and it does not narrow what that ranking surfaces._
+_The treatment strategies that are standard for this patient's situation, meaning a regulator approved them for a population that includes this patient or a major academic or clinical-society guideline carries them. Each one also has a row in the case's ranked table; this page is the depth behind those rows: regulatory footing, guideline carriage, eligibility and sequencing._
 
 ## Downloads
 
@@ -17,7 +17,7 @@ Nothing standard has been spent: there is no prior therapy on file.
 
 One option sits behind a gate. Ivosidenib is carried by NCCN for IDH-mutant dedifferentiated disease but waits on the IDH1 sequencing the ranked workup already orders, and its FDA label does not yet include chondrosarcoma. Pazopanib and pulmonary metastasectomy were assessed and set aside because their guideline populations, conventional histology and oligometastatic lungs, are not hers.
 
-This report is additive. It supplies the standard options and does not narrow, reorder, or filter the experimental options ranked elsewhere on this case page; where the two tracks share a line, the rows name the trade instead of resolving it.
+This report is additive. Every option here also holds a row in the case's ranked table, and nothing on this page narrows, reorders, or filters that ranking; what it adds is the regulatory footing and the sequencing, so where two options share a line the rows name the trade instead of resolving it.
 
 ## Options to consider now
 
@@ -62,14 +62,14 @@ _Endorsed for this patient's situation, but gated on a result that is missing, p
     - **Pazopanib (carried for the conventional-chondrosarcoma population, which this is stated not to be)**: Carried so the chondrosarcoma pathway reads complete rather than because it fits: pazopanib&#x27;s guideline position and its phase 2 evidence are in conventional chondrosarcoma, and that trial excluded dedifferentiated histology. It would only enter consideration if the pending expert bone-sarcoma pathology review reclassified the tumour, and that review is a hardening item, not an open fork.
     - **Pulmonary metastasectomy or local ablation of lung metastases**: Standard in bone sarcoma only for oligometastatic lung disease, and the profile places this presentation outside that population on its face. Assessed and set aside so a reader who knows metastasectomy is sometimes curative in bone sarcoma can see it was weighed rather than missed; systemic control is the operative question for these lungs.
 
-## How these sit alongside the targeted options
+## How these sit alongside the other options
 
-_The ranked recommendations stay scoped to this case's targetable features, and nothing on this page changes that ranking. What this section adds is the sequencing: where a standard option and a targeted option compete for the same line, and where taking one would close the door on the other._
+_Every option on this page also has a row in the case's ranked table, and nothing here changes that ranking. What this section adds is the sequencing: where two options compete for the same line, and where taking one would close the door on the other._
 
 **Competes for the same line of therapy**
 
 - **Doxorubicin-based chemotherapy (doxorubicin alone or with ifosfamide or cisplatin)**: First-line chemotherapy and the IACS-6274 phase 1 seat occupy the same window: that protocol has no prior-therapy requirement, and the board noted a first-line dose-escalation slot would spend the one line with a proven response signal in this histology. Several ranked options (abemaciclib on NCT04040205, TAPUR, sunitinib plus nivolumab) are pre-positioned for the line after an anthracycline, so receiving it is also what opens them. The trade is named here, not resolved. (interacts with: glutaminase-inhibition, cdk4-6-inhibition, tapur-genomically-matched-agents, sunitinib-plus-nivolumab, tam-directed-therapy)
-- **Ivosidenib, conditional on an IDH1 mutation being found**: This is the same agent the Experimental ranking carries at rank 13, behind the same untested IDH1 gate that the rank-1 profiling row exists to close. This row adds its guideline footing and its regulatory limits (no chondrosarcoma indication on the FDA label; the phase 3 route, CHONQUER NCT06127407, enrols conventional histology only); it is one option viewed from two tables, not two options. (interacts with: ivosidenib, comprehensive-dna-rna-profiling)
+- **Ivosidenib, conditional on an IDH1 mutation being found**: This is the same agent the ranked table carries at rank 19, behind the same untested IDH1 gate that the rank-1 profiling row exists to close. This row adds its guideline footing and its regulatory limits (no chondrosarcoma indication on the FDA label; the phase 3 route, CHONQUER NCT06127407, enrols conventional histology only); it is one option viewed from two angles, not two options. (interacts with: ivosidenib, comprehensive-dna-rna-profiling)
 
 **May foreclose a targeted option**
 
@@ -83,7 +83,7 @@ _The ranked recommendations stay scoped to this case's targetable features, and 
 
 - **Early referral to a specialist interdisciplinary palliative care team, alongside active treatment**: Runs alongside every ranked option and forecloses none. The board's critic observed that this recommendation is the best-evidenced single item put in front of the board, and it carries randomised data where the rest of the case rests on retrospective cohorts.
 - **Referral to a high-volume sarcoma centre with a bone-sarcoma multidisciplinary team, before first treatment**: An expert centre is also where the ranked workup (comprehensive DNA plus RNA profiling on the dedifferentiated component) and most protocol seats are reachable, so this option widens rather than competes with the experimental track. (interacts with: comprehensive-dna-rna-profiling)
-- **Clinical trial enrollment as a management strategy**: The Experimental table on this case page is the concrete instantiation of this row: it holds the ranked protocol seats. This row records only that guideline text itself points to trials in metastatic chondrosarcoma; it does not rank among them or substitute for them.
+- **Clinical trial enrollment as a management strategy**: The ranked table on this case page is the concrete instantiation of this row: it holds the ranked protocol seats. This row records only that guideline text itself points to trials in metastatic chondrosarcoma; it does not rank among them or substitute for them.
 
 **Independent of the targeted options**
 

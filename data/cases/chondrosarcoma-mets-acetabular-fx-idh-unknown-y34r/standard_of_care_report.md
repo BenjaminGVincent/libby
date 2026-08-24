@@ -4,4 +4,4 @@ Nothing standard has been spent: there is no prior therapy on file.
 
 One option sits behind a gate. Ivosidenib is carried by NCCN for IDH-mutant dedifferentiated disease but waits on the IDH1 sequencing the ranked workup already orders, and its FDA label does not yet include chondrosarcoma. Pazopanib and pulmonary metastasectomy were assessed and set aside because their guideline populations, conventional histology and oligometastatic lungs, are not hers.
 
-This report is additive. It supplies the standard options and does not narrow, reorder, or filter the experimental options ranked elsewhere on this case page; where the two tracks share a line, the rows name the trade instead of resolving it.
+This report is additive. Every option here also holds a row in the case's ranked table, and nothing on this page narrows, reorders, or filters that ranking; what it adds is the regulatory footing and the sequencing, so where two options share a line the rows name the trade instead of resolving it.

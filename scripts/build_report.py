@@ -387,6 +387,22 @@ h4 { margin-top: 1.25rem; margin-bottom: 0.25rem; font-size: 1rem; }
 .flag-consolidated   { background: #E8EAF6; color: #303F9F; border-color: #C5CAE9; }
 .flag-thin           { background: #FFF8E1; color: #7A5B00; border-color: #F0E1B0; }
 .flag-not-enrollable { background: #F3E5F5; color: #6A1B7A; border-color: #E1BEE7; }
+/* access_route badges (unified-table Access column). Mirrors libby.css
+   .rel-badge so the offline artifact matches the on-site table. */
+.rel-badge {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.4em;
+  font-size: 0.78em;
+  font-weight: 600;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.rel-indication  { background: #DDF1EE; color: #134E48; border-color: #B0DBD3; }
+.rel-basket      { background: #FFE9D6; color: #6F3A0F; border-color: #F0CFAE; }
+.rel-same-drug   { background: #DFEBFB; color: #1B3A6B; border-color: #B5CDEE; }
+.rel-cross-tumor { background: #F1E5FF; color: #441E72; border-color: #D4BBF2; }
+.rel-other       { background: #F1F3F5; color: #4A5568; border-color: #E2E8F0; }
 footer.libby-footer {
   margin-top: 3rem;
   padding-top: 1rem;
@@ -445,18 +461,47 @@ def _surfaced_badge_html(reason: str | None) -> str:
 
 
 _RECS_HEAD_HTML = (
-    "<th>Rank</th><th>Intervention</th>"
+    "<th>Rank</th><th>Intervention</th><th>Access</th>"
     "<th>Likelihood of effect</th><th>Toxicity burden</th>"
     "<th>Counter-productive MoA</th><th>Overall</th>"
     "<th>Key references</th>"
 )
 
 _RECS_HEAD_HTML_FLAGGED = (
-    "<th>Flag</th><th>Intervention</th>"
+    "<th>Flag</th><th>Intervention</th><th>Access</th>"
     "<th>Likelihood of effect</th><th>Toxicity burden</th>"
     "<th>Counter-productive MoA</th><th>Overall</th>"
     "<th>Key references</th>"
 )
+
+# access_route → (badge label, CSS class). Mirrors ACCESS_META in
+# build_recommendations.py so the offline artifact and the on-site table
+# stay in sync; unknown routes render title-cased on the muted pill.
+_ACCESS_META: dict[str, tuple[str, str]] = {
+    "standard_of_care": ("Standard care", "rel-indication"),
+    "off_label_use": ("Off-label", "rel-cross-tumor"),
+    "clinical_trial_only": ("Trial only", "rel-basket"),
+    "compassionate_use": ("Compassionate use", "rel-same-drug"),
+    "expanded_access_program": ("Expanded access", "rel-same-drug"),
+    "not_yet_accessible": ("Not yet accessible", "rel-other"),
+    "unavailable": ("Unavailable", "rel-other"),
+}
+
+
+def _access_label(route: str | None) -> str | None:
+    """Human-readable access_route label, or None when the row has none
+    (the expected state for cases ranked before the unified-table change)."""
+    if not route:
+        return None
+    return _ACCESS_META.get(route, (route.replace("_", " "), "rel-other"))[0]
+
+
+def _access_cell_html(r: dict) -> str:
+    route = r.get("access_route")
+    if not route:
+        return "<td>&mdash;</td>"
+    label, cls = _ACCESS_META.get(route, (route.replace("_", " "), "rel-other"))
+    return f'<td><span class="rel-badge {cls}">{_html.escape(label)}</span></td>'
 
 
 def _key_references_cell_html(r: dict) -> str:
@@ -586,6 +631,7 @@ def _render_recs_table_html(
             tr_open
             + f"<td>{lead_html}</td>"
             f"{_intervention_cell_html(r, show_personas=show_personas)}"
+            f"{_access_cell_html(r)}"
             f"<td>{_fmt_html(r.get('likelihood_of_effect'))}</td>"
             f"<td>{_fmt_html(r.get('toxicity_burden'))}</td>"
             f"{_cpm_cell_html(r)}"
@@ -2940,6 +2986,10 @@ def _recommendations_md_for_pdf(
     def _emit_rec_detail(rec: dict, heading_line: str) -> None:
         lines.append(heading_line)
         lines.append("")
+        access = _access_label(rec.get("access_route"))
+        if access:
+            lines.append(f"**Access:** {access}")
+            lines.append("")
         if rec.get("likelihood_of_effect"):
             lines.append(f"**Likelihood of effect:** {rec['likelihood_of_effect']}")
             lines.append("")

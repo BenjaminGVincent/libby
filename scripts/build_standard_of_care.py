@@ -431,11 +431,11 @@ def render_sequencing(rows: list[dict]) -> str:
         grouped.setdefault(r["relationship_to_targeted_options"]["relation"], []).append(r)
 
     lines = [
-        "## How these sit alongside the targeted options\n",
-        "_The ranked recommendations stay scoped to this case's targetable features, and "
-        "nothing on this page changes that ranking. What this section adds is the "
-        "sequencing: where a standard option and a targeted option compete for the same "
-        "line, and where taking one would close the door on the other._\n",
+        "## How these sit alongside the other options\n",
+        "_Every option on this page also has a row in the case's ranked table, and nothing "
+        "here changes that ranking. What this section adds is the sequencing: where two "
+        "options compete for the same line, and where taking one would close the door on "
+        "the other._\n",
     ]
     for relation in sorted(grouped, key=lambda k: RELATION_ORDER.get(k, 99)):
         lines.append(f"**{RELATION_LABELS.get(relation, relation)}**\n")
@@ -622,9 +622,9 @@ def render_page(slug: str, rows: list[dict], narrative: str = "",
         f"# {PAGE_TITLE} — `{slug}`\n",
         "_The treatment strategies that are standard for this patient's situation, meaning "
         "a regulator approved them for a population that includes this patient or a major "
-        "academic or clinical-society guideline carries them. This report runs alongside "
-        "the targetable-feature ranking rather than in place of it, and it does not narrow "
-        "what that ranking surfaces._\n",
+        "academic or clinical-society guideline carries them. Each one also has a row in the "
+        "case's ranked table; this page is the depth behind those rows: regulatory footing, "
+        "guideline carriage, eligibility and sequencing._\n",
         _downloads_block(slug),
         f"_{summary['total']} standard options assessed: {summary['actionable']} to consider "
         f"now, {summary['gated']} behind an open gate, {summary['received']} already "
@@ -689,9 +689,9 @@ def _deep_markdown(slug: str, rows: list[dict], narrative: str = "") -> str:
     lines.append(
         "The treatment strategies that are standard for this patient's situation, meaning "
         "a regulator approved them for a population that includes this patient or a major "
-        "academic or clinical-society guideline carries them. This report runs alongside "
-        "the targetable-feature ranking rather than in place of it, and it does not narrow "
-        "what that ranking surfaces.\n"
+        "academic or clinical-society guideline carries them. Each one also has a row in the "
+        "case's ranked table; this page is the depth behind those rows: regulatory footing, "
+        "guideline carriage, eligibility and sequencing.\n"
     )
     lines.append(
         f"**Assessed:** {summary['total']} standard options. "
