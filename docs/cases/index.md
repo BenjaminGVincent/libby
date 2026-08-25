@@ -20,6 +20,7 @@
 - [metastatic urothelial carcinoma progressing on pembrolizumab maintenance after 25-month EV+P complete response, HER2 IHC 3+ discordant with weak research MXIF, on T-DXd pending reconciliation](urothelial-mets-her2-discordant-kndl/index.md)
 - [AML x7q2 question: what therapy is most likely to induce a complete remission? (question-scoped run, linked)](q-aml-x7q2-cr-induction-svl7/question.md)
 - [treatment-naive metastatic high-grade chondrosarcoma with dedifferentiated features, pathologic acetabular fracture, IDH and whole molecular landscape untested, ECOG assumed not measured](chondrosarcoma-mets-acetabular-fx-idh-unknown-y34r/index.md)
+- [systemic-therapy-naive metastatic high-grade uterine leiomyosarcoma, bilateral pulmonary metastases, plasma-only SMARCB1 and TP53 calls with INI1 pending, HLA-A\*02:01 confirmed, LMS-04 planned not started](ulms-highgrade-pulm-mets-tp53-smarcb1-hla-a2-w9t4/index.md)
 
 ## Conventions
 

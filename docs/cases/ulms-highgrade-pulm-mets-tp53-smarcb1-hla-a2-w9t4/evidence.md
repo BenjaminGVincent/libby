@@ -1,0 +1,631 @@
+<meta name="robots" content="noindex">
+
+# Evidence — `ulms-highgrade-pulm-mets-tp53-smarcb1-hla-a2-w9t4`
+
+_This page shows 34 included clinical + 47 included pre-clinical rows, grouped by intervention. 7 clinical and 6 pre-clinical papers were reviewed and excluded — see the [master manuscripts table](manuscripts.md) for the full audit trail._
+
+## Clinical evidence (34 rows)
+
+Per-manuscript detail grouped by intervention. Each row is one published clinical-evidence finding. Columns mirror the per-publication decision-support layout used in companion projects (`io-shieldbreak`'s Pharmacodynamic-Results table).
+
+### Doxorubicin + trabectedin, then trabectedin maintenance (LMS-04)  
+<small><code>intervention_id: doxorubicin-trabectedin</code> · 2 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Pautier/Duffaud (2024)<br><em>N Engl J Med</em></td><td class="num">150</td><td>same 150-patient ITT population as the primary report; median follow-up 55 months; analyses adjusted for uterine vs soft-tissue origin and disease stage</td><td>1L</td><td>randomised open-label phase 3 (LMS-04, NCT02997358), final overall-survival analysis</td><td>doxorubicin 75 mg/m2</td><td>as in the primary report: doxorubicin 60 mg/m2 + trabectedin 1.1 mg/m2 q3w x6, then trabectedin maintenance</td><td>OS</td><td>median overall survival</td><td class="num">33.00 months</td><td class="num">26.00–48.00</td><td class="num">—</td><td>mOS 33 mo (combination) vs 24 mo (doxorubicin)</td><td>Abstract states AE incidence and dose reductions were higher with the combination; no new per-term rates given. Per-term safety is carried on the primary-report row (pmid 35835135).</td><td><span class="rob-badge rob-med">RoB2:Some</span></td><td>1b</td><td><span class="fit-badge fit-strong">strong</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/39231341">39231341</a></td><td><a href="https://doi.org/10.1056/NEJMoa2403394">DOI</a></td><td>The OS confirmation that separates LMS-04 from every other first-line intensification attempt in this disease. Fallback for per-term AEs attempted: abstract has none, NEJM is not in PMC, publisher is paywalled; the trial&#x27;s per-term safety table is on the companion Lancet Oncol row.</td></tr>
+        <tr><td>Pautier/Duffaud (2022)<br><em>Lancet Oncol</em></td><td class="num">150</td><td>ECOG 0-1; 67 of 150 patients had uterine LMS; randomisation stratified by uterine vs soft-tissue origin; surgery for residual disease allowed after 6 cycles</td><td>1L</td><td>randomised open-label phase 3 (LMS-04, NCT02997358)</td><td>doxorubicin 75 mg/m2</td><td>doxorubicin 60 mg/m2 IV + trabectedin 1.1 mg/m2 IV q3w x6, then trabectedin maintenance; comparator doxorubicin 75 mg/m2 q3w x6</td><td>PFS</td><td>median PFS by blinded independent central review</td><td class="num">12.20 months</td><td class="num">10.10–15.60</td><td class="num">&lt;0.0001</td><td>mPFS 12.2 mo (combination) vs 6.2 mo (doxorubicin)</td><td>Combination markedly more myelotoxic than doxorubicin alone: G3-4 neutropenia 80% vs 13%, thrombocytopenia 47% vs 0%, febrile neutropenia 28% vs 9%. One treatment-related death, in the doxorubicin-alone arm (cardiac failure).</td><td><span class="rob-badge rob-med">RoB2:Some</span></td><td>1b</td><td><span class="fit-badge fit-strong">strong</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/35835135">35835135</a></td><td><a href="https://doi.org/10.1016/S1470-2045(22)00380-1">DOI</a></td><td>The regimen her oncologist has planned. Uterine LMS was 45% of the trial and a stratification factor, but the abstract does not report a uterine-only PFS estimate; the benefit claim for her rests on the stratified full-trial analysis. AE rates from the published abstract.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### Doxorubicin + ifosfamide (EORTC 62012)  
+<small><code>intervention_id: doxorubicin-ifosfamide</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Judson/van der Graaf (2014)<br><em>Lancet Oncol</em></td><td class="num">455</td><td>age 18-60, WHO PS 0-1; all STS histologies, not LMS- or uterine-specific</td><td>1L</td><td>randomised controlled phase 3 (EORTC 62012, NCT00061984)</td><td>doxorubicin 75 mg/m2</td><td>doxorubicin 25 mg/m2/day d1-3 + ifosfamide 10 g/m2 over 4 days with mesna and pegfilgrastim, q3w; comparator doxorubicin 75 mg/m2</td><td>OS</td><td>median overall survival (primary endpoint, not met)</td><td class="num">14.30 months</td><td class="num">12.50–16.50</td><td class="num">0.076</td><td>mPFS 7.4 mo (combination) vs 4.6 mo (doxorubicin)</td><td>Intensified combination roughly doubles to quadruples high-grade haematologic toxicity versus doxorubicin alone; febrile neutropenia 46% vs 13% despite pegfilgrastim.</td><td><span class="rob-badge rob-med">RoB2:Some</span></td><td>1b</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/24618336">24618336</a></td><td><a href="https://doi.org/10.1016/S1470-2045(14)70063-4">DOI</a></td><td>Doubles the response rate without an OS win, at real toxicity cost; the authors themselves restrict it to situations where tumour shrinkage is the goal. Age cap 60 means she would have been eligible. All-comer STS, so LMS-specific benefit is not established here.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### Gemcitabine + docetaxel (GeDDiS)  
+<small><code>intervention_id: gemcitabine-docetaxel</code> · 3 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Seddon/Beare (2017)<br><em>Lancet Oncol</em></td><td class="num">257</td><td>Trojani grade 2-3 STS; leiomyosarcoma (uterine and non-uterine) was the largest histology stratum</td><td>1L</td><td>randomised controlled phase 3 (GeDDiS, ISRCTN07742377)</td><td>doxorubicin 75 mg/m2</td><td>gemcitabine 675 mg/m2 d1,8 + docetaxel 75 mg/m2 d8 q3w x6; comparator doxorubicin 75 mg/m2 q3w x6</td><td>PFS</td><td>proportion alive and progression-free at 24 weeks (primary endpoint: no difference)</td><td class="num">46.40 % progression-free at 24 weeks</td><td class="num">37.50–54.80</td><td class="num">0.06</td><td>mPFS 23.7 weeks (gem-doce) vs 23.3 weeks (doxorubicin)</td><td>No efficacy advantage for gem-doce, and toxicity profiles differ rather than favour it: more fatigue, less mucositis and febrile neutropenia than doxorubicin. No treatment-related deaths.</td><td><span class="rob-badge rob-med">RoB2:Some</span></td><td>1b</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/28882536">28882536</a></td><td><a href="https://doi.org/10.1016/S1470-2045(17)30622-8">DOI</a></td><td>The trial that kept doxorubicin as the default first line: gem-doce was not better and trended worse on PFS. Relevant to her as the strongest randomised argument against choosing gem-doce over an anthracycline backbone up front, GOG-0250&#x27;s uterine-specific single-arm activity notwithstanding.</td></tr>
+        <tr><td>Hensley/Rose (2008)<br><em>Gynecol Oncol</em></td><td class="num">42</td><td>42 women with advanced uLMS, no prior chemotherapy; 39 evaluable for response</td><td>1L</td><td>single-arm phase 2 (Gynecologic Oncology Group)</td><td>—</td><td>gemcitabine 900 mg/m2 over 90 min d1,8 + docetaxel 100 mg/m2 d8 with G-CSF, q21d; doses reduced after prior pelvic radiation</td><td>ORR</td><td>objective response rate</td><td class="num">35.80 %</td><td class="num">23.50–49.60</td><td class="num">—</td><td>mPFS 4.4 mo; median response duration 6 mo</td><td>Myelosuppression dominates: G3-4 neutropenia 17%, G3 anemia 24%, G3 fatigue 17%. One possibly related G4 pulmonary toxicity, which matters for a patient with infiltrative bilateral lung disease at altitude.</td><td><span class="rob-badge rob-med">ROBINS-I:Moderate</span></td><td>2b</td><td><span class="fit-badge fit-strong">strong</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/18534250">18534250</a></td><td><a href="https://doi.org/10.1016/j.ygyno.2008.03.010">DOI</a></td><td>The uterine-specific first-line benchmark for gem-doce: response in a third of patients but short mPFS. Read alongside GeDDiS before treating the 35.8% as superiority over doxorubicin; single-arm response rates in uLMS have repeatedly outrun randomised comparisons.</td></tr>
+        <tr><td>Hensley/Spriggs (2002)<br><em>J Clin Oncol</em></td><td class="num">34</td><td>0-2 prior regimens; 16 of 34 had progressed on doxorubicin, 18 chemotherapy-naive</td><td>any</td><td>single-arm phase 2</td><td>—</td><td>gemcitabine 900 mg/m2 d1,8 + docetaxel 100 mg/m2 d8 with G-CSF d9-15, q21d; 25% dose reduction after pelvic radiation</td><td>ORR</td><td>overall response rate</td><td class="num">53.00 %</td><td class="num">35.00–70.00</td><td class="num">—</td><td>median TTP 5.6 mo (range 4-10)</td><td>Haematologic toxicity common but febrile neutropenia rare (6%); no bleeding events.</td><td><span class="rob-badge rob-med">ROBINS-I:Moderate</span></td><td>2b</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/12065559">12065559</a></td><td><a href="https://doi.org/10.1200/JCO.2002.11.050">DOI</a></td><td>The study that established gem-doce in LMS, and the source of the often-quoted 53% response rate. Activity held in doxorubicin-pretreated patients, which is why this regimen remains her most likely second-line chemotherapy after LMS-04.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### Gemcitabine + docetaxel +/- bevacizumab (GOG-0250)  
+<small><code>intervention_id: gemcitabine-docetaxel-bevacizumab</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Hensley/Michael (2015)<br><em>J Clin Oncol</em></td><td class="num">107</td><td>107 of a planned 130 patients; accrual stopped early for futility</td><td>1L</td><td>randomised double-blind placebo-controlled phase 3 (GOG-0250)</td><td>gemcitabine-docetaxel + placebo</td><td>gemcitabine-docetaxel plus bevacizumab or placebo</td><td>HR_PFS</td><td>median PFS (bevacizumab did not improve it)</td><td class="num">1.12 HR</td><td class="num">—</td><td class="num">0.58</td><td>mPFS 6.2 mo (placebo) vs 4.2 mo (bevacizumab); mean DoR 8.6 vs 8.8 mo</td><td>No significant G3-4 differences between arms; bevacizumab added hypertension (8% G3) and a fistula without any efficacy return.</td><td><span class="rob-badge rob-low">RoB2:Low</span></td><td>1b</td><td><span class="fit-badge fit-strong">strong</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/25713428">25713428</a></td><td><a href="https://doi.org/10.1200/JCO.2014.58.3781">DOI</a></td><td>The uterine-LMS-specific test of adding plain VEGF blockade to first-line chemotherapy, and it failed. Directly relevant when weighing the PD-1xVEGF bispecific rationale for the ivonescimab trial seat: anti-VEGF alone bought nothing in this exact disease. Per-term AE rates from the PMC full text (Table 2, n=103 toxicity-evaluable).</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### Trabectedin (ET743-SAR-3007 phase 3)  
+<small><code>intervention_id: trabectedin</code> · 2 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Hensley/Demetri (2017)<br><em>Gynecol Oncol</em></td><td class="num">232</td><td>232 uLMS patients (trabectedin 144, dacarbazine 88), the largest subgroup (40%) of the phase 3 trial; post hoc analysis</td><td>2L+</td><td>post hoc subgroup analysis of a randomised phase 3 (NCT01343277)</td><td>dacarbazine</td><td>trabectedin 1.5 mg/m2 24-h IV q3w; dacarbazine 1 g/m2 q3w</td><td>PFS</td><td>median PFS in uLMS</td><td class="num">4.00 months</td><td class="num">—</td><td class="num">0.0012</td><td>mPFS 4.0 mo (trabectedin) vs 1.5 mo (dacarbazine); mDoR 6.5 vs 4.1 mo</td><td>In the uLMS subset the trabectedin profile matches the full trial: G3/4 transaminitis 34% (ALT), neutropenia 36%, with cytopenias and two treatment-related deaths in the overall trabectedin arm.</td><td><span class="rob-badge rob-med">RoB2:Some</span></td><td>2b</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/28651804">28651804</a></td><td><a href="https://doi.org/10.1016/j.ygyno.2017.06.018">DOI</a></td><td>The uterine-specific read of SAR-3007: PFS benefit holds in her histology, response rates stay near 10%, and OS does not move. Post hoc, so treat the subgroup HR as estimation rather than confirmation. Per-term AE rates from the PMC full text.</td></tr>
+        <tr><td>Demetri/Patel (2016)<br><em>J Clin Oncol</em></td><td class="num">518</td><td>518 patients; L-sarcomas only; leiomyosarcoma 73% of enrolment</td><td>2L+</td><td>randomised open-label phase 3 (NCT01343277)</td><td>dacarbazine</td><td>trabectedin 1.5 mg/m2 24-h IV infusion d1 q21d; comparator dacarbazine 1 g/m2 q3w</td><td>PFS</td><td>median PFS</td><td class="num">4.20 months</td><td class="num">—</td><td class="num">&lt;0.001</td><td>mPFS 4.2 mo (trabectedin) vs 1.5 mo (dacarbazine)</td><td>Myelosuppression and transient transaminitis define the profile; treatment-related deaths 2.1%, all in the trabectedin arm.</td><td><span class="rob-badge rob-med">RoB2:Some</span></td><td>1b</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/26371143">26371143</a></td><td><a href="https://doi.org/10.1200/JCO.2015.62.4734">DOI</a></td><td>Basis of trabectedin&#x27;s US approval in L-sarcomas: disease control without an OS difference. Per-term G3-4 rates from the PMC full text. If she receives trabectedin inside LMS-04, this later-line monotherapy row becomes less relevant to her own sequence.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### Pazopanib (PALETTE)  
+<small><code>intervention_id: pazopanib</code> · 2 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Benson/van der Graaf (2016)<br><em>Gynecol Oncol</em></td><td class="num">44</td><td>44 uterine sarcoma patients pooled from EORTC phase 2 (62043) and PALETTE (62072); 61% had &gt;=2 prior chemotherapy lines; 84% high grade</td><td>2L+</td><td>retrospective analysis of two prospective trials</td><td>—</td><td>pazopanib 800 mg PO daily</td><td>ORR</td><td>partial response rate</td><td class="num">11.00 %</td><td class="num">3.80–24.60</td><td class="num">—</td><td>mPFS 3.0 mo (95% CI 2.5-4.7); mOS 17.5 mo (95% CI 11.1-19.6)</td><td>No uterine-specific safety analysis; toxicity in the parent trials matches the PALETTE profile on the companion row.</td><td><span class="rob-badge rob-med">ROBINS-I:Moderate</span></td><td>2b</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/27012429">27012429</a></td><td><a href="https://doi.org/10.1016/j.ygyno.2016.03.024">DOI</a></td><td>Confirms pazopanib activity reaches uterine LMS at roughly the same modest level as other STS. AE fallback: abstract has no per-term data, no PMC record, publisher paywalled; safety is carried on the PALETTE row for the same drug and dose.</td></tr>
+        <tr><td>van der Graaf/Hohenberger (2012)<br><em>Lancet</em></td><td class="num">369</td><td>369 patients, angiogenesis-inhibitor-naive; leiomyosarcoma was the largest histology group</td><td>2L+</td><td>randomised double-blind placebo-controlled phase 3 (PALETTE, NCT00753688)</td><td>placebo</td><td>pazopanib 800 mg PO daily</td><td>PFS</td><td>median PFS</td><td class="num">4.60 months</td><td class="num">3.70–4.80</td><td class="num">&lt;0.0001</td><td>mPFS 4.6 mo (pazopanib) vs 1.6 mo (placebo)</td><td>Class-typical VEGFR-TKI profile: fatigue, diarrhoea, nausea, weight loss, hypertension. Abstract reports any-grade rates; G3 detail is in the full paper.</td><td><span class="rob-badge rob-low">RoB2:Low</span></td><td>1b</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/22595799">22595799</a></td><td><a href="https://doi.org/10.1016/S0140-6736(12)60651-5">DOI</a></td><td>Approval trial for pazopanib in pretreated STS. PFS gain of 3 months, no OS gain. The uterine-sarcoma-specific read is on the Benson retrospective row.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### Eribulin (phase 3 vs dacarbazine)  
+<small><code>intervention_id: eribulin</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Schöffski/Patel (2016)<br><em>Lancet</em></td><td class="num">452</td><td>452 patients; LMS and liposarcoma randomised as independent strata</td><td>2L+</td><td>randomised open-label phase 3 (NCT01327885)</td><td>dacarbazine</td><td>eribulin mesilate 1.4 mg/m2 IV d1,8 q21d; comparator dacarbazine 850-1200 mg/m2 d1 q21d</td><td>OS</td><td>median overall survival</td><td class="num">13.50 months</td><td class="num">10.90–15.60</td><td class="num">0.0169</td><td>mOS 13.5 mo (eribulin) vs 11.5 mo (dacarbazine)</td><td>G3+ AEs 67% vs 56% with dacarbazine; on-treatment deaths 4% vs 1%, one considered treatment-related. Neutropenia is the characteristic high-grade event.</td><td><span class="rob-badge rob-med">RoB2:Some</span></td><td>1b</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/26874885">26874885</a></td><td><a href="https://doi.org/10.1016/S0140-6736(15)01283-0">DOI</a></td><td>The trial-level OS benefit was driven by the liposarcoma stratum (see the excluded Demetri 2017 subgroup row); the LMS subgroup did not share the OS advantage, so eribulin sits low among her later-line options despite the positive headline. Abstract reports only pooled G3+ rates; per-term table is in the full paper.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### Gemcitabine + dacarbazine (Spanish GEIS randomised phase 2)  
+<small><code>intervention_id: gemcitabine-dacarbazine</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>García-Del-Muro/Buesa (2011)<br><em>J Clin Oncol</em></td><td class="num">113</td><td>113 patients, mixed STS histologies including LMS; not uterine-specific</td><td>2L+</td><td>randomised phase 2 vs dacarbazine</td><td>dacarbazine</td><td>gemcitabine 1800 mg/m2 at 10 mg/m2/min + dacarbazine 500 mg/m2 q2w; comparator dacarbazine 1200 mg/m2 q3w</td><td>PFS</td><td>progression-free rate at 3 months (primary endpoint)</td><td class="num">56.00 % progression-free at 3 months</td><td class="num">—</td><td class="num">0.001</td><td>mPFS 4.2 mo vs 2.0 mo</td><td>Well tolerated; granulocytopenia the main serious event, febrile neutropenia uncommon, discontinuation for toxicity rare. Abstract gives no per-term percentages.</td><td><span class="rob-badge rob-med">RoB2:Some</span></td><td>2b</td><td><span class="fit-badge fit-weak">weak</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/21606430">21606430</a></td><td><a href="https://doi.org/10.1200/JCO.2010.33.6107">DOI</a></td><td>A gemcitabine-based fallback with an OS signal in a small randomised phase 2; mixed histologies, so LMS-specific benefit is inferred rather than shown. AE fallback: abstract qualitative only, no PMC record, publisher paywalled.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### Temozolomide in soft-tissue sarcoma (LMS-enriched activity)  
+<small><code>intervention_id: temozolomide</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Talbot/Taub (2003)<br><em>Cancer</em></td><td class="num">25</td><td>25 evaluable patients; all responders had uterine or non-uterine LMS; LMS subset n=11</td><td>2L+</td><td>single-arm phase 2</td><td>—</td><td>temozolomide 200 mg/m2 oral bolus then 90 mg/m2 q12h x9 doses, q4w</td><td>ORR</td><td>objective response rate</td><td class="num">8.00 %</td><td class="num">—</td><td class="num">—</td><td>mPFS 2.0 mo overall; 3.9 mo in the LMS subset</td><td>Gentle by chemotherapy standards: no G4 events or treatment-related deaths; single G3 events (nausea, anemia, fatigue, alkaline phosphatase, non-neutropenic fever).</td><td><span class="rob-badge rob-med">ROBINS-I:Moderate</span></td><td>4</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/14584078">14584078</a></td><td><a href="https://doi.org/10.1002/cncr.11730">DOI</a></td><td>Modest single-agent activity concentrated in LMS; today temozolomide&#x27;s real interest for her is as the partner in olaparib-temozolomide rather than as monotherapy.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### Olaparib + temozolomide (NCI Protocol 10250)  
+<small><code>intervention_id: olaparib-temozolomide</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Ingham/Schwartz (2023)<br><em>J Clin Oncol</em></td><td class="num">22</td><td>22 evaluable uLMS patients; 59% had &gt;=3 prior lines; HRD not required for entry but assessed on paired biopsies (RAD51 assay, WES/RNAseq)</td><td>2L+</td><td>single-arm multicenter phase 2 (NCI 10250, NCT03880019)</td><td>—</td><td>olaparib 200 mg PO BID d1-7 + temozolomide 75 mg/m2 PO daily d1-7, q21d</td><td>ORR</td><td>best ORR within 6 months (primary endpoint, met: &gt;=5 of 22 required)</td><td class="num">23.00 %</td><td class="num">—</td><td class="num">—</td><td>mPFS 6.9 mo (95% CI 5.4-NE)</td><td>Haematologic toxicity is the cost: G3/4 neutropenia 75% and thrombocytopenia 32%, managed with dose modification; no treatment-related deaths reported.</td><td><span class="rob-badge rob-med">ROBINS-I:Moderate</span></td><td>2b</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37467452">37467452</a></td><td><a href="https://doi.org/10.1200/JCO.23.00402">DOI</a></td><td>The strongest targeted-combination signal in her exact histology, but it sits one line away: entry required prior therapy. Entry did not require HRD, and half of assayed tumours were RAD51-deficient; her own HRD/BRCA status is unmeasured, which is exactly why tissue testing gates this branch. A randomised phase 2/3 confirmation (NCT05432791) has completed accrual. Published erratum (pmid 37801676) does not change the efficacy results.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### PARP inhibition in BRCA2-altered uterine LMS (genomic series)  
+<small><code>intervention_id: parp-inhibitor-brca2</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Seligson/Chen (2019)<br><em>Oncologist</em></td><td class="num">4</td><td>2,548 STS genomic profiles across two cohorts; BRCA2 alterations concentrated in uLMS (10% of uLMS); 4 uLMS patients with functional BRCA2 loss treated with PARP inhibitors</td><td>any</td><td>retrospective genomic analysis plus 4-patient case series</td><td>—</td><td>PARP inhibitor, agent per treating physician (case series)</td><td>other</td><td>durable clinical benefit on PARP inhibition (descriptive)</td><td class="num">4 of 4 with durable clinical benefit patients</td><td class="num">—</td><td class="num">—</td><td>—</td><td>No systematic AE reporting; four-patient off-label series.</td><td><span class="rob-badge rob-high">ROBINS-I:Serious</span></td><td>4</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/30541756">30541756</a></td><td><a href="https://doi.org/10.1634/theoncologist.2018-0448">DOI</a></td><td>Why BRCA2 testing earns its place on her tissue-NGS order: the one STS subtype where BRCA2 loss clusters is hers. Hypothesis-generating only; the prospective data live on the NCI 10250 row. AE data not reported in source beyond case narratives.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### Tazemetostat in INI1/SMARCB1-lost epithelioid sarcoma (approval cohort)  
+<small><code>intervention_id: tazemetostat</code> · 2 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Gounder/Tannir (2026)<br><em>Nat Commun</em></td><td class="num">129</td><td>129 patients across five cohorts; Cohort 3 (INI1-negative any histology, n=32) is the cohort a tissue-confirmed INI1-lost uLMS would have entered</td><td>2L+</td><td>open-label phase 2 basket, 2-stage Green-Dahlberg design (NCT02601950)</td><td>—</td><td>tazemetostat 800 mg PO BID</td><td>ORR</td><td>objective response rate, INI1-negative cohort</td><td class="num">9.00 %</td><td class="num">—</td><td class="num">—</td><td>—</td><td>G3+ treatment-related AEs in 10% across 129 patients; consistent with the benign profile seen in epithelioid sarcoma.</td><td><span class="rob-badge rob-med">ROBINS-I:Moderate</span></td><td>2b</td><td><span class="fit-badge fit-weak">weak</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/41882006">41882006</a></td><td><a href="https://doi.org/10.1038/s41467-026-69708-2">DOI</a></td><td>The closest thing to data for an INI1-lost uLMS: a 9% response rate in INI1-negative non-epithelioid histologies, with the authors concluding single-agent EZH2 inhibition needs combination partners. No uLMS-specific EZH2 efficacy data exist anywhere, accrual is closed, and both BRD9 degraders in the SWI/SNF space have been discontinued (see excluded rows). This branch stays hypothetical until tissue INI1 IHC returns lost.</td></tr>
+        <tr><td>Gounder/Stacchiotti (2020)<br><em>Lancet Oncol</em></td><td class="num">62</td><td>62 patients, ECOG 0-2, documented INI1 loss by IHC or biallelic SMARCB1 alteration; 1L and later lines</td><td>any</td><td>open-label phase 2 basket, epithelioid sarcoma cohort (NCT02601950)</td><td>—</td><td>tazemetostat 800 mg PO BID, continuous 28-day cycles</td><td>ORR</td><td>investigator-assessed objective response rate</td><td class="num">15.00 %</td><td class="num">7.00–26.00</td><td class="num">—</td><td>mDoR not reached (95% CI 9.2-NE); mPFS 5.5 mo</td><td>Unusually gentle for an active oral agent: G3+ treatment-related anemia 6% and weight loss 3%; two treatment-related serious AEs (seizure, haemoptysis); no treatment-related deaths.</td><td><span class="rob-badge rob-med">ROBINS-I:Moderate</span></td><td>2b</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/33035459">33035459</a></td><td><a href="https://doi.org/10.1016/S1470-2045(20)30451-4">DOI</a></td><td>Pivotal cohort behind the FDA accelerated approval, which is confined to epithelioid sarcoma. For her this is mechanism precedent only: a different histology, and her SMARCB1 call is plasma-only against a strong prior that uterine smooth-muscle tumours retain INI1 (see excluded Kihara row). Any use in uLMS would be off-label extrapolation gated on tissue INI1 loss.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### Afamitresgene autoleucel (SPEARHEAD-1)  
+<small><code>intervention_id: afamitresgene-autoleucel</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>D&#x27;Angelo/Van Tine (2024)<br><em>Lancet</em></td><td class="num">52</td><td>52 patients (44 synovial sarcoma, 8 MRCLS); median 3 prior lines; MAGE-A4 expression and HLA-A*02 required at screening</td><td>2L+</td><td>open-label single-arm phase 2 (SPEARHEAD-1, NCT04044768)</td><td>—</td><td>single IV infusion, transduced dose 1.0-10.0 x 10^9 T cells, after fludarabine/cyclophosphamide lymphodepletion</td><td>ORR</td><td>overall response rate by masked independent review</td><td class="num">37.00 %</td><td class="num">24.00–51.00</td><td class="num">—</td><td>—</td><td>CRS in 71% (one G3); G3+ cytopenias near-universal (lymphopenia 96%, neutropenia 85%); no treatment-related deaths.</td><td><span class="rob-badge rob-med">ROBINS-I:Moderate</span></td><td>2b</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/38554725">38554725</a></td><td><a href="https://doi.org/10.1016/S0140-6736(24)00319-2">DOI</a></td><td>Basis of the FDA approval (Tecelra), which reaches synovial sarcoma only. She clears the HLA-A*02 gate but sits outside the histology, and her MAGE-A4 status is untested; uLMS access would be trial-based (e.g. surgery-free cohorts or basket TCR-T programs), contingent on antigen IHC.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### NY-ESO-1c259 TCR T cells (letetresgene autoleucel lineage) in synovial sarcoma  
+<small><code>intervention_id: letetresgene-autoleucel</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>D&#x27;Angelo/Mackall (2018)<br><em>Cancer Discov</em></td><td class="num">12</td><td>12 patients in the reported high-antigen, full-lymphodepletion cohort</td><td>2L+</td><td>single-arm pilot (phase 1/2)</td><td>—</td><td>single infusion of NY-ESO-1c259 TCR T cells after fludarabine 30 mg/m2 x4 + cyclophosphamide 1800 mg/m2 x2 lymphodepletion</td><td>ORR</td><td>confirmed objective response rate</td><td class="num">50.00 %</td><td class="num">—</td><td class="num">—</td><td>—</td><td>G3+ AEs in all 12 patients, dominated by lymphodepletion cytopenias; CRS in 5 of 12 (two G3); no fatal AEs.</td><td><span class="rob-badge rob-high">ROBINS-I:Serious</span></td><td>4</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/29891538">29891538</a></td><td><a href="https://doi.org/10.1158/2159-8290.CD-17-1417">DOI</a></td><td>The clinical foundation for lete-cel, which uses this same NY-ESO-1c259 TCR. The registrational IGNYTE-ESO synovial sarcoma/MRCLS results had no PubMed-indexed primary publication as of August 2026, so this pilot is the citable evidence. No uLMS data exist for NY-ESO-1 TCR-T; her NY-ESO-1 expression is untested. CRS and cytopenia rates from the PMC full text.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### IMA203 PRAME-directed TCR T cells (phase 1)  
+<small><code>intervention_id: ima203</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Wermke/Britten (2025)<br><em>Nat Med</em></td><td class="num">41</td><td>41 patients started lymphodepletion, 40 treated; PRAME expression and HLA-A*02 required; confirmed responses enriched at higher dose and higher PRAME expression</td><td>2L+</td><td>first-in-human phase 1 dose escalation/extension (NCT03686124), interim report</td><td>—</td><td>single infusion, 3+3 dose escalation with dose extension, after lymphodepletion</td><td>ORR</td><td>confirmed objective response rate</td><td class="num">28.90 %</td><td class="num">—</td><td class="num">—</td><td>mDoR 4.4 mo (range 2.4-23.0; 95% CI 2.6-NR)</td><td>MTD not reached; severe CRS 4.9% (2 of 41), no severe neurotoxicity; expected lymphodepletion cytopenias.</td><td><span class="rob-badge rob-med">ROBINS-I:Moderate</span></td><td>4</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40205198">40205198</a></td><td><a href="https://doi.org/10.1038/s41591-025-03650-6">DOI</a></td><td>The published PRAME TCR-T dataset her HLA type points at; melanoma-dominant with sarcoma patients included but no uLMS-specific efficacy reported. PRAME is frequently expressed in sarcomas including LMS, yet her own PRAME expression is untested; the trial screen carries the active IMA203 registration-track study. Brenetafusp, the PRAME ImmTAC, had no peer-reviewed clinical publication as of August 2026.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### Tebentafusp (ImmTAC class precedent, IMCgp100-202)  
+<small><code>intervention_id: tebentafusp</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Nathan/Piperno-Neumann (2021)<br><em>N Engl J Med</em></td><td class="num">378</td><td>378 HLA-A*02:01 patients randomised 2:1 vs investigator&#x27;s choice (pembrolizumab, ipilimumab, or dacarbazine)</td><td>1L</td><td>randomised open-label phase 3 (NCT03070392)</td><td>investigator&#x27;s choice</td><td>tebentafusp weekly IV with intra-patient step-up dosing</td><td>HR_OS</td><td>overall survival</td><td class="num">0.51 HR</td><td class="num">0.37–0.71</td><td class="num">&lt;0.001</td><td>—</td><td>Cytokine-mediated and skin AEs dominate (rash 83%, pyrexia 76%, pruritus 69%), fading after the first 3-4 doses; discontinuation 2%; no treatment-related deaths.</td><td><span class="rob-badge rob-med">RoB2:Some</span></td><td>1b</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/34551229">34551229</a></td><td><a href="https://doi.org/10.1056/NEJMoa2103485">DOI</a></td><td>Included as the proof that an off-the-shelf HLA-A*02:01-restricted bispecific TCR can move overall survival in a solid tumour. Everything else about it is uveal-melanoma-specific (gp100 target); its role in her dossier is to anchor the ImmTAC class, not to suggest tebentafusp itself.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### Pembrolizumab monotherapy in STS (SARC028) - LMS cohort negative  
+<small><code>intervention_id: pembrolizumab</code> · 2 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Marabelle/Bang (2020)<br><em>Lancet Oncol</em></td><td class="num">790</td><td>790 efficacy-evaluable, 102 tTMB-high (&gt;=10 mut/Mb by FoundationOne CDx)</td><td>2L+</td><td>prospective biomarker analysis of a multicohort single-arm phase 2 (NCT02628067)</td><td>—</td><td>pembrolizumab 200 mg IV q3w, up to 35 cycles</td><td>ORR</td><td>ORR in tTMB-high vs non-tTMB-high</td><td class="num">29.00 %</td><td class="num">21.00–39.00</td><td class="num">—</td><td>—</td><td>G3-5 treatment-related AEs 15% in the tTMB-high group; one treatment-related fatal pneumonia; colitis the only recurring G3+ term.</td><td><span class="rob-badge rob-med">ROBINS-I:Moderate</span></td><td>2b</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/32919526">32919526</a></td><td><a href="https://doi.org/10.1016/S1470-2045(20)30445-9">DOI</a></td><td>Underpins the tumour-agnostic TMB&gt;=10 pembrolizumab approval. Her TMB is unmeasured and uLMS is rarely TMB-high, so this row exists to justify closing the TMB gap on tissue NGS, not to predict benefit. Sarcoma was not among the ten cohorts.</td></tr>
+        <tr><td>Tawbi/Patel (2017)<br><em>Lancet Oncol</em></td><td class="num">80</td><td>STS cohort n=40 evaluable, 10 per histology including 10 LMS</td><td>2L+</td><td>two-cohort single-arm phase 2 (SARC028, NCT02301039)</td><td>—</td><td>pembrolizumab 200 mg IV q3w</td><td>ORR</td><td>objective response, STS cohort (primary endpoint not met)</td><td class="num">18.00 %</td><td class="num">—</td><td class="num">—</td><td>—</td><td>Typical PD-1 profile; G3+ anemia, lymphopenia and aPTT prolongation at 7% each in the STS cohort; immune-related SAEs included pneumonitis, adrenal insufficiency, nephritis.</td><td><span class="rob-badge rob-med">ROBINS-I:Moderate</span></td><td>2b</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/28988646">28988646</a></td><td><a href="https://doi.org/10.1016/S1470-2045(17)30624-1">DOI</a></td><td>Half of the case against single-agent PD-1 in her histology: zero of ten LMS responses, while UPS and dedifferentiated liposarcoma carried the signal.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### Nivolumab monotherapy in uterine LMS (negative phase 2)  
+<small><code>intervention_id: nivolumab</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Ben-Ami/George (2017)<br><em>Cancer</em></td><td class="num">12</td><td>12 patients, single centre; stage 1 of a 2-stage design; PD-L1 expression 20% of archival samples</td><td>2L+</td><td>single-arm phase 2, stopped at stage 1 for futility</td><td>—</td><td>nivolumab 3 mg/kg IV q2w</td><td>ORR</td><td>objective response rate</td><td class="num">0.00 %</td><td class="num">—</td><td class="num">—</td><td>mPFS 1.8 mo (95% CI 0.8-unknown)</td><td>G3+ events in 9 of 12 patients but only 3 attributed to nivolumab (abdominal pain, amylase/lipase rise, fatigue); the rest tracked disease progression.</td><td><span class="rob-badge rob-med">ROBINS-I:Moderate</span></td><td>2b</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/28440953">28440953</a></td><td><a href="https://doi.org/10.1002/cncr.30738">DOI</a></td><td>The other half of the case: the only uLMS-specific single-agent PD-1 trial, stopped for futility at 12 patients with no responses and 1.8-month PFS. Any checkpoint strategy for her needs a combination rationale. AE detail from the PMC full text.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### Nivolumab +/- ipilimumab (Alliance A091401)  
+<small><code>intervention_id: nivolumab-ipilimumab</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>D&#x27;Angelo/Streicher (2018)<br><em>Lancet Oncol</em></td><td class="num">85</td><td>85 treated across two non-comparative arms; LMS among enrolled histologies; responses in the combination arm included LMS and uterine sarcoma</td><td>2L+</td><td>randomised non-comparative phase 2 x2 (NCT02500797)</td><td>—</td><td>nivolumab 3 mg/kg q2w; or nivolumab 3 mg/kg + ipilimumab 1 mg/kg q3w x4 then nivolumab q2w</td><td>ORR</td><td>confirmed ORR per arm</td><td class="num">16.00 %</td><td class="num">7.00–30.00</td><td class="num">—</td><td>—</td><td>Combination arm: G3+ anaemia 19%, hypotension 10%; treatment-related SAEs 26% vs 19% with monotherapy; no treatment-related deaths.</td><td><span class="rob-badge rob-med">RoB2:Some</span></td><td>2b</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/29370992">29370992</a></td><td><a href="https://doi.org/10.1016/S1470-2045(18)30006-8">DOI</a></td><td>Establishes that dual checkpoint blockade retrieves a modest response rate in sarcoma where PD-1 alone fails; the authors sent the combination, not the monotherapy, forward. Supports combination or bispecific IO logic in her disease more than any single-agent plan.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### Doxorubicin + pembrolizumab, first-line chemo-IO (phase 1/2)  
+<small><code>intervention_id: doxorubicin-pembrolizumab</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Pollack/Cranmer (2020)<br><em>JAMA Oncol</em></td><td class="num">37</td><td>37 patients, single academic sarcoma centre; osteosarcoma, Ewing and alveolar/embryonal rhabdomyosarcoma excluded</td><td>1L</td><td>non-randomised phase 1/2 (NCT02888665)</td><td>—</td><td>doxorubicin 45 or 75 mg/m2 + pembrolizumab 200 mg q3w</td><td>ORR</td><td>objective response rate (primary endpoint not met)</td><td class="num">19.00 %</td><td class="num">—</td><td class="num">—</td><td>mPFS 8.1 mo (95% CI 7.6-10.8); mOS 27.6 mo (95% CI 18.7-NR)</td><td>No dose-limiting toxicities or unexpected safety signals; tolerability of the chemo-IO combination was the main positive finding.</td><td><span class="rob-badge rob-med">ROBINS-I:Moderate</span></td><td>2b</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/32910151">32910151</a></td><td><a href="https://doi.org/10.1001/jamaoncol.2020.3689">DOI</a></td><td>Shows anthracycline plus PD-1 is deliverable first line in sarcoma with PFS/OS that compare well with historical doxorubicin, though the response endpoint failed and durable responses clustered in UPS/DDLPS rather than LMS. Context for weighing chemo-first vs the ivonescimab seat. AE fallback: abstract and PMC text report no per-term G3 table beyond absence of DLTs.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### Ivonescimab vs pembrolizumab (HARMONi-2, NSCLC)  
+<small><code>intervention_id: ivonescimab</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Xiong/Zhou (2025)<br><em>Lancet</em></td><td class="num">398</td><td>398 patients in China; PD-L1 TPS &gt;=1%; EGFR/ALK excluded</td><td>1L</td><td>randomised double-blind phase 3 (HARMONi-2, NCT05499390), interim analysis</td><td>pembrolizumab</td><td>ivonescimab 20 mg/kg IV q3w; comparator pembrolizumab 200 mg q3w</td><td>HR_PFS</td><td>PFS by masked independent review</td><td class="num">0.51 HR</td><td class="num">0.38–0.69</td><td class="num">&lt;0.0001</td><td>mPFS 11.1 mo (ivonescimab) vs 5.8 mo (pembrolizumab)</td><td>G3+ treatment-related AEs 29% vs 16% for pembrolizumab, the increment mostly VEGF-class effects; G3+ immune-related AEs similar (7% vs 8%).</td><td><span class="rob-badge rob-med">RoB2:Some</span></td><td>1b</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40057343">40057343</a></td><td><a href="https://doi.org/10.1016/S0140-6736(24)02722-3">DOI</a></td><td>Why the PD-1xVEGF bispecific is credible: it beat pembrolizumab head-to-head on PFS in NSCLC. Zero published sarcoma efficacy data; the single-arm MSK trial (NCT07516925) is her only route, and the GOG-0250 row is the cautionary precedent that VEGF blockade added to chemo did nothing in uLMS. China-only trial; OS immature at this analysis.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### Anlotinib in refractory STS (phase 2, LMS subset)  
+<small><code>intervention_id: anlotinib</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Chi/Cai (2018)<br><em>Clin Cancer Res</em></td><td class="num">166</td><td>166 patients in China; LMS subset n=26, not uterine-specific</td><td>2L+</td><td>single-arm phase 2</td><td>—</td><td>anlotinib 12 mg PO daily d1-14 q21d</td><td>ORR</td><td>objective response rate</td><td class="num">13.00 %</td><td class="num">7.60–18.00</td><td class="num">—</td><td>mPFS 5.6 mo overall; 11 mo in the LMS subset</td><td>Cleanest of the VEGFR-TKIs in this space: G3+ hypertension 4.8%, triglyceride elevation 3.6%, pneumothorax 2.4%; no treatment-related deaths.</td><td><span class="rob-badge rob-med">ROBINS-I:Moderate</span></td><td>2b</td><td><span class="fit-badge fit-weak">weak</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/29895706">29895706</a></td><td><a href="https://doi.org/10.1158/1078-0432.CCR-17-3766">DOI</a></td><td>Backs the anlotinib phase 3 in the trial screen: the 26-patient LMS subset did unusually well (11-month mPFS). Chinese population, subgroup not prespecified for inference, and no uterine breakdown; pneumothorax risk deserves attention given her lung disease.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### Pulmonary metastasectomy (International Registry of Lung Metastases)  
+<small><code>intervention_id: pulmonary-metastasectomy</code> · 3 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Nobori/Kawamura (2023)<br><em>JTCVS Open</em></td><td class="num">319</td><td>Metastatic Lung Tumor Study Group of Japan, 1984-2016; risk-adjusted analysis by primary histology</td><td>any</td><td>retrospective multicentre registry analysis</td><td>—</td><td>pulmonary metastasectomy</td><td>OS</td><td>5-year OS after metastasectomy, uterine sarcoma subset</td><td class="num">55.40 % 5-year OS</td><td class="num">—</td><td class="num">—</td><td>—</td><td>Operative complications not reported in the abstract.</td><td><span class="rob-badge rob-med">ROBINS-I:Moderate</span></td><td>4</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37063124">37063124</a></td><td><a href="https://doi.org/10.1016/j.xjon.2023.01.014">DOI</a></td><td>The uterine-specific metastasectomy dataset: half of resected uterine-sarcoma patients alive at 5 years, with DFI over 12 months the main selector. Her DFI qualifies; her current bilateral distribution does not, pending systemic response.</td></tr>
+        <tr><td>Burt/Jaklitsch (2011)<br><em>Ann Thorac Surg</em></td><td class="num">82</td><td>single-institution series over 15 years; LMS patients presented with fewer metastases (mean 1.9) and were mostly female</td><td>any</td><td>retrospective single-institution cohort</td><td>—</td><td>wedge or anatomic resection; repeat metastasectomy in 48% of LMS patients</td><td>OS</td><td>median OS after metastasectomy, LMS vs other sarcoma</td><td class="num">70.00 months</td><td class="num">—</td><td class="num">0.049</td><td>—</td><td>Surgical morbidity not summarised in the abstract; disease-free intervals before and after first metastasectomy were the independent survival predictors.</td><td><span class="rob-badge rob-high">ROBINS-I:Serious</span></td><td>4</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/21867989">21867989</a></td><td><a href="https://doi.org/10.1016/j.athoracsur.2011.05.052">DOI</a></td><td>LMS lung metastases behave more indolently than other sarcomas after resection, and repeat operations extend survival in selected patients. Selection bias is heavy: these were operable, often oligometastatic patients, which she currently is not.</td></tr>
+        <tr><td>Pastorino/Putnam (1997)<br><em>J Thorac Cardiovasc Surg</em></td><td class="num">5206</td><td>5206 metastasectomies from 18 thoracic units; prognostic model built on resectability, disease-free interval, and number of lesions</td><td>any</td><td>international multicentre registry</td><td>—</td><td>surgical resection of lung metastases; complete resection in 88%</td><td>OS</td><td>5-year overall survival after complete resection</td><td class="num">36.00 % 5-year OS</td><td class="num">—</td><td class="num">—</td><td>—</td><td>Operative morbidity and mortality not reported in the abstract; the registry&#x27;s message is selection: completeness of resection, DFI and lesion count drive outcome.</td><td><span class="rob-badge rob-high">ROBINS-I:Serious</span></td><td>4</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/9011700">9011700</a></td><td><a href="https://doi.org/10.1016/s0022-5223(97)70397-0">DOI</a></td><td>The selection criteria that still govern metastasectomy decisions. Her roughly 23-month interval from primary resection to metastatic diagnosis sits in the favourable DFI band, but bilateral multifocal infiltrative disease argues against completeness of resection today; this becomes live only after systemic control.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### SBRT for sarcoma pulmonary metastases (MSK series)  
+<small><code>intervention_id: sbrt-lung</code> · 2 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>n</th><th>Population</th><th>Line</th><th>Design</th><th>Comparator</th><th>Dose / schedule</th><th>Endpoint</th><th>Outcome</th><th>Effect</th><th>CI</th><th>p</th><th>Durability</th><th>Safety</th><th>RoB</th><th>Tier</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Lebow/Rimner (2023)<br><em>Radiother Oncol</em></td><td class="num">66</td><td>66 consecutive patients, median follow-up 36 months; oligometastatic and intrathoracic-only disease predicted longer survival</td><td>any</td><td>retrospective single-institution cohort</td><td>—</td><td>stereotactic body radiotherapy to 95 pulmonary metastases</td><td>other</td><td>cumulative incidence of local failure</td><td class="num">7.40 % local failure at 24 months</td><td class="num">4.00–13.90</td><td class="num">—</td><td>—</td><td>No G3+ toxicity; three G2 pneumonitis and one G2 esophagitis.</td><td><span class="rob-badge rob-med">ROBINS-I:Moderate</span></td><td>4</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37532104">37532104</a></td><td><a href="https://doi.org/10.1016/j.radonc.2023.109824">DOI</a></td><td>Local control above 90% with essentially no high-grade toxicity makes SBRT the non-surgical consolidation option if induction converts her to oligoprogressive or oligoresidual disease. Baseline pulmonary reserve at 8,500 ft residence should enter any pneumonitis-risk discussion.</td></tr>
+        <tr><td>Asha/Shah (2023)<br><em>Am J Clin Oncol</em></td><td class="num">50</td><td>50 patients, 109 lung metastases, 2005-2021; lesion size &gt;4 cm predicted worse local control and survival</td><td>any</td><td>retrospective single-institution cohort</td><td>—</td><td>SBRT 30-34 Gy/1 fx, 48-50 Gy/4-5 fx, or 60 Gy/5 fx</td><td>other</td><td>local control</td><td class="num">88.00 % local control at 3 years</td><td class="num">—</td><td class="num">—</td><td>—</td><td>Toxicity 16% overall across regimens, none clearly dose-dependent; terms include pneumonitis/fibrosis, chest-wall toxicity, dermatitis.</td><td><span class="rob-badge rob-med">ROBINS-I:Moderate</span></td><td>4</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/36914598">36914598</a></td><td><a href="https://doi.org/10.1097/COC.0000000000001000">DOI</a></td><td>Adds the chemotherapy-deferral angle: most patients needed no systemic change for a year after lung SBRT. In her sequencing the same idea would apply only after induction, to consolidate residual disease.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+## Pre-clinical evidence (47 rows)
+
+### SMARCB1/INI1 expression across uterine mesenchymal tumours  
+<small><code>intervention_id: smarcb1-ini1-target-biology</code> · 4 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>Model</th><th>n</th><th>Control</th><th>Dose</th><th>Mechanism</th><th>Key finding</th><th>Effect (qual)</th><th>Translatability</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Caveats</th></tr></thead>
+      <tbody>
+        <tr><td>Kihara/Niki (2021)<br><em>Hum Pathol</em></td><td>human surgical specimens, 206 uterine mesenchymal tumours (170 smooth-muscle tumours) by IHC</td><td>n=206 tumours; 170 smooth-muscle</td><td>internal non-neoplastic stroma/endothelium as staining control</td><td>—</td><td>INI1 protein readout of SMARCB1 status in the exact anatomic lineage in question</td><td>Every one of the 206 uterine mesenchymal tumours retained SMARCB1 expression, including all 170 smooth-muscle tumours. Two tumours lost SMARCA4/SMARCA2, and neither was a leiomyosarcoma.</td><td>negative</td><td>high</td><td><span class="fit-badge fit-strong">strong</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/34271067">34271067</a></td><td><a href="https://doi.org/10.1016/j.humpath.2021.07.001">DOI</a></td><td>Single-institution Japanese cohort scored by IHC alone, so a subclonal or metastasis-restricted SMARCB1 event would not be captured. This is the hardest available prior against INI1 loss in this histology and it is a prior, not a result for this patient.</td></tr>
+        <tr><td>Nakayama/Kadoch (2017)<br><em>Nat Genet</em></td><td>SMARCB1-deficient rhabdoid cell lines with inducible SMARCB1 re-expression; ChIP-seq and ATAC-seq</td><td>—</td><td>isogenic SMARCB1 re-expressing cells</td><td>—</td><td>SMARCB1 loss collapses BAF occupancy and remodelling at typical enhancers while residual complex persists at super-enhancers</td><td>Re-expressing SMARCB1 restored BAF binding and accessibility at thousands of typical enhancers and at bivalent promoters. The residual SMARCB1-less complex retained super-enhancer occupancy, which explains why loss of this one subunit reprograms rather than abolishes BAF function.</td><td>strong</td><td>med</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/28945250">28945250</a></td><td><a href="https://doi.org/10.1038/ng.3958">DOI</a></td><td>Isogenic rhabdoid systems only; no smooth-muscle or mesenchymal-lineage cells tested. Supports why complete INI1 protein loss, not a heterozygous variant call, is the biologically meaningful state.</td></tr>
+        <tr><td>Guidi/Jones (2001)<br><em>Mol Cell Biol</em></td><td>germline Ini1 knockout mouse; tumours from heterozygotes genotyped at the Ini1 locus</td><td>~15% of heterozygous mice developed tumours</td><td>wild-type and untransformed heterozygous tissue</td><td>—</td><td>loss of the remaining wild-type allele as the rate-limiting event downstream of a single inactivating hit</td><td>About 15% of Ini1-heterozygous mice developed mostly undifferentiated sarcomas, and tumour formation went along with loss of heterozygosity at the Ini1 locus. Ini1-null embryos died between 3.5 and 5.5 days post-coitum.</td><td>moderate</td><td>med</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/11313485">11313485</a></td><td><a href="https://doi.org/10.1128/MCB.21.10.3598-3603.2001">DOI</a></td><td>This is the paper that makes the mono- versus bi-allelic distinction concrete: a single truncating allele was not the transformed state, LOH was. Mouse germline model, undifferentiated sarcoma rather than smooth muscle.</td></tr>
+        <tr><td>Roberts/Orkin (2000)<br><em>Proc Natl Acad Sci U S A</em></td><td>germline Snf5 knockout mouse (heterozygous and homozygous)</td><td>—</td><td>wild-type littermates</td><td>—</td><td>genetic test of how many SMARCB1 alleles must be lost before the rhabdoid phenotype appears</td><td>Homozygous Snf5 null embryos died by embryonic day 7, while heterozygotes were born normal and only later developed focal rhabdoid-like tumours from about 5 weeks of age. One inactivated allele was therefore compatible with normal tissue, and tumours arose focally rather than across the whole heterozygous animal.</td><td>strong</td><td>med</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/11095756">11095756</a></td><td><a href="https://doi.org/10.1073/pnas.250492697">DOI</a></td><td>Mouse germline model of a paediatric rhabdoid phenotype; the tumours arise from first-branchial-arch soft tissue, not myometrium. Bears on this case only through the allele-dosage question.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### Snf5 loss drives EZH2 dependence — genetic proof  
+<small><code>intervention_id: tazemetostat-ezh2</code> · 5 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>Model</th><th>n</th><th>Control</th><th>Dose</th><th>Mechanism</th><th>Key finding</th><th>Effect (qual)</th><th>Translatability</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Caveats</th></tr></thead>
+      <tbody>
+        <tr><td>Stacchiotti/Zaffaroni (2019)<br><em>Cancers (Basel)</em></td><td>INI1-deficient proximal-type epithelioid sarcoma patient-derived xenograft (PDX ES-1) and the derived ES-1 cell line</td><td>—</td><td>untreated mice; doxorubicin, ifosfamide, doxorubicin+ifosfamide and gemcitabine arms</td><td>EPZ-011989 versus doxorubicin, ifosfamide, the doxorubicin-ifosfamide doublet, and gemcitabine</td><td>EZH2 methyltransferase inhibition in a tumour with complete INI1 loss, with autophagy induction as the escape route</td><td>Maximum tumour volume inhibition of roughly 90% was reached by gemcitabine, by EPZ-011989 and by doxorubicin plus ifosfamide alike. RNA-seq and functional work on residual tumour pointed to autophagy, with HMGA2 central, as a cytoprotective response to EZH2 inhibition.</td><td>moderate</td><td>med</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/31331120">31331120</a></td><td><a href="https://doi.org/10.3390/cancers11071015">DOI</a></td><td>One PDX from one INI1-negative epithelioid sarcoma. EZH2 inhibition matched rather than beat anthracycline-based chemotherapy in this model, which is worth holding next to any cross-histology extrapolation.</td></tr>
+        <tr><td>Zhang/Huang (2018)<br><em>Sci Rep</em></td><td>human myogenic tumour specimens by IHC (leiomyosarcoma vs leiomyoma, rhabdomyosarcoma vs rhabdomyoma) with GEO expression datasets</td><td>—</td><td>benign myogenic counterparts</td><td>—</td><td>PRC2 subunit expression as a correlate of malignancy in smooth-muscle tumours</td><td>EZH2 protein was high in leiomyosarcoma and low or absent in leiomyoma, with SUZ12 and EED following a weaker version of the same pattern.</td><td>weak</td><td>low</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/30120321">30120321</a></td><td><a href="https://doi.org/10.1038/s41598-018-30648-7">DOI</a></td><td>Expression is not dependency. High EZH2 in an INI1-intact smooth-muscle tumour is a proliferation correlate, and none of these tumours were tested against an EZH2 inhibitor.</td></tr>
+        <tr><td>Kim/Roberts (2015)<br><em>Nat Med</em></td><td>panel of cancer cell lines and xenografts mutant for ARID1A, PBRM1 or SMARCA4; shRNA/CRISPR versus enzymatic inhibitor</td><td>—</td><td>SWI/SNF-wild-type lines; catalytically dead and stabilisation-competent EZH2 rescue constructs</td><td>—</td><td>EZH2 supports PRC2 complex stability independently of its methyltransferase activity, so genetic depletion and enzymatic inhibition are not equivalent</td><td>EZH2 was essential across the SWI/SNF-mutant lines tested, but the dependency ran mostly through a non-catalytic stabilising role, with only partial reliance on methyltransferase activity. A co-occurring Ras-pathway mutation abrogated the dependency altogether.</td><td>moderate</td><td>med</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/26552009">26552009</a></td><td><a href="https://doi.org/10.1038/nm.3968">DOI</a></td><td>The mutant subunits tested were ARID1A, PBRM1 and SMARCA4, not SMARCB1. The practical warning for this case is that an enzymatic EZH2 inhibitor may under-deliver even where the genetic dependency is real.</td></tr>
+        <tr><td>Knutson/Keilhack (2013)<br><em>Proc Natl Acad Sci U S A</em></td><td>SMARCB1-deleted malignant rhabdoid tumour cell lines and subcutaneous xenografts in mice</td><td>—</td><td>vehicle-treated xenografts; SMARCB1-wild-type lines as the specificity comparator</td><td>oral, dose-ranging; intratumoural H3K27me3 measured as the pharmacodynamic readout</td><td>selective inhibition of EZH2 methyltransferase activity, lowering H3K27me3 and releasing differentiation programs in SMARCB1-null cells</td><td>Apoptosis and differentiation followed EZH2 inhibition specifically in SMARCB1-deleted rhabdoid lines. Xenografts regressed dose-dependently with matching loss of intratumoural H3K27me3, and tumours did not regrow after dosing stopped.</td><td>strong</td><td>med</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/23620515">23620515</a></td><td><a href="https://doi.org/10.1073/pnas.1303800110">DOI</a></td><td>This is the origin of the whole SMARCB1-to-EZH2 therapeutic logic, and every model in it is a paediatric rhabdoid tumour with biallelic SMARCB1 deletion. All authors but one were Epizyme employees.</td></tr>
+        <tr><td>Wilson/Roberts (2010)<br><em>Cancer Cell</em></td><td>conditional Snf5 mouse crossed to conditional Ezh2; SNF5-deficient MEFs and human rhabdoid tumours</td><td>—</td><td>Snf5-loss animals with intact Ezh2</td><td>—</td><td>SNF5 loss raises EZH2 and drives H3K27me3 across Polycomb targets; the two complexes act antagonistically on stem-cell programs</td><td>Polycomb targets were broadly trimethylated and repressed in SNF5-deficient cells, and inactivating Ezh2 genetically blocked tumour formation driven by Snf5 loss. The dependency is genetic, not merely correlative.</td><td>strong</td><td>med</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/20951942">20951942</a></td><td><a href="https://doi.org/10.1016/j.ccr.2010.09.006">DOI</a></td><td>Whole rationale rests on complete Snf5 loss in a mouse rhabdoid context. Nothing here tests a smooth-muscle lineage or a heterozygous truncating allele. An erratum was published (Cancer Cell 2011;19:153).</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### EZH1/2 dual inhibitors (valemetostat chemical series) — antitumor profile and SWI/SNF correlation  
+<small><code>intervention_id: valemetostat-ezh1-2</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>Model</th><th>n</th><th>Control</th><th>Dose</th><th>Mechanism</th><th>Key finding</th><th>Effect (qual)</th><th>Translatability</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Caveats</th></tr></thead>
+      <tbody>
+        <tr><td>Honma/Adachi (2017)<br><em>Cancer Sci</em></td><td>haematological and solid cancer cell-line panels plus DLBCL xenografts; 14-day rat tolerability</td><td>—</td><td>EZH2-selective inhibitor as the head-to-head comparator; vehicle</td><td>orally bioavailable EZH1/2 dual inhibitors, once-daily oral dosing in vivo</td><td>simultaneous inhibition of EZH1- and EZH2-containing PRC2 suppresses H3K27me3 more completely than EZH2-selective blockade</td><td>Dual EZH1/2 inhibition dropped H3K27me3 further and outperformed the EZH2-selective comparator in EZH2 gain-of-function DLBCL in vitro and in vivo. Across the solid-tumour panel the authors found no clear correlation between sensitivity and SWI/SNF mutation status, with few exceptions.</td><td>moderate</td><td>low</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/28741798">28741798</a></td><td><a href="https://doi.org/10.1111/cas.13326">DOI</a></td><td>The absent SWI/SNF-sensitivity correlation cuts against using a SMARCB1 call as the selection biomarker for this class. No sarcoma or smooth-muscle model appears in the panel, and the compounds are the chemical series behind valemetostat rather than the clinical agent itself.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### ncBAF/BRD9 as a synthetic-lethal target in BAF-perturbed cancers  
+<small><code>intervention_id: brd9-degrader</code> · 3 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>Model</th><th>n</th><th>Control</th><th>Dose</th><th>Mechanism</th><th>Key finding</th><th>Effect (qual)</th><th>Translatability</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Caveats</th></tr></thead>
+      <tbody>
+        <tr><td>Wang/Roberts (2019)<br><em>Nat Commun</em></td><td>genome-wide CRISPR-Cas9 screen across cancer lines with follow-up in SMARCB1-mutant rhabdoid tumour lines</td><td>—</td><td>SMARCB1-wild-type lines; domain-deletion BRD9 rescue constructs</td><td>—</td><td>SMARCB1 loss increases BRD9 incorporation into a distinct SWI/SNF sub-complex whose integrity depends on the DUF3512 domain</td><td>BRD9 scored as a specific dependency in rhabdoid tumours, and SMARCB1 loss itself drove more BRD9 into the complex. The bromodomain was dispensable while DUF3512 was essential, which is the mechanistic argument for degrading BRD9 rather than inhibiting its bromodomain.</td><td>strong</td><td>med</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/31015438">31015438</a></td><td><a href="https://doi.org/10.1038/s41467-019-09891-7">DOI</a></td><td>Paediatric rhabdoid lines with biallelic SMARCB1 loss throughout; nothing on heterozygous alleles or mesenchymal smooth-muscle lineage. An erratum was published (Nat Commun 2019;10:4445).</td></tr>
+        <tr><td>Michel/Kadoch (2018)<br><em>Nat Cell Biol</em></td><td>synovial sarcoma and malignant rhabdoid tumour cell lines; chemical (BRD9 degrader/inhibitor) and shRNA depletion; genome-wide complex mapping</td><td>—</td><td>cBAF-intact cancer lines; non-targeting constructs</td><td>—</td><td>ncBAF complexes localise to CTCF sites and promoters and sustain gene expression when cBAF is crippled by SMARCB1 loss or SS18-SSX fusion</td><td>Depleting BRD9 rapidly cut proliferation of synovial sarcoma and rhabdoid lines but spared cBAF-intact cancers. The surviving dependency in SMARCB1-perturbed cells ran through ncBAF maintenance of retained CTCF-promoter sites.</td><td>strong</td><td>med</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/30397315">30397315</a></td><td><a href="https://doi.org/10.1038/s41556-018-0221-1">DOI</a></td><td>Cell-line dependency mapping with limited in-vivo work; both index histologies carry complete cBAF perturbation. This is the rationale that sent FHD-609 and CFT8634 into the clinic, and both programmes were later discontinued.</td></tr>
+        <tr><td>Brien/Armstrong (2018)<br><em>Elife</em></td><td>synovial sarcoma cell lines treated with the BRD9 degrader dBRD9; proteomics and expression profiling</td><td>—</td><td>bromodomain-inhibitor comparator and non-SS18-SSX lines</td><td>—</td><td>targeted degradation removes BRD9 protein and the ncBAF assembly it scaffolds, undoing SS18-SSX-driven transcription</td><td>Degrading BRD9 reversed the oncogenic expression program and suppressed synovial sarcoma growth, where bromodomain occupancy alone was insufficient.</td><td>strong</td><td>med</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/30431433">30431433</a></td><td><a href="https://doi.org/10.7554/eLife.41305">DOI</a></td><td>Synovial sarcoma is driven by SS18-SSX-mediated SMARCB1 ejection, a different route to the same complex defect than a SMARCB1 mutation; largely in-vitro.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### Uterine sarcoma patient-derived xenograft panel — engraftment and fidelity  
+<small><code>intervention_id: ulms-model-systems</code> · 4 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>Model</th><th>n</th><th>Control</th><th>Dose</th><th>Mechanism</th><th>Key finding</th><th>Effect (qual)</th><th>Translatability</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Caveats</th></tr></thead>
+      <tbody>
+        <tr><td>Chudasama/Fröhling (2018)<br><em>Nat Commun</em></td><td>human leiomyosarcoma tumours profiled by whole-exome/genome and RNA sequencing, with functional follow-up in LMS cell lines</td><td>—</td><td>normal tissue comparators for somatic calling</td><td>—</td><td>recurrent inactivation of TP53, RB1 and PTEN with widespread copy-number change; telomere maintenance and DNA-damage-response features rather than a single driver oncogene</td><td>Leiomyosarcoma is copy-number driven, with TP53 and RB1 loss recurring and few actionable point mutations. Telomere-maintenance and homologous-recombination features stood out as the recurring biology.</td><td>—</td><td>med</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/29321523">29321523</a></td><td><a href="https://doi.org/10.1038/s41467-017-02602-0">DOI</a></td><td>Mixed anatomic sites rather than uterus-only. Sets the expectation that a TP53 nonsense call in this histology is background biology rather than a lead.</td></tr>
+        <tr><td>Cuppens/Amant (2017)<br><em>Gynecol Oncol</em></td><td>subcutaneous patient-derived xenografts from uterine sarcoma and carcinosarcoma in immunocompromised mice</td><td>13 LMS implanted, 10 engrafted (77%); 2/7 carcinosarcoma (29%); 1 high-grade uterine sarcoma NOS</td><td>paired original patient tumour for histology, copy-number and RNA comparison</td><td>—</td><td>not applicable — model characterisation</td><td>Leiomyosarcoma engrafted at 77% and the xenografts looked histologically like their source tumours, with desmin or h-caldesmon retained in 8 of 10. Copy-number concordance with the parent tumour ranged from 57.7% to 98.2%, and three LMS models clustered away from their originating tumour by RNA expression.</td><td>—</td><td>med</td><td><span class="fit-badge fit-strong">strong</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/28625393">28625393</a></td><td><a href="https://doi.org/10.1016/j.ygyno.2017.06.005">DOI</a></td><td>Subcutaneous rather than orthotopic, immunodeficient hosts, and the RNA drift in three of ten LMS models is the honest limit on how far a uLMS PDX result travels. This is close to the whole published uLMS PDX resource.</td></tr>
+        <tr><td>Mäkinen/Vahteristo (2016)<br><em>PLoS Genet</em></td><td>whole-exome sequencing of uterine leiomyosarcoma specimens with matched normal DNA</td><td>—</td><td>matched germline DNA</td><td>—</td><td>defines which genes are recurrently hit in this specific histology</td><td>TP53, ATRX and MED12 were the recurrently mutated genes in uterine leiomyosarcoma. SMARCB1 was not among the recurrent events.</td><td>—</td><td>high</td><td><span class="fit-badge fit-strong">strong</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/26891131">26891131</a></td><td><a href="https://doi.org/10.1371/journal.pgen.1005850">DOI</a></td><td>Descriptive sequencing with no therapeutic arm. Useful mainly as the denominator against which the plasma SMARCB1 call should be judged.</td></tr>
+        <tr><td>Pérot/Aurias (2009)<br><em>Cancer Res</em></td><td>human retroperitoneal leiomyosarcoma series with siRNA knockdown in LMS cell lines</td><td>—</td><td>non-targeting siRNA; non-amplified tumours</td><td>—</td><td>myocardin amplification sustains the smooth-muscle transcriptional program that defines the lineage</td><td>MYOCD was amplified and overexpressed in most well-differentiated retroperitoneal leiomyosarcomas, and knocking it down reduced smooth-muscle marker expression and proliferation.</td><td>moderate</td><td>med</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/19276386">19276386</a></td><td><a href="https://doi.org/10.1158/0008-5472.CAN-08-1443">DOI</a></td><td>Retroperitoneal rather than uterine LMS, and no drug exists against myocardin. Included because lineage dependency is the alternative frame to the borrowed epigenetic one.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### Conditional p53/BRCA1 deletion in the murine uterus — a uLMS model and human BRCA1 loss  
+<small><code>intervention_id: olaparib-temozolomide</code> · 4 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>Model</th><th>n</th><th>Control</th><th>Dose</th><th>Mechanism</th><th>Key finding</th><th>Effect (qual)</th><th>Translatability</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Caveats</th></tr></thead>
+      <tbody>
+        <tr><td>Dall/Barker (2023)<br><em>J Exp Clin Cancer Res</em></td><td>uterine leiomyosarcoma patient-derived xenografts, including a paired post-PARPi-resistant PDX; national cohort screened by WGS/WES/panel</td><td>58 individuals screened; 5 (9%) HRD; 13 samples by WGS</td><td>olaparib alone and olaparib plus cisplatin as comparators to the PARP1-selective agent</td><td>AZD5305 (PARP1-selective) vs olaparib vs olaparib+cisplatin in PDX</td><td>synthetic lethality of PARP inhibition in tumours with biallelic HR-gene loss; PARP1-selective trapping as the more complete version of that mechanism</td><td>Five of 58 uLMS (9%) were HR-deficient, all through homozygous BRCA2 deletion, and all 13 WGS samples carried a dominant COSMIC signature 3. PDX responses were fastest and most sustained with the PARP1-selective AZD5305, including in a paired PDX that had acquired PRKDC resistance mutations after patient PARPi exposure.</td><td>strong</td><td>high</td><td><span class="fit-badge fit-strong">strong</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37143137">37143137</a></td><td><a href="https://doi.org/10.1186/s13046-023-02687-0">DOI</a></td><td>The responding models were biallelic BRCA2-deleted, a state this patient has not been tested for; signature 3 was near-universal but CHORD scores were high in only 2 of 13, so genome-wide LOH alone did not equal functional HRD.</td></tr>
+        <tr><td>Smith/Houghton (2015)<br><em>Clin Cancer Res</em></td><td>Pediatric Preclinical Testing Program xenograft panel including Ewing sarcoma, rhabdomyosarcoma and osteosarcoma</td><td>—</td><td>talazoparib alone, temozolomide alone, vehicle</td><td>talazoparib (BMN 673) with temozolomide on the PPTP schedule</td><td>PARP trapping potentiating temozolomide-induced base damage in vivo</td><td>Talazoparib alone was largely inactive, while the combination with temozolomide produced objective regressions in a subset of xenografts, most consistently Ewing sarcoma. Myelosuppression forced temozolomide dose reduction in the combination.</td><td>moderate</td><td>med</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/25500058">25500058</a></td><td><a href="https://doi.org/10.1158/1078-0432.CCR-14-2572">DOI</a></td><td>No leiomyosarcoma model in the panel, and the responsive histology (Ewing) has a distinct DNA-damage biology. The haematologic toxicity signal is the part that carries directly into clinic.</td></tr>
+        <tr><td>Murai/Pommier (2014)<br><em>J Pharmacol Exp Ther</em></td><td>isogenic DT40 and human cell lines with defined DNA-repair deletions; PARP inhibitors compared for trapping versus catalytic potency</td><td>—</td><td>PARP1/2-null cells; catalytic-only inhibitor (veliparib) comparator</td><td>—</td><td>temozolomide-induced N-methylpurine lesions generate base-excision-repair intermediates that trapped PARP-DNA complexes convert into cytotoxic replication blocks</td><td>Synergy with temozolomide tracked with a drug&#x27;s ability to trap PARP on DNA rather than with catalytic inhibition, so trapping-potent inhibitors combined far better than veliparib. Camptothecin combinations followed the same rule.</td><td>strong</td><td>med</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/24650937">24650937</a></td><td><a href="https://doi.org/10.1124/jpet.113.210146">DOI</a></td><td>Engineered cell lines rather than sarcoma models. Explains why the olaparib-plus-temozolomide regimen is a mechanistic pairing rather than an empirical one.</td></tr>
+        <tr><td>Xing/Orsulic (2009)<br><em>Cancer Res</em></td><td>Amhr2-Cre conditional p53 and p53/BRCA1 deleted mice; human uterine leiomyosarcoma specimens for BRCA1 protein and promoter methylation</td><td>—</td><td>p53-deleted-only animals; BRCA1-intact human tumours</td><td>—</td><td>p53 loss initiates uterine smooth-muscle tumours and concurrent BRCA1 loss accelerates them, with promoter methylation as the human silencing route</td><td>Conditional p53 deletion produced uterine tumours resembling human uLMS, and adding BRCA1 deletion accelerated progression. BRCA1 protein was absent in 29% of human uLMS, most plausibly through promoter methylation.</td><td>moderate</td><td>med</td><td><span class="fit-badge fit-strong">strong</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/19843854">19843854</a></td><td><a href="https://doi.org/10.1158/0008-5472.CAN-09-2543">DOI</a></td><td>Genetically engineered mouse tumours are not identical to human uLMS, and the 29% BRCA1-negative figure is IHC-based rather than an HRD score. Still the clearest lineage-matched argument that an HR-directed branch is worth testing on tissue.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### ALT prevalence and ATRX loss in leiomyosarcoma  
+<small><code>intervention_id: atr-inhibition-alt</code> · 5 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>Model</th><th>n</th><th>Control</th><th>Dose</th><th>Mechanism</th><th>Key finding</th><th>Effect (qual)</th><th>Translatability</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Caveats</th></tr></thead>
+      <tbody>
+        <tr><td>Laroche-Clary/Italiano (2020)<br><em>Sci Rep</em></td><td>soft-tissue sarcoma cell lines and an undifferentiated pleomorphic sarcoma patient-derived xenograft</td><td>—</td><td>single-agent VE-822, single-agent gemcitabine, vehicle</td><td>VE-822 combined with gemcitabine in vitro and in vivo</td><td>ATR inhibition removes the intra-S-phase checkpoint that would otherwise let cells survive gemcitabine-induced replication stress</td><td>The VE-822 and gemcitabine combination was synergistic in vitro with increased gammaH2AX and S-phase accumulation, and in vivo it improved tumour growth inhibition and progression-free survival over either agent. Sensitivity did not track ALT status.</td><td>moderate</td><td>med</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/32366852">32366852</a></td><td><a href="https://doi.org/10.1038/s41598-020-63294-z">DOI</a></td><td>The in-vivo model was undifferentiated pleomorphic sarcoma, not leiomyosarcoma. Supports ATR inhibition as a chemo-sensitiser rather than as an ALT-selected strategy.</td></tr>
+        <tr><td>Goncalves/Tomita (2020)<br><em>ACS Pharmacol Transl Sci</em></td><td>osteosarcoma cell lines of varying telomere length and telomere-maintenance mechanism</td><td>—</td><td>long-telomere lines within the same panel</td><td>—</td><td>short telomeres, rather than the recombination-based maintenance mechanism itself, create the ATR dependency</td><td>ATR inhibitors selectively eliminated osteosarcoma lines with short telomeres regardless of whether those lines used ALT.</td><td>moderate</td><td>low</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/33344901">33344901</a></td><td><a href="https://doi.org/10.1021/acsptsci.0c00125">DOI</a></td><td>Osteosarcoma lines, in vitro. Reframes the biomarker as telomere length, which nobody has measured in this patient either.</td></tr>
+        <tr><td>Deeg/Rippe (2016)<br><em>Front Oncol</em></td><td>panel of ALT-positive and telomerase-positive cell lines including U2OS and ALT-positive glioma lines</td><td>—</td><td>telomerase-positive lines; multiple ATR inhibitors</td><td>—</td><td>direct test of whether the ALT phenotype itself confers ATR dependency</td><td>Across a broader panel and several ATR inhibitors, ALT-positive lines showed no general hypersensitivity relative to telomerase-positive lines.</td><td>negative</td><td>low</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/27602331">27602331</a></td><td><a href="https://doi.org/10.3389/fonc.2016.00186">DOI</a></td><td>Contradicts Flynn 2015. In-vitro only, but the negative result is the reason ALT status alone should not be treated as an ATR-inhibitor selection biomarker in this case.</td></tr>
+        <tr><td>Liau/Yang (2015)<br><em>Am J Surg Pathol</em></td><td>92 human leiomyosarcomas (uterine, retroperitoneal and other sites) by telomere FISH, ATRX/DAXX IHC and TERT promoter sequencing</td><td>n=92 tumours</td><td>ALT-negative tumours within the same series</td><td>—</td><td>ATRX inactivation permits the recombination-based telomere maintenance that defines ALT</td><td>ALT was present in 59% of leiomyosarcomas and ATRX expression was lost in 33%, with all but two ATRX-deficient tumours being ALT-positive. Both features went with epithelioid or pleomorphic morphology, necrosis and worse outcome.</td><td>moderate</td><td>high</td><td><span class="fit-badge fit-strong">strong</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/25229770">25229770</a></td><td><a href="https://doi.org/10.1097/PAS.0000000000000324">DOI</a></td><td>Human tissue survey with no therapeutic arm. Sets a realistic pre-test probability that this tumour is ALT-positive, which matters only if an ALT-directed strategy has a real preclinical basis.</td></tr>
+        <tr><td>Flynn/Zou (2015)<br><em>Science</em></td><td>ALT-positive and telomerase-positive human cancer cell lines, including ATRX-deficient lines</td><td>—</td><td>isogenic and matched telomerase-positive lines</td><td>—</td><td>ALT depends on ATR-coordinated homologous recombination at telomeres, so ATR inhibition disrupts telomere maintenance selectively</td><td>ALT-positive lines were selectively killed by ATR inhibitors while telomerase-positive lines were spared, and ATRX loss was linked to the ALT phenotype.</td><td>strong</td><td>low</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/25593184">25593184</a></td><td><a href="https://doi.org/10.1126/science.1257216">DOI</a></td><td>In-vitro only, and the selectivity claim failed to replicate in later work — read alongside Deeg 2016 and Goncalves 2020 rather than on its own.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### MAGE-A4, PRAME and NY-ESO-1 prevalence across bone and soft-tissue sarcoma  
+<small><code>intervention_id: ct-antigen-target-biology</code> · 3 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>Model</th><th>n</th><th>Control</th><th>Dose</th><th>Mechanism</th><th>Key finding</th><th>Effect (qual)</th><th>Translatability</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Caveats</th></tr></thead>
+      <tbody>
+        <tr><td>Chen/Li (2025)<br><em>Cancer Med</em></td><td>human sarcoma specimens by IHC and multiplex immunostaining microarray; 26 smooth-muscle sarcomas among 128 tumours</td><td>n=128 (21 UPS, 26 smooth-muscle sarcoma, 28 liposarcoma, 40 osteosarcoma, 13 chondrosarcoma)</td><td>cross-subtype comparison; testis as the reference positive tissue for this antigen class</td><td>—</td><td>cancer/testis antigen expression as the second gate for HLA-restricted TCR and ImmTAC programs</td><td>Expression was subtype-dependent, highest for MAGE-A4 and PRAME in UPS and osteosarcoma. NY-ESO-1 was low across every subtype, and the smooth-muscle sarcoma group was positive for MAGE-A4 in a minority of cases.</td><td>weak</td><td>med</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40152485">40152485</a></td><td><a href="https://doi.org/10.1002/cam4.70750">DOI</a></td><td>The reported MAGE-A4 percentages for smooth-muscle sarcoma are internally inconsistent between the results text and its own framing, and an erratum was issued (Cancer Med 2025;14:e70971) — treat the exact figure as soft. Smooth-muscle sarcoma here is not uterus-restricted.</td></tr>
+        <tr><td>McGranahan/TRACERx Consortium (2017)<br><em>Cell</em></td><td>multiregion whole-exome sequencing of primary non-small-cell lung tumours (TRACERx) with an HLA-specific LOH caller</td><td>LOH at the HLA locus in 40% of tumours analysed</td><td>HLA-intact regions within the same tumours</td><td>—</td><td>somatic loss of one HLA haplotype removes the restriction element without touching the antigen, under immune-editing selection</td><td>HLA LOH occurred in around 40% of tumours, was frequently subclonal and enriched in metastatic or later subclones, and associated with a higher neoantigen burden in the affected regions.</td><td>strong</td><td>med</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/29107330">29107330</a></td><td><a href="https://doi.org/10.1016/j.cell.2017.10.001">DOI</a></td><td>Lung cancer under endogenous T-cell pressure, not sarcoma under engineered T cells. The relevance is that germline HLA-A*02:01 typing does not guarantee the pulmonary metastases still present that allele.</td></tr>
+        <tr><td>De Smet/Boon (1996)<br><em>Proc Natl Acad Sci U S A</em></td><td>20 human tumour cell lines plus primary fibroblasts; CpG methylation mapping and 5-aza-2&#x27;-deoxycytidine treatment</td><td>—</td><td>MAGE-1-negative lines; untreated fibroblasts</td><td>—</td><td>CpG demethylation at Ets-binding sites in the MAGE-1 promoter permits transcription-factor binding, downstream of genome-wide demethylation in the tumour</td><td>MAGE-1 promoter CpGs were demethylated in expressing lines and methylated in non-expressing ones, and 5-aza-2&#x27;-deoxycytidine switched the gene on even in normal fibroblasts. Overall CpG methylation was inversely correlated with MAGE-1 expression across the 20 lines.</td><td>strong</td><td>med</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/8692960">8692960</a></td><td><a href="https://doi.org/10.1073/pnas.93.14.7149">DOI</a></td><td>MAGE-1 rather than MAGE-A4, and the work predates modern epigenomics. It is the reason cancer/testis antigen expression is patchy and epigenetically labile rather than a fixed lineage property — which is the honest answer to whether expression is stable enough for a TCR-T strategy.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### ADP-A2M4 (afamitresgene) affinity-enhanced MAGE-A4 TCR — preclinical potency and specificity  
+<small><code>intervention_id: afamitresgene-magea4-tcrt</code> · 2 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>Model</th><th>n</th><th>Control</th><th>Dose</th><th>Mechanism</th><th>Key finding</th><th>Effect (qual)</th><th>Translatability</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Caveats</th></tr></thead>
+      <tbody>
+        <tr><td>Sanderson/Gerry (2020)<br><em>Oncoimmunology</em></td><td>2D and 3D human cell cultures, primary tumour material, and human primary-cell and cell-line cross-reactivity panels</td><td>—</td><td>non-transduced T cells; HLA-A2-negative and MAGE-A4-negative targets</td><td>—</td><td>affinity-enhanced TCR recognising the HLA-A*02-restricted MAGE-A4 peptide GVYDGREHTV on the tumour cell surface</td><td>ADP-A2M4 killed MAGE-A4-positive HLA-A2-positive targets potently across 2D, 3D and primary tumour material. Alanine-scanning and primary-cell screening turned up no major off-target cross-reactivity.</td><td>strong</td><td>med</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/32002290">32002290</a></td><td><a href="https://doi.org/10.1080/2162402X.2019.1682381">DOI</a></td><td>Adaptimmune-authored; the tumour material tested was not uterine leiomyosarcoma. Potency is contingent on antigen expression, which is exactly what has not been measured in this patient.</td></tr>
+        <tr><td>Cameron/Jakobsen (2013)<br><em>Sci Transl Med</em></td><td>in-vitro functional analysis of an affinity-enhanced HLA-A*01-restricted MAGE-A3 TCR; post-hoc amino-acid scanning and beating-cardiomyocyte cultures</td><td>—</td><td>pre-SAE preclinical panels that had returned clean</td><td>—</td><td>affinity enhancement broadens peptide tolerance, so a structurally similar peptide from a muscle protein becomes a target</td><td>Conventional preclinical screening found no off-target activity, yet the engineered T cells caused fatal cardiac toxicity in patients. Amino-acid scanning afterwards identified the titin peptide ESDPIVAQY as the cross-reactive target.</td><td>strong</td><td>med</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/23926201">23926201</a></td><td><a href="https://doi.org/10.1126/scitranslmed.3006034">DOI</a></td><td>A different TCR, a different antigen and a different HLA allele from the MAGE-A4 A*02:01 products in scope here. Logged because it is why the peptide-scanning and primary-cell work in the MAGE-A4 package matters, and because the off-target was a sarcomeric muscle protein.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### PRAME/HLA-A2 epitope density and the immunoproteasome  
+<small><code>intervention_id: prame-directed-tcr-immtac</code> · 2 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>Model</th><th>n</th><th>Control</th><th>Dose</th><th>Mechanism</th><th>Key finding</th><th>Effect (qual)</th><th>Translatability</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Caveats</th></tr></thead>
+      <tbody>
+        <tr><td>Chang/Scheinberg (2017)<br><em>J Clin Invest</em></td><td>PRAME-positive HLA-A2-positive human cancer and leukemia lines; mouse xenograft models of human leukemia; TCR-mimic antibody Pr20</td><td>—</td><td>PRAME-negative and HLA-A2-negative lines; unmodified IgG</td><td>—</td><td>the PRAME300-309 ALYVDSLFFL peptide is presented on HLA-A*02:01 at very low copy number, and immunoproteasome subunit beta5i induction after IFN-gamma raises the amount presented</td><td>Surface PRAME/HLA-A2 complexes were present at ultra-low density, and an afucosylated TCR-mimic antibody was nonetheless therapeutically active against leukemia xenografts. IFN-gamma markedly increased Pr20 binding in some tumours by shifting proteasome cleavage away from destroying the epitope.</td><td>moderate</td><td>med</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/28628042">28628042</a></td><td><a href="https://doi.org/10.1172/JCI92335">DOI</a></td><td>Leukemia and melanoma models, and a TCR-mimic antibody rather than a TCR-T or ImmTAC. The transferable point is that PRAME protein positivity by IHC and PRAME epitope density on HLA-A2 are not the same quantity.</td></tr>
+        <tr><td>Epping/Bernards (2005)<br><em>Cell</em></td><td>human melanoma and other cancer lines with PRAME knockdown; in-vitro and in-vivo proliferation assays</td><td>—</td><td>control shRNA; PRAME-low lines</td><td>—</td><td>PRAME binds liganded RAR and recruits Polycomb proteins to RAR target promoters, blocking retinoic-acid-induced differentiation and growth arrest</td><td>PRAME knockdown restored RAR signalling in RA-resistant melanoma and reinstated sensitivity to retinoic acid in vitro and in vivo.</td><td>moderate</td><td>low</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/16179254">16179254</a></td><td><a href="https://doi.org/10.1016/j.cell.2005.07.003">DOI</a></td><td>Melanoma, no sarcoma model. Relevant to the antigen-stability question: PRAME appears to be functionally selected for in the tumour rather than being inert cargo, which argues against easy antigen-loss escape but does not prove it.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### Sarcoma immune classes and B-cell-rich tertiary lymphoid structures  
+<small><code>intervention_id: checkpoint-blockade-ulms</code> · 3 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>Model</th><th>n</th><th>Control</th><th>Dose</th><th>Mechanism</th><th>Key finding</th><th>Effect (qual)</th><th>Translatability</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Caveats</th></tr></thead>
+      <tbody>
+        <tr><td>Guo/Li (2025)<br><em>Front Immunol</em></td><td>single-cell RNA sequencing of metastatic lesions from one treatment-naive uterine leiomyosarcoma patient versus normal myometrium</td><td>1 uLMS patient (4 metastatic sites); n=5 normal myometrium</td><td>normal uterine myometrium</td><td>—</td><td>exhausted CD8 T cells, M2-polarised tumour-associated macrophages and immature N2 neutrophils together with MIF-CD74/CD44 and CXCL8 signalling produce an immunosuppressed niche</td><td>Metastatic uLMS lesions were dominated by exhausted CD8 T cells, CD163-positive M2 macrophages and CD15-positive immature neutrophils, with naive markers lost along the pseudotime trajectory. CXCL8 signalling linked angiogenesis to macrophage polarisation in the same niche.</td><td>moderate</td><td>med</td><td><span class="fit-badge fit-strong">strong</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40948800">40948800</a></td><td><a href="https://doi.org/10.3389/fimmu.2025.1653096">DOI</a></td><td>A single patient&#x27;s metastases, so cell-type frequencies are anecdotal even if the qualitative picture matches the wider literature. No therapeutic arm.</td></tr>
+        <tr><td>De Wispelaere/Amant (2024)<br><em>Clin Transl Med</em></td><td>humanized and immunodeficient uterine leiomyosarcoma patient-derived xenografts; TCGA analysis of 101 LMS; serial single-cell RNA/TCR sequencing of biopsies</td><td>—</td><td>single-agent anti-PD-1, single-agent PI3K/mTOR inhibitor, vehicle</td><td>PI3K/mTOR inhibitor with anti-PD-1 in a humanized uLMS PDX</td><td>PI3K/mTOR overactivation associates with lymphocyte depletion; inhibiting it repolarises macrophages, raises antigen presentation on dendritic and tumour cells, and draws in PD-1-positive T cells that then need checkpoint release</td><td>Single-agent anti-PD-1 produced no response in the ICB-resistant humanized uLMS PDX, while combining it with PI3K/mTOR inhibition gave partial or complete responses. The combination reinvigorated exhausted T cells and drove clonal expansion of a cytotoxic CD8 population supported by CD4 Th1 cells.</td><td>strong</td><td>med</td><td><span class="fit-badge fit-strong">strong</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/38711203">38711203</a></td><td><a href="https://doi.org/10.1002/ctm2.1655">DOI</a></td><td>Humanized PDX immunology is an approximation of a human immune system, and the pS6-high selection marker has not been measured in this patient. The nearest lineage-matched argument that checkpoint blockade in uLMS needs a partner rather than a companion diagnostic.</td></tr>
+        <tr><td>Petitprez/Fridman (2020)<br><em>Nature</em></td><td>gene-expression profiling of 608 soft-tissue sarcomas with validation against a phase 2 pembrolizumab cohort</td><td>n=608 tumours</td><td>cross-class comparison within the same cohort</td><td>—</td><td>composition of the tumour microenvironment, and specifically B-cell-rich tertiary lymphoid structures, governs whether PD-1 blockade has anything to act on</td><td>Five immune phenotypes emerged, from immune-low (A, B) to immune-high (D, E). Class E, defined by tertiary lymphoid structures rich in B cells and follicular dendritic cells, had better survival and a high response rate to pembrolizumab, and B-cell content outperformed CD8 content as a predictor.</td><td>strong</td><td>high</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/31942077">31942077</a></td><td><a href="https://doi.org/10.1038/s41586-019-1906-8">DOI</a></td><td>Leiomyosarcoma sits predominantly in the immune-low classes, which is the structural reason single-agent checkpoint blockade underperforms in this histology. Class assignment requires an expression assay nobody has run here.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### Antiangiogenic plus anti-PD-L1 therapy and high endothelial venule formation  
+<small><code>intervention_id: ivonescimab-pd1-vegf</code> · 2 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>Model</th><th>n</th><th>Control</th><th>Dose</th><th>Mechanism</th><th>Key finding</th><th>Effect (qual)</th><th>Translatability</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Caveats</th></tr></thead>
+      <tbody>
+        <tr><td>Zhong/Li (2025)<br><em>iScience</em></td><td>biophysical and cell-based assays plus mouse tumour models; cynomolgus monkey safety</td><td>—</td><td>parental anti-PD-1 and anti-VEGF antibodies and their combination</td><td>—</td><td>VEGF dimers cross-link the tetravalent antibody into soluble complexes that raise its avidity for PD-1, and PD-1 engagement reciprocally strengthens VEGF binding; Fc mutations abrogate FcgammaRI/IIIa binding</td><td>Each target enhanced binding to the other, so PD-1/PD-L1 and VEGF blockade were both more potent than with the separate antibodies. Fc silencing cut effector function in vitro, consistent with the tolerability seen in monkeys and patients, and the antibody produced a significant in-vivo antitumor response.</td><td>moderate</td><td>low</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40034861">40034861</a></td><td><a href="https://doi.org/10.1016/j.isci.2024.111722">DOI</a></td><td>Authored entirely by the sponsor, and the in-vivo work is in humanized-mouse tumour models with no sarcoma among them. Explains the molecular design; says nothing about leiomyosarcoma.</td></tr>
+        <tr><td>Allen/Bergers (2017)<br><em>Sci Transl Med</em></td><td>mouse models of pancreatic neuroendocrine tumour, mammary carcinoma and glioblastoma</td><td>—</td><td>single-agent anti-VEGFR2, single-agent anti-PD-L1, vehicle</td><td>anti-VEGFR2 (DC101) combined with anti-PD-L1 antibody</td><td>VEGF blockade normalises tumour vasculature and induces high endothelial venules, which in turn permit cytotoxic T-cell entry that checkpoint blockade can then sustain</td><td>The combination prolonged survival and produced tumour regression in models where either agent alone did little, and the benefit tracked with intratumoural high endothelial venule formation and increased CTL infiltration. Anti-PD-L1 also sustained vessel normalisation, making the interaction reciprocal.</td><td>strong</td><td>med</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/28404866">28404866</a></td><td><a href="https://doi.org/10.1126/scitranslmed.aak9679">DOI</a></td><td>Carcinoma and neuroendocrine models, no sarcoma. This is the mechanistic ancestor of the PD-1 x VEGF bispecific rationale rather than evidence about ivonescimab itself.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### B7-H3 expression across soft-tissue sarcoma subtypes  
+<small><code>intervention_id: b7h3-adc</code> · 3 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>Model</th><th>n</th><th>Control</th><th>Dose</th><th>Mechanism</th><th>Key finding</th><th>Effect (qual)</th><th>Translatability</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Caveats</th></tr></thead>
+      <tbody>
+        <tr><td>Lynch/Pollack (2024)<br><em>BMC Cancer</em></td><td>153 human soft-tissue sarcoma specimens across 15 subtypes, scored by IHC for tumour and vessel staining</td><td>n=153 patients</td><td>within-cohort comparison; PD-L1/PD-1 status where previously assessed</td><td>—</td><td>B7-H3 surface expression as the antigen available to an ADC or a T-cell engager</td><td>B7-H3 was expressed in 97% of samples and at high level in 69.2%, with vessel positivity in 94.7%. Expression was independent of prior treatment, tumour size, grade, age, and of PD-L1 or PD-1 status.</td><td>strong</td><td>high</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/39478506">39478506</a></td><td><a href="https://doi.org/10.1186/s12885-024-13061-4">DOI</a></td><td>Prevalence, not density in molecules per cell, which is the quantity that actually governs CAR and ADC activity. Leiomyosarcoma is one of 15 subtypes in the cohort rather than the focus.</td></tr>
+        <tr><td>Brignole/Ponzoni (2023)<br><em>J Immunother Cancer</em></td><td>neuroblastoma cell lines and orthotopic/metastatic mouse xenograft models with varying B7-H3 levels</td><td>—</td><td>isotype-ADC control; untreated mice</td><td>vobramitamab duocarmazine (MGC018) administered intravenously in xenograft-bearing mice</td><td>B7-H3-directed antibody delivering a duocarmycin payload, with membrane-permeable released drug killing neighbouring antigen-low cells</td><td>The ADC inhibited tumour growth and extended survival across models, with activity extending to cells expressing lower B7-H3 through bystander killing of adjacent cells.</td><td>strong</td><td>med</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37775116">37775116</a></td><td><a href="https://doi.org/10.1136/jitc-2023-007174">DOI</a></td><td>Neuroblastoma only, and the payload class differs from the topoisomerase-I payloads carried by the B7-H3 ADCs in this case&#x27;s trial set. The bystander principle is what transfers, not the potency numbers.</td></tr>
+        <tr><td>Majzner/Mackall (2019)<br><em>Clin Cancer Res</em></td><td>xenograft models of osteosarcoma, medulloblastoma and Ewing sarcoma; target lines titrated for surface B7-H3</td><td>—</td><td>untransduced T cells; antigen-low and antigen-negative target lines</td><td>—</td><td>CAR engagement scales with surface antigen copy number, so a density threshold separates tumour killing from sparing of low-expressing normal tissue</td><td>B7-H3 CAR T cells regressed established solid-tumour xenografts, and efficacy depended heavily on high surface antigen density. Activity fell away sharply against low-expressing targets, which is what creates the therapeutic window over normal tissue.</td><td>strong</td><td>med</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/30655315">30655315</a></td><td><a href="https://doi.org/10.1158/1078-0432.CCR-18-0432">DOI</a></td><td>Paediatric tumour xenografts, no leiomyosarcoma. The density-threshold result is the reason a &#x27;B7-H3 positive&#x27; IHC call is insufficient on its own for a CAR strategy, and it applies with less force to an ADC with a bystander payload.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### CC-3, a B7-H3 x CD3 bispecific antibody, against bone and soft-tissue sarcoma  
+<small><code>intervention_id: b7h3-cd3-bispecific</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>Model</th><th>n</th><th>Control</th><th>Dose</th><th>Mechanism</th><th>Key finding</th><th>Effect (qual)</th><th>Translatability</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Caveats</th></tr></thead>
+      <tbody>
+        <tr><td>Holzmayer/Märklin (2024)<br><em>Front Immunol</em></td><td>sarcoma cell lines of multiple subtypes with healthy-donor T cells; patient sarcoma specimens for expression and outcome</td><td>—</td><td>B7-H3-negative target cells; control bispecific/T cells alone</td><td>—</td><td>IgG-based B7-H3 x CD3 bispecific redirects polyclonal T cells to B7-H3-positive tumour cells independent of TCR specificity or HLA</td><td>B7-H3 was found on every sarcoma line tested, and CC-3 triggered T-cell activation, cytokine release, proliferation, memory differentiation and target-restricted lysis. Higher B7-H3 in patient specimens went with shorter progression-free and overall survival.</td><td>moderate</td><td>med</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/38765008">38765008</a></td><td><a href="https://doi.org/10.3389/fimmu.2024.1391954">DOI</a></td><td>In-vitro only — no xenograft arm — and the sarcoma line panel is not leiomyosarcoma-specific. HLA-independence is the practical contrast with the TCR-T options in this case.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### Trabectedin&#x27;s selective depletion of mononuclear phagocytes  
+<small><code>intervention_id: trabectedin-monotherapy</code> · 3 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>Model</th><th>n</th><th>Control</th><th>Dose</th><th>Mechanism</th><th>Key finding</th><th>Effect (qual)</th><th>Translatability</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Caveats</th></tr></thead>
+      <tbody>
+        <tr><td>Germano/Allavena (2013)<br><em>Cancer Cell</em></td><td>four mouse tumour models with myeloid-cell transfer and depletion experiments; trabectedin-resistant tumour cells; blood and tumour from treated patients</td><td>—</td><td>untreated tumour-bearing mice; trabectedin-resistant tumour cells to separate direct from myeloid effects</td><td>—</td><td>caspase-8-dependent apoptosis restricted to mononuclear phagocytes, with selectivity over neutrophils and lymphocytes set by differential signalling and decoy TRAIL receptor expression</td><td>Trabectedin depleted monocytes and macrophages from blood, spleen and tumour across four mouse models, with angiogenesis falling alongside. Transfer and depletion experiments using trabectedin-resistant tumour cells established that killing mononuclear phagocytes is a real component of the antitumour effect, and monocyte depletion was reproduced in treated patients.</td><td>strong</td><td>med</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/23410977">23410977</a></td><td><a href="https://doi.org/10.1016/j.ccr.2013.01.008">DOI</a></td><td>None of the four mouse models is uterine leiomyosarcoma. Directly relevant here because the metastatic uLMS niche is macrophage-rich, which makes the planned first-line agent partly an immune-modulating one.</td></tr>
+        <tr><td>Aune/Pommier (2008)<br><em>Clin Cancer Res</em></td><td>human cell lines with defined defects in transcription-coupled nucleotide excision repair and in VHL</td><td>—</td><td>TC-NER-proficient and VHL-proficient isogenic lines</td><td>—</td><td>trabectedin-DNA adducts stall elongating RNA polymerase II, and degradation of the stalled polymerase requires both transcription-coupled NER and VHL</td><td>Trabectedin caused rapid RNA polymerase II degradation that depended on both TC-NER and VHL, tying cytotoxicity to transcription rather than to replication alone.</td><td>strong</td><td>med</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/18927284">18927284</a></td><td><a href="https://doi.org/10.1158/1078-0432.CCR-08-0730">DOI</a></td><td>Isogenic human cell lines, no tumour model. Explains why trabectedin is a transcription-targeted drug and why repair-pathway status, not proliferation rate, is where a predictive biomarker would sit.</td></tr>
+        <tr><td>Damia/D&#x27;Incalci (2001)<br><em>Int J Cancer</em></td><td>yeast and mammalian cell panels with defined NER, mismatch-repair, DNA-PK and ATM deficiencies</td><td>—</td><td>repair-proficient parental lines and complemented revertants</td><td>—</td><td>NER machinery converts the minor-groove adduct into a lethal lesion, while double-strand-break repair capacity determines how well the cell survives it</td><td>NER-deficient lines were 2- to 8-fold less sensitive to ET-743 and restoring NER re-sensitised them, the opposite of the usual pattern for DNA-damaging drugs. Cells lacking DNA-PK or ATM were more sensitive, and mismatch-repair status made no difference.</td><td>moderate</td><td>med</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/11304695">11304695</a></td><td><a href="https://doi.org/10.1002/ijc.1221">DOI</a></td><td>Engineered cell systems from 2001, no tumour model. The closest thing to a mechanistic biomarker of trabectedin benefit: intact NER plus impaired double-strand-break repair, which is the profile an HR-deficient uLMS would have.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### ET-743 combined with doxorubicin in sarcoma models  
+<small><code>intervention_id: doxorubicin-trabectedin-lms04</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>Model</th><th>n</th><th>Control</th><th>Dose</th><th>Mechanism</th><th>Key finding</th><th>Effect (qual)</th><th>Translatability</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Caveats</th></tr></thead>
+      <tbody>
+        <tr><td>Meco/Riccardi (2003)<br><em>Cancer Chemother Pharmacol</em></td><td>TE-671 rhabdomyosarcoma xenografts in nude mice; UV2237M murine fibrosarcoma and its doxorubicin-resistant Pgp-overexpressing subline</td><td>—</td><td>single-agent ET-743, single-agent doxorubicin, untreated controls</td><td>ET-743 and doxorubicin simultaneously, or ET-743 1 h before doxorubicin, or the reverse sequence</td><td>a transcription-targeted minor-groove binder combined with a topoisomerase II poison, hitting non-overlapping lesions</td><td>Isobologram analysis showed an additive interaction with combination indices slightly below 1. In TE-671 xenografts each drug alone was marginal (log cell kill 0.13 and 0.33) while the combination reached 0.85 to 1.12, best when ET-743 preceded doxorubicin by an hour, and no pharmacokinetic interaction was found.</td><td>moderate</td><td>med</td><td><span class="fit-badge fit-partial">partial</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/12783202">12783202</a></td><td><a href="https://doi.org/10.1007/s00280-003-0636-6">DOI</a></td><td>Pre-dates the LMS-04 regimen by nearly two decades and neither model is leiomyosarcoma. The interaction was additive rather than synergistic, and in the fibrosarcoma lung-metastasis arm the combination did not beat either drug alone.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+### Histone eviction as a second mechanism of anthracycline action  
+<small><code>intervention_id: doxorubicin-backbone</code> · 1 row(s)</small>
+
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>Model</th><th>n</th><th>Control</th><th>Dose</th><th>Mechanism</th><th>Key finding</th><th>Effect (qual)</th><th>Translatability</th><th>Case fit</th><th>PMID</th><th>DOI</th><th>Caveats</th></tr></thead>
+      <tbody>
+        <tr><td>Pang/Neefjes (2013)<br><em>Nat Commun</em></td><td>human cancer cell lines, mouse tissues including heart, and primary AML blasts from patients</td><td>—</td><td>etoposide and doxorubicin variants that break DNA without evicting histones</td><td>—</td><td>anthracyclines evict histones, including H2AX, from open chromatin independently of double-strand-break formation, which deregulates transcription and blunts the damage response</td><td>Doxorubicin evicted histones from open chromatin whether or not it induced double-strand breaks, and H2AX eviction was accompanied by attenuated DNA repair. The same eviction happened in heart tissue and could kill topoisomerase-negative AML blasts.</td><td>strong</td><td>med</td><td><span class="fit-badge fit-weak">cross tumor only</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/23715267">23715267</a></td><td><a href="https://doi.org/10.1038/ncomms2921">DOI</a></td><td>No sarcoma model. Matters here for two reasons: it explains anthracycline activity in slowly proliferating tumours, and it links the same mechanism to cardiac tissue in a patient whose baseline LVEF has not yet been measured.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+[Back to case](index.md) · [Trials](trials.md) · [Manuscripts](manuscripts.md) · [Target validation](target_validation.md) · [Board](board.md) · [Recommendations](recommendations.md)
+
+!!! danger disclaimer "Decision support, not medical advice"
+    See [PHI policy](../../phi_policy.md).
+

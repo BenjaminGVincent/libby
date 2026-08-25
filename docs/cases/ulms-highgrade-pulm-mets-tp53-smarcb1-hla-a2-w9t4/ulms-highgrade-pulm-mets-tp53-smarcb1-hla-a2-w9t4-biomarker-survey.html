@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>Libby selected general biomarker report — ulms-highgrade-pulm-mets-tp53-smarcb1-hla-a2-w9t4</title>
+<style>
+
+      :root { color-scheme: light; }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        max-width: 1200px;
+        margin: 2em auto;
+        padding: 0 1.5em 3em;
+        color: #1A202C;
+        background: #FFFFFF;
+        line-height: 1.55;
+      }
+      h1 { border-bottom: 2px solid #5B3A87; padding-bottom: 0.3em; margin-top: 0; }
+      h2 { color: #5B3A87; margin-top: 1.8em; }
+      h3 { color: #1A202C; margin-top: 1.4em; }
+      a { color: #5B3A87; text-decoration: underline; }
+      code { background: #F4F6F8; padding: 0.1em 0.4em; border-radius: 2px; font-size: 0.92em; }
+      .disclaimer {
+        background: #FFF4E5; border-left: 4px solid #B45309;
+        padding: 0.8em 1em; margin: 1em 0 2em; font-size: 0.95em;
+      }
+      .libby-footer {
+        margin-top: 3em; padding-top: 1em; border-top: 1px solid #E2E8F0;
+        color: #6B6B7F; font-size: 0.85em;
+      }
+    
+/* Trial-table style — vendored from /Users/benjaminvincent/turtle/pfo/conductor/styles/trial-table/
+   Scoped via .trial-table-wrap so it does not leak into surrounding MkDocs page.
+
+   Uses explicit [data-md-color-scheme] selectors to bypass any CSS-variable
+   inheritance issues — the table reads correctly in both default (light) and
+   slate (dark) Material color schemes regardless of cascade quirks. */
+
+.trial-table-wrap caption {
+  caption-side: top;
+  text-align: left;
+  font-weight: 600;
+  padding: 0.4em 0;
+  font-size: 1em;
+}
+.trial-scroll { overflow-x: auto; }
+.trial-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.88em;
+}
+.trial-table thead th {
+  font-weight: 600;
+  text-align: left;
+  padding: 0.5em 0.6em;
+  white-space: nowrap;
+}
+.trial-table tbody td {
+  padding: 0.5em 0.6em;
+  font-variant-numeric: tabular-nums;
+  vertical-align: top;
+}
+.trial-table .num { text-align: right; }
+
+/* Narrow ID-style columns — the entry number in the access-guide summary
+   table and the NCT id in the access-guide trial-pathways table. Keep
+   numbers / NCTs on a single line so "10" doesn't wrap to "1\n0" and
+   "NCT05379985" doesn't break across four lines. min-width is large
+   enough to comfortably fit the widest expected value (3-digit entry
+   number, NCT + 8 digits = 11 chars in a monospace fallback). */
+.trial-table th.col-num,
+.trial-table td.col-num,
+.trial-table th.col-nct,
+.trial-table td.col-nct {
+  white-space: nowrap;
+}
+.trial-table th.col-num,
+.trial-table td.col-num { min-width: 2.4em; }
+.trial-table th.col-nct,
+.trial-table td.col-nct { min-width: 6.5em; }
+
+/* Access-guide column widths — kept generous so the wrapping `.trial-scroll`
+   div engages horizontal scroll before the cell text squeezes into a tall
+   narrow stack. Tuned for the access-guide tables specifically; other
+   trial-tables on the site keep their default auto layout. */
+.trial-table th.col-intervention,
+.trial-table td.col-intervention { min-width: 14em; }
+.trial-table th.col-target,
+.trial-table td.col-target { min-width: 12em; }
+.trial-table th.col-access-status,
+.trial-table td.col-access-status { min-width: 10em; }
+.trial-table th.col-regulatory,
+.trial-table td.col-regulatory { min-width: 22em; }
+.trial-table th.col-first-action,
+.trial-table td.col-first-action { min-width: 22em; }
+
+.trial-table th.col-phase,
+.trial-table td.col-phase { min-width: 3.5em; white-space: nowrap; }
+.trial-table th.col-indication,
+.trial-table td.col-indication { min-width: 18em; }
+.trial-table th.col-status,
+.trial-table td.col-status { min-width: 7em; white-space: nowrap; }
+.trial-table th.col-eligibility,
+.trial-table td.col-eligibility { min-width: 8em; white-space: nowrap; }
+.trial-table th.col-contact,
+.trial-table td.col-contact { min-width: 14em; }
+.trial-table th.col-notes,
+.trial-table td.col-notes { min-width: 24em; }
+.trial-table a {
+  text-decoration: underline;
+  font-weight: 700;
+}
+.trial-table .mark {
+  font-size: 0.75em;
+  vertical-align: super;
+}
+
+/* ---------- Default (light) scheme ---------- */
+[data-md-color-scheme="default"] .trial-table-wrap { color: #1A202C; }
+[data-md-color-scheme="default"] .trial-table thead th {
+  background: #F4F6F8;
+  color: #1A202C;
+  border-top: 2px solid #1A202C;
+  border-bottom: 1px solid #1A202C;
+}
+[data-md-color-scheme="default"] .trial-table tbody td {
+  color: #1A202C;
+  border-bottom: 1px solid #E2E8F0;
+}
+[data-md-color-scheme="default"] .trial-table tbody tr:last-child td {
+  border-bottom: 2px solid #1A202C;
+}
+[data-md-color-scheme="default"] .trial-table a { color: #1A202C; }
+[data-md-color-scheme="default"] .trial-table-wrap .notes {
+  font-size: 0.85em;
+  color: #4A5568;
+  margin-top: 0.6em;
+}
+
+/* ---------- Slate (dark) scheme ---------- */
+[data-md-color-scheme="slate"] .trial-table-wrap { color: #E2E8F0; }
+[data-md-color-scheme="slate"] .trial-table thead th {
+  background: #2D3344;
+  color: #F1F5F9;
+  border-top: 2px solid #94A3B8;
+  border-bottom: 1px solid #94A3B8;
+}
+[data-md-color-scheme="slate"] .trial-table tbody td {
+  color: #E2E8F0;
+  border-bottom: 1px solid #3A4159;
+}
+[data-md-color-scheme="slate"] .trial-table tbody tr:last-child td {
+  border-bottom: 2px solid #94A3B8;
+}
+[data-md-color-scheme="slate"] .trial-table a {
+  color: #93C5FD;
+}
+[data-md-color-scheme="slate"] .trial-table-wrap .notes {
+  font-size: 0.85em;
+  color: #94A3B8;
+  margin-top: 0.6em;
+}
+/* Question-report column widths. These tables carry prose in most cells, so
+   without min-widths every column squeezes to fit 100% of the container and the
+   rows grow very tall with a few words per cell. The min-widths let the table
+   exceed the container so .trial-scroll scrolls it sideways instead, which reads
+   far better for a candidate comparison. */
+.trial-table th.col-q-rank,
+.trial-table td.col-q-rank { min-width: 3em; white-space: nowrap; }
+.trial-table th.col-q-candidate,
+.trial-table td.col-q-candidate { min-width: 24em; }
+.trial-table th.col-q-rate,
+.trial-table td.col-q-rate { min-width: 15em; }
+.trial-table th.col-q-tox,
+.trial-table td.col-q-tox { min-width: 20em; }
+.trial-table th.col-q-avail,
+.trial-table td.col-q-avail { min-width: 9em; white-space: nowrap; }
+.trial-table th.col-q-refs,
+.trial-table td.col-q-refs { min-width: 11em; }
+.trial-table th.col-q-criterion,
+.trial-table td.col-q-criterion { min-width: 22em; }
+.trial-table th.col-q-result,
+.trial-table td.col-q-result { min-width: 8em; white-space: nowrap; }
+.trial-table th.col-q-points,
+.trial-table td.col-q-points { min-width: 7em; white-space: nowrap; }
+.trial-table th.col-q-finding,
+.trial-table td.col-q-finding { min-width: 30em; }
+.trial-table th.col-q-dir,
+.trial-table td.col-q-dir { min-width: 6em; white-space: nowrap; }
+.trial-table th.col-q-claim,
+.trial-table td.col-q-claim { min-width: 32em; }
+.trial-table th.col-q-strength,
+.trial-table td.col-q-strength { min-width: 7em; white-space: nowrap; }
+.trial-table th.col-q-popmatch,
+.trial-table td.col-q-popmatch { min-width: 22em; }
+.trial-table th.col-q-seat,
+.trial-table td.col-q-seat { min-width: 9em; white-space: nowrap; }
+.trial-table th.col-q-position,
+.trial-table td.col-q-position { min-width: 34em; }
+.trial-table th.col-q-carried,
+.trial-table td.col-q-carried { min-width: 8em; white-space: nowrap; }
+
+/* Libby-specific styling: case-fit / toxicity badges, agreement matrix, persona pills. */
+
+/* Bold links across all rendered content. */
+.md-typeset a {
+  font-weight: 700;
+}
+
+/* Case-fit badges (in trials.md). */
+.fit-badge {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.4em;
+  font-size: 0.78em;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+.fit-strong  { background: #E6F5EA; color: #14532D; border-color: #BBE2C7; }
+.fit-partial { background: #FFF7E0; color: #5A4500; border-color: #F1DD9A; }
+.fit-weak    { background: #FBE9E7; color: #6F2E1A; border-color: #ECC4BB; }
+.fit-none    { background: #F1F3F5; color: #4A5568; border-color: #E2E8F0; }
+
+/* Tumor-type-relation badges (trial table). */
+.rel-badge {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.4em;
+  font-size: 0.78em;
+  font-weight: 600;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.rel-indication  { background: #DDF1EE; color: #134E48; border-color: #B0DBD3; }
+.rel-basket      { background: #FFE9D6; color: #6F3A0F; border-color: #F0CFAE; }
+.rel-same-drug   { background: #DFEBFB; color: #1B3A6B; border-color: #B5CDEE; }
+.rel-cross-tumor { background: #F1E5FF; color: #441E72; border-color: #D4BBF2; }
+.rel-other       { background: #F1F3F5; color: #4A5568; border-color: #E2E8F0; }
+
+/* Risk-of-bias badges (evidence table). */
+.rob-badge {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.4em;
+  font-size: 0.78em;
+  font-weight: 600;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.rob-low  { background: #E6F5EA; color: #14532D; border-color: #BBE2C7; }
+.rob-med  { background: #FFF7E0; color: #5A4500; border-color: #F1DD9A; }
+.rob-high { background: #FBE9E7; color: #6F2E1A; border-color: #ECC4BB; }
+
+/* Toxicity flag pills. */
+.tox-flag {
+  display: inline-block;
+  padding: 0.05em 0.45em;
+  border-radius: 999px;
+  font-size: 0.75em;
+  background: #FBE9E7;
+  color: #6F2E1A;
+  border: 1px solid #ECC4BB;
+  margin-right: 0.25em;
+}
+
+/* Persona badges (board.md, recommendations.md). */
+.persona {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.35em;
+  font-size: 0.78em;
+  font-weight: 600;
+  margin-right: 0.25em;
+  border: 1px solid transparent;
+}
+.persona-risktaker    { background: #FFE9D6; color: #6F3A0F; border-color: #F0CFAE; }
+.persona-conservative { background: #DFEBFB; color: #1B3A6B; border-color: #B5CDEE; }
+.persona-critic       { background: #F1E5FF; color: #441E72; border-color: #D4BBF2; }
+.persona-concensusite { background: #DDF1EE; color: #134E48; border-color: #B0DBD3; }
+.persona-advocate     { background: #FFE5EE; color: #6E1638; border-color: #F0BBCB; }
+
+/* Agreement-level decorations. */
+.agree-endorse   { color: #14532D; font-weight: 600; }
+.agree-qualified { color: #5A4500; font-weight: 600; }
+.agree-dissent   { color: #6F2E1A; font-weight: 600; }
+.agree-veto      { color: #6F2E1A; font-weight: 700; text-decoration: underline; }
+
+/* Biomarker-conditional flag (inline in Intervention cell when scenario ends with :positive). */
+.scenario-conditional {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5A4500;
+  background: #FFF7E0;
+  border: 1px solid #F1DD9A;
+  border-radius: 0.35em;
+  padding: 0.05em 0.45em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+
+/* Counter-productive MoA descriptor (parenthetical text after the bold severity). */
+.cpm-desc {
+  font-size: 0.92em;
+  color: #4A5568;
+}
+
+/* Persona pill row inside the Intervention cell on the ranked-prioritization table. */
+.persona-line {
+  display: inline-block;
+  margin-top: 0.15em;
+  font-size: 0.78em;
+  color: #4A5568;
+}
+.persona-line + .persona-line {
+  margin-left: 0.6em;
+}
+
+/* Recommendation table marks. */
+.split-glyph { font-weight: 700; color: #5A4500; }
+/* not_recommended rows: mute, never strike through. The strikethrough used to
+   sit on the whole <tr>, so it struck the rationale columns too — and on a
+   rejected option the rationale is the most useful text in the row, since it
+   is what lets a reader stop considering it. Muting carries the de-emphasis;
+   the badge states the verdict in words, so the signal survives monochrome
+   printing and screen readers rather than resting on typography alone. */
+.not-recommended {
+  color: #4A5568;
+}
+.badge-not-recommended {
+  background: #FDECEA;
+  color: #8C2F22;
+  border-color: #F5C6C0;
+}
+
+/* surfaced_reason flag pills (Experimental "Also considered" table). Neutral,
+   muted pills — these rows are informational, not scored. */
+.flag-badge {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 999px;
+  font-size: 0.75em;
+  font-weight: 600;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.flag-unavailable    { background: #ECEFF1; color: #37474F; border-color: #CFD8DC; }
+.flag-consolidated   { background: #E8EAF6; color: #303F9F; border-color: #C5CAE9; }
+.flag-thin           { background: #FFF8E1; color: #7A5B00; border-color: #F0E1B0; }
+.flag-not-enrollable { background: #F3E5F5; color: #6A1B7A; border-color: #E1BEE7; }
+
+/* Disclaimer banner — applied to every case page via admonition. */
+.md-typeset .admonition.disclaimer {
+  border-color: #B71C1C;
+}
+.md-typeset .admonition.disclaimer > .admonition-title {
+  background-color: rgba(183, 28, 28, 0.08);
+  color: #B71C1C;
+}
+
+/* Agreement matrix heatmap (board.md). Pastel cells carry explicit
+   foreground+background that remain legible regardless of scheme; matrix
+   chrome (header, borders, no-opinion cells) uses scheme-aware selectors. */
+.agreement-matrix {
+  border-collapse: collapse;
+  font-size: 0.85em;
+}
+.agreement-matrix th, .agreement-matrix td {
+  padding: 0.35em 0.5em;
+  text-align: center;
+}
+.agreement-matrix th { font-weight: 600; }
+
+/* Pastel cell colors — same in both schemes (high contrast on their own bg). */
+.agreement-matrix td.cell-endorse   { background: #C8E6D0; color: #14532D; }
+.agreement-matrix td.cell-qualified { background: #FCEEC2; color: #5A4500; }
+.agreement-matrix td.cell-dissent   { background: #F4C7BE; color: #6F2E1A; }
+.agreement-matrix td.cell-veto      { background: #E8A399; color: #4A1408; font-weight: 700; }
+
+/* Default (light) scheme chrome. */
+[data-md-color-scheme="default"] .agreement-matrix th,
+[data-md-color-scheme="default"] .agreement-matrix td {
+  border: 1px solid #E2E8F0;
+  color: #1A202C;
+}
+[data-md-color-scheme="default"] .agreement-matrix th {
+  background: #F4F6F8;
+  color: #1A202C;
+}
+[data-md-color-scheme="default"] .agreement-matrix td.cell-absent {
+  background: #F1F3F5;
+  color: #94A3B8;
+}
+
+/* Slate (dark) scheme chrome. */
+[data-md-color-scheme="slate"] .agreement-matrix th,
+[data-md-color-scheme="slate"] .agreement-matrix td {
+  border: 1px solid #3A4159;
+  color: #E2E8F0;
+}
+[data-md-color-scheme="slate"] .agreement-matrix th {
+  background: #2D3344;
+  color: #F1F5F9;
+}
+[data-md-color-scheme="slate"] .agreement-matrix td.cell-absent {
+  background: #232838;
+  color: #64748B;
+}
+
+</style>
+</head>
+<body data-md-color-scheme="default">
+<div class="disclaimer">
+<strong>Decision support, not medical advice.</strong> Libby is an experimental 
+multi-agent decision-support tool. The information on this page has not been 
+reviewed by a clinician treating this patient. Information ages — confirm details 
+directly with the relevant sources before relying on them.
+</div>
+<h1 id="selected-general-biomarker-report-ulms-highgrade-pulm-mets-tp53-smarcb1-hla-a2-w9t4">Selected general biomarker report — <code>ulms-highgrade-pulm-mets-tp53-smarcb1-hla-a2-w9t4</code></h1>
+<p><em>Which biomarkers on the selected panel this patient has been tested for, and which have never been measured. The panel covers targets established in this tumor type, targets relevant across a subset of tumor types, and biomarkers that predict benefit regardless of where the tumor started, such as MSI-H/dMMR and high tumor mutational burden gating PD-1 blockade.</em></p>
+<h2 id="downloads">Downloads</h2>
+<ul>
+<li><a href="ulms-highgrade-pulm-mets-tp53-smarcb1-hla-a2-w9t4-biomarker-survey.html">Selected general biomarker report (offline HTML)</a> — the same survey, self-contained HTML that opens offline</li>
+<li><a href="ulms-highgrade-pulm-mets-tp53-smarcb1-hla-a2-w9t4-biomarker-survey.pdf">Selected general biomarker report (PDF)</a> — print-friendly, grouped by recommended action</li>
+</ul>
+<p><em>15 biomarkers surveyed: 12 with no usable result on file (2 essential), 2 measured but not to decision resolution, 1 already established. Panel coverage: 9 tumor-agnostic biomarkers plus 6 of 72 protein targets in scope for this tumor.</em></p>
+<p>Fifteen biomarkers were surveyed, and the source case's headline, a molecular landscape entirely unmeasured, no longer holds: a Guardant plasma ctDNA assay and HLA class I typing have since been done, and the gap narrowed rather than closed. Twelve were never measured, two measured short of decision grade, one settled. Four gaps are essential: MSI/dMMR, TMB, NTRK fusion, and HR/BRCA status.</p>
+<p>The Guardant tumor fraction was never supplied, so its non-detections exclude nothing: a plasma negative is not a tissue negative. NTRK and HR/BRCA rest on plasma non-detections that only an RNA fusion panel and a tissue HRD score with germline testing can harden. MSI/dMMR and TMB stayed not measured, deliberately: the plasma assay returned no call, so there is nothing to harden.</p>
+<p>HLA typing is settled; typing is not eligibility. A*02:01 is confirmed, converting MAGE-A4, PRAME and NY-ESO-1 from unassessable to live expression questions on one archival block. Leiomyosarcoma expression runs well below synovial sarcoma for MAGE-A4 and NY-ESO-1; PRAME is the likeliest of the three.</p>
+<p>Three bundles carry thirteen of the fourteen actionable rows: a comprehensive tissue DNA plus RNA panel, which also settles TP53 versus clonal hematopoiesis; an IHC block led by INI1; the cancer/testis stain set, plus a blood draw for the germline HR panel. The fourteenth, FAP, defers to imaging. All ride the 2024 resection held at an outside institution, so block release is the rate-limiting step; with LMS-04 pending, serial ordering costs weeks she does not have. The INI1 stain would turn the plasma SMARCB1 frameshift from hypothesis to actionable, against a hard prior: 170 consecutive uterine smooth-muscle tumors all retained SMARCB1. Eight rows hand off to the target-validation track by survey ID. Most of these tests will come back negative; the case for each is the size of the option a positive opens, not the odds of one.</p>
+<h2 id="gaps-biomarkers-with-no-usable-result-on-file">Gaps: biomarkers with no usable result on file</h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Priority</th><th>Biomarker</th><th>Status</th><th>Why it is in scope</th><th>Recommended assay</th><th>What a positive result would open</th><th>Next step</th><th>Rationale</th><th>References</th></tr></thead>
+      <tbody>
+    <tr><td><span class="fit-badge fit-strong">essential</span></td><td><strong>Microsatellite instability / mismatch-repair deficiency (MSI-H / dMMR)</strong><br><small class="persona-line">Tumor-agnostic</small></td><td>Not measured</td><td>MSI-H and dMMR are read the same way whatever the primary site. Nothing in this record speaks to mismatch repair, and she becomes a checkpoint-blockade candidate the moment the planned first-line regimen stops working.</td><td><strong>MMR protein IHC (MLH1, PMS2, MSH2, MSH6) on tumor tissue</strong><br><small>IHC · Archival FFPE; the September 2024 hysterectomy specimen has more tissue to spare, the 2026 lung core reflects current disease · 3-5 days</small><br><small class="persona-line"><em>bundles with:</em> Single archival block cut for the IHC set: INI1/SMARCB1, MMR (MLH1, PMS2, MSH2, MSH6), PD-L1, HER2 and B7-H3</small></td><td><div><strong>pembrolizumab</strong> <small class="persona-line">(PD-1 inhibitor · tumor-agnostic approval)</small><br><small><a href="https://clinicaltrials.gov/study/NCT02628067">NCT02628067</a></small></div><div><strong>dostarlimab</strong> <small class="persona-line">(PD-1 inhibitor · tumor-agnostic approval)</small><br><small><a href="https://clinicaltrials.gov/study/NCT02715284">NCT02715284</a></small></div></td><td>Order now</td><td>Mismatch-repair status is still unassessed: the plasma assay returned no MSI call, and no stain or PCR has been run on either specimen. Uterine leiomyosarcoma is nearly always mismatch-repair proficient, so a negative is the expected result, and the case for testing is that four stains on a block already being cut for INI1 close a tumor-agnostic PD-1 indication that would otherwise sit open at progression. Loss of any one protein would also carry Lynch implications for a woman in her thirties and for her first-degree relatives.</td><td><a href="https://clinicaltrials.gov/study/NCT02628067">NCT02628067</a><br><a href="https://clinicaltrials.gov/study/NCT02715284">NCT02715284</a></td></tr>
+    <tr><td><span class="fit-badge fit-strong">essential</span></td><td><strong>Tumor mutational burden, high (TMB-H)</strong><br><small class="persona-line">Tumor-agnostic</small></td><td>Not measured</td><td>TMB at or above 10 mutations per megabase supports pembrolizumab whatever the primary site. The Guardant plasma assay did not report a TMB value, so TMB here is unknown rather than low.</td><td><strong>Validated comprehensive genomic profiling panel on tissue, reporting TMB in mutations per megabase</strong><br><small>NGS_panel · Archival FFPE; the September 2024 uterine resection is preferred for tumor content and volume · 2-3 weeks</small><br><small class="persona-line"><em>bundles with:</em> Comprehensive tissue DNA plus RNA genomic profiling on archival tumor tissue, the single order that also returns TMB, MSI, NTRK and RET fusions, BRAF codon 600, the HR genes, the RB1 / ATRX / MED12 backbone of this histology, and tissue confirmation of the plasma TP53 and SMARCB1 calls</small></td><td><div><strong>pembrolizumab</strong> <small class="persona-line">(PD-1 inhibitor · tumor-agnostic approval)</small><br><small><a href="https://clinicaltrials.gov/study/NCT02628067">NCT02628067</a></small></div></td><td>Order now</td><td>TMB is unreported: the plasma assay did not return one, and a plasma TMB at an unstated tumor fraction would not have been usable anyway. Leiomyosarcoma is copy-number driven and typically low-TMB, so a high value would be a surprise, but the tissue panel that reports it is the same order that settles MSI, the fusions, the HR genes, and whether the plasma TP53 call is tumor-derived. Ask explicitly for a validated comprehensive assay with a mutations-per-megabase figure, because a number off a small hotspot panel does not satisfy the indication.</td><td><a href="https://clinicaltrials.gov/study/NCT02628067">NCT02628067</a></td></tr>
+    <tr><td><span class="fit-badge fit-partial">high</span></td><td><strong>B7-H3 (CD276) protein expression</strong><br><small class="persona-line">Relevant across a tumor subset</small></td><td>Not measured</td><td>B7-H3 sits on tumor cells and tumor vasculature across soft tissue sarcoma: 97% of specimens positive and about 69% high in a 153-patient series covering 15 subtypes, leiomyosarcoma among them. Of the surface targets on the panel, this is the one most likely to be positive here.</td><td><strong>B7-H3 (CD276) IHC on tumor tissue</strong><br><small>IHC · Archival FFPE; the 2026 lung core reflects current disease, the 2024 resection has more tissue and reads heterogeneity better · 1 week</small><br><small class="persona-line"><em>bundles with:</em> Single archival block cut for the IHC set: INI1/SMARCB1, MMR (MLH1, PMS2, MSH2, MSH6), PD-L1, HER2 and B7-H3</small></td><td><div><strong>ifinatamab deruxtecan</strong> <small class="persona-line">(B7-H3-directed ADC · trial only)</small></div><div><strong>enoblituzumab</strong> <small class="persona-line">(mAb · trial only)</small></div><div><strong>vobramitamab duocarmazine</strong> <small class="persona-line">(ADC · trial only)</small></div></td><td>Bundle with planned testing</td><td>B7-H3 has still not been stained, and it carries the best odds of a positive result of any surface target in scope. Nothing is approved against it, so a positive buys trial access rather than a prescription, and the ADC, CAR-T and bispecific programs generally require documented expression at screening. Adding it to the block already being cut for INI1 and the MMR stains keeps a later trial referral from stalling while someone hunts for tissue.</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/39478506">PMID&nbsp;39478506</a></td></tr>
+    <tr><td><span class="fit-badge fit-partial">high</span></td><td><strong>MAGE-A4 expression (HLA-A*02:01-restricted)</strong><br><small class="persona-line">Relevant across a tumor subset</small></td><td>Not measured</td><td>MAGE-A4 carries the first approved TCR-T therapy for a solid tumor, and this patient clears its restriction gate: allele-level typing confirms HLA-A*02:01. Expression has never been tested, and it is the only remaining half of the screening question.</td><td><strong>MAGE-A4 expression by IHC or RT-PCR on tumor tissue, scored per the candidate program&#x27;s screening assay</strong><br><small>IHC · Archival FFPE; RT-PCR tolerates lower tumor content than IHC scoring · 1-2 weeks</small><br><small class="persona-line"><em>bundles with:</em> Cancer/testis antigen IHC set (MAGE-A4, PRAME, NY-ESO-1) on one archival block, now unconditional because HLA-A*02:01 is confirmed</small></td><td><div><strong>afamitresgene autoleucel</strong> <small class="persona-line">(MAGE-A4-directed TCR-T · approved, other tumor type)</small></div><div><strong>uzatresgene autoleucel</strong> <small class="persona-line">(MAGE-A4-directed TCR-T · trial only)</small></div></td><td>Order if tissue available</td><td>The expensive half of this question is already answered: she is HLA-A*02:01 positive, so MAGE-A4 expression is the only thing standing between her and a class of agents she is a plausible candidate for. Expression in leiomyosarcoma runs well below the 70 to 80 percent seen in synovial sarcoma, so a negative is a realistic and useful outcome, and even a positive would not make her eligible for afamitresgene autoleucel, whose licence covers synovial sarcoma alone. The realistic route is a MAGE-A4 solid-tumor TCR-T trial, and the stain is what decides whether that door is open or shut.</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/38554725">PMID&nbsp;38554725</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/36624315">PMID&nbsp;36624315</a></td></tr>
+    <tr><td><span class="fit-badge fit-partial">high</span></td><td><strong>PRAME expression (HLA-A*02:01-restricted)</strong><br><small class="persona-line">Relevant across a tumor subset</small></td><td>Not measured</td><td>PRAME is expressed in a subset of sarcomas including leiomyosarcoma, and the ImmTAC and TCR-T programs behind it enrol HLA-A*02:01-positive patients, which she is. Antigen expression has never been measured.</td><td><strong>PRAME expression by validated IHC or RT-PCR at the threshold the candidate protocol specifies</strong><br><small>IHC · Archival FFPE; RT-PCR tolerates lower tumor content than IHC scoring · 1-2 weeks</small><br><small class="persona-line"><em>bundles with:</em> Cancer/testis antigen IHC set (MAGE-A4, PRAME, NY-ESO-1) on one archival block, now unconditional because HLA-A*02:01 is confirmed</small></td><td><div><strong>brenetafusp</strong> <small class="persona-line">(PRAME-directed bispecific TCR (ImmTAC) · trial only)</small></div><div><strong>IMA203</strong> <small class="persona-line">(PRAME-directed TCR-T · trial only)</small></div></td><td>Order if tissue available</td><td>PRAME is now a straight expression question, because the HLA gate that used to make it unassessable is answered. Of the three cancer/testis antigens in scope it has the most credible chance of being positive in this histology, and both programs behind it enrol HLA-A*02:01-positive, PRAME-expressing solid tumors, so a positive buys trial access rather than a prescription. Reported expression in leiomyosarcoma runs below synovial sarcoma, so a negative stain would not be surprising and would close the axis cleanly.</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40205198">PMID&nbsp;40205198</a></td></tr>
+    <tr><td><span class="fit-badge fit-weak">medium</span></td><td><strong>BRAF V600E mutation</strong><br><small class="persona-line">Tumor-agnostic</small></td><td>Not measured</td><td>BRAF V600E is actionable across nearly all primary sites, colorectal excepted. It is a rarity in leiomyosarcoma, and it belongs on the list because any comprehensive tissue panel reports codon 600 whether or not anyone thought to ask.</td><td><strong>Tumor NGS panel covering BRAF codon 600</strong><br><small>NGS_panel · Archival FFPE · 2-3 weeks</small><br><small class="persona-line"><em>bundles with:</em> Comprehensive tissue DNA plus RNA genomic profiling on archival tumor tissue, the single order that also returns TMB, MSI, NTRK and RET fusions, BRAF codon 600, the HR genes, the RB1 / ATRX / MED12 backbone of this histology, and tissue confirmation of the plasma TP53 and SMARCB1 calls</small></td><td><div><strong>dabrafenib plus trametinib</strong> <small class="persona-line">(BRAF inhibitor plus MEK inhibitor · tumor-agnostic approval)</small><br><small><a href="https://clinicaltrials.gov/study/NCT02034110">NCT02034110</a></small></div></td><td>Bundle with planned testing</td><td>No BRAF result is on file and the prior probability in uterine leiomyosarcoma is very low. No separate order is warranted: codon 600 is covered by the comprehensive tissue panel already recommended for TMB, MSI and the HR genes. Non-V600E class II and III BRAF alterations, should any turn up, do not carry this indication.</td><td><a href="https://clinicaltrials.gov/study/NCT02034110">NCT02034110</a></td></tr>
+    <tr><td><span class="fit-badge fit-weak">medium</span></td><td><strong>HER2 protein overexpression (IHC 3+)</strong><br><small class="persona-line">Tumor-agnostic</small></td><td>Not measured</td><td>HER2 IHC 3+ supports trastuzumab deruxtecan irrespective of primary site. Strong HER2 staining is uncommon in leiomyosarcoma, but nothing on file addresses it and the stain is routine.</td><td><strong>HER2 IHC on tumor tissue</strong><br><small>IHC · Archival FFPE block · 1 week</small><br><small class="persona-line"><em>bundles with:</em> Single archival block cut for the IHC set: INI1/SMARCB1, MMR (MLH1, PMS2, MSH2, MSH6), PD-L1, HER2 and B7-H3; ERBB2 copy number also comes off the comprehensive tissue NGS panel</small></td><td><div><strong>trastuzumab deruxtecan</strong> <small class="persona-line">(HER2-directed ADC · tumor-agnostic approval)</small><br><small><a href="https://clinicaltrials.gov/study/NCT04482309">NCT04482309</a></small></div></td><td>Bundle with planned testing</td><td>HER2 protein expression is untested. Only 3+ carries the tumor-agnostic indication and 3+ is unlikely in uterine leiomyosarcoma, so a 1+ or 2+ result should be reported as HER2-low and read as a weaker, less reliable signal rather than as a positive. A block is being cut for other stains anyway, which makes adding HER2 cheap and settles the question either way. The ERBB3 G914E variant on the plasma report sits at 0.9% VAF, near the assay limit of detection, and is not a reason to pursue the HER family.</td><td><a href="https://clinicaltrials.gov/study/NCT04482309">NCT04482309</a></td></tr>
+    <tr><td><span class="fit-badge fit-weak">medium</span></td><td><strong>RET gene fusion</strong><br><small class="persona-line">Tumor-agnostic</small></td><td>Not measured</td><td>The RET fusion indication ignores primary site. RET fusions in uterine leiomyosarcoma are rare to the point of being anecdotal, but the RNA fusion assay ordered for NTRK answers RET in the same run.</td><td><strong>RNA-based fusion NGS panel covering RET</strong><br><small>NGS_panel · Archival FFPE · 2-3 weeks</small><br><small class="persona-line"><em>bundles with:</em> Comprehensive tissue DNA plus RNA genomic profiling on archival tumor tissue, the single order that also returns TMB, MSI, NTRK and RET fusions, BRAF codon 600, the HR genes, the RB1 / ATRX / MED12 backbone of this histology, and tissue confirmation of the plasma TP53 and SMARCB1 calls</small></td><td><div><strong>selpercatinib</strong> <small class="persona-line">(selective RET inhibitor · tumor-agnostic approval)</small><br><small><a href="https://clinicaltrials.gov/study/NCT03157128">NCT03157128</a></small></div></td><td>Bundle with planned testing</td><td>RET fusion is untested and will almost certainly be negative in this histology, and the plasma report on file does not enumerate a RET result either way. It earns a row because it costs nothing extra once an RNA fusion panel is ordered for NTRK, and because a positive would put an oral targeted agent ahead of further cytotoxic chemotherapy. A RET point mutation is a different finding and does not carry this indication.</td><td><a href="https://clinicaltrials.gov/study/NCT03157128">NCT03157128</a></td></tr>
+    <tr><td><span class="fit-badge fit-weak">medium</span></td><td><strong>FAP (fibroblast activation protein) expression</strong><br><small class="persona-line">Relevant across a tumor subset</small></td><td>Not measured</td><td>FAP is the panel&#x27;s stromal target, and mesenchymal tumors carry it on the malignant cells as well as on associated fibroblasts, which is why sarcoma shows up so reliably on FAPI PET. The panel&#x27;s expression evidence comes from carcinoma stroma, so read sarcoma relevance as supported by imaging rather than by an IHC series in this histology.</td><td><strong>FAP IHC on archival tissue, or FAPI PET where a FAP-directed program requires it</strong><br><small>IHC · Archival FFPE · 1-2 weeks</small><br><small class="persona-line"><em>bundles with:</em> The archival IHC block if a FAP-directed program comes into play; otherwise the trial&#x27;s own screening assay</small></td><td><div><strong>177Lu-FAP-2286</strong> <small class="persona-line">(radioligand therapy · trial only)</small></div><div><strong>RO7300490</strong> <small class="persona-line">(bispecific (FAP-4-1BBL) · trial only)</small></div><div><strong>simlukafusp alfa</strong> <small class="persona-line">(FAP-IL2v immunocytokine · trial only)</small></div></td><td>Defer</td><td>FAP is untested, and no FAP-directed agent is approved anywhere, so a positive would matter only if a radioligand or bispecific trial were within reach. FAP IHC is not a routine clinical stain and most laboratories do not offer it, which makes speculative testing a poor use of a block that several higher-yield stains are already queued on. Revisit if a FAP-directed trial becomes a live option, at which point FAPI PET is usually the practical screening route and spends no tissue.</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/32601975">PMID&nbsp;32601975</a></td></tr>
+    <tr><td><span class="fit-badge fit-weak">medium</span></td><td><strong>NY-ESO-1 (CTAG1B) expression, HLA-A*02:01-restricted</strong><br><small class="persona-line">Relevant across a tumor subset</small></td><td>Not measured</td><td>NY-ESO-1 is the third A*02:01-restricted cancer/testis antigen with a clinical-stage TCR-T program, and the restriction gate is satisfied. Its expression evidence sits in synovial sarcoma and myxoid liposarcoma rather than leiomyosarcoma, so the prior here is low.</td><td><strong>NY-ESO-1 expression by IHC or RT-PCR, run alongside MAGE-A4 and PRAME on the same block</strong><br><small>IHC · Archival FFPE; RT-PCR is the more forgiving option at low tumor content · 1-2 weeks</small><br><small class="persona-line"><em>bundles with:</em> Cancer/testis antigen IHC set (MAGE-A4, PRAME, NY-ESO-1) on one archival block, now unconditional because HLA-A*02:01 is confirmed</small></td><td><div><strong>letetresgene autoleucel</strong> <small class="persona-line">(NY-ESO-1-directed TCR-T · trial only)</small><br><small><a href="https://clinicaltrials.gov/study/NCT03967223">NCT03967223</a></small></div></td><td>Bundle with planned testing</td><td>NY-ESO-1 is an expression question now rather than an unassessable one, since HLA-A*02:01 is confirmed, but the prior probability in leiomyosarcoma is low. Letetresgene autoleucel is being developed in synovial sarcoma and myxoid/round cell liposarcoma, so even a positive stain would point at a solid-tumor cohort rather than a trial written for this histology. Add it to the cancer/testis block being cut for MAGE-A4 and PRAME rather than ordering it on its own.</td><td><a href="https://clinicaltrials.gov/study/NCT03967223">NCT03967223</a></td></tr>
+    <tr><td><span class="fit-badge fit-weak">medium</span></td><td><strong>PD-L1 protein expression</strong><br><small class="persona-line">Relevant across a tumor subset</small></td><td>Not measured</td><td>PD-L1 gates no approval in soft tissue sarcoma, so this is supporting rather than decisive. It stays in scope because the pulmonary lesions were read as infiltrative and possibly inflammatory, which makes the immune phenotype a question someone will raise.</td><td><strong>PD-L1 IHC using the clone and scoring system matched to the intended agent</strong><br><small>IHC · Archival FFPE; the 2026 lung core is the more informative specimen for current immune phenotype · 1 week</small><br><small class="persona-line"><em>bundles with:</em> Single archival block cut for the IHC set: INI1/SMARCB1, MMR (MLH1, PMS2, MSH2, MSH6), PD-L1, HER2 and B7-H3</small></td><td><div><strong>PD-1 / PD-L1 inhibitors</strong> <small class="persona-line">(checkpoint inhibitor · trial only)</small></div></td><td>Bundle with planned testing</td><td>PD-L1 has not been stained and cannot be read off a plasma assay. In sarcoma it neither opens nor closes a labelled indication, so treat the result as supporting information for trial screening and for weighing any checkpoint-blockade proposal rather than as a decision point. If it is stained, use the lung metastasis and match the clone and cutoff to whichever agent is under consideration, because a result generated for one companion diagnostic does not transfer to another indication.</td><td>—</td></tr>
+    <tr><td><span class="fit-badge fit-none">low</span></td><td><strong>AXL receptor tyrosine kinase expression</strong><br><small class="persona-line">Relevant across a tumor subset</small></td><td>Not measured</td><td>AXL marks mesenchymal and EMT-high tumor cells, which is the constitutive state of a sarcoma rather than an acquired one, and it tracks with chemotherapy resistance. The panel&#x27;s expression evidence comes from carcinomas, so read this as plausible in leiomyosarcoma rather than established.</td><td><strong>AXL IHC on tumor tissue</strong><br><small>IHC · Archival FFPE · 1-2 weeks</small><br><small class="persona-line"><em>bundles with:</em> Would ride on the archival IHC block if an AXL-directed program required documented expression</small></td><td><div><strong>enapotamab vedotin</strong> <small class="persona-line">(ADC · trial only)</small></div><div><strong>tilvestamab</strong> <small class="persona-line">(mAb · trial only)</small></div></td><td>Defer</td><td>AXL has not been assessed, and no AXL-directed agent is approved: enapotamab vedotin and tilvestamab both stopped at completed early-phase studies. Testing would not change anything she can access now or at progression. Revisit only if an AXL-directed program opens with an expression-based entry criterion.</td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2 id="what-this-collapses-to">What this collapses to</h2>
+<p><em>The gaps above resolve onto this many distinct orders. Biomarkers that ride along on the same assay are grouped together.</em></p>
+<ul>
+<li><strong>Cancer/testis antigen IHC set (MAGE-A4, PRAME, NY-ESO-1) on one archival block, now unconditional because HLA-A*02:01 is confirmed</strong> — MAGE-A4 expression (HLA-A<em>02:01-restricted), NY-ESO-1 (CTAG1B) expression, HLA-A</em>02:01-restricted, PRAME expression (HLA-A*02:01-restricted)</li>
+<li><strong>Comprehensive tissue DNA plus RNA genomic profiling on archival tumor tissue, the single order that also returns TMB, MSI, NTRK and RET fusions, BRAF codon 600, the HR genes, the RB1 / ATRX / MED12 backbone of this histology, and tissue confirmation of the plasma TP53 and SMARCB1 calls</strong> — BRAF V600E mutation, RET gene fusion, Tumor mutational burden, high (TMB-H)</li>
+<li><strong>Single archival block cut for the IHC set: INI1/SMARCB1, MMR (MLH1, PMS2, MSH2, MSH6), PD-L1, HER2 and B7-H3</strong> — B7-H3 (CD276) protein expression, Microsatellite instability / mismatch-repair deficiency (MSI-H / dMMR), PD-L1 protein expression</li>
+<li><strong>Single archival block cut for the IHC set: INI1/SMARCB1, MMR (MLH1, PMS2, MSH2, MSH6), PD-L1, HER2 and B7-H3; ERBB2 copy number also comes off the comprehensive tissue NGS panel</strong> — HER2 protein overexpression (IHC 3+)</li>
+<li><strong>The archival IHC block if a FAP-directed program comes into play; otherwise the trial&#x27;s own screening assay</strong> — FAP (fibroblast activation protein) expression</li>
+<li><strong>Would ride on the archival IHC block if an AXL-directed program required documented expression</strong> — AXL receptor tyrosine kinase expression</li>
+</ul>
+<h2 id="measured-but-not-to-decision-resolution">Measured, but not to decision resolution</h2>
+<p><em>A result exists for each of these, but not at the resolution a treatment decision needs. The workup that would close each gap is carried into the <a href="target_validation.md">Target validation paths</a> report.</em></p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Priority</th><th>Biomarker</th><th>What is on file</th><th>Gap</th><th>What would close it</th><th>Next step</th><th>References</th></tr></thead>
+      <tbody>
+    <tr><td><span class="fit-badge fit-strong">essential</span></td><td><strong>NTRK1 / NTRK2 / NTRK3 gene fusion</strong><br><small class="persona-line">Tumor-agnostic</small></td><td>profile.json:biomarkers[13] NTRK fusion: &#x27;not settled by the Guardant plasma panel (fusion detection in plasma is insensitive at low tumor fraction)&#x27;, confirmation_status &#x27;ngs_pending&#x27;; no RNA-based fusion panel and no tissue DNA NGS with fusion calling on file; profile.json:organ_function.note_ctdna_tumor_fraction: plasma tumor fraction was not supplied, so non-detection on the plasma assay is non-exclusionary</td><td>All that is on file is non-detection on a plasma DNA assay run at an unstated tumor fraction. Plasma fusion calling is insensitive when shedding is low, and DNA capture misses breakpoints sitting in large NTRK introns. An RNA-based fusion panel on archival tissue, covering NTRK1, NTRK2 and NTRK3, is what would let a negative be read as a negative.</td><td><strong>RNA-based fusion NGS panel covering NTRK1/2/3 on archival tissue</strong><br><small>NGS_panel · Archival FFPE; the 2024 hysterectomy specimen is preferred for volume, the 2026 lung core is acceptable · 2-3 weeks</small><br><small class="persona-line"><em>bundles with:</em> Comprehensive tissue DNA plus RNA genomic profiling on archival tumor tissue, the single order that also returns TMB, MSI, NTRK and RET fusions, BRAF codon 600, the HR genes, the RB1 / ATRX / MED12 backbone of this histology, and tissue confirmation of the plasma TP53 and SMARCB1 calls</small></td><td>Order now</td><td><a href="https://clinicaltrials.gov/study/NCT02576431">NCT02576431</a><br><a href="https://clinicaltrials.gov/study/NCT02568267">NCT02568267</a><br><a href="https://clinicaltrials.gov/study/NCT03093116">NCT03093116</a></td></tr>
+    <tr><td><span class="fit-badge fit-strong">essential</span></td><td><strong>Homologous recombination deficiency / BRCA1 / BRCA2 pathogenic variant</strong><br><small class="persona-line">Relevant across a tumor subset</small></td><td>profile.json:biomarkers[12] Homologous recombination status incl. BRCA2: &#x27;not settled by the Guardant plasma panel (no BRCA1/2 alteration reported, but plasma sensitivity is limited at low tumor fraction and HRD signatures require tissue)&#x27;, confirmation_status &#x27;ngs_pending&#x27;; no tissue HRD score and no germline multigene panel on file; profile.json:organ_function.note_ctdna_tumor_fraction: plasma tumor fraction was not supplied, so non-detection on the plasma assay is non-exclusionary</td><td>The plasma panel reported no BRCA1/2 alteration, at an unstated tumor fraction and with no genomic-instability score, and no germline testing has been done. Closing this needs tissue NGS across the HR genes with an HRD score, plus a germline multigene panel on blood.</td><td><strong>Tumor NGS covering BRCA1/2, PALB2, RAD51C, RAD51D and ATM with a genomic-instability (HRD) score, plus a germline multigene panel on blood</strong><br><small>NGS_panel · Archival FFPE for the somatic panel; whole blood for the germline panel · 2-3 weeks tumor, 2-4 weeks germline</small><br><small class="persona-line"><em>bundles with:</em> Comprehensive tissue DNA plus RNA genomic profiling on archival tumor tissue, the single order that also returns TMB, MSI, NTRK and RET fusions, BRAF codon 600, the HR genes, the RB1 / ATRX / MED12 backbone of this histology, and tissue confirmation of the plasma TP53 and SMARCB1 calls; germline panel on a single blood draw</small></td><td>Order now</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37467452">PMID&nbsp;37467452</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/37143137">PMID&nbsp;37143137</a><br><a href="https://clinicaltrials.gov/study/NCT03880019">NCT03880019</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2 id="already-established">Already established</h2>
+<p><em>On file at decision resolution. No further action from this survey.</em></p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Biomarker</th><th>Status</th><th>Where it is recorded</th><th>Note</th></tr></thead>
+      <tbody>
+    <tr><td><strong>HLA class I genotype</strong><br><small class="persona-line">Relevant across a tumor subset</small></td><td>Measured</td><td>profile.json:biomarkers[4] HLA class I typing (allele-level): A*02:01, A*03:01; B*39:01, B*44:02; C*05:01, C*12:03, confirmation_status &#x27;confirmed&#x27;; profile.json:targetable_features[2] carries the A*02:01 result as an opened axis pending antigen expression</td><td>Allele-level typing is done and positive for A*02:01, which is what lets the MAGE-A4, PRAME and NY-ESO-1 rows stand as expression questions instead of HLA questions. Nothing further is needed on the typing itself. Typing is not eligibility: each of those programs still requires demonstrated antigen expression on tumor tissue, and none of those stains has been done.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2 id="panel-targets-out-of-scope-for-this-tumor">Panel targets out of scope for this tumor</h2>
+<p>??? note "66 of 72 panel targets were screened and set aside"
+    Set aside as having no plausible connection to this patient's tumor type or stated features. Listed for completeness of the audit trail.</p>
+<pre><code>ALPPL2 · ANTXR1 · CA9 · CD19 · CD200 · CD37 · CD46 · CD70 · CDCP1 · CDH17 · CDH3 · CDH6 · CEACAM5 · CLDN18 · CLEC12A · CT83 · DLK1 · DLL3 · EGFR · EGFR (variant III) · ENPP3 · EPCAM · EPHA2 · EPHB4 · ERBB2 · ERBB3 · F3 · FOLH1 · FOLR1 · FZD7 · GPC3 · GPRC5D · GUCY2C · HAVCR1 · IL13RA2 · IL3RA · ITGA3 · ITGB6 · L1CAM · LGR5 · LILRB4 · LY6E · LYPD3 · MAGEA1 · MAGEC2 · MERTK · MET · MMP14 · MSLN · MUC1 · NECTIN4 · PODXL · PSCA · PTK7 · ROR1 · SEZ6 · SLC34A2 · SLC44A4 · SLITRK6 · SSTR2 · SSX2 · STEAP1 · TACSTD2 · TNFRSF10B · TNFRSF17 · TSPAN8
+</code></pre>
+<p>!!! note "Reading this report"
+    This page answers one question per biomarker: has this patient been tested for it, and was the test at a resolution that can carry a treatment decision. <strong>Not measured</strong> means nothing is on file, which is not the same as a negative result. <strong>Measured, not decision-grade</strong> means a result exists but cannot be acted on as it stands; those gaps are worked into the <a href="target_validation.md">Target validation paths</a> report. <strong>Priority</strong> weighs what is going unassessed against how routine the assay is. Most of these biomarkers will be negative if tested; the case for testing rests on the size of the option that opens if positive, not on how likely a positive is.</p>
+<footer class="libby-footer">Generated 2026-08-25 &middot; Libby &middot; <code>ulms-highgrade-pulm-mets-tp53-smarcb1-hla-a2-w9t4</code> &middot; Selected general biomarker report</footer>
+</body></html>

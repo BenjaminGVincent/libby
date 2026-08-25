@@ -155,6 +155,15 @@ ONCOLOGY_ACRONYM_ALLOWLIST = frozenset({
     "TIBSOVO", "IDHIFA", "OPDIVO", "WELIREG", "AG", "CC", "BMS",
     "DDLPS", "UPS", "RT", "CIRT", "PKR", "MTAP", "MTA",
     "LVEF", "MUGA", "ECG", "CMP", "CBC", "RECIST",
+    # Uterine-leiomyosarcoma run: the sarcoma-subtype pair "MFS, UPS", the
+    # aurora-kinase pair "AURKA, AURKB", and the DNA-repair target list
+    # "PARP, POLQ". Partner tokens UPS, AURKA and PARP were already listed, so
+    # only the missing halves are added here.
+    "MFS", "AURKB", "POLQ",
+    # Same run, rendered accessibility page: cell-therapy product shorthands
+    # ("DC-CIK, HRYZ-..."), the TCR-T trade name beside its development code
+    # ("TECELRA, ADP-A2M4"), and a chemo/society pair ("DTIC, GEIS").
+    "CIK", "HRYZ", "TECELRA", "ADP", "DTIC", "GEIS",
     "PDAC", "NAPOLI", "SPOTLIGHT", "GLOW", "GLEAM", "PYNNACLE",
     "ADCC", "CDC", "ADC", "MMAE", "KEYTRUDA", "MK",
     "ELI", "FG", "HPAF", "HPAC", "CLDN", "VYLOY", "VENTANA",

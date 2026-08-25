@@ -31,7 +31,7 @@ REPO = Path(__file__).resolve().parent.parent
 # so build_report imports cleanly and its __main__ guard keeps it inert.
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import build_report as br  # noqa: E402
-from libbylib import load_jsonl  # noqa: E402
+from libbylib import load_jsonl, drop_superseded  # noqa: E402
 
 PAGE_TITLE = "Standard of care options"
 
@@ -862,7 +862,10 @@ def main() -> int:
 
     case_dir = REPO / "data" / "cases" / slug
     case_docs = REPO / "docs" / "cases" / slug
-    rows = load_jsonl(case_dir / "standard_of_care.jsonl")
+    # Same append-only correction contract as accessibility.jsonl. The schema
+    # has carried `supersedes` since this artifact was introduced, but nothing
+    # honoured it, so a corrected row would have rendered twice.
+    rows = drop_superseded(load_jsonl(case_dir / "standard_of_care.jsonl"), "soc_id")
 
     page = case_docs / "standard_of_care.md"
     html_dst = case_docs / f"{slug}-standard-of-care.html"

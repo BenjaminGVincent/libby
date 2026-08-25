@@ -338,3 +338,52 @@ def test_nav_links_only_pages_that_exist(tmp_path):
     # recommendations.md was never rendered for this case; linking it would
     # break `mkdocs build --strict`.
     assert "(recommendations.md)" not in page
+
+
+# --- Append-only corrections -----------------------------------------------
+#
+# accessibility.jsonl and standard_of_care.jsonl are append-only, so a correction
+# arrives as a new row carrying `supersedes` rather than as an edit. Without the
+# filter both rows render and a reader sees the stale eligibility call beside the
+# corrected one, with nothing marking which is current. The standard_of_care
+# schema carried the field from the start but nothing honoured it.
+
+from libbylib import drop_superseded
+
+
+def test_superseded_row_is_dropped():
+    rows = [
+        {"soc_id": "a", "option_label": "Old call"},
+        {"soc_id": "b", "option_label": "Corrected call", "supersedes": "a"},
+    ]
+    kept = drop_superseded(rows, "soc_id")
+    assert [r["soc_id"] for r in kept] == ["b"]
+
+
+def test_no_supersedes_is_a_noop_and_preserves_order():
+    rows = [{"soc_id": "a"}, {"soc_id": "b"}, {"soc_id": "c"}]
+    assert drop_superseded(rows, "soc_id") == rows
+
+
+def test_works_for_accessibility_row_id_key():
+    rows = [
+        {"row_id": "x", "intervention_id": "drug"},
+        {"row_id": "x-v2", "intervention_id": "drug", "supersedes": "x"},
+    ]
+    kept = drop_superseded(rows, "row_id")
+    assert len(kept) == 1 and kept[0]["row_id"] == "x-v2"
+
+
+def test_rows_without_ids_are_kept():
+    rows = [{"option_label": "no id"}, {"soc_id": "b", "supersedes": "a"}]
+    assert len(drop_superseded(rows, "soc_id")) == 2
+
+
+def test_chained_supersedes_keeps_only_the_newest():
+    rows = [
+        {"soc_id": "v1"},
+        {"soc_id": "v2", "supersedes": "v1"},
+        {"soc_id": "v3", "supersedes": "v2"},
+    ]
+    kept = drop_superseded(rows, "soc_id")
+    assert [r["soc_id"] for r in kept] == ["v3"]

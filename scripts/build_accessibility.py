@@ -14,7 +14,7 @@ import html
 import json
 import sys
 from pathlib import Path
-from libbylib import load_jsonl
+from libbylib import load_jsonl, drop_superseded
 from libbylib import FEATURE_LABELS as _FEATURE_LABELS
 
 REPO = Path(__file__).resolve().parent.parent
@@ -323,7 +323,10 @@ def main() -> int:
     slug = args.slug
 
     case_dir = REPO / "data" / "cases" / slug
-    rows = load_jsonl(case_dir / "accessibility.jsonl")
+    # Append-only artifact: a correction is a new row carrying `supersedes`,
+    # so the replaced row must not also render or the page shows the stale
+    # eligibility call beside the corrected one with no marker of which is current.
+    rows = drop_superseded(load_jsonl(case_dir / "accessibility.jsonl"), "row_id")
     recs = load_jsonl(case_dir / "recommendations.jsonl")
     canonical = _build_canonical_order(recs)
 

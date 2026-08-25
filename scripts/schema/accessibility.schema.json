@@ -14,14 +14,29 @@
     "access_summary"
   ],
   "properties": {
-    "row_id": { "type": "string", "description": "Stable kebab-case ID, typically `<slug>-access-<intervention_id>`." },
-    "case_slug": { "type": "string" },
-    "intervention_id": { "type": "string", "description": "Matches the intervention_id used in clinical_evidence.jsonl / preclinical_evidence.jsonl / recommendations.jsonl." },
-    "intervention_label": { "type": "string" },
-    "modality": { "type": "string", "description": "Therapeutic modality (BiTE / trispecific / ADC / radioligand / CAR-T / CAR-NK / small molecule / monoclonal antibody / vaccine / other). Reuse the value from trials.jsonl when one exists." },
+    "row_id": {
+      "type": "string",
+      "description": "Stable kebab-case ID, typically `<slug>-access-<intervention_id>`."
+    },
+    "case_slug": {
+      "type": "string"
+    },
+    "intervention_id": {
+      "type": "string",
+      "description": "Matches the intervention_id used in clinical_evidence.jsonl / preclinical_evidence.jsonl / recommendations.jsonl."
+    },
+    "intervention_label": {
+      "type": "string"
+    },
+    "modality": {
+      "type": "string",
+      "description": "Therapeutic modality (BiTE / trispecific / ADC / radioligand / CAR-T / CAR-NK / small molecule / monoclonal antibody / vaccine / other). Reuse the value from trials.jsonl when one exists."
+    },
     "aliases": {
       "type": "array",
-      "items": { "type": "string" },
+      "items": {
+        "type": "string"
+      },
       "description": "Every known identifier — generic INN/USAN, pharma code, dev-program code, nicknames. Mirrored from trials.jsonl when available."
     },
     "access_status": {
@@ -56,19 +71,67 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["nct_id"],
+        "required": [
+          "nct_id"
+        ],
         "properties": {
-          "nct_id": { "type": "string" },
-          "title": { "type": "string" },
-          "phase": { "type": "string" },
-          "indication": { "type": "string" },
-          "patient_eligible": { "type": "string", "enum": ["yes", "likely", "unconfirmed", "no"], "description": "Does this trial accept the patient's tumor type per published eligibility?" },
-          "recruitment_status": { "type": "string", "enum": ["recruiting", "active not recruiting", "not yet recruiting", "enrolling by invitation", "completed", "terminated", "withdrawn", "suspended", "available", "no longer available", "temporarily not available", "approved for marketing", "unknown"] },
-          "central_contact_name": { "type": "string" },
-          "central_contact_email": { "type": "string" },
-          "central_contact_phone": { "type": "string" },
-          "sites_url": { "type": "string", "description": "URL on ClinicalTrials.gov for the trial's site list." },
-          "notes": { "type": "string", "description": "Slot availability, geography, time-to-screen, anything else useful for the user's outreach call." }
+          "nct_id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "phase": {
+            "type": "string"
+          },
+          "indication": {
+            "type": "string"
+          },
+          "patient_eligible": {
+            "type": "string",
+            "enum": [
+              "yes",
+              "likely",
+              "unconfirmed",
+              "no"
+            ],
+            "description": "Does this trial accept the patient's tumor type per published eligibility?"
+          },
+          "recruitment_status": {
+            "type": "string",
+            "enum": [
+              "recruiting",
+              "active not recruiting",
+              "not yet recruiting",
+              "enrolling by invitation",
+              "completed",
+              "terminated",
+              "withdrawn",
+              "suspended",
+              "available",
+              "no longer available",
+              "temporarily not available",
+              "approved for marketing",
+              "unknown"
+            ]
+          },
+          "central_contact_name": {
+            "type": "string"
+          },
+          "central_contact_email": {
+            "type": "string"
+          },
+          "central_contact_phone": {
+            "type": "string"
+          },
+          "sites_url": {
+            "type": "string",
+            "description": "URL on ClinicalTrials.gov for the trial's site list."
+          },
+          "notes": {
+            "type": "string",
+            "description": "Slot availability, geography, time-to-screen, anything else useful for the user's outreach call."
+          }
         }
       }
     },
@@ -77,14 +140,31 @@
       "additionalProperties": false,
       "description": "Manufacturer / marketer / sponsor contact info for medical-information inquiries, off-label requests, and compassionate-use requests.",
       "properties": {
-        "company": { "type": "string" },
-        "country_of_origin": { "type": "string" },
-        "medical_information_phone": { "type": "string" },
-        "medical_information_email": { "type": "string" },
-        "product_information_url": { "type": "string" },
-        "compassionate_use_url": { "type": "string", "description": "Direct URL for the manufacturer's compassionate-use / expanded-access portal when one exists." },
-        "compassionate_use_email": { "type": "string" },
-        "notes": { "type": "string" }
+        "company": {
+          "type": "string"
+        },
+        "country_of_origin": {
+          "type": "string"
+        },
+        "medical_information_phone": {
+          "type": "string"
+        },
+        "medical_information_email": {
+          "type": "string"
+        },
+        "product_information_url": {
+          "type": "string"
+        },
+        "compassionate_use_url": {
+          "type": "string",
+          "description": "Direct URL for the manufacturer's compassionate-use / expanded-access portal when one exists."
+        },
+        "compassionate_use_email": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        }
       }
     },
     "payer_access_notes": {
@@ -97,7 +177,9 @@
     },
     "next_steps": {
       "type": "array",
-      "items": { "type": "string" },
+      "items": {
+        "type": "string"
+      },
       "description": "Ordered list of concrete actions the user / treating team should take to pursue this pathway. e.g. 'Confirm DLL3 IHC SP347 result before enrollment', 'Email the NCT06788938 central contact to request screening slot'."
     },
     "geographic_scope": {
@@ -111,6 +193,13 @@
     "notes": {
       "type": "string",
       "description": "Caveats, recent news, sponsor-side updates that don't fit the structured fields."
+    },
+    "supersedes": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "row_id of a prior row this one corrects or replaces. The artifact is append-only, so a correction is a new row rather than an edit; the renderers drop any row named here so a reader sees the corrected eligibility call once, not both calls side by side."
     }
   }
 }

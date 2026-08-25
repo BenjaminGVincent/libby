@@ -1,0 +1,179 @@
+{
+  "case_slug": "ulms-highgrade-pulm-mets-tp53-smarcb1-hla-a2-w9t4",
+  "age_band": "30-39",
+  "sex": "female",
+  "primary_site": "uterus (myometrium)",
+  "histology": "high-grade uterine leiomyosarcoma (uLMS), spindle-cell morphology; diagnosis confirmed on both the pulmonary biopsy and the re-reviewed uterine specimen by a reference pathology laboratory (August 2026)",
+  "stage": "metastatic (stage IV): bilateral pulmonary metastases. Radiologic read by the consulting sarcoma oncologist: lesions unusually infiltrative and possibly inflammatory in appearance. Primary resected September 2024 (signed out benign at the time); metastatic diagnosis July-August 2026",
+  "ecog": 1,
+  "biomarkers": [
+    {
+      "name": "ER (estrogen receptor)",
+      "value": "<1% positive (decision-relevant negative)",
+      "method": "IHC on tumor tissue",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "IHC; already at decision-relevant resolution. This negative forecloses endocrine strategies: aromatase inhibition has activity in ER-positive uLMS specifically."
+    },
+    {
+      "name": "PR (progesterone receptor)",
+      "value": "<1% positive (decision-relevant negative)",
+      "method": "IHC on tumor tissue",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "IHC; already at decision-relevant resolution. Together with ER <1%, closes the endocrine-therapy door."
+    },
+    {
+      "name": "SMARCB1 G344Afs*13 (frameshift, called pathogenic)",
+      "value": "detected on plasma ctDNA (Guardant liquid biopsy, August 2026). NOT yet confirmed on tumor tissue. A truncating SMARCB1 alteration raises the hypothesis of SMARCB1/INI1 deficiency, but SMARCB1 loss is uncommon in uterine leiomyosarcoma and a plasma-only call is a hypothesis, not an established tumor feature.",
+      "method": "plasma ctDNA NGS (Guardant); no tissue confirmation performed",
+      "confirmation_status": "ihc_pending",
+      "decision_resolution": "INI1/SMARCB1 IHC on tumor tissue (loss of nuclear INI1 staining) is the orthogonal, decision-relevant test; tissue NGS of the pulmonary biopsy or uterine specimen is a reasonable companion. Until INI1 IHC is done, SMARCB1-deficiency-directed strategies (e.g. EZH2 inhibition, approved in a different sarcoma histology on the basis of INI1 loss) remain a hypothesis branch, not an established option."
+    },
+    {
+      "name": "TP53 Q52* (nonsense, called pathogenic)",
+      "value": "detected on plasma ctDNA (Guardant liquid biopsy, August 2026). NOT tissue-confirmed. Carries an explicit clonal-haematopoiesis (CHIP) caveat: TP53 is the most common CHIP gene, and a ctDNA-only TP53 call in a patient with potentially low tumor fraction can originate from blood rather than tumor. TP53 alteration is also expected in the large majority of uLMS, so if tumor-derived it is unsurprising and largely prognostic rather than directly actionable.",
+      "method": "plasma ctDNA NGS (Guardant); no tissue or paired white-blood-cell sequencing performed",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "Tissue NGS, or paired white-blood-cell (buffy coat) sequencing to exclude clonal haematopoiesis, settles whether the variant is tumor-derived. Even if confirmed, TP53 loss in uLMS is chiefly prognostic/biologic context and trial-matching information, not a direct drug target."
+    },
+    {
+      "name": "HLA class I typing (allele-level)",
+      "value": "HLA-A*02:01, A*03:01; HLA-B*39:01, B*44:02; HLA-C*05:01, C*12:03. HLA-A*02:01 is present: this is the restriction allele required by the MAGE-A4 and NY-ESO-1 TCR-engineered T-cell programs. Typing alone is NOT eligibility; those programs also require tumor expression of the antigen by IHC, which has not been done.",
+      "method": "allele-level (high-resolution) HLA class I typing",
+      "confirmation_status": "confirmed",
+      "decision_resolution": "Typing is already at decision-relevant resolution. The dependent second step is antigen-expression IHC on tumor tissue (MAGE-A4, NY-ESO-1; PRAME for PRAME-directed programs) - type first, stain second. Eligibility for HLA-A*02:01-restricted TCR-T requires both."
+    },
+    {
+      "name": "MAGE-A4 expression",
+      "value": "not tested. Newly decision-relevant because HLA-A*02:01 is confirmed present: MAGE-A4 expression by IHC is the second, still-missing half of eligibility screening for A*02:01-restricted MAGE-A4 TCR-T programs (afamitresgene autoleucel is approved in synovial sarcoma; uLMS access would be via trial).",
+      "method": "none performed",
+      "confirmation_status": "ihc_pending",
+      "decision_resolution": "MAGE-A4 IHC on tumor tissue, scored per the relevant program's screening assay/threshold."
+    },
+    {
+      "name": "NY-ESO-1 expression",
+      "value": "not tested. Newly decision-relevant because HLA-A*02:01 is confirmed present: NY-ESO-1 expression by IHC is the second, still-missing half of eligibility screening for A*02:01-restricted NY-ESO-1 TCR-T programs (trial-only).",
+      "method": "none performed",
+      "confirmation_status": "ihc_pending",
+      "decision_resolution": "NY-ESO-1 IHC on tumor tissue, scored per the relevant program's screening assay/threshold."
+    },
+    {
+      "name": "PRAME expression",
+      "value": "not tested. Same type-first-stain-second dependency: HLA-A*02:01 is present, and PRAME-directed TCR/ImmTAC programs (trial-only) require demonstrated PRAME expression.",
+      "method": "none performed",
+      "confirmation_status": "ihc_pending",
+      "decision_resolution": "PRAME expression testing (IHC or the program's specified assay) on tumor tissue."
+    },
+    {
+      "name": "Guardant ctDNA variants of uncertain significance (recorded, not pursued)",
+      "value": "Four VUS at 0.09-1.1% VAF, at or near the assay limit of detection: ARAF L161Ffs*16 (0.09%), ERBB3 G914E (0.9%), GREM1 L14Sfs*70 (0.1%), P2RY8 R234S (1.1%). Two are frameshifts in genes with no established role in this histology. Treated as low-confidence subclonal or technical findings, not targetable features. Explicitly: ERBB3 G914E at 0.9% VAF is NOT a HER-family targeting rationale.",
+      "method": "plasma ctDNA NGS (Guardant, August 2026)",
+      "confirmation_status": "unknown",
+      "decision_resolution": "None planned. Recorded for transparency so a reader can see they were found and why they were not pursued. Tissue NGS, if performed for other reasons, would incidentally clarify them."
+    },
+    {
+      "name": "RB1",
+      "value": "no alteration reported on the plasma ctDNA assay; a plasma negative is not exclusionary (possible low tumor shedding, panel coverage limits). Tissue-level status remains unmeasured.",
+      "method": "plasma ctDNA NGS only (Guardant); no tissue NGS performed",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "Tissue NGS. Commonly altered in uLMS; informs biology and trial matching."
+    },
+    {
+      "name": "ATRX",
+      "value": "not reported on the plasma ctDNA assay (coverage uncertain); tissue-level status remains unmeasured",
+      "method": "no tissue NGS performed",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "Tissue NGS (with or without IHC for loss of expression)."
+    },
+    {
+      "name": "MED12",
+      "value": "not reported on the plasma ctDNA assay (coverage uncertain); tissue-level status remains unmeasured",
+      "method": "no tissue NGS performed",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "Tissue NGS."
+    },
+    {
+      "name": "Homologous recombination status incl. BRCA2",
+      "value": "not settled by the Guardant plasma panel (no BRCA1/2 alteration reported, but plasma sensitivity is limited at low tumor fraction and HRD signatures require tissue). Remains unmeasured at decision-relevant resolution.",
+      "method": "plasma ctDNA NGS only; no tissue HRD or germline testing performed",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "Tissue NGS with HRD signature or germline plus somatic BRCA1/2 testing. uLMS carries a recognised HRD subset relevant to PARP inhibition; this gates a real therapeutic branch."
+    },
+    {
+      "name": "NTRK fusion",
+      "value": "not settled by the Guardant plasma panel (fusion detection in plasma is insensitive at low tumor fraction). Remains unmeasured at decision-relevant resolution.",
+      "method": "plasma ctDNA NGS only; no RNA-based fusion panel performed",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "RNA-based fusion panel or tissue DNA NGS with fusion calling. Gates tumor-agnostic TRK inhibition."
+    },
+    {
+      "name": "TMB (tumor mutational burden)",
+      "value": "not reported on the Guardant assay; remains unmeasured. Plasma TMB at low tumor fraction is unreliable in any case.",
+      "method": "none reported",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "Tissue NGS with validated TMB reporting. Gates tumor-agnostic checkpoint-blockade eligibility at TMB-high."
+    },
+    {
+      "name": "MSI / MMR",
+      "value": "not settled by the Guardant plasma panel; remains unmeasured",
+      "method": "none performed on tissue",
+      "confirmation_status": "ngs_pending",
+      "decision_resolution": "MMR IHC or NGS/PCR MSI testing on tissue. Gates tumor-agnostic checkpoint blockade; rarely positive in uLMS but cheap to close."
+    },
+    {
+      "name": "PD-L1",
+      "value": "not tested (not assessable on a plasma assay)",
+      "method": "none performed",
+      "confirmation_status": "ihc_pending",
+      "decision_resolution": "PD-L1 IHC on tumor tissue (assay per intended agent). Informs, though does not by itself gate, checkpoint-blockade consideration in sarcoma."
+    }
+  ],
+  "prior_therapies": [
+    {
+      "regimen": "Hysterectomy with resection of a 6.0 cm myometrial mass (surgery, not systemic therapy) - performed September 2024 for presumed benign leiomyoma, signed out benign; malignancy not recognised at the time. The uterine case was amended after re-review in July 2026.",
+      "line": "surgical (initial resection of primary)",
+      "best_response": "NE"
+    }
+  ],
+  "current_therapy": "None yet. NO systemic therapy has been given to date. Planned (not started) first-line systemic therapy per the consulting sarcoma oncologist: doxorubicin + trabectedin with a maintenance phase (LMS-04 regimen) - aggressive induction, then maintenance. Systemic therapy first because multifocal disease must be treated systemically; local therapy (metastasectomy, SBRT) explicitly on the table after control is gained.",
+  "organ_function": {
+    "note_labs": "GAP: no laboratory values were supplied at intake or at this re-run. Nothing here is measured.",
+    "note_open_items": "Named open items before the planned regimen: baseline LVEF/echocardiogram (mandatory before doxorubicin); pulmonary function tests and resting/exertional oxygen saturation, interpreted against high-altitude residence; renal and hepatic panels (trabectedin carries hepatotoxicity); baseline haemoglobin (polycythaemia is expected at altitude and will confound anaemia assessment on chemotherapy).",
+    "residence_altitude_ft": 8500,
+    "note_altitude": "Resides at roughly 8,500 ft (~2,600 m). Retained because chronic hypoxic adaptation shifts the baseline for dyspnea, pulse oximetry, and haemoglobin, and bears on pulmonary reserve before an anthracycline. State of residence deliberately omitted.",
+    "note_ecog": "ASSUMPTION carried forward from the source case: ECOG 1 was NOT stated and is an intake assumption (symptomatic with cough and dyspnea, yet travelling for specialist consultation). The schema requires an integer with no unknown value. Must be confirmed before trial-eligibility calls.",
+    "note_smoking": "Lifetime never-smoker (relevant to interpreting the pulmonary findings and pulmonary reserve).",
+    "note_ctdna_tumor_fraction": "The Guardant report's overall tumor fraction was not supplied. The pathogenic calls sit at unstated VAF and the VUS at 0.09-1.1%, consistent with a possibly low ctDNA shed; this bears on the CHIP caveat for TP53 and on the weight given to plasma negatives."
+  },
+  "targetable_features": [
+    {
+      "feature": "High-grade uterine leiomyosarcoma histology",
+      "rationale": "The disease-defining feature, and it drives the whole systemic option set: trabectedin, doxorubicin, gemcitabine/docetaxel, pazopanib, eribulin. First-line doxorubicin + trabectedin with maintenance (LMS-04) is planned but not started, so the full first-line landscape is still open at this re-run."
+    },
+    {
+      "feature": "SMARCB1 G344Afs*13 (plasma ctDNA, pathogenic) - hypothesised SMARCB1/INI1 deficiency, UNCONFIRMED",
+      "rationale": "The potentially practice-changing finding of the new molecular workup, stated as a hypothesis, not a result. A truncating SMARCB1 alteration raises SMARCB1/INI1 deficiency, the target of an approved EZH2 inhibitor (tazemetostat) in a different sarcoma histology (epithelioid sarcoma); any use here would be off-label or trial-based cross-histology extrapolation, not approved standard care. Two hedges are load-bearing: (1) SMARCB1 loss is uncommon in uterine leiomyosarcoma, so the prior is low; (2) the call comes from plasma, not tissue. The orthogonal, decision-relevant test is INI1/SMARCB1 IHC on tumor tissue, and until that is done this branch is scenario-only. Expect PI branching on the ihc_pending status: confirmed INI1 loss opens EZH2-directed strategies; intact INI1 closes them."
+    },
+    {
+      "feature": "HLA-A*02:01 confirmed present - opens the A*02:01-restricted TCR-T axis, one step behind antigen-expression testing",
+      "rationale": "Allele-level typing confirms HLA-A*02:01, the restriction element required by the MAGE-A4 and NY-ESO-1 TCR-engineered T-cell programs (and PRAME-directed programs). This is a genuine actionable axis in sarcoma, but typing alone is not eligibility: those programs also require tumor expression of the antigen by IHC, which has not been done. The dependency is explicit - type first (done, positive), stain second (MAGE-A4, NY-ESO-1, PRAME all ihc_pending). MAGE-A4 TCR-T is approved in synovial sarcoma; uLMS access would be trial-based. Antigen-expression IHC on existing tumor tissue is the cheap next step that converts this from a door ajar to a screened option or a closed branch."
+    },
+    {
+      "feature": "ER and PR <1% by IHC (decision-relevant negative)",
+      "rationale": "A confirmed negative that closes the endocrine door: aromatase inhibition has activity in ER-positive uLMS specifically, and this tumor is hormone-receptor negative at the <1% cutoff. Recorded as a foreclosure, not merely as 'tested'."
+    },
+    {
+      "feature": "Remaining unmeasured molecular landscape (the gap has narrowed, not closed)",
+      "rationale": "The Guardant plasma assay and HLA typing replace 'entirely unmeasured' from the source case, but the decision-relevant tissue work is still outstanding: INI1/SMARCB1 IHC (gates the EZH2 branch), MAGE-A4 / NY-ESO-1 / PRAME IHC (gates the TCR-T branch), tissue NGS (settles TP53 vs CHIP, RB1/ATRX/MED12, TMB), HRD/BRCA testing (gates PARP inhibition; uLMS has a recognised HRD subset), NTRK fusion status (gates TRK inhibition), and MSI/MMR plus PD-L1 (gate or inform checkpoint blockade). Plasma negatives do not settle any of these given possible low tumor fraction. Closing this tissue-level gap is itself the first actionable step, and most of it can run on the existing pulmonary biopsy or uterine specimen."
+    },
+    {
+      "feature": "Bilateral pulmonary metastases with an infiltrative, possibly inflammatory radiologic pattern",
+      "rationale": "Bears on whether local therapy (metastasectomy, SBRT) becomes feasible after systemic control, which the consulting sarcoma oncologist explicitly kept on the table. The unusual radiologic read (infiltrative, possibly inflammatory) is itself a flag worth carrying: it may affect response assessment and local-therapy planning. High-altitude residence (~8,500 ft) shifts the baseline for dyspnea and oximetry when judging pulmonary compromise."
+    },
+    {
+      "feature": "~23-month interval between resection of the primary (September 2024, signed out benign) and correct diagnosis (July-August 2026)",
+      "rationale": "Clinically load-bearing for disease-tempo assessment: the primary was resected without recognised malignancy and the metastatic diagnosis came roughly 23 months later, which bounds the growth kinetics of the pulmonary disease. No systemic therapy was given in the interval, so the disease is systemic-therapy naive."
+    }
+  ],
+  "geography_band": "US",
+  "private": false
+}

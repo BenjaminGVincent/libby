@@ -1,0 +1,8 @@
+{
+  "case_slug": "ulms-highgrade-pulm-mets-tp53-smarcb1-hla-a2-w9t4",
+  "efficacy_toxicity_weight": 0.7,
+  "toxicity_vetoes": [],
+  "modality_constraints": [],
+  "prefers_trials": true,
+  "free_text_constraints": "Carried forward unchanged from source case ulms-highgrade-pulm-mets-er-pr-neg-qqvt; no new preferences were stated at this re-run and the new molecular information (Guardant ctDNA, HLA typing) does not itself change any preference. IMPORTANT: no preferences were stated by the user. Every value in this file is an assumed default with no user statement behind it: efficacy_toxicity_weight 0.7, empty toxicity_vetoes, empty modality_constraints, prefers_trials true. Goals of care were not discussed at intake. The ECOG of 1 in profile.json is likewise an unverified intake assumption (she is symptomatic with cough and dyspnea yet travelling for specialist consultation) and must be confirmed; downstream trial-eligibility calls depend on it. A patient in her 30s with a planned aggressive induction (doxorubicin + trabectedin, LMS-04) plausibly implies curative or maximal-disease-control intent, but that is inference, not a stated preference. She remains systemic-therapy naive with LMS-04 planned but not started. All of these need direct confirmation with the patient before they carry weight. prefers_trials true is newly load-bearing at this re-run: both hypothesis branches opened by the new data (SMARCB1/INI1-gated EZH2 inhibition; HLA-A*02:01-gated TCR-T) are trial or off-label pathways in this histology."
+}

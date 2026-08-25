@@ -46,3 +46,25 @@ FEATURE_LABELS: dict[str, str] = {
     "egfr_l858r": "EGFR L858R-targeting interventions",
     "met_amplification": "MET amplification-targeting interventions",
 }
+
+
+def drop_superseded(rows: list[dict], id_key: str) -> list[dict]:
+    """Drop rows that a later row supersedes.
+
+    Both `accessibility.jsonl` and `standard_of_care.jsonl` are append-only, so a
+    correction arrives as a new row carrying `supersedes: "<id of the row it
+    replaces>"` rather than as an edit. Without this filter both rows render and a
+    reader sees the stale eligibility call sitting next to the corrected one, with
+    nothing on the page saying which is current — the failure mode is silent and
+    reads as contradiction rather than as an error.
+
+    `id_key` is the artifact's identifier field (`row_id` / `soc_id`). Rows whose
+    id is named by any surviving row's `supersedes` are removed. Order is
+    preserved; rows without ids are kept untouched.
+    """
+    superseded = {
+        r.get("supersedes") for r in rows if r.get("supersedes")
+    }
+    if not superseded:
+        return rows
+    return [r for r in rows if r.get(id_key) not in superseded]
