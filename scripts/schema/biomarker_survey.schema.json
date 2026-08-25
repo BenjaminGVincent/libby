@@ -24,10 +24,15 @@
       "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
       "description": "Stable kebab-case row id, conventionally <panel_key>-<status shorthand> (e.g. 'tacstd2-not-measured', 'msi-dmmr-measured')."
     },
-    "case_slug": { "type": "string" },
+    "case_slug": {
+      "type": "string"
+    },
     "panel_source": {
       "type": "string",
-      "enum": ["selected_biomarker_panel", "tumor_agnostic_biomarkers"],
+      "enum": [
+        "selected_biomarker_panel",
+        "tumor_agnostic_biomarkers"
+      ],
       "description": "Which reference panel this row came from. Rows are never invented outside the panels."
     },
     "panel_key": {
@@ -35,7 +40,10 @@
       "description": "Verbatim `panel_key` from the source panel entry. The renderer joins on this to pull binder / therapeutic context."
     },
     "gene_symbol": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "description": "Primary gene symbol where the biomarker has one. Null for assay-level biomarkers such as TMB."
     },
     "biomarker_label": {
@@ -44,8 +52,13 @@
     },
     "relevance_class": {
       "type": "string",
-      "enum": ["tumor_type_specific", "tumor_subset", "tumor_agnostic"],
-      "description": "Why this biomarker is in scope for this patient: established in this tumor type, relevant across a subset of tumor types that includes this one, or predictive regardless of primary site."
+      "enum": [
+        "tumor_type_specific",
+        "tumor_subset",
+        "tumor_agnostic",
+        "screened_not_relevant"
+      ],
+      "description": "Why this biomarker is in scope for this patient: established in this tumor type, relevant across a subset of tumor types that includes this one, or predictive regardless of primary site. `screened_not_relevant` marks a panel entry that was assessed against this case and found to have no plausible connection to the tumour type or stated features. Such rows exist so the survey reports every biomarker considered rather than only the ones that survived scoping: a reader can then tell an absent biomarker from an unconsidered one. They are rendered in their own section, below the actionable rows, so full coverage does not bury signal."
     },
     "relevance_rationale": {
       "type": "string",
@@ -65,40 +78,91 @@
     },
     "status_evidence": {
       "type": "array",
-      "items": { "type": "string" },
+      "items": {
+        "type": "string"
+      },
       "description": "Where in the case record the status was read, as artifact pointers (e.g. 'profile.json:biomarkers[2] DLL3 RNA', 'target_validation.jsonl:dll3-ihc-confirmatory'). A not_measured row records what was searched, so 'absent from profile.json:biomarkers[]' is a valid entry. Never cite case/<slug>/ raw PHI."
     },
     "hardening_gap": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "maxLength": 600,
       "description": "Required (non-null) when measurement_status is measured_not_hardened: names precisely what is short of decision-grade and what would close it. This string is the payload the target_validator consumes."
     },
     "recommended_assay": {
-      "type": ["object", "null"],
+      "type": [
+        "object",
+        "null"
+      ],
       "description": "The concrete test that would answer this biomarker. Null only when no action is recommended (a measured_hardened row). `bundled_with` is what makes a long gap list practical: it names the single order that carries several of these rows at once.",
       "additionalProperties": false,
       "properties": {
-        "test_name": { "type": "string" },
+        "test_name": {
+          "type": "string"
+        },
         "assay_modality": {
-          "type": ["string", "null"],
+          "type": [
+            "string",
+            "null"
+          ],
           "enum": [
-            "IHC", "FISH", "PCR", "ddPCR", "NGS_panel", "WES", "WGS", "RNA_seq",
-            "methylation_array", "flow_cytometry", "tissue_microarray", "ctDNA",
-            "functional_assay", "imaging", "germline_panel", "hla_typing", "other", null
+            "IHC",
+            "FISH",
+            "PCR",
+            "ddPCR",
+            "NGS_panel",
+            "WES",
+            "WGS",
+            "RNA_seq",
+            "methylation_array",
+            "flow_cytometry",
+            "tissue_microarray",
+            "ctDNA",
+            "functional_assay",
+            "imaging",
+            "germline_panel",
+            "hla_typing",
+            "other",
+            null
           ]
         },
-        "tissue_required": { "type": ["string", "null"] },
-        "turnaround_estimate": { "type": ["string", "null"] },
+        "tissue_required": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "turnaround_estimate": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
         "cost_relative": {
-          "type": ["string", "null"],
-          "enum": ["low", "moderate", "high", null]
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "low",
+            "moderate",
+            "high",
+            null
+          ]
         },
         "bundled_with": {
-          "type": ["string", "null"],
+          "type": [
+            "string",
+            "null"
+          ],
           "description": "When this assay rides along on a test already recommended elsewhere (a comprehensive NGS panel that reports TMB and MSI together, a single IHC block cut for several stains), name it. Bundling is the main lever for keeping a long not-measured list practical."
         }
       },
-      "required": ["test_name"]
+      "required": [
+        "test_name"
+      ]
     },
     "therapeutic_implication": {
       "type": "array",
@@ -106,25 +170,69 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["intervention"],
+        "required": [
+          "intervention"
+        ],
         "properties": {
-          "intervention": { "type": "string" },
-          "modality": { "type": ["string", "null"] },
-          "development_stage": { "type": ["string", "null"] },
-          "approval_status": { "type": ["string", "null"] },
+          "intervention": {
+            "type": "string"
+          },
+          "modality": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "development_stage": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "approval_status": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
           "indication_match": {
-            "type": ["string", "null"],
-            "enum": ["approved_this_tumor_type", "approved_other_tumor_type", "tumor_agnostic", "trial_only", "preclinical_only", null],
+            "type": [
+              "string",
+              "null"
+            ],
+            "enum": [
+              "approved_this_tumor_type",
+              "approved_other_tumor_type",
+              "tumor_agnostic",
+              "trial_only",
+              "preclinical_only",
+              null
+            ],
             "description": "How the intervention's current status lines up with THIS patient's tumor type. The difference between an approved option and a cross-tumor extrapolation is the single most load-bearing distinction in this column."
           },
-          "nct_id": { "type": ["string", "null"] },
-          "notes": { "type": ["string", "null"] }
+          "nct_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "notes": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
         }
       }
     },
     "priority": {
       "type": "string",
-      "enum": ["essential", "high", "medium", "low"],
+      "enum": [
+        "essential",
+        "high",
+        "medium",
+        "low"
+      ],
       "description": "essential: a decision-grade option is being left unassessed and the assay is practical. high: meaningfully changes the option set. medium: refines or adds a trial-only option. low: research-grade or the therapeutic tail is thin."
     },
     "screening_recommendation": {
@@ -146,7 +254,9 @@
     },
     "references": {
       "type": "array",
-      "items": { "type": "string" },
+      "items": {
+        "type": "string"
+      },
       "description": "pmid:* / nct:* / guideline:* / fda:* citations, carried from the panel entry or added by the surveyor. Verified per .claude/snippets/reference_check.md before the row is written."
     },
     "handoff_to_target_validator": {
@@ -154,33 +264,65 @@
       "default": false,
       "description": "True when the target_validator should emit a corresponding hardening row in target_validation.jsonl. Set true on every measured_not_hardened row; may also be set on a not_assessable row whose prerequisite is itself an assay."
     },
-    "notes": { "type": ["string", "null"] },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
     "supersedes": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "description": "survey_id of a prior row this one corrects or replaces."
     }
   },
   "allOf": [
     {
       "if": {
-        "properties": { "measurement_status": { "const": "measured_not_hardened" } },
-        "required": ["measurement_status"]
+        "properties": {
+          "measurement_status": {
+            "const": "measured_not_hardened"
+          }
+        },
+        "required": [
+          "measurement_status"
+        ]
       },
       "then": {
         "properties": {
-          "hardening_gap": { "type": "string", "minLength": 1 },
-          "handoff_to_target_validator": { "const": true }
+          "hardening_gap": {
+            "type": "string",
+            "minLength": 1
+          },
+          "handoff_to_target_validator": {
+            "const": true
+          }
         },
-        "required": ["hardening_gap", "handoff_to_target_validator"]
+        "required": [
+          "hardening_gap",
+          "handoff_to_target_validator"
+        ]
       }
     },
     {
       "if": {
-        "properties": { "measurement_status": { "const": "measured_hardened" } },
-        "required": ["measurement_status"]
+        "properties": {
+          "measurement_status": {
+            "const": "measured_hardened"
+          }
+        },
+        "required": [
+          "measurement_status"
+        ]
       },
       "then": {
-        "properties": { "screening_recommendation": { "const": "no_action" } }
+        "properties": {
+          "screening_recommendation": {
+            "const": "no_action"
+          }
+        }
       }
     }
   ]

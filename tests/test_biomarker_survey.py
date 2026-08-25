@@ -224,3 +224,78 @@ def test_target_validation_marks_addressed_handoff():
 def test_target_validation_ignores_survey_without_handoffs():
     survey = [{"survey_id": "x", "handoff_to_target_validator": False}]
     assert btv.render_survey_handoffs(rows=[], survey=survey) == ""
+
+
+# --- Full-coverage surveys -------------------------------------------------
+#
+# The survey reports every biomarker considered, not only the ones that survived
+# scoping: an irrelevant panel entry gets a `screened_not_relevant` row carrying
+# its reason, instead of being omitted and reconstructed as a bare gene symbol.
+# Surveys written before that change omit them, and must keep rendering as built.
+
+import build_biomarker_survey as bs
+
+
+def _cov_row(key, cls, **kw):
+    r = {
+        "panel_key": key,
+        "biomarker_label": key.upper(),
+        "relevance_class": cls,
+        "measurement_status": "not_measured",
+        "priority": "low",
+        "relevance_rationale": f"reason for {key}",
+    }
+    r.update(kw)
+    return r
+
+
+def test_set_aside_rows_are_collected_and_not_double_counted():
+    rows = [
+        _cov_row("msi-dmmr", "tumor_agnostic"),
+        _cov_row("cd276", "tumor_subset"),
+        _cov_row("cldn18", "screened_not_relevant"),
+        _cov_row("gucy2c", "screened_not_relevant"),
+    ]
+    cov = bs.compute_coverage(rows)
+    assert len(cov["set_aside_rows"]) == 2
+    # A full survey omits nothing, so there is no subtraction list to show.
+    assert cov["out_of_scope"] == []
+
+
+def test_legacy_survey_still_derives_out_of_scope_by_subtraction():
+    """Surveys with no screened_not_relevant row keep the old behaviour."""
+    rows = [_cov_row("msi-dmmr", "tumor_agnostic"), _cov_row("cd276", "tumor_subset")]
+    cov = bs.compute_coverage(rows)
+    assert cov["set_aside_rows"] == []
+    assert len(cov["out_of_scope"]) > 0
+
+
+def test_a_reader_never_sees_both_lists():
+    """The two shapes are mutually exclusive; showing both would double-report."""
+    for rows in (
+        [_cov_row("msi-dmmr", "tumor_agnostic"), _cov_row("cldn18", "screened_not_relevant")],
+        [_cov_row("msi-dmmr", "tumor_agnostic")],
+    ):
+        cov = bs.compute_coverage(rows)
+        assert not (cov["set_aside_rows"] and cov["out_of_scope"])
+
+
+def test_set_aside_table_carries_the_reason_not_just_the_name():
+    """The whole point of the change: a per-target reason, which a bare gene
+    symbol list could not carry."""
+    html_out = bs.render_set_aside_table([_cov_row("cldn18", "screened_not_relevant")])
+    assert "reason for cldn18" in html_out
+    assert "<th>Why it was set aside</th>" in html_out
+
+
+def test_set_aside_table_stays_narrow():
+    """Two columns. Anything wider makes the section worth reading, which is the
+    opposite of the intent — the actionable tables sit above it."""
+    assert bs.render_set_aside_table([_cov_row("cldn18", "screened_not_relevant")]).count("<th>") == 2
+
+
+def test_indent_block_preserves_blank_lines():
+    """Indenting a blank line ends a mkdocs admonition early and spills the rest
+    of the table into the page body."""
+    out = bs._indent_block("a\n\nb")
+    assert out.splitlines() == ["    a", "", "    b"]

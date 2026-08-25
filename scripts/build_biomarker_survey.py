@@ -309,6 +309,40 @@ def render_measured_table(rows: list[dict]) -> str:
     return _table(head, body)
 
 
+def _indent_block(block: str, spaces: int = 4) -> str:
+    """Indent a rendered block so it nests inside a mkdocs `??? note` admonition.
+
+    Blank lines stay blank; indenting them would end the admonition early and
+    dump the rest of the table into the page body.
+    """
+    pad = " " * spaces
+    lines = [(pad + ln if ln.strip() else ln) for ln in block.splitlines()]
+    return "\n".join(lines) + "\n"
+
+
+def render_set_aside_table(rows: list[dict]) -> str:
+    """The panel entries assessed and found not relevant to this tumour.
+
+    Deliberately narrow: biomarker and the one-line reason. These rows exist so a
+    reader can tell "assessed and set aside, here is why" from "nobody looked",
+    which the old bare list of gene symbols could not do. Anything wider would
+    make the section worth reading, which is the opposite of the intent — the
+    actionable tables are above it.
+    """
+    if not rows:
+        return ""
+    head = "<th>Biomarker</th><th>Why it was set aside</th>"
+    body = []
+    for r in rows:
+        body.append(
+            "    <tr>"
+            f"{biomarker_cell(r)}"
+            f"<td>{fmt(r.get('relevance_rationale'))}</td>"
+            "</tr>"
+        )
+    return _table(head, body)
+
+
 def render_bundles(rows: list[dict]) -> str:
     """Collapse the recommended assays onto the orders that would carry them.
 
@@ -342,10 +376,21 @@ def render_bundles(rows: list[dict]) -> str:
 def compute_coverage(rows: list[dict]) -> dict:
     """Panel coverage, derived rather than stored.
 
-    The surveyor deliberately omits panel targets with no plausible connection to
-    this tumor, so the out-of-scope list is the panel minus the emitted rows. That
-    keeps the audit trail complete without padding the survey with 50 rows that
-    say "not relevant".
+    Two shapes are supported, distinguished by whether the survey carries any
+    `screened_not_relevant` row:
+
+    * **Full survey** (current contract). The surveyor emits a row for every
+      panel entry, classifying the irrelevant ones `screened_not_relevant`
+      rather than omitting them, so a reader can tell "assessed and set aside,
+      here is why" from "nobody looked". Those rows render as their own table.
+    * **Legacy shortlist.** Surveys written before that change omit the
+      irrelevant targets entirely, and the out-of-scope list is the panel minus
+      the emitted rows — a bare list of gene symbols with no per-target reason.
+      Kept so already-published cases still render as they were built.
+
+    `set_aside_rows` is the full-survey list and is empty for a legacy survey;
+    `out_of_scope` is the legacy list and is empty for a full survey. A reader
+    should never see both.
     """
     panel = load_json(PANEL_PATH)
     agnostic = load_json(AGNOSTIC_PATH)
@@ -357,13 +402,21 @@ def compute_coverage(rows: list[dict]) -> dict:
     agnostic_keys = {b["panel_key"]: b["biomarker_label"] for b in agnostic_entries if b.get("panel_key")}
 
     missing_agnostic = [label for key, label in agnostic_keys.items() if key not in surveyed]
-    out_of_scope = sorted(gene for key, gene in target_keys.items() if key not in surveyed)
 
+    set_aside_rows = [r for r in rows if r.get("relevance_class") == "screened_not_relevant"]
+    if set_aside_rows:
+        # Full survey: nothing is omitted, so there is no subtraction to do.
+        out_of_scope: list[str] = []
+    else:
+        out_of_scope = sorted(gene for key, gene in target_keys.items() if key not in surveyed)
+
+    set_aside_keys = {r.get("panel_key") for r in set_aside_rows}
     return {
         "panel_targets": len(target_keys),
         "panel_agnostic": len(agnostic_keys),
-        "targets_in_scope": len(target_keys) - len(out_of_scope),
+        "targets_in_scope": len(target_keys) - len(out_of_scope) - len(set_aside_keys),
         "out_of_scope": out_of_scope,
+        "set_aside_rows": set_aside_rows,
         "missing_agnostic": missing_agnostic,
         "panel_run": (panel.get("source") or {}).get("run_timestamp_iso"),
     }
@@ -533,7 +586,20 @@ def render_page(slug: str, rows: list[dict], coverage: dict, narrative: str = ""
         parts.append("_On file at decision resolution. No further action from this survey._\n")
         parts.append(render_measured_table(sorted(measured, key=sort_key)))
 
-    if coverage["out_of_scope"]:
+    if coverage["set_aside_rows"]:
+        parts.append("## Panel entries assessed and set aside\n")
+        parts.append(
+            f'??? note "{len(coverage["set_aside_rows"])} of '
+            f'{coverage["panel_targets"]} panel targets were assessed and set aside"\n'
+            "    Every biomarker on the reference panel is assessed for every case, so "
+            "this section records what was considered and why it was set aside rather "
+            "than leaving it absent. Collapsed because none of it carries an action.\n"
+        )
+        parts.append(
+            _indent_block(render_set_aside_table(coverage["set_aside_rows"]))
+        )
+    elif coverage["out_of_scope"]:
+        # Legacy shortlist survey: no per-target reason exists to render.
         parts.append("## Panel targets out of scope for this tumor\n")
         parts.append(
             f'??? note "{len(coverage["out_of_scope"])} of '
