@@ -283,15 +283,17 @@ def test_a_reader_never_sees_both_lists():
 def test_set_aside_table_carries_the_reason_not_just_the_name():
     """The whole point of the change: a per-target reason, which a bare gene
     symbol list could not carry."""
-    html_out = bs.render_set_aside_table([_cov_row("cldn18", "screened_not_relevant")])
+    html_out = bs.render_gap_table([_cov_row("cldn18", "screened_not_relevant")])
     assert "reason for cldn18" in html_out
-    assert "<th>Relevance to this case</th>" in html_out
 
 
-def test_set_aside_table_stays_narrow():
-    """Two columns. Anything wider makes the section worth reading, which is the
-    opposite of the intent — the actionable tables sit above it."""
-    assert bs.render_set_aside_table([_cov_row("cldn18", "screened_not_relevant")]).count("<th>") == 2
+def test_remaining_panel_uses_the_same_columns_as_the_gap_table():
+    """Same table, same columns. What separates these rows from a gap row is the
+    conclusion, not the depth of the record."""
+    row = _cov_row("cldn18", "screened_not_relevant")
+    assert bs.render_gap_table([row]).count("<th>") == bs.render_gap_table(
+        [_cov_row("msi-dmmr", "tumor_agnostic")]
+    ).count("<th>")
 
 
 def test_indent_block_preserves_blank_lines():
@@ -345,4 +347,5 @@ def test_remaining_panel_table_is_visible_not_collapsed():
     tail = page.split("## Remaining panel biomarkers", 1)[1]
     assert "??? note" not in tail
     assert "<details" not in tail
-    assert "<th>Relevance to this case</th>" in tail
+    assert "<th>Recommended assay</th>" in tail
+    assert "<th>What a positive result would open</th>" in tail

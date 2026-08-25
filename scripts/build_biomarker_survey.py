@@ -635,12 +635,13 @@ def render_page(slug: str, rows: list[dict], coverage: dict, narrative: str = ""
         parts.append("## Remaining panel biomarkers\n")
         parts.append(
             f'_The other {len(coverage["set_aside_rows"])} of '
-            f'{coverage["panel_targets"]} reference-panel targets, each assessed '
-            "against this case. None of them changes what to order today, and the "
-            "relevance call is given per biomarker so a reader searching for one "
-            "finds it here rather than finding nothing._\n"
+            f'{coverage["panel_targets"]} reference-panel targets, assessed against '
+            "this case and reported on the same terms as the gaps above: same "
+            "columns, same assay and implication detail. What differs is the "
+            "conclusion, not the depth of the record. None of them changes what to "
+            "order today._\n"
         )
-        parts.append(render_set_aside_table(
+        parts.append(render_gap_table(
             sorted(coverage["set_aside_rows"], key=sort_key)
         ))
     elif coverage["out_of_scope"]:

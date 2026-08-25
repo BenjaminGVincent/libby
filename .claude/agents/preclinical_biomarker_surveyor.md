@@ -47,15 +47,24 @@ Set `relevance_class` to say how the entry relates to this case:
 
 A target that appears in this case's stated features, trials, or evidence rows is decision-relevant **regardless of what the panel's tumor list says** — classify it by relevance, not by the panel's snapshot.
 
-### Keeping full coverage from burying the signal
+### These rows carry the same fields as every other row
 
-The reason this used to be a shortlist was real: a report where 50 rows say "not relevant" hides the handful that carry a decision. Full coverage is worth having anyway, but only if the `screened_not_relevant` rows stay cheap to skip. So:
+A `screened_not_relevant` row is a full row, not a stub. The renderer prints it in the **same table, with the same columns**, as the gap rows: priority, biomarker, status, why it is in scope, recommended assay, what a positive would open, next step, rationale, references. What separates it from a gap row is the conclusion, not the depth of the record — a reader who looks up a biomarker here gets the same account they would get for one in scope.
 
-- **Write them short.** A `screened_not_relevant` row needs a one-line `relevance_rationale` naming the actual reason ("expressed in colorectal and gastric adenocarcinoma; no reported expression in uterine smooth-muscle tumours"), `measurement_status: not_measured` unless something genuinely is on file, `priority: low`, and `screening_recommendation: no_action`. Do not research these; the panel's own `cancer_relevance` is the basis, and one sentence is the whole row.
-- **Never spend a hardening gap or a handoff on one.** `handoff_to_target_validator` stays false. If a target deserves a handoff, it was never `screened_not_relevant` — reclassify it.
-- **Reserve your judgment for the rows that carry weight.** The `measurement_status` call described below is the load-bearing work, and it applies to the in-scope rows. Getting a decision-relevant biomarker wrong matters; spending an extra paragraph explaining why a colorectal target is irrelevant to a sarcoma does not.
+So populate, for each:
 
-The renderer groups `screened_not_relevant` rows into their own section below the actionable ones, so a full survey reads the same as the old shortlist until a reader deliberately goes looking.
+- **`relevance_rationale`** — the relevance call, from the panel entry's own `cancer_relevance`. One or two sentences: which tumour types it is expressed in, and why this patient's histology is not among them.
+- **`recommended_assay`** — from the panel entry's `default_assay`. This is the assay that *would* be used if the target were in scope; recording it is what lets a reader judge the call rather than take it on trust.
+- **`therapeutic_implication`** — from the panel entry's `binders` / `best_binder` and `best_evidence_level`. What would open if this target were both relevant and positive. Where the panel lists no binder program, say so — "no binder program in the panel" is itself the useful answer.
+- **`references`** — the panel entry's `evidence_pmids`, where it has them.
+- **`measurement_status: not_measured`** unless something genuinely is on file, `priority: low`, `screening_recommendation: no_action`.
+
+**All of this is a lookup from the panel, not research.** You are transcribing what the reference file already knows into the case's own record, and adding the one judgment that is yours: whether this patient's tumour is in the relevant set. Do not go searching the literature for these; the panel is the basis, and if the panel is thin the row says so.
+
+- **Never spend a hardening gap or a handoff on one.** `handoff_to_target_validator` stays false and `hardening_gap` stays null. If a target deserves a handoff, it was never `screened_not_relevant` — reclassify it.
+- **The load-bearing judgment is still `measurement_status` on the in-scope rows.** Getting a decision-relevant biomarker wrong is what hurts a patient. Full-depth coverage rows are cheap because the panel supplies them, not because they matter less to a reader looking one up.
+
+The renderer puts these in their own section **below** the actionable ones, so the tables that carry decisions are still what a reader meets first.
 
 ## Deciding `measurement_status` (the load-bearing judgment)
 
