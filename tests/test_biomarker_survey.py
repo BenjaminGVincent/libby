@@ -285,7 +285,7 @@ def test_set_aside_table_carries_the_reason_not_just_the_name():
     symbol list could not carry."""
     html_out = bs.render_set_aside_table([_cov_row("cldn18", "screened_not_relevant")])
     assert "reason for cldn18" in html_out
-    assert "<th>Why it was set aside</th>" in html_out
+    assert "<th>Relevance to this case</th>" in html_out
 
 
 def test_set_aside_table_stays_narrow():
@@ -329,3 +329,20 @@ def test_legacy_survey_buckets_unchanged():
     in_scope, gaps, not_hardened, measured = bs.bucket_rows(rows)
     assert len(gaps) == 1 and len(not_hardened) == 1 and len(measured) == 1
     assert len(in_scope) == len(rows)
+
+
+def test_remaining_panel_table_is_visible_not_collapsed():
+    """These entries were assessed like every other one, so they get their own
+    visible table. A reader searching for a specific biomarker should find it
+    without expanding anything."""
+    rows = [
+        _cov_row("msi-dmmr", "tumor_agnostic"),
+        _cov_row("cldn18", "screened_not_relevant"),
+    ]
+    page = bs.render_page("slug", rows, bs.compute_coverage(rows), case_docs=None)
+    assert "## Remaining panel biomarkers" in page
+    # The section's own table must not sit inside a collapsible wrapper.
+    tail = page.split("## Remaining panel biomarkers", 1)[1]
+    assert "??? note" not in tail
+    assert "<details" not in tail
+    assert "<th>Relevance to this case</th>" in tail

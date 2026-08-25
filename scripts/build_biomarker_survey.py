@@ -321,17 +321,17 @@ def _indent_block(block: str, spaces: int = 4) -> str:
 
 
 def render_set_aside_table(rows: list[dict]) -> str:
-    """The panel entries assessed and found not relevant to this tumour.
+    """The rest of the reference panel, assessed against this case.
 
-    Deliberately narrow: biomarker and the one-line reason. These rows exist so a
-    reader can tell "assessed and set aside, here is why" from "nobody looked",
-    which the old bare list of gene symbols could not do. Anything wider would
-    make the section worth reading, which is the opposite of the intent — the
-    actionable tables are above it.
+    Its own visible table rather than a collapsed aside: these entries were
+    assessed like every other, and a reader looking for a specific biomarker
+    should find it and its reasoning without having to expand anything. Narrow by
+    design — biomarker and the one-line relevance call — because the actionable
+    tables above carry the decisions and this one carries the coverage.
     """
     if not rows:
         return ""
-    head = "<th>Biomarker</th><th>Why it was set aside</th>"
+    head = "<th>Biomarker</th><th>Relevance to this case</th>"
     body = []
     for r in rows:
         body.append(
@@ -632,15 +632,16 @@ def render_page(slug: str, rows: list[dict], coverage: dict, narrative: str = ""
         parts.append(render_measured_table(sorted(measured, key=sort_key)))
 
     if coverage["set_aside_rows"]:
-        parts.append("## Panel entries assessed and set aside\n")
-        parts.append(_collapsed(
-            f'{len(coverage["set_aside_rows"])} of {coverage["panel_targets"]} '
-            "panel targets were assessed and set aside",
-            "Every biomarker on the reference panel is assessed for every case, so "
-            "this section records what was considered and why it was set aside rather "
-            "than leaving it absent. Collapsed because none of it carries an action.",
-            render_set_aside_table(coverage["set_aside_rows"]),
-            collapsible,
+        parts.append("## Remaining panel biomarkers\n")
+        parts.append(
+            f'_The other {len(coverage["set_aside_rows"])} of '
+            f'{coverage["panel_targets"]} reference-panel targets, each assessed '
+            "against this case. None of them changes what to order today, and the "
+            "relevance call is given per biomarker so a reader searching for one "
+            "finds it here rather than finding nothing._\n"
+        )
+        parts.append(render_set_aside_table(
+            sorted(coverage["set_aside_rows"], key=sort_key)
         ))
     elif coverage["out_of_scope"]:
         # Legacy shortlist survey: no per-target reason exists to render.
@@ -760,14 +761,14 @@ def _deep_markdown(slug: str, rows: list[dict], coverage: dict, narrative: str =
         lines.append("")
 
     if coverage["set_aside_rows"]:
-        # Full survey: keep the offline artifacts at parity with the web page, which
-        # collapses these into an expandable table. Print has no expander, so they run
-        # as a list at the foot, biomarker then reason, and nothing else.
-        lines.append("## Panel entries assessed and set aside\n")
+        # Parity with the web page, which now prints these as their own visible
+        # table. Print has no expander to omit, so they run as a list at the foot,
+        # biomarker then relevance call, and nothing else.
+        lines.append("## Remaining panel biomarkers\n")
         lines.append(
-            f"{len(coverage['set_aside_rows'])} of {coverage['panel_targets']} panel "
-            "targets were assessed for this case and set aside. None carries an action; "
-            "they are listed so the record shows what was considered and why.\n"
+            f"The other {len(coverage['set_aside_rows'])} of "
+            f"{coverage['panel_targets']} reference-panel targets, each assessed "
+            "against this case. None of them changes what to order today.\n"
         )
         for r in sorted(coverage["set_aside_rows"], key=sort_key):
             label = r.get("biomarker_label") or r.get("panel_key")
