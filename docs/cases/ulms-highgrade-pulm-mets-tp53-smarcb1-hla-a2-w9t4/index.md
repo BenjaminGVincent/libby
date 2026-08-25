@@ -6,8 +6,8 @@
 
 ## Case output
 
-- [Target validation paths (PDF)](ulms-highgrade-pulm-mets-tp53-smarcb1-hla-a2-w9t4-target-validation.pdf?v=a397b3d8) — diagnostic + biomarker workup that hardens the targetable-feature call
-- [Selected general biomarker report (HTML)](biomarker_survey.md?v=bb7b678e) — which panel biomarkers this patient has and has not been tested for, including the tumor-agnostic ones, sortable in-browser
+- [Target validation paths (PDF)](ulms-highgrade-pulm-mets-tp53-smarcb1-hla-a2-w9t4-target-validation.pdf?v=ddae00d6) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Selected general biomarker report (HTML)](biomarker_survey.md?v=e3d771a6) — which panel biomarkers this patient has and has not been tested for, including the tumor-agnostic ones, sortable in-browser
 - [Recommendations table (HTML)](ulms-highgrade-pulm-mets-tp53-smarcb1-hla-a2-w9t4-recommendations.html?v=177bd861) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
 - [Standard of care options (HTML)](standard_of_care.md?v=4838b375) — approved and guideline-endorsed strategies for this patient's situation, assessed for eligibility and for how they sequence against the targeted options, sortable in-browser
 - [Preclinical recommendations (HTML)](preclinical_recommendations.md?v=893ad407) — forward-looking horizon scan of earlier-than-clinical candidate drugs, compounds, and strategies, sortable in-browser
@@ -15,7 +15,7 @@
 - [Access guide (offline HTML)](ulms-highgrade-pulm-mets-tp53-smarcb1-hla-a2-w9t4-accessibility.html?v=90dcb764) — same access-guide content as the in-browser page, packaged as a self-contained HTML that opens offline
 - [Master manuscripts table (HTML)](manuscripts.md?v=76438757) — every paper considered — n, effect, variance, toxicities, sortable in-browser
 - [Master manuscripts table (offline HTML)](ulms-highgrade-pulm-mets-tp53-smarcb1-hla-a2-w9t4-manuscripts.html?v=aab2b27a) — same manuscripts inventory as the in-browser page, packaged as a self-contained HTML that opens offline
-- [Patient/caregiver PDF](ulms-highgrade-pulm-mets-tp53-smarcb1-hla-a2-w9t4-plain-language.pdf?v=ecab957e) — plain-language summary
+- [Patient/caregiver PDF](ulms-highgrade-pulm-mets-tp53-smarcb1-hla-a2-w9t4-plain-language.pdf?v=c33c21b1) — plain-language summary
 
 <!-- libby:case-output:end -->
 ## Research question
@@ -648,8 +648,8 @@ Biomarker gating: several biomarkers are non-confirmed (SMARCB1 `ihc_pending`, T
 ### HTML
 
 - [Target validation paths](target_validation.md?v=79b27592) — per-feature biomarker-workup table with providers and references, sortable in-browser
-- [Selected general biomarker report](biomarker_survey.md?v=bb7b678e) — which panel biomarkers this patient has and has not been tested for, including the tumor-agnostic ones, in a sortable in-browser table
-- [Selected general biomarker report (offline)](ulms-highgrade-pulm-mets-tp53-smarcb1-hla-a2-w9t4-biomarker-survey.html?v=0a2398ac) — same biomarker survey packaged as a self-contained HTML that opens offline
+- [Selected general biomarker report](biomarker_survey.md?v=e3d771a6) — which panel biomarkers this patient has and has not been tested for, including the tumor-agnostic ones, in a sortable in-browser table
+- [Selected general biomarker report (offline)](ulms-highgrade-pulm-mets-tp53-smarcb1-hla-a2-w9t4-biomarker-survey.html?v=ee915bce) — same biomarker survey packaged as a self-contained HTML that opens offline
 - [Recommendations table](ulms-highgrade-pulm-mets-tp53-smarcb1-hla-a2-w9t4-recommendations.html?v=177bd861) — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline
 - [Standard of care options](standard_of_care.md?v=4838b375) — approved and guideline-endorsed strategies for this patient's situation, assessed for eligibility and sequencing, in a sortable in-browser table
 - [Standard of care options (offline)](ulms-highgrade-pulm-mets-tp53-smarcb1-hla-a2-w9t4-standard-of-care.html?v=ea89d57b) — same standard-of-care assessment packaged as a self-contained HTML that opens offline
@@ -662,14 +662,14 @@ Biomarker gating: several biomarkers are non-confirmed (SMARCB1 `ihc_pending`, T
 
 ### PDF
 
-- [Target validation paths](ulms-highgrade-pulm-mets-tp53-smarcb1-hla-a2-w9t4-target-validation.pdf?v=a397b3d8) — diagnostic + biomarker workup that hardens the targetable-feature call
-- [Selected general biomarker report](ulms-highgrade-pulm-mets-tp53-smarcb1-hla-a2-w9t4-biomarker-survey.pdf?v=51d61971) — biomarker screening coverage and the gaps it leaves, in a print-friendly PDF
-- [Recommendations table](ulms-highgrade-pulm-mets-tp53-smarcb1-hla-a2-w9t4-recommendations.pdf?v=af922278) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
-- [Standard of care options](ulms-highgrade-pulm-mets-tp53-smarcb1-hla-a2-w9t4-standard-of-care.pdf?v=4598aa44) — approved and guideline-endorsed strategies, their eligibility fit, and how they sequence against the targeted options, in a print-friendly PDF
-- [Preclinical recommendations](ulms-highgrade-pulm-mets-tp53-smarcb1-hla-a2-w9t4-preclinical.pdf?v=b6804084) — forward-looking horizon scan of earlier-than-clinical candidates, one deep section per candidate, in a print-friendly PDF
-- [Access guide](ulms-highgrade-pulm-mets-tp53-smarcb1-hla-a2-w9t4-accessibility.pdf?v=8934eb89) — trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF
-- [Master manuscripts table](ulms-highgrade-pulm-mets-tp53-smarcb1-hla-a2-w9t4-manuscripts.pdf?v=23951449) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
-- [Patient/caregiver PDF](ulms-highgrade-pulm-mets-tp53-smarcb1-hla-a2-w9t4-plain-language.pdf?v=ecab957e) — plain-language summary
+- [Target validation paths](ulms-highgrade-pulm-mets-tp53-smarcb1-hla-a2-w9t4-target-validation.pdf?v=ddae00d6) — diagnostic + biomarker workup that hardens the targetable-feature call
+- [Selected general biomarker report](ulms-highgrade-pulm-mets-tp53-smarcb1-hla-a2-w9t4-biomarker-survey.pdf?v=38a38b7a) — biomarker screening coverage and the gaps it leaves, in a print-friendly PDF
+- [Recommendations table](ulms-highgrade-pulm-mets-tp53-smarcb1-hla-a2-w9t4-recommendations.pdf?v=4e9ff678) — ranked options + pipeline context + evidence in detail, in a print-friendly PDF
+- [Standard of care options](ulms-highgrade-pulm-mets-tp53-smarcb1-hla-a2-w9t4-standard-of-care.pdf?v=dc586349) — approved and guideline-endorsed strategies, their eligibility fit, and how they sequence against the targeted options, in a print-friendly PDF
+- [Preclinical recommendations](ulms-highgrade-pulm-mets-tp53-smarcb1-hla-a2-w9t4-preclinical.pdf?v=1de9fd90) — forward-looking horizon scan of earlier-than-clinical candidates, one deep section per candidate, in a print-friendly PDF
+- [Access guide](ulms-highgrade-pulm-mets-tp53-smarcb1-hla-a2-w9t4-accessibility.pdf?v=6f18159e) — trial recruitment contacts + manufacturer medical-info lines, in a print-friendly PDF
+- [Master manuscripts table](ulms-highgrade-pulm-mets-tp53-smarcb1-hla-a2-w9t4-manuscripts.pdf?v=b5fc5637) — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF
+- [Patient/caregiver PDF](ulms-highgrade-pulm-mets-tp53-smarcb1-hla-a2-w9t4-plain-language.pdf?v=c33c21b1) — plain-language summary
 
 <!-- libby:downloads:end -->
 

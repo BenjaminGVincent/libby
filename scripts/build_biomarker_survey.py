@@ -536,12 +536,55 @@ def _nav_line(case_docs: Path) -> str:
     return " · ".join(links) + "\n" if links else ""
 
 
+def bucket_rows(rows: list[dict]) -> tuple[list[dict], list[dict], list[dict], list[dict]]:
+    """Split the survey into the buckets the page reports on.
+
+    `screened_not_relevant` rows are held out of all three status buckets. They
+    are `not_measured` in the strict sense (nobody ran the assay) but nobody
+    should: they were assessed against this tumour and set aside, and they get
+    their own collapsed section with a per-target reason. Counting them as gaps
+    would put the same 63 rows in two tables and drown the in-scope count that
+    the report exists to deliver.
+    """
+    in_scope = [r for r in rows if r.get("relevance_class") != "screened_not_relevant"]
+    gaps = [r for r in in_scope
+            if r.get("measurement_status") in ("not_measured", "not_assessable", "indeterminate")]
+    not_hardened = [r for r in in_scope if r.get("measurement_status") == "measured_not_hardened"]
+    measured = [r for r in in_scope if r.get("measurement_status") == "measured_hardened"]
+    return in_scope, gaps, not_hardened, measured
+
+
+def _collapsed(summary: str, intro: str, block: str, style: str) -> str:
+    """One collapsed section, in whichever collapsible the target renderer speaks.
+
+    `admonition` is mkdocs `??? note`, which the Material theme collapses. The
+    self-contained HTML is built by `build_report._render_self_contained_html_page`,
+    whose markdown converter has no admonition extension: it would print the
+    literal `??? note` line and, worse, render the four-space-indented table as an
+    escaped code block. So the offline copy gets a plain `<details>` instead, which
+    needs no extension and collapses in any browser.
+    """
+    if style == "details":
+        return (
+            "<details>\n"
+            f"  <summary>{html.escape(summary)}</summary>\n\n"
+            f"{intro}\n\n"
+            f"{block}\n"
+            "</details>\n"
+        )
+    return (
+        f'??? note "{summary}"\n'
+        + _indent_block(intro.strip() + "\n")
+        + "\n"
+        + _indent_block(block)
+    )
+
+
 def render_page(slug: str, rows: list[dict], coverage: dict, narrative: str = "",
-                case_docs: Path | None = None) -> str:
-    gaps = [r for r in rows if r.get("measurement_status") in ("not_measured", "not_assessable", "indeterminate")]
-    not_hardened = [r for r in rows if r.get("measurement_status") == "measured_not_hardened"]
-    measured = [r for r in rows if r.get("measurement_status") == "measured_hardened"]
+                case_docs: Path | None = None, collapsible: str = "admonition") -> str:
+    in_scope, gaps, not_hardened, measured = bucket_rows(rows)
     n_essential = sum(1 for r in gaps if r.get("priority") == "essential")
+    n_set_aside = len(coverage["set_aside_rows"])
 
     parts = [
         '<meta name="robots" content="noindex">\n',
@@ -552,10 +595,12 @@ def render_page(slug: str, rows: list[dict], coverage: dict, narrative: str = ""
         "that predict benefit regardless of where the tumor started, such as MSI-H/dMMR "
         "and high tumor mutational burden gating PD-1 blockade._\n",
         _downloads_block(slug),
-        f"_{len(rows)} biomarkers surveyed: {len(gaps)} with no usable result on file "
+        f"_{len(in_scope)} biomarkers in scope: {len(gaps)} with no usable result on file "
         f"({n_essential} essential), {len(not_hardened)} measured but not to decision "
-        f"resolution, {len(measured)} already established. Panel coverage: "
-        f"{coverage['panel_agnostic']} tumor-agnostic biomarkers plus "
+        f"resolution, {len(measured)} already established."
+        + (f" A further {n_set_aside} panel entries were assessed against this tumor and "
+           "set aside." if n_set_aside else "")
+        + f" Panel coverage: {coverage['panel_agnostic']} tumor-agnostic biomarkers plus "
         f"{coverage['targets_in_scope']} of {coverage['panel_targets']} protein targets "
         "in scope for this tumor._\n",
     ]
@@ -588,26 +633,26 @@ def render_page(slug: str, rows: list[dict], coverage: dict, narrative: str = ""
 
     if coverage["set_aside_rows"]:
         parts.append("## Panel entries assessed and set aside\n")
-        parts.append(
-            f'??? note "{len(coverage["set_aside_rows"])} of '
-            f'{coverage["panel_targets"]} panel targets were assessed and set aside"\n'
-            "    Every biomarker on the reference panel is assessed for every case, so "
+        parts.append(_collapsed(
+            f'{len(coverage["set_aside_rows"])} of {coverage["panel_targets"]} '
+            "panel targets were assessed and set aside",
+            "Every biomarker on the reference panel is assessed for every case, so "
             "this section records what was considered and why it was set aside rather "
-            "than leaving it absent. Collapsed because none of it carries an action.\n"
-        )
-        parts.append(
-            _indent_block(render_set_aside_table(coverage["set_aside_rows"]))
-        )
+            "than leaving it absent. Collapsed because none of it carries an action.",
+            render_set_aside_table(coverage["set_aside_rows"]),
+            collapsible,
+        ))
     elif coverage["out_of_scope"]:
         # Legacy shortlist survey: no per-target reason exists to render.
         parts.append("## Panel targets out of scope for this tumor\n")
-        parts.append(
-            f'??? note "{len(coverage["out_of_scope"])} of '
-            f'{coverage["panel_targets"]} panel targets were screened and set aside"\n'
-            "    Set aside as having no plausible connection to this patient's tumor "
-            "type or stated features. Listed for completeness of the audit trail.\n\n"
-            "    " + _symbol_list(coverage["out_of_scope"], escape=True) + "\n"
-        )
+        parts.append(_collapsed(
+            f'{len(coverage["out_of_scope"])} of {coverage["panel_targets"]} '
+            "panel targets were screened and set aside",
+            "Set aside as having no plausible connection to this patient's tumor "
+            "type or stated features. Listed for completeness of the audit trail.",
+            _symbol_list(coverage["out_of_scope"], escape=True) + "\n",
+            collapsible,
+        ))
 
     parts.append(_legend(case_docs))
     if case_docs is not None:
@@ -628,9 +673,7 @@ def render_page(slug: str, rows: list[dict], coverage: dict, narrative: str = ""
 
 
 def _deep_markdown(slug: str, rows: list[dict], coverage: dict, narrative: str = "") -> str:
-    gaps = [r for r in rows if r.get("measurement_status") in ("not_measured", "not_assessable", "indeterminate")]
-    not_hardened = [r for r in rows if r.get("measurement_status") == "measured_not_hardened"]
-    measured = [r for r in rows if r.get("measurement_status") == "measured_hardened"]
+    in_scope, gaps, not_hardened, measured = bucket_rows(rows)
 
     lines: list[str] = [f"# {PAGE_TITLE}\n"]
     lines.append(
@@ -642,9 +685,11 @@ def _deep_markdown(slug: str, rows: list[dict], coverage: dict, narrative: str =
         "carries it.\n"
     )
     lines.append(
-        f"**Surveyed:** {len(rows)} biomarkers. **No usable result on file:** {len(gaps)}. "
+        f"**In scope:** {len(in_scope)} biomarkers. **No usable result on file:** {len(gaps)}. "
         f"**Measured but not decision-grade:** {len(not_hardened)}. "
-        f"**Already established:** {len(measured)}.\n"
+        f"**Already established:** {len(measured)}."
+        + (f" **Assessed and set aside:** {len(coverage['set_aside_rows'])}.\n"
+           if coverage["set_aside_rows"] else "\n")
     )
 
     if narrative:
@@ -712,6 +757,22 @@ def _deep_markdown(slug: str, rows: list[dict], coverage: dict, narrative: str =
         for r in sorted(measured, key=sort_key):
             evidence = "; ".join(str(x) for x in (r.get("status_evidence") or [])) or "on file"
             lines.append(f"- **{r.get('biomarker_label') or r.get('panel_key')}** — {evidence}")
+        lines.append("")
+
+    if coverage["set_aside_rows"]:
+        # Full survey: keep the offline artifacts at parity with the web page, which
+        # collapses these into an expandable table. Print has no expander, so they run
+        # as a list at the foot, biomarker then reason, and nothing else.
+        lines.append("## Panel entries assessed and set aside\n")
+        lines.append(
+            f"{len(coverage['set_aside_rows'])} of {coverage['panel_targets']} panel "
+            "targets were assessed for this case and set aside. None carries an action; "
+            "they are listed so the record shows what was considered and why.\n"
+        )
+        for r in sorted(coverage["set_aside_rows"], key=sort_key):
+            label = r.get("biomarker_label") or r.get("panel_key")
+            reason = r.get("relevance_rationale") or "no plausible connection to this tumor"
+            lines.append(f"- **{label}** — {reason}")
         lines.append("")
 
     if coverage["out_of_scope"]:
@@ -805,7 +866,8 @@ def main() -> int:
     print(f"wrote {page} ({len(rows)} rows)")
 
     html_out = br._render_self_contained_html_page(
-        slug, f"Libby {PAGE_TITLE.lower()} — {slug}", PAGE_TITLE, page_md,
+        slug, f"Libby {PAGE_TITLE.lower()} — {slug}", PAGE_TITLE,
+        render_page(slug, rows, coverage, narrative, case_docs, collapsible="details"),
     )
     html_dst.write_text(html_out, encoding="utf-8")
     print(f"built {html_dst}")

@@ -288,11 +288,19 @@ def check_pipeline(slug: str) -> tuple[list[str], list[str]]:
     # the gap counts so a reviewer can see the survey ran and what it found.
     survey = _rows(case / "biomarker_survey.jsonl")
     if survey:
-        gaps = sum(1 for r in survey if r.get("measurement_status") == "not_measured")
-        soft = sum(1 for r in survey if r.get("measurement_status") == "measured_not_hardened")
+        # `screened_not_relevant` rows are coverage, not gaps. They are all
+        # `not_measured` by construction — nobody orders an assay for a target
+        # with no connection to the tumour — so counting them here would report
+        # a full-coverage survey as having ~78 gaps when it has 15. Excluded from
+        # the gap counts and reported separately.
+        in_scope = [r for r in survey if r.get("relevance_class") != "screened_not_relevant"]
+        set_aside = len(survey) - len(in_scope)
+        gaps = sum(1 for r in in_scope if r.get("measurement_status") == "not_measured")
+        soft = sum(1 for r in in_scope if r.get("measurement_status") == "measured_not_hardened")
+        coverage_note = f", {set_aside} assessed and set aside" if set_aside else ""
         notes.append(
-            f"{slug}: biomarker survey present ({len(survey)} surveyed, "
-            f"{gaps} not measured, {soft} not decision-grade)"
+            f"{slug}: biomarker survey present ({len(in_scope)} in scope, "
+            f"{gaps} not measured, {soft} not decision-grade{coverage_note})"
         )
         # A handoff row that never reached the target_validator is a real break in
         # the chain: the gap was found and then dropped. Informational for now,

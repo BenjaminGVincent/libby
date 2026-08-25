@@ -299,3 +299,33 @@ def test_indent_block_preserves_blank_lines():
     of the table into the page body."""
     out = bs._indent_block("a\n\nb")
     assert out.splitlines() == ["    a", "", "    b"]
+
+
+def test_set_aside_rows_never_appear_in_the_gap_buckets():
+    """The bug this guards: `screened_not_relevant` rows are all `not_measured`
+    by construction, so bucketing on measurement_status alone put all 63 of them
+    in the gap table *and* the set-aside section. The page then reported 78 gaps
+    for a survey with 15."""
+    rows = [
+        _cov_row("msi-dmmr", "tumor_agnostic"),
+        _cov_row("cldn18", "screened_not_relevant"),
+        _cov_row("gucy2c", "screened_not_relevant"),
+    ]
+    in_scope, gaps, not_hardened, measured = bs.bucket_rows(rows)
+    assert [r["panel_key"] for r in gaps] == ["msi-dmmr"]
+    assert [r["panel_key"] for r in in_scope] == ["msi-dmmr"]
+    assert not_hardened == [] and measured == []
+    # The two set-aside rows are held out of every status bucket, so they cannot
+    # be counted as gaps and cannot render in the gap table.
+    assert len(rows) - len(in_scope) == 2
+
+
+def test_legacy_survey_buckets_unchanged():
+    rows = [
+        _cov_row("msi-dmmr", "tumor_agnostic"),
+        _cov_row("tmb-high", "tumor_agnostic", measurement_status="measured_not_hardened"),
+        _cov_row("hla", "tumor_subset", measurement_status="measured_hardened"),
+    ]
+    in_scope, gaps, not_hardened, measured = bs.bucket_rows(rows)
+    assert len(gaps) == 1 and len(not_hardened) == 1 and len(measured) == 1
+    assert len(in_scope) == len(rows)
