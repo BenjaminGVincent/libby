@@ -1,0 +1,1506 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A multi-agent decision-support framework for identifying candidate therapeutics for an individual cancer patient. Not medical advice.">
+      
+      
+      
+        <link rel="canonical" href="https://benjamingvincent.github.io/libby/methods/">
+      
+      
+        <link rel="prev" href="../cases/">
+      
+      
+        <link rel="next" href="../phi_policy/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Methods - Libby</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/trial-table.css?v=1a438225">
+    
+      <link rel="stylesheet" href="../stylesheets/libby.css?v=41cd52d9">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#methods" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Libby" class="md-header__button md-logo" aria-label="Libby" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Libby
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Methods
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/BenjaminGVincent/libby" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BenjaminGVincent/libby
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Libby" class="md-nav__button md-logo" aria-label="Libby" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Libby
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/BenjaminGVincent/libby" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BenjaminGVincent/libby
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Methods
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#targetable-feature-scope-cross-cutting-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Targetable-feature scope (cross-cutting rule)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Targetable-feature scope (cross-cutting rule)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#two-therapeutic-tables-split-by-regulatory-maturity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two therapeutic tables, split by regulatory maturity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-scoped-runs-parallel-entry-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question-scoped runs (parallel entry point)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Question-scoped runs (parallel entry point)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-and-is-not-relaxed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is and is not relaxed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-terminal-artifact-is-an-answer-not-a-ranking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The terminal artifact is an answer, not a ranking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Order
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pipeline
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pipeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-intake-phi-bearing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Intake (PHI-bearing)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-promote" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Promote
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2a-biomarker-survey" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2a. Biomarker survey
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-target-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Target validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-research-tier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Research tier
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4a-standard-of-care-screen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4a. Standard of care screen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-tumor-board-round-1-positions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Tumor board — round 1 (positions)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-tumor-board-round-2-cross-critiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Tumor board — round 2 (cross-critiques)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-synthesis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Synthesis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-render" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Render
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8a-validation-and-completeness-gates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8a. Validation and completeness gates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-publish" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Publish
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schemas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schemas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-tumor-and-basket-trials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-tumor and basket trials
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#biomarker-confirmation-gating" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Biomarker confirmation gating
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limitations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phi_policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PHI policy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#targetable-feature-scope-cross-cutting-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Targetable-feature scope (cross-cutting rule)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Targetable-feature scope (cross-cutting rule)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#two-therapeutic-tables-split-by-regulatory-maturity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two therapeutic tables, split by regulatory maturity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-scoped-runs-parallel-entry-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question-scoped runs (parallel entry point)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Question-scoped runs (parallel entry point)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-and-is-not-relaxed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is and is not relaxed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-terminal-artifact-is-an-answer-not-a-ranking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The terminal artifact is an answer, not a ranking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Order
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pipeline
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pipeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-intake-phi-bearing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Intake (PHI-bearing)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-promote" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Promote
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2a-biomarker-survey" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2a. Biomarker survey
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-target-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Target validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-research-tier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Research tier
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4a-standard-of-care-screen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4a. Standard of care screen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-tumor-board-round-1-positions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Tumor board — round 1 (positions)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-tumor-board-round-2-cross-critiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Tumor board — round 2 (cross-critiques)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-synthesis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Synthesis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-render" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Render
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8a-validation-and-completeness-gates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8a. Validation and completeness gates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-publish" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Publish
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schemas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schemas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-tumor-and-basket-trials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-tumor and basket trials
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#biomarker-confirmation-gating" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Biomarker confirmation gating
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limitations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/BenjaminGVincent/libby/edit/main/docs/methods.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h1>
+<h2 id="targetable-feature-scope-cross-cutting-rule">Targetable-feature scope (cross-cutting rule)<a class="headerlink" href="#targetable-feature-scope-cross-cutting-rule" title="Permanent link">&para;</a></h2>
+<p>Libby's <strong>ranking</strong> is a targetable-feature ranker. The case slug commits to a
+specific molecular feature (or features) named in
+<code>profile.json::targetable_features[]</code> — e.g. <em>DLL3 RNA expression</em>, <em>EGFR
+L858R</em>, <em>MET exon-14 skipping</em>. The ranking surfaces — the trial table,
+the clinical-evidence dossier, the preclinical dossier, the board positions,
+the PI ranking, the executive summary, the plain-language page, and the PDF
+report — are scoped to drugs whose mechanism plausibly targets one of those
+features.</p>
+<p>A drug is <strong>in scope for the ranking</strong> if its mechanism binds, modulates, or
+acts via the named feature. It is <strong>out of scope for the ranking</strong> if it does
+not, even when it has RCT-grade evidence in the patient's tumor type.</p>
+<p>The contract is enforced at every agent boundary:</p>
+<ul>
+<li><code>trial_screener</code> only logs trials whose drug targets the feature (including a
+  drug approved for the tumor type whose eligibility hinges on an alteration the
+  patient lacks — that is the <code>standard_of_care_screener</code>'s, not the dossier's).</li>
+<li><code>clinician</code> only compiles clinical evidence for feature-targeting drugs.</li>
+<li><code>researcher</code> only logs preclinical evidence for feature-targeting drugs.</li>
+<li>The 5 board personas only reason over the in-scope dossier.</li>
+<li><code>PI</code> produces the <strong>Experimental table</strong> (<code>recommendations.jsonl</code>): every
+  non-standard-of-care therapy with evidence, tiered (top-tier ranked +
+  non-top-tier flagged via <code>surfaced_reason</code>), with <code>access_route</code> distinguishing
+  trial-only from off-label and compassionate-use. It routes approved and
+  guideline-carried options to the Standard-of-care table and names them where it
+  does.</li>
+<li><code>translator</code> and <code>reporter</code> carry the two-table model into the patient and PDF
+  surfaces.</li>
+</ul>
+<h3 id="two-therapeutic-tables-split-by-regulatory-maturity">Two therapeutic tables, split by regulatory maturity<a class="headerlink" href="#two-therapeutic-tables-split-by-regulatory-maturity" title="Permanent link">&para;</a></h3>
+<p>The therapeutic landscape is reported as <strong>two co-equal tables</strong>, both on the
+case page, so every considered option is surfaced with its tier and rationale
+rather than silently absent. An option lands in exactly one, by <em>regulatory
+maturity</em>:</p>
+<ul>
+<li><strong>Standard-of-care table</strong> (<code>standard_of_care_screener</code> → <code>standard_of_care.jsonl</code>):
+  options approved for a population including this patient, or carried in a major
+  guideline. This includes a drug that <em>also</em> targets a stated feature (e.g.
+  gemtuzumab, approved for R/R CD33+ AML), the non-molecular standards (surgery,
+  radiotherapy, cytotoxic chemotherapy, palliative care) where a guideline carries
+  them, and an approved drug whose target the patient lacks (flagged "target
+  absent"). It also holds what a ranked row cannot: label language, guideline
+  versions, eligibility and blocking factors, prior exposure, and sequencing.</li>
+<li><strong>Experimental table</strong> (<code>PI</code> → <code>recommendations.jsonl</code>): the non-standard-of-care
+  options (trial-only, off-label, compassionate-use, expanded-access,
+  not-yet-accessible, unavailable), tiered — top-tier ranked plus non-top-tier
+  flagged via <code>surfaced_reason</code> (<code>unavailable</code> / <code>consolidated</code> / <code>thin_evidence</code> /
+  <code>not_enrollable</code>), which demotes a row <em>within</em> the table and never removes it.
+  <code>access_route</code> marks which access path this patient would actually take, since
+  an off-label prescription available this week is a different proposition from a
+  trial seat abroad.</li>
+</ul>
+<p><strong>Each table ranks itself 1..n, independently of the other.</strong> The Experimental table
+numbers 1..n and the Standard-of-care table numbers its own 1..m. Neither sequence
+continues the other, so both begin at 1, and "rank 1" on the standard-of-care table
+means the first standard option rather than the first option overall.</p>
+<p><strong>The rule that binds the two is about the union.</strong> A therapy may be routed from
+one table to the other; it may never end up in neither. <code>check_pipeline.py</code> fails
+a case when a therapy with dossier evidence appears in neither table (opt-in via
+<code>access_route</code>; diagnostics are excluded, being consolidated into the rank-1
+workup row and reported by the target-validation track).</p>
+<p>That rule exists because of a concrete failure. In one case the routing was
+applied correctly and doxorubicin-based chemotherapy — ranked first by all five
+board personas — ended up with no row in the Experimental table, its absence
+reading as a judgement rather than as the filing decision it was. Routing is
+legitimate; disappearing is not. So the PI must also <strong>name the routed therapies
+in the <code>index.md</code> scope note</strong>, so a reader who expects chemotherapy learns in one
+line where it is and that the board ranked it.</p>
+<p>A negative biomarker test may empty the Experimental table without leaving the
+patient with nothing, because the Standard-of-care table sits on the same page
+and is unaffected. The cross-cutting caveat must name the standard options rather
+than reading as "no options left".</p>
+<p>The one sanctioned bridge is <code>standard_of_care.jsonl::relationship_to_targeted_options</code>,
+and it runs one way: it names sequencing and conflicts (a regimen that would
+exhaust eligibility for a trial, a line the two tracks both want) without
+ranking either against the other.</p>
+<p>Earlier versions of this rule let the cross-cutting caveat say a negative test
+left the case with "no within-scope recommendations". That was true of the
+Experimental table and false of the case, which is not a distinction a patient
+reading the page will draw. The caveat now names the standard options that
+stand.</p>
+<h2 id="question-scoped-runs-parallel-entry-point">Question-scoped runs (parallel entry point)<a class="headerlink" href="#question-scoped-runs-parallel-entry-point" title="Permanent link">&para;</a></h2>
+<p>The pipeline above answers one question: <em>which feature-targeting options exist
+for this patient?</em> A <strong>question run</strong> answers a different one, using the same
+research tier and the same tumor board, scoped to a single question instead of a
+target set.</p>
+<p>The scope spine changes. In a standard case it is
+<code>profile.json::targetable_features[]</code>, and the cross-cutting rule above binds
+every agent to it. In a question run it is <strong><code>question.json</code></strong>, authored by
+<code>question_framer</code>: the question, its decision context, explicit <code>in_scope</code> and
+<code>out_of_scope</code> boundaries, and <code>acceptance_criteria</code> — what evidence would
+answer it, each way, <strong>written before the search runs</strong>. Downstream agents that
+ask "is this in scope" check there instead.</p>
+<p>A question run may be <strong>linked</strong> (<code>source_case_slug</code> set) or <strong>standalone</strong>
+(null). A linked question inherits the source case's <code>profile.json</code> <strong>in place</strong> — no
+copy is made into the question tree, so no PHI-derived data is duplicated — and
+may cite that case's dossier rather than re-researching settled ground. It still
+gets its own slug and its own page, so a published case is never mutated by a
+later question. A standalone question has no patient, no <code>profile.json</code>,
+and no PHI surface.</p>
+<h3 id="what-is-and-is-not-relaxed">What is and is not relaxed<a class="headerlink" href="#what-is-and-is-not-relaxed" title="Permanent link">&para;</a></h3>
+<p><strong>Not relaxed: the board.</strong> Five personas, two rounds, same as a full case. That
+rigour is what a question run buys; a question answered without it is a
+literature search wearing a case report's clothes.</p>
+<p><strong>Relaxed: the artifacts that presuppose a target set.</strong> <code>target_validation.jsonl</code>
+and <code>accessibility.jsonl</code> become informational — a prognostic or mechanistic
+question may have no assay to harden and no intervention to price.
+<code>recommendations.jsonl</code> is required only when the answer is option-shaped.</p>
+<h3 id="the-terminal-artifact-is-an-answer-not-a-ranking">The terminal artifact is an answer, not a ranking<a class="headerlink" href="#the-terminal-artifact-is-an-answer-not-a-ranking" title="Permanent link">&para;</a></h3>
+<p><code>question_synthesist</code> writes <strong><code>question_answer.json</code></strong>: a verdict from a fixed
+set, a confidence calibrated to the evidence rather than to how strongly the
+board argued, the evidence each way with its <code>population_match</code> stated, the
+board's preserved dissent, what would change the answer, and a required
+<code>scope_caveat</code>.</p>
+<p>Two guards matter more than the rest:</p>
+<ul>
+<li><strong><code>acceptance_criteria_result</code> must report every pre-registered criterion, in
+  order.</strong> This is the audit trail proving the answer was not assembled backwards
+  from a conclusion. <code>check_pipeline</code> and <code>build_question.py</code> both enforce it.</li>
+<li><strong><code>insufficient_evidence</code> is a first-class verdict.</strong> Dressing it up as a
+  qualified yes misleads by the shape of the answer rather than its content, so
+  the renderer deliberately gives it no positive badge colour.</li>
+</ul>
+<p>The synthesist may <strong>downgrade</strong> the framer's <code>answer_shape</code> and may never
+upgrade it. An unnecessary ranked table is worse than an absent one: a ranking
+implies a completeness the run does not have, because a question run screened
+one question and not the therapeutic landscape.</p>
+<h3 id="order">Order<a class="headerlink" href="#order" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>question_framer → [trial_screener, clinician, researcher] → 5 personas × 2 rounds
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  → question_synthesist → question_reporter
+</code></pre></div>
+<p><code>check_pipeline.py</code> branches on the presence of <code>question.json</code>.</p>
+<h2 id="pipeline">Pipeline<a class="headerlink" href="#pipeline" title="Permanent link">&para;</a></h2>
+<p>Libby is invoked one case at a time. A "case" is one patient (or one
+consultation) tied to a kebab-case slug. Each case runs through 11 agent steps
+and 4 deterministic build scripts.</p>
+<h3 id="1-intake-phi-bearing">1. Intake (PHI-bearing)<a class="headerlink" href="#1-intake-phi-bearing" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>mkdir -p case/&lt;slug&gt;/clinical
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>cp /path/to/patient/notes/* case/&lt;slug&gt;/clinical/
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>/intake &lt;slug&gt;
+</code></pre></div>
+<p>The <code>intake</code> agent reads <code>case/&lt;slug&gt;/clinical/*</code> and asks the user clarifying
+questions. It writes <code>case/&lt;slug&gt;/derived/{profile,preferences}.json</code> — both
+files <strong>scrubbed</strong>: age band not birthdate, region not ZIP, biomarker values, no
+patient or clinician names, no day-precision dates.</p>
+<p><code>case/</code> is gitignored. Nothing under it ever enters version control.</p>
+<h3 id="2-promote">2. Promote<a class="headerlink" href="#2-promote" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>python3 scripts/promote_profile.py &lt;slug&gt;
+</code></pre></div>
+<p>The promotion script validates <code>derived/profile.json</code> and <code>preferences.json</code>
+against the JSON schemas in <code>scripts/schema/</code>, runs the PHI scanner against
+both files, and (only if both pass) copies them to <code>data/cases/&lt;slug&gt;/</code>. This is
+the <strong>only path</strong> PHI-derived data takes into the committable tree.</p>
+<h3 id="2a-biomarker-survey">2a. Biomarker survey<a class="headerlink" href="#2a-biomarker-survey" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>/preclinical_biomarker_surveyor &lt;slug&gt;   # data/cases/&lt;slug&gt;/biomarker_survey.jsonl
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>/biomarker_reporter             &lt;slug&gt;   # docs/cases/&lt;slug&gt;/biomarker_survey.md + HTML + PDF
+</code></pre></div>
+<p>Every other research-tier agent reasons forward from the features the case
+already claims are targetable. The surveyor runs the opposite direction: it
+screens the case record against two fixed panels and reports what was never
+measured.</p>
+<ul>
+<li><code>data/reference/selected_biomarker_panel.json</code> — 72 cell-surface and
+  HLA-presented protein targets with their binder programs, machine-generated
+  from <code>selected_biomarker_target_list.xlsx</code> by
+  <code>scripts/import_biomarker_panel.py</code>.</li>
+<li><code>data/reference/tumor_agnostic_biomarkers.json</code> — 9 hand-curated predictive
+  biomarkers that are tumor-agnostic (MSI-H/dMMR, TMB-H, NTRK fusion, RET
+  fusion, BRAF V600E, HER2 IHC 3+) or relevant across a tumor subset (PD-L1,
+  HRD/BRCA, HLA class I genotype).</li>
+</ul>
+<p>Each in-scope biomarker gets a <code>measurement_status</code>: <code>measured_hardened</code>,
+<code>measured_not_hardened</code>, <code>not_measured</code>, <code>not_assessable</code>, or <code>indeterminate</code>.
+The distinction that carries the whole track is between <em>tested and negative</em>
+and <em>never tested</em>: a biomarker absent from <code>profile.json::biomarkers[]</code> is
+<code>not_measured</code>, never negative.</p>
+<p>All 9 tumor-agnostic entries are surveyed in every case regardless of tumor
+type — that is the point of the track, and <code>build_biomarker_survey.py</code> refuses
+to render a page that is missing one. Protein targets with no plausible
+connection to the tumor get no row, and the renderer derives the out-of-scope
+list by subtracting the emitted rows from the panel, so the audit trail stays
+complete without padding the report.</p>
+<p><code>measured_not_hardened</code> rows carry <code>handoff_to_target_validator: true</code> and are
+worked into the Target validation paths report (below) rather than this one.</p>
+<h3 id="3-target-validation">3. Target validation<a class="headerlink" href="#3-target-validation" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>/target_validator &lt;slug&gt;   # data/cases/&lt;slug&gt;/target_validation.jsonl
+</code></pre></div>
+<p>For each <code>profile.json::targetable_features[]</code> entry, the validator surfaces
+the additional biomarkers, orthogonal assays, resistance markers, and
+functional studies that would harden the target call. Rows are tagged with
+a <code>priority</code> (essential / high / medium / low) and a <code>decision_relevance</code>
+(gates_intervention / confirms_target_call / refines_target_subtype /
+informs_resistance / informs_prognosis / informs_microenvironment /
+informs_germline_implications). The PI uses <code>priority: "essential"</code> +
+<code>decision_relevance: "gates_intervention"</code> rows to compute the rank-1
+shared workup row in <code>recommendations.jsonl</code> — the canonical example is
+<em>DLL3 RNA → DLL3 IHC SP347</em> in the osteosarcoma case, where the IHC gates
+every DLL3-directed therapy regardless of which specific drug is chosen.</p>
+<p>The validator also absorbs the biomarker survey's handoffs. Each row it writes
+to close one carries <code>source_survey_id</code> pointing back at the survey row, and
+<code>build_target_validation.py</code> renders a "Measured, but not to decision
+resolution" table that flags any handoff with no matching row as <strong>not yet
+addressed</strong> — so a gap that was found and then dropped is visible on the
+published page instead of lost between two reports.</p>
+<h3 id="4-research-tier">4. Research tier<a class="headerlink" href="#4-research-tier" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>/trial_screener &lt;slug&gt;     # data/cases/&lt;slug&gt;/trials.jsonl
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>/clinician      &lt;slug&gt;     # data/cases/&lt;slug&gt;/clinical_evidence.jsonl
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>/researcher     &lt;slug&gt;     # data/cases/&lt;slug&gt;/preclinical_evidence.jsonl
+</code></pre></div>
+<p>Each agent reads only <code>data/cases/&lt;slug&gt;/{profile,preferences}.json</code>,
+<code>target_validation.jsonl</code> (when present), and the prior agent's output.
+They never read <code>case/&lt;slug&gt;/clinical/</code> directly.</p>
+<h3 id="4a-standard-of-care-screen">4a. Standard of care screen<a class="headerlink" href="#4a-standard-of-care-screen" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>/standard_of_care_screener &lt;slug&gt;   # data/cases/&lt;slug&gt;/standard_of_care.jsonl
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>                                    # + standard_of_care_report.md
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>                                    # + docs/cases/&lt;slug&gt;/standard_of_care.md + HTML + PDF
+</code></pre></div>
+<p>The research tier reasons forward from the case's stated targetable features.
+This track answers the question none of those agents will: what is the
+established treatment for someone in this situation, and does this patient
+still have it available? An option earns a row only if a regulator approved it
+for a population that includes this patient, or a major academic or
+clinical-society guideline (NCCN, ESMO, ASCO, ASH, EHA, ASTRO, SITC and peers)
+carries it. Standard of care is not only drugs: surgery, radiotherapy,
+locoregional therapy, transplant, and active surveillance get rows in the
+settings where guidelines carry them.</p>
+<p>The track is <strong>additive only</strong> and does not feed the board or the PI. It runs
+any time after <code>promote_profile.py</code>, but the useful slot is after <code>/PI</code>,
+because that is when <code>relationship_to_targeted_options</code> can name the ranked
+interventions a standard option would sequence against or foreclose.</p>
+<p>Three judgments carry the track, and the renderer's pre-flight enforces each:</p>
+<ul>
+<li><strong><code>endorsements[].population_match</code></strong> — whether the approval or guideline
+  entry was written for <em>this</em> patient's situation or for a different stage,
+  line, or biomarker subgroup. A <code>consider_now</code> row whose endorsements are all
+  <code>different_population</code> or <code>unclear</code> is an extrapolation, not standard of
+  care, and blocks the build.</li>
+<li><strong><code>eligibility_status</code></strong> — judged against <code>profile.json</code> alone. The gap
+  between a textbook option and a real one is usually <code>prior_therapies[]</code>. An
+  <code>already_received</code> row requires a <code>prior_exposure_note</code> recording what was
+  given, the best response, and why it stopped; re-offering a regimen the
+  patient already progressed on is the worst error this page can make.</li>
+<li><strong><code>consideration_status</code></strong> — an option behind an unmet, unmeasured, or
+  pending biomarker gate is <code>requires_further_workup</code>, never <code>consider_now</code>.
+  Same discipline the targeted track applies to biomarker-confirmation gating.
+  Where the gate is one the biomarker survey already logged, <code>linked_survey_id</code>
+  joins the two reports instead of duplicating the gap.</li>
+</ul>
+<p><code>last_verified_utc</code> is required on every row and means what it says. NCCN
+versions several times a year; a row verified more than six months ago renders
+with a re-check marker.</p>
+<h3 id="5-tumor-board-round-1-positions">5. Tumor board — round 1 (positions)<a class="headerlink" href="#5-tumor-board-round-1-positions" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>/risktaker     &lt;slug&gt; --round 1
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>/conservative  &lt;slug&gt; --round 1
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>/critic        &lt;slug&gt; --round 1
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>/concensusite  &lt;slug&gt; --round 1
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>/advocate      &lt;slug&gt; --round 1
+</code></pre></div>
+<p>Each persona reads the research dossier and appends one row to
+<code>data/cases/&lt;slug&gt;/board/positions.jsonl</code> — 3–5 ranked picks with rationale,
+evidence citations, primary concerns, and confidence. Order is independent.</p>
+<p>The five personas deliberate from the assembled dossier. One asymmetry is
+intentional: <code>concensusite</code> (the guidelines persona) alone has <code>WebSearch</code> /
+<code>WebFetch</code>, because professional guidelines (NCCN/ESMO/ASCO) update faster than
+the indexed literature the dossier was built from. The other four personas have
+no web access by design — this is not tool-config drift.</p>
+<p>Canonical on-disk layout: board output lives only in
+<code>data/cases/&lt;slug&gt;/board/{positions,critiques}.jsonl</code> (the merged files the
+renderers read). Per-persona split files and top-level copies are not part of
+the schema and should not be committed. The persona id is spelled
+<code>concensusite</code> everywhere in code, schemas, and data (a canonical misspelling);
+keep it consistent rather than "correcting" individual files.</p>
+<h3 id="6-tumor-board-round-2-cross-critiques">6. Tumor board — round 2 (cross-critiques)<a class="headerlink" href="#6-tumor-board-round-2-cross-critiques" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>/risktaker     &lt;slug&gt; --round 2
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>/conservative  &lt;slug&gt; --round 2
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>/critic        &lt;slug&gt; --round 2
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>/concensusite  &lt;slug&gt; --round 2
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>/advocate      &lt;slug&gt; --round 2
+</code></pre></div>
+<p>Each persona reads all five round-1 positions and writes four critique rows
+(one per other persona) to <code>data/cases/&lt;slug&gt;/board/critiques.jsonl</code>. Twenty
+rows total. Round-2 prompts explicitly direct each agent to <strong>disagree where
+defensible</strong> to mitigate consensus drift.</p>
+<h3 id="7-synthesis">7. Synthesis<a class="headerlink" href="#7-synthesis" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>/PI &lt;slug&gt;          # data/cases/&lt;slug&gt;/recommendations.jsonl + docs/cases/&lt;slug&gt;/index.md
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>/translator &lt;slug&gt;  # docs/cases/&lt;slug&gt;/plain_language.md
+</code></pre></div>
+<p>The <code>PI</code> agent ingests the full dossier, all five positions, and all 20
+critiques, and produces a ranked recommendation table. Hard rule: a <code>veto</code> from
+<code>conservative</code> or <code>critic</code> is never silently dropped — either overridden with
+documented reasoning or kept in the table marked <code>not_recommended</code>.</p>
+<p>The <code>translator</code> agent produces the patient/caregiver track separately —
+absolute-risk framing, no NCT IDs in body, "questions to ask your oncologist."
+A separate agent (rather than a prompt branch on <code>PI</code>) because the audiences
+need different <em>omissions</em>, not just different word choices.</p>
+<h3 id="8-render">8. Render<a class="headerlink" href="#8-render" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>bash scripts/run_case.sh &lt;slug&gt;
+</code></pre></div>
+<p>Fails fast on <code>validate_case.py</code> (schema-checks every committed artifact), then
+runs <code>build_table.py</code>, <code>build_evidence.py</code>, <code>build_manuscripts.py</code>,
+<code>build_board.py</code>, <code>build_recommendations.py</code>, <code>build_preclinical.py</code>,
+<code>build_target_validation.py</code>, <code>build_biomarker_survey.py</code>,
+<code>build_standard_of_care.py</code>, <code>build_accessibility.py</code>, a PHI re-scan against
+rendered docs, and finally <code>build_report.py</code> (PDF/HTML downloads). It closes with
+a non-fatal <code>check_pipeline.py</code> completeness warning. Shared render helpers
+(<code>load_jsonl</code>, <code>FEATURE_LABELS</code>) live in <code>scripts/libbylib.py</code>.</p>
+<h3 id="8a-validation-and-completeness-gates">8a. Validation and completeness gates<a class="headerlink" href="#8a-validation-and-completeness-gates" title="Permanent link">&para;</a></h3>
+<p>Two deterministic gates guard the committed artifacts, both also enforced in the
+<code>validate.yml</code> CI workflow:</p>
+<ul>
+<li><code>scripts/validate_case.py &lt;slug&gt; [--all] [--strict]</code> validates every JSONL row
+  and JSON document against <code>scripts/schema/*.schema.json</code>. Referenced identifiers
+  are format-checked here (<code>pmid</code> numeric, <code>doi</code> well-formed); existence and
+  contextual correctness are the job of the <code>reference_checking</code> skill, which the
+  evidence/synthesis agents invoke via <code>.claude/snippets/reference_check.md</code>.</li>
+<li><code>scripts/check_pipeline.py &lt;slug&gt; [--all]</code> proves every required stage ran, from
+  the board artifacts (5 personas in round 1, 5 critics in round 2, no
+  self-critique) through PI + translator surfaces. It keys off artifacts rather
+  than <code>runs.jsonl</code> because per-persona round telemetry is logged inconsistently.</li>
+</ul>
+<h3 id="9-publish">9. Publish<a class="headerlink" href="#9-publish" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>git add data/cases/&lt;slug&gt;/ docs/cases/&lt;slug&gt;/
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>git commit -m "case &lt;slug&gt;: initial run"
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>git push
+</code></pre></div>
+<p>The pre-commit hook re-scans for PHI shapes. The <code>phi-scan.yml</code> CI workflow
+runs the scanner against the full tree on every push and fails the deploy on
+any hit. The <code>pages.yml</code> workflow then runs <code>mkdocs gh-deploy</code> to publish.</p>
+<h2 id="schemas">Schemas<a class="headerlink" href="#schemas" title="Permanent link">&para;</a></h2>
+<p>Every committed JSONL/JSON artifact validates against a schema in
+<code>scripts/schema/</code>, enforced by <code>validate_case.py</code> (in <code>run_case.sh</code> and CI) —
+not merely documented:</p>
+<ul>
+<li><code>profile.schema.json</code> — scrubbed patient profile.</li>
+<li><code>preferences.schema.json</code> — user tradeoff weights and vetoes.</li>
+<li><code>target_validation.schema.json</code> — target-validator row.</li>
+<li><code>biomarker_survey.schema.json</code> — biomarker-surveyor row.</li>
+<li><code>standard_of_care.schema.json</code> — standard-of-care screener row.</li>
+<li><code>trials.schema.json</code> — trial-screener row.</li>
+<li><code>clinical_evidence.schema.json</code> — clinical-evidence row.</li>
+<li><code>preclinical_evidence.schema.json</code> — pre-clinical evidence row.</li>
+<li><code>preclinical_pipeline.schema.json</code> / <code>preclinical_recommendations.schema.json</code> — horizon-scan track.</li>
+<li><code>accessibility.schema.json</code> — accessibility-screener row.</li>
+<li><code>positions.schema.json</code> — board round-1 position.</li>
+<li><code>critiques.schema.json</code> — board round-2 cross-critique.</li>
+<li><code>recommendations.schema.json</code> — PI's ranked recommendation row.</li>
+<li><code>runs.schema.json</code> — per-agent run-log row (<code>agent</code> is pinned to the canonical
+  agent id; extra telemetry is permitted).</li>
+</ul>
+<h2 id="cross-tumor-and-basket-trials">Cross-tumor and basket trials<a class="headerlink" href="#cross-tumor-and-basket-trials" title="Permanent link">&para;</a></h2>
+<p>The <code>trial_screener</code> agent does NOT restrict the search to trials whose primary
+indication matches the patient's tumor type. For rare-disease and refractory
+patients, the highest-EV trial often lives outside the primary indication.
+Each row in <code>trials.jsonl</code> is tagged with <code>tumor_type_relationship</code>:</p>
+<ul>
+<li><strong><code>primary_indication_match</code></strong> — trial enrolls the patient's tumor type as
+  a primary cohort. The default category.</li>
+<li><strong><code>basket_or_biomarker_match</code></strong> — trial accepts the patient based on a
+  biomarker regardless of tumor type (e.g. NTRK fusions, BRAF V600E, MSI-H,
+  DLL3 IHC). These are the most under-recognized actionable opportunities for
+  rare-disease patients and rank above same-tumor weak-evidence trials in
+  practice.</li>
+<li><strong><code>same_drug_other_indication</code></strong> — trial of a drug already proven elsewhere
+  now being tested in the patient's tumor type. Bridges cross-tumor evidence
+  to on-label care.</li>
+<li><strong><code>cross_tumor_extrapolation</code></strong> — trial in a different tumor type, included
+  in the dossier for mechanism-of-action / efficacy evidence even though the
+  patient cannot enroll. Informs board reasoning about whether the drug is
+  worth pursuing through a basket trial or off-label use.</li>
+</ul>
+<p>The render layer (<code>build_table.py</code>) surfaces the category as a colored
+badge in the trial table so a clinician can scan enrollable-now vs
+informational-only at a glance.</p>
+<h2 id="biomarker-confirmation-gating">Biomarker confirmation gating<a class="headerlink" href="#biomarker-confirmation-gating" title="Permanent link">&para;</a></h2>
+<p>When a biomarker driving candidate-intervention selection is not yet at the
+resolution required for clinical decisions (e.g. DLL3 RNA expression measured
+but IHC protein-level confirmation pending), Libby flags the confirmatory
+test as the rank-1 workup and tags biomarker-conditional therapeutic recs.
+Libby does NOT generate a parallel ranking for the negative-result branch:
+if the test is negative, biomarker-conditional recs are foreclosed, and
+the cross-cutting caveat in the case page documents what remains valid.</p>
+<p>The mechanism is on the schema and PI-prompt side:</p>
+<ul>
+<li><strong><code>profile.json::biomarkers[].confirmation_status</code></strong> — one of <code>confirmed</code>
+  (default), <code>rna_only</code>, <code>ihc_pending</code>, <code>ngs_pending</code>, <code>hypothetical_positive</code>,
+  <code>hypothetical_negative</code>, <code>unknown</code>. Set during intake.</li>
+<li><strong><code>profile.json::biomarkers[].decision_resolution</code></strong> — short description
+  of what level of testing IS required (e.g. "IHC SP347 ≥1%").</li>
+<li><strong><code>recommendations.jsonl::scenario</code></strong> — three values:<ul>
+<li><code>null</code> (default) — used in non-gated cases (every biomarker <code>confirmed</code>); the row applies in the case's single ranking.</li>
+<li><code>"shared"</code> — the rank-1 workup row representing the confirmatory test itself.</li>
+<li><code>"&lt;biomarker_short&gt;:positive"</code> (e.g. <code>dll3_ihc:positive</code>) — rec valid only if the named biomarker confirms positive; foreclosed if the test is negative.</li>
+</ul>
+</li>
+</ul>
+<p>The <code>:negative</code> suffix is no longer emitted; the negative-result outcome
+  is documented in the case page's cross-cutting caveat instead.
+- <strong><code>PI.md</code></strong> prompt rule: when any biomarker gates a candidate intervention
+  and is non-confirmed, emit a focused ranking with the workup at rank 1
+  (<code>scenario: "shared"</code>) plus only the therapeutic rec(s) that target the
+  gating feature, tagged <code>:positive</code>. Drugs that don't target the feature
+  (standard care for the indication) are out of scope for the ranking and
+  <strong>do not appear anywhere in it</strong> — not in the ranked table, not in "Classes
+  examined but not ranked", not by name in any of the PI's narrative. The
+  cross-cutting caveat in <code>index.md</code> carries the "if test negative, no
+  within-scope recommendations" mapping in the ranking's own voice, without
+  enumerating standard-care alternatives. Those alternatives are enumerated on
+  the standard-of-care page instead, which the Case output section links; the
+  <code>PI</code> neither writes nor reads that page. The trial screener, clinician, and
+  researcher contracts enforce mechanism-scope upstream so out-of-scope drugs
+  do not enter the dossier in the first place.
+- <strong><code>translator.md</code></strong> prompt rule: surface the workup as "the first step
+  everyone agreed on"; flag biomarker-conditional options inline with an
+  "if negative" note; do NOT render a parallel negative-branch ranking.
+- <strong><code>build_recommendations.py</code></strong> and <strong><code>build_report.py</code></strong> render the workup
+  under a "Shared first step" header and the rest of the unified ranking
+  in a single ranked table. Conditional recs are visually flagged.</p>
+<p>Cap: 1 biomarker dimension for <code>:positive</code> tagging. If the case has more
+than one non-confirmed biomarker, choose the single most-decision-relevant
+one; flag the others as open questions.</p>
+<h2 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>fit_to_case</code> and <code>toxicity_flags</code> in <code>trials.jsonl</code> are <strong>LLM-interpreted</strong>,
+  not deterministic. Two runs may classify the same trial differently. Treat as
+  advisory.</li>
+<li>The PHI scanner is a <strong>safety net, not the defense</strong>. It catches shape-based
+  PHI (MRN, SSN, dates, phone, email) but not a clinician's surname embedded in <!-- phi-scan: ignore -->
+  free text. The scrub agent is the real guard.</li>
+<li>No outcome tracking. Libby is a recommender, not a registry.</li>
+<li>Persona convergence is a real risk. If all five board members read the same
+  dossier and reach the same conclusion, "diversity" was performative. Plan to
+  re-tune persona prompts if this happens.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.top", "navigation.instant", "navigation.tracking", "search.highlight", "search.suggest", "content.code.copy", "content.action.edit", "content.tables.sortable"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

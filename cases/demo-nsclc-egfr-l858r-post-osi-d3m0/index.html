@@ -1,0 +1,1595 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A multi-agent decision-support framework for identifying candidate therapeutics for an individual cancer patient. Not medical advice.">
+      
+      
+      
+        <link rel="canonical" href="https://benjamingvincent.github.io/libby/cases/demo-nsclc-egfr-l858r-post-osi-d3m0/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Index - Libby</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/trial-table.css?v=1a438225">
+    
+      <link rel="stylesheet" href="../../stylesheets/libby.css?v=41cd52d9">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#demo-nsclc-egfr-l858r-post-osi-d3m0" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Libby" class="md-header__button md-logo" aria-label="Libby" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Libby
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Index
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/BenjaminGVincent/libby" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BenjaminGVincent/libby
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Libby" class="md-nav__button md-logo" aria-label="Libby" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Libby
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/BenjaminGVincent/libby" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BenjaminGVincent/libby
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../phi_policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PHI policy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#case-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Case output
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#research-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Research question
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#patient-profile-scrubbed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Patient profile (scrubbed)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preferences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preferences
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#target-validation-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Target validation paths
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Target validation paths">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#egfr-l858r" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EGFR L858R
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#met-amplification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MET amplification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-to-order-these-assays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where to order these assays
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#biomarker-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Biomarker plan
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scope-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scope summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-cutting-caveat-read-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-cutting caveat (read first)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intervention-grouping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intervention grouping
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#top-interventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top interventions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Top interventions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rank-1-savolitinib-osimertinib-preferably-on-saffron-sachi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rank 1. Savolitinib + osimertinib (preferably on SAFFRON / SACHI)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rank 1. Savolitinib + osimertinib (preferably on SAFFRON / SACHI)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#evidence-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evidence base
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#likelihood-of-desired-effect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Likelihood of desired effect
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toxicity-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toxicity profile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#counter-productive-mechanisms-dissent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Counter-productive mechanisms / dissent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practical-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical considerations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-rank" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this rank
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#per-trial-detail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Per-trial detail
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rank-2-amivantamab-lazertinib" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rank 2. Amivantamab + lazertinib
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rank 2. Amivantamab + lazertinib">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#evidence-base_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evidence base
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#likelihood-of-desired-effect_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Likelihood of desired effect
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toxicity-profile_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toxicity profile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#counter-productive-mechanisms-dissent_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Counter-productive mechanisms / dissent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practical-considerations_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical considerations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-rank_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this rank
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#per-trial-detail_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Per-trial detail
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rank-3-patritumab-deruxtecan-her3-dxd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rank 3. Patritumab deruxtecan (HER3-DXd)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rank 3. Patritumab deruxtecan (HER3-DXd)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#evidence-base_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evidence base
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#likelihood-of-desired-effect_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Likelihood of desired effect
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toxicity-profile_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toxicity profile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#counter-productive-mechanisms-dissent_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Counter-productive mechanisms / dissent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practical-considerations_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical considerations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-rank_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this rank
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#per-trial-detail_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Per-trial detail
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classes-examined-but-not-ranked" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classes examined but not ranked
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ranked-prioritization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ranked prioritization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caveats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Caveats
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sources
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transparency-artifacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transparency artifacts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Run log
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#downloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Downloads
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Downloads">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#html" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTML
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PDF
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/BenjaminGVincent/libby/edit/main/docs/cases/demo-nsclc-egfr-l858r-post-osi-d3m0/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<p><meta name="robots" content="noindex"></p>
+<h1 id="demo-nsclc-egfr-l858r-post-osi-d3m0"><code>demo-nsclc-egfr-l858r-post-osi-d3m0</code><a class="headerlink" href="#demo-nsclc-egfr-l858r-post-osi-d3m0" title="Permanent link">&para;</a></h1>
+<!-- libby:case-output:begin -->
+
+<h2 id="case-output">Case output<a class="headerlink" href="#case-output" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="demo-nsclc-egfr-l858r-post-osi-d3m0-target-validation.pdf?v=e5ac38b3">Target validation paths (PDF)</a> — diagnostic + biomarker workup that hardens the targetable-feature call</li>
+<li><a href="demo-nsclc-egfr-l858r-post-osi-d3m0-recommendations.html?v=60a21ba9">Recommendations table (HTML)</a> — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline</li>
+<li><a href="accessibility/?v=a9b23b43">Access guide (HTML)</a> — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, sortable in-browser</li>
+<li><a href="demo-nsclc-egfr-l858r-post-osi-d3m0-accessibility.html?v=878fa5c7">Access guide (offline HTML)</a> — same access-guide content as the in-browser page, packaged as a self-contained HTML that opens offline</li>
+<li><a href="manuscripts/?v=46cdbd66">Master manuscripts table (HTML)</a> — every paper considered — n, effect, variance, toxicities, sortable in-browser</li>
+<li><a href="demo-nsclc-egfr-l858r-post-osi-d3m0-manuscripts.html?v=1fc936ef">Master manuscripts table (offline HTML)</a> — same manuscripts inventory as the in-browser page, packaged as a self-contained HTML that opens offline</li>
+<li><a href="demo-nsclc-egfr-l858r-post-osi-d3m0-plain-language.pdf?v=16c32a0a">Patient/caregiver PDF</a> — plain-language summary</li>
+</ul>
+<!-- libby:case-output:end -->
+<h2 id="research-question">Research question<a class="headerlink" href="#research-question" title="Permanent link">&para;</a></h2>
+<p>A working artist in her 60s has stage IV EGFR L858R lung adenocarcinoma. She got 22 months out of first-line osimertinib (PR), and now she is progressing. The tumor is T790M-negative but MET-amplified at GCN 8.2 by FISH. What should the next line of therapy target, given that she needs her hands, prefers oral therapy, and is open to trials?</p>
+<h2 id="patient-profile-scrubbed">Patient profile (scrubbed)<a class="headerlink" href="#patient-profile-scrubbed" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Primary site / histology:</strong> lung adenocarcinoma</li>
+<li><strong>Stage:</strong> IV</li>
+<li><strong>Performance status:</strong> ECOG 1</li>
+<li><strong>Age band:</strong> 60-69</li>
+<li><strong>Biomarkers:</strong> EGFR L858R (present); EGFR T790M (absent); MET amplification (GCN 8.2 by FISH); PD-L1 TPS 10%</li>
+<li><strong>Prior therapy:</strong> 1L osimertinib, PR x 22 months — now progressed</li>
+<li><strong>Targetable features:</strong> EGFR L858R (sensitizing); MET amplification (likely on-target resistance)</li>
+</ul>
+<h2 id="preferences">Preferences<a class="headerlink" href="#preferences" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Efficacy/toxicity weight:</strong> 0.55 (slight efficacy lean)</li>
+<li><strong>Toxicity vetoes:</strong> severe neuropathy, cardiotoxicity, alopecia</li>
+<li><strong>Modality constraints:</strong> oral preferred; no inpatient infusion; minimize IV chair time</li>
+<li><strong>Free text:</strong> <em>"working artist — manual dexterity in hands matters more than typical"</em></li>
+<li><strong>Trials preferred:</strong> yes</li>
+</ul>
+<!-- libby:target-validation:begin -->
+
+<h2 id="target-validation-paths">Target validation paths<a class="headerlink" href="#target-validation-paths" title="Permanent link">&para;</a></h2>
+<p>EGFR L858R, MET amplification (GCN 8.2), and T790M-absent are all confirmed at decision-relevant resolution, so no diagnostic test gates the savolitinib + osimertinib trial enrollment (SAFFRON / SACHI). The validation work here is about resistance characterization at progression, not target confirmation. The goal is to make sure the case really is MET-amplified bypass resistance and not something more complicated wearing the same imaging signature.</p>
+<h3 id="egfr-l858r">EGFR L858R<a class="headerlink" href="#egfr-l858r" title="Permanent link">&para;</a></h3>
+<p>The most consequential miss right now would be SCLC histologic transformation, which is the highest-PPV resistance pattern that no liquid biopsy can confirm. Tumor NGS including TP53 and RB1 status is the screen: co-loss is the strongest predictor of transformation, with reported rates of 3–14% across post-osimertinib cohorts. If imaging morphology shifts or co-loss is detected, fresh re-biopsy with a neuroendocrine IHC panel (chromogranin, synaptophysin, INSM1, Ki-67) is the only way to confirm. ctDNA covering EGFR C797S and exon-20 inserts is the parallel on-target resistance check; a positive C797S result reframes the next-line conversation toward fourth-generation EGFR-TKIs or combination strategies.</p>
+<h3 id="met-amplification">MET amplification<a class="headerlink" href="#met-amplification" title="Permanent link">&para;</a></h3>
+<p>The FISH GCN 8.2 result clears SAFFRON's enrollment threshold (≥ 6) cleanly, but MET amplification can be focal, and primary-vs-metastatic discordance is a documented confounder in this setting. A second-site FISH (or a matched archival block) refines confidence that the dominant disease, not just the biopsied site, is the amplified one. MET IHC (clone SP44) is the orthogonal-modality complement to the SAFFRON eligibility profile. A comprehensive NGS panel that picks up HER2 / BRAF / FGFR co-alterations frames durability expectations and the next-line plan.</p>
+<h3 id="where-to-order-these-assays">Where to order these assays<a class="headerlink" href="#where-to-order-these-assays" title="Permanent link">&para;</a></h3>
+<p>The preferred provider for each assay is marked <strong>(preferred)</strong>, selected on company size, reputation, US-based location, and turnaround time. Other providers in the row are listed in case the preferred lab is unreachable for this patient.</p>
+<table>
+<thead>
+<tr>
+<th>Assay</th>
+<th>Provider</th>
+<th>Decision gated</th>
+<th>Contact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctDNA panel (EGFR C797S / T790M / exon-20)</strong></td>
+<td><strong>Guardant Health <em>(preferred)</em> (Guardant360 CDx)</strong></td>
+<td><strong>Distinguishes on-target (C797S, exon-20) vs bypass post-osimertinib resistance; informs fourth-gen TKI vs combination strategy</strong></td>
+<td><strong><a href="https://guardanthealth.com/products/guardant360-cdx/">test info</a> · 505 Penobscot Drive, Redwood City, CA 94063 · 1-855-698-8887</strong></td>
+</tr>
+<tr>
+<td>ctDNA panel</td>
+<td>Foundation Medicine <em>(FoundationOne Liquid CDx)</em></td>
+<td>Distinguishes on-target vs bypass post-osimertinib resistance</td>
+<td><a href="https://www.foundationmedicine.com/test/foundationone-liquid-cdx">test info</a> · 150 Second Street, Cambridge, MA 02141 · 1-888-988-3639</td>
+</tr>
+<tr>
+<td>ctDNA panel</td>
+<td>Tempus <em>(xF+)</em></td>
+<td>Distinguishes on-target vs bypass post-osimertinib resistance</td>
+<td><a href="https://www.tempus.com/oncology/diagnostics/">test info</a> · 600 West Chicago Avenue, Chicago, IL 60654 · 1-800-739-4137</td>
+</tr>
+<tr>
+<td>ctDNA panel</td>
+<td>Caris Life Sciences <em>(Caris Assure)</em></td>
+<td>Distinguishes on-target vs bypass post-osimertinib resistance</td>
+<td><a href="https://www.carislifesciences.com/products-and-services/molecular-profiling/">test info</a> · 4610 South 44th Place, Phoenix, AZ 85040 · 1-888-979-8669</td>
+</tr>
+<tr>
+<td>ctDNA panel</td>
+<td>NeoGenomics Laboratories <em>(NeoLAB Liquid)</em></td>
+<td>Distinguishes on-target vs bypass post-osimertinib resistance</td>
+<td><a href="https://neogenomics.com/test-menu">test info</a> · 9490 NeoGenomics Way, Fort Myers, FL 33912 · 1-866-776-5907</td>
+</tr>
+<tr>
+<td><strong>Tumor NGS for TP53 / RB1 + bypass alterations</strong></td>
+<td><strong>Foundation Medicine <em>(preferred)</em> (FoundationOne CDx)</strong></td>
+<td><strong>Predicts SCLC histologic transformation; informs whether next-line stays adenocarcinoma-targeted or pivots to chemo</strong></td>
+<td><strong><a href="https://www.foundationmedicine.com/test/foundationone-cdx">test info</a> · 150 Second Street, Cambridge, MA 02141 · 1-888-988-3639</strong></td>
+</tr>
+<tr>
+<td>Tumor NGS</td>
+<td>Caris Life Sciences <em>(Molecular Intelligence)</em></td>
+<td>Predicts SCLC histologic transformation</td>
+<td><a href="https://www.carislifesciences.com/products-and-services/molecular-profiling/">test info</a> · 4610 South 44th Place, Phoenix, AZ 85040 · 1-888-979-8669</td>
+</tr>
+<tr>
+<td>Tumor NGS</td>
+<td>Tempus <em>(xT)</em></td>
+<td>Predicts SCLC histologic transformation</td>
+<td><a href="https://www.tempus.com/oncology/diagnostics/">test info</a> · 600 West Chicago Avenue, Chicago, IL 60654 · 1-800-739-4137</td>
+</tr>
+<tr>
+<td>Tumor NGS</td>
+<td>NeoGenomics Laboratories <em>(NeoTYPE Comprehensive)</em></td>
+<td>Predicts SCLC histologic transformation</td>
+<td><a href="https://neogenomics.com/test-menu">test info</a> · 9490 NeoGenomics Way, Fort Myers, FL 33912 · 1-866-776-5907</td>
+</tr>
+<tr>
+<td>Tumor NGS</td>
+<td>Memorial Sloan Kettering <em>(MSK-IMPACT)</em></td>
+<td>Predicts SCLC histologic transformation</td>
+<td><a href="https://www.mskcc.org/clinical-services/diagnostic-laboratory">test info</a> · 1275 York Avenue, New York, NY 10065 · 1-212-639-2000</td>
+</tr>
+<tr>
+<td><strong>Re-biopsy + neuroendocrine IHC panel</strong></td>
+<td><strong>Mayo Clinic Laboratories <em>(preferred)</em></strong></td>
+<td><strong>Confirms SCLC transformation when imaging shifts or TP53/RB1 co-loss is detected; pivots therapy entirely</strong></td>
+<td><strong><a href="https://www.mayocliniclabs.com/test-catalog">test info</a> · 200 First Street SW, Rochester, MN 55905 · 1-800-533-1710</strong></td>
+</tr>
+<tr>
+<td>Re-biopsy + neuroendocrine IHC</td>
+<td>ARUP Laboratories</td>
+<td>Confirms SCLC transformation when imaging shifts or TP53/RB1 co-loss is detected</td>
+<td><a href="https://www.aruplab.com/">test info</a> · 500 Chipeta Way, Salt Lake City, UT 84108 · 1-800-242-2787</td>
+</tr>
+<tr>
+<td>Re-biopsy + neuroendocrine IHC</td>
+<td>LabCorp / Esoterix Oncology</td>
+<td>Confirms SCLC transformation when imaging shifts or TP53/RB1 co-loss is detected</td>
+<td><a href="https://www.labcorp.com/oncology">test info</a> · 358 South Main Street, Burlington, NC 27215 · 1-800-345-4363</td>
+</tr>
+<tr>
+<td>Re-biopsy + neuroendocrine IHC</td>
+<td>Quest Diagnostics</td>
+<td>Confirms SCLC transformation when imaging shifts or TP53/RB1 co-loss is detected</td>
+<td><a href="https://testdirectory.questdiagnostics.com/">test info</a> · 500 Plaza Drive, Secaucus, NJ 07094 · 1-866-697-8378</td>
+</tr>
+<tr>
+<td>Re-biopsy + neuroendocrine IHC</td>
+<td>Memorial Sloan Kettering Diagnostic Molecular Pathology</td>
+<td>Confirms SCLC transformation when imaging shifts or TP53/RB1 co-loss is detected</td>
+<td><a href="https://www.mskcc.org/clinical-services/diagnostic-laboratory">test info</a> · 1275 York Avenue, New York, NY 10065 · 1-212-639-2000</td>
+</tr>
+<tr>
+<td><strong>MET FISH (gene/CEP7 ratio)</strong></td>
+<td><strong>NeoGenomics Laboratories <em>(preferred)</em></strong></td>
+<td><strong>Refines confidence in MET amp gating result for SAFFRON enrollment; does not gate eligibility</strong></td>
+<td><strong><a href="https://neogenomics.com/test-menu">test info</a> · 9490 NeoGenomics Way, Fort Myers, FL 33912 · 1-866-776-5907</strong></td>
+</tr>
+<tr>
+<td>MET FISH</td>
+<td>Foundation Medicine</td>
+<td>Refines MET amp gating result; does not gate eligibility</td>
+<td><a href="https://www.foundationmedicine.com/test/foundationone-cdx">test info</a> · 150 Second Street, Cambridge, MA 02141 · 1-888-988-3639</td>
+</tr>
+<tr>
+<td>MET FISH</td>
+<td>Mayo Clinic Laboratories</td>
+<td>Refines MET amp gating result; does not gate eligibility</td>
+<td><a href="https://www.mayocliniclabs.com/test-catalog">test info</a> · 200 First Street SW, Rochester, MN 55905 · 1-800-533-1710</td>
+</tr>
+<tr>
+<td>MET FISH</td>
+<td>LabCorp / Esoterix Oncology</td>
+<td>Refines MET amp gating result; does not gate eligibility</td>
+<td><a href="https://www.labcorp.com/oncology">test info</a> · 358 South Main Street, Burlington, NC 27215 · 1-800-345-4363</td>
+</tr>
+<tr>
+<td>MET FISH</td>
+<td>Quest Diagnostics</td>
+<td>Refines MET amp gating result; does not gate eligibility</td>
+<td><a href="https://testdirectory.questdiagnostics.com/">test info</a> · 500 Plaza Drive, Secaucus, NJ 07094 · 1-866-697-8378</td>
+</tr>
+<tr>
+<td><strong>MET IHC (clone SP44)</strong></td>
+<td><strong>Mayo Clinic Laboratories <em>(preferred)</em></strong></td>
+<td><strong>Confirms MET protein-level expression; orthogonal complement to FISH but does not change SAFFRON eligibility</strong></td>
+<td><strong><a href="https://www.mayocliniclabs.com/test-catalog">test info</a> · 200 First Street SW, Rochester, MN 55905 · 1-800-533-1710</strong></td>
+</tr>
+<tr>
+<td>MET IHC</td>
+<td>ARUP Laboratories</td>
+<td>Confirms MET protein-level expression</td>
+<td><a href="https://www.aruplab.com/">test info</a> · 500 Chipeta Way, Salt Lake City, UT 84108 · 1-800-242-2787</td>
+</tr>
+<tr>
+<td>MET IHC</td>
+<td>NeoGenomics Laboratories</td>
+<td>Confirms MET protein-level expression</td>
+<td><a href="https://neogenomics.com/test-menu">test info</a> · 9490 NeoGenomics Way, Fort Myers, FL 33912 · 1-866-776-5907</td>
+</tr>
+<tr>
+<td>MET IHC</td>
+<td>LabCorp / Esoterix Oncology</td>
+<td>Confirms MET protein-level expression</td>
+<td><a href="https://www.labcorp.com/oncology">test info</a> · 358 South Main Street, Burlington, NC 27215 · 1-800-345-4363</td>
+</tr>
+<tr>
+<td>MET IHC</td>
+<td>Quest Diagnostics</td>
+<td>Confirms MET protein-level expression</td>
+<td><a href="https://testdirectory.questdiagnostics.com/">test info</a> · 500 Plaza Drive, Secaucus, NJ 07094 · 1-866-697-8378</td>
+</tr>
+<tr>
+<td><strong>Comprehensive bypass NGS (HER2 / BRAF / KRAS / FGFR)</strong></td>
+<td><strong>Foundation Medicine <em>(preferred)</em> (FoundationOne CDx)</strong></td>
+<td><strong>Frames durability expectations and the next-line plan for MET-directed therapy; does not gate SAFFRON</strong></td>
+<td><strong><a href="https://www.foundationmedicine.com/test/foundationone-cdx">test info</a> · 150 Second Street, Cambridge, MA 02141 · 1-888-988-3639</strong></td>
+</tr>
+<tr>
+<td>Comprehensive bypass NGS</td>
+<td>Caris Life Sciences <em>(Molecular Intelligence)</em></td>
+<td>Frames durability and next-line plan for MET-directed therapy</td>
+<td><a href="https://www.carislifesciences.com/products-and-services/molecular-profiling/">test info</a> · 4610 South 44th Place, Phoenix, AZ 85040 · 1-888-979-8669</td>
+</tr>
+<tr>
+<td>Comprehensive bypass NGS</td>
+<td>Tempus <em>(xT)</em></td>
+<td>Frames durability and next-line plan for MET-directed therapy</td>
+<td><a href="https://www.tempus.com/oncology/diagnostics/">test info</a> · 600 West Chicago Avenue, Chicago, IL 60654 · 1-800-739-4137</td>
+</tr>
+<tr>
+<td>Comprehensive bypass NGS</td>
+<td>NeoGenomics Laboratories <em>(NeoTYPE Comprehensive)</em></td>
+<td>Frames durability and next-line plan for MET-directed therapy</td>
+<td><a href="https://neogenomics.com/test-menu">test info</a> · 9490 NeoGenomics Way, Fort Myers, FL 33912 · 1-866-776-5907</td>
+</tr>
+<tr>
+<td>Comprehensive bypass NGS</td>
+<td>Memorial Sloan Kettering <em>(MSK-IMPACT)</em></td>
+<td>Frames durability and next-line plan for MET-directed therapy</td>
+<td><a href="https://www.mskcc.org/clinical-services/diagnostic-laboratory">test info</a> · 1275 York Avenue, New York, NY 10065 · 1-212-639-2000</td>
+</tr>
+</tbody>
+</table>
+<h3 id="biomarker-plan">Biomarker plan<a class="headerlink" href="#biomarker-plan" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Recommended assay</th>
+<th>Rationale</th>
+<th>Suggested assay provider</th>
+<th>Tissue requirements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ctDNA panel including EGFR C797S, T790M, and exon 20 insertions</td>
+<td>After osimertinib progression, the resistance landscape divides cleanly between on-target EGFR mutations (C797S, exon-20 inserts, less commonly T790M) and bypass mechanisms. Detecting C797S in cis vs trans changes whether a fourth-generation EGFR-TKI or a combination strategy is the rational next move. Skipping ctDNA at progression risks treating the case as bypass-resistance-only when the biology is mixed.</td>
+<td>Guardant Health <em>(Guardant360 CDx)</em> · <a href="https://guardanthealth.com/products/guardant360-cdx/">test info</a> · 505 Penobscot Drive, Redwood City, CA 94063 · 1-855-698-8887</td>
+<td>10–20 mL whole blood; archival tissue not required</td>
+</tr>
+<tr>
+<td>Tumor NGS including TP53 and RB1 status</td>
+<td>TP53 + RB1 co-loss is the strongest predictor of small-cell histologic transformation as a resistance mechanism in EGFR-mutant NSCLC progressing on osimertinib. The probability of transformation is non-trivial (3–14% across cohorts), and missing it changes the next-line conversation entirely; chemotherapy backbones and platinum-etoposide enter the picture. Pair this with re-biopsy guidance below.</td>
+<td>Foundation Medicine <em>(FoundationOne CDx)</em> · <a href="https://www.foundationmedicine.com/test/foundationone-cdx">test info</a> · 150 Second Street, Cambridge, MA 02141 · 1-888-988-3639</td>
+<td>archival FFPE; if exhausted, ctDNA broad panel</td>
+</tr>
+<tr>
+<td>Re-biopsy with neuroendocrine IHC panel (chromogranin, synaptophysin, INSM1, Ki-67) if imaging morphology shifts</td>
+<td>Histologic small-cell transformation is the most consequential resistance pattern that no liquid biopsy can confirm. When TP53/RB1 are co-lost or imaging shows new visceral / explosive growth atypical for adenocarcinoma, fresh tissue with a neuroendocrine IHC panel is the only way to confirm. Without this, a transformed case can be treated as adenocarcinoma indefinitely.</td>
+<td>Mayo Clinic Laboratories · <a href="https://www.mayocliniclabs.com/test-catalog">test info</a> · 200 First Street SW, Rochester, MN 55905 · 1-800-533-1710</td>
+<td>fresh biopsy of the most-active site</td>
+</tr>
+<tr>
+<td>MET FISH on a second site (metastatic biopsy or matched archival block)</td>
+<td>MET amplification can be focal and discordant between primary and metastatic sites in EGFR-resistant NSCLC. The patient's GCN 8.2 from a single block clears SAFFRON's threshold, but a second-site test rules out the scenario where one biopsy hits a focal amplicon and the dominant disease is unaffected. Without it, a positive trial enrollment can rest on a non-representative result.</td>
+<td>NeoGenomics Laboratories · <a href="https://neogenomics.com/test-menu">test info</a> · 9490 NeoGenomics Way, Fort Myers, FL 33912 · 1-866-776-5907</td>
+<td>second-site archival FFPE if available; not gating</td>
+</tr>
+<tr>
+<td>MET IHC (clone SP44) for orthogonal expression confirmation</td>
+<td>FISH-confirmed MET amplification at GCN 8.2 is the load-bearing finding, and SAFFRON enrollment accepts FISH or IHC 3+. IHC adds an orthogonal modality and surfaces protein-level MET expression; concordance increases confidence that the FISH result reflects active MET signaling. Discordance (FISH-amp without IHC overexpression) is a soft signal worth flagging but does not foreclose the trial.</td>
+<td>Mayo Clinic Laboratories · <a href="https://www.mayocliniclabs.com/test-catalog">test info</a> · 200 First Street SW, Rochester, MN 55905 · 1-800-533-1710</td>
+<td>archival FFPE; same block as prior testing</td>
+</tr>
+<tr>
+<td>Comprehensive NGS for HER2 amp, BRAF, KRAS, FGFR1-3, and bypass-pathway alterations</td>
+<td>Bypass amplifications co-occur with MET amp in roughly 10–20% of post-osimertinib cases and modify expected response to MET-directed therapy. Detecting co-bypass alterations doesn't foreclose savolitinib + osimertinib but reframes the durability expectation and informs subsequent-line planning. Pair this with the TP53 / RB1 panel if running comprehensive NGS; same blood draw / block.</td>
+<td>Foundation Medicine <em>(FoundationOne CDx)</em> · <a href="https://www.foundationmedicine.com/test/foundationone-cdx">test info</a> · 150 Second Street, Cambridge, MA 02141 · 1-888-988-3639</td>
+<td>archival FFPE; ctDNA as backup</td>
+</tr>
+<tr>
+<td>---</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><em>Decision support, not medical advice. Confirm assay availability and current standards with the treating team and the local pathology service.</em></p>
+<!-- libby:target-validation:end -->
+
+<h2 id="scope-summary">Scope summary<a class="headerlink" href="#scope-summary" title="Permanent link">&para;</a></h2>
+<p>The dossier behind this page contains 4 trials, 5 clinical-evidence rows, and 4 preclinical rows. Three interventions get ranked. There is no scenario branching because every biomarker on this patient is <code>confirmed</code>. Board agreement scores run from +0.8 at rank 1 down to -0.4 at rank 2, where there is an active veto, so the gap between the top two picks is wide and does real work in the ranking.</p>
+<h2 id="cross-cutting-caveat-read-first">Cross-cutting caveat (read first)<a class="headerlink" href="#cross-cutting-caveat-read-first" title="Permanent link">&para;</a></h2>
+<p>MET amplification at GCN 8.2 with T790M absent points cleanly at MET-directed combination therapy. The patient's modality and toxicity preferences then close off the most-cited alternative. That is the story behind every rank below.</p>
+<ul>
+<li>T790M-negative status takes second-generation osimertinib re-challenge off the table as a sequencing move. The resistance is not gatekeeper-mutation-driven.</li>
+<li>MET amplification accounts for roughly 15–30% of post-osimertinib resistance at this GCN range. Savolitinib + osimertinib is the mechanism-matched combination with replicated evidence in this exact subset.</li>
+<li>The patient's manual-dexterity-driven veto on <strong>severe neuropathy</strong> plus <strong>minimize IV chair time</strong> rules out amivantamab + lazertinib at rank 1 even though the regimen carries NCCN cat-2A status. The conservative's toxicity veto on this rec is the load-bearing dissent.</li>
+<li>The <strong>alopecia veto</strong> alone forecloses patritumab deruxtecan independent of efficacy. The dossier keeps it on the page for transparency, not as a live option.</li>
+</ul>
+<h2 id="intervention-grouping">Intervention grouping<a class="headerlink" href="#intervention-grouping" title="Permanent link">&para;</a></h2>
+<p>Three buckets, sorted by how cleanly each one matches the resistance biology.</p>
+<ul>
+<li>MET-targeted EGFR-TKI combinations (mechanism-matched, all-oral): savolitinib + osimertinib via the SAFFRON / SACHI phase-3 program. The mechanistic anchor is the TATTON expansion (<a href="https://pubmed.ncbi.nlm.nih.gov/32679432">PMID 32679432</a>).</li>
+<li>EGFR + MET bispecific paired with a 3G TKI (broader-spectrum, IV-anchored): amivantamab + lazertinib via CHRYSALIS-2 (<a href="https://pubmed.ncbi.nlm.nih.gov/36720074">PMID 36720074</a>).</li>
+<li>HER3-directed antibody-drug conjugate (mechanism-agnostic post-TKI option): patritumab deruxtecan via HERTHENA-Lung01 (<a href="https://pubmed.ncbi.nlm.nih.gov/37563559">PMID 37563559</a>).</li>
+</ul>
+<h2 id="top-interventions">Top interventions<a class="headerlink" href="#top-interventions" title="Permanent link">&para;</a></h2>
+<h3 id="rank-1-savolitinib-osimertinib-preferably-on-saffron-sachi">Rank 1. Savolitinib + osimertinib (preferably on SAFFRON / SACHI)<a class="headerlink" href="#rank-1-savolitinib-osimertinib-preferably-on-saffron-sachi" title="Permanent link">&para;</a></h3>
+<p><em>Mechanism-matched, all-oral, clears every preference axis. Four of five personas endorsed. Concensusite's qualified guideline-fit concern resolves on trial enrollment.</em></p>
+<h4 id="evidence-base">Evidence base<a class="headerlink" href="#evidence-base" title="Permanent link">&para;</a></h4>
+<p>The mechanistic and clinical anchor is the TATTON expansion (<a href="https://pubmed.ncbi.nlm.nih.gov/32679432">PMID 32679432</a>; n=69; ORR 30%, 95% CI 19–42 in the EGFR-mut + MET-amp post-EGFR-TKI subset). The phase-3 confirmatory study (<a href="https://clinicaltrials.gov/study/NCT05261399">NCT05261399</a>; SAFFRON; n=324; savo + osi vs platinum + pemetrexed; PFS endpoint) is recruiting and reads out into the same biomarker-defined population. The patient's MET-amp GCN 8.2 by FISH clears the GCN ≥6 / IHC 3+ enrollment threshold without needing a borderline call.</p>
+<h4 id="likelihood-of-desired-effect">Likelihood of desired effect<a class="headerlink" href="#likelihood-of-desired-effect" title="Permanent link">&para;</a></h4>
+<p>Mechanism concordance is high. MET amplification IS the on-target resistance mechanism this combination targets, and the patient's biomarker fits the studied stratum exactly. The TATTON ORR (~30%) is real, replicated within the program, and pre-specified to this subset. The phase-3 readout will quantify durability and PFS gain over chemotherapy.</p>
+<h4 id="toxicity-profile">Toxicity profile<a class="headerlink" href="#toxicity-profile" title="Permanent link">&para;</a></h4>
+<ul>
+<li>LFT elevation, manageable with dose reduction</li>
+<li>Peripheral edema</li>
+<li>Fatigue</li>
+<li>All-oral, with no inpatient component</li>
+<li>No severe-neuropathy signal in either TATTON or the broader SAFFRON program</li>
+</ul>
+<p>User vetoes (severe neuropathy, cardiotoxicity, alopecia) all clear. Modality constraints (oral, no inpatient, minimize IV) all clear.</p>
+<h4 id="counter-productive-mechanisms-dissent">Counter-productive mechanisms / dissent<a class="headerlink" href="#counter-productive-mechanisms-dissent" title="Permanent link">&para;</a></h4>
+<p>Endorsed by risktaker, conservative, critic, and advocate. Concensusite raised a <em>qualified guideline-fit</em> concern: the combination is not currently NCCN-listed as a recommended regimen, so off-trial use is off-label. The resolution is trial enrollment, which the patient already prefers. No persona dissented or vetoed.</p>
+<h4 id="practical-considerations">Practical considerations<a class="headerlink" href="#practical-considerations" title="Permanent link">&para;</a></h4>
+<ul>
+<li>All-oral: savolitinib 300 mg PO BID + osimertinib 80 mg PO daily</li>
+<li>Trial enrollment is the guideline-aligned route</li>
+<li>Off-trial use is off-label, so flag it with the treating team</li>
+<li>LFT monitoring at baseline plus every 2–4 weeks early in therapy</li>
+</ul>
+<h4 id="why-this-rank">Why this rank<a class="headerlink" href="#why-this-rank" title="Permanent link">&para;</a></h4>
+<p>Strong combined evidence-and-preference fit. Every preference axis clears, the mechanism matches the biomarker, and the agreement_score (+0.8) is the highest in the dossier. The rank-1/rank-2 gap is +1.2 (vs amivantamab + lazertinib at -0.4), driven both by the active veto on rank 2 and by the better preference fit here.</p>
+<h4 id="per-trial-detail">Per-trial detail<a class="headerlink" href="#per-trial-detail" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Therapeutic agent</th>
+<th>Efficacy</th>
+<th>Toxicity</th>
+<th>Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Savolitinib + osimertinib — TATTON expansion (single-arm phase 1b, n=69 EGFR-mut + MET-amp post-TKI)</td>
+<td>ORR 30% (95% CI 19–42)</td>
+<td>LFT elevation, peripheral edema, fatigue (all manageable)</td>
+<td><a href="https://pubmed.ncbi.nlm.nih.gov/32679432">PMID 32679432</a></td>
+</tr>
+<tr>
+<td>Savolitinib + osimertinib — SAFFRON (phase 3 RCT, recruiting, n=324)</td>
+<td>PFS endpoint; outcome pending</td>
+<td>Per TATTON safety profile + comparator chemo arm</td>
+<td><a href="https://clinicaltrials.gov/study/NCT05261399">NCT05261399</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="rank-2-amivantamab-lazertinib">Rank 2. Amivantamab + lazertinib<a class="headerlink" href="#rank-2-amivantamab-lazertinib" title="Permanent link">&para;</a></h3>
+<p><em>Real efficacy signal, NCCN cat-2A, but </em><em>conservative vetoed on neuropathy + IV-burden grounds</em><em>. Considered with caveats; override not recommended absent rank-1 failure.</em></p>
+<h4 id="evidence-base_1">Evidence base<a class="headerlink" href="#evidence-base_1" title="Permanent link">&para;</a></h4>
+<p>CHRYSALIS-2 (<a href="https://pubmed.ncbi.nlm.nih.gov/36720074">PMID 36720074</a>; single-arm phase 1/2; n=162; post-osimertinib EGFR-mutant biomarker subset including MET-amp): ORR 36% (95% CI 28–45). NCCN NSCLC v3.2025 category 2A. ESMO MCBS B.</p>
+<h4 id="likelihood-of-desired-effect_1">Likelihood of desired effect<a class="headerlink" href="#likelihood-of-desired-effect_1" title="Permanent link">&para;</a></h4>
+<p>Effect size is real and slightly larger than rank 1's ORR. Biomarker fit is acceptable (EGFR L858R + MET-amp permitted), but the trial is not enriched specifically for MET-amplified post-osimertinib progressors at this GCN range, so the subset estimate is less granular than TATTON's.</p>
+<h4 id="toxicity-profile_1">Toxicity profile<a class="headerlink" href="#toxicity-profile_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Severe neuropathy</strong> in combination data, which triggers the user veto</li>
+<li>IRR grade 3+ ~7%</li>
+<li>Rash</li>
+<li>Inpatient or extended chair-time IV cycle 1, which conflicts with both modality preferences (no inpatient infusion; minimize IV chair time)</li>
+</ul>
+<p>For a working artist whose manual dexterity matters more than typical, the neuropathy risk is decision-relevant beyond the categorical veto.</p>
+<h4 id="counter-productive-mechanisms-dissent_1">Counter-productive mechanisms / dissent<a class="headerlink" href="#counter-productive-mechanisms-dissent_1" title="Permanent link">&para;</a></h4>
+<p><strong>Conservative issued a toxicity veto on stated severe-neuropathy and IV-burden grounds.</strong> Advocate dissented on preference fit. Critic dissented on evidence-quality grounds (single-arm phase 1/2, no randomized comparator in the post-osimertinib subset). Risktaker endorsed on effect size; concensusite endorsed on NCCN guideline alignment.</p>
+<p>The veto is honored, not silently dropped. Per PI synthesis rules this row stays on the page as <code>considered_with_caveats</code> so the user sees what was considered. Override of the conservative's veto is <strong>not</strong> recommended absent failure of the rank-1 option.</p>
+<h4 id="practical-considerations_1">Practical considerations<a class="headerlink" href="#practical-considerations_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Amivantamab 1050 mg IV weekly cycle 1 then q2w + lazertinib 240 mg PO daily</li>
+<li>Subcutaneous amivantamab is in development; AE re-profiling pending</li>
+<li>NCCN-recommended; off-label considerations are weaker than for rank 1</li>
+</ul>
+<h4 id="why-this-rank_1">Why this rank<a class="headerlink" href="#why-this-rank_1" title="Permanent link">&para;</a></h4>
+<p>Below savolitinib + osimertinib because of the active toxicity veto plus the modality conflict, even though the ORR is slightly larger. Above patritumab deruxtecan because two personas affirmatively endorsed and the alopecia veto on rank 3 is unconditional.</p>
+<h4 id="per-trial-detail_1">Per-trial detail<a class="headerlink" href="#per-trial-detail_1" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Therapeutic agent</th>
+<th>Efficacy</th>
+<th>Toxicity</th>
+<th>Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Amivantamab + lazertinib — CHRYSALIS-2 (single-arm phase 1/2, n=162 post-osimertinib)</td>
+<td>ORR 36% (95% CI 28–45)</td>
+<td>Severe neuropathy (combination); IRR G3+ ~7%; rash</td>
+<td><a href="https://pubmed.ncbi.nlm.nih.gov/36720074">PMID 36720074</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="rank-3-patritumab-deruxtecan-her3-dxd">Rank 3. Patritumab deruxtecan (HER3-DXd)<a class="headerlink" href="#rank-3-patritumab-deruxtecan-her3-dxd" title="Permanent link">&para;</a></h3>
+<p><em>Real efficacy, but </em><em>the alopecia veto forecloses it.</em><em> Surfaced only so the user can re-weight the veto with her oncologist if she chooses.</em></p>
+<h4 id="evidence-base_2">Evidence base<a class="headerlink" href="#evidence-base_2" title="Permanent link">&para;</a></h4>
+<p>HERTHENA-Lung01 (<a href="https://pubmed.ncbi.nlm.nih.gov/37563559">PMID 37563559</a>; single-arm phase 2; n=225; EGFR-mutant NSCLC after EGFR-TKI): ORR 29.8% (95% CI 23.9–36.2). Effect size is comparable to ranks 1 and 2.</p>
+<h4 id="likelihood-of-desired-effect_2">Likelihood of desired effect<a class="headerlink" href="#likelihood-of-desired-effect_2" title="Permanent link">&para;</a></h4>
+<p>The mechanism (HER3-targeted antibody-drug conjugate) is mechanism-agnostic relative to the patient's MET-amp resistance. It targets HER3 expression rather than the resistance pathway. The effect is real, but the mechanism fit is weaker than at rank 1.</p>
+<h4 id="toxicity-profile_2">Toxicity profile<a class="headerlink" href="#toxicity-profile_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li>ILD grade 3+ ~5%</li>
+<li><strong>Alopecia</strong>, which triggers the user veto</li>
+<li>Thrombocytopenia</li>
+<li>IV q3w</li>
+</ul>
+<h4 id="counter-productive-mechanisms-dissent_2">Counter-productive mechanisms / dissent<a class="headerlink" href="#counter-productive-mechanisms-dissent_2" title="Permanent link">&para;</a></h4>
+<p>Only the risktaker advanced this rec. Advocate did not advance it because the alopecia veto was already on the table. No formal veto was issued because the dossier surfaced the rec only after ranks 1 and 2 were established.</p>
+<h4 id="practical-considerations_2">Practical considerations<a class="headerlink" href="#practical-considerations_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li>5.6 mg/kg IV q3w</li>
+<li>Not currently NCCN-endorsed as standard for this setting</li>
+<li>ILD risk requires baseline pulmonary function plus ongoing monitoring</li>
+</ul>
+<h4 id="why-this-rank_2">Why this rank<a class="headerlink" href="#why-this-rank_2" title="Permanent link">&para;</a></h4>
+<p>Below ranks 1 and 2 because the alopecia veto is unconditional. The rec is on the page for transparency: the user can ask her oncologist whether re-weighting the alopecia veto changes the calculus. That is a conversation, not a recommendation.</p>
+<h4 id="per-trial-detail_2">Per-trial detail<a class="headerlink" href="#per-trial-detail_2" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Therapeutic agent</th>
+<th>Efficacy</th>
+<th>Toxicity</th>
+<th>Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Patritumab deruxtecan — HERTHENA-Lung01 (single-arm phase 2, n=225 post-EGFR-TKI)</td>
+<td>ORR 29.8% (95% CI 23.9–36.2)</td>
+<td>ILD G3+ ~5%; alopecia; thrombocytopenia</td>
+<td><a href="https://pubmed.ncbi.nlm.nih.gov/37563559">PMID 37563559</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="classes-examined-but-not-ranked">Classes examined but not ranked<a class="headerlink" href="#classes-examined-but-not-ranked" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Osimertinib re-challenge or dose escalation: T790M is absent, so the gatekeeper-mutation pathway is not the resistance mechanism, and re-challenge has no biomarker rationale.</li>
+<li>MET-targeted monotherapy (capmatinib, tepotinib): the mechanism overlaps with the rank-1 savolitinib + osimertinib combo, but the approved indications cover METex14 rather than amplification, so the biomarker subset does not match.</li>
+</ul>
+<h2 id="ranked-prioritization">Ranked prioritization<a class="headerlink" href="#ranked-prioritization" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Status</th>
+<th>Intervention</th>
+<th>Endorsed by</th>
+<th>Dissent</th>
+<th>Veto</th>
+<th>Likelihood</th>
+<th>Toxicity burden</th>
+<th>Why this rank</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>recommended</td>
+<td>Savolitinib + osimertinib (preferably on SAFFRON / SACHI)</td>
+<td><span class="persona persona-risktaker">risktaker</span> <span class="persona persona-conservative">conservative</span> <span class="persona persona-critic">critic</span> <span class="persona persona-advocate">advocate</span></td>
+<td>—</td>
+<td>—</td>
+<td>High mechanism fit; ORR ~30% replicated</td>
+<td>LFT, edema, fatigue</td>
+<td>Mechanism + preferences both clean</td>
+</tr>
+<tr>
+<td>2</td>
+<td>considered_with_caveats</td>
+<td>Amivantamab + lazertinib</td>
+<td><span class="persona persona-risktaker">risktaker</span> <span class="persona persona-concensusite">concensusite</span></td>
+<td><span class="persona persona-critic">critic</span> <span class="persona persona-advocate">advocate</span></td>
+<td><span class="persona persona-conservative">conservative</span></td>
+<td>ORR 36% in subset</td>
+<td>Severe neuropathy, IV burden</td>
+<td>Active veto + modality conflict</td>
+</tr>
+<tr>
+<td>3</td>
+<td>considered_with_caveats</td>
+<td>Patritumab deruxtecan (HER3-DXd)</td>
+<td><span class="persona persona-risktaker">risktaker</span></td>
+<td>—</td>
+<td>—</td>
+<td>ORR 29.8% post-TKI</td>
+<td>ILD ~5%; alopecia</td>
+<td>Triggers alopecia veto outright</td>
+</tr>
+</tbody>
+</table>
+<h2 id="caveats">Caveats<a class="headerlink" href="#caveats" title="Permanent link">&para;</a></h2>
+<ul>
+<li>The evidence base is modest in size. Rank 1's anchor is a 69-patient TATTON expansion plus a recruiting phase 3. Rank 2's anchor is a 162-patient single-arm. Rank 3's anchor is a 225-patient single-arm. None has a randomized comparator in this patient's exact biomarker stratum yet.</li>
+<li>No OS data exist for any of the three ranked interventions in the post-osimertinib MET-amp setting specifically. Effect estimates are ORR-based, and durability is the open question for all three.</li>
+<li>Two of the three rec-ranks turn on user vetoes (neuropathy, alopecia) tied to the working-artist context. The board treated those as load-bearing, not disposable.</li>
+<li>What would change the ranking:<ul>
+<li>A SAFFRON OS readout that confirms a meaningful PFS / OS benefit would tighten rank 1's confidence and could push it from "preferred" to "guideline-fit."</li>
+<li>A MET-amp-stratified amivantamab + lazertinib randomized readout that mitigates neuropathy (for example with the SC formulation) could narrow the rank-1 / rank-2 gap, but the modality preference would still anchor rank 1 above it.</li>
+<li>If the user re-weighted the alopecia veto, patritumab deruxtecan would move from rank 3 (<code>considered_with_caveats</code>) to rank 2.</li>
+<li>Failure of the rank-1 option (intolerance, progression, slot unavailability) is the explicit precondition for revisiting rank 2 with the conservative's veto on the table.</li>
+</ul>
+</li>
+<li>Re-scoping caveat. If the patient's clinical state changes (CNS progression, declining ECOG) or if the modality preference relaxes, the ranking shifts. The current page assumes the stated profile and preferences hold.</li>
+</ul>
+<h2 id="sources">Sources<a class="headerlink" href="#sources" title="Permanent link">&para;</a></h2>
+<p><strong>PubMed (PMID):</strong></p>
+<ul>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/32679432">32679432</a> — Sequist et al., TATTON expansion, <em>Lancet Oncol</em> 2020</li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/36720074">36720074</a> — Cho et al., CHRYSALIS-2, <em>JCO</em> 2023</li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/37563559">37563559</a> — Yu et al., HERTHENA-Lung01, <em>JCO</em> 2023</li>
+</ul>
+<p><strong>ClinicalTrials.gov (NCT):</strong></p>
+<ul>
+<li><a href="https://clinicaltrials.gov/study/NCT05261399">NCT05261399</a> — SAFFRON (savolitinib + osimertinib phase 3)</li>
+<li><a href="https://clinicaltrials.gov/study/NCT04077463">NCT04077463</a> — CHRYSALIS-2 (amivantamab + lazertinib)</li>
+<li><a href="https://clinicaltrials.gov/study/NCT04619004">NCT04619004</a> — HERTHENA-Lung01 (patritumab deruxtecan)</li>
+<li><a href="https://clinicaltrials.gov/study/NCT02143466">NCT02143466</a> — TATTON</li>
+</ul>
+<h2 id="transparency-artifacts">Transparency artifacts<a class="headerlink" href="#transparency-artifacts" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="trials/">Trial table</a> — 4 trials in the dossier</li>
+<li><a href="evidence/">Evidence list</a> — 5 clinical-evidence rows + 4 preclinical rows</li>
+<li><a href="board/">Tumor-board transcript</a> — 5 positions, 20 cross-critiques</li>
+<li><a href="recommendations/">Recommendations table</a> — full ranked detail</li>
+<li><a href="plain_language/">Plain-language summary</a> — patient/caregiver track</li>
+</ul>
+<h2 id="run-log">Run log<a class="headerlink" href="#run-log" title="Permanent link">&para;</a></h2>
+<p>This is a demo case authored in May 2026 with synthetic data so the pipeline can be smoke-tested. No real patient is represented. The page was re-rendered into the shieldbreak-flavored layout the same month after Libby's PI authoring contract was updated to mirror <code>pirl-unc/io-shieldbreak</code>, then re-run with the humanizer pass once that was added to the contract.</p>
+<!-- libby:downloads:begin -->
+
+<h2 id="downloads">Downloads<a class="headerlink" href="#downloads" title="Permanent link">&para;</a></h2>
+<h3 id="html">HTML<a class="headerlink" href="#html" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="target_validation/?v=c8af7f62">Target validation paths</a> — per-feature biomarker-workup table with providers and references, sortable in-browser</li>
+<li><a href="demo-nsclc-egfr-l858r-post-osi-d3m0-recommendations.html?v=60a21ba9">Recommendations table</a> — ranked options + pipeline context + per-intervention evidence in detail — self-contained HTML that opens offline</li>
+<li><a href="accessibility/?v=a9b23b43">Access guide</a> — how to access each therapy — trial recruitment contacts + manufacturer medical-info lines, in a sortable in-browser table</li>
+<li><a href="demo-nsclc-egfr-l858r-post-osi-d3m0-accessibility.html?v=878fa5c7">Access guide (offline)</a> — same access-guide content packaged as a self-contained HTML that opens offline</li>
+<li><a href="manuscripts/?v=46cdbd66">Master manuscripts table</a> — every paper considered — n, effect, variance, toxicities, in a sortable in-browser table</li>
+<li><a href="demo-nsclc-egfr-l858r-post-osi-d3m0-manuscripts.html?v=1fc936ef">Master manuscripts table (offline)</a> — same manuscripts inventory packaged as a self-contained HTML that opens offline</li>
+</ul>
+<h3 id="pdf">PDF<a class="headerlink" href="#pdf" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="demo-nsclc-egfr-l858r-post-osi-d3m0-target-validation.pdf?v=e5ac38b3">Target validation paths</a> — diagnostic + biomarker workup that hardens the targetable-feature call</li>
+<li><a href="demo-nsclc-egfr-l858r-post-osi-d3m0-recommendations.pdf?v=0a1fb112">Recommendations table</a> — ranked options + pipeline context + evidence in detail, in a print-friendly PDF</li>
+<li><a href="demo-nsclc-egfr-l858r-post-osi-d3m0-manuscripts.pdf?v=45f714c6">Master manuscripts table</a> — every paper considered — n, effect, variance, toxicities, in a print-friendly PDF</li>
+<li><a href="demo-nsclc-egfr-l858r-post-osi-d3m0-plain-language.pdf?v=16c32a0a">Patient/caregiver PDF</a> — plain-language summary</li>
+</ul>
+<!-- libby:downloads:end -->
+
+<div class="admonition danger disclaimer">
+<p class="admonition-title">Decision support, not medical advice</p>
+<p>Libby is experimental. The recommendations on this page have <strong>not</strong> been
+reviewed by a clinician treating this patient. Do not act on this page
+without consulting a qualified oncologist. This is a synthetic
+demonstration case; the patient profile is fictional.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "navigation.instant", "navigation.tracking", "search.highlight", "search.suggest", "content.code.copy", "content.action.edit", "content.tables.sortable"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

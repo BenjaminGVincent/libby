@@ -1,0 +1,633 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A multi-agent decision-support framework for identifying candidate therapeutics for an individual cancer patient. Not medical advice.">
+      
+      
+      
+        <link rel="canonical" href="https://benjamingvincent.github.io/libby/cases/pancreatic-mets-kras-g12d-basal-arid1a-k9r3/target_validation/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Target validation - Libby</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/trial-table.css?v=1a438225">
+    
+      <link rel="stylesheet" href="../../../stylesheets/libby.css?v=41cd52d9">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#target-validation-pancreatic-mets-kras-g12d-basal-arid1a-k9r3" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Libby" class="md-header__button md-logo" aria-label="Libby" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Libby
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Target validation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/BenjaminGVincent/libby" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BenjaminGVincent/libby
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Libby" class="md-nav__button md-logo" aria-label="Libby" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Libby
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/BenjaminGVincent/libby" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BenjaminGVincent/libby
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../phi_policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PHI policy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#kras-g12d-mutation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KRAS G12D mutation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hla-restricted-kras-directed-immunotherapy-hla-class-i-genotype-a0101-a0201-b3701-b4402-c0501-c0602" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HLA-restricted KRAS-directed immunotherapy (HLA class I genotype A01:01, A02:01, B37:01, B44:02, C05:01, C06:02)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arid1a-frameshift-loss-of-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ARID1A frameshift (loss of function)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mlh1-mutation-mismatch-repair-status-in-an-mss-tmb-86-germline-negative-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MLH1 mutation / mismatch-repair status (in an MSS, TMB-8.6, germline-negative context)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mss-status-with-tmb-86-mutmb-decision-relevant-negative-immunotherapy-findings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MSS status with TMB 8.6 mut/Mb (decision-relevant negative immunotherapy findings)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#smad4-e520-loss-and-tp53-y126s-a138v-co-mutations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SMAD4 E520* loss and TP53 (Y126S, A138V) co-mutations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#purist-basal-like-transcriptional-subtype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PurIST basal-like transcriptional subtype
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/BenjaminGVincent/libby/edit/main/docs/cases/pancreatic-mets-kras-g12d-basal-arid1a-k9r3/target_validation.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<p><meta name="robots" content="noindex"></p>
+<h1 id="target-validation-pancreatic-mets-kras-g12d-basal-arid1a-k9r3">Target validation — <code>pancreatic-mets-kras-g12d-basal-arid1a-k9r3</code><a class="headerlink" href="#target-validation-pancreatic-mets-kras-g12d-basal-arid1a-k9r3" title="Permanent link">&para;</a></h1>
+<p><em>6 validation rows across 7 feature(s) — 2 essential, 4 gating an intervention. Sorted within each feature by priority, then by decision relevance.</em></p>
+<p><em>Essential / gates-intervention rows are the diagnostic prerequisites that must resolve before any feature-targeting therapy can be chosen. Rows tagged <code>confirms_target_call</code> harden the target call without gating a specific therapy; resistance / co-mutation / microenvironment rows refine sequencing and risk.</em></p>
+<h2 id="kras-g12d-mutation">KRAS G12D mutation<a class="headerlink" href="#kras-g12d-mutation" title="Permanent link">&para;</a></h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Priority</th><th>Test</th><th>Type</th><th>Modality</th><th>Tissue</th><th>Turnaround</th><th>Decision gated</th><th>Rationale</th><th>Providers</th><th>References</th></tr></thead>
+      <tbody>
+    <tr><td><span class="fit-badge fit-strong">essential</span></td><td><strong>Tissue comprehensive genomic profiling (DNA NGS) confirming KRAS G12D, with SMAD4, TP53, ARID1A, MLH1 co-calls</strong></td><td>confirmatory</td><td>NGS_panel</td><td>FFPE block or ~10-15 unstained slides; a liver-met core is acceptable if the primary block is unavailable</td><td>2-3 weeks from block receipt</td><td>RAS(ON) inhibitor trial entry (daraxonrasib/RMC-6236, RMC-9805, MRTX1133) requiring a pathologically documented KRAS G12D.</td><td>The KRAS G12D driver came from plasma ctDNA, but the RAS(ON) inhibitor trials want the mutation pathologically documented on tissue, so a tissue NGS confirmation hardens eligibility and rules out a ctDNA artifact before committing to a trial slot. The RMC-9805 and daraxonrasib protocols specify a pathologically documented KRAS mutation (nct:NCT05379985), and tissue profiling simultaneously re-confirms the SMAD4, TP53, ARID1A, and MLH1 co-calls that drive the rest of this workup. Without it, a borderline-VAF plasma case risks a screen-fail or a wrong target call at the most decision-heavy step.</td><td><div><strong>Foundation Medicine</strong> · <em>FoundationOne CDx</em> <span class="fit-badge fit-strong">preferred</span><br><small><a href="https://www.foundationmedicine.com/">test info</a> · 150 Second St, Cambridge, MA 02141 · +1-888-988-3639</small><br><small><em>Preferred: FDA-approved tissue CDx used widely as the central confirmatory assay in RAS-inhibitor trials, broad payer recognition, and a single report that re-confirms KRAS plus all co-alterations.</em></small></div><br><div><strong>Caris Life Sciences</strong> · <em>MI Cancer Seek / WES+WTS</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.carislifesciences.com/">test info</a> · 4610 South 44th Place, Phoenix, AZ 85040 · +1-888-979-8669</small></div><br><div><strong>MSK-IMPACT (Memorial Sloan Kettering)</strong> · <em>MSK-IMPACT</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.mskcc.org/">test info</a> · 1275 York Ave, New York, NY 10065 · +1-833-675-5437</small><br><small><em>Academic option if the patient is being seen at an NCI center that runs IMPACT in-house.</em></small></div><br><div><strong>Tempus</strong> · <em>Tempus xT (tissue DNA/RNA)</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.tempus.com/oncology/">test info</a> · 600 W Chicago Ave, Suite 510, Chicago, IL 60654 · +1-800-739-4137</small><br><small><em>Same lab that ran the plasma panel; xT on tissue gives an orthogonal solid-tumor read and keeps records together.</em></small></div></td><td><a href="https://clinicaltrials.gov/study/NCT05379985">NCT05379985</a><br><a href="https://clinicaltrials.gov/study/NCT06625320">NCT06625320</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/42090791">PMID&nbsp;42090791</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2 id="hla-restricted-kras-directed-immunotherapy-hla-class-i-genotype-a0101-a0201-b3701-b4402-c0501-c0602">HLA-restricted KRAS-directed immunotherapy (HLA class I genotype A<em>01:01, A</em>02:01, B<em>37:01, B</em>44:02, C<em>05:01, C</em>06:02)<a class="headerlink" href="#hla-restricted-kras-directed-immunotherapy-hla-class-i-genotype-a0101-a0201-b3701-b4402-c0501-c0602" title="Permanent link">&para;</a></h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Priority</th><th>Test</th><th>Type</th><th>Modality</th><th>Tissue</th><th>Turnaround</th><th>Decision gated</th><th>Rationale</th><th>Providers</th><th>References</th></tr></thead>
+      <tbody>
+    <tr><td><span class="fit-badge fit-partial">high</span></td><td><strong>High-resolution HLA class I genotyping (A, B, C) by sequence-based typing</strong></td><td>confirmatory</td><td>NGS_panel</td><td>5-10 mL whole blood in EDTA, or a buccal swab; no tumor tissue needed</td><td>1-2 weeks</td><td>HLA-restricted KRAS G12D TCR-T / cell therapy (e.g. NT-112 via NCT06218914); confirms the patient is not C*08:02 and so is ineligible for the C*08:02-restricted products.</td><td>The HLA genotype decides which KRAS G12D cell and TCR products can present the epitope, so a clinical-grade, high-resolution A/B/C type is the enrollment token for these programs. It confirms the decision-relevant negative already in the file: the patient is HLA-C*05:01/C*06:02, not C*08:02, so the published C*08:02-restricted anti-KRAS-G12D TCR-T (NT-112, NCT06218914; NCI NCT06690281) does not apply and should not be pursued. A confirmed type also lets the screener match A*02:01- and A*01:01-restricted KRAS programs cleanly instead of relying on the research HLA call alone.</td><td><div><strong>Labcorp / Labcorp Transplant Diagnostics</strong> · <em>HLA class I high-resolution typing</em> <span class="fit-badge fit-strong">preferred</span><br><small><a href="https://www.labcorp.com/">test info</a> · 358 South Main St, Burlington, NC 27215 · +1-800-845-6167</small><br><small><em>Preferred: CLIA/ASHI-accredited high-resolution HLA typing with national draw-site access and routine 2-field A/B/C reporting that trial coordinators accept for enrollment.</em></small></div><br><div><strong>American Red Cross HLA Laboratory</strong> · <em>High-resolution HLA class I typing</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.redcrossblood.org/biomedical-services/immunohematology-reference-laboratories.html">test info</a> · 100 Edgewood Ave NE, Atlanta, GA 30303 · +1-800-733-2767</small></div><br><div><strong>NMDP / Histogenetics (reference HLA)</strong> · <em>SBT high-resolution HLA</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.histogenetics.com/">test info</a> · 300 Collins St, Ossining, NY 10562 · +1-914-682-4020</small><br><small><em>High-throughput sequence-based HLA typing reference lab.</em></small></div><br><div><strong>Versiti Diagnostic Laboratories</strong> · <em>HLA high-resolution typing</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.versiti.org/">test info</a> · 638 N 18th St, Milwaukee, WI 53233 · +1-800-245-3117</small><br><small><em>ASHI-accredited HLA/histocompatibility lab.</em></small></div></td><td><a href="https://clinicaltrials.gov/study/NCT06218914">NCT06218914</a><br><a href="https://clinicaltrials.gov/study/NCT06690281">NCT06690281</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/35648703">PMID&nbsp;35648703</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2 id="arid1a-frameshift-loss-of-function">ARID1A frameshift (loss of function)<a class="headerlink" href="#arid1a-frameshift-loss-of-function" title="Permanent link">&para;</a></h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Priority</th><th>Test</th><th>Type</th><th>Modality</th><th>Tissue</th><th>Turnaround</th><th>Decision gated</th><th>Rationale</th><th>Providers</th><th>References</th></tr></thead>
+      <tbody>
+    <tr><td><span class="fit-badge fit-partial">high</span></td><td><strong>ARID1A/BAF250a IHC (loss of nuclear expression)</strong></td><td>confirmatory</td><td>IHC</td><td>archival FFPE block or unstained slides; same block as the MMR IHC can be used</td><td>3-7 days from block receipt</td><td>ATR inhibitor (ceralasertib) and EZH2 inhibitor (tazemetostat) trials that require BAF250a loss by IHC.</td><td>The synthetic-lethal trials in ARID1A-deficient tumors define deficiency by loss of BAF250a protein on IHC, not by the DNA frameshift alone, so this is the test that actually gates ATR- and EZH2-inhibitor enrollment. In the ceralasertib study only 67% (28/42) of ARID1A-mutant tumors showed BAF250a loss, so the frameshift call does not reliably predict protein loss (pmid:41686845). Order it and the ATR/EZH2 axis becomes a concrete trial option; skip it and the patient could screen-fail or be enrolled on an unconfirmed target.</td><td><div><strong>NeoGenomics Laboratories</strong> · <em>ARID1A (BAF250a) IHC</em> <span class="fit-badge fit-strong">preferred</span><br><small><a href="https://neogenomics.com/">test info</a> · 9490 NeoGenomics Way, Fort Myers, FL 33912 · +1-866-776-5907</small><br><small><em>Preferred: high-volume reference IHC lab that runs ARID1A/BAF250a as a routine single-marker stain with fast turnaround, so it can run off the same block alongside MMR IHC.</em></small></div><br><div><strong>Caris Life Sciences</strong> · <em>ARID1A IHC</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.carislifesciences.com/">test info</a> · 4610 South 44th Place, Phoenix, AZ 85040 · +1-888-979-8669</small></div><br><div><strong>Labcorp / Labcorp Oncology</strong> · <em>BAF250a (ARID1A) IHC</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.labcorp.com/">test info</a> · 358 South Main St, Burlington, NC 27215 · +1-800-845-6167</small></div><br><div><strong>Tempus</strong> · <em>ARID1A IHC</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.tempus.com/oncology/">test info</a> · 600 W Chicago Ave, Suite 510, Chicago, IL 60654 · +1-800-739-4137</small><br><small><em>Convenient if tissue is already routed to Tempus for the KRAS tissue NGS confirmation.</em></small></div></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/41686845">PMID&nbsp;41686845</a><br><a href="https://clinicaltrials.gov/study/NCT05023655">NCT05023655</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2 id="mlh1-mutation-mismatch-repair-status-in-an-mss-tmb-86-germline-negative-context">MLH1 mutation / mismatch-repair status (in an MSS, TMB-8.6, germline-negative context)<a class="headerlink" href="#mlh1-mutation-mismatch-repair-status-in-an-mss-tmb-86-germline-negative-context" title="Permanent link">&para;</a></h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Priority</th><th>Test</th><th>Type</th><th>Modality</th><th>Tissue</th><th>Turnaround</th><th>Decision gated</th><th>Rationale</th><th>Providers</th><th>References</th></tr></thead>
+      <tbody>
+    <tr><td><span class="fit-badge fit-strong">essential</span></td><td><strong>Mismatch-repair protein IHC (MLH1, PMS2, MSH2, MSH6) on tumor tissue</strong></td><td>confirmatory</td><td>IHC</td><td>archival FFPE block or unstained slides; no fresh biopsy needed</td><td>3-7 days once the block is in hand</td><td>Pembrolizumab/dostarlimab on the dMMR/MSI-H tumor-agnostic label; retained MMR expression argues against single-agent checkpoint blockade here.</td><td>This is the gate on the whole immunotherapy question. The plasma call is a single somatic MLH1 variant in an MSS, TMB-8.6, germline-negative tumor, which usually means MMR is still proficient; protein IHC on tissue settles it directly by showing retained vs lost MLH1/PMS2 nuclear staining. Skip it and the team is guessing whether the dMMR/MSI-H pembrolizumab label even applies, when retained expression would close that door and spare a low-yield checkpoint course. Roughly 6% of MSI-H tumors retain MMR protein and a missense variant can leave a functional protein, so IHC and MSI can disagree (pmid:32152268).</td><td><div><strong>Tempus</strong> · <em>MMR IHC (reflex on xT/xF profiling)</em> <span class="fit-badge fit-strong">preferred</span><br><small><a href="https://www.tempus.com/oncology/">test info</a> · 600 W Chicago Ave, Suite 510, Chicago, IL 60654 · +1-800-739-4137</small><br><small><em>Preferred: already holds this case (xF/xG/xR), so a reflex MMR IHC keeps the tumor block and reporting in one lab and shortens turnaround. Confirm a tumor block is available, since the original profile was plasma-based.</em></small></div><br><div><strong>Caris Life Sciences</strong> · <em>MI Profile (MMR IHC)</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.carislifesciences.com/">test info</a> · 4610 South 44th Place, Phoenix, AZ 85040 · +1-888-979-8669</small></div><br><div><strong>Labcorp / Labcorp Oncology</strong> · <em>MMR protein IHC panel</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.labcorp.com/">test info</a> · 358 South Main St, Burlington, NC 27215 · +1-800-845-6167</small></div><br><div><strong>NeoGenomics Laboratories</strong> · <em>MMR/MSI by IHC</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://neogenomics.com/">test info</a> · 9490 NeoGenomics Way, Fort Myers, FL 33912 · +1-866-776-5907</small></div></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/32152268">PMID&nbsp;32152268</a><br><em>nccn-pancreatic-v1.2025</em></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2 id="mss-status-with-tmb-86-mutmb-decision-relevant-negative-immunotherapy-findings">MSS status with TMB 8.6 mut/Mb (decision-relevant negative immunotherapy findings)<a class="headerlink" href="#mss-status-with-tmb-86-mutmb-decision-relevant-negative-immunotherapy-findings" title="Permanent link">&para;</a></h2>
+<p><em>No validation rows for this feature.</em></p>
+<h2 id="smad4-e520-loss-and-tp53-y126s-a138v-co-mutations">SMAD4 E520* loss and TP53 (Y126S, A138V) co-mutations<a class="headerlink" href="#smad4-e520-loss-and-tp53-y126s-a138v-co-mutations" title="Permanent link">&para;</a></h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Priority</th><th>Test</th><th>Type</th><th>Modality</th><th>Tissue</th><th>Turnaround</th><th>Decision gated</th><th>Rationale</th><th>Providers</th><th>References</th></tr></thead>
+      <tbody>
+    <tr><td><span class="fit-badge fit-weak">medium</span></td><td><strong>Paired peripheral-blood-cell (buffy coat) sequencing to adjudicate the plasma ASXL1 frameshift as CHIP vs tumor</strong></td><td>co-mutation</td><td>NGS_panel</td><td>5-10 mL whole blood for buffy-coat DNA; pairs with the tissue NGS draw</td><td>2-3 weeks (often bundled with tissue NGS)</td><td>Whether the plasma ASXL1 frameshift counts as a tumor alteration; CHIP origin removes it from target and biomarker accounting.</td><td>ASXL1 is one of the top three CHIP genes, and a frameshift seen only in plasma cannot be assigned to tumor versus blood by VAF alone, so paired white-blood-cell sequencing is what separates clonal hematopoiesis from a true tumor variant (pmid:32814631). If the ASXL1 call is CHIP, it should be dropped as a tumor target and not counted toward TMB or trial stratification; if it is also present in tumor tissue, it stays in the co-alteration picture. The same paired analysis flags any other plasma calls (here including the incidental variants) that are really hematopoietic in origin.</td><td><div><strong>Tempus</strong> · <em>Paired tumor/normal (tissue + buffy coat)</em> <span class="fit-badge fit-strong">preferred</span><br><small><a href="https://www.tempus.com/oncology/">test info</a> · 600 W Chicago Ave, Suite 510, Chicago, IL 60654 · +1-800-739-4137</small><br><small><em>Preferred: already holds the plasma profile, so a paired tumor-or-buffy-coat analysis is the cleanest way to subtract CHIP from the existing xF call without re-contracting a new lab.</em></small></div><br><div><strong>Foundation Medicine</strong> · <em>FoundationOne (germline/CHIP filtering)</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.foundationmedicine.com/">test info</a> · 150 Second St, Cambridge, MA 02141 · +1-888-988-3639</small></div><br><div><strong>Guardant Health</strong> · <em>Guardant360 (CH annotation)</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.guardanthealth.com/">test info</a> · 3100 Hanover St, Palo Alto, CA 94304 · +1-855-698-8887</small><br><small><em>Liquid panels increasingly annotate likely-CH variants; a dedicated paired buffy-coat run is more definitive for an ASXL1 call.</em></small></div></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/32814631">PMID&nbsp;32814631</a></td></tr>
+    <tr><td><span class="fit-badge fit-none">low</span></td><td><strong>Tissue confirmation of SMAD4 loss and TP53 status (read off the same tissue NGS report)</strong></td><td>co-mutation</td><td>NGS_panel</td><td>none beyond the tissue NGS block already submitted</td><td>same report as the tissue NGS (2-3 weeks)</td><td>Prognostic weighting and DDR/cell-cycle trial stratification; no standalone drug gate.</td><td>SMAD4 loss tracks with a metastasis-dominant, poorer-prognosis pattern and TP53 inactivation is near-universal in PDAC, so confirming both on tissue mainly sharpens prognosis and DDR/cell-cycle trial stratification rather than naming a drug. These calls come for free on the tissue NGS panel already ordered for KRAS confirmation, so no separate specimen or cost is involved. The value is making sure the prognostic weighting and any combination rationale rest on tissue rather than plasma alone.</td><td><div><strong>Foundation Medicine</strong> · <em>FoundationOne CDx</em> <span class="fit-badge fit-strong">preferred</span><br><small><a href="https://www.foundationmedicine.com/">test info</a> · 150 Second St, Cambridge, MA 02141 · +1-888-988-3639</small><br><small><em>Preferred only because these calls ride along on the KRAS tissue NGS report; no separate order is needed.</em></small></div></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/42090791">PMID&nbsp;42090791</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2 id="purist-basal-like-transcriptional-subtype">PurIST basal-like transcriptional subtype<a class="headerlink" href="#purist-basal-like-transcriptional-subtype" title="Permanent link">&para;</a></h2>
+<p><em>No validation rows for this feature.</em></p>
+<p><a href="../">Back to case</a> · <a href="../trials/">Trials</a> · <a href="../evidence/">Evidence</a> · <a href="../manuscripts/">Manuscripts</a> · <a href="../board/">Board</a> · <a href="../recommendations/">Recommendations</a></p>
+<div class="admonition danger disclaimer">
+<p class="admonition-title">Decision support, not medical advice</p>
+<p>Libby is experimental. The validation tests on this page are decision-support;
+confirm assay availability, current standards, and clinical relevance with the
+treating team and the local pathology service.
+See <a href="../../../phi_policy/">PHI policy</a>.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.top", "navigation.instant", "navigation.tracking", "search.highlight", "search.suggest", "content.code.copy", "content.action.edit", "content.tables.sortable"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

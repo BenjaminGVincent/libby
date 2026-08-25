@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>Libby recommendations &mdash; mcrc-kras-a59t-pik3ca-peritoneal-pre-hipec-q8k4</title>
+<style>
+
+:root {
+  --ink: #1A202C;
+  --ink-muted: #4A5568;
+  --rule: #E2E8F0;
+  --header-bg: #F4F6F8;
+  --accent: #5B3A87;
+  --bg: #FFFFFF;
+  --warn-fg: #6F2E1A;
+  --warn-bg: #FBE9E7;
+  --warn-border: #ECC4BB;
+}
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  max-width: 80rem;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  line-height: 1.5;
+}
+h1, h2, h3 { color: var(--ink); }
+h1 { font-size: 1.6rem; }
+h2 { font-size: 1.2rem; margin-top: 2rem; }
+h3 { font-size: 1.05rem; margin-top: 1.5rem; }
+small.scenario-key { color: var(--ink-muted); }
+.disclaimer {
+  border: 1px solid var(--warn-border);
+  background: var(--warn-bg);
+  color: var(--warn-fg);
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  margin: 1rem 0 2rem;
+  font-size: 0.95rem;
+}
+.disclaimer strong { color: #B71C1C; }
+.profile-grid {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.25rem 1rem;
+  margin: 1rem 0 2rem;
+  font-size: 0.95rem;
+}
+.profile-grid dt { font-weight: 600; color: var(--ink-muted); }
+.profile-grid dd { margin: 0; }
+.trial-table-wrap { color: var(--ink); }
+.trial-scroll { overflow-x: auto; }
+.trial-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.88em;
+}
+.trial-table thead th {
+  background: var(--header-bg);
+  font-weight: 600;
+  text-align: left;
+  padding: 0.5em 0.6em;
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  white-space: nowrap;
+}
+.trial-table tbody td {
+  padding: 0.5em 0.6em;
+  border-bottom: 1px solid var(--rule);
+  font-variant-numeric: tabular-nums;
+  vertical-align: top;
+}
+.trial-table tbody tr:last-child td {
+  border-bottom: 2px solid var(--ink);
+}
+.persona {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.35em;
+  font-size: 0.78em;
+  font-weight: 600;
+  margin-right: 0.25em;
+  border: 1px solid transparent;
+}
+.persona-risktaker    { background: #FFE9D6; color: #6F3A0F; border-color: #F0CFAE; }
+.persona-conservative { background: #DFEBFB; color: #1B3A6B; border-color: #B5CDEE; }
+.persona-critic       { background: #F1E5FF; color: #441E72; border-color: #D4BBF2; }
+.persona-concensusite { background: #DDF1EE; color: #134E48; border-color: #B0DBD3; }
+.persona-advocate     { background: #FFE5EE; color: #6E1638; border-color: #F0BBCB; }
+.split-glyph { font-weight: 700; color: #5A4500; }
+.not-recommended {
+  color: var(--ink-muted);
+  text-decoration: line-through;
+}
+.scenario-conditional {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5A4500;
+  background: #FFF7E0;
+  border: 1px solid #F1DD9A;
+  border-radius: 0.35em;
+  padding: 0.05em 0.45em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+.pipeline-note,
+.evidence-detail-note {
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+  margin: 0.25rem 0 0.75rem;
+}
+.evidence-detail-empty {
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+  margin: 0.25rem 0 0.75rem;
+  padding-left: 0.5rem;
+  border-left: 2px solid #E5E5E5;
+}
+.evidence-detail-table { font-size: 0.86em; }
+.evidence-detail-table thead th {
+  background: #FAFAFA;
+}
+.evidence-detail-table .tox-grade {
+  font-size: 0.85em;
+  color: var(--ink-muted);
+  font-weight: 500;
+}
+.evidence-detail-table .safety-summary-fallback {
+  font-style: italic;
+  color: var(--ink-muted);
+}
+h4 + .trial-table-wrap,
+h4 + .evidence-detail-empty {
+  margin-top: 0.25rem;
+}
+h4 { margin-top: 1.25rem; margin-bottom: 0.25rem; font-size: 1rem; }
+.pipeline-context-table { font-size: 0.82em; color: var(--ink-muted); }
+.pipeline-context-table thead th {
+  background: #FAFAFA;
+  border-top: 1px solid var(--ink-muted);
+  border-bottom: 1px solid var(--ink-muted);
+}
+.pipeline-context-table tbody tr:last-child td { border-bottom: 1px solid var(--ink-muted); }
+.pipeline-context-table .intervention-name { color: var(--ink); font-weight: 600; }
+.pipeline-context-table .alias-list { color: var(--ink-muted); font-size: 0.9em; }
+.pipeline-context-table .basket-flag {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #134E48;
+  background: #DDF1EE;
+  border: 1px solid #B0DBD3;
+  border-radius: 0.35em;
+  padding: 0.02em 0.4em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+.pipeline-context-table .discontinued-flag {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5A2A2A;
+  background: #F2E1E1;
+  border: 1px solid #DDB7B7;
+  border-radius: 0.35em;
+  padding: 0.02em 0.4em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+.pipeline-context-table .offlabel-flag {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5F4310;
+  background: #FBEFD3;
+  border: 1px solid #E8C977;
+  border-radius: 0.35em;
+  padding: 0.02em 0.4em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+footer.libby-footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  color: var(--ink-muted);
+  font-size: 0.85rem;
+}
+
+</style>
+</head>
+<body>
+<h1>Libby recommendations &mdash; <code>mcrc-kras-a59t-pik3ca-peritoneal-pre-hipec-q8k4</code></h1>
+<div class="disclaimer">
+<strong>Decision support, not medical advice.</strong> Libby is an experimental 
+multi-agent decision-support tool. The recommendations below have not been 
+reviewed by a clinician treating this patient. Do not act on this page without 
+consulting a qualified oncologist.
+</div>
+<h2>Profile snapshot</h2>
+<dl class="profile-grid">
+  <dt>Primary site</dt><dd>colon</dd>
+  <dt>Histology</dt><dd>colon adenocarcinoma (presumed; histologic subtype not specified at intake)</dd>
+  <dt>Stage</dt><dd>IV (metastatic; liver metastases status post-resection, peritoneal involvement present)</dd>
+  <dt>ECOG</dt><dd>1</dd>
+  <dt>Age band</dt><dd>30-39</dd>
+  <dt>Sex</dt><dd>unknown</dd>
+  <dt>Biomarkers</dt><dd>Germline hereditary cancer panel negative; KRAS A59T mutated (atypical, switch-II region; non-G12/G13/Q61) (ngs_pending); APC E1295 mutated (likely truncating; presumed mutation cluster region) (ngs_pending); TP53 R273 mutated (hotspot; specific substitution not specified) (ngs_pending); PIK3CA M1043I mutated (kinase-domain activating) (ngs_pending); SMAD4 R361H mutated (MH2-domain hotspot; loss-of-function) (ngs_pending); 20q11 amplification (BCL2L1/TOP1 co-amplified) amplified (ngs_pending); MSI status MSS; TMB low; PD-L1 negative; HER2 (ERBB2) amplification not reported (ngs_pending); BRAF V600E not explicitly reported (ngs_pending); NRAS / HRAS not explicitly reported (ngs_pending); Consensus molecular subtype (CMS) / CDX2 not reported (ngs_pending)</dd>
+  <dt>Efficacy/toxicity weight</dt><dd>0.7</dd>
+</dl>
+
+<p><em>4 ranked therapeutic options across 3 targetable features. Biomarker workup steps live in the standalone Target validation paths report.</em></p>
+<h2>Pik3Ca M1043I interventions</h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr><td><a href="#evidence-aspirin-pik3ca">1</a></td><td><strong>Low-dose aspirin 160 mg PO daily as a PIK3CA-directed adjunct, sequenced into the post-HIPEC window and held peri-operatively</strong></td><td>Moderate as a recurrence-risk adjunct: ALASCCA HR 0.49 in the exon-9/20 subset M1043I maps into; direction concordant across three datasets, but validated in resected not metastatic disease.</td><td>Low (G3+ GI bleeding ~3%; serious AEs ~5%)</td><td><strong>Low</strong> <span class="cpm-desc">(Additive bleeding risk with concurrent bevacizumab and the CRS-HIPEC window; a sequencing/timing hold, not a mechanism that blunts the therapeutic goal.)</span></td><td><strong>The strongest RoB-low biomarker match and a do-no-harm PIK3CA-directed adjunct; effect validated in resected, not metastatic, disease, so it layers on the backbone rather than replacing it.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40961426">PMID&nbsp;40961426</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/38889377">PMID&nbsp;38889377</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/23094721">PMID&nbsp;23094721</a></td></tr>
+    <tr><td><a href="#evidence-cgt6297-pi3ka">2</a></td><td><strong>Mutant-selective PI3K-alpha inhibition - CGT6297 on the explicit CRC + PIK3CA cohort (NCT07383506, Cohort 3), with tersolisib (NCT05768139) / ETX-636 (NCT06993844) / inavolisib+bev on INTRINSIC (NCT04929223) as class alternatives</strong></td><td>Low-to-moderate for CRC: cross-tumor kinase-domain-PIK3CA signal (INAVO120 HR 0.43 in breast; RLY-2608 ORR 66.7% breast) with only 2 alpelisib CRC PRs and a non-canonical-allele hedge.</td><td>Moderate (hyperglycemia G3+ ~20% alpelisib / ~6% inavolisib, stomatitis, rash, diarrhea; near-absent on wild-type-sparing agents)</td><td><strong>Moderate</strong> <span class="cpm-desc">(KRAS A59T co-activation can bypass PI3K-alpha blockade via parallel MAPK signaling, blunting single-agent response and arguing for combination.)</span></td><td><strong>The one trial naming a CRC-and-PIK3CA cohort, targeting the patient&#x27;s kinase-domain allele directly; efficacy rests entirely on cross-tumor abstract-tier data with a non-canonical-allele predictive hedge.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/39476340">PMID&nbsp;39476340</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/29401002">PMID&nbsp;29401002</a><br><a href="https://clinicaltrials.gov/study/NCT07383506">NCT07383506</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-aspirin-pik3ca">Low-dose aspirin 160 mg PO daily as a PIK3CA-directed adjunct, sequenced into the post-HIPEC window and held peri-operatively</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>Resected stage I-III rectal or stage II-III colon cancer with somatic PI3K-pathway alteration (PIK3CA / PIK3R1 / PTEN)</strong> (adj)<br><small>n=626 randomized; 1,103 of 2,980 screened (37%) carried a PI3K-pathway alteration. Group A = PIK3CA exon 9/20 mut; Group B = other PI3K-pathway alterations.</small></td><td>626</td><td><strong>GI bleeding</strong> <span class="tox-grade">grade &gt;=3</span>: 3% <small>(aspirin arm)</small><br><strong>Serious AEs overall</strong> <span class="tox-grade">grade any</span>: 5%</td><td><strong>Time to recurrence at 3 years</strong>: 0.49 HR (Group A, time to recurrence) (95% CI 0.24–0.98); p 0.044 (Group A)<br><small>3-yr recurrence 7.7% vs 14.1% (Group A)</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40961426">Frödin et al. <em>N Engl J Med</em> 2025</a></td></tr>
+    <tr><td><strong>Resected stage III colon cancer, PIK3CA-activating subset</strong> (adj)<br><small>Pre-specified biomarker subgroup of CALGB/SWOG 80702 (n=2,524 randomized total; ~16% PIK3CA-activating).</small></td><td>401</td><td><span class="safety-summary-fallback">Celecoxib G3+ AEs class-typical (cardiovascular, GI). Cohort safety dominated by FOLFOX backbone toxicity.</span></td><td><strong>DFS and OS in PIK3CA-activating subset</strong>: 0.56 HR (DFS, PIK3CA-activated) (95% CI 0.35–0.88); p 0.012</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/38889377">Yang et al. <em>J Clin Oncol</em> 2024</a></td></tr>
+    <tr><td><strong>Resected colorectal cancer stratified by tumor PIK3CA mutation</strong> (adj)<br><small>964 stage I-IV CRC patients from NHS + HPFS; tumor PIK3CA mutation status assessed retrospectively; 17% PIK3CA-mut.</small></td><td>964</td><td><span class="safety-summary-fallback">Aspirin GI-bleed / ulcer risk class-typical; not formally captured in this cohort analysis.</span></td><td><strong>CRC-specific and overall mortality by aspirin use × PIK3CA status</strong>: 0.18 HR (CRC-specific mortality, PIK3CA-mut subset) (95% CI 0.06–0.61); p 0.001</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/23094721">Liao et al. <em>N Engl J Med</em> 2012</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-cgt6297-pi3ka">Mutant-selective PI3K-alpha inhibition - CGT6297 on the explicit CRC + PIK3CA cohort (NCT07383506, Cohort 3), with tersolisib (NCT05768139) / ETX-636 (NCT06993844) / inavolisib+bev on INTRINSIC (NCT04929223) as class alternatives</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>HR+/HER2- PIK3CA-mutated metastatic breast cancer (1L after endocrine therapy)</strong> (1L)<br><small>n=325 with PIK3CA alterations confirmed by ctDNA or tissue.</small></td><td>325</td><td><strong>Hyperglycemia</strong> <span class="tox-grade">grade &gt;=3</span>: 5.6%<br><strong>Hyperglycemia</strong> <span class="tox-grade">grade any</span>: 58.6%<br><strong>Stomatitis</strong> <span class="tox-grade">grade &gt;=3</span>: 5.6%<br><strong>Diarrhea</strong> <span class="tox-grade">grade &gt;=3</span>: 3.7%<br><strong>Rash</strong> <span class="tox-grade">grade any</span>: 25%<br><strong>Treatment discontinuation due to AE</strong> <span class="tox-grade">grade any</span>: 6.5%</td><td><strong>Investigator-assessed PFS</strong>: 0.43 HR (95% CI 0.32–0.59); p &lt;0.001<br><small>mPFS 15.0 vs 7.3 mo</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/39476340">Jhaveri et al. <em>N Engl J Med</em> 2024</a></td></tr>
+    <tr><td><strong>Advanced solid tumors with PIK3CA alterations (mixed: breast, CRC, gynecologic, endometrial)</strong> (2L+)<br><small>n=134 PIK3CA-altered solid tumors; CRC subset included. PIK3CA mutations spanned the canonical helical / kinase hotspots (E542K, E545K, H1047R) and rarer alleles.</small></td><td>134</td><td><strong>Hyperglycemia</strong> <span class="tox-grade">grade &gt;=3</span>: 20% <small>(class-typical PI3K-alpha effect)</small><br><strong>Rash/maculopapular</strong> <span class="tox-grade">grade &gt;=3</span>: 10%<br><strong>Diarrhea</strong> <span class="tox-grade">grade &gt;=3</span>: 7%<br><strong>Nausea</strong> <span class="tox-grade">grade any</span>: 56%</td><td><strong>ORR and clinical activity across tumor types</strong>: 6% (8/134 PRs total (1 breast, 2 CRC, 4 gyn/endometrial, 1 other))<br><small>median TTP ~5.5 mo across cohort</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/29401002">Juric et al. <em>J Clin Oncol</em> 2018</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2>Mss Peritoneal interventions</h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr><td><a href="#evidence-botensilimab-balstilimab">1</a></td><td><strong>Botensilimab + balstilimab (Fc-enhanced anti-CTLA-4 + anti-PD-1), 2L+ after FOLFIRI-bev progression, on an MSS-CRC / any-KRAS protocol (USC NCT06336902, Agenus NCT05608044, CCTG NCT07152821, or expanded access NCT06751524)</strong></td><td>Moderate in this NLM/peritoneal subset: ORR ~22% and mOS 20.9 mo (Bullock 2024), the strongest MSS-CRC ICI signal, but subgroup-level and not yet confirmed vs BSC.</td><td>Moderate (immune-mediated colitis 12-13%, hepatitis ~8%, pyrexia/cytokine-release; overall G3+ irAE ~35-38%)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Fc-enhanced CTLA-4 irAE colitis/hepatitis overlaps the peri-operative CRS window; immune-mediated toxicity could delay or complicate cytoreductive surgery.)</span></td><td><strong>The only MSS-CRC immunotherapy with a compartment-matched signal at the patient&#x27;s peritoneal disease; a 2L+ proposition gated by ~35% immune toxicity and single-arm, subgroup-level evidence.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/38871975">PMID&nbsp;38871975</a><br><a href="https://clinicaltrials.gov/study/NCT07152821">NCT07152821</a><br><a href="https://clinicaltrials.gov/study/NCT06336902">NCT06336902</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-botensilimab-balstilimab">Botensilimab + balstilimab (Fc-enhanced anti-CTLA-4 + anti-PD-1), 2L+ after FOLFIRI-bev progression, on an MSS-CRC / any-KRAS protocol (USC NCT06336902, Agenus NCT05608044, CCTG NCT07152821, or expanded access NCT06751524)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>Relapsed/refractory MSS metastatic colorectal cancer</strong> (2L+)<br><small>n=101 r/r MSS mCRC, mixed liver / non-liver metastatic distribution. Most patients had ≥3 prior lines.</small></td><td>101</td><td><strong>Diarrhea/colitis</strong> <span class="tox-grade">grade &gt;=3</span>: 12% <small>(immune-mediated)</small><br><strong>Fatigue</strong> <span class="tox-grade">grade any</span>: 45%<br><strong>Pyrexia</strong> <span class="tox-grade">grade any</span>: 38% <small>(characteristic Fc-enhanced CTLA-4 effect)</small><br><strong>Hepatitis (transaminitis)</strong> <span class="tox-grade">grade &gt;=3</span>: 8%<br><strong>Treatment-related AE &gt;=3</strong> <span class="tox-grade">grade &gt;=3</span>: 35%<br><strong>Treatment-related death</strong> <span class="tox-grade">grade 5</span>: 0% (0/101)</td><td><strong>Confirmed ORR, mOS, mPFS by liver-metastasis status</strong>: 17% (95% CI 10–26)<br><small>mDoR not reached (NLM subset); mOS 20.9 mo (NLM)</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/38871975">Bullock et al. <em>Nat Med</em> 2024</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2>Kras A59T interventions</h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr><td><a href="#evidence-daraxonrasib-rmc6236">1</a></td><td><strong>Daraxonrasib (RMC-6236) and other codon-agnostic pan-RAS / RAS(ON) inhibitors on trials whose eligibility does not name a codon (Pfizer PF-07934040 NCT06447662 &#x27;any KRAS variant&#x27;, Roche RO7673396 NCT06884618, Jacobio JAB-23E73 NCT06973564, Adlai AN9025 NCT07252479, RevMed RAS(ON)+ivonescimab NCT07397338), contingent on a sponsor A59T-eligibility call</strong></td><td>Low / unquantified for A59T: zero allele-matched data; extrapolated from PDAC canonical-codon ORR 35% (pmid:42090791) and structural binding (pmid:40056080, A59T untested); CRC monotherapy signal ~9%.</td><td>Moderate (daraxonrasib G3+ TRAE ~30%: rash, stomatitis/mucositis, diarrhea; combination arms uncharacterized in CRC)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Switch-II A59T may signal weakly through MAPK, so pan-RAS engagement optimized for G12/G13 could under-suppress the pathway; VEGF-arm wound-healing impairment peri-HIPEC.)</span></td><td><strong>The only option reaching the patient&#x27;s actual KRAS A59T driver, but on codon-agnostic eligibility and structural read-across with zero allele-matched efficacy; a sponsor-gated trial referral, not proven A59T therapy.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/42090791">PMID&nbsp;42090791</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/40056080">PMID&nbsp;40056080</a><br><a href="https://clinicaltrials.gov/study/NCT06447662">NCT06447662</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-daraxonrasib-rmc6236">Daraxonrasib (RMC-6236) and other codon-agnostic pan-RAS / RAS(ON) inhibitors on trials whose eligibility does not name a codon (Pfizer PF-07934040 NCT06447662 &#x27;any KRAS variant&#x27;, Roche RO7673396 NCT06884618, Jacobio JAB-23E73 NCT06973564, Adlai AN9025 NCT07252479, RevMed RAS(ON)+ivonescimab NCT07397338), contingent on a sponsor A59T-eligibility call</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>Previously treated advanced RAS-mutated pancreatic ductal adenocarcinoma</strong> (2L+)<br><small>RAS-mutant PDAC; efficacy anchored to the 300 mg second-line RAS G12 subset (n=26) and the G12/G13/Q61 subset (n=38). Codons 12/13/61 only — no A59 alleles enrolled.</small></td><td>168</td><td><strong>Treatment-related AE</strong> <span class="tox-grade">grade &gt;=3</span>: 30% (n=168) <small>(pooled up to 300 mg)</small><br><strong>Rash</strong> <span class="tox-grade">grade any</span> <small>(&gt;=10% incidence; on-target MAPK effect)</small><br><strong>Stomatitis/mucositis</strong> <span class="tox-grade">grade any</span> <small>(&gt;=10% incidence)</small><br><strong>Diarrhea</strong> <span class="tox-grade">grade any</span> <small>(&gt;=10% incidence)</small></td><td><strong>ORR in second-line RAS G12 PDAC</strong>: 35% (95% CI 17–56)<br><small>mPFS 8.5 mo (G12 subset); mDoR 8.2 mo</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/42090791">Wolpin et al. <em>N Engl J Med</em> 2026</a></td></tr>
+    <tr><td><strong>Preclinical characterization of a pan-RAS(ON) tri-complex inhibitor across RAS variants</strong> (any)<br><small>Cell-line and structural work spanning wild-type KRAS and G12V/G12C/G12D/G12R/G13D/Q61X. The compound occupies a CypA-SWI/SWII composite pocket and leaves the G12/G13/Q61 groove unoccupied, the structural basis for binding mutant and wild-type RAS with similar affinity.</small></td><td>&mdash;</td><td>&mdash;</td><td><strong>Codon-agnostic RAS binding and pERK suppression</strong>: pERK suppression across RAS variants fold-change</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40056080">Knox et al. <em>J Med Chem</em> 2025</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<footer class="libby-footer">Generated 2026-07-10 &middot; Libby &middot; <code>mcrc-kras-a59t-pik3ca-peritoneal-pre-hipec-q8k4</code></footer>
+</body></html>

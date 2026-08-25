@@ -1,0 +1,206 @@
+/* Libby-specific styling: case-fit / toxicity badges, agreement matrix, persona pills. */
+
+/* Bold links across all rendered content. */
+.md-typeset a {
+  font-weight: 700;
+}
+
+/* Case-fit badges (in trials.md). */
+.fit-badge {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.4em;
+  font-size: 0.78em;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+.fit-strong  { background: #E6F5EA; color: #14532D; border-color: #BBE2C7; }
+.fit-partial { background: #FFF7E0; color: #5A4500; border-color: #F1DD9A; }
+.fit-weak    { background: #FBE9E7; color: #6F2E1A; border-color: #ECC4BB; }
+.fit-none    { background: #F1F3F5; color: #4A5568; border-color: #E2E8F0; }
+
+/* Tumor-type-relation badges (trial table). */
+.rel-badge {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.4em;
+  font-size: 0.78em;
+  font-weight: 600;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.rel-indication  { background: #DDF1EE; color: #134E48; border-color: #B0DBD3; }
+.rel-basket      { background: #FFE9D6; color: #6F3A0F; border-color: #F0CFAE; }
+.rel-same-drug   { background: #DFEBFB; color: #1B3A6B; border-color: #B5CDEE; }
+.rel-cross-tumor { background: #F1E5FF; color: #441E72; border-color: #D4BBF2; }
+.rel-other       { background: #F1F3F5; color: #4A5568; border-color: #E2E8F0; }
+
+/* Risk-of-bias badges (evidence table). */
+.rob-badge {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.4em;
+  font-size: 0.78em;
+  font-weight: 600;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.rob-low  { background: #E6F5EA; color: #14532D; border-color: #BBE2C7; }
+.rob-med  { background: #FFF7E0; color: #5A4500; border-color: #F1DD9A; }
+.rob-high { background: #FBE9E7; color: #6F2E1A; border-color: #ECC4BB; }
+
+/* Toxicity flag pills. */
+.tox-flag {
+  display: inline-block;
+  padding: 0.05em 0.45em;
+  border-radius: 999px;
+  font-size: 0.75em;
+  background: #FBE9E7;
+  color: #6F2E1A;
+  border: 1px solid #ECC4BB;
+  margin-right: 0.25em;
+}
+
+/* Persona badges (board.md, recommendations.md). */
+.persona {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.35em;
+  font-size: 0.78em;
+  font-weight: 600;
+  margin-right: 0.25em;
+  border: 1px solid transparent;
+}
+.persona-risktaker    { background: #FFE9D6; color: #6F3A0F; border-color: #F0CFAE; }
+.persona-conservative { background: #DFEBFB; color: #1B3A6B; border-color: #B5CDEE; }
+.persona-critic       { background: #F1E5FF; color: #441E72; border-color: #D4BBF2; }
+.persona-concensusite { background: #DDF1EE; color: #134E48; border-color: #B0DBD3; }
+.persona-advocate     { background: #FFE5EE; color: #6E1638; border-color: #F0BBCB; }
+
+/* Agreement-level decorations. */
+.agree-endorse   { color: #14532D; font-weight: 600; }
+.agree-qualified { color: #5A4500; font-weight: 600; }
+.agree-dissent   { color: #6F2E1A; font-weight: 600; }
+.agree-veto      { color: #6F2E1A; font-weight: 700; text-decoration: underline; }
+
+/* Biomarker-conditional flag (inline in Intervention cell when scenario ends with :positive). */
+.scenario-conditional {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5A4500;
+  background: #FFF7E0;
+  border: 1px solid #F1DD9A;
+  border-radius: 0.35em;
+  padding: 0.05em 0.45em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+
+/* Counter-productive MoA descriptor (parenthetical text after the bold severity). */
+.cpm-desc {
+  font-size: 0.92em;
+  color: #4A5568;
+}
+
+/* Persona pill row inside the Intervention cell on the ranked-prioritization table. */
+.persona-line {
+  display: inline-block;
+  margin-top: 0.15em;
+  font-size: 0.78em;
+  color: #4A5568;
+}
+.persona-line + .persona-line {
+  margin-left: 0.6em;
+}
+
+/* Recommendation table marks. */
+.split-glyph { font-weight: 700; color: #5A4500; }
+/* not_recommended rows: mute, never strike through. The strikethrough used to
+   sit on the whole <tr>, so it struck the rationale columns too — and on a
+   rejected option the rationale is the most useful text in the row, since it
+   is what lets a reader stop considering it. Muting carries the de-emphasis;
+   the badge states the verdict in words, so the signal survives monochrome
+   printing and screen readers rather than resting on typography alone. */
+.not-recommended {
+  color: #4A5568;
+}
+.badge-not-recommended {
+  background: #FDECEA;
+  color: #8C2F22;
+  border-color: #F5C6C0;
+}
+
+/* surfaced_reason flag pills (Experimental "Also considered" table). Neutral,
+   muted pills — these rows are informational, not scored. */
+.flag-badge {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 999px;
+  font-size: 0.75em;
+  font-weight: 600;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.flag-unavailable    { background: #ECEFF1; color: #37474F; border-color: #CFD8DC; }
+.flag-consolidated   { background: #E8EAF6; color: #303F9F; border-color: #C5CAE9; }
+.flag-thin           { background: #FFF8E1; color: #7A5B00; border-color: #F0E1B0; }
+.flag-not-enrollable { background: #F3E5F5; color: #6A1B7A; border-color: #E1BEE7; }
+
+/* Disclaimer banner — applied to every case page via admonition. */
+.md-typeset .admonition.disclaimer {
+  border-color: #B71C1C;
+}
+.md-typeset .admonition.disclaimer > .admonition-title {
+  background-color: rgba(183, 28, 28, 0.08);
+  color: #B71C1C;
+}
+
+/* Agreement matrix heatmap (board.md). Pastel cells carry explicit
+   foreground+background that remain legible regardless of scheme; matrix
+   chrome (header, borders, no-opinion cells) uses scheme-aware selectors. */
+.agreement-matrix {
+  border-collapse: collapse;
+  font-size: 0.85em;
+}
+.agreement-matrix th, .agreement-matrix td {
+  padding: 0.35em 0.5em;
+  text-align: center;
+}
+.agreement-matrix th { font-weight: 600; }
+
+/* Pastel cell colors — same in both schemes (high contrast on their own bg). */
+.agreement-matrix td.cell-endorse   { background: #C8E6D0; color: #14532D; }
+.agreement-matrix td.cell-qualified { background: #FCEEC2; color: #5A4500; }
+.agreement-matrix td.cell-dissent   { background: #F4C7BE; color: #6F2E1A; }
+.agreement-matrix td.cell-veto      { background: #E8A399; color: #4A1408; font-weight: 700; }
+
+/* Default (light) scheme chrome. */
+[data-md-color-scheme="default"] .agreement-matrix th,
+[data-md-color-scheme="default"] .agreement-matrix td {
+  border: 1px solid #E2E8F0;
+  color: #1A202C;
+}
+[data-md-color-scheme="default"] .agreement-matrix th {
+  background: #F4F6F8;
+  color: #1A202C;
+}
+[data-md-color-scheme="default"] .agreement-matrix td.cell-absent {
+  background: #F1F3F5;
+  color: #94A3B8;
+}
+
+/* Slate (dark) scheme chrome. */
+[data-md-color-scheme="slate"] .agreement-matrix th,
+[data-md-color-scheme="slate"] .agreement-matrix td {
+  border: 1px solid #3A4159;
+  color: #E2E8F0;
+}
+[data-md-color-scheme="slate"] .agreement-matrix th {
+  background: #2D3344;
+  color: #F1F5F9;
+}
+[data-md-color-scheme="slate"] .agreement-matrix td.cell-absent {
+  background: #232838;
+  color: #64748B;
+}

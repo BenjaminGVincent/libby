@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>Libby manuscripts inventory — demo-nsclc-egfr-l858r-post-osi-d3m0</title>
+<style>
+
+      :root { color-scheme: light; }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        max-width: 1200px;
+        margin: 2em auto;
+        padding: 0 1.5em 3em;
+        color: #1A202C;
+        background: #FFFFFF;
+        line-height: 1.55;
+      }
+      h1 { border-bottom: 2px solid #5B3A87; padding-bottom: 0.3em; margin-top: 0; }
+      h2 { color: #5B3A87; margin-top: 1.8em; }
+      h3 { color: #1A202C; margin-top: 1.4em; }
+      a { color: #5B3A87; text-decoration: underline; }
+      code { background: #F4F6F8; padding: 0.1em 0.4em; border-radius: 2px; font-size: 0.92em; }
+      .disclaimer {
+        background: #FFF4E5; border-left: 4px solid #B45309;
+        padding: 0.8em 1em; margin: 1em 0 2em; font-size: 0.95em;
+      }
+      .libby-footer {
+        margin-top: 3em; padding-top: 1em; border-top: 1px solid #E2E8F0;
+        color: #6B6B7F; font-size: 0.85em;
+      }
+    
+/* Trial-table style — vendored from /Users/benjaminvincent/turtle/pfo/conductor/styles/trial-table/
+   Scoped via .trial-table-wrap so it does not leak into surrounding MkDocs page.
+
+   Uses explicit [data-md-color-scheme] selectors to bypass any CSS-variable
+   inheritance issues — the table reads correctly in both default (light) and
+   slate (dark) Material color schemes regardless of cascade quirks. */
+
+.trial-table-wrap caption {
+  caption-side: top;
+  text-align: left;
+  font-weight: 600;
+  padding: 0.4em 0;
+  font-size: 1em;
+}
+.trial-scroll { overflow-x: auto; }
+.trial-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.88em;
+}
+.trial-table thead th {
+  font-weight: 600;
+  text-align: left;
+  padding: 0.5em 0.6em;
+  white-space: nowrap;
+}
+.trial-table tbody td {
+  padding: 0.5em 0.6em;
+  font-variant-numeric: tabular-nums;
+  vertical-align: top;
+}
+.trial-table .num { text-align: right; }
+
+/* Narrow ID-style columns — the entry number in the access-guide summary
+   table and the NCT id in the access-guide trial-pathways table. Keep
+   numbers / NCTs on a single line so "10" doesn't wrap to "1\n0" and
+   "NCT05379985" doesn't break across four lines. min-width is large
+   enough to comfortably fit the widest expected value (3-digit entry
+   number, NCT + 8 digits = 11 chars in a monospace fallback). */
+.trial-table th.col-num,
+.trial-table td.col-num,
+.trial-table th.col-nct,
+.trial-table td.col-nct {
+  white-space: nowrap;
+}
+.trial-table th.col-num,
+.trial-table td.col-num { min-width: 2.4em; }
+.trial-table th.col-nct,
+.trial-table td.col-nct { min-width: 6.5em; }
+
+/* Access-guide column widths — kept generous so the wrapping `.trial-scroll`
+   div engages horizontal scroll before the cell text squeezes into a tall
+   narrow stack. Tuned for the access-guide tables specifically; other
+   trial-tables on the site keep their default auto layout. */
+.trial-table th.col-intervention,
+.trial-table td.col-intervention { min-width: 14em; }
+.trial-table th.col-target,
+.trial-table td.col-target { min-width: 12em; }
+.trial-table th.col-access-status,
+.trial-table td.col-access-status { min-width: 10em; }
+.trial-table th.col-regulatory,
+.trial-table td.col-regulatory { min-width: 22em; }
+.trial-table th.col-first-action,
+.trial-table td.col-first-action { min-width: 22em; }
+
+.trial-table th.col-phase,
+.trial-table td.col-phase { min-width: 3.5em; white-space: nowrap; }
+.trial-table th.col-indication,
+.trial-table td.col-indication { min-width: 18em; }
+.trial-table th.col-status,
+.trial-table td.col-status { min-width: 7em; white-space: nowrap; }
+.trial-table th.col-eligibility,
+.trial-table td.col-eligibility { min-width: 8em; white-space: nowrap; }
+.trial-table th.col-contact,
+.trial-table td.col-contact { min-width: 14em; }
+.trial-table th.col-notes,
+.trial-table td.col-notes { min-width: 24em; }
+.trial-table a {
+  text-decoration: underline;
+  font-weight: 700;
+}
+.trial-table .mark {
+  font-size: 0.75em;
+  vertical-align: super;
+}
+
+/* ---------- Default (light) scheme ---------- */
+[data-md-color-scheme="default"] .trial-table-wrap { color: #1A202C; }
+[data-md-color-scheme="default"] .trial-table thead th {
+  background: #F4F6F8;
+  color: #1A202C;
+  border-top: 2px solid #1A202C;
+  border-bottom: 1px solid #1A202C;
+}
+[data-md-color-scheme="default"] .trial-table tbody td {
+  color: #1A202C;
+  border-bottom: 1px solid #E2E8F0;
+}
+[data-md-color-scheme="default"] .trial-table tbody tr:last-child td {
+  border-bottom: 2px solid #1A202C;
+}
+[data-md-color-scheme="default"] .trial-table a { color: #1A202C; }
+[data-md-color-scheme="default"] .trial-table-wrap .notes {
+  font-size: 0.85em;
+  color: #4A5568;
+  margin-top: 0.6em;
+}
+
+/* ---------- Slate (dark) scheme ---------- */
+[data-md-color-scheme="slate"] .trial-table-wrap { color: #E2E8F0; }
+[data-md-color-scheme="slate"] .trial-table thead th {
+  background: #2D3344;
+  color: #F1F5F9;
+  border-top: 2px solid #94A3B8;
+  border-bottom: 1px solid #94A3B8;
+}
+[data-md-color-scheme="slate"] .trial-table tbody td {
+  color: #E2E8F0;
+  border-bottom: 1px solid #3A4159;
+}
+[data-md-color-scheme="slate"] .trial-table tbody tr:last-child td {
+  border-bottom: 2px solid #94A3B8;
+}
+[data-md-color-scheme="slate"] .trial-table a {
+  color: #93C5FD;
+}
+[data-md-color-scheme="slate"] .trial-table-wrap .notes {
+  font-size: 0.85em;
+  color: #94A3B8;
+  margin-top: 0.6em;
+}
+
+/* Libby-specific styling: case-fit / toxicity badges, agreement matrix, persona pills. */
+
+/* Bold links across all rendered content. */
+.md-typeset a {
+  font-weight: 700;
+}
+
+/* Case-fit badges (in trials.md). */
+.fit-badge {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.4em;
+  font-size: 0.78em;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+.fit-strong  { background: #E6F5EA; color: #14532D; border-color: #BBE2C7; }
+.fit-partial { background: #FFF7E0; color: #5A4500; border-color: #F1DD9A; }
+.fit-weak    { background: #FBE9E7; color: #6F2E1A; border-color: #ECC4BB; }
+.fit-none    { background: #F1F3F5; color: #4A5568; border-color: #E2E8F0; }
+
+/* Tumor-type-relation badges (trial table). */
+.rel-badge {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.4em;
+  font-size: 0.78em;
+  font-weight: 600;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.rel-indication  { background: #DDF1EE; color: #134E48; border-color: #B0DBD3; }
+.rel-basket      { background: #FFE9D6; color: #6F3A0F; border-color: #F0CFAE; }
+.rel-same-drug   { background: #DFEBFB; color: #1B3A6B; border-color: #B5CDEE; }
+.rel-cross-tumor { background: #F1E5FF; color: #441E72; border-color: #D4BBF2; }
+.rel-other       { background: #F1F3F5; color: #4A5568; border-color: #E2E8F0; }
+
+/* Risk-of-bias badges (evidence table). */
+.rob-badge {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.4em;
+  font-size: 0.78em;
+  font-weight: 600;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.rob-low  { background: #E6F5EA; color: #14532D; border-color: #BBE2C7; }
+.rob-med  { background: #FFF7E0; color: #5A4500; border-color: #F1DD9A; }
+.rob-high { background: #FBE9E7; color: #6F2E1A; border-color: #ECC4BB; }
+
+/* Toxicity flag pills. */
+.tox-flag {
+  display: inline-block;
+  padding: 0.05em 0.45em;
+  border-radius: 999px;
+  font-size: 0.75em;
+  background: #FBE9E7;
+  color: #6F2E1A;
+  border: 1px solid #ECC4BB;
+  margin-right: 0.25em;
+}
+
+/* Persona badges (board.md, recommendations.md). */
+.persona {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.35em;
+  font-size: 0.78em;
+  font-weight: 600;
+  margin-right: 0.25em;
+  border: 1px solid transparent;
+}
+.persona-risktaker    { background: #FFE9D6; color: #6F3A0F; border-color: #F0CFAE; }
+.persona-conservative { background: #DFEBFB; color: #1B3A6B; border-color: #B5CDEE; }
+.persona-critic       { background: #F1E5FF; color: #441E72; border-color: #D4BBF2; }
+.persona-concensusite { background: #DDF1EE; color: #134E48; border-color: #B0DBD3; }
+.persona-advocate     { background: #FFE5EE; color: #6E1638; border-color: #F0BBCB; }
+
+/* Agreement-level decorations. */
+.agree-endorse   { color: #14532D; font-weight: 600; }
+.agree-qualified { color: #5A4500; font-weight: 600; }
+.agree-dissent   { color: #6F2E1A; font-weight: 600; }
+.agree-veto      { color: #6F2E1A; font-weight: 700; text-decoration: underline; }
+
+/* Biomarker-conditional flag (inline in Intervention cell when scenario ends with :positive). */
+.scenario-conditional {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5A4500;
+  background: #FFF7E0;
+  border: 1px solid #F1DD9A;
+  border-radius: 0.35em;
+  padding: 0.05em 0.45em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+
+/* Counter-productive MoA descriptor (parenthetical text after the bold severity). */
+.cpm-desc {
+  font-size: 0.92em;
+  color: #4A5568;
+}
+
+/* Persona pill row inside the Intervention cell on the ranked-prioritization table. */
+.persona-line {
+  display: inline-block;
+  margin-top: 0.15em;
+  font-size: 0.78em;
+  color: #4A5568;
+}
+.persona-line + .persona-line {
+  margin-left: 0.6em;
+}
+
+/* Recommendation table marks. */
+.split-glyph { font-weight: 700; color: #5A4500; }
+.not-recommended {
+  color: #4A5568;
+  text-decoration: line-through;
+}
+
+/* Disclaimer banner — applied to every case page via admonition. */
+.md-typeset .admonition.disclaimer {
+  border-color: #B71C1C;
+}
+.md-typeset .admonition.disclaimer > .admonition-title {
+  background-color: rgba(183, 28, 28, 0.08);
+  color: #B71C1C;
+}
+
+/* Agreement matrix heatmap (board.md). Pastel cells carry explicit
+   foreground+background that remain legible regardless of scheme; matrix
+   chrome (header, borders, no-opinion cells) uses scheme-aware selectors. */
+.agreement-matrix {
+  border-collapse: collapse;
+  font-size: 0.85em;
+}
+.agreement-matrix th, .agreement-matrix td {
+  padding: 0.35em 0.5em;
+  text-align: center;
+}
+.agreement-matrix th { font-weight: 600; }
+
+/* Pastel cell colors — same in both schemes (high contrast on their own bg). */
+.agreement-matrix td.cell-endorse   { background: #C8E6D0; color: #14532D; }
+.agreement-matrix td.cell-qualified { background: #FCEEC2; color: #5A4500; }
+.agreement-matrix td.cell-dissent   { background: #F4C7BE; color: #6F2E1A; }
+.agreement-matrix td.cell-veto      { background: #E8A399; color: #4A1408; font-weight: 700; }
+
+/* Default (light) scheme chrome. */
+[data-md-color-scheme="default"] .agreement-matrix th,
+[data-md-color-scheme="default"] .agreement-matrix td {
+  border: 1px solid #E2E8F0;
+  color: #1A202C;
+}
+[data-md-color-scheme="default"] .agreement-matrix th {
+  background: #F4F6F8;
+  color: #1A202C;
+}
+[data-md-color-scheme="default"] .agreement-matrix td.cell-absent {
+  background: #F1F3F5;
+  color: #94A3B8;
+}
+
+/* Slate (dark) scheme chrome. */
+[data-md-color-scheme="slate"] .agreement-matrix th,
+[data-md-color-scheme="slate"] .agreement-matrix td {
+  border: 1px solid #3A4159;
+  color: #E2E8F0;
+}
+[data-md-color-scheme="slate"] .agreement-matrix th {
+  background: #2D3344;
+  color: #F1F5F9;
+}
+[data-md-color-scheme="slate"] .agreement-matrix td.cell-absent {
+  background: #232838;
+  color: #64748B;
+}
+
+</style>
+</head>
+<body data-md-color-scheme="default">
+<div class="disclaimer">
+<strong>Decision support, not medical advice.</strong> Libby is an experimental 
+multi-agent decision-support tool. The information on this page has not been 
+reviewed by a clinician treating this patient. Information ages — confirm details 
+directly with the relevant sources before relying on them.
+</div>
+<h1 id="manuscripts-considered-demo-nsclc-egfr-l858r-post-osi-d3m0">Manuscripts considered — <code>demo-nsclc-egfr-l858r-post-osi-d3m0</code></h1>
+<p>Master inventory: 3 clinical (3 included, 0 considered &amp; excluded) + 3 pre-clinical (3 included, 0 considered &amp; excluded) + 1 additional trial publications/registrations. One row per paper, sorted by year (newest first). Excluded rows are papers a Libby agent reviewed and chose NOT to feed to the board, with the exclusion reason captured. Toxicities use CTCAE-style term · grade · n/N · rate. Pre-clinical rows leave the toxicity cell blank by design. A printable PDF version is linked from the case <strong>Downloads</strong> section.</p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Report</th><th>Reference</th><th>Type</th><th>Inclusion</th><th>Intervention</th><th>Indication / model</th><th>Design</th><th>n</th><th>Effect size</th><th>Variance</th><th>Toxicities (type · n/N · rate)</th><th>Case fit</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>—/— (2024)<br><em>ClinicalTrials.gov record</em></td><td><a href="https://clinicaltrials.gov/study/NCT05261399">NCT05261399</a></td><td><span class="rel-badge rel-basket">trial publication</span></td><td><span class="fit-badge fit-strong">included</span></td><td>savolitinib + osimertinib</td><td>EGFR-mutant NSCLC, post-osimertinib, MET-amp <em>(2L)</em><br><small>EGFR-mut + MET-amp (GCN ≥6 or IHC 3+)</small></td><td>RCT (savolitinib + osimertinib vs platinum doublet)</td><td class="num">324</td><td class="num">—<br><small>PFS</small></td><td class="num">—</td><td>—</td><td><span class="fit-badge fit-strong">strong</span></td><td>Open trial; biomarker match (MET amp GCN 8.2 exceeds threshold). Oral regimen aligns with modality preference. · Trial registration only — no peer-reviewed publication yet<br><em>registration only — no peer-reviewed publication yet; toxicity table not extracted</em></td></tr>
+        <tr><td>—/Bauml (2023)<br><em>JCO</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/36720074">PMID&nbsp;36720074</a></td><td><span class="rel-badge rel-indication">clinical</span></td><td><span class="fit-badge fit-strong">included</span></td><td>amivantamab + lazertinib</td><td>EGFR-mutant NSCLC, post-osimertinib</td><td>single-arm phase 1/2 (CHRYSALIS-2)</td><td class="num">162</td><td class="num"><strong>ORR</strong>: 36.00 % <small><em>investigator-assessed; cohort A post-osimertinib + platinum</em></small><br><strong>mPFS</strong>: 5.10 months <small><em>median; cohort A</em></small><br><strong>mDoR</strong>: 9.60 months <small><em>median in responders</em></small><br><strong>TRAE rate</strong>: — <small><em>secondary outcomes pending verification — IRR G&gt;=3 ~7% per row notes</em></small><br><small>ORR (investigator)</small></td><td class="num">95% CI 28.00–45.00<br>—<br>—<br>—</td><td>—</td><td>—</td><td>IRR grade 3+ in 7%, rash common; preference conflict on IV time.<br><em>toxicity table not extracted</em></td></tr>
+        <tr><td>—/Jänne (2023)<br><em>JCO</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37563559">PMID&nbsp;37563559</a></td><td><span class="rel-badge rel-indication">clinical</span></td><td><span class="fit-badge fit-strong">included</span></td><td>patritumab deruxtecan (HER3-DXd)</td><td>EGFR-mutant NSCLC after EGFR-TKI</td><td>single-arm phase 2 (HERTHENA-Lung01)</td><td class="num">225</td><td class="num"><strong>ORR</strong>: 29.80 % <small><em>BICR-confirmed; 5.6 mg/kg fixed-dose cohort</em></small><br><strong>mDoR</strong>: 6.40 months <small><em>median in responders</em></small><br><strong>mPFS</strong>: 5.50 months <small><em>BICR-assessed</em></small><br><strong>mOS</strong>: 11.90 months<br><strong>TRAE rate</strong>: 64.90 % <small><em>G&gt;=3 treatment-related AEs</em></small><br><small>ORR (BICR)</small></td><td class="num">95% CI 23.90–36.20<br>95% CI 4.90–7.80<br>95% CI 5.10–5.90<br>95% CI 11.20–13.10<br>—</td><td>—</td><td>—</td><td>ILD grade 3+ ~5%; alopecia frequent — preference conflict for this patient.<br><em>toxicity table not extracted</em></td></tr>
+        <tr><td>—/— (2021)<br><em>Cancer Discov</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/—">PMID&nbsp;—</a></td><td><span class="rel-badge rel-cross-tumor">preclinical</span></td><td><span class="fit-badge fit-strong">included</span></td><td>amivantamab + lazertinib</td><td>Ba/F3 cells expressing EGFR L858R + lazertinib-resistant lines</td><td>Bispecific EGFR/MET antibody enhances internalization; lazertinib provides intracellular EGFR inhibition.</td><td class="num">—</td><td>moderate — Combination retained activity in models where lazertinib alone failed.</td><td>translatability: high</td><td><em>n/a (preclinical)</em></td><td>—</td><td>Cell-line model; in-vivo activity confirmed clinically (CHRYSALIS-2).</td></tr>
+        <tr><td>—/Camidge (2020)<br><em>Lancet Oncol</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/32679432">PMID&nbsp;32679432</a></td><td><span class="rel-badge rel-indication">clinical</span></td><td><span class="fit-badge fit-strong">included</span></td><td>savolitinib + osimertinib</td><td>EGFR-mutant NSCLC + MET amp post-EGFR-TKI</td><td>phase 1b expansion (TATTON)</td><td class="num">69</td><td class="num"><strong>ORR</strong>: 30.00 % <small><em>Part B post-3rd-gen EGFR-TKI MET-amp cohort</em></small><br><strong>mPFS</strong>: 5.40 months <small><em>median; Part B post-3rd-gen cohort</em></small><br><strong>mDoR</strong>: 7.90 months <small><em>median in responders</em></small><br><small>ORR</small></td><td class="num">95% CI 19.00–42.00<br>—<br>—</td><td>—</td><td>—</td><td>All-oral; AE profile favorable for working patient; SAVANNAH and SACHI replicate signal.<br><em>toxicity table not extracted</em></td></tr>
+        <tr><td>—/— (2020)<br><em>Cancer Discov</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/—">PMID&nbsp;—</a></td><td><span class="rel-badge rel-cross-tumor">preclinical</span></td><td><span class="fit-badge fit-strong">included</span></td><td>patritumab deruxtecan (HER3-DXd)</td><td>HER3-expressing NSCLC PDX panel</td><td>HER3-directed ADC delivers topoisomerase-I-inhibitor payload to tumor cells with surface HER3.</td><td class="num">—</td><td>moderate — Tumor regression observed across HER3-high and HER3-mid expressors; broader activity than expected.</td><td>translatability: med</td><td><em>n/a (preclinical)</em></td><td>—</td><td>Bystander payload effect complicates predicting which patients benefit.</td></tr>
+        <tr><td>—/— (2019)<br><em>Mol Cancer Ther</em></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/—">PMID&nbsp;—</a></td><td><span class="rel-badge rel-cross-tumor">preclinical</span></td><td><span class="fit-badge fit-strong">included</span></td><td>savolitinib + osimertinib</td><td>MET-amplified PC-9-derived xenograft</td><td>Combined inhibition of bypass MET pathway with continued EGFR suppression overcomes adaptive resistance.</td><td class="num">—</td><td>strong — Combination produced sustained tumor regression where either agent alone showed regrowth at 30 days.</td><td>translatability: high</td><td><em>n/a (preclinical)</em></td><td>—</td><td>Single model; clinical efficacy depends on documented MET amplification.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<footer class="libby-footer">Generated 2026-05-13 &middot; Libby &middot; <code>demo-nsclc-egfr-l858r-post-osi-d3m0</code> &middot; Master manuscripts table</footer>
+</body></html>

@@ -1,0 +1,544 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A multi-agent decision-support framework for identifying candidate therapeutics for an individual cancer patient. Not medical advice.">
+      
+      
+      
+        <link rel="canonical" href="https://benjamingvincent.github.io/libby/cases/osteosarcoma-mets-dll3-h7r2/target_validation/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Target validation - Libby</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/trial-table.css?v=1a438225">
+    
+      <link rel="stylesheet" href="../../../stylesheets/libby.css?v=41cd52d9">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#target-validation-osteosarcoma-mets-dll3-h7r2" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Libby" class="md-header__button md-logo" aria-label="Libby" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Libby
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Target validation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/BenjaminGVincent/libby" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BenjaminGVincent/libby
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Libby" class="md-nav__button md-logo" aria-label="Libby" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Libby
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/BenjaminGVincent/libby" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BenjaminGVincent/libby
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../phi_policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PHI policy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dll3-rna-expression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DLL3 RNA expression
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prame-rna-expression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PRAME RNA expression
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/BenjaminGVincent/libby/edit/main/docs/cases/osteosarcoma-mets-dll3-h7r2/target_validation.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<p><meta name="robots" content="noindex"></p>
+<h1 id="target-validation-osteosarcoma-mets-dll3-h7r2">Target validation — <code>osteosarcoma-mets-dll3-h7r2</code><a class="headerlink" href="#target-validation-osteosarcoma-mets-dll3-h7r2" title="Permanent link">&para;</a></h1>
+<p><em>9 validation rows across 2 feature(s) — 3 essential, 3 gating an intervention. Sorted within each feature by priority, then by decision relevance.</em></p>
+<p><em>Essential / gates-intervention rows are the diagnostic prerequisites that must resolve before any feature-targeting therapy can be chosen. Rows tagged <code>confirms_target_call</code> harden the target call without gating a specific therapy; resistance / co-mutation / microenvironment rows refine sequencing and risk.</em></p>
+<h2 id="dll3-rna-expression">DLL3 RNA expression<a class="headerlink" href="#dll3-rna-expression" title="Permanent link">&para;</a></h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Priority</th><th>Test</th><th>Type</th><th>Modality</th><th>Tissue</th><th>Turnaround</th><th>Decision gated</th><th>Rationale</th><th>Providers</th><th>References</th></tr></thead>
+      <tbody>
+    <tr><td><span class="fit-badge fit-strong">essential</span></td><td><strong>DLL3 IHC (clone SP347)</strong></td><td>confirmatory</td><td>IHC</td><td>archival FFPE; fresh biopsy not required if stored tissue is adequate</td><td>1–3 weeks</td><td>Tarlatamab via NCT06788938 (every approved DLL3-directed therapy gates on protein-level IHC).</td><td>RNA expression establishes that the DLL3 gene is being transcribed; it does not establish that DLL3 protein sits on the cell surface where a BiTE can engage. NCT06788938 enforces IHC ≥ 25% (stage 1) or ≥ 1% (stage 2) for enrollment, and every approved DLL3-directed therapy gates on protein-level confirmation. Skipping the test forecloses every DLL3-directed candidate downstream by definition.</td><td><div><strong>Foundation Medicine</strong> · <em>FoundationOne CDx (DLL3 IHC reflex)</em> <span class="fit-badge fit-strong">preferred</span><br><small><a href="https://www.foundationmedicine.com/test/foundationone-cdx">test info</a> · 150 Second Street, Cambridge, MA 02141 · 1-888-988-3639</small><br><small><em>Roche-owned; SP347 is the Roche Tissue Diagnostics clone used in the tarlatamab development program.</em></small></div><br><div><strong>Caris Life Sciences</strong> · <em>Caris Molecular Intelligence (with IHC reflex)</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.carislifesciences.com/products-and-services/molecular-profiling/">test info</a> · 4610 South 44th Place, Phoenix, AZ 85040 · 1-888-979-8669</small><br><small><em>Comprehensive cancer profiling with IHC reflex options.</em></small></div><br><div><strong>LabCorp / Esoterix Oncology</strong> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.labcorp.com/oncology">test info</a> · 358 South Main Street, Burlington, NC 27215 · 1-800-345-4363</small><br><small><em>Major commercial reference lab; CAP/CLIA-accredited.</em></small></div><br><div><strong>Mayo Clinic Laboratories</strong> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.mayocliniclabs.com/test-catalog">test info</a> · 200 First Street SW, Rochester, MN 55905 · 1-800-533-1710</small><br><small><em>Academic reference lab; offers DLL3 IHC for both diagnostic and trial-eligibility testing.</em></small></div><br><div><strong>NeoGenomics Laboratories</strong> <span class="fit-badge fit-strong">US</span><br><small><a href="https://neogenomics.com/test-menu">test info</a> · 9490 NeoGenomics Way, Fort Myers, FL 33912 · 1-866-776-5907</small><br><small><em>Oncology-focused commercial reference lab; CAP-accredited.</em></small></div></td><td><a href="https://clinicaltrials.gov/study/NCT06788938">NCT06788938</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/35983951">PMID&nbsp;35983951</a></td></tr>
+    <tr><td><span class="fit-badge fit-partial">high</span></td><td><strong>DLL3 IHC on multiple tumor regions / metastatic biopsy</strong></td><td>heterogeneity</td><td>IHC</td><td>additional archival blocks from a different site if available</td><td>1–4 weeks</td><td>Refines confidence in the DLL3 IHC gating result; does not gate enrollment.</td><td>Osteosarcoma metastases can diverge from primary tumors in surface-marker expression, and the cross-tumor DLL3 literature in solid tumors (Zhang 2023) flags spatial heterogeneity as a frequent confounder. Testing one site can over- or under-estimate enrollment-grade DLL3 status. If only one block is available the workup proceeds with that block, but the result should be interpreted with this caveat in mind.</td><td><div><strong>NeoGenomics Laboratories</strong> <span class="fit-badge fit-strong">preferred</span><br><small><a href="https://neogenomics.com/test-menu">test info</a> · 9490 NeoGenomics Way, Fort Myers, FL 33912 · 1-866-776-5907</small></div><br><div><strong>Foundation Medicine</strong> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.foundationmedicine.com/test/foundationone-cdx">test info</a> · 150 Second Street, Cambridge, MA 02141 · 1-888-988-3639</small><br><small><em>Same lab can run IHC on multiple submitted blocks under one order.</em></small></div><br><div><strong>Mayo Clinic Laboratories</strong> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.mayocliniclabs.com/test-catalog">test info</a> · 200 First Street SW, Rochester, MN 55905 · 1-800-533-1710</small></div><br><div><strong>Memorial Sloan Kettering Diagnostic Molecular Pathology</strong> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.mskcc.org/clinical-services/diagnostic-laboratory">test info</a> · 1275 York Avenue, New York, NY 10065 · 1-212-639-2000</small><br><small><em>Academic reference lab; DLL3 IHC available on case-by-case basis.</em></small></div></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/36841456">PMID&nbsp;36841456</a></td></tr>
+    <tr><td><span class="fit-badge fit-weak">medium</span></td><td><strong>ASCL1 / NEUROD1 IHC + chromogranin / synaptophysin / INSM1 panel</strong></td><td>subtyping</td><td>IHC</td><td>archival FFPE; same block as the DLL3 IHC</td><td>1–2 weeks</td><td>Confirms the DLL3 target call by anchoring on neuroendocrine biology; does not gate enrollment.</td><td>DLL3 is a Notch-pathway target normally expressed in neuroendocrine lineage. In a non-NEC tumor like osteosarcoma, surfacing or excluding any neuroendocrine differentiation pattern (Notch-low / ASCL1-high state) provides mechanistic context for whether DLL3 expression is biologically plausible or a stochastic finding. Does not gate enrollment; informs how the tarlatamab trial outcome should be interpreted.</td><td><div><strong>Mayo Clinic Laboratories</strong> <span class="fit-badge fit-strong">preferred</span><br><small><a href="https://www.mayocliniclabs.com/test-catalog">test info</a> · 200 First Street SW, Rochester, MN 55905 · 1-800-533-1710</small><br><small><em>Standard NEC IHC panel including chromogranin, synaptophysin, INSM1; ASCL1/NEUROD1 typically requires a referral order.</em></small></div><br><div><strong>ARUP Laboratories</strong> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.aruplab.com/">test info</a> · 500 Chipeta Way, Salt Lake City, UT 84108 · 1-800-242-2787</small><br><small><em>University of Utah-affiliated; comprehensive neuroendocrine IHC panel routinely run.</em></small></div><br><div><strong>LabCorp / Esoterix Oncology</strong> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.labcorp.com/oncology">test info</a> · 358 South Main Street, Burlington, NC 27215 · 1-800-345-4363</small></div><br><div><strong>Memorial Sloan Kettering Diagnostic Molecular Pathology</strong> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.mskcc.org/clinical-services/diagnostic-laboratory">test info</a> · 1275 York Avenue, New York, NY 10065 · 1-212-639-2000</small></div><br><div><strong>Quest Diagnostics</strong> <span class="fit-badge fit-strong">US</span><br><small><a href="https://testdirectory.questdiagnostics.com/">test info</a> · 500 Plaza Drive, Secaucus, NJ 07094 · 1-866-697-8378</small></div></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/33288979">PMID&nbsp;33288979</a></td></tr>
+    <tr><td><span class="fit-badge fit-weak">medium</span></td><td><strong>Germline TP53 sequencing (Li-Fraumeni panel)</strong></td><td>germline</td><td>germline_panel</td><td>5–10 mL EDTA whole blood</td><td>3–6 weeks</td><td>Frames radiation-sensitivity, synchronous-tumor screening, and family cascade testing; does not affect tarlatamab eligibility.</td><td>Osteosarcoma in the late-teens to twenties carries a meaningful prior probability of germline TP53 (Li-Fraumeni). A positive germline TP53 result changes radiation-sensitivity considerations, screening for synchronous tumors, and family screening for first-degree relatives. Does not affect tarlatamab eligibility, but is the kind of finding that would change the surrounding care plan.</td><td><div><strong>Invitae</strong> · <em>Invitae Common Hereditary Cancers Panel</em> <span class="fit-badge fit-strong">preferred</span><br><small><a href="https://www.invitae.com/en/providers/test-catalog">test info</a> · 1400 16th Street, San Francisco, CA 94103 · 1-800-436-3037</small><br><small><em>Major germline reference lab; TP53 included in standard hereditary-cancer panels.</em></small></div><br><div><strong>Ambry Genetics</strong> · <em>CancerNext</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.ambrygen.com/providers/test-menu">test info</a> · 1 Enterprise, Aliso Viejo, CA 92656 · 1-866-262-7943</small><br><small><em>Konica Minolta–owned; CancerNext is the broad hereditary-cancer panel including TP53.</em></small></div><br><div><strong>Color Health</strong> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.color.com/">test info</a> · 831 Mitten Road, Burlingame, CA 94010 · 1-844-352-6567</small><br><small><em>Genetic-counseling forward; broader hereditary cancer screening with built-in counselor visit.</em></small></div><br><div><strong>GeneDx</strong> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.genedx.com/tests">test info</a> · 207 Perry Parkway, Gaithersburg, MD 20877 · 1-888-729-1206</small><br><small><em>Major germline testing provider; TP53 + comprehensive hereditary cancer panels.</em></small></div><br><div><strong>Myriad Genetics</strong> · <em>MyRisk Hereditary Cancer</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://myriad.com/genetic-tests/myrisk-hereditary-cancer/">test info</a> · 320 Wakara Way, Salt Lake City, UT 84108 · 1-800-469-7423</small></div></td><td><em>nccn-bone-cancer</em><br><a href="https://pubmed.ncbi.nlm.nih.gov/32647394">PMID&nbsp;32647394</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2 id="prame-rna-expression">PRAME RNA expression<a class="headerlink" href="#prame-rna-expression" title="Permanent link">&para;</a></h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Priority</th><th>Test</th><th>Type</th><th>Modality</th><th>Tissue</th><th>Turnaround</th><th>Decision gated</th><th>Rationale</th><th>Providers</th><th>References</th></tr></thead>
+      <tbody>
+    <tr><td><span class="fit-badge fit-strong">essential</span></td><td><strong>HLA Class I high-resolution typing (HLA-A*02:01 specifically)</strong></td><td>confirmatory</td><td>germline_panel</td><td>5–10 mL EDTA whole blood</td><td>1–2 weeks</td><td>IMA203 and the PRAME ImmTAC class; every program is HLA-A*02:01-restricted.</td><td>Every PRAME-directed ImmTAC and TCR-T in clinical development is HLA-A*02:01-restricted; the PRAME peptide is presented on HLA-A*02:01, and patients without this allele cannot present the target. HLA-A*02:01 prevalence is ~40–50% in Caucasian populations; without typing, the patient&#x27;s eligibility for the entire HLA-restricted PRAME class is unknown. Every PRAME-directed program (IMA203 via NCT03686124, brenetafusp, IMC-P115C via NCT07156136) is foreclosed if HLA-A*02:01 typing returns negative.</td><td><div><strong>HistoGenetics</strong> <span class="fit-badge fit-strong">preferred</span><br><small><a href="https://www.histogenetics.com/">test info</a> · 1 Patrick Henry Drive, Stewartsville, NJ 08886 · 1-845-356-3801</small><br><small><em>Specialized HLA reference lab used by transplant centers and TCR-based therapy trials including the IMA203 program.</em></small></div><br><div><strong>ARUP Laboratories</strong> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.aruplab.com/">test info</a> · 500 Chipeta Way, Salt Lake City, UT 84108 · 1-800-242-2787</small><br><small><em>High-resolution Class I HLA typing routinely run.</em></small></div><br><div><strong>Mayo Clinic Laboratories</strong> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.mayocliniclabs.com/test-catalog">test info</a> · 200 First Street SW, Rochester, MN 55905 · 1-800-533-1710</small></div><br><div><strong>Stanford Histocompatibility Laboratory</strong> <span class="fit-badge fit-strong">US</span><br><small><a href="https://stanfordbloodcenter.org/healthcare-professionals/histocompatibility/">test info</a> · 3373 Hillview Avenue, Palo Alto, CA 94304 · 1-650-723-7960</small><br><small><em>Academic HLA reference lab; ASHI-accredited.</em></small></div><br><div><strong>Versiti / Wisconsin Diagnostic Laboratories</strong> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.versiti.org/medical-professionals/diagnostic-labs">test info</a> · 638 N 18th Street, Milwaukee, WI 53233 · 1-800-245-3117</small><br><small><em>Major US-based HLA typing provider for transplant + immunotherapy programs.</em></small></div></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/38821093">PMID&nbsp;38821093</a><br><a href="https://clinicaltrials.gov/study/NCT03686124">NCT03686124</a><br><a href="https://clinicaltrials.gov/study/NCT07156136">NCT07156136</a></td></tr>
+    <tr><td><span class="fit-badge fit-strong">essential</span></td><td><strong>PRAME IHC (clone EPR20330 or equivalent)</strong></td><td>confirmatory</td><td>IHC</td><td>archival FFPE; same block as the DLL3 IHC</td><td>1–2 weeks</td><td>IMA203 (NCT03686124) and the PRAME ImmTAC class (brenetafusp, IMC-P115C); every PRAME-directed ImmTAC and TCR-T gates on PRAME IHC.</td><td>RNA expression establishes that the PRAME gene is being transcribed; it does not establish that the PRAME peptide is presented at sufficient density to engage a TCR or ImmTAC. PRAME-targeting therapies in development (IMA203 ACTengine, brenetafusp, IMC-P115C) require IHC-confirmed PRAME protein expression on tumor cells. PRAME IHC is positive in ~56% of osteosarcoma (Iura 2017, n=82). Skipping the IHC forecloses every PRAME-directed candidate downstream by definition.</td><td><div><strong>NeoGenomics Laboratories</strong> <span class="fit-badge fit-strong">preferred</span><br><small><a href="https://neogenomics.com/test-menu">test info</a> · 9490 NeoGenomics Way, Fort Myers, FL 33912 · 1-866-776-5907</small><br><small><em>PRAME IHC on the standard solid-tumor IHC menu; commonly used by melanoma centers.</em></small></div><br><div><strong>Caris Life Sciences</strong> · <em>Caris Molecular Intelligence (with IHC reflex)</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.carislifesciences.com/products-and-services/molecular-profiling/">test info</a> · 4610 South 44th Place, Phoenix, AZ 85040 · 1-888-979-8669</small></div><br><div><strong>Foundation Medicine</strong> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.foundationmedicine.com/test/foundationone-cdx">test info</a> · 150 Second Street, Cambridge, MA 02141 · 1-888-988-3639</small><br><small><em>PRAME IHC available on case-by-case basis as part of FoundationOne IHC reflex.</em></small></div><br><div><strong>LabCorp / Esoterix Oncology</strong> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.labcorp.com/oncology">test info</a> · 358 South Main Street, Burlington, NC 27215 · 1-800-345-4363</small></div><br><div><strong>Mayo Clinic Laboratories</strong> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.mayocliniclabs.com/test-catalog">test info</a> · 200 First Street SW, Rochester, MN 55905 · 1-800-533-1710</small><br><small><em>PRAME IHC available; confirm clone with the ordering pathologist.</em></small></div></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/28315425">PMID&nbsp;28315425</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/38821093">PMID&nbsp;38821093</a><br><a href="https://clinicaltrials.gov/study/NCT03686124">NCT03686124</a><br><a href="https://clinicaltrials.gov/study/NCT07156136">NCT07156136</a></td></tr>
+    <tr><td><span class="fit-badge fit-partial">high</span></td><td><strong>PRAME IHC on multiple tumor regions / metastatic biopsy</strong></td><td>heterogeneity</td><td>IHC</td><td>additional archival blocks from a different site if available</td><td>1–2 weeks</td><td>Refines confidence in the PRAME IHC gating result; does not gate enrollment.</td><td>PRAME expression is heterogeneous across tumor regions, particularly in solid tumors outside melanoma. Iura 2017 reported variable PRAME staining intensity across osteosarcoma cases; primary-vs-metastatic discordance is a documented confounder for PRAME-directed therapy selection. Multi-region IHC refines confidence that the binary positive call is representative of the dominant disease.</td><td><div><strong>NeoGenomics Laboratories</strong> <span class="fit-badge fit-strong">preferred</span><br><small><a href="https://neogenomics.com/test-menu">test info</a> · 9490 NeoGenomics Way, Fort Myers, FL 33912 · 1-866-776-5907</small></div><br><div><strong>Caris Life Sciences</strong> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.carislifesciences.com/products-and-services/molecular-profiling/">test info</a> · 4610 South 44th Place, Phoenix, AZ 85040 · 1-888-979-8669</small></div><br><div><strong>Foundation Medicine</strong> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.foundationmedicine.com/test/foundationone-cdx">test info</a> · 150 Second Street, Cambridge, MA 02141 · 1-888-988-3639</small></div><br><div><strong>Mayo Clinic Laboratories</strong> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.mayocliniclabs.com/test-catalog">test info</a> · 200 First Street SW, Rochester, MN 55905 · 1-800-533-1710</small></div><br><div><strong>Memorial Sloan Kettering Diagnostic Molecular Pathology</strong> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.mskcc.org/clinical-services/diagnostic-laboratory">test info</a> · 1275 York Avenue, New York, NY 10065 · 1-212-639-2000</small></div></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/28315425">PMID&nbsp;28315425</a></td></tr>
+    <tr><td><span class="fit-badge fit-weak">medium</span></td><td><strong>Tumor NGS for HLA loss-of-heterozygosity, B2M loss-of-function, and antigen-presentation pathway</strong></td><td>resistance marker</td><td>NGS_panel</td><td>archival FFPE; matched germline blood is required for tumor-specific HLA-LOH calling</td><td>2–4 weeks</td><td>Frames durability and post-progression sequencing for PRAME-directed therapy; does not gate enrollment.</td><td>TCR-based and ImmTAC therapies depend on intact HLA-Class-I antigen presentation on tumor cells. Tumor-specific HLA-A*02:01 loss-of-heterozygosity, B2M loss-of-function mutations, or upstream antigen-presentation defects render the cell invisible to TCR-mediated killing even with PRAME expression preserved. Detecting these alterations does not foreclose enrollment but reframes the durability expectation and informs sequencing planning.</td><td><div><strong>Memorial Sloan Kettering Diagnostic Molecular Pathology</strong> · <em>MSK-IMPACT</em> <span class="fit-badge fit-strong">preferred</span><br><small><a href="https://www.mskcc.org/clinical-services/diagnostic-laboratory">test info</a> · 1275 York Avenue, New York, NY 10065 · 1-212-639-2000</small><br><small><em>MSK-IMPACT covers B2M; HLA-LOH calling available in research-grade reports.</em></small></div><br><div><strong>Caris Life Sciences</strong> · <em>Caris Molecular Intelligence</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.carislifesciences.com/products-and-services/molecular-profiling/">test info</a> · 4610 South 44th Place, Phoenix, AZ 85040 · 1-888-979-8669</small></div><br><div><strong>Foundation Medicine</strong> · <em>FoundationOne CDx</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.foundationmedicine.com/test/foundationone-cdx">test info</a> · 150 Second Street, Cambridge, MA 02141 · 1-888-988-3639</small><br><small><em>Standard panel covers B2M; tumor-specific HLA-LOH typically requires the dedicated POLYSOLVER pipeline or a research-grade order.</em></small></div><br><div><strong>NeoGenomics Laboratories</strong> · <em>NeoTYPE Comprehensive Panel</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://neogenomics.com/test-menu">test info</a> · 9490 NeoGenomics Way, Fort Myers, FL 33912 · 1-866-776-5907</small></div><br><div><strong>Tempus</strong> · <em>Tempus xT</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.tempus.com/oncology/diagnostics/">test info</a> · 600 West Chicago Avenue, Chicago, IL 60654 · 1-800-739-4137</small></div></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/32214246">PMID&nbsp;32214246</a></td></tr>
+    <tr><td><span class="fit-badge fit-weak">medium</span></td><td><strong>Tumor CD8+ T-cell infiltrate density (CD8 IHC, optionally with multiplex CD3 / CD8 / FoxP3)</strong></td><td>microenvironment</td><td>IHC</td><td>archival FFPE; same block as the PRAME IHC</td><td>1–2 weeks</td><td>Frames durability of PRAME-directed therapy; informs the next-line plan if IMA203 or IMC-P115C fails.</td><td>TCR-based therapies require T-cell trafficking into the tumor; an immune-cold microenvironment with low CD8 density predicts diminished response even when PRAME and HLA are both positive. Quantifying baseline TIL density frames durability expectations and is informative for the next-line conversation if PRAME-directed therapy fails. Does not gate enrollment.</td><td><div><strong>NeoGenomics Laboratories</strong> · <em>MultiOmyx multiplex IHC</em> <span class="fit-badge fit-strong">preferred</span><br><small><a href="https://neogenomics.com/test-menu">test info</a> · 9490 NeoGenomics Way, Fort Myers, FL 33912 · 1-866-776-5907</small><br><small><em>MultiOmyx panel can quantify CD8, CD3, FoxP3 density on a single section.</em></small></div><br><div><strong>Caris Life Sciences</strong> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.carislifesciences.com/products-and-services/molecular-profiling/">test info</a> · 4610 South 44th Place, Phoenix, AZ 85040 · 1-888-979-8669</small></div><br><div><strong>Foundation Medicine</strong> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.foundationmedicine.com/test/foundationone-cdx">test info</a> · 150 Second Street, Cambridge, MA 02141 · 1-888-988-3639</small></div><br><div><strong>Mayo Clinic Laboratories</strong> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.mayocliniclabs.com/test-catalog">test info</a> · 200 First Street SW, Rochester, MN 55905 · 1-800-533-1710</small></div><br><div><strong>Memorial Sloan Kettering Diagnostic Molecular Pathology</strong> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.mskcc.org/clinical-services/diagnostic-laboratory">test info</a> · 1275 York Avenue, New York, NY 10065 · 1-212-639-2000</small></div></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/28102259">PMID&nbsp;28102259</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<p><a href="../">Back to case</a> · <a href="../trials/">Trials</a> · <a href="../evidence/">Evidence</a> · <a href="../manuscripts/">Manuscripts</a> · <a href="../board/">Board</a> · <a href="../recommendations/">Recommendations</a></p>
+<div class="admonition danger disclaimer">
+<p class="admonition-title">Decision support, not medical advice</p>
+<p>Libby is experimental. The validation tests on this page are decision-support;
+confirm assay availability, current standards, and clinical relevance with the
+treating team and the local pathology service.
+See <a href="../../../phi_policy/">PHI policy</a>.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.top", "navigation.instant", "navigation.tracking", "search.highlight", "search.suggest", "content.code.copy", "content.action.edit", "content.tables.sortable"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

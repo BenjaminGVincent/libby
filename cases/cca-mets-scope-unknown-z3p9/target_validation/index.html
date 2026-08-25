@@ -1,0 +1,654 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A multi-agent decision-support framework for identifying candidate therapeutics for an individual cancer patient. Not medical advice.">
+      
+      
+      
+        <link rel="canonical" href="https://benjamingvincent.github.io/libby/cases/cca-mets-scope-unknown-z3p9/target_validation/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Target validation - Libby</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/trial-table.css?v=1a438225">
+    
+      <link rel="stylesheet" href="../../../stylesheets/libby.css?v=41cd52d9">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#target-validation-cca-mets-scope-unknown-z3p9" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Libby" class="md-header__button md-logo" aria-label="Libby" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Libby
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Target validation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/BenjaminGVincent/libby" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BenjaminGVincent/libby
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Libby" class="md-nav__button md-logo" aria-label="Libby" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Libby
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/BenjaminGVincent/libby" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BenjaminGVincent/libby
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../phi_policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PHI policy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fgfr2-fusionrearrangement-candidate-untested-pending-comprehensive-genomic-profiling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FGFR2 fusion/rearrangement (candidate; untested, pending comprehensive genomic profiling)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#idh1-r132-mutation-candidate-untested-pending-comprehensive-genomic-profiling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IDH1 R132 mutation (candidate; untested, pending comprehensive genomic profiling)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#her2-erbb2-amplificationoverexpression-candidate-untested-pending-her2-ihcish-and-ngs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HER2 (ERBB2) amplification/overexpression (candidate; untested, pending HER2 IHC/ISH and NGS)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#braf-v600e-candidate-untested-pending-comprehensive-genomic-profiling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BRAF V600E (candidate; untested, pending comprehensive genomic profiling)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#msi-h-dmmr-or-high-tmb-candidate-untested-pending-mmr-ihc-msi-assay-and-ngs-derived-tmb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MSI-H / dMMR or high TMB (candidate; untested, pending MMR IHC, MSI assay, and NGS-derived TMB)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ntrk-or-ret-fusion-candidate-untested-pending-rna-based-fusion-ngs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NTRK or RET fusion (candidate; untested, pending RNA-based fusion NGS)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kras-g12c-candidate-untested-pending-comprehensive-genomic-profiling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KRAS G12C (candidate; untested, pending comprehensive genomic profiling)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/BenjaminGVincent/libby/edit/main/docs/cases/cca-mets-scope-unknown-z3p9/target_validation.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<p><meta name="robots" content="noindex"></p>
+<h1 id="target-validation-cca-mets-scope-unknown-z3p9">Target validation — <code>cca-mets-scope-unknown-z3p9</code><a class="headerlink" href="#target-validation-cca-mets-scope-unknown-z3p9" title="Permanent link">&para;</a></h1>
+<p><em>9 validation rows across 7 feature(s) — 2 essential, 7 gating an intervention. Sorted within each feature by priority, then by decision relevance.</em></p>
+<p><em>Essential / gates-intervention rows are the diagnostic prerequisites that must resolve before any feature-targeting therapy can be chosen. Rows tagged <code>confirms_target_call</code> harden the target call without gating a specific therapy; resistance / co-mutation / microenvironment rows refine sequencing and risk.</em></p>
+<h2 id="fgfr2-fusionrearrangement-candidate-untested-pending-comprehensive-genomic-profiling">FGFR2 fusion/rearrangement (candidate; untested, pending comprehensive genomic profiling)<a class="headerlink" href="#fgfr2-fusionrearrangement-candidate-untested-pending-comprehensive-genomic-profiling" title="Permanent link">&para;</a></h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Priority</th><th>Test</th><th>Type</th><th>Modality</th><th>Tissue</th><th>Turnaround</th><th>Decision gated</th><th>Rationale</th><th>Providers</th><th>References</th></tr></thead>
+      <tbody>
+    <tr><td><span class="fit-badge fit-strong">essential</span></td><td><strong>Comprehensive genomic profiling: paired DNA + RNA NGS with structural-variant/fusion calling, MSI, and TMB (covering FGFR2, IDH1, ERBB2 copy number, BRAF V600E, KRAS G12C, NTRK1/2/3, RET)</strong></td><td>confirmatory</td><td>NGS_panel</td><td>archival FFPE block or 10-20 unstained slides; or 2 x 10 mL Streck tubes whole blood for ctDNA</td><td>2-3 weeks (tissue); 7-10 days (ctDNA)</td><td>Gates all targeted second-line therapy in metastatic CCA (FGFR, IDH1, HER2, BRAF, RET, NTRK inhibitors and pembrolizumab); rank-1 shared workup.</td><td>No molecular profiling was supplied, so every actionable axis in this case is unmeasured; a single comprehensive DNA+RNA panel resolves seven of the eight candidate features at once and is the gate for all targeted second-line options. NCCN advises CGP at diagnosis of unresectable/metastatic biliary tract cancer, and an RNA-based fusion read matters because DNA-only calling misses a subset of FGFR2 fusions with novel or intronic breakpoints. Skipping it leaves the patient on chemotherapy alone while a roughly 40% chance of an actionable alteration goes undetected.</td><td><div><strong>Foundation Medicine</strong> · <em>FoundationOne CDx (tissue) / FoundationOne Liquid CDx</em> <span class="fit-badge fit-strong">preferred</span><br><small><a href="https://www.foundationmedicine.com/test/foundationone-cdx">test info</a> · 150 Second Street, Cambridge, MA 02141 · 888-988-3639</small><br><small><em>FDA-approved companion diagnostic for pemigatinib FGFR2 fusion detection in CCA; the pivotal-trial central-lab pedigree and CDx status make it the default for this gating decision. Tissue DNA panel; pair with an RNA fusion assay if FGFR2 is negative and clinical suspicion stays high.</em></small></div><br><div><strong>Caris Life Sciences</strong> · <em>Caris MI Profile (whole-exome + whole-transcriptome)</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.carislifesciences.com/products-and-services/molecular-profiling/">test info</a> · 4610 South 44th Place, Phoenix, AZ 85040 · 888-979-8669</small><br><small><em>Whole-transcriptome RNA sequencing gives broad agnostic fusion detection.</em></small></div><br><div><strong>Guardant Health</strong> · <em>Guardant360 CDx (ctDNA)</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.guardanthealth.com/products/guardant360-cdx/">test info</a> · 3100 Hanover Street, Palo Alto, CA 94304 · 855-698-8887</small><br><small><em>Liquid option when tissue is exhausted or a biopsy is undesirable; fastest turnaround but lower fusion sensitivity than tissue RNA.</em></small></div><br><div><strong>Tempus</strong> · <em>Tempus xT (DNA) + xR (RNA fusion)</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.tempus.com/oncology/genomic-profiling/">test info</a> · 600 West Chicago Avenue, Suite 510, Chicago, IL 60654 · 800-739-4137</small><br><small><em>Paired DNA/RNA workflow; xR dedicated RNA assay improves fusion sensitivity for novel FGFR2 partners.</em></small></div></td><td><em>nccn-hepatobiliary-v2.2025</em><br><a href="https://pubmed.ncbi.nlm.nih.gov/32203698">PMID&nbsp;32203698</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/37577463">PMID&nbsp;37577463</a><br><a href="https://clinicaltrials.gov/study/NCT04466891">NCT04466891</a></td></tr>
+    <tr><td><span class="fit-badge fit-weak">medium</span></td><td><strong>Baseline and serial ctDNA for FGFR2 kinase-domain mutations and co-altered PIK3CA / CDKN2A/B</strong></td><td>resistance marker</td><td>ctDNA</td><td>2 x 10 mL Streck tubes whole blood</td><td>7-10 days per draw</td><td>Switch between FGFR inhibitors (e.g. to next-generation agents) on acquired-resistance signal; does not gate enrollment.</td><td>If FGFR2 fusion is confirmed and an FGFR inhibitor is started, acquired FGFR2 kinase-domain mutations (gatekeeper N549K, V564F and others) and co-alterations such as PIK3CA or CDKN2A/B drive resistance and can prompt a switch to a next-generation FGFR inhibitor. Serial ctDNA tracks these clones earlier than imaging or re-biopsy. This is sequencing intelligence rather than an enrollment gate, so it is not essential up front, but it should be in place before or shortly after starting therapy.</td><td><div><strong>Guardant Health</strong> · <em>Guardant360</em> <span class="fit-badge fit-strong">preferred</span><br><small><a href="https://www.guardanthealth.com/products/guardant360/">test info</a> · 3100 Hanover Street, Palo Alto, CA 94304 · 855-698-8887</small><br><small><em>Established serial-ctDNA platform with FGFR2 resistance-mutation reporting; blood draw avoids repeat biopsy, which fits resistance monitoring.</em></small></div><br><div><strong>Foundation Medicine</strong> · <em>FoundationOne Liquid CDx</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.foundationmedicine.com/test/foundationone-liquid-cdx">test info</a> · 150 Second Street, Cambridge, MA 02141 · 888-988-3639</small><br><small><em>Liquid CDx reports FGFR2 alterations and co-mutations from plasma.</em></small></div></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/33218975">PMID&nbsp;33218975</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/40156172">PMID&nbsp;40156172</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2 id="idh1-r132-mutation-candidate-untested-pending-comprehensive-genomic-profiling">IDH1 R132 mutation (candidate; untested, pending comprehensive genomic profiling)<a class="headerlink" href="#idh1-r132-mutation-candidate-untested-pending-comprehensive-genomic-profiling" title="Permanent link">&para;</a></h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Priority</th><th>Test</th><th>Type</th><th>Modality</th><th>Tissue</th><th>Turnaround</th><th>Decision gated</th><th>Rationale</th><th>Providers</th><th>References</th></tr></thead>
+      <tbody>
+    <tr><td><span class="fit-badge fit-partial">high</span></td><td><strong>IDH1 R132 hotspot detection by tumor DNA NGS (included in comprehensive panel)</strong></td><td>confirmatory</td><td>NGS_panel</td><td>no additional tissue if CGP is run</td><td>covered within the 2-3 week CGP turnaround</td><td>Ivosidenib (ClarIDHy) for IDH1 R132-mutant CCA; confirms DNA hotspot coverage in the ordered panel.</td><td>Ivosidenib eligibility (ClarIDHy) requires a confirmed IDH1 R132 mutation, and the codon is captured by any comprehensive DNA panel, so this is satisfied by the rank-1 CGP rather than a standalone assay. The row exists to make the IDH1 gate explicit and to note that IDH2 and non-R132 IDH1 variants do not qualify for ivosidenib. If only a limited fusion-focused panel is run, the IDH1 hotspot can be missed, so confirm DNA coverage when ordering.</td><td><div><strong>Foundation Medicine</strong> · <em>FoundationOne CDx</em> <span class="fit-badge fit-strong">preferred</span><br><small><a href="https://www.foundationmedicine.com/test/foundationone-cdx">test info</a> · 150 Second Street, Cambridge, MA 02141 · 888-988-3639</small><br><small><em>IDH1 R132 is reported in the same gating panel; no separate send-out required.</em></small></div><br><div><strong>Tempus</strong> · <em>Tempus xT</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.tempus.com/oncology/genomic-profiling/">test info</a> · 600 West Chicago Avenue, Suite 510, Chicago, IL 60654 · 800-739-4137</small><br><small><em>DNA panel covers the IDH1 hotspot alongside the other candidate alterations.</em></small></div></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/32416072">PMID&nbsp;32416072</a><br><em>nccn-hepatobiliary-v2.2025</em></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2 id="her2-erbb2-amplificationoverexpression-candidate-untested-pending-her2-ihcish-and-ngs">HER2 (ERBB2) amplification/overexpression (candidate; untested, pending HER2 IHC/ISH and NGS)<a class="headerlink" href="#her2-erbb2-amplificationoverexpression-candidate-untested-pending-her2-ihcish-and-ngs" title="Permanent link">&para;</a></h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Priority</th><th>Test</th><th>Type</th><th>Modality</th><th>Tissue</th><th>Turnaround</th><th>Decision gated</th><th>Rationale</th><th>Providers</th><th>References</th></tr></thead>
+      <tbody>
+    <tr><td><span class="fit-badge fit-strong">essential</span></td><td><strong>HER2 IHC (PATHWAY anti-HER2/neu clone 4B5) with reflex HER2 ISH</strong></td><td>confirmatory</td><td>IHC</td><td>archival FFPE block or 4-5 unstained slides</td><td>3-7 days</td><td>Zanidatamab (HERIZON-BTC-01) and trastuzumab deruxtecan (IHC 3+); selects which anti-HER2 agent applies.</td><td>NGS copy-number alone does not establish HER2 protein expression, and the approved biliary-tract HER2 agents key off a protein/ISH readout, not an amplification call: trastuzumab deruxtecan is labeled for IHC 3+, and zanidatamab eligibility was defined by ISH amplification plus IHC 2+/3+ in HERIZON-BTC-01. The PATHWAY 4B5 antibody is the FDA companion diagnostic for zanidatamab in biliary tract cancer. Without IHC/ISH, an NGS HER2 signal cannot be converted into a drug choice or the correct agent.</td><td><div><strong>NeoGenomics Laboratories</strong> · <em>HER2/neu (4B5) IHC with reflex ISH</em> <span class="fit-badge fit-strong">preferred</span><br><small><a href="https://neogenomics.com/test-menu">test info</a> · 9490 NeoGenomics Way, Fort Myers, FL 33912 · 866-776-5907</small><br><small><em>Routine high-volume HER2 IHC/ISH on the 4B5 clone with fast turnaround; CAP-accredited and widely used for solid-tumor HER2 scoring, which fits a gating decision better than a send-out.</em></small></div><br><div><strong>Labcorp</strong> · <em>HER2 (HER-2/neu) IHC and FISH</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.labcorp.com/tests/480020/her-2-neu-by-immunohistochemistry">test info</a> · 358 South Main Street, Burlington, NC 27215 · 800-845-6167</small><br><small><em>National footprint; offers reflex FISH on equivocal IHC.</em></small></div><br><div><strong>Quest Diagnostics</strong> · <em>HER2 IHC with reflex ISH</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://testdirectory.questdiagnostics.com/">test info</a> · 500 Plaza Drive, Secaucus, NJ 07094 · 866-697-8378</small><br><small><em>Wide draw-site network; confirm 4B5 clone when ordering for zanidatamab eligibility.</em></small></div></td><td><a href="https://clinicaltrials.gov/study/NCT04466891">NCT04466891</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/38823410">PMID&nbsp;38823410</a><br><em>nccn-hepatobiliary-v2.2025</em></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2 id="braf-v600e-candidate-untested-pending-comprehensive-genomic-profiling">BRAF V600E (candidate; untested, pending comprehensive genomic profiling)<a class="headerlink" href="#braf-v600e-candidate-untested-pending-comprehensive-genomic-profiling" title="Permanent link">&para;</a></h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Priority</th><th>Test</th><th>Type</th><th>Modality</th><th>Tissue</th><th>Turnaround</th><th>Decision gated</th><th>Rationale</th><th>Providers</th><th>References</th></tr></thead>
+      <tbody>
+    <tr><td><span class="fit-badge fit-partial">high</span></td><td><strong>BRAF V600E confirmation by NGS (or VE1 IHC screen confirmed by NGS/PCR)</strong></td><td>orthogonal validation</td><td>NGS_panel</td><td>no additional tissue if CGP is run; 1-2 unstained slides if VE1 IHC is added</td><td>covered within the 2-3 week CGP turnaround; VE1 IHC 3-5 days</td><td>Dabrafenib + trametinib (BRAF V600E tumor-agnostic / ROAR); distinguishes V600E from non-actionable class-2/3 BRAF.</td><td>VE1 IHC is a sensitive screen but is not definitive on its own; the dabrafenib/trametinib tumor-agnostic label and the ROAR biliary cohort were built on molecularly confirmed BRAF V600E, so a positive IHC needs NGS or PCR confirmation before committing. The comprehensive panel already covers this codon, so this row mainly flags that a non-V600E BRAF class-2/3 alteration would not qualify for the same regimen. Treating on an unconfirmed IHC risks exposing the patient to a doublet they cannot benefit from.</td><td><div><strong>Foundation Medicine</strong> · <em>FoundationOne CDx</em> <span class="fit-badge fit-strong">preferred</span><br><small><a href="https://www.foundationmedicine.com/test/foundationone-cdx">test info</a> · 150 Second Street, Cambridge, MA 02141 · 888-988-3639</small><br><small><em>BRAF V600E is reported within the same comprehensive panel that gates the rest of the case; no separate order needed unless a VE1 IHC fast screen is wanted.</em></small></div><br><div><strong>NeoGenomics Laboratories</strong> · <em>BRAF V600E (VE1) IHC</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://neogenomics.com/test-menu">test info</a> · 9490 NeoGenomics Way, Fort Myers, FL 33912 · 866-776-5907</small><br><small><em>Offers VE1 IHC as a rapid screen; still confirm a positive by NGS/PCR before treating.</em></small></div></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/32818466">PMID&nbsp;32818466</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/26637002">PMID&nbsp;26637002</a><br><em>nccn-hepatobiliary-v2.2025</em></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2 id="msi-h-dmmr-or-high-tmb-candidate-untested-pending-mmr-ihc-msi-assay-and-ngs-derived-tmb">MSI-H / dMMR or high TMB (candidate; untested, pending MMR IHC, MSI assay, and NGS-derived TMB)<a class="headerlink" href="#msi-h-dmmr-or-high-tmb-candidate-untested-pending-mmr-ihc-msi-assay-and-ngs-derived-tmb" title="Permanent link">&para;</a></h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Priority</th><th>Test</th><th>Type</th><th>Modality</th><th>Tissue</th><th>Turnaround</th><th>Decision gated</th><th>Rationale</th><th>Providers</th><th>References</th></tr></thead>
+      <tbody>
+    <tr><td><span class="fit-badge fit-partial">high</span></td><td><strong>Mismatch-repair IHC (MLH1, MSH2, MSH6, PMS2) with reflex MSI by PCR</strong></td><td>orthogonal validation</td><td>IHC</td><td>archival FFPE block or 4 unstained slides</td><td>3-5 days (IHC); 1 week (reflex MSI-PCR)</td><td>Pembrolizumab under the MSI-H/dMMR tumor-agnostic label; orthogonal confirmation of any NGS MSI signal.</td><td>MMR protein IHC is the fastest, cheapest orthogonal readout for dMMR and catches cases an NGS-derived MSI score can miss when tumor purity is low; concordance with MSI-PCR is high but discordances occur, so the two together harden the call before committing to checkpoint blockade. The VENTANA MMR RxDx panel is an FDA companion diagnostic in the dMMR tumor-agnostic setting. MSI-H/dMMR is uncommon in biliary tract cancer (roughly 1-3%), so a confirmed positive is decision-changing and a clean negative redirects attention to the targeted axes.</td><td><div><strong>NeoGenomics Laboratories</strong> · <em>MMR IHC panel with reflex MSI</em> <span class="fit-badge fit-strong">preferred</span><br><small><a href="https://neogenomics.com/test-menu">test info</a> · 9490 NeoGenomics Way, Fort Myers, FL 33912 · 866-776-5907</small><br><small><em>Four-antibody MMR panel with reflex MSI-PCR run together routinely; same lab can co-process the HER2 IHC, simplifying tissue logistics.</em></small></div><br><div><strong>Labcorp</strong> · <em>MMR IHC / MSI by PCR</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.labcorp.com/tests/481675/microsatellite-instability">test info</a> · 358 South Main Street, Burlington, NC 27215 · 800-845-6167</small><br><small><em>Offers both MMR IHC and standalone MSI-PCR.</em></small></div><br><div><strong>Mayo Clinic Laboratories</strong> · <em>Mismatch repair (MMR) IHC and MSI</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.mayocliniclabs.com/test-catalog">test info</a> · 3050 Superior Drive NW, Rochester, MN 55901 · 800-533-1710</small><br><small><em>Academic reference lab; useful when MLH1 loss prompts BRAF/MLH1-promoter methylation follow-up.</em></small></div></td><td><em>nccn-hepatobiliary-v2.2025</em><br><a href="https://pubmed.ncbi.nlm.nih.gov/32955177">PMID&nbsp;32955177</a></td></tr>
+    <tr><td><span class="fit-badge fit-none">low</span></td><td><strong>Germline multigene panel (Lynch genes MLH1/MSH2/MSH6/PMS2/EPCAM; BRCA1/2; reflex from somatic findings)</strong></td><td>germline</td><td>germline_panel</td><td>5-10 mL whole blood or a saliva kit</td><td>2-3 weeks</td><td>Hereditary-syndrome diagnosis and cascade family screening; does not change current systemic therapy.</td><td>If MMR IHC shows MLH1 loss or the somatic panel returns a pathogenic Lynch-gene or BRCA1/2 variant, germline testing distinguishes a heritable syndrome from a sporadic somatic event and triggers cascade family screening. MLH1 loss usually warrants a BRAF V600E or MLH1-promoter methylation check first to gauge whether germline testing is indicated. This does not change the patient&#x27;s immediate therapy, so it is research-adjacent for the targeting question, but it carries real family implications when a driver is germline.</td><td><div><strong>Invitae</strong> · <em>Invitae Multi-Cancer / Lynch Syndrome Panel</em> <span class="fit-badge fit-strong">preferred</span><br><small><a href="https://www.invitae.com/en/providers/test-catalog">test info</a> · 1400 16th Street, San Francisco, CA 94103 · 800-436-3037</small><br><small><em>Broad hereditary-cancer panels with integrated genetic-counseling support; appropriate once a somatic or IHC finding flags possible germline origin.</em></small></div><br><div><strong>GeneDx</strong> · <em>GeneDx hereditary cancer panel</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.genedx.com">test info</a> · 207 Perry Parkway, Gaithersburg, MD 20877 · 888-729-1206</small><br><small><em>Alternative germline panel provider.</em></small></div></td><td><em>nccn-genetic-familial-v1.2025</em></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2 id="ntrk-or-ret-fusion-candidate-untested-pending-rna-based-fusion-ngs">NTRK or RET fusion (candidate; untested, pending RNA-based fusion NGS)<a class="headerlink" href="#ntrk-or-ret-fusion-candidate-untested-pending-rna-based-fusion-ngs" title="Permanent link">&para;</a></h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Priority</th><th>Test</th><th>Type</th><th>Modality</th><th>Tissue</th><th>Turnaround</th><th>Decision gated</th><th>Rationale</th><th>Providers</th><th>References</th></tr></thead>
+      <tbody>
+    <tr><td><span class="fit-badge fit-weak">medium</span></td><td><strong>RNA-based fusion NGS for NTRK1/2/3 and RET (pan-TRK IHC as an optional screen)</strong></td><td>confirmatory</td><td>RNA_seq</td><td>no additional tissue if paired DNA/RNA CGP is run</td><td>covered within CGP turnaround if RNA is included; 1-2 weeks standalone</td><td>Larotrectinib/entrectinib (NTRK) and selpercatinib (RET) tumor-agnostic labels; confirms RNA fusion coverage.</td><td>NTRK and RET fusions are rare in biliary tract cancer (&lt;1%) but tumor-agnostically actionable, and an RNA-based assay detects them more reliably than DNA-only calling, especially for partners with large intronic breakpoints. This is satisfied by the RNA arm of the rank-1 paired panel; a standalone RNA fusion test or pan-TRK IHC screen is only needed if a DNA-only platform was used. A missed fusion forecloses a high-response oral targeted option.</td><td><div><strong>Caris Life Sciences</strong> · <em>Caris MI Profile (whole-transcriptome)</em> <span class="fit-badge fit-strong">preferred</span><br><small><a href="https://www.carislifesciences.com/products-and-services/molecular-profiling/">test info</a> · 4610 South 44th Place, Phoenix, AZ 85040 · 888-979-8669</small><br><small><em>Whole-transcriptome RNA sequencing gives the broadest agnostic detection of rare NTRK/RET partners, which suits low-prevalence fusions.</em></small></div><br><div><strong>ArcherDX / Invitae</strong> · <em>Archer FusionPlex</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.invitae.com">test info</a> · 1400 16th Street, San Francisco, CA 94103 · 800-436-3037</small><br><small><em>Anchored-multiplex RNA fusion chemistry used in several CCA series; good for novel partners.</em></small></div><br><div><strong>Tempus</strong> · <em>Tempus xR (RNA fusion)</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.tempus.com/oncology/genomic-profiling/">test info</a> · 600 West Chicago Avenue, Suite 510, Chicago, IL 60654 · 800-739-4137</small><br><small><em>Dedicated RNA fusion assay; pair with xT DNA.</em></small></div></td><td><em>nccn-hepatobiliary-v2.2025</em><br><a href="https://pubmed.ncbi.nlm.nih.gov/37577463">PMID&nbsp;37577463</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2 id="kras-g12c-candidate-untested-pending-comprehensive-genomic-profiling">KRAS G12C (candidate; untested, pending comprehensive genomic profiling)<a class="headerlink" href="#kras-g12c-candidate-untested-pending-comprehensive-genomic-profiling" title="Permanent link">&para;</a></h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Priority</th><th>Test</th><th>Type</th><th>Modality</th><th>Tissue</th><th>Turnaround</th><th>Decision gated</th><th>Rationale</th><th>Providers</th><th>References</th></tr></thead>
+      <tbody>
+    <tr><td><span class="fit-badge fit-weak">medium</span></td><td><strong>KRAS G12C detection by tumor DNA NGS (included in comprehensive panel)</strong></td><td>confirmatory</td><td>NGS_panel</td><td>no additional tissue if CGP is run</td><td>covered within the 2-3 week CGP turnaround</td><td>Adagrasib/sotorasib-class KRAS G12C inhibitors and G12C trial enrollment.</td><td>KRAS G12C is uncommon in biliary tract cancer but, when present, opens covalent G12C inhibitors and trial enrollment; the codon is covered by any comprehensive DNA panel, so the rank-1 CGP resolves it. The row flags that broader KRAS hotspot results (e.g. G12D, G12V) also carry prognostic and emerging-trial relevance even though they do not gate a G12C inhibitor. No separate assay is needed if the ordered panel reports KRAS codon 12.</td><td><div><strong>Foundation Medicine</strong> · <em>FoundationOne CDx</em> <span class="fit-badge fit-strong">preferred</span><br><small><a href="https://www.foundationmedicine.com/test/foundationone-cdx">test info</a> · 150 Second Street, Cambridge, MA 02141 · 888-988-3639</small><br><small><em>KRAS codon 12 including G12C reported in the gating panel.</em></small></div><br><div><strong>Guardant Health</strong> · <em>Guardant360 CDx (ctDNA)</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.guardanthealth.com/products/guardant360-cdx/">test info</a> · 3100 Hanover Street, Palo Alto, CA 94304 · 855-698-8887</small><br><small><em>Liquid option detects KRAS G12C when tissue is limited.</em></small></div></td><td><em>nccn-hepatobiliary-v2.2025</em></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<p><a href="../">Back to case</a> · <a href="../trials/">Trials</a> · <a href="../evidence/">Evidence</a> · <a href="../manuscripts/">Manuscripts</a> · <a href="../board/">Board</a> · <a href="../recommendations/">Recommendations</a></p>
+<div class="admonition danger disclaimer">
+<p class="admonition-title">Decision support, not medical advice</p>
+<p>Libby is experimental. The validation tests on this page are decision-support;
+confirm assay availability, current standards, and clinical relevance with the
+treating team and the local pathology service.
+See <a href="../../../phi_policy/">PHI policy</a>.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.top", "navigation.instant", "navigation.tracking", "search.highlight", "search.suggest", "content.code.copy", "content.action.edit", "content.tables.sortable"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

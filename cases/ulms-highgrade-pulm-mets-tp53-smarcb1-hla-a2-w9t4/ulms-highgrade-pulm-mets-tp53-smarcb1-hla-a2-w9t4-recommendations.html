@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>Libby recommendations &mdash; ulms-highgrade-pulm-mets-tp53-smarcb1-hla-a2-w9t4</title>
+<style>
+
+:root {
+  --ink: #1A202C;
+  --ink-muted: #4A5568;
+  --rule: #E2E8F0;
+  --header-bg: #F4F6F8;
+  --accent: #5B3A87;
+  --bg: #FFFFFF;
+  --warn-fg: #6F2E1A;
+  --warn-bg: #FBE9E7;
+  --warn-border: #ECC4BB;
+}
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  max-width: 80rem;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  line-height: 1.5;
+}
+h1, h2, h3 { color: var(--ink); }
+h1 { font-size: 1.6rem; }
+h2 { font-size: 1.2rem; margin-top: 2rem; }
+h3 { font-size: 1.05rem; margin-top: 1.5rem; }
+small.scenario-key { color: var(--ink-muted); }
+.disclaimer {
+  border: 1px solid var(--warn-border);
+  background: var(--warn-bg);
+  color: var(--warn-fg);
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  margin: 1rem 0 2rem;
+  font-size: 0.95rem;
+}
+.disclaimer strong { color: #B71C1C; }
+.profile-grid {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.25rem 1rem;
+  margin: 1rem 0 2rem;
+  font-size: 0.95rem;
+}
+.profile-grid dt { font-weight: 600; color: var(--ink-muted); }
+.profile-grid dd { margin: 0; }
+.trial-table-wrap { color: var(--ink); }
+.trial-scroll { overflow-x: auto; }
+.trial-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.88em;
+}
+.trial-table thead th {
+  background: var(--header-bg);
+  font-weight: 600;
+  text-align: left;
+  padding: 0.5em 0.6em;
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  white-space: nowrap;
+}
+.trial-table tbody td {
+  padding: 0.5em 0.6em;
+  border-bottom: 1px solid var(--rule);
+  font-variant-numeric: tabular-nums;
+  vertical-align: top;
+}
+.trial-table tbody tr:last-child td {
+  border-bottom: 2px solid var(--ink);
+}
+/* Question-report column widths. These tables carry prose in most cells, so
+   without min-widths every column squeezes to fit 100% of the container and the
+   rows grow very tall with a few words per cell. The min-widths let the table
+   exceed the container so .trial-scroll scrolls it sideways instead, which reads
+   far better for a candidate comparison. */
+.trial-table th.col-q-rank,
+.trial-table td.col-q-rank { min-width: 3em; white-space: nowrap; }
+.trial-table th.col-q-candidate,
+.trial-table td.col-q-candidate { min-width: 24em; }
+.trial-table th.col-q-rate,
+.trial-table td.col-q-rate { min-width: 15em; }
+.trial-table th.col-q-tox,
+.trial-table td.col-q-tox { min-width: 20em; }
+.trial-table th.col-q-avail,
+.trial-table td.col-q-avail { min-width: 9em; white-space: nowrap; }
+.trial-table th.col-q-refs,
+.trial-table td.col-q-refs { min-width: 11em; }
+.trial-table th.col-q-criterion,
+.trial-table td.col-q-criterion { min-width: 22em; }
+.trial-table th.col-q-result,
+.trial-table td.col-q-result { min-width: 8em; white-space: nowrap; }
+.trial-table th.col-q-points,
+.trial-table td.col-q-points { min-width: 7em; white-space: nowrap; }
+.trial-table th.col-q-finding,
+.trial-table td.col-q-finding { min-width: 30em; }
+.trial-table th.col-q-dir,
+.trial-table td.col-q-dir { min-width: 6em; white-space: nowrap; }
+.trial-table th.col-q-claim,
+.trial-table td.col-q-claim { min-width: 32em; }
+.trial-table th.col-q-strength,
+.trial-table td.col-q-strength { min-width: 7em; white-space: nowrap; }
+.trial-table th.col-q-popmatch,
+.trial-table td.col-q-popmatch { min-width: 22em; }
+.trial-table th.col-q-seat,
+.trial-table td.col-q-seat { min-width: 9em; white-space: nowrap; }
+.trial-table th.col-q-position,
+.trial-table td.col-q-position { min-width: 34em; }
+.trial-table th.col-q-carried,
+.trial-table td.col-q-carried { min-width: 8em; white-space: nowrap; }
+
+.persona {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.35em;
+  font-size: 0.78em;
+  font-weight: 600;
+  margin-right: 0.25em;
+  border: 1px solid transparent;
+}
+.persona-risktaker    { background: #FFE9D6; color: #6F3A0F; border-color: #F0CFAE; }
+.persona-conservative { background: #DFEBFB; color: #1B3A6B; border-color: #B5CDEE; }
+.persona-critic       { background: #F1E5FF; color: #441E72; border-color: #D4BBF2; }
+.persona-concensusite { background: #DDF1EE; color: #134E48; border-color: #B0DBD3; }
+.persona-advocate     { background: #FFE5EE; color: #6E1638; border-color: #F0BBCB; }
+.split-glyph { font-weight: 700; color: #5A4500; }
+/* not_recommended rows: mute, never strike through.
+   Strikethrough was applied to the whole <tr>, which struck the rationale
+   columns too — and on a rejected option the rationale is the most useful
+   text in the row, since it is what lets a reader stop considering it.
+   Muting carries the de-emphasis on its own; the badge below states the
+   verdict in words, so the signal does not rest on typography or colour
+   alone (both are invisible to a screen reader and to a monochrome print). */
+.not-recommended {
+  color: var(--ink-muted);
+}
+.badge-not-recommended {
+  background: #FDECEA;
+  color: #8C2F22;
+  border-color: #F5C6C0;
+}
+.scenario-conditional {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5A4500;
+  background: #FFF7E0;
+  border: 1px solid #F1DD9A;
+  border-radius: 0.35em;
+  padding: 0.05em 0.45em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+.pipeline-note,
+.evidence-detail-note {
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+  margin: 0.25rem 0 0.75rem;
+}
+.evidence-detail-empty {
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+  margin: 0.25rem 0 0.75rem;
+  padding-left: 0.5rem;
+  border-left: 2px solid #E5E5E5;
+}
+.evidence-detail-table { font-size: 0.86em; }
+.evidence-detail-table thead th {
+  background: #FAFAFA;
+}
+.evidence-detail-table .tox-grade {
+  font-size: 0.85em;
+  color: var(--ink-muted);
+  font-weight: 500;
+}
+.evidence-detail-table .safety-summary-fallback {
+  font-style: italic;
+  color: var(--ink-muted);
+}
+h4 + .trial-table-wrap,
+h4 + .evidence-detail-empty {
+  margin-top: 0.25rem;
+}
+h4 { margin-top: 1.25rem; margin-bottom: 0.25rem; font-size: 1rem; }
+.pipeline-context-table { font-size: 0.82em; color: var(--ink-muted); }
+.pipeline-context-table thead th {
+  background: #FAFAFA;
+  border-top: 1px solid var(--ink-muted);
+  border-bottom: 1px solid var(--ink-muted);
+}
+.pipeline-context-table tbody tr:last-child td { border-bottom: 1px solid var(--ink-muted); }
+.pipeline-context-table .intervention-name { color: var(--ink); font-weight: 600; }
+.pipeline-context-table .alias-list { color: var(--ink-muted); font-size: 0.9em; }
+.pipeline-context-table .basket-flag {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #134E48;
+  background: #DDF1EE;
+  border: 1px solid #B0DBD3;
+  border-radius: 0.35em;
+  padding: 0.02em 0.4em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+.pipeline-context-table .discontinued-flag {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5A2A2A;
+  background: #F2E1E1;
+  border: 1px solid #DDB7B7;
+  border-radius: 0.35em;
+  padding: 0.02em 0.4em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+.pipeline-context-table .offlabel-flag {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5F4310;
+  background: #FBEFD3;
+  border: 1px solid #E8C977;
+  border-radius: 0.35em;
+  padding: 0.02em 0.4em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+/* surfaced_reason flag pills (Experimental "Also considered" table). */
+.flag-badge {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 0.02em 0.5em;
+  white-space: nowrap;
+}
+.flag-unavailable    { background: #ECEFF1; color: #37474F; border-color: #CFD8DC; }
+.flag-consolidated   { background: #E8EAF6; color: #303F9F; border-color: #C5CAE9; }
+.flag-thin           { background: #FFF8E1; color: #7A5B00; border-color: #F0E1B0; }
+.flag-not-enrollable { background: #F3E5F5; color: #6A1B7A; border-color: #E1BEE7; }
+/* access_route badges (unified-table Access column). Mirrors libby.css
+   .rel-badge so the offline artifact matches the on-site table. */
+.rel-badge {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.4em;
+  font-size: 0.78em;
+  font-weight: 600;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.rel-indication  { background: #DDF1EE; color: #134E48; border-color: #B0DBD3; }
+.rel-basket      { background: #FFE9D6; color: #6F3A0F; border-color: #F0CFAE; }
+.rel-same-drug   { background: #DFEBFB; color: #1B3A6B; border-color: #B5CDEE; }
+.rel-cross-tumor { background: #F1E5FF; color: #441E72; border-color: #D4BBF2; }
+.rel-other       { background: #F1F3F5; color: #4A5568; border-color: #E2E8F0; }
+footer.libby-footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  color: var(--ink-muted);
+  font-size: 0.85rem;
+}
+
+</style>
+</head>
+<body>
+<h1>Libby recommendations &mdash; <code>ulms-highgrade-pulm-mets-tp53-smarcb1-hla-a2-w9t4</code></h1>
+<div class="disclaimer">
+<strong>Decision support, not medical advice.</strong> Libby is an experimental 
+multi-agent decision-support tool. The recommendations below have not been 
+reviewed by a clinician treating this patient. Do not act on this page without 
+consulting a qualified oncologist.
+</div>
+<h2>Profile snapshot</h2>
+<dl class="profile-grid">
+  <dt>Primary site</dt><dd>uterus (myometrium)</dd>
+  <dt>Histology</dt><dd>high-grade uterine leiomyosarcoma (uLMS), spindle-cell morphology; diagnosis confirmed on both the pulmonary biopsy and the re-reviewed uterine specimen by a reference pathology laboratory (August 2026)</dd>
+  <dt>Stage</dt><dd>metastatic (stage IV): bilateral pulmonary metastases. Radiologic read by the consulting sarcoma oncologist: lesions unusually infiltrative and possibly inflammatory in appearance. Primary resected September 2024 (signed out benign at the time); metastatic diagnosis July-August 2026</dd>
+  <dt>ECOG</dt><dd>1</dd>
+  <dt>Age band</dt><dd>30-39</dd>
+  <dt>Sex</dt><dd>female</dd>
+  <dt>Biomarkers</dt><dd>ER (estrogen receptor) &lt;1% positive (decision-relevant negative); PR (progesterone receptor) &lt;1% positive (decision-relevant negative); SMARCB1 G344Afs*13 (frameshift, called pathogenic) detected on plasma ctDNA (Guardant liquid biopsy, August 2026). NOT yet confirmed on tumor tissue. A truncating SMARCB1 alteration raises the hypothesis of SMARCB1/INI1 deficiency, but SMARCB1 loss is uncommon in uterine leiomyosarcoma and a plasma-only call is a hypothesis, not an established tumor feature. (ihc_pending); TP53 Q52* (nonsense, called pathogenic) detected on plasma ctDNA (Guardant liquid biopsy, August 2026). NOT tissue-confirmed. Carries an explicit clonal-haematopoiesis (CHIP) caveat: TP53 is the most common CHIP gene, and a ctDNA-only TP53 call in a patient with potentially low tumor fraction can originate from blood rather than tumor. TP53 alteration is also expected in the large majority of uLMS, so if tumor-derived it is unsurprising and largely prognostic rather than directly actionable. (ngs_pending); HLA class I typing (allele-level) HLA-A*02:01, A*03:01; HLA-B*39:01, B*44:02; HLA-C*05:01, C*12:03. HLA-A*02:01 is present: this is the restriction allele required by the MAGE-A4 and NY-ESO-1 TCR-engineered T-cell programs. Typing alone is NOT eligibility; those programs also require tumor expression of the antigen by IHC, which has not been done.; MAGE-A4 expression not tested. Newly decision-relevant because HLA-A*02:01 is confirmed present: MAGE-A4 expression by IHC is the second, still-missing half of eligibility screening for A*02:01-restricted MAGE-A4 TCR-T programs (afamitresgene autoleucel is approved in synovial sarcoma; uLMS access would be via trial). (ihc_pending); NY-ESO-1 expression not tested. Newly decision-relevant because HLA-A*02:01 is confirmed present: NY-ESO-1 expression by IHC is the second, still-missing half of eligibility screening for A*02:01-restricted NY-ESO-1 TCR-T programs (trial-only). (ihc_pending); PRAME expression not tested. Same type-first-stain-second dependency: HLA-A*02:01 is present, and PRAME-directed TCR/ImmTAC programs (trial-only) require demonstrated PRAME expression. (ihc_pending); Guardant ctDNA variants of uncertain significance (recorded, not pursued) Four VUS at 0.09-1.1% VAF, at or near the assay limit of detection: ARAF L161Ffs*16 (0.09%), ERBB3 G914E (0.9%), GREM1 L14Sfs*70 (0.1%), P2RY8 R234S (1.1%). Two are frameshifts in genes with no established role in this histology. Treated as low-confidence subclonal or technical findings, not targetable features. Explicitly: ERBB3 G914E at 0.9% VAF is NOT a HER-family targeting rationale. (unknown); RB1 no alteration reported on the plasma ctDNA assay; a plasma negative is not exclusionary (possible low tumor shedding, panel coverage limits). Tissue-level status remains unmeasured. (ngs_pending); ATRX not reported on the plasma ctDNA assay (coverage uncertain); tissue-level status remains unmeasured (ngs_pending); MED12 not reported on the plasma ctDNA assay (coverage uncertain); tissue-level status remains unmeasured (ngs_pending); Homologous recombination status incl. BRCA2 not settled by the Guardant plasma panel (no BRCA1/2 alteration reported, but plasma sensitivity is limited at low tumor fraction and HRD signatures require tissue). Remains unmeasured at decision-relevant resolution. (ngs_pending); NTRK fusion not settled by the Guardant plasma panel (fusion detection in plasma is insensitive at low tumor fraction). Remains unmeasured at decision-relevant resolution. (ngs_pending); TMB (tumor mutational burden) not reported on the Guardant assay; remains unmeasured. Plasma TMB at low tumor fraction is unreliable in any case. (ngs_pending); MSI / MMR not settled by the Guardant plasma panel; remains unmeasured (ngs_pending); PD-L1 not tested (not assessable on a plasma assay) (ihc_pending)</dd>
+  <dt>Efficacy/toxicity weight</dt><dd>0.7</dd>
+</dl>
+
+<p><em>44 ranked therapeutic options across 11 targetable features. Biomarker workup steps live in the standalone Target validation paths report.</em></p>
+<h2>Hrd Brca interventions</h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Rank</th><th>Intervention</th><th>Access</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr><td><a href="#evidence-olaparib-temozolomide">1</a></td><td><strong>Olaparib + temozolomide (NCI Protocol 10250 regimen in uterine leiomyosarcoma), post-induction, with tissue HRD/HRR testing ordered now</strong></td><td><span class="rel-badge rel-cross-tumor">Off-label</span></td><td>Moderate in her exact histology: ORR 27% (6 of 22) and mPFS 6.9 months in advanced uterine LMS, prespecified endpoint met (pmid:37467452).</td><td>High (G3/4 neutropenia 75%, thrombocytopenia 32%, anaemia; managed with dose modification, no treatment-related deaths)</td><td><strong>Low</strong> <span class="cpm-desc">(Overlapping myelosuppression after LMS-04 may force dose reductions that cost the PARP exposure the regimen depends on.)</span></td><td><strong>The best lineage-matched targeted signal in this file, sitting one line away and worth ordering tissue HRD for now — at a heavy second consecutive marrow cost.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37467452">PMID&nbsp;37467452</a><br><a href="https://clinicaltrials.gov/study/NCT03880019">NCT03880019</a><br><a href="https://clinicaltrials.gov/study/NCT05432791">NCT05432791</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Also considered &mdash; not ranked</h3>
+<p class="pipeline-note">Feature-targeting investigational options the board considered but did not rank as live top-tier choices. The <strong>Flag</strong> column says why: <em>Unavailable</em> (program discontinued/terminated), <em>Consolidated</em> (one product of an approach ranked above), <em>Thin evidence</em> (no peer-reviewed clinical efficacy yet), <em>Not enrollable</em> (cross-tumor evidence or geographically inaccessible).</p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Flag</th><th>Intervention</th><th>Access</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr class="not-recommended"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>Fluzoparib + camrelizumab with concurrent SBRT to lung metastases (NCT06074692)</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td><span class="rel-badge rel-other">Not yet accessible</span></td><td>Not enrollable: Shanghai single site with two drugs unavailable in the US. Local SBRT carries its own retrospective evidence (pmid:37532104).</td><td>High (PARP-inhibitor myelosuppression plus checkpoint toxicity and concurrent radiotherapy; no combination profile published)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Concurrent radiotherapy with a PARP inhibitor raises pneumonitis risk in already-infiltrated lung.)</span></td><td><strong>The one protocol combining her best mechanism with her locoregional question, in Shanghai, with two drugs the US does not have.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT06074692">NCT06074692</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/37532104">PMID&nbsp;37532104</a></td></tr>
+    <tr class="split-glyph"><td><span class="flag-badge flag-consolidated">Consolidated</span></td><td><strong>PARP inhibition in BRCA2-altered uterine leiomyosarcoma (genomic series)</strong></td><td><span class="rel-badge rel-cross-tumor">Off-label</span></td><td>Consolidated into rank 2. On its own: four of four with durable benefit in a tier-4 retrospective series (pmid:30541756), hypothesis-generating only.</td><td>Low (no systematic AE reporting in a four-patient off-label series; class profile carried on the rank-2 row)</td><td><strong>Low</strong> <span class="cpm-desc">(No mechanism objection; the risk is over-reading a four-patient series as a selection rule.)</span></td><td><strong>The reason BRCA2 belongs on her tissue order, and a four-patient series that cannot carry more weight than that.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/30541756">PMID&nbsp;30541756</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/37143137">PMID&nbsp;37143137</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/37467452">PMID&nbsp;37467452</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-olaparib-temozolomide">Olaparib + temozolomide (NCI Protocol 10250 regimen in uterine leiomyosarcoma), post-induction, with tissue HRD/HRR testing ordered now</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>advanced uterine leiomyosarcoma after progression on &gt;=1 prior line</strong> (2L+)<br><small>22 evaluable uLMS patients; 59% had &gt;=3 prior lines; HRD not required for entry but assessed on paired biopsies (RAD51 assay, WES/RNAseq)</small></td><td>22</td><td><strong>neutropenia</strong> <span class="tox-grade">grade &gt;=3</span>: 75% (n=22)<br><strong>thrombocytopenia</strong> <span class="tox-grade">grade &gt;=3</span>: 32% (n=22)</td><td><strong>best ORR within 6 months (primary endpoint, met: &gt;=5 of 22 required)</strong>: 23%<br><small>mPFS 6.9 mo (95% CI 5.4-NE)</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37467452">Ingham et al. <em>J Clin Oncol</em> 2023</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-fluzoparib-camrelizumab-sbrt">Fluzoparib + camrelizumab with concurrent SBRT to lung metastases (NCT06074692)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>sarcoma pulmonary metastases, including patients unfit for or declining resection</strong> (any)<br><small>66 consecutive patients, median follow-up 36 months; oligometastatic and intrathoracic-only disease predicted longer survival</small></td><td>66</td><td><strong>pneumonitis</strong> <span class="tox-grade">grade 1-2</span>: 5% (3/66) <small>(grade 2)</small><br><strong>esophagitis</strong> <span class="tox-grade">grade 1-2</span>: 2% (1/66) <small>(grade 2)</small><br><strong>any adverse event</strong> <span class="tox-grade">grade &gt;=3</span>: 0% (0/66)</td><td><strong>cumulative incidence of local failure</strong>: 7.4% local failure at 24 months (95% CI 4.0–13.9)</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37532104">Lebow et al. <em>Radiother Oncol</em> 2023</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-parp-inhibitor-brca2">PARP inhibition in BRCA2-altered uterine leiomyosarcoma (genomic series)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>leiomyosarcoma; BRCA2-altered uterine LMS subset</strong> (any)<br><small>2,548 STS genomic profiles across two cohorts; BRCA2 alterations concentrated in uLMS (10% of uLMS); 4 uLMS patients with functional BRCA2 loss treated with PARP inhibitors</small></td><td>4</td><td><span class="safety-summary-fallback">No systematic AE reporting; four-patient off-label series.</span></td><td><strong>durable clinical benefit on PARP inhibition (descriptive)</strong>: 4 of 4 with durable clinical benefit patients</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/30541756">Seligson et al. <em>Oncologist</em> 2019</a></td></tr>
+    <tr><td><strong>advanced uterine leiomyosarcoma after progression on &gt;=1 prior line</strong> (2L+)<br><small>22 evaluable uLMS patients; 59% had &gt;=3 prior lines; HRD not required for entry but assessed on paired biopsies (RAD51 assay, WES/RNAseq)</small></td><td>22</td><td><strong>neutropenia</strong> <span class="tox-grade">grade &gt;=3</span>: 75% (n=22)<br><strong>thrombocytopenia</strong> <span class="tox-grade">grade &gt;=3</span>: 32% (n=22)</td><td><strong>best ORR within 6 months (primary endpoint, met: &gt;=5 of 22 required)</strong>: 23%<br><small>mPFS 6.9 mo (95% CI 5.4-NE)</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37467452">Ingham et al. <em>J Clin Oncol</em> 2023</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2>Rb1 Status interventions</h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Rank</th><th>Intervention</th><th>Access</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr><td><a href="#evidence-abemaciclib-gemcitabine-docetaxel">1</a></td><td><strong>Abemaciclib + gemcitabine and docetaxel (NCT06498648, MD Anderson randomised phase 1/2), Rb-intact required</strong></td><td><span class="rel-badge rel-basket">Trial only</span></td><td>Unknown for the add-on: no abemaciclib efficacy data in LMS. The floor is the randomised gem/doc control arm, ORR 35.8% first-line uterine (pmid:18534250).</td><td>Moderate (backbone G3 anaemia 24%, G3 fatigue 17%, G3-4 neutropenia 17%, one G4 pulmonary event in 42; abemaciclib diarrhoea uncharacterised on this doublet)</td><td><strong>Moderate</strong> <span class="cpm-desc">(CDK4/6-induced G1 arrest can antagonise S-phase-dependent gemcitabine; Rb-intact status, the premise of the whole seat, is unmeasured.)</span></td><td><strong>The one investigational seat that survives LMS-04 instead of competing with it, routed by a single Rb stain and carrying no efficacy data of its own.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT06498648">NCT06498648</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/18534250">PMID&nbsp;18534250</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/28882536">PMID&nbsp;28882536</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Also considered &mdash; not ranked</h3>
+<p class="pipeline-note">Feature-targeting investigational options the board considered but did not rank as live top-tier choices. The <strong>Flag</strong> column says why: <em>Unavailable</em> (program discontinued/terminated), <em>Consolidated</em> (one product of an approach ranked above), <em>Thin evidence</em> (no peer-reviewed clinical efficacy yet), <em>Not enrollable</em> (cross-tumor evidence or geographically inaccessible).</p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Flag</th><th>Intervention</th><th>Access</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr class="split-glyph"><td><span class="flag-badge flag-thin">Thin evidence</span></td><td><strong>REC-617 (selective CDK7 inhibitor) in RB1-negative leiomyosarcoma (NCT07633756, MD Anderson)</strong></td><td><span class="rel-badge rel-basket">Trial only</span></td><td>Unknown: 15-patient phase 1b with a safety primary endpoint and no efficacy readout.</td><td>Moderate (no published sarcoma toxicity profile; CDK7-class myelosuppression and gastrointestinal toxicity expected)</td><td><strong>Low</strong> <span class="cpm-desc">(No mechanism objection raised; the risk is a null first-in-class readout rather than antagonism.)</span></td><td><strong>The Rb-loss half of a single stain that also routes the abemaciclib seat — free to answer now, with no efficacy data behind it.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT07633756">NCT07633756</a><br><a href="https://clinicaltrials.gov/study/NCT06498648">NCT06498648</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-abemaciclib-gemcitabine-docetaxel">Abemaciclib + gemcitabine and docetaxel (NCT06498648, MD Anderson randomised phase 1/2), Rb-intact required</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>metastatic uterine leiomyosarcoma, chemotherapy-naive</strong> (1L)<br><small>42 women with advanced uLMS, no prior chemotherapy; 39 evaluable for response</small></td><td>42</td><td><strong>neutropenia</strong> <span class="tox-grade">grade 3</span>: 5% (n=42)<br><strong>neutropenia</strong> <span class="tox-grade">grade 4</span>: 12% (n=42)<br><strong>anemia</strong> <span class="tox-grade">grade 3</span>: 24% (n=42)<br><strong>thrombocytopenia</strong> <span class="tox-grade">grade 3</span>: 9.5% (n=42)<br><strong>fatigue</strong> <span class="tox-grade">grade 3</span>: 17% (n=42)<br><strong>pulmonary toxicity</strong> <span class="tox-grade">grade 4</span>: 2.4% (1/42) <small>(possibly treatment-related)</small></td><td><strong>objective response rate</strong>: 35.8% (95% CI 23.5–49.6)<br><small>mPFS 4.4 mo; median response duration 6 mo</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/18534250">Hensley et al. <em>Gynecol Oncol</em> 2008</a></td></tr>
+    <tr><td><strong>previously untreated advanced or metastatic soft-tissue sarcoma</strong> (1L)<br><small>Trojani grade 2-3 STS; leiomyosarcoma (uterine and non-uterine) was the largest histology stratum</small></td><td>257</td><td><strong>neutropenia</strong> <span class="tox-grade">grade &gt;=3</span>: 20% (25/126) <small>(gem-doce arm; 25% doxorubicin arm)</small><br><strong>febrile neutropenia</strong> <span class="tox-grade">grade &gt;=3</span>: 12% (15/126) <small>(gem-doce arm; 20% doxorubicin arm)</small><br><strong>fatigue</strong> <span class="tox-grade">grade &gt;=3</span>: 14% (17/126) <small>(gem-doce arm; 6% doxorubicin arm)</small><br><strong>oral mucositis</strong> <span class="tox-grade">grade &gt;=3</span>: 2% (2/126) <small>(gem-doce arm; 14% doxorubicin arm)</small></td><td><strong>proportion alive and progression-free at 24 weeks (primary endpoint: no difference)</strong>: 46.4% progression-free at 24 weeks (95% CI 37.5–54.8); p 0.06<br><small>mPFS 23.7 weeks (gem-doce) vs 23.3 weeks (doxorubicin)</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/28882536">Seddon et al. <em>Lancet Oncol</em> 2017</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-rec-617-cdk7">REC-617 (selective CDK7 inhibitor) in RB1-negative leiomyosarcoma (NCT07633756, MD Anderson)</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h2>Prame Ihc interventions</h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Rank</th><th>Intervention</th><th>Access</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr class="split-glyph"><td><a href="#evidence-ima203">1</a></td><td><strong>IMA203 / IMA203CD8 PRAME-directed TCR-T cells (NCT03686124), sponsor screening started in the first-line window</strong></td><td><span class="rel-badge rel-basket">Trial only</span></td><td>Low-to-uncertain: 28.9% confirmed ORR in a 41-patient phase 1 with no uLMS patient and mDoR 4.4 months (pmid:40205198).</td><td>Moderate (severe CRS 4.9%, no severe ICANS in n=41; lymphodepletion cytopenias expected but not tabulated per term)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Antigen-loss or HLA-A*02:01 LOH escape; a local PRAME stain has no established operating characteristics against the sponsor assay.)</span></td><td><strong>The only cellular axis her confirmed HLA-A*02:01 opens, double-gated on a sponsor PRAME assay and a standard-of-care-exhaustion clause.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40205198">PMID&nbsp;40205198</a><br><a href="https://clinicaltrials.gov/study/NCT03686124">NCT03686124</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/40152485">PMID&nbsp;40152485</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Also considered &mdash; not ranked</h3>
+<p class="pipeline-note">Feature-targeting investigational options the board considered but did not rank as live top-tier choices. The <strong>Flag</strong> column says why: <em>Unavailable</em> (program discontinued/terminated), <em>Consolidated</em> (one product of an approach ranked above), <em>Thin evidence</em> (no peer-reviewed clinical efficacy yet), <em>Not enrollable</em> (cross-tumor evidence or geographically inaccessible).</p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Flag</th><th>Intervention</th><th>Access</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr class="not-recommended"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>Brenetafusp (IMC-F106C, PRAME x CD3 ImmTAC) (NCT04262466)</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td><span class="rel-badge rel-basket">Trial only</span></td><td>Not enrollable: accrual closed, no peer-reviewed clinical publication for the agent; class precedent is uveal-melanoma-specific (pmid:34551229).</td><td>Moderate (ImmTAC-class rash, pyrexia and pruritus front-loaded over the first doses; class discontinuation for AE 2%)</td><td><strong>Low</strong> <span class="cpm-desc">(Antigen-loss and HLA LOH escape possible; no mechanism objection raised.)</span></td><td><strong>The off-the-shelf PRAME route that needs no cell manufacturing, closed to accrual — one phone call away from being worth re-checking.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT04262466">NCT04262466</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/34551229">PMID&nbsp;34551229</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-ima203">IMA203 / IMA203CD8 PRAME-directed TCR-T cells (NCT03686124), sponsor screening started in the first-line window</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>PRAME-positive recurrent/refractory solid tumours in HLA-A*02-positive patients (melanoma-dominant; sarcoma included)</strong> (2L+)<br><small>41 patients started lymphodepletion, 40 treated; PRAME expression and HLA-A*02 required; confirmed responses enriched at higher dose and higher PRAME expression</small></td><td>41</td><td><strong>cytokine release syndrome</strong> <span class="tox-grade">grade &gt;=3</span>: 4.9% (2/41)<br><strong>neurotoxicity (ICANS)</strong> <span class="tox-grade">grade &gt;=3</span>: 0% (0/41)</td><td><strong>confirmed objective response rate</strong>: 28.9%<br><small>mDoR 4.4 mo (range 2.4-23.0; 95% CI 2.6-NR)</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40205198">Wermke et al. <em>Nat Med</em> 2025</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-brenetafusp">Brenetafusp (IMC-F106C, PRAME x CD3 ImmTAC) (NCT04262466)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>previously untreated metastatic uveal melanoma, HLA-A*02:01-positive</strong> (1L)<br><small>378 HLA-A*02:01 patients randomised 2:1 vs investigator&#x27;s choice (pembrolizumab, ipilimumab, or dacarbazine)</small></td><td>378</td><td><strong>rash</strong> <span class="tox-grade">grade any</span>: 83% (n=252)<br><strong>pyrexia</strong> <span class="tox-grade">grade any</span>: 76% (n=252)<br><strong>pruritus</strong> <span class="tox-grade">grade any</span>: 69% (n=252)<br><strong>treatment discontinuation for AE</strong> <span class="tox-grade">grade any</span>: 2% (n=252)</td><td><strong>overall survival</strong>: 0.51 HR (95% CI 0.37–0.71); p &lt;0.001</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/34551229">Nathan et al. <em>N Engl J Med</em> 2021</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2>Pulmonary Oligometastatic interventions</h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Rank</th><th>Intervention</th><th>Access</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr class="split-glyph"><td><a href="#evidence-ivlp-doxorubicin">1</a></td><td><strong>In vivo lung perfusion with doxorubicin plus metastasectomy for sarcoma pulmonary metastases (NCT02811523, Toronto), as post-induction consolidation</strong></td><td><span class="rel-badge rel-basket">Trial only</span></td><td>Uncertain: metastasectomy series give 55.4% five-year OS in resected uterine sarcoma (pmid:37063124), but perfusion itself is phase 1 with no human efficacy readout.</td><td>Moderate (thoracotomy morbidity; acute lung injury is the trial&#x27;s registered primary endpoint; no published human safety series in this population)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Perfusion injury to already-infiltrated lung; and a full induction spends the anthracycline budget that keeps the door open.)</span></td><td><strong>The one option in this dossier aimed at cure rather than control, and the one whose anatomic premise her infiltrative bilateral pattern may defeat.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT02811523">NCT02811523</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/37063124">PMID&nbsp;37063124</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/26952295">PMID&nbsp;26952295</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Also considered &mdash; not ranked</h3>
+<p class="pipeline-note">Feature-targeting investigational options the board considered but did not rank as live top-tier choices. The <strong>Flag</strong> column says why: <em>Unavailable</em> (program discontinued/terminated), <em>Consolidated</em> (one product of an approach ranked above), <em>Thin evidence</em> (no peer-reviewed clinical efficacy yet), <em>Not enrollable</em> (cross-tumor evidence or geographically inaccessible).</p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Flag</th><th>Intervention</th><th>Access</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr class="split-glyph"><td><span class="flag-badge flag-thin">Thin evidence</span></td><td><strong>Pulmonary suffusion with cisplatin plus metastasectomy for sarcoma lung metastases (NCT03965234, Roswell Park)</strong></td><td><span class="rel-badge rel-basket">Trial only</span></td><td>Unknown: phase 1/2 with a local-toxicity endpoint; the survival rationale belongs to metastasectomy series, not to suffusion (pmid:9011700).</td><td>Moderate (thoracotomy morbidity plus regional cisplatin exposure; no published outcome series)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Same resectability premise as the Toronto protocol; an infiltrative bilateral pattern may never qualify.)</span></td><td><strong>The US locoregional trial with no prior-line requirement, resting on a resectability judgement her current imaging may not support.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT03965234">NCT03965234</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/9011700">PMID&nbsp;9011700</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-ivlp-doxorubicin">In vivo lung perfusion with doxorubicin plus metastasectomy for sarcoma pulmonary metastases (NCT02811523, Toronto), as post-induction consolidation</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>lung metastases from uterine primaries; sarcoma subset n=46 of 319</strong> (any)<br><small>Metastatic Lung Tumor Study Group of Japan, 1984-2016; risk-adjusted analysis by primary histology</small></td><td>319</td><td><span class="safety-summary-fallback">Operative complications not reported in the abstract.</span></td><td><strong>5-year OS after metastasectomy, uterine sarcoma subset</strong>: 55.4% 5-year OS</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37063124">Nobori et al. <em>JTCVS Open</em> 2023</a></td></tr>
+    <tr><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/26952295">Reck Dos Santos et al. <em>Ann Thorac Surg</em> 2016</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-pulmonary-suffusion">Pulmonary suffusion with cisplatin plus metastasectomy for sarcoma lung metastases (NCT03965234, Roswell Park)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>lung metastases from any primary; sarcoma 2173 of 5206 cases</strong> (any)<br><small>5206 metastasectomies from 18 thoracic units; prognostic model built on resectability, disease-free interval, and number of lesions</small></td><td>5206</td><td><span class="safety-summary-fallback">Operative morbidity and mortality not reported in the abstract; the registry&#x27;s message is selection: completeness of resection, DFI and lesion count drive outcome.</span></td><td><strong>5-year overall survival after complete resection</strong>: 36% 5-year OS</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/9011700">Pastorino et al. <em>J Thorac Cardiovasc Surg</em> 1997</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2>Ulms Histology interventions</h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Rank</th><th>Intervention</th><th>Access</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr class="split-glyph"><td><a href="#evidence-ivonescimab">1</a></td><td><strong>Ivonescimab (PD-1 x VEGF bispecific), MSK single-arm phase 2 in leiomyosarcoma (NCT07516925)</strong></td><td><span class="rel-badge rel-basket">Trial only</span></td><td>Low: no sarcoma efficacy data anywhere, and both component axes already failed in uLMS (pmid:25713428, pmid:28440953). HARMONi-2 is an NSCLC result.</td><td>Moderate (G3+ treatment-related AEs 29% in NSCLC, VEGF-class hypertension and bleeding, G3+ immune-related AEs 7%)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Both mechanisms have already been beaten in this disease; a spent first-line window is the counter-productive outcome.)</span></td><td><strong>The only seat reachable before cycle 1 by explicit protocol language, and the one four of five personas refused on three mutually independent negative trials.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT07516925">NCT07516925</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/40057343">PMID&nbsp;40057343</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/25713428">PMID&nbsp;25713428</a></td></tr>
+    <tr class="not-recommended"><td><a href="#evidence-nivolumab">2</a></td><td><strong>Nivolumab monotherapy in uterine leiomyosarcoma</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td><span class="rel-badge rel-cross-tumor">Off-label</span></td><td>Low for response: ORR 0% with mPFS 1.8 months in the only dedicated uLMS PD-1 trial, stopped for futility (pmid:28440953).</td><td>Moderate (G3+ events in 9 of 12, three attributed to drug: abdominal pain, amylase/lipase rise, fatigue)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Prior PD-1 exposure permanently closes the ivonescimab seat and buys nothing this histology has shown it responds to.)</span></td><td><strong>The negative result that defines the checkpoint question in this disease: 0 of 12, stopped for futility.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/28440953">PMID&nbsp;28440953</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/28988646">PMID&nbsp;28988646</a></td></tr>
+    <tr class="not-recommended"><td><a href="#evidence-nivolumab-ipilimumab">3</a></td><td><strong>Nivolumab +/- ipilimumab, dual checkpoint blockade in sarcoma (Alliance A091401)</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td><span class="rel-badge rel-cross-tumor">Off-label</span></td><td>Low-to-uncertain: ORR 16% across sarcoma histologies with no uLMS breakdown, against a 0-of-12 and 0-of-10 record in this disease (pmid:29370992).</td><td>Moderate (G3+ anaemia 19%, hypotension 10%; treatment-related serious AEs 26%; no treatment-related deaths)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Repeats a mechanism this histology has twice defeated, and forecloses the ivonescimab seat on the way.)</span></td><td><strong>The evidence that dual blockade beats single-agent PD-1 in sarcoma generally, with nothing in it specific to uterine leiomyosarcoma.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/29370992">PMID&nbsp;29370992</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/28440953">PMID&nbsp;28440953</a></td></tr>
+    <tr class="not-recommended"><td><a href="#evidence-doxorubicin-pembrolizumab">4</a></td><td><strong>Doxorubicin + pembrolizumab, first-line chemo-immunotherapy (phase 1/2)</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td><span class="rel-badge rel-cross-tumor">Off-label</span></td><td>Low for response: ORR 19% with the primary endpoint missed, durable responses clustered outside LMS (pmid:32910151).</td><td>Moderate (no dose-limiting toxicities reported; anthracycline myelosuppression plus immune-related events, no per-term G3 table published)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Spends the first-line window and the anthracycline budget on a mechanism this histology has not responded to.)</span></td><td><strong>Deliverable first-line chemo-immunotherapy whose response endpoint failed and whose responders were other histologies.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/32910151">PMID&nbsp;32910151</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/35835135">PMID&nbsp;35835135</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Also considered &mdash; not ranked</h3>
+<p class="pipeline-note">Feature-targeting investigational options the board considered but did not rank as live top-tier choices. The <strong>Flag</strong> column says why: <em>Unavailable</em> (program discontinued/terminated), <em>Consolidated</em> (one product of an approach ranked above), <em>Thin evidence</em> (no peer-reviewed clinical efficacy yet), <em>Not enrollable</em> (cross-tumor evidence or geographically inaccessible).</p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Flag</th><th>Intervention</th><th>Access</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr class="split-glyph"><td><span class="flag-badge flag-thin">Thin evidence</span></td><td><strong>Peposertib (DNA-PK inhibitor) + low-dose pegylated liposomal doxorubicin (NCT05711615), anthracycline-ceiling-gated</strong></td><td><span class="rel-badge rel-basket">Trial only</span></td><td>Unknown: recruiting phase 1 with a dose-finding endpoint and no efficacy readout in any histology.</td><td>Moderate (DNA-PK inhibitor plus anthracycline; myelosuppression and mucositis expected, no published grade profile)</td><td><strong>Low</strong> <span class="cpm-desc">(Radiosensitiser-class mechanism with no antagonism vector raised; the risk is a spent anthracycline budget.)</span></td><td><strong>A later-line seat whose 360 mg/m2 anthracycline ceiling makes it an induction-planning question rather than a progression question.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT05711615">NCT05711615</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/35835135">PMID&nbsp;35835135</a></td></tr>
+    <tr class="split-glyph"><td><span class="flag-badge flag-thin">Thin evidence</span></td><td><strong>ADCE-D01 (uPARAP/Endo180-directed antibody-drug conjugate) in soft-tissue sarcoma (NCT06797999)</strong></td><td><span class="rel-badge rel-basket">Trial only</span></td><td>Unknown: first-in-human dose-escalation with no efficacy readout.</td><td>Moderate (ADC-class myelosuppression and payload effects; no published grade profile)</td><td><strong>Low</strong> <span class="cpm-desc">(No mechanism objection raised; risk is a null first-in-human readout.)</span></td><td><strong>A sarcoma-dedicated ADC with a line window that LMS-04 opens and a third line would close — worth a calendar entry, not a rank.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT06797999">NCT06797999</a></td></tr>
+    <tr class="split-glyph"><td><span class="flag-badge flag-thin">Thin evidence</span></td><td><strong>ZL-6201 (LRRC15-directed antibody-drug conjugate) in sarcoma (NCT07374848)</strong></td><td><span class="rel-badge rel-basket">Trial only</span></td><td>Unknown: phase 1 dose-escalation with no efficacy readout.</td><td>Moderate (ADC-class myelosuppression and payload effects; no published grade profile)</td><td><strong>Low</strong> <span class="cpm-desc">(No mechanism objection raised; risk is a null first-in-human readout.)</span></td><td><strong>A post-induction ADC seat with the strictest performance-status ceiling in this tier and no efficacy data.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT07374848">NCT07374848</a></td></tr>
+    <tr class="split-glyph"><td><span class="flag-badge flag-thin">Thin evidence</span></td><td><strong>Gemcitabine + nab-sirolimus in leiomyosarcoma or TSC1/TSC2-altered sarcoma (NCT06308419)</strong></td><td><span class="rel-badge rel-basket">Trial only</span></td><td>Unknown: 18-patient phase 1 with a safety endpoint and no efficacy readout.</td><td>Moderate (gemcitabine myelosuppression plus mTOR-inhibitor stomatitis and metabolic effects; no published combination profile)</td><td><strong>Low</strong> <span class="cpm-desc">(Gemcitabine exposure here permanently forecloses the abemaciclib randomised seat — a sequencing cost, not an antagonism.)</span></td><td><strong>A post-induction phase 1 whose gemcitabine backbone would permanently close the one trial seat LMS-04 preserves.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT06308419">NCT06308419</a></td></tr>
+    <tr class="split-glyph"><td><span class="flag-badge flag-thin">Thin evidence</span></td><td><strong>All-trans retinoic acid + cemiplimab in leiomyosarcoma after standard chemotherapy (NCT06528769)</strong></td><td><span class="rel-badge rel-basket">Trial only</span></td><td>Low: 16-patient single-arm phase 2 with no readout, built on a checkpoint component that went 0 of 12 in dedicated uLMS (pmid:28440953).</td><td>Moderate (immune-related toxicity plus retinoid effects — hypertriglyceridaemia, mucocutaneous dryness, headache; no published combination profile)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Single-agent PD-1 has failed twice in this histology; the retinoid rationale is preclinical and PRAME-dependent.)</span></td><td><strong>The one PRAME-adjacent rationale that does not need a cell product, attached to a checkpoint backbone this disease has already beaten twice.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT06528769">NCT06528769</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/28440953">PMID&nbsp;28440953</a></td></tr>
+    <tr class="split-glyph"><td><span class="flag-badge flag-thin">Thin evidence</span></td><td><strong>FAP-directed radioligand therapy ([225Ac]RTX-2358, [212Pb]Pb-PSV359, [177Lu]Lu-FAP-2286)</strong></td><td><span class="rel-badge rel-basket">Trial only</span></td><td>Unknown: three phase 1 or 1/2 programmes with safety endpoints and no sarcoma efficacy readout.</td><td>Moderate (radioligand marrow suppression and renal exposure; no sarcoma-specific grade profile published)</td><td><strong>Low</strong> <span class="cpm-desc">(Stromal FAP targeting has no antagonism vector raised; the risk is absent uptake.)</span></td><td><strong>The one axis whose screening test is a scan rather than a stain, with no sarcoma efficacy data behind any of its three programmes.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT07156565">NCT07156565</a><br><a href="https://clinicaltrials.gov/study/NCT06710756">NCT06710756</a><br><a href="https://clinicaltrials.gov/study/NCT04939610">NCT04939610</a></td></tr>
+    <tr class="split-glyph"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>Zanzalintinib (XL092), next-generation multikinase inhibitor with a leiomyosarcoma cohort (NCT06571734)</strong></td><td><span class="rel-badge rel-basket">Trial only</span></td><td>Unknown: phase 2 with no readout. Class benchmark pazopanib gives roughly three months of PFS with no OS gain (pmid:22595799).</td><td>Moderate (VEGFR-TKI class: hypertension, fatigue, diarrhoea, hand-foot syndrome; no agent-specific sarcoma profile)</td><td><strong>Low</strong> <span class="cpm-desc">(Antiangiogenic wound-healing impairment would conflict with any planned metastasectomy; sequencing issue, not antagonism.)</span></td><td><strong>A third-line seat at the earliest, worth naming now only because its pathology-review requirement takes months to arrange.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT06571734">NCT06571734</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/22595799">PMID&nbsp;22595799</a></td></tr>
+    <tr class="split-glyph"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>Lurbinectedin + doxorubicin, first-line anthracycline-naive leiomyosarcoma (SaLuDo, NCT06088290)</strong></td><td><span class="rel-badge rel-cross-tumor">Off-label</span></td><td>Unknown: phase 3 accrued and unreported; no efficacy data public.</td><td>Moderate (trabectedin-class myelosuppression and transaminitis expected; no combination profile published)</td><td><strong>Low</strong> <span class="cpm-desc">(Mechanistically redundant with the trabectedin already planned in induction.)</span></td><td><strong>The trial that matched her indication and line exactly and closed before her diagnosis was corrected — a read-out to watch, not a seat.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT06088290">NCT06088290</a></td></tr>
+    <tr class="split-glyph"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>Pegylated liposomal doxorubicin maintenance after first-line chemotherapy (MELODY, NCT06981637)</strong></td><td><span class="rel-badge rel-cross-tumor">Off-label</span></td><td>Unknown: phase 2 with no readout, and the same question is answered inside her planned regimen (pmid:35835135).</td><td>Moderate (liposomal anthracycline: palmar-plantar erythrodysesthesia, mucositis, myelosuppression)</td><td><strong>Low</strong> <span class="cpm-desc">(Further anthracycline exposure erodes the cumulative-dose headroom that two other protocols gate on.)</span></td><td><strong>A maintenance question her planned regimen already answers, in a trial she cannot reach.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT06981637">NCT06981637</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/35835135">PMID&nbsp;35835135</a></td></tr>
+    <tr class="split-glyph"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>Anlotinib (catequentinib, AL3818) in refractory soft-tissue sarcoma (APROMISS, NCT03016819)</strong></td><td><span class="rel-badge rel-other">Not yet accessible</span></td><td>Low-to-uncertain: ORR 13% overall with an 11-month mPFS in a 26-patient LMS subset that was not prespecified for inference (pmid:29895706).</td><td>Low (G3+ hypertension 4.8%, triglyceride elevation 3.6%, pneumothorax 2.4%; no treatment-related deaths)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Pneumothorax risk from tumour cavitation in bilateral lung metastases; wound-healing impairment conflicts with metastasectomy.)</span></td><td><strong>The best-looking VEGFR-TKI subset number in the file, from a non-prespecified 26-patient subgroup, in an arm that is currently suspended.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/29895706">PMID&nbsp;29895706</a><br><a href="https://clinicaltrials.gov/study/NCT03016819">NCT03016819</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/39918552">PMID&nbsp;39918552</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>MASCT-I (autologous dendritic cell and cytokine-induced killer cell therapy) + doxorubicin + ifosfamide, first line (NCT06277154)</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td><span class="rel-badge rel-other">Not yet accessible</span></td><td>Not enrollable: mainland China single site with locally manufactured cells; no efficacy data for the cellular component.</td><td>High (backbone febrile neutropenia 46% in EORTC 62012 despite pegfilgrastim; cellular component profile unpublished)</td><td><strong>Low</strong> <span class="cpm-desc">(No mechanism objection raised; the barrier is geography and manufacturing.)</span></td><td><strong>One of the few first-line investigational options anywhere, single-site in China with the cell product made locally.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT06277154">NCT06277154</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/24618336">PMID&nbsp;24618336</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>Tislelizumab + liposomal doxorubicin and ifosfamide, first line (NCT06849986)</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td><span class="rel-badge rel-other">Not yet accessible</span></td><td>Not enrollable: Shanghai single site. The nearest published analogue missed its response endpoint (ORR 19%, pmid:32910151).</td><td>High (anthracycline-ifosfamide backbone toxicity plus immune-related events; no combination profile published)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Checkpoint blockade has failed twice in this histology; adding it to chemotherapy repeats a tested idea.)</span></td><td><strong>A first-line chemo-immunotherapy seat in Shanghai, on a mechanism this disease has already defeated twice.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT06849986">NCT06849986</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/32910151">PMID&nbsp;32910151</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-unavailable">Unavailable</span></td><td><strong>[177Lu]Lu-ITG-PSMA-1 with [68Ga]Ga-PSMA-11 PET selection (NCT05420727)</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td><span class="rel-badge rel-other">Unavailable</span></td><td>Not available: completed single-centre phase 1, no successor study registered.</td><td>Moderate (radioligand marrow and renal exposure; no published grade profile from the 14-patient study)</td><td><strong>Low</strong> <span class="cpm-desc">(Neovascular rather than tumour-cell targeting; no mechanism objection raised.)</span></td><td><strong>A finished single-centre Swiss phase 1 with no successor — the dead half of the radioligand branch.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT05420727">NCT05420727</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-consolidated">Consolidated</span></td><td><strong>Checkpoint-blockade target biology in uterine leiomyosarcoma (immune classes, tertiary lymphoid structures, pS6-high sensitisation)</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td><span class="rel-badge rel-cross-tumor">Off-label</span></td><td>Low: mechanistic rationale exists but the clinical record in this histology is 0 of 10 and 0 of 12 (pmid:28988646, pmid:28440953).</td><td>Low (none — this row is target biology; toxicity is carried on the agent rows)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Sensitisation hypotheses have no available assay, and the histology has twice defeated the unmodified mechanism.)</span></td><td><strong>The mechanism row behind five checkpoint options, and the reason the immune-phenotype stains ride the rank-1 block cut.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/28988646">PMID&nbsp;28988646</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/28440953">PMID&nbsp;28440953</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-ivonescimab">Ivonescimab (PD-1 x VEGF bispecific), MSK single-arm phase 2 in leiomyosarcoma (NCT07516925)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>PD-L1-positive advanced NSCLC, first line</strong> (1L)<br><small>398 patients in China; PD-L1 TPS &gt;=1%; EGFR/ALK excluded</small></td><td>398</td><td><strong>any treatment-related AE</strong> <span class="tox-grade">grade &gt;=3</span>: 29% (58/198) <small>(vs 16% pembrolizumab)</small><br><strong>immune-related AE</strong> <span class="tox-grade">grade &gt;=3</span>: 7% (14/197) <small>(vs 8% pembrolizumab)</small></td><td><strong>PFS by masked independent review</strong>: 0.51 HR (95% CI 0.38–0.69); p &lt;0.0001<br><small>mPFS 11.1 mo (ivonescimab) vs 5.8 mo (pembrolizumab)</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40057343">Xiong et al. <em>Lancet</em> 2025</a></td></tr>
+    <tr><td><strong>chemotherapy-naive metastatic unresectable uterine leiomyosarcoma</strong> (1L)<br><small>107 of a planned 130 patients; accrual stopped early for futility</small></td><td>107</td><td><strong>neutropenia</strong> <span class="tox-grade">grade &gt;=3</span>: 23% (12/52) <small>(bevacizumab arm; 24% placebo arm)</small><br><strong>thrombocytopenia</strong> <span class="tox-grade">grade &gt;=3</span>: 37% (19/52) <small>(bevacizumab arm; 29% placebo arm)</small><br><strong>anemia</strong> <span class="tox-grade">grade &gt;=3</span>: 13% (7/52) <small>(bevacizumab arm; 33% placebo arm)</small><br><strong>hypertension</strong> <span class="tox-grade">grade 3</span>: 8% (4/52) <small>(bevacizumab arm; 0% placebo arm)</small><br><strong>thromboembolic event</strong> <span class="tox-grade">grade &gt;=3</span>: 10% (5/52) <small>(bevacizumab arm; 8% placebo arm)</small></td><td><strong>median PFS (bevacizumab did not improve it)</strong>: 1.12 HR; p 0.58<br><small>mPFS 6.2 mo (placebo) vs 4.2 mo (bevacizumab); mean DoR 8.6 vs 8.8 mo</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/25713428">Hensley et al. <em>J Clin Oncol</em> 2015</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-peposertib-liposomal-doxorubicin">Peposertib (DNA-PK inhibitor) + low-dose pegylated liposomal doxorubicin (NCT05711615), anthracycline-ceiling-gated</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>metastatic or unresectable leiomyosarcoma (uterine and soft-tissue), chemotherapy-naive</strong> (1L)<br><small>ECOG 0-1; 67 of 150 patients had uterine LMS; randomisation stratified by uterine vs soft-tissue origin; surgery for residual disease allowed after 6 cycles</small></td><td>150</td><td><strong>neutropenia</strong> <span class="tox-grade">grade &gt;=3</span>: 80% (59/74) <small>(combination arm; 13% with doxorubicin alone)</small><br><strong>thrombocytopenia</strong> <span class="tox-grade">grade &gt;=3</span>: 47% (35/74) <small>(combination arm; 0% with doxorubicin alone)</small><br><strong>anemia</strong> <span class="tox-grade">grade &gt;=3</span>: 31% (23/74) <small>(combination arm; 5% with doxorubicin alone)</small><br><strong>febrile neutropenia</strong> <span class="tox-grade">grade &gt;=3</span>: 28% (21/74) <small>(combination arm; 9% with doxorubicin alone)</small><br><strong>treatment-related death</strong> <span class="tox-grade">grade 5</span>: 0.7% (1/150) <small>(cardiac failure, doxorubicin-alone arm)</small></td><td><strong>median PFS by blinded independent central review</strong>: 12.2 months (95% CI 10.1–15.6); p &lt;0.0001<br><small>mPFS 12.2 mo (combination) vs 6.2 mo (doxorubicin)</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/35835135">Pautier et al. <em>Lancet Oncol</em> 2022</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-adce-d01">ADCE-D01 (uPARAP/Endo180-directed antibody-drug conjugate) in soft-tissue sarcoma (NCT06797999)</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-zl-6201">ZL-6201 (LRRC15-directed antibody-drug conjugate) in sarcoma (NCT07374848)</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-gemcitabine-nab-sirolimus">Gemcitabine + nab-sirolimus in leiomyosarcoma or TSC1/TSC2-altered sarcoma (NCT06308419)</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-atra-cemiplimab">All-trans retinoic acid + cemiplimab in leiomyosarcoma after standard chemotherapy (NCT06528769)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>advanced uterine leiomyosarcoma, previously treated</strong> (2L+)<br><small>12 patients, single centre; stage 1 of a 2-stage design; PD-L1 expression 20% of archival samples</small></td><td>12</td><td><strong>amylase/lipase increase</strong> <span class="tox-grade">grade 4</span>: 8% (1/12) <small>(definitely related)</small><br><strong>fatigue</strong> <span class="tox-grade">grade 3</span>: 8% (1/12) <small>(probably related)</small><br><strong>abdominal pain</strong> <span class="tox-grade">grade 3</span>: 8% (1/12) <small>(possibly related)</small></td><td><strong>objective response rate</strong>: 0%<br><small>mPFS 1.8 mo (95% CI 0.8-unknown)</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/28440953">Ben-Ami et al. <em>Cancer</em> 2017</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-fap-radioligand">FAP-directed radioligand therapy ([225Ac]RTX-2358, [212Pb]Pb-PSV359, [177Lu]Lu-FAP-2286)</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-zanzalintinib">Zanzalintinib (XL092), next-generation multikinase inhibitor with a leiomyosarcoma cohort (NCT06571734)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>metastatic non-adipocytic soft-tissue sarcoma after standard chemotherapy</strong> (2L+)<br><small>369 patients, angiogenesis-inhibitor-naive; leiomyosarcoma was the largest histology group</small></td><td>369</td><td><strong>fatigue</strong> <span class="tox-grade">grade any</span>: 65% (n=155) <small>(pazopanib arm; 49% placebo)</small><br><strong>diarrhoea</strong> <span class="tox-grade">grade any</span>: 58% (n=138) <small>(pazopanib arm; 16% placebo)</small><br><strong>nausea</strong> <span class="tox-grade">grade any</span>: 54% (n=129) <small>(pazopanib arm; 28% placebo)</small><br><strong>weight loss</strong> <span class="tox-grade">grade any</span>: 48% (n=115) <small>(pazopanib arm; 20% placebo)</small><br><strong>hypertension</strong> <span class="tox-grade">grade any</span>: 41% (n=99) <small>(pazopanib arm; 7% placebo)</small></td><td><strong>median PFS</strong>: 4.6 months (95% CI 3.7–4.8); p &lt;0.0001<br><small>mPFS 4.6 mo (pazopanib) vs 1.6 mo (placebo)</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/22595799">van der Graaf et al. <em>Lancet</em> 2012</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-lurbinectedin-doxorubicin">Lurbinectedin + doxorubicin, first-line anthracycline-naive leiomyosarcoma (SaLuDo, NCT06088290)</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-pegylated-liposomal-doxorubicin-maintenance">Pegylated liposomal doxorubicin maintenance after first-line chemotherapy (MELODY, NCT06981637)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>metastatic or unresectable leiomyosarcoma (uterine and soft-tissue), chemotherapy-naive</strong> (1L)<br><small>ECOG 0-1; 67 of 150 patients had uterine LMS; randomisation stratified by uterine vs soft-tissue origin; surgery for residual disease allowed after 6 cycles</small></td><td>150</td><td><strong>neutropenia</strong> <span class="tox-grade">grade &gt;=3</span>: 80% (59/74) <small>(combination arm; 13% with doxorubicin alone)</small><br><strong>thrombocytopenia</strong> <span class="tox-grade">grade &gt;=3</span>: 47% (35/74) <small>(combination arm; 0% with doxorubicin alone)</small><br><strong>anemia</strong> <span class="tox-grade">grade &gt;=3</span>: 31% (23/74) <small>(combination arm; 5% with doxorubicin alone)</small><br><strong>febrile neutropenia</strong> <span class="tox-grade">grade &gt;=3</span>: 28% (21/74) <small>(combination arm; 9% with doxorubicin alone)</small><br><strong>treatment-related death</strong> <span class="tox-grade">grade 5</span>: 0.7% (1/150) <small>(cardiac failure, doxorubicin-alone arm)</small></td><td><strong>median PFS by blinded independent central review</strong>: 12.2 months (95% CI 10.1–15.6); p &lt;0.0001<br><small>mPFS 12.2 mo (combination) vs 6.2 mo (doxorubicin)</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/35835135">Pautier et al. <em>Lancet Oncol</em> 2022</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-anlotinib">Anlotinib (catequentinib, AL3818) in refractory soft-tissue sarcoma (APROMISS, NCT03016819)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>refractory metastatic soft-tissue sarcoma after anthracycline, angiogenesis-inhibitor-naive</strong> (2L+)<br><small>166 patients in China; LMS subset n=26, not uterine-specific</small></td><td>166</td><td><strong>hypertension</strong> <span class="tox-grade">grade &gt;=3</span>: 4.8% (n=166)<br><strong>triglyceride elevation</strong> <span class="tox-grade">grade &gt;=3</span>: 3.6% (n=166)<br><strong>pneumothorax</strong> <span class="tox-grade">grade &gt;=3</span>: 2.4% (n=166) <small>(relevant to bilateral lung metastases)</small></td><td><strong>objective response rate</strong>: 13% (95% CI 7.6–18)<br><small>mPFS 5.6 mo overall; 11 mo in the LMS subset</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/29895706">Chi et al. <em>Clin Cancer Res</em> 2018</a></td></tr>
+    <tr><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/39918552">Wang et al. <em>Clin Cancer Res</em> 2025</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-masct-i">MASCT-I (autologous dendritic cell and cytokine-induced killer cell therapy) + doxorubicin + ifosfamide, first line (NCT06277154)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>advanced or metastatic high-grade soft-tissue sarcoma, first line</strong> (1L)<br><small>age 18-60, WHO PS 0-1; all STS histologies, not LMS- or uterine-specific</small></td><td>455</td><td><strong>febrile neutropenia</strong> <span class="tox-grade">grade &gt;=3</span>: 46% (103/224) <small>(combination; 13% doxorubicin alone)</small><br><strong>leucopenia</strong> <span class="tox-grade">grade &gt;=3</span>: 43% (97/224) <small>(combination; 18% doxorubicin alone)</small><br><strong>neutropenia</strong> <span class="tox-grade">grade &gt;=3</span>: 42% (93/224) <small>(combination; 37% doxorubicin alone)</small><br><strong>anemia</strong> <span class="tox-grade">grade &gt;=3</span>: 35% (78/224) <small>(combination; 5% doxorubicin alone)</small><br><strong>thrombocytopenia</strong> <span class="tox-grade">grade &gt;=3</span>: 33% (75/224) <small>(combination; &lt;1% doxorubicin alone)</small></td><td><strong>median overall survival (primary endpoint, not met)</strong>: 14.3 months (95% CI 12.5–16.5); p 0.076<br><small>mPFS 7.4 mo (combination) vs 4.6 mo (doxorubicin)</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/24618336">Judson et al. <em>Lancet Oncol</em> 2014</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-tislelizumab-doxorubicin-ifosfamide">Tislelizumab + liposomal doxorubicin and ifosfamide, first line (NCT06849986)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>advanced anthracycline-naive sarcoma (LMS the most common subtype, 11 of 37)</strong> (1L)<br><small>37 patients, single academic sarcoma centre; osteosarcoma, Ewing and alveolar/embryonal rhabdomyosarcoma excluded</small></td><td>37</td><td><span class="safety-summary-fallback">No dose-limiting toxicities or unexpected safety signals; tolerability of the chemo-IO combination was the main positive finding.</span></td><td><strong>objective response rate (primary endpoint not met)</strong>: 19%<br><small>mPFS 8.1 mo (95% CI 7.6-10.8); mOS 27.6 mo (95% CI 18.7-NR)</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/32910151">Pollack et al. <em>JAMA Oncol</em> 2020</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-nivolumab">Nivolumab monotherapy in uterine leiomyosarcoma</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>advanced uterine leiomyosarcoma, previously treated</strong> (2L+)<br><small>12 patients, single centre; stage 1 of a 2-stage design; PD-L1 expression 20% of archival samples</small></td><td>12</td><td><strong>amylase/lipase increase</strong> <span class="tox-grade">grade 4</span>: 8% (1/12) <small>(definitely related)</small><br><strong>fatigue</strong> <span class="tox-grade">grade 3</span>: 8% (1/12) <small>(probably related)</small><br><strong>abdominal pain</strong> <span class="tox-grade">grade 3</span>: 8% (1/12) <small>(possibly related)</small></td><td><strong>objective response rate</strong>: 0%<br><small>mPFS 1.8 mo (95% CI 0.8-unknown)</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/28440953">Ben-Ami et al. <em>Cancer</em> 2017</a></td></tr>
+    <tr><td><strong>advanced soft-tissue and bone sarcoma, up to 3 prior lines</strong> (2L+)<br><small>STS cohort n=40 evaluable, 10 per histology including 10 LMS</small></td><td>80</td><td><strong>anemia</strong> <span class="tox-grade">grade &gt;=3</span>: 7% (3/42) <small>(STS cohort)</small><br><strong>lymphopenia</strong> <span class="tox-grade">grade &gt;=3</span>: 7% (3/42) <small>(STS cohort)</small><br><strong>pneumonitis (immune-related)</strong> <span class="tox-grade">grade &gt;=3</span>: 2% (2/84) <small>(among treatment-emergent serious AEs, both cohorts)</small></td><td><strong>objective response, STS cohort (primary endpoint not met)</strong>: 18%</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/28988646">Tawbi et al. <em>Lancet Oncol</em> 2017</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-nivolumab-ipilimumab">Nivolumab +/- ipilimumab, dual checkpoint blockade in sarcoma (Alliance A091401)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>metastatic sarcoma after &gt;=1 prior systemic line</strong> (2L+)<br><small>85 treated across two non-comparative arms; LMS among enrolled histologies; responses in the combination arm included LMS and uterine sarcoma</small></td><td>85</td><td><strong>anemia</strong> <span class="tox-grade">grade &gt;=3</span>: 19% (8/42) <small>(nivo+ipi arm; 10% nivo arm)</small><br><strong>hypotension</strong> <span class="tox-grade">grade &gt;=3</span>: 10% (4/42) <small>(nivo+ipi arm)</small><br><strong>treatment-related serious AE</strong> <span class="tox-grade">grade any</span>: 26% (11/42) <small>(nivo+ipi arm; 19% nivo arm)</small></td><td><strong>confirmed ORR per arm</strong>: 16% (95% CI 7–30)</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/29370992">D&#x27;Angelo et al. <em>Lancet Oncol</em> 2018</a></td></tr>
+    <tr><td><strong>advanced uterine leiomyosarcoma, previously treated</strong> (2L+)<br><small>12 patients, single centre; stage 1 of a 2-stage design; PD-L1 expression 20% of archival samples</small></td><td>12</td><td><strong>amylase/lipase increase</strong> <span class="tox-grade">grade 4</span>: 8% (1/12) <small>(definitely related)</small><br><strong>fatigue</strong> <span class="tox-grade">grade 3</span>: 8% (1/12) <small>(probably related)</small><br><strong>abdominal pain</strong> <span class="tox-grade">grade 3</span>: 8% (1/12) <small>(possibly related)</small></td><td><strong>objective response rate</strong>: 0%<br><small>mPFS 1.8 mo (95% CI 0.8-unknown)</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/28440953">Ben-Ami et al. <em>Cancer</em> 2017</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-doxorubicin-pembrolizumab">Doxorubicin + pembrolizumab, first-line chemo-immunotherapy (phase 1/2)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>advanced anthracycline-naive sarcoma (LMS the most common subtype, 11 of 37)</strong> (1L)<br><small>37 patients, single academic sarcoma centre; osteosarcoma, Ewing and alveolar/embryonal rhabdomyosarcoma excluded</small></td><td>37</td><td><span class="safety-summary-fallback">No dose-limiting toxicities or unexpected safety signals; tolerability of the chemo-IO combination was the main positive finding.</span></td><td><strong>objective response rate (primary endpoint not met)</strong>: 19%<br><small>mPFS 8.1 mo (95% CI 7.6-10.8); mOS 27.6 mo (95% CI 18.7-NR)</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/32910151">Pollack et al. <em>JAMA Oncol</em> 2020</a></td></tr>
+    <tr><td><strong>metastatic or unresectable leiomyosarcoma (uterine and soft-tissue), chemotherapy-naive</strong> (1L)<br><small>ECOG 0-1; 67 of 150 patients had uterine LMS; randomisation stratified by uterine vs soft-tissue origin; surgery for residual disease allowed after 6 cycles</small></td><td>150</td><td><strong>neutropenia</strong> <span class="tox-grade">grade &gt;=3</span>: 80% (59/74) <small>(combination arm; 13% with doxorubicin alone)</small><br><strong>thrombocytopenia</strong> <span class="tox-grade">grade &gt;=3</span>: 47% (35/74) <small>(combination arm; 0% with doxorubicin alone)</small><br><strong>anemia</strong> <span class="tox-grade">grade &gt;=3</span>: 31% (23/74) <small>(combination arm; 5% with doxorubicin alone)</small><br><strong>febrile neutropenia</strong> <span class="tox-grade">grade &gt;=3</span>: 28% (21/74) <small>(combination arm; 9% with doxorubicin alone)</small><br><strong>treatment-related death</strong> <span class="tox-grade">grade 5</span>: 0.7% (1/150) <small>(cardiac failure, doxorubicin-alone arm)</small></td><td><strong>median PFS by blinded independent central review</strong>: 12.2 months (95% CI 10.1–15.6); p &lt;0.0001<br><small>mPFS 12.2 mo (combination) vs 6.2 mo (doxorubicin)</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/35835135">Pautier et al. <em>Lancet Oncol</em> 2022</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-psma-radioligand">[177Lu]Lu-ITG-PSMA-1 with [68Ga]Ga-PSMA-11 PET selection (NCT05420727)</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-checkpoint-blockade-ulms">Checkpoint-blockade target biology in uterine leiomyosarcoma (immune classes, tertiary lymphoid structures, pS6-high sensitisation)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>advanced soft-tissue and bone sarcoma, up to 3 prior lines</strong> (2L+)<br><small>STS cohort n=40 evaluable, 10 per histology including 10 LMS</small></td><td>80</td><td><strong>anemia</strong> <span class="tox-grade">grade &gt;=3</span>: 7% (3/42) <small>(STS cohort)</small><br><strong>lymphopenia</strong> <span class="tox-grade">grade &gt;=3</span>: 7% (3/42) <small>(STS cohort)</small><br><strong>pneumonitis (immune-related)</strong> <span class="tox-grade">grade &gt;=3</span>: 2% (2/84) <small>(among treatment-emergent serious AEs, both cohorts)</small></td><td><strong>objective response, STS cohort (primary endpoint not met)</strong>: 18%</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/28988646">Tawbi et al. <em>Lancet Oncol</em> 2017</a></td></tr>
+    <tr><td><strong>advanced uterine leiomyosarcoma, previously treated</strong> (2L+)<br><small>12 patients, single centre; stage 1 of a 2-stage design; PD-L1 expression 20% of archival samples</small></td><td>12</td><td><strong>amylase/lipase increase</strong> <span class="tox-grade">grade 4</span>: 8% (1/12) <small>(definitely related)</small><br><strong>fatigue</strong> <span class="tox-grade">grade 3</span>: 8% (1/12) <small>(probably related)</small><br><strong>abdominal pain</strong> <span class="tox-grade">grade 3</span>: 8% (1/12) <small>(possibly related)</small></td><td><strong>objective response rate</strong>: 0%<br><small>mPFS 1.8 mo (95% CI 0.8-unknown)</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/28440953">Ben-Ami et al. <em>Cancer</em> 2017</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2>Ini1 Ihc interventions</h2>
+<p><em>No rows.</em></p>
+<h3>Also considered &mdash; not ranked</h3>
+<p class="pipeline-note">Feature-targeting investigational options the board considered but did not rank as live top-tier choices. The <strong>Flag</strong> column says why: <em>Unavailable</em> (program discontinued/terminated), <em>Consolidated</em> (one product of an approach ranked above), <em>Thin evidence</em> (no peer-reviewed clinical efficacy yet), <em>Not enrollable</em> (cross-tumor evidence or geographically inaccessible).</p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Flag</th><th>Intervention</th><th>Access</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr class="split-glyph"><td><span class="flag-badge flag-thin">Thin evidence</span></td><td><strong>Tazemetostat (EZH2 inhibition for SMARCB1/INI1-deficient disease)</strong> <span class="scenario-conditional">(conditional on ini1_ihc positive)</span></td><td><span class="rel-badge rel-cross-tumor">Off-label</span></td><td>Low even if INI1 is lost: 9% ORR in the INI1-negative non-epithelioid basket cohort, no uLMS patient reported (pmid:41882006).</td><td>Low (G3+ treatment-related AEs 10%; anaemia 6%, weight loss 3%; two serious events — one seizure, one haemoptysis)</td><td><strong>Moderate</strong> <span class="cpm-desc">(EZH2 dependency in SWI/SNF-mutant cancers is largely non-catalytic, so single-agent inhibition may not engage it.)</span></td><td><strong>Gated on a stain the board expects to come back retained, and even a positive buys a 9% cross-histology response rate.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/41882006">PMID&nbsp;41882006</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/33035459">PMID&nbsp;33035459</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/34271067">PMID&nbsp;34271067</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>Valemetostat tosylate (EZH1/EZH2 dual inhibitor), SWI/SNF-defective basket cohort 1.A (NCT07303387)</strong> <span class="scenario-conditional">(conditional on ini1_ihc positive)</span> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td><span class="rel-badge rel-basket">Trial only</span></td><td>Not enrollable: France-only, and the protocol requires biallelic homozygous SMARCB1 deletion plus central IHC confirmation that a heterozygous plasma call cannot supply.</td><td>Moderate (EZH1/2 dual inhibition: thrombocytopenia, anaemia, dysgeusia in the lymphoma experience; no solid-tumour profile published)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Same non-catalytic EZH2-dependency problem as tazemetostat, on a target the tissue may not carry.)</span></td><td><strong>The live SWI/SNF basket that looks like a door and is not: biallelic homozygous deletion required, France only.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT07303387">NCT07303387</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/34271067">PMID&nbsp;34271067</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>Tiragolumab + atezolizumab in SMARCB1- or SMARCA4-deficient tumours (NCT05286801)</strong> <span class="scenario-conditional">(conditional on ini1_ihc positive)</span> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td><span class="rel-badge rel-cross-tumor">Off-label</span></td><td>Not enrollable: closed to accrual, and the TIGIT partner is investigational with no off-protocol route.</td><td>Moderate (checkpoint-class immune-related toxicity; combination G3+ profile not published for this study)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Checkpoint blockade has failed twice in this histology; TIGIT adds no evidence in sarcoma.)</span></td><td><strong>The most reachable SMARCB1-directed study for a US patient until it closed to accrual — worth re-checking, not plannable.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT05286801">NCT05286801</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/28988646">PMID&nbsp;28988646</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>Ubamatamab (MUC16 x CD3 bispecific), alone or with cemiplimab, in SMARCB1-deficient tumours (NCT06444880)</strong> <span class="scenario-conditional">(conditional on ini1_ihc positive)</span> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td><span class="rel-badge rel-basket">Trial only</span></td><td>Not enrollable: histology-restricted to renal medullary carcinoma and epithelioid sarcoma, and closed to accrual.</td><td>Moderate (T-cell-engager CRS risk; no published grade profile)</td><td><strong>Low</strong> <span class="cpm-desc">(No mechanism objection; the target antigen is unlikely to be present in this histology.)</span></td><td><strong>A SMARCB1-platform study whose two cohorts exclude her histology, closed to accrual — checked and shut.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT06444880">NCT06444880</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-unavailable">Unavailable</span></td><td><strong>BRD9 degraders (class) — ncBAF synthetic lethality in SMARCB1-loss disease</strong> <span class="scenario-conditional">(conditional on ini1_ihc positive)</span> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td><span class="rel-badge rel-other">Unavailable</span></td><td>Not available: both clinical programmes terminated with no successor; no published efficacy from either.</td><td>Moderate (no case-relevant published toxicity data from either terminated programme)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Preclinical work suggests the bromodomain is the wrong handle in SMARCB1-mutant disease.)</span></td><td><strong>The second SMARCB1 approach, and it no longer exists — both clinical degraders terminated without a successor.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT04965753">NCT04965753</a><br><a href="https://clinicaltrials.gov/study/NCT05355753">NCT05355753</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-unavailable">Unavailable</span></td><td><strong>FHD-609 (BRD9 degrader), phase 1 (NCT04965753)</strong> <span class="scenario-conditional">(conditional on ini1_ihc positive)</span> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td><span class="rel-badge rel-other">Unavailable</span></td><td>Not available: phase 1 terminated, no successor study registered.</td><td>Moderate (no case-relevant published toxicity data)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Class-level bromodomain-handle problem in SMARCB1-mutant disease.)</span></td><td><strong>Terminated phase 1 in the SMARCB1-loss space, consolidated under the BRD9 class row.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT04965753">NCT04965753</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/39660994">PMID&nbsp;39660994</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-unavailable">Unavailable</span></td><td><strong>CFT8634 (BRD9 degrader), phase 1 (NCT05355753)</strong> <span class="scenario-conditional">(conditional on ini1_ihc positive)</span> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td><span class="rel-badge rel-other">Unavailable</span></td><td>Not available: phase 1 terminated, no follow-on programme registered.</td><td>Moderate (no case-relevant published toxicity data)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Class-level bromodomain-handle problem in SMARCB1-mutant disease.)</span></td><td><strong>The second BRD9 degrader to stop in SMARCB1-null disease — the class closed twice, not once.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT05355753">NCT05355753</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/41285423">PMID&nbsp;41285423</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-tazemetostat">Tazemetostat (EZH2 inhibition for SMARCB1/INI1-deficient disease)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>solid tumours with SWI/SNF alterations: rhabdoid tumours, synovial sarcoma, INI1-negative tumours of any histology, renal medullary carcinoma, poorly differentiated chordoma</strong> (2L+)<br><small>129 patients across five cohorts; Cohort 3 (INI1-negative any histology, n=32) is the cohort a tissue-confirmed INI1-lost uLMS would have entered</small></td><td>129</td><td><strong>any treatment-related AE</strong> <span class="tox-grade">grade &gt;=3</span>: 10% (n=129)</td><td><strong>objective response rate, INI1-negative cohort</strong>: 9%</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/41882006">Gounder et al. <em>Nat Commun</em> 2026</a></td></tr>
+    <tr><td><strong>advanced epithelioid sarcoma with INI1/SMARCB1 loss</strong> (any)<br><small>62 patients, ECOG 0-2, documented INI1 loss by IHC or biallelic SMARCB1 alteration; 1L and later lines</small></td><td>62</td><td><strong>anemia</strong> <span class="tox-grade">grade &gt;=3</span>: 6% (4/62) <small>(treatment-related)</small><br><strong>weight loss</strong> <span class="tox-grade">grade &gt;=3</span>: 3% (2/62) <small>(treatment-related)</small><br><strong>treatment-related serious AE</strong> <span class="tox-grade">grade &gt;=3</span>: 3% (2/62) <small>(one seizure, one haemoptysis)</small></td><td><strong>investigator-assessed objective response rate</strong>: 15% (95% CI 7–26)<br><small>mDoR not reached (95% CI 9.2-NE); mPFS 5.5 mo</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/33035459">Gounder et al. <em>Lancet Oncol</em> 2020</a></td></tr>
+    <tr><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/34271067">Kihara et al. <em>Hum Pathol</em> 2021</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-valemetostat-ezh1-2">Valemetostat tosylate (EZH1/EZH2 dual inhibitor), SWI/SNF-defective basket cohort 1.A (NCT07303387)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/34271067">Kihara et al. <em>Hum Pathol</em> 2021</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-tiragolumab-atezolizumab">Tiragolumab + atezolizumab in SMARCB1- or SMARCA4-deficient tumours (NCT05286801)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>advanced soft-tissue and bone sarcoma, up to 3 prior lines</strong> (2L+)<br><small>STS cohort n=40 evaluable, 10 per histology including 10 LMS</small></td><td>80</td><td><strong>anemia</strong> <span class="tox-grade">grade &gt;=3</span>: 7% (3/42) <small>(STS cohort)</small><br><strong>lymphopenia</strong> <span class="tox-grade">grade &gt;=3</span>: 7% (3/42) <small>(STS cohort)</small><br><strong>pneumonitis (immune-related)</strong> <span class="tox-grade">grade &gt;=3</span>: 2% (2/84) <small>(among treatment-emergent serious AEs, both cohorts)</small></td><td><strong>objective response, STS cohort (primary endpoint not met)</strong>: 18%</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/28988646">Tawbi et al. <em>Lancet Oncol</em> 2017</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-ubamatamab">Ubamatamab (MUC16 x CD3 bispecific), alone or with cemiplimab, in SMARCB1-deficient tumours (NCT06444880)</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-brd9-degrader">BRD9 degraders (class) — ncBAF synthetic lethality in SMARCB1-loss disease</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-fhd-609">FHD-609 (BRD9 degrader), phase 1 (NCT04965753)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/39660994">Livingston et al. <em>Clin Cancer Res</em> 2025</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-cft8634">CFT8634 (BRD9 degrader), phase 1 (NCT05355753)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/41285423">Jackson et al. <em>J Med Chem</em> 2025</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2>Magea4 Ihc interventions</h2>
+<p><em>No rows.</em></p>
+<h3>Also considered &mdash; not ranked</h3>
+<p class="pipeline-note">Feature-targeting investigational options the board considered but did not rank as live top-tier choices. The <strong>Flag</strong> column says why: <em>Unavailable</em> (program discontinued/terminated), <em>Consolidated</em> (one product of an approach ranked above), <em>Thin evidence</em> (no peer-reviewed clinical efficacy yet), <em>Not enrollable</em> (cross-tumor evidence or geographically inaccessible).</p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Flag</th><th>Intervention</th><th>Access</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr class="split-glyph"><td><span class="flag-badge flag-thin">Thin evidence</span></td><td><strong>CDR404 (MAGE-A4 x CD3 T-cell engager) in HLA-A*02:01, MAGE-A4-expressing solid tumours (NCT06402201)</strong></td><td><span class="rel-badge rel-basket">Trial only</span></td><td>Unknown: first-in-human phase 1 with a dose-limiting-toxicity endpoint and no efficacy readout; MAGE-A4 status unmeasured.</td><td>Moderate (T-cell-engager CRS risk; no published grade profile)</td><td><strong>Low</strong> <span class="cpm-desc">(Antigen-loss and HLA LOH escape possible; no data either way in this histology.)</span></td><td><strong>An off-the-shelf MAGE-A4 engager with no manufacturing lead time and possibly no prior-line requirement, but zero efficacy data and an unstained antigen.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT06402201">NCT06402201</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/40152485">PMID&nbsp;40152485</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>Afamitresgene autoleucel (MAGE-A4 TCR-T, TECELRA), SPEARHEAD-1</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td><span class="rel-badge rel-other">Not yet accessible</span></td><td>Not enrollable: ORR 37% is synovial sarcoma and MRCLS (pmid:38554725); the label stops at synovial sarcoma and her histology is outside it.</td><td>High (CRS 71% with one G3; G3+ lymphopenia 96%, neutropenia 85%; no treatment-related deaths)</td><td><strong>Low</strong> <span class="cpm-desc">(Antigen-loss escape possible; no mechanism objection, the barrier is histology and label.)</span></td><td><strong>Her HLA type clears the allele gate and nothing else — the label and the trial both stop at synovial sarcoma.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/38554725">PMID&nbsp;38554725</a><br><a href="https://clinicaltrials.gov/study/NCT04044768">NCT04044768</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>Uzatresgene autoleucel (ADP-A2M4CD8), alone or with checkpoint blockade (SURPASS, NCT04044859)</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td><span class="rel-badge rel-other">Not yet accessible</span></td><td>Not enrollable: closed to accrual and the histology list excludes uterine sarcoma.</td><td>High (TCR-T class: near-universal G3+ lymphodepletion cytopenias, CRS; no study-specific published profile)</td><td><strong>Low</strong> <span class="cpm-desc">(Antigen-loss escape possible; the operative barriers are histology, enrolment and an oximetry threshold.)</span></td><td><strong>Closed, and its histology list excludes her — but its 90% room-air saturation criterion is the class gate her altitude makes decisive.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT04044859">NCT04044859</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/38554725">PMID&nbsp;38554725</a></td></tr>
+    <tr class="split-glyph"><td><span class="flag-badge flag-consolidated">Consolidated</span></td><td><strong>Cancer/testis antigen expression axis (MAGE-A4, PRAME, NY-ESO-1) — target biology behind the HLA-A*02:01 options</strong></td><td><span class="rel-badge rel-basket">Trial only</span></td><td>Consolidated target biology, not a therapy. The prevalence base for smooth-muscle tumours is thin and internally inconsistent (pmid:40152485).</td><td>Low (none — this row is target biology; toxicity is carried on the product rows)</td><td><strong>Moderate</strong> <span class="cpm-desc">(HLA-A*02:01 allele loss would close the whole axis at once, whatever the antigen stains show.)</span></td><td><strong>The stain-second half of a two-part gate: her allele is confirmed, all three antigens are untested, and the prevalence base is thin.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40152485">PMID&nbsp;40152485</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/38554725">PMID&nbsp;38554725</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-cdr404">CDR404 (MAGE-A4 x CD3 T-cell engager) in HLA-A*02:01, MAGE-A4-expressing solid tumours (NCT06402201)</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-afamitresgene-autoleucel">Afamitresgene autoleucel (MAGE-A4 TCR-T, TECELRA), SPEARHEAD-1</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>advanced synovial sarcoma or myxoid round cell liposarcoma, HLA-A*02, MAGE-A4-expressing, after anthracycline- or ifosfamide-containing therapy</strong> (2L+)<br><small>52 patients (44 synovial sarcoma, 8 MRCLS); median 3 prior lines; MAGE-A4 expression and HLA-A*02 required at screening</small></td><td>52</td><td><strong>cytokine release syndrome</strong> <span class="tox-grade">grade any</span>: 71% (37/52)<br><strong>cytokine release syndrome</strong> <span class="tox-grade">grade 3</span>: 2% (1/52)<br><strong>lymphopenia</strong> <span class="tox-grade">grade &gt;=3</span>: 96% (50/52)<br><strong>neutropenia</strong> <span class="tox-grade">grade &gt;=3</span>: 85% (44/52)<br><strong>leukopenia</strong> <span class="tox-grade">grade &gt;=3</span>: 81% (42/52)</td><td><strong>overall response rate by masked independent review</strong>: 37% (95% CI 24–51)</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/38554725">D&#x27;Angelo et al. <em>Lancet</em> 2024</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-uzatresgene-autoleucel">Uzatresgene autoleucel (ADP-A2M4CD8), alone or with checkpoint blockade (SURPASS, NCT04044859)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>advanced synovial sarcoma or myxoid round cell liposarcoma, HLA-A*02, MAGE-A4-expressing, after anthracycline- or ifosfamide-containing therapy</strong> (2L+)<br><small>52 patients (44 synovial sarcoma, 8 MRCLS); median 3 prior lines; MAGE-A4 expression and HLA-A*02 required at screening</small></td><td>52</td><td><strong>cytokine release syndrome</strong> <span class="tox-grade">grade any</span>: 71% (37/52)<br><strong>cytokine release syndrome</strong> <span class="tox-grade">grade 3</span>: 2% (1/52)<br><strong>lymphopenia</strong> <span class="tox-grade">grade &gt;=3</span>: 96% (50/52)<br><strong>neutropenia</strong> <span class="tox-grade">grade &gt;=3</span>: 85% (44/52)<br><strong>leukopenia</strong> <span class="tox-grade">grade &gt;=3</span>: 81% (42/52)</td><td><strong>overall response rate by masked independent review</strong>: 37% (95% CI 24–51)</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/38554725">D&#x27;Angelo et al. <em>Lancet</em> 2024</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-ct-antigen-target-biology">Cancer/testis antigen expression axis (MAGE-A4, PRAME, NY-ESO-1) — target biology behind the HLA-A*02:01 options</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>advanced synovial sarcoma or myxoid round cell liposarcoma, HLA-A*02, MAGE-A4-expressing, after anthracycline- or ifosfamide-containing therapy</strong> (2L+)<br><small>52 patients (44 synovial sarcoma, 8 MRCLS); median 3 prior lines; MAGE-A4 expression and HLA-A*02 required at screening</small></td><td>52</td><td><strong>cytokine release syndrome</strong> <span class="tox-grade">grade any</span>: 71% (37/52)<br><strong>cytokine release syndrome</strong> <span class="tox-grade">grade 3</span>: 2% (1/52)<br><strong>lymphopenia</strong> <span class="tox-grade">grade &gt;=3</span>: 96% (50/52)<br><strong>neutropenia</strong> <span class="tox-grade">grade &gt;=3</span>: 85% (44/52)<br><strong>leukopenia</strong> <span class="tox-grade">grade &gt;=3</span>: 81% (42/52)</td><td><strong>overall response rate by masked independent review</strong>: 37% (95% CI 24–51)</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/38554725">D&#x27;Angelo et al. <em>Lancet</em> 2024</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2>B7H3 interventions</h2>
+<p><em>No rows.</em></p>
+<h3>Also considered &mdash; not ranked</h3>
+<p class="pipeline-note">Feature-targeting investigational options the board considered but did not rank as live top-tier choices. The <strong>Flag</strong> column says why: <em>Unavailable</em> (program discontinued/terminated), <em>Consolidated</em> (one product of an approach ranked above), <em>Thin evidence</em> (no peer-reviewed clinical efficacy yet), <em>Not enrollable</em> (cross-tumor evidence or geographically inaccessible).</p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Flag</th><th>Intervention</th><th>Access</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr class="split-glyph"><td><span class="flag-badge flag-thin">Thin evidence</span></td><td><strong>B7-H3-directed antibody-drug conjugates (MGC026, GSK5764227 / HS-20093)</strong></td><td><span class="rel-badge rel-basket">Trial only</span></td><td>Unknown: dose-escalation phase 1 programmes with no sarcoma efficacy readout; target prevalence is high (97% positive, pmid:39478506) but unmeasured here.</td><td>Moderate (ADC-class myelosuppression, interstitial lung disease risk; no sarcoma-specific grade profile published)</td><td><strong>Low</strong> <span class="cpm-desc">(Antigen-density threshold effects could blunt payload delivery; no mechanism objection raised by the board.)</span></td><td><strong>The surface target most likely to be present, riding a stain that costs almost nothing — but every accessible programme is a phase 1 with no efficacy data.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT06242470">NCT06242470</a><br><a href="https://clinicaltrials.gov/study/NCT06551142">NCT06551142</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/39478506">PMID&nbsp;39478506</a></td></tr>
+    <tr class="not-recommended"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>CC-3 (B7-H3 x CD3 bispecific antibody) (NCT05999396)</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td><span class="rel-badge rel-other">Not yet accessible</span></td><td>Not enrollable: single German site with colorectal-written eligibility; the sarcoma data behind it are preclinical.</td><td>Moderate (T-cell-engager CRS risk; no published grade profile)</td><td><strong>Low</strong> <span class="cpm-desc">(Antigen-density threshold effects possible; no mechanism objection raised.)</span></td><td><strong>An interesting preclinical B7-H3 engager with one German site and colorectal-written eligibility — checked and closed.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT05999396">NCT05999396</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/39478506">PMID&nbsp;39478506</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2>Atrx Alt interventions</h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Rank</th><th>Intervention</th><th>Access</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr class="not-recommended"><td>1</td><td><strong>ATR inhibition on the ATRX / ALT hypothesis (berzosertib, tuvusertib class)</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td><span class="rel-badge rel-basket">Trial only</span></td><td>Low: the hypothesis was tested in ATRX-mutant LMS with proven target engagement and patients progressed within 4 months (pmid:39453756).</td><td>Moderate (ATR-inhibitor class myelosuppression; monotherapy profile from the negative phase 2)</td><td><strong>High</strong> <span class="cpm-desc">(ALT-selective ATR sensitivity failed to replicate; selecting on ATRX rather than SLFN11 is selecting on the wrong marker.)</span></td><td><strong>The one hypothesis in this case that has already been tested in her histology with the right biomarker and the right pharmacodynamics, and lost.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/39453756">PMID&nbsp;39453756</a><br><a href="https://clinicaltrials.gov/study/NCT04807816">NCT04807816</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Also considered &mdash; not ranked</h3>
+<p class="pipeline-note">Feature-targeting investigational options the board considered but did not rank as live top-tier choices. The <strong>Flag</strong> column says why: <em>Unavailable</em> (program discontinued/terminated), <em>Consolidated</em> (one product of an approach ranked above), <em>Thin evidence</em> (no peer-reviewed clinical efficacy yet), <em>Not enrollable</em> (cross-tumor evidence or geographically inaccessible).</p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Flag</th><th>Intervention</th><th>Access</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr class="split-glyph"><td><span class="flag-badge flag-thin">Thin evidence</span></td><td><strong>Tuvusertib (ATR inhibitor) + temozolomide, NCI dose escalation (NCT05691491)</strong></td><td><span class="rel-badge rel-basket">Trial only</span></td><td>Low: the monotherapy form of this hypothesis failed in ATRX-mutant LMS with target engagement proven on biopsy (pmid:39453756).</td><td>Moderate (ATR-inhibitor plus alkylator myelosuppression; no published combination grade profile)</td><td><strong>Moderate</strong> <span class="cpm-desc">(ALT-selective ATR sensitivity failed to replicate, and the sarcoma cohort testing it progressed within four months.)</span></td><td><strong>The only reachable ATR seat, carrying a hypothesis this histology has already tested and answered in the negative.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT05691491">NCT05691491</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/39453756">PMID&nbsp;39453756</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2>Nyeso1 Ihc interventions</h2>
+<p><em>No rows.</em></p>
+<h3>Also considered &mdash; not ranked</h3>
+<p class="pipeline-note">Feature-targeting investigational options the board considered but did not rank as live top-tier choices. The <strong>Flag</strong> column says why: <em>Unavailable</em> (program discontinued/terminated), <em>Consolidated</em> (one product of an approach ranked above), <em>Thin evidence</em> (no peer-reviewed clinical efficacy yet), <em>Not enrollable</em> (cross-tumor evidence or geographically inaccessible).</p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Flag</th><th>Intervention</th><th>Access</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr class="not-recommended"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>Letetresgene autoleucel (lete-cel, NY-ESO-1 TCR-T), IGNYTE-ESO (NCT03967223)</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td><span class="rel-badge rel-other">Not yet accessible</span></td><td>Not enrollable: synovial sarcoma and MRCLS only, closed to accrual; the citable efficacy is a 12-patient pilot (pmid:29891538).</td><td>High (G3+ AEs in all 12 pilot patients; lymphodepletion cytopenias, CRS in 5 of 12 with two G3)</td><td><strong>Low</strong> <span class="cpm-desc">(Antigen-loss escape possible; the barrier is histology restriction, and NY-ESO-1 is low across sarcoma subtypes.)</span></td><td><strong>Histology-restricted and closed, on an antigen that stains low across sarcoma — order it only inside the shared panel.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT03967223">NCT03967223</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/29891538">PMID&nbsp;29891538</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-letetresgene-autoleucel">Letetresgene autoleucel (lete-cel, NY-ESO-1 TCR-T), IGNYTE-ESO (NCT03967223)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>metastatic synovial sarcoma, HLA-A*02, NY-ESO-1-expressing</strong> (2L+)<br><small>12 patients in the reported high-antigen, full-lymphodepletion cohort</small></td><td>12</td><td><strong>cytokine release syndrome</strong> <span class="tox-grade">grade any</span>: 42% (5/12) <small>(two grade 3)</small><br><strong>lymphopenia</strong> <span class="tox-grade">grade &gt;=3</span>: 100% (n=12)<br><strong>leukopenia</strong> <span class="tox-grade">grade &gt;=3</span>: 92% (n=12)<br><strong>neutropenia</strong> <span class="tox-grade">grade &gt;=3</span>: 83% (n=12)<br><strong>anemia</strong> <span class="tox-grade">grade &gt;=3</span>: 83% (n=12)<br><strong>febrile neutropenia</strong> <span class="tox-grade">grade &gt;=3</span>: 17% (n=12)</td><td><strong>confirmed objective response rate</strong>: 50%</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/29891538">D&#x27;Angelo et al. <em>Cancer Discov</em> 2018</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2>Hla A0201 interventions</h2>
+<p><em>No rows.</em></p>
+<h3>Also considered &mdash; not ranked</h3>
+<p class="pipeline-note">Feature-targeting investigational options the board considered but did not rank as live top-tier choices. The <strong>Flag</strong> column says why: <em>Unavailable</em> (program discontinued/terminated), <em>Consolidated</em> (one product of an approach ranked above), <em>Thin evidence</em> (no peer-reviewed clinical efficacy yet), <em>Not enrollable</em> (cross-tumor evidence or geographically inaccessible).</p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Flag</th><th>Intervention</th><th>Access</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr class="not-recommended"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>Tebentafusp (gp100 x CD3 ImmTAC), HLA-A*02:01-restricted</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td><span class="rel-badge rel-cross-tumor">Off-label</span></td><td>Not enrollable: gp100 is a melanocytic antigen absent from leiomyosarcoma; the OS result is uveal-melanoma-specific (pmid:34551229).</td><td>Moderate (rash 83%, pyrexia 76%, pruritus 69% any-grade, front-loaded; discontinuation for AE 2%, no treatment-related deaths)</td><td><strong>Low</strong> <span class="cpm-desc">(Target antigen absent in this histology; the row is class precedent, not a therapeutic proposal.)</span></td><td><strong>The approved ImmTAC her allele fits and her tumour&#x27;s biology does not — class precedent, plus the strictest oximetry threshold in the file.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/34551229">PMID&nbsp;34551229</a><br><a href="https://clinicaltrials.gov/study/NCT06942442">NCT06942442</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-tebentafusp">Tebentafusp (gp100 x CD3 ImmTAC), HLA-A*02:01-restricted</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>previously untreated metastatic uveal melanoma, HLA-A*02:01-positive</strong> (1L)<br><small>378 HLA-A*02:01 patients randomised 2:1 vs investigator&#x27;s choice (pembrolizumab, ipilimumab, or dacarbazine)</small></td><td>378</td><td><strong>rash</strong> <span class="tox-grade">grade any</span>: 83% (n=252)<br><strong>pyrexia</strong> <span class="tox-grade">grade any</span>: 76% (n=252)<br><strong>pruritus</strong> <span class="tox-grade">grade any</span>: 69% (n=252)<br><strong>treatment discontinuation for AE</strong> <span class="tox-grade">grade any</span>: 2% (n=252)</td><td><strong>overall survival</strong>: 0.51 HR (95% CI 0.37–0.71); p &lt;0.001</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/34551229">Nathan et al. <em>N Engl J Med</em> 2021</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<footer class="libby-footer">Generated 2026-08-25 &middot; Libby &middot; <code>ulms-highgrade-pulm-mets-tp53-smarcb1-hla-a2-w9t4</code></footer>
+</body></html>

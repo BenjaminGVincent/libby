@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>Libby selected general biomarker report — aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2</title>
+<style>
+
+      :root { color-scheme: light; }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        max-width: 1200px;
+        margin: 2em auto;
+        padding: 0 1.5em 3em;
+        color: #1A202C;
+        background: #FFFFFF;
+        line-height: 1.55;
+      }
+      h1 { border-bottom: 2px solid #5B3A87; padding-bottom: 0.3em; margin-top: 0; }
+      h2 { color: #5B3A87; margin-top: 1.8em; }
+      h3 { color: #1A202C; margin-top: 1.4em; }
+      a { color: #5B3A87; text-decoration: underline; }
+      code { background: #F4F6F8; padding: 0.1em 0.4em; border-radius: 2px; font-size: 0.92em; }
+      .disclaimer {
+        background: #FFF4E5; border-left: 4px solid #B45309;
+        padding: 0.8em 1em; margin: 1em 0 2em; font-size: 0.95em;
+      }
+      .libby-footer {
+        margin-top: 3em; padding-top: 1em; border-top: 1px solid #E2E8F0;
+        color: #6B6B7F; font-size: 0.85em;
+      }
+    
+/* Trial-table style — vendored from /Users/benjaminvincent/turtle/pfo/conductor/styles/trial-table/
+   Scoped via .trial-table-wrap so it does not leak into surrounding MkDocs page.
+
+   Uses explicit [data-md-color-scheme] selectors to bypass any CSS-variable
+   inheritance issues — the table reads correctly in both default (light) and
+   slate (dark) Material color schemes regardless of cascade quirks. */
+
+.trial-table-wrap caption {
+  caption-side: top;
+  text-align: left;
+  font-weight: 600;
+  padding: 0.4em 0;
+  font-size: 1em;
+}
+.trial-scroll { overflow-x: auto; }
+.trial-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.88em;
+}
+.trial-table thead th {
+  font-weight: 600;
+  text-align: left;
+  padding: 0.5em 0.6em;
+  white-space: nowrap;
+}
+.trial-table tbody td {
+  padding: 0.5em 0.6em;
+  font-variant-numeric: tabular-nums;
+  vertical-align: top;
+}
+.trial-table .num { text-align: right; }
+
+/* Narrow ID-style columns — the entry number in the access-guide summary
+   table and the NCT id in the access-guide trial-pathways table. Keep
+   numbers / NCTs on a single line so "10" doesn't wrap to "1\n0" and
+   "NCT05379985" doesn't break across four lines. min-width is large
+   enough to comfortably fit the widest expected value (3-digit entry
+   number, NCT + 8 digits = 11 chars in a monospace fallback). */
+.trial-table th.col-num,
+.trial-table td.col-num,
+.trial-table th.col-nct,
+.trial-table td.col-nct {
+  white-space: nowrap;
+}
+.trial-table th.col-num,
+.trial-table td.col-num { min-width: 2.4em; }
+.trial-table th.col-nct,
+.trial-table td.col-nct { min-width: 6.5em; }
+
+/* Access-guide column widths — kept generous so the wrapping `.trial-scroll`
+   div engages horizontal scroll before the cell text squeezes into a tall
+   narrow stack. Tuned for the access-guide tables specifically; other
+   trial-tables on the site keep their default auto layout. */
+.trial-table th.col-intervention,
+.trial-table td.col-intervention { min-width: 14em; }
+.trial-table th.col-target,
+.trial-table td.col-target { min-width: 12em; }
+.trial-table th.col-access-status,
+.trial-table td.col-access-status { min-width: 10em; }
+.trial-table th.col-regulatory,
+.trial-table td.col-regulatory { min-width: 22em; }
+.trial-table th.col-first-action,
+.trial-table td.col-first-action { min-width: 22em; }
+
+.trial-table th.col-phase,
+.trial-table td.col-phase { min-width: 3.5em; white-space: nowrap; }
+.trial-table th.col-indication,
+.trial-table td.col-indication { min-width: 18em; }
+.trial-table th.col-status,
+.trial-table td.col-status { min-width: 7em; white-space: nowrap; }
+.trial-table th.col-eligibility,
+.trial-table td.col-eligibility { min-width: 8em; white-space: nowrap; }
+.trial-table th.col-contact,
+.trial-table td.col-contact { min-width: 14em; }
+.trial-table th.col-notes,
+.trial-table td.col-notes { min-width: 24em; }
+.trial-table a {
+  text-decoration: underline;
+  font-weight: 700;
+}
+.trial-table .mark {
+  font-size: 0.75em;
+  vertical-align: super;
+}
+
+/* ---------- Default (light) scheme ---------- */
+[data-md-color-scheme="default"] .trial-table-wrap { color: #1A202C; }
+[data-md-color-scheme="default"] .trial-table thead th {
+  background: #F4F6F8;
+  color: #1A202C;
+  border-top: 2px solid #1A202C;
+  border-bottom: 1px solid #1A202C;
+}
+[data-md-color-scheme="default"] .trial-table tbody td {
+  color: #1A202C;
+  border-bottom: 1px solid #E2E8F0;
+}
+[data-md-color-scheme="default"] .trial-table tbody tr:last-child td {
+  border-bottom: 2px solid #1A202C;
+}
+[data-md-color-scheme="default"] .trial-table a { color: #1A202C; }
+[data-md-color-scheme="default"] .trial-table-wrap .notes {
+  font-size: 0.85em;
+  color: #4A5568;
+  margin-top: 0.6em;
+}
+
+/* ---------- Slate (dark) scheme ---------- */
+[data-md-color-scheme="slate"] .trial-table-wrap { color: #E2E8F0; }
+[data-md-color-scheme="slate"] .trial-table thead th {
+  background: #2D3344;
+  color: #F1F5F9;
+  border-top: 2px solid #94A3B8;
+  border-bottom: 1px solid #94A3B8;
+}
+[data-md-color-scheme="slate"] .trial-table tbody td {
+  color: #E2E8F0;
+  border-bottom: 1px solid #3A4159;
+}
+[data-md-color-scheme="slate"] .trial-table tbody tr:last-child td {
+  border-bottom: 2px solid #94A3B8;
+}
+[data-md-color-scheme="slate"] .trial-table a {
+  color: #93C5FD;
+}
+[data-md-color-scheme="slate"] .trial-table-wrap .notes {
+  font-size: 0.85em;
+  color: #94A3B8;
+  margin-top: 0.6em;
+}
+
+/* Libby-specific styling: case-fit / toxicity badges, agreement matrix, persona pills. */
+
+/* Bold links across all rendered content. */
+.md-typeset a {
+  font-weight: 700;
+}
+
+/* Case-fit badges (in trials.md). */
+.fit-badge {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.4em;
+  font-size: 0.78em;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+.fit-strong  { background: #E6F5EA; color: #14532D; border-color: #BBE2C7; }
+.fit-partial { background: #FFF7E0; color: #5A4500; border-color: #F1DD9A; }
+.fit-weak    { background: #FBE9E7; color: #6F2E1A; border-color: #ECC4BB; }
+.fit-none    { background: #F1F3F5; color: #4A5568; border-color: #E2E8F0; }
+
+/* Tumor-type-relation badges (trial table). */
+.rel-badge {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.4em;
+  font-size: 0.78em;
+  font-weight: 600;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.rel-indication  { background: #DDF1EE; color: #134E48; border-color: #B0DBD3; }
+.rel-basket      { background: #FFE9D6; color: #6F3A0F; border-color: #F0CFAE; }
+.rel-same-drug   { background: #DFEBFB; color: #1B3A6B; border-color: #B5CDEE; }
+.rel-cross-tumor { background: #F1E5FF; color: #441E72; border-color: #D4BBF2; }
+.rel-other       { background: #F1F3F5; color: #4A5568; border-color: #E2E8F0; }
+
+/* Risk-of-bias badges (evidence table). */
+.rob-badge {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.4em;
+  font-size: 0.78em;
+  font-weight: 600;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.rob-low  { background: #E6F5EA; color: #14532D; border-color: #BBE2C7; }
+.rob-med  { background: #FFF7E0; color: #5A4500; border-color: #F1DD9A; }
+.rob-high { background: #FBE9E7; color: #6F2E1A; border-color: #ECC4BB; }
+
+/* Toxicity flag pills. */
+.tox-flag {
+  display: inline-block;
+  padding: 0.05em 0.45em;
+  border-radius: 999px;
+  font-size: 0.75em;
+  background: #FBE9E7;
+  color: #6F2E1A;
+  border: 1px solid #ECC4BB;
+  margin-right: 0.25em;
+}
+
+/* Persona badges (board.md, recommendations.md). */
+.persona {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.35em;
+  font-size: 0.78em;
+  font-weight: 600;
+  margin-right: 0.25em;
+  border: 1px solid transparent;
+}
+.persona-risktaker    { background: #FFE9D6; color: #6F3A0F; border-color: #F0CFAE; }
+.persona-conservative { background: #DFEBFB; color: #1B3A6B; border-color: #B5CDEE; }
+.persona-critic       { background: #F1E5FF; color: #441E72; border-color: #D4BBF2; }
+.persona-concensusite { background: #DDF1EE; color: #134E48; border-color: #B0DBD3; }
+.persona-advocate     { background: #FFE5EE; color: #6E1638; border-color: #F0BBCB; }
+
+/* Agreement-level decorations. */
+.agree-endorse   { color: #14532D; font-weight: 600; }
+.agree-qualified { color: #5A4500; font-weight: 600; }
+.agree-dissent   { color: #6F2E1A; font-weight: 600; }
+.agree-veto      { color: #6F2E1A; font-weight: 700; text-decoration: underline; }
+
+/* Biomarker-conditional flag (inline in Intervention cell when scenario ends with :positive). */
+.scenario-conditional {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5A4500;
+  background: #FFF7E0;
+  border: 1px solid #F1DD9A;
+  border-radius: 0.35em;
+  padding: 0.05em 0.45em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+
+/* Counter-productive MoA descriptor (parenthetical text after the bold severity). */
+.cpm-desc {
+  font-size: 0.92em;
+  color: #4A5568;
+}
+
+/* Persona pill row inside the Intervention cell on the ranked-prioritization table. */
+.persona-line {
+  display: inline-block;
+  margin-top: 0.15em;
+  font-size: 0.78em;
+  color: #4A5568;
+}
+.persona-line + .persona-line {
+  margin-left: 0.6em;
+}
+
+/* Recommendation table marks. */
+.split-glyph { font-weight: 700; color: #5A4500; }
+/* not_recommended rows: mute, never strike through. The strikethrough used to
+   sit on the whole <tr>, so it struck the rationale columns too — and on a
+   rejected option the rationale is the most useful text in the row, since it
+   is what lets a reader stop considering it. Muting carries the de-emphasis;
+   the badge states the verdict in words, so the signal survives monochrome
+   printing and screen readers rather than resting on typography alone. */
+.not-recommended {
+  color: #4A5568;
+}
+.badge-not-recommended {
+  background: #FDECEA;
+  color: #8C2F22;
+  border-color: #F5C6C0;
+}
+
+/* surfaced_reason flag pills (Experimental "Also considered" table). Neutral,
+   muted pills — these rows are informational, not scored. */
+.flag-badge {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 999px;
+  font-size: 0.75em;
+  font-weight: 600;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.flag-unavailable    { background: #ECEFF1; color: #37474F; border-color: #CFD8DC; }
+.flag-consolidated   { background: #E8EAF6; color: #303F9F; border-color: #C5CAE9; }
+.flag-thin           { background: #FFF8E1; color: #7A5B00; border-color: #F0E1B0; }
+.flag-not-enrollable { background: #F3E5F5; color: #6A1B7A; border-color: #E1BEE7; }
+
+/* Disclaimer banner — applied to every case page via admonition. */
+.md-typeset .admonition.disclaimer {
+  border-color: #B71C1C;
+}
+.md-typeset .admonition.disclaimer > .admonition-title {
+  background-color: rgba(183, 28, 28, 0.08);
+  color: #B71C1C;
+}
+
+/* Agreement matrix heatmap (board.md). Pastel cells carry explicit
+   foreground+background that remain legible regardless of scheme; matrix
+   chrome (header, borders, no-opinion cells) uses scheme-aware selectors. */
+.agreement-matrix {
+  border-collapse: collapse;
+  font-size: 0.85em;
+}
+.agreement-matrix th, .agreement-matrix td {
+  padding: 0.35em 0.5em;
+  text-align: center;
+}
+.agreement-matrix th { font-weight: 600; }
+
+/* Pastel cell colors — same in both schemes (high contrast on their own bg). */
+.agreement-matrix td.cell-endorse   { background: #C8E6D0; color: #14532D; }
+.agreement-matrix td.cell-qualified { background: #FCEEC2; color: #5A4500; }
+.agreement-matrix td.cell-dissent   { background: #F4C7BE; color: #6F2E1A; }
+.agreement-matrix td.cell-veto      { background: #E8A399; color: #4A1408; font-weight: 700; }
+
+/* Default (light) scheme chrome. */
+[data-md-color-scheme="default"] .agreement-matrix th,
+[data-md-color-scheme="default"] .agreement-matrix td {
+  border: 1px solid #E2E8F0;
+  color: #1A202C;
+}
+[data-md-color-scheme="default"] .agreement-matrix th {
+  background: #F4F6F8;
+  color: #1A202C;
+}
+[data-md-color-scheme="default"] .agreement-matrix td.cell-absent {
+  background: #F1F3F5;
+  color: #94A3B8;
+}
+
+/* Slate (dark) scheme chrome. */
+[data-md-color-scheme="slate"] .agreement-matrix th,
+[data-md-color-scheme="slate"] .agreement-matrix td {
+  border: 1px solid #3A4159;
+  color: #E2E8F0;
+}
+[data-md-color-scheme="slate"] .agreement-matrix th {
+  background: #2D3344;
+  color: #F1F5F9;
+}
+[data-md-color-scheme="slate"] .agreement-matrix td.cell-absent {
+  background: #232838;
+  color: #64748B;
+}
+
+</style>
+</head>
+<body data-md-color-scheme="default">
+<div class="disclaimer">
+<strong>Decision support, not medical advice.</strong> Libby is an experimental 
+multi-agent decision-support tool. The information on this page has not been 
+reviewed by a clinician treating this patient. Information ages — confirm details 
+directly with the relevant sources before relying on them.
+</div>
+<h1 id="selected-general-biomarker-report-aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2">Selected general biomarker report — <code>aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2</code></h1>
+<p><em>Which biomarkers on the selected panel this patient has been tested for, and which have never been measured. The panel covers targets established in this tumor type, targets relevant across a subset of tumor types, and biomarkers that predict benefit regardless of where the tumor started, such as MSI-H/dMMR and high tumor mutational burden gating PD-1 blockade.</em></p>
+<h2 id="downloads">Downloads</h2>
+<ul>
+<li><a href="aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2-biomarker-survey.html">Selected general biomarker report (offline HTML)</a> — the same survey, self-contained HTML that opens offline</li>
+<li><a href="aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2-biomarker-survey.pdf">Selected general biomarker report (PDF)</a> — print-friendly, grouped by recommended action</li>
+</ul>
+<p><em>20 biomarkers surveyed: 18 with no usable result on file (0 essential), 2 measured but not to decision resolution, 0 already established. Panel coverage: 9 tumor-agnostic biomarkers plus 11 of 72 protein targets in scope for this tumor.</em></p>
+<p>Twenty biomarkers were surveyed: all nine tumor-agnostic markers and eleven of the panel's 72 protein targets. Not one is measured to decision resolution. Eighteen have no usable result on file, and the two with results cannot support a decision as they stand: CD123 positivity is a qualitative flow call without antigen density, and the HLA class I genotype, typed at high resolution for the 2020 sibling transplant, survives only as a placeholder in the EHR. That genotype is the one essential item, and it is the master switch. Until the 4-digit type is retrieved or repeated, PRAME and MAGE-A1 read as unassessable rather than negative, and the HA-1/HA-2 and WT1 handles, the stated reason this case was submitted, cannot be adjudicated.</p>
+<p>Closing all of it takes three orders, none needing a biopsy. A flow panel on the next marrow or blood specimen adds quantitative CD123 and CD33 density plus CLEC12A, CD70, LILRB4, CD37, CD200, B7-H3 and AXL. A comprehensive genomic panel, already indicated for the TP53 question, returns TMB, MSI, BRAF and RNA fusions on the same run. One blood draw covers HLA typing, HA-1/HA-2 genotyping and a germline predisposition panel, for the patient and the sibling donor both. BRAF may cost nothing: a records request for the 2019 and 2026 covered-gene lists would settle whether codon 600 was ever sequenced.</p>
+<p>Five of the six tumor-agnostic approvals here are written for solid tumors, checkpoint blockade after an allograft brings a graft-versus-host hazard of its own, and most of these markers will be negative if tested. The argument for testing is the size of the option a positive opens, not any implied likelihood of one. CD33 density, TP53 with the Y220C question, and WT1 with HA-1/HA-2 appear in neither reference panel; the target validation report works them directly from the profile.</p>
+<h2 id="gaps-biomarkers-with-no-usable-result-on-file">Gaps: biomarkers with no usable result on file</h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Priority</th><th>Biomarker</th><th>Status</th><th>Why it is in scope</th><th>Recommended assay</th><th>What a positive result would open</th><th>Next step</th><th>Rationale</th><th>References</th></tr></thead>
+      <tbody>
+    <tr><td><span class="fit-badge fit-partial">high</span></td><td><strong>CLEC12A (CLL-1 / CD371) expression on blasts</strong><br><small class="persona-line">Relevant to this tumor type</small></td><td>Not measured</td><td>CLEC12A sits on AML blasts and leukemic stem cells while sparing normal hematopoietic stem cells, which is why it carries an active AML CAR-T and bispecific program. This patient accepts trials including travel.</td><td><strong>CLEC12A (CD371 / CLL-1) by flow cytometry on blasts</strong><br><small>flow_cytometry · bone marrow aspirate or peripheral blood · 3-7 days</small><br><small class="persona-line"><em>bundles with:</em> AML surface-antigen flow panel: one run on the next marrow or blood specimen carrying quantitative CD123 and CD33 density plus CLEC12A, CD70, LILRB4, CD37, CD200 and B7-H3</small></td><td><div><strong>CD371 (CLL-1) CAR-T</strong> <small class="persona-line">(CAR-T · trial only)</small><br><small><a href="https://clinicaltrials.gov/study/NCT06017258">NCT06017258</a></small></div><div><strong>tepoditamab</strong> <small class="persona-line">(CLEC12A x CD3 bispecific · trial only)</small></div></td><td>Bundle with planned testing</td><td>Nothing on file speaks to CLL-1, because the flow panel run for lineage assignment did not include it, and in refractory AML after transplant the CLL-1 CAR-T and bispecific trials are among the few cell-therapy doors that do not depend on HLA type. Adding the marker to a panel already being sent costs one antibody and either opens those trials or closes them cleanly. Expression is common in AML but not universal, so a negative result is a real possibility and is useful in its own right.</td><td><a href="https://clinicaltrials.gov/study/NCT06017258">NCT06017258</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/41959675">PMID&nbsp;41959675</a></td></tr>
+    <tr><td><span class="fit-badge fit-partial">high</span></td><td><strong>PRAME expression (HLA class I presented)</strong><br><small class="persona-line">Relevant to this tumor type</small></td><td>Not assessable yet</td><td>PRAME is named in this case&#x27;s stated features as one of the HLA-restricted handles for post-transplant consolidation. It is over-expressed in the large majority of AML at diagnosis and is absent from normal hematopoietic progenitors, which is what makes it attractive after a graft.</td><td><strong>HLA class I typing, reflexing to PRAME expression on blasts by RT-qPCR or IHC</strong><br><small>hla_typing · whole blood for typing; marrow aspirate or clot section for the reflex · 1-2 weeks for typing, about 1 week for the reflex</small><br><small class="persona-line"><em>bundles with:</em> HLA typing blood draw: one blood draw carrying high-resolution class I typing, HA-1/HA-2 genotyping and a germline myeloid-predisposition panel</small></td><td><div><strong>brenetafusp</strong> <small class="persona-line">(PRAME x CD3 ImmTAC bispecific · trial only)</small><br><small><a href="https://clinicaltrials.gov/study/NCT06112314">NCT06112314</a></small></div><div><strong>IMA203</strong> <small class="persona-line">(PRAME TCR-T · trial only)</small></div></td><td>Reflex if positive</td><td>PRAME expression has never been measured here and cannot be interpreted until the HLA class I type is in hand, so this reads as unassessable rather than negative. PRAME is over-expressed in most AML at diagnosis, so a positive A*02:01 result would make expression testing worth doing, but every PRAME binder is trial-stage and currently enrolling melanoma or solid-tumor populations rather than leukemia. Closing the HLA gap first keeps the cost of this row to a reflex on tissue already being sent.</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/32502139">PMID&nbsp;32502139</a><br><a href="https://clinicaltrials.gov/study/NCT06112314">NCT06112314</a></td></tr>
+    <tr><td><span class="fit-badge fit-weak">medium</span></td><td><strong>Homologous recombination deficiency / BRCA1 / BRCA2 pathogenic variant</strong><br><small class="persona-line">Relevant across a tumor subset</small></td><td>Not measured</td><td>PARP inhibitors have no AML indication, so the drug tail behind this biomarker is thin. The reason to look is different: a second transplant from a sibling is being planned, and a germline finding on the panel that carries these genes would bear on donor selection and on conditioning.</td><td><strong>Germline panel covering HR genes and the myeloid predisposition genes, with somatic HR genes read off the relapse comprehensive panel</strong><br><small>germline_panel · cultured skin fibroblasts preferred while blasts are circulating; whole blood only if a remission sample is available · 2-4 weeks, longer if fibroblast culture is needed</small><br><small class="persona-line"><em>bundles with:</em> HLA typing blood draw: one blood draw carrying high-resolution class I typing, HA-1/HA-2 genotyping and a germline myeloid-predisposition panel</small></td><td><div><strong>PARP inhibitors</strong> <small class="persona-line">(PARP inhibitor · approved, other tumor type)</small></div></td><td>Bundle with planned testing</td><td>No HR gene, HRD score or germline result is on file, and PARP inhibitors carry no AML indication, so this row is not about opening a drug. It matters because a germline predisposition finding would change which sibling can safely donate for a second transplant and how the graft is chosen, and the panel that answers it rides on the same blood draw as the HLA typing. One caveat on sampling: a germline call from blood is unreliable while blasts are circulating at 58 to 82 percent, so the source has to be chosen deliberately.</td><td>—</td></tr>
+    <tr><td><span class="fit-badge fit-weak">medium</span></td><td><strong>CD70 expression on blasts</strong><br><small class="persona-line">Relevant to this tumor type</small></td><td>Not measured</td><td>CD70 is expressed on AML blasts and leukemic stem cells with tightly restricted normal expression, and the panel&#x27;s cusatuzumab program was developed in AML. It reads on flow, so the marginal cost is one antibody.</td><td><strong>CD70 by flow cytometry on blasts</strong><br><small>flow_cytometry · bone marrow aspirate or peripheral blood · 3-7 days</small><br><small class="persona-line"><em>bundles with:</em> AML surface-antigen flow panel: one run on the next marrow or blood specimen carrying quantitative CD123 and CD33 density plus CLEC12A, CD70, LILRB4, CD37, CD200 and B7-H3</small></td><td><div><strong>cusatuzumab</strong> <small class="persona-line">(anti-CD70 mAb · trial only)</small></div><div><strong>CTX130</strong> <small class="persona-line">(allogeneic CD70 CAR-T · trial only)</small></div></td><td>Bundle with planned testing</td><td>CD70 has never been looked at in this patient. The honest caveat is that cusatuzumab, the AML program that made this target interesting, was discontinued, so a positive result points at trials rather than at an available agent. It earns a place on the flow panel because the marginal cost is one antibody and CD70-directed cell therapy is still in development.</td><td>—</td></tr>
+    <tr><td><span class="fit-badge fit-none">low</span></td><td><strong>HER2 protein overexpression (IHC 3+)</strong><br><small class="persona-line">Tumor-agnostic</small></td><td>Not measured</td><td>In scope because the tumor-agnostic panel is screened in full, not because HER2 has a plausible role here. HER2 protein overexpression is not a feature of myeloid leukemia and the approval covers solid tumors.</td><td>—</td><td><div><strong>trastuzumab deruxtecan</strong> <small class="persona-line">(HER2-directed ADC · approved, other tumor type)</small><br><small><a href="https://clinicaltrials.gov/study/NCT04482309">NCT04482309</a></small></div></td><td>Defer</td><td>HER2 IHC has not been done, and there is no reason to do it. HER2 protein overexpression is not a feature of acute myeloid leukemia, and the tumor-agnostic trastuzumab deruxtecan approval covers unresectable or metastatic solid tumors. This row exists so the record shows the question was asked and closed rather than overlooked.</td><td><a href="https://clinicaltrials.gov/study/NCT04482309">NCT04482309</a></td></tr>
+    <tr><td><span class="fit-badge fit-none">low</span></td><td><strong>Microsatellite instability / mismatch-repair deficiency (MSI-H / dMMR)</strong><br><small class="persona-line">Tumor-agnostic</small></td><td>Not measured</td><td>Primary site does not matter for this biomarker, which is why it gets a row in every case. The qualifier that matters here is that both tumor-agnostic PD-1 approvals are written for solid tumors, and this is a myeloid leukemia.</td><td><strong>MSI status reported from a validated comprehensive genomic profiling panel</strong><br><small>NGS_panel · bone marrow aspirate, or blood with circulating blasts · 2-3 weeks</small><br><small class="persona-line"><em>bundles with:</em> relapse comprehensive genomic profiling panel: the same order already needed to resolve TP53 variant identity and VAF, which also reports TMB, MSI, BRAF and RNA fusions</small></td><td><div><strong>pembrolizumab</strong> <small class="persona-line">(PD-1 inhibitor · approved, other tumor type)</small><br><small><a href="https://clinicaltrials.gov/study/NCT02628067">NCT02628067</a></small></div><div><strong>dostarlimab</strong> <small class="persona-line">(PD-1 inhibitor · approved, other tumor type)</small><br><small><a href="https://clinicaltrials.gov/study/NCT02715284">NCT02715284</a></small></div></td><td>Bundle with planned testing</td><td>MSI and mismatch-repair status have never been assessed. This sits at low rather than essential for two reasons: MSI-H is rare in AML, and both tumor-agnostic PD-1 approvals are written for solid tumors while checkpoint blockade after allogeneic transplant carries a real risk of severe graft-versus-host disease, so even a positive result would not convert into a clean option. MSI comes back with a comprehensive panel that is already indicated to resolve the TP53 question, so let it ride along rather than ordering it alone.</td><td><a href="https://clinicaltrials.gov/study/NCT02628067">NCT02628067</a><br><a href="https://clinicaltrials.gov/study/NCT02715284">NCT02715284</a><br><em>pembrolizumab-msi-h-dmmr-solid-tumors</em></td></tr>
+    <tr><td><span class="fit-badge fit-none">low</span></td><td><strong>NTRK1 / NTRK2 / NTRK3 gene fusion</strong><br><small class="persona-line">Tumor-agnostic</small></td><td>Not measured</td><td>A TRK fusion is actionable regardless of primary site, so it is screened in every case. In myeloid disease the frequency is well under one percent, and all three TRK approvals name solid tumors.</td><td><strong>RNA-based fusion NGS panel covering NTRK1/2/3</strong><br><small>RNA_seq · bone marrow aspirate or blood with circulating blasts · 2-3 weeks</small><br><small class="persona-line"><em>bundles with:</em> relapse comprehensive genomic profiling panel: the same order already needed to resolve TP53 variant identity and VAF, which also reports TMB, MSI, BRAF and RNA fusions</small></td><td><div><strong>larotrectinib</strong> <small class="persona-line">(TRK inhibitor · approved, other tumor type)</small><br><small><a href="https://clinicaltrials.gov/study/NCT02576431">NCT02576431</a></small></div><div><strong>entrectinib</strong> <small class="persona-line">(TRK / ROS1 / ALK inhibitor · approved, other tumor type)</small><br><small><a href="https://clinicaltrials.gov/study/NCT02568267">NCT02568267</a></small></div><div><strong>repotrectinib</strong> <small class="persona-line">(next-generation TRK inhibitor · approved, other tumor type)</small><br><small><a href="https://clinicaltrials.gov/study/NCT03093116">NCT03093116</a></small></div></td><td>Bundle with planned testing</td><td>No fusion-capable assay is on file, and the DNA myeloid panel run at relapse would not reliably detect one. NTRK fusions do occur in myeloid disease but at a frequency well under one percent, and all three TRK approvals are written for solid tumors, so a positive result would start an off-label or trial conversation rather than a straightforward one. An RNA fusion panel at relapse is worth having for other reasons, and NTRK comes with it.</td><td><a href="https://clinicaltrials.gov/study/NCT02576431">NCT02576431</a><br><a href="https://clinicaltrials.gov/study/NCT02568267">NCT02568267</a><br><a href="https://clinicaltrials.gov/study/NCT03093116">NCT03093116</a></td></tr>
+    <tr><td><span class="fit-badge fit-none">low</span></td><td><strong>RET gene fusion</strong><br><small class="persona-line">Tumor-agnostic</small></td><td>Not measured</td><td>Screened in every case because selpercatinib is approved across primary sites. RET fusions are described in myeloid neoplasms only as isolated reports, and the approval names solid tumors.</td><td><strong>RET fusion detection on an RNA-based fusion NGS panel</strong><br><small>RNA_seq · bone marrow aspirate or blood with circulating blasts · 2-3 weeks</small><br><small class="persona-line"><em>bundles with:</em> relapse comprehensive genomic profiling panel: the same order already needed to resolve TP53 variant identity and VAF, which also reports TMB, MSI, BRAF and RNA fusions</small></td><td><div><strong>selpercatinib</strong> <small class="persona-line">(selective RET inhibitor · approved, other tumor type)</small><br><small><a href="https://clinicaltrials.gov/study/NCT03157128">NCT03157128</a></small></div></td><td>Bundle with planned testing</td><td>RET fusion status is unknown because no fusion-capable assay has been run. RET fusions are rare enough in myeloid disease that the expected yield is very low, and the selpercatinib approval is written for solid tumors. The only sensible way to answer it is as part of the RNA fusion panel already recommended, not as a standalone test.</td><td><a href="https://clinicaltrials.gov/study/NCT03157128">NCT03157128</a></td></tr>
+    <tr><td><span class="fit-badge fit-none">low</span></td><td><strong>Tumor mutational burden, high (TMB-H)</strong><br><small class="persona-line">Tumor-agnostic</small></td><td>Not measured</td><td>TMB is screened regardless of primary site. As with MSI, the pembrolizumab TMB-high approval is written for solid tumors, which limits what a positive result would do here.</td><td><strong>TMB in mutations per megabase from a validated comprehensive genomic profiling panel</strong><br><small>NGS_panel · bone marrow aspirate, or blood with circulating blasts · 2-3 weeks</small><br><small class="persona-line"><em>bundles with:</em> relapse comprehensive genomic profiling panel: the same order already needed to resolve TP53 variant identity and VAF, which also reports TMB, MSI, BRAF and RNA fusions</small></td><td><div><strong>pembrolizumab</strong> <small class="persona-line">(PD-1 inhibitor · approved, other tumor type)</small><br><small><a href="https://clinicaltrials.gov/study/NCT02628067">NCT02628067</a></small></div></td><td>Bundle with planned testing</td><td>No TMB value is on file, and the targeted myeloid panel used at relapse cannot produce one. AML carries among the lowest mutational burdens of any malignancy, so a TMB-high result would be unusual, and the pembrolizumab TMB-high approval covers solid tumors in any case. Take the number if a comprehensive panel is run to answer the TP53 question, but it does not justify an order of its own.</td><td><a href="https://clinicaltrials.gov/study/NCT02628067">NCT02628067</a><br><em>pembrolizumab-tmb-h-solid-tumors</em></td></tr>
+    <tr><td><span class="fit-badge fit-none">low</span></td><td><strong>BRAF V600E mutation</strong><br><small class="persona-line">Tumor-agnostic</small></td><td>Record ambiguous</td><td>BRAF V600E is actionable across most primary sites, so it is screened in every case. It occurs in well under one percent of AML, though BRAF-directed therapy is established in hairy cell leukemia, so the question is not dismissed outright in a hematologic malignancy.</td><td><strong>Retrieve the covered-gene list for the 2019 and 2026 NGS panels; sequence BRAF codon 600 if it was not covered</strong><br><small>NGS_panel · no new tissue if the archived reports answer it · days for the records request</small><br><small class="persona-line"><em>bundles with:</em> relapse comprehensive genomic profiling panel: the same order already needed to resolve TP53 variant identity and VAF, which also reports TMB, MSI, BRAF and RNA fusions</small></td><td><div><strong>dabrafenib plus trametinib</strong> <small class="persona-line">(BRAF inhibitor plus MEK inhibitor · approved, other tumor type)</small><br><small><a href="https://clinicaltrials.gov/study/NCT02034110">NCT02034110</a></small></div></td><td>Bundle with planned testing</td><td>This is genuinely ambiguous rather than untested: myeloid NGS panels commonly cover BRAF, but the record reports only the genes with findings plus explicit FLT3, IDH1 and IDH2 negatives, so whether codon 600 was sequenced cannot be told from what is on file. Asking the laboratory for the covered-gene list of the 2019 and 2026 assays settles it at the cost of a records request. If BRAF was not covered, it comes back with the comprehensive panel already recommended for the TP53 question.</td><td><a href="https://clinicaltrials.gov/study/NCT02034110">NCT02034110</a></td></tr>
+    <tr><td><span class="fit-badge fit-none">low</span></td><td><strong>B7-H3 (CD276) expression on blasts</strong><br><small class="persona-line">Relevant across a tumor subset</small></td><td>Not measured</td><td>B7-H3 is a pan-cancer surface target with reported expression on AML blasts, which brings it into scope even though the panel&#x27;s tumor list is solid-tumor weighted.</td><td><strong>B7-H3 (CD276) by flow cytometry on blasts</strong><br><small>flow_cytometry · bone marrow aspirate or peripheral blood · 3-7 days</small><br><small class="persona-line"><em>bundles with:</em> AML surface-antigen flow panel: one run on the next marrow or blood specimen carrying quantitative CD123 and CD33 density plus CLEC12A, CD70, LILRB4, CD37, CD200 and B7-H3</small></td><td><div><strong>ifinatamab deruxtecan</strong> <small class="persona-line">(B7-H3 ADC · trial only)</small></div><div><strong>enoblituzumab</strong> <small class="persona-line">(anti-B7-H3 mAb · trial only)</small></div></td><td>Bundle with planned testing</td><td>B7-H3 is expressed on AML blasts in reported series but has never been looked at here. Every clinical B7-H3 binder, the ADCs and the antibodies alike, is enrolling solid-tumor populations, so a positive result would not point at an AML-eligible trial today. Add it to a flow panel already being run; do not order it separately.</td><td>—</td></tr>
+    <tr><td><span class="fit-badge fit-none">low</span></td><td><strong>PD-L1 protein expression</strong><br><small class="persona-line">Relevant across a tumor subset</small></td><td>Not measured</td><td>PD-L1 gates checkpoint-inhibitor benefit in several tumor types, none of them AML. In this patient it also runs into the post-transplant setting, where checkpoint blockade carries its own hazard.</td><td>—</td><td><div><strong>PD-1 / PD-L1 inhibitors</strong> <small class="persona-line">(checkpoint inhibitor · approved, other tumor type)</small></div></td><td>Defer</td><td>PD-L1 has not been stained, and no PD-L1-gated approval exists in AML, so a result would not change the option set. It also meets a specific hazard here: checkpoint blockade after allogeneic transplant can precipitate severe graft-versus-host disease, so any consideration of it needs that discussion first rather than a stain. Defer.</td><td>—</td></tr>
+    <tr><td><span class="fit-badge fit-none">low</span></td><td><strong>MAGE-A1 expression (HLA class I presented)</strong><br><small class="persona-line">Relevant across a tumor subset</small></td><td>Not assessable yet</td><td>MAGE-A1 is the one cancer/testis antigen in the panel whose relevance text names hematologic malignancies. Like every HLA-presented target it sits behind the same unknown class I genotype.</td><td><strong>MAGE-A1 expression by RT-PCR or IHC, only after HLA class I typing returns</strong><br><small>PCR · bone marrow aspirate or clot section · about 1 week once triggered</small><br><small class="persona-line"><em>bundles with:</em> HLA typing blood draw: one blood draw carrying high-resolution class I typing, HA-1/HA-2 genotyping and a germline myeloid-predisposition panel</small></td><td><div><strong>IMA202</strong> <small class="persona-line">(MAGE-A1 TCR-T · trial only)</small></div></td><td>Defer</td><td>MAGE-A1 has not been measured and cannot be interpreted without the HLA class I type, so it is unassessable rather than negative. IMA202 is the only TCR-T that reached the clinic against it and it enrolled HLA-A2-positive solid tumors. Revisit only if the HLA type comes back A*02:01-positive and the higher-yield antigens on this list have been worked through.</td><td>—</td></tr>
+    <tr><td><span class="fit-badge fit-none">low</span></td><td><strong>AXL expression on blasts</strong><br><small class="persona-line">Relevant to this tumor type</small></td><td>Not measured</td><td>The panel names AML among the diseases that up-regulate AXL, which is tied to drug-resistance phenotypes. That fits a leukemia that has progressed through FLAG-IDA with venetoclax.</td><td><strong>AXL by flow cytometry on blasts, or IHC on the marrow clot section</strong><br><small>flow_cytometry · bone marrow aspirate or peripheral blood · 3-7 days</small><br><small class="persona-line"><em>bundles with:</em> AML surface-antigen flow panel: one run on the next marrow or blood specimen carrying quantitative CD123 and CD33 density plus CLEC12A, CD70, LILRB4, CD37, CD200 and B7-H3</small></td><td><div><strong>enapotamab vedotin</strong> <small class="persona-line">(AXL ADC · trial only)</small></div><div><strong>tilvestamab</strong> <small class="persona-line">(anti-AXL mAb · trial only)</small></div></td><td>Bundle with planned testing</td><td>AXL has not been assessed, and in a leukemia that failed intensive reinduction the resistance biology it marks is at least plausible. The binders in the panel were both taken into solid-tumor trials and neither is approved, so a positive result would be a lead rather than a treatment. Worth doing only as part of a flow panel that is already being run.</td><td>—</td></tr>
+    <tr><td><span class="fit-badge fit-none">low</span></td><td><strong>CD200 expression on blasts</strong><br><small class="persona-line">Relevant to this tumor type</small></td><td>Not measured</td><td>The panel names AML among the diseases that up-regulate CD200. Its therapeutic tail is one antibody that did not continue past phase 1.</td><td><strong>CD200 by flow cytometry on blasts</strong><br><small>flow_cytometry · bone marrow aspirate or peripheral blood · 3-7 days</small><br><small class="persona-line"><em>bundles with:</em> AML surface-antigen flow panel: one run on the next marrow or blood specimen carrying quantitative CD123 and CD33 density plus CLEC12A, CD70, LILRB4, CD37, CD200 and B7-H3</small></td><td><div><strong>samalizumab</strong> <small class="persona-line">(anti-CD200 mAb · trial only)</small></div></td><td>Bundle with planned testing</td><td>CD200 has not been measured. It is expressed on AML blasts and has been reported as an adverse prognostic marker, but samalizumab is the only antibody that reached the clinic against it and that program did not continue, so the therapeutic tail is thin. Add it to the flow panel if convenient; the result is likelier to inform prognosis than to open a treatment.</td><td>—</td></tr>
+    <tr><td><span class="fit-badge fit-none">low</span></td><td><strong>CD37 expression on blasts</strong><br><small class="persona-line">Relevant to this tumor type</small></td><td>Not measured</td><td>The panel entry names AML alongside B-cell lymphoma for CD37, so it meets the screening rule. Every binder program behind it was built in lymphoma.</td><td><strong>CD37 by flow cytometry on blasts</strong><br><small>flow_cytometry · bone marrow aspirate or peripheral blood · 3-7 days</small><br><small class="persona-line"><em>bundles with:</em> AML surface-antigen flow panel: one run on the next marrow or blood specimen carrying quantitative CD123 and CD33 density plus CLEC12A, CD70, LILRB4, CD37, CD200 and B7-H3</small></td><td><div><strong>naratuximab emtansine</strong> <small class="persona-line">(CD37 ADC · trial only)</small></div><div><strong>177Lu-lilotomab satetraxetan</strong> <small class="persona-line">(CD37 radioligand · trial only)</small></div></td><td>Bundle with planned testing</td><td>CD37 has not been assessed. The ADC and radioligand programs behind this target were developed in B-cell lymphoma, so an AML-eligible option would not follow from a positive stain. Include it on the flow panel if the antibody is already in the laboratory&#x27;s inventory, and do not order it on its own.</td><td>—</td></tr>
+    <tr><td><span class="fit-badge fit-none">low</span></td><td><strong>LILRB4 (ILT3) expression on blasts</strong><br><small class="persona-line">Relevant to this tumor type</small></td><td>Not measured</td><td>LILRB4 marks monocytic AML (FAB M4/M5) and CMML. The flow already on file argues against a monocytic phenotype here, with CD14, CD64 and CD4 all negative.</td><td><strong>LILRB4 (ILT3) by flow cytometry on blasts</strong><br><small>flow_cytometry · bone marrow aspirate or peripheral blood · 3-7 days</small><br><small class="persona-line"><em>bundles with:</em> AML surface-antigen flow panel: one run on the next marrow or blood specimen carrying quantitative CD123 and CD33 density plus CLEC12A, CD70, LILRB4, CD37, CD200 and B7-H3</small></td><td><div><strong>vopikitug (IO-202)</strong> <small class="persona-line">(anti-LILRB4 mAb · trial only)</small></div><div><strong>LILRB4 STAR-T</strong> <small class="persona-line">(CAR-T · trial only)</small></div></td><td>Bundle with planned testing</td><td>LILRB4 has not been stained, and the immunophenotype on file points away from the monocytic subtype where it is usually found. The IO-202 and STAR-T programs recruit monocytic AML and CMML specifically, so the prior probability of this opening anything is low. If the marker is available on the flow panel it is cheap to check, but it does not justify a separate order.</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40919482">PMID&nbsp;40919482</a></td></tr>
+    <tr><td><span class="fit-badge fit-none">low</span></td><td><strong>MERTK expression on blasts</strong><br><small class="persona-line">Relevant to this tumor type</small></td><td>Not measured</td><td>The panel names acute leukemia among the diseases that aberrantly express MERTK. The evidence level is preclinical and the single clinical-stage binder is being studied in lung cancer.</td><td>—</td><td><div><strong>MRX-2843</strong> <small class="persona-line">(MERTK/FLT3 small-molecule inhibitor · trial only)</small></div></td><td>Defer</td><td>MERTK has not been measured. The one binder that reached the clinic is in a lung-cancer combination study and the rest of the work is preclinical, so a result would not connect to anything this patient could receive now or on trial. Defer unless a MERTK-directed study in myeloid disease opens.</td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2 id="what-this-collapses-to">What this collapses to</h2>
+<p><em>The gaps above resolve onto this many distinct orders. Biomarkers that ride along on the same assay are grouped together.</em></p>
+<ul>
+<li><strong>AML surface-antigen flow panel: one run on the next marrow or blood specimen carrying quantitative CD123 and CD33 density plus CLEC12A, CD70, LILRB4, CD37, CD200 and B7-H3</strong> — AXL expression on blasts, B7-H3 (CD276) expression on blasts, CD200 expression on blasts, CD37 expression on blasts, CD70 expression on blasts, CLEC12A (CLL-1 / CD371) expression on blasts, LILRB4 (ILT3) expression on blasts</li>
+<li><strong>relapse comprehensive genomic profiling panel: the same order already needed to resolve TP53 variant identity and VAF, which also reports TMB, MSI, BRAF and RNA fusions</strong> — BRAF V600E mutation, Microsatellite instability / mismatch-repair deficiency (MSI-H / dMMR), NTRK1 / NTRK2 / NTRK3 gene fusion, RET gene fusion, Tumor mutational burden, high (TMB-H)</li>
+<li><strong>HLA typing blood draw: one blood draw carrying high-resolution class I typing, HA-1/HA-2 genotyping and a germline myeloid-predisposition panel</strong> — Homologous recombination deficiency / BRCA1 / BRCA2 pathogenic variant, MAGE-A1 expression (HLA class I presented), PRAME expression (HLA class I presented)</li>
+</ul>
+<h2 id="measured-but-not-to-decision-resolution">Measured, but not to decision resolution</h2>
+<p><em>A result exists for each of these, but not at the resolution a treatment decision needs. The workup that would close each gap is carried into the <a href="target_validation.md">Target validation paths</a> report.</em></p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Priority</th><th>Biomarker</th><th>What is on file</th><th>Gap</th><th>What would close it</th><th>Next step</th><th>References</th></tr></thead>
+      <tbody>
+    <tr><td><span class="fit-badge fit-strong">essential</span></td><td><strong>HLA class I genotype (4-digit), patient and sibling donor</strong><br><small class="persona-line">Relevant across a tumor subset</small></td><td>profile.json:biomarkers[] HLA-A*02:01, confirmation_status unknown; value records that high-resolution typing was done around 2020 but the allele-level result is a placeholder in the EHR; profile.json:biomarkers[] HLA-A*24:02, confirmation_status unknown; profile.json:targetable_features[] HLA-restricted immunotherapy handles (HA-1/HA-2 TCR-T, WT1, PRAME)</td><td>High-resolution typing was performed for the 2020 sibling transplant, but no allele-level call sits in the record on hand, so nothing can be acted on. Closing this means retrieving the 4-digit A, B and C type from the transplant and donor-registry file, and repeating typing on a fresh blood draw if the archived report cannot be produced quickly. Type the sibling donor in the same pass, since HA-1/HA-2 eligibility depends on the donor as well as the patient.</td><td><strong>HLA class I high-resolution (4-digit) typing, patient and HLA-identical sibling donor</strong><br><small>hla_typing · whole blood (buccal swab acceptable) · 1-2 weeks, faster if the 2020 report can be retrieved</small><br><small class="persona-line"><em>bundles with:</em> HLA typing blood draw: one blood draw carrying high-resolution class I typing, HA-1/HA-2 genotyping and a germline myeloid-predisposition panel</small></td><td>Order now</td><td><a href="https://clinicaltrials.gov/study/NCT06112314">NCT06112314</a></td></tr>
+    <tr><td><span class="fit-badge fit-partial">high</span></td><td><strong>CD123 (IL3RA) antigen density on blasts</strong><br><small class="persona-line">Relevant to this tumor type</small></td><td>profile.json:biomarkers[] CD123, positive by flow cytometry, confirmation_status confirmed, method recorded as qualitative; profile.json:biomarkers[] CD123 decision_resolution explicitly requests quantitative antigen-density flow; profile.json:targetable_features[] CD123-positive blasts</td><td>Positivity is qualitative. Flow called the blasts CD123-positive without reporting antigen density, and density is what the immunotoxin and ADC literature ties to benefit. Closing this means quantitative CD123 by flow reported as antibody-binding capacity or molecules of equivalent soluble fluorochrome, on a current marrow or peripheral-blood specimen, with the percentage of blasts positive stated alongside the density.</td><td><strong>Quantitative CD123 antigen-density flow cytometry (ABC or MESF)</strong><br><small>flow_cytometry · bone marrow aspirate, or peripheral blood given blasts at 58-82 percent · 3-7 days</small><br><small class="persona-line"><em>bundles with:</em> AML surface-antigen flow panel: one run on the next marrow or blood specimen carrying quantitative CD123 and CD33 density plus CLEC12A, CD70, LILRB4, CD37, CD200 and B7-H3</small></td><td>Order now</td><td><em>pivekimab-sunirine-bpdcn-approval-2026</em><br><a href="https://pubmed.ncbi.nlm.nih.gov/41933267">PMID&nbsp;41933267</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2 id="panel-targets-out-of-scope-for-this-tumor">Panel targets out of scope for this tumor</h2>
+<p>??? note "61 of 72 panel targets were screened and set aside"
+    Set aside as having no plausible connection to this patient's tumor type or stated features. Listed for completeness of the audit trail.</p>
+<pre><code>ALPPL2 · ANTXR1 · CA9 · CD19 · CD46 · CDCP1 · CDH17 · CDH3 · CDH6 · CEACAM5 · CLDN18 · CT83 · CTAG1B · DLK1 · DLL3 · EGFR · EGFR (variant III) · ENPP3 · EPCAM · EPHA2 · EPHB4 · ERBB2 · ERBB3 · F3 · FAP · FOLH1 · FOLR1 · FZD7 · GPC3 · GPRC5D · GUCY2C · HAVCR1 · IL13RA2 · ITGA3 · ITGB6 · L1CAM · LGR5 · LY6E · LYPD3 · MAGEA4 · MAGEC2 · MET · MMP14 · MSLN · MUC1 · NECTIN4 · PODXL · PSCA · PTK7 · ROR1 · SEZ6 · SLC34A2 · SLC44A4 · SLITRK6 · SSTR2 · SSX2 · STEAP1 · TACSTD2 · TNFRSF10B · TNFRSF17 · TSPAN8
+</code></pre>
+<p>!!! note "Reading this report"
+    This page answers one question per biomarker: has this patient been tested for it, and was the test at a resolution that can carry a treatment decision. <strong>Not measured</strong> means nothing is on file, which is not the same as a negative result. <strong>Measured, not decision-grade</strong> means a result exists but cannot be acted on as it stands; those gaps are worked into the <a href="target_validation.md">Target validation paths</a> report. <strong>Priority</strong> weighs what is going unassessed against how routine the assay is. Most of these biomarkers will be negative if tested; the case for testing rests on the size of the option that opens if positive, not on how likely a positive is.</p>
+<footer class="libby-footer">Generated 2026-08-12 &middot; Libby &middot; <code>aml-mds-related-rr-tp53-aberrant-hla-pending-x7q2-rerun2</code> &middot; Selected general biomarker report</footer>
+</body></html>

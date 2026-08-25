@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>Libby standard of care options — ulms-highgrade-pulm-mets-er-pr-neg-qqvt</title>
+<style>
+
+      :root { color-scheme: light; }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        max-width: 1200px;
+        margin: 2em auto;
+        padding: 0 1.5em 3em;
+        color: #1A202C;
+        background: #FFFFFF;
+        line-height: 1.55;
+      }
+      h1 { border-bottom: 2px solid #5B3A87; padding-bottom: 0.3em; margin-top: 0; }
+      h2 { color: #5B3A87; margin-top: 1.8em; }
+      h3 { color: #1A202C; margin-top: 1.4em; }
+      a { color: #5B3A87; text-decoration: underline; }
+      code { background: #F4F6F8; padding: 0.1em 0.4em; border-radius: 2px; font-size: 0.92em; }
+      .disclaimer {
+        background: #FFF4E5; border-left: 4px solid #B45309;
+        padding: 0.8em 1em; margin: 1em 0 2em; font-size: 0.95em;
+      }
+      .libby-footer {
+        margin-top: 3em; padding-top: 1em; border-top: 1px solid #E2E8F0;
+        color: #6B6B7F; font-size: 0.85em;
+      }
+    
+/* Trial-table style — vendored from /Users/benjaminvincent/turtle/pfo/conductor/styles/trial-table/
+   Scoped via .trial-table-wrap so it does not leak into surrounding MkDocs page.
+
+   Uses explicit [data-md-color-scheme] selectors to bypass any CSS-variable
+   inheritance issues — the table reads correctly in both default (light) and
+   slate (dark) Material color schemes regardless of cascade quirks. */
+
+.trial-table-wrap caption {
+  caption-side: top;
+  text-align: left;
+  font-weight: 600;
+  padding: 0.4em 0;
+  font-size: 1em;
+}
+.trial-scroll { overflow-x: auto; }
+.trial-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.88em;
+}
+.trial-table thead th {
+  font-weight: 600;
+  text-align: left;
+  padding: 0.5em 0.6em;
+  white-space: nowrap;
+}
+.trial-table tbody td {
+  padding: 0.5em 0.6em;
+  font-variant-numeric: tabular-nums;
+  vertical-align: top;
+}
+.trial-table .num { text-align: right; }
+
+/* Narrow ID-style columns — the entry number in the access-guide summary
+   table and the NCT id in the access-guide trial-pathways table. Keep
+   numbers / NCTs on a single line so "10" doesn't wrap to "1\n0" and
+   "NCT05379985" doesn't break across four lines. min-width is large
+   enough to comfortably fit the widest expected value (3-digit entry
+   number, NCT + 8 digits = 11 chars in a monospace fallback). */
+.trial-table th.col-num,
+.trial-table td.col-num,
+.trial-table th.col-nct,
+.trial-table td.col-nct {
+  white-space: nowrap;
+}
+.trial-table th.col-num,
+.trial-table td.col-num { min-width: 2.4em; }
+.trial-table th.col-nct,
+.trial-table td.col-nct { min-width: 6.5em; }
+
+/* Access-guide column widths — kept generous so the wrapping `.trial-scroll`
+   div engages horizontal scroll before the cell text squeezes into a tall
+   narrow stack. Tuned for the access-guide tables specifically; other
+   trial-tables on the site keep their default auto layout. */
+.trial-table th.col-intervention,
+.trial-table td.col-intervention { min-width: 14em; }
+.trial-table th.col-target,
+.trial-table td.col-target { min-width: 12em; }
+.trial-table th.col-access-status,
+.trial-table td.col-access-status { min-width: 10em; }
+.trial-table th.col-regulatory,
+.trial-table td.col-regulatory { min-width: 22em; }
+.trial-table th.col-first-action,
+.trial-table td.col-first-action { min-width: 22em; }
+
+.trial-table th.col-phase,
+.trial-table td.col-phase { min-width: 3.5em; white-space: nowrap; }
+.trial-table th.col-indication,
+.trial-table td.col-indication { min-width: 18em; }
+.trial-table th.col-status,
+.trial-table td.col-status { min-width: 7em; white-space: nowrap; }
+.trial-table th.col-eligibility,
+.trial-table td.col-eligibility { min-width: 8em; white-space: nowrap; }
+.trial-table th.col-contact,
+.trial-table td.col-contact { min-width: 14em; }
+.trial-table th.col-notes,
+.trial-table td.col-notes { min-width: 24em; }
+.trial-table a {
+  text-decoration: underline;
+  font-weight: 700;
+}
+.trial-table .mark {
+  font-size: 0.75em;
+  vertical-align: super;
+}
+
+/* ---------- Default (light) scheme ---------- */
+[data-md-color-scheme="default"] .trial-table-wrap { color: #1A202C; }
+[data-md-color-scheme="default"] .trial-table thead th {
+  background: #F4F6F8;
+  color: #1A202C;
+  border-top: 2px solid #1A202C;
+  border-bottom: 1px solid #1A202C;
+}
+[data-md-color-scheme="default"] .trial-table tbody td {
+  color: #1A202C;
+  border-bottom: 1px solid #E2E8F0;
+}
+[data-md-color-scheme="default"] .trial-table tbody tr:last-child td {
+  border-bottom: 2px solid #1A202C;
+}
+[data-md-color-scheme="default"] .trial-table a { color: #1A202C; }
+[data-md-color-scheme="default"] .trial-table-wrap .notes {
+  font-size: 0.85em;
+  color: #4A5568;
+  margin-top: 0.6em;
+}
+
+/* ---------- Slate (dark) scheme ---------- */
+[data-md-color-scheme="slate"] .trial-table-wrap { color: #E2E8F0; }
+[data-md-color-scheme="slate"] .trial-table thead th {
+  background: #2D3344;
+  color: #F1F5F9;
+  border-top: 2px solid #94A3B8;
+  border-bottom: 1px solid #94A3B8;
+}
+[data-md-color-scheme="slate"] .trial-table tbody td {
+  color: #E2E8F0;
+  border-bottom: 1px solid #3A4159;
+}
+[data-md-color-scheme="slate"] .trial-table tbody tr:last-child td {
+  border-bottom: 2px solid #94A3B8;
+}
+[data-md-color-scheme="slate"] .trial-table a {
+  color: #93C5FD;
+}
+[data-md-color-scheme="slate"] .trial-table-wrap .notes {
+  font-size: 0.85em;
+  color: #94A3B8;
+  margin-top: 0.6em;
+}
+
+/* Libby-specific styling: case-fit / toxicity badges, agreement matrix, persona pills. */
+
+/* Bold links across all rendered content. */
+.md-typeset a {
+  font-weight: 700;
+}
+
+/* Case-fit badges (in trials.md). */
+.fit-badge {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.4em;
+  font-size: 0.78em;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+.fit-strong  { background: #E6F5EA; color: #14532D; border-color: #BBE2C7; }
+.fit-partial { background: #FFF7E0; color: #5A4500; border-color: #F1DD9A; }
+.fit-weak    { background: #FBE9E7; color: #6F2E1A; border-color: #ECC4BB; }
+.fit-none    { background: #F1F3F5; color: #4A5568; border-color: #E2E8F0; }
+
+/* Tumor-type-relation badges (trial table). */
+.rel-badge {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.4em;
+  font-size: 0.78em;
+  font-weight: 600;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.rel-indication  { background: #DDF1EE; color: #134E48; border-color: #B0DBD3; }
+.rel-basket      { background: #FFE9D6; color: #6F3A0F; border-color: #F0CFAE; }
+.rel-same-drug   { background: #DFEBFB; color: #1B3A6B; border-color: #B5CDEE; }
+.rel-cross-tumor { background: #F1E5FF; color: #441E72; border-color: #D4BBF2; }
+.rel-other       { background: #F1F3F5; color: #4A5568; border-color: #E2E8F0; }
+
+/* Risk-of-bias badges (evidence table). */
+.rob-badge {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.4em;
+  font-size: 0.78em;
+  font-weight: 600;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.rob-low  { background: #E6F5EA; color: #14532D; border-color: #BBE2C7; }
+.rob-med  { background: #FFF7E0; color: #5A4500; border-color: #F1DD9A; }
+.rob-high { background: #FBE9E7; color: #6F2E1A; border-color: #ECC4BB; }
+
+/* Toxicity flag pills. */
+.tox-flag {
+  display: inline-block;
+  padding: 0.05em 0.45em;
+  border-radius: 999px;
+  font-size: 0.75em;
+  background: #FBE9E7;
+  color: #6F2E1A;
+  border: 1px solid #ECC4BB;
+  margin-right: 0.25em;
+}
+
+/* Persona badges (board.md, recommendations.md). */
+.persona {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.35em;
+  font-size: 0.78em;
+  font-weight: 600;
+  margin-right: 0.25em;
+  border: 1px solid transparent;
+}
+.persona-risktaker    { background: #FFE9D6; color: #6F3A0F; border-color: #F0CFAE; }
+.persona-conservative { background: #DFEBFB; color: #1B3A6B; border-color: #B5CDEE; }
+.persona-critic       { background: #F1E5FF; color: #441E72; border-color: #D4BBF2; }
+.persona-concensusite { background: #DDF1EE; color: #134E48; border-color: #B0DBD3; }
+.persona-advocate     { background: #FFE5EE; color: #6E1638; border-color: #F0BBCB; }
+
+/* Agreement-level decorations. */
+.agree-endorse   { color: #14532D; font-weight: 600; }
+.agree-qualified { color: #5A4500; font-weight: 600; }
+.agree-dissent   { color: #6F2E1A; font-weight: 600; }
+.agree-veto      { color: #6F2E1A; font-weight: 700; text-decoration: underline; }
+
+/* Biomarker-conditional flag (inline in Intervention cell when scenario ends with :positive). */
+.scenario-conditional {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5A4500;
+  background: #FFF7E0;
+  border: 1px solid #F1DD9A;
+  border-radius: 0.35em;
+  padding: 0.05em 0.45em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+
+/* Counter-productive MoA descriptor (parenthetical text after the bold severity). */
+.cpm-desc {
+  font-size: 0.92em;
+  color: #4A5568;
+}
+
+/* Persona pill row inside the Intervention cell on the ranked-prioritization table. */
+.persona-line {
+  display: inline-block;
+  margin-top: 0.15em;
+  font-size: 0.78em;
+  color: #4A5568;
+}
+.persona-line + .persona-line {
+  margin-left: 0.6em;
+}
+
+/* Recommendation table marks. */
+.split-glyph { font-weight: 700; color: #5A4500; }
+/* not_recommended rows: mute, never strike through. The strikethrough used to
+   sit on the whole <tr>, so it struck the rationale columns too — and on a
+   rejected option the rationale is the most useful text in the row, since it
+   is what lets a reader stop considering it. Muting carries the de-emphasis;
+   the badge states the verdict in words, so the signal survives monochrome
+   printing and screen readers rather than resting on typography alone. */
+.not-recommended {
+  color: #4A5568;
+}
+.badge-not-recommended {
+  background: #FDECEA;
+  color: #8C2F22;
+  border-color: #F5C6C0;
+}
+
+/* surfaced_reason flag pills (Experimental "Also considered" table). Neutral,
+   muted pills — these rows are informational, not scored. */
+.flag-badge {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 999px;
+  font-size: 0.75em;
+  font-weight: 600;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.flag-unavailable    { background: #ECEFF1; color: #37474F; border-color: #CFD8DC; }
+.flag-consolidated   { background: #E8EAF6; color: #303F9F; border-color: #C5CAE9; }
+.flag-thin           { background: #FFF8E1; color: #7A5B00; border-color: #F0E1B0; }
+.flag-not-enrollable { background: #F3E5F5; color: #6A1B7A; border-color: #E1BEE7; }
+
+/* Disclaimer banner — applied to every case page via admonition. */
+.md-typeset .admonition.disclaimer {
+  border-color: #B71C1C;
+}
+.md-typeset .admonition.disclaimer > .admonition-title {
+  background-color: rgba(183, 28, 28, 0.08);
+  color: #B71C1C;
+}
+
+/* Agreement matrix heatmap (board.md). Pastel cells carry explicit
+   foreground+background that remain legible regardless of scheme; matrix
+   chrome (header, borders, no-opinion cells) uses scheme-aware selectors. */
+.agreement-matrix {
+  border-collapse: collapse;
+  font-size: 0.85em;
+}
+.agreement-matrix th, .agreement-matrix td {
+  padding: 0.35em 0.5em;
+  text-align: center;
+}
+.agreement-matrix th { font-weight: 600; }
+
+/* Pastel cell colors — same in both schemes (high contrast on their own bg). */
+.agreement-matrix td.cell-endorse   { background: #C8E6D0; color: #14532D; }
+.agreement-matrix td.cell-qualified { background: #FCEEC2; color: #5A4500; }
+.agreement-matrix td.cell-dissent   { background: #F4C7BE; color: #6F2E1A; }
+.agreement-matrix td.cell-veto      { background: #E8A399; color: #4A1408; font-weight: 700; }
+
+/* Default (light) scheme chrome. */
+[data-md-color-scheme="default"] .agreement-matrix th,
+[data-md-color-scheme="default"] .agreement-matrix td {
+  border: 1px solid #E2E8F0;
+  color: #1A202C;
+}
+[data-md-color-scheme="default"] .agreement-matrix th {
+  background: #F4F6F8;
+  color: #1A202C;
+}
+[data-md-color-scheme="default"] .agreement-matrix td.cell-absent {
+  background: #F1F3F5;
+  color: #94A3B8;
+}
+
+/* Slate (dark) scheme chrome. */
+[data-md-color-scheme="slate"] .agreement-matrix th,
+[data-md-color-scheme="slate"] .agreement-matrix td {
+  border: 1px solid #3A4159;
+  color: #E2E8F0;
+}
+[data-md-color-scheme="slate"] .agreement-matrix th {
+  background: #2D3344;
+  color: #F1F5F9;
+}
+[data-md-color-scheme="slate"] .agreement-matrix td.cell-absent {
+  background: #232838;
+  color: #64748B;
+}
+
+</style>
+</head>
+<body data-md-color-scheme="default">
+<div class="disclaimer">
+<strong>Decision support, not medical advice.</strong> Libby is an experimental 
+multi-agent decision-support tool. The information on this page has not been 
+reviewed by a clinician treating this patient. Information ages — confirm details 
+directly with the relevant sources before relying on them.
+</div>
+<h1 id="standard-of-care-options-ulms-highgrade-pulm-mets-er-pr-neg-qqvt">Standard of care options — <code>ulms-highgrade-pulm-mets-er-pr-neg-qqvt</code></h1>
+<p><em>The treatment strategies that are standard for this patient's situation, meaning a regulator approved them for a population that includes this patient or a major academic or clinical-society guideline carries them. This report runs alongside the targetable-feature ranking rather than in place of it, and it does not narrow what that ranking surfaces.</em></p>
+<h2 id="downloads">Downloads</h2>
+<ul>
+<li><a href="ulms-highgrade-pulm-mets-er-pr-neg-qqvt-standard-of-care.html">Standard of care options (offline HTML)</a> — the same standard-of-care assessment, self-contained HTML that opens offline</li>
+<li><a href="ulms-highgrade-pulm-mets-er-pr-neg-qqvt-standard-of-care.pdf">Standard of care options (PDF)</a> — print-friendly, grouped by next step</li>
+</ul>
+<p><em>17 standard options assessed: 8 to consider now, 2 behind an open gate, 0 already received.</em></p>
+<p>Seventeen standard-of-care options were assessed for this systemic-therapy-naive metastatic uterine leiomyosarcoma; eight are actionable now. The guideline-preferred systemic choice at this decision point is single-agent doxorubicin, graded I,A by BSG 2025 and on the US label for metastatic soft tissue sarcoma. The planned doxorubicin plus trabectedin combination outperformed it in LMS-04 but is off-label first line and ranked on the Experimental table, so both regimens, plus gemcitabine and docetaxel as the fallback if cardiac or pulmonary screening fails, are competing for one chemotherapy-naive slot. The other consider-now rows are the supportive scaffolding an anthracycline demands and this record lacks: baseline echocardiogram with cumulative-dose planning, primary G-CSF prophylaxis against a 28% febrile neutropenia rate, fertility and ovarian-function counselling whose window closes at cycle 1, early palliative care, and tumour NGS with germline TP53 testing.</p>
+<p>Nothing standard has been spent yet. The 2024 hysterectomy was surgery for a presumed fibroid, not therapy, so every systemic line remains available; the sequencing risk runs the other way, since trabectedin maintenance would spend the on-label second-line trabectedin slot, and dacarbazine would close a PARP-trial door.</p>
+<p>Two rows sit behind gates: the pembrolizumab and TRK-inhibitor tumour-agnostic approvals, untested rather than negative, both closed or opened by the NGS panel already ordered. Lung-directed consolidation waits on the 2024 operative report and on whether induction converts the anatomy. Later lines are honestly thin: eribulin's LMS subgroup is null and pazopanib's uterine evidence is a 44-patient retrospective pooling.</p>
+<p>This report adds the standard options alongside the case's targeted ranking; it does not narrow or reorder the options ranked elsewhere on this page.</p>
+<h2 id="options-to-consider-now">Options to consider now</h2>
+<p><em>Standard options this patient is eligible for, with an endorsement that covers their situation, and no unresolved gate in front of them.</em></p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Priority</th><th>Option</th><th>What makes it standard</th><th>Fit to this patient</th><th>Key evidence</th><th>Toxicities that would change the decision</th><th>Rationale</th><th>References</th></tr></thead>
+      <tbody>
+    <tr><td><span class="fit-badge fit-strong">essential</span></td><td><strong>Doxorubicin, single agent</strong><br><small class="persona-line">Systemic chemotherapy · First line · life-prolonging intent</small><br><small><em>also called:</em> Adriamycin</small></td><td><div><strong>other_society</strong> British Sarcoma Group (BSG): I,A, &#x27;Standard first-line treatment is single-agent doxorubicin&#x27; <small class="persona-line">(covers this patient · BSG UK guidelines 2025 (Br J Cancer))</small><br><small>Advanced or metastatic soft tissue sarcoma, first-line systemic therapy.</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/38734790">PMID&nbsp;38734790</a></small></div><div><strong>FDA</strong> on-label approval <small class="persona-line">(covers this patient · DailyMed label accessed 2026-08-12)</small><br><small>Doxorubicin is indicated for the treatment of metastatic soft tissue sarcoma (label section 1.2, among other cancers).</small><br><small><em>Adriamycin (doxorubicin HCl) prescribing information, section 1.2</em></small></div><div><small>verified 2026-08-12</small></div></td><td><strong>Conditionally eligible</strong><br><small>She is systemic-therapy naive, so the first-line slot is open, but no baseline echocardiogram or LVEF exists before an anthracycline, no laboratory values were supplied at intake, and the ECOG of 1 is an intake assumption never documented by a clinician.</small><br><small class="persona-line">blocker: No baseline echocardiogram or LVEF on file before an anthracycline</small><br><small class="persona-line">blocker: ECOG 1 is an intake assumption, not clinician-documented</small><br><small class="persona-line">blocker: No laboratory values of any kind were supplied at intake</small></td><td><div><strong>LMS-04 doxorubicin-alone arm (first-line LMS benchmark)</strong> <small class="persona-line">(randomized phase 3 comparator arm · n=150)</small><br><small>median PFS 6.2 months and median OS 24 months in the doxorubicin-alone arm; grade 3-4 neutropenia 13%, febrile neutropenia 9%</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/35835135">PMID&nbsp;35835135</a> · <a href="https://clinicaltrials.gov/study/NCT02997358">NCT02997358</a></small></div><div><strong>GeDDiS doxorubicin arm</strong> <small class="persona-line">(randomized phase 3 comparator arm · n=257)</small><br><small>46.3% alive and progression-free at 24 weeks; median PFS 23.3 weeks on doxorubicin</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/28882536">PMID&nbsp;28882536</a></small></div></td><td>Cumulative, dose-capped cardiotoxicity; at her age the lifetime anthracycline ledger matters as much as this treatment course; Myelosuppression that must be read against altitude-shifted baseline blood counts at 8,500 ft; Febrile neutropenia 9% as a single agent in LMS-04, well below the combination&#x27;s 28%</td><td>Single-agent doxorubicin holds the strongest guideline position in this disease: BSG 2025 grades it I,A as standard first-line treatment, and metastatic soft tissue sarcoma is on the US label. It occupies the same first-line slot as the planned doxorubicin plus trabectedin combination, which beat it on PFS and OS in LMS-04 but remains off-label at this line and is ranked on the Experimental table. Whichever is chosen, the missing baseline echocardiogram is the true gate on cycle 1.</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/38734790">PMID&nbsp;38734790</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/35835135">PMID&nbsp;35835135</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/39231341">PMID&nbsp;39231341</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/28882536">PMID&nbsp;28882536</a><br><a href="https://clinicaltrials.gov/study/NCT02997358">NCT02997358</a></td></tr>
+    <tr><td><span class="fit-badge fit-strong">essential</span></td><td><strong>Baseline echocardiogram, cardiac surveillance and cumulative anthracycline planning</strong><br><small class="persona-line">Supportive care · Not line-indexed · risk reduction</small><br><small><em>also called:</em> Cardio-oncology workup; LVEF assessment with dexrazoxane conversation</small></td><td><div><strong>ASCO</strong> ASCO clinical practice guideline recommendation <small class="persona-line">(covers this patient · ASCO 2017 (J Clin Oncol))</small><br><small>Prevention and monitoring of cardiac dysfunction in adults receiving potentially cardiotoxic therapy, including anthracyclines: discuss risk before beginning therapy, with prevention and screening strategies during treatment for higher-risk patients.</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/27918725">PMID&nbsp;27918725</a></small></div><div><strong>other_society</strong> 2022 ESC cardio-oncology guideline (developed with EHA, ESTRO and IC-OS) <small class="persona-line">(covers this patient · ESC 2022 (Eur Heart J))</small><br><small>Baseline cardiovascular risk assessment including echocardiography before anthracycline chemotherapy, with surveillance during and after treatment.</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/36017568">PMID&nbsp;36017568</a></small></div><div><small>verified 2026-08-12</small></div></td><td><strong>Eligible</strong><br><small>Nothing in the profile blocks an echocardiogram; the problem is that it has not been done and induction is imminent.</small></td><td>—</td><td>—</td><td>A baseline echocardiogram before an anthracycline is standard care under both the ASCO 2017 and ESC 2022 cardio-oncology guidelines, and it was an eligibility criterion of the trial her planned regimen comes from; none exists in her chart. At her age the cumulative doxorubicin dose is a lifetime ledger, so the dose-cap and dexrazoxane conversation belongs before cycle 1, noting honestly that the dexrazoxane label population (metastatic breast cancer after 300 mg/m2 of doxorubicin) is not hers. A pathogenic germline TP53 result would re-open the whole genotoxic plan.</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/27918725">PMID&nbsp;27918725</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/36017568">PMID&nbsp;36017568</a><br><a href="https://clinicaltrials.gov/study/NCT02997358">NCT02997358</a></td></tr>
+    <tr><td><span class="fit-badge fit-strong">essential</span></td><td><strong>Fertility and ovarian-function counselling before gonadotoxic chemotherapy</strong><br><small class="persona-line">Supportive care · Not line-indexed · risk reduction</small><br><small><em>also called:</em> Oncofertility referral</small></td><td><div><strong>ASCO</strong> ASCO clinical practice guideline recommendation <small class="persona-line">(covers this patient · ASCO 2018 update (J Clin Oncol))</small><br><small>Providers should initiate the discussion of possible infertility with patients treated during their reproductive years as early as possible before treatment starts; oocyte cryopreservation is standard practice; evidence for GnRH-agonist ovarian suppression is conflicting and it should not replace proven methods.</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/29620997">PMID&nbsp;29620997</a></small></div><div><small>verified 2026-08-12</small></div></td><td><strong>Eligible</strong><br><small>She is in her thirties with presumably retained ovaries after a hysterectomy done for a presumed fibroid; the profile records no counselling and no reproductive-endocrinology referral.</small></td><td>—</td><td>—</td><td>She is 30-39 and days from chemotherapy that can end ovarian function, and the record shows no one has raised it; hysterectomy settled childbearing anatomy but not oocytes, hormones or menopause timing. ASCO places this discussion before therapy starts, as early as possible, because the widest option set exists only before cycle 1. What ovarian function and the hormonal aftermath mean to her is one of the four questions the advocate flagged as never asked.</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/29620997">PMID&nbsp;29620997</a></td></tr>
+    <tr><td><span class="fit-badge fit-strong">essential</span></td><td><strong>Primary G-CSF prophylaxis through induction chemotherapy</strong><br><small class="persona-line">Supportive care · Not line-indexed · risk reduction</small><br><small><em>also called:</em> Pegfilgrastim; Filgrastim</small></td><td><div><strong>ASCO</strong> ASCO guideline recommendation <small class="persona-line">(covers this patient · ASCO 2015 WBC growth factors update)</small><br><small>Prophylactic use of colony-stimulating factors is warranted when the risk of febrile neutropenia is approximately 20% or higher and no equally effective and safe regimen that does not require CSFs is available.</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/26169616">PMID&nbsp;26169616</a></small></div><div><small>verified 2026-08-12</small></div></td><td><strong>Eligible</strong><br><small>No contraindication in the profile; the planned combination regimen&#x27;s 28% febrile neutropenia rate puts her above the ASCO prophylaxis threshold from cycle 1.</small></td><td><div><strong>LMS-04 combination-arm cytopenia rates</strong> <small class="persona-line">(randomized phase 3 safety read · n=150)</small><br><small>grade 3-4 neutropenia 80% and febrile neutropenia 28% in the doxorubicin plus trabectedin arm, vs 13% and 9% with doxorubicin alone</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/35835135">PMID&nbsp;35835135</a> · <a href="https://clinicaltrials.gov/study/NCT02997358">NCT02997358</a></small></div></td><td>Bone pain is the common G-CSF toxicity; the trade is against a 28% febrile neutropenia rate</td><td>The planned induction produced febrile neutropenia in 28% of trial patients, above the roughly 20% threshold at which ASCO recommends primary G-CSF prophylaxis, so growth-factor support belongs in the cycle 1 orders rather than being discovered at cycle 2. Neutropenic-fever counselling also needs the altitude context: baseline counts and oximetry at 8,500 ft shift the reference ranges the fever thresholds are read against.</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/26169616">PMID&nbsp;26169616</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/35835135">PMID&nbsp;35835135</a></td></tr>
+    <tr><td><span class="fit-badge fit-strong">essential</span></td><td><strong>Tumour NGS with germline TP53 testing before genotoxic chemotherapy</strong><br><small class="persona-line">Other · Not line-indexed · risk reduction</small><br><small><em>also called:</em> Comprehensive genomic profiling; Somatic and germline panel</small></td><td><div><strong>ESMO</strong> ESMO Precision Medicine Working Group recommendation, 2024 update <small class="persona-line">(covers this patient · ESMO PMWG 2024 (Ann Oncol))</small><br><small>Tumour NGS recommendations expanded to encompass rare tumours including sarcoma, and tumour NGS is recommended to detect tumour-agnostic alterations in metastatic cancers where access to matched therapies is available.</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/38834388">PMID&nbsp;38834388</a></small></div><div><strong>other_society</strong> ERN GENTURIS guideline recommendation <small class="persona-line">(covers this patient · ERN GENTURIS 2020 (Eur J Hum Genet))</small><br><small>Li-Fraumeni and heritable TP53-related cancer syndromes: soft-tissue sarcoma sits in the tumour spectrum, and radiotherapy and conventional genotoxic chemotherapy contribute to subsequent primary tumours in carriers, so germline status is best established before such therapy.</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/32457520">PMID&nbsp;32457520</a></small></div><div><small>verified 2026-08-12</small></div></td><td><strong>Eligible</strong><br><small>The 2024 resection block exists and no result is pending; only the consent conversation and a records and block-release request stand between her and the panel.</small></td><td>—</td><td>—</td><td>Tumour NGS in sarcoma moved from clinician preference to guideline-backed workup in the ESMO 2024 precision-medicine update, and ERN GENTURIS puts the germline TP53 answer before genotoxic chemotherapy because uLMS sits in the Li-Fraumeni spectrum. On this table the panel is the key that opens or closes both tumour-agnostic approval doors. The germline draw is a consent conversation with consequences for her relatives, and whether she wants that information has not been asked.</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/38834388">PMID&nbsp;38834388</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/32457520">PMID&nbsp;32457520</a></td></tr>
+    <tr><td><span class="fit-badge fit-partial">high</span></td><td><strong>Gemcitabine + docetaxel</strong><br><small class="persona-line">Systemic chemotherapy · First line · life-prolonging intent</small><br><small><em>also called:</em> Gem-doce; GemTax</small></td><td><div><strong>other_society</strong> British Sarcoma Group (BSG): II,B <small class="persona-line">(covers this patient · BSG UK guidelines 2025 (Br J Cancer))</small><br><small>First-line alternative to doxorubicin across sarcoma subtypes: GeDDiS showed the regimen non-inferior to doxorubicin but more toxic; activity demonstrated in leiomyosarcoma and undifferentiated pleomorphic sarcoma.</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/38734790">PMID&nbsp;38734790</a></small></div><div><small>verified 2026-08-12</small></div></td><td><strong>Conditionally eligible</strong><br><small>Chemotherapy-naive, so the slot is open; docetaxel needs a hepatic panel that does not exist yet, and pneumonitis surveillance needs the pulmonary baseline and altitude-adjusted oximetry the rank-1 workup orders.</small><br><small class="persona-line">blocker: No hepatic panel on file (docetaxel dosing)</small><br><small class="persona-line">blocker: No pulmonary function tests or oximetry baseline at her 8,500 ft residence for pneumonitis surveillance</small><br><small class="persona-line">blocker: ECOG 1 is an intake assumption, not clinician-documented</small></td><td><div><strong>GeDDiS</strong> <small class="persona-line">(randomized phase 3, first line, all STS subtypes · n=257)</small><br><small>46.4% vs 46.3% alive and progression-free at 24 weeks; PFS HR 1.28 (95% CI 0.99-1.65) not favouring gemcitabine plus docetaxel; more toxic than doxorubicin</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/28882536">PMID&nbsp;28882536</a></small></div><div><strong>GOG 087L</strong> <small class="persona-line">(single-arm phase 2, first-line metastatic uLMS · n=42)</small><br><small>ORR 35.8% (95% CI 23.5-49.6); median PFS 4.4 months</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/18534250">PMID&nbsp;18534250</a></small></div></td><td>Both drugs carry pneumonitis risk, which would be hard to read against bilateral infiltrative lung disease and altitude-shifted oximetry; Docetaxel fluid retention, neuropathy and myelosuppression; GeDDiS logged more toxicity than doxorubicin</td><td>The main first-line alternative when an anthracycline is unwise: BSG 2025 carries it at II,B as non-inferior to doxorubicin though more toxic, and it has dedicated first-line uLMS data (ORR 35.8% in GOG 087L). The PI&#x27;s synthesis names it the fallback if the cardiac or pulmonary baseline disqualifies doxorubicin, and that is exactly where it sits on this table. Its pneumonitis liability deserves naming in advance against her lungs and her altitude.</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/38734790">PMID&nbsp;38734790</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/28882536">PMID&nbsp;28882536</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/18534250">PMID&nbsp;18534250</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/12065559">PMID&nbsp;12065559</a></td></tr>
+    <tr><td><span class="fit-badge fit-partial">high</span></td><td><strong>Early specialist palliative care alongside active treatment</strong><br><small class="persona-line">Supportive care · Not line-indexed · symptom palliation</small><br><small><em>also called:</em> Concurrent palliative care; Supportive care referral</small></td><td><div><strong>ASCO</strong> ASCO guideline recommendation <small class="persona-line">(covers this patient · ASCO 2024 update (J Clin Oncol))</small><br><small>Patients with advanced solid tumours should be referred to specialised interdisciplinary palliative care teams beginning early in the disease course, alongside active treatment of their cancer.</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/38748941">PMID&nbsp;38748941</a></small></div><div><strong>other_society</strong> British Sarcoma Group (BSG) recommendation <small class="persona-line">(covers this patient · BSG UK guidelines 2025 (Br J Cancer))</small><br><small>Supportive and palliative care should always be considered in advanced disease, with early referral to specialist palliative care services.</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/38734790">PMID&nbsp;38734790</a></small></div><div><small>verified 2026-08-12</small></div></td><td><strong>Eligible</strong><br><small>Metastatic disease with cough and dyspnea; nothing blocks a referral, and none is recorded.</small></td><td>—</td><td>—</td><td>Concurrent specialist palliative care from early in metastatic disease is an ASCO recommendation rather than a late-stage handoff, and BSG 2025 says the same for advanced sarcoma. In this case it also hosts the conversation nobody has had: goals of care were never discussed at intake and every preference on file is an assumed default. A symptom-control referral is a natural place for the four unasked questions to finally get asked.</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/38748941">PMID&nbsp;38748941</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/38734790">PMID&nbsp;38734790</a></td></tr>
+    <tr><td><span class="fit-badge fit-weak">medium</span></td><td><strong>Doxorubicin + ifosfamide</strong><br><small class="persona-line">Systemic chemotherapy · First line · disease-control intent</small><br><small><em>also called:</em> AI regimen</small></td><td><div><strong>other_society</strong> British Sarcoma Group (BSG): II,B <small class="persona-line">(covers this patient · BSG UK guidelines 2025 (Br J Cancer))</small><br><small>First-line advanced STS: the combination has not been shown to improve survival over single-agent doxorubicin; response rates and PFS are higher at greater toxicity, and it may be considered in individual patients where a response would improve symptoms.</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/38734790">PMID&nbsp;38734790</a></small></div><div><small>verified 2026-08-12</small></div></td><td><strong>Conditionally eligible</strong><br><small>Her age band fits the EORTC 62012 population (18-60, PS 0-1), but the missing baselines bite harder here: ifosfamide needs the renal panel that does not exist, on top of the absent echocardiogram.</small><br><small class="persona-line">blocker: No renal panel on file (ifosfamide nephrotoxicity)</small><br><small class="persona-line">blocker: No baseline echocardiogram before an anthracycline</small><br><small class="persona-line">blocker: ECOG 1 is an intake assumption, not clinician-documented</small></td><td><div><strong>EORTC 62012</strong> <small class="persona-line">(randomized phase 3, OS primary endpoint · n=455)</small><br><small>median OS 14.3 vs 12.8 months, HR 0.83 (95.5% CI 0.67-1.03, p=0.076); higher ORR and PFS with substantially more toxicity</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/24618336">PMID&nbsp;24618336</a></small></div></td><td>Febrile neutropenia 46% vs 13% with doxorubicin alone in EORTC 62012; Ifosfamide encephalopathy and nephrotoxicity; Shares the cumulative anthracycline ledger with every other doxorubicin-containing option</td><td>Carried at II,B for the situation where tumour shrinkage itself is the goal, since the combination buys response rate and PFS but not survival (EORTC 62012 OS HR 0.83 with the upper bound crossing 1). Two case-specific facts keep it at a completeness listing: leiomyosarcoma is among the less ifosfamide-sensitive histologies, and her symptomatic lung disease already has a response-seeking plan in the ranked induction.</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/24618336">PMID&nbsp;24618336</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/38734790">PMID&nbsp;38734790</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2 id="options-at-the-next-decision-point">Options at the next decision point</h2>
+<p><em>Standard for a line this patient has not reached yet, or for a disease state that has not arrived. Listed now so the sequence is visible in advance.</em></p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Priority</th><th>Option</th><th>What makes it standard</th><th>Fit to this patient</th><th>Key evidence</th><th>Toxicities that would change the decision</th><th>Rationale</th><th>References</th></tr></thead>
+      <tbody>
+    <tr><td><span class="fit-badge fit-partial">high</span></td><td><strong>Pazopanib</strong><br><small class="persona-line">Targeted therapy · Second line · disease-control intent</small><br><small><em>also called:</em> Votrient</small></td><td><div><strong>FDA</strong> on-label approval <small class="persona-line">(partial population match · FDA approval 2012-04; DailyMed label accessed 2026-08-12)</small><br><small>Adults with advanced soft tissue sarcoma who have received prior chemotherapy; efficacy not demonstrated in adipocytic STS or GIST.</small><br><small><em>Votrient (pazopanib) prescribing information, indication 1.2</em></small></div><div><strong>other_society</strong> British Sarcoma Group (BSG): II,B <small class="persona-line">(partial population match · BSG UK guidelines 2025 (Br J Cancer))</small><br><small>Metastatic STS (not liposarcoma) after prior chemotherapy, on a 3-month progression-free survival improvement over placebo.</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/38734790">PMID&nbsp;38734790</a></small></div><div><small>verified 2026-08-12</small></div></td><td><strong>Conditionally eligible</strong><br><small>Label and trial evidence both require prior chemotherapy, and she is systemic-therapy naive until induction runs; the population match becomes exact at first progression.</small><br><small class="persona-line">blocker: Label requires prior chemotherapy; she has had no systemic therapy yet</small></td><td><div><strong>PALETTE</strong> <small class="persona-line">(randomized double-blind placebo-controlled phase 3 · n=369)</small><br><small>median PFS 4.6 vs 1.6 months, HR 0.31 (95% CI 0.24-0.40); overall survival not significantly improved</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/22595799">PMID&nbsp;22595799</a></small></div><div><strong>EORTC uterine sarcoma retrospective (Benson)</strong> <small class="persona-line">(retrospective pooling of two prospective EORTC trials · n=44)</small><br><small>ORR 11% (95% CI 3.8-24.6); median PFS 3.0 months</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/27012429">PMID&nbsp;27012429</a></small></div></td><td>Hypertension and transaminitis with scheduled liver-function monitoring; Pneumothorax has been reported in sarcoma patients with lung metastases; VEGFR-class wound-healing impairment would interact with any later lung-directed surgery</td><td>The on-label second-line anchor: approved for advanced STS after prior chemotherapy on PALETTE&#x27;s PFS effect (HR 0.31), carried by BSG 2025 at II,B. Its uterine-LMS-specific evidence is thinner than the label reads: a retrospective pooling of 44 heavily pretreated uterine sarcoma patients with ORR 11% and median PFS 3.0 months. It becomes live at first progression, where it shares the slot with the HRD-conditional PARP branch and the phase 1 doors the Experimental table ranks.</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/22595799">PMID&nbsp;22595799</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/27012429">PMID&nbsp;27012429</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/38734790">PMID&nbsp;38734790</a></td></tr>
+    <tr><td><span class="fit-badge fit-weak">medium</span></td><td><strong>Trabectedin monotherapy</strong><br><small class="persona-line">Systemic chemotherapy · Second line · disease-control intent</small><br><small><em>also called:</em> Yondelis</small></td><td><div><strong>FDA</strong> on-label approval <small class="persona-line">(partial population match · FDA approval 2015-10; DailyMed label accessed 2026-08-12)</small><br><small>Adults with unresectable or metastatic liposarcoma or leiomyosarcoma who received a prior anthracycline-containing regimen.</small><br><small><em>Yondelis (trabectedin) prescribing information, section 1</em></small></div><div><strong>other_society</strong> British Sarcoma Group (BSG): licensed second-line agent <small class="persona-line">(partial population match · BSG UK guidelines 2025 (Br J Cancer))</small><br><small>Licensed as second-line treatment for all soft tissue sarcomas, with activity in leiomyosarcoma and liposarcoma; NICE approves continuation until disease progression.</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/38734790">PMID&nbsp;38734790</a></small></div><div><small>verified 2026-08-12</small></div></td><td><strong>Conditionally eligible</strong><br><small>The label requires a prior anthracycline she has not yet had; more importantly, the planned first line already contains trabectedin through maintenance, so at progression the drug would usually count as spent.</small><br><small class="persona-line">blocker: Label requires a prior anthracycline-containing regimen; she is systemic-therapy naive</small><br><small class="persona-line">blocker: The planned LMS-04 first line delivers trabectedin to progression through its maintenance phase, which would close this on-label second-line use</small></td><td><div><strong>ET743-SAR-3007 (trabectedin vs dacarbazine)</strong> <small class="persona-line">(randomized phase 3 · n=518)</small><br><small>median PFS 4.2 vs 1.5 months, HR 0.55 (95% CI 0.44-0.70); grade 3+ ALT elevation 25%, treatment-related deaths 2.1%</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/26371143">PMID&nbsp;26371143</a></small></div><div><strong>uLMS subset of the same trial</strong> <small class="persona-line">(subset analysis · n=232)</small><br><small>PFS HR 0.57, mirroring the parent trial</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/28651804">PMID&nbsp;28651804</a></small></div></td><td>Grade 3+ transaminitis in a quarter of patients; hepatic panel and CK stay on a recurring schedule; Rhabdomyolysis 1.2% and treatment-related mortality 2.1% in the registration trial</td><td>On label this is the classic second-line drug for uLMS after an anthracycline, with a randomized PFS advantage over dacarbazine (HR 0.55) that held in the uterine subset. Her case bends the sequence: the planned first line already delivers trabectedin to progression through its maintenance phase, which would spend this slot before she reaches it. If the first line ends up being doxorubicin alone instead, this row returns to the table intact.</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/26371143">PMID&nbsp;26371143</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/28651804">PMID&nbsp;28651804</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/38734790">PMID&nbsp;38734790</a></td></tr>
+    <tr><td><span class="fit-badge fit-weak">medium</span></td><td><strong>Gemcitabine + dacarbazine (or dacarbazine alone)</strong><br><small class="persona-line">Systemic chemotherapy · Third line or later · disease-control intent</small><br><small><em>also called:</em> Gem-DTIC</small></td><td><div><strong>other_society</strong> British Sarcoma Group (BSG): II,B <small class="persona-line">(covers this patient · BSG UK guidelines 2025 (Br J Cancer))</small><br><small>Gemcitabine plus dacarbazine as an alternative later-line regimen in advanced STS, generally well tolerated.</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/38734790">PMID&nbsp;38734790</a></small></div><div><small>verified 2026-08-12</small></div></td><td><strong>Likely eligible</strong><br><small>No case-specific block once earlier lines are spent; no organ-function labs exist yet, as everywhere in this record.</small></td><td><div><strong>Spanish sarcoma group randomized phase 2 (Garcia-Del-Muro)</strong> <small class="persona-line">(randomized phase 2 vs dacarbazine alone · n=113)</small><br><small>median PFS 4.2 vs 2.0 months (HR 0.58, 95% CI 0.39-0.86); median OS 16.8 vs 8.2 months (HR 0.56, 95% CI 0.36-0.90)</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/21606430">PMID&nbsp;21606430</a></small></div></td><td>Generally well tolerated; granulocytopenia the main serious event, febrile neutropenia uncommon; Gemcitabine pneumonitis risk reads poorly against her infiltrative lung disease</td><td>A tolerable later-line option with a randomized signal: gemcitabine plus dacarbazine beat dacarbazine alone on PFS and OS in previously treated STS, and BSG 2025 carries it at II,B. Its main case-specific weight is a foreclosure: dacarbazine exposure would exclude her from the randomized trial behind the Experimental table&#x27;s PARP branch, so sequencing, not efficacy, is what this row is really about.</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/21606430">PMID&nbsp;21606430</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/38734790">PMID&nbsp;38734790</a><br><a href="https://clinicaltrials.gov/study/NCT05432791">NCT05432791</a></td></tr>
+    <tr><td><span class="fit-badge fit-weak">medium</span></td><td><strong>Pulmonary metastasectomy</strong><br><small class="persona-line">Surgery · Not line-indexed · disease-control intent</small><br><small><em>also called:</em> Lung metastasectomy</small></td><td><div><strong>other_society</strong> British Sarcoma Group (BSG): III,B <small class="persona-line">(partial population match · BSG UK guidelines 2025 (Br J Cancer))</small><br><small>Selected patients with thoracic metastases: long-term survivors are reported (20-40% of patients undergoing lung surgery) although prospective data are few and the survival benefit remains unproven.</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/38734790">PMID&nbsp;38734790</a></small></div><div><small>verified 2026-08-12</small></div></td><td><strong>Likely ineligible</strong><br><small>Bilateral infiltrative, possibly inflammatory pulmonary disease is the anatomy the surgical series screened out, and the staging record is incomplete: the 2024 operative report has not been retrieved.</small><br><small class="persona-line">blocker: Bilateral infiltrative disease pattern; the resection series selected patients with countable, resectable lesions</small><br><small class="persona-line">blocker: Morcellation status of the 2024 resection unknown; if morcellation occurred, peritoneal restaging precedes any consolidation planning (abdominopelvic dissemination 44% vs 12.9% in the cited series)</small><br><small class="persona-line">blocker: No pulmonary function tests or oximetry baseline, read against an 8,500 ft residence</small></td><td><div><strong>International Registry of Lung Metastases</strong> <small class="persona-line">(retrospective multi-institutional registry, operability-selected · n=5206)</small><br><small>5-year OS 36% after complete resection; median OS 35 vs 15 months for complete vs incomplete resection</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/9011700">PMID&nbsp;9011700</a></small></div><div><strong>Brigham LMS metastasectomy series</strong> <small class="persona-line">(retrospective single-institution cohort · n=82)</small><br><small>median OS 70 months in the LMS subset vs 24 months non-LMS (p=0.049)</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/21867989">PMID&nbsp;21867989</a></small></div></td><td>Thoracotomy morbidity and permanently lost pulmonary reserve, priced differently for someone living at 8,500 ft</td><td>Guideline-carried for selected patients, and the long-term survivors in the registries are real, but every series is retrospective and operability-selected, and bilateral infiltrative disease is exactly what they screened out. The honest framing is the PI&#x27;s: a question to re-ask if induction converts the anatomy, not a survival number to quote today. Two records gate it before anatomy even matters: the 2024 operative report and a measured pulmonary baseline at her altitude.</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/38734790">PMID&nbsp;38734790</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/9011700">PMID&nbsp;9011700</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/21867989">PMID&nbsp;21867989</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/21565389">PMID&nbsp;21565389</a></td></tr>
+    <tr><td><span class="fit-badge fit-weak">medium</span></td><td><strong>Stereotactic body radiotherapy (SBRT) to pulmonary metastases</strong><br><small class="persona-line">Radiotherapy · Not line-indexed · disease-control intent</small><br><small><em>also called:</em> SABR; Stereotactic ablative radiotherapy</small></td><td><div><strong>other_society</strong> British Sarcoma Group (BSG): named option, evidence limited <small class="persona-line">(partial population match · BSG UK guidelines 2025 (Br J Cancer))</small><br><small>Stereotactic ablative radiotherapy has become another potential option for lung metastases from STS, with evidence still limited.</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/38734790">PMID&nbsp;38734790</a></small></div><div><small>verified 2026-08-12</small></div></td><td><strong>Likely ineligible</strong><br><small>The SBRT series treated small numbers of countable lesions with a controlled primary; bilateral diffuse infiltrative disease is not currently a stereotactic target, and no pulmonary baseline exists.</small><br><small class="persona-line">blocker: Bilateral diffuse infiltrative disease is not an oligometastatic SBRT target; the cited series treated up to a few discrete lesions</small><br><small class="persona-line">blocker: No pulmonary function baseline at 8,500 ft; lost lung volume carries a higher price at altitude</small><br><small class="persona-line">blocker: Consolidation intent shares the unresolved 2024 morcellation and staging question with the surgical row</small></td><td><div><strong>MGH/Penn sarcoma lung SBRT</strong> <small class="persona-line">(retrospective two-institution cohort · n=44)</small><br><small>local control 90% (95% CI 84-96) at 24 months, alongside overall survival 46% at 24 months in the same patients</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/32588468">PMID&nbsp;32588468</a></small></div><div><strong>Humanitas sarcoma lung SBRT</strong> <small class="persona-line">(retrospective single-institution cohort · n=28)</small><br><small>actuarial 5-year local control 96%</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/25686482">PMID&nbsp;25686482</a></small></div></td><td>Radiation pneumonitis would be difficult to separate from disease progression and altitude physiology in these lungs</td><td>The non-surgical consolidation route, named by BSG 2025 as a potential option with limited evidence. The series are retrospective and eligibility-selected, and their headline numbers measure different things: the same 44-patient cohort shows 90% local control at 24 months and 46% survival at 24 months, so ablating visible lesions and changing the disease course are separate claims. Like metastasectomy, this is a question to re-ask if induction converts bilateral infiltrative disease into countable targets.</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/38734790">PMID&nbsp;38734790</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/32588468">PMID&nbsp;32588468</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/25686482">PMID&nbsp;25686482</a></td></tr>
+    <tr><td><span class="fit-badge fit-none">low</span></td><td><strong>Eribulin</strong><br><small class="persona-line">Systemic chemotherapy · Third line or later · disease-control intent</small><br><small><em>also called:</em> Halaven</small></td><td><div><strong>FDA</strong> on-label approval (liposarcoma only) <small class="persona-line">(different population · FDA approval 2016-01; DailyMed label accessed 2026-08-12)</small><br><small>Unresectable or metastatic liposarcoma after a prior anthracycline-containing regimen; leiomyosarcoma is not in the US label.</small><br><small><em>Halaven (eribulin) prescribing information, indication 1.2</em></small></div><div><strong>other_society</strong> British Sarcoma Group (BSG): noted, liposarcoma authorisation <small class="persona-line">(different population · BSG UK guidelines 2025 (Br J Cancer))</small><br><small>Marketing authorisation for unresectable liposarcoma; data in other sarcoma types limited; not currently funded in England.</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/38734790">PMID&nbsp;38734790</a></small></div><div><small>verified 2026-08-12</small></div></td><td><strong>Conditionally eligible</strong><br><small>Medically she could receive it after an anthracycline, but the label covers liposarcoma, so any use in her histology is off-label and rests on a null subgroup.</small><br><small class="persona-line">blocker: Requires a prior anthracycline-containing regimen; not yet given</small><br><small class="persona-line">blocker: US label excludes leiomyosarcoma, so use in her histology is off-label</small></td><td><div><strong>Study 309</strong> <small class="persona-line">(randomized open-label phase 3 vs dacarbazine · n=452)</small><br><small>median OS 13.5 vs 11.5 months, HR 0.77 (95% CI 0.62-0.95), driven by the liposarcoma stratum</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/26874885">PMID&nbsp;26874885</a></small></div><div><strong>Study 309 leiomyosarcoma subgroup</strong> <small class="persona-line">(preplanned subgroup analysis · n=309)</small><br><small>OS HR 0.93 (95% CI 0.71-1.20, p=0.57); median PFS 2.2 vs 2.6 months, numerically worse than dacarbazine</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/31065111">PMID&nbsp;31065111</a></small></div></td><td>Neutropenia and neuropathy, the familiar microtubule-inhibitor profile</td><td>Carried for completeness and honesty rather than promise: the OS benefit that won eribulin its approval came from the liposarcoma stratum, the US label is liposarcoma-only, and the leiomyosarcoma subgroup is null (OS HR 0.93 with PFS numerically worse than dacarbazine). For her histology this is a drug the later-line conversation will mention and the data do not support well. That thin later-line shelf is itself a finding of this screen.</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/26874885">PMID&nbsp;26874885</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/31065111">PMID&nbsp;31065111</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/38734790">PMID&nbsp;38734790</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2 id="standard-options-behind-an-open-gate">Standard options behind an open gate</h2>
+<p><em>Endorsed for this patient's situation, but gated on a result that is missing, pending, or below threshold. The gate has to close before the option is real.</em></p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Priority</th><th>Option</th><th>What makes it standard</th><th>Fit to this patient</th><th>Key evidence</th><th>Toxicities that would change the decision</th><th>Rationale</th><th>References</th></tr></thead>
+      <tbody>
+    <tr><td><span class="fit-badge fit-none">low</span></td><td><strong>Pembrolizumab (tumour-agnostic: MSI-H/dMMR or TMB-H)</strong><br><small class="persona-line">Immunotherapy · Second line · disease-control intent</small><br><small><em>also called:</em> Keytruda</small></td><td><div><strong>FDA</strong> tumour-agnostic approval (MSI-H/dMMR) <small class="persona-line">(population match unclear · FDA accelerated approval 2017-05; DailyMed label accessed 2026-08-12)</small><br><small>Adult and pediatric patients with unresectable or metastatic MSI-H or dMMR solid tumours, as determined by an FDA-authorized test, that have progressed following prior treatment and who have no satisfactory alternative treatment options.</small><br><small><em>Keytruda (pembrolizumab) prescribing information, indication 1.8</em></small></div><div><strong>FDA</strong> tumour-agnostic approval (TMB-H) <small class="persona-line">(population match unclear · FDA accelerated approval 2020-06; DailyMed label accessed 2026-08-12)</small><br><small>Adult and pediatric patients with unresectable or metastatic TMB-high (10 or more mutations per megabase) solid tumours, as determined by an FDA-authorized test, that have progressed following prior treatment and who have no satisfactory alternative treatment options.</small><br><small><em>Keytruda (pembrolizumab) prescribing information, indication 1.18</em></small></div><div><small>verified 2026-08-12</small></div></td><td><strong>Not determinable from the record</strong><br><small>Both gating biomarkers are untested rather than negative, and the label also requires progression on prior therapy, a line she has not yet reached. The missing facts are the MSI/MMR and TMB results the ordered NGS panel will return.</small><br><small class="persona-line">gate: MSI-H/dMMR or TMB MSI-H or dMMR by an FDA-authorized test; or TMB &gt;= 10 mut/Mb (never measured)</small></td><td><div><strong>KEYNOTE-158 (MSI-H/dMMR noncolorectal)</strong> <small class="persona-line">(single-arm phase 2, 27 tumour types · n=233)</small><br><small>ORR 34.3% (95% CI 28.3-40.8); median PFS 4.1 months</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/31682550">PMID&nbsp;31682550</a></small></div><div><strong>KEYNOTE-158 TMB analysis</strong> <small class="persona-line">(prospectively planned retrospective analysis · n=790)</small><br><small>ORR 29% (95% CI 21-39) in TMB &gt;= 10 mut/Mb vs 6% (95% CI 5-8) below</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/32919526">PMID&nbsp;32919526</a></small></div></td><td>Immune-related pneumonitis would be hard to read against bilateral infiltrative lung disease and altitude-shifted oximetry</td><td>Two tumour-agnostic approval doors that testing would open: pembrolizumab is approved for MSI-H/dMMR and for TMB-H solid tumours after progression on prior therapy. Both markers are currently untested rather than negative, both are rare in uLMS, and both close cheaply on the NGS panel already in the rank-1 workup. Until a result returns, the population match is unknowable, which is why this row sits behind a workup gate rather than in the consider-now group.</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/31682550">PMID&nbsp;31682550</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/32919526">PMID&nbsp;32919526</a></td></tr>
+    <tr><td><span class="fit-badge fit-none">low</span></td><td><strong>TRK inhibitor (larotrectinib or entrectinib), tumour-agnostic if NTRK fusion-positive</strong><br><small class="persona-line">Targeted therapy · Any line · disease-control intent</small><br><small><em>also called:</em> Vitrakvi; Rozlytrek</small></td><td><div><strong>FDA</strong> tumour-agnostic accelerated approval <small class="persona-line">(population match unclear · FDA accelerated approval 2018-11; Vitrakvi label revised 4/2025, DailyMed accessed 2026-08-12)</small><br><small>Adult and pediatric patients with solid tumours that have an NTRK gene fusion without a known acquired resistance mutation, are metastatic or where resection would cause severe morbidity, and have no satisfactory alternative treatments or have progressed following treatment.</small><br><small><em>Vitrakvi (larotrectinib) prescribing information, section 1</em></small></div><div><small>verified 2026-08-12</small></div></td><td><strong>Not determinable from the record</strong><br><small>NTRK fusion status has never been tested; the profile is silent on the single fact that gates the entire option.</small><br><small class="persona-line">gate: NTRK gene fusion NTRK1/2/3 fusion without a known acquired resistance mutation, ideally by RNA-inclusive fusion calling (never measured)</small></td><td><div><strong>Larotrectinib pooled analysis</strong> <small class="persona-line">(pooled analysis of three phase 1/2 trials · n=159)</small><br><small>ORR 79% (95% CI 72-85)</small><br><small><a href="https://pubmed.ncbi.nlm.nih.gov/32105622">PMID&nbsp;32105622</a></small></div></td><td>Dizziness, fatigue and weight gain; a benign profile relative to the cytotoxic rows</td><td>The second tumour-agnostic door: TRK inhibitors carry a pooled ORR of 79% in NTRK fusion-positive tumours, but the fusion is vanishingly rare in uLMS and hers is untested rather than negative. The requisition detail decides the answer&#x27;s quality, since several common panels are DNA-only and the rank-1 workup already specifies RNA-inclusive fusion calling. A positive would be on-label care; the prior is low.</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/32105622">PMID&nbsp;32105622</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2 id="assessed-and-set-aside">Assessed and set aside</h2>
+<p>??? note "1 option(s) screened against this patient and set aside"
+    Screened against this patient and found not to apply. Listed for the audit trail.</p>
+<pre><code>- **Aromatase inhibition (letrozole)**: Listed so its absence is explained rather than wondered about: endocrine therapy in uLMS belongs to receptor-expressing tumours, and hers stained under 1% for both ER and PR, which closes this door. The one residual thread is provenance: if the stain came off the 2024 block rather than current disease, the restain in the rank-1 workup could in principle reopen the question, though a true conversion is unlikely.
+</code></pre>
+<h2 id="how-these-sit-alongside-the-targeted-options">How these sit alongside the targeted options</h2>
+<p><em>The ranked recommendations stay scoped to this case's targetable features, and nothing on this page changes that ranking. What this section adds is the sequencing: where a standard option and a targeted option compete for the same line, and where taking one would close the door on the other.</em></p>
+<p><strong>Competes for the same line of therapy</strong></p>
+<ul>
+<li><strong>Doxorubicin, single agent</strong>: The guideline-preferred single agent and the planned off-label LMS-04 combination spend the same chemotherapy-naive first-line slot, and the same echocardiogram gates both. This row names the trade the treating team is already weighing; it does not resolve it. (interacts with: doxorubicin-trabectedin-lms04)</li>
+<li><strong>Gemcitabine + docetaxel</strong>: Holds the fallback slot for the same first-line window the ranked LMS-04 regimen occupies: a failed echocardiogram or pulmonary screen moves the first-line conversation here without touching the rest of the ranking. (interacts with: doxorubicin-trabectedin-lms04)</li>
+<li><strong>Pazopanib</strong>: At first progression this approved anchor and the ranked experimental doors ask for the same treatment slot; an on-label option a payer recognises exists at that line whichever way the team goes. Its wound-healing liability would also matter if metastasectomy ever became real. (interacts with: olaparib-temozolomide, b7h3-adc, fap-radioligand, rec-617-cdk7)</li>
+<li><strong>Doxorubicin + ifosfamide</strong>: A third occupant of the single chemotherapy-naive first-line slot the ranked LMS-04 regimen is planned to spend; listing it does not reopen the choice, it maps the slot. (interacts with: doxorubicin-trabectedin-lms04)</li>
+<li><strong>Eribulin</strong>: By third line the approved shelf in LMS is thin, which is the backdrop against which the ranked phase 1 doors were surfaced; this row shares that slot without arguing against them. (interacts with: b7h3-adc, fap-radioligand, rec-617-cdk7)</li>
+</ul>
+<p><strong>May foreclose a targeted option</strong></p>
+<ul>
+<li><strong>Gemcitabine + dacarbazine (or dacarbazine alone)</strong>: The randomized successor trial behind the ranked PARP branch excludes prior temozolomide or dacarbazine, so giving this regimen first would close that trial door while the HRR/HRD result that would make the PARP branch live is still unmeasured. The order in which this row is reached matters more than usual. (interacts with: olaparib-temozolomide)</li>
+</ul>
+<p><strong>May be foreclosed by a targeted option</strong></p>
+<ul>
+<li><strong>Trabectedin monotherapy</strong>: Progression on LMS-04 maintenance is progression on trabectedin, which closes the on-label second-line use of the same drug; single-agent doxorubicin first line would leave it open. The upstream regimen choice decides whether this row survives, and that is a sequencing fact rather than advice. (interacts with: doxorubicin-trabectedin-lms04)</li>
+</ul>
+<p><strong>Comes before the targeted options</strong></p>
+<ul>
+<li><strong>Fertility and ovarian-function counselling before gonadotoxic chemotherapy</strong>: Any oocyte retrieval or suppression decision has to land before the ranked induction begins. This names the timing pressure; it is not an argument to delay treatment, and the window is days rather than weeks. (interacts with: doxorubicin-trabectedin-lms04)</li>
+</ul>
+<p><strong>Can run alongside the targeted options</strong></p>
+<ul>
+<li><strong>Baseline echocardiogram, cardiac surveillance and cumulative anthracycline planning</strong>: The echocardiogram in this row is the same one the Experimental table's rank-1 workup names as a true gate on cycle 1 of the ranked induction regimen; a failed screen moves the first-line conversation to this table's gemcitabine plus docetaxel row. (interacts with: gating-workup-baselines-molecular, doxorubicin-trabectedin-lms04)</li>
+<li><strong>Primary G-CSF prophylaxis through induction chemotherapy</strong>: Belongs in the cycle 1 orders of the ranked induction regimen. If single-agent doxorubicin is chosen instead, its 9% febrile neutropenia rate sits below the ASCO threshold, so the G-CSF call follows the regimen choice. (interacts with: doxorubicin-trabectedin-lms04)</li>
+<li><strong>Tumour NGS with germline TP53 testing before genotoxic chemotherapy</strong>: This is the same panel, consent conversation and block-allocation question the Experimental table carries at rank 1, and it is what opens or closes the pembrolizumab and TRK rows below. One requisition set serves both tables. (interacts with: gating-workup-baselines-molecular)</li>
+<li><strong>Early specialist palliative care alongside active treatment</strong>: Runs alongside induction and every later branch; it neither delays nor competes with any ranked option. (interacts with: doxorubicin-trabectedin-lms04)</li>
+<li><strong>Pembrolizumab (tumour-agnostic: MSI-H/dMMR or TMB-H)</strong>: The gate closes on the same one-pass NGS panel the Experimental rank-1 workup orders; nothing extra is spent. A positive would move this row to on-label care at progression. (interacts with: gating-workup-baselines-molecular)</li>
+<li><strong>TRK inhibitor (larotrectinib or entrectinib), tumour-agnostic if NTRK fusion-positive</strong>: Priced by the same rank-1 requisition; the workup already specifies RNA-inclusive fusion calling because a DNA-only panel could return a false negative that reads as a closed question. (interacts with: gating-workup-baselines-molecular)</li>
+</ul>
+<p><strong>Comes after the targeted options</strong></p>
+<ul>
+<li><strong>Pulmonary metastasectomy</strong>: Only becomes assessable if the ranked induction converts bilateral infiltrative disease into a resectable pattern, and after the rank-1 workup retrieves the 2024 operative report; the morcellation answer decides whether peritoneal restaging comes first. (interacts with: doxorubicin-trabectedin-lms04, gating-workup-baselines-molecular)</li>
+<li><strong>Stereotactic body radiotherapy (SBRT) to pulmonary metastases</strong>: Like the surgical row, this is a consolidation question that only opens if the ranked induction converts the anatomy; the same operative-report and staging gates apply. (interacts with: doxorubicin-trabectedin-lms04, gating-workup-baselines-molecular)</li>
+</ul>
+<p>!!! note "Reading this report"
+    An option earns a row here only if a regulator approved it for a population that includes this patient, or a major society's guideline carries it. <strong>What makes it standard</strong> names the endorsing body and, next to it, whether that endorsement was written for this patient's situation or for a different population. <strong>Fit to this patient</strong> is judged against the case profile alone, so an option the patient has already had and progressed on is marked rather than re-offered. This page is additive: it runs alongside the <a href="recommendations.md">ranked recommendations</a> and does not narrow, rerank, or filter the targeted options that ranking surfaces.</p>
+<footer class="libby-footer">Generated 2026-08-12 &middot; Libby &middot; <code>ulms-highgrade-pulm-mets-er-pr-neg-qqvt</code> &middot; Standard of care options</footer>
+</body></html>

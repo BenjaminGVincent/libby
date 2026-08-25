@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>Libby selected general biomarker report — urothelial-mets-her2-discordant-kndl</title>
+<style>
+
+      :root { color-scheme: light; }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        max-width: 1200px;
+        margin: 2em auto;
+        padding: 0 1.5em 3em;
+        color: #1A202C;
+        background: #FFFFFF;
+        line-height: 1.55;
+      }
+      h1 { border-bottom: 2px solid #5B3A87; padding-bottom: 0.3em; margin-top: 0; }
+      h2 { color: #5B3A87; margin-top: 1.8em; }
+      h3 { color: #1A202C; margin-top: 1.4em; }
+      a { color: #5B3A87; text-decoration: underline; }
+      code { background: #F4F6F8; padding: 0.1em 0.4em; border-radius: 2px; font-size: 0.92em; }
+      .disclaimer {
+        background: #FFF4E5; border-left: 4px solid #B45309;
+        padding: 0.8em 1em; margin: 1em 0 2em; font-size: 0.95em;
+      }
+      .libby-footer {
+        margin-top: 3em; padding-top: 1em; border-top: 1px solid #E2E8F0;
+        color: #6B6B7F; font-size: 0.85em;
+      }
+    
+/* Trial-table style — vendored from /Users/benjaminvincent/turtle/pfo/conductor/styles/trial-table/
+   Scoped via .trial-table-wrap so it does not leak into surrounding MkDocs page.
+
+   Uses explicit [data-md-color-scheme] selectors to bypass any CSS-variable
+   inheritance issues — the table reads correctly in both default (light) and
+   slate (dark) Material color schemes regardless of cascade quirks. */
+
+.trial-table-wrap caption {
+  caption-side: top;
+  text-align: left;
+  font-weight: 600;
+  padding: 0.4em 0;
+  font-size: 1em;
+}
+.trial-scroll { overflow-x: auto; }
+.trial-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.88em;
+}
+.trial-table thead th {
+  font-weight: 600;
+  text-align: left;
+  padding: 0.5em 0.6em;
+  white-space: nowrap;
+}
+.trial-table tbody td {
+  padding: 0.5em 0.6em;
+  font-variant-numeric: tabular-nums;
+  vertical-align: top;
+}
+.trial-table .num { text-align: right; }
+
+/* Narrow ID-style columns — the entry number in the access-guide summary
+   table and the NCT id in the access-guide trial-pathways table. Keep
+   numbers / NCTs on a single line so "10" doesn't wrap to "1\n0" and
+   "NCT05379985" doesn't break across four lines. min-width is large
+   enough to comfortably fit the widest expected value (3-digit entry
+   number, NCT + 8 digits = 11 chars in a monospace fallback). */
+.trial-table th.col-num,
+.trial-table td.col-num,
+.trial-table th.col-nct,
+.trial-table td.col-nct {
+  white-space: nowrap;
+}
+.trial-table th.col-num,
+.trial-table td.col-num { min-width: 2.4em; }
+.trial-table th.col-nct,
+.trial-table td.col-nct { min-width: 6.5em; }
+
+/* Access-guide column widths — kept generous so the wrapping `.trial-scroll`
+   div engages horizontal scroll before the cell text squeezes into a tall
+   narrow stack. Tuned for the access-guide tables specifically; other
+   trial-tables on the site keep their default auto layout. */
+.trial-table th.col-intervention,
+.trial-table td.col-intervention { min-width: 14em; }
+.trial-table th.col-target,
+.trial-table td.col-target { min-width: 12em; }
+.trial-table th.col-access-status,
+.trial-table td.col-access-status { min-width: 10em; }
+.trial-table th.col-regulatory,
+.trial-table td.col-regulatory { min-width: 22em; }
+.trial-table th.col-first-action,
+.trial-table td.col-first-action { min-width: 22em; }
+
+.trial-table th.col-phase,
+.trial-table td.col-phase { min-width: 3.5em; white-space: nowrap; }
+.trial-table th.col-indication,
+.trial-table td.col-indication { min-width: 18em; }
+.trial-table th.col-status,
+.trial-table td.col-status { min-width: 7em; white-space: nowrap; }
+.trial-table th.col-eligibility,
+.trial-table td.col-eligibility { min-width: 8em; white-space: nowrap; }
+.trial-table th.col-contact,
+.trial-table td.col-contact { min-width: 14em; }
+.trial-table th.col-notes,
+.trial-table td.col-notes { min-width: 24em; }
+.trial-table a {
+  text-decoration: underline;
+  font-weight: 700;
+}
+.trial-table .mark {
+  font-size: 0.75em;
+  vertical-align: super;
+}
+
+/* ---------- Default (light) scheme ---------- */
+[data-md-color-scheme="default"] .trial-table-wrap { color: #1A202C; }
+[data-md-color-scheme="default"] .trial-table thead th {
+  background: #F4F6F8;
+  color: #1A202C;
+  border-top: 2px solid #1A202C;
+  border-bottom: 1px solid #1A202C;
+}
+[data-md-color-scheme="default"] .trial-table tbody td {
+  color: #1A202C;
+  border-bottom: 1px solid #E2E8F0;
+}
+[data-md-color-scheme="default"] .trial-table tbody tr:last-child td {
+  border-bottom: 2px solid #1A202C;
+}
+[data-md-color-scheme="default"] .trial-table a { color: #1A202C; }
+[data-md-color-scheme="default"] .trial-table-wrap .notes {
+  font-size: 0.85em;
+  color: #4A5568;
+  margin-top: 0.6em;
+}
+
+/* ---------- Slate (dark) scheme ---------- */
+[data-md-color-scheme="slate"] .trial-table-wrap { color: #E2E8F0; }
+[data-md-color-scheme="slate"] .trial-table thead th {
+  background: #2D3344;
+  color: #F1F5F9;
+  border-top: 2px solid #94A3B8;
+  border-bottom: 1px solid #94A3B8;
+}
+[data-md-color-scheme="slate"] .trial-table tbody td {
+  color: #E2E8F0;
+  border-bottom: 1px solid #3A4159;
+}
+[data-md-color-scheme="slate"] .trial-table tbody tr:last-child td {
+  border-bottom: 2px solid #94A3B8;
+}
+[data-md-color-scheme="slate"] .trial-table a {
+  color: #93C5FD;
+}
+[data-md-color-scheme="slate"] .trial-table-wrap .notes {
+  font-size: 0.85em;
+  color: #94A3B8;
+  margin-top: 0.6em;
+}
+
+/* Libby-specific styling: case-fit / toxicity badges, agreement matrix, persona pills. */
+
+/* Bold links across all rendered content. */
+.md-typeset a {
+  font-weight: 700;
+}
+
+/* Case-fit badges (in trials.md). */
+.fit-badge {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.4em;
+  font-size: 0.78em;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+.fit-strong  { background: #E6F5EA; color: #14532D; border-color: #BBE2C7; }
+.fit-partial { background: #FFF7E0; color: #5A4500; border-color: #F1DD9A; }
+.fit-weak    { background: #FBE9E7; color: #6F2E1A; border-color: #ECC4BB; }
+.fit-none    { background: #F1F3F5; color: #4A5568; border-color: #E2E8F0; }
+
+/* Tumor-type-relation badges (trial table). */
+.rel-badge {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.4em;
+  font-size: 0.78em;
+  font-weight: 600;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.rel-indication  { background: #DDF1EE; color: #134E48; border-color: #B0DBD3; }
+.rel-basket      { background: #FFE9D6; color: #6F3A0F; border-color: #F0CFAE; }
+.rel-same-drug   { background: #DFEBFB; color: #1B3A6B; border-color: #B5CDEE; }
+.rel-cross-tumor { background: #F1E5FF; color: #441E72; border-color: #D4BBF2; }
+.rel-other       { background: #F1F3F5; color: #4A5568; border-color: #E2E8F0; }
+
+/* Risk-of-bias badges (evidence table). */
+.rob-badge {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.4em;
+  font-size: 0.78em;
+  font-weight: 600;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.rob-low  { background: #E6F5EA; color: #14532D; border-color: #BBE2C7; }
+.rob-med  { background: #FFF7E0; color: #5A4500; border-color: #F1DD9A; }
+.rob-high { background: #FBE9E7; color: #6F2E1A; border-color: #ECC4BB; }
+
+/* Toxicity flag pills. */
+.tox-flag {
+  display: inline-block;
+  padding: 0.05em 0.45em;
+  border-radius: 999px;
+  font-size: 0.75em;
+  background: #FBE9E7;
+  color: #6F2E1A;
+  border: 1px solid #ECC4BB;
+  margin-right: 0.25em;
+}
+
+/* Persona badges (board.md, recommendations.md). */
+.persona {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.35em;
+  font-size: 0.78em;
+  font-weight: 600;
+  margin-right: 0.25em;
+  border: 1px solid transparent;
+}
+.persona-risktaker    { background: #FFE9D6; color: #6F3A0F; border-color: #F0CFAE; }
+.persona-conservative { background: #DFEBFB; color: #1B3A6B; border-color: #B5CDEE; }
+.persona-critic       { background: #F1E5FF; color: #441E72; border-color: #D4BBF2; }
+.persona-concensusite { background: #DDF1EE; color: #134E48; border-color: #B0DBD3; }
+.persona-advocate     { background: #FFE5EE; color: #6E1638; border-color: #F0BBCB; }
+
+/* Agreement-level decorations. */
+.agree-endorse   { color: #14532D; font-weight: 600; }
+.agree-qualified { color: #5A4500; font-weight: 600; }
+.agree-dissent   { color: #6F2E1A; font-weight: 600; }
+.agree-veto      { color: #6F2E1A; font-weight: 700; text-decoration: underline; }
+
+/* Biomarker-conditional flag (inline in Intervention cell when scenario ends with :positive). */
+.scenario-conditional {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5A4500;
+  background: #FFF7E0;
+  border: 1px solid #F1DD9A;
+  border-radius: 0.35em;
+  padding: 0.05em 0.45em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+
+/* Counter-productive MoA descriptor (parenthetical text after the bold severity). */
+.cpm-desc {
+  font-size: 0.92em;
+  color: #4A5568;
+}
+
+/* Persona pill row inside the Intervention cell on the ranked-prioritization table. */
+.persona-line {
+  display: inline-block;
+  margin-top: 0.15em;
+  font-size: 0.78em;
+  color: #4A5568;
+}
+.persona-line + .persona-line {
+  margin-left: 0.6em;
+}
+
+/* Recommendation table marks. */
+.split-glyph { font-weight: 700; color: #5A4500; }
+/* not_recommended rows: mute, never strike through. The strikethrough used to
+   sit on the whole <tr>, so it struck the rationale columns too — and on a
+   rejected option the rationale is the most useful text in the row, since it
+   is what lets a reader stop considering it. Muting carries the de-emphasis;
+   the badge states the verdict in words, so the signal survives monochrome
+   printing and screen readers rather than resting on typography alone. */
+.not-recommended {
+  color: #4A5568;
+}
+.badge-not-recommended {
+  background: #FDECEA;
+  color: #8C2F22;
+  border-color: #F5C6C0;
+}
+
+/* surfaced_reason flag pills (Experimental "Also considered" table). Neutral,
+   muted pills — these rows are informational, not scored. */
+.flag-badge {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 999px;
+  font-size: 0.75em;
+  font-weight: 600;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.flag-unavailable    { background: #ECEFF1; color: #37474F; border-color: #CFD8DC; }
+.flag-consolidated   { background: #E8EAF6; color: #303F9F; border-color: #C5CAE9; }
+.flag-thin           { background: #FFF8E1; color: #7A5B00; border-color: #F0E1B0; }
+.flag-not-enrollable { background: #F3E5F5; color: #6A1B7A; border-color: #E1BEE7; }
+
+/* Disclaimer banner — applied to every case page via admonition. */
+.md-typeset .admonition.disclaimer {
+  border-color: #B71C1C;
+}
+.md-typeset .admonition.disclaimer > .admonition-title {
+  background-color: rgba(183, 28, 28, 0.08);
+  color: #B71C1C;
+}
+
+/* Agreement matrix heatmap (board.md). Pastel cells carry explicit
+   foreground+background that remain legible regardless of scheme; matrix
+   chrome (header, borders, no-opinion cells) uses scheme-aware selectors. */
+.agreement-matrix {
+  border-collapse: collapse;
+  font-size: 0.85em;
+}
+.agreement-matrix th, .agreement-matrix td {
+  padding: 0.35em 0.5em;
+  text-align: center;
+}
+.agreement-matrix th { font-weight: 600; }
+
+/* Pastel cell colors — same in both schemes (high contrast on their own bg). */
+.agreement-matrix td.cell-endorse   { background: #C8E6D0; color: #14532D; }
+.agreement-matrix td.cell-qualified { background: #FCEEC2; color: #5A4500; }
+.agreement-matrix td.cell-dissent   { background: #F4C7BE; color: #6F2E1A; }
+.agreement-matrix td.cell-veto      { background: #E8A399; color: #4A1408; font-weight: 700; }
+
+/* Default (light) scheme chrome. */
+[data-md-color-scheme="default"] .agreement-matrix th,
+[data-md-color-scheme="default"] .agreement-matrix td {
+  border: 1px solid #E2E8F0;
+  color: #1A202C;
+}
+[data-md-color-scheme="default"] .agreement-matrix th {
+  background: #F4F6F8;
+  color: #1A202C;
+}
+[data-md-color-scheme="default"] .agreement-matrix td.cell-absent {
+  background: #F1F3F5;
+  color: #94A3B8;
+}
+
+/* Slate (dark) scheme chrome. */
+[data-md-color-scheme="slate"] .agreement-matrix th,
+[data-md-color-scheme="slate"] .agreement-matrix td {
+  border: 1px solid #3A4159;
+  color: #E2E8F0;
+}
+[data-md-color-scheme="slate"] .agreement-matrix th {
+  background: #2D3344;
+  color: #F1F5F9;
+}
+[data-md-color-scheme="slate"] .agreement-matrix td.cell-absent {
+  background: #232838;
+  color: #64748B;
+}
+
+</style>
+</head>
+<body data-md-color-scheme="default">
+<div class="disclaimer">
+<strong>Decision support, not medical advice.</strong> Libby is an experimental 
+multi-agent decision-support tool. The information on this page has not been 
+reviewed by a clinician treating this patient. Information ages — confirm details 
+directly with the relevant sources before relying on them.
+</div>
+<h1 id="selected-general-biomarker-report-urothelial-mets-her2-discordant-kndl">Selected general biomarker report — <code>urothelial-mets-her2-discordant-kndl</code></h1>
+<p><em>Which biomarkers on the selected panel this patient has been tested for, and which have never been measured. The panel covers targets established in this tumor type, targets relevant across a subset of tumor types, and biomarkers that predict benefit regardless of where the tumor started, such as MSI-H/dMMR and high tumor mutational burden gating PD-1 blockade.</em></p>
+<h2 id="downloads">Downloads</h2>
+<ul>
+<li><a href="urothelial-mets-her2-discordant-kndl-biomarker-survey.html">Selected general biomarker report (offline HTML)</a> — the same survey, self-contained HTML that opens offline</li>
+<li><a href="urothelial-mets-her2-discordant-kndl-biomarker-survey.pdf">Selected general biomarker report (PDF)</a> — print-friendly, grouped by recommended action</li>
+</ul>
+<p><em>23 biomarkers surveyed: 11 with no usable result on file (0 essential), 9 measured but not to decision resolution, 3 already established. Panel coverage: 9 tumor-agnostic biomarkers plus 14 of 72 protein targets in scope for this tumor.</em></p>
+<p>The survey covered 23 biomarkers: all 9 tumor-agnostic markers plus 14 protein targets in scope for urothelial carcinoma. Three have hardened answers. The tumor is microsatellite stable, MAGE-A4 is negative, and HLA-A*02:01 is confirmed positive. The other 20 have no result a trial or a label could act on today. One gap is essential: HER2 status on the current tumor. Three validated IHC 3+ results exist, but they describe 2023 and 2025 tissue, and the only read of the 2026 nodal disease is a weak research-grade signal. A validated repeat IHC was drawn in 2026-08; its tier is missing from the record, not from the lab.</p>
+<p>Closing the list takes three orders, none of which is a biopsy. First, a records retrieval of sequencing already performed, which reads out NTRK, RET, BRAF, and somatic HR status, recomputes TMB to companion-diagnostic grade, and names the one OncoKB-actionable alteration the record counts but never identifies. Second, retrieval of the 2026 assay reads: the validated HER2 and TROP2 IHC tiers, plus the Nectin-4, PRAME, and FAP imaging results. Third, one archival block, most plausibly the 2025-03 recurrence, cut once for HER2 with reflex ISH, TROP2, mesothelin, MUC1, and B7-H3, with PRAME and NY-ESO-1 run on the same block. That fits the tissue reality here: nodal cores carry 5-10% tumor content and one fresh-frozen vial remains.</p>
+<p>Most of these, if tested, will come back negative. That is the expected result for rare markers in this disease. The case for testing is what a positive would open, cell-therapy and ADC trial classes among them, not an implied likelihood of finding one. The weak TROP2 signal stays a low positive, and a low positive predicts ADC benefit less reliably than strong expression does.</p>
+<h2 id="gaps-biomarkers-with-no-usable-result-on-file">Gaps: biomarkers with no usable result on file</h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Priority</th><th>Biomarker</th><th>Status</th><th>Why it is in scope</th><th>Recommended assay</th><th>What a positive result would open</th><th>Next step</th><th>Rationale</th><th>References</th></tr></thead>
+      <tbody>
+    <tr><td><span class="fit-badge fit-weak">medium</span></td><td><strong>BRAF V600E mutation</strong><br><small class="persona-line">Tumor-agnostic</small></td><td>Record ambiguous</td><td>BRAF V600E is actionable across primary sites outside colorectal cancer. A 468-gene panel of the class used here covers BRAF codon 600, but no BRAF result, positive or negative, is in the derived record.</td><td><strong>Read BRAF codon 600 status off the retrieved full tissue NGS report</strong><br><small>NGS_panel · None; the sequencing is already done · days</small><br><small class="persona-line"><em>bundles with:</em> Retrieval of the sequencing already performed (institutional 468-gene tumor/normal panel 2023-11, two commercial WES/WTS platforms, WGS 2025-03), which also returns FGFR3 status and the single unnamed OncoKB-actionable alteration. No new specimen needed</small></td><td><div><strong>dabrafenib plus trametinib</strong> <small class="persona-line">(BRAF inhibitor plus MEK inhibitor · tumor-agnostic approval)</small><br><small><a href="https://clinicaltrials.gov/study/NCT02034110">NCT02034110</a></small></div></td><td>Bundle with planned testing</td><td>BRAF V600E is uncommon in urothelial carcinoma and the honest expectation is that it is absent. It stays on this list because the record explicitly counts one OncoKB-actionable alteration and never says which, so the identity of that variant is simply unknown. Reading it off the existing report costs a records request.</td><td><a href="https://clinicaltrials.gov/study/NCT02034110">NCT02034110</a></td></tr>
+    <tr><td><span class="fit-badge fit-weak">medium</span></td><td><strong>NTRK1 / NTRK2 / NTRK3 gene fusion</strong><br><small class="persona-line">Tumor-agnostic</small></td><td>Record ambiguous</td><td>Any solid tumor with an in-frame NTRK fusion qualifies for TRK inhibition, primary site aside. Fusion-capable sequencing has been performed here, but no NTRK result appears in the derived record.</td><td><strong>Retrieve the whole-transcriptome and NGS reports and read the NTRK fusion status directly; RNA fusion panel only if none covered NTRK</strong><br><small>RNA_seq · None for retrieval; archival FFPE if an RNA fusion panel turns out to be needed · days for retrieval, 2-3 weeks for a new RNA panel</small><br><small class="persona-line"><em>bundles with:</em> Retrieval of the sequencing already performed (institutional 468-gene tumor/normal panel 2023-11, two commercial WES/WTS platforms, WGS 2025-03), which also returns FGFR3 status and the single unnamed OncoKB-actionable alteration. No new specimen needed</small></td><td><div><strong>larotrectinib</strong> <small class="persona-line">(TRK inhibitor · tumor-agnostic approval)</small><br><small><a href="https://clinicaltrials.gov/study/NCT02576431">NCT02576431</a></small></div><div><strong>entrectinib</strong> <small class="persona-line">(TRK / ROS1 / ALK inhibitor · tumor-agnostic approval)</small><br><small><a href="https://clinicaltrials.gov/study/NCT02568267">NCT02568267</a></small></div><div><strong>repotrectinib</strong> <small class="persona-line">(next-generation TRK inhibitor · tumor-agnostic approval)</small><br><small><a href="https://clinicaltrials.gov/study/NCT03093116">NCT03093116</a></small></div></td><td>Bundle with planned testing</td><td>This is a records problem, not a testing problem: whole-transcriptome sequencing that would show an NTRK fusion has already been run on two platforms and the reports are not in hand. NTRK fusions in urothelial carcinoma are rare, so a negative is the expected answer, and the reason to settle it is that the same retrieval also names the single OncoKB-actionable alteration the record counts but never identifies. A DNA-only panel reporting no structural variants does not close the question, because NTRK breakpoints sit in large introns.</td><td><a href="https://clinicaltrials.gov/study/NCT02576431">NCT02576431</a><br><a href="https://clinicaltrials.gov/study/NCT02568267">NCT02568267</a><br><a href="https://clinicaltrials.gov/study/NCT03093116">NCT03093116</a></td></tr>
+    <tr><td><span class="fit-badge fit-weak">medium</span></td><td><strong>RET gene fusion</strong><br><small class="persona-line">Tumor-agnostic</small></td><td>Record ambiguous</td><td>Selpercatinib is approved for RET fusion-positive solid tumors irrespective of site. As with NTRK, the sequencing that would answer this has been done and the reports have not been retrieved.</td><td><strong>Read RET fusion status off the retrieved transcriptome or NGS report; RNA fusion panel only if RET was not covered</strong><br><small>RNA_seq · None for retrieval · days for retrieval</small><br><small class="persona-line"><em>bundles with:</em> Retrieval of the sequencing already performed (institutional 468-gene tumor/normal panel 2023-11, two commercial WES/WTS platforms, WGS 2025-03), which also returns FGFR3 status and the single unnamed OncoKB-actionable alteration. No new specimen needed</small></td><td><div><strong>selpercatinib</strong> <small class="persona-line">(selective RET inhibitor · tumor-agnostic approval)</small><br><small><a href="https://clinicaltrials.gov/study/NCT03157128">NCT03157128</a></small></div></td><td>Bundle with planned testing</td><td>RET fusions are rare in urothelial carcinoma and nothing in this record suggests one, so the expected result is negative. It rides free on the report retrieval that this case needs anyway, and leaving it unread means an approved oral agent stays formally unassessed. A DNA panel without RET intronic coverage would not be sufficient on its own.</td><td><a href="https://clinicaltrials.gov/study/NCT03157128">NCT03157128</a></td></tr>
+    <tr><td><span class="fit-badge fit-weak">medium</span></td><td><strong>B7-H3 (CD276) protein expression</strong><br><small class="persona-line">Relevant across a tumor subset</small></td><td>Not measured</td><td>B7-H3 is overexpressed across most solid tumor types with limited normal surface expression, and B7-H3-directed ADCs and bispecifics are enrolling solid-tumor cohorts. Nothing in this record speaks to it.</td><td><strong>B7-H3 (CD276) IHC on tumor tissue</strong><br><small>IHC · Archival block, one additional slide from the cut already planned · 1 week</small><br><small class="persona-line"><em>bundles with:</em> One archival block cut for the validated IHC set: HER2 with reflex ISH, TROP2, mesothelin, MUC1 and B7-H3 read together on the 2025-03 recurrence or the 2026-08 nodal core</small></td><td><div><strong>ifinatamab deruxtecan</strong> <small class="persona-line">(B7-H3-directed ADC · trial only)</small></div><div><strong>enoblituzumab</strong> <small class="persona-line">(B7-H3-directed mAb · trial only)</small></div><div><strong>vobramitamab duocarmazine</strong> <small class="persona-line">(B7-H3-directed ADC · trial only)</small></div></td><td>Bundle with planned testing</td><td>B7-H3 has never been looked at in this patient, and it is the pan-cancer surface target with the deepest current trial bench. One extra slide from the block already being cut for HER2 and TROP2 answers it, which is the only reason it earns a place against a tissue-scarce case. Expression would open solid-tumor ADC cohorts; the payload class would still have to be weighed against the pulmonary findings.</td><td>—</td></tr>
+    <tr><td><span class="fit-badge fit-weak">medium</span></td><td><strong>NY-ESO-1 (CTAG1B) expression, HLA-A*02:01-restricted</strong><br><small class="persona-line">Relevant across a tumor subset</small></td><td>Not measured</td><td>NY-ESO-1 is the other HLA-A*02:01-restricted cancer/testis antigen with a clinical-stage TCR-T program, and this patient&#x27;s HLA gate is already satisfied. Expression has never been tested.</td><td><strong>NY-ESO-1 expression by IHC or RT-PCR, run alongside PRAME on the same block</strong><br><small>IHC · Archival block; RT-PCR is the more forgiving option at 5-10% tumor content · 1-2 weeks</small><br><small class="persona-line"><em>bundles with:</em> Cancer/testis antigen expression panel (PRAME, NY-ESO-1) by validated IHC or RT-PCR on the same archival block, alongside the retrieval of the 2026-08 PRAME imaging read</small></td><td><div><strong>letetresgene autoleucel</strong> <small class="persona-line">(NY-ESO-1-directed TCR-T · trial only)</small></div></td><td>Bundle with planned testing</td><td>The patient is HLA-A*02:01 positive with an active adoptive-cell-therapy programme, and NY-ESO-1 is the second A*02:01-restricted antigen with an open TCR-T bench. Expression in urothelial carcinoma is a minority finding, so a negative is the likely outcome, and it costs one assay run next to the PRAME order. MAGE-A4 already showed how quickly an expression assay closes one of these axes.</td><td>—</td></tr>
+    <tr><td><span class="fit-badge fit-weak">medium</span></td><td><strong>Homologous recombination deficiency / BRCA1 / BRCA2 pathogenic variant</strong><br><small class="persona-line">Relevant across a tumor subset</small></td><td>Record ambiguous</td><td>PARP inhibitors are approved in other tumor types and not in urothelial carcinoma, but DNA-damage response alterations gate trial entry, and this patient already has an ARID1A-driven DDR hypothesis in play. Germline testing was negative; somatic HR status is not in the record.</td><td><strong>Read somatic HR gene status off the retrieved tissue NGS report; add an HRD score only if a protocol requires one</strong><br><small>NGS_panel · None for retrieval · days for retrieval</small><br><small class="persona-line"><em>bundles with:</em> Retrieval of the sequencing already performed (institutional 468-gene tumor/normal panel 2023-11, two commercial WES/WTS platforms, WGS 2025-03), which also returns FGFR3 status and the single unnamed OncoKB-actionable alteration. No new specimen needed</small></td><td><div><strong>PARP inhibitors</strong> <small class="persona-line">(PARP inhibitor · approved, other tumor type)</small></div></td><td>Bundle with planned testing</td><td>Germline testing came back negative, which leaves somatic HR gene status as the unanswered half, and it sits in a report that has not been retrieved. Urothelial carcinoma is not a PARP-inhibitor indication, so the realistic payoff is trial eligibility and not an approved drug, and it lands next to the ARID1A synthetic-lethality hypothesis already on the feature list. No new specimen is involved.</td><td>—</td></tr>
+    <tr><td><span class="fit-badge fit-none">low</span></td><td><strong>EPHB4 protein expression</strong><br><small class="persona-line">Relevant to this tumor type</small></td><td>Not measured</td><td>EPHB4 is overexpressed on bladder and prostate cancers with a tumor-vascular component, which puts it in scope by tumor type. Its clinical bench is one fusion protein that has not advanced.</td><td><strong>EPHB4 IHC on tumor tissue</strong><br><small>IHC · Archival block · 2 weeks, research assay</small></td><td><div><strong>soluble EphB4-HSA</strong> <small class="persona-line">(fusion protein · trial only)</small></div></td><td>Defer</td><td>EPHB4 earns a line on a bladder gap list and nothing more: the evidence tier is preclinical, the one clinical-stage binder was studied in other diseases, and endothelial expression makes the therapeutic window uncertain. Spending scarce tissue on it would displace stains with real options behind them.</td><td>—</td></tr>
+    <tr><td><span class="fit-badge fit-none">low</span></td><td><strong>Integrin alpha-3 (ITGA3) protein expression</strong><br><small class="persona-line">Relevant to this tumor type</small></td><td>Not measured</td><td>ITGA3 is upregulated on bladder carcinoma and drives invasion, so the panel puts it in scope for this tumor type. There is no anti-ITGA3 binder in clinical development.</td><td>—</td><td>—</td><td>Defer</td><td>ITGA3 has no clinical-stage binder, so a result either way would change nothing that can be acted on today. The row exists so the reader can see the target was considered and set aside, not because a stain is worth ordering. Broad normal epithelial expression would also limit any future window.</td><td>—</td></tr>
+    <tr><td><span class="fit-badge fit-none">low</span></td><td><strong>PSCA protein expression</strong><br><small class="persona-line">Relevant to this tumor type</small></td><td>Not measured</td><td>PSCA is upregulated in bladder cancer as well as in prostate and pancreatic cancer, and this patient also carries a treated prostate primary. No PSCA result exists.</td><td><strong>PSCA IHC on tumor tissue</strong><br><small>IHC · Archival block · 1-2 weeks</small></td><td><div><strong>PSCA-directed CAR-T (City of Hope program)</strong> <small class="persona-line">(CAR-T · trial only)</small></div><div><strong>BPX-601</strong> <small class="persona-line">(CAR-T · trial only)</small></div></td><td>Defer</td><td>PSCA is plausibly expressed in this tumor but the clinical bench is confined to early prostate and pancreatic CAR-T protocols, none of which is enrolling urothelial patients. Normal prostate, bladder and pancreas expression is also an on-target risk that matters more than usual in a man with a prostate primary and prior pancreatitis. Test only if a PSCA protocol opens to this disease.</td><td>—</td></tr>
+    <tr><td><span class="fit-badge fit-none">low</span></td><td><strong>SLITRK6 protein expression</strong><br><small class="persona-line">Relevant to this tumor type</small></td><td>Not measured</td><td>SLITRK6 is expressed on urothelial carcinoma and was developed specifically in this disease, so it belongs on a urothelial gap list even though the program behind it stalled.</td><td><strong>SLITRK6 IHC on tumor tissue</strong><br><small>IHC · Archival block · 1-2 weeks, and the assay is not routinely offered</small></td><td><div><strong>sirtratumab vedotin</strong> <small class="persona-line">(SLITRK6-directed ADC · trial only)</small></div></td><td>Defer</td><td>SLITRK6 is genuinely urothelial-restricted but the only binder that reached patients has not advanced past phase 1, so a positive stain would open nothing that is currently enrolling. With one block left and several higher-yield stains competing for it, this is the wrong slide to spend. Revisit if a SLITRK6 program reopens.</td><td>—</td></tr>
+    <tr><td><span class="fit-badge fit-none">low</span></td><td><strong>STEAP1 protein expression</strong><br><small class="persona-line">Relevant to this tumor type</small></td><td>Not measured</td><td>STEAP1 is expressed in bladder cancer alongside its main prostate indication, and the patient has a second prostate primary under surveillance. It has never been assessed.</td><td><strong>STEAP1 IHC on tumor tissue</strong><br><small>IHC · Archival block · 1-2 weeks</small></td><td><div><strong>xaluritamig</strong> <small class="persona-line">(STEAP1 x CD3 bispecific · trial only)</small></div></td><td>Defer</td><td>STEAP1 programs are running in castration-resistant prostate cancer, and this patient&#x27;s prostate primary has no evidence of disease, so neither his urothelial disease nor his prostate history gives him a route to one, and some normal urothelial expression complicates the tumor-versus-normal argument on top of that. There is nothing to order here today.</td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2 id="what-this-collapses-to">What this collapses to</h2>
+<p><em>The gaps above resolve onto this many distinct orders. Biomarkers that ride along on the same assay are grouped together.</em></p>
+<ul>
+<li><strong>Retrieval of the sequencing already performed (institutional 468-gene tumor/normal panel 2023-11, two commercial WES/WTS platforms, WGS 2025-03), which also returns FGFR3 status and the single unnamed OncoKB-actionable alteration. No new specimen needed</strong> — BRAF V600E mutation, Homologous recombination deficiency / BRCA1 / BRCA2 pathogenic variant, NTRK1 / NTRK2 / NTRK3 gene fusion, RET gene fusion</li>
+<li><strong>Cancer/testis antigen expression panel (PRAME, NY-ESO-1) by validated IHC or RT-PCR on the same archival block, alongside the retrieval of the 2026-08 PRAME imaging read</strong> — NY-ESO-1 (CTAG1B) expression, HLA-A*02:01-restricted</li>
+<li><strong>EPHB4 IHC on tumor tissue</strong> — EPHB4 protein expression</li>
+<li><strong>One archival block cut for the validated IHC set: HER2 with reflex ISH, TROP2, mesothelin, MUC1 and B7-H3 read together on the 2025-03 recurrence or the 2026-08 nodal core</strong> — B7-H3 (CD276) protein expression</li>
+<li><strong>PSCA IHC on tumor tissue</strong> — PSCA protein expression</li>
+<li><strong>SLITRK6 IHC on tumor tissue</strong> — SLITRK6 protein expression</li>
+<li><strong>STEAP1 IHC on tumor tissue</strong> — STEAP1 protein expression</li>
+</ul>
+<h2 id="measured-but-not-to-decision-resolution">Measured, but not to decision resolution</h2>
+<p><em>A result exists for each of these, but not at the resolution a treatment decision needs. The workup that would close each gap is carried into the <a href="target_validation.md">Target validation paths</a> report.</em></p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Priority</th><th>Biomarker</th><th>What is on file</th><th>Gap</th><th>What would close it</th><th>Next step</th><th>References</th></tr></thead>
+      <tbody>
+    <tr><td><span class="fit-badge fit-strong">essential</span></td><td><strong>HER2 protein overexpression (IHC 3+)</strong><br><small class="persona-line">Tumor-agnostic</small></td><td>profile.json:biomarkers[0] HER2, confirmation_status &#x27;ihc_pending&#x27;; profile.json:biomarkers[0] three concordant IHC 3+ results (primary 2023-11, liver met 2023-11, recurrence 2025-03), clone 4B5 and a national reference lab; profile.json:biomarkers[0] discordant weak HER2 on research-grade MXIF of 2026-08 nodal tissue; repeat validated IHC performed 2026-08, tier not in the record; profile.json:targetable_features[0] names HER2 reconciliation as the near-term decision gate</td><td>The 3+ calls describe 2023 and 2025 tumor. The current (2026-08) nodal tumor has been read only by research-grade multiplex immunofluorescence, which is not a validated HER2 assay and scored weak. Closing the gap needs the tier from the validated HER2 IHC drawn 2026-08 (4B5 or equivalent, reflex ISH if 2+), reported with tumor content stated, since the nodal cores carry only 5-10% tumor.</td><td><strong>Validated HER2 IHC (4B5 or equivalent) with reflex ISH if 2+, on contemporary tumor tissue</strong><br><small>IHC · The 2026-08 nodal core if tumor content allows, otherwise the 2025-03 bladder recurrence block; specimen sufficiency must be stated on the report · 3-7 days once the block is released, and the 2026-08 result may only need retrieval</small><br><small class="persona-line"><em>bundles with:</em> One archival block cut for the validated IHC set: HER2 with reflex ISH, TROP2, mesothelin, MUC1 and B7-H3 read together on the 2025-03 recurrence or the 2026-08 nodal core</small></td><td>Order now</td><td><a href="https://clinicaltrials.gov/study/NCT04482309">NCT04482309</a><br><em>enhertu-tumor-agnostic-her2-ihc3plus-accelerated-approval-2024</em></td></tr>
+    <tr><td><span class="fit-badge fit-partial">high</span></td><td><strong>Tumor mutational burden, high (TMB-H)</strong><br><small class="persona-line">Tumor-agnostic</small></td><td>profile.json:biomarkers[9] TMB 12.4 mut/Mb in primary and liver metastasis, confirmation_status &#x27;confirmed&#x27;; profile.json:biomarkers[9] method &#x27;institutional hybrid-capture tumor/normal NGS panel (468-gene class), 2023-11&#x27;; profile.json:biomarkers[9] decision_resolution already flags the cross-assay calibration hedge</td><td>The value comes from an institutional 468-gene hybrid-capture panel. The tumor-agnostic pembrolizumab indication reads TMB-H by an FDA-approved test, and FoundationOne CDx is still the only approved TMB companion diagnostic as of 2026-08, so 12.4 mut/Mb on a laboratory-developed panel does not satisfy the label as written. TMB recomputed from the whole-exome sequencing already performed, or a companion-diagnostic-grade panel report, would settle it.</td><td><strong>TMB from a companion-diagnostic-grade comprehensive panel, or recomputed from the existing WES with a validated caller</strong><br><small>NGS_panel · Archival tissue already sequenced, or the existing WES data; plasma is an option if tissue is not released · days if the existing reports are retrieved, 2-3 weeks for a new panel</small><br><small class="persona-line"><em>bundles with:</em> Retrieval of the sequencing already performed (institutional 468-gene tumor/normal panel 2023-11, two commercial WES/WTS platforms, WGS 2025-03), which also returns FGFR3 status and the single unnamed OncoKB-actionable alteration. No new specimen needed</small></td><td>Bundle with planned testing</td><td><a href="https://clinicaltrials.gov/study/NCT02628067">NCT02628067</a><br><em>keytruda-tmb-h-tumor-agnostic-2020</em><br><em>foundationone-cdx-tmb-companion-diagnostic</em></td></tr>
+    <tr><td><span class="fit-badge fit-partial">high</span></td><td><strong>Mesothelin (MSLN) protein expression</strong><br><small class="persona-line">Relevant across a tumor subset</small></td><td>profile.json:biomarkers[4] mesothelin strong on research-grade MXIF 2026-08, confirmation_status &#x27;ihc_pending&#x27;; profile.json:biomarkers[4] decision_resolution asks for validated mesothelin IHC before trial screening; profile.json:targetable_features[3] treats this as a confirmation-first lead</td><td>The only evidence is research-grade multiplex immunofluorescence, not a validated clinical mesothelin IHC, and mesothelin is atypical in urothelial carcinoma, which raises the bar on assay specificity. A validated stain on tumor tissue is what mesothelin-directed trials will ask for, and the 5-10% tumor content of the nodal cores has to be stated on the report.</td><td><strong>Validated mesothelin IHC on tumor tissue (clone and threshold per candidate protocol)</strong><br><small>IHC · Archival block; the 2025-03 recurrence has more tumor than the nodal cores · 1 week</small><br><small class="persona-line"><em>bundles with:</em> One archival block cut for the validated IHC set: HER2 with reflex ISH, TROP2, mesothelin, MUC1 and B7-H3 read together on the 2025-03 recurrence or the 2026-08 nodal core</small></td><td>Bundle with planned testing</td><td>—</td></tr>
+    <tr><td><span class="fit-badge fit-partial">high</span></td><td><strong>PRAME expression (HLA-A*02:01-restricted)</strong><br><small class="persona-line">Relevant across a tumor subset</small></td><td>profile.json:biomarkers[7] PRAME-directed imaging completed 2026-08, result not in the available record, confirmation_status &#x27;unknown&#x27;; profile.json:biomarkers[12] HLA-A*02:01 positive by high-resolution typing 2025-01, confirmation_status &#x27;confirmed&#x27;; profile.json:targetable_features[5] describes this axis as conditional on expression</td><td>The 2026-08 PRAME imaging read is not in the record, and imaging is not what a PRAME trial screens on. Trials require expression by validated IHC or RT-PCR at a stated threshold, which has not been done. Retrieve the imaging read, then run the expression assay the candidate protocol names.</td><td><strong>PRAME expression by validated IHC or RT-PCR at the threshold the candidate protocol specifies</strong><br><small>IHC · Archival block; RT-PCR tolerates lower tumor content than IHC scoring · 1-2 weeks</small><br><small class="persona-line"><em>bundles with:</em> Cancer/testis antigen expression panel (PRAME, NY-ESO-1) by validated IHC or RT-PCR on the same archival block, alongside the retrieval of the 2026-08 PRAME imaging read</small></td><td>Order if tissue available</td><td>—</td></tr>
+    <tr><td><span class="fit-badge fit-partial">high</span></td><td><strong>Nectin-4 (NECTIN4) protein expression</strong><br><small class="persona-line">Relevant to this tumor type</small></td><td>profile.json:biomarkers[2] Nectin-4 95% membranous (primary 2023-11), 100% in the in-situ component (2025-03), confirmation_status &#x27;confirmed&#x27;; profile.json:biomarkers[2] Nectin-4-directed imaging performed 2026-06, result not in the available record; profile.json:targetable_features[1] flags acquired Nectin-4 downregulation after enfortumab vedotin as plausible and unverified</td><td>Both stains predate 25 months of enfortumab vedotin. Antigen downregulation is a recognised route to EV resistance, so the historical 95-100% result cannot carry a re-targeting decision. Closing the gap means the 2026-06 Nectin-4 imaging read, or a contemporary IHC on post-EV tissue.</td><td><strong>Contemporary Nectin-4 IHC on post-EV tissue, or retrieval of the 2026-06 Nectin-4 imaging read</strong><br><small>IHC · 2026-08 nodal core (5-10% tumor content) or the 2025-03 recurrence block; the imaging read needs no tissue at all · days for the imaging retrieval, 1 week for the stain</small><br><small class="persona-line"><em>bundles with:</em> One archival block cut for the validated IHC set: HER2 with reflex ISH, TROP2, mesothelin, MUC1 and B7-H3 read together on the 2025-03 recurrence or the 2026-08 nodal core</small></td><td>Order if tissue available</td><td>—</td></tr>
+    <tr><td><span class="fit-badge fit-partial">high</span></td><td><strong>TROP2 (TACSTD2) protein expression</strong><br><small class="persona-line">Relevant to this tumor type</small></td><td>profile.json:biomarkers[3] TROP2 low positive (weak) on research-grade MXIF 2026-08, confirmation_status &#x27;ihc_pending&#x27;; profile.json:biomarkers[3] validated TROP2 IHC performed 2026-08 at a tertiary academic center, tier not in the available record</td><td>A weak MXIF signal is recorded as low expression and not as a negative, and multiplex immunofluorescence is not a validated TROP2 assay. The validated IHC drawn 2026-08 needs to be retrieved and reported as a tier, percent times intensity or H-score, so that trials gating on expression can be screened against a real number.</td><td><strong>Validated TROP2 IHC reported as percent membranous staining times intensity (H-score)</strong><br><small>IHC · Already drawn 2026-08; retrieval first, restain only if the original is uninterpretable · days for retrieval, 1 week for a restain</small><br><small class="persona-line"><em>bundles with:</em> One archival block cut for the validated IHC set: HER2 with reflex ISH, TROP2, mesothelin, MUC1 and B7-H3 read together on the 2025-03 recurrence or the 2026-08 nodal core</small></td><td>Bundle with planned testing</td><td><em>trodelvy-urothelial-accelerated-approval-withdrawn-2024</em></td></tr>
+    <tr><td><span class="fit-badge fit-weak">medium</span></td><td><strong>MUC1 protein expression</strong><br><small class="persona-line">Relevant across a tumor subset</small></td><td>profile.json:biomarkers[5] MUC1 strong on research-grade MXIF 2026-08, confirmation_status &#x27;ihc_pending&#x27;; profile.json:biomarkers[5] decision_resolution asks for validated MUC1 IHC with clone and threshold per candidate trial</td><td>Research-grade multiplex immunofluorescence with no validated tier. MUC1 is expressed at low level on normal epithelia, so a strong signal only becomes meaningful when the assay distinguishes the tumor-associated glycoform the candidate agent targets. The stain has to be the clone that protocol names.</td><td><strong>Validated MUC1 IHC using the clone and threshold the candidate protocol specifies</strong><br><small>IHC · Archival block · 1 week</small><br><small class="persona-line"><em>bundles with:</em> One archival block cut for the validated IHC set: HER2 with reflex ISH, TROP2, mesothelin, MUC1 and B7-H3 read together on the 2025-03 recurrence or the 2026-08 nodal core</small></td><td>Bundle with planned testing</td><td>—</td></tr>
+    <tr><td><span class="fit-badge fit-weak">medium</span></td><td><strong>PD-L1 protein expression</strong><br><small class="persona-line">Relevant across a tumor subset</small></td><td>profile.json:biomarkers[1] CPS 5 and 5% tumor cells on the primary (2023-11), CPS 0 on the liver metastasis (2023-11), confirmation_status &#x27;confirmed&#x27;; profile.json:biomarkers[1] method &#x27;IHC E1L3N clone, validated comparable to 22C3 pharmDx&#x27;; profile.json:biomarkers[1] decision_resolution notes heterogeneity weakens PD-L1 as a predictor here</td><td>Two sites gave CPS 5 and CPS 0, which is discordance and not a number, and the stain used a laboratory clone validated as comparable to 22C3 pharmDx rather than the companion assay itself. No PD-L1 result exists on tissue from 2025 or later. A trial specifying CPS at or above 10 by 22C3 would need a fresh companion-assay read on contemporary tissue.</td><td><strong>PD-L1 IHC by the companion clone the candidate protocol names, on contemporary tissue</strong><br><small>IHC · Archival block, ideally the 2025-03 recurrence or the 2026-08 node · 3-7 days</small><br><small class="persona-line"><em>bundles with:</em> One archival block cut for the validated IHC set: HER2 with reflex ISH, TROP2, mesothelin, MUC1 and B7-H3 read together on the 2025-03 recurrence or the 2026-08 nodal core</small></td><td>Defer</td><td>—</td></tr>
+    <tr><td><span class="fit-badge fit-none">low</span></td><td><strong>Fibroblast activation protein alpha (FAP), stromal</strong><br><small class="persona-line">Relevant across a tumor subset</small></td><td>profile.json:biomarkers[6] FAP-positive stroma on research-grade MXIF 2026-08, confirmation_status &#x27;unknown&#x27;; profile.json:biomarkers[6] FAPI PET 2025-09 showed intense uptake in prostate and seminal vesicle only, attributed to biopsy-proven BCG granulomatous inflammation, with no FAP-avid urothelial disease; profile.json:biomarkers[6] repeat FAP imaging 2026-06, result not in the available record</td><td>Stromal positivity on an unvalidated multiplex assay conflicts with a FAPI PET that showed no avid urothelial lesion, and the uptake it did show sits in granulomatous tissue, a classic false positive. What would settle it is quantitative FAPI PET uptake in the known nodal disease, read with the post-SBRT inflammatory caveat stated.</td><td><strong>Retrieve the 2026-06 FAP imaging read and, if it is uninformative, quantitative FAPI PET uptake in known metastatic nodes</strong><br><small>imaging · None · days for retrieval</small></td><td>Defer</td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2 id="already-established">Already established</h2>
+<p><em>On file at decision resolution. No further action from this survey.</em></p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Biomarker</th><th>Status</th><th>Where it is recorded</th><th>Note</th></tr></thead>
+      <tbody>
+    <tr><td><strong>Microsatellite instability / mismatch-repair deficiency (MSI-H / dMMR)</strong><br><small class="persona-line">Tumor-agnostic</small></td><td>Measured</td><td>profile.json:biomarkers[10] MSI: microsatellite stable in both specimens, method &#x27;institutional NGS panel (2023-11)&#x27;, confirmation_status &#x27;confirmed&#x27;; concordant with profile.json:biomarkers[9] TMB 12.4 mut/Mb, which is elevated but well below the hypermutated range dMMR produces</td><td>Microsatellite status was assessed on a comprehensive panel in two separate specimens and both were stable, which closes the tumor-agnostic mismatch-repair route. The TMB of 12.4 mut/Mb is consistent with a stable tumor and not with mismatch-repair loss, so nothing in the case argues for a second opinion by MMR IHC. If a strong clinical suspicion ever arises, MMR protein IHC is the orthogonal test.</td></tr>
+    <tr><td><strong>HLA class I genotype</strong><br><small class="persona-line">Relevant across a tumor subset</small></td><td>Measured</td><td>profile.json:biomarkers[12] HLA-A*02:01 positive, high-resolution class I and II typing 2025-01, confirmation_status &#x27;confirmed&#x27;; profile.json:biomarkers[12] full typing withheld from the derived profile as quasi-identifying, which does not affect the A*02:01 call</td><td>Allele-level typing is already on file and positive for A*02:01, so the prerequisite that would otherwise make the whole intracellular-antigen class unassessable is satisfied. That is what lets the PRAME and NY-ESO-1 rows stand as expression questions instead of HLA questions. The full typing is held in the local record and should be supplied directly to any protocol that needs the class II alleles.</td></tr>
+    <tr><td><strong>MAGE-A4 expression (HLA-A*02-restricted)</strong><br><small class="persona-line">Relevant across a tumor subset</small></td><td>Measured</td><td>profile.json:biomarkers[8] MAGE-A4 tumor expression negative (2024-06), confirmation_status &#x27;confirmed&#x27;; profile.json:biomarkers[8] testing was performed as part of screening for a MAGE-A4 TCR trial for which the patient was HLA-matched</td><td>MAGE-A4 was tested on tumor tissue and was negative, which forecloses the MAGE-A4 TCR-T class despite the matching HLA type. The row is kept because it is the case&#x27;s own worked example of why an HLA match is not an option until expression is measured, which is exactly the state PRAME and NY-ESO-1 are in now. Nothing further is needed unless a new specimen is ever sequenced and shows re-expression.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2 id="panel-targets-out-of-scope-for-this-tumor">Panel targets out of scope for this tumor</h2>
+<p>??? note "58 of 72 panel targets were screened and set aside"
+    Set aside as having no plausible connection to this patient's tumor type or stated features. Listed for completeness of the audit trail.</p>
+<pre><code>ALPPL2 · ANTXR1 · AXL · CA9 · CD19 · CD200 · CD37 · CD46 · CD70 · CDCP1 · CDH17 · CDH3 · CDH6 · CEACAM5 · CLDN18 · CLEC12A · CT83 · DLK1 · DLL3 · EGFR · EGFR (variant III) · ENPP3 · EPCAM · EPHA2 · ERBB2 · ERBB3 · F3 · FOLH1 · FOLR1 · FZD7 · GPC3 · GPRC5D · GUCY2C · HAVCR1 · IL13RA2 · IL3RA · ITGB6 · L1CAM · LGR5 · LILRB4 · LY6E · LYPD3 · MAGEA1 · MAGEC2 · MERTK · MET · MMP14 · PODXL · PTK7 · ROR1 · SEZ6 · SLC34A2 · SLC44A4 · SSTR2 · SSX2 · TNFRSF10B · TNFRSF17 · TSPAN8
+</code></pre>
+<p>!!! note "Reading this report"
+    This page answers one question per biomarker: has this patient been tested for it, and was the test at a resolution that can carry a treatment decision. <strong>Not measured</strong> means nothing is on file, which is not the same as a negative result. <strong>Measured, not decision-grade</strong> means a result exists but cannot be acted on as it stands; those gaps are worked into the <a href="target_validation.md">Target validation paths</a> report. <strong>Priority</strong> weighs what is going unassessed against how routine the assay is. Most of these biomarkers will be negative if tested; the case for testing rests on the size of the option that opens if positive, not on how likely a positive is.</p>
+<footer class="libby-footer">Generated 2026-08-20 &middot; Libby &middot; <code>urothelial-mets-her2-discordant-kndl</code> &middot; Selected general biomarker report</footer>
+</body></html>

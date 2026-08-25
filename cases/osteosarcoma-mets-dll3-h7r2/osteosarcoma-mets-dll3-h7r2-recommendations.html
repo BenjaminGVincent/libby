@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>Libby recommendations &mdash; osteosarcoma-mets-dll3-h7r2</title>
+<style>
+
+:root {
+  --ink: #1A202C;
+  --ink-muted: #4A5568;
+  --rule: #E2E8F0;
+  --header-bg: #F4F6F8;
+  --accent: #5B3A87;
+  --bg: #FFFFFF;
+  --warn-fg: #6F2E1A;
+  --warn-bg: #FBE9E7;
+  --warn-border: #ECC4BB;
+}
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  max-width: 80rem;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  line-height: 1.5;
+}
+h1, h2, h3 { color: var(--ink); }
+h1 { font-size: 1.6rem; }
+h2 { font-size: 1.2rem; margin-top: 2rem; }
+h3 { font-size: 1.05rem; margin-top: 1.5rem; }
+small.scenario-key { color: var(--ink-muted); }
+.disclaimer {
+  border: 1px solid var(--warn-border);
+  background: var(--warn-bg);
+  color: var(--warn-fg);
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  margin: 1rem 0 2rem;
+  font-size: 0.95rem;
+}
+.disclaimer strong { color: #B71C1C; }
+.profile-grid {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.25rem 1rem;
+  margin: 1rem 0 2rem;
+  font-size: 0.95rem;
+}
+.profile-grid dt { font-weight: 600; color: var(--ink-muted); }
+.profile-grid dd { margin: 0; }
+.trial-table-wrap { color: var(--ink); }
+.trial-scroll { overflow-x: auto; }
+.trial-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.88em;
+}
+.trial-table thead th {
+  background: var(--header-bg);
+  font-weight: 600;
+  text-align: left;
+  padding: 0.5em 0.6em;
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  white-space: nowrap;
+}
+.trial-table tbody td {
+  padding: 0.5em 0.6em;
+  border-bottom: 1px solid var(--rule);
+  font-variant-numeric: tabular-nums;
+  vertical-align: top;
+}
+.trial-table tbody tr:last-child td {
+  border-bottom: 2px solid var(--ink);
+}
+.persona {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.35em;
+  font-size: 0.78em;
+  font-weight: 600;
+  margin-right: 0.25em;
+  border: 1px solid transparent;
+}
+.persona-risktaker    { background: #FFE9D6; color: #6F3A0F; border-color: #F0CFAE; }
+.persona-conservative { background: #DFEBFB; color: #1B3A6B; border-color: #B5CDEE; }
+.persona-critic       { background: #F1E5FF; color: #441E72; border-color: #D4BBF2; }
+.persona-concensusite { background: #DDF1EE; color: #134E48; border-color: #B0DBD3; }
+.persona-advocate     { background: #FFE5EE; color: #6E1638; border-color: #F0BBCB; }
+.split-glyph { font-weight: 700; color: #5A4500; }
+.not-recommended {
+  color: var(--ink-muted);
+  text-decoration: line-through;
+}
+.scenario-conditional {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5A4500;
+  background: #FFF7E0;
+  border: 1px solid #F1DD9A;
+  border-radius: 0.35em;
+  padding: 0.05em 0.45em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+.pipeline-note,
+.evidence-detail-note {
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+  margin: 0.25rem 0 0.75rem;
+}
+.evidence-detail-empty {
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+  margin: 0.25rem 0 0.75rem;
+  padding-left: 0.5rem;
+  border-left: 2px solid #E5E5E5;
+}
+.evidence-detail-table { font-size: 0.86em; }
+.evidence-detail-table thead th {
+  background: #FAFAFA;
+}
+.evidence-detail-table .tox-grade {
+  font-size: 0.85em;
+  color: var(--ink-muted);
+  font-weight: 500;
+}
+.evidence-detail-table .safety-summary-fallback {
+  font-style: italic;
+  color: var(--ink-muted);
+}
+h4 + .trial-table-wrap,
+h4 + .evidence-detail-empty {
+  margin-top: 0.25rem;
+}
+h4 { margin-top: 1.25rem; margin-bottom: 0.25rem; font-size: 1rem; }
+.pipeline-context-table { font-size: 0.82em; color: var(--ink-muted); }
+.pipeline-context-table thead th {
+  background: #FAFAFA;
+  border-top: 1px solid var(--ink-muted);
+  border-bottom: 1px solid var(--ink-muted);
+}
+.pipeline-context-table tbody tr:last-child td { border-bottom: 1px solid var(--ink-muted); }
+.pipeline-context-table .intervention-name { color: var(--ink); font-weight: 600; }
+.pipeline-context-table .alias-list { color: var(--ink-muted); font-size: 0.9em; }
+.pipeline-context-table .basket-flag {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #134E48;
+  background: #DDF1EE;
+  border: 1px solid #B0DBD3;
+  border-radius: 0.35em;
+  padding: 0.02em 0.4em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+.pipeline-context-table .discontinued-flag {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5A2A2A;
+  background: #F2E1E1;
+  border: 1px solid #DDB7B7;
+  border-radius: 0.35em;
+  padding: 0.02em 0.4em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+.pipeline-context-table .offlabel-flag {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5F4310;
+  background: #FBEFD3;
+  border: 1px solid #E8C977;
+  border-radius: 0.35em;
+  padding: 0.02em 0.4em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+footer.libby-footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  color: var(--ink-muted);
+  font-size: 0.85rem;
+}
+
+</style>
+</head>
+<body>
+<h1>Libby recommendations &mdash; <code>osteosarcoma-mets-dll3-h7r2</code></h1>
+<div class="disclaimer">
+<strong>Decision support, not medical advice.</strong> Libby is an experimental 
+multi-agent decision-support tool. The recommendations below have not been 
+reviewed by a clinician treating this patient. Do not act on this page without 
+consulting a qualified oncologist.
+</div>
+<h2>Profile snapshot</h2>
+<dl class="profile-grid">
+  <dt>Primary site</dt><dd>bone</dd>
+  <dt>Histology</dt><dd>osteosarcoma</dd>
+  <dt>Stage</dt><dd>IV</dd>
+  <dt>ECOG</dt><dd>1</dd>
+  <dt>Age band</dt><dd>18-29</dd>
+  <dt>Sex</dt><dd>unknown</dd>
+  <dt>Biomarkers</dt><dd>DLL3 RNA expression elevated; protein-level membrane status unknown (rna_only); PRAME RNA expression elevated; protein-level expression and HLA presentation status unknown (rna_only)</dd>
+  <dt>Efficacy/toxicity weight</dt><dd>0.85</dd>
+</dl>
+
+<p><em>6 ranked therapeutic options across 2 targetable features. Biomarker workup steps live in the standalone Target validation paths report.</em></p>
+<h2>DLL3-targeting interventions</h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr><td><a href="#evidence-tarlatamab">1</a></td><td><strong>tarlatamab (DLL3 x CD3 BiTE) via NCT06788938 (DLL3-IHC-gated basket)</strong> <span class="scenario-conditional">(conditional on dll3_ihc positive)</span></td><td>Moderate if DLL3 IHC confirms — best-validated mechanism (DeLLphi-304 OS HR 0.60) but efficacy is entirely SCLC-derived; no osteosarcoma data.</td><td>Moderate (CRS ~56% mostly G1-2, ICANS-like ~12%, G3+ TRAE 24%)</td><td><strong>Moderate</strong> <span class="cpm-desc">(On-mechanism CNS/neuro bystander activation and antigen-density-dependent escape if DLL3 membrane expression is low or heterogeneous)</span></td><td><strong>The best-validated mechanism on the board and the lighter-toxicity DLL3 route — but every efficacy row is SCLC; osteosarcoma activity is a hypothesis until the IHC confirms surface target.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40454646">PMID&nbsp;40454646</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/37861218">PMID&nbsp;37861218</a><br><a href="https://clinicaltrials.gov/study/NCT06788938">NCT06788938</a></td></tr>
+    <tr><td><a href="#evidence-tarlatamab-radiation">2</a></td><td><strong>tarlatamab + radiation therapy via NCT06814496 (pan-tumor DLL3-IHC basket with RT)</strong> <span class="scenario-conditional">(conditional on dll3_ihc positive)</span></td><td>Unknown — no combination data; abscopal benefit over tarlatamab monotherapy is a hypothesis the phase-1 is still measuring.</td><td>Moderate (uncharacterized combination; BiTE CRS ~50% mostly G1-2, ICANS-like ~10%, plus site-specific RT toxicity)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Uncharacterized RT-on-BiTE synergistic toxicity; potential on-mechanism CNS/neuro bystander activation compounded by radiation)</span></td><td><strong>A parallel DLL3 slot with an abscopal rationale — but zero combination data, and the monotherapy basket delivers the same backbone with a written safety algorithm.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT06814496">NCT06814496</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/40454646">PMID&nbsp;40454646</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Pipeline context &mdash; not currently enrollable</h3>
+<p class="pipeline-note">Other agents in this target class drawn from the case dossier. The patient cannot currently enroll in these trials (most enroll a different tumor type), but they are included for context on the broader modality landscape. Drugs already listed in the ranked table above are not repeated here.</p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table pipeline-context-table">
+      <thead><tr><th>Intervention</th><th>Modality</th><th>Phase</th><th>Enrolling indication</th><th>Recruitment</th><th>Trial</th></tr></thead>
+      <tbody>
+    <tr><td><span class="intervention-name">SHR-4849 (IDE849)</span> <span class="basket-flag">basket / biomarker</span></td><td>ADC</td><td>1/2</td><td>SCLC, neuroendocrine carcinomas, DLL3-expressing tumors</td><td>recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT07174583" target="_blank" rel="noopener noreferrer">NCT07174583</a><br><span class="alias-list">IDEAYA Biosciences (US license) / Jiangsu Hengrui (parent)</span></td></tr>
+    <tr><td><span class="intervention-name">alveltamig</span><br><span class="alias-list">ZG006</span></td><td>trispecific</td><td>3</td><td>relapsed SCLC</td><td>recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT07189455" target="_blank" rel="noopener noreferrer">NCT07189455</a><br><span class="alias-list">Suzhou Zelgen Biopharmaceuticals</span></td></tr>
+    <tr><td><span class="intervention-name">zocilurtatug pelitecan</span><br><span class="alias-list">ZL-1310</span></td><td>ADC</td><td>3</td><td>small-cell lung cancer</td><td>recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT07218146" target="_blank" rel="noopener noreferrer">NCT07218146</a><br><span class="alias-list">Zai Lab</span></td></tr>
+    <tr><td><span class="intervention-name">obrixtamig</span><br><span class="alias-list">BI 764532, BI-764532</span></td><td>BiTE</td><td>3</td><td>extensive-stage SCLC (1L)</td><td>recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT07472517" target="_blank" rel="noopener noreferrer">NCT07472517</a><br><span class="alias-list">Boehringer Ingelheim</span></td></tr>
+    <tr><td><span class="intervention-name">gocatamig</span><br><span class="alias-list">MK-6070, HPN328, DS3280</span></td><td>trispecific</td><td>1/2</td><td>DLL3-expressing SCLC, large-cell NEC, neuroendocrine prostate cancer, GEP-NEC</td><td>active not recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT04471727" target="_blank" rel="noopener noreferrer">NCT04471727</a><br><span class="alias-list">Harpoon Therapeutics → Merck</span></td></tr>
+    <tr><td><span class="intervention-name">peluntamig</span><br><span class="alias-list">PT217</span></td><td>bispecific_other</td><td>1/2</td><td>SCLC, LCNEC, NEPC, GEP-NEC, EP-NEC</td><td>recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT05652686" target="_blank" rel="noopener noreferrer">NCT05652686</a><br><span class="alias-list">Phanes Therapeutics</span></td></tr>
+    <tr><td><span class="intervention-name">NG2 and DLL3 CAR-T cells</span><br><span class="alias-list">NG2/DLL3 CAR-T</span></td><td>CAR-T</td><td>1/2</td><td>melanoma</td><td>recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT07193966" target="_blank" rel="noopener noreferrer">NCT07193966</a><br><span class="alias-list">Shenzhen Geno-Immune Medical Institute</span></td></tr>
+    <tr><td><span class="intervention-name">[212Pb]Pb-MP0712 (212Pb-DOTAM-MAM279)</span><br><span class="alias-list">212Pb-MP0712</span></td><td>radioligand</td><td>1/2</td><td>SCLC and other DLL3-expressing solid tumors (LCNEC, EP-NEC, GEP-NEC, NEC of bladder)</td><td>recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT07278479" target="_blank" rel="noopener noreferrer">NCT07278479</a><br><span class="alias-list">Molecular Partners AG</span></td></tr>
+    <tr><td><span class="intervention-name">DJI136</span></td><td>CAR-T</td><td>1/2</td><td>extensive-stage SCLC</td><td>recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT07564401" target="_blank" rel="noopener noreferrer">NCT07564401</a><br><span class="alias-list">Novartis Pharmaceuticals</span></td></tr>
+    <tr><td><span class="intervention-name">QLS31904</span></td><td>BiTE</td><td>1</td><td>advanced solid tumors with DLL3 expression</td><td>unknown</td><td><a href="https://clinicaltrials.gov/study/NCT05461287" target="_blank" rel="noopener noreferrer">NCT05461287</a><br><span class="alias-list">Qilu Pharmaceutical</span></td></tr>
+    <tr><td><span class="intervention-name">DLL3-CAR-NK cells</span></td><td>CAR-NK</td><td>1</td><td>extensive-stage SCLC</td><td>unknown</td><td><a href="https://clinicaltrials.gov/study/NCT05507593" target="_blank" rel="noopener noreferrer">NCT05507593</a><br><span class="alias-list">Tianjin Medical University Cancer Institute</span></td></tr>
+    <tr><td><span class="intervention-name">clesitamig</span><br><span class="alias-list">RO7616789, RG6524, ALPS12</span></td><td>trispecific</td><td>1</td><td>SCLC, neuroendocrine carcinoma</td><td>completed</td><td><a href="https://clinicaltrials.gov/study/NCT05619744" target="_blank" rel="noopener noreferrer">NCT05619744</a><br><span class="alias-list">Hoffmann-La Roche</span></td></tr>
+    <tr><td><span class="intervention-name">LB2102</span></td><td>CAR-T</td><td>1</td><td>extensive-stage SCLC, LCNEC of lung</td><td>active not recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT05680922" target="_blank" rel="noopener noreferrer">NCT05680922</a><br><span class="alias-list">Legend Biotech</span></td></tr>
+    <tr><td><span class="intervention-name">FZ-AD005</span></td><td>ADC</td><td>1</td><td>advanced solid tumors, SCLC, LCNEC</td><td>recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT06424665" target="_blank" rel="noopener noreferrer">NCT06424665</a><br><span class="alias-list">Shanghai Fudan-Zhangjiang Bio-Pharmaceutical</span></td></tr>
+    <tr><td><span class="intervention-name">IBI3009</span></td><td>ADC</td><td>1</td><td>small-cell lung cancer</td><td>recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT06613009" target="_blank" rel="noopener noreferrer">NCT06613009</a><br><span class="alias-list">Innovent Biologics</span></td></tr>
+    <tr><td><span class="intervention-name">²²⁵Ac-ABD147</span><br><span class="alias-list">225Ac-ABD147</span></td><td>radioligand</td><td>1</td><td>SCLC, large-cell neuroendocrine carcinoma</td><td>active not recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT06736418" target="_blank" rel="noopener noreferrer">NCT06736418</a><br><span class="alias-list">Abdera Therapeutics</span></td></tr>
+    <tr><td><span class="intervention-name">¹⁷⁷Lu-DTPA-SC16.56</span><br><span class="alias-list">177Lu-SC16.56</span></td><td>radioimmunotherapy</td><td>1</td><td>neuroendocrine tumors / carcinomas (lung, prostate)</td><td>not yet recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT06941480" target="_blank" rel="noopener noreferrer">NCT06941480</a><br><span class="alias-list">Memorial Sloan Kettering Cancer Center</span></td></tr>
+    <tr><td><span class="intervention-name">²²⁵Ac-ETN029</span><br><span class="alias-list">225Ac-ETN029</span></td><td>radioligand</td><td>1</td><td>SCLC, LCNEC, NEPC, GEP-NEC</td><td>recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT07006727" target="_blank" rel="noopener noreferrer">NCT07006727</a><br><span class="alias-list">Novartis</span></td></tr>
+    <tr><td><span class="intervention-name">BL-M14D1</span></td><td>ADC</td><td>1</td><td>SCLC and neuroendocrine neoplasms (NEPC, GEP-NEC, Merkel cell, LCNEC, EP-NEC)</td><td>recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT07080242" target="_blank" rel="noopener noreferrer">NCT07080242</a><br><span class="alias-list">SystImmune Inc.</span></td></tr>
+    <tr><td><span class="intervention-name">NEUK203-13 (anti-DLL3 iPSC CAR-NK)</span><br><span class="alias-list">NEUKIO203-13</span></td><td>CAR-NK</td><td>1</td><td>extensive-stage SCLC and neuroendocrine tumors</td><td>recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT07366658" target="_blank" rel="noopener noreferrer">NCT07366658</a><br><span class="alias-list">Cancer Institute and Hospital, Chinese Academy of Medical Sciences</span></td></tr>
+    <tr><td><span class="intervention-name">ML261</span></td><td>CAR-T</td><td>1</td><td>R/R SCLC and select NECs (EP-NEC, GEP-NEC, NEPC)</td><td>not yet recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT07488923" target="_blank" rel="noopener noreferrer">NCT07488923</a><br><span class="alias-list">Moonlight Bio, Inc.</span></td></tr>
+    <tr><td><span class="intervention-name">rovalpituzumab tesirine</span> <span class="discontinued-flag">discontinued</span><br><span class="alias-list">Rova-T, SC16LD6.5</span></td><td>ADC</td><td>3</td><td>small-cell lung cancer (2L)</td><td>completed</td><td><a href="https://clinicaltrials.gov/study/NCT03061812" target="_blank" rel="noopener noreferrer">NCT03061812</a><br><span class="alias-list">AbbVie / Stemcentrx</span></td></tr>
+    <tr><td><span class="intervention-name">SC-002</span> <span class="discontinued-flag">discontinued</span></td><td>ADC</td><td>1</td><td>small-cell lung cancer</td><td>terminated</td><td><a href="https://clinicaltrials.gov/study/NCT02500914" target="_blank" rel="noopener noreferrer">NCT02500914</a><br><span class="alias-list">Stemcentrx (acquired by AbbVie)</span></td></tr>
+    <tr><td><span class="intervention-name">AMG 119</span> <span class="discontinued-flag">discontinued</span></td><td>CAR-T</td><td>1</td><td>small-cell lung cancer</td><td>unknown</td><td><a href="https://clinicaltrials.gov/study/NCT03392064" target="_blank" rel="noopener noreferrer">NCT03392064</a><br><span class="alias-list">Amgen</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-tarlatamab">tarlatamab (DLL3 x CD3 BiTE)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>SCLC after platinum-based chemo</strong> (2L)<br><small>Platinum-resistant or platinum-sensitive SCLC; ECOG 0-1</small></td><td>509</td><td><strong>CRS</strong> <span class="tox-grade">grade any</span>: 56% (n=254) <small>(tarlatamab arm; mostly grade 1-2)</small><br><strong>CRS</strong> <span class="tox-grade">grade &gt;=3</span>: 1% (n=254)<br><strong>ICANS-like neurologic event</strong> <span class="tox-grade">grade any</span>: 12% (n=254)<br><strong>treatment-related AE</strong> <span class="tox-grade">grade &gt;=3</span>: 24% (n=254) <small>(vs 53% on chemo comparator arm)</small><br><strong>neutropenia</strong> <span class="tox-grade">grade &gt;=3</span>: 3% (n=254) <small>(vs 25% on chemo arm)</small></td><td><strong>OS (HR vs chemo)</strong>: 0.6 HR (95% CI 0.47–0.77); p &lt;0.001<br><small>mPFS 4.2 vs 3.2 mo</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40454646">Mountzios et al. <em>N Engl J Med</em> 2025</a></td></tr>
+    <tr><td><strong>previously treated SCLC</strong> (2L+)<br><small>SCLC after platinum-based therapy and ≥1 prior line; ECOG 0-1; brain mets allowed if treated</small></td><td>220</td><td><strong>CRS</strong> <span class="tox-grade">grade any</span>: 51% <small>(10 mg cohort; mostly grade 1-2)</small><br><strong>CRS</strong> <span class="tox-grade">grade &gt;=3</span>: 1% <small>(single grade-3 event)</small><br><strong>ICANS-like neurologic event</strong> <span class="tox-grade">grade any</span>: 10% <small>(neurotoxicity / immune-effector-cell-associated)</small><br><strong>treatment-related AE</strong> <span class="tox-grade">grade &gt;=3</span>: 30% <small>(all-cause TRAE rate)</small><br><strong>treatment discontinuation due to AE</strong> <span class="tox-grade">grade any</span>: 3%</td><td><strong>ORR (BICR)</strong>: 40% (95% CI 29–52)<br><small>mDoR not reached at 10.6 mo follow-up; mPFS 4.9 mo</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37861218">Ahn et al. <em>N Engl J Med</em> 2023</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-tarlatamab-radiation">tarlatamab + radiation therapy</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>SCLC after platinum-based chemo</strong> (2L)<br><small>Platinum-resistant or platinum-sensitive SCLC; ECOG 0-1</small></td><td>509</td><td><strong>CRS</strong> <span class="tox-grade">grade any</span>: 56% (n=254) <small>(tarlatamab arm; mostly grade 1-2)</small><br><strong>CRS</strong> <span class="tox-grade">grade &gt;=3</span>: 1% (n=254)<br><strong>ICANS-like neurologic event</strong> <span class="tox-grade">grade any</span>: 12% (n=254)<br><strong>treatment-related AE</strong> <span class="tox-grade">grade &gt;=3</span>: 24% (n=254) <small>(vs 53% on chemo comparator arm)</small><br><strong>neutropenia</strong> <span class="tox-grade">grade &gt;=3</span>: 3% (n=254) <small>(vs 25% on chemo arm)</small></td><td><strong>OS (HR vs chemo)</strong>: 0.6 HR (95% CI 0.47–0.77); p &lt;0.001<br><small>mPFS 4.2 vs 3.2 mo</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40454646">Mountzios et al. <em>N Engl J Med</em> 2025</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2>Prame Hla interventions</h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr><td><a href="#evidence-ima203">1</a></td><td><strong>IMA203 (PRAME TCR-T) via NCT03686124 (ACTengine pan-solid basket, sarcoma cohort named)</strong> <span class="scenario-conditional">(conditional on prame_hla positive)</span></td><td>High ceiling if both biomarkers confirm (ORR 54%, Nat Med 2025) but from n=28 with a wide CI and no osteosarcoma-specific responder; unstable point estimate.</td><td>High (1 treatment-related septic death; CRS ~100%/G3+ 11%, ICANS ~25%, universal G3+ cytopenias post-Cy/Flu)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Antigen-loss / HLA-LOH escape and post-lymphodepletion immunosuppression window; durability unproven, responders melanoma-skewed)</span></td><td><strong>The highest-response on-axis option with a named sarcoma cohort, and the one with a fatality on the board — efficacy-first personas lead it, three dissent on the safety tail and n=28 imprecision.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40205198">PMID&nbsp;40205198</a><br><a href="https://clinicaltrials.gov/study/NCT03686124">NCT03686124</a></td></tr>
+    <tr><td><a href="#evidence-brenetafusp">2</a></td><td><strong>brenetafusp (IMC-F106C, PRAME x CD3 ImmTAC) via NCT04262466 / successor IMC-P115C</strong> <span class="scenario-conditional">(conditional on prame_hla positive)</span></td><td>Low-to-moderate: overall ORR 9-11%, benefit concentrated in a PRAME-positive subset (mPFS 4.5 vs 2.1 mo); melanoma-derived, cross-tumor.</td><td>Low (CRS predominantly G1-2, no G3+ CRS in cohort; rash ~70%, G3+ TRAE ~30%)</td><td><strong>Low</strong> <span class="cpm-desc">(On-target/off-tumor rash and antigen-density dependence; dissent is enrollability-flavored, no mechanism-level counter-productive vector)</span></td><td><strong>The best-tolerated PRAME route with an off-the-shelf, no-lymphodepletion trade — but modest single-agent efficacy and a sarcoma enrollment slot that is currently closed.</strong></td><td>doi:10.1200/JCO.2024.42.16_suppl.9507<br><a href="https://clinicaltrials.gov/study/NCT04262466">NCT04262466</a></td></tr>
+    <tr><td><a href="#evidence-imc-p115c">3</a></td><td><strong>IMC-P115C (next-gen PRAME x CD3 ImmTAC) via NCT07156136</strong> <span class="scenario-conditional">(conditional on prame_hla positive)</span></td><td>Unknown — first-in-human, no efficacy data; class bet on the ImmTAC platform and PRAME target, inferred from brenetafusp.</td><td>Low (no drug-specific data; class expectation predominantly G1-2 CRS and rash)</td><td><strong>Low</strong> <span class="cpm-desc">(Same on-target/off-tumor and antigen-density dependence as the ImmTAC class; no drug-specific counter-productive signal yet)</span></td><td><strong>The recruiting-today PRAME ImmTAC when brenetafusp&#x27;s sarcoma slot is closed — a platform-and-target bet with no efficacy readout of its own yet.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT07156136">NCT07156136</a><br>doi:10.1200/JCO.2024.42.16_suppl.9507</td></tr>
+    <tr><td><a href="#evidence-nw-101c">4</a></td><td><strong>NW-101C (PRAME TCR-T) via NCT07266298 (pan-solid PRAME/HLA-A*02:01 basket)</strong> <span class="scenario-conditional">(conditional on prame_hla positive)</span></td><td>Unknown — no NW-101C data exist; efficacy inferred entirely from the IMA203 PRAME TCR-T class precedent.</td><td>High (no drug-specific data; class expectation is the IMA203 TCR-T profile — CRS, ICANS, post-lymphodepletion cytopenias)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Same antigen-loss / HLA-LOH escape and lymphodepletion immunosuppression risk as the PRAME TCR-T class; no drug-specific data)</span></td><td><strong>A redundant PRAME TCR-T fallback if the IMA203 slot is inaccessible — but zero data under this name; the efficacy expectation is entirely borrowed.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT07266298">NCT07266298</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-ima203">IMA203 (PRAME TCR-T)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>PRAME-positive HLA-A*02:01-positive refractory solid tumors (basket: melanoma, sarcomas including synovial sarcoma, ovarian, NSCLC, head and neck, uterine, others)</strong> (2L+)<br><small>Heavily pretreated PRAME+ HLA-A*02:01+ patients; subset of synovial sarcoma cohort enrolled; lymphodepleting Cy/Flu prior to infusion</small></td><td>28</td><td><strong>CRS</strong> <span class="tox-grade">grade any</span>: 100% (28/28) <small>(TCR-T class effect; mostly G1-2)</small><br><strong>CRS</strong> <span class="tox-grade">grade &gt;=3</span>: 11% (n=28)<br><strong>ICANS-like neurotoxicity</strong> <span class="tox-grade">grade any</span>: 25% (n=28)<br><strong>post-Cy/Flu cytopenia</strong> <span class="tox-grade">grade &gt;=3</span>: 100% (28/28) <small>(expected lymphodepletion effect)</small><br><strong>treatment-related death</strong> <span class="tox-grade">grade 5</span>: 4% (1/28) <small>(septic shock)</small></td><td><strong>ORR (BICR)</strong>: 54% (95% CI 34–73)<br><small>mDoR not reached; mPFS 5.1 mo</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40205198">Wermke et al. <em>Lancet Oncol</em> 2024</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-brenetafusp">brenetafusp (IMC-F106C, PRAME x CD3 ImmTAC)</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-imc-p115c">IMC-P115C (next-gen PRAME x CD3 ImmTAC)</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-nw-101c">NW-101C (PRAME TCR-T)</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<footer class="libby-footer">Generated 2026-07-10 &middot; Libby &middot; <code>osteosarcoma-mets-dll3-h7r2</code></footer>
+</body></html>

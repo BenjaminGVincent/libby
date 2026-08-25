@@ -1,0 +1,688 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A multi-agent decision-support framework for identifying candidate therapeutics for an individual cancer patient. Not medical advice.">
+      
+      
+      
+        <link rel="canonical" href="https://benjamingvincent.github.io/libby/cases/pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m/target_validation/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Target validation - Libby</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/trial-table.css?v=1a438225">
+    
+      <link rel="stylesheet" href="../../../stylesheets/libby.css?v=41cd52d9">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#target-validation-pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Libby" class="md-header__button md-logo" aria-label="Libby" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Libby
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Target validation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/BenjaminGVincent/libby" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BenjaminGVincent/libby
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Libby" class="md-nav__button md-logo" aria-label="Libby" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Libby
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/BenjaminGVincent/libby" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BenjaminGVincent/libby
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../phi_policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PHI policy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cldn182-expression-moderate-to-strong-23-in-60-of-tumor-cells" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLDN18.2 expression, moderate-to-strong (2+/3+) in 60% of tumor cells
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tp53-py220c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TP53 p.Y220C
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kras-pg12r" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KRAS p.G12R
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kmt2c-ps2816fs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KMT2C p.S2816fs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mss-tmb-low-083-mutmb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MSS, TMB-low (0.83 mut/Mb)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clinical-course-node-negative-r0-resection-with-early-recurrence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clinical course: node-negative R0 resection with early recurrence
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#homologous-recombination-deficiency-brca1-brca2-pathogenic-variant-germline-and-somatic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Homologous recombination deficiency / BRCA1 / BRCA2 pathogenic variant (germline and somatic)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#measured-but-not-to-decision-resolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Measured, but not to decision resolution
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/BenjaminGVincent/libby/edit/main/docs/cases/pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m/target_validation.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<p><meta name="robots" content="noindex"></p>
+<h1 id="target-validation-pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m">Target validation — <code>pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m</code><a class="headerlink" href="#target-validation-pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m" title="Permanent link">&para;</a></h1>
+<p><em>18 validation rows across 7 feature(s) — 9 essential, 10 gating an intervention. Sorted within each feature by priority, then by decision relevance.</em></p>
+<p><em>Essential / gates-intervention rows are the diagnostic prerequisites that must resolve before any feature-targeting therapy can be chosen. Rows tagged <code>confirms_target_call</code> harden the target call without gating a specific therapy; resistance / co-mutation / microenvironment rows refine sequencing and risk.</em></p>
+<h2 id="cldn182-expression-moderate-to-strong-23-in-60-of-tumor-cells">CLDN18.2 expression, moderate-to-strong (2+/3+) in 60% of tumor cells<a class="headerlink" href="#cldn182-expression-moderate-to-strong-23-in-60-of-tumor-cells" title="Permanent link">&para;</a></h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Priority</th><th>Test</th><th>Type</th><th>Modality</th><th>Tissue</th><th>Turnaround</th><th>Decision gated</th><th>Rationale</th><th>Providers</th><th>References</th></tr></thead>
+      <tbody>
+    <tr><td><span class="fit-badge fit-strong">essential</span></td><td><strong>CLDN18.2 IHC by the VENTANA CLDN18 (43-14A) RxDx assay, reporting percent of viable tumor cells with moderate-to-strong (2+/3+) membranous staining</strong></td><td>confirmatory</td><td>IHC</td><td>FFPE block, or one H&amp;E plus 2-3 positively charged unstained slides at 4-5 microns with more than 100 viable tumor cells</td><td>2-5 days once tissue is in the lab</td><td>Off-label zolbetuximab and every CLDN18.2 trial that scores against the 43-14A assay (ASP2138 NCT05365581, CT041 NCT04404595).</td><td>The existing 60% 2+/3+ result was produced by an assay the report does not name, and the &gt;=75% cutoff that defines zolbetuximab eligibility in SPOTLIGHT and GLOW is specific to the 43-14A companion assay, so an unnamed clone cannot be scored against it. Re-staining with the FDA assay puts the number on the scale that every threshold conversation uses, including the sponsor assays for ASP2138 (NCT05365581) and CT041 (NCT04404595), which require central or protocol-specified IHC. Without it the whole CLDN18.2 strategy rests on a percentage that cannot be compared to any published threshold.</td><td><div><strong>NeoGenomics Laboratories</strong> · <em>Claudin 18 FDA (VYLOY), VENTANA CLDN18 (43-14A) RxDx Assay</em> <span class="fit-badge fit-strong">preferred</span><br><small><a href="https://www.neogenomics.com/providers/test/APH-CLAP-01AX/claudin-18-fda-vyloy-for-gastric-gej-adenocarcinoma">test info</a> · 9490 NeoGenomics Way, Fort Myers, FL 33912 · 866-776-5907 (Client Services, option 3)</small><br><small><em>Runs the FDA RxDx assay as a catalogued test with a 2-day global turnaround and 24-hour tech-only option; the fastest of the three verified US options.</em></small></div><br><div><strong>Labcorp Oncology</strong> · <em>Claudin 18 IHC (test 452390)</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://oncology.labcorp.com/tests/452390/claudin-18-ihc">test info</a> · 358 South Main Street, Burlington, NC 27215 · 800-845-6167</small></div><br><div><strong>Mayo Clinic Laboratories</strong> · <em>CLD18: Claudin 18 (CLDN18) (43-14A), semi-quantitative IHC</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.mayocliniclabs.com/test-catalog/overview/620665">test info</a> · 3050 Superior Drive NW, Rochester, MN 55901 · 800-533-1710</small><br><small><em>Semi-quantitative 43-14A IHC, manual; useful as a second read or when the treating center already routes to Mayo.</em></small></div></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37068504">PMID&nbsp;37068504</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/37524953">PMID&nbsp;37524953</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/39098518">PMID&nbsp;39098518</a><br><a href="https://clinicaltrials.gov/study/NCT05365581">NCT05365581</a><br><a href="https://clinicaltrials.gov/study/NCT04404595">NCT04404595</a></td></tr>
+    <tr><td><span class="fit-badge fit-strong">essential</span></td><td><strong>Paired CLDN18.2 IHC on the recurrent-lesion biopsy and the December 2025 resection block, stained and scored side by side in one laboratory</strong></td><td>heterogeneity</td><td>IHC</td><td>unstained slides from both blocks; request the December 2025 resection block from the operating hospital early, since retrieval is often the slow step</td><td>2-5 days once both specimens are in the same lab</td><td>Whether the archival 60% result can stand in for current expression when a CLDN18.2 trial requires contemporaneous tissue.</td><td>CLDN18.2 expression is discordant between primary and metastatic lesions in a substantial minority of gastric cases (PMID 40200874), and loss of expression under zolbetuximab treatment has been documented in a reported case (PMID 41854734), so a stain from a pre-adjuvant resection is weak evidence about a lesion that emerged after ten cycles of chemotherapy. Running both specimens in the same laboratory in the same batch is what separates real biological change from inter-laboratory scoring drift. If only the recurrence is stained and comes back lower, there will be no way to tell which of the two explanations applies.</td><td><div><strong>NeoGenomics Laboratories</strong> · <em>Claudin 18 FDA (VYLOY), VENTANA CLDN18 (43-14A) RxDx Assay</em> <span class="fit-badge fit-strong">preferred</span><br><small><a href="https://www.neogenomics.com/providers/test/APH-CLAP-01AX/claudin-18-fda-vyloy-for-gastric-gej-adenocarcinoma">test info</a> · 9490 NeoGenomics Way, Fort Myers, FL 33912 · 866-776-5907 (Client Services, option 3)</small><br><small><em>Single-laboratory batch of both specimens is the point of this row; NeoGenomics accepts outside blocks and runs the FDA assay routinely.</em></small></div><br><div><strong>Labcorp Oncology</strong> · <em>Claudin 18 IHC (test 452390)</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://oncology.labcorp.com/tests/452390/claudin-18-ihc">test info</a> · 358 South Main Street, Burlington, NC 27215 · 800-845-6167</small></div><br><div><strong>Mayo Clinic Laboratories</strong> · <em>CLD18: Claudin 18 (CLDN18) (43-14A), semi-quantitative IHC</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.mayocliniclabs.com/test-catalog/overview/620665">test info</a> · 3050 Superior Drive NW, Rochester, MN 55901 · 800-533-1710</small></div></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40200874">PMID&nbsp;40200874</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/41854734">PMID&nbsp;41854734</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/39098518">PMID&nbsp;39098518</a></td></tr>
+    <tr><td><span class="fit-badge fit-partial">high</span></td><td><strong>Quantified CLDN18.2 expression tier: percent of tumor cells at 1+, 2+ and 3+ membranous intensity, reported against each program&#x27;s threshold</strong></td><td>subtyping</td><td>IHC</td><td>no additional tissue; a reporting request on the CLDN18.2 re-stain</td><td>no additional time if requested with the re-stain</td><td>Which CLDN18.2 program the expression level qualifies for: zolbetuximab-style &gt;=75% versus CAR-T thresholds near 40%.</td><td>A single positive-or-negative call is useless here because the thresholds differ by program: &gt;=75% at 2+/3+ for zolbetuximab (SPOTLIGHT, GLOW), and &gt;=40% at &gt;=2+ intensity for satri-cel, which the primary&#x27;s 60% clears. Asking the laboratory to report the intensity distribution rather than one number lets each protocol be checked against its own criterion without re-staining. A 60% result sits in the band where this distinction decides which door is open.</td><td><div><strong>NeoGenomics Laboratories</strong> · <em>Claudin 18 FDA (VYLOY), VENTANA CLDN18 (43-14A) RxDx Assay</em> <span class="fit-badge fit-strong">preferred</span><br><small><a href="https://www.neogenomics.com/providers/test/APH-CLAP-01AX/claudin-18-fda-vyloy-for-gastric-gej-adenocarcinoma">test info</a> · 9490 NeoGenomics Way, Fort Myers, FL 33912 · 866-776-5907 (Client Services, option 3)</small><br><small><em>Reports percent positivity with the FDA assay; ask explicitly for the intensity breakdown rather than the binary CDx call.</em></small></div><br><div><strong>Labcorp Oncology</strong> · <em>Claudin 18 IHC (test 452390)</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://oncology.labcorp.com/tests/452390/claudin-18-ihc">test info</a> · 358 South Main Street, Burlington, NC 27215 · 800-845-6167</small></div><br><div><strong>Mayo Clinic Laboratories</strong> · <em>CLD18: Claudin 18 (CLDN18) (43-14A), semi-quantitative IHC</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.mayocliniclabs.com/test-catalog/overview/620665">test info</a> · 3050 Superior Drive NW, Rochester, MN 55901 · 800-533-1710</small></div></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37068504">PMID&nbsp;37068504</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/37524953">PMID&nbsp;37524953</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/40460847">PMID&nbsp;40460847</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/38830992">PMID&nbsp;38830992</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/39098518">PMID&nbsp;39098518</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2 id="tp53-py220c">TP53 p.Y220C<a class="headerlink" href="#tp53-py220c" title="Permanent link">&para;</a></h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Priority</th><th>Test</th><th>Type</th><th>Modality</th><th>Tissue</th><th>Turnaround</th><th>Decision gated</th><th>Rationale</th><th>Providers</th><th>References</th></tr></thead>
+      <tbody>
+    <tr><td><span class="fit-badge fit-strong">essential</span></td><td><strong>TP53 p.Y220C confirmation on a CLIA-certified NGS test (tumor tissue or plasma) reporting the variant at codon level with variant allele fraction</strong></td><td>confirmatory</td><td>NGS_panel</td><td>no new specimen if the existing CLIA report is accepted; otherwise rides on the recurrence NGS or the plasma ctDNA draw</td><td>immediate if the December 2025 report is retrieved and acceptable; 1-3 weeks on new tissue or plasma sequencing</td><td>Rezatapopt via PYNNACLE (NCT04585750).</td><td>PYNNACLE (NCT04585750) states only that the tumor must carry a TP53 Y220C mutation, but the companion rezatapopt protocols spell out what counts: CLIA-certified local testing with variant allele fraction above 2% (NCT06616636), and tissue-based or liquid-biopsy NGS both acceptable (NCT07372625). The December 2025 tissue result probably satisfies this on its face; what the sponsor will want confirmed is that the variant is still present in current disease. Turning up at screening with only a pre-adjuvant report risks a re-test delay at best.</td><td><div><strong>Foundation Medicine</strong> · <em>FoundationOne CDx</em> <span class="fit-badge fit-strong">preferred</span><br><small><a href="https://www.foundationmedicine.com/providers/contact">test info</a> · 400 Summer Street, Boston, MA 02210 · 888-988-3639 · <a href="mailto:client.services@foundationmedicine.com">client.services@foundationmedicine.com</a></small><br><small><em>FoundationOne CDx and FoundationOne Liquid CDx reports are accepted at face value by most sponsors, which is the whole point of this row.</em></small></div><br><div><strong>Caris Life Sciences</strong> · <em>MI Cancer Seek (whole exome plus whole transcriptome)</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.carislifesciences.com/physicians/physician-services/customer-support/">test info</a> · 4610 South 44th Place, Suite 100, Phoenix, AZ 85040 · 888-979-8669 · <a href="mailto:MIclientservices@carisls.com">MIclientservices@carisls.com</a></small></div><br><div><strong>Guardant Health</strong> · <em>Guardant360 CDx</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://guardanthealth.com/contact/">test info</a> · 3100 Hanover Street, Palo Alto, CA 94304 · 855-698-8887 · <a href="mailto:clientservices@guardanthealth.com">clientservices@guardanthealth.com</a></small></div><br><div><strong>Tempus AI</strong> · <em>Tempus xT (DNA) plus xR (RNA)</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.tempus.com/order/">test info</a> · 600 West Chicago Avenue, Suite 510, Chicago, IL 60654 · 800-739-4137 · <a href="mailto:support@tempus.com">support@tempus.com</a></small></div></td><td><a href="https://clinicaltrials.gov/study/NCT04585750">NCT04585750</a><br><a href="https://clinicaltrials.gov/study/NCT06616636">NCT06616636</a><br><a href="https://clinicaltrials.gov/study/NCT07372625">NCT07372625</a></td></tr>
+    <tr><td><span class="fit-badge fit-weak">medium</span></td><td><strong>TP53 Y220C variant allele fraction corrected for tumor purity, with TP53 copy number and LOH status, from the recurrence NGS</strong></td><td>heterogeneity</td><td>NGS_panel</td><td>no additional tissue; a reporting request on the recurrence NGS</td><td>no additional time if requested with the recurrence NGS</td><td>Expected depth of benefit from rezatapopt; does not gate PYNNACLE eligibility.</td><td>A Y220C reactivator only helps if the mutant protein is the dominant p53 species in most tumor cells, so a subclonal variant or a second inactivating hit on the other allele changes what the drug can plausibly do. In pancreatic adenocarcinoma TP53 alterations are typically clonal with LOH, so the expected answer supports the target rather than undercutting it. This does not gate PYNNACLE entry; it informs how much to expect.</td><td><div><strong>Caris Life Sciences</strong> · <em>MI Cancer Seek (whole exome plus whole transcriptome)</em> <span class="fit-badge fit-strong">preferred</span><br><small><a href="https://www.carislifesciences.com/physicians/physician-services/customer-support/">test info</a> · 4610 South 44th Place, Suite 100, Phoenix, AZ 85040 · 888-979-8669 · <a href="mailto:MIclientservices@carisls.com">MIclientservices@carisls.com</a></small><br><small><em>Whole-exome output reports purity, copy number, and allele fraction together, which a targeted panel often does not.</em></small></div><br><div><strong>Foundation Medicine</strong> · <em>FoundationOne CDx</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.foundationmedicine.com/providers/contact">test info</a> · 400 Summer Street, Boston, MA 02210 · 888-988-3639 · <a href="mailto:client.services@foundationmedicine.com">client.services@foundationmedicine.com</a></small></div><br><div><strong>Tempus AI</strong> · <em>Tempus xT (DNA) plus xR (RNA)</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.tempus.com/order/">test info</a> · 600 West Chicago Avenue, Suite 510, Chicago, IL 60654 · 800-739-4137 · <a href="mailto:support@tempus.com">support@tempus.com</a></small></div></td><td><a href="https://clinicaltrials.gov/study/NCT04585750">NCT04585750</a></td></tr>
+    <tr><td><span class="fit-badge fit-weak">medium</span></td><td><strong>Serial plasma ctDNA TP53 sequencing during rezatapopt treatment to detect acquired secondary TP53 alterations in cis</strong></td><td>resistance marker</td><td>ctDNA</td><td>10-20 mL whole blood per timepoint</td><td>7-10 days per draw</td><td>Whether progression on rezatapopt is on-target resistance, which governs pursuit of next-generation p53 reactivators.</td><td>Acquired secondary TP53 mutations arising in cis with Y220C drive clinical resistance to the Y220C reactivator (PMID 41504628, with accompanying commentary PMID 41918356), and they are detectable in plasma before imaging turns. Knowing that resistance is on-target rather than target-independent changes whether a next-generation p53 reactivator is worth pursuing. Only relevant once rezatapopt is actually started, which is why this sits below the eligibility rows.</td><td><div><strong>Guardant Health</strong> · <em>Guardant360 CDx</em> <span class="fit-badge fit-strong">preferred</span><br><small><a href="https://guardanthealth.com/contact/">test info</a> · 3100 Hanover Street, Palo Alto, CA 94304 · 855-698-8887 · <a href="mailto:clientservices@guardanthealth.com">clientservices@guardanthealth.com</a></small><br><small><em>Fast repeat-draw workflow suits serial monitoring better than a tissue-anchored assay.</em></small></div><br><div><strong>Foundation Medicine</strong> · <em>FoundationOne Liquid CDx</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.foundationmedicine.com/providers/contact">test info</a> · 400 Summer Street, Boston, MA 02210 · 888-988-3639 · <a href="mailto:client.services@foundationmedicine.com">client.services@foundationmedicine.com</a></small></div><br><div><strong>Tempus AI</strong> · <em>Tempus xF+ (plasma)</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.tempus.com/order/">test info</a> · 600 West Chicago Avenue, Suite 510, Chicago, IL 60654 · 800-739-4137 · <a href="mailto:support@tempus.com">support@tempus.com</a></small></div></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/41504628">PMID&nbsp;41504628</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/41918356">PMID&nbsp;41918356</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2 id="kras-pg12r">KRAS p.G12R<a class="headerlink" href="#kras-pg12r" title="Permanent link">&para;</a></h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Priority</th><th>Test</th><th>Type</th><th>Modality</th><th>Tissue</th><th>Turnaround</th><th>Decision gated</th><th>Rationale</th><th>Providers</th><th>References</th></tr></thead>
+      <tbody>
+    <tr><td><span class="fit-badge fit-strong">essential</span></td><td><strong>Plasma ctDNA comprehensive panel reporting KRAS codon 12 genotype and TP53 Y220C with variant allele fractions</strong></td><td>orthogonal validation</td><td>ctDNA</td><td>10-20 mL whole blood; no tissue and no procedure</td><td>7-10 days</td><td>Genotype for daraxonrasib and rezatapopt when tissue is not obtainable; ctDNA-positivity entry criterion for ELI-002 7P protocols.</td><td>If the lesion turns out to be unsafe to biopsy, plasma is the only route to a current genotype, and it answers within about a week rather than a month. Several mutant-KRAS vaccine protocols in this space use ctDNA positivity as an entry criterion (ELI-002 7P, NCT05726864 phase 1, NCT07671339), so the result can gate access rather than merely inform it. A negative plasma result in a low-shedding pancreatic lesion does not overturn the tissue findings, which is the main way this assay is misread.</td><td><div><strong>Guardant Health</strong> · <em>Guardant360 CDx</em> <span class="fit-badge fit-strong">preferred</span><br><small><a href="https://guardanthealth.com/contact/">test info</a> · 3100 Hanover Street, Palo Alto, CA 94304 · 855-698-8887 · <a href="mailto:clientservices@guardanthealth.com">clientservices@guardanthealth.com</a></small><br><small><em>FDA-approved liquid CDx, high volume in gastrointestinal cancers, and the fastest routine turnaround of the four.</em></small></div><br><div><strong>Caris Life Sciences</strong> · <em>Caris Assure (blood)</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.carislifesciences.com/physicians/physician-services/customer-support/">test info</a> · 4610 South 44th Place, Suite 100, Phoenix, AZ 85040 · 888-979-8669 · <a href="mailto:MIclientservices@carisls.com">MIclientservices@carisls.com</a></small></div><br><div><strong>Foundation Medicine</strong> · <em>FoundationOne Liquid CDx</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.foundationmedicine.com/providers/contact">test info</a> · 400 Summer Street, Boston, MA 02210 · 888-988-3639 · <a href="mailto:client.services@foundationmedicine.com">client.services@foundationmedicine.com</a></small></div><br><div><strong>Tempus AI</strong> · <em>Tempus xF+ (plasma)</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.tempus.com/order/">test info</a> · 600 West Chicago Avenue, Suite 510, Chicago, IL 60654 · 800-739-4137 · <a href="mailto:support@tempus.com">support@tempus.com</a></small></div></td><td><a href="https://clinicaltrials.gov/study/NCT07671339">NCT07671339</a><br><a href="https://clinicaltrials.gov/study/NCT05726864">NCT05726864</a><br><a href="https://clinicaltrials.gov/study/NCT04585750">NCT04585750</a></td></tr>
+    <tr><td><span class="fit-badge fit-strong">essential</span></td><td><strong>Comprehensive tumor NGS on recurrent-lesion tissue, DNA plus RNA, reporting codon-level KRAS genotype, TP53, homologous-recombination genes, fusions, MSI and TMB</strong></td><td>confirmatory</td><td>NGS_panel</td><td>FFPE block or 10-15 unstained slides from the recurrent-lesion biopsy; archival resection block acceptable if the biopsy fails</td><td>2-3 weeks from tissue receipt</td><td>Pan-RAS(ON) trials for daraxonrasib (NCT06625320, NCT07491445) and rezatapopt via PYNNACLE (NCT04585750).</td><td>G12R is not touched by the G12C-selective drugs (sotorasib, adagrasib) or by G12D-selective agents, so the codon-level call is what separates a pan-RAS(ON) route such as daraxonrasib from drugs that cannot work here; RASolute 302 (NCT06625320) asks for documented RAS status at codon 12, 13, or 61. Re-sequencing the recurrence also tests whether the driver persisted through ten cycles of FOLFIRINOX and catches anything acquired under that pressure. A DNA-only panel leaves fusion status unestablished rather than negative, which is why RNA should ride along.</td><td><div><strong>Caris Life Sciences</strong> · <em>MI Cancer Seek (whole exome plus whole transcriptome)</em> <span class="fit-badge fit-strong">preferred</span><br><small><a href="https://www.carislifesciences.com/physicians/physician-services/customer-support/">test info</a> · 4610 South 44th Place, Suite 100, Phoenix, AZ 85040 · 888-979-8669 · <a href="mailto:MIclientservices@carisls.com">MIclientservices@carisls.com</a></small><br><small><em>Whole exome plus whole transcriptome in one order covers the codon-level KRAS call, HR genes, and RNA fusions without a second send-out.</em></small></div><br><div><strong>Foundation Medicine</strong> · <em>FoundationOne CDx</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.foundationmedicine.com/providers/contact">test info</a> · 400 Summer Street, Boston, MA 02210 · 888-988-3639 · <a href="mailto:client.services@foundationmedicine.com">client.services@foundationmedicine.com</a></small><br><small><em>FoundationOne CDx is the report format most sponsors accept without re-testing; DNA only, so fusion coverage is narrower.</em></small></div><br><div><strong>NeoGenomics Laboratories</strong> · <em>NeoTYPE Comprehensive Tumor Profile</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.neogenomics.com/test-menu">test info</a> · 9490 NeoGenomics Way, Fort Myers, FL 33912 · 866-776-5907 (Client Services, option 3)</small></div><br><div><strong>Tempus AI</strong> · <em>Tempus xT (DNA) plus xR (RNA)</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.tempus.com/order/">test info</a> · 600 West Chicago Avenue, Suite 510, Chicago, IL 60654 · 800-739-4137 · <a href="mailto:support@tempus.com">support@tempus.com</a></small></div></td><td><a href="https://clinicaltrials.gov/study/NCT06625320">NCT06625320</a><br><a href="https://clinicaltrials.gov/study/NCT07491445">NCT07491445</a><br><a href="https://clinicaltrials.gov/study/NCT04585750">NCT04585750</a></td></tr>
+    <tr><td><span class="fit-badge fit-weak">medium</span></td><td><strong>Co-alteration profiling on the recurrence NGS: CDKN2A, SMAD4, ARID1A, MYC amplification, and KRAS allelic imbalance or amplification</strong></td><td>co-mutation</td><td>NGS_panel</td><td>no additional tissue; included in the recurrence NGS report</td><td>no additional time if requested with the recurrence NGS</td><td>Expected durability of pan-RAS(ON) inhibition; does not gate enrollment.</td><td>KRAS allelic imbalance and amplification are among the mechanisms that blunt RAS-pathway inhibition, and SMAD4 loss carries a distinct metastatic phenotype in pancreatic adenocarcinoma that bears on how aggressively to sequence therapies. None of these findings would exclude a pan-RAS(ON) trial, so this refines expectation rather than eligibility. It reads out on sequencing already ordered.</td><td><div><strong>Caris Life Sciences</strong> · <em>MI Cancer Seek (whole exome plus whole transcriptome)</em> <span class="fit-badge fit-strong">preferred</span><br><small><a href="https://www.carislifesciences.com/physicians/physician-services/customer-support/">test info</a> · 4610 South 44th Place, Suite 100, Phoenix, AZ 85040 · 888-979-8669 · <a href="mailto:MIclientservices@carisls.com">MIclientservices@carisls.com</a></small><br><small><em>Copy-number and allelic-imbalance calls come with the exome-based report already recommended.</em></small></div><br><div><strong>Foundation Medicine</strong> · <em>FoundationOne CDx</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.foundationmedicine.com/providers/contact">test info</a> · 400 Summer Street, Boston, MA 02210 · 888-988-3639 · <a href="mailto:client.services@foundationmedicine.com">client.services@foundationmedicine.com</a></small></div><br><div><strong>Tempus AI</strong> · <em>Tempus xT (DNA) plus xR (RNA)</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.tempus.com/order/">test info</a> · 600 West Chicago Avenue, Suite 510, Chicago, IL 60654 · 800-739-4137 · <a href="mailto:support@tempus.com">support@tempus.com</a></small></div></td><td><a href="https://clinicaltrials.gov/study/NCT06625320">NCT06625320</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2 id="kmt2c-ps2816fs">KMT2C p.S2816fs<a class="headerlink" href="#kmt2c-ps2816fs" title="Permanent link">&para;</a></h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Priority</th><th>Test</th><th>Type</th><th>Modality</th><th>Tissue</th><th>Turnaround</th><th>Decision gated</th><th>Rationale</th><th>Providers</th><th>References</th></tr></thead>
+      <tbody>
+    <tr><td><span class="fit-badge fit-none">low</span></td><td><strong>Characterization of KMT2C p.S2816fs as truncating and biallelic: variant allele fraction with tumor purity, KMT2C copy number and LOH, from the recurrence NGS</strong></td><td>functional assay</td><td>NGS_panel</td><td>no additional tissue; a reporting detail on the recurrence NGS</td><td>no additional time; reports with the recurrence NGS</td><td>Basket-trial screening on COMPASS-complex alterations; nothing approved turns on it.</td><td>To be plain about it: no assay result would make this variant actionable today, because no approved or late-phase therapy selects patients on KMT2C status and the synthetic-lethal hypotheses remain preclinical. What a biallelic, clonal loss-of-function call would buy is entry to an epigenetic-agent basket trial that accepts COMPASS-complex alterations, if one is open and taking pancreatic patients. Nothing about this justifies a separate order or a separate specimen.</td><td>—</td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2 id="mss-tmb-low-083-mutmb">MSS, TMB-low (0.83 mut/Mb)<a class="headerlink" href="#mss-tmb-low-083-mutmb" title="Permanent link">&para;</a></h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Priority</th><th>Test</th><th>Type</th><th>Modality</th><th>Tissue</th><th>Turnaround</th><th>Decision gated</th><th>Rationale</th><th>Providers</th><th>References</th></tr></thead>
+      <tbody>
+    <tr><td><span class="fit-badge fit-none">low</span></td><td><strong>MMR IHC (MLH1, PMS2, MSH2, MSH6) plus MSI and TMB re-read as part of the recurrence NGS; no standalone order</strong></td><td>orthogonal validation</td><td>IHC</td><td>no additional tissue; one unstained slide set if MMR IHC is added to an existing block</td><td>no additional time; reports with the recurrence NGS</td><td>Keeps the single-agent PD-1 route closed; no new decision hinges on repeating it.</td><td>MSS status and a TMB of 0.83 mut/Mb against a threshold of 10 are already at decision resolution and close the tumor-agnostic pembrolizumab routes; nothing here needs a new order. The only caveat is that neither assay platform was named, and TMB from a small panel is not interchangeable across platforms, a caveat that bites near the cutoff rather than an order of magnitude below it. If the recurrence is biopsied and sequenced anyway, both values re-report at no extra cost and MMR IHC can ride on the same block.</td><td><div><strong>NeoGenomics Laboratories</strong> · <em>Claudin 18 FDA (VYLOY), VENTANA CLDN18 (43-14A) RxDx Assay</em> <span class="fit-badge fit-strong">preferred</span><br><small><a href="https://www.neogenomics.com/providers/test/APH-CLAP-01AX/claudin-18-fda-vyloy-for-gastric-gej-adenocarcinoma">test info</a> · 9490 NeoGenomics Way, Fort Myers, FL 33912 · 866-776-5907 (Client Services, option 3)</small><br><small><em>MMR IHC is a routine catalogue item; only worth adding when a block is already being cut.</em></small></div><br><div><strong>Labcorp Oncology</strong> · <em>Claudin 18 IHC (test 452390)</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://oncology.labcorp.com/tests/452390/claudin-18-ihc">test info</a> · 358 South Main Street, Burlington, NC 27215 · 800-845-6167</small></div><br><div><strong>Mayo Clinic Laboratories</strong> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.mayocliniclabs.com/test-catalog/">test info</a> · 3050 Superior Drive NW, Rochester, MN 55901 · 800-533-1710</small></div></td><td><a href="https://clinicaltrials.gov/study/NCT02628067">NCT02628067</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2 id="clinical-course-node-negative-r0-resection-with-early-recurrence">Clinical course: node-negative R0 resection with early recurrence<a class="headerlink" href="#clinical-course-node-negative-r0-resection-with-early-recurrence" title="Permanent link">&para;</a></h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Priority</th><th>Test</th><th>Type</th><th>Modality</th><th>Tissue</th><th>Turnaround</th><th>Decision gated</th><th>Rationale</th><th>Providers</th><th>References</th></tr></thead>
+      <tbody>
+    <tr><td><span class="fit-badge fit-strong">essential</span></td><td><strong>Baseline CBC with differential, comprehensive metabolic panel with bilirubin and albumin, creatinine with calculated eGFR, coagulation studies, and CA 19-9</strong></td><td>functional assay</td><td>other</td><td>one routine blood draw; can share the germline panel and ctDNA venipuncture</td><td>24-48 hours</td><td>Organ-function eligibility thresholds shared by the trials under consideration, plus a baseline CA 19-9 for response assessment.</td><td>No laboratory values were supplied at intake, so marrow, renal, and hepatic reserve after ten cycles of chemotherapy and a pancreatic resection are entirely unknown, and these thresholds appear in the eligibility criteria of essentially every trial under consideration. A baseline CA 19-9 is also needed now if it is going to mean anything as a response measure later. Screening failures on labs that were never checked are the most avoidable way to lose weeks here.</td><td><div><strong>Labcorp</strong> <span class="fit-badge fit-strong">preferred</span><br><small><a href="https://www.labcorp.com/">test info</a> · 358 South Main Street, Burlington, NC 27215 · 800-845-6167</small><br><small><em>Widest US draw-site network, which matters for a patient willing to travel for trials but drawing labs locally.</em></small></div><br><div><strong>Mayo Clinic Laboratories</strong> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.mayocliniclabs.com/test-catalog/">test info</a> · 3050 Superior Drive NW, Rochester, MN 55901 · 800-533-1710</small></div><br><div><strong>Quest Diagnostics</strong> <span class="fit-badge fit-strong">US</span><br><small><a href="https://testdirectory.questdiagnostics.com/">test info</a> · 500 Plaza Drive, Secaucus, NJ 07094 · 866-697-8378</small></div></td><td>—</td></tr>
+    <tr><td><span class="fit-badge fit-strong">essential</span></td><td><strong>Graded neurologic examination for peripheral sensory neuropathy (CTCAE v5) with a patient-reported instrument (EORTC QLQ-CIPN20) at baseline</strong></td><td>functional assay</td><td>functional_assay</td><td>none; clinic examination and a questionnaire</td><td>same visit</td><td>Platinum or taxane re-exposure, and the grade 2 neuropathy exclusion common to trial protocols.</td><td>Ten total cycles of FOLFIRINOX is a large cumulative oxaliplatin exposure and no neuropathy grade appears anywhere in the record, yet most trial protocols exclude grade 2 or higher peripheral neuropathy and every platinum or taxane re-exposure decision turns on it. A documented baseline grade also gives the toxicity side of the 0.7 efficacy weight something real to sit on. Without it, both the ranking and the screening conversation are guessing about the one toxicity this patient is most likely to already carry.</td><td>—</td><td>—</td></tr>
+    <tr><td><span class="fit-badge fit-strong">essential</span></td><td><strong>EUS-guided core needle biopsy of the pancreatic body mass with histologic confirmation and tissue banked for downstream molecular and IHC work</strong></td><td>confirmatory</td><td>other</td><td>EUS-guided core biopsy; request at least three cores so one goes to a paraffin block for IHC and the rest to molecular</td><td>1-2 weeks to schedule and report histology</td><td>Confirms the mass is recurrent PDAC and supplies tissue for every tissue-gated CLDN18.2 program (ASP2138 NCT05365581, CT041 NCT04404595).</td><td>Everything known about this tumor comes from a resection specimen taken before four more cycles of FOLFIRINOX, and the new mass has not been sampled, so its histology is presumed rather than established. One EUS-guided pass supplies the tissue that the CLDN18.2 re-stain, the DNA and RNA sequencing, and most tissue-gated trial screens all draw on. Skipping it means treating a radiographic diagnosis with a target call that may no longer hold.</td><td>—</td><td><a href="https://clinicaltrials.gov/study/NCT05365581">NCT05365581</a><br><a href="https://clinicaltrials.gov/study/NCT04404595">NCT04404595</a></td></tr>
+    <tr><td><span class="fit-badge fit-partial">high</span></td><td><strong>Pancreas-protocol CT of chest, abdomen and pelvis (or MRI abdomen) defining vascular involvement, biopsy route, and local-only versus metastatic extent, with RECIST-measurable target lesions identified</strong></td><td>confirmatory</td><td>imaging</td><td>none; imaging only</td><td>1 week</td><td>RECIST-measurable disease for trial entry, biopsy route selection, and whether locoregional options stay on the table.</td><td>The recurrence is described as a body mass with likely vascular invasion, which leaves open both whether disease is confined to the pancreatic bed and whether a measurable target lesion exists; most trials require the latter. The same scan tells the interventional team whether an EUS or percutaneous route to the mass is safe. Local-only disease also keeps radiation and locoregional options in the conversation that widely metastatic disease would close.</td><td>—</td><td>—</td></tr>
+    <tr><td><span class="fit-badge fit-partial">high</span></td><td><strong>Fecal elastase-1, fat-soluble vitamin levels (A, D, E), HbA1c, and review of biliary anatomy and stent status on the restaging scan</strong></td><td>functional assay</td><td>other</td><td>one stool sample plus routine blood; no procedure</td><td>3-7 days</td><td>Nutritional and hepatobiliary fitness for systemic therapy and for trial performance-status and albumin thresholds.</td><td>Exocrine insufficiency after pancreatic resection is common, under-treated, and drives the weight loss and hypoalbuminemia that later cost patients trial eligibility and dose intensity; enzyme replacement is cheap and fixes it. New endocrine insufficiency after resection is frequent enough to check for. Biliary anatomy and any indwelling stent matter because cholangitis during systemic therapy is a common reason treatment stops.</td><td><div><strong>Mayo Clinic Laboratories</strong> <span class="fit-badge fit-strong">preferred</span><br><small><a href="https://www.mayocliniclabs.com/test-catalog/">test info</a> · 3050 Superior Drive NW, Rochester, MN 55901 · 800-533-1710</small><br><small><em>Fecal elastase-1 and fat-soluble vitamin assays are catalogued send-outs run in volume.</em></small></div><br><div><strong>Labcorp</strong> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.labcorp.com/">test info</a> · 358 South Main Street, Burlington, NC 27215 · 800-845-6167</small></div><br><div><strong>Quest Diagnostics</strong> <span class="fit-badge fit-strong">US</span><br><small><a href="https://testdirectory.questdiagnostics.com/">test info</a> · 500 Plaza Drive, Secaucus, NJ 07094 · 866-697-8378</small></div></td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2 id="homologous-recombination-deficiency-brca1-brca2-pathogenic-variant-germline-and-somatic">Homologous recombination deficiency / BRCA1 / BRCA2 pathogenic variant (germline and somatic)<a class="headerlink" href="#homologous-recombination-deficiency-brca1-brca2-pathogenic-variant-germline-and-somatic" title="Permanent link">&para;</a></h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Priority</th><th>Test</th><th>Type</th><th>Modality</th><th>Tissue</th><th>Turnaround</th><th>Decision gated</th><th>Rationale</th><th>Providers</th><th>References</th></tr></thead>
+      <tbody>
+    <tr><td><span class="fit-badge fit-strong">essential</span></td><td><strong>Dedicated germline multigene panel on blood or saliva covering BRCA1, BRCA2, PALB2, ATM, CDKN2A, STK11 and the mismatch-repair genes</strong></td><td>germline</td><td>germline_panel</td><td>5-10 mL whole blood in EDTA, or a saliva kit</td><td>2-3 weeks</td><td>PARP-inhibitor maintenance (olaparib) eligibility, platinum re-challenge weighting, and family testing.</td><td>The &#x27;no incidental germline findings&#x27; line came off a tumor NGS report, which is not built for germline sensitivity, misses large rearrangements, and does not state which homologous-recombination genes were covered. NCCN recommends germline testing for every patient with pancreatic adenocarcinoma, and a pathogenic BRCA1/2 or PALB2 variant puts an approved PARP-inhibitor maintenance strategy on the table in this tumor type (POLO, PMID 31157963 and PMID 35834777) as well as arguing for keeping platinum in the sequence. It is a blood draw with no procedure attached, so it should go out now rather than wait on tissue.</td><td><div><strong>Myriad Genetics</strong> · <em>MyRisk Hereditary Cancer with BRACAnalysis CDx</em> <span class="fit-badge fit-strong">preferred</span><br><small><a href="https://myriad.com/contact-us/">test info</a> · 322 North 2200 West, Salt Lake City, UT 84116 · 800-469-7423</small><br><small><em>BRACAnalysis CDx is the companion diagnostic named in the olaparib pancreatic label, so a Myriad result needs no confirmatory re-test if PARP maintenance comes into play.</em></small></div><br><div><strong>Ambry Genetics</strong> · <em>CustomNext-Cancer / PancNext</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.ambrygen.com/providers/contact-us">test info</a> · One Enterprise, Aliso Viejo, CA 92656 · 866-262-7943</small></div><br><div><strong>GeneDx</strong> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.genedx.com/contact-us/">test info</a> · 207 Perry Parkway, Gaithersburg, MD 20877 · 888-729-1206</small></div><br><div><strong>Labcorp Genetics (formerly Invitae)</strong> · <em>Multi-Cancer Panel</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.labcorp.com/genetics">test info</a> · 1400 16th Street, San Francisco, CA 94103 · 800-436-3037</small></div></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/31157963">PMID&nbsp;31157963</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/35834777">PMID&nbsp;35834777</a><br><em>nccn-pancreatic-adenocarcinoma</em></td></tr>
+    <tr><td><span class="fit-badge fit-partial">high</span></td><td><strong>Somatic homologous-recombination gene coverage (BRCA1, BRCA2, PALB2, ATM, RAD51 paralogs) with a genomic-instability or LOH score on the recurrence NGS</strong></td><td>orthogonal validation</td><td>NGS_panel</td><td>no additional tissue beyond the recurrence NGS specimen</td><td>2-3 weeks, concurrent with the recurrence NGS</td><td>Somatic HRD evidence for off-label or trial PARP-inhibitor use and for keeping platinum in the sequence.</td><td>A germline panel will miss somatic-only BRCA and PALB2 events, which occur in pancreatic adenocarcinoma and carry the same platinum-sensitivity signal even though the olaparib label is written around germline status. A genomic-instability score adds a phenotypic read when no single gene is hit. This rides on sequencing already recommended for the recurrence, so it costs an order line rather than a new specimen.</td><td><div><strong>Caris Life Sciences</strong> · <em>MI Cancer Seek (whole exome plus whole transcriptome)</em> <span class="fit-badge fit-strong">preferred</span><br><small><a href="https://www.carislifesciences.com/physicians/physician-services/customer-support/">test info</a> · 4610 South 44th Place, Suite 100, Phoenix, AZ 85040 · 888-979-8669 · <a href="mailto:MIclientservices@carisls.com">MIclientservices@carisls.com</a></small><br><small><em>The whole-exome assay already recommended for the recurrence returns HR gene status and a genomic-instability read without a second specimen.</em></small></div><br><div><strong>Foundation Medicine</strong> · <em>FoundationOne CDx</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.foundationmedicine.com/providers/contact">test info</a> · 400 Summer Street, Boston, MA 02210 · 888-988-3639 · <a href="mailto:client.services@foundationmedicine.com">client.services@foundationmedicine.com</a></small></div><br><div><strong>Myriad Genetics</strong> · <em>myChoice CDx (genomic instability score)</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://myriad.com/contact-us/">test info</a> · 322 North 2200 West, Salt Lake City, UT 84116 · 800-469-7423</small><br><small><em>myChoice CDx is the dedicated genomic-instability assay but requires its own tissue order.</em></small></div><br><div><strong>Tempus AI</strong> · <em>Tempus xT (DNA) plus xR (RNA)</em> <span class="fit-badge fit-strong">US</span><br><small><a href="https://www.tempus.com/order/">test info</a> · 600 West Chicago Avenue, Suite 510, Chicago, IL 60654 · 800-739-4137 · <a href="mailto:support@tempus.com">support@tempus.com</a></small></div></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/31157963">PMID&nbsp;31157963</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/35834777">PMID&nbsp;35834777</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2 id="measured-but-not-to-decision-resolution">Measured, but not to decision resolution<a class="headerlink" href="#measured-but-not-to-decision-resolution" title="Permanent link">&para;</a></h2>
+<p><em>2 biomarkers from the <a href="../biomarker_survey/">Selected general biomarker report</a> have a result on file that cannot carry a treatment decision as it stands. These are distinct from the per-feature workup below: the target call is not in question, the resolution of the existing result is.</em></p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Biomarker</th><th>What is on file</th><th>Why it is not decision-grade</th><th>Hardening step</th><th>Status</th></tr></thead>
+      <tbody>
+    <tr><td><strong>CLDN18.2 protein expression (CLDN18 splice variant 2)</strong><br><small class="persona-line"><span class="fit-badge fit-strong">essential</span></small></td><td>profile.json:biomarkers[0] CLDN18.2, &#x27;2+/3+ membranous staining in 60% of tumor cells (resected primary, December 2025 specimen)&#x27;, confirmation_status confirmed; profile.json:biomarkers[1] &#x27;CLDN18.2 (recurrent lesion)&#x27; not assessed, confirmation_status ihc_pending; profile.json:targetable_features[0]</td><td>Three things sit between this stain and an eligibility call. The result is 60% of tumor cells at 2+/3+, below the &gt;=75% used in SPOTLIGHT and GLOW. The antibody clone and assay were not named, so it is not known whether this was the VENTANA CLDN18 (43-14A) RxDx assay that defines that cutoff. And the tissue is the December 2025 resection, not the recurrence that emerged after ten cycles of FOLFIRINOX. Re-staining with the CDx assay, ideally on recurrent-lesion tissue, closes all three at once.</td><td><strong>CLDN18.2 IHC by the VENTANA CLDN18 (43-14A) RxDx assay, reporting percent of viable tumor cells with moderate-to-strong (2+/3+) membranous staining</strong><br><strong>Paired CLDN18.2 IHC on the recurrent-lesion biopsy and the December 2025 resection block, stained and scored side by side in one laboratory</strong><br><strong>Quantified CLDN18.2 expression tier: percent of tumor cells at 1+, 2+ and 3+ membranous intensity, reported against each program&#x27;s threshold</strong></td><td><span class="fit-badge fit-strong">addressed above</span></td></tr>
+    <tr><td><strong>Homologous recombination deficiency / BRCA1 / BRCA2 pathogenic variant (germline and somatic)</strong><br><small class="persona-line"><span class="fit-badge fit-strong">essential</span></small></td><td>profile.json:biomarkers[7] &#x27;Germline findings (incidental)&#x27; value &#x27;none detected, per incidental germline reporting on the tumor NGS report&#x27;, confirmation_status ngs_pending; profile.json:biomarkers[] reports KRAS, TP53, and KMT2C from the December 2025 tumor NGS; no BRCA1/2, PALB2, ATM, or genomic-instability score appears either way</td><td>Incidental germline reporting on a tumor NGS report is not a germline panel: it is not designed for germline sensitivity, it misses large rearrangements, and the report on file does not state which homologous-recombination genes were sequenced. Closing this takes a dedicated germline multigene panel on blood or saliva covering BRCA1, BRCA2, PALB2, ATM, CDKN2A, STK11, and the mismatch-repair genes, plus somatic HR gene coverage and a genomic-instability score on whatever tumor NGS is run next.</td><td><strong>Dedicated germline multigene panel on blood or saliva covering BRCA1, BRCA2, PALB2, ATM, CDKN2A, STK11 and the mismatch-repair genes</strong><br><strong>Somatic homologous-recombination gene coverage (BRCA1, BRCA2, PALB2, ATM, RAD51 paralogs) with a genomic-instability or LOH score on the recurrence NGS</strong></td><td><span class="fit-badge fit-strong">addressed above</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<p><a href="../">Back to case</a> · <a href="../trials/">Trials</a> · <a href="../evidence/">Evidence</a> · <a href="../manuscripts/">Manuscripts</a> · <a href="../board/">Board</a> · <a href="../recommendations/">Recommendations</a> · <a href="../biomarker_survey/">Biomarker survey</a></p>
+<div class="admonition danger disclaimer">
+<p class="admonition-title">Decision support, not medical advice</p>
+<p>Libby is experimental. The validation tests on this page are decision-support;
+confirm assay availability, current standards, and clinical relevance with the
+treating team and the local pathology service.
+See <a href="../../../phi_policy/">PHI policy</a>.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.top", "navigation.instant", "navigation.tracking", "search.highlight", "search.suggest", "content.code.copy", "content.action.edit", "content.tables.sortable"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

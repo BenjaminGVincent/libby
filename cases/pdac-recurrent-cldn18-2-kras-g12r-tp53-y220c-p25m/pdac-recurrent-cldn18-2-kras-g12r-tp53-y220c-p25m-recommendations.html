@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>Libby recommendations &mdash; pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m</title>
+<style>
+
+:root {
+  --ink: #1A202C;
+  --ink-muted: #4A5568;
+  --rule: #E2E8F0;
+  --header-bg: #F4F6F8;
+  --accent: #5B3A87;
+  --bg: #FFFFFF;
+  --warn-fg: #6F2E1A;
+  --warn-bg: #FBE9E7;
+  --warn-border: #ECC4BB;
+}
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  max-width: 80rem;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  line-height: 1.5;
+}
+h1, h2, h3 { color: var(--ink); }
+h1 { font-size: 1.6rem; }
+h2 { font-size: 1.2rem; margin-top: 2rem; }
+h3 { font-size: 1.05rem; margin-top: 1.5rem; }
+small.scenario-key { color: var(--ink-muted); }
+.disclaimer {
+  border: 1px solid var(--warn-border);
+  background: var(--warn-bg);
+  color: var(--warn-fg);
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  margin: 1rem 0 2rem;
+  font-size: 0.95rem;
+}
+.disclaimer strong { color: #B71C1C; }
+.profile-grid {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.25rem 1rem;
+  margin: 1rem 0 2rem;
+  font-size: 0.95rem;
+}
+.profile-grid dt { font-weight: 600; color: var(--ink-muted); }
+.profile-grid dd { margin: 0; }
+.trial-table-wrap { color: var(--ink); }
+.trial-scroll { overflow-x: auto; }
+.trial-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.88em;
+}
+.trial-table thead th {
+  background: var(--header-bg);
+  font-weight: 600;
+  text-align: left;
+  padding: 0.5em 0.6em;
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  white-space: nowrap;
+}
+.trial-table tbody td {
+  padding: 0.5em 0.6em;
+  border-bottom: 1px solid var(--rule);
+  font-variant-numeric: tabular-nums;
+  vertical-align: top;
+}
+.trial-table tbody tr:last-child td {
+  border-bottom: 2px solid var(--ink);
+}
+.persona {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.35em;
+  font-size: 0.78em;
+  font-weight: 600;
+  margin-right: 0.25em;
+  border: 1px solid transparent;
+}
+.persona-risktaker    { background: #FFE9D6; color: #6F3A0F; border-color: #F0CFAE; }
+.persona-conservative { background: #DFEBFB; color: #1B3A6B; border-color: #B5CDEE; }
+.persona-critic       { background: #F1E5FF; color: #441E72; border-color: #D4BBF2; }
+.persona-concensusite { background: #DDF1EE; color: #134E48; border-color: #B0DBD3; }
+.persona-advocate     { background: #FFE5EE; color: #6E1638; border-color: #F0BBCB; }
+.split-glyph { font-weight: 700; color: #5A4500; }
+/* not_recommended rows: mute, never strike through.
+   Strikethrough was applied to the whole <tr>, which struck the rationale
+   columns too — and on a rejected option the rationale is the most useful
+   text in the row, since it is what lets a reader stop considering it.
+   Muting carries the de-emphasis on its own; the badge below states the
+   verdict in words, so the signal does not rest on typography or colour
+   alone (both are invisible to a screen reader and to a monochrome print). */
+.not-recommended {
+  color: var(--ink-muted);
+}
+.badge-not-recommended {
+  background: #FDECEA;
+  color: #8C2F22;
+  border-color: #F5C6C0;
+}
+.scenario-conditional {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5A4500;
+  background: #FFF7E0;
+  border: 1px solid #F1DD9A;
+  border-radius: 0.35em;
+  padding: 0.05em 0.45em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+.pipeline-note,
+.evidence-detail-note {
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+  margin: 0.25rem 0 0.75rem;
+}
+.evidence-detail-empty {
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+  margin: 0.25rem 0 0.75rem;
+  padding-left: 0.5rem;
+  border-left: 2px solid #E5E5E5;
+}
+.evidence-detail-table { font-size: 0.86em; }
+.evidence-detail-table thead th {
+  background: #FAFAFA;
+}
+.evidence-detail-table .tox-grade {
+  font-size: 0.85em;
+  color: var(--ink-muted);
+  font-weight: 500;
+}
+.evidence-detail-table .safety-summary-fallback {
+  font-style: italic;
+  color: var(--ink-muted);
+}
+h4 + .trial-table-wrap,
+h4 + .evidence-detail-empty {
+  margin-top: 0.25rem;
+}
+h4 { margin-top: 1.25rem; margin-bottom: 0.25rem; font-size: 1rem; }
+.pipeline-context-table { font-size: 0.82em; color: var(--ink-muted); }
+.pipeline-context-table thead th {
+  background: #FAFAFA;
+  border-top: 1px solid var(--ink-muted);
+  border-bottom: 1px solid var(--ink-muted);
+}
+.pipeline-context-table tbody tr:last-child td { border-bottom: 1px solid var(--ink-muted); }
+.pipeline-context-table .intervention-name { color: var(--ink); font-weight: 600; }
+.pipeline-context-table .alias-list { color: var(--ink-muted); font-size: 0.9em; }
+.pipeline-context-table .basket-flag {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #134E48;
+  background: #DDF1EE;
+  border: 1px solid #B0DBD3;
+  border-radius: 0.35em;
+  padding: 0.02em 0.4em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+.pipeline-context-table .discontinued-flag {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5A2A2A;
+  background: #F2E1E1;
+  border: 1px solid #DDB7B7;
+  border-radius: 0.35em;
+  padding: 0.02em 0.4em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+.pipeline-context-table .offlabel-flag {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5F4310;
+  background: #FBEFD3;
+  border: 1px solid #E8C977;
+  border-radius: 0.35em;
+  padding: 0.02em 0.4em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+/* surfaced_reason flag pills (Experimental "Also considered" table). */
+.flag-badge {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 0.02em 0.5em;
+  white-space: nowrap;
+}
+.flag-unavailable    { background: #ECEFF1; color: #37474F; border-color: #CFD8DC; }
+.flag-consolidated   { background: #E8EAF6; color: #303F9F; border-color: #C5CAE9; }
+.flag-thin           { background: #FFF8E1; color: #7A5B00; border-color: #F0E1B0; }
+.flag-not-enrollable { background: #F3E5F5; color: #6A1B7A; border-color: #E1BEE7; }
+footer.libby-footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  color: var(--ink-muted);
+  font-size: 0.85rem;
+}
+
+</style>
+</head>
+<body>
+<h1>Libby recommendations &mdash; <code>pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m</code></h1>
+<div class="disclaimer">
+<strong>Decision support, not medical advice.</strong> Libby is an experimental 
+multi-agent decision-support tool. The recommendations below have not been 
+reviewed by a clinician treating this patient. Do not act on this page without 
+consulting a qualified oncologist.
+</div>
+<h2>Profile snapshot</h2>
+<dl class="profile-grid">
+  <dt>Primary site</dt><dd>pancreas</dd>
+  <dt>Histology</dt><dd>ductal adenocarcinoma (PDAC; per user framing, consistent with the supplied pathology narrative; the histology line of the path report was not quoted at intake)</dd>
+  <dt>Stage</dt><dd>Recurrent PDAC. New pancreatic body mass (July 2026) with likely vascular invasion, roughly 4 months after completing adjuvant FOLFIRINOX (March 2026). Prior course: neoadjuvant mFOLFIRINOX x6 (2025), then R0 resection (December 2025) with 0/34 nodes and CAP tumor regression grade 2 (partial response: evident regression, but more than single cells or rare small groups of residual cancer). The recurrence is radiographic only so far; it has not been biopsied or re-sequenced.</dd>
+  <dt>ECOG</dt><dd>0</dd>
+  <dt>Age band</dt><dd>50-59</dd>
+  <dt>Sex</dt><dd>unknown</dd>
+  <dt>Biomarkers</dt><dd>CLDN18.2 positive, moderate-to-strong: 2+/3+ membranous staining in 60% of tumor cells (resected primary, December 2025 specimen); CLDN18.2 (recurrent lesion) not assessed; the recurrence has not been biopsied. The 60% 2+/3+ result is from the resected primary only. (ihc_pending); KRAS G12R KRAS p.G12R, pathogenic driver; TP53 Y220C TP53 p.Y220C; KMT2C S2816fs KMT2C p.S2816fs, frameshift; Microsatellite instability (MSI) negative (MSS); Tumor mutational burden (TMB) 0.83 mutations/Mb (low); Germline findings (incidental) none detected, per incidental germline reporting on the tumor NGS report (ngs_pending); Somatic profile (recurrent lesion) not assessed; the mutation list (KRAS G12R, TP53 Y220C, KMT2C S2816fs) is from the December 2025 resection specimen (ngs_pending)</dd>
+  <dt>Efficacy/toxicity weight</dt><dd>0.7</dd>
+</dl>
+
+<p><em>37 ranked therapeutic options across 6 targetable features. Biomarker workup steps live in the standalone Target validation paths report.</em></p>
+<h2>Recurrence Profile interventions</h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr><td><a href="#evidence-daraxonrasib">1</a></td><td><strong>Daraxonrasib (RMC-6236, oral pan-RAS(ON) multi-selective inhibitor) via RASolute 303, the phase 1/2, or the FDA-authorized expanded-access protocol</strong> <span class="scenario-conditional">(conditional on recurrence_profile positive)</span></td><td>Moderate: the only RCT-grade PDAC evidence containing this allele (RASolute 302, HR 0.40), read across a pooled estimand and a different line context.</td><td>High (grade &gt;=3 AEs 61.8%, below the 69.6% chemotherapy comparator: rash, diarrhea, nausea, stomatitis)</td><td><strong>Low</strong> <span class="cpm-desc">(Pan-RAS inhibition can select RAS-wild-type escape; allele-specific EGFR rebound described in preprint only.)</span></td><td><strong>The only option here with randomized survival evidence in PDAC that contains this allele; what is uncertain is the width of the interval, not the position.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/42223072">PMID&nbsp;42223072</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/42090791">PMID&nbsp;42090791</a><br><a href="https://clinicaltrials.gov/study/NCT07573215">NCT07573215</a></td></tr>
+    <tr><td><a href="#evidence-ibi343">2</a></td><td><strong>IBI343 (CLDN18.2 antibody-drug conjugate, exatecan payload) via the phase 1 PDAC cohort</strong> <span class="scenario-conditional">(conditional on recurrence_profile positive)</span></td><td>Moderate-to-low: 22.7% confirmed ORR in expression-selected treated PDAC, but median OS 9.1 months sits inside the 8.8-month chemotherapy class-switch floor.</td><td>High (grade &gt;=3 TRAEs 52.6% in the gastric cohort: neutropenia 28.4%, leukopenia 25.9%, anemia, thrombocytopenia)</td><td><strong>Low</strong> <span class="cpm-desc">(Roughly 40% of cells stain antigen-negative; bystander exatecan mitigates but does not erase escape.)</span></td><td><strong>The best-evidenced CLDN18.2 route this patient can actually reach, and its own median survival has not yet cleared the chemotherapy floor it would displace.</strong></td><td>doi:10.1200/JCO.2025.43.16_suppl.4017<br><a href="https://pubmed.ncbi.nlm.nih.gov/40670773">PMID&nbsp;40670773</a><br><a href="https://clinicaltrials.gov/study/NCT05458219">NCT05458219</a></td></tr>
+    <tr class="split-glyph"><td><a href="#evidence-asp2138">3</a></td><td><strong>ASP2138 (CLDN18.2 x CD3 2+1 bispecific T-cell engager), phase 1 with a dedicated metastatic PDAC cohort</strong> <span class="scenario-conditional">(conditional on recurrence_profile positive)</span></td><td>Low-to-unknown in PDAC: no efficacy readout in this disease; the gastric signal is a 12-week unconfirmed DCR of 41.7%, the softest endpoint in the file.</td><td>Moderate (CRS 43.2% gastric / 23.4% PDAC cohort, largely low-grade; nausea 44.7%; on-target gastric mucosal injury)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Desmoplastic, T-cell-cold PDAC starves a CD3 engager of the effector density its response depends on.)</span></td><td><strong>The widest-open CLDN18.2 door in the file, ranked on eligibility and site count rather than on evidence, in the tumor type where engagers historically struggle most.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT05365581">NCT05365581</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/34433637">PMID&nbsp;34433637</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/23900716">PMID&nbsp;23900716</a></td></tr>
+    <tr class="split-glyph"><td><a href="#evidence-asp5834">4</a></td><td><strong>ASP5834 (intravenous pan-KRAS inhibitor), first-in-human phase 1</strong> <span class="scenario-conditional">(conditional on recurrence_profile positive)</span></td><td>Unknown: zero published efficacy for this molecule. Ranked on eligibility fit, as the KRAS route that survives a locally-recurrent staging call.</td><td>Unknown (first-in-human dose escalation; no published AE table at any dose)</td><td><strong>Low</strong> <span class="cpm-desc">(Pan-KRAS inhibition can select RAS-wild-type escape; the class resistance map is still being drawn.)</span></td><td><strong>Insurance against the largest access risk in this case: it accepts locally advanced unresectable disease, which the daraxonrasib expanded-access protocol and RASolute 303 do not.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT07094204">NCT07094204</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/42223072">PMID&nbsp;42223072</a></td></tr>
+    <tr class="not-recommended"><td><a href="#evidence-zolbetuximab">5</a></td><td><strong>Zolbetuximab (anti-CLDN18.2 monoclonal antibody), off-label in PDAC</strong> <span class="scenario-conditional">(conditional on recurrence_profile positive)</span> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td>Low: the only randomized CLDN18.2 readout in PDAC was flat at 13.7 vs 13.6 months, and this tumor sits below the label-defining cutoff.</td><td>High (grade &gt;=3 TEAEs 87% with mFOLFOX6, 72.8% with CAPOX: nausea, vomiting, neutropenia)</td><td><strong>Low</strong> <span class="cpm-desc">(A naked antibody needs uniform surface antigen; roughly 40% of cells stain negative and there is no payload or crossfire.)</span></td><td><strong>Prescribable off-label today and argued against on both counts: 60% is below the companion-diagnostic cutoff, and the randomized PDAC readout was flat.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37068504">PMID&nbsp;37068504</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/37524953">PMID&nbsp;37524953</a><br><a href="https://clinicaltrials.gov/study/NCT03816163">NCT03816163</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Also considered &mdash; not ranked</h3>
+<p class="pipeline-note">Feature-targeting investigational options the board considered but did not rank as live top-tier choices. The <strong>Flag</strong> column says why: <em>Unavailable</em> (program discontinued/terminated), <em>Consolidated</em> (one product of an approach ranked above), <em>Thin evidence</em> (no peer-reviewed clinical efficacy yet), <em>Not enrollable</em> (cross-tumor evidence or geographically inaccessible).</p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Flag</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr class="split-glyph"><td><span class="flag-badge flag-thin">Thin evidence</span></td><td><strong>JAB-30355 (oral p53 Y220C reactivator), phase 1/2 with US sites</strong> <span class="scenario-conditional">(conditional on recurrence_profile positive)</span></td><td>Unknown, and the class points the wrong way: every responder in rezatapopt&#x27;s phase 1 (n=77) was KRAS wild-type, ORR 30% in that subset against 20% overall.</td><td>Unknown (no published AE table at any dose; the entire record is one sponsor sentence)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Restored p53 in a KRAS-driven, low-priming tumor produces arrest rather than apoptosis.)</span></td><td><strong>The only Y220C door this KRAS-co-mutated patient can walk through, and Y220C fails twice here; the rank measures door-openness, not evidence.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT06386146">NCT06386146</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/41740031">PMID&nbsp;41740031</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/34074758">PMID&nbsp;34074758</a></td></tr>
+    <tr class="split-glyph"><td><span class="flag-badge flag-consolidated">Consolidated</span></td><td><strong>NTS071 (oral p53 Y220C reactivator), phase 1/2 with US sites</strong> <span class="scenario-conditional">(conditional on recurrence_profile positive)</span></td><td>Unknown: consolidated under the JAB-30355 row, which carries the class read for this patient.</td><td>Unknown (no published safety data of any kind)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Same class liability: restored p53 in a KRAS-driven, low-priming tumor arrests rather than kills.)</span></td><td><strong>The second US Y220C door without a posted KRAS exclusion, kept as redundancy if the first one narrows.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT07060989">NCT07060989</a></td></tr>
+    <tr class="split-glyph"><td><span class="flag-badge flag-thin">Thin evidence</span></td><td><strong>KST-6051 (oral pan-KRAS inhibitor), first-in-human phase 1 at US sites</strong> <span class="scenario-conditional">(conditional on recurrence_profile positive)</span></td><td>Unknown: no published efficacy. Eligibility as posted asks only for a documented KRAS mutation, which G12R satisfies on its face.</td><td>Unknown (first-in-human dose escalation; no published AE table)</td><td><strong>Low</strong> <span class="cpm-desc">(Pan-KRAS inhibition can select RAS-wild-type escape; no drug-specific mechanism data exist.)</span></td><td><strong>A reachable US pan-KRAS door with an unusually simple eligibility line, and it closes permanently once daraxonrasib starts.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT07458347">NCT07458347</a></td></tr>
+    <tr class="split-glyph"><td><span class="flag-badge flag-thin">Thin evidence</span></td><td><strong>AN9025 (pan-RAS(ON) inhibitor), phase 1 at three US sites</strong> <span class="scenario-conditional">(conditional on recurrence_profile positive)</span></td><td>Unknown: no published efficacy. Its posted criteria fit this history unusually well, including adjuvant therapy with progression inside 6 months as prior therapy.</td><td>Unknown (first-in-human dose escalation; no published AE table)</td><td><strong>Low</strong> <span class="cpm-desc">(Pan-RAS(ON) inhibition can select RAS-wild-type escape; no drug-specific data exist.)</span></td><td><strong>The rare pan-RAS(ON) trial with backfill cohorts that accept patients who already progressed on daraxonrasib, which makes it a post-progression asset.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT07252479">NCT07252479</a></td></tr>
+    <tr class="split-glyph"><td><span class="flag-badge flag-consolidated">Consolidated</span></td><td><strong>JAB-23E73 (oral pan-KRAS inhibitor), phase 1/2</strong> <span class="scenario-conditional">(conditional on recurrence_profile positive)</span></td><td>Consolidated under the ranked pan-KRAS approach; no drug-specific efficacy published.</td><td>Unknown (dose escalation; no published AE table)</td><td><strong>Low</strong> <span class="cpm-desc">(Pan-KRAS inhibition can select RAS-wild-type escape; no drug-specific data exist.)</span></td><td><strong>One more recruiting pan-KRAS escalation with no published data; the approach is already ranked at daraxonrasib and ASP5834.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT06973564">NCT06973564</a></td></tr>
+    <tr class="split-glyph"><td><span class="flag-badge flag-consolidated">Consolidated</span></td><td><strong>BLU-924 / SAR449336 (pan-KRAS inhibitor), phase 1/2</strong> <span class="scenario-conditional">(conditional on recurrence_profile positive)</span></td><td>Consolidated under the ranked pan-KRAS approach; no drug-specific efficacy published.</td><td>Unknown (dose escalation; no published AE table)</td><td><strong>Low</strong> <span class="cpm-desc">(Pan-KRAS inhibition can select RAS-wild-type escape; no drug-specific data exist.)</span></td><td><strong>One more recruiting pan-KRAS escalation with no published data; the approach is already ranked at daraxonrasib and ASP5834.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT07629960">NCT07629960</a></td></tr>
+    <tr class="split-glyph"><td><span class="flag-badge flag-consolidated">Consolidated</span></td><td><strong>BBO-11818 (pan-KRAS inhibitor), phase 1</strong> <span class="scenario-conditional">(conditional on recurrence_profile positive)</span></td><td>Consolidated under the ranked pan-KRAS approach; no drug-specific efficacy published.</td><td>Unknown (dose escalation; no published AE table)</td><td><strong>Low</strong> <span class="cpm-desc">(Pan-KRAS inhibition can select RAS-wild-type escape; no drug-specific data exist.)</span></td><td><strong>One more recruiting pan-KRAS escalation with no published data; the approach is already ranked at daraxonrasib and ASP5834.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT06917079">NCT06917079</a></td></tr>
+    <tr class="split-glyph"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>Satri-cel (CT041, autologous CLDN18.2 CAR-T)</strong> <span class="scenario-conditional">(conditional on recurrence_profile positive)</span></td><td>Not reachable: the strongest design in the CLDN18.2 class (mPFS 3.25 vs 1.77 months, HR 0.37) is gastric, and the absolute gain is about six weeks.</td><td>High (grade &gt;=3 TEAEs in 87 of 88 treated patients; CRS 95%; lymphopenia 98%; on-target gastric mucosal injury)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Desmoplastic, T-cell-poor PDAC is the environment CAR-T does worst in; on-target gastric injury adds a second vector.)</span></td><td><strong>The closest expression match in the file and the one with no door: North American enrollment closed, the approval is dispensed only in mainland China.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40460847">PMID&nbsp;40460847</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/38830992">PMID&nbsp;38830992</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/37689733">PMID&nbsp;37689733</a></td></tr>
+    <tr class="split-glyph"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>[177Lu]Lu-DOTA-SNA040 (CLDN18.2-directed lutetium-177 radioligand therapy), investigator-initiated phase 1</strong> <span class="scenario-conditional">(conditional on recurrence_profile positive)</span></td><td>Unknown clinically, but the biomarker fit is the best in the file: it requires &gt;=2+ in &gt;=20% of cells and this tumor is 2+/3+ in 60%.</td><td>Unknown (no published clinical safety; radioligand class carries marrow and renal dose constraints)</td><td><strong>Low</strong> <span class="cpm-desc">(Beta crossfire kills antigen-negative neighbours, which is the one CLDN18.2 approach heterogeneity does not disable.)</span></td><td><strong>The best mechanistic match in the whole dossier and the least reachable: a 12-patient single-center trial in Shanghai with no mechanism for foreign enrollees.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT07595237">NCT07595237</a></td></tr>
+    <tr class="split-glyph"><td><span class="flag-badge flag-thin">Thin evidence</span></td><td><strong>Spevatamig (PT886, CLDN18.2 x CD47 bispecific), phase 1/2 at 11 US sites</strong> <span class="scenario-conditional">(conditional on recurrence_profile positive)</span></td><td>Unknown: no published efficacy. A straightforward US door in the CLDN18.2 class with tissue assessment built into screening.</td><td>Unknown (no published AE table; CD47 engagement carries a class anemia signal)</td><td><strong>Low</strong> <span class="cpm-desc">(CD47 blockade recruits macrophages rather than T cells, which sidesteps the T-cell-cold problem but is unproven here.)</span></td><td><strong>One of the few CLDN18.2 programs recruiting at US sites for previously treated pancreatic carcinoma, with no published data behind it.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT05482893">NCT05482893</a></td></tr>
+    <tr class="split-glyph"><td><span class="flag-badge flag-consolidated">Consolidated</span></td><td><strong>AZD5863 (CLDN18.2 x CD3 affinity-modulated T-cell engager), phase 1/2</strong> <span class="scenario-conditional">(conditional on recurrence_profile positive)</span></td><td>Consolidated under the ranked CD3-engager approach; preclinical work reports potent activity with limited cytokine release, and no clinical efficacy is published.</td><td>Unknown clinically (the affinity-modulated design is built to lower cytokine release; no human AE table)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Same T-cell-density dependency that handicaps every CD3 engager in desmoplastic PDAC.)</span></td><td><strong>A second CLDN18.2 x CD3 engager whose affinity modulation targets the CRS problem; consolidated under the ASP2138 rank.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT06005493">NCT06005493</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/40759445">PMID&nbsp;40759445</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-daraxonrasib">Daraxonrasib (RMC-6236, oral pan-RAS(ON) multi-selective inhibitor)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>Previously treated metastatic PDAC (91.8% RAS G12-mutant)</strong> (2L)<br><small>Previously treated mPDAC; dual primary endpoints in the RAS G12 subpopulation, which contains this patient&#x27;s G12R. Overall population also took G13/Q61 and RAS-WT.</small></td><td>500</td><td><strong>any AE</strong> <span class="tox-grade">grade any</span>: 100% (n=248) <small>(daraxonrasib arm; 97.7% chemotherapy arm)</small><br><strong>any AE</strong> <span class="tox-grade">grade &gt;=3</span>: 61.8% (n=248) <small>(vs 69.6% chemotherapy arm)</small><br><strong>TRAE leading to discontinuation</strong> <span class="tox-grade">grade any</span>: 1.2% (n=248) <small>(vs 11.2% chemotherapy arm)</small></td><td><strong>median OS, RAS G12 population</strong>: 13.2 months (HR CIs not in abstract; P&lt;0.001 for OS and PFS comparisons); p &lt;0.001<br><small>mPFS 7.3 mo (RAS G12)</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/42223072">O&#x27;Reilly et al. <em>N Engl J Med</em> 2026</a></td></tr>
+    <tr><td><strong>Previously treated advanced RAS-mutated PDAC (phase 1/2 solid-tumor study, PDAC subset)</strong> (2L+)<br><small>168 previously treated RAS-mutant PDAC patients dosed at &lt;=300 mg; key efficacy subgroup is 26 patients with RAS G12 tumors on second-line 300 mg. G12R qualifies alongside the other G12 alleles.</small></td><td>168</td><td><strong>any TRAE</strong> <span class="tox-grade">grade any</span>: 96% (n=168)<br><strong>any TRAE</strong> <span class="tox-grade">grade &gt;=3</span>: 30% (n=168)<br><strong>rash</strong> <span class="tox-grade">grade any</span>: (n=168) <small>(reported in &gt;=10%; per-term rates in full text)</small><br><strong>diarrhea</strong> <span class="tox-grade">grade any</span>: (n=168) <small>(reported in &gt;=10%)</small><br><strong>nausea</strong> <span class="tox-grade">grade any</span>: (n=168) <small>(reported in &gt;=10%)</small><br><strong>stomatitis/mucositis</strong> <span class="tox-grade">grade any</span>: (n=168) <small>(reported in &gt;=10%)</small><br><strong>vomiting</strong> <span class="tox-grade">grade any</span>: (n=168) <small>(reported in &gt;=10%)</small><br><strong>fatigue</strong> <span class="tox-grade">grade any</span>: (n=168) <small>(reported in &gt;=10%)</small></td><td><strong>ORR, 2L RAS G12 at 300 mg</strong>: 35% (95% CI 17–56)<br><small>mDoR 8.2 mo (95% CI 3.8-NE); mPFS 8.5 mo (2L RAS G12, 300 mg)</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/42090791">Wolpin et al. <em>N Engl J Med</em> 2026</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-ibi343">IBI343 (CLDN18.2 antibody-drug conjugate, exatecan payload)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>Advanced gastric/GEJ adenocarcinoma, CLDN18.2-positive (phase 1)</strong> (2L+)<br><small>127 dosed (19 escalation, 108 expansion); headline efficacy in CLDN18.2-high (2+/3+ &gt;=75%) at 6 mg/kg.</small></td><td>127</td><td><strong>any TRAE</strong> <span class="tox-grade">grade &gt;=3</span>: 52.6% (n=116)<br><strong>neutrophil count decreased</strong> <span class="tox-grade">grade &gt;=3</span>: 28.4% (n=116)<br><strong>white blood cell count decreased</strong> <span class="tox-grade">grade &gt;=3</span>: 25.9% (n=116)<br><strong>anemia</strong> <span class="tox-grade">grade &gt;=3</span>: 16.4% (n=116)<br><strong>ILD/pneumonitis</strong> <span class="tox-grade">grade any</span>: 0% (0/127)<br><strong>treatment-related death</strong> <span class="tox-grade">grade 5</span>: 0% (0/116)</td><td><strong>confirmed ORR, CLDN18.2-high 6 mg/kg</strong>: 29% (95% CI 14.2–48.0)<br><small>mPFS 5.5 mo (95% CI 4.1-7.0), same cohort</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40670773">Liu et al. <em>Nat Med</em> 2025</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-asp2138">ASP2138 (CLDN18.2 x CD3 2+1 bispecific T-cell engager), phase 1 with a dedicated metastatic PDAC cohort</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-asp5834">ASP5834 (intravenous pan-KRAS inhibitor), first-in-human phase 1</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>Previously treated metastatic PDAC (91.8% RAS G12-mutant)</strong> (2L)<br><small>Previously treated mPDAC; dual primary endpoints in the RAS G12 subpopulation, which contains this patient&#x27;s G12R. Overall population also took G13/Q61 and RAS-WT.</small></td><td>500</td><td><strong>any AE</strong> <span class="tox-grade">grade any</span>: 100% (n=248) <small>(daraxonrasib arm; 97.7% chemotherapy arm)</small><br><strong>any AE</strong> <span class="tox-grade">grade &gt;=3</span>: 61.8% (n=248) <small>(vs 69.6% chemotherapy arm)</small><br><strong>TRAE leading to discontinuation</strong> <span class="tox-grade">grade any</span>: 1.2% (n=248) <small>(vs 11.2% chemotherapy arm)</small></td><td><strong>median OS, RAS G12 population</strong>: 13.2 months (HR CIs not in abstract; P&lt;0.001 for OS and PFS comparisons); p &lt;0.001<br><small>mPFS 7.3 mo (RAS G12)</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/42223072">O&#x27;Reilly et al. <em>N Engl J Med</em> 2026</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-zolbetuximab">Zolbetuximab (anti-CLDN18.2 monoclonal antibody), off-label in PDAC</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>CLDN18.2-positive (&gt;=75% 2+/3+), HER2-negative, untreated advanced gastric/GEJ adenocarcinoma</strong> (1L)<br><small>565 randomized across 215 centers; ECOG 0-1.</small></td><td>565</td><td><strong>any TEAE</strong> <span class="tox-grade">grade &gt;=3</span>: 87% (242/279) <small>(vs 78% placebo + mFOLFOX6)</small><br><strong>nausea</strong> <span class="tox-grade">grade &gt;=3</span>: (n=279) <small>(among most common grade &gt;=3 events; per-term rates in full text)</small><br><strong>vomiting</strong> <span class="tox-grade">grade &gt;=3</span>: (n=279) <small>(among most common grade &gt;=3 events)</small><br><strong>decreased appetite</strong> <span class="tox-grade">grade &gt;=3</span>: (n=279) <small>(among most common grade &gt;=3 events)</small><br><strong>treatment-related death</strong> <span class="tox-grade">grade 5</span>: 2% (5/279) <small>(vs 4 (1%) placebo arm)</small></td><td><strong>PFS (IRC)</strong>: 10.61 months (95% CI 8.9–12.48); p 0.0066<br><small>mPFS 10.61 mo vs 8.67 mo</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37068504">Shitara et al. <em>Lancet</em> 2023</a></td></tr>
+    <tr><td><strong>CLDN18.2-positive (&gt;=75% 2+/3+), HER2-negative, untreated advanced gastric/GEJ adenocarcinoma</strong> (1L)<br><small>507 randomized 1:1, global.</small></td><td>507</td><td><strong>any TEAE</strong> <span class="tox-grade">grade &gt;=3</span>: 72.8% <small>(vs 69.9% placebo + CAPOX; per-term table in full text (PMC10427418))</small></td><td><strong>PFS</strong>: 8.21 months; p 0.0007<br><small>mPFS 8.21 mo vs 6.80 mo</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37524953">Shah et al. <em>Nat Med</em> 2023</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-jab-30355">JAB-30355 (oral p53 Y220C reactivator), phase 1/2 with US sites</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>Locally advanced/metastatic solid tumors with TP53 Y220C (heavily pretreated)</strong> (2L+)<br><small>77 patients across 8 dose levels. Every responder had a KRAS wild-type tumor; ORR 30% in KRAS-WT at &gt;=1150 mg vs 20% overall.</small></td><td>77</td><td><strong>nausea</strong> <span class="tox-grade">grade any</span>: 58% (n=77)<br><strong>vomiting</strong> <span class="tox-grade">grade any</span>: 44% (n=77)<br><strong>blood creatinine increased</strong> <span class="tox-grade">grade any</span>: 39% (n=77)<br><strong>fatigue</strong> <span class="tox-grade">grade any</span>: 39% (n=77)<br><strong>anemia</strong> <span class="tox-grade">grade any</span>: 36% (n=77)<br><strong>anemia</strong> <span class="tox-grade">grade &gt;=3</span>: 16% (n=77) <small>(most common grade &gt;=3 AE)</small><br><strong>TRAE leading to discontinuation</strong> <span class="tox-grade">grade any</span>: 3% (2/77)</td><td><strong>ORR (all patients)</strong>: 20%</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/41740031">Dumbrava et al. <em>N Engl J Med</em> 2026</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-nts071">NTS071 (oral p53 Y220C reactivator), phase 1/2 with US sites</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-kst-6051">KST-6051 (oral pan-KRAS inhibitor), first-in-human phase 1 at US sites</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-an9025">AN9025 (pan-RAS(ON) inhibitor), phase 1 at three US sites</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-jab-23e73">JAB-23E73 (oral pan-KRAS inhibitor), phase 1/2</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-blu-924">BLU-924 / SAR449336 (pan-KRAS inhibitor), phase 1/2</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-bbo-11818">BBO-11818 (pan-KRAS inhibitor), phase 1</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-satri-cel">Satri-cel (CT041, autologous CLDN18.2 CAR-T)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>CLDN18.2-positive (2+ intensity in &gt;=40% of cells) advanced gastric/GEJ adenocarcinoma, &gt;=2 prior lines</strong> (2L+)<br><small>156 randomized 2:1 in China; 69% of the satri-cel group had peritoneal metastasis. The &gt;=2+ in &gt;=40% eligibility rule is the one this patient&#x27;s 60% at 2+/3+ clears.</small></td><td>156</td><td><strong>any TEAE</strong> <span class="tox-grade">grade &gt;=3</span>: 99% (87/88) <small>(vs 30/48 (63%) TPC arm)</small><br><strong>lymphocyte count decreased</strong> <span class="tox-grade">grade &gt;=3</span>: 98% (86/88)<br><strong>white blood cell count decreased</strong> <span class="tox-grade">grade &gt;=3</span>: 77% (68/88)<br><strong>neutrophil count decreased</strong> <span class="tox-grade">grade &gt;=3</span>: 66% (58/88)<br><strong>CRS</strong> <span class="tox-grade">grade any</span>: 95% (84/88)</td><td><strong>PFS (IRC, ITT)</strong>: 3.25 months (95% CI 2.86–4.53); p &lt;0.0001<br><small>mPFS 3.25 mo vs 1.77 mo</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40460847">Qi et al. <em>Lancet</em> 2025</a></td></tr>
+    <tr><td><strong>CLDN18.2-positive advanced gastrointestinal cancers (gastric-dominant; includes pancreatic patients)</strong> (2L+)<br><small>98 infused across escalation and four expansion cohorts (monotherapy, +anti-PD-1, post-1L sequential, anti-CLDN18.2-mAb-refractory).</small></td><td>98</td><td><strong>CRS</strong> <span class="tox-grade">grade any</span>: 96.9% (n=98) <small>(all grade 1-2)</small><br><strong>gastric mucosal injury</strong> <span class="tox-grade">grade any</span>: 8.2% (8/98)<br><strong>ICANS</strong> <span class="tox-grade">grade any</span>: 0% (0/98)<br><strong>treatment-related death</strong> <span class="tox-grade">grade 5</span>: 0% (0/98)</td><td><strong>ORR</strong>: 38.8%<br><small>mPFS 4.4 mo (95% CI 3.7-6.6)</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/38830992">Qi et al. <em>Nat Med</em> 2024</a></td></tr>
+    <tr><td><strong>CLDN18.2-positive metastatic PDAC after failure of standard therapy</strong> (2L+)<br><small>Two patients: case 1 CLDN18.2 2+ in 70%; case 2 3+ in 60% — case 2 is nearly this patient&#x27;s exact expression profile.</small></td><td>2</td><td><strong>CRS</strong> <span class="tox-grade">grade 1-2</span>: 100% (2/2) <small>(grade 1 in case 1, grade 2 in case 2; tocilizumab-responsive)</small></td><td><strong>response (RECIST v1.1)</strong>: PR (case 1); target-lesion CR of lung metastases (case 2) response<br><small>case 2 disease still controlled at last follow-up (July 2023)</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37689733">Qi et al. <em>J Hematol Oncol</em> 2023</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-lu177-dota-sna040">[177Lu]Lu-DOTA-SNA040 (CLDN18.2-directed lutetium-177 radioligand therapy), investigator-initiated phase 1</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-spevatamig">Spevatamig (PT886, CLDN18.2 x CD47 bispecific), phase 1/2 at 11 US sites</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-azd5863">AZD5863 (CLDN18.2 x CD3 affinity-modulated T-cell engager), phase 1/2</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h2>Germline BRCA / HRD-targeting interventions</h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr class="split-glyph"><td><a href="#evidence-olaparib-maintenance">1</a></td><td><strong>Olaparib maintenance, gated on the dedicated germline panel that has not been drawn</strong></td><td>Low: roughly 5-7% pre-test probability of germline BRCA1/2, a POLO population fit this patient does not currently meet, and PFS-only benefit (HR 0.53).</td><td>Moderate (grade &gt;=3 AEs 40% vs 23% on placebo: anemia, fatigue, nausea)</td><td><strong>Low</strong> <span class="cpm-desc">(Recurrence four months after platinum-containing adjuvant therapy argues against the platinum sensitivity this strategy assumes.)</span></td><td><strong>Ranked chiefly to force a blood draw NCCN has asked for in every PDAC patient since 2019, which gates the one FDA-labelled biomarker route in this disease.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/31157963">PMID&nbsp;31157963</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/35834777">PMID&nbsp;35834777</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-olaparib-maintenance">Olaparib maintenance, gated on the dedicated germline panel that has not been drawn</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>Germline BRCA1/2-mutated metastatic PDAC, non-progressing on &gt;=16 weeks of first-line platinum</strong> (maintenance)<br><small>154 randomized 3:2 of 3315 screened — the screening funnel itself shows how uncommon the gBRCA gate is.</small></td><td>154</td><td><strong>any AE</strong> <span class="tox-grade">grade &gt;=3</span>: 40% (n=91) <small>(vs 23% placebo)</small><br><strong>AE leading to discontinuation</strong> <span class="tox-grade">grade any</span>: 5% (n=91) <small>(vs 2% placebo)</small></td><td><strong>PFS (BICR)</strong>: 7.4 months; p 0.004<br><small>mPFS 7.4 mo vs 3.8 mo</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/31157963">Golan et al. <em>N Engl J Med</em> 2019</a></td></tr>
+    <tr><td><strong>Germline BRCA1/2-mutated metastatic PDAC, non-progressing on &gt;=16 weeks of first-line platinum</strong> (maintenance)<br><small>Same 154-patient POLO population; final OS analysis.</small></td><td>154</td><td><span class="safety-summary-fallback">Long-term tolerability held up; no new safety signals versus the primary analysis.</span></td><td><strong>OS (final)</strong>: 19.0 months; p 0.3487</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/35834777">Golan et al. <em>J Clin Oncol</em> 2022</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2>Mss Tmb Low interventions</h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr class="not-recommended"><td>1</td><td><strong>Single-agent PD-1 blockade (pembrolizumab, MSI-high / TMB-high tumor-agnostic routes)</strong> <span class="flag-badge badge-not-recommended">Not recommended</span></td><td>Low: MSS with TMB 0.83 mut/Mb forecloses both tumor-agnostic indications; single-agent checkpoint blockade has no route in this tumor.</td><td>Low (immune-related AE profile; academic here, since the indication is closed on biomarker)</td><td><strong>Low</strong> <span class="cpm-desc">(No target present; FAP+ CAF-driven exclusion keeps single-agent checkpoint blockade inert in MSS PDAC.)</span></td><td><strong>Carried so the MSS / TMB-low result is visibly answered: it closes checkpoint monotherapy and routes immune interest to engagers, vaccines, and cell therapy instead.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT02628067">NCT02628067</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/24277834">PMID&nbsp;24277834</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2>Tp53 Y220C interventions</h2>
+<p><em>No rows.</em></p>
+<h3>Also considered &mdash; not ranked</h3>
+<p class="pipeline-note">Feature-targeting investigational options the board considered but did not rank as live top-tier choices. The <strong>Flag</strong> column says why: <em>Unavailable</em> (program discontinued/terminated), <em>Consolidated</em> (one product of an approach ranked above), <em>Thin evidence</em> (no peer-reviewed clinical efficacy yet), <em>Not enrollable</em> (cross-tumor evidence or geographically inaccessible).</p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Flag</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr class="split-glyph"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>Rezatapopt (PC14586, first-in-class p53 Y220C reactivator), PYNNACLE</strong></td><td>Not enrollable as posted: ORR 20% overall and 30% in KRAS wild-type at &gt;=1150 mg (n=77), with no responder carrying a KRAS mutation.</td><td>Moderate (nausea 58%, vomiting 44%, creatinine increase 39%, fatigue 39%, largely low-grade)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Acquired secondary TP53 alterations in cis with Y220C drive on-target resistance in this class.)</span></td><td><strong>The flagship Y220C program, closed to this patient by its own KRAS-SNV exclusion, with a phase 1 responder pattern that says the same thing.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/41740031">PMID&nbsp;41740031</a><br><a href="https://clinicaltrials.gov/study/NCT04585750">NCT04585750</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/41504628">PMID&nbsp;41504628</a></td></tr>
+    <tr class="split-glyph"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>GenSci128 (p53 Y220C reactivator), phase 1</strong></td><td>Unknown: no published data, and no reachable site for a US patient.</td><td>Unknown (no published safety data)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Shares the class liability of p53 reactivation in a KRAS-driven, low-priming tumor.)</span></td><td><strong>A third Y220C reactivator in the file with no Western route; surfaced so the class inventory is complete.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT06908434">NCT06908434</a></td></tr>
+    <tr class="split-glyph"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>LG00313112 (oral p53 Y220C reactivator), phase 1/2</strong></td><td>Unknown: not yet recruiting, no published data.</td><td>Unknown (no published safety data)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Shares the class liability of p53 reactivation in a KRAS-driven, low-priming tumor.)</span></td><td><strong>Not yet recruiting; a registry alert rather than an option.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT07752875">NCT07752875</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-rezatapopt">Rezatapopt (PC14586, first-in-class p53 Y220C reactivator), PYNNACLE</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>Locally advanced/metastatic solid tumors with TP53 Y220C (heavily pretreated)</strong> (2L+)<br><small>77 patients across 8 dose levels. Every responder had a KRAS wild-type tumor; ORR 30% in KRAS-WT at &gt;=1150 mg vs 20% overall.</small></td><td>77</td><td><strong>nausea</strong> <span class="tox-grade">grade any</span>: 58% (n=77)<br><strong>vomiting</strong> <span class="tox-grade">grade any</span>: 44% (n=77)<br><strong>blood creatinine increased</strong> <span class="tox-grade">grade any</span>: 39% (n=77)<br><strong>fatigue</strong> <span class="tox-grade">grade any</span>: 39% (n=77)<br><strong>anemia</strong> <span class="tox-grade">grade any</span>: 36% (n=77)<br><strong>anemia</strong> <span class="tox-grade">grade &gt;=3</span>: 16% (n=77) <small>(most common grade &gt;=3 AE)</small><br><strong>TRAE leading to discontinuation</strong> <span class="tox-grade">grade any</span>: 3% (2/77)</td><td><strong>ORR (all patients)</strong>: 20%</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/41740031">Dumbrava et al. <em>N Engl J Med</em> 2026</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-gensci128">GenSci128 (p53 Y220C reactivator), phase 1</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-lg00313112">LG00313112 (oral p53 Y220C reactivator), phase 1/2</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h2>KRAS G12R-targeting interventions</h2>
+<p><em>No rows.</em></p>
+<h3>Also considered &mdash; not ranked</h3>
+<p class="pipeline-note">Feature-targeting investigational options the board considered but did not rank as live top-tier choices. The <strong>Flag</strong> column says why: <em>Unavailable</em> (program discontinued/terminated), <em>Consolidated</em> (one product of an approach ranked above), <em>Thin evidence</em> (no peer-reviewed clinical efficacy yet), <em>Not enrollable</em> (cross-tumor evidence or geographically inaccessible).</p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Flag</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr class="split-glyph"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>PF-07934040 (pan-KRAS inhibitor), phase 1</strong></td><td>Not enrollable for this patient (active but not recruiting); no published efficacy.</td><td>Unknown (no published AE table)</td><td><strong>Low</strong> <span class="cpm-desc">(Pan-RAS inhibition can select RAS-wild-type escape; no drug-specific data exist.)</span></td><td><strong>A pan-KRAS program that matches the allele and has no open door for this patient.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT06447662">NCT06447662</a></td></tr>
+    <tr class="split-glyph"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>YL-17231 (pan-RAS inhibitor), phase 1</strong></td><td>Not enrollable for this patient (recruiting in China only); no published efficacy.</td><td>Unknown (no published AE table)</td><td><strong>Low</strong> <span class="cpm-desc">(Pan-RAS inhibition can select RAS-wild-type escape; no drug-specific data exist.)</span></td><td><strong>A pan-KRAS program that matches the allele and has no open door for this patient.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT06096974">NCT06096974</a></td></tr>
+    <tr class="split-glyph"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>JYP0015 / ERAS-0015 (pan-RAS(ON) molecular glue), phase 2</strong></td><td>Not enrollable for this patient (graded not-yet-accessible by the access screen); no published efficacy.</td><td>Unknown (no published AE table)</td><td><strong>Low</strong> <span class="cpm-desc">(Pan-RAS inhibition can select RAS-wild-type escape; no drug-specific data exist.)</span></td><td><strong>A pan-KRAS program that matches the allele and has no open door for this patient.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT06895031">NCT06895031</a></td></tr>
+    <tr class="split-glyph"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>mKRASvax + balstilimab + botensilimab (mutant-KRAS peptide vaccine with dual checkpoint blockade), single US site</strong></td><td>Low for bulk disease: AMPLIFY-201&#x27;s HR 0.12 is a T-cell-threshold split inside a single-arm minimal-residual-disease trial with a different vaccine.</td><td>Unknown for this construct (dual checkpoint blockade brings immune-related toxicity; no organ-function labs exist)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Vaccines rarely shrink bulk desmoplastic tumors; the supporting data come from a minimal-residual-disease setting.)</span></td><td><strong>G12R is in the peptide pool and the mandatory ECOG 0 fits, but a radiographic mass with vascular invasion is not minimal residual disease.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT06411691">NCT06411691</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/40790272">PMID&nbsp;40790272</a></td></tr>
+    <tr class="split-glyph"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>ELI-002 7P (seven-peptide mutant-KRAS amphiphile vaccine), AMPLIFY-7P and the MSK combination study</strong></td><td>Not enrollable: AMPLIFY-7P screens out patients whose imaging shows recurrence, which is this patient&#x27;s presentation.</td><td>Low (no dose-limiting toxicities across 25 patients in the phase 1; final abstract carries no AE table)</td><td><strong>Low</strong> <span class="cpm-desc">(Minimal-residual-disease biology; no counter-productive vector, but no bulk-disease activity either.)</span></td><td><strong>The vaccine platform with real G12R immunogenicity data in PDAC patients, and an entry criterion this recurrence fails on sight.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT05726864">NCT05726864</a><br><a href="https://clinicaltrials.gov/study/NCT07671339">NCT07671339</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/40790272">PMID&nbsp;40790272</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Pipeline context &mdash; not currently enrollable</h3>
+<p class="pipeline-note">Other agents in this target class drawn from the case dossier. The patient cannot currently enroll in these trials (most enroll a different tumor type), but they are included for context on the broader modality landscape. Drugs already listed in the ranked table above are not repeated here.</p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table pipeline-context-table">
+      <thead><tr><th>Intervention</th><th>Modality</th><th>Phase</th><th>Enrolling indication</th><th>Recruitment</th><th>Trial</th></tr></thead>
+      <tbody>
+    <tr><td><span class="intervention-name">zoldonrasib (RMC-9805, KRAS G12D(ON)-selective)</span></td><td>small_molecule</td><td>3</td><td>Metastatic PDAC, first-line, KRAS G12D-mutant</td><td>recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT07621718" target="_blank" rel="noopener noreferrer">NCT07621718</a><br><span class="alias-list">Revolution Medicines</span></td></tr>
+    <tr><td><span class="intervention-name">daratumumab + TG01 + nivolumab</span></td><td>vaccine</td><td>2</td><td>PDAC after one failed treatment (and NSCLC post-anti-PD-1) with KRAS codon 12/13 mutations</td><td>active not recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT06015724" target="_blank" rel="noopener noreferrer">NCT06015724</a><br><span class="alias-list">Georgetown University</span></td></tr>
+    <tr><td><span class="intervention-name">daraxonrasib (RMC-6236, oral RAS(ON) multi-selective inhibitor)</span></td><td>small_molecule</td><td>1/2</td><td>Previously treated advanced RAS-mutated PDAC (phase 1/2 RMC-6236-001; trial still recruiting)</td><td>recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT05379985" target="_blank" rel="noopener noreferrer">NCT05379985</a><br><span class="alias-list">Revolution Medicines</span></td></tr>
+    <tr><td><span class="intervention-name">ANOC-001 / ANOC-002 / ANOC-003 (mutant-KRAS TCR-T)</span></td><td>other</td><td>1/2</td><td>Metastatic/locally advanced PDAC (Anocca TCR-T master protocol)</td><td>recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT07145450" target="_blank" rel="noopener noreferrer">NCT07145450</a><br><span class="alias-list">Anocca AB</span></td></tr>
+    <tr><td><span class="intervention-name">ELI-002 2P (mKRAS amphiphile vaccine)</span></td><td>vaccine</td><td>1</td><td>PDAC (20) and CRC (5) with minimal residual mKRAS disease after locoregional treatment (AMPLIFY-201, ELI-002 2P)</td><td>completed</td><td><a href="https://clinicaltrials.gov/study/NCT04853017" target="_blank" rel="noopener noreferrer">NCT04853017</a><br><span class="alias-list">Elicio Therapeutics</span></td></tr>
+    <tr><td><span class="intervention-name">NT-112 / AZD0240 (KRAS G12D-directed TCR-T)</span></td><td>other</td><td>1</td><td>Unresectable/metastatic solid tumors incl. PDAC with KRAS G12D</td><td>recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT06218914" target="_blank" rel="noopener noreferrer">NCT06218914</a><br><span class="alias-list">AstraZeneca (Neogene Therapeutics)</span></td></tr>
+    <tr><td><span class="intervention-name">TCR1188-ABC (KRAS G12V TCR-T)</span></td><td>other</td><td>1</td><td>KRAS G12V-mutated pancreatic, cholangiocarcinoma, CRC, NSCLC (UPenn)</td><td>recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT07594067" target="_blank" rel="noopener noreferrer">NCT07594067</a><br><span class="alias-list">University of Pennsylvania</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-pf-07934040">PF-07934040 (pan-KRAS inhibitor), phase 1</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-yl-17231">YL-17231 (pan-RAS inhibitor), phase 1</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-jyp0015">JYP0015 / ERAS-0015 (pan-RAS(ON) molecular glue), phase 2</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-mkrasvax">mKRASvax + balstilimab + botensilimab (mutant-KRAS peptide vaccine with dual checkpoint blockade), single US site</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>PDAC (n=20) and CRC (n=5) in minimal-residual-disease state after locoregional therapy</strong> (adj)<br><small>MRD-positive (ctDNA/serum biomarker) after surgery and chemotherapy, radiographically recurrence-free. KRAS G12D or G12R tumors; the vaccine&#x27;s peptide pool covers this patient&#x27;s allele exactly.</small></td><td>25</td><td><strong>dose-limiting toxicity</strong> <span class="tox-grade">grade any</span>: 0% (0/25) <small>(per interim publication; final abstract carries no AE table)</small></td><td><strong>RFS by mKRAS T-cell response threshold</strong>: 0.12 HR (P=0.0002 (threshold split, not a randomized comparison)); p 0.0002<br><small>median RFS not reached above T-cell threshold vs 3.02 mo below</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40790272">Wainberg et al. <em>Nat Med</em> 2025</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-eli-002">ELI-002 7P (seven-peptide mutant-KRAS amphiphile vaccine), AMPLIFY-7P and the MSK combination study</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>PDAC (n=20) and CRC (n=5) in minimal-residual-disease state after locoregional therapy</strong> (adj)<br><small>MRD-positive (ctDNA/serum biomarker) after surgery and chemotherapy, radiographically recurrence-free. KRAS G12D or G12R tumors; the vaccine&#x27;s peptide pool covers this patient&#x27;s allele exactly.</small></td><td>25</td><td><strong>dose-limiting toxicity</strong> <span class="tox-grade">grade any</span>: 0% (0/25) <small>(per interim publication; final abstract carries no AE table)</small></td><td><strong>RFS by mKRAS T-cell response threshold</strong>: 0.12 HR (P=0.0002 (threshold split, not a randomized comparison)); p 0.0002<br><small>median RFS not reached above T-cell threshold vs 3.02 mo below</small></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40790272">Wainberg et al. <em>Nat Med</em> 2025</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2>Cldn18 2 Expression interventions</h2>
+<p><em>No rows.</em></p>
+<h3>Also considered &mdash; not ranked</h3>
+<p class="pipeline-note">Feature-targeting investigational options the board considered but did not rank as live top-tier choices. The <strong>Flag</strong> column says why: <em>Unavailable</em> (program discontinued/terminated), <em>Consolidated</em> (one product of an approach ranked above), <em>Thin evidence</em> (no peer-reviewed clinical efficacy yet), <em>Not enrollable</em> (cross-tumor evidence or geographically inaccessible).</p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Flag</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr class="split-glyph"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>AZD0901 / CMG901 (CLDN18.2 ADC, MMAE payload), phase 2 with a PDAC cohort</strong></td><td>Not enrollable as posted: the PDAC cohort is first-line and requires progression at least 6 months after the last perioperative dose; this recurrence came at about 4 months.</td><td>High (grade &gt;=3 TEAEs 68% in gastric: neutropenia 21%, anemia 14%, vomiting 10%)</td><td><strong>Low</strong> <span class="cpm-desc">(MMAE payload without meaningful bystander reach; antigen-negative cells are not covered.)</span></td><td><strong>A broadly recruiting CLDN18.2 ADC whose PDAC cohort excludes this patient by two months of arithmetic.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/39788133">PMID&nbsp;39788133</a><br><a href="https://clinicaltrials.gov/study/NCT06219941">NCT06219941</a></td></tr>
+    <tr class="split-glyph"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>FG-M108 (ADCC-enhanced anti-CLDN18.2 monoclonal antibody) + gemcitabine/nab-paclitaxel, phase 3</strong></td><td>Unknown for this patient: the supporting phase 1b ORR of 32.4% (n=39) sits on a chemotherapy backbone that cannot isolate the antibody&#x27;s contribution.</td><td>Moderate (anemia 56.2%, nausea 56.4%, vomiting 48.7% any-grade on a gemcitabine/nab-paclitaxel backbone)</td><td><strong>Low</strong> <span class="cpm-desc">(Naked antibody depends on uniform antigen; ADCC enhancement does not reach antigen-negative cells.)</span></td><td><strong>The one CLDN18.2 phase 3 whose cutoff this tumor actually clears, posted at a single mainland-China site and not yet recruiting.</strong></td><td>doi:10.1200/JCO.2025.43.4_suppl.729<br><a href="https://clinicaltrials.gov/study/NCT07383922">NCT07383922</a></td></tr>
+    <tr class="split-glyph"><td><span class="flag-badge flag-thin">Thin evidence</span></td><td><strong>ASP546C (CLDN18.2 ADC), phase 1/2</strong></td><td>Unknown: no published efficacy or safety data.</td><td>Unknown (no published AE table)</td><td><strong>Low</strong> <span class="cpm-desc">(ADC class; antigen-negative cells depend on whatever bystander reach the undisclosed payload has.)</span></td><td><strong>A recruiting CLDN18.2 ADC with nothing published; a screening call rather than a considered option.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT07488676">NCT07488676</a></td></tr>
+    <tr class="split-glyph"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>QLS31905 / ANO31905 (CLDN18.2 x CD3 bispecific) + gemcitabine/nab-paclitaxel, phase 3 and phase 1/2</strong></td><td>Not enrollable: recruiting in China, and the phase 3 pairs the engager with a chemotherapy backbone this patient has functionally failed.</td><td>Unknown (no published AE table)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Same T-cell-density dependency as the class, on a chemotherapy backbone this tumor already progressed through.)</span></td><td><strong>A CLDN18.2 engager that reached phase 3 in PDAC, recruiting in China only.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT07079228">NCT07079228</a><br><a href="https://clinicaltrials.gov/study/NCT07444541">NCT07444541</a></td></tr>
+    <tr class="split-glyph"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>Givastomig (TJ033721/ABL111, CLDN18.2 x 4-1BB bispecific), phase 1</strong></td><td>Cross-tumor only: ORR 16% in CLDN18.2-positive gastroesophageal cancer at &gt;=5 mg/kg (n=75), with no pancreatic arm.</td><td>Low (no dose-limiting toxicities through 18 mg/kg; MTD not reached; nausea and anemia the common treatment-related events)</td><td><strong>Moderate</strong> <span class="cpm-desc">(4-1BB costimulation needs T cells already present; PDAC is where that assumption fails.)</span></td><td><strong>The best-tolerated agent in the CLDN18.2 file, with gastroesophageal-only efficacy and no pancreatic cohort.</strong></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40586719">PMID&nbsp;40586719</a><br><a href="https://clinicaltrials.gov/study/NCT04900818">NCT04900818</a></td></tr>
+    <tr class="split-glyph"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>XNW27011 (CLDN18.2 ADC), phase 1/2</strong></td><td>Not enrollable (active but not recruiting, and graded not-yet-accessible); no case-relevant efficacy published.</td><td>Unknown (no published AE table)</td><td><strong>Low</strong> <span class="cpm-desc">(ADC class; antigen-negative cells depend on the payload&#x27;s bystander reach.)</span></td><td><strong>A CLDN18.2 ADC with no open door for this patient.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT06792435">NCT06792435</a></td></tr>
+    <tr class="split-glyph"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>AZD4360 (CLDN18.2 ADC), phase 1/2</strong></td><td>Not enrollable (active but not recruiting); no case-relevant efficacy published.</td><td>Unknown (no published AE table)</td><td><strong>Low</strong> <span class="cpm-desc">(ADC class; antigen-negative cells depend on the payload&#x27;s bystander reach.)</span></td><td><strong>A CLDN18.2 ADC with no open door for this patient.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT06921928">NCT06921928</a></td></tr>
+    <tr class="split-glyph"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>TORL-2-307-ADC (CLDN18.2 ADC), phase 1</strong></td><td>Not enrollable (active but not recruiting); no case-relevant efficacy published.</td><td>Unknown (no published AE table)</td><td><strong>Low</strong> <span class="cpm-desc">(ADC class; antigen-negative cells depend on the payload&#x27;s bystander reach.)</span></td><td><strong>A CLDN18.2 ADC with no open door for this patient.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT05156866">NCT05156866</a></td></tr>
+    <tr class="split-glyph"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>LB1908 (CLDN18.2 CAR-T), phase 1</strong></td><td>Not enrollable: active but not recruiting; no clinical efficacy published in pancreatic cancer.</td><td>Unknown (cell-therapy class: CRS and lymphodepletion cytopenias; no published grade profile)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Cell therapy in desmoplastic, T-cell-poor PDAC faces the trafficking barrier that dominates this disease.)</span></td><td><strong>A CLDN18.2 cell-therapy program that has stopped enrolling; carried so the cellular sweep is complete.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT05539430">NCT05539430</a></td></tr>
+    <tr class="split-glyph"><td><span class="flag-badge flag-not-enrollable">Not enrollable</span></td><td><strong>TAC01-CLDN18.2 (T-cell antigen coupler engineered T cells), phase 1/2</strong></td><td>Not enrollable: active but not recruiting; no clinical efficacy published in pancreatic cancer.</td><td>Unknown (cell-therapy class: CRS and lymphodepletion cytopenias; no published grade profile)</td><td><strong>Moderate</strong> <span class="cpm-desc">(Cell therapy in desmoplastic, T-cell-poor PDAC faces the trafficking barrier that dominates this disease.)</span></td><td><strong>A CLDN18.2 cell-therapy program that has stopped enrolling; carried so the cellular sweep is complete.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT05862324">NCT05862324</a><br><a href="https://pubmed.ncbi.nlm.nih.gov/39404622">PMID&nbsp;39404622</a></td></tr>
+    <tr class="split-glyph"><td><span class="flag-badge flag-unavailable">Unavailable</span></td><td><strong>EO-3021 / SYSA1801 (CLDN18.2 ADC, MMAE payload), phase 1</strong></td><td>Not available: the program was terminated with no successor study posted.</td><td>Not assessable (program terminated; no usable published safety readout)</td><td><strong>Low</strong> <span class="cpm-desc">(ADC class; no mechanism-level concern beyond the usual antigen-negative gap.)</span></td><td><strong>A discontinued CLDN18.2 ADC, carried so its absence reads as a program decision rather than an oversight.</strong></td><td><a href="https://clinicaltrials.gov/study/NCT05980416">NCT05980416</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-azd0901">AZD0901 / CMG901 (CLDN18.2 ADC, MMAE payload), phase 2 with a PDAC cohort</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>Advanced gastric/GEJ adenocarcinoma, CLDN18.2-positive (first-in-human phase 1)</strong> (2L+)<br><small>27 escalation + 107 gastric/GEJ expansion in China; refractory to or lacking standard therapy; pancreatic dose-expansion data held for a separate publication.</small></td><td>134</td><td><strong>any TEAE</strong> <span class="tox-grade">grade &gt;=3</span>: 68% (73/107)<br><strong>neutrophil count decreased</strong> <span class="tox-grade">grade 3</span>: 21% (22/107) <small>(grade 3-4)</small><br><strong>anemia</strong> <span class="tox-grade">grade 3</span>: 14% (15/107) <small>(grade 3-4)</small><br><strong>vomiting</strong> <span class="tox-grade">grade 3</span>: 10% (11/107) <small>(grade 3-4)</small><br><strong>pancreatitis (DLT)</strong> <span class="tox-grade">grade 3</span>: (1/27) <small>(at 2.2 mg/kg; MTD not reached)</small><br><strong>treatment-related death</strong> <span class="tox-grade">grade 5</span>: (1/107)</td><td><strong>confirmed ORR, 2.2-3.0 mg/kg G/GEJ full analysis set</strong>: 28% (95% CI 20–38)</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/39788133">Ruan et al. <em>Lancet Oncol</em> 2025</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-fg-m108">FG-M108 (ADCC-enhanced anti-CLDN18.2 monoclonal antibody) + gemcitabine/nab-paclitaxel, phase 3</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-asp546c">ASP546C (CLDN18.2 ADC), phase 1/2</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-qls31905">QLS31905 / ANO31905 (CLDN18.2 x CD3 bispecific) + gemcitabine/nab-paclitaxel, phase 3 and phase 1/2</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-givastomig">Givastomig (TJ033721/ABL111, CLDN18.2 x 4-1BB bispecific), phase 1</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>CLDN18.2-positive advanced solid tumors; efficacy population gastroesophageal cancer</strong> (2L+)<br><small>75 enrolled; CLDN18.2-positive defined as &gt;=1+ on &gt;=1% of cells — responders spanned 11% to 100% expression, i.e. activity well below this patient&#x27;s 60%.</small></td><td>75</td><td><strong>dose-limiting toxicity</strong> <span class="tox-grade">grade any</span>: 0% (0/36) <small>(escalation to 18 mg/kg; MTD not reached)</small><br><strong>nausea</strong> <span class="tox-grade">grade any</span>: (n=75) <small>(TRAE in &gt;=10%; per-term rates in full text (PMC12582174))</small><br><strong>anemia</strong> <span class="tox-grade">grade any</span>: (n=75) <small>(TRAE in &gt;=10%)</small><br><strong>fatigue</strong> <span class="tox-grade">grade any</span>: (n=75) <small>(TRAE in &gt;=10%)</small></td><td><strong>ORR, CLDN18.2+ GEC at &gt;=5 mg/kg</strong>: 16%</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/40586719">Ku et al. <em>Clin Cancer Res</em> 2025</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-xnw27011">XNW27011 (CLDN18.2 ADC), phase 1/2</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-azd4360">AZD4360 (CLDN18.2 ADC), phase 1/2</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-torl-2-307">TORL-2-307-ADC (CLDN18.2 ADC), phase 1</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-lb1908">LB1908 (CLDN18.2 CAR-T), phase 1</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-tac01-cldn18-2">TAC01-CLDN18.2 (T-cell antigen coupler engineered T cells), phase 1/2</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<h4 id="evidence-eo-3021">EO-3021 / SYSA1801 (CLDN18.2 ADC, MMAE payload), phase 1</h4>
+<p class="evidence-detail-empty"><em>No published clinical manuscripts in the case dossier yet; the supporting evidence for this intervention is the trial registration only.</em></p>
+<footer class="libby-footer">Generated 2026-08-12 &middot; Libby &middot; <code>pdac-recurrent-cldn18-2-kras-g12r-tp53-y220c-p25m</code></footer>
+</body></html>

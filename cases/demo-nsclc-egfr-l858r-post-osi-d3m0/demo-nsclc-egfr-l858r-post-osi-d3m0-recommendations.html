@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>Libby recommendations &mdash; demo-nsclc-egfr-l858r-post-osi-d3m0</title>
+<style>
+
+:root {
+  --ink: #1A202C;
+  --ink-muted: #4A5568;
+  --rule: #E2E8F0;
+  --header-bg: #F4F6F8;
+  --accent: #5B3A87;
+  --bg: #FFFFFF;
+  --warn-fg: #6F2E1A;
+  --warn-bg: #FBE9E7;
+  --warn-border: #ECC4BB;
+}
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  max-width: 80rem;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  line-height: 1.5;
+}
+h1, h2, h3 { color: var(--ink); }
+h1 { font-size: 1.6rem; }
+h2 { font-size: 1.2rem; margin-top: 2rem; }
+h3 { font-size: 1.05rem; margin-top: 1.5rem; }
+small.scenario-key { color: var(--ink-muted); }
+.disclaimer {
+  border: 1px solid var(--warn-border);
+  background: var(--warn-bg);
+  color: var(--warn-fg);
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  margin: 1rem 0 2rem;
+  font-size: 0.95rem;
+}
+.disclaimer strong { color: #B71C1C; }
+.profile-grid {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.25rem 1rem;
+  margin: 1rem 0 2rem;
+  font-size: 0.95rem;
+}
+.profile-grid dt { font-weight: 600; color: var(--ink-muted); }
+.profile-grid dd { margin: 0; }
+.trial-table-wrap { color: var(--ink); }
+.trial-scroll { overflow-x: auto; }
+.trial-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.88em;
+}
+.trial-table thead th {
+  background: var(--header-bg);
+  font-weight: 600;
+  text-align: left;
+  padding: 0.5em 0.6em;
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  white-space: nowrap;
+}
+.trial-table tbody td {
+  padding: 0.5em 0.6em;
+  border-bottom: 1px solid var(--rule);
+  font-variant-numeric: tabular-nums;
+  vertical-align: top;
+}
+.trial-table tbody tr:last-child td {
+  border-bottom: 2px solid var(--ink);
+}
+.persona {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: 0.35em;
+  font-size: 0.78em;
+  font-weight: 600;
+  margin-right: 0.25em;
+  border: 1px solid transparent;
+}
+.persona-risktaker    { background: #FFE9D6; color: #6F3A0F; border-color: #F0CFAE; }
+.persona-conservative { background: #DFEBFB; color: #1B3A6B; border-color: #B5CDEE; }
+.persona-critic       { background: #F1E5FF; color: #441E72; border-color: #D4BBF2; }
+.persona-concensusite { background: #DDF1EE; color: #134E48; border-color: #B0DBD3; }
+.persona-advocate     { background: #FFE5EE; color: #6E1638; border-color: #F0BBCB; }
+.split-glyph { font-weight: 700; color: #5A4500; }
+.not-recommended {
+  color: var(--ink-muted);
+  text-decoration: line-through;
+}
+.scenario-conditional {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5A4500;
+  background: #FFF7E0;
+  border: 1px solid #F1DD9A;
+  border-radius: 0.35em;
+  padding: 0.05em 0.45em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+.pipeline-note,
+.evidence-detail-note {
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+  margin: 0.25rem 0 0.75rem;
+}
+.evidence-detail-empty {
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+  margin: 0.25rem 0 0.75rem;
+  padding-left: 0.5rem;
+  border-left: 2px solid #E5E5E5;
+}
+.evidence-detail-table { font-size: 0.86em; }
+.evidence-detail-table thead th {
+  background: #FAFAFA;
+}
+.evidence-detail-table .tox-grade {
+  font-size: 0.85em;
+  color: var(--ink-muted);
+  font-weight: 500;
+}
+.evidence-detail-table .safety-summary-fallback {
+  font-style: italic;
+  color: var(--ink-muted);
+}
+h4 + .trial-table-wrap,
+h4 + .evidence-detail-empty {
+  margin-top: 0.25rem;
+}
+h4 { margin-top: 1.25rem; margin-bottom: 0.25rem; font-size: 1rem; }
+.pipeline-context-table { font-size: 0.82em; color: var(--ink-muted); }
+.pipeline-context-table thead th {
+  background: #FAFAFA;
+  border-top: 1px solid var(--ink-muted);
+  border-bottom: 1px solid var(--ink-muted);
+}
+.pipeline-context-table tbody tr:last-child td { border-bottom: 1px solid var(--ink-muted); }
+.pipeline-context-table .intervention-name { color: var(--ink); font-weight: 600; }
+.pipeline-context-table .alias-list { color: var(--ink-muted); font-size: 0.9em; }
+.pipeline-context-table .basket-flag {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #134E48;
+  background: #DDF1EE;
+  border: 1px solid #B0DBD3;
+  border-radius: 0.35em;
+  padding: 0.02em 0.4em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+.pipeline-context-table .discontinued-flag {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5A2A2A;
+  background: #F2E1E1;
+  border: 1px solid #DDB7B7;
+  border-radius: 0.35em;
+  padding: 0.02em 0.4em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+.pipeline-context-table .offlabel-flag {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #5F4310;
+  background: #FBEFD3;
+  border: 1px solid #E8C977;
+  border-radius: 0.35em;
+  padding: 0.02em 0.4em;
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+footer.libby-footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  color: var(--ink-muted);
+  font-size: 0.85rem;
+}
+
+</style>
+</head>
+<body>
+<h1>Libby recommendations &mdash; <code>demo-nsclc-egfr-l858r-post-osi-d3m0</code></h1>
+<div class="disclaimer">
+<strong>Decision support, not medical advice.</strong> Libby is an experimental 
+multi-agent decision-support tool. The recommendations below have not been 
+reviewed by a clinician treating this patient. Do not act on this page without 
+consulting a qualified oncologist.
+</div>
+<h2>Profile snapshot</h2>
+<dl class="profile-grid">
+  <dt>Primary site</dt><dd>lung</dd>
+  <dt>Histology</dt><dd>adenocarcinoma</dd>
+  <dt>Stage</dt><dd>IV</dd>
+  <dt>ECOG</dt><dd>1</dd>
+  <dt>Age band</dt><dd>60-69</dd>
+  <dt>Sex</dt><dd>female</dd>
+  <dt>Biomarkers</dt><dd>EGFR L858R present; EGFR T790M absent; MET amplification GCN 8.2; PD-L1 TPS 10%</dd>
+  <dt>Efficacy/toxicity weight</dt><dd>0.55</dd>
+  <dt>Toxicity vetoes</dt><dd>severe neuropathy, cardiotoxicity, alopecia</dd>
+  <dt>Modality constraints</dt><dd>oral preferred, no inpatient infusion, minimize IV chair time</dd>
+</dl>
+
+<p><em>3 ranked therapeutic options. Biomarker workup steps live in the standalone Target validation paths report.</em></p>
+<h2>EGFR L858R-targeting interventions</h2>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table">
+      <thead><tr><th>Rank</th><th>Intervention</th><th>Likelihood of effect</th><th>Toxicity burden</th><th>Counter-productive MoA</th><th>Overall</th><th>Key references</th></tr></thead>
+      <tbody>
+    <tr><td><a href="#evidence-savolitinib-osimertinib">1</a></td><td><strong>savolitinib + osimertinib (preferably on SAFFRON / SACHI)</strong></td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/32679432">PMID&nbsp;32679432</a><br><a href="https://clinicaltrials.gov/study/NCT05261399">NCT05261399</a></td></tr>
+    <tr><td><a href="#evidence-amivantamab-lazertinib">2</a></td><td><strong>amivantamab + lazertinib</strong></td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/36720074">PMID&nbsp;36720074</a></td></tr>
+    <tr><td><a href="#evidence-patritumab-deruxtecan">3</a></td><td><strong>patritumab deruxtecan (HER3-DXd)</strong></td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37563559">PMID&nbsp;37563559</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Pipeline context &mdash; not currently enrollable</h3>
+<p class="pipeline-note">Other agents in this target class drawn from the case dossier. The patient cannot currently enroll in these trials (most enroll a different tumor type), but they are included for context on the broader modality landscape. Drugs already listed in the ranked table above are not repeated here.</p>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table pipeline-context-table">
+      <thead><tr><th>Intervention</th><th>Modality</th><th>Phase</th><th>Enrolling indication</th><th>Recruitment</th><th>Trial</th></tr></thead>
+      <tbody>
+    <tr><td><span class="intervention-name">patritumab deruxtecan (HER3-DXd)</span></td><td>&mdash;</td><td>2</td><td>EGFR-mutant NSCLC after EGFR-TKI</td><td>active not recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT04619004" target="_blank" rel="noopener noreferrer">NCT04619004</a></td></tr>
+    <tr><td><span class="intervention-name">amivantamab + lazertinib</span> <span class="offlabel-flag">off-label</span></td><td>&mdash;</td><td>1/2</td><td>EGFR-mutant NSCLC, post-osimertinib</td><td>active not recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT04077463" target="_blank" rel="noopener noreferrer">NCT04077463</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Evidence in detail</h3>
+<p class="evidence-detail-note">One row per published clinical manuscript supporting each ranked intervention. Drawn from the case's clinical-evidence dossier. Disease context lists the indication, line of therapy, and the population the trial enrolled. Toxicities are broken out per term with grade and frequency. Efficacy lists the primary endpoint with effect size and variance. The Rank-cell numbers in the table above link directly to the matching mini-table below.</p>
+<h4 id="evidence-savolitinib-osimertinib">savolitinib + osimertinib (preferably on SAFFRON / SACHI)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>EGFR-mutant NSCLC + MET amp post-EGFR-TKI</strong></td><td>69</td><td>&mdash;</td><td><strong>ORR</strong>: 30 (95% CI 19-42)</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/32679432"><em>Lancet Oncol</em> 2020</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-amivantamab-lazertinib">amivantamab + lazertinib</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>EGFR-mutant NSCLC, post-osimertinib</strong></td><td>162</td><td>&mdash;</td><td><strong>ORR (investigator)</strong>: 36 (95% CI 28-45)</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/36720074"><em>JCO</em> 2023</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h4 id="evidence-patritumab-deruxtecan">patritumab deruxtecan (HER3-DXd)</h4>
+<div class="trial-table-wrap">
+  <div class="trial-scroll">
+    <table class="trial-table evidence-detail-table">
+      <thead><tr><th>Disease context</th><th>n</th><th>Toxicities</th><th>Efficacy</th><th>Reference</th></tr></thead>
+      <tbody>
+    <tr><td><strong>EGFR-mutant NSCLC after EGFR-TKI</strong></td><td>225</td><td>&mdash;</td><td><strong>ORR (BICR)</strong>: 29.8 (95% CI 23.9-36.2)</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/37563559"><em>JCO</em> 2023</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<footer class="libby-footer">Generated 2026-05-13 &middot; Libby &middot; <code>demo-nsclc-egfr-l858r-post-osi-d3m0</code></footer>
+</body></html>
